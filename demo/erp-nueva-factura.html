@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ERP Demo — Nueva factura</title>
+<link rel="stylesheet" href="erp.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="logo">ERP<span>demo</span></div>
+    <nav>
+      <a href="#">Panel</a>
+      <a href="#">Clientes</a>
+      <a href="erp-facturas.html" class="activo">Facturación</a>
+      <a href="#">Inventario</a>
+      <a href="#">Contabilidad</a>
+      <a href="#">Reportes</a>
+    </nav>
+  </aside>
+
+  <main class="contenido">
+    <header class="barra">
+      <h1>Nueva factura</h1>
+      <span class="tag pend">Borrador · sin timbrar</span>
+    </header>
+
+    <section class="panel" id="datos-fiscales">
+      <h2>Datos fiscales del receptor</h2>
+      <div class="rejilla">
+        <div class="campo">
+          <label for="cliente_rfc">RFC del cliente <span class="req">*</span></label>
+          <input type="text" id="cliente_rfc" name="cliente_rfc" placeholder="Ej. XAXX010101000" maxlength="13">
+          <span class="ayuda">12 o 13 caracteres. Se valida contra el catálogo del SAT.</span>
+        </div>
+        <div class="campo">
+          <label for="cliente_nombre">Razón social <span class="req">*</span></label>
+          <input type="text" id="cliente_nombre" name="cliente_nombre" placeholder="Se autocompleta con el RFC">
+          <span class="ayuda">Debe coincidir exactamente con la constancia fiscal.</span>
+        </div>
+        <div class="campo">
+          <label for="uso_cfdi">Uso de CFDI <span class="req">*</span></label>
+          <select id="uso_cfdi" name="uso_cfdi">
+            <option value="">Selecciona…</option>
+            <option value="G01">G01 · Adquisición de mercancías</option>
+            <option value="G03">G03 · Gastos en general</option>
+            <option value="I04">I04 · Equipo de cómputo</option>
+            <option value="S01">S01 · Sin efectos fiscales</option>
+          </select>
+          <span class="ayuda">Lo define el cliente según cómo va a deducir.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="datos-documento">
+      <h2>Datos del documento</h2>
+      <div class="rejilla">
+        <div class="campo">
+          <label for="serie">Serie <span class="req">*</span></label>
+          <select id="serie" name="serie">
+            <option value="A" selected>A · Ventas nacionales</option>
+            <option value="B">B · Exportación</option>
+          </select>
+          <span class="ayuda">Folio siguiente disponible: A-1043</span>
+        </div>
+        <div class="campo">
+          <label for="forma_pago">Forma de pago <span class="req">*</span></label>
+          <select id="forma_pago" name="forma_pago">
+            <option value="03" selected>03 · Transferencia electrónica</option>
+            <option value="01">01 · Efectivo</option>
+            <option value="04">04 · Tarjeta de crédito</option>
+          </select>
+          <span class="ayuda">Cómo se liquidó realmente la operación.</span>
+        </div>
+        <div class="campo">
+          <label for="metodo_pago">Método de pago <span class="req">*</span></label>
+          <select id="metodo_pago" name="metodo_pago">
+            <option value="PUE" selected>PUE · Pago en una sola exhibición</option>
+            <option value="PPD">PPD · Pago en parcialidades</option>
+          </select>
+          <span class="ayuda">PPD obliga a emitir complementos de pago.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="panel" id="conceptos">
+      <h2>Conceptos</h2>
+      <table class="tabla">
+        <thead>
+          <tr><th>Clave SAT</th><th>Descripción</th><th>Cantidad</th><th>P. unitario</th><th>Importe</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>43211508</td><td>Licencia anual módulo inventarios</td><td>2</td><td>$ 9,800.00</td><td>$ 19,600.00</td></tr>
+          <tr><td>81111811</td><td>Servicio de implementación</td><td>1</td><td>$ 15,000.00</td><td>$ 15,000.00</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="panel">
+      <div class="totales">
+        <table>
+          <tr><td>Subtotal</td><td>$ 34,600.00</td></tr>
+          <tr><td>IVA 16%</td><td>$ 5,536.00</td></tr>
+          <tr class="grande"><td>Total</td><td>$ 40,136.00</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <div class="acciones">
+      <button class="btn" id="btn-borrador">Guardar borrador</button>
+      <button class="btn btn-peligro" id="btn-timbrar">Timbrar factura</button>
+    </div>
+  </main>
+</div>
+</body>
+</html>

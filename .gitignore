@@ -1,0 +1,24 @@
+# Configuración de esta máquina: rutas, credenciales y datos de demo.
+# Nunca se versiona. Usa config.ejemplo.json como plantilla.
+config.local.json
+
+# Salidas generadas: videos, audio, frames y, sobre todo, capturas del sistema
+# real. Aquí es donde con más facilidad se filtra información de clientes.
+salida/
+fichas/
+
+# Entorno y dependencias
+.venv/
+__pycache__/
+*.py[cod]
+
+# Material pesado o de referencia
+*.mp4
+*.mov
+*.mp3
+*.aiff
+*.srt
+
+# Sistema
+.DS_Store
+Note.md

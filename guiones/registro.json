@@ -1,0 +1,383 @@
+{
+  "tutorial": "registro",
+  "titulo": "Cómo registrarse en Germiva ERP: crea tu cuenta y tu empresa",
+  "base_url": "http://localhost:4200",
+  "pasos": [
+    {
+      "id": "00-ubicacion",
+      "capitulo": "Dónde se crea la cuenta",
+      "setup": {
+        "tipo": "shell",
+        "cmd": ".venv/bin/python seeds/limpiar_registro_demo.py"
+      },
+      "navegar": "/authentication/signin",
+      "esperar": "button:has-text('Registro Gratuito')",
+      "ruta": "Inicio de sesión › Registro Gratuito",
+      "texto_pantalla": "El registro se abre desde la pantalla de inicio de sesión",
+      "resaltar": [
+        {
+          "sel": "button:has-text('Registro Gratuito')",
+          "estilo": "subrayado",
+          "color": "ambar"
+        }
+      ],
+      "kenburns": {
+        "hacia": "button:has-text('Registro Gratuito')",
+        "zoom": 1.2
+      },
+      "narracion": "Para empezar a usar Germiva lo primero es crear una cuenta, y se hace desde la misma pantalla de inicio de sesión, con la opción «Registro Gratuito». Vale la pena saber qué vas a registrar aquí: no es solo tu usuario, el formulario da de alta también la empresa con la que vas a operar. Así que antes de empezar, ten a mano el RNC o la cédula del negocio y el nombre legal tal como está en la DGII."
+    },
+    {
+      "id": "01-representante",
+      "capitulo": "Datos del representante legal",
+      "navegar": "/authentication/signup",
+      "esperar": "input[formcontrolname='name']",
+      "ruta": "Registro › Representante Legal",
+      "vista": {
+        "texto_pantalla": "Sección 1 de 2 · Representante Legal",
+        "narracion": "«Registro Gratuito» nos trae a esta pantalla, el formulario de registro. Antes de llenar nada, ubícate: el formulario tiene dos secciones, y la pestaña de arriba te dice en cuál estás. Primero van los datos del representante legal, que es lo que ves ahora, y después los de la empresa. Son seis campos, ninguno complicado, pero hay dos que conviene no equivocar. Vamos uno por uno."
+      },
+      "kenburns": {
+        "zoom": 1.22
+      },
+      "campos": [
+        {
+          "sel": "input[formcontrolname='name']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='name']",
+                "texto": "Miguel"
+              }
+            }
+          ],
+          "texto_pantalla": "Nombre del representante legal",
+          "narracion": "El formulario arranca con los datos del representante legal: la persona que va a administrar la cuenta. En «Nombre» capturamos el nombre de pila, Miguel."
+        },
+        {
+          "sel": "input[formcontrolname='lastName']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='lastName']",
+                "texto": "Jiménez"
+              }
+            }
+          ],
+          "texto_pantalla": "Apellido",
+          "narracion": "En «Apellido», Jiménez. Nombre y apellido son los que van a identificarte dentro del sistema, y los que verán los demás usuarios de la empresa."
+        },
+        {
+          "sel": "input[formcontrolname='phone']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='phone']",
+                "texto": "809-555-1234"
+              }
+            }
+          ],
+          "texto_pantalla": "Teléfono · formato local",
+          "narracion": "«Teléfono» acepta el formato local: 809-555-1234. Es el número de contacto de la cuenta, por donde Germiva te busca si hay algo que confirmar con soporte."
+        },
+        {
+          "sel": "input[formcontrolname='email']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='email']",
+                "texto": "{{correo_demo}}"
+              }
+            }
+          ],
+          "texto_pantalla": "Correo · será tu usuario para entrar",
+          "narracion": "«Correo» es el dato más delicado de esta pantalla, por dos razones: va a ser tu usuario para entrar al sistema, y ahí llega el código que activa la cuenta. Si lo capturas mal no vas a poder verificar la cuenta, así que revísalo con calma antes de seguir."
+        },
+        {
+          "sel": "input[formcontrolname='password']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='password']",
+                "texto": "{{clave_demo}}"
+              }
+            }
+          ],
+          "texto_pantalla": "Contraseña · mínimo 8 caracteres",
+          "narracion": "La contraseña pide mínimo ocho caracteres. Conviene combinar mayúsculas, minúsculas, números y un símbolo, porque esta cuenta va a tener acceso a la facturación y a la contabilidad de la empresa."
+        },
+        {
+          "sel": "input[formcontrolname='cpassword']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='cpassword']",
+                "texto": "{{clave_demo}}"
+              }
+            }
+          ],
+          "texto_pantalla": "Confirmar contraseña",
+          "narracion": "«Confirmar contraseña» repite la anterior. Si las dos no coinciden, el formulario no te deja avanzar a la siguiente sección."
+        }
+      ]
+    },
+    {
+      "id": "02-siguiente",
+      "capitulo": "Datos del representante legal",
+      "ruta": "Registro › Representante Legal",
+      "texto_pantalla": "Siguiente · pasa a la sección de empresa",
+      "resaltar": [
+        {
+          "sel": "button:has-text('Siguiente')",
+          "estilo": "foco",
+          "color": "verde"
+        }
+      ],
+      "kenburns": {
+        "hacia": "button:has-text('Siguiente')",
+        "zoom": 1.18
+      },
+      "narracion": "Con la sección del representante completa, «Siguiente» pasa a los datos de la empresa. Todavía no se ha creado nada: el registro se envía hasta el final, así que puedes regresar y corregir lo que haga falta."
+    },
+    {
+      "id": "03-empresa",
+      "capitulo": "Datos de la empresa",
+      "ruta": "Registro › Datos de Empresa",
+      "acciones": [
+        {
+          "click": "button:has-text('Siguiente')"
+        },
+        {
+          "esperar_ms": 2500
+        }
+      ],
+      "vista": {
+        "texto_pantalla": "Sección 2 de 2 · Datos de Empresa",
+        "narracion": "«Siguiente» nos dejó en la segunda sección: Datos de Empresa. Los datos del representante quedaron guardados atrás, y la pestaña de arriba ya marca este paso. Esta pantalla es más corta, tres campos y una casilla, pero es la que define cómo va a aparecer tu negocio en cada comprobante que emitas."
+      },
+      "kenburns": {
+        "zoom": 1.22
+      },
+      "campos": [
+        {
+          "sel": "input[formcontrolname='rnc']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='rnc']",
+                "texto": "131793916"
+              }
+            }
+          ],
+          "texto_pantalla": "RNC o cédula · identifica fiscalmente a la empresa",
+          "narracion": "«RNC o Cédula» es lo que identifica fiscalmente al negocio. Capturamos 131793916. Germiva consulta ese número contra el padrón de la DGII y, si lo encuentra, te completa el nombre legal automáticamente."
+        },
+        {
+          "sel": "input[formcontrolname='legalName']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='legalName']",
+                "texto": "Germiva Tutorial SRL"
+              }
+            }
+          ],
+          "texto_pantalla": "Nombre legal · debe coincidir con la DGII",
+          "narracion": "«Nombre Legal» es la razón social tal como está registrada en la DGII: Germiva Tutorial SRL. Este es el nombre que va a salir en tus comprobantes fiscales, así que tiene que coincidir exactamente con tu registro. Si no coincide, los comprobantes que emitas después van a tener un problema de fondo."
+        },
+        {
+          "sel": "input[formcontrolname='tradeName']",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "input[formcontrolname='tradeName']",
+                "texto": "Germiva Tutorial"
+              }
+            }
+          ],
+          "texto_pantalla": "Nombre comercial · con el que te conoce el público",
+          "narracion": "«Nombre Comercial» es con el que te conoce el público, y puede ser distinto del legal. Aquí ponemos Germiva Tutorial. Este es el que vas a ver dentro del sistema en el día a día."
+        },
+        {
+          "sel": "mat-checkbox",
+          "acciones": [
+            {
+              "marcar": "#mat-mdc-checkbox-0-input"
+            }
+          ],
+          "texto_pantalla": "Términos y condiciones · obligatorio",
+          "narracion": "Falta aceptar los términos y condiciones. Este es el punto donde más gente se atora: sin esta casilla marcada el botón de registro no envía nada, aunque el resto del formulario esté completo y sin ningún error visible."
+        }
+      ]
+    },
+    {
+      "id": "04-registrarse",
+      "capitulo": "Enviar el registro",
+      "ruta": "Registro › Datos de Empresa",
+      "texto_pantalla": "Registrarse · crea usuario y empresa",
+      "resaltar": [
+        {
+          "sel": "button:has-text('Registrarse')",
+          "estilo": "foco",
+          "color": "verde"
+        }
+      ],
+      "kenburns": {
+        "hacia": "button:has-text('Registrarse')",
+        "zoom": 1.18
+      },
+      "narracion": "«Registrarse» envía todo junto: crea tu usuario, da de alta la empresa y genera un código de verificación. La cuenta queda creada, pero todavía inactiva, así que este no es el último paso. Al presionarlo, el formulario te saca y te lleva a una pantalla nueva."
+    },
+    {
+      "id": "05-verificacion",
+      "capitulo": "Verificación del correo",
+      "acciones": [
+        {
+          "click": "button:has-text('Registrarse')"
+        },
+        {
+          "esperar_ms": 6000
+        }
+      ],
+      "esperar": "input[formcontrolname='code']",
+      "ruta": "Registro › Verificación de Email",
+      "texto_pantalla": "Nueva pantalla · Verificación de Email",
+      "resaltar": [],
+      "narracion": "Esta es la pantalla de Verificación de Email. El formulario de registro ya quedó atrás, la cuenta está creada, y Germiva acaba de mandar un código de seis dígitos al correo que registraste, que puedes ver confirmado en el centro de la pantalla. A la izquierda están las recomendaciones de seguridad, y abajo del campo hay dos salidas para cuando algo sale mal: reenviar el código, o corregir el correo si lo escribiste mal, sin repetir todo el registro."
+    },
+    {
+      "id": "06-codigo",
+      "capitulo": "Verificación del correo",
+      "setup": {
+        "tipo": "sql",
+        "query": "SELECT verificationCode FROM users WHERE email='{{correo_demo}}'",
+        "guardar_en": "codigo"
+      },
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='code']",
+            "texto": "{{codigo}}"
+          }
+        }
+      ],
+      "ruta": "Registro › Verificación de Email",
+      "texto_pantalla": "Captura el código que llegó al correo",
+      "resaltar": [
+        {
+          "sel": "input[formcontrolname='code']",
+          "estilo": "caja",
+          "color": "ambar"
+        }
+      ],
+      "kenburns": {
+        "hacia": "input[formcontrolname='code']",
+        "zoom": 1.18
+      },
+      "narracion": "Capturamos los seis dígitos que llegaron al correo. El código expira en diez minutos. Si ya se te venció, «Reenviar código» genera uno nuevo, pero ten en cuenta que el anterior deja de funcionar en ese momento: usa siempre el último que recibiste."
+    },
+    {
+      "id": "07-verificar",
+      "capitulo": "Verificación del correo",
+      "ruta": "Registro › Verificación de Email",
+      "texto_pantalla": "Verificar Email · activa la cuenta",
+      "resaltar": [
+        {
+          "sel": "button:has-text('Verificar Email')",
+          "estilo": "foco",
+          "color": "verde"
+        }
+      ],
+      "kenburns": {
+        "hacia": "button:has-text('Verificar Email')",
+        "zoom": 1.18
+      },
+      "narracion": "«Verificar Email» activa la cuenta. Es el último paso del registro."
+    },
+    {
+      "id": "08-confirmacion",
+      "capitulo": "Cuenta activa",
+      "acciones": [
+        {
+          "click": "button:has-text('Verificar Email')"
+        },
+        {
+          "esperar_ms": 7000
+        }
+      ],
+      "esperar": "button:has-text('Ir al Dashboard')",
+      "ruta": "Registro › Cuenta verificada",
+      "texto_pantalla": "Cuenta verificada · Ir al Dashboard",
+      "resaltar": [
+        {
+          "sel": "button:has-text('Ir al Dashboard')",
+          "estilo": "foco",
+          "color": "verde"
+        }
+      ],
+      "kenburns": {
+        "hacia": "button:has-text('Ir al Dashboard')",
+        "zoom": 1.22
+      },
+      "narracion": "Germiva confirma que el correo quedó verificado y que la cuenta ya tiene acceso a todo el sistema. Desde aquí, «Ir al Dashboard» te lleva directo a tu espacio de trabajo, con la empresa que registraste hace un momento ya cargada."
+    },
+    {
+      "id": "09-dashboard",
+      "capitulo": "Cuenta activa",
+      "acciones": [
+        {
+          "click": "button:has-text('Ir al Dashboard')"
+        },
+        {
+          "esperar_ms": 6000
+        }
+      ],
+      "esperar": "text=Configuración incompleta",
+      "ruta": "Inicio › Configuración pendiente",
+      "texto_pantalla": "Faltan 3 datos para poder facturar",
+      "resaltar": [],
+      "narracion": "Al entrar, Germiva te recibe con un aviso que conviene no ignorar: la empresa quedó creada, pero le faltan tres datos para poder facturar. Provincia, Municipio y Certificados Digitales. Sin ellos el sistema funciona, pero no vas a poder generar comprobantes fiscales electrónicos válidos para la DGII. «Configurar ahora» te lleva directo a completarlos; «Más tarde» lo deja pendiente y el aviso vuelve a salir."
+    },
+    {
+      "id": "10-dashboard",
+      "capitulo": "Cuenta activa",
+      "acciones": [
+        {
+          "click": "button:has-text('Más tarde')"
+        },
+        {
+          "esperar_ms": 2500
+        }
+      ],
+      "esperar": "text=TUS MÓDULOS",
+      "ruta": "Inicio › Panel",
+      "texto_pantalla": "Panel principal · tu espacio de trabajo",
+      "resaltar": [],
+      "narracion": "Detrás del aviso está el panel principal, ya con tu empresa cargada: arriba a la izquierda ves su nombre y su RNC. En la barra lateral están los módulos —ventas, compras, inventario, contabilidad, nómina— y en el centro los accesos rápidos a lo que más se usa."
+    },
+    {
+      "id": "11-cierre",
+      "capitulo": "Cuenta activa",
+      "tarjeta": {
+        "titulo": "Tu cuenta ya está activa",
+        "subtitulo": "Usuario creado, empresa dada de alta y correo verificado.",
+        "pie": "Sembraste el control. Ahora, a cosechar resultados."
+      },
+      "narracion": "Tu cuenta ya está lista: usuario creado, empresa dada de alta y correo verificado. Antes de emitir tu primera factura queda un paso, el que te pedía el aviso del panel: completar la provincia, el municipio y los certificados digitales. Acabas de sembrar el control de tu negocio. Ahora toca cosechar resultados."
+    }
+  ],
+  "descripcion": "En este tutorial creamos una cuenta en Germiva ERP de principio a fin: los datos del representante legal, los datos fiscales de la empresa, la verificación del correo y el primer acceso al panel. El registro da de alta tu usuario y tu empresa en un mismo formulario, así que conviene tener a mano el RNC y el nombre legal como está en la DGII.",
+  "aprenderas": [
+    "Dónde se abre el registro y qué necesitas antes de empezar",
+    "Qué va en cada campo del representante legal y de la empresa",
+    "Por qué el correo y el uso del RNC son los datos críticos",
+    "Cómo verificar la cuenta con el código de seis dígitos",
+    "Qué falta configurar antes de poder emitir facturas electrónicas"
+  ],
+  "errores_comunes": [
+    "Olvidar marcar la casilla de términos: el botón no envía y no muestra error",
+    "Capturar mal el correo: sin él no se puede verificar la cuenta",
+    "Nombre legal que no coincide con la DGII: afecta tus comprobantes fiscales",
+    "Dejar la configuración fiscal pendiente e intentar facturar"
+  ]
+}

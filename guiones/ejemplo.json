@@ -1,0 +1,175 @@
+{
+  "tutorial": "ejemplo",
+  "titulo": "Cómo emitir una factura",
+  "voz": {
+    "id": "es-MX-DaliaNeural",
+    "velocidad": "-8%"
+  },
+  "base_url": "file://{RAIZ}/demo",
+  "pasos": [
+    {
+      "id": "00-ubicacion",
+      "capitulo": "Dónde vive la facturación",
+      "navegar": "/erp-panel.html",
+      "esperar": "#accesos-rapidos",
+      "ruta": "Menú lateral › Facturación",
+      "texto_pantalla": "Dos accesos: el menú lateral y el Panel de inicio",
+      "resaltar": [
+        {
+          "sel": "#menu-facturacion",
+          "estilo": "subrayado",
+          "color": "ambar",
+          "etiqueta": "1"
+        },
+        {
+          "sel": "#acceso-nueva-factura",
+          "estilo": "caja",
+          "color": "ambar",
+          "etiqueta": "2"
+        }
+      ],
+      "kenburns": {
+        "hacia": "#accesos-rapidos",
+        "zoom": 1.2
+      },
+      "narracion": "Antes de entrar a la pantalla, ubiquémosla. La facturación vive en el menú lateral, en la entrada «Facturación»: ahí está el listado de comprobantes y desde ahí se emiten los nuevos. Pero no es el único camino. En el Panel de inicio, el bloque «Accesos rápidos» tiene la tarjeta «Nueva factura», que lleva directo al formulario sin pasar por el listado. Si ya estás en el panel revisando el resumen del mes, ese es el atajo. Si necesitas consultar una factura anterior o retomar un borrador, conviene entrar por el menú."
+    },
+    {
+      "id": "01-listado",
+      "capitulo": "Dos formas de empezar una factura",
+      "navegar": "/erp-facturas.html",
+      "ruta": "Menú lateral › Facturación",
+      "esperar": "#btn-nueva-factura",
+      "texto_pantalla": "Nueva factura · o Duplicar una existente",
+      "resaltar": [
+        {
+          "sel": "#btn-nueva-factura",
+          "estilo": "caja",
+          "color": "ambar",
+          "etiqueta": "1"
+        },
+        {
+          "sel": "#filas tr:first-child .accion",
+          "estilo": "caja",
+          "color": "ambar",
+          "etiqueta": "2"
+        }
+      ],
+      "kenburns": {
+        "hacia": "#btn-nueva-factura",
+        "zoom": 1.25
+      },
+      "narracion": "Empezamos en el módulo de Facturación, donde está el historial de comprobantes de la empresa. Para emitir uno nuevo usamos el botón «Nueva factura»: abre un comprobante en estado borrador, que todavía no existe para el SAT. Hay una segunda ruta: en cualquier renglón del listado, la acción «Duplicar» crea una factura copiando el cliente y los conceptos de esa. Conviene cuando le facturas lo mismo al mismo cliente cada mes. Nosotros seguimos por «Nueva factura»."
+    },
+    {
+      "id": "02-datos-fiscales",
+      "capitulo": "Datos fiscales del receptor",
+      "navegar": "/erp-nueva-factura.html",
+      "ruta": "Menú lateral › Facturación › Nueva factura",
+      "esperar": "#datos-fiscales",
+      "kenburns": {
+        "zoom": 1.7
+      },
+      "campos": [
+        {
+          "sel": "#cliente_rfc",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "#cliente_rfc",
+                "texto": "DBA980412H23"
+              }
+            }
+          ],
+          "texto_pantalla": "RFC del cliente · obligatorio",
+          "narracion": "Empezamos por «RFC del cliente»: capturamos el RFC del receptor, DBA980412H23. Es el dato que identifica fiscalmente a quien recibe el comprobante, y el sistema lo valida contra el catálogo del SAT en cuanto sales del campo."
+        },
+        {
+          "sel": "#cliente_nombre",
+          "acciones": [
+            {
+              "escribir": {
+                "sel": "#cliente_nombre",
+                "texto": "Distribuidora del Bajío"
+              }
+            }
+          ],
+          "texto_pantalla": "Razón social · se completa sola desde el padrón",
+          "narracion": "«Razón social» no la escribimos: se completa sola en cuanto el RFC existe en el padrón, y aquí trae Distribuidora del Bajío. Si se queda vacía, ese cliente no está dado de alta y hay que registrarlo antes de continuar. No la llenes a mano para salir del paso, porque debe coincidir exactamente con la constancia fiscal."
+        },
+        {
+          "sel": "#uso_cfdi",
+          "acciones": [
+            {
+              "seleccionar": {
+                "sel": "#uso_cfdi",
+                "valor": "G01"
+              }
+            }
+          ],
+          "texto_pantalla": "Uso de CFDI · lo define el cliente",
+          "narracion": "En «Uso de CFDI» elegimos G01, adquisición de mercancías. Este dato no lo decides tú: te lo indica el cliente según cómo va a deducir el gasto. Si va equivocado la factura se timbra igual, pero al cliente no le sirve, y corregirlo obliga a cancelar y reemitir."
+        }
+      ]
+    },
+    {
+      "id": "03-documento",
+      "capitulo": "Forma y método de pago",
+      "ruta": "Menú lateral › Facturación › Nueva factura",
+      "kenburns": {
+        "zoom": 1.7
+      },
+      "campos": [
+        {
+          "sel": "#forma_pago",
+          "texto_pantalla": "Forma de pago · cómo entró el dinero",
+          "narracion": "«Forma de pago» describe cómo entró el dinero. Seleccionamos 03, transferencia electrónica, que es como nos pagó este cliente. Junto a este campo, la serie y el folio ya vienen puestos con el consecutivo disponible: no hay que tocarlos."
+        },
+        {
+          "sel": "#metodo_pago",
+          "texto_pantalla": "Método de pago · PUE o PPD",
+          "narracion": "«Método de pago» define cuándo se liquida. Dejamos PUE, pago en una sola exhibición, porque el cliente ya pagó el total. Si te fuera a pagar en parcialidades elegirías PPD, y esa opción te obliga a emitir un complemento de pago por cada abono que recibas después. Por eso conviene usarla solo cuando de verdad aplique."
+        }
+      ]
+    },
+    {
+      "id": "04-timbrar",
+      "capitulo": "Timbrar o guardar como borrador",
+      "ruta": "Menú lateral › Facturación › Nueva factura",
+      "texto_pantalla": "Timbrar es irreversible · el borrador se puede retomar",
+      "resaltar": [
+        {
+          "sel": "#btn-timbrar",
+          "estilo": "foco",
+          "color": "verde",
+          "etiqueta": "1"
+        },
+        {
+          "sel": "#btn-borrador",
+          "estilo": "foco",
+          "color": "ambar",
+          "etiqueta": "2"
+        }
+      ],
+      "kenburns": {
+        "hacia": "#btn-timbrar",
+        "zoom": 1.6
+      },
+      "narracion": "Con los datos revisados, presionamos «Timbrar factura». El comprobante viaja al PAC y regresa con el UUID fiscal ya registrado ante el SAT; en ese mismo momento el ERP descuenta las licencias del inventario y genera la póliza contable del ingreso. Si todavía no quieres timbrar, «Guardar borrador» conserva la captura sin efectos fiscales y la retomas después desde el listado. Ten presente que timbrar sí es irreversible: a partir de ahí un error ya no se corrige editando, se corrige cancelando el comprobante y emitiendo uno nuevo. Vale la pena revisar el RFC y el uso de CFDI antes de presionarlo."
+    }
+  ],
+  "privacidad": {
+    "perfil": "estricto",
+    "semilla": "germiva-2026",
+    "reglas": [
+      {
+        "sel": "#filas td:nth-child(2)",
+        "tipo": "empresa"
+      },
+      {
+        "sel": "#cliente_nombre",
+        "tipo": "empresa"
+      }
+    ]
+  }
+}

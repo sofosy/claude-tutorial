@@ -1,0 +1,13 @@
+{
+  "_comentario": "Plantilla de config.local.json. Copia este archivo a config.local.json y ajusta las rutas de TU máquina. config.local.json NO se versiona: contiene rutas y credenciales locales.",
+  "base_url": "http://localhost:4200",
+  "db": {
+    "env": "/ruta/a/tu/api/.env",
+    "cliente": "/opt/homebrew/opt/mysql@8.4/bin/mysql"
+  },
+  "variables": {
+    "clave_demo": "CambiaEstaClave1!",
+    "correo_demo": "demo@tu-dominio.com",
+    "rnc_demo": "000000000"
+  }
+}

@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>ERP Demo — Panel</title>
+<link rel="stylesheet" href="erp.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="logo">ERP<span>demo</span></div>
+    <nav>
+      <a href="erp-panel.html" class="activo">Panel</a>
+      <a href="#">Clientes</a>
+      <a href="erp-facturas.html" id="menu-facturacion">Facturación</a>
+      <a href="#">Inventario</a>
+      <a href="#">Contabilidad</a>
+      <a href="#">Reportes</a>
+    </nav>
+  </aside>
+
+  <main class="contenido">
+    <header class="barra">
+      <h1>Panel</h1>
+      <span class="tag pend">Julio 2026</span>
+    </header>
+
+    <section class="panel" id="accesos-rapidos">
+      <h2>Accesos rápidos</h2>
+      <div class="rejilla">
+        <a class="tarjeta" id="acceso-nueva-factura" href="erp-nueva-factura.html">
+          <strong>Nueva factura</strong>
+          <span>Emitir un CFDI de ingreso</span>
+        </a>
+        <a class="tarjeta" href="#">
+          <strong>Nuevo cliente</strong>
+          <span>Dar de alta con RFC y constancia</span>
+        </a>
+        <a class="tarjeta" href="#">
+          <strong>Registrar pago</strong>
+          <span>Aplicar un abono a una factura</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="panel">
+      <h2>Resumen del mes</h2>
+      <div class="rejilla">
+        <div class="kpi"><span>Facturado</span><strong>$ 412,900.00</strong></div>
+        <div class="kpi"><span>Por cobrar</span><strong>$ 87,450.00</strong></div>
+        <div class="kpi"><span>Comprobantes emitidos</span><strong>38</strong></div>
+      </div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

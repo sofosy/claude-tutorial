@@ -1,0 +1,26 @@
+{
+  "_comentario": "Identidad y ajustes comunes a TODOS los tutoriales. Cada guion puede sobrescribir cualquier clave. Lo que dependa de esta máquina (rutas, credenciales) va en config.local.json, que no se versiona.",
+
+  "marca": {
+    "nombre": "Germiva ERP",
+    "slogan": "Siembra control, cosecha resultados.",
+    "logo": "marca/logo.png"
+  },
+
+  "url_publica": "https://germiva.com",
+
+  "voz": {
+    "id": "es-MX-DaliaNeural",
+    "velocidad": "+12%"
+  },
+
+  "privacidad": {
+    "perfil": "estricto",
+    "semilla": "germiva-2026"
+  },
+
+  "tags": [
+    "Germiva", "ERP", "facturación electrónica", "DGII",
+    "República Dominicana", "tutorial", "software de gestión"
+  ]
+}
