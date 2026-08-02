@@ -59,8 +59,11 @@ def _kenburns(meta, zoom_pedido, nframes):
     """
     w, h = meta["tamano"]
     if meta.get("kenburns"):
-        x, y, cw, ch = meta["kenburns"]["caja"]
-        cxp, cyp = x + cw / 2, y + ch / 2
+        caja = meta["kenburns"].get("caja")
+        # sin caja el acercamiento va al centro: se usa cuando lo que hay que
+        # mirar es la pantalla completa y no un componente concreto
+        cxp, cyp = ((caja[0] + caja[2] / 2, caja[1] + caja[3] / 2) if caja
+                    else (w / 2, h / 2))
         z1 = _zoom_seguro(meta, cxp, cyp, zoom_pedido)
         cx1, cy1 = cxp / w, cyp / h
     else:

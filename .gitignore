@@ -7,6 +7,20 @@ config.local.json
 salida/
 fichas/
 
+# Contenido de una serie concreta: cambia con cada tutorial y no es parte de la
+# herramienta. Se versiona solo lo que sirve para CUALQUIER video — el motor, la
+# marca y la configuración común.
+# git no admite comentarios en la misma línea del patrón: van aparte.
+# guiones/   el guion de cada video
+# seeds/     preparación de datos de una serie concreta
+# demo/      sitio de ejemplo de un tutorial concreto
+# PLAN-*.md  el plan de una serie (PLAN.md, el del motor, sí se versiona)
+guiones/
+seeds/
+demo/
+PLAN-*.md
+image.png
+
 # Entorno y dependencias
 .venv/
 __pycache__/

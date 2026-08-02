@@ -1,26 +1,33 @@
 {
   "_comentario": "Identidad y ajustes comunes a TODOS los tutoriales. Cada guion puede sobrescribir cualquier clave. Lo que dependa de esta máquina (rutas, credenciales) va en config.local.json, que no se versiona.",
-
   "marca": {
     "nombre": "Germiva ERP",
     "slogan": "Siembra control, cosecha resultados.",
     "logo": "marca/logo.png"
   },
-
   "url_publica": "https://germiva.com",
-
   "voz": {
     "id": "es-MX-DaliaNeural",
     "velocidad": "+12%"
   },
-
   "privacidad": {
     "perfil": "estricto",
-    "semilla": "germiva-2026"
+    "semilla": "germiva-2026",
+    "_permitidos": "Datos de demo que NO se sustituyen ni se tapan: la narración los pronuncia, así que cambiarlos rompería la coherencia entre audio y pantalla. «germiva» marca los nombres y correos; «1305550» es el rango de RNC inventado de la serie. Un dato real no lleva ninguna de las dos marcas.",
+    "permitidos": [
+      "germiva",
+      "1305550"
+    ],
+    "_ofuscar": "Valores que sí hay que tapar en los frames antes de publicar (se cubren con una banda opaca). Úsalo para cualquier dato real que no se pueda evitar mostrar.",
+    "ofuscar": []
   },
-
   "tags": [
-    "Germiva", "ERP", "facturación electrónica", "DGII",
-    "República Dominicana", "tutorial", "software de gestión"
+    "Germiva",
+    "ERP",
+    "facturación electrónica",
+    "DGII",
+    "República Dominicana",
+    "tutorial",
+    "software de gestión"
   ]
 }

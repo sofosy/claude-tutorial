@@ -118,11 +118,19 @@ def sustituir(pag, cfg, previo=None):
     mapa = dict(previo)
     ya_inventados = set(previo.values())
 
+    # Valores de demo que NO se sustituyen: los datos que el guion escribe a
+    # propósito y que la narración pronuncia en voz alta. Sin esta exención, un
+    # nombre inventado por el guion se cambia por otro inventado por la
+    # herramienta y la pantalla deja de coincidir con el audio.
+    permitidos = [p.lower() for p in cfg.get("permitidos", [])]
+
     def registrar(tipo, valor):
         valor = (valor or "").strip()
         if not valor or valor in mapa or valor in ya_inventados:
             return
         if _es_inventado(tipo, valor):
+            return
+        if any(p in valor.lower() for p in permitidos):
             return
         mapa[valor] = falso(tipo, valor, semilla)
 
@@ -205,12 +213,17 @@ def _es_inventado(tipo, valor):
     return False
 
 
-def auditar(salida, textos_extra=(), ids=None):
+def auditar(salida, textos_extra=(), ids=None, permitidos=()):
     """Busca datos que parezcan reales en los frames YA renderizados.
 
     Corre sobre las imágenes finales, no sobre el DOM: así detecta lo que se coló
     por canvas, imágenes, PDFs incrustados o tooltips, que es justo donde la
     sustitución de DOM no alcanza.
+
+    `permitidos` son los valores de demo exentos de sustitución (ver `sustituir`).
+    El auditor tiene que conocer la misma lista: si no, marca como hallazgo cada
+    dato inventado a propósito, y un informe lleno de falsos positivos deja de
+    leerse — que es la única forma de que un dato real de verdad pase inadvertido.
     """
     try:
         import pytesseract
@@ -220,11 +233,16 @@ def auditar(salida, textos_extra=(), ids=None):
 
     hallazgos = []
 
+    exentos = [x.lower() for x in permitidos]
+
     def revisar(texto, origen):
         for tipo, patron in PATRONES.items():
             for v in re.findall(patron, texto):
-                if not _es_inventado(tipo, v):
-                    hallazgos.append((origen, tipo, v))
+                if _es_inventado(tipo, v):
+                    continue
+                if any(e in v.lower() for e in exentos):
+                    continue
+                hallazgos.append((origen, tipo, v))
 
     if pytesseract:
         for png in sorted((salida / "anotados").glob("*.png")):
@@ -247,4 +265,108 @@ def auditar(salida, textos_extra=(), ids=None):
                            encoding="utf-8")
     else:
         informe.write_text("Sin hallazgos.\n", encoding="utf-8")
+    return hallazgos
+
+def ofuscar(salida, ids=None, permitidos=(), declarados=()):
+    """Tapa en los frames renderizados los datos que la auditoría marcó.
+
+    Es la última red antes de publicar. La sustitución de DOM cubre lo que el
+    navegador pinta como texto, pero no lo que llega por canvas, un PDF
+    incrustado o una imagen; y el OCR de la auditoría a veces lee mal un valor
+    ya inventado y lo reporta igual. En ambos casos el video no puede subirse
+    con un dato que parezca real, así que aquí se cubre con una banda opaca
+    sobre el frame: se pierde legibilidad en ese punto, pero el video es
+    publicable. Después hay que volver a montar.
+
+    Devuelve la lista de (frame, tipo, valor) que tapó.
+    """
+    from PIL import Image, ImageDraw
+    import pytesseract
+
+    exentos = [x.lower() for x in permitidos]
+    # los valores que el guion declara para tapar se cubren siempre, aunque no
+    # coincidan con ningún patrón: es la lista explícita del autor
+    forzados = [str(x) for x in declarados]
+    tapados = []
+    for png in sorted((salida / "anotados").glob("*.png")):
+        if ids is not None and png.stem not in ids:
+            continue
+        img = Image.open(png)
+        datos = pytesseract.image_to_data(img, output_type=pytesseract.Output.DICT)
+        dib = ImageDraw.Draw(img)
+        cambios = 0
+        for i, palabra in enumerate(datos["text"]):
+            palabra = (palabra or "").strip()
+            if not palabra:
+                continue
+            objetivos = [("declarado", f) for f in forzados if f in palabra]
+            for tipo, patron in PATRONES.items():
+                objetivos += [(tipo, v) for v in re.findall(patron, palabra)]
+            for tipo, v in objetivos:
+                if tipo != "declarado":
+                    if _es_inventado(tipo, v) or any(e in v.lower() for e in exentos):
+                        continue
+                if True:
+                    x, y = datos["left"][i], datos["top"][i]
+                    w, h = datos["width"][i], datos["height"][i]
+                    m = max(2, h // 6)
+                    dib.rectangle([x - m, y - m, x + w + m, y + h + m], fill=(58, 62, 70))
+                    tapados.append((png.name, tipo, v))
+                    cambios += 1
+                    break
+        if cambios:
+            img.save(png)
+    return tapados
+
+def _textos_del_guion(guion):
+    """Todo el texto que el guion aporta: narración, rótulos y lo que escribe."""
+    for paso in guion.get("pasos", []):
+        for clave in ("narracion", "texto_pantalla", "ruta"):
+            if paso.get(clave):
+                yield f"{paso['id']}.{clave}", paso[clave]
+        for tar in ([paso["tarjeta"]] if paso.get("tarjeta") else []):
+            for k, v in tar.items():
+                if isinstance(v, str):
+                    yield f"{paso['id']}.tarjeta.{k}", v
+        for i, acc in enumerate(paso.get("acciones", [])):
+            e = acc.get("escribir")
+            if e:
+                yield f"{paso['id']}.escribir[{i}]", e.get("texto", "")
+    for clave in ("titulo", "descripcion"):
+        if guion.get(clave):
+            yield clave, guion[clave]
+    for clave in ("aprenderas", "errores_comunes"):
+        for i, v in enumerate(guion.get(clave, [])):
+            yield f"{clave}[{i}]", v
+
+
+def revisar_guion(guion):
+    """Analiza el guion antes de capturar y devuelve los datos sin declarar.
+
+    Un RNC o un correo real escrito en el guion llega al video por narración,
+    subtítulos y descripción de YouTube, donde la sustitución del DOM no alcanza.
+    Detectarlo aquí cuesta segundos; detectarlo después de montar cuesta una
+    recompilación entera, y no detectarlo cuesta que YouTube rechace el video.
+
+    Cada valor tiene que estar en una de las dos listas de `privacidad`:
+    `permitidos` (dato de demo, se muestra tal cual) u `ofuscar` (se tapa en los
+    frames). Lo que no esté en ninguna se reporta.
+    """
+    cfg = guion.get("privacidad", {})
+    exentos = [x.lower() for x in cfg.get("permitidos", [])]
+    declarados = {str(x).lower() for x in cfg.get("ofuscar", [])}
+    hallazgos, vistos = [], set()
+    for donde, texto in _textos_del_guion(guion):
+        for tipo, patron in PATRONES.items():
+            for v in re.findall(patron, texto or ""):
+                if _es_inventado(tipo, v):
+                    continue
+                if any(e in v.lower() for e in exentos):
+                    continue
+                if v.lower() in declarados:
+                    continue
+                if (donde, v) in vistos:
+                    continue
+                vistos.add((donde, v))
+                hallazgos.append((donde, tipo, v))
     return hallazgos

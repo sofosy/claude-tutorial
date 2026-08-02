@@ -122,10 +122,138 @@ def _acciones(pag, paso, variables):
         elif "marcar" in acc:
             # Angular Material esconde el <input> real tras la etiqueta
             pag.locator(acc["marcar"]).first.check(force=True)
+        elif "click_opcional" in acc:
+            # avisos del arranque que aparecen o no según el estado de la
+            # sesión: si no está, no es un error, es que no había nada que cerrar
+            loc = pag.locator(acc["click_opcional"]).first
+            try:
+                loc.click(timeout=acc.get("espera_ms", 4000))
+            except PlaywrightTimeout:
+                pass
+        elif "subir" in acc:
+            # el <input type=file> suele estar oculto tras un botón: se le
+            # pasa el archivo directamente, sin abrir el diálogo del sistema
+            s = acc["subir"]
+            pag.locator(s["sel"]).first.set_input_files(str(RAIZ / s["archivo"]))
+        elif "presionar" in acc:
+            # los campos de etiquetas (app-chips) confirman con Enter: sin esto
+            # el texto queda escrito pero la etiqueta nunca se agrega
+            p = acc["presionar"]
+            pag.press(p["sel"], p["tecla"])
         elif "esperar_ms" in acc:
             pag.wait_for_timeout(acc["esperar_ms"])
         else:
             raise SystemExit(f"[{paso['id']}] acción desconocida: {acc}")
+
+
+def _sesion(pag, guion, variables, base):
+    """Entra a la aplicación antes del primer paso, sin capturar nada.
+
+    Una corrida de `capturar` abre un solo contexto de navegador, así que la
+    sesión vive para todo el guion. Se hace aquí y no como paso porque el
+    formulario de acceso no es parte de ningún tutorial: sale en todos y no
+    enseña nada. Los selectores tienen valor por defecto y se pueden
+    sobrescribir para otra aplicación.
+    """
+    s = guion.get("sesion")
+    if not s:
+        return
+    pag.goto(base + s.get("navegar", "/authentication/signin"),
+             wait_until="networkidle")
+    pag.fill(s.get("sel_usuario", "input[formcontrolname='username']"),
+             _sub(s["usuario"], variables))
+    pag.fill(s.get("sel_clave", "input[formcontrolname='password']"),
+             _sub(s["clave"], variables))
+    pag.click(s.get("sel_entrar", "button.login-button"))
+    if s.get("esperar"):
+        pag.wait_for_selector(s["esperar"], timeout=s.get("esperar_timeout_ms", 30000))
+    else:
+        # sin selector que esperar, basta con salir de la pantalla de acceso
+        pag.wait_for_url(lambda u: "signin" not in u, timeout=30000)
+    print(f"  · sesión: {_sub(s['usuario'], variables)}")
+
+
+JS_ENCUADRAR = """(el) => {
+  // La aplicación tiene cabecera fija y el contenido scrollea por debajo, así
+  // que "estar dentro del viewport" no basta: un elemento puede quedar tapado
+  // por la barra superior. Se mide el estorbo real en vez de suponerlo.
+  const estorbo = () => {
+    let tope = 0;
+    for (const e of document.querySelectorAll('body *')) {
+      const s = getComputedStyle(e);
+      if (s.position !== 'fixed' && s.position !== 'sticky') continue;
+      if (s.visibility === 'hidden' || s.display === 'none') continue;
+      const r = e.getBoundingClientRect();
+      // solo lo que se pega arriba y cubre buena parte del ancho
+      if (r.top <= 2 && r.bottom > tope && r.width > window.innerWidth * 0.4
+          && r.bottom < window.innerHeight * 0.5) tope = r.bottom;
+    }
+    return tope;
+  };
+  // Un diálogo se pinta ENCIMA de la cabecera (vive en la capa de overlay y es
+  // de posición fija), así que la cabecera no lo tapa: descontarla ahí daría un
+  // falso aviso y obligaría a partir un paso que en realidad se ve completo.
+  const enOverlay = (() => {
+    if (el.closest('.cdk-overlay-container, .cdk-overlay-pane')) return true;
+    // basta con que un ANCESTRO sea fijo: un botón dentro del propio banner
+    // superior no puede estar tapado por ese banner
+    for (let n = el; n; n = n.parentElement) {
+      const pos = getComputedStyle(n).position;
+      if (pos === 'fixed' || pos === 'sticky') return true;
+    }
+    return false;
+  })();
+  const tope = enOverlay ? 0 : estorbo();
+  const util = window.innerHeight - tope;
+  const visible = () => {
+    const r = el.getBoundingClientRect();
+    return r.top >= tope - 1 && r.bottom <= window.innerHeight + 1;
+  };
+  const alto = () => el.getBoundingClientRect().height;
+
+  if (visible()) return {ok: true, alto: alto(), tope};
+  if (alto() > util) return {ok: false, alto: alto(), tope};
+
+  // Se desplaza el contenedor que de verdad scrollea (puede ser la ventana o
+  // un contenedor interno), lo justo para dejarlo libre de la cabecera.
+  const contenedor = (() => {
+    let n = el.parentElement;
+    while (n) {
+      const s = getComputedStyle(n);
+      if (/(auto|scroll)/.test(s.overflowY) && n.scrollHeight > n.clientHeight) return n;
+      n = n.parentElement;
+    }
+    return document.scrollingElement;
+  })();
+  for (let i = 0; i < 4 && !visible(); i++) {
+    const r = el.getBoundingClientRect();
+    const delta = r.top < tope ? r.top - tope - 12
+                               : r.bottom - window.innerHeight + 12;
+    if (Math.abs(delta) < 1) break;
+    contenedor.scrollTop += delta;
+    if (!visible()) window.scrollBy(0, delta);
+  }
+  return {ok: visible(), alto: alto(), tope};
+}"""
+
+
+def _encuadrar(pag, sel, paso):
+    """Deja el componente explicado completamente dentro del encuadre.
+
+    Es la garantía mecánica de que el video nunca muestra a medias la sección de
+    la que habla la narración: revisarlo a ojo frame por frame no escala, y un
+    componente cortado contradice lo que se está explicando. Se reintenta porque
+    Angular puede seguir creciendo la vista después del primer scroll.
+    """
+    loc = pag.locator(sel).first
+    for intento in range(3):
+        r = loc.evaluate(JS_ENCUADRAR)
+        pag.wait_for_timeout(350)
+        if r["ok"]:
+            return
+    print(f"    AVISO [{paso['id']}]: «{sel}» no se ve entero"
+          f" (alto {int(r['alto'])}px, cabecera fija {int(r['tope'])}px)."
+          f" Divide el paso o marca una parte.")
 
 
 JS_CAJA_TEXTO = """el => {
@@ -171,7 +299,14 @@ def capturar(guion, pasos, salida):
         nav = p.chromium.launch()
         ctx = nav.new_context(viewport={"width": ANCHO, "height": ALTO_PAGINA},
                               device_scale_factor=ESCALA)
+        # El setup del guion prepara el entorno ANTES de entrar: un seed que
+        # borra y vuelve a crear la empresa desde cero también borra el usuario
+        # con el que se inicia sesión, así que hacerlo después dejaría la sesión
+        # del navegador inválida a media captura.
+        _setup({"id": "guion", "setup": guion.get("setup")}, variables, db)
+
         pag = ctx.new_page()
+        _sesion(pag, guion, variables, base)
 
         for paso in pasos:
             print(f"  · {paso['id']}")
@@ -203,8 +338,46 @@ def capturar(guion, pasos, salida):
                     _acciones(pag, paso, variables)
                     pag.wait_for_selector(paso["esperar"], timeout=espera)
 
-            # la sustitución va antes de la captura y después de las acciones:
-            # los datos sensibles pueden haber entrado al llenar el formulario
+            # Un selector puede existir mientras la vista sigue cargando: los
+            # listados de Germiva pintan primero un esqueleto gris. `pausa_ms`
+            # espera a que la pantalla quede como la verá el usuario, antes de
+            # sustituir datos y de medir las cajas de las marcas.
+            if paso.get("pausa_ms"):
+                pag.wait_for_timeout(paso["pausa_ms"])
+
+            marcas = paso.get("resaltar", [])
+            # Encuadre. Por defecto se centra la marca, que es lo que se quiere
+            # casi siempre. `desplazar` lo hace a mano cuando centrar corta por
+            # la mitad lo que hay que mostrar entero (una tarjeta con su botón,
+            # una tabla con su encabezado). Va DESPUÉS de la pausa: si la vista
+            # todavía estaba creciendo, un scroll anterior queda obsoleto.
+            # Componentes que no son el tema del paso y que no deben salir. El
+            # caso real: Germiva sirve el resumen de la cartera de un caché de
+            # 5 minutos, así que después de un cambio hecho en cámara muestra el
+            # número anterior. Antes que enseñar un dato falso, se saca del plano.
+            for sel in paso.get("ocultar", []):
+                pag.eval_on_selector_all(
+                    sel, "els => els.forEach(e => e.style.display = 'none')")
+            if paso.get("ocultar"):
+                pag.wait_for_timeout(200)
+
+            encuadre = paso.get("desplazar")
+            if encuadre:
+                # Encuadre explícito del autor: alinea siempre, aunque el
+                # elemento ya se viera. Sirve para decidir qué queda FUERA del
+                # plano, no solo qué entra.
+                pag.locator(encuadre["sel"]).first.evaluate(
+                    "(el, b) => el.scrollIntoView({block: b, behavior: 'instant'})",
+                    encuadre.get("bloque", "start"))
+                pag.wait_for_timeout(400)
+            if marcas:
+                # y en cualquier caso, la marca tiene que verse completa
+                _encuadrar(pag, marcas[0]["sel"], paso)
+
+            # La sustitución va lo más pegada posible al screenshot, y después
+            # del scroll: Angular vuelve a pintar sus componentes al cambiar de
+            # ruta o al terminar de cargar, y un valor ya sustituido reaparece
+            # con su texto original si queda tiempo entre sustituir y capturar.
             cfg_priv = guion.get("privacidad")
             if cfg_priv:
                 antes = len(mapa_priv)
@@ -212,11 +385,6 @@ def capturar(guion, pasos, salida):
                 if len(mapa_priv) > antes:
                     print(f"    privacidad: {len(mapa_priv) - antes} valores nuevos"
                           f" ({len(mapa_priv)} en total)")
-
-            marcas = paso.get("resaltar", [])
-            if marcas:
-                pag.locator(marcas[0]["sel"]).first.scroll_into_view_if_needed()
-                pag.wait_for_timeout(300)  # deja asentar el scroll suave
 
             png = frames / f"{paso['id']}.png"
             pag.screenshot(path=str(png))
@@ -244,8 +412,12 @@ def capturar(guion, pasos, salida):
 
             kb = paso.get("kenburns")
             if kb:
-                meta["kenburns"] = {"zoom": kb.get("zoom", 1.3),
-                                    "caja": _caja(pag, kb["hacia"], paso)}
+                # sin `hacia` el acercamiento va al centro del frame: es lo que
+                # se quiere cuando lo que hay que mirar es la pantalla entera
+                # (una tabla completa) y no un elemento concreto
+                meta["kenburns"] = {"zoom": kb.get("zoom", 1.3)}
+                if kb.get("hacia"):
+                    meta["kenburns"]["caja"] = _caja(pag, kb["hacia"], paso)
             (frames / f"{paso['id']}.json").write_text(
                 json.dumps(meta, indent=2, ensure_ascii=False), encoding="utf-8")
 
