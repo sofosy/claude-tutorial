@@ -1,6 +1,14 @@
 #!/usr/bin/env python3
 """Generador de video tutoriales. Ver PLAN.md."""
 import argparse
+import sys
+
+# La consola de Windows usa cp1252 y el progreso se imprime con «·», flechas y
+# acentos: sin esto, el motor muere con UnicodeEncodeError DESPUÉS de haber
+# capturado o narrado, y el fallo aparenta ser del paso y no de la terminal.
+for _flujo in (sys.stdout, sys.stderr):
+    if hasattr(_flujo, "reconfigure"):
+        _flujo.reconfigure(encoding="utf-8", errors="replace")
 
 from tutorial import anotar as m_anotar
 from tutorial import capturar as m_capturar
@@ -58,7 +66,8 @@ def main():
         tapados = m_privacidad.ofuscar(
             salida, ids={p["id"] for p in guion["pasos"]},
             permitidos=cfg.get("permitidos", ()),
-            declarados=cfg.get("ofuscar", ()))
+            declarados=cfg.get("ofuscar", ()),
+            binario=guion.get("tesseract"))
         for origen, tipo, valor in tapados:
             print(f"  tapado  {origen}\t{tipo}\t{valor}")
         print(f"\n  {len(tapados)} valores cubiertos."
@@ -70,7 +79,8 @@ def main():
         hallazgos = m_privacidad.auditar(
             salida, [salida / "youtube.txt", salida / "final.srt"],
             ids={p["id"] for p in guion["pasos"]},
-            permitidos=guion.get("privacidad", {}).get("permitidos", ()))
+            permitidos=guion.get("privacidad", {}).get("permitidos", ()),
+            binario=guion.get("tesseract"))
         for origen, tipo, valor in hallazgos:
             print(f"  {origen}\t{tipo}\t{valor}")
         print(f"\n  {len(hallazgos)} posibles datos reales"

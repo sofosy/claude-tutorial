@@ -17,18 +17,40 @@ MARGEN = 10          # aire entre el elemento y el recuadro
 OSCURECER = 165      # alpha del velo en estilo "foco"
 SALIDA_ANCHO, SALIDA_ALTO = 1920, 1080  # tamaño del video, para la capa de barra
 
+# Rutas por sistema, en orden de preferencia. La primera que exista gana. Sin
+# una de estas, Pillow cae a `load_default()`: un bitmap de tamaño fijo que
+# ignora el tamaño pedido, así que los rótulos salen minúsculos e ilegibles en
+# un frame de 1920×1080 — y el fallo es silencioso, se descubre viendo el video.
 _FUENTES = [
+    # macOS
     "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
     "/System/Library/Fonts/Helvetica.ttc",
+    # Windows
+    "C:/Windows/Fonts/arialbd.ttf",
+    "C:/Windows/Fonts/segoeuib.ttf",
+    "C:/Windows/Fonts/seguisb.ttf",
+    "C:/Windows/Fonts/arial.ttf",
+    # Linux
+    "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
+    "/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf",
 ]
 
 
+_aviso_fuente = False
+
+
 def _fuente(tam):
+    global _aviso_fuente
     for f in _FUENTES:
         try:
             return ImageFont.truetype(f, tam)
         except OSError:
             continue
+    if not _aviso_fuente:
+        _aviso_fuente = True
+        print("    AVISO: no se encontró ninguna fuente TrueType de la lista;"
+              " los rótulos saldrán en el bitmap por defecto de Pillow, que"
+              " ignora el tamaño. Agrega la ruta de una fuente a _FUENTES.")
     return ImageFont.load_default()
 
 
@@ -142,6 +164,17 @@ def anotar(pasos, salida):
         for m in marcas:
             color = COLORES.get(m.get("color", "ambar"), COLORES["ambar"])
             x0, y0, x1, y1 = _expandir(m["caja"], img)
+            # Un elemento fuera del encuadre (una columna corrida a la derecha
+            # en una tabla con scroll horizontal) da una caja que al recortarla
+            # queda invertida. Antes eso reventaba el proceso entero y perdía
+            # las decenas de fotogramas que faltaban por anotar; ahora se avisa
+            # y se sigue, que es como se comporta el resto del motor.
+            if x1 <= x0 or y1 <= y0:
+                print(f"    AVISO [{pid}]: «{m['sel']}» cae fuera del encuadre"
+                      f" ({[int(v) for v in m['caja']]} sobre"
+                      f" {img.width}×{img.height}); marca omitida."
+                      " Usa `ocultar` para dejarlo a la vista, o marca otro elemento.")
+                continue
             if m.get("estilo") == "subrayado":
                 # en menús y enlaces, un recuadro compite con el resaltado propio
                 # de la navegación; la línea señala sin discutirle al diseño

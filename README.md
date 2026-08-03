@@ -36,6 +36,37 @@ brew install ffmpeg tesseract      # macOS
 cp config.ejemplo.json config.local.json   # y ajusta las rutas de tu máquina
 ```
 
+### En Windows
+
+```powershell
+python -m venv .venv
+.\.venv\Scripts\pip install edge-tts playwright pillow pytesseract
+.\.venv\Scripts\python -m playwright install chromium chromium-headless-shell
+winget install Gyan.FFmpeg          # ffmpeg y ffprobe, sin administrador
+```
+
+Dos cosas que no salen solas:
+
+- **`chromium-headless-shell`** hay que pedirlo aparte. El motor lanza el
+  navegador en modo headless, y sin ese binario la captura muere en el primer
+  paso aunque `playwright install chromium` haya terminado bien.
+- **Tesseract** (la auditoría OCR) solo se distribuye como instalador que exige
+  administrador. Si no lo tienes, extrae el instalador en tu perfil y declara la
+  ruta del binario en `config.local.json` → `"tesseract"`; el motor la usa sin
+  necesidad de que esté en el PATH:
+
+  ```powershell
+  # 7-Zip portátil, extraído del MSI (no requiere administrador)
+  curl -o 7z.msi https://www.7-zip.org/a/7z2301-x64.msi
+  msiexec /a 7z.msi TARGETDIR="$env:LOCALAPPDATA\7zip-portable" /qn
+  # y con él, Tesseract
+  curl -o tess.exe https://github.com/UB-Mannheim/tesseract/releases/download/v5.4.0.20240606/tesseract-ocr-w64-setup-5.4.0.20240606.exe
+  & "$env:LOCALAPPDATA\7zip-portable\Files\7-Zip\7z.exe" x tess.exe -o"$env:LOCALAPPDATA\Tesseract-OCR"
+  ```
+
+`ffmpeg` recién instalado no está en el PATH de las consolas ya abiertas: abre
+una nueva antes de `tut narrar` o `tut montar`.
+
 ## Uso
 
 ```bash
@@ -64,7 +95,7 @@ separadas.
 | Archivo | Qué contiene | ¿Se versiona? |
 |---|---|---|
 | `config.json` | Marca, voz, dominio público, privacidad, etiquetas | sí |
-| `config.local.json` | Rutas de tu máquina, acceso a la base, credenciales de demo | **no** |
+| `config.local.json` | Rutas de tu máquina (`tesseract`, cliente de MySQL), acceso a la base, credenciales de demo | **no** |
 | `guiones/<nombre>.json` | El tutorial concreto | sí |
 
 Se fusionan en ese orden, y el guion gana. Todo lo compartido vive en
@@ -119,8 +150,36 @@ El resultado de una consulta se usa después como `{{codigo}}`. Es lo que permit
 grabar un flujo con código de verificación por correo sin depender de que el
 correo llegue.
 
+`navegar` también admite `{{variable}}`. El número de un documento lo genera la
+aplicación al crearlo, así que no se puede escribir en el guion; con `setup: sql`
+el paso lo consulta y salta directo a él:
+
+```json
+"setup":   { "tipo": "sql", "guardar_en": "cotizacion",
+             "query": "SELECT numero FROM quotes WHERE referencia='TUT-01'" },
+"navegar": "/sales/quotes/edit/{{cotizacion}}"
+```
+
+Poner ese `setup` en **cada** paso que use la variable es lo que hace que
+`tut capturar <tutorial> --paso 12` funcione por sí solo, sin depender de que
+antes se haya corrido el paso que la definió. Es la diferencia entre rehacer una
+toma en diez segundos o volver a capturar el video entero.
+
 Un guion **sin** ningún `setup` corre contra cualquier URL, sin acceso al código
 de la aplicación.
+
+### Avisos que tapan la primera pantalla
+
+Un ERP suele recibirte con un modal de notificaciones o una franja de aviso, y si
+no se despachan salen en todos los fotogramas. Se cierran una sola vez, al
+entrar, con las mismas acciones del guion:
+
+```json
+"sesion": { "usuario": "…", "clave": "…",
+            "acciones": [{ "click_opcional": "mat-dialog-container button:has-text('Cerrar')" }] }
+```
+
+`click_opcional` no falla si el aviso no apareció.
 
 ## Privacidad
 

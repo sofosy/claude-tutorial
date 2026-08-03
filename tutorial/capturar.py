@@ -5,6 +5,7 @@ resaltar, leído del navegador. Es lo que hace que las marcas caigan exactas en 
 de aproximadas.
 """
 import json
+import os
 import shutil
 import subprocess
 from pathlib import Path
@@ -37,11 +38,17 @@ def _sql(db, query):
         raise SystemExit("El guion usa setup sql pero no declara el bloque 'db'")
     e = _env(db["env"])
     cliente = db.get("cliente") or shutil.which("mysql") or "mysql"
+    # La clave va por MYSQL_PWD y no en la línea de comandos: un `-p` seguido de
+    # nada (base local sin contraseña, que es lo normal en desarrollo) hace que
+    # el cliente la pida por teclado, y como se corre con la salida capturada el
+    # proceso se queda colgado para siempre en vez de fallar. De paso evita el
+    # aviso de "using a password on the command line is insecure" y que la clave
+    # quede visible en la lista de procesos.
+    entorno = {**os.environ, "MYSQL_PWD": e.get("DB_PASSWORD", "")}
     r = subprocess.run(
         [cliente, "-h", e["DB_HOST"], "-P", e.get("DB_PORT", "3306"),
-         "-u", e["DB_USERNAME"], "-p" + e["DB_PASSWORD"], e["DB_DATABASE"],
-         "-N", "-e", query],
-        capture_output=True, text=True)
+         "-u", e["DB_USERNAME"], e["DB_DATABASE"], "-N", "-e", query],
+        capture_output=True, text=True, env=entorno, stdin=subprocess.DEVNULL)
     if r.returncode != 0:
         raise SystemExit(f"Error de SQL: {r.stderr.strip()[:300]}")
     salida = r.stdout.strip()
@@ -170,6 +177,14 @@ def _sesion(pag, guion, variables, base):
     else:
         # sin selector que esperar, basta con salir de la pantalla de acceso
         pag.wait_for_url(lambda u: "signin" not in u, timeout=30000)
+
+    # Lo que hay que despachar UNA vez, nada más entrar: el modal de
+    # notificaciones y el aviso de suscripción de Germiva se pintan sobre
+    # cualquier pantalla, así que si se cerraran paso por paso taparían el
+    # primero y ensuciarían el resto. Se usan las mismas acciones del guion
+    # (`click_opcional` no falla si el aviso no salió).
+    if s.get("acciones"):
+        _acciones(pag, {"id": "sesión", "acciones": s["acciones"]}, variables)
     print(f"  · sesión: {_sub(s['usuario'], variables)}")
 
 
@@ -279,6 +294,15 @@ def _caja(pag, sel, paso, solo_texto=False):
         b = loc.bounding_box()
     if b is None:
         raise SystemExit(f"[{paso['id']}] selector no visible: {sel}")
+    # `_encuadrar` solo corrige el eje vertical. Una tabla ancha se desplaza en
+    # horizontal, y entonces la columna existe en el DOM pero está fuera del
+    # cuadro: la marca no se puede dibujar y el paso no enseña lo que dice.
+    # Avisar aquí lo delata en la captura, no tres etapas después.
+    if b["x"] + b["width"] > ANCHO or b["x"] < 0:
+        print(f"    AVISO [{paso['id']}]: «{sel}» queda fuera del ancho del"
+              f" cuadro (x={int(b['x'])}..{int(b['x'] + b['width'])} de {ANCHO})."
+              " La tabla está corrida en horizontal: oculta columnas con"
+              " `ocultar` o marca otro elemento.")
     # la barra del navegador desplaza la página hacia abajo en el frame final
     return [b["x"] * ESCALA, (b["y"] + CROMO) * ESCALA,
             b["width"] * ESCALA, b["height"] * ESCALA]
@@ -323,7 +347,13 @@ def capturar(guion, pasos, salida):
 
             _setup(paso, variables, db)
             if paso.get("navegar"):
-                pag.goto(base + paso["navegar"], wait_until="networkidle")
+                # La ruta admite {{variable}} igual que las acciones: el número
+                # de un documento se genera al crearlo, así que no se puede
+                # escribir en el guion. Con `setup: sql` + `guardar_en` el paso
+                # lo consulta y navega directo a él, en vez de depender de que
+                # un paso anterior haya dejado el navegador en esa pantalla.
+                pag.goto(base + _sub(paso["navegar"], variables),
+                         wait_until="networkidle")
             _acciones(pag, paso, variables)
             if paso.get("esperar"):
                 espera = paso.get("esperar_timeout_ms", 30000)

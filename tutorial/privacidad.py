@@ -85,9 +85,22 @@ JS_APLICAR = """(pares) => {
 }"""
 
 
+# Campos que llevan «name»/«nombre» pero NO nombran a una persona ni a una
+# empresa. Sin esta lista, un `productName` cae en la regla del nombre y el
+# servicio «Limpieza profunda» aparece en el video como «Carlos»: se corrompe la
+# pantalla, la narración deja de coincidir con ella, y encima no se estaba
+# protegiendo ningún dato personal.
+NO_PERSONALES = ("product", "producto", "item", "articulo", "artículo",
+                 "servicio", "service", "categor", "marca", "brand",
+                 "usuario", "username", "archivo", "file", "banco", "bank",
+                 "moneda", "currency", "plan", "template", "plantilla")
+
+
 def _tipo_de(sel_o_texto, elemento_info):
     """Adivina el tipo por el nombre/etiqueta del campo (regla 2 del plan)."""
     t = (elemento_info or "").lower()
+    if any(p in t for p in NO_PERSONALES):
+        return None
     for clave, tipo in [("rfc", "rfc"), ("rnc", "rnc"),
                         ("cedula", "cedula"), ("cédula", "cedula"),
                         ("mail", "email"), ("correo", "email"),
@@ -213,7 +226,34 @@ def _es_inventado(tipo, valor):
     return False
 
 
-def auditar(salida, textos_extra=(), ids=None, permitidos=()):
+def _ocr(binario=None):
+    """Devuelve pytesseract listo para usar, o None si no hay OCR disponible.
+
+    `binario` es la ruta al ejecutable, que en Windows rara vez está en el PATH:
+    el instalador oficial exige administrador, así que lo normal es tenerlo
+    extraído en el perfil del usuario. Se declara en config.local.json, igual
+    que el cliente de MySQL, porque es una ruta de ESTA máquina.
+    """
+    try:
+        import pytesseract
+    except ImportError:
+        print("  AVISO: falta el paquete pytesseract; no se revisaron los"
+              " fotogramas, solo los textos.")
+        return None
+
+    if binario:
+        pytesseract.pytesseract.tesseract_cmd = str(binario)
+    try:
+        pytesseract.get_tesseract_version()
+    except Exception:
+        print("  AVISO: pytesseract está instalado pero no encuentra el binario"
+              " `tesseract`. NO se revisaron los fotogramas, solo los textos."
+              " Declara su ruta en config.local.json → \"tesseract\".")
+        return None
+    return pytesseract
+
+
+def auditar(salida, textos_extra=(), ids=None, permitidos=(), binario=None):
     """Busca datos que parezcan reales en los frames YA renderizados.
 
     Corre sobre las imágenes finales, no sobre el DOM: así detecta lo que se coló
@@ -225,12 +265,9 @@ def auditar(salida, textos_extra=(), ids=None, permitidos=()):
     dato inventado a propósito, y un informe lleno de falsos positivos deja de
     leerse — que es la única forma de que un dato real de verdad pase inadvertido.
     """
-    try:
-        import pytesseract
-        from PIL import Image
-    except ImportError:
-        pytesseract = None
+    from PIL import Image
 
+    pytesseract = _ocr(binario)
     hallazgos = []
 
     exentos = [x.lower() for x in permitidos]
@@ -252,7 +289,7 @@ def auditar(salida, textos_extra=(), ids=None, permitidos=()):
                 continue
             revisar(pytesseract.image_to_string(Image.open(png)), png.name)
     else:
-        print("  aviso: pytesseract no disponible, no se revisaron los frames")
+        print("  aviso: no se revisaron los frames con OCR")
 
     for ruta in textos_extra:
         if ruta.exists():
@@ -267,7 +304,7 @@ def auditar(salida, textos_extra=(), ids=None, permitidos=()):
         informe.write_text("Sin hallazgos.\n", encoding="utf-8")
     return hallazgos
 
-def ofuscar(salida, ids=None, permitidos=(), declarados=()):
+def ofuscar(salida, ids=None, permitidos=(), declarados=(), binario=None):
     """Tapa en los frames renderizados los datos que la auditoría marcó.
 
     Es la última red antes de publicar. La sustitución de DOM cubre lo que el
@@ -281,7 +318,11 @@ def ofuscar(salida, ids=None, permitidos=(), declarados=()):
     Devuelve la lista de (frame, tipo, valor) que tapó.
     """
     from PIL import Image, ImageDraw
-    import pytesseract
+
+    pytesseract = _ocr(binario)
+    if not pytesseract:
+        raise SystemExit("`ofuscar` necesita OCR: sin tesseract no se puede"
+                         " localizar en el frame el valor que hay que tapar.")
 
     exentos = [x.lower() for x in permitidos]
     # los valores que el guion declara para tapar se cubren siempre, aunque no
