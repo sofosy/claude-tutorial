@@ -33,18 +33,25 @@ def _capitulos(guion, duraciones, transicion):
     return fusionados, t
 
 
-def _miniatura(guion, salida):
-    """Frame representativo, oscurecido, con el título encima."""
+def _miniatura(guion, salida, sufijo="", portada_png=None):
+    """Frame representativo, oscurecido, con el título encima.
+
+    `portada_png` es el fotograma que aporta el modo de grabación (un cuadro
+    real del video); sin él se busca entre los frames anotados del modo fijo.
+    """
     from PIL import Image, ImageDraw
 
     from .anotar import COLORES, _fuente
     from .tarjeta import _envolver
 
-    portada = next((p["id"] for p in guion["pasos"] if p.get("portada")), None)
-    frames = sorted((salida / "anotados").glob("*.png"))
-    if not frames:
-        return None
-    ruta = next((f for f in frames if f.stem == portada), frames[0])
+    if portada_png:
+        ruta = portada_png
+    else:
+        portada = next((p["id"] for p in guion["pasos"] if p.get("portada")), None)
+        frames = sorted((salida / "anotados").glob("*.png"))
+        if not frames:
+            return None
+        ruta = next((f for f in frames if f.stem == portada), frames[0])
 
     img = Image.open(ruta).convert("RGB").resize((1280, 720))
     velo = Image.new("RGBA", img.size, (10, 14, 24, 165))
@@ -60,12 +67,14 @@ def _miniatura(guion, salida):
     dib.rounded_rectangle([565, y + 22, 715, y + 30], radius=4,
                           fill=COLORES["ambar"])
 
-    destino = salida / "miniatura.png"
+    destino = salida / f"miniatura{sufijo}.png"
     img.convert("RGB").save(destino)
     return destino
 
 
-def publicar(guion, salida, duraciones, transicion, mapa=None):
+def publicar(guion, salida, duraciones, transicion, mapa=None, sufijo="", portada=None):
+    """`sufijo` separa el paquete del modo de grabación («-video») del modo
+    fijo: los capítulos llevan timestamps y los dos videos no duran lo mismo."""
     from .privacidad import aplicar_a_texto
     lim = lambda s: aplicar_a_texto(s, mapa or {})
     caps, total = _capitulos(guion, duraciones, transicion)
@@ -95,11 +104,11 @@ def publicar(guion, salida, duraciones, transicion, mapa=None):
                "TRANSCRIPCIÓN", "=" * 60]
     partes += [lim(p["narracion"]) for p in guion["pasos"]]
 
-    destino = salida / "youtube.txt"
+    destino = salida / f"youtube{sufijo}.txt"
     destino.write_text("\n".join(partes) + "\n", encoding="utf-8")
     if len(caps) < 3:
         print(f"  aviso: solo {len(caps)} capítulos; YouTube pide mínimo 3")
     print(f"  → {destino}")
-    mini = _miniatura(guion, salida)
+    mini = _miniatura(guion, salida, sufijo, portada)
     if mini:
         print(f"  → {mini}")

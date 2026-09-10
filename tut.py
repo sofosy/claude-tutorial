@@ -12,13 +12,17 @@ for _flujo in (sys.stdout, sys.stderr):
 
 from tutorial import anotar as m_anotar
 from tutorial import capturar as m_capturar
+from tutorial import grabar as m_grabar
 from tutorial import mapa as m_mapa
 from tutorial import montar as m_montar
+from tutorial import montar_video as m_montar_video
 from tutorial import narrar as m_narrar
 from tutorial import privacidad as m_privacidad
 from tutorial.rutas import cargar_guion, dir_salida, pasos_filtrados
 
 ETAPAS = ("capturar", "anotar", "narrar", "montar", "build")
+# Modo de grabación en vivo (ver GRABACION.md): `video` = grabar + montar-video.
+GRABACION = ("grabar", "montar-video", "video")
 
 
 def _revisar(guion):
@@ -39,11 +43,14 @@ def _revisar(guion):
 def main():
     ap = argparse.ArgumentParser(prog="tut")
     sub = ap.add_subparsers(dest="cmd", required=True)
-    for c in ETAPAS + ("auditar", "ofuscar", "revisar", "mapa"):
+    for c in ETAPAS + GRABACION + ("auditar", "ofuscar", "revisar", "verificar", "mapa"):
         p = sub.add_parser(c)
         p.add_argument("tutorial")
-        if c in ETAPAS and c != "montar":
+        if c in ETAPAS + GRABACION and c not in ("montar", "montar-video"):
             p.add_argument("--paso", help="rehacer solo el paso con este prefijo")
+        if c == "auditar":
+            p.add_argument("--video", action="store_true",
+                           help="auditar fotogramas de video.mp4 (modo grabación)")
     sub.add_parser("cobertura")
 
     a = ap.parse_args()
@@ -61,6 +68,16 @@ def main():
     if a.cmd == "revisar":
         raise SystemExit(_revisar(guion))
 
+    if a.cmd == "verificar":
+        from tutorial import verificar as m_verificar
+        hallazgos = m_verificar.revisar_guion(guion)
+        for nivel, paso, texto in hallazgos:
+            print(f"  {nivel:5} {paso}\t{texto}")
+        errores = sum(1 for n, _, _ in hallazgos if n == "ERROR")
+        print(f"\n  {errores} errores, {len(hallazgos) - errores} avisos"
+              " — regla: cada clic y cada vista se explican.")
+        raise SystemExit(1 if errores else 0)
+
     if a.cmd == "ofuscar":
         cfg = guion.get("privacidad", {})
         tapados = m_privacidad.ofuscar(
@@ -76,16 +93,47 @@ def main():
         return
 
     if a.cmd == "auditar":
-        hallazgos = m_privacidad.auditar(
-            salida, [salida / "youtube.txt", salida / "final.srt"],
-            ids={p["id"] for p in guion["pasos"]},
-            permitidos=guion.get("privacidad", {}).get("permitidos", ()),
-            binario=guion.get("tesseract"))
+        if a.video:
+            # un fotograma cada 2 s del video final: cada paso dura más que eso,
+            # así que ninguna pantalla se queda sin revisar
+            import subprocess
+            carpeta = salida / "auditoria-video"
+            carpeta.mkdir(exist_ok=True)
+            for viejo in carpeta.glob("*.png"):
+                viejo.unlink()
+            subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-i", str(salida / "video.mp4"),
+                            "-vf", "fps=1/2", str(carpeta / "%05d.png")], check=True)
+            hallazgos = m_privacidad.auditar(
+                salida, [salida / "youtube-video.txt", salida / "video.srt"],
+                permitidos=guion.get("privacidad", {}).get("permitidos", ()),
+                binario=guion.get("tesseract"), carpeta=carpeta,
+                informe="auditoria-video.txt")
+            nombre = "auditoria-video.txt"
+        else:
+            hallazgos = m_privacidad.auditar(
+                salida, [salida / "youtube.txt", salida / "final.srt"],
+                ids={p["id"] for p in guion["pasos"]},
+                permitidos=guion.get("privacidad", {}).get("permitidos", ()),
+                binario=guion.get("tesseract"))
+            nombre = "auditoria.txt"
         for origen, tipo, valor in hallazgos:
             print(f"  {origen}\t{tipo}\t{valor}")
         print(f"\n  {len(hallazgos)} posibles datos reales"
-              f" → {salida / 'auditoria.txt'}")
+              f" → {salida / nombre}")
         raise SystemExit(1 if hallazgos else 0)
+
+    if a.cmd in GRABACION:
+        if a.cmd != "montar-video":
+            from tutorial import verificar as m_verificar
+            for nivel, paso, texto in m_verificar.revisar_guion(guion):
+                print(f"  {nivel:5} {paso}\t{texto}")
+            pasos = pasos_filtrados(guion, getattr(a, "paso", None))
+            print("G1 grabar")
+            m_grabar.grabar(guion, pasos, salida)
+        if a.cmd != "grabar":
+            print("G2 montar")
+            m_montar_video.montar(guion, salida)
+        return
 
     if a.cmd in ("capturar", "build"):
         _revisar(guion)

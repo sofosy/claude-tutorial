@@ -125,7 +125,9 @@ def sustituir(pag, cfg, previo=None):
     """
     perfil = cfg.get("perfil", "estricto")
     if perfil == "ninguno":
-        return {}
+        # sin sustituciones automáticas, pero el mapa FIJO del guion (por
+        # ejemplo «localhost:3001» → dominio público) tiene que sobrevivir
+        return dict(previo or {})
     semilla = cfg.get("semilla", "tutorial")
     previo = previo or {}
     mapa = dict(previo)
@@ -153,8 +155,11 @@ def sustituir(pag, cfg, previo=None):
     for regla in cfg.get("reglas", []):
         for el in pag.locator(regla["sel"]).all():
             try:
-                real = (el.input_value() if el.evaluate("e => 'value' in e")
-                        else el.inner_text())
+                # textContent y no innerText: innerText devuelve el texto YA
+                # transformado por CSS (capitalize, uppercase) y la clave no
+                # coincide con el nodo real, así que nunca se sustituye
+                real = el.evaluate("e => 'value' in e && e.tagName !== 'BUTTON'"
+                                   " ? e.value : e.textContent")
             except Exception:
                 continue
             registrar(regla["tipo"], real)
@@ -253,7 +258,8 @@ def _ocr(binario=None):
     return pytesseract
 
 
-def auditar(salida, textos_extra=(), ids=None, permitidos=(), binario=None):
+def auditar(salida, textos_extra=(), ids=None, permitidos=(), binario=None,
+            carpeta=None, informe="auditoria.txt"):
     """Busca datos que parezcan reales en los frames YA renderizados.
 
     Corre sobre las imágenes finales, no sobre el DOM: así detecta lo que se coló
@@ -264,6 +270,9 @@ def auditar(salida, textos_extra=(), ids=None, permitidos=(), binario=None):
     El auditor tiene que conocer la misma lista: si no, marca como hallazgo cada
     dato inventado a propósito, y un informe lleno de falsos positivos deja de
     leerse — que es la única forma de que un dato real de verdad pase inadvertido.
+
+    `carpeta` permite auditar otro juego de imágenes: el modo de grabación
+    extrae fotogramas del video final y los pasa por aquí.
     """
     from PIL import Image
 
@@ -282,7 +291,7 @@ def auditar(salida, textos_extra=(), ids=None, permitidos=(), binario=None):
                 hallazgos.append((origen, tipo, v))
 
     if pytesseract:
-        for png in sorted((salida / "anotados").glob("*.png")):
+        for png in sorted((carpeta or salida / "anotados").glob("*.png")):
             # solo los frames del guion vigente: los sobrantes de una
             # compilación anterior no forman parte del video que se publica
             if ids is not None and png.stem not in ids:
@@ -295,7 +304,7 @@ def auditar(salida, textos_extra=(), ids=None, permitidos=(), binario=None):
         if ruta.exists():
             revisar(ruta.read_text(encoding="utf-8"), ruta.name)
 
-    informe = salida / "auditoria.txt"
+    informe = salida / informe
     if hallazgos:
         lineas = [f"{o}\t{t}\t{v}" for o, t, v in hallazgos]
         informe.write_text("POSIBLES DATOS REALES\n" + "\n".join(lineas) + "\n",

@@ -69,6 +69,24 @@ una nueva antes de `tut narrar` o `tut montar`.
 
 ## Uso
 
+**Modo de grabación en vivo** (recomendado — ver [`GRABACION.md`](GRABACION.md)):
+la pantalla se graba mientras el guion se ejecuta, con cursor, clics y tecleo
+reales, y la voz sincronizada palabra por palabra.
+
+```bash
+./.venv/bin/python tut.py verificar ejemplo         # cada clic y cada vista se explican (exit 0)
+./.venv/bin/python tut.py video ejemplo             # voz → grabar → montar → informe-video.md
+./.venv/bin/python tut.py video ejemplo --paso 05   # regrabar solo un grupo
+./.venv/bin/python tut.py auditar ejemplo --video   # OCR sobre el video final
+open salida/ejemplo/video.mp4
+```
+
+El guion lo escribe una sesión (Opus/Sonnet) y otra lo rectifica con
+`informe-video.md` + `revision/clics.png`; el skill `germiva-video` del
+workspace describe los dos roles y las reglas de un guion grabado en vivo.
+
+Modo fijo original (una foto por paso con Ken Burns):
+
 ```bash
 ./.venv/bin/python tut.py build ejemplo     # captura, anota, narra y monta
 ./.venv/bin/python tut.py auditar ejemplo   # revisa que no se filtren datos reales

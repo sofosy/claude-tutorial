@@ -38,6 +38,23 @@ fiscales inventadas es peor que no tener tutorial.
 quedó bien. La diferencia aparece rápido: marcas fuera de sitio, texto tapado,
 acercamientos que recortan justo lo que señalan.
 
+## Para el modo de grabación en vivo (`tut video`)
+
+El guion es el mismo. Lo que cambia al escribirlo es que **la acción ocurre en
+cámara**, así que la narración tiene que anunciarla y la acción tiene que caer
+en la palabra:
+
+- Cada `click`/`escribir` que se quiera sincronizado lleva `"al_decir": "<palabra>"`
+  con una palabra que la narración de ESE paso diga de verdad. La voz «lleva»
+  la mano: «Elijo **Borrador** en el filtro…» + `"al_decir": "Borrador"`.
+- Un paso que navega y actúa necesita una frase de entrada antes de la palabra
+  clave (la pantalla tarda ~1 s en abrirse).
+- Las esperas (`esperar_ms`, `pausa_ms`) del modo fijo eran para «asentar la
+  pantalla antes de la foto»; aquí corren en cámara, así que se acortan a lo
+  que la app necesita de verdad.
+- Pide siempre al final: «corre `tut video <t>`, extrae fotogramas en los
+  instantes de cada clic y confirma que la voz dice esa palabra en el `.srt`».
+
 ## Otros prompts útiles
 
 **Corregir una redacción** (barato, no re-captura nada):

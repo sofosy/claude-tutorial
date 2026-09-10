@@ -98,7 +98,10 @@ def _setup(paso, variables, db):
         return
     if s["tipo"] == "shell":
         print(f"    setup shell: {s['cmd']}")
-        subprocess.run(s["cmd"], shell=True, check=True, cwd=RAIZ)
+        # con la salida entubada, Python hijo hereda cp1252 en Windows y muere
+        # al imprimir una flecha o un acento: el seed queda a medias sin culpa
+        entorno = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
+        subprocess.run(s["cmd"], shell=True, check=True, cwd=RAIZ, env=entorno)
     elif s["tipo"] == "sql":
         valor = _sql(db, _sub(s["query"], variables))
         if s.get("guardar_en"):
@@ -385,9 +388,14 @@ def capturar(guion, pasos, salida):
             # caso real: Germiva sirve el resumen de la cartera de un caché de
             # 5 minutos, así que después de un cambio hecho en cámara muestra el
             # número anterior. Antes que enseñar un dato falso, se saca del plano.
+            # `!important` no es paranoia: las rejillas de Germiva declaran su
+            # `display: flex !important`, y sin la prioridad el estilo en línea
+            # pierde. Ocultar una columna se quedaba en nada, y la marca del
+            # paso siguiente caía fuera del cuadro sin que nada lo explicara.
             for sel in paso.get("ocultar", []):
                 pag.eval_on_selector_all(
-                    sel, "els => els.forEach(e => e.style.display = 'none')")
+                    sel, "els => els.forEach(e =>"
+                         " e.style.setProperty('display', 'none', 'important'))")
             if paso.get("ocultar"):
                 pag.wait_for_timeout(200)
 

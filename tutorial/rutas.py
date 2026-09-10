@@ -37,6 +37,9 @@ def _expandir_campos(paso):
             + dato.get("acciones", [])
         p["narracion"] = dato["narracion"]
         p["texto_pantalla"] = dato.get("texto_pantalla")
+        # modo de grabación: la marca aparece cuando la voz dice esta palabra
+        if dato.get("al_decir"):
+            p["al_decir"] = dato["al_decir"]
         if sel:
             p["resaltar"] = [{"sel": sel, "estilo": dato.get("estilo", "caja"),
                               "color": dato.get("color", "ambar")}]
@@ -74,7 +77,8 @@ def cargar_guion(nombre):
         guion.update({k: v for k, v in capa.items() if not k.startswith("_")})
 
     if "{RAIZ}" in guion.get("base_url", ""):
-        guion["base_url"] = guion["base_url"].replace("{RAIZ}", str(RAIZ))
+        # con barras normales: en Windows la raíz lleva «\» y una URL file:// no
+        guion["base_url"] = guion["base_url"].replace("{RAIZ}", RAIZ.as_posix())
 
     guion["pasos"] = [p for base in guion["pasos"] for p in _expandir_campos(base)]
     return guion
