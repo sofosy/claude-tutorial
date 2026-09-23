@@ -1,0 +1,13 @@
+{
+  "titulo": "Prueba del ensayo (solo lectura)",
+  "sesion": { "usuario": "admin", "clave": "admin", "sel_entrar": "button.auth-primary-btn",
+    "acciones": [ { "click_opcional": "button.close-btn" }, { "click_opcional": "button:has-text('Recordar más tarde')" } ] },
+  "pasos": [
+    { "id": "01-cajas", "navegar": "/cashier", "narracion": "Esta es la pantalla de cajas, solo para probar el ensayo.",
+      "acciones": [
+        { "click": "button.panel-collapse", "al_decir": "pantalla" },
+        { "resaltar": "h1", "durante_ms": 3000, "al_decir": "cajas" },
+        { "resaltar": "#no-existe-a-proposito", "al_decir": "ensayo" }
+      ] }
+  ]
+}

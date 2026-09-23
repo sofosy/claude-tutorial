@@ -41,8 +41,8 @@ def _miniatura(guion, salida, sufijo="", portada_png=None):
     """
     from PIL import Image, ImageDraw
 
-    from .anotar import COLORES, _fuente
-    from .tarjeta import _envolver
+    from .anotar import _fuente
+    from .tarjeta import VERDE_MARCA, _envolver, cargar_marca
 
     if portada_png:
         ruta = portada_png
@@ -54,9 +54,18 @@ def _miniatura(guion, salida, sufijo="", portada_png=None):
         ruta = next((f for f in frames if f.stem == portada), frames[0])
 
     img = Image.open(ruta).convert("RGB").resize((1280, 720))
-    velo = Image.new("RGBA", img.size, (10, 14, 24, 165))
+    # velo en el azul marino de la marca (#0B3552, oscurecido para el contraste)
+    velo = Image.new("RGBA", img.size, (7, 33, 52, 172))
     img = Image.alpha_composite(img.convert("RGBA"), velo)
     dib = ImageDraw.Draw(img)
+
+    # sello de marca arriba a la izquierda: el símbolo sobre una placa blanca
+    # (la hoja inferior es azul oscuro y sobre el velo se perdería)
+    simbolo = cargar_marca((guion.get("marca") or {}).get("simbolo") or "marca/simbolo.png", alto=52)
+    if simbolo:
+        lado = 76
+        dib.rounded_rectangle([36, 36, 36 + lado, 36 + lado], radius=16, fill=(255, 255, 255, 255))
+        img.alpha_composite(simbolo, (36 + (lado - simbolo.width) // 2, 36 + (lado - simbolo.height) // 2))
 
     f = _fuente(74)
     lineas = _envolver(dib, guion["titulo"], f, 1120)
@@ -65,7 +74,7 @@ def _miniatura(guion, salida, sufijo="", portada_png=None):
         dib.text((640, y), linea, font=f, fill=(255, 255, 255), anchor="ma")
         y += 88
     dib.rounded_rectangle([565, y + 22, 715, y + 30], radius=4,
-                          fill=COLORES["ambar"])
+                          fill=VERDE_MARCA)
 
     destino = salida / f"miniatura{sufijo}.png"
     img.convert("RGB").save(destino)
