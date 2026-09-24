@@ -157,7 +157,7 @@ def _acciones(pag, paso, variables):
 
 
 def _rutas_locales(ctx, guion):
-    """Sirve desde disco lo que la app pide a un dominio bloqueado.
+    """Sirve desde disco lo que la app pide a un dominio bloqueado (y el CSS global).
 
     Caso típico: Google Fonts bloqueado por la red → los íconos de Material se
     pintan como texto («menu», «home») y el video no sirve. Cada entrada de
@@ -165,6 +165,14 @@ def _rutas_locales(ctx, guion):
     con un archivo fijo (`archivo`) o con el archivo del mismo nombre dentro de
     `carpeta` (el último segmento de la URL). Ver `fuentes/preparar.sh`.
     """
+    # `css_global`: reglas que se inyectan en toda página (p. ej. ocultar un
+    # botón flotante de chat que tapa la esquina durante todo el video).
+    if guion.get("css_global"):
+        css = json.dumps("\n".join(guion["css_global"]))
+        ctx.add_init_script(
+            "document.addEventListener('DOMContentLoaded', () => {"
+            " const s = document.createElement('style'); s.textContent = %s;"
+            " document.head.appendChild(s); });" % css)
     for r in guion.get("rutas_locales", []):
         def servir(route, _req=None, r=r):
             if r.get("archivo"):
