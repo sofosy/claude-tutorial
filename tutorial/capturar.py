@@ -156,6 +156,28 @@ def _acciones(pag, paso, variables):
             raise SystemExit(f"[{paso['id']}] acción desconocida: {acc}")
 
 
+def _rutas_locales(ctx, guion):
+    """Sirve desde disco lo que la app pide a un dominio bloqueado.
+
+    Caso típico: Google Fonts bloqueado por la red → los íconos de Material se
+    pintan como texto («menu», «home») y el video no sirve. Cada entrada de
+    `rutas_locales` intercepta un patrón de URL (glob de Playwright) y responde
+    con un archivo fijo (`archivo`) o con el archivo del mismo nombre dentro de
+    `carpeta` (el último segmento de la URL). Ver `fuentes/preparar.sh`.
+    """
+    for r in guion.get("rutas_locales", []):
+        def servir(route, _req=None, r=r):
+            if r.get("archivo"):
+                ruta = RAIZ / r["archivo"]
+            else:
+                ruta = RAIZ / r["carpeta"] / route.request.url.split("?")[0].rsplit("/", 1)[-1]
+            if not ruta.exists():
+                return route.abort()
+            route.fulfill(path=str(ruta), headers={"Access-Control-Allow-Origin": "*",
+                                                   "Cache-Control": "max-age=86400"})
+        ctx.route(r["url"], servir)
+
+
 def _sesion(pag, guion, variables, base):
     """Entra a la aplicación antes del primer paso, sin capturar nada.
 
@@ -358,6 +380,7 @@ def capturar(guion, pasos, salida):
         nav = p.chromium.launch()
         ctx = nav.new_context(viewport={"width": ANCHO, "height": ALTO_PAGINA},
                               device_scale_factor=ESCALA)
+        _rutas_locales(ctx, guion)
         # El setup del guion prepara el entorno ANTES de entrar: un seed que
         # borra y vuelve a crear la empresa desde cero también borra el usuario
         # con el que se inicia sesión, así que hacerlo después dejaría la sesión

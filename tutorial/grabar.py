@@ -45,7 +45,7 @@ from playwright.sync_api import sync_playwright
 from . import narrar as m_narrar
 from . import privacidad, tarjeta
 from .anotar import COLORES
-from .capturar import _sesion, _setup, _sub
+from .capturar import _rutas_locales, _sesion, _setup, _sub
 from .rutas import RAIZ
 
 # La página se cree un portátil de 1280×720 al 150 %: la interfaz sale grande y
@@ -837,6 +837,7 @@ def grabar(guion, pasos, salida):
         ctx_nav = nav.new_context(viewport={"width": ANCHO_CSS, "height": ALTO_CSS},
                                   device_scale_factor=ESCALA)
         ctx_nav.add_init_script(JS_CAPA)
+        _rutas_locales(ctx_nav, guion)
         _setup({"id": "guion", "setup": guion.get("setup")}, variables, db)
         pag = ctx_nav.new_page()
         _sesion(pag, guion, variables, base)

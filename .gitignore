@@ -36,3 +36,6 @@ __pycache__/
 # Sistema
 .DS_Store
 Note.md
+
+# Binarios de fuentes locales (se regeneran con fuentes/preparar.sh)
+fuentes/*.woff2
