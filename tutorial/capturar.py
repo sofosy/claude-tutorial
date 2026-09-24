@@ -168,6 +168,9 @@ def _sesion(pag, guion, variables, base):
     s = guion.get("sesion")
     if not s:
         return
+    if s.get("tipo") == "api":
+        _sesion_api(pag, s, variables, base)
+        return
     pag.goto(base + s.get("navegar", "/authentication/signin"),
              wait_until="networkidle")
     pag.fill(s.get("sel_usuario", "input[formcontrolname='username']"),
@@ -189,6 +192,35 @@ def _sesion(pag, guion, variables, base):
     if s.get("acciones"):
         _acciones(pag, {"id": "sesión", "acciones": s["acciones"]}, variables)
     print(f"  · sesión: {_sub(s['usuario'], variables)}")
+
+
+def _sesion_api(pag, s, variables, base):
+    """Sesión inyectada desde un login por API, sin pasar por el formulario.
+
+    Para aplicaciones cuyo formulario de acceso no se puede automatizar (p. ej.
+    Germiva exige reCAPTCHA): se llama al endpoint de login de desarrollo y la
+    respuesta se escribe en `localStorage[clave]` antes de que cargue la app,
+    igual que lo haría la propia app al entrar.
+
+        "sesion": {"tipo": "api", "url": "http://localhost:3001/api/auth/dev/login",
+                   "cuerpo": {"username": "admin", "password": "admin"},
+                   "clave": "aut", "extra": {"__v": 2}, "navegar": "/"}
+    """
+    import urllib.request
+    cuerpo = json.dumps({k: _sub(str(v), variables) for k, v in s["cuerpo"].items()})
+    req = urllib.request.Request(_sub(s["url"], variables), data=cuerpo.encode("utf-8"),
+                                 headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        datos = {**s.get("extra", {}), **json.loads(r.read().decode("utf-8"))}
+    pag.context.add_init_script(
+        "localStorage.setItem(%s, %s);" % (json.dumps(s.get("clave", "aut")),
+                                           json.dumps(json.dumps(datos))))
+    pag.goto(base + s.get("navegar", "/"), wait_until="networkidle")
+    if s.get("esperar"):
+        pag.wait_for_selector(s["esperar"], timeout=s.get("esperar_timeout_ms", 30000))
+    if s.get("acciones"):
+        _acciones(pag, {"id": "sesión", "acciones": s["acciones"]}, variables)
+    print(f"  · sesión (api): {_sub(str(s['cuerpo'].get('username', '')), variables)}")
 
 
 JS_ENCUADRAR = """(el) => {
