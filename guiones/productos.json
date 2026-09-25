@@ -1,0 +1,895 @@
+{
+  "titulo": "Productos en Germiva: alta, precios, variantes, inventario y más",
+  "descripcion": "Recorrido completo del módulo de Productos de Germiva ERP: crear un producto, sus impuestos, lista de precios por tipo de cliente, atributos y variantes, pestañas Fiscal, Configuración, Insumos e Historial, entradas de inventario, existencias, duplicar y mantenimiento de precios.",
+  "base_url": "http://127.0.0.1:4200",
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/productos-reset.sh"
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/inventory/product/list",
+    "esperar": "button:has-text('Nuevo Producto')"
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material+Icons*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}"
+  ],
+  "pronunciacion": {
+    "PMP": "pe-eme-pe",
+    "SKU": "ese-ka-u",
+    "EAN-13": "e-a-ene-trece",
+    "CDT": "ce-de-te",
+    "ISC": "i-ese-ce",
+    "CSV": "ce-ese-uve"
+  },
+  "pasos": [
+    {
+      "id": "01-listado",
+      "ruta": "Inventario › Productos",
+      "texto_pantalla": "Productos · el catálogo de lo que vendes y compras",
+      "acciones": [
+        {
+          "resaltar": "a:has-text('Productos') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "Inventario"
+        },
+        {
+          "resaltar": "table thead",
+          "durante_ms": 6000,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": "mat-form-field:has-text('Buscar') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "filtros"
+        },
+        {
+          "resaltar": "mat-form-field:has-text('Estado') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "estado"
+        },
+        {
+          "resaltar": "tbody tr >> nth=0 >> td >> nth=-1",
+          "durante_ms": 5000,
+          "al_decir": "acciones"
+        }
+      ],
+      "narracion": "Esta es la pantalla de Productos, dentro del menú Inventario. Aquí vive todo lo que tu empresa vende o compra: los bienes que se guardan en un almacén y también los servicios. Cada fila es un producto, con su imagen, nombre, código, tipo, unidad de medida, el ITBIS de ventas, cuántas variantes tiene y si maneja inventario. Arriba están los filtros: puedes buscar por nombre, código o marca, y filtrar por tipo, por si maneja inventario o por estado. Si no tocas ese filtro, el listado muestra solo los productos activos. Al final de cada fila están las acciones: editar, duplicar, activar o desactivar, y eliminar. Las vemos al final del video.",
+      "capitulo": "Listado y carga masiva"
+    },
+    {
+      "id": "02-importar",
+      "ruta": "Productos › Importar / Exportar",
+      "texto_pantalla": "Carga masiva: alta por foto e importación desde Excel o CSV",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Alta por foto')",
+          "durante_ms": 3500,
+          "al_decir": "Alta por foto"
+        },
+        {
+          "click": "button:has-text('Importar / Exportar')",
+          "al_decir": "abre"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Plantilla Excel')",
+          "durante_ms": 4000,
+          "al_decir": "plantilla",
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Seleccionar archivo')",
+          "durante_ms": 4000,
+          "al_decir": "subes",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container .mdc-tab:has-text('Exportar')",
+          "al_decir": "pestaña Exportar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "Cierro"
+        }
+      ],
+      "narracion": "Junto al botón Nuevo Producto hay dos atajos para cargar productos en cantidad. Alta por foto crea productos a partir de una fotografía del artículo. E Importar y Exportar abre este asistente: primero descargas la plantilla, en Excel o en CSV, que trae las instrucciones y los valores válidos de cada columna; la completas y la subes aquí. Si el código ya existe, el producto se actualiza; si no, se crea. Y si el archivo tiene un solo error, no se importa nada y se listan los errores para que los corrijas. En la pestaña Exportar descargas los productos actuales. Cierro el asistente.",
+      "capitulo": "Listado y carga masiva"
+    },
+    {
+      "id": "03-alta-basico",
+      "ruta": "Productos › Nuevo Producto",
+      "texto_pantalla": "Nombre, tipo, inventario y precio de venta",
+      "acciones": [
+        {
+          "click": "button:has-text('Nuevo Producto')",
+          "al_decir": "Nuevo Producto"
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='name']",
+            "texto": "Camiseta Germiva Algodón"
+          },
+          "al_decir": "nombre"
+        },
+        {
+          "resaltar": "mat-button-toggle-group.segmented",
+          "durante_ms": 6500,
+          "al_decir": "tipo"
+        },
+        {
+          "resaltar": "mat-slide-toggle[formcontrolname='managesInventory']",
+          "durante_ms": 4500,
+          "al_decir": "Maneja inventario"
+        },
+        {
+          "escribir": {
+            "sel": ".sheet-price__field input",
+            "texto": "850"
+          },
+          "al_decir": "escribo"
+        },
+        {
+          "resaltar": ".sheet-price__summary",
+          "durante_ms": 5000,
+          "al_decir": "desglose"
+        },
+        {
+          "resaltar": ".sheet-price__meta",
+          "durante_ms": 4500,
+          "al_decir": "ITBIS incluido"
+        }
+      ],
+      "narracion": "Vamos a crear un producto desde cero. Pulso Nuevo Producto. Empiezo por el nombre: Camiseta Germiva Algodón. Mientras escribes, el sistema revisa si ya existe otro producto con ese nombre, para evitar duplicados. A la derecha está el tipo: Producto es un bien físico que se puede almacenar; Servicio es algo que se presta, como una consultoría, y nunca maneja inventario. Como la camiseta se guarda en el almacén, dejo activo Maneja inventario: así cada venta descuenta existencias. Ahora el precio de venta: escribo ochocientos cincuenta. Al lado ves el desglose: el neto, más el ITBIS, igual al total que paga el cliente. Si tu precio ya trae el impuesto, marca ITBIS incluido y el sistema calcula el neto hacia atrás.",
+      "capitulo": "Crear un producto"
+    },
+    {
+      "id": "04-alta-detalle",
+      "ruta": "Productos › Nuevo Producto",
+      "texto_pantalla": "Impuestos, costo, unidad, categoría, stock mínimo y descripción",
+      "acciones": [
+        {
+          "resaltar": "app-custom-select[formcontrolname='tax']",
+          "durante_ms": 3500,
+          "al_decir": "ventas"
+        },
+        {
+          "resaltar": "app-custom-select[formcontrolname='purchaseTax']",
+          "durante_ms": 3500,
+          "al_decir": "compras"
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='purchasePrice']",
+            "texto": "400"
+          },
+          "al_decir": "Costo"
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select[formcontrolname='unitMeasure'] input",
+            "texto": "Unidad"
+          },
+          "al_decir": "escribo Unidad"
+        },
+        {
+          "esperar_ms": 1200
+        },
+        {
+          "presionar": {
+            "tecla": "ArrowDown"
+          },
+          "al_decir": "elijo"
+        },
+        {
+          "presionar": {
+            "tecla": "Enter"
+          },
+          "al_decir": "lista"
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='unitMeasureValue']",
+            "texto": "1"
+          },
+          "al_decir": "uno"
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select[formcontrolname='productType'] input",
+            "texto": "Camisetas"
+          },
+          "al_decir": "escribo Camisetas"
+        },
+        {
+          "click": "mat-option:has-text('Crear categoría')",
+          "al_decir": "Crear categoría"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='name']",
+            "texto": "Camisetas"
+          },
+          "al_decir": "nombre"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "guardo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='minStock']",
+            "texto": "10"
+          },
+          "al_decir": "stock mínimo"
+        },
+        {
+          "escribir": {
+            "sel": ".ck-editor__editable",
+            "texto": "Camiseta de algodón peinado, cuello redondo."
+          },
+          "al_decir": "descripción"
+        }
+      ],
+      "narracion": "Debajo están los impuestos. El ITBIS de ventas es el que cobras al facturar, y el ITBIS de compras el que te cobra el proveedor. Los dos son obligatorios y vienen precargados: dieciocho por ciento para los bienes. En Costo sin ITBIS pongo cuatrocientos: es una referencia, porque con cada entrada de inventario el sistema lo reemplaza por el costo promedio. La unidad de medida define cómo se vende: escribo Unidad y la elijo de la lista; la cantidad dice cuántas unidades trae cada artículo, en este caso uno. La categoría agrupa productos parecidos. Todavía no existe, así que escribo Camisetas y elijo Crear categoría. En el formulario pongo el nombre, confirmo que aplica a Producto y guardo; acepto el aviso de categoría creada. El stock mínimo es el umbral de alerta: cuando las existencias bajen de diez, el sistema te avisa. Y la descripción es el texto que se muestra en el catálogo en línea.",
+      "capitulo": "Crear un producto"
+    },
+    {
+      "id": "05-precios",
+      "ruta": "Productos › Nuevo Producto › Precios por tipo de cliente",
+      "texto_pantalla": "Lista de precios: un precio por tipo de cliente",
+      "acciones": [
+        {
+          "click": ".sheet-price__more",
+          "al_decir": "Pulso Agregar"
+        },
+        {
+          "resaltar": "table.prices-table tbody tr >> nth=0 >> .star-btn",
+          "durante_ms": 3500,
+          "al_decir": "estrella"
+        },
+        {
+          "resaltar": "table.prices-table tbody tr >> nth=0",
+          "durante_ms": 7000,
+          "al_decir": "Cada fila"
+        },
+        {
+          "click": "button:has-text('Agregar precio')",
+          "al_decir": "Agrego"
+        },
+        {
+          "esperar_ms": 900
+        },
+        {
+          "click": "table.prices-table tbody tr >> nth=1 >> mat-select.prices-select >> nth=0",
+          "al_decir": "Precio para"
+        },
+        {
+          "click": "mat-option:has-text('Mayorista')",
+          "al_decir": "Mayorista"
+        },
+        {
+          "escribir": {
+            "sel": "table.prices-table tbody tr >> nth=1 >> .prices-amount input",
+            "texto": "750"
+          },
+          "al_decir": "monto"
+        },
+        {
+          "click": "button.mdc-button:has-text('Guardar') >> nth=-1",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": "mat-dialog-container ",
+          "durante_ms": 3000,
+          "al_decir": "aviso",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        }
+      ],
+      "narracion": "Un mismo producto puede tener precios distintos según el tipo de cliente. Pulso Agregar precio por tipo de cliente. El primer precio ya está: es el Regular, marcado con la estrella como predeterminado, y es el que se propone al facturar. Cada fila dice para quién es el precio, en qué moneda, el monto, si incluye ITBIS y su prioridad: si hay dos precios para el mismo tipo de cliente, gana el de menor número. Agrego otro precio. En Precio para elijo Mayorista, y como monto escribo setecientos cincuenta. Un detalle importante: ningún precio puede quedar por debajo del costo; si pasa, el sistema no deja guardar. Pulso Guardar. Sale el aviso de que el producto quedó creado. Acepto.",
+      "capitulo": "Lista de precios por tipo de cliente"
+    },
+    {
+      "id": "06-ficha",
+      "ruta": "Productos › Editar Producto",
+      "texto_pantalla": "La ficha guardada: stock, imágenes y código de barras",
+      "acciones": [
+        {
+          "resaltar": ".hero-stock",
+          "durante_ms": 3500,
+          "al_decir": "stock actual"
+        },
+        {
+          "resaltar": "button:has-text('Registrar Entrada')",
+          "durante_ms": 3500,
+          "al_decir": "Registrar Entrada"
+        },
+        {
+          "resaltar": "app-product-images",
+          "durante_ms": 4500,
+          "al_decir": "galería"
+        },
+        {
+          "resaltar": ":text('EAN-13 válido')",
+          "durante_ms": 4500,
+          "al_decir": "código de barras"
+        },
+        {
+          "resaltar": "button:has-text('Imprimir etiqueta')",
+          "durante_ms": 3500,
+          "al_decir": "Imprimir etiqueta"
+        }
+      ],
+      "narracion": "Al guardar, la pantalla pasa a modo edición y se habilita todo lo demás. Arriba ves el stock actual, que todavía es cero, y los botones Duplicar y Registrar Entrada. A la derecha aparece la galería de imágenes: puedes subir hasta diez fotos a la vez. Y debajo, el código de barras: como lo dejé vacío, el sistema generó un EAN-13 válido a partir del producto. Con Imprimir etiqueta lo sacas en papel para pegarlo en la mercancía.",
+      "capitulo": "Atributos y variantes"
+    },
+    {
+      "id": "07-atributos",
+      "ruta": "Editar Producto › Variantes › Atributos",
+      "texto_pantalla": "Atributos: Talla del catálogo y Manga creada al momento",
+      "acciones": [
+        {
+          "click": "mat-tab-group.product-tabs .mdc-tab:has-text('Variantes')",
+          "al_decir": "pestaña Variantes"
+        },
+        {
+          "click": "mat-tab-group.product-tabs button:has-text('Agregar')",
+          "al_decir": "pulso Agregar"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input >> nth=0",
+            "texto": "Talla"
+          },
+          "al_decir": "Escribo Talla"
+        },
+        {
+          "esperar_ms": 1200
+        },
+        {
+          "presionar": {
+            "tecla": "ArrowDown"
+          },
+          "al_decir": "elijo"
+        },
+        {
+          "presionar": {
+            "tecla": "Enter"
+          },
+          "al_decir": "marca"
+        },
+        {
+          "click": ".option-rows > .option-row-edit:nth-of-type(4) mat-checkbox",
+          "al_decir": "desmarco"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Asignar Atributo')",
+          "al_decir": "Pulso Asignar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto el aviso"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input >> nth=0",
+            "texto": "Manga"
+          },
+          "al_decir": "lo escribo"
+        },
+        {
+          "click": "mat-option:has-text('Crear atributo')",
+          "al_decir": "Crear atributo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='valuesInput']",
+            "texto": "Corta, Larga"
+          },
+          "al_decir": "Valores"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        },
+        {
+          "resaltar": ".option-rows",
+          "durante_ms": 3000,
+          "al_decir": "asignación",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Asignar Atributo')",
+          "al_decir": "Asignar Atributo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "cierro"
+        }
+      ],
+      "narracion": "Ahora las variantes: la misma camiseta se vende en varias tallas, con manga corta o larga. En la pestaña Variantes pulso Agregar para asignarle atributos. Escribo Talla: ya existe en el catálogo de la empresa, así que la elijo. El sistema marca todas sus opciones; desmarco XL, que no la vendo, y dejo solo S, M y L. Pulso Asignar Atributo y acepto el aviso. El segundo atributo, Manga, no existe: lo escribo y elijo Crear atributo. En Valores del atributo pongo las opciones separadas por comas: corta, larga. Guardo, y en la asignación dejo las dos marcadas. Asignar Atributo, acepto, y cierro. Ojo: los atributos y sus opciones son del catálogo de la empresa, así que renombrar una opción la cambia en todos los productos que la usan.",
+      "capitulo": "Atributos y variantes"
+    },
+    {
+      "id": "08-variantes",
+      "ruta": "Editar Producto › Variantes",
+      "texto_pantalla": "Combinaciones: precio, SKU, estado y acciones en lote",
+      "acciones": [
+        {
+          "click": "button:has-text('Generar todas')",
+          "al_decir": "Generar todas"
+        },
+        {
+          "resaltar": ".variants-table tbody tr >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": ".variants-table tbody tr >> nth=0 >> .price-cell",
+          "durante_ms": 4000,
+          "al_decir": "hereda"
+        },
+        {
+          "escribir": {
+            "sel": ".variants-table tbody tr >> nth=4 >> input.flat-input--price",
+            "texto": "900"
+          },
+          "al_decir": "novecientos"
+        },
+        {
+          "escribir": {
+            "sel": ".variants-table tbody tr >> nth=5 >> input.flat-input--price",
+            "texto": "900"
+          },
+          "al_decir": "lado"
+        },
+        {
+          "resaltar": ".variants-table tbody tr >> nth=4 >> .col-price",
+          "durante_ms": 3500,
+          "al_decir": "diferencia"
+        },
+        {
+          "resaltar": ".variants-table tbody tr >> nth=0 >> td.col-sku",
+          "durante_ms": 3500,
+          "al_decir": "genera solo"
+        },
+        {
+          "resaltar": ".variants-table tbody tr >> nth=0 >> td.col-state",
+          "durante_ms": 3500,
+          "al_decir": "interruptor"
+        },
+        {
+          "click": ".variants-table tbody tr >> nth=0 >> .col-check mat-checkbox",
+          "al_decir": "marcas"
+        },
+        {
+          "click": ".variants-table tbody tr >> nth=1 >> .col-check mat-checkbox",
+          "al_decir": "varias"
+        },
+        {
+          "resaltar": "button:has-text('Aplicar precio')",
+          "durante_ms": 4000,
+          "al_decir": "lote"
+        },
+        {
+          "click": ".variants button:has-text('Cancelar')",
+          "al_decir": "Cancelo"
+        },
+        {
+          "click": "button.mdc-button:has-text('Guardar') >> nth=-1",
+          "al_decir": "pulso Guardar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        }
+      ],
+      "narracion": "Con los dos atributos listos pulso Generar todas: el sistema crea las seis combinaciones posibles de talla y manga. Cada fila es una variante, con su propia imagen, precio, stock y SKU. Si dejas el precio vacío, la variante hereda el precio base del producto, ochocientos cincuenta. Las tallas L llevan más tela, así que les pongo novecientos: al lado aparece la diferencia contra el precio base. El SKU se genera solo al guardar, a partir del código y de las opciones. Con el interruptor Activa dejas de vender una combinación sin borrarla. Y si marcas varias filas, aparece la barra de acciones en lote para aplicar un precio, activar o desactivar de una vez. Cancelo la selección. Las variantes se guardan con el producto: pulso Guardar y acepto el aviso.",
+      "capitulo": "Atributos y variantes"
+    },
+    {
+      "id": "09-fiscal",
+      "ruta": "Editar Producto › Fiscal",
+      "texto_pantalla": "Base imponible presunta e impuestos adicionales DGII",
+      "acciones": [
+        {
+          "click": "mat-tab-group.product-tabs .mdc-tab:has-text('Fiscal')",
+          "al_decir": "Fiscal"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-body-active mat-slide-toggle >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "presunta"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-body-active :text('Impuestos adicionales DGII')",
+          "durante_ms": 5000,
+          "al_decir": "Impuestos adicionales"
+        },
+        {
+          "click": "mat-tab-group.product-tabs .mat-mdc-tab-body-active button:has-text('Agregar')",
+          "al_decir": "Pulso Agregar"
+        },
+        {
+          "resaltar": "mat-dialog-container ",
+          "durante_ms": 8000,
+          "al_decir": "formulario",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "cancelo"
+        }
+      ],
+      "narracion": "La pestaña Fiscal reúne lo tributario. Base imponible presunta se activa solo en sectores donde el ITBIS se calcula sobre una parte del precio, como la construcción; para una camiseta queda apagada. En Impuestos adicionales DGII se asignan la propina legal, el CDT o el ISC de bebidas alcohólicas y cigarrillos. Pulso Agregar para ver el formulario: eliges el impuesto, si se aplica o se excluye para un cliente en particular, y las fechas de vigencia. Esta camiseta no lleva ninguno, así que cancelo.",
+      "capitulo": "Pestañas Fiscal, Configuración e Insumos"
+    },
+    {
+      "id": "10-configuracion",
+      "ruta": "Editar Producto › Configuración",
+      "texto_pantalla": "Marca, control de lote y caducidad, tienda en línea",
+      "acciones": [
+        {
+          "click": "mat-tab-group.product-tabs .mdc-tab:has-text('Configuración')",
+          "al_decir": "Configuración"
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='brand']",
+            "texto": "Germiva"
+          },
+          "al_decir": "escribo"
+        },
+        {
+          "resaltar": "mat-slide-toggle[formcontrolname='usesBatchControl']",
+          "durante_ms": 5000,
+          "al_decir": "Controla lote"
+        },
+        {
+          "resaltar": "mat-slide-toggle[formcontrolname='usesExpirationDate']",
+          "durante_ms": 4000,
+          "al_decir": "Controla caducidad"
+        },
+        {
+          "resaltar": "mat-slide-toggle[formcontrolname='visibleInStore']",
+          "durante_ms": 5000,
+          "al_decir": "Tienda en línea"
+        },
+        {
+          "click": "button.mdc-button:has-text('Guardar') >> nth=-1",
+          "al_decir": "guardo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        }
+      ],
+      "narracion": "En Configuración está la marca: escribo Germiva. La sección Inventario tiene dos controles. Controla lote, activo por defecto, obliga a indicar el número de lote al recibir mercancía, y así sabes de qué compra salió cada unidad. Controla caducidad pide además la fecha de vencimiento: úsalo en perecederos. Y en Tienda en línea decides si el producto se publica en el catálogo y si los buscadores lo pueden indexar. Por ahora lo dejo sin publicar y guardo. Acepto el aviso.",
+      "capitulo": "Pestañas Fiscal, Configuración e Insumos"
+    },
+    {
+      "id": "11-insumos",
+      "ruta": "Editar Producto › Insumos",
+      "texto_pantalla": "Receta de costo: insumos, merma y margen teórico",
+      "acciones": [
+        {
+          "click": "mat-tab-group.product-tabs .mdc-tab:has-text('Insumos')",
+          "al_decir": "Insumos"
+        },
+        {
+          "escribir": {
+            "sel": "mat-tab-group.product-tabs .mat-mdc-tab-body-active input >> nth=0",
+            "texto": "Tela"
+          },
+          "al_decir": "Busco"
+        },
+        {
+          "esperar_ms": 1200
+        },
+        {
+          "presionar": {
+            "tecla": "ArrowDown"
+          },
+          "al_decir": "agrego"
+        },
+        {
+          "presionar": {
+            "tecla": "Enter"
+          },
+          "al_decir": "tela"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-body-active :text('Margen teórico')",
+          "durante_ms": 5000,
+          "al_decir": "margen"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-body-active table",
+          "durante_ms": 5000,
+          "al_decir": "tabla"
+        }
+      ],
+      "narracion": "La pestaña Insumos es la receta de costo: lo que consume cada unidad, útil en restaurantes, combos, kits o manufactura. Busco Tela y agrego la tela de algodón. Arriba el sistema calcula el costo de insumos por unidad, lo compara con el precio de venta y te da el margen teórico. En la tabla ajustas la cantidad y el porcentaje de merma de cada insumo, y los cambios se guardan solos.",
+      "capitulo": "Pestañas Fiscal, Configuración e Insumos"
+    },
+    {
+      "id": "12-entrada",
+      "ruta": "Editar Producto › Registrar entrada",
+      "texto_pantalla": "Entrada de inventario: variante, motivo, proveedor, lote y costo",
+      "acciones": [
+        {
+          "click": "button:has-text('Registrar Entrada')",
+          "al_decir": "Pulso Registrar Entrada"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='productVariantId']",
+          "al_decir": "combinación"
+        },
+        {
+          "click": "mat-option:has-text('M + Corta')",
+          "al_decir": "M con"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='inventoryMovementTypeId']",
+          "al_decir": "motivo"
+        },
+        {
+          "click": "mat-option:has-text('Compras de mercancía')",
+          "al_decir": "Compras de mercancía"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='partnerId'] input",
+            "texto": "Textiles"
+          },
+          "al_decir": "escribo Textiles"
+        },
+        {
+          "esperar_ms": 1200
+        },
+        {
+          "presionar": {
+            "tecla": "ArrowDown"
+          },
+          "al_decir": "lo selecciono"
+        },
+        {
+          "presionar": {
+            "tecla": "Enter"
+          },
+          "al_decir": "selecciono"
+        },
+        {
+          "click": "mat-dialog-container [formcontrolname='locationId'] input",
+          "al_decir": "ubicación"
+        },
+        {
+          "esperar_ms": 1200
+        },
+        {
+          "presionar": {
+            "tecla": "ArrowDown"
+          },
+          "al_decir": "almacén"
+        },
+        {
+          "presionar": {
+            "tecla": "Enter"
+          },
+          "al_decir": "guarda"
+        },
+        {
+          "click": "mat-dialog-container button:has(mat-icon:text('auto_awesome'))",
+          "al_decir": "botón"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='quantity']",
+            "texto": "20"
+          },
+          "al_decir": "veinte"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='unitPrice']",
+            "texto": "400"
+          },
+          "al_decir": "cuatrocientos"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('El ITBIS no se registra aquí')",
+          "durante_ms": 7000,
+          "al_decir": "aviso",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Registrar entrada')",
+          "al_decir": "Pulso Registrar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        }
+      ],
+      "narracion": "Con el producto listo, falta la mercancía. Pulso Registrar Entrada, arriba. Como el producto maneja variantes, primero se elige la combinación que entra: M con manga corta. El motivo explica por qué entra la mercancía; elijo Compras de mercancía. El proveedor es quien la vende: escribo Textiles y lo selecciono. La ubicación es el lugar exacto del almacén donde se guarda. El número de lote lo genera este botón. Entran veinte unidades, a un costo de cuatrocientos sin ITBIS, y el costo total se calcula solo. Fíjate en el aviso: esta entrada mueve el inventario y el costo promedio, pero no registra el ITBIS ni la cuenta por pagar; eso sale de la factura del proveedor, en Compras. Pulso Registrar entrada y acepto.",
+      "capitulo": "Entrada de inventario"
+    },
+    {
+      "id": "13-historial",
+      "ruta": "Editar Producto › Historial",
+      "texto_pantalla": "Stock, última compra, PMP e historial del producto",
+      "acciones": [
+        {
+          "resaltar": ".hero-stock",
+          "durante_ms": 3500,
+          "al_decir": "stock actual"
+        },
+        {
+          "resaltar": ":text('PMP') >> nth=0",
+          "durante_ms": 4500,
+          "al_decir": "precio medio"
+        },
+        {
+          "click": "mat-tab-group.product-tabs .mdc-tab:has-text('Historial')",
+          "al_decir": "Historial"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-body-active ",
+          "durante_ms": 6000,
+          "al_decir": "compras"
+        }
+      ],
+      "narracion": "La cabecera ya refleja la entrada: stock actual veinte, última compra a cuatrocientos y el PMP, el precio medio ponderado que el sistema recalcula con cada entrada. En la pestaña Historial ves las compras del producto, sus ventas y los cambios de precio, con cantidades, costo promedio e importe.",
+      "capitulo": "Entrada de inventario"
+    },
+    {
+      "id": "14-existencias",
+      "ruta": "Inventario › Existencias",
+      "texto_pantalla": "Existencias: disponible, reservado y dónde está cada unidad",
+      "navegar": "/inventory/existencias",
+      "al_decir_navegar": "Existencias",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[placeholder^='Buscar por código']",
+            "texto": "Camiseta"
+          },
+          "al_decir": "Busco"
+        },
+        {
+          "presionar": {
+            "tecla": "Enter"
+          },
+          "al_decir": "Camiseta"
+        },
+        {
+          "resaltar": "tbody tr:has-text('Camiseta Germiva')",
+          "durante_ms": 4500,
+          "al_decir": "fila"
+        },
+        {
+          "click": "tr:has-text('Camiseta Germiva') button >> nth=0",
+          "al_decir": "ojo"
+        },
+        {
+          "resaltar": ":text('Dónde está')",
+          "durante_ms": 5000,
+          "al_decir": "dónde está"
+        },
+        {
+          "click": "a:has-text('Movimientos'), [role=tab]:has-text('Movimientos') >> nth=0",
+          "al_decir": "Movimientos"
+        },
+        {
+          "resaltar": "tbody tr >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "lote"
+        }
+      ],
+      "narracion": "Para ver el inventario de todos los productos, voy a Inventario, Existencias. Busco Camiseta. La fila muestra lo disponible, lo reservado por cotizaciones y el estado. Con el ojo abro el detalle: disponible, reservado y ubicaciones; los botones de entrada, salida y mover entre almacenes; y abajo, dónde está cada unidad: almacén, pasillo y variante. En la pestaña Movimientos queda el registro de cada entrada y salida, con su fecha, su ubicación y su lote.",
+      "capitulo": "Existencias y movimientos"
+    },
+    {
+      "id": "15-acciones",
+      "ruta": "Inventario › Productos",
+      "texto_pantalla": "Duplicar, desactivar y eliminar",
+      "navegar": "/inventory/product/list",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('Camiseta Germiva')",
+          "durante_ms": 4000,
+          "al_decir": "variantes"
+        },
+        {
+          "click": "tr:has-text('Camiseta Germiva') button >> nth=1",
+          "al_decir": "Duplicar"
+        },
+        {
+          "resaltar": "mat-dialog-container ",
+          "durante_ms": 6000,
+          "al_decir": "copia",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "parecido"
+        },
+        {
+          "resaltar": "tr:has-text('Camiseta Germiva') button >> nth=2",
+          "durante_ms": 3500,
+          "al_decir": "Desactivar"
+        },
+        {
+          "resaltar": "tr:has-text('Camiseta Germiva') button >> nth=3",
+          "durante_ms": 3500,
+          "al_decir": "Eliminar"
+        }
+      ],
+      "narracion": "De vuelta al listado de Productos, la camiseta ya aparece con sus variantes. En las acciones de la fila, Duplicar crea una copia con precios, impuestos, atributos e insumos, pero sin imágenes ni código de barras: es lo más rápido para dar de alta un producto parecido. Desactivar lo saca de la venta sin perder su historial, y Eliminar solo se permite si el producto no tiene existencias.",
+      "capitulo": "Duplicar, desactivar y mantenimiento de precios"
+    },
+    {
+      "id": "16-mantenimiento-precios",
+      "ruta": "Inventario › Mantenimiento de Precios",
+      "texto_pantalla": "Todos los precios en una sola lista",
+      "navegar": "/inventory/product/price-maintenance",
+      "acciones": [
+        {
+          "click": "mat-form-field:has-text('Tipo de Cliente') mat-select",
+          "al_decir": "elijo"
+        },
+        {
+          "click": "mat-option:has-text('Mayorista')",
+          "al_decir": "Mayorista"
+        },
+        {
+          "resaltar": "tbody tr:has-text('Camiseta')",
+          "durante_ms": 4500,
+          "al_decir": "camiseta"
+        },
+        {
+          "resaltar": "tbody tr:has-text('Camiseta') button >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "lápiz"
+        }
+      ],
+      "narracion": "Por último, la pantalla Mantenimiento de Precios reúne en una sola lista los precios de todos los productos: producto, tipo de cliente, precio, prioridad y estado. Puedes filtrar por tipo de cliente; por ejemplo, elijo Mayorista y aparece el precio que le dimos a la camiseta. Para cambiarlo, el lápiz te lleva a la ficha del producto, que es donde se administran los precios. Con esto ya conoces todo el ciclo de un producto en Germiva.",
+      "capitulo": "Duplicar, desactivar y mantenimiento de precios"
+    }
+  ],
+  "_voz_offline": "Sin acceso a speech.platform.bing.com, agrega \"voz\": {\"id\": \"espeak:mb-vz1\", \"velocidad\": \"+8%\"} para la voz de respaldo."
+}

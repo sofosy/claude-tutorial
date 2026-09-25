@@ -1,0 +1,755 @@
+1
+00:00:00,104 --> 00:00:03,483
+Esta es la pantalla de Productos, dentro del menú Inventario.
+
+2
+00:00:03,529 --> 00:00:05,991
+Aquí vive todo lo que tu empresa vende o compra:
+
+3
+00:00:06,022 --> 00:00:09,549
+los bienes que se guardan en un almacén y también los servicios.
+
+4
+00:00:09,803 --> 00:00:14,419
+Cada fila es un producto, con su imagen, nombre, código, tipo, unidad de medida,
+
+5
+00:00:14,218 --> 00:00:18,363
+el ITBIS de ventas, cuántas variantes tiene y si maneja inventario.
+
+6
+00:00:18,663 --> 00:00:20,227
+Arriba están los filtros:
+
+7
+00:00:20,277 --> 00:00:23,768
+puedes buscar por nombre, código o marca, y filtrar por tipo,
+
+8
+00:00:23,568 --> 00:00:25,887
+por si maneja inventario o por estado.
+
+9
+00:00:26,109 --> 00:00:30,234
+Si no tocas ese filtro, el listado muestra solo los productos activos.
+
+10
+00:00:30,321 --> 00:00:32,726
+Al final de cada fila están las acciones:
+
+11
+00:00:32,746 --> 00:00:36,065
+editar, duplicar, activar o desactivar, y eliminar.
+
+12
+00:00:36,087 --> 00:00:37,905
+Las vemos al final del video.
+
+13
+00:00:38,586 --> 00:00:42,785
+Junto al botón Nuevo Producto hay dos atajos para cargar productos en cantidad.
+
+14
+00:00:42,916 --> 00:00:46,593
+Alta por foto crea productos a partir de una fotografía del artículo.
+
+15
+00:00:46,651 --> 00:00:48,983
+E Importar y Exportar abre este asistente:
+
+16
+00:00:49,097 --> 00:00:52,062
+primero descargas la plantilla, en Excel o en CSV,
+
+17
+00:00:51,862 --> 00:00:55,390
+que trae las instrucciones y los valores válidos de cada columna;
+
+18
+00:00:55,575 --> 00:00:57,452
+la completas y la subes aquí.
+
+19
+00:00:57,433 --> 00:01:00,408
+Si el código ya existe, el producto se actualiza;
+
+20
+00:01:00,398 --> 00:01:01,821
+si no, se crea.
+
+21
+00:01:01,832 --> 00:01:03,632
+Y si el archivo tiene un solo error,
+
+22
+00:01:03,432 --> 00:01:06,519
+no se importa nada y se listan los errores para que los corrijas.
+
+23
+00:01:06,668 --> 00:01:10,084
+En la pestaña Exportar descargas los productos actuales.
+
+24
+00:01:10,096 --> 00:01:11,442
+Cierro el asistente.
+
+25
+00:01:12,036 --> 00:01:14,323
+Vamos a crear un producto desde cero.
+
+26
+00:01:14,282 --> 00:01:15,885
+Pulso Nuevo Producto.
+
+27
+00:01:15,804 --> 00:01:17,302
+Empiezo por el nombre:
+
+28
+00:01:17,226 --> 00:01:19,044
+Camiseta Germiva Algodón.
+
+29
+00:01:19,115 --> 00:01:23,658
+Mientras escribes, el sistema revisa si ya existe otro producto con ese nombre,
+
+30
+00:01:23,458 --> 00:01:24,938
+para evitar duplicados.
+
+31
+00:01:25,083 --> 00:01:26,495
+A la derecha está el tipo:
+
+32
+00:01:26,447 --> 00:01:29,299
+Producto es un bien físico que se puede almacenar;
+
+33
+00:01:29,383 --> 00:01:33,846
+Servicio es algo que se presta, como una consultoría, y nunca maneja inventario.
+
+34
+00:01:34,000 --> 00:01:37,911
+Como la camiseta se guarda en el almacén, dejo activo Maneja inventario:
+
+35
+00:01:37,988 --> 00:01:40,474
+así cada venta descuenta existencias.
+
+36
+00:01:40,441 --> 00:01:41,903
+Ahora el precio de venta:
+
+37
+00:01:41,833 --> 00:01:43,915
+escribo ochocientos cincuenta.
+
+38
+00:01:43,861 --> 00:01:45,401
+Al lado ves el desglose:
+
+39
+00:01:45,378 --> 00:01:48,769
+el neto, más el ITBIS, igual al total que paga el cliente.
+
+40
+00:01:48,899 --> 00:01:50,741
+Si tu precio ya trae el impuesto,
+
+41
+00:01:50,542 --> 00:01:53,877
+marca ITBIS incluido y el sistema calcula el neto hacia atrás.
+
+42
+00:01:54,652 --> 00:01:56,536
+Debajo están los impuestos.
+
+43
+00:01:56,588 --> 00:01:59,178
+El ITBIS de ventas es el que cobras al facturar,
+
+44
+00:01:58,978 --> 00:02:01,714
+y el ITBIS de compras el que te cobra el proveedor.
+
+45
+00:02:01,865 --> 00:02:04,611
+Los dos son obligatorios y vienen precargados:
+
+46
+00:02:04,618 --> 00:02:06,929
+dieciocho por ciento para los bienes.
+
+47
+00:02:06,919 --> 00:02:09,393
+En Costo sin ITBIS pongo cuatrocientos:
+
+48
+00:02:09,478 --> 00:02:13,584
+es una referencia, porque con cada entrada de inventario el sistema lo reemplaza
+
+49
+00:02:13,384 --> 00:02:14,658
+por el costo promedio.
+
+50
+00:02:14,795 --> 00:02:17,002
+La unidad de medida define cómo se vende:
+
+51
+00:02:16,971 --> 00:02:18,996
+escribo Unidad y la elijo de la lista;
+
+52
+00:02:19,018 --> 00:02:22,936
+la cantidad dice cuántas unidades trae cada artículo, en este caso uno.
+
+53
+00:02:23,014 --> 00:02:25,501
+La categoría agrupa productos parecidos.
+
+54
+00:02:25,545 --> 00:02:29,425
+Todavía no existe, así que escribo Camisetas y elijo Crear categoría.
+
+55
+00:02:29,550 --> 00:02:33,521
+En el formulario pongo el nombre, confirmo que aplica a Producto y guardo;
+
+56
+00:02:33,591 --> 00:02:35,756
+acepto el aviso de categoría creada.
+
+57
+00:02:35,723 --> 00:02:37,788
+El stock mínimo es el umbral de alerta:
+
+58
+00:02:37,800 --> 00:02:41,384
+cuando las existencias bajen de diez, el sistema te avisa.
+
+59
+00:02:41,477 --> 00:02:44,966
+Y la descripción es el texto que se muestra en el catálogo en línea.
+
+60
+00:02:46,331 --> 00:02:50,414
+Un mismo producto puede tener precios distintos según el tipo de cliente.
+
+61
+00:02:50,499 --> 00:02:52,990
+Pulso Agregar precio por tipo de cliente.
+
+62
+00:02:52,961 --> 00:02:54,622
+El primer precio ya está:
+
+63
+00:02:54,654 --> 00:02:57,775
+es el Regular, marcado con la estrella como predeterminado,
+
+64
+00:02:57,575 --> 00:02:59,538
+y es el que se propone al facturar.
+
+65
+00:02:59,757 --> 00:03:03,249
+Cada fila dice para quién es el precio, en qué moneda, el monto,
+
+66
+00:03:03,048 --> 00:03:05,000
+si incluye ITBIS y su prioridad:
+
+67
+00:03:05,193 --> 00:03:09,045
+si hay dos precios para el mismo tipo de cliente, gana el de menor número.
+
+68
+00:03:09,083 --> 00:03:10,512
+Agrego otro precio.
+
+69
+00:03:10,508 --> 00:03:14,722
+En Precio para elijo Mayorista, y como monto escribo setecientos cincuenta.
+
+70
+00:03:14,779 --> 00:03:16,163
+Un detalle importante:
+
+71
+00:03:16,112 --> 00:03:18,880
+ningún precio puede quedar por debajo del costo;
+
+72
+00:03:18,890 --> 00:03:21,251
+si pasa, el sistema no deja guardar.
+
+73
+00:03:21,202 --> 00:03:22,452
+Pulso Guardar.
+
+74
+00:03:22,383 --> 00:03:24,869
+Sale el aviso de que el producto quedó creado.
+
+75
+00:03:24,817 --> 00:03:25,776
+Acepto.
+
+76
+00:03:27,353 --> 00:03:30,963
+Al guardar, la pantalla pasa a modo edición y se habilita todo lo demás.
+
+77
+00:03:31,099 --> 00:03:33,710
+Arriba ves el stock actual, que todavía es cero,
+
+78
+00:03:33,510 --> 00:03:35,915
+y los botones Duplicar y Registrar Entrada.
+
+79
+00:03:36,033 --> 00:03:38,276
+A la derecha aparece la galería de imágenes:
+
+80
+00:03:38,258 --> 00:03:40,634
+puedes subir hasta diez fotos a la vez.
+
+81
+00:03:40,605 --> 00:03:42,438
+Y debajo, el código de barras:
+
+82
+00:03:42,460 --> 00:03:46,701
+como lo dejé vacío, el sistema generó un EAN-13 válido a partir del producto.
+
+83
+00:03:46,830 --> 00:03:50,412
+Con Imprimir etiqueta lo sacas en papel para pegarlo en la mercancía.
+
+84
+00:03:51,169 --> 00:03:52,513
+Ahora las variantes:
+
+85
+00:03:52,492 --> 00:03:56,283
+la misma camiseta se vende en varias tallas, con manga corta o larga.
+
+86
+00:03:56,382 --> 00:03:59,784
+En la pestaña Variantes pulso Agregar para asignarle atributos.
+
+87
+00:03:59,788 --> 00:04:00,878
+Escribo Talla:
+
+88
+00:04:00,820 --> 00:04:03,927
+ya existe en el catálogo de la empresa, así que la elijo.
+
+89
+00:04:03,954 --> 00:04:06,225
+El sistema marca todas sus opciones;
+
+90
+00:04:06,252 --> 00:04:09,918
+desmarco XL, que no la vendo, y dejo solo S, M y L.
+
+91
+00:04:09,979 --> 00:04:12,396
+Pulso Asignar Atributo y acepto el aviso.
+
+92
+00:04:12,395 --> 00:04:14,972
+El segundo atributo, Manga, no existe:
+
+93
+00:04:14,961 --> 00:04:17,014
+lo escribo y elijo Crear atributo.
+
+94
+00:04:17,023 --> 00:04:20,507
+En Valores del atributo pongo las opciones separadas por comas:
+
+95
+00:04:20,521 --> 00:04:21,858
+corta, larga.
+
+96
+00:04:21,812 --> 00:04:24,845
+Guardo, y en la asignación dejo las dos marcadas.
+
+97
+00:04:24,870 --> 00:04:27,286
+Asignar Atributo, acepto, y cierro.
+
+98
+00:04:27,221 --> 00:04:27,887
+Ojo:
+
+99
+00:04:27,927 --> 00:04:31,090
+los atributos y sus opciones son del catálogo de la empresa,
+
+100
+00:04:30,889 --> 00:04:34,744
+así que renombrar una opción la cambia en todos los productos que la usan.
+
+101
+00:04:35,650 --> 00:04:38,573
+Con los dos atributos listos pulso Generar todas:
+
+102
+00:04:38,633 --> 00:04:42,241
+el sistema crea las seis combinaciones posibles de talla y manga.
+
+103
+00:04:42,364 --> 00:04:46,816
+Cada fila es una variante, con su propia imagen, precio, stock y SKU.
+
+104
+00:04:47,016 --> 00:04:51,166
+Si dejas el precio vacío, la variante hereda el precio base del producto,
+
+105
+00:04:50,965 --> 00:04:52,373
+ochocientos cincuenta.
+
+106
+00:04:52,555 --> 00:04:55,885
+Las tallas L llevan más tela, así que les pongo novecientos:
+
+107
+00:04:55,943 --> 00:04:58,860
+al lado aparece la diferencia contra el precio base.
+
+108
+00:04:58,932 --> 00:05:02,932
+El SKU se genera solo al guardar, a partir del código y de las opciones.
+
+109
+00:05:03,054 --> 00:05:06,771
+Con el interruptor Activa dejas de vender una combinación sin borrarla.
+
+110
+00:05:06,959 --> 00:05:11,190
+Y si marcas varias filas, aparece la barra de acciones en lote para aplicar un
+
+111
+00:05:10,990 --> 00:05:13,205
+precio, activar o desactivar de una vez.
+
+112
+00:05:13,382 --> 00:05:15,067
+Cancelo la selección.
+
+113
+00:05:15,021 --> 00:05:17,450
+Las variantes se guardan con el producto:
+
+114
+00:05:17,431 --> 00:05:19,471
+pulso Guardar y acepto el aviso.
+
+115
+00:05:21,901 --> 00:05:24,086
+La pestaña Fiscal reúne lo tributario.
+
+116
+00:05:24,205 --> 00:05:28,698
+Base imponible presunta se activa solo en sectores donde el ITBIS se calcula sobre
+
+117
+00:05:28,497 --> 00:05:30,843
+una parte del precio, como la construcción;
+
+118
+00:05:31,049 --> 00:05:32,937
+para una camiseta queda apagada.
+
+119
+00:05:33,016 --> 00:05:36,115
+En Impuestos adicionales DGII se asignan la propina legal,
+
+120
+00:05:35,915 --> 00:05:38,963
+el CDT o el ISC de bebidas alcohólicas y cigarrillos.
+
+121
+00:05:39,139 --> 00:05:41,288
+Pulso Agregar para ver el formulario:
+
+122
+00:05:41,371 --> 00:05:45,644
+eliges el impuesto, si se aplica o se excluye para un cliente en particular,
+
+123
+00:05:45,444 --> 00:05:47,002
+y las fechas de vigencia.
+
+124
+00:05:47,180 --> 00:05:49,941
+Esta camiseta no lleva ninguno, así que cancelo.
+
+125
+00:05:52,052 --> 00:05:53,969
+En Configuración está la marca:
+
+126
+00:05:53,901 --> 00:05:55,271
+escribo Germiva.
+
+127
+00:05:55,215 --> 00:05:57,862
+La sección Inventario tiene dos controles.
+
+128
+00:05:58,015 --> 00:05:59,889
+Controla lote, activo por defecto,
+
+129
+00:05:59,688 --> 00:06:02,728
+obliga a indicar el número de lote al recibir mercancía,
+
+130
+00:06:02,528 --> 00:06:04,959
+y así sabes de qué compra salió cada unidad.
+
+131
+00:06:05,217 --> 00:06:08,236
+Controla caducidad pide además la fecha de vencimiento:
+
+132
+00:06:08,232 --> 00:06:09,755
+úsalo en perecederos.
+
+133
+00:06:09,795 --> 00:06:13,782
+Y en Tienda en línea decides si el producto se publica en el catálogo y si los
+
+134
+00:06:13,581 --> 00:06:15,171
+buscadores lo pueden indexar.
+
+135
+00:06:15,320 --> 00:06:17,578
+Por ahora lo dejo sin publicar y guardo.
+
+136
+00:06:17,526 --> 00:06:18,828
+Acepto el aviso.
+
+137
+00:06:21,675 --> 00:06:23,906
+La pestaña Insumos es la receta de costo:
+
+138
+00:06:23,961 --> 00:06:28,574
+lo que consume cada unidad, útil en restaurantes, combos, kits o manufactura.
+
+139
+00:06:28,680 --> 00:06:30,852
+Busco Tela y agrego la tela de algodón.
+
+140
+00:06:30,937 --> 00:06:33,805
+Arriba el sistema calcula el costo de insumos por unidad,
+
+141
+00:06:33,605 --> 00:06:36,612
+lo compara con el precio de venta y te da el margen teórico.
+
+142
+00:06:36,879 --> 00:06:40,730
+En la tabla ajustas la cantidad y el porcentaje de merma de cada insumo,
+
+143
+00:06:40,530 --> 00:06:42,302
+y los cambios se guardan solos.
+
+144
+00:06:43,136 --> 00:06:45,801
+Con el producto listo, falta la mercancía.
+
+145
+00:06:45,796 --> 00:06:47,852
+Pulso Registrar Entrada, arriba.
+
+146
+00:06:47,884 --> 00:06:52,090
+Como el producto maneja variantes, primero se elige la combinación que entra:
+
+147
+00:06:52,149 --> 00:06:53,600
+M con manga corta.
+
+148
+00:06:53,542 --> 00:06:56,014
+El motivo explica por qué entra la mercancía;
+
+149
+00:06:55,993 --> 00:06:57,883
+elijo Compras de mercancía.
+
+150
+00:06:57,828 --> 00:06:59,636
+El proveedor es quien la vende:
+
+151
+00:06:59,589 --> 00:07:01,797
+escribo Textiles y lo selecciono.
+
+152
+00:07:01,809 --> 00:07:05,166
+La ubicación es el lugar exacto del almacén donde se guarda.
+
+153
+00:07:05,202 --> 00:07:07,366
+El número de lote lo genera este botón.
+
+154
+00:07:07,439 --> 00:07:10,955
+Entran veinte unidades, a un costo de cuatrocientos sin ITBIS,
+
+155
+00:07:10,755 --> 00:07:12,720
+y el costo total se calcula solo.
+
+156
+00:07:12,832 --> 00:07:14,126
+Fíjate en el aviso:
+
+157
+00:07:14,143 --> 00:07:16,834
+esta entrada mueve el inventario y el costo promedio,
+
+158
+00:07:16,634 --> 00:07:19,183
+pero no registra el ITBIS ni la cuenta por pagar;
+
+159
+00:07:19,337 --> 00:07:22,301
+eso sale de la factura del proveedor, en Compras.
+
+160
+00:07:22,314 --> 00:07:24,428
+Pulso Registrar entrada y acepto.
+
+161
+00:07:26,798 --> 00:07:28,713
+La cabecera ya refleja la entrada:
+
+162
+00:07:28,824 --> 00:07:32,220
+stock actual veinte, última compra a cuatrocientos y el PMP,
+
+163
+00:07:32,019 --> 00:07:35,668
+el precio medio ponderado que el sistema recalcula con cada entrada.
+
+164
+00:07:36,060 --> 00:07:39,194
+En la pestaña Historial ves las compras del producto,
+
+165
+00:07:38,994 --> 00:07:43,346
+sus ventas y los cambios de precio, con cantidades, costo promedio e importe.
+
+166
+00:07:44,336 --> 00:07:48,867
+Para ver el inventario de todos los productos, voy a Inventario, Existencias.
+
+167
+00:07:48,937 --> 00:07:50,240
+Busco Camiseta.
+
+168
+00:07:50,221 --> 00:07:54,135
+La fila muestra lo disponible, lo reservado por cotizaciones y el estado.
+
+169
+00:07:54,180 --> 00:07:55,692
+Con el ojo abro el detalle:
+
+170
+00:07:55,632 --> 00:07:57,935
+disponible, reservado y ubicaciones;
+
+171
+00:07:57,942 --> 00:08:00,978
+los botones de entrada, salida y mover entre almacenes;
+
+172
+00:08:00,990 --> 00:08:02,973
+y abajo, dónde está cada unidad:
+
+173
+00:08:02,928 --> 00:08:04,906
+almacén, pasillo y variante.
+
+174
+00:08:04,975 --> 00:08:09,271
+En la pestaña Movimientos queda el registro de cada entrada y salida, con su fecha,
+
+175
+00:08:09,070 --> 00:08:10,420
+su ubicación y su lote.
+
+176
+00:08:11,307 --> 00:08:15,543
+De vuelta al listado de Productos, la camiseta ya aparece con sus variantes.
+
+177
+00:08:15,800 --> 00:08:20,053
+En las acciones de la fila, Duplicar crea una copia con precios, impuestos,
+
+178
+00:08:19,854 --> 00:08:23,276
+atributos e insumos, pero sin imágenes ni código de barras:
+
+179
+00:08:23,558 --> 00:08:26,447
+es lo más rápido para dar de alta un producto parecido.
+
+180
+00:08:26,591 --> 00:08:29,599
+Desactivar lo saca de la venta sin perder su historial,
+
+181
+00:08:29,399 --> 00:08:32,817
+y Eliminar solo se permite si el producto no tiene existencias.
+
+182
+00:08:33,830 --> 00:08:37,778
+Por último, la pantalla Mantenimiento de Precios reúne en una sola lista los
+
+183
+00:08:37,577 --> 00:08:39,307
+precios de todos los productos:
+
+184
+00:08:39,504 --> 00:08:43,111
+producto, tipo de cliente, precio, prioridad y estado.
+
+185
+00:08:43,161 --> 00:08:45,355
+Puedes filtrar por tipo de cliente;
+
+186
+00:08:45,388 --> 00:08:49,394
+por ejemplo, elijo Mayorista y aparece el precio que le dimos a la camiseta.
+
+187
+00:08:49,567 --> 00:08:52,759
+Para cambiarlo, el lápiz te lleva a la ficha del producto,
+
+188
+00:08:52,560 --> 00:08:54,860
+que es donde se administran los precios.
+
+189
+00:08:55,038 --> 00:08:58,339
+Con esto ya conoces todo el ciclo de un producto en Germiva.
