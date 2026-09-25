@@ -145,6 +145,12 @@ def sustituir(pag, cfg, previo=None):
             return
         if _es_inventado(tipo, valor):
             return
+        # un número nunca es un nombre ni una razón social: el placeholder
+        # «Umbral de la empresa» de un campo de stock mínimo lo clasificaba
+        # como «empresa» y cada «10» de la pantalla (paginador incluido)
+        # pasaba a leerse «Distribuidora del Este SRL»
+        if tipo in ("nombre", "apellido", "empresa") and re.fullmatch(r"[\d\s.,%$-]+", valor):
+            return
         if any(p in valor.lower() for p in permitidos):
             return
         mapa[valor] = falso(tipo, valor, semilla)

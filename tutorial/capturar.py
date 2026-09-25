@@ -156,6 +156,36 @@ def _acciones(pag, paso, variables):
             raise SystemExit(f"[{paso['id']}] acción desconocida: {acc}")
 
 
+def _rutas_locales(ctx, guion):
+    """Sirve desde disco lo que la app pide a un dominio bloqueado (y el CSS global).
+
+    Caso típico: Google Fonts bloqueado por la red → los íconos de Material se
+    pintan como texto («menu», «home») y el video no sirve. Cada entrada de
+    `rutas_locales` intercepta un patrón de URL (glob de Playwright) y responde
+    con un archivo fijo (`archivo`) o con el archivo del mismo nombre dentro de
+    `carpeta` (el último segmento de la URL). Ver `fuentes/preparar.sh`.
+    """
+    # `css_global`: reglas que se inyectan en toda página (p. ej. ocultar un
+    # botón flotante de chat que tapa la esquina durante todo el video).
+    if guion.get("css_global"):
+        css = json.dumps("\n".join(guion["css_global"]))
+        ctx.add_init_script(
+            "document.addEventListener('DOMContentLoaded', () => {"
+            " const s = document.createElement('style'); s.textContent = %s;"
+            " document.head.appendChild(s); });" % css)
+    for r in guion.get("rutas_locales", []):
+        def servir(route, _req=None, r=r):
+            if r.get("archivo"):
+                ruta = RAIZ / r["archivo"]
+            else:
+                ruta = RAIZ / r["carpeta"] / route.request.url.split("?")[0].rsplit("/", 1)[-1]
+            if not ruta.exists():
+                return route.abort()
+            route.fulfill(path=str(ruta), headers={"Access-Control-Allow-Origin": "*",
+                                                   "Cache-Control": "max-age=86400"})
+        ctx.route(r["url"], servir)
+
+
 def _sesion(pag, guion, variables, base):
     """Entra a la aplicación antes del primer paso, sin capturar nada.
 
@@ -167,6 +197,9 @@ def _sesion(pag, guion, variables, base):
     """
     s = guion.get("sesion")
     if not s:
+        return
+    if s.get("tipo") == "api":
+        _sesion_api(pag, s, variables, base)
         return
     pag.goto(base + s.get("navegar", "/authentication/signin"),
              wait_until="networkidle")
@@ -189,6 +222,35 @@ def _sesion(pag, guion, variables, base):
     if s.get("acciones"):
         _acciones(pag, {"id": "sesión", "acciones": s["acciones"]}, variables)
     print(f"  · sesión: {_sub(s['usuario'], variables)}")
+
+
+def _sesion_api(pag, s, variables, base):
+    """Sesión inyectada desde un login por API, sin pasar por el formulario.
+
+    Para aplicaciones cuyo formulario de acceso no se puede automatizar (p. ej.
+    Germiva exige reCAPTCHA): se llama al endpoint de login de desarrollo y la
+    respuesta se escribe en `localStorage[clave]` antes de que cargue la app,
+    igual que lo haría la propia app al entrar.
+
+        "sesion": {"tipo": "api", "url": "http://localhost:3001/api/auth/dev/login",
+                   "cuerpo": {"username": "admin", "password": "admin"},
+                   "clave": "aut", "extra": {"__v": 2}, "navegar": "/"}
+    """
+    import urllib.request
+    cuerpo = json.dumps({k: _sub(str(v), variables) for k, v in s["cuerpo"].items()})
+    req = urllib.request.Request(_sub(s["url"], variables), data=cuerpo.encode("utf-8"),
+                                 headers={"Content-Type": "application/json"})
+    with urllib.request.urlopen(req, timeout=30) as r:
+        datos = {**s.get("extra", {}), **json.loads(r.read().decode("utf-8"))}
+    pag.context.add_init_script(
+        "localStorage.setItem(%s, %s);" % (json.dumps(s.get("clave", "aut")),
+                                           json.dumps(json.dumps(datos))))
+    pag.goto(base + s.get("navegar", "/"), wait_until="networkidle")
+    if s.get("esperar"):
+        pag.wait_for_selector(s["esperar"], timeout=s.get("esperar_timeout_ms", 30000))
+    if s.get("acciones"):
+        _acciones(pag, {"id": "sesión", "acciones": s["acciones"]}, variables)
+    print(f"  · sesión (api): {_sub(str(s['cuerpo'].get('username', '')), variables)}")
 
 
 JS_ENCUADRAR = """(el) => {
@@ -326,6 +388,7 @@ def capturar(guion, pasos, salida):
         nav = p.chromium.launch()
         ctx = nav.new_context(viewport={"width": ANCHO, "height": ALTO_PAGINA},
                               device_scale_factor=ESCALA)
+        _rutas_locales(ctx, guion)
         # El setup del guion prepara el entorno ANTES de entrar: un seed que
         # borra y vuelve a crear la empresa desde cero también borra el usuario
         # con el que se inicia sesión, así que hacerlo después dejaría la sesión

@@ -7,16 +7,13 @@ config.local.json
 salida/
 fichas/
 
-# Contenido de una serie concreta: cambia con cada tutorial y no es parte de la
-# herramienta. Se versiona solo lo que sirve para CUALQUIER video — el motor, la
-# marca y la configuración común.
+# Contenido de una serie concreta que NO se versiona. Los guiones (guiones/),
+# la preparación de datos (seeds/) y los videos publicados (entregas/) SÍ se
+# versionan: son lo que permite regrabar un tutorial con otra voz o tras un
+# cambio de pantalla sin rehacer el trabajo.
 # git no admite comentarios en la misma línea del patrón: van aparte.
-# guiones/   el guion de cada video
-# seeds/     preparación de datos de una serie concreta
 # demo/      sitio de ejemplo de un tutorial concreto
 # PLAN-*.md  el plan de una serie (PLAN.md, el del motor, sí se versiona)
-guiones/
-seeds/
 demo/
 PLAN-*.md
 image.png
@@ -33,6 +30,13 @@ __pycache__/
 *.aiff
 *.srt
 
+# Excepción: lo entregado de cada tutorial (video final, subtítulos) sí va al repo
+!entregas/**/*.mp4
+!entregas/**/*.srt
+
 # Sistema
 .DS_Store
 Note.md
+
+# Binarios de fuentes locales (se regeneran con fuentes/preparar.sh)
+fuentes/*.woff2

@@ -17,7 +17,8 @@ import json
 import re
 import subprocess
 
-import edge_tts
+import tempfile
+from pathlib import Path
 
 from . import privacidad
 
@@ -65,8 +66,52 @@ def para_voz(texto, extra=None):
     return texto
 
 
+def _sintetizar_espeak(texto, voz, velocidad, destino):
+    """Voz offline (espeak-ng + mbrola) para entornos sin acceso a edge-tts.
+
+    Suena más sintética, pero no depende de la red. espeak-ng no reporta el
+    instante de cada palabra, así que se sintetiza FRASE por frase (el tiempo
+    de cada frase es exacto) y dentro de la frase las palabras se reparten en
+    proporción a sus letras: basta para anclar `al_decir` y los subtítulos.
+
+    `voz` = "espeak:<voz>" (p. ej. "espeak:mb-es3"); `velocidad` = "+12%" se
+    traduce a palabras por minuto sobre 150.
+    """
+    nombre = voz.split(":", 1)[1] or "mb-es3"
+    pct = int(re.sub(r"[^-+0-9]", "", velocidad) or 0)
+    wpm = str(int(150 * (1 + pct / 100)))
+    frases = [f.strip() for f in re.split(r"(?<=[.!?…:;])\s+", texto) if f.strip()]
+    palabras, t = [], 0.0
+    with tempfile.TemporaryDirectory() as tmp:
+        lista = []
+        for i, frase in enumerate(frases):
+            wav = Path(tmp) / f"{i:04d}.wav"
+            subprocess.run(["espeak-ng", "-v", nombre, "-s", wpm, "-w", str(wav), frase],
+                           check=True, capture_output=True)
+            d = duracion(wav)
+            lista.append(wav)
+            trozos = frase.split()
+            pesos = [max(len(re.sub(r"\W", "", w)), 1) + 1 for w in trozos]
+            util, cursor = d * 0.92, t + d * 0.03
+            for w, peso in zip(trozos, pesos):
+                dw = util * peso / sum(pesos)
+                palabras.append({"t": round(cursor, 3), "d": round(dw, 3),
+                                 "texto": re.sub(r"^\W+|\W+$", "", w) or w})
+                cursor += dw
+            t += d
+        concat = Path(tmp) / "lista.txt"
+        concat.write_text("".join(f"file '{w.as_posix()}'\n" for w in lista), encoding="utf-8")
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
+                        "-i", str(concat), "-ar", "24000", "-ac", "1", "-b:a", "96k",
+                        str(destino)], check=True)
+    return palabras
+
+
 async def _sintetizar(texto, voz, velocidad, destino):
     """Escribe el MP3 y devuelve las marcas de palabra (segundos)."""
+    if voz.startswith("espeak:"):
+        return _sintetizar_espeak(texto, voz, velocidad, destino)
+    import edge_tts  # sólo si se usa: el motor offline no lo necesita
     # edge-tts ≥ 7 manda límites de FRASE por defecto; los de palabra hay que pedirlos
     com = edge_tts.Communicate(texto, voz, rate=velocidad, boundary="WordBoundary")
     palabras = []
