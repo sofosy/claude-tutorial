@@ -152,6 +152,115 @@ solo donde hace falta una aclaración**.
   «a que la pantalla se asiente antes de la foto»; aquí corren mientras la
   voz habla, así que en general se pueden acortar.
 
+## Música de fondo (opcional)
+
+```jsonc
+{
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -24,     // atenuación fija antes de mezclar (por defecto -24)
+    "ducking": true,       // baja aún más sola cuando hay voz (por defecto true)
+    "fade_s": 2            // fundido de entrada y de salida, en segundos (por defecto 2)
+  }
+}
+```
+
+- Va en `config.json` (toda la serie) o en el guion de un tutorial concreto
+  (pisa la config, igual que `voz`). **Sin la clave, el montaje queda
+  EXACTAMENTE igual que hoy** — no se toca ni un filtro.
+- La pista se repite en bucle para cubrir el video completo, con un único
+  fundido de entrada al principio y uno de salida al final (no en cada
+  clip); el `-24dB` deja la música muy por debajo de la voz (~20 dB medidos
+  con `ebur128` en `salida/rrhh-import-export-empleados/`) y con
+  `ducking: true` baja más todavía mientras alguien habla, con
+  `sidechaincompress` usando la propia voz como disparador.
+- Pistas CC0 listas para usar en `marca/musica/` (ver
+  `marca/musica/LICENCIAS.md` — origen, autor y licencia de cada una).
+- No cambia la duración del video ni la sincronía: cada clip solo recorta
+  su tramo de la pista ya preparada, en el mismo instante que le toca dentro
+  del video final.
+- Con `musica` y ducking, la voz se duplica con `asplit` antes de mezclar:
+  una etiqueta de filtro de ffmpeg se consume una sola vez, y usar `[voz]`
+  en el `sidechaincompress` y en el `amix` hacía fallar el montaje.
+
+## Acabado profesional (opcional): sonoridad, entrada/cierre de marca, rótulos
+
+Tres claves independientes, en `config.json` (toda la serie) o en el guion
+(pisa la config). **Sin ninguna de ellas el montaje es idéntico bit a bit al
+de antes** (comprobado: mismo `video.mp4`, `video.srt` y `youtube-video.txt`,
+por md5). La miniatura sí cambió a propósito con la identidad 2026 (abajo).
+
+```jsonc
+{
+  "loudnorm":    { "lufs": -14, "tp": -1.5 },          // norma de YouTube
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 }
+}
+```
+
+**`loudnorm`** — normaliza la sonoridad del video ya montado, en dos pasadas:
+la primera mide (`loudnorm`, integrado + pico real); la segunda aplica UNA
+ganancia lineal. Si la ganancia deja los picos bajo `tp`, se aplica con
+`loudnorm … linear=true`; si no cabe (la voz TTS trae picos sueltos: en
+`rrhh-import-export-empleados` -19 LUFS con pico -5,9 dBTP, que +5 dB
+llevaría a -0,9), en vez de dejar que `loudnorm` caiga a su modo dinámico
+(comprime toda la voz) se aplica la misma ganancia con `volume` + un
+`alimiter` rápido con compensación de latencia, que solo toca esos picos.
+El video se copia (`-c:v copy`); solo se recodifica el audio, con los mismos
+parámetros del montaje: la duración no cambia. Resultado medido con
+`ebur128`: **-14,0 LUFS, pico -2,0 dBFS**. Corre después de unir, así que
+cubre también la entrada y el cierre.
+
+**`marca_video`** — antepone una entrada y añade un cierre, generados con
+Pillow (1920×1080, fondo claro, Inter de `marca/fuentes/`) con la identidad
+2026 de `germiva/Logos/`: `marca/logo.png` (horizontal: hoja + «Germiva» +
+«ERP | Siembra control, cosecha resultados») y `marca/simbolo.png` (solo la
+hoja), ambos con fondo transparente sin halo (el blanco del PNG original se
+«des-mezcla»; el logo anterior quedó en `marca/_anterior/logo-2026-09.png`).
+Paleta del logo: marino `#0B3552` (título), azul `#1273B8` (antetítulo),
+teal `#04B19E` («Germiva ERP · Tutorial»), verde `#5BD34E` (línea de acento
+y punto del rótulo). `marca.simbolo` en la config cambia el símbolo.
+
+- Entrada: símbolo · antetítulo · título · «Germiva ERP · Tutorial». Si el
+  `titulo` del guion es «Módulo · Tema», el módulo sube como antetítulo en
+  mayúsculas y el tema queda como título. Aparece desde blanco y vuelve a
+  blanco antes de la app.
+- Cierre: logo horizontal · `url_publica` (el eslogan ya va en el logo: no
+  se repite en texto). Aparece desde blanco y termina en negro.
+- La miniatura (con o sin estas claves) usa la misma identidad: velo marino,
+  sello del símbolo sobre placa blanca arriba a la izquierda, acento verde.
+- Sin voz. Con `musica`, llevan su tramo de la pista (la pista se prepara
+  del largo total, entrada y cierre incluidos) subida +3 dB, con una rampa
+  de 1 s hacia la narración; sin `musica`, silencio.
+- **Sincronía**: `video.srt` se corre `entrada_s`; en `youtube-video.txt`
+  el primer capítulo sigue en 00:00 (YouTube lo exige) y absorbe la
+  entrada, los demás se corren `entrada_s`. El informe (`informe-video.md`,
+  fotogramas de `revision/`) se calcula sobre los pasos sin la entrada
+  (`grabacion/cuerpo.mp4`, temporal, se borra al terminar). La miniatura no
+  cambia.
+- Archivos: `clips-video/_entrada.{png,mp4}` y `clips-video/_cierre.{png,mp4}`.
+
+**`rotulo_paso`** — al empezar cada paso de video (no en tarjetas), una
+píldora oscura semitransparente con un punto verde y el título del paso en
+Inter Bold, abajo a la izquierda: 54 px de alto (5 % del cuadro), 112 px
+del borde izquierdo (pasa la franja de iconos del menú lateral) y 34 px del
+inferior, a lo sumo el 40 % del ancho (se trunca con «…»). Entra a 0,35 s y
+sale a los `segundos`, con fundidos de opacidad de 0,4 s.
+
+- Texto: la clave opcional `rotulo` del paso; si no, lo que va antes del
+  primer « · » de `texto_pantalla` (convención «Pantalla · detalle»). Un
+  paso sin ninguna de las dos no lleva rótulo. Pasa por la sustitución de
+  privacidad.
+- Se pinta después del zoom y de la barra de `capas`: el acercamiento no lo
+  mueve ni lo agranda. Con `capas: true` y la barra abajo, se solaparían:
+  no combinar las dos cosas.
+- Las barras de acciones de la app (botones de diálogo, «Crear…») viven a
+  la derecha o al centro; la esquina inferior izquierda solo tiene filas de
+  tabla o el pie del menú, y el rótulo dura 3,5 s. Aun así, si un paso
+  empieza con algo que hay que ver ahí, dale un `rotulo` corto o quita la
+  clave en ese guion.
+- La miniatura sale de un cuadro SIN rótulo (tomado del maestro).
+
 ## Qué cambia respecto al modo fijo
 
 | | `tut build` (fijo) | `tut video` (grabación) |

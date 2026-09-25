@@ -4,6 +4,7 @@ Dibuja sobre el frame usando las cajas que reportó el navegador en C1.
 Paleta de un solo acento para no competir con los colores propios del ERP.
 """
 import json
+from pathlib import Path
 
 from PIL import Image, ImageDraw, ImageFont
 
@@ -22,6 +23,8 @@ SALIDA_ANCHO, SALIDA_ALTO = 1920, 1080  # tamaño del video, para la capa de bar
 # ignora el tamaño pedido, así que los rótulos salen minúsculos e ilegibles en
 # un frame de 1920×1080 — y el fallo es silencioso, se descubre viendo el video.
 _FUENTES = [
+    # Inter (OFL, marca/fuentes/LICENCIAS.md): la tipografía de la marca, igual en cualquier PC
+    str(Path(__file__).resolve().parent.parent / "marca" / "fuentes" / "Inter-ExtraBold.ttf"),
     # macOS
     "/System/Library/Fonts/Supplemental/Arial Bold.ttf",
     "/System/Library/Fonts/Helvetica.ttc",
