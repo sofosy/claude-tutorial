@@ -1,6 +1,9 @@
 <!--
-  Diagrama «conceptos-seguridad» · lámina de 1280×720 (viewBox).
+  Diagrama «conceptos-seguridad» · lámina de 1280×720 (viewBox). 6 fases.
   Fases: 1 Persona · 2 Rol · 3 Permiso · 4 Alcance · 5 Equipo · 6 Credencial de API.
+  Corrección 09-27 (_SERIE-SEGURIDAD.md §8/00): la tarjeta 05 (Equipo) ya NO dice
+  que suma permisos a sus miembros. Un equipo agrupa personas y solo sirve para
+  el alcance «Equipo»; no da ningún permiso (verdad 2 del plan).
   Cada tarjeta es un <g data-fase="N"> con su traslado en el <g> interior (la
   animación de entrada usa transform de CSS y pisaría el atributo).
   Textos: edítalos en su <text>/<tspan>; cada línea cabe en ~36 caracteres.
@@ -93,9 +96,9 @@
     <g class="ico" transform="translate(40,40)"><circle cx="9" cy="8.5" r="3.2"/><circle cx="17" cy="9.5" r="2.6"/><path d="M3 20c0-3.6 2.7-5.8 6-5.8s6 2.2 6 5.8M15.5 14.4c3 .1 5.5 1.9 5.5 5.1"/></g>
     <text class="c-num" x="92" y="44">05</text>
     <text class="c-tit" x="92" y="70">Equipo</text>
-    <text class="c-txt" x="28" y="118"><tspan x="28">Un grupo de personas que suma</tspan><tspan x="28" dy="22">permisos a todos sus miembros.</tspan></text>
-    <rect class="chip" x="28" y="166" width="134" height="36" rx="18"/>
-    <text class="chip-t" x="46" y="189">Ventas Norte</text>
+    <text class="c-txt" x="28" y="118"><tspan x="28">Agrupa personas. No da permisos:</tspan><tspan x="28" dy="22">sirve para el alcance «Equipo».</tspan></text>
+    <rect class="chip" x="28" y="166" width="112" height="36" rx="18"/>
+    <text class="chip-t" x="46" y="189">Zona Este</text>
   </g></g>
 
   <!-- 6 · Credencial de API -->

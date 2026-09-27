@@ -1,8 +1,15 @@
 <!--
-  Diagrama «estado-documento» · lámina de 1280×720 (viewBox).
-  Fases: 1 Borrador (Editar permitido) · 2 «Emitir» → Emitida (Editar con
-  candado) · 3 «Anular» → Anulada (Editar con candado) · 4 la conclusión.
-  Textos: edítalos en su <text>; el número FAC-0107 se repite en las tres
+  Diagrama «estado-documento» · lámina de 1280×720 (viewBox). 3 fases.
+  Fases: 1 Borrador («Convertir a factura» bloqueado) · 2 «Aprobar» →
+  Aprobada («Convertir a factura» permitido) · 3 la conclusión.
+  Corrección 09-27 (_SERIE-SEGURIDAD.md §8/00): antes usaba una FACTURA
+  (Borrador → Emitir → Emitida → Anular → Anulada, con «Editar»). Ahora usa
+  la COTIZACIÓN del plan (Borrador → Aprobada) y la acción real que depende
+  del estado: «Convertir a factura» (QUOTE_CONVERT_DIRECTLY_TO_INVOICE),
+  que además exige la cotización Aprobada o Aceptada (F-255/F-256). Aprobar
+  exige «Cotizaciones · Aprobar» (QUOTE_APPROVE) cuando la empresa exige
+  aprobación, que es el caso de esta serie (quote_requires_approval = 1).
+  Textos: edítalos en su <text>; el número COT-1042 se repite en ambas
   tarjetas.
 -->
 <style>
@@ -15,10 +22,9 @@
   .linea{fill:var(--borde)}
   .num{font-size:12px;font-weight:800;fill:var(--tinta)}
   .fila{fill:var(--suave)}
-  .acc{font-size:16px;font-weight:800;fill:var(--tinta)}
+  .acc{font-size:14px;font-weight:800;fill:var(--tinta)}
   .ok{font-size:14px;font-weight:700;fill:#2E8B2A}
   .no{font-size:14px;font-weight:700;fill:#C62828}
-  .sello{font-size:17px;font-weight:900;fill:#C62828;letter-spacing:.14em}
   .flujo{fill:none;stroke:var(--tinta-2);stroke-width:2.2;stroke-dasharray:7 6;animation:flujo 1s linear infinite}
   @keyframes flujo{to{stroke-dashoffset:-13}}
   .punta{fill:var(--tinta-2)}
@@ -37,7 +43,7 @@
     </marker>
     <g id="hoja">
       <rect class="hoja" width="124" height="150" rx="8"/>
-      <text class="num" x="14" y="24">FAC-0107</text>
+      <text class="num" x="14" y="24">COT-1042</text>
       <rect class="linea" x="14" y="40" width="96" height="6" rx="3"/>
       <rect class="linea" x="14" y="56" width="72" height="6" rx="3"/>
       <rect class="linea" x="14" y="80" width="96" height="6" rx="3"/>
@@ -50,61 +56,40 @@
 
   <rect x="80" y="60" width="48" height="6" rx="3" fill="#5BD34E"/>
   <text class="t-tit" x="80" y="106">El estado del documento también decide</text>
-  <text class="t-sub" x="80" y="136">Con el permiso «Facturas · Editar», Ana solo puede editar mientras la factura es un borrador.</text>
+  <text class="t-sub" x="80" y="136">Con el permiso «Cotizaciones · Aprobar», Carlos aprueba en Borrador. «Convertir a factura» exige que ya esté Aprobada.</text>
 
   <!-- 1 · Borrador -->
-  <g data-fase="1"><g transform="translate(80,176)">
-    <rect class="card" width="300" height="334" rx="12" filter="url(#sombra)"/>
+  <g data-fase="1"><g transform="translate(225,176)">
+    <rect class="card" width="360" height="334" rx="12" filter="url(#sombra)"/>
     <rect x="24" y="24" width="100" height="30" rx="15" fill="#1273B8"/>
     <text class="estado" x="74" y="44" text-anchor="middle">Borrador</text>
-    <use href="#hoja" transform="translate(88,74)"/>
-    <rect class="fila" x="24" y="258" width="252" height="52" rx="10"/>
-    <use href="#si" transform="translate(40,273)"/>
-    <text class="acc" x="74" y="290">Editar</text>
-    <text class="ok" x="262" y="289" text-anchor="end">Permitido</text>
+    <use href="#hoja" transform="translate(118,74)"/>
+    <rect class="fila" x="24" y="258" width="312" height="52" rx="10"/>
+    <use href="#candado" transform="translate(40,273)"/>
+    <text class="acc" x="74" y="290">Convertir a factura</text>
+    <text class="no" x="326" y="289" text-anchor="end">Bloqueado</text>
   </g></g>
 
-  <!-- 2 · Emitir → Emitida -->
+  <!-- 2 · Aprobar → Aprobada -->
   <g data-fase="2">
-    <path class="flujo" d="M386 352 L482 352" marker-end="url(#punta)"/>
-    <rect class="et" x="398" y="312" width="72" height="28" rx="14"/>
-    <text class="et-t" x="434" y="331" text-anchor="middle">Emitir</text>
-    <g transform="translate(490,176)">
-      <rect class="card" width="300" height="334" rx="12" filter="url(#sombra)"/>
-      <rect x="24" y="24" width="96" height="30" rx="15" fill="#3DAA35"/>
-      <text class="estado" x="72" y="44" text-anchor="middle">Emitida</text>
-      <use href="#hoja" transform="translate(88,74)"/>
-      <use href="#si" transform="translate(186,194) scale(1.3)"/>
-      <rect class="fila" x="24" y="258" width="252" height="52" rx="10"/>
-      <use href="#candado" transform="translate(40,273)"/>
-      <text class="acc" x="74" y="290">Editar</text>
-      <text class="no" x="262" y="289" text-anchor="end">Bloqueado</text>
+    <path class="flujo" d="M591 352 L689 352" marker-end="url(#punta)"/>
+    <rect class="et" x="603" y="312" width="72" height="28" rx="14"/>
+    <text class="et-t" x="639" y="331" text-anchor="middle">Aprobar</text>
+    <g transform="translate(695,176)">
+      <rect class="card" width="360" height="334" rx="12" filter="url(#sombra)"/>
+      <rect x="24" y="24" width="108" height="30" rx="15" fill="#3DAA35"/>
+      <text class="estado" x="78" y="44" text-anchor="middle">Aprobada</text>
+      <use href="#hoja" transform="translate(118,74)"/>
+      <use href="#si" transform="translate(180,194) scale(1.3)"/>
+      <rect class="fila" x="24" y="258" width="312" height="52" rx="10"/>
+      <use href="#si" transform="translate(40,273)"/>
+      <text class="acc" x="74" y="290">Convertir a factura</text>
+      <text class="ok" x="326" y="289" text-anchor="end">Permitido</text>
     </g>
   </g>
 
-  <!-- 3 · Anular → Anulada -->
-  <g data-fase="3">
-    <path class="flujo" d="M796 352 L892 352" marker-end="url(#punta)"/>
-    <rect class="et" x="808" y="312" width="72" height="28" rx="14"/>
-    <text class="et-t" x="844" y="331" text-anchor="middle">Anular</text>
-    <g transform="translate(900,176)">
-      <rect class="card" width="300" height="334" rx="12" filter="url(#sombra)"/>
-      <rect x="24" y="24" width="96" height="30" rx="15" fill="#C62828"/>
-      <text class="estado" x="72" y="44" text-anchor="middle">Anulada</text>
-      <use href="#hoja" transform="translate(88,74)"/>
-      <g transform="translate(150,160) rotate(-18)">
-        <rect x="-62" y="-18" width="124" height="34" rx="6" fill="none" stroke="#C62828" stroke-width="3"/>
-        <text class="sello" x="0" y="6" text-anchor="middle">ANULADA</text>
-      </g>
-      <rect class="fila" x="24" y="258" width="252" height="52" rx="10"/>
-      <use href="#candado" transform="translate(40,273)"/>
-      <text class="acc" x="74" y="290">Editar</text>
-      <text class="no" x="262" y="289" text-anchor="end">Bloqueado</text>
-    </g>
-  </g>
-
-  <!-- 4 · Conclusión -->
-  <g data-fase="4"><g transform="translate(80,560)">
+  <!-- 3 · Conclusión -->
+  <g data-fase="3"><g transform="translate(80,560)">
     <rect class="nota" width="1120" height="64" rx="12"/>
     <circle cx="38" cy="32" r="14" fill="#1273B8"/>
     <circle cx="38" cy="25" r="2" fill="#fff"/><rect x="36" y="29" width="4" height="10" rx="2" fill="#fff"/>

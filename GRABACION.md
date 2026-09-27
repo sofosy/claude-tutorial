@@ -197,7 +197,7 @@ así que salen en el video tal cual, en su palabra. Estética de marca: Inter
   del paso (o con `diagrama_cerrar`); no pasa de un paso a otro. Mientras
   está abierta, el cursor se oculta. Una recarga completa la pierde.
   Disponibles: `conceptos-seguridad` (6 fases), `acceso-efectivo` (4),
-  `alcance-propios-todos` (2), `estado-documento` (4); sus textos se editan
+  `alcance-propios-todos` (2), `estado-documento` (3); sus textos se editan
   en el propio html.
 - **Puertas**: cada una deja evento en el segmento (`insignia`, `cartel`
   con `dur`, `diagrama` con `dur` si la tiene, `diagrama_fase`,
