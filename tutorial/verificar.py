@@ -104,9 +104,14 @@ def _posicion(narracion, clave, desde=0):
     return None
 
 
-def _instante_cercano(palabras, clave, t_evento):
-    """De todas las veces que la voz dice `clave`, la más cercana al evento."""
-    buscadas = [_normal(w) for w in str(clave).split()]
+def _instante_cercano(palabras, clave, t_evento, extra=None):
+    """De todas las veces que la voz dice `clave`, la más cercana al evento.
+
+    `palabras` viene del sidecar de audio: la voz oyó las siglas ya pasadas
+    por el mapa combinado (global + `pronunciacion` del guion), así que la
+    clave se busca de la misma forma o nunca calzaría con lo que se oyó.
+    """
+    buscadas = [_normal(w) for w in narrar.para_voz(str(clave), extra).split()]
     dichas = [_normal(p["texto"]) for p in palabras]
     candidatos = [palabras[i]["t"] for i in range(len(dichas) - len(buscadas) + 1)
                   if dichas[i:i + len(buscadas)] == buscadas]
@@ -138,6 +143,7 @@ def revisar_guion(guion):
 
         # cada clic se explica: lleva palabra de sincronía y la narración la dice
         from .grabar import instante
+        extra = guion.get("pronunciacion")
         palabras_narr = [{"t": i, "texto": w} for i, w in enumerate(narr.split())]
         espera_previa = 0
         clics = []
@@ -159,7 +165,7 @@ def revisar_guion(guion):
             elif isinstance(acc["al_decir"], str):
                 pos = _posicion(narr, acc["al_decir"], desde=ultimo + 1)
                 if pos is None:
-                    if instante(palabras_narr, acc["al_decir"]) is None:
+                    if instante(palabras_narr, acc["al_decir"], extra) is None:
                         _hallazgo(h, "ERROR", pid, f"la narración no dice «{acc['al_decir']}» ({clave} «{que}»)")
                     else:
                         _hallazgo(h, "ERROR", pid, f"«{acc['al_decir']}» ({clave} «{que}») aparece en la"
@@ -180,7 +186,7 @@ def revisar_guion(guion):
                 _hallazgo(h, "AVISO", pid, f"se resalta «{m['sel']}» después de pulsarlo: si el clic"
                           " cambia de pantalla el botón ya no existe. Resalta el RESULTADO"
                           " (la fila nueva, el aviso, el diálogo).")
-        if p.get("al_decir") and instante(palabras_narr, p["al_decir"]) is None:
+        if p.get("al_decir") and instante(palabras_narr, p["al_decir"], extra) is None:
             _hallazgo(h, "ERROR", pid, f"la narración no dice «{p['al_decir']}» (marca)")
         for m in p.get("resaltar", []):
             selectores[m["sel"]] += 1
@@ -312,7 +318,7 @@ def informe(guion, salida, video=None):
                            if e["que"] == sel and e["tipo"] == TIPO[accion] and i not in usados), None)
                 if ev:
                     usados.add(seg["eventos"].index(ev))
-                t_pal = _instante_cercano(palabras, clave, ev["t"]) if ev else None
+                t_pal = _instante_cercano(palabras, clave, ev["t"], guion.get("pronunciacion")) if ev else None
                 if t_pal is not None and ev:
                     desfase = ev["t"] - t_pal
                     lineas.append(f"  · «{clave}» a {t_pal:.2f}s, clic a {ev['t']:.2f}s"

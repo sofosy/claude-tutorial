@@ -429,8 +429,12 @@ class Contexto:
     """Lo que toda acción necesita del paso en curso: reloj, línea de tiempo,
     palabras de la narración y dónde registrar eventos y enfoques."""
 
-    def __init__(self, paso, reloj, inicio, palabras):
+    def __init__(self, paso, reloj, inicio, palabras, pronunciacion=None):
         self.paso, self.reloj, self.inicio, self.palabras = paso, reloj, inicio, palabras
+        # extra de `pronunciacion` propio del guion: el ancla `al_decir` tiene
+        # que pasar por el MISMO mapa combinado que usó narrar.py al sintetizar
+        # la voz, o una sigla remapeada solo por el guion nunca se encuentra.
+        self.pronunciacion = pronunciacion
         self.eventos, self.enfoques = [], []
         self.alertas_vistas = set()
         self.diagrama = None   # número del diagrama que cierra el fin del paso
@@ -665,7 +669,7 @@ def _normal(palabra):
     return "".join(c for c in palabra.lower() if c.isalnum())
 
 
-def instante(palabras, clave):
+def instante(palabras, clave, pronunciacion=None):
     """Segundo en que la narración pronuncia `clave` (una o varias palabras).
 
     Es lo que sincroniza la acción con la voz: «Elijo *Borrador* en el filtro»
@@ -676,9 +680,10 @@ def instante(palabras, clave):
     if isinstance(clave, (int, float)):
         return float(clave)
     # las palabras vienen del motor de voz, que oyó las siglas escritas como se
-    # pronuncian: el ancla del guion pasa por el mismo mapa o «Tipo de NCF» no
-    # encontraría nunca su «ene-ce-efe».
-    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave)).split()]
+    # pronuncian: el ancla del guion pasa por el MISMO mapa combinado (global +
+    # `pronunciacion` del guion) que usó narrar.para_voz al sintetizar, o una
+    # sigla remapeada solo por el guion («API» → «a-pe-i») nunca se encuentra.
+    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave), pronunciacion).split()]
     dichas = [_normal(p["texto"]) for p in palabras]
     for i in range(len(dichas) - len(buscadas) + 1):
         if dichas[i:i + len(buscadas)] == buscadas:
@@ -686,20 +691,18 @@ def instante(palabras, clave):
     return None
 
 
-def _instante_desde(palabras, clave, desde):
+def _instante_desde(palabras, clave, desde, pronunciacion=None):
     """Como `instante`, pero busca la primera aparición posterior a `desde`:
     en una narración larga la misma palabra puede repetirse."""
     if isinstance(clave, (int, float)):
         return float(clave)
-    # las palabras vienen del motor de voz, que oyó las siglas escritas como se
-    # pronuncian: el ancla del guion pasa por el mismo mapa o «Tipo de NCF» no
-    # encontraría nunca su «ene-ce-efe».
-    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave)).split()]
+    # ver comentario de `instante`: mismo mapa combinado (global + del guion).
+    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave), pronunciacion).split()]
     dichas = [_normal(p["texto"]) for p in palabras]
     for i in range(len(dichas) - len(buscadas) + 1):
         if palabras[i]["t"] >= desde and dichas[i:i + len(buscadas)] == buscadas:
             return palabras[i]["t"]
-    return instante(palabras, clave)
+    return instante(palabras, clave, pronunciacion)
 
 
 # lo que tarda el cursor en llegar y pulsar: viaje + localizar el elemento,
@@ -719,7 +722,7 @@ def _esperar_palabra(ctx, clave, minimo=ADELANTO, anticipo=ANTICIPO):
     if clave is None:
         ctx.reloj.esperar_hasta(ctx.inicio + minimo)
         return
-    t = _instante_desde(ctx.palabras, clave, ctx.t() + anticipo - 0.3)
+    t = _instante_desde(ctx.palabras, clave, ctx.t() + anticipo - 0.3, ctx.pronunciacion)
     if t is None:
         print(f"    AVISO [{ctx.paso['id']}]: la narración no dice «{clave}»;"
               " la acción va al inicio.")
@@ -1083,7 +1086,7 @@ def grabar(guion, pasos, salida):
                 grab.arrancar()
 
             inicio = grab.ahora()
-            ctx = Contexto(paso, grab, inicio, palabras)
+            ctx = Contexto(paso, grab, inicio, palabras, guion.get("pronunciacion"))
             _CTX[0] = ctx
             grab.sonda = lambda: ctx.sondear_alertas(pag)
             navego, error, meta_marcas, cursor = False, None, [], None
@@ -1118,7 +1121,7 @@ def grabar(guion, pasos, salida):
                     except PlaywrightTimeout:
                         print(f"    sin respuesta; reintento las acciones de {pid}")
                         pag.wait_for_timeout(2000)
-                        _acciones(pag, Contexto(paso, None, 0, palabras), variables)
+                        _acciones(pag, Contexto(paso, None, 0, palabras, guion.get("pronunciacion")), variables)
                         pag.wait_for_selector(paso["esperar"], timeout=espera)
                 if paso.get("pausa_ms"):
                     pag.wait_for_timeout(paso["pausa_ms"])
