@@ -16,6 +16,8 @@ export const ANTICIPO = MOVER + 0.45; // lo que el motor adelanta un clic a su p
 export const ANTICIPO_MARCA = 0.25;
 export const TECLEO = 0.045;     // TECLEO_MS entre teclas
 export const MARCA_MS = 4500;    // resaltar sin durante_ms
+export const CARTEL_MS = 6000;   // cartel sin durante_ms
+export const FASE_S = 1.0;       // lo que dura el revelado de una fase de diagrama
 export const HUECO_MAX = 10;     // R0
 
 // ── PRONUNCIACION: se lee de narrar.py para no divergir; copia de respaldo ──
@@ -111,12 +113,33 @@ export function cargarGuion(arg) {
 
 /** Tipo de acción de una entrada de `acciones`. */
 export const TIPOS = ['click', 'escribir', 'resaltar', 'subir', 'seleccionar', 'marcar',
-  'click_opcional', 'presionar', 'esperar_ms', 'quitar_marca', 'plano_general'];
+  'click_opcional', 'presionar', 'esperar_ms', 'quitar_marca', 'plano_general',
+  'cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar'];
+/** Acciones de la capa (insignia/cartel/diagrama): cambian la pantalla sin mover el cursor. */
+export const TIPOS_CAPA = ['cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar'];
 export const tipoDe = acc => TIPOS.find(k => k in acc) || ('al_decir' in acc ? 'ritmo' : '?');
 export const selDe = acc => {
   const t = tipoDe(acc), v = acc[t];
   return typeof v === 'string' ? v : (v && typeof v === 'object' ? (v.sel || v.ancla || null) : null);
 };
+
+/** Lo que grabar.py anota como `que` del evento de una acción (verificar.que_accion). */
+export const queDe = acc => {
+  const t = tipoDe(acc), v = acc[t];
+  if (t === 'cartel') return v?.titulo || v?.tipo || 'consejo';
+  if (t === 'diagrama') return typeof v === 'string' ? v : v?.nombre;
+  if (t === 'diagrama_fase') return String(v);
+  if (t === 'diagrama_cerrar') return 'cerrar';
+  return selDe(acc);
+};
+
+/** Fases de marca/diagramas/<nombre>.html (máximo data-fase), o null si no existe. */
+export function fasesDiagrama(nombre) {
+  try {
+    const html = fs.readFileSync(path.join(RAIZ, 'marca', 'diagramas', `${nombre}.html`), 'utf8');
+    return Math.max(0, ...[...html.matchAll(/data-fase="(\d+)"/g)].map(m => +m[1]));
+  } catch { return null; }
+}
 
 // ── utilidades de salida ────────────────────────────────────────────────────
 export const fmt = s => {
@@ -199,7 +222,8 @@ export function cambiosDeSegmento(p, alertasPrevias = new Set()) {
   const marcasGuion = (p.paso?.acciones || []).filter(a => 'resaltar' in a);
   const usadas = new Set();
   let ultimoClic = {};
-  for (const ev of seg.eventos || []) {
+  const eventos = seg.eventos || [];
+  for (const [k, ev] of eventos.entries()) {
     const t = ev.t;
     switch (ev.tipo) {
       case 'navegar': iv.push([t - 0.3, t + 1.5]); break;
@@ -218,6 +242,15 @@ export function cambiosDeSegmento(p, alertasPrevias = new Set()) {
       case 'alerta':
         if (!(t < 1.5 && alertasPrevias.has(ev.que))) iv.push([t - 0.3, t + 0.5]);
         break;
+      // la capa anota su duración en el evento (`dur`, segundos)
+      case 'cartel': iv.push([t - 0.3, t + (ev.dur ?? CARTEL_MS / 1000)]); break;
+      case 'diagrama': {
+        // sin `dur` queda abierto hasta diagrama_cerrar (o el fin del segmento)
+        const cierre = eventos.slice(k + 1).find(e => e.tipo === 'diagrama_cerrar' || e.tipo === 'diagrama');
+        iv.push([t - 0.3, ev.dur != null ? t + ev.dur : (cierre ? cierre.t : seg.duracion)]);
+        break;
+      }
+      case 'diagrama_fase': iv.push([t - 0.3, t + FASE_S]); break;
       default: iv.push([t - 0.3, t + 0.5]);
     }
   }

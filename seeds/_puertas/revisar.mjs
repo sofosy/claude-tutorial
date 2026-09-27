@@ -12,8 +12,8 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
-  RAIZ, PAD, ADELANTO, ANTICIPO, ANTICIPO_MARCA, TECLEO, MARCA_MS, HUECO_MAX,
-  cargarGuion, tokens, posiciones, tipoDe, selDe, fmt, corto, huecos,
+  RAIZ, PAD, ADELANTO, ANTICIPO, ANTICIPO_MARCA, TECLEO, MARCA_MS, HUECO_MAX, CARTEL_MS, FASE_S,
+  cargarGuion, tokens, posiciones, tipoDe, selDe, queDe, fasesDiagrama, TIPOS_CAPA, fmt, corto, huecos,
 } from './comun.mjs';
 
 const args = process.argv.slice(2);
@@ -63,6 +63,7 @@ function revisarGuion(arg) {
   // marcas que siguen encendidas al pasar de un paso a otro (el temporizador
   // del motor corre sobre el reloj del maestro, no del paso)
   let marcasVivas = [];
+  let insigniaPrevia = null;
 
   guion.pasos.forEach((paso, ip) => {
     const pid = paso.id;
@@ -82,6 +83,24 @@ function revisarGuion(arg) {
     let finTecleo = null;
     let ultimaMarca = null;
     const usadas = new Set();
+    // diagrama abierto en este punto del paso: {t, fases} (lo cierra el fin de la voz)
+    let diag = null;
+    const abrirDiag = (spec, t, durS) => {
+      const nombre = typeof spec === 'string' ? spec : spec?.nombre;
+      const fases = fasesDiagrama(nombre);
+      if (fases == null) H('ERROR', pid, `no existe marca/diagramas/${nombre}.html`);
+      if (diag) cerrarDiag(t);
+      diag = { t, fases: fases ?? 0, fin: durS != null ? t + durS : null };
+      (typeof spec === 'object' && spec?.pasos_ms || []).forEach(ms => cambios.push([t + ms / 1000, t + ms / 1000 + FASE_S]));
+    };
+    const cerrarDiag = t => { if (diag) { cambios.push([diag.t, diag.fin != null ? Math.min(diag.fin, t) : t]); diag = null; } };
+
+    // insignia: fija todo el paso; cambia la pantalla solo cuando cambia
+    const ins = paso.insignia ?? null;
+    if (ins !== null && (typeof ins !== 'object' || !['con', 'sin', 'info'].includes(ins.tipo) || !ins.texto))
+      H('ERROR', pid, '`insignia` debe ser {tipo: con|sin|info, texto}');
+    if (JSON.stringify(ins) !== JSON.stringify(insigniaPrevia)) cambios.push([0, 0.4]);
+    insigniaPrevia = ins;
 
     // un ancla se busca como en grabar._esperar_palabra: la primera aparición
     // posterior a (reloj + anticipo − 0,3); si no hay, el motor toma la
@@ -115,13 +134,15 @@ function revisarGuion(arg) {
     }
     // marcas del paso anterior que siguen encendidas
     for (const [a, b] of marcasVivas) cambios.push([a - t0, b - t0]);
+    // diagrama de paso: abre al empezar (tras navegar) y dura toda la voz
+    if (paso.diagrama) abrirDiag(paso.diagrama, now || ADELANTO, null);
 
     const acciones = paso.acciones || [];
     acciones.forEach((acc, ia) => {
       const tipo = tipoDe(acc);
       const sel = selDe(acc);
       const esClic = ['click', 'escribir', 'marcar', 'click_opcional', 'subir', 'seleccionar'].includes(tipo);
-      const anticipo = tipo === 'resaltar' ? ANTICIPO_MARCA : ANTICIPO;
+      const anticipo = tipo === 'resaltar' || TIPOS_CAPA.includes(tipo) ? ANTICIPO_MARCA : ANTICIPO;
 
       if (tipo === 'esperar_ms') {
         const sig = acciones.slice(ia + 1).find(x => tipoDe(x) !== 'esperar_ms');
@@ -131,7 +152,7 @@ function revisarGuion(arg) {
       }
       if (tipo === '?') { H('ERROR', pid, `acción desconocida: ${corto(JSON.stringify(acc), 80)}`); return; }
 
-      const a = anclar(acc.al_decir, anticipo, `${tipo} ${corto(sel || '', 40)}`);
+      const a = anclar(acc.al_decir, anticipo, `${tipo} ${corto(sel || queDe(acc) || '', 40)}`);
       if (a && finTecleo != null && a.t < finTecleo + 2 && tipo !== 'ritmo')
         H('ERROR', pid, `R2: «${acc.al_decir}» (${a.t.toFixed(1)} s) cae antes de que termine el tecleo anterior + 2 s (${(finTecleo + 2).toFixed(1)} s)`);
       let s = a ? Math.max(now, a.t - anticipo) : (ia === 0 && !paso.navegar ? Math.max(now, ADELANTO) : now);
@@ -184,12 +205,44 @@ function revisarGuion(arg) {
         case 'presionar': te = s + 0.05; cambios.push([te, te + 0.5]); now = te + 0.1; break;
         case 'quitar_marca': te = s; if (ultimaMarca) { ultimaMarca.fin = Math.min(ultimaMarca.fin, te); } now = s; break;
         case 'plano_general': case 'ritmo': te = s; now = s; break;
+        case 'cartel': {
+          te = s + 0.05;
+          const c = acc.cartel;
+          if (!c || typeof c !== 'object' || !['consejo', 'cuidado'].includes(c.tipo ?? 'consejo') || !c.texto)
+            H('ERROR', pid, '`cartel` debe ser {tipo: consejo|cuidado, titulo?, texto}');
+          cambios.push([te, te + (acc.durante_ms ?? CARTEL_MS) / 1000]);
+          now = te + 0.05;
+          break;
+        }
+        case 'diagrama': {
+          te = s + 0.1;
+          const spec = typeof acc.diagrama === 'string' ? { nombre: acc.diagrama } : { ...acc.diagrama };
+          if (acc.pasos_ms) spec.pasos_ms = acc.pasos_ms;
+          abrirDiag(spec, te, acc.durante_ms != null ? acc.durante_ms / 1000 : null);
+          now = te + 0.1;
+          break;
+        }
+        case 'diagrama_fase': {
+          te = s + 0.05;
+          const n = acc.diagrama_fase;
+          if (!diag) H('ERROR', pid, `diagrama_fase ${n} sin un diagrama abierto antes en el paso`);
+          else if (!Number.isInteger(n) || n < 1 || n > diag.fases) H('ERROR', pid, `diagrama_fase ${n}: el diagrama tiene fases 1–${diag.fases}`);
+          cambios.push([te, te + FASE_S]);
+          now = te + 0.05;
+          break;
+        }
+        case 'diagrama_cerrar':
+          te = s + 0.05;
+          if (!diag) H('AVISO', pid, 'diagrama_cerrar sin diagrama abierto');
+          cerrarDiag(te + 0.45);
+          now = te + 0.05;
+          break;
       }
       if (tipo === 'quitar_marca') {
         // recorta la marca encendida
         for (const c of cambios) if (c[1] > te && c[0] < te) c[1] = te;
       }
-      if (tipo !== 'ritmo') linea.push({ t: te, tipo, que: sel || '', palabra: a?.palabra, tp: a?.t });
+      if (tipo !== 'ritmo') linea.push({ t: te, tipo, que: sel || queDe(acc) || '', palabra: a?.palabra, tp: a?.t });
     });
 
     // esperar (selector) a nivel de paso
@@ -212,6 +265,8 @@ function revisarGuion(arg) {
     }
 
     const fin = Math.max(W.voz + PAD, now + 0.2);
+    // el motor cierra al final de la voz el diagrama que no tiene tiempo propio
+    if (diag) cerrarDiag(diag.fin != null ? diag.fin : Math.min(fin, W.voz + 0.55));
     if (fin > PASO_MAX) H('AVISO', pid, `paso de ${fin.toFixed(0)} s (> ${PASO_MAX} s): pártelo en dos tareas`);
     if (now > W.voz + PAD + 0.3) H('AVISO', pid, `las acciones terminan ${(now - W.voz - PAD).toFixed(1)} s después de la voz: silencio al final`);
 

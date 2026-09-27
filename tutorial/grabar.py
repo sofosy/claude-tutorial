@@ -65,6 +65,10 @@ CALIDAD_JPEG = 90
 ZOOM_MARCA = 1.3     # acercamiento cuando la voz señala algo
 ZOOM_ACCION = 1.18   # acercamiento suave sobre lo que se pulsa o se escribe
 MARCA_MS = 4500      # una marca transitoria sin `durante_ms` dura esto
+CARTEL_MS = 6000     # un cartel sin `durante_ms` dura esto
+DIAGRAMAS = RAIZ / "marca" / "diagramas"
+# acciones que no mueven el cursor: caen en su palabra con el anticipo corto
+ACCIONES_MARCA = ("resaltar", "cartel", "diagrama", "diagrama_fase", "diagrama_cerrar")
 
 _HEX = {k: "#%02x%02x%02x" % v for k, v in COLORES.items()}
 
@@ -145,6 +149,77 @@ JS_CAPA = r"""
   halo.style.transitionDuration = '0ms';
   halo.style.transform = `translate(${pos[0]}px,${pos[1]}px) scale(.6)`;
 
+  // ---- insignia de paso, cartel y lámina de diagrama. Viven en un shadow
+  // root: el CSS global de la app no los toca, el suyo no se escapa a la app,
+  // y ni la sustitución de privacidad ni las sondas (alertas, barras fijas)
+  // los ven. Van DEBAJO del cursor (primer hijo de la capa).
+  const ui = document.createElement('div'); ui.id = '__tut_ui';
+  ui.style.cssText = 'position:absolute;inset:0;pointer-events:none';
+  capa.insertBefore(ui, capa.firstChild);
+  const sr = ui.attachShadow({mode: 'open'});
+  sr.innerHTML = `<style>
+    :host{all:initial}
+    *{box-sizing:border-box}
+    #ins,#car,#lam{font-family:Inter,'Inter var',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+      -webkit-font-smoothing:antialiased}
+    #ins{position:absolute;top:64px;left:50%;height:36px;max-width:640px;display:flex;align-items:center;gap:9px;
+      padding:0 16px 0 7px;border-radius:18px;background:rgba(7,33,52,.9);color:#fff;font-size:14px;font-weight:600;
+      white-space:nowrap;border:1px solid rgba(255,255,255,.14);box-shadow:0 6px 18px rgba(7,33,52,.28);
+      opacity:0;transform:translate(-50%,-8px);transition:opacity .3s ease,transform .3s ease}
+    #ins.on{opacity:1;transform:translate(-50%,0)}
+    #ins svg{width:22px;height:22px;flex:none}
+    #ins span{overflow:hidden;text-overflow:ellipsis}
+    #car{position:absolute;left:88px;bottom:72px;width:max-content;max-width:420px;display:flex;gap:14px;
+      align-items:flex-start;padding:16px 20px 16px 16px;border-radius:12px;background:rgba(7,33,52,.94);color:#fff;
+      border:1px solid rgba(255,255,255,.12);box-shadow:0 12px 32px rgba(7,33,52,.32),0 2px 6px rgba(0,0,0,.12);
+      opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s cubic-bezier(.22,.8,.25,1)}
+    #car.on{opacity:1;transform:none}
+    #car .ico{width:40px;height:40px;border-radius:10px;flex:none;display:grid;place-items:center}
+    #car .ico svg{width:24px;height:24px}
+    #car b{display:block;font-size:15px;font-weight:700;margin:1px 0 4px}
+    #car p{margin:0;font-size:14.5px;line-height:1.45;font-weight:400;color:rgba(255,255,255,.88)}
+    #lam{position:absolute;inset:0;display:none;opacity:0;transition:opacity .4s ease}
+    #lam.on{opacity:1}
+    #lam.claro{background:#F6F8FA;--tinta:#072134;--tinta-2:#4A5D6E;--tarjeta:#FFFFFF;--borde:#DCE3EA;--suave:#EEF2F6}
+    #lam.oscuro{background:#072134;--tinta:#FFFFFF;--tinta-2:#B6C6D4;--tarjeta:#0E2E47;--borde:#2A4C66;--suave:#123754}
+    #lam .dg{position:absolute;inset:0}
+    #lam .dg>svg{display:block;width:100%;height:100%}
+    #lam [data-fase]{opacity:0;transform:translateY(14px);
+      transition:opacity .5s ease,transform .6s cubic-bezier(.22,.8,.25,1)}
+    #lam [data-fase].on{opacity:1;transform:none}
+  </style><div id="ins"></div><div id="lam"></div><div id="car"></div>`;
+  const ins = sr.getElementById('ins'), car = sr.getElementById('car'), lam = sr.getElementById('lam');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const ICONO_INS = {
+    con: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#5BD34E"/><path d="M7 12.4l3.3 3.3L17.2 8.8" fill="none" stroke="#072134" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    sin: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#C62828"/><rect x="7.5" y="10.8" width="9" height="7.2" rx="1.6" fill="#fff"/><path d="M9.4 10.8V9a2.6 2.6 0 0 1 5.2 0v1.8" fill="none" stroke="#fff" stroke-width="1.9"/></svg>',
+    info: '<svg viewBox="0 0 24 24"><path d="M12 1.5l8.5 3.2v6.1c0 5.3-3.6 9.2-8.5 11.5C7.1 20 3.5 16.1 3.5 10.8V4.7z" fill="#2F8FDB"/><circle cx="12" cy="7.6" r="1.4" fill="#fff"/><rect x="10.8" y="10.2" width="2.4" height="6.6" rx="1.2" fill="#fff"/></svg>',
+  };
+  const ICONO_CAR = {
+    consejo: ['#F5A623', '<svg viewBox="0 0 24 24" fill="none" stroke="#072134" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21.2h4"/><path d="M12 2.8a6.2 6.2 0 0 0-3.7 11.2c.7.5 1.1 1.2 1.1 2V17h5.2v-1c0-.8.4-1.5 1.1-2A6.2 6.2 0 0 0 12 2.8z"/></svg>'],
+    cuidado: ['#C62828', '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2L2.4 20h19.2z"/><path d="M12 9.6v4.8"/><circle cx="12" cy="17.2" r=".6" fill="#fff"/></svg>'],
+  };
+  let insActual = null, carSeq = 0, lamCierre = null;
+  const pintarIns = (d, animar) => {
+    const clave = d ? JSON.stringify(d) : null;
+    if (clave === insActual) return;
+    insActual = clave;
+    try { d ? sessionStorage.setItem('__tutIns', clave) : sessionStorage.removeItem('__tutIns'); } catch (e) {}
+    if (!d) { ins.classList.remove('on'); return; }
+    ins.innerHTML = (ICONO_INS[d.tipo] || ICONO_INS.info) + `<span>${esc(d.texto)}</span>`;
+    ins.style.top = d.arriba != null ? d.arriba + 'px' : '';
+    if (animar) { ins.classList.remove('on'); void ins.offsetWidth; ins.classList.add('on'); return; }
+    // tras una recarga completa la insignia ya estaba: vuelve sin animación
+    ins.style.transition = 'none'; ins.classList.add('on'); void ins.offsetWidth; ins.style.transition = '';
+  };
+  try { const g = sessionStorage.getItem('__tutIns'); if (g) pintarIns(JSON.parse(g), false); } catch (e) {}
+  const faseLam = n => {
+    const dg = lam.querySelector('.dg'); if (!dg) return;
+    dg.querySelectorAll('[data-fase]').forEach(e => e.classList.toggle('on', +e.dataset.fase <= n));
+    for (let k = 1; k <= 12; k++) dg.classList.toggle('fase-' + k, k <= n);
+    dg.dataset.actual = n;
+  };
+
   window.__tut = {
     move(x, y, ms) {
       cur.style.transitionDuration = ms + 'ms';
@@ -180,6 +255,37 @@ JS_CAPA = r"""
     priv(p) {
       pares = p; try { sessionStorage.setItem('__tutPares', JSON.stringify(p)); } catch (e) {}
       aplicar(document.body);
+    },
+    // insignia del paso: {tipo: con|sin|info, texto, arriba?} o null. Queda en
+    // sessionStorage, así que una recarga completa la vuelve a pintar.
+    insignia(d) { pintarIns(d || null, true); },
+    cartel(d) {
+      const [fondo, svg] = ICONO_CAR[d.tipo] || ICONO_CAR.consejo;
+      const titulo = d.titulo || (d.tipo === 'cuidado' ? 'Cuidado' : 'Consejo');
+      car.innerHTML = `<div class="ico" style="background:${fondo}">${svg}</div>` +
+        `<div><b>${esc(titulo)}</b><p>${esc(d.texto)}</p></div>`;
+      car.classList.remove('on'); void car.offsetWidth; car.classList.add('on');
+      return ++carSeq;
+    },
+    cartelFuera(id) { if (id == null || id === carSeq) car.classList.remove('on'); },
+    // lámina a pantalla completa con un diagrama (fragmento HTML+SVG). Los
+    // elementos con data-fase="N" aparecen cuando la fase llega a N; el
+    // contenedor lleva además las clases fase-1…fase-N para efectos de CSS.
+    diagrama(html, o) {
+      o = o || {};
+      if (lamCierre) { clearTimeout(lamCierre); lamCierre = null; }
+      lam.className = o.fondo === 'oscuro' ? 'oscuro' : 'claro';
+      lam.innerHTML = `<div class="dg">${html}</div>`;
+      lam.style.display = 'block'; void lam.offsetWidth; lam.classList.add('on');
+      cur.style.opacity = 0; halo.style.visibility = 'hidden';
+      const f = o.fase == null ? 1 : o.fase;
+      setTimeout(() => faseLam(f), 250);
+    },
+    fase(n) { faseLam(n); },
+    diagramaCerrar() {
+      lam.classList.remove('on');
+      cur.style.opacity = ''; halo.style.visibility = '';
+      lamCierre = setTimeout(() => { lam.style.display = 'none'; lam.innerHTML = ''; lamCierre = null; }, 450);
     }
   };
   };
@@ -327,6 +433,7 @@ class Contexto:
         self.paso, self.reloj, self.inicio, self.palabras = paso, reloj, inicio, palabras
         self.eventos, self.enfoques = [], []
         self.alertas_vistas = set()
+        self.diagrama = None   # número del diagrama que cierra el fin del paso
 
     def sondear_alertas(self, pag):
         """Registra cada diálogo o aviso que la app muestre durante el paso.
@@ -347,9 +454,13 @@ class Contexto:
     def t(self):
         return round(self.reloj.ahora() - self.inicio, 3) if self.reloj else 0.0
 
-    def registro(self, tipo, que, loc=None):
-        """Anota el evento y, si hay elemento, la medición de si se ve entero."""
-        ev = {"t": self.t(), "tipo": tipo, "que": que}
+    def registro(self, tipo, que, loc=None, **extra):
+        """Anota el evento y, si hay elemento, la medición de si se ve entero.
+
+        `extra` va tal cual al evento (p. ej. `dur`: segundos que el cambio
+        sigue en pantalla, que las puertas cuentan como «pantalla que cambia»).
+        """
+        ev = {"t": self.t(), "tipo": tipo, "que": que, **extra}
         if loc is not None:
             m = _medir_visible(loc)
             ev["visible"] = m.get("ok")
@@ -667,6 +778,87 @@ def _resaltar(pag, marca, ctx, cursor=True):
 
 
 _MARCA_SEQ = [0]
+_DIAG_SEQ = [0]   # número del diagrama abierto: los temporizadores solo tocan el suyo
+_CTX = [None]     # contexto del paso en curso (un temporizador puede caer en el siguiente)
+
+
+def _ctx_vivo(ctx):
+    return _CTX[0] or ctx
+
+
+# ------------------------------------------ insignia, cartel y diagrama (capa)
+
+def _insignia(pag, datos):
+    """Pinta (o quita, con None) la insignia fija del paso: arriba al centro."""
+    try:
+        pag.evaluate("d => window.__tut && __tut.insignia(d)", datos or None)
+    except Exception:
+        pass  # página a medio cargar: el init script la repinta desde sessionStorage
+
+
+def _cartel(pag, ctx, acc):
+    """Tarjeta flotante abajo a la izquierda que se va sola a los `durante_ms`."""
+    datos = acc["cartel"]
+    durante = acc.get("durante_ms", CARTEL_MS)
+    mia = pag.evaluate("d => window.__tut ? __tut.cartel(d) : null", datos)
+    ctx.registro("cartel", datos.get("titulo") or datos.get("tipo", "consejo"),
+                 dur=round(durante / 1000, 3))
+    if ctx.reloj:
+        ctx.reloj.programar(ctx.reloj.ahora() + durante / 1000,
+                            lambda: pag.evaluate("i => window.__tut && __tut.cartelFuera(i)", mia))
+
+
+def _spec_diagrama(spec):
+    """`"nombre"` o `{"nombre", "fondo", "fase", "pasos_ms"}` → dict."""
+    return {"nombre": spec} if isinstance(spec, str) else dict(spec)
+
+
+def _abrir_diagrama(pag, ctx, spec, durante=None):
+    """Lámina a pantalla completa con `marca/diagramas/<nombre>.html`.
+
+    Arranca en la fase 1 (o `fase`). `pasos_ms` revela las fases siguientes
+    solas, a esos milisegundos desde la apertura; `diagrama_fase` las ancla a
+    una palabra. Con `durante` se cierra sola; sin él, al acabar la voz del
+    paso o con `diagrama_cerrar`.
+    """
+    nombre = spec["nombre"]
+    ruta = DIAGRAMAS / f"{nombre}.html"
+    if not ruta.exists():
+        raise SelectorAusente(f"no existe el diagrama marca/diagramas/{nombre}.html")
+    fase = spec.get("fase", 1)
+    pag.evaluate("([h,o]) => window.__tut && __tut.diagrama(h,o)",
+                 [ruta.read_text(encoding="utf-8"), {"fondo": spec.get("fondo", "claro"), "fase": fase}])
+    _DIAG_SEQ[0] += 1
+    mia = _DIAG_SEQ[0]
+    extra = {"dur": round(durante / 1000, 3)} if durante else {}
+    ctx.registro("diagrama", nombre, **extra)
+    ctx.enfocar(None, 1.0)
+    ctx.diagrama = None if durante else mia   # sin tiempo propio: lo cierra el fin del paso
+    if not ctx.reloj:
+        return
+    t0 = ctx.reloj.ahora()
+    for i, ms in enumerate(spec.get("pasos_ms") or []):
+        def revelar(n=fase + 1 + i):
+            if _DIAG_SEQ[0] == mia:
+                _fase_diagrama(pag, _ctx_vivo(ctx), n)
+        ctx.reloj.programar(t0 + ms / 1000, revelar)
+    if durante:
+        def cerrar():
+            if _DIAG_SEQ[0] == mia:
+                _cerrar_diagrama(pag, _ctx_vivo(ctx))
+        ctx.reloj.programar(t0 + durante / 1000, cerrar)
+
+
+def _fase_diagrama(pag, ctx, n):
+    pag.evaluate("n => window.__tut && __tut.fase(n)", n)
+    ctx.registro("diagrama_fase", str(n))
+
+
+def _cerrar_diagrama(pag, ctx):
+    _DIAG_SEQ[0] += 1   # invalida los temporizadores del que se cierra
+    ctx.diagrama = None
+    pag.evaluate("window.__tut && __tut.diagramaCerrar()")
+    ctx.registro("diagrama_cerrar", "cerrar")
 
 
 def _acciones(pag, ctx, variables):
@@ -680,6 +872,9 @@ def _acciones(pag, ctx, variables):
     - `resaltar`: marca transitoria sobre un elemento (con `durante_ms`).
     - `quitar_marca`: apaga la marca y abre el plano.
     - `plano_general`: solo abre el plano (zoom 1) sin tocar la marca.
+    - `cartel`: tarjeta de consejo/cuidado abajo a la izquierda (`durante_ms`).
+    - `diagrama`, `diagrama_fase`, `diagrama_cerrar`: lámina a pantalla
+      completa con revelado por fases (ver GRABACION.md).
     """
     paso = ctx.paso
     for acc in paso.get("acciones", []):
@@ -688,7 +883,7 @@ def _acciones(pag, ctx, variables):
         if acc.get("al_decir") is not None:
             # una marca no necesita que el cursor «llegue»: cae en la palabra
             _esperar_palabra(ctx, acc["al_decir"], minimo=0,
-                             anticipo=0.25 if "resaltar" in acc else ANTICIPO)
+                             anticipo=0.25 if any(k in acc for k in ACCIONES_MARCA) else ANTICIPO)
         if "click" in acc:
             _clic(pag, acc["click"], ctx)
         elif "escribir" in acc:
@@ -699,6 +894,18 @@ def _acciones(pag, ctx, variables):
                 else dict(acc["resaltar"])
             marca.setdefault("durante_ms", MARCA_MS)
             _resaltar(pag, marca, ctx, cursor=acc.get("cursor", True))
+        elif "cartel" in acc:
+            _cartel(pag, ctx, acc)
+        elif "diagrama" in acc:
+            spec = _spec_diagrama(acc["diagrama"])
+            for k in ("fondo", "fase", "pasos_ms"):
+                if k in acc:
+                    spec[k] = acc[k]
+            _abrir_diagrama(pag, ctx, spec, acc.get("durante_ms"))
+        elif "diagrama_fase" in acc:
+            _fase_diagrama(pag, ctx, int(acc["diagrama_fase"]))
+        elif "diagrama_cerrar" in acc:
+            _cerrar_diagrama(pag, ctx)
         elif "quitar_marca" in acc:
             pag.evaluate("window.__tut && __tut.clear()")
             ctx.enfocar(None, 1.0)
@@ -852,6 +1059,7 @@ def grabar(guion, pasos, salida):
             _empujar_privacidad(pag, mapa_priv)
 
         grab = None
+        insignia_previa = None
         for paso in pasos:
             pid = paso["id"]
             print(f"  · {pid}")
@@ -876,8 +1084,15 @@ def grabar(guion, pasos, salida):
 
             inicio = grab.ahora()
             ctx = Contexto(paso, grab, inicio, palabras)
+            _CTX[0] = ctx
             grab.sonda = lambda: ctx.sondear_alertas(pag)
             navego, error, meta_marcas, cursor = False, None, [], None
+            # la insignia dura TODO el paso; un paso sin ella la quita
+            insignia = paso.get("insignia") or None
+            _insignia(pag, insignia)
+            if insignia != insignia_previa:
+                ctx.registro("insignia", insignia.get("texto", "") if insignia else "")
+            insignia_previa = insignia
             try:
                 if paso.get("navegar"):
                     # la marca del paso anterior no debe sobrevivir bajo la barra nueva
@@ -888,8 +1103,12 @@ def grabar(guion, pasos, salida):
                     ctx.registro("navegar", paso["navegar"])
                     pag.evaluate("window.__tut && __tut.clear()")
                     _empujar_privacidad(pag, mapa_priv)
+                    # la navegación pudo cambiar de documento (u origen): se re-empuja
+                    _insignia(pag, insignia)
                 elif paso.get("acciones") and paso["acciones"][0].get("al_decir") is None:
                     grab.esperar_hasta(inicio + ADELANTO)
+                if paso.get("diagrama"):
+                    _abrir_diagrama(pag, ctx, _spec_diagrama(paso["diagrama"]))
 
                 _acciones(pag, ctx, variables)
                 if paso.get("esperar"):
@@ -943,6 +1162,10 @@ def grabar(guion, pasos, salida):
                 print(f"    ERROR [{pid}]: {error}")
                 pag.evaluate("window.__tut && __tut.clear()")
 
+            if ctx.diagrama is not None and _DIAG_SEQ[0] == ctx.diagrama:
+                # la lámina se va con la última palabra: el fundido cae en este paso
+                grab.esperar_hasta(inicio + dur_audio + 0.1)
+                _cerrar_diagrama(pag, ctx)
             grab.esperar_hasta(inicio + dur_audio + PAD)
             grab.tick()
             ctx.sondear_alertas(pag)

@@ -1,0 +1,116 @@
+<!--
+  Diagrama «alcance-propios-todos» · lámina de 1280×720 (viewBox).
+  Fases: 1 la misma lista de 6 documentos en las dos columnas · 2 el filtro:
+  en «Solo los propios» los documentos de otros se apagan con candado.
+  El apagado usa la clase .ajeno + .fase-2 (el motor pone fase-1…fase-N en el
+  contenedor); los candados y contadores son <g data-fase="2">.
+  Autores: Ana (teal, la persona del ejemplo), Luis (azul), Marta (ámbar).
+  Textos: edítalos en su <text>.
+-->
+<style>
+  svg{font-family:Inter,'Inter var',system-ui,'Segoe UI',Roboto,sans-serif}
+  .t-tit{font-size:30px;font-weight:800;fill:var(--tinta)}
+  .t-sub{font-size:17px;font-weight:500;fill:var(--tinta-2)}
+  .card{fill:var(--tarjeta);stroke:var(--borde);stroke-width:1.5}
+  .h{font-size:22px;font-weight:800;fill:var(--tinta)}
+  .hc{font-size:14px;font-weight:500;fill:var(--tinta-2)}
+  .fila{fill:var(--suave)}
+  .doc{font-size:15px;font-weight:700;fill:var(--tinta)}
+  .aut{font-size:14px;font-weight:600;fill:var(--tinta-2)}
+  .ini{font-size:13px;font-weight:800;fill:#fff}
+  .ley{font-size:14px;font-weight:600;fill:var(--tinta-2)}
+  .cuenta{font-size:14px;font-weight:800;fill:#fff}
+  .ajeno{transition:opacity .6s ease}
+  .fase-2 .ajeno{opacity:.22}
+</style>
+<svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="sombra" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#072134" flood-opacity=".10"/>
+    </filter>
+    <g id="candado">
+      <circle cx="10" cy="10" r="12" fill="#C62828"/>
+      <rect x="5.5" y="9" width="9" height="7" rx="1.5" fill="#fff"/>
+      <path d="M7.4 9V7.4a2.6 2.6 0 0 1 5.2 0V9" fill="none" stroke="#fff" stroke-width="1.8"/>
+    </g>
+    <g id="embudo"><path d="M3 4h14l-5.5 6.5V16l-3 1.5v-7z" fill="#fff"/></g>
+  </defs>
+
+  <rect x="80" y="60" width="48" height="6" rx="3" fill="#5BD34E"/>
+  <text class="t-tit" x="80" y="106">Alcance: ¿sobre qué registros actúa el permiso?</text>
+  <text class="t-sub" x="80" y="136">El mismo permiso «Facturas · Ver» para Ana, con dos alcances distintos.</text>
+  <g transform="translate(880,156)">
+    <circle cx="6" cy="0" r="6" fill="#04B19E"/><text class="ley" x="18" y="5">Ana</text>
+    <circle cx="86" cy="0" r="6" fill="#1273B8"/><text class="ley" x="98" y="5">Luis</text>
+    <circle cx="166" cy="0" r="6" fill="#F5A623"/><text class="ley" x="178" y="5">Marta</text>
+  </g>
+
+  <g data-fase="1">
+    <!-- Columna «Todos» -->
+    <g transform="translate(80,176)">
+      <rect class="card" width="540" height="460" rx="12" filter="url(#sombra)"/>
+      <text class="h" x="28" y="46">Todos</text>
+      <text class="hc" x="28" y="72">Ve los documentos de cualquier persona</text>
+      <g transform="translate(24,96)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#04B19E"/><text class="ini" x="28" y="29" text-anchor="middle">A</text><text class="doc" x="56" y="29">Factura FAC-0101</text><text class="aut" x="470" y="29" text-anchor="end">Ana</text>
+      </g>
+      <g transform="translate(24,154)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#1273B8"/><text class="ini" x="28" y="29" text-anchor="middle">L</text><text class="doc" x="56" y="29">Factura FAC-0102</text><text class="aut" x="470" y="29" text-anchor="end">Luis</text>
+      </g>
+      <g transform="translate(24,212)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#F5A623"/><text class="ini" x="28" y="29" text-anchor="middle">M</text><text class="doc" x="56" y="29">Factura FAC-0103</text><text class="aut" x="470" y="29" text-anchor="end">Marta</text>
+      </g>
+      <g transform="translate(24,270)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#04B19E"/><text class="ini" x="28" y="29" text-anchor="middle">A</text><text class="doc" x="56" y="29">Factura FAC-0104</text><text class="aut" x="470" y="29" text-anchor="end">Ana</text>
+      </g>
+      <g transform="translate(24,328)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#1273B8"/><text class="ini" x="28" y="29" text-anchor="middle">L</text><text class="doc" x="56" y="29">Factura FAC-0105</text><text class="aut" x="470" y="29" text-anchor="end">Luis</text>
+      </g>
+      <g transform="translate(24,386)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#F5A623"/><text class="ini" x="28" y="29" text-anchor="middle">M</text><text class="doc" x="56" y="29">Factura FAC-0106</text><text class="aut" x="470" y="29" text-anchor="end">Marta</text>
+      </g>
+    </g>
+
+    <!-- Columna «Solo los propios» -->
+    <g transform="translate(660,176)">
+      <rect class="card" width="540" height="460" rx="12" filter="url(#sombra)"/>
+      <text class="h" x="28" y="46">Solo los propios</text>
+      <text class="hc" x="28" y="72">Ve únicamente lo que Ana creó</text>
+      <g transform="translate(24,96)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#04B19E"/><text class="ini" x="28" y="29" text-anchor="middle">A</text><text class="doc" x="56" y="29">Factura FAC-0101</text><text class="aut" x="470" y="29" text-anchor="end">Ana</text>
+      </g>
+      <g class="ajeno" transform="translate(24,154)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#1273B8"/><text class="ini" x="28" y="29" text-anchor="middle">L</text><text class="doc" x="56" y="29">Factura FAC-0102</text><text class="aut" x="430" y="29" text-anchor="end">Luis</text>
+      </g>
+      <g class="ajeno" transform="translate(24,212)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#F5A623"/><text class="ini" x="28" y="29" text-anchor="middle">M</text><text class="doc" x="56" y="29">Factura FAC-0103</text><text class="aut" x="430" y="29" text-anchor="end">Marta</text>
+      </g>
+      <g transform="translate(24,270)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#04B19E"/><text class="ini" x="28" y="29" text-anchor="middle">A</text><text class="doc" x="56" y="29">Factura FAC-0104</text><text class="aut" x="470" y="29" text-anchor="end">Ana</text>
+      </g>
+      <g class="ajeno" transform="translate(24,328)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#1273B8"/><text class="ini" x="28" y="29" text-anchor="middle">L</text><text class="doc" x="56" y="29">Factura FAC-0105</text><text class="aut" x="430" y="29" text-anchor="end">Luis</text>
+      </g>
+      <g class="ajeno" transform="translate(24,386)">
+        <rect class="fila" width="492" height="48" rx="10"/><circle cx="28" cy="24" r="15" fill="#F5A623"/><text class="ini" x="28" y="29" text-anchor="middle">M</text><text class="doc" x="56" y="29">Factura FAC-0106</text><text class="aut" x="430" y="29" text-anchor="end">Marta</text>
+      </g>
+    </g>
+  </g>
+
+  <!-- 2 · El filtro: contadores y candados -->
+  <g data-fase="2">
+    <g transform="translate(496,200)">
+      <rect width="100" height="32" rx="16" fill="#3DAA35"/>
+      <text class="cuenta" x="50" y="21" text-anchor="middle">6 de 6</text>
+    </g>
+    <g transform="translate(1062,200)">
+      <rect width="114" height="32" rx="16" fill="#04B19E"/>
+      <use href="#embudo" transform="translate(12,6)"/>
+      <text class="cuenta" x="66" y="21" text-anchor="middle">2 de 6</text>
+    </g>
+    <use href="#candado" transform="translate(1140,344)"/>
+    <use href="#candado" transform="translate(1140,402)"/>
+    <use href="#candado" transform="translate(1140,518)"/>
+    <use href="#candado" transform="translate(1140,576)"/>
+  </g>
+</svg>

@@ -1,0 +1,112 @@
+<!--
+  Diagrama «conceptos-seguridad» · lámina de 1280×720 (viewBox).
+  Fases: 1 Persona · 2 Rol · 3 Permiso · 4 Alcance · 5 Equipo · 6 Credencial de API.
+  Cada tarjeta es un <g data-fase="N"> con su traslado en el <g> interior (la
+  animación de entrada usa transform de CSS y pisaría el atributo).
+  Textos: edítalos en su <text>/<tspan>; cada línea cabe en ~36 caracteres.
+  Colores: var(--tinta), var(--tinta-2), var(--tarjeta), var(--borde), var(--suave)
+  los pone el motor según el fondo (claro u oscuro).
+-->
+<style>
+  svg{font-family:Inter,'Inter var',system-ui,'Segoe UI',Roboto,sans-serif}
+  .t-tit{font-size:30px;font-weight:800;fill:var(--tinta)}
+  .t-sub{font-size:17px;font-weight:500;fill:var(--tinta-2)}
+  .card{fill:var(--tarjeta);stroke:var(--borde);stroke-width:1.5}
+  .c-num{font-size:12px;font-weight:700;letter-spacing:.12em;fill:var(--tinta-2)}
+  .c-tit{font-size:22px;font-weight:800;fill:var(--tinta)}
+  .c-txt{font-size:15px;font-weight:400;fill:var(--tinta-2)}
+  .chip{fill:var(--suave);stroke:var(--borde)}
+  .chip-t{font-size:14px;font-weight:600;fill:var(--tinta)}
+  .mas{font-size:18px;font-weight:700;fill:var(--tinta-2)}
+  .ico{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="sombra" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#072134" flood-opacity=".10"/>
+    </filter>
+  </defs>
+
+  <rect x="80" y="60" width="48" height="6" rx="3" fill="#5BD34E"/>
+  <text class="t-tit" x="80" y="106">Seguridad en seis conceptos</text>
+  <text class="t-sub" x="80" y="136">Quién entra, qué puede hacer y sobre qué registros.</text>
+
+  <!-- 1 · Persona -->
+  <g data-fase="1"><g transform="translate(80,172)">
+    <rect class="card" width="352" height="228" rx="12" filter="url(#sombra)"/>
+    <circle cx="52" cy="52" r="24" fill="#1273B8"/>
+    <g class="ico" transform="translate(40,40)"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/></g>
+    <text class="c-num" x="92" y="44">01</text>
+    <text class="c-tit" x="92" y="70">Persona</text>
+    <text class="c-txt" x="28" y="118"><tspan x="28">Quien entra al sistema con su</tspan><tspan x="28" dy="22">usuario. Tiene uno o más roles.</tspan></text>
+    <rect class="chip" x="28" y="166" width="150" height="36" rx="18"/>
+    <text class="chip-t" x="46" y="189">Ana · Vendedor</text>
+  </g></g>
+
+  <!-- 2 · Rol -->
+  <g data-fase="2"><g transform="translate(456,172)">
+    <rect class="card" width="352" height="228" rx="12" filter="url(#sombra)"/>
+    <circle cx="52" cy="52" r="24" fill="#04B19E"/>
+    <g class="ico" transform="translate(40,40)"><rect x="3" y="5" width="18" height="14" rx="2.5"/><circle cx="9" cy="11" r="2.2"/><path d="M5.8 16.2c.6-1.6 1.8-2.4 3.2-2.4s2.6.8 3.2 2.4M14.5 10h4M14.5 13.5h3"/></g>
+    <text class="c-num" x="92" y="44">02</text>
+    <text class="c-tit" x="92" y="70">Rol</text>
+    <text class="c-txt" x="28" y="118"><tspan x="28">Un conjunto de permisos con</tspan><tspan x="28" dy="22">nombre, que se asigna a personas.</tspan></text>
+    <rect class="chip" x="28" y="166" width="104" height="36" rx="18"/>
+    <text class="chip-t" x="46" y="189">Vendedor</text>
+    <rect class="chip" x="142" y="166" width="104" height="36" rx="18"/>
+    <text class="chip-t" x="160" y="189">Contador</text>
+  </g></g>
+
+  <!-- 3 · Permiso = Recurso + Acción -->
+  <g data-fase="3"><g transform="translate(832,172)">
+    <rect class="card" width="352" height="228" rx="12" filter="url(#sombra)"/>
+    <circle cx="52" cy="52" r="24" fill="#0B3552"/>
+    <g class="ico" transform="translate(40,40)"><circle cx="8" cy="15" r="4.5"/><path d="M11.3 11.8L20 3M16.5 6.5l2.5 2.5M14 9l2 2"/></g>
+    <text class="c-num" x="92" y="44">03</text>
+    <text class="c-tit" x="92" y="70">Permiso</text>
+    <text class="c-txt" x="28" y="118"><tspan x="28">Recurso + Acción: qué se puede</tspan><tspan x="28" dy="22">hacer y en qué parte del sistema.</tspan></text>
+    <rect class="chip" x="28" y="166" width="96" height="36" rx="18"/>
+    <text class="chip-t" x="46" y="189">Facturas</text>
+    <text class="mas" x="134" y="190">+</text>
+    <rect class="chip" x="154" y="166" width="76" height="36" rx="18"/>
+    <text class="chip-t" x="172" y="189">Crear</text>
+  </g></g>
+
+  <!-- 4 · Alcance -->
+  <g data-fase="4"><g transform="translate(80,424)">
+    <rect class="card" width="352" height="228" rx="12" filter="url(#sombra)"/>
+    <circle cx="52" cy="52" r="24" fill="#F5A623"/>
+    <g class="ico" transform="translate(40,40)"><path d="M2 12s3.6-6.5 10-6.5S22 12 22 12s-3.6 6.5-10 6.5S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></g>
+    <text class="c-num" x="92" y="44">04</text>
+    <text class="c-tit" x="92" y="70">Alcance</text>
+    <text class="c-txt" x="28" y="118"><tspan x="28">Sobre qué registros vale el</tspan><tspan x="28" dy="22">permiso: los propios o todos.</tspan></text>
+    <rect class="chip" x="28" y="166" width="100" height="36" rx="18"/>
+    <text class="chip-t" x="46" y="189">Propios</text>
+    <rect class="chip" x="138" y="166" width="84" height="36" rx="18"/>
+    <text class="chip-t" x="156" y="189">Todos</text>
+  </g></g>
+
+  <!-- 5 · Equipo -->
+  <g data-fase="5"><g transform="translate(456,424)">
+    <rect class="card" width="352" height="228" rx="12" filter="url(#sombra)"/>
+    <circle cx="52" cy="52" r="24" fill="#3DAA35"/>
+    <g class="ico" transform="translate(40,40)"><circle cx="9" cy="8.5" r="3.2"/><circle cx="17" cy="9.5" r="2.6"/><path d="M3 20c0-3.6 2.7-5.8 6-5.8s6 2.2 6 5.8M15.5 14.4c3 .1 5.5 1.9 5.5 5.1"/></g>
+    <text class="c-num" x="92" y="44">05</text>
+    <text class="c-tit" x="92" y="70">Equipo</text>
+    <text class="c-txt" x="28" y="118"><tspan x="28">Un grupo de personas que suma</tspan><tspan x="28" dy="22">permisos a todos sus miembros.</tspan></text>
+    <rect class="chip" x="28" y="166" width="134" height="36" rx="18"/>
+    <text class="chip-t" x="46" y="189">Ventas Norte</text>
+  </g></g>
+
+  <!-- 6 · Credencial de API -->
+  <g data-fase="6"><g transform="translate(832,424)">
+    <rect class="card" width="352" height="228" rx="12" filter="url(#sombra)"/>
+    <circle cx="52" cy="52" r="24" fill="#5B6FD0"/>
+    <g class="ico" transform="translate(40,40)"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14"/></g>
+    <text class="c-num" x="92" y="44">06</text>
+    <text class="c-tit" x="92" y="70">Credencial de API</text>
+    <text class="c-txt" x="28" y="118"><tspan x="28">Acceso de otro sistema, sin</tspan><tspan x="28" dy="22">persona detrás y con sus permisos.</tspan></text>
+    <rect class="chip" x="28" y="166" width="116" height="36" rx="18"/>
+    <text class="chip-t" x="46" y="189">Tienda web</text>
+  </g></g>
+</svg>

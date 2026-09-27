@@ -152,6 +152,63 @@ solo donde hace falta una aclaración**.
   «a que la pantalla se asiente antes de la foto»; aquí corren mientras la
   voz habla, así que en general se pueden acortar.
 
+## Insignia, cartel y diagrama (capa de la grabación)
+
+Tres piezas que se dibujan como DOM dentro de la capa inyectada (en un shadow
+root: el CSS de la app no las toca y la privacidad y las sondas no las ven),
+así que salen en el video tal cual, en su palabra. Estética de marca: Inter
+(o system-ui), marino `#072134`, verde `#5BD34E`, radio 12 px.
+
+```jsonc
+{
+  "pasos": [{
+    // píldora fija arriba al centro (64 px del borde) durante TODO el paso;
+    // un paso sin la clave la quita. tipo: con (check verde) | sin (candado
+    // rojo) | info (escudo azul). "arriba": N cambia la altura en px CSS.
+    "insignia": { "tipo": "con", "texto": "Con permiso · Ana (Vendedor)" },
+    // lámina que abre al empezar el paso y se cierra con la última palabra
+    "diagrama": "acceso-efectivo",          // o {"nombre", "fondo": "oscuro", "fase", "pasos_ms"}
+    "acciones": [
+      { "diagrama_fase": 2, "al_decir": "hereda" },          // revela los data-fase="2"
+      { "cartel": { "tipo": "consejo", "titulo": "Consejo", "texto": "…" },
+        "durante_ms": 6000, "al_decir": "consejo" },       // consejo (bombilla) | cuidado (triángulo)
+      { "diagrama": "estado-documento", "durante_ms": 9000, "pasos_ms": [3000, 6000],
+        "al_decir": "estado" },                              // abre otra lámina (cierra la anterior)
+      { "diagrama_cerrar": true, "al_decir": "listo" }
+    ]
+  }]
+}
+```
+
+- **Insignia**: se guarda en sessionStorage y el motor la re-empuja tras
+  cada `navegar`: sobrevive a navegaciones del SPA y a recargas completas.
+- **Cartel**: abajo a la izquierda (88 px del borde, 72 px del fondo: libre
+  del menú lateral, del `rotulo_paso` y del botón flotante del asistente),
+  máx. 420 px, entra con fundido + deslizamiento de 300 ms y se va solo a los
+  `durante_ms` (6000 por defecto).
+- **Diagrama**: lámina a pantalla completa (fondo `#F6F8FA`, o `"fondo":
+  "oscuro"` = marino) con el fragmento `marca/diagramas/<nombre>.html`
+  (HTML + SVG + CSS autocontenido, viewBox 1280×720). Abre en la fase 1
+  (`"fase": 0` la abre vacía); los elementos con `data-fase="N"` aparecen
+  cuando la fase llega a N, y el contenedor lleva las clases `fase-1…fase-N`
+  para efectos como apagar filas (`.fase-2 .ajeno{opacity:.2}`). Las fases
+  van con `diagrama_fase` en su palabra, o solas con `pasos_ms` (ms desde la
+  apertura para la fase 2, 3…). Sin `durante_ms` se cierra al acabar la voz
+  del paso (o con `diagrama_cerrar`); no pasa de un paso a otro. Mientras
+  está abierta, el cursor se oculta. Una recarga completa la pierde.
+  Disponibles: `conceptos-seguridad` (6 fases), `acceso-efectivo` (4),
+  `alcance-propios-todos` (2), `estado-documento` (4); sus textos se editan
+  en el propio html.
+- **Puertas**: cada una deja evento en el segmento (`insignia`, `cartel`
+  con `dur`, `diagrama` con `dur` si la tiene, `diagrama_fase`,
+  `diagrama_cerrar`); `veredicto.mjs` cuenta el cartel y la lámina abierta
+  como pantalla que cambia (no hay R0 mientras se ven) y mide el desfase con
+  su palabra como un clic. `revisar.mjs` y `tut verificar` validan la forma
+  de `insignia`/`cartel`, que el html exista y que la fase pedida exista.
+- Prueba sin ERP: `guiones/_prueba-capa-seguridad.json` sobre una página
+  estática (`seeds/_puertas/prueba-capa/`) servida en `:4390` con
+  `node seeds/_puertas/servir-estatico.mjs seeds/_puertas/prueba-capa 4390`.
+
 ## Música de fondo (opcional)
 
 ```jsonc

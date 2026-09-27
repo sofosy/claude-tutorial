@@ -15,14 +15,75 @@ rectificación no sea «ver el video entero», hay dos herramientas:
   vistazo.
 """
 import json
+import re
 import subprocess
 from collections import Counter
 
 from . import narrar, privacidad
+from .rutas import RAIZ
 
 MIN_PALABRAS = 6          # una narración más corta que esto no explica nada
 DESFASE_MAX = 0.9         # segundos entre la palabra y el clic que se toleran
 ACCIONES_VISIBLES = ("click", "escribir", "seleccionar", "marcar", "presionar", "subir")
+# acciones de la capa (insignia/cartel/diagrama, ver GRABACION.md): cambian la
+# pantalla sin mover el cursor, como `resaltar`
+ACCIONES_CAPA = ("cartel", "diagrama", "diagrama_fase", "diagrama_cerrar")
+TIPOS_INSIGNIA = ("con", "sin", "info")
+TIPOS_CARTEL = ("consejo", "cuidado")
+
+
+def que_accion(clave, valor):
+    """Lo que el motor anota como `que` del evento de una acción (para emparejarlos)."""
+    if clave == "cartel":
+        return (valor or {}).get("titulo") or (valor or {}).get("tipo", "consejo")
+    if clave == "diagrama":
+        return valor if isinstance(valor, str) else (valor or {}).get("nombre")
+    if clave == "diagrama_fase":
+        return str(valor)
+    if clave == "diagrama_cerrar":
+        return "cerrar"
+    return valor if isinstance(valor, str) else (valor.get("sel") if isinstance(valor, dict) else clave)
+
+
+def _fases_diagrama(nombre):
+    """Fases que declara el diagrama (máximo `data-fase`), o None si no existe."""
+    ruta = RAIZ / "marca" / "diagramas" / f"{nombre}.html"
+    if not ruta.exists():
+        return None
+    return max([int(n) for n in re.findall(r'data-fase="(\d+)"', ruta.read_text(encoding="utf-8"))] or [0])
+
+
+def _revisar_capa(h, p):
+    """Insignia, cartel y diagramas del paso: forma válida y archivo existente."""
+    pid = p["id"]
+    ins = p.get("insignia")
+    if ins is not None:
+        if not isinstance(ins, dict) or ins.get("tipo") not in TIPOS_INSIGNIA or not ins.get("texto"):
+            _hallazgo(h, "ERROR", pid, "`insignia` debe ser {tipo: con|sin|info, texto}")
+    fases = None   # fases del diagrama abierto en este punto del paso
+    if p.get("diagrama"):
+        nombre = que_accion("diagrama", p["diagrama"])
+        fases = _fases_diagrama(nombre)
+        if fases is None:
+            _hallazgo(h, "ERROR", pid, f"no existe marca/diagramas/{nombre}.html")
+    for acc in p.get("acciones", []):
+        if "cartel" in acc:
+            c = acc["cartel"]
+            if not isinstance(c, dict) or c.get("tipo", "consejo") not in TIPOS_CARTEL or not c.get("texto"):
+                _hallazgo(h, "ERROR", pid, "`cartel` debe ser {tipo: consejo|cuidado, titulo?, texto}")
+        elif "diagrama" in acc:
+            nombre = que_accion("diagrama", acc["diagrama"])
+            fases = _fases_diagrama(nombre)
+            if fases is None:
+                _hallazgo(h, "ERROR", pid, f"no existe marca/diagramas/{nombre}.html")
+        elif "diagrama_fase" in acc:
+            n = acc["diagrama_fase"]
+            if fases is None:
+                _hallazgo(h, "ERROR", pid, f"`diagrama_fase` {n} sin un diagrama abierto antes en el paso")
+            elif not isinstance(n, int) or n < 1 or n > fases:
+                _hallazgo(h, "ERROR", pid, f"`diagrama_fase` {n}: el diagrama tiene fases 1–{fases}")
+        elif "diagrama_cerrar" in acc:
+            fases = None
 
 
 def _hallazgo(lista, nivel, paso, texto):
@@ -70,7 +131,9 @@ def revisar_guion(guion):
             _hallazgo(h, "AVISO", pid, "sin `texto_pantalla`: la barra inferior saldrá vacía")
         if not p.get("ruta"):
             _hallazgo(h, "AVISO", pid, "sin `ruta`: quien caiga al video por la mitad no sabrá dónde está")
-        if not p.get("resaltar") and not p.get("acciones") and not p.get("navegar"):
+        _revisar_capa(h, p)
+        if not p.get("resaltar") and not p.get("acciones") and not p.get("navegar") \
+                and not p.get("diagrama"):
             _hallazgo(h, "AVISO", pid, "paso sin marca, sin acciones y sin navegación: ¿qué mira el usuario?")
 
         # cada clic se explica: lleva palabra de sincronía y la narración la dice
@@ -84,11 +147,10 @@ def revisar_guion(guion):
                 espera_previa += acc["esperar_ms"]
                 continue
             clave = next((k for k in ACCIONES_VISIBLES + ("resaltar", "plano_general", "quitar_marca")
-                          if k in acc), None)
+                          + ACCIONES_CAPA if k in acc), None)
             if not clave:
                 continue
-            que = acc[clave] if isinstance(acc[clave], str) else (
-                acc[clave].get("sel") if isinstance(acc[clave], dict) else clave)
+            que = que_accion(clave, acc[clave])
             if clave in ACCIONES_VISIBLES:
                 clics.append(que)
             if acc.get("al_decir") is None:
@@ -218,7 +280,8 @@ def informe(guion, salida, video=None):
                     if not explicada:
                         avisos.append(f"{pid}: la alerta «{ev['que'][:70]}…» apareció a {ev['t']:.1f}s"
                                       " y no se señaló ni se explicó (regla: toda alerta se explica)")
-                if ev["tipo"] in ("clic", "escribir", "subir", "alerta", "resaltar"):
+                if ev["tipo"] in ("clic", "escribir", "subir", "alerta", "resaltar",
+                                  "cartel", "diagrama", "diagrama_fase"):
                     # el fotograma se toma medio segundo después: el cursor ya
                     # llegó, el texto ya está escrito, la marca ya se ve
                     png = revision / f"{pid}-{ev['t']:05.2f}.png"
@@ -233,7 +296,8 @@ def informe(guion, salida, video=None):
             # se anota al TERMINAR de teclear (para medir que el campo siguió
             # a la vista), y 20 letras tardan casi un segundo
             TIPO = {"click": "clic", "escribir": "clic", "resaltar": "resaltar",
-                    "seleccionar": "seleccionar", "subir": "subir", "marcar": "clic"}
+                    "seleccionar": "seleccionar", "subir": "subir", "marcar": "clic",
+                    **{k: k for k in ACCIONES_CAPA}}
             for acc in paso.get("acciones", []):
                 clave = acc.get("al_decir")
                 if not isinstance(clave, str):
@@ -241,8 +305,7 @@ def informe(guion, salida, video=None):
                 accion = next((k for k in acc if k in TIPO), None)
                 if not accion:
                     continue
-                v = acc[accion]
-                sel = v if isinstance(v, str) else v.get("sel")
+                sel = que_accion(accion, acc[accion])
                 # el mismo campo puede teclearse dos veces: se empareja por
                 # tipo Y selector, en orden, sin reutilizar eventos
                 ev = next((e for i, e in enumerate(seg.get("eventos", []))

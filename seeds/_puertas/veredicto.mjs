@@ -9,7 +9,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import {
-  HUECO_MAX, leerGrabacion, leerSrt, huecosGrabados, tokens, posiciones, tipoDe, selDe,
+  HUECO_MAX, leerGrabacion, leerSrt, huecosGrabados, tokens, posiciones, tipoDe, selDe, queDe,
   esSelDialogo, firmaAlerta, fmt, corto,
 } from './comun.mjs';
 
@@ -17,7 +17,10 @@ const DESFASE_MAX = 0.9;
 const VENTANA_ALERTA = 8;     // una marca sobre el diálogo en ≤ 8 s la explica
 const ALERTA_ANTES = 1.5;     // la marca puede llegar un poco ANTES de que la sonda la detecte
 // verificar.py empareja así cada acción con su evento
-const TIPO_EVENTO = { click: 'clic', escribir: 'clic', marcar: 'clic', resaltar: 'resaltar', seleccionar: 'seleccionar', subir: 'subir' };
+const TIPO_EVENTO = {
+  click: 'clic', escribir: 'clic', marcar: 'clic', resaltar: 'resaltar', seleccionar: 'seleccionar', subir: 'subir',
+  cartel: 'cartel', diagrama: 'diagrama', diagrama_fase: 'diagrama_fase', diagrama_cerrar: 'diagrama_cerrar',
+};
 
 const modulos = process.argv.slice(2).filter(a => !a.startsWith('--'));
 if (!modulos.length) { console.error('uso: node seeds/_puertas/veredicto.mjs <modulo> [...]'); process.exit(2); }
@@ -73,7 +76,7 @@ function veredicto(modulo) {
         if (typeof acc.al_decir !== 'string') continue;
         const tipo = tipoDe(acc);
         if (!TIPO_EVENTO[tipo]) continue;
-        const sel = tipo === 'subir' ? acc.subir.sel : selDe(acc);
+        const sel = tipo === 'subir' ? acc.subir.sel : queDe(acc);
         const i = eventos.findIndex((e, k) => !usados.has(k) && e.que === sel && e.tipo === TIPO_EVENTO[tipo]);
         if (i < 0) continue;
         usados.add(i);
