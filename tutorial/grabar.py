@@ -262,14 +262,24 @@ JS_CAPA = r"""
     cartel(d) {
       const [fondo, svg] = ICONO_CAR[d.tipo] || ICONO_CAR.consejo;
       const titulo = d.titulo || (d.tipo === 'cuidado' ? 'Cuidado' : 'Consejo');
-      // Sobre una lámina de diagrama el sitio de abajo a la izquierda tapa
-      // tarjetas del diagrama: el cartel sube a la esquina de arriba a la
-      // derecha, que todas las láminas dejan libre junto al título.
-      const sobreLam = lam.classList.contains('on');
-      car.style.left = sobreLam ? 'auto' : ''; car.style.right = sobreLam ? '40px' : '';
-      car.style.top = sobreLam ? '28px' : ''; car.style.bottom = sobreLam ? 'auto' : '';
       car.innerHTML = `<div class="ico" style="background:${fondo}">${svg}</div>` +
         `<div><b>${esc(titulo)}</b><p>${esc(d.texto)}</p></div>`;
+      // Sobre una lámina de diagrama el sitio de abajo a la izquierda tapa
+      // tarjetas: el cartel prueba arriba a la derecha, luego abajo a la
+      // derecha y luego su sitio de siempre, y se queda en la primera esquina
+      // que no pisa ningún texto ni tarjeta de la lámina (también los de las
+      // fases que aún no se revelan). Un subtítulo largo ocupa arriba a la
+      // derecha (estado-documento), por eso no basta una esquina fija.
+      const sitios = [['auto', '40px', '28px', 'auto'], ['auto', '40px', 'auto', '28px'], ['', '', '', '']];
+      const poner = s => { [car.style.left, car.style.right, car.style.top, car.style.bottom] = s; };
+      poner(sitios[2]);
+      if (lam.classList.contains('on')) {
+        const obst = [...lam.querySelectorAll('.dg text, .dg rect, .dg [data-fase]')].map(e => e.getBoundingClientRect())
+          .filter(r => r.width > 2 && r.height > 2 && !(r.width > innerWidth * .8 && r.height > innerHeight * .8));
+        const libre = () => { const c = car.getBoundingClientRect();
+          return !obst.some(r => r.right > c.left && r.left < c.right && r.bottom > c.top - 16 && r.top < c.bottom + 16); };
+        poner(sitios.find(s => { poner(s); return libre(); }) || sitios[0]);
+      }
       car.classList.remove('on'); void car.offsetWidth; car.classList.add('on');
       return ++carSeq;
     },
