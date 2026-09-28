@@ -214,6 +214,16 @@ function revisarGuion(arg) {
           now = te + 0.05;
           break;
         }
+        case 'insignia': {
+          // sin duración propia (como diagrama_fase): cambia la píldora en su palabra
+          te = s + 0.05;
+          const ins2 = acc.insignia;
+          if (ins2 !== null && (typeof ins2 !== 'object' || !['con', 'sin', 'info'].includes(ins2.tipo) || !ins2.texto))
+            H('ERROR', pid, '`insignia` (acción) debe ser {tipo: con|sin|info, texto} o null');
+          cambios.push([te, te + 0.5]);
+          now = te + 0.05;
+          break;
+        }
         case 'diagrama': {
           te = s + 0.1;
           const spec = typeof acc.diagrama === 'string' ? { nombre: acc.diagrama } : { ...acc.diagrama };

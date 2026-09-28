@@ -68,7 +68,7 @@ MARCA_MS = 4500      # una marca transitoria sin `durante_ms` dura esto
 CARTEL_MS = 6000     # un cartel sin `durante_ms` dura esto
 DIAGRAMAS = RAIZ / "marca" / "diagramas"
 # acciones que no mueven el cursor: caen en su palabra con el anticipo corto
-ACCIONES_MARCA = ("resaltar", "cartel", "diagrama", "diagrama_fase", "diagrama_cerrar")
+ACCIONES_MARCA = ("resaltar", "cartel", "diagrama", "diagrama_fase", "diagrama_cerrar", "insignia")
 
 _HEX = {k: "#%02x%02x%02x" % v for k, v in COLORES.items()}
 
@@ -895,6 +895,20 @@ def _insignia(pag, datos):
         pass  # página a medio cargar: el init script la repinta desde sessionStorage
 
 
+def _insignia_accion(pag, ctx, acc):
+    """Cambia (o quita, con None) la insignia en el instante de la palabra.
+
+    Para los pasos que cambian de usuario en cámara: la insignia de la
+    persona que la voz nombra al ENTRAR no puede aparecer antes de que su
+    sesión ya esté dentro (ver GRABACION.md «Insignia, cartel y diagrama»).
+    Sin duración propia, como `diagrama_fase`; la insignia queda hasta que
+    otra acción o el siguiente paso la cambie.
+    """
+    datos = acc["insignia"]
+    _insignia(pag, datos)
+    ctx.registro("insignia", datos.get("texto", "") if datos else "")
+
+
 def _cartel(pag, ctx, acc):
     """Tarjeta flotante abajo a la izquierda que se va sola a los `durante_ms`."""
     datos = acc["cartel"]
@@ -974,6 +988,8 @@ def _acciones(pag, ctx, variables):
     - `cartel`: tarjeta de consejo/cuidado abajo a la izquierda (`durante_ms`).
     - `diagrama`, `diagrama_fase`, `diagrama_cerrar`: lámina a pantalla
       completa con revelado por fases (ver GRABACION.md).
+    - `insignia`: cambia (o, con `null`, quita) la insignia del paso en esa
+      palabra — para cambios de usuario en cámara (ver GRABACION.md).
     """
     paso = ctx.paso
     for acc in paso.get("acciones", []):
@@ -993,6 +1009,8 @@ def _acciones(pag, ctx, variables):
                 else dict(acc["resaltar"])
             marca.setdefault("durante_ms", MARCA_MS)
             _resaltar(pag, marca, ctx, cursor=acc.get("cursor", True))
+        elif "insignia" in acc:
+            _insignia_accion(pag, ctx, acc)
         elif "cartel" in acc:
             _cartel(pag, ctx, acc)
         elif "diagrama" in acc:

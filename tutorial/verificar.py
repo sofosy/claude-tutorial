@@ -27,7 +27,7 @@ DESFASE_MAX = 0.9         # segundos entre la palabra y el clic que se toleran
 ACCIONES_VISIBLES = ("click", "escribir", "seleccionar", "marcar", "presionar", "subir")
 # acciones de la capa (insignia/cartel/diagrama, ver GRABACION.md): cambian la
 # pantalla sin mover el cursor, como `resaltar`
-ACCIONES_CAPA = ("cartel", "diagrama", "diagrama_fase", "diagrama_cerrar")
+ACCIONES_CAPA = ("cartel", "diagrama", "diagrama_fase", "diagrama_cerrar", "insignia")
 TIPOS_INSIGNIA = ("con", "sin", "info")
 TIPOS_CARTEL = ("consejo", "cuidado")
 
@@ -36,6 +36,8 @@ def que_accion(clave, valor):
     """Lo que el motor anota como `que` del evento de una acción (para emparejarlos)."""
     if clave == "cartel":
         return (valor or {}).get("titulo") or (valor or {}).get("tipo", "consejo")
+    if clave == "insignia":
+        return (valor or {}).get("texto") or "quitar"
     if clave == "diagrama":
         return valor if isinstance(valor, str) else (valor or {}).get("nombre")
     if clave == "diagrama_fase":
@@ -67,7 +69,13 @@ def _revisar_capa(h, p):
         if fases is None:
             _hallazgo(h, "ERROR", pid, f"no existe marca/diagramas/{nombre}.html")
     for acc in p.get("acciones", []):
-        if "cartel" in acc:
+        if "insignia" in acc:
+            ins2 = acc["insignia"]
+            if ins2 is not None:
+                if not isinstance(ins2, dict) or ins2.get("tipo") not in TIPOS_INSIGNIA or not ins2.get("texto"):
+                    _hallazgo(h, "ERROR", pid,
+                              "`insignia` (acción) debe ser {tipo: con|sin|info, texto} o null")
+        elif "cartel" in acc:
             c = acc["cartel"]
             if not isinstance(c, dict) or c.get("tipo", "consejo") not in TIPOS_CARTEL or not c.get("texto"):
                 _hallazgo(h, "ERROR", pid, "`cartel` debe ser {tipo: consejo|cuidado, titulo?, texto}")
@@ -287,7 +295,7 @@ def informe(guion, salida, video=None):
                         avisos.append(f"{pid}: la alerta «{ev['que'][:70]}…» apareció a {ev['t']:.1f}s"
                                       " y no se señaló ni se explicó (regla: toda alerta se explica)")
                 if ev["tipo"] in ("clic", "escribir", "subir", "alerta", "resaltar",
-                                  "cartel", "diagrama", "diagrama_fase"):
+                                  "cartel", "diagrama", "diagrama_fase", "insignia"):
                     # el fotograma se toma medio segundo después: el cursor ya
                     # llegó, el texto ya está escrito, la marca ya se ve
                     png = revision / f"{pid}-{ev['t']:05.2f}.png"

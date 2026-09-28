@@ -114,9 +114,9 @@ export function cargarGuion(arg) {
 /** Tipo de acción de una entrada de `acciones`. */
 export const TIPOS = ['click', 'escribir', 'resaltar', 'subir', 'seleccionar', 'marcar',
   'click_opcional', 'presionar', 'esperar_ms', 'quitar_marca', 'plano_general',
-  'cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar'];
+  'cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar', 'insignia'];
 /** Acciones de la capa (insignia/cartel/diagrama): cambian la pantalla sin mover el cursor. */
-export const TIPOS_CAPA = ['cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar'];
+export const TIPOS_CAPA = ['cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar', 'insignia'];
 export const tipoDe = acc => TIPOS.find(k => k in acc) || ('al_decir' in acc ? 'ritmo' : '?');
 export const selDe = acc => {
   const t = tipoDe(acc), v = acc[t];
@@ -130,6 +130,7 @@ export const queDe = acc => {
   if (t === 'diagrama') return typeof v === 'string' ? v : v?.nombre;
   if (t === 'diagrama_fase') return String(v);
   if (t === 'diagrama_cerrar') return 'cerrar';
+  if (t === 'insignia') return v?.texto || 'quitar';
   return selDe(acc);
 };
 
@@ -251,6 +252,8 @@ export function cambiosDeSegmento(p, alertasPrevias = new Set()) {
         break;
       }
       case 'diagrama_fase': iv.push([t - 0.3, t + FASE_S]); break;
+      // insignia (acción anclada): sin duración propia, solo el fundido de la píldora
+      case 'insignia': iv.push([t - 0.3, t + 0.5]); break;
       default: iv.push([t - 0.3, t + 0.5]);
     }
   }

@@ -170,6 +170,10 @@ así que salen en el video tal cual, en su palabra. Estética de marca: Inter
     "diagrama": "acceso-efectivo",          // o {"nombre", "fondo": "oscuro", "fase", "pasos_ms"}
     "acciones": [
       { "diagrama_fase": 2, "al_decir": "hereda" },          // revela los data-fase="2"
+      // cambia (o, con null, quita) la insignia EN el instante de la palabra;
+      // misma forma que la del paso, sin duración propia (ver más abajo)
+      { "insignia": { "tipo": "sin", "texto": "Sin permiso · Pedro (Almacén)" }, "al_decir": "Pedro" },
+      { "insignia": null, "al_decir": "cerrar sesión" },
       { "cartel": { "tipo": "consejo", "titulo": "Consejo", "texto": "…" },
         "durante_ms": 6000, "al_decir": "consejo" },       // consejo (bombilla) | cuidado (triángulo)
       { "diagrama": "estado-documento", "durante_ms": 9000, "pasos_ms": [3000, 6000],
@@ -182,6 +186,34 @@ así que salen en el video tal cual, en su palabra. Estética de marca: Inter
 
 - **Insignia**: se guarda en sessionStorage y el motor la re-empuja tras
   cada `navegar`: sobrevive a navegaciones del SPA y a recargas completas.
+  La clave de paso (`"insignia"` junto a `narracion`/`acciones`) fija la
+  insignia durante TODO el paso, como hasta ahora. Además hay una ACCIÓN
+  `{"insignia": {...}, "al_decir": "…"}` (o `{"insignia": null, "al_decir": "…"}`
+  para quitarla) que la cambia en el instante exacto de esa palabra, igual
+  que `cartel`/`diagrama`; sin duración propia, queda puesta hasta la
+  siguiente acción o el fin del paso.
+  **Patrón recomendado al cambiar de usuario en cámara** (cerrar sesión →
+  entrar como otra persona, todo narrado en el mismo paso o en dos
+  seguidos): la insignia DEL PASO es la de quien SALE (o ninguna, si nadie
+  tenía insignia antes) — nunca la de quien entra, porque el login tarda
+  8–12 s y esa insignia estaría flotando sobre la pantalla de la persona
+  anterior. La insignia de quien ENTRA va como acción, anclada a la palabra
+  que la narración dice cuando esa sesión YA está dentro (p. ej. tras
+  «...ahora Pedro, de Almacén, entra al sistema» — nunca antes):
+  ```jsonc
+  {
+    "id": "cambio-usuario",
+    "insignia": null,                          // o la de Rosa, quien sale
+    "narracion": "Rosa cierra sesión. Ahora Pedro, de Almacén, entra al sistema y prueba borrar el producto.",
+    "acciones": [
+      { "click": "#logout", "al_decir": "cierra" },
+      { "escribir": { "sel": "#user", "texto": "pedro" }, "al_decir": "Pedro" },
+      { "click": "#login-submit", "al_decir": "entra" },
+      { "insignia": { "tipo": "sin", "texto": "Sin permiso · Pedro (Almacén)" }, "al_decir": "sistema" },
+      { "click": ".borrar", "al_decir": "borrar" }
+    ]
+  }
+  ```
 - **Cartel**: abajo a la izquierda (88 px del borde, 72 px del fondo: libre
   del menú lateral, del `rotulo_paso` y del botón flotante del asistente),
   máx. 420 px, entra con fundido + deslizamiento de 300 ms y se va solo a los
@@ -197,14 +229,16 @@ así que salen en el video tal cual, en su palabra. Estética de marca: Inter
   del paso (o con `diagrama_cerrar`); no pasa de un paso a otro. Mientras
   está abierta, el cursor se oculta. Una recarga completa la pierde.
   Disponibles: `conceptos-seguridad` (6 fases), `acceso-efectivo` (4),
-  `alcance-propios-todos` (2), `estado-documento` (3); sus textos se editan
+  `alcance-propios-todos` (3), `estado-documento` (3); sus textos se editan
   en el propio html.
-- **Puertas**: cada una deja evento en el segmento (`insignia`, `cartel`
-  con `dur`, `diagrama` con `dur` si la tiene, `diagrama_fase`,
-  `diagrama_cerrar`); `veredicto.mjs` cuenta el cartel y la lámina abierta
-  como pantalla que cambia (no hay R0 mientras se ven) y mide el desfase con
-  su palabra como un clic. `revisar.mjs` y `tut verificar` validan la forma
-  de `insignia`/`cartel`, que el html exista y que la fase pedida exista.
+- **Puertas**: cada una deja evento en el segmento (`insignia` —de paso o de
+  acción, misma forma—, `cartel` con `dur`, `diagrama` con `dur` si la
+  tiene, `diagrama_fase`, `diagrama_cerrar`); `veredicto.mjs` cuenta el
+  cartel, la lámina abierta y el cambio de insignia como pantalla que
+  cambia (no hay R0 mientras se ven) y mide el desfase con su palabra como
+  un clic. `revisar.mjs` y `tut verificar` validan la forma de
+  `insignia`/`cartel` (de paso y de acción), que el html exista y que la
+  fase pedida exista.
 - Prueba sin ERP: `guiones/_prueba-capa-seguridad.json` sobre una página
   estática (`seeds/_puertas/prueba-capa/`) servida en `:4390` con
   `node seeds/_puertas/servir-estatico.mjs seeds/_puertas/prueba-capa 4390`.

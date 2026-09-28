@@ -20,6 +20,7 @@ const ALERTA_ANTES = 1.5;     // la marca puede llegar un poco ANTES de que la s
 const TIPO_EVENTO = {
   click: 'clic', escribir: 'clic', marcar: 'clic', resaltar: 'resaltar', seleccionar: 'seleccionar', subir: 'subir',
   cartel: 'cartel', diagrama: 'diagrama', diagrama_fase: 'diagrama_fase', diagrama_cerrar: 'diagrama_cerrar',
+  insignia: 'insignia',
 };
 
 const modulos = process.argv.slice(2).filter(a => !a.startsWith('--'));
