@@ -262,6 +262,12 @@ JS_CAPA = r"""
     cartel(d) {
       const [fondo, svg] = ICONO_CAR[d.tipo] || ICONO_CAR.consejo;
       const titulo = d.titulo || (d.tipo === 'cuidado' ? 'Cuidado' : 'Consejo');
+      // Sobre una lámina de diagrama el sitio de abajo a la izquierda tapa
+      // tarjetas del diagrama: el cartel sube a la esquina de arriba a la
+      // derecha, que todas las láminas dejan libre junto al título.
+      const sobreLam = lam.classList.contains('on');
+      car.style.left = sobreLam ? 'auto' : ''; car.style.right = sobreLam ? '40px' : '';
+      car.style.top = sobreLam ? '28px' : ''; car.style.bottom = sobreLam ? 'auto' : '';
       car.innerHTML = `<div class="ico" style="background:${fondo}">${svg}</div>` +
         `<div><b>${esc(titulo)}</b><p>${esc(d.texto)}</p></div>`;
       car.classList.remove('on'); void car.offsetWidth; car.classList.add('on');
