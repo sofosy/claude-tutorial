@@ -521,6 +521,7 @@ def _mover(pag, x, y, ms=MOVER_MS):
 
 
 MARGEN_VISTA = 28  # aire mínimo entre el elemento y las barras fijas
+AIRE_INTERNO = 12  # holgura al meter un elemento en una lista interna con scroll
 
 # Un formulario de ERP es más alto que la pantalla y tiene cabecera fija arriba
 # y barra de acciones fija abajo. "Estar en el viewport" no basta: un campo
@@ -571,26 +572,104 @@ JS_FRANJA = """
   };
 """
 
-JS_A_LA_VISTA = "(el, margen) => {" + JS_FRANJA + """
-  if (enFijo()) return {ok: true};
-  const [tope, fondo] = franja();
-  const r = el.getBoundingClientRect();
-  if (r.top >= tope + margen && r.bottom <= fondo - margen) return {ok: true};
-  const util = fondo - tope;
-  const objetivo = r.height > util - 2 * margen ? tope + margen : tope + (util - r.height) / 2;
-  const delta = Math.round(r.top - objetivo);
-  let n = el.parentElement, contenedor = null;
-  while (n) {
+# G-14/G-19: antes se desplazaba el PRIMER ancestro con scroll (a menudo una
+# lista interna) para centrar el elemento en la ventana, y además
+# `scroll_into_view_if_needed` de Playwright centraba en cada contenedor. En
+# pantallas con listas internas (consola de Seguridad) eso dejaba cabeceras de
+# tabla cortadas y filas medio tapadas bajo el thead fijo. Ahora:
+#  1. si el elemento YA se ve entero (franja de la ventana y rectángulo útil de
+#     cada ancestro con scroll, descontando sus cabeceras/pies sticky) no se
+#     mueve nada;
+#  2. los contenedores INTERNOS se desplazan lo mínimo para que entre entero,
+#     con `aire` px de holgura, sin quedar bajo sus elementos sticky;
+#  3. la caja PRINCIPAL (la ventana, o el contenedor de página que ocupa casi
+#     toda la franja) conserva el centrado de siempre cuando está fuera.
+JS_A_LA_VISTA = "(el, [margen, aire]) => {" + JS_FRANJA + """
+  const fijo = enFijo();
+  const [tope, fondo] = fijo ? [0, window.innerHeight] : franja();
+  const r0 = el.getBoundingClientRect();
+  let top = r0.top, bot = r0.bottom, izq = r0.left, der = r0.right;
+  const rueda = (s) => /(auto|scroll|overlay)/.test(s);
+  const cajas = [];
+  for (let n = el.parentElement; n && n !== document.body && n !== document.documentElement; n = n.parentElement) {
     const s = getComputedStyle(n);
-    if (/(auto|scroll)/.test(s.overflowY) && n.scrollHeight > n.clientHeight + 1) { contenedor = n; break; }
-    n = n.parentElement;
+    const v = rueda(s.overflowY) && n.scrollHeight > n.clientHeight + 1;
+    const h = rueda(s.overflowX) && n.scrollWidth > n.clientWidth + 1;
+    if (v || h) cajas.push({n, v, h});
   }
-  const caja = contenedor || document.scrollingElement;
+  const doc = document.scrollingElement;
+  const docRueda = !!doc && doc.scrollHeight > window.innerHeight + 1;
+  // la caja principal: la más externa si ocupa casi toda la franja; si no, la ventana
+  let principal = null;
+  if (!fijo) {
+    const ult = cajas.filter(c => c.v).pop();
+    if (ult && ult.n.clientHeight >= 0.6 * (fondo - tope)) principal = ult.n;
+    else if (docRueda) principal = window;
+  }
+  // rectángulo útil de un contenedor: su área de contenido menos lo sticky/fixed
+  // que vive dentro y se pega arriba o abajo (thead, cabeceras de bloque, leyendas)
+  const SEL = 'thead, th, tfoot, [class*=sticky], [class*=header], [class*=head], [class*=footer],' +
+              ' [class*=legend], [class*=leyenda], [class*=toolbar], [class*=actions]';
+  const banda = (c) => {
+    const cr = c.getBoundingClientRect();
+    let a = cr.top + c.clientTop, b = a + c.clientHeight;
+    const l = cr.left + c.clientLeft, rr = l + c.clientWidth;
+    const alto = b - a;
+    const cand = new Set(c.querySelectorAll(SEL));
+    for (const h of c.children) { cand.add(h); for (const k of h.children) cand.add(k); }
+    let k = 0, a2 = a, b2 = b;
+    for (const e of cand) {
+      if (++k > 400) break;
+      if (e === el || e.contains(el) || el.contains(e)) continue;
+      const s = getComputedStyle(e);
+      if (s.position !== 'sticky' && s.position !== 'fixed') continue;
+      if (s.visibility === 'hidden' || s.display === 'none') continue;
+      const q = e.getBoundingClientRect();
+      if (!q.height || !q.width || q.right <= l || q.left >= rr) continue;
+      if (q.top <= a + 2 && q.bottom > a && q.bottom < a + alto * 0.5) a2 = Math.max(a2, q.bottom);
+      if (q.bottom >= b - 2 && q.top < b && q.top > b - alto * 0.5) b2 = Math.min(b2, q.top);
+    }
+    return [a2, b2, l, rr];
+  };
+  const pos = cajas.map(c => Math.round(c.n.scrollTop) + ',' + Math.round(c.n.scrollLeft))
+                   .join('|') + '|' + Math.round(window.scrollY);
+  // cuánto mover para que [p, q] entre en [a, b] con `aire`: mínimo, o alineado
+  // al principio si no cabe
+  const minimo = (p, q, a, b) => {
+    if (p >= a && q <= b) return 0;
+    if (q - p > b - a - 2 * aire || p < a) return p - (a + aire);
+    return q - (b - aire);
+  };
+  const plan = [];
+  for (const c of cajas) {
+    if (c.n === principal) continue;
+    const [a, b, l, rr] = banda(c.n);
+    let dy = c.v ? minimo(top, bot, a, b) : 0;
+    let dx = c.h ? minimo(izq, der, l, rr) : 0;
+    const maxY = c.n.scrollHeight - c.n.clientHeight, maxX = c.n.scrollWidth - c.n.clientWidth;
+    const y = Math.max(0, Math.min(maxY, c.n.scrollTop + dy));
+    const x = Math.max(0, Math.min(maxX, c.n.scrollLeft + dx));
+    const ry = y - c.n.scrollTop, rx = x - c.n.scrollLeft;
+    if (Math.abs(ry) < 1 && Math.abs(rx) < 1) continue;
+    plan.push(() => c.n.scrollTo({top: y, left: x, behavior: 'smooth'}));
+    top -= ry; bot -= ry; izq -= rx; der -= rx;
+  }
+  let a = tope, b = fondo;
+  if (principal && principal !== window) {
+    const [ca, cb] = banda(principal);
+    a = Math.max(a, ca); b = Math.min(b, cb);
+  }
+  let visible = top >= a && bot <= b;
+  if (!visible && principal) {
+    const util = b - a, alto = bot - top;
+    const objetivo = alto > util - 2 * margen ? a + margen : a + (util - alto) / 2;
+    const delta = Math.round(top - objetivo);
+    plan.push(() => principal.scrollBy({top: delta, behavior: 'smooth'}));
+  }
+  plan.forEach(f => f());
   // posición ANTES de pedir el desplazamiento: si en el siguiente intento no ha
-  // cambiado, es que la caja ya estaba topada y volver a pedirlo no hará nada
-  const pos = Math.round(caja ? caja.scrollTop : window.scrollY);
-  (contenedor || window).scrollBy({top: delta, behavior: 'smooth'});
-  return {ok: false, delta, tope, fondo, pos};
+  // cambiado, es que las cajas ya estaban topadas y volver a pedirlo no hará nada
+  return {ok: !plan.length && visible, pasos: plan.length, tope, fondo, pos};
 }"""
 
 
@@ -629,7 +708,7 @@ def _a_la_vista(pag, loc):
     """
     anterior = None
     for _ in range(3):
-        r = loc.evaluate(JS_A_LA_VISTA, MARGEN_VISTA, timeout=8000)
+        r = loc.evaluate(JS_A_LA_VISTA, [MARGEN_VISTA, AIRE_INTERNO], timeout=8000)
         if r.get("ok"):
             return True
         pos = r.get("pos")
@@ -637,7 +716,7 @@ def _a_la_vista(pag, loc):
             return False  # topado: no hay desplazamiento que lo arregle
         anterior = pos
         pag.wait_for_timeout(520)  # lo que dura el desplazamiento suave
-    return bool(loc.evaluate(JS_A_LA_VISTA, MARGEN_VISTA, timeout=8000).get("ok"))
+    return bool(loc.evaluate(JS_A_LA_VISTA, [MARGEN_VISTA, AIRE_INTERNO], timeout=8000).get("ok"))
 
 
 def _localizar(pag, sel, timeout=8000):
@@ -646,7 +725,8 @@ def _localizar(pag, sel, timeout=8000):
         loc.wait_for(state="visible", timeout=timeout)
     except PlaywrightTimeout:
         raise SelectorAusente(f"no aparece o no es visible: {sel}")
-    loc.scroll_into_view_if_needed()
+    # sin `scroll_into_view_if_needed`: centra en CADA contenedor y cortaba
+    # cabeceras de listas internas (G-14/G-19); `_a_la_vista` lo hace a medida
     if not _a_la_vista(pag, loc):
         print(f"    AVISO: «{sel}» no cabe entero en la franja visible;"
               " el video puede mostrarlo cortado.")
