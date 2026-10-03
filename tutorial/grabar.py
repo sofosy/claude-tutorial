@@ -565,8 +565,15 @@ JS_FRANJA = """
   const enFijo = () => {
     if (el.closest('.cdk-overlay-container, .cdk-overlay-pane')) return true;
     for (let n = el; n && n !== document.body; n = n.parentElement) {
-      const p = getComputedStyle(n).position;
-      if (p === 'fixed' || p === 'sticky') return true;
+      const cs = getComputedStyle(n), p = cs.position;
+      if (p === 'fixed') return true;
+      // columna fija de una tabla: se pega a un lado, no arriba ni abajo, y
+      // sube y baja con la página como cualquier fila
+      if (p === 'sticky' && cs.top === 'auto' && cs.bottom === 'auto') continue;
+      // un sticky es una barra (cabecera, filtros) si es bajo; un panel lateral
+      // de más de media ventana también se pega, pero lo de dentro sí hay que
+      // bajarlo desplazando la página
+      if (p === 'sticky' && n.getBoundingClientRect().height <= window.innerHeight * 0.5) return true;
     }
     return false;
   };
@@ -600,10 +607,17 @@ JS_A_LA_VISTA = "(el, [margen, aire]) => {" + JS_FRANJA + """
   const doc = document.scrollingElement;
   const docRueda = !!doc && doc.scrollHeight > window.innerHeight + 1;
   // la caja principal: la más externa si ocupa casi toda la franja; si no, la ventana
-  let principal = null;
+  let principal = null, sobresale = false;
   if (!fijo) {
     const ult = cajas.filter(c => c.v).pop();
-    if (ult && ult.n.clientHeight >= 0.6 * (fondo - tope)) principal = ult.n;
+    // una lista interna que sobresale por debajo de la ventana (panel lateral
+    // aún sin pegar, con la página desplazable) no basta: hay que bajar también
+    // la ventana, o lo del fondo de la lista queda fuera del cuadro
+    if (ult && docRueda) {
+      const rb = ult.n.getBoundingClientRect();
+      sobresale = rb.bottom > fondo + 2 || rb.top < tope - 2;
+    }
+    if (ult && ult.n.clientHeight >= 0.6 * (fondo - tope) && !sobresale) principal = ult.n;
     else if (docRueda) principal = window;
   }
   // rectángulo útil de un contenedor: su área de contenido menos lo sticky/fixed
@@ -641,10 +655,26 @@ JS_A_LA_VISTA = "(el, [margen, aire]) => {" + JS_FRANJA + """
     return q - (b - aire);
   };
   const plan = [];
+  // con la ventana como principal y una lista que sobresale: primero se baja la
+  // ventana (el panel se pega arriba) y, ya en cuadro el elemento, se ajusta la
+  // lista recortada a lo que cabe en pantalla
+  const soloVentana = sobresale && principal === window;
+  // cuánto se va a mover la ventana (lo que pida el centrado, hasta donde llegue
+  // la página): la lista se ajusta en el mismo intento contando con ello, en vez
+  // de esperar al siguiente. Si un panel pegado no se mueve lo previsto, el
+  // intento siguiente corrige.
+  let dWin = 0;
+  if (soloVentana && (top < tope || bot > fondo)) {
+    const util = fondo - tope, alto = bot - top;
+    const objetivo = alto > util - 2 * margen ? tope + margen : tope + (util - alto) / 2;
+    dWin = Math.max(-doc.scrollTop,
+                    Math.min(doc.scrollHeight - window.innerHeight - doc.scrollTop, Math.round(top - objetivo)));
+  }
   for (const c of cajas) {
     if (c.n === principal) continue;
-    const [a, b, l, rr] = banda(c.n);
-    let dy = c.v ? minimo(top, bot, a, b) : 0;
+    let [a, b, l, rr] = banda(c.n);
+    if (soloVentana) { a = Math.max(a - dWin, tope); b = Math.min(b - dWin, fondo); }
+    let dy = c.v ? minimo(top - dWin, bot - dWin, a, b) : 0;
     let dx = c.h ? minimo(izq, der, l, rr) : 0;
     const maxY = c.n.scrollHeight - c.n.clientHeight, maxX = c.n.scrollWidth - c.n.clientWidth;
     const y = Math.max(0, Math.min(maxY, c.n.scrollTop + dy));
@@ -664,7 +694,18 @@ JS_A_LA_VISTA = "(el, [margen, aire]) => {" + JS_FRANJA + """
     const util = b - a, alto = bot - top;
     const objetivo = alto > util - 2 * margen ? a + margen : a + (util - alto) / 2;
     const delta = Math.round(top - objetivo);
-    plan.push(() => principal.scrollBy({top: delta, behavior: 'smooth'}));
+    // un salto de varias pantallas, animado entero, tarda más de un segundo y
+    // deja el clic por detrás de su palabra: se salta de golpe hasta quedar a
+    // una pantalla del destino y solo se anima el último tramo
+    const pantalla = fondo - tope;
+    plan.push(() => {
+      if (Math.abs(delta) > 1.5 * pantalla) {
+        principal.scrollBy({top: delta - Math.sign(delta) * pantalla, behavior: 'instant'});
+        principal.scrollBy({top: Math.sign(delta) * pantalla, behavior: 'smooth'});
+      } else {
+        principal.scrollBy({top: delta, behavior: 'smooth'});
+      }
+    });
   }
   plan.forEach(f => f());
   // posición ANTES de pedir el desplazamiento: si en el siguiente intento no ha
@@ -677,7 +718,8 @@ JS_A_LA_VISTA = "(el, [margen, aire]) => {" + JS_FRANJA + """
 # Es la evidencia que queda en cada evento; no se da por hecho.
 JS_VISIBLE = "(el, margen) => {" + JS_FRANJA + """
   const r = el.getBoundingClientRect();
-  const dentroViewport = r.top >= 0 && r.bottom <= window.innerHeight && r.left >= 0 && r.right <= window.innerWidth;
+  // 1 px de holgura: una barra pegada al borde mide 720,4 y no está cortada
+  const dentroViewport = r.top >= -1 && r.bottom <= window.innerHeight + 1 && r.left >= -1 && r.right <= window.innerWidth + 1;
   if (enFijo()) return {ok: dentroViewport, tope: 0, fondo: window.innerHeight,
                         arriba: Math.round(r.top), abajo: Math.round(r.bottom)};
   const [tope, fondo] = franja();
@@ -692,6 +734,28 @@ def _medir_visible(loc):
         return loc.evaluate(JS_VISIBLE, 0, timeout=4000)
     except Exception:
         return {"ok": None}
+
+
+def _esperar_quieto(pag, loc, tope_ms=520):
+    """Espera a que acabe el desplazamiento suave, sin gastar el tope entero.
+
+    Un desplazamiento corto termina en ~250 ms; con dos seguidos (la página y
+    luego una lista interna) la espera fija de 520 ms dejaba la marca más de
+    0,9 s por detrás de su palabra. Se da por quieto cuando el elemento repite
+    posición en dos lecturas, nunca antes de 210 ms (el arranque es lento).
+    """
+    anterior, t = None, 0
+    while t < tope_ms:
+        pag.wait_for_timeout(70)
+        t += 70
+        try:
+            caja = loc.bounding_box()
+        except Exception:
+            caja = None
+        y = round(caja["y"]) if caja else None
+        if t >= 210 and y is not None and y == anterior:
+            return
+        anterior = y
 
 
 def _a_la_vista(pag, loc):
@@ -715,7 +779,7 @@ def _a_la_vista(pag, loc):
         if anterior is not None and pos == anterior:
             return False  # topado: no hay desplazamiento que lo arregle
         anterior = pos
-        pag.wait_for_timeout(520)  # lo que dura el desplazamiento suave
+        _esperar_quieto(pag, loc)  # lo que dura el desplazamiento suave
     return bool(loc.evaluate(JS_A_LA_VISTA, [MARGEN_VISTA, AIRE_INTERNO], timeout=8000).get("ok"))
 
 
