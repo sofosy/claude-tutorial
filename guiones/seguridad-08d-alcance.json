@@ -1,0 +1,531 @@
+{
+  "titulo": "Con y sin permiso · El alcance: propios, equipo y todos",
+  "_comentario": "Serie Seguridad, caso ALCANCE (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo). Entran EN CÁMARA: carlos.pimentel (sesion) → ana.mejia → rosa.almanzar → ana.mejia. Qué escribe en BD: el alcance de «Cotizaciones · Ver» del rol Vendedor (77) pasa de Propios a Equipo (role_permissions + audit_logs PERMISSIONS_CHANGED); lo deshace `restaurar.mjs E0`. Contraste sobre el MISMO listado de Cotizaciones: Carlos «Todos» 1–8 de 8 (02) · Ana «Propios» 1–3 de 3 (03) · Ana «Equipo» 1–5 de 5 (07). Recuentos reales de E0 (_SELECTORES §6): la lista NO tiene columna de creador, por eso la voz dice de quién es cada una y se marca la celda N° (COT n). Diagrama `alcance-propios-todos` CORREGIDO por este autor para casar con E0 (8 cotizaciones, COT 8…1, Ana 3 · José 2 · Carlos 2 · Rosa 1; fase 3 nueva = Equipo 5 de 8). El paso 04 abre por número la cotización 4 (de José) con Ana en «Propios»: el API responde 403 «Tu rol solo te permite ver y trabajar las cotizaciones que creaste tú. Pide acceso a tu administrador si necesitas este documento.» (verificado, A6). DEPENDENCIA ronda 2 (D-S4): hoy la UI vuelve muda a la lista; escrito para el comportamiento CORREGIDO (aviso visible). Se marca la unión toast|diálogo SIN al_decir y `click_opcional` del primer botón del diálogo (si es toast, no hace nada): re-verificar en el ensayo qué forma tiene el aviso. El alcance nuevo se aplica en la siguiente petición (Ana ve 5 con solo recargar, _SELECTORES §8.10); aquí Ana vuelve a entrar porque el navegador es uno solo. Barra de guardado: «1 cambio sin guardar · afectan a 3 personas» (titulares directos de Vendedor). AVISOS justificados: paginador (zona FAB; el rango queda a la izquierda de los botones), sin button.panel-collapse en /security/*. Ensayo 09-27: 0 fallos (7 pasos, 66 acciones). D-S4 corregido: Ana abre /sales/quotes/4 → diálogo «Acceso Denegado · Su rol solo le permite ver y trabajar las cotizaciones que usted creó…» [Entendido] y vuelve a su lista 1–3 de 3 (la voz ahora nombra y pulsa «Entendido» en vez de un click_opcional mudo). Contrastes vistos: Carlos 1–8 de 8, Ana 1–3 de 3, Ana tras el cambio 1–5 de 5 (COT 5 y 4 de José); toast «Permisos del rol actualizados exitosamente». Lámina alcance-propios-todos: fases 2 y 3 reveladas (fase 3 «Equipo · Zona Este 5 de 8»). Cambios T3: login en cámara con «Iniciar sesión» + marca «Entrando» + relleno hasta «Ya dentro, abro Ventas» (login 7,2–7,7 s); marca «alcance Todos» pasa de h4.page-title (R5b) a table thead th:nth-child(1); recortes de voz para no pasar de 4:10 (prevista 4:01 + 6 s de marca = ≈4:07; al borde: si el login real pasa de 11 s el paso se alarga). Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D 08d + «insignia adelantada» + ronda 8 R8-6): (1) INSIGNIAS: 03 (Carlos→Ana), 05 (Ana→Rosa) y 07 (Rosa→Ana) llevan la insignia de quien SALE; `{insignia: null}` en la pantalla de acceso y la de quien ENTRA como acción anclada a «Ya dentro», DETRÁS de la marca sin ancla de `aside.sidebar` (el motor la pone en max(palabra, menú visible): nunca antes de que el Inicio esté en cámara aunque el login tarde). En 05 «En cuanto entra» pasó a «Ya dentro». (2) 02: «alcance Todos» ya no marca la cabecera «N°»: marca el paginador (`:has-text('de 8')`, selector distinto por R20); todas las marcas del paginador van sin cursor (tapaba «1 – 8 de 8»). (3) 04: cartel «Dirección escrita · …/sales/quotes/4» al decir «que es de José» (la dirección tecleada no se veía); OJO, es el 3.er cartel del video (convención 1–2): se prefirió que el espectador vea la dirección. (4) 06: marca previa sobre el nombre del recurso «Cotizaciones» (`.rpe__resource-name`) antes del alcance; la barra de guardado se lee sin cifra («a cuántas personas afecta»), porque con R8-6 `holders` cuenta también a quien hereda del rol (Carlos, Vendedor sénior) y el número no está confirmado en pantalla. El corte de la cabecera del recurso (3:29–3:47) es de motor: regrabar 06 con e1810d6. Duración prevista por la puerta 1 tras la corrección: ≈4:16 (AVISO de 4:10): el tiempo lo dan los tres logins en cámara; no se recortó más voz de relleno porque la necesita la espera del login.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "carlos.pimentel",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Qué es el alcance de un permiso de ver: Propios, Equipo o Todos",
+    "Que el alcance se decide por quién CREÓ el registro, no por el vendedor asignado",
+    "Qué ve alguien con alcance Propios si abre por número un registro ajeno",
+    "Cómo se cambia el alcance en un rol y para qué sirve un equipo"
+  ],
+  "errores_comunes": [
+    "Buscar en pantalla un rótulo de «Propios»: el alcance se nota en cuántos registros salen",
+    "Creer que un vendedor ve las cotizaciones que tiene asignadas: cuenta quién las creó",
+    "Dar alcance Todos a quien solo necesita lo suyo o lo de su equipo",
+    "Olvidar meter a la persona en el equipo: con alcance Equipo y sin equipo, ve solo lo suyo"
+  ],
+  "pasos": [
+    {
+      "id": "01-que-es-el-alcance",
+      "ruta": "Concepto › Alcance",
+      "texto_pantalla": "Alcance · el mismo permiso de ver, tres alcances",
+      "capitulo": "Qué es el alcance",
+      "rotulo": "Qué es el alcance",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Alcance · Cotizaciones · Ver"
+      },
+      "navegar": "/home",
+      "diagrama": "alcance-propios-todos",
+      "acciones": [
+        {
+          "diagrama_fase": 2,
+          "al_decir": "Solo los propios"
+        },
+        {
+          "diagrama_fase": 3,
+          "al_decir": "el alcance Equipo"
+        }
+      ],
+      "narracion": "En este video vemos el alcance: sobre qué registros vale un permiso. Dos personas pueden tener el mismo permiso, Cotizaciones, Ver, y aun así no ver la misma lista. A la izquierda, alcance Todos: Carlos, el vendedor sénior, ve las ocho cotizaciones de la empresa. A la derecha, la misma lista para Ana con alcance Solo los propios: ve únicamente las tres que creó ella; las demás ni aparecen. Y hay un punto medio, el alcance Equipo: Ana ve lo suyo y lo de sus compañeros; en su equipo, Zona Este, está José, así que ve cinco. Lo que cuenta es quién creó cada cotización, no a qué vendedor está asignada."
+    },
+    {
+      "id": "02-todos",
+      "ruta": "Ventas › Cotizaciones (Carlos)",
+      "texto_pantalla": "Carlos, alcance Todos · la lista completa: 8 de 8",
+      "capitulo": "Todos: Carlos ve las 8",
+      "rotulo": "Alcance Todos: Carlos",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Alcance Todos · Carlos"
+      },
+      "acciones": [
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abre Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "luego Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Contraigo el panel"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 4500,
+          "al_decir": "al pie dice",
+          "cursor": false
+        },
+        {
+          "resaltar": "tr:has-text('COT 8') td:nth-child(1)",
+          "durante_ms": 1900,
+          "al_decir": "la número ocho"
+        },
+        {
+          "resaltar": "tr:has-text('COT 6') td:nth-child(1)",
+          "durante_ms": 1900,
+          "al_decir": "la siete y la seis"
+        },
+        {
+          "resaltar": "tr:has-text('COT 4') td:nth-child(1)",
+          "durante_ms": 1900,
+          "al_decir": "la cinco y la cuatro"
+        },
+        {
+          "resaltar": "tr:has-text('COT 1') td:nth-child(1)",
+          "durante_ms": 3000,
+          "al_decir": "de la tres a la uno"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label:has-text('de 8')",
+          "durante_ms": 4000,
+          "al_decir": "alcance Todos",
+          "cursor": false
+        }
+      ],
+      "narracion": "Vamos a la lista real. Carlos abre Ventas, y luego Cotizaciones. Se abre la lista, y contraigo el panel. Esta es la lista de cotizaciones de la empresa; al pie dice uno a ocho de ocho: las ve todas. La lista no tiene una columna de autor, así que lo digo yo: la número ocho la hizo Rosa; la siete y la seis, Carlos; la cinco y la cuatro, José; y de la tres a la uno, Ana. Carlos las ve todas porque su permiso de ver tiene alcance Todos."
+    },
+    {
+      "id": "03-propios",
+      "ruta": "Acceso › Ventas › Cotizaciones (Ana)",
+      "texto_pantalla": "Ana, alcance Propios · la misma lista: 3 de 3",
+      "capitulo": "Propios: Ana ve 3",
+      "rotulo": "Alcance Propios: Ana",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Alcance Todos · Carlos"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Ana"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "ana.mejia"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Alcance Propios · Ana"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abro Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "elijo Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "contraigo el panel"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 2600,
+          "al_decir": "Al pie dice",
+          "cursor": false
+        },
+        {
+          "resaltar": "tr:has-text('COT 3') td:nth-child(1)",
+          "durante_ms": 4000,
+          "al_decir": "Son la tres"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Propios es lo que la persona creó, no lo que tiene asignado."
+          },
+          "durante_ms": 7000,
+          "al_decir": "ningún rótulo"
+        }
+      ],
+      "narracion": "Ahora la misma lista con Ana. Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro como Ana, la vendedora. Escribo su usuario, ana punto mejia, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda: el alcance no cambia qué botones ve Ana, sino qué cotizaciones le aparecen. Ana tiene el mismo permiso de ver cotizaciones, pero con alcance Propios: solo cuenta lo que ella misma creó. Ya dentro, abro Ventas, y en su lista elijo Cotizaciones; luego contraigo el panel. Al pie dice uno a tres de tres. Son la tres, la dos y la uno: las que creó ella. En pantalla no hay ningún rótulo que diga Propios; se nota en lo que falta."
+    },
+    {
+      "id": "04-ajena-por-numero",
+      "ruta": "Dirección escrita › Cotización 4 (de José)",
+      "texto_pantalla": "Ana abre por número una cotización ajena · aviso y vuelta a su lista",
+      "capitulo": "Propios: una cotización ajena",
+      "rotulo": "Propios: por número",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Alcance Propios · Ana · Cotización de José"
+      },
+      "navegar": "/sales/quotes/4",
+      "al_decir_navegar": "Pruebo con",
+      "acciones": [
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Dirección escrita",
+            "texto": "…/sales/quotes/4: la cotización 4, que creó José."
+          },
+          "durante_ms": 5000,
+          "al_decir": "que es de José"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container",
+          "durante_ms": 7000,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Entendido')",
+          "al_decir": "Pulso Entendido"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 5000,
+          "al_decir": "tanto en la lista",
+          "cursor": false
+        }
+      ],
+      "narracion": "¿Y si Ana escribe en el navegador la dirección de una cotización que no es suya? Pruebo con la cuatro, que es de José. El sistema no se la abre: le avisa que su rol solo le permite ver y trabajar las cotizaciones que creó ella, y que pida acceso a su administrador si necesita ese documento. Pulso Entendido, y Ana se queda en su lista, con sus tres. El alcance vale tanto en la lista como al abrir una cotización por su número."
+    },
+    {
+      "id": "05-entra-rosa",
+      "ruta": "Acceso › Inicio de Rosa",
+      "texto_pantalla": "Entra Rosa, la administradora, para cambiar el alcance",
+      "capitulo": "Equipo: Rosa cambia el alcance",
+      "rotulo": "Entra Rosa",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Alcance Propios · Ana"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Rosa"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "rosa.almanzar"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el cambio le llegará"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 6000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "info",
+            "texto": "Administradora · Rosa"
+          },
+          "al_decir": "Ya dentro"
+        }
+      ],
+      "narracion": "Ahora el punto medio: el alcance Equipo. Lo cambia la administradora. Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa. Escribo su usuario, rosa punto almanzar, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Rosa va a cambiar el alcance en el rol Vendedor, que es el de Ana, y el cambio le llegará a todas las personas que tienen ese rol. Ya dentro, su menú trae todos los módulos, con Seguridad incluida."
+    },
+    {
+      "id": "06-cambiar-a-equipo",
+      "ruta": "Seguridad › Roles y permisos › Vendedor › Cotizaciones",
+      "texto_pantalla": "Rol Vendedor · Cotizaciones · Ver: de Propios a Equipo",
+      "capitulo": "Equipo: cambiar el alcance",
+      "rotulo": "Cambiar el alcance",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "navegar": "/security/roles?rol=77",
+      "acciones": [
+        {
+          "resaltar": ".sec-roles__h2",
+          "durante_ms": 3000,
+          "al_decir": "el rol Vendedor"
+        },
+        {
+          "click": ".rpe__module:has-text('Cotizaciones')",
+          "al_decir": "elijo Cotizaciones"
+        },
+        {
+          "resaltar": ".rpe__resource-name:text-is('Cotizaciones')",
+          "durante_ms": 2200,
+          "cursor": false,
+          "al_decir": "En el recurso"
+        },
+        {
+          "resaltar": ".rpe__scope-seg[aria-label='Alcance de Ver en Cotizaciones']",
+          "durante_ms": 5000,
+          "al_decir": "trae su alcance"
+        },
+        {
+          "click": ".rpe__scope-seg[aria-label='Alcance de Ver en Cotizaciones'] button:has-text('Equipo')",
+          "al_decir": "pulso Equipo"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar",
+          "durante_ms": 4200,
+          "al_decir": "la barra de guardado"
+        },
+        {
+          "click": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "al_decir": "Pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        }
+      ],
+      "narracion": "Estoy en Seguridad, Roles y permisos, con el rol Vendedor abierto. En la columna de módulos, junto a la lista de roles, elijo Cotizaciones. En el recurso Cotizaciones, el permiso Ver trae su alcance: Propios, Equipo o Todos. Ahora está en Propios; pulso Equipo. Abajo aparece la barra de guardado: un cambio sin guardar, y a cuántas personas afecta. Pulso Guardar cambios. Sale el aviso de que los permisos del rol quedaron actualizados."
+    },
+    {
+      "id": "07-equipo",
+      "ruta": "Acceso › Ventas › Cotizaciones (Ana, alcance Equipo)",
+      "texto_pantalla": "Ana, alcance Equipo · la misma lista: 5 de 5",
+      "capitulo": "Equipo: Ana ve 5",
+      "rotulo": "Alcance Equipo: Ana",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "pantalla de acceso"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "ana.mejia"
+          },
+          "al_decir": "escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "info",
+            "texto": "Alcance Equipo · Ana (Zona Este)"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abro Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "elijo Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "contraigo el panel"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 3500,
+          "al_decir": "Ahora dice",
+          "cursor": false
+        },
+        {
+          "resaltar": "tr:has-text('COT 4') td:nth-child(1)",
+          "durante_ms": 4000,
+          "al_decir": "de José"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Un equipo no da permisos: solo decide qué ve quien tiene alcance Equipo."
+          },
+          "durante_ms": 8000,
+          "al_decir": "En resumen"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 4000,
+          "al_decir": "el alcance más corto",
+          "cursor": false
+        }
+      ],
+      "narracion": "Para comprobarlo, vuelvo a entrar como Ana: abro el menú de mi usuario y pulso Cerrar sesión. En la pantalla de acceso escribo su usuario, ana punto mejia, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, fíjate que no tocamos ni a José ni al equipo: solo el alcance. El equipo Zona Este lo forman Ana y José, y el rol de Ana ahora tiene alcance Equipo en cotizaciones. Ya dentro, abro Ventas, y en su lista elijo Cotizaciones; luego contraigo el panel. Ahora dice uno a cinco de cinco: sus tres, más la cinco y la cuatro, que son de José. En resumen: con Todos se ve lo de cualquiera; con Propios, solo lo que la persona creó; y con Equipo, lo suyo y lo de sus compañeros. Elige siempre el alcance más corto que le permita trabajar."
+    }
+  ]
+}

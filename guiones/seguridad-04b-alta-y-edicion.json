@@ -1,0 +1,486 @@
+{
+  "titulo": "Seguridad · Dar de alta, editar y desactivar personas",
+  "_comentario": "Serie Seguridad, video 04b (AUTOR B, 2026-09-27). Parte de E0 (restaurar.mjs E0 antes y después: la toma crea, edita, desactiva, activa y elimina a Julio Santana, julio.santana, y deja eventos en la bitácora). Graba rosa.almanzar. Tiempos medidos (_resultados-r04b.json): alta 7,7–8,2 s con los botones deshabilitados (R16/R25: marca de relleno sobre el campo usuario a +4 s y marca del diálogo «Operación completada» anclada a ≈+9,5 s del clic); editar 3,6 s; desactivar 3,4 s; activar 3,3 s (sin confirmación); eliminar 6,3 s. Toasts marcados SIN al_decir justo tras el clic (R9). Los tres clics en «Más acciones» usan selectores distintos (R20). D-01 VERIFICADO en la rama (a1-02…05): «+ Asignar rol» abre «Asignar roles», diff «Se agrega: Almacén». Radio «Activo»: `mat-radio-button >> nth=0` («Activo» casa también «Inactivo»). La opción «Vendedor» se elige con :not(:has-text('sénior')). DEPENDE DE LA RONDA 2: «Guardando…» en botones (D-S12) — si aparece, la voz ya dice «los botones quedan en espera», sin nombrar el texto; re-verificar en el ensayo. Carteles: «no compartir usuarios» (01) y «desactivar en vez de borrar» (05), temas obligatorios de la serie. AVISOS justificados: el primer paso no contrae el panel del menú (no existe en /security/*). Ensayo 09-27: 0 fallos (5 pasos, 63 acciones). Cambios T2: alta 7–11 s → marca sin ancla sobre «Creando usuario» + relleno «Fíjate en el usuario» a +4 s + marca del diálogo anclada a «Mientras tanto» (+10 s; el motor espera a que exista); eliminar tarda 4,6–11 s → marca `.sec-people__busy` («Eliminando…») y voz más larga antes de «otra vez nueve»; quitada la frase no verificada «tampoco puedes dar permisos que no tienes». GRABACIÓN T2 (2026-09-27): en la toma 1 las escrituras sobre usuarios tardaron ~2,5× lo del ensayo (alta 21,7 s, editar 8,9 s, desactivar 10,5 s, activar 10 s, eliminar ~19 s: D-S12/E-9 con la grabación en marcha). Se alargó la voz y se añadieron marcas de relleno (rol y estado en el alta, clave en editar, nombre/roles en desactivar/activar, cartel y «Eliminando…» en eliminar) para que el aviso llegue ANTES de su palabra. T2 revisión visual (G-5 guion): tras activar, Julio sale «Pendiente» (nunca entró), no «Activa»: la voz lo dice así. Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-B): (04b-1) la marca del campo Contraseña («la anterior», ahora 2500 ms) va ANTES de «Pulso Actualizar», con la frase «Desde que la guarde, Julio tiene que usar esta para entrar, y la anterior ya no le sirve»; tras el clic, relleno sin marca («eso toma unos segundos, y mientras tanto el formulario espera») hasta el aviso: ya no queda dibujada detrás de «Operación completada»; (04b-2) el aviso de la propia ficha va en condicional y sin marca sobre ROLES: «Si abres tu propia ficha, ese enlace no aparece: nadie puede cambiar sus propios roles»; para no dejar un tramo R0 la marca de Permisos efectivos («la suma de los dos») sube a 5000 ms. Ronda 8 (R8-10): «Crear usuario» y «Editar usuario» en voz, texto_pantalla y selector. (04b-3, insignia sobre el diálogo) es opcional de motor: no se toca. Los AVISOS de marcas solapadas y la duración 4:20 ya estaban antes de esta corrección (marcas de avisos sin ancla, R9/R10). Ensayo: confirmar que el aviso de actualización llega dentro de los ~8 s de relleno.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "julio",
+      "santana",
+      "julio.santana"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i",
+    "IP": "i-pe"
+  },
+  "aprenderas": [
+    "Dar de alta a una persona con su usuario, su clave y su rol",
+    "Cambiarle la contraseña a alguien que la olvidó",
+    "Asignarle otro rol con «+ Asignar rol» y leer qué se agrega y qué se quita antes de guardar",
+    "Desactivar y volver a activar una cuenta, y cuándo conviene eliminarla"
+  ],
+  "errores_comunes": [
+    "Crear la cuenta sin rol: la persona entra y no ve ningún módulo",
+    "Compartir un mismo usuario entre varias personas: la auditoría ya no dice quién hizo qué",
+    "Eliminar a alguien que puede volver: desactivar corta el acceso y conserva todo",
+    "Intentar cambiarte tus propios roles: lo tiene que hacer otro administrador"
+  ],
+  "pasos": [
+    {
+      "id": "01-crear-usuario",
+      "capitulo": "Dar de alta a una persona",
+      "rotulo": "Crear usuario",
+      "ruta": "Seguridad › Personas › Nuevo › Usuario",
+      "texto_pantalla": "Crear usuario · nombre, correo, usuario, clave, rol y estado",
+      "navegar": "/security/personas",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": ".gm-sheet__actions button:has-text('Nuevo')",
+          "al_decir": "Se hace con Nuevo"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Usuario')",
+          "al_decir": "elijo Usuario"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Crear usuario')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el formulario"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='name']",
+            "texto": "Julio"
+          },
+          "al_decir": "En Nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='lastName']",
+            "texto": "Santana"
+          },
+          "al_decir": "Al lado va el apellido"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='email']",
+            "texto": "julio.santana@germiva.demo"
+          },
+          "al_decir": "Luego el correo"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has([formcontrolname='email'])",
+          "durante_ms": 6000,
+          "al_decir": "sale un aviso"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='username']",
+            "texto": "julio.santana"
+          },
+          "al_decir": "Su nombre de usuario"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "Escribo la contraseña"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='confirmPassword']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "la repito"
+        },
+        {
+          "click": "mat-dialog-container app-role-multi-select mat-select",
+          "al_decir": "Roles del Usuario"
+        },
+        {
+          "click": ".rms-panel mat-option:has-text('Vendedor'):not(:has-text('sénior'))",
+          "al_decir": "elijo Vendedor"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "cierro la lista"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-radio-button >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "El Estado"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Cada persona con su propio usuario: nunca compartas uno entre varias."
+          },
+          "durante_ms": 6500,
+          "al_decir": "Cada persona"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Creando usuario')",
+          "durante_ms": 1800,
+          "cursor": false,
+          "al_decir": "Creando usuario"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has([formcontrolname='username'])",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Fíjate en el usuario"
+        },
+        {
+          "resaltar": "mat-dialog-container app-role-multi-select",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "fíjate en el rol"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-radio-button >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "lo vincula"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Operación completada')",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container:has-text('Operación completada') button:has-text('Aceptar')",
+          "al_decir": "Pulso Aceptar"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Julio Santana')",
+          "durante_ms": 3500,
+          "al_decir": "ya aparece"
+        }
+      ],
+      "narracion": "Ahora vamos a dar de alta a una persona nueva: Julio Santana, un vendedor que acaba de entrar a la empresa. Se hace con Nuevo, arriba a la derecha, y ahí elijo Usuario. Se abre el formulario Crear usuario. En Nombre escribo Julio, su primer nombre, tal cual. Al lado va el apellido: Santana, como aparece en su cédula. Luego el correo: julio punto santana, arroba germiva punto demo. Si ese correo ya existe en Germiva, aquí mismo sale un aviso: la persona se vincula a esta empresa con su clave de siempre; y si era de alguien eliminado, se restaura. Su nombre de usuario, con el que va a entrar: julio punto santana. Escribo la contraseña, que pide seis caracteres o más, con una mayúscula y un número; y la repito para confirmarla, igualita, letra por letra. Ahora, en Roles del Usuario, abro la lista y elijo Vendedor. Y cierro la lista con la tecla Escape. Sin ningún rol, la persona entraría y no vería ningún módulo. El Estado queda en Activo. Cada persona tiene que tener su propio usuario. Pulso Guardar. El botón dice Creando usuario, y puede tardar unos segundos. Fíjate en el usuario, porque es lo que le vas a entregar a Julio, junto con su clave, en persona. Y fíjate en el rol: Vendedor es lo que decide qué módulos va a ver cuando entre. Mientras tanto, el sistema crea la cuenta, le asigna el rol y lo vincula a Distribuidora Las Palmas. Listo: sale el aviso Operación completada, el usuario ha sido creado. Pulso Aceptar, y Julio ya aparece en la lista."
+    },
+    {
+      "id": "02-editar-y-contrasena",
+      "capitulo": "Editar y cambiar la contraseña",
+      "rotulo": "Cambiar contraseña",
+      "ruta": "Seguridad › Personas › Julio Santana › Cambiar contraseña",
+      "texto_pantalla": "Editar usuario · cambiar la contraseña de una persona",
+      "acciones": [
+        {
+          "click": ".sec-people__who:has-text('Julio Santana')",
+          "al_decir": "abro su ficha"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__buttons button:has-text('Editar')",
+          "durante_ms": 5000,
+          "al_decir": "botón Editar"
+        },
+        {
+          "click": "aside[aria-label='Detalle de la persona'] .sec-people__buttons button:has-text('Cambiar contraseña')",
+          "al_decir": "uso Cambiar contraseña"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-checkbox:has-text('Cambiar la contraseña')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "ya marcada"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='password']",
+            "texto": "Santana2026!"
+          },
+          "al_decir": "escribo la nueva"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has([formcontrolname='password'])",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "la anterior"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Actualizar')",
+          "al_decir": "Pulso Actualizar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('actualizado correctamente')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "se actualizó"
+        },
+        {
+          "click": "mat-dialog-container:has-text('actualizado correctamente') button:has-text('Aceptar')",
+          "al_decir": "Aceptar"
+        }
+      ],
+      "narracion": "Para cambiarle algo a una persona, abro su ficha: pulso Julio Santana. El botón Editar abre su formulario completo: nombre, correo, WhatsApp, roles y estado. Si Julio olvida su clave, uso Cambiar contraseña: es el mismo formulario, Editar usuario, con la casilla de cambiar la contraseña ya marcada. Aquí hay una sola casilla de clave, sin confirmación: escribo la nueva. Desde que la guarde, Julio tiene que usar esta para entrar, y la anterior ya no le sirve. Si cierras este formulario con cambios sin guardar, te pregunta antes de salir. Pulso Actualizar. El sistema guarda la clave nueva; eso toma unos segundos, y mientras tanto el formulario espera. Listo: el aviso dice que el usuario se actualizó correctamente. Aceptar."
+    },
+    {
+      "id": "03-asignar-rol",
+      "capitulo": "Asignar otro rol",
+      "rotulo": "Asignar rol",
+      "ruta": "Seguridad › Personas › Julio Santana › Asignar roles",
+      "texto_pantalla": "Asignar roles · agregar un rol y ver el cambio antes de guardar",
+      "acciones": [
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role",
+          "durante_ms": 4000,
+          "al_decir": "el bloque Roles"
+        },
+        {
+          "click": "aside[aria-label='Detalle de la persona'] .sec-people__assign-roles",
+          "al_decir": "el enlace Asignar rol"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Asignar roles')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "con su nombre"
+        },
+        {
+          "click": "mat-dialog-container app-role-multi-select mat-select",
+          "al_decir": "Abro la lista"
+        },
+        {
+          "click": ".rms-panel mat-option:has-text('Almacén')",
+          "al_decir": "marco Almacén"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "con Escape"
+        },
+        {
+          "resaltar": "mat-dialog-container .person-roles__line--add",
+          "durante_ms": 2800,
+          "cursor": false,
+          "al_decir": "Se agrega"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role:has-text('Almacén')",
+          "durante_ms": 2600,
+          "al_decir": "dos roles"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__block-head",
+          "durante_ms": 5000,
+          "al_decir": "la suma de los dos"
+        }
+      ],
+      "narracion": "Julio también va a ayudar en el almacén. En su ficha, el bloque Roles tiene, debajo de su rol, el enlace Asignar rol. Lo pulso, y se abre la ventana Asignar roles, con su nombre arriba. Abro la lista de roles y marco Almacén. Cierro la lista con Escape. Antes de guardar, la ventana te dice qué va a cambiar: Se agrega Almacén. Si quitaras uno, diría Se quita. Pulso Guardar, y el aviso confirma que los roles se actualizaron. Ahora Julio tiene dos roles, y lo que puede hacer es la suma de los dos, en sus permisos efectivos. Si abres tu propia ficha, ese enlace no aparece: nadie puede cambiar sus propios roles."
+    },
+    {
+      "id": "04-desactivar-activar",
+      "capitulo": "Desactivar y activar",
+      "rotulo": "Desactivar y activar",
+      "ruta": "Seguridad › Personas › Julio Santana › Más acciones",
+      "texto_pantalla": "Más acciones · desactivar una cuenta y volver a activarla",
+      "acciones": [
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__card-name",
+          "durante_ms": 4500,
+          "al_decir": "no hace falta borrarlo"
+        },
+        {
+          "click": "aside[aria-label='Detalle de la persona'] button[aria-label='Más acciones']",
+          "al_decir": "los tres puntos"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Desactivar')",
+          "al_decir": "elijo Desactivar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Desactivar usuario')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "pregunta primero"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Desactivar')",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__card-name",
+          "durante_ms": 4500,
+          "al_decir": "fíjate en el nombre"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('desactivado')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__facts",
+          "durante_ms": 4500,
+          "al_decir": "dice Inactiva"
+        },
+        {
+          "click": ".sec-people__buttons button[aria-label='Más acciones']",
+          "al_decir": "Para devolverle"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Activar')",
+          "al_decir": "elijo Activar"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role",
+          "durante_ms": 4500,
+          "al_decir": "sus roles siguen"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('Usuario activado')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-people__row:has-text('Julio Santana') .gm-status",
+          "durante_ms": 4000,
+          "al_decir": "vuelve a Pendiente"
+        }
+      ],
+      "narracion": "Si Julio sale de vacaciones largas, o está de licencia, no hace falta borrarlo: se desactiva. Abro los tres puntos de su ficha, a la derecha de Cambiar contraseña, y elijo Desactivar. El sistema pregunta primero: dice que no podrá iniciar sesión hasta que se active de nuevo. Confirmo. Mientras el sistema guarda el cambio, fíjate en el nombre de arriba: es la ficha de Julio, la que va a cambiar de estado. Eso toma unos segundos. Sale el aviso de que se desactivó, y arriba su estado ya dice Inactiva. Su usuario, sus roles y todo lo que hizo se quedan como estaban. Para devolverle el acceso, vuelvo al mismo menú y elijo Activar; esta vez no pregunta, porque devolver el acceso no tiene riesgo. Mientras se guarda, sus roles siguen ahí, igual que antes. Sale el aviso, y en la lista su estado vuelve a Pendiente, igual que antes de desactivarlo, porque Julio todavía no ha entrado nunca."
+    },
+    {
+      "id": "05-eliminar",
+      "capitulo": "Eliminar y caso práctico",
+      "rotulo": "Eliminar",
+      "ruta": "Seguridad › Personas › Julio Santana › Eliminar",
+      "texto_pantalla": "Eliminar usuario · cuándo sí y cuándo es mejor desactivar",
+      "acciones": [
+        {
+          "click": ".sec-people__buttons button:has(mat-icon:text-is('more_vert'))",
+          "al_decir": "en los tres puntos"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Eliminar')",
+          "al_decir": "está Eliminar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Eliminar usuario')",
+          "durante_ms": 1200,
+          "cursor": false,
+          "al_decir": "no se puede deshacer"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Eliminar')",
+          "al_decir": "Lo confirmo"
+        },
+        {
+          "resaltar": ".sec-people__busy",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Mientras dice Eliminando"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Si la persona puede volver, desactívala en vez de eliminarla."
+          },
+          "durante_ms": 7000,
+          "al_decir": "Un caso práctico"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Auditoría')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "lo que hizo sigue"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('eliminado')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-people :text('Mostrando')",
+          "durante_ms": 4500,
+          "al_decir": "otra vez nueve"
+        }
+      ],
+      "narracion": "Y si la persona ya no va a volver, en los tres puntos también está Eliminar. Lo pulso, y el sistema avisa que esta acción no se puede deshacer. Lo confirmo. Mientras dice Eliminando, el sistema quita a la persona de la empresa con todos sus roles; es lo que más tarda de todo este video. Un caso práctico, mientras tanto: un vendedor se va por tres meses, desactívalo; si renuncia y no vuelve, elimínalo. En los dos casos, lo que hizo sigue en la Auditoría. Cuando termina, sale el aviso de usuario eliminado, el panel se cierra, y la lista tiene otra vez nueve personas."
+    }
+  ]
+}

@@ -1,0 +1,334 @@
+{
+  "titulo": "Seguridad · Rotar, pausar y revocar credenciales",
+  "_comentario": "Serie Seguridad, video 06b (AUTOR B, 2026-09-27). Parte de E6c (restaurar.mjs E6c: ya existe «Programa del contador», id 7957, prefijo gv_live_0ff350fd, sin «Registrar compras»). Graba rosa.almanzar. Qué escribe en BD: rota el secreto de «Programa del contador» (invalida el de credencial.json hasta restaurar), la desactiva y la activa, y revoca «Tienda en línea anterior»; restaurar.mjs E6c DESPUÉS (06c necesita el secreto de credencial.json vigente). Tiempos medidos (_resultados-v06b/r06b): rotar ≈3,5 s hasta la franja; desactivar/activar/revocar ≈3,4 s hasta el toast (sin confirmación al desactivar/activar; con confirmación al rotar y al revocar). Toasts SIN al_decir justo tras el clic (R9), con selectores distintos por texto (R20: «Integración desactivada» contiene «activada»: por eso «Integración activada»). Documentación: barra lateral `.api-docs-sidenav` con botones de sección y enlaces `a.nav-item`; los TÍTULOS de los documentos siguen sin acento o en inglés (D-S10): la voz no los lee. «Revisar» del Resumen: el paso 03 lo comprueba en cámara (tras revocar quedan 3 asuntos, volcado v06b-08). DEPENDE DE LA RONDA 2: D-S10 (títulos con acento) — no cambia la narración. AVISOS justificados: el primer paso no contrae el panel del menú (no existe en /security/*). Ensayo 09-27: 0 fallos (4 pasos, 39 acciones). Cambios T2: desactivar/activar/revocar tardan 3,1–5,4 s → más voz antes de «dice Inactiva», «otra vez Activa» y «queda una sola»; la Documentación de la API se pinta DEBAJO de la barra superior y del riel (E-7): el h1 sale tapado → marca sobre el primer bloque de código (`.api-docs-content pre >> nth=0`). GRABACIÓN T2 toma 1: rotar 11,5 s, desactivar 10,5 s, activar 11 s y revocar 12,2 s (≈3× el ensayo): voz de relleno + una marca por espera, para que cada aviso llegue antes de su palabra. Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe C 06b-1/06b-2/06b-4): la voz dice que el número de la pestaña Integraciones cuenta SOLO las credenciales activas (en 02, con marca sobre la pestaña cuando baja a 1 al desactivar —confirmado en el fotograma 029/030 de la revisión C—; en 03, «va a bajar» sin cifra); la marca de «fíjate arriba» pasa a `.sec-api__facts` (incluye el estado «Activa» que cambia) y la de «ya dice Inactiva» a `.sec-api__facts .gm-status` (selector distinto, R20); en el Resumen la voz ya no dice «ahora hay tres asuntos pendientes» (se veían dos): lee la cifra del contador de «Requiere atención» con marca sin cursor. 06b-3 (migas cortadas en la documentación) es de motor: regrabar 02–04 con e1810d6. Sin cambio de usuario.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "Programa del contador",
+      "Tienda en línea anterior",
+      "gv_live"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i",
+    "IP": "i-pe",
+    "DGII": "de-ge-i-i"
+  },
+  "aprenderas": [
+    "Rotar el secreto de una credencial cuando se filtra o cuando cambia quien la maneja",
+    "Pausar una credencial sin perder su configuración, y volver a activarla",
+    "Revocar una credencial que ya no se usa",
+    "Dónde está la documentación de la API para el técnico que conecta el otro programa"
+  ],
+  "errores_comunes": [
+    "Rotar el secreto sin avisar al otro programa: la integración se cae hasta que use el nuevo",
+    "Revocar en vez de pausar cuando la pausa es temporal: revocar no se puede deshacer",
+    "Dejar credenciales sin uso activas: son llaves abiertas que nadie vigila"
+  ],
+  "pasos": [
+    {
+      "id": "01-rotar-secreto",
+      "capitulo": "Rotar el secreto",
+      "rotulo": "Rotar secreto",
+      "ruta": "Seguridad › Integraciones › Programa del contador › Rotar secreto",
+      "texto_pantalla": "Rotar secreto · un secreto nuevo, el anterior deja de funcionar",
+      "navegar": "/security/integraciones",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "resaltar": ".sec-api__row:has-text('Programa del contador') .sec-api__name",
+          "durante_ms": 5000,
+          "al_decir": "credenciales de la empresa"
+        },
+        {
+          "click": ".sec-api__row:has-text('Programa del contador') .sec-api__who",
+          "al_decir": "Abro Programa del contador"
+        },
+        {
+          "click": ".sec-api__buttons button:has-text('Rotar secreto')",
+          "al_decir": "pulso Rotar secreto"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('deja de funcionar')",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "El sistema avisa"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Rotar secreto')",
+          "al_decir": "Lo confirmo"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Rotar corta la integración hasta que el otro programa use el secreto nuevo."
+          },
+          "durante_ms": 6500,
+          "al_decir": "con el secreto viejo"
+        },
+        {
+          "resaltar": ".sec-api__card-top",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "a quién se lo vas"
+        },
+        {
+          "resaltar": ".sec-api__secret",
+          "durante_ms": 3900,
+          "cursor": false,
+          "al_decir": "vuelve la franja"
+        },
+        {
+          "click": ".sec-api__secret button:has-text('Copiar secreto')",
+          "al_decir": "Copio el secreto"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('copiado')",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "click": ".sec-api__secret button[aria-label='Cerrar aviso']",
+          "al_decir": "cierro la franja"
+        }
+      ],
+      "narracion": "Seguimos con las credenciales de API, o sea las llaves con que otros programas entran a Germiva. Aquí, en la pestaña Integraciones, están las credenciales de la empresa. Rotar el secreto es cambiarlo por uno nuevo. Se hace cuando alguien lo pudo ver, o cuando cambia la persona que maneja el otro programa. Abro Programa del contador, y en su panel pulso Rotar secreto. El sistema avisa: el secreto actual deja de funcionar de inmediato, y la integración se cae hasta que se actualice del otro lado. Lo confirmo. Desde este momento, el programa del contador no entra con el secreto viejo. Mientras el sistema genera el nuevo, piensa a quién se lo vas a pasar: solo al técnico que configura ese programa. En unos segundos vuelve la franja con el secreto nuevo, igual que al crearla. Copio el secreto, se lo paso al técnico del contador por un canal privado, y cierro la franja."
+    },
+    {
+      "id": "02-desactivar-activar",
+      "capitulo": "Pausar y reactivar",
+      "rotulo": "Desactivar y activar",
+      "ruta": "Seguridad › Integraciones › Programa del contador › Más acciones",
+      "texto_pantalla": "Más acciones · pausar una credencial sin perder su configuración",
+      "acciones": [
+        {
+          "click": ".sec-api__buttons button[aria-label='Más acciones']",
+          "al_decir": "tres puntos del panel"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Desactivar')",
+          "al_decir": "elijo Desactivar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('desactivada')",
+          "durante_ms": 2500,
+          "al_decir": "sale el aviso",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-api__facts",
+          "durante_ms": 2500,
+          "al_decir": "Fíjate arriba",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-api__facts .gm-status",
+          "durante_ms": 2000,
+          "al_decir": "ya dice Inactiva",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "el número de la pestaña"
+        },
+        {
+          "click": ".sec-api__buttons button:has(mat-icon:text-is('more_vert'))",
+          "al_decir": "vuelvo al menú"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Activar')",
+          "al_decir": "elijo Activar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('Integración activada')",
+          "durante_ms": 2400,
+          "al_decir": "Sale otra vez el aviso",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Programa del contador') .gm-status",
+          "durante_ms": 5000,
+          "al_decir": "otra vez Activa"
+        }
+      ],
+      "narracion": "A veces solo hace falta una pausa: el contador cierra por vacaciones, o sospechas algo y quieres cortar mientras averiguas. En los tres puntos del panel elijo Desactivar. No pregunta: sale el aviso, y el sistema le corta el paso al otro programa. Fíjate arriba, debajo del nombre: el estado ya dice Inactiva, en gris. Además, el número de la pestaña Integraciones bajó a uno: cuenta solo las credenciales activas. Mientras está así, el otro programa no puede entrar, pero su clave, su secreto y sus permisos se quedan como estaban. Para devolverle el paso, vuelvo al menú de los tres puntos, y ahí elijo Activar; tampoco pregunta. Sale otra vez el aviso, y en la lista, donde también se ve el estado de cada credencial, la fila dice otra vez Activa."
+    },
+    {
+      "id": "03-revocar",
+      "capitulo": "Revocar una credencial",
+      "rotulo": "Revocar",
+      "ruta": "Seguridad › Integraciones › Tienda en línea anterior › Revocar y eliminar",
+      "texto_pantalla": "Revocar y eliminar · para la credencial que ya no se usa",
+      "acciones": [
+        {
+          "click": ".sec-api__row:has-text('Tienda en línea anterior') .sec-api__who",
+          "al_decir": "Abro Tienda en línea anterior"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Tienda en línea anterior') .sec-api__stale",
+          "durante_ms": 4500,
+          "al_decir": "su último uso"
+        },
+        {
+          "click": ".sec-api__buttons button[aria-label='Más acciones']",
+          "al_decir": "en los tres puntos"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Revocar y eliminar')",
+          "al_decir": "Revocar y eliminar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Revocar credencial')",
+          "durante_ms": 1499,
+          "cursor": false,
+          "al_decir": "no se puede deshacer"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Eliminar')",
+          "al_decir": "Confirmo con Eliminar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('eliminada')",
+          "durante_ms": 2600,
+          "al_decir": "sale el aviso",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "durante_ms": 4500,
+          "al_decir": "la pestaña Integraciones"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Programa del contador') .sec-api__who",
+          "durante_ms": 4500,
+          "al_decir": "queda una sola"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Resumen')",
+          "al_decir": "en el Resumen"
+        },
+        {
+          "resaltar": ".sec-ov__count",
+          "durante_ms": 5500,
+          "al_decir": "tres asuntos",
+          "cursor": false
+        }
+      ],
+      "narracion": "Y cuando una credencial ya no se usa, lo correcto es revocarla. Abro Tienda en línea anterior: la tienda vieja ya no existe, y en la lista se ve que su último uso fue hace meses. En los tres puntos elijo Revocar y eliminar. El sistema pide confirmar: sus credenciales dejan de funcionar y no se puede deshacer. Confirmo con Eliminar, y sale el aviso: el sistema borró su acceso. Fíjate en la pestaña Integraciones, arriba: su número cuenta solo las credenciales activas. Y en la lista queda una sola credencial. ¿Y en el Resumen? Lo abro. El aviso de credencial sin uso desaparece: el contador de Requiere atención dice ahora tres asuntos, y ninguno es de credenciales."
+    },
+    {
+      "id": "04-documentacion",
+      "capitulo": "La documentación de la API",
+      "rotulo": "Documentación de la API",
+      "ruta": "Seguridad › Integraciones › Documentación de la API",
+      "texto_pantalla": "Documentación de la API · para el técnico que conecta el otro programa",
+      "navegar": "/security/integraciones",
+      "acciones": [
+        {
+          "click": "button:has-text('Documentación de la API')",
+          "al_decir": "Documentación de la API"
+        },
+        {
+          "resaltar": ".api-docs-sidenav button.section-header:has-text('Inicio')",
+          "durante_ms": 1800,
+          "al_decir": "A la izquierda"
+        },
+        {
+          "resaltar": ".api-docs-sidenav button.section-header:has-text('Autenticación')",
+          "durante_ms": 3500,
+          "al_decir": "Autenticación"
+        },
+        {
+          "resaltar": ".api-docs-sidenav button.section-header:has-text('Facturas Emitidas')",
+          "durante_ms": 1400,
+          "al_decir": "las facturas"
+        },
+        {
+          "click": ".api-docs-sidenav a.nav-item[href='/security/api-docs/autenticacion']",
+          "al_decir": "Abro el primero"
+        },
+        {
+          "resaltar": ".api-docs-content pre >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "paso a paso"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Revoca lo que no se usa: una credencial olvidada es una llave abierta."
+          },
+          "durante_ms": 7000,
+          "al_decir": "Un caso práctico"
+        }
+      ],
+      "narracion": "Por último, la ayuda para el técnico. Vuelvo a Integraciones y, arriba, pulso Documentación de la API. Es un manual para quien conecta el otro programa, no para ti. A la izquierda están las secciones: Autenticación, que explica cómo entra el programa con su clave y su secreto; las facturas, emitidas y recibidas; los reportes para la DGII, o sea la dirección de impuestos; y la cuenta. Abro el primero de esa sección: explica paso a paso cómo entra un programa y qué le responde el sistema. Un caso práctico: tu contador pide acceso para su programa. Creas una credencial solo con lo que necesita, le pasas la clave y el secreto por un canal privado, y le mandas este manual."
+    }
+  ]
+}

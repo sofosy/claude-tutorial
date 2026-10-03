@@ -1,0 +1,317 @@
+{
+  "titulo": "Con y sin permiso · Lo que una credencial puede y no puede consultar",
+  "_comentario": "Serie Seguridad, video 06c (AUTOR B, 2026-09-27). Parte de E6c (restaurar.mjs E6c: «Programa del contador» id 7957 con la plantilla sin «Registrar compras», SIN «Productos · Ver»; su clave y secreto vigentes en seeds/seguridad/credencial.json — si 06b se grabó antes, restaurar E6c: 06b rota el secreto). Graba rosa.almanzar (la sesión solo sirve para el paso 04 en el ERP). Qué escribe en BD: 1 login de integración + 2–3 consultas (api_call_count/last_api_call), y concede «Productos · Ver» a la credencial (paso 04); restaurar.mjs E6c después. LÁMINA: marca/demo-integracion/index.html, servida en el MISMO origen del front (el motor no navega a otro origen, _SELECTORES §8 resp. 5): este guion lleva `rutas_locales` (**/demo-integracion/* → marca/demo-integracion/) para la grabación; para el ENSAYO (ensayar.py no aplica rutas_locales) hay que copiarla con «node marca/demo-integracion/preparar.mjs --estatico» a fe-estatico-seguridad/browser/demo-integracion/. En los dos casos, antes: «node marca/demo-integracion/preparar.mjs» (escribe credencial.local.json, en .gitignore). `spa: false`: cada `navegar` es una carga completa (la lámina no es parte del SPA; volver al ERP recarga Angular ≈3–5 s, cubierto por la voz). La lámina guarda el token en sessionStorage: en el paso 05 sigue «Conectado». Rutas confirmadas en _ensuciar.mjs/README (E6c): GET /api/v1/invoices/sales → 200 (3 facturas: F1 y F2 emitidas + F3 borrador), GET /api/v1/product → 403 «No tienes el permiso requerido para acceder a este recurso: «Productos» (PRODUCT_VIEW). Solicita acceso a tu administrador.»; la lámina quita «(PRODUCT_VIEW)» de la frase y lo pone aparte en pequeño; la voz NO lee el código técnico. CORS: el API arranca con `cors: true` (Germiva-api/src/main.ts:55). El ítem se busca por su código en la página de permisos (la voz no lo lee) y la casilla se elige excluyendo SUPPLIER_PRODUCT_VIEW y ORDER_PRODUCT_VIEW (el filtro deja 3, volcado a5-04). Selectores de la lámina: propios (#btn-conectar, #estado-conexion, #btn-facturas, #btn-productos, #res-facturas/#res-productos .res-codigo/.res-resumen/.res-mensaje/.res-tecnico/.filas) — SIN verificar en navegador: los confirma el ensayo. AVISOS justificados: el primer paso no contrae el panel del menú (la lámina no tiene menú). Ensayo 09-27: 0 fallos (5 pasos, 35 acciones). Cambios T2: `.page-title` → `mat-card.info-card` (como 06a). Confirmado en la lámina: facturas 200 · Permitido, 3 facturas (2 emitidas + borrador); productos 403 · Rechazado con «No tienes el permiso requerido para acceder a este recurso: «Productos». Solicita acceso a tu administrador.» y «Germiva no entregó ningún dato»; tras conceder, 200 y «Germiva entregó 25 productos». Antes de ensayar/grabar: restaurar E6c + `node marca/demo-integracion/preparar.mjs --estatico`. GRABACIÓN T2 (2026-09-27): el paso 04 ya no usa el buscador (no filtra, G-5; E-8 quitó los códigos de las casillas): abre el módulo Productos (0/42) y marca su primera casilla, «Productos» (PRODUCT_VIEW). T2 toma 1 (REGRABAR): (1) con `rutas_locales` la lámina servida por route.fulfill cuenta como origen público y Chromium bloquea el fetch al loopback («Permission was denied for this request to access the `loopback` address space») → «Germiva no responde»; se QUITÓ `rutas_locales`: la lámina se sirve desde el front estático (preparar.mjs --estatico, que grabar-serie.sh ya corre tras restaurar E6c). (2) El paso 04 se alargó 74 s: la pasada de privacidad al final del paso recorre la página de permisos entera; el paso ahora termina con «Volver a Integraciones». Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe C 06c-1 + ronda 8 R8-8): la lámina marca/demo-integracion/index.html ya NO pinta la línea «Código técnico del permiso: PRODUCT_VIEW» (se quitó `.res-tecnico` del rechazo) y su dato dice «Clave de API» (antes «Clave (API Key)»); la voz dice «su clave de API». Antes de ensayar/grabar hay que volver a copiar la lámina al front estático (`node marca/demo-integracion/preparar.mjs --estatico`). Las insignias de los contrastes no cambian (no hay cambio de usuario en cámara: la sesión del ERP es siempre Rosa). 06c-2 (prefijo distinto entre 06a y E6c): aceptado; la voz no nombra el prefijo.",
+  "base_url": "http://localhost:4200",
+  "spa": false,
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "Programa del contador",
+      "gv_live",
+      "Constructora Mirador",
+      "Ferretería Doña Luz",
+      "Consumidor Final",
+      "Inversiones Barahona",
+      "Colmado La Esquina"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i"
+  },
+  "aprenderas": [
+    "Cómo entra otro programa a Germiva con una credencial: clave, secreto y un pase temporal",
+    "Qué responde Germiva cuando la credencial tiene el permiso: los datos",
+    "Qué responde cuando no lo tiene: un rechazo 403, sin entregar nada",
+    "Conceder un permiso a la credencial y comprobar que vale al instante"
+  ],
+  "errores_comunes": [
+    "Dar a la credencial todos los permisos «por si acaso»: se entrega más información de la que el programa necesita",
+    "Creer que un rechazo 403 es una falla del sistema: es el permiso que falta, y se concede en Integraciones",
+    "Confundir la credencial con un usuario: no entra por la pantalla de acceso ni tiene roles de persona"
+  ],
+  "pasos": [
+    {
+      "id": "01-el-programa",
+      "capitulo": "El programa del contador",
+      "rotulo": "El programa del contador",
+      "ruta": "Programa del contador (página de prueba)",
+      "texto_pantalla": "Programa del contador · una página de prueba que se conecta con la credencial",
+      "navegar": "/demo-integracion/index.html",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Credencial · Programa del contador"
+      },
+      "acciones": [
+        {
+          "resaltar": "#aviso-demo",
+          "durante_ms": 6500,
+          "al_decir": "simula el programa del contador"
+        },
+        {
+          "resaltar": "#tarjeta-conexion",
+          "durante_ms": 6000,
+          "al_decir": "A la izquierda"
+        },
+        {
+          "resaltar": "#dato-clave",
+          "durante_ms": 4500,
+          "al_decir": "su clave"
+        },
+        {
+          "click": "#btn-conectar",
+          "al_decir": "Pulso Conectar"
+        },
+        {
+          "resaltar": "#estado-conexion:has-text('Conectado')",
+          "durante_ms": 1400,
+          "al_decir": "Conectado"
+        },
+        {
+          "resaltar": "#btn-facturas",
+          "durante_ms": 4000,
+          "al_decir": "dos consultas"
+        }
+      ],
+      "narracion": "Un caso práctico para ver los permisos de una credencial en acción. Esta página simula el programa del contador: pide datos a Germiva con la credencial que creamos, igual que lo haría el programa real. A la izquierda está su conexión. El programa no entra con el usuario de una persona: se presenta con su clave de API, que es la llave de la puerta por la que dos programas se hablan, y con su secreto, que aquí va tapado. Pulso Conectar. Germiva revisa la clave y el secreto, y le entrega un pase temporal: dice Conectado. A la derecha tiene dos consultas, una para facturas y otra para productos."
+    },
+    {
+      "id": "02-consulta-permitida",
+      "capitulo": "Consulta permitida",
+      "rotulo": "Consulta permitida",
+      "ruta": "Programa del contador › Consultar facturas emitidas",
+      "texto_pantalla": "Facturas emitidas · la credencial tiene el permiso: 200 y los datos",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Facturas · Ver"
+      },
+      "acciones": [
+        {
+          "click": "#btn-facturas",
+          "al_decir": "Consultar facturas emitidas"
+        },
+        {
+          "resaltar": "#res-facturas .res-codigo",
+          "durante_ms": 5200,
+          "al_decir": "doscientos"
+        },
+        {
+          "resaltar": "#res-facturas .res-resumen",
+          "durante_ms": 2499,
+          "al_decir": "tres facturas"
+        },
+        {
+          "resaltar": "#res-facturas .filas",
+          "durante_ms": 7500,
+          "al_decir": "Cada renglón"
+        }
+      ],
+      "narracion": "Primero, lo que el contador necesita. Pulso Consultar facturas emitidas. Germiva responde con el código doscientos, que en el idioma de los programas quiere decir: permitido, aquí están los datos. Entregó tres facturas, todas las que tiene la empresa. Cada renglón trae el comprobante fiscal, el cliente, el estado y el total: dos emitidas y un borrador. La credencial tiene el permiso de ver facturas, porque venía en la plantilla con que se creó, así que Germiva entrega todo sin preguntar."
+    },
+    {
+      "id": "03-consulta-no-permitida",
+      "capitulo": "Consulta no permitida",
+      "rotulo": "Consulta no permitida",
+      "ruta": "Programa del contador › Consultar productos",
+      "texto_pantalla": "Productos · la credencial no tiene el permiso: 403 y nada más",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Productos · Ver"
+      },
+      "acciones": [
+        {
+          "click": "#btn-productos",
+          "al_decir": "Consultar productos"
+        },
+        {
+          "resaltar": "#res-productos .res-codigo",
+          "durante_ms": 1800,
+          "al_decir": "cuatrocientos tres"
+        },
+        {
+          "resaltar": "#res-productos .res-mensaje",
+          "durante_ms": 7500,
+          "al_decir": "El mensaje"
+        },
+        {
+          "resaltar": "#res-productos .res-resumen",
+          "durante_ms": 4500,
+          "al_decir": "ni un solo producto"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Sin permiso, Germiva responde 403 y no entrega nada."
+          },
+          "durante_ms": 7000,
+          "al_decir": "No es una falla"
+        }
+      ],
+      "narracion": "Ahora algo que no le dimos. Pulso Consultar productos. La respuesta es cuatrocientos tres, que quiere decir rechazado. El mensaje lo dice en español: no tienes el permiso requerido para acceder a este recurso, Productos; solicita acceso a tu administrador. Y Germiva no entregó ni un solo producto: ni nombres, ni precios, ni existencias. No es una falla del sistema: es exactamente lo que tiene que pasar cuando un programa pide algo que su credencial no tiene."
+    },
+    {
+      "id": "04-conceder",
+      "capitulo": "Conceder el permiso",
+      "rotulo": "Conceder el permiso",
+      "ruta": "Seguridad › Integraciones › Programa del contador › Permisos",
+      "texto_pantalla": "Permisos de Integración · conceder «Productos · Ver» a la credencial",
+      "navegar": "/security/integraciones?credencial=7957",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "resaltar": ".sec-api__card-top",
+          "durante_ms": 5000,
+          "al_decir": "su panel"
+        },
+        {
+          "click": ".sec-api__permissions",
+          "al_decir": "pulso Editar permisos"
+        },
+        {
+          "resaltar": "mat-card.info-card",
+          "durante_ms": 4000,
+          "al_decir": "Permisos de Integración"
+        },
+        {
+          "resaltar": "mat-expansion-panel-header:has(mat-icon:text-is('inventory_2'))",
+          "durante_ms": 3000,
+          "al_decir": "el módulo Productos"
+        },
+        {
+          "click": "mat-expansion-panel-header:has(mat-icon:text-is('inventory_2'))",
+          "al_decir": "Lo abro"
+        },
+        {
+          "resaltar": "mat-expansion-panel.parent-module:has(mat-icon:text-is('inventory_2')) mat-checkbox:has(.permission-name:text-is('Productos'))",
+          "durante_ms": 5000,
+          "al_decir": "La primera casilla"
+        },
+        {
+          "click": "mat-expansion-panel.parent-module:has(mat-icon:text-is('inventory_2')) mat-checkbox:has(.permission-name:text-is('Productos')) input",
+          "al_decir": "La marco"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('concedido')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-expansion-panel.parent-module:has(mat-icon:text-is('inventory_2')) .group-count",
+          "durante_ms": 2500,
+          "al_decir": "pasa a uno"
+        },
+        {
+          "click": "button:has-text('Volver a Integraciones')",
+          "al_decir": "Volver a Integraciones"
+        },
+        {
+          "resaltar": ".sec-api__block-head >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "cinco permisos"
+        }
+      ],
+      "narracion": "El contador también necesita consultar productos, para cuadrar el inventario. Vuelvo a Germiva, a la pestaña Integraciones, con su panel abierto: Programa del contador. Arriba pulso Editar permisos. La página tarda un momento, porque trae los más de mil permisos del sistema, y se abre Permisos de Integración. Los módulos donde la credencial ya tiene algo salen abiertos; el módulo Productos está cerrado, en cero. Lo abro. La primera casilla, Productos a secas, es la de ver productos; las de debajo son para crear, editar o eliminar, y esas no se las doy. La marco. El aviso dice que el permiso se concedió, y queda guardado en el acto, sin botón de guardar: el módulo pasa a uno. Listo: ahora pulso Volver a Integraciones, al pie, y el panel ya cuenta cinco permisos."
+    },
+    {
+      "id": "05-repetir",
+      "capitulo": "La misma consulta, ahora permitida",
+      "rotulo": "La misma consulta, otra vez",
+      "ruta": "Programa del contador › Consultar productos",
+      "texto_pantalla": "Productos · con el permiso concedido: 200 y los datos",
+      "navegar": "/demo-integracion/index.html",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Productos · Ver"
+      },
+      "acciones": [
+        {
+          "resaltar": "#estado-conexion",
+          "durante_ms": 4200,
+          "al_decir": "sigue conectado"
+        },
+        {
+          "click": "#btn-productos",
+          "al_decir": "repito Consultar productos"
+        },
+        {
+          "resaltar": "#res-productos .res-codigo",
+          "durante_ms": 2100,
+          "al_decir": "Ahora responde"
+        },
+        {
+          "resaltar": "#res-productos .filas",
+          "durante_ms": 4500,
+          "al_decir": "veinticinco productos"
+        },
+        {
+          "resaltar": "#res-productos .res-resumen",
+          "durante_ms": 4500,
+          "al_decir": "valió al instante"
+        }
+      ],
+      "narracion": "Vuelvo al programa del contador, que sigue conectado con el mismo pase. Sin tocar nada más, repito Consultar productos. Ahora responde doscientos, permitido, y entrega los veinticinco productos del catálogo. El cambio valió al instante, desde la siguiente consulta. En resumen: una credencial solo recibe lo que tiene concedido; lo demás se rechaza con cuatrocientos tres. Dale a cada programa solo lo que necesita."
+    }
+  ]
+}

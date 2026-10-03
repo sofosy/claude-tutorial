@@ -1,0 +1,403 @@
+{
+  "titulo": "Seguridad · Equipos",
+  "_comentario": "Serie Seguridad, video 04c (AUTOR B, 2026-09-27). Parte de E0 («Zona Este» con Ana y José). Graba rosa.almanzar. Qué escribe en BD: crea el equipo «Zona Norte», le agrega a Carlos y Héctor, quita a Héctor, cambia la descripción y lo elimina; en el paso 05 (AUTOR D, F-052) elimina TAMBIÉN «Zona Este» para enseñar el estado vacío «Sin equipos todavía.» (`.sec-people__none`, security-people.component.html:33-35, verificado en código, NO en volcado → confirmar en el ensayo) — restaurar.mjs E0 después, que devuelve Zona Este con Ana y José (teams + team_members están en el canon). Es el último paso: no rompe nada posterior del video. Tras eliminar un equipo la vista vuelve a «Todas» (F-059), por eso la fila de Ana está en pantalla. Tiempos medidos (_resultados-v04c.json): agregar/quitar/eliminar equipo 0,3–0,4 s (toasts), crear/editar = diálogo «Operación completada» con Aceptar. Toasts marcados SIN al_decir justo tras el clic (R9), con selectores distintos por texto (R20). Verdad 2 de la serie: un equipo NO da permisos, solo sirve al alcance «Equipo» (A-020): lo dicen la voz y el cartel. El ítem «Nuevo › Equipo» de la consola solo se nombra (F-020): se usa el «+» del riel. Casillas de Carlos (y=605) y Héctor (y=829) están bajo el pliegue del scroll interno de la lista: el motor las centra. AVISOS justificados: el primer paso no contrae el panel del menú (no existe en /security/*). Ensayo 09-27: 0 fallos (5 pasos, 52 acciones). Cambios T2: el riel de Equipos NO muestra el número de miembros (E-6: `.gm-rail-count` vacío) → la voz ya no lo afirma; el resultado de «Agregar a equipo» se marca en el correo de Carlos («· Zona Norte»). GRABACIÓN T2 (2026-09-27): E-6 corregido en el ERP — el riel de equipos muestra «N personas»; el paso 01 lo dice («a su lado dice cuántas personas lo forman», marca sobre el botón de Zona Este) y el 03 cierra con «Zona Norte ya dice dos personas». REGRABACIÓN T4 (09-27, G-13): el diálogo de trabajo «Editar Equipo» no tenía marca y la puerta 2 lo contó como alerta sin explicar (en T2 lo había descartado): marca `mat-dialog-container:has-text('Editar Equipo')` al decir «el mismo formulario». Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-B): (04c-1) la lista de Zona Este muestra a José arriba y a Ana debajo: la voz dice «Arriba, José Cabrera; y debajo, Ana Mejía» y las marcas van en ese orden; (04c-3) las marcas del título .sec-people__title («Zona Este · 2» en 01 y «Zona Norte · 1» en 04) usan estilo subrayado, que mide el texto y no la barra entera; la de 04 baja a 2800 ms para apagarse antes de que se abra «Editar Equipo». (04c-2 y la observación de 03:39) son de motor: se resuelven regrabando con e1810d6. Ronda 8: el título del diálogo sigue «Nuevo Equipo» / «Editar Equipo» (team-form usa entityLabel «Equipo»; :has-text no distingue mayúsculas). Ensayo: confirmar el orden José/Ana en Zona Este y que el subrayado cae bajo el título.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "Zona Norte",
+      "Santiago",
+      "Puerto Plata",
+      "Los Alcarrizos"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Qué es un equipo y para qué sirve de verdad: el alcance «Equipo» de un permiso",
+    "Crear un equipo y agregarle personas desde la lista, varias a la vez",
+    "Quitar a alguien de un equipo, editarlo y eliminarlo"
+  ],
+  "errores_comunes": [
+    "Meter a alguien en un equipo esperando que gane permisos: los permisos vienen solo de sus roles",
+    "Buscar los miembros dentro del formulario del equipo: se agregan y se quitan desde la lista de personas",
+    "Olvidar que un equipo solo cambia algo cuando un rol usa el alcance «Equipo»"
+  ],
+  "pasos": [
+    {
+      "id": "01-que-es-un-equipo",
+      "capitulo": "Qué es un equipo",
+      "rotulo": "Qué es un equipo",
+      "ruta": "Seguridad › Personas › Equipos › Zona Este",
+      "texto_pantalla": "Equipos · un grupo de personas para el alcance «Equipo»",
+      "navegar": "/security/personas",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "resaltar": ".sec-people__teams-label",
+          "durante_ms": 3000,
+          "al_decir": "debajo de las vistas"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has(:text-is('Zona Este'))",
+          "durante_ms": 3000,
+          "al_decir": "cuántas personas"
+        },
+        {
+          "click": ".gm-rail-btn:has(:text-is('Zona Este'))",
+          "al_decir": "Ahora pulso Zona Este"
+        },
+        {
+          "resaltar": ".sec-people__title",
+          "estilo": "subrayado",
+          "durante_ms": 1200,
+          "al_decir": "son dos personas"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('José Cabrera')",
+          "durante_ms": 1200,
+          "al_decir": "José Cabrera"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Ana Mejía')",
+          "durante_ms": 3500,
+          "al_decir": "Ana Mejía"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Un equipo no da permisos: solo decide qué ven con el alcance «Equipo»."
+          },
+          "durante_ms": 7500,
+          "al_decir": "no da permisos"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('José Cabrera') .gm-sheet-meta",
+          "durante_ms": 4500,
+          "al_decir": "su correo"
+        }
+      ],
+      "narracion": "Un equipo es un grupo de personas que trabajan juntas, por ejemplo los vendedores de una misma zona. Los equipos están en la pestaña Personas, a la izquierda, debajo de las vistas; esta empresa tiene uno solo, y a su lado dice cuántas personas lo forman, en gris. Ahora pulso Zona Este: la lista se queda con sus miembros, que son dos personas. Arriba, José Cabrera; y debajo, Ana Mejía. ¿Para qué sirve? Para una sola cosa: cuando un rol deja ver cotizaciones con el alcance Equipo, cada vendedor ve las suyas y las de sus compañeros de equipo. Pero ojo, un equipo no da permisos. Lo que alguien puede hacer lo deciden sus roles; el equipo solo decide qué registros ve. En la lista, el equipo sale al lado de su correo, para saber de un vistazo a qué equipo pertenece cada quien."
+    },
+    {
+      "id": "02-crear-equipo",
+      "capitulo": "Crear un equipo",
+      "rotulo": "Crear un equipo",
+      "ruta": "Seguridad › Personas › Nuevo equipo",
+      "texto_pantalla": "Nuevo Equipo · nombre y descripción",
+      "acciones": [
+        {
+          "click": "button[aria-label='Nuevo equipo']",
+          "al_decir": "el botón de sumar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Nuevo Equipo')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Nuevo Equipo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='name']",
+            "texto": "Zona Norte"
+          },
+          "al_decir": "En Nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='description']",
+            "texto": "Vendedores de Santiago y Puerto Plata"
+          },
+          "al_decir": "la Descripción"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Operación completada')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Operación completada"
+        },
+        {
+          "click": "mat-dialog-container:has-text('Operación completada') button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has(:text-is('Zona Norte'))",
+          "durante_ms": 5000,
+          "al_decir": "ya aparece"
+        }
+      ],
+      "narracion": "Ahora creo uno nuevo para los vendedores del norte. Junto al título Equipos está el botón de sumar; lo pulso y se abre el formulario Nuevo Equipo. Esto mismo está en el botón Nuevo, arriba, en la opción Equipo. En Nombre escribo Zona Norte, un nombre corto que todos reconozcan. Y en la Descripción, para qué es: vendedores de Santiago y Puerto Plata. Fíjate que aquí no se eligen miembros: eso se hace desde la lista. Pulso Guardar, y sale el aviso Operación completada: el equipo ha sido creado. Acepto, y Zona Norte ya aparece en el riel, todavía vacío."
+    },
+    {
+      "id": "03-agregar-miembros",
+      "capitulo": "Agregar miembros",
+      "rotulo": "Agregar miembros",
+      "ruta": "Seguridad › Personas › Todas › Agregar a equipo",
+      "texto_pantalla": "Personas · marcar varias y agregarlas a un equipo",
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has(:text-is('Todas'))",
+          "al_decir": "vuelvo a Todas"
+        },
+        {
+          "resaltar": "input[aria-label='Seleccionar todas']",
+          "durante_ms": 4500,
+          "al_decir": "la casilla de arriba"
+        },
+        {
+          "click": "input[aria-label='Seleccionar Carlos Pimentel']",
+          "al_decir": "Marco a Carlos"
+        },
+        {
+          "click": "input[aria-label='Seleccionar Héctor Vargas']",
+          "al_decir": "y a Héctor"
+        },
+        {
+          "resaltar": ".sec-people__bulk",
+          "durante_ms": 2800,
+          "al_decir": "una barra"
+        },
+        {
+          "resaltar": ".sec-people__bulk button:has-text('Limpiar')",
+          "durante_ms": 3500,
+          "al_decir": "Limpiar"
+        },
+        {
+          "click": ".sec-people__bulk button:has-text('Agregar a equipo')",
+          "al_decir": "Ahora pulso Agregar a equipo"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Zona Norte')",
+          "al_decir": "elijo Zona Norte"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('agregadas')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Carlos Pimentel') .gm-sheet-meta",
+          "durante_ms": 2200,
+          "al_decir": "al lado de su correo"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has(:text-is('Zona Norte'))",
+          "durante_ms": 3500,
+          "al_decir": "Y en el riel"
+        }
+      ],
+      "narracion": "Los miembros se agregan desde la lista. Primero vuelvo a Todas. Cada fila tiene una casilla a la izquierda, y la casilla de arriba marca todas de una vez. Marco a Carlos, que va a cubrir el norte, y a Héctor. Arriba de la lista aparece una barra que dice cuántas personas marqué, con sus acciones. Si te equivocas, Limpiar quita todas las marcas y empiezas de nuevo. Ahora pulso Agregar a equipo, se abre la lista de equipos, y elijo Zona Norte. El aviso confirma que se agregaron, y en la lista Carlos ya lleva Zona Norte al lado de su correo; Héctor también. Y en el riel, Zona Norte ya dice dos personas."
+    },
+    {
+      "id": "04-quitar-editar-eliminar",
+      "capitulo": "Quitar, editar y eliminar",
+      "rotulo": "Quitar, editar y eliminar",
+      "ruta": "Seguridad › Personas › Equipos › Zona Norte",
+      "texto_pantalla": "Zona Norte · quitar un miembro, editar el equipo y eliminarlo",
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has(:text-is('Zona Norte'))",
+          "al_decir": "Abro Zona Norte"
+        },
+        {
+          "click": "input[aria-label='Seleccionar Héctor Vargas']",
+          "al_decir": "marco su casilla"
+        },
+        {
+          "click": ".sec-people__bulk button:has-text('Quitar del equipo')",
+          "al_decir": "Quitar del equipo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('quitada')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-people__title",
+          "estilo": "subrayado",
+          "durante_ms": 2800,
+          "al_decir": "queda Carlos"
+        },
+        {
+          "click": "button:has-text('Editar equipo')",
+          "al_decir": "Editar equipo"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Editar Equipo')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el mismo formulario"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='description']",
+            "texto": "Vendedores de Santiago"
+          },
+          "al_decir": "cambio la descripción"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Actualizar')",
+          "al_decir": "Pulso Actualizar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('actualizado correctamente')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el aviso dice"
+        },
+        {
+          "click": "mat-dialog-container:has-text('actualizado correctamente') button:has-text('Aceptar')",
+          "al_decir": "Pulso Aceptar"
+        },
+        {
+          "click": "button[aria-label='Eliminar equipo']",
+          "al_decir": "a su derecha"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Eliminar equipo')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "pide confirmar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Eliminar')",
+          "al_decir": "Confirmo con Eliminar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('eliminado')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-rail-btn:has(:text-is('Zona Este'))",
+          "durante_ms": 5000,
+          "al_decir": "solo Zona Este"
+        }
+      ],
+      "narracion": "Para quitar a alguien, abro el equipo. Abro Zona Norte: al final Héctor no va a cubrir el norte, así que marco su casilla y pulso Quitar del equipo. No pregunta: sale el aviso, y en el equipo queda Carlos. Arriba a la derecha, Editar equipo abre el mismo formulario con sus datos: cambio la descripción, porque Puerto Plata lo cubre otra persona. Si cierras con cambios sin guardar, te pregunta antes. Pulso Actualizar, y el aviso dice que el equipo se ha actualizado correctamente. Pulso Aceptar. Y en la misma barra, a su derecha, la papelera elimina el equipo; pide confirmar, porque no se puede deshacer. Confirmo con Eliminar. Las personas no se borran ni pierden permisos: solo dejan de estar agrupadas. En el riel queda solo Zona Este."
+    },
+    {
+      "id": "05-sin-equipos",
+      "capitulo": "Cuando no queda ningún equipo",
+      "rotulo": "Sin equipos",
+      "ruta": "Seguridad › Personas › Equipos (vacío)",
+      "texto_pantalla": "Sin equipos todavía · así se ve el riel cuando la empresa no tiene ninguno",
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has(:text-is('Zona Este'))",
+          "al_decir": "abro Zona Este"
+        },
+        {
+          "click": "button[aria-label='Eliminar equipo']",
+          "al_decir": "pulso la papelera"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Zona Este')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el nombre del equipo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Eliminar')",
+          "al_decir": "confirmo otra vez"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('Equipo eliminado')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-people__none",
+          "durante_ms": 3200,
+          "al_decir": "Sin equipos todavía"
+        },
+        {
+          "resaltar": ".sec-people__teams-label",
+          "durante_ms": 2800,
+          "al_decir": "crear el primero"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Ana Mejía') .gm-sheet-meta",
+          "durante_ms": 5000,
+          "al_decir": "siguen en la lista"
+        },
+        {
+          "resaltar": "button[aria-label='Nuevo equipo']",
+          "durante_ms": 3200,
+          "al_decir": "los agrupas en un equipo"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "durante_ms": 5000,
+          "al_decir": "el alcance Equipo"
+        }
+      ],
+      "narracion": "Por último, cómo se ve la consola cuando no queda ningún equipo. Para mostrarlo, abro Zona Este y pulso la papelera. La confirmación trae el nombre del equipo, para no borrar el que no es. Confirmo otra vez con Eliminar. Sale el aviso, y debajo de Equipos, el riel ahora dice Sin equipos todavía. El botón de sumar sigue ahí, para crear el primero cuando haga falta. Ana y José siguen en la lista, con sus mismos roles y permisos: solo dejaron de estar agrupados. Un caso práctico: si mañana quieres que los vendedores del norte vean las cotizaciones entre ellos, los agrupas en un equipo y en su rol pones el alcance Equipo. Eso lo vemos en el video del alcance."
+    }
+  ]
+}

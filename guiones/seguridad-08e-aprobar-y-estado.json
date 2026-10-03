@@ -1,0 +1,444 @@
+{
+  "titulo": "Con y sin permiso · Aprobar y el estado del documento",
+  "_comentario": "Serie Seguridad, casos ACCIÓN aprobar + ESTADO (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo); la empresa exige aprobación (company_configs.quote_requires_approval = 1). Entran EN CÁMARA: carlos.pimentel (sesion) → ana.mejia → carlos.pimentel. Qué escribe en BD: la cotización 1 (Q1, de Ana, Constructora Mirador) pasa de Borrador a Aprobada (quotes, quote_approvals, quote_versions, audit_logs); lo deshace `restaurar.mjs E0`. «Convertir a factura» solo se señala (convertirla crearía una factura). Contrastes sobre el MISMO punto: paso «Aprobada» del stepper (Carlos lo pulsa en Q1 → «Aprobar cotización / ¿Está seguro…? Dejará de ser editable.» [Aprobar] → «Éxito / Estado actualizado correctamente» [Aceptar] · Ana en su Q2: se ve, cursor not-allowed, el clic no hace nada ni avisa) y «Más acciones» del formulario (Carlos en Q6 Aprobada: Convertir a factura · Versiones e historial · Duplicar · Carlos en Q7 Borrador: Versiones e historial · Duplicar; «Convertir a factura» DESAPARECE). Reglas usadas, SIN inventar (F-255, F-256, _SELECTORES §6): Aprobada exige QUOTE_APPROVE con aprobación exigida; Convertir a factura exige QUOTE_CONVERT_DIRECTLY_TO_INVOICE y estado Aprobada o Aceptada. La voz dice que la regla del estado NO se configura en el rol (A-018: no hay filtros por estado). Diagrama `estado-documento` alineado con E0 (hoja «COT 1»). Entre documentos se entra SIEMPRE desde la lista (R21). DEPENDENCIA ronda 2 (D-S1): hoy al abrir cualquier cotización salta el modal «Acceso Denegado — Configuración Empresa» para Carlos y Ana; escrito para el comportamiento CORREGIDO: re-verificar en el ensayo. A VERIFICAR EN EL ENSAYO: el clic crudo sobre `.step-content:has-text('Aprobada')` (en la exploración, Playwright avisó que `.step-wrapper.chevron-wrapper` intercepta el puntero; si el clic no abre la confirmación, usar `.step-wrapper:has(.step-content:has-text('Aprobada'))`). AVISOS justificados: sin panel-collapse en el primer paso (es la lámina sobre /home). Ensayo 09-27: 0 fallos (5 pasos, 59 acciones). D-S1 corregido (sin modal). Verificado: el clic crudo en el paso «Aprobada» abre «Aprobar cotización · ¿Está seguro…? Dejará de ser editable.» → «Éxito · Estado actualizado correctamente» [Aceptar] y Q1 queda Aprobada; para Ana el paso Aprobada sale en gris (Cancelada en azul) y el clic no hace nada; Más acciones de Q6: Convertir a factura; de Q7: solo «Versiones e historial» y «Duplicar». Lámina estado-documento: fase 1 Borrador/Bloqueado, fase 2 Aprobada/Permitido, fase 3 la frase del permiso y el estado (capturas lam-estado-f1..f3). Cambios T3: login en cámara con «Iniciar sesión» + marca «Entrando» + relleno hasta «Ya dentro, abro Ventas» (login 5,1–10,8 s); «el puntero indica que no se puede» → «sale en gris» (el cursor del video es el del motor); 05: tras navegar a la lista, marca previa sobre la celda Estado de COT 7 antes de pulsar su ojo (en el primer ensayo el clic inmediato no abrió la cotización y «Más acciones» cayó en el menú de una fila). Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D 08e + «insignia adelantada»): (1) INSIGNIAS: 03 (Carlos→Ana) y 04 (Ana→Carlos) llevan la insignia de quien SALE; `{insignia: null}` en la pantalla de acceso y la de quien ENTRA como acción anclada a «Ya dentro», detrás de la marca sin ancla de `aside.sidebar` (sale en max(palabra, menú visible)). (2) 04: la voz ya no nombra la cotización uno para luego abrir la seis: «Abro otra que ya está aprobada, la número seis». (3) Todas las marcas de la barra de estados y del título van con `cursor: false` (el cursor y la ayuda emergente tapaban «Aprobada»). (4) «y dentro Cotizaciones» → «y en su lista elijo Cotizaciones» (la puerta 1 daba el ancla por gastada tras «abro Ventas»). El ⚠ de existencias y el «Guardar» apagado son del ERP.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "carlos.pimentel",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Qué da el permiso de aprobar: el paso «Aprobada» de la cotización",
+    "Qué ve quien no tiene ese permiso: el paso existe pero no se puede pulsar",
+    "Por qué un botón puede no aparecer aunque tengas el permiso: el estado del documento también decide",
+    "Que las reglas de estado no se configuran en el rol: son del documento"
+  ],
+  "errores_comunes": [
+    "Dar el permiso de aprobar a quien arma las cotizaciones: nadie debería aprobar lo suyo sin revisión",
+    "Buscar «Convertir a factura» en una cotización en borrador: primero hay que aprobarla",
+    "Pensar que alguien perdió un permiso cuando lo que cambió es el estado del documento"
+  ],
+  "pasos": [
+    {
+      "id": "01-permiso-y-estado",
+      "ruta": "Concepto › Permiso y estado",
+      "texto_pantalla": "Permiso + estado · el permiso dice qué, el estado dice cuándo",
+      "capitulo": "Permiso y estado",
+      "rotulo": "Permiso y estado",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Permiso + estado del documento"
+      },
+      "navegar": "/home",
+      "diagrama": "estado-documento",
+      "acciones": [
+        {
+          "diagrama_fase": 2,
+          "al_decir": "Carlos la aprueba"
+        },
+        {
+          "diagrama_fase": 3,
+          "al_decir": "El permiso dice"
+        }
+      ],
+      "narracion": "En este video juntamos dos cosas que deciden lo que puedes hacer con un documento: el permiso y el estado. Aquí, la cotización uno, en Borrador. Carlos, el vendedor sénior, tiene el permiso Cotizaciones, Aprobar, y por eso puede aprobarla. Pero la acción Convertir a factura todavía está bloqueada: solo existe cuando la cotización ya está aprobada. Carlos la aprueba, y la cotización pasa a Aprobada: ahora sí se puede convertir en factura. El permiso dice qué acción existe; el estado del documento dice cuándo se puede usar."
+    },
+    {
+      "id": "02-con-aprobar",
+      "ruta": "Ventas › Cotizaciones › Cotización 1 (Carlos)",
+      "texto_pantalla": "Carlos aprueba la cotización 1 · paso «Aprobada» y confirmación",
+      "capitulo": "Con permiso: aprobar",
+      "rotulo": "Con permiso: aprobar",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Carlos · Aprobar"
+      },
+      "acciones": [
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abre Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "luego Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "contraigo el panel"
+        },
+        {
+          "click": "tr:has-text('COT 1') button[aria-label='Abrir']",
+          "al_decir": "con el ojo"
+        },
+        {
+          "resaltar": ".page-hero-title",
+          "durante_ms": 3000,
+          "al_decir": "Está en Borrador",
+          "cursor": false
+        },
+        {
+          "click": ".step-content:has-text('Aprobada')",
+          "al_decir": "pulso el paso Aprobada"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "pide confirmación"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aprobar')",
+          "al_decir": "Pulso Aprobar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Estado actualizado')",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Pulso Aceptar"
+        },
+        {
+          "resaltar": "div.step-content:has-text('Aprobada')",
+          "durante_ms": 5000,
+          "al_decir": "ya está aprobada",
+          "cursor": false
+        }
+      ],
+      "narracion": "Vamos a hacerlo de verdad. Carlos abre Ventas, y luego Cotizaciones; se abre la lista, y contraigo el panel. Abro la cotización número uno, de Ana, con el ojo de su fila. Está en Borrador. En la barra de estados de arriba, pulso el paso Aprobada. El sistema pide confirmación, y avisa que la cotización dejará de ser editable. Pulso Aprobar. El sistema guarda el cambio de estado, y enseguida sale el aviso de éxito: Estado actualizado correctamente. Pulso Aceptar. La cotización uno ya está aprobada, y la aprobó quien tiene el permiso para hacerlo."
+    },
+    {
+      "id": "03-sin-aprobar",
+      "ruta": "Acceso › Ventas › Cotizaciones › Cotización 2 (Ana)",
+      "texto_pantalla": "Ana, sin el permiso de aprobar · el paso «Aprobada» no se puede pulsar",
+      "capitulo": "Sin permiso: aprobar",
+      "rotulo": "Sin permiso: aprobar",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Carlos · Aprobar"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Ana"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "ana.mejia"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Sin permiso · Ana · Aprobar"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abro Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "elijo Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "contraigo el panel"
+        },
+        {
+          "click": "tr:has-text('COT 2') button[aria-label='Abrir']",
+          "al_decir": "Abro la número dos"
+        },
+        {
+          "resaltar": ".page-hero-title",
+          "durante_ms": 3000,
+          "al_decir": "la puede editar",
+          "cursor": false
+        },
+        {
+          "resaltar": ".step-content:has-text('Aprobada')",
+          "durante_ms": 4000,
+          "al_decir": "no está disponible",
+          "cursor": false
+        },
+        {
+          "click": ".step-content:has-text('Aprobada')",
+          "al_decir": "Si lo pulso"
+        },
+        {
+          "resaltar": "div.step-content:has-text('Borrador')",
+          "durante_ms": 4000,
+          "al_decir": "sigue en Borrador",
+          "cursor": false
+        }
+      ],
+      "narracion": "Ahora la otra cara. Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro como Ana, la vendedora. Escribo su usuario, ana punto mejia, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que aprobar es un permiso aparte de crear y de editar. Ana puede crear y editar cotizaciones, pero su rol no tiene el permiso de aprobar: quien vende no aprueba sus propios presupuestos. Ya dentro, abro Ventas, y en su lista elijo Cotizaciones; se abre su lista, y contraigo el panel. Abro la número dos, que es suya y está en Borrador. Ella la puede editar; pero el paso Aprobada, aunque se ve, no está disponible: sale en gris. Si lo pulso, no pasa nada, y la cotización sigue en Borrador. La aprobación la da otra persona con ese permiso, como Carlos."
+    },
+    {
+      "id": "04-con-estado-aprobada",
+      "ruta": "Acceso › Ventas › Cotizaciones › Cotización 6 (Carlos)",
+      "texto_pantalla": "Cotización Aprobada · «Convertir a factura» aparece en Más acciones",
+      "capitulo": "Estado Aprobada: se puede convertir",
+      "rotulo": "Estado Aprobada",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Ana · Aprobar"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "pantalla de acceso"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "carlos.pimentel"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "con",
+            "texto": "Estado Aprobada · Convertir a factura"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abro Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "elijo Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "contraigo el panel"
+        },
+        {
+          "click": "tr:has-text('COT 6') button[aria-label='Abrir']",
+          "al_decir": "la número seis"
+        },
+        {
+          "resaltar": "div.step-content:has-text('Aprobada')",
+          "durante_ms": 3000,
+          "al_decir": "ya está aprobada",
+          "cursor": false
+        },
+        {
+          "click": "button[aria-label='Más acciones']",
+          "al_decir": "pulso Más acciones"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button:has-text('Convertir a factura')",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "está Convertir a factura"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Cierro el menú"
+        }
+      ],
+      "narracion": "Segunda regla: el estado del documento. Vuelvo a entrar como Carlos: abro el menú de mi usuario y pulso Cerrar sesión. En la pantalla de acceso escribo su usuario, carlos punto pimentel, todo en minúsculas y sin espacios; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que una cotización aprobada es la que ya pasó por el paso Aprobada, como hizo Carlos hace un momento. Carlos tiene el permiso de convertir una cotización en factura, y además el de aprobarla: es el vendedor con más experiencia. Ya dentro, abro Ventas, y en su lista elijo Cotizaciones; se abre la lista, y contraigo el panel. Abro otra cotización aprobada, la número seis: en la barra de estados, ya está aprobada. Arriba a la derecha, pulso Más acciones: ahí está Convertir a factura. No la pulso, porque crearía una factura de verdad. Cierro el menú."
+    },
+    {
+      "id": "05-sin-estado-borrador",
+      "ruta": "Ventas › Cotizaciones › Cotización 7 (Carlos)",
+      "texto_pantalla": "Cotización en Borrador · el mismo permiso, sin «Convertir a factura»",
+      "capitulo": "Estado Borrador: no se puede convertir",
+      "rotulo": "Estado Borrador",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Estado Borrador · Convertir a factura"
+      },
+      "navegar": "/sales/quotes",
+      "al_decir_navegar": "vuelvo a la lista",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('COT 7') td:nth-child(3)",
+          "durante_ms": 2500,
+          "al_decir": "Aquí está"
+        },
+        {
+          "click": "tr:has-text('COT 7') button[aria-label='Abrir']",
+          "al_decir": "la abro"
+        },
+        {
+          "resaltar": "div.step-content:has-text('Borrador')",
+          "durante_ms": 3000,
+          "al_decir": "lo confirma",
+          "cursor": false
+        },
+        {
+          "click": "button[aria-label='Más acciones']",
+          "al_decir": "Pulso otra vez"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "solo salen"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "no perdió"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Tener el permiso no basta si el documento no está en el estado correcto."
+          },
+          "durante_ms": 7000,
+          "al_decir": "la regla del documento"
+        },
+        {
+          "resaltar": "div.step-content:has-text('Borrador')",
+          "durante_ms": 5000,
+          "al_decir": "revisa las dos cosas",
+          "cursor": false
+        }
+      ],
+      "narracion": "Ahora, con el mismo Carlos y el mismo permiso, vuelvo a la lista. Aquí está la número siete, que sigue en Borrador; la abro, y la barra de estados lo confirma. Arriba a la derecha, pulso otra vez Más acciones. Esta vez solo salen Versiones e historial y Duplicar: Convertir a factura no aparece. Carlos no perdió ningún permiso; lo que cambia es el estado de la cotización. Y esto no se configura en el rol: es la regla del documento. En resumen: el permiso dice qué acciones existen para cada persona, y el estado del documento dice cuándo se pueden usar. Si alguien no encuentra un botón, revisa las dos cosas: su rol y el estado del documento."
+    }
+  ]
+}

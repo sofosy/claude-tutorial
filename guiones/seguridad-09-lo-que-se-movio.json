@@ -1,0 +1,349 @@
+{
+  "titulo": "Seguridad · Dónde quedó lo que se movió",
+  "_comentario": "Video 09 de la serie Seguridad (AUTOR A, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0`). Entra rosa.almanzar (Admin). ESCRIBE en BD: la visibilidad del menú de Rosa (oculta Compras y la restablece en el mismo paso: termina como empezó). La contraseña se llena y NO se envía. Recorrido: /home → menú del usuario › Mi perfil (/profile) → tarjeta Seguridad (contraseña) → Preferencias › Visibilidad del menú (Compras apagado → Guardar Cambios → «Cambios Guardados» → Restablecer Todo → «¿Restablecer Todo?» → «Menús Restablecidos») → `navegar` /my-company/perfil-consultorio (en el ERP vuelve a /home sin aviso) → `navegar` /security/settings (llega a /profile). DECISIÓN Perfil del Consultorio: no se inventa pantalla del ERP ni se graba RegiSalud; se navega a su dirección en el ERP para que se VEA que vuelve al inicio, con insignia info «Solo en RegiSalud» y un cartel consejo con dónde está en RegiSalud (el motor no tiene cartel «info»: consejo|cuidado). ORDEN: el enlace viejo /security/settings va en el ÚLTIMO paso, saliendo desde /home: si se pidiera estando ya en /profile, Angular no recargaría la vista y no se vería nada. Verificar en el ensayo: (1) al salir de /profile con la contraseña escrita (paso 03) no sale ningún aviso de salir sin guardar; (2) el ojo de «Mostrar contraseña» no se toca; (3) la fila Inicio del árbol lleva candado (`app-menu-visibility-config .menu-node.level-0:has(> .node-row .node-title:text-is('Inicio')) > .node-row`, derivado de la cadena verificada de la fila Compras; la exploración contó 3 candados); (4) «Desplegar» choca con el FAB en su posición inicial (y=624): el motor la centra antes del clic. AVISO justificado: primer paso sin button.panel-collapse (no existe en /home ni en /profile). AÑADIDO (AUTOR D, F-007): paso 03b navega a la ruta vieja /security/audit/entity-name/roles/entity-id/79, que redirige a /security/auditoria?registro=roles&registroId=79&periodo=todo (security.routes.ts:20-27, 93-97; inventario F-007). E0 trae 3 eventos de roles/79 (Creó 310373 + dos PERMISSIONS_CHANGED 310379/312438, E0.sql): la voz dice «tres eventos». El paso 04 sale ahora desde /security/auditoria (no desde /home): sigue sin estar en /profile, así que la redirección de /security/settings se ve igual. A CONFIRMAR EN EL ENSAYO: que la redirección funcione por navegación SPA (pushState+popstate) y que el campo «Filtrar por registro» muestre «roles»; «Cambió permisos» en Auditoría ya sale así (v07). Si la toma es posterior a otra que tocó Almacén sin restaurar, el número cambia: restaurar E0 antes. OJO: `restaurar.mjs` NO cubre `user_menu_visibility`; si una toma se corta entre «Guardar Cambios» y «Restablecer Todo», Compras queda oculto para Rosa (arreglo: UPDATE hidden_menu_keys='[]' user 7943 empresa 50). Ensayo 09-27: 0 fallos (5 pasos). Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D 09 + ronda 8 R8-4/R8-10): (1) 03b: el historial viejo ya no enseña el nombre interno «roles»: el filtro de Registro queda FIJADO y dice «Rol · Almacén» (R8-4); la marca pasa de `input[aria-label='Filtrar por registro']` (ya no existe con el filtro fijado) a `.sec-audit__pinned:has-text('Almacén')` y la voz lo lee («Rol, Almacén») — POR VERIFICAR en el ensayo (si sale «Rol #79», selector `.sec-audit__pinned` y voz «Rol, número setenta y nueve»). (2) R8-10: Visibilidad del menú en estilo oración: «Guardar cambios», «Cambios guardados», «Restablecer todo», «¿Restablecer todo?», «Menús restablecidos» (voz y selectores). (3) 03: la marca del riel «Configuración» va sin cursor (el tooltip quedaba bajo el cartel «En RegiSalud»). El RNC del OCR es un falso positivo (cursor sobre 130555036). Sin cambio de usuario. Final T1 (09-28, revisión visual de la toma 1): 03 y 04 navegaban al EMPEZAR el paso, así que la pantalla nueva salía 5–6 s antes de que la voz dijera «abres la dirección» / «Lo abro»: ahora llevan al_decir_navegar. En 03 la marca pasa de la empresa de la barra (el cursor tapaba el RNC: era el falso positivo del OCR) al saludo del Inicio, subrayado; en 04 «a Mi perfil» marca el título «Mi perfil» de la miga. cursor:false en las marcas de títulos (nombre, Seguridad, Preferencias, Inicio con candado, Cambió permisos) para no tapar lo que se lee; diálogos de éxito/confirmación 2400/2200 ms para que la caja no quede flotando al cerrarse.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "almánzar",
+      "féliz",
+      "8095550188"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Cambiar tu contraseña desde Mi perfil",
+    "Ocultar o mostrar módulos de tu menú lateral con Visibilidad del menú, y restablecerlo",
+    "Por qué ocultar un menú no quita ningún permiso",
+    "A dónde llevan los enlaces viejos de Seguridad y dónde quedó el Perfil del Consultorio"
+  ],
+  "errores_comunes": [
+    "Buscar el cambio de contraseña dentro de Seguridad: ahora está en Mi perfil",
+    "Creer que ocultar un menú a tu gusto le quita el permiso a alguien",
+    "Olvidar pulsar «Guardar cambios» después de apagar un menú",
+    "Buscar el Perfil del Consultorio en el ERP: solo existe en RegiSalud"
+  ],
+  "pasos": [
+    {
+      "id": "01-contrasena-en-mi-perfil",
+      "ruta": "Mi perfil › Seguridad",
+      "texto_pantalla": "Mi perfil · la tarjeta Seguridad para cambiar tu contraseña",
+      "capitulo": "Tu contraseña, en Mi perfil",
+      "rotulo": "Tu contraseña",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Antes: Seguridad › Configuración"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "arriba a la derecha"
+        },
+        {
+          "click": ".user-item-list:has-text('Mi perfil')",
+          "al_decir": "elijo Mi perfil"
+        },
+        {
+          "resaltar": "h2.hero-name",
+          "durante_ms": 4000,
+          "al_decir": "tus datos",
+          "estilo": "subrayado",
+          "cursor": false
+        },
+        {
+          "resaltar": ".panel-title:has-text('Seguridad')",
+          "durante_ms": 4000,
+          "al_decir": "la tarjeta Seguridad",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "Contraseña actual"
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='new_password']",
+            "texto": "Palmas2026!"
+          },
+          "al_decir": "la nueva"
+        },
+        {
+          "escribir": {
+            "sel": "[formcontrolname='confirm_new_password']",
+            "texto": "Palmas2026!"
+          },
+          "al_decir": "la confirmo"
+        },
+        {
+          "resaltar": "button:has-text('Actualizar contraseña')",
+          "durante_ms": 6000,
+          "al_decir": "Actualizar contraseña"
+        }
+      ],
+      "narracion": "Algunas cosas que antes estaban en Seguridad se mudaron. La primera, tu contraseña. Abro el menú de mi usuario, arriba a la derecha, y elijo Mi perfil. Aquí están tus datos: nombre, contacto y preferencias. Al pie de la columna derecha está la tarjeta Seguridad, que antes era una pantalla dentro del módulo. Escribo mi Contraseña actual, para probar que soy yo; se ve con puntos, como debe ser. Después la nueva, con mayúsculas, minúsculas y números: fácil de recordar para ti y difícil de adivinar para otros. Y la confirmo, escribiéndola otra vez igual. Cada campo tiene un ojo para ver lo que escribiste. Para cambiarla de verdad pulsarías Actualizar contraseña, y un aviso confirma que se actualizó; esta vez no la cambio. Si tu cuenta tiene el cambio de contraseña bloqueado, aquí verás ese aviso en lugar del formulario."
+    },
+    {
+      "id": "02-visibilidad-del-menu",
+      "ruta": "Mi perfil › Preferencias › Visibilidad del menú",
+      "texto_pantalla": "Visibilidad del menú · qué módulos ves en tu menú lateral",
+      "capitulo": "Visibilidad del menú",
+      "rotulo": "Visibilidad del menú",
+      "acciones": [
+        {
+          "resaltar": ".panel-title:has-text('Preferencias')",
+          "durante_ms": 4000,
+          "al_decir": "tarjeta Preferencias",
+          "cursor": false
+        },
+        {
+          "click": "button[aria-label='Desplegar']",
+          "al_decir": "La despliego"
+        },
+        {
+          "resaltar": "app-menu-visibility-config .menu-node.level-0:has(> .node-row .node-title:text-is('Inicio')) > .node-row",
+          "durante_ms": 4500,
+          "al_decir": "un candado",
+          "cursor": false
+        },
+        {
+          "click": "app-menu-visibility-config .menu-node.level-0:has(> .node-row .node-title:text-is('Compras')) > .node-row mat-slide-toggle",
+          "al_decir": "Apago Compras"
+        },
+        {
+          "click": "button:has-text('Guardar cambios')",
+          "al_decir": "pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2400,
+          "cursor": false
+        },
+        {
+          "click": ".custom-alert-dialog-panel button:has-text('Aceptar')",
+          "al_decir": "Lo acepto"
+        },
+        {
+          "resaltar": "aside.sidebar button.rail-item[aria-label='Inventario']",
+          "durante_ms": 4500,
+          "al_decir": "debajo de Ventas"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Ocultar un menú NO quita el permiso: es solo tu preferencia de pantalla."
+          },
+          "durante_ms": 7000,
+          "al_decir": "no quita ningún permiso"
+        },
+        {
+          "click": "button:has-text('Restablecer todo')",
+          "al_decir": "pulso Restablecer todo"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2200,
+          "cursor": false
+        },
+        {
+          "click": ".custom-alert-dialog-panel button:has-text('Sí, restablecer')",
+          "al_decir": "Sí, restablecer"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container:has-text('Menús restablecidos')",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "click": ".custom-alert-dialog-panel button:has-text('Aceptar')",
+          "al_decir": "Acepto otra vez"
+        },
+        {
+          "resaltar": "aside.sidebar button.rail-item[aria-label='Compras']",
+          "durante_ms": 4000,
+          "al_decir": "Compras volvió"
+        }
+      ],
+      "narracion": "La segunda mudanza es la visibilidad del menú. Está en la tarjeta Preferencias, en la sección Visibilidad del menú: La despliego. Es el árbol de tu menú lateral, con un interruptor por módulo y por opción. Algunos llevan un candado, como Inicio, porque no se pueden ocultar. Apago Compras, que no uso a diario, y pulso Guardar cambios. El sistema lo confirma con Cambios guardados. Lo acepto. Mira el menú de la izquierda: debajo de Ventas ya no está Compras. Importante: esto solo cambia lo que tú ves, en esta empresa; no quita ningún permiso, ni a ti ni a nadie. Para volver atrás, pulso Restablecer todo. Pregunta si quiero mostrar todos los menús ocultos, y respondo Sí, restablecer. Sale Menús restablecidos. Acepto otra vez, y Compras volvió a su lugar."
+    },
+    {
+      "id": "03-perfil-consultorio",
+      "ruta": "Inicio · Perfil del Consultorio (solo RegiSalud)",
+      "texto_pantalla": "Perfil del Consultorio · solo existe en RegiSalud",
+      "capitulo": "Perfil del Consultorio",
+      "rotulo": "Perfil del Consultorio",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Solo en RegiSalud"
+      },
+      "navegar": "/my-company/perfil-consultorio",
+      "acciones": [
+        {
+          "resaltar": "h1:has-text('Rosa')",
+          "durante_ms": 4000,
+          "al_decir": "de vuelta al inicio",
+          "estilo": "subrayado",
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "En RegiSalud",
+            "texto": "Perfil del Consultorio: menú Configuración › Perfil del Consultorio (parte de Mi Empresa)."
+          },
+          "durante_ms": 9000,
+          "al_decir": "En RegiSalud"
+        },
+        {
+          "resaltar": "aside.sidebar button.rail-item[aria-label='Configuración']",
+          "durante_ms": 5000,
+          "al_decir": "menú Configuración",
+          "cursor": false
+        }
+      ],
+      "narracion": "La tercera mudanza solo aplica a los consultorios. Si en el ERP, que es este sistema de gestión, abres la dirección del antiguo Perfil del Consultorio, te trae de vuelta al inicio, sin aviso: esa pantalla no existe en Germiva ERP. En RegiSalud, el sistema para clínicas, el Perfil del Consultorio salió de Seguridad y ahora está en el menú Configuración, como parte de Mi Empresa. Si administras una distribuidora como esta, no tienes nada que buscar.",
+      "al_decir_navegar": "abres la dirección"
+    },
+    {
+      "id": "03b-historial-viejo",
+      "ruta": "Enlace viejo › Auditoría filtrada por un registro",
+      "texto_pantalla": "El enlace viejo del historial de un registro abre la Auditoría ya filtrada",
+      "capitulo": "El enlace viejo del historial",
+      "rotulo": "Historial: enlace viejo",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Antes: Seguridad › Auditoría › Historial"
+      },
+      "navegar": "/security/audit/entity-name/roles/entity-id/79",
+      "al_decir_navegar": "Lo abro",
+      "acciones": [
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Auditoría')",
+          "durante_ms": 2500,
+          "al_decir": "pestaña Auditoría"
+        },
+        {
+          "resaltar": ".sec-audit__pinned:has-text('Almacén')",
+          "durante_ms": 4000,
+          "al_decir": "filtrada por ese registro",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet-meta:has-text('evento')",
+          "durante_ms": 2000,
+          "al_decir": "tres eventos",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-audit__row:has-text('Cambió permisos') .gm-badge",
+          "durante_ms": 4000,
+          "al_decir": "cambios de permisos",
+          "cursor": false
+        }
+      ],
+      "narracion": "Otro enlace que quizás tengas guardado: el historial de un registro de la auditoría vieja, en este caso el del rol Almacén. Lo abro, y el sistema lo convierte en la pestaña Auditoría. Arriba, en los filtros, ya viene filtrada por ese registro, que se lee con su nombre, Rol, Almacén; y con el período en todo el historial. Aquí están sus tres eventos: cuando se creó el rol, y los dos cambios de permisos que le hizo Rosa."
+    },
+    {
+      "id": "04-enlaces-viejos",
+      "ruta": "Mi perfil · enlaces viejos",
+      "texto_pantalla": "Caso práctico · un enlace viejo guardado sigue funcionando",
+      "capitulo": "Caso práctico: los enlaces viejos",
+      "rotulo": "Enlaces viejos",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Caso práctico · enlace guardado"
+      },
+      "navegar": "/security/settings",
+      "acciones": [
+        {
+          "resaltar": "app-breadcrumb :text-is('Mi perfil')",
+          "durante_ms": 3300,
+          "al_decir": "a Mi perfil",
+          "cursor": false
+        },
+        {
+          "resaltar": ".panel-title:has-text('Seguridad')",
+          "durante_ms": 3800,
+          "al_decir": "tu contraseña",
+          "cursor": false
+        },
+        {
+          "resaltar": ".panel-title:has-text('Preferencias')",
+          "durante_ms": 3800,
+          "al_decir": "a tu gusto",
+          "cursor": false
+        },
+        {
+          "resaltar": "a.rail-item[href='/security']",
+          "durante_ms": 5000,
+          "al_decir": "sigue siendo"
+        }
+      ],
+      "narracion": "Un caso práctico para cerrar: tenías guardado el enlace de la antigua Configuración de Seguridad. Lo abro, y el sistema me lleva directo a Mi perfil: los enlaces viejos siguen funcionando. En resumen: tu contraseña está en la tarjeta Seguridad de Mi perfil; el menú a tu gusto, en Preferencias; y el módulo de Seguridad, el del candado, sigue siendo el lugar para personas, roles, integraciones y auditoría.",
+      "al_decir_navegar": "Lo abro"
+    }
+  ],
+  "pronunciacion": {
+    "ERP": "e-erre-pe"
+  }
+}

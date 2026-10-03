@@ -1,0 +1,392 @@
+{
+  "titulo": "Seguridad · La auditoría",
+  "_comentario": "Serie Seguridad, video 07 (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo). Entra rosa.almanzar (sesion). Qué escribe en BD: NADA salvo los eventos de acceso de la propia toma (audit_logs, los borra restaurar E0). Fechas: el período por defecto es 7 días; el paso 03 pone «Todo el historial» para que la fila «Cambió permisos» sembrada (E0, 27-09) salga siempre, y el paso 02 usa «Últimos 30 días» con los eventos de Ana sembrados el 27-09: grabar ANTES del 2026-10-27 (o re-sembrar). DEPENDENCIAS de la ronda 2 (D-S5, D-S6, D-S7): 02 escribe en Persona/Registro/IP y espera que la lista se filtre al escribir (D-S5 corregido; hoy solo filtra al recargar); 01 y 03 dicen «Cambió permisos» (D-S6) y la voz dice «quién lo hizo: Rosa» y «el enlace Ver a Rosa», válido con el usuario o con el nombre (D-S7); la voz no lee la etiqueta exacta del registro («Roles #79» hoy, legible tras D-S7) ni la etiqueta del grupo («Inventario · Productos» desde E-3, antes «Productos · Productos»; D-S11: dice «en Productos»). El Origen del evento sembrado es «Cliente de API» (D-S13): la voz lo cubre sin afirmar cuál sale. El filtro Registro usa el nombre interno de la tabla (F-200): se escribe «quotes» y la voz lo explica. IP 10.9.9.9 = una que no existe, para enseñar el vacío «No se encontraron resultados…» (F-207). AVISOS justificados: sin button.panel-collapse (no existe en /security/*); «Seguridad» del riel de Rosa cae fuera del cuadro (y=716), por eso el paso 01 entra con navegar a /security/resumen y pulsa la pestaña Auditoría en cámara. AÑADIDO (AUTOR D, A-059): en 03, antes de abrir «Cambió permisos», se marca la celda REGISTRO de la fila inmediatamente inferior, «Creó · <permiso de rol> #12151» (role_permissions, auditado LIGHT, `audited-entities.config.ts:113-116`), misma hora que el cambio sembrado 312438 (volcados v07-01/a7-05/r07-03: «Cambió permisos Roles #79 · Creó Permisos por rol #12151»). La etiqueta está en corrección (D-S7: build viejo «Permisos por rol», front actual «Permisos del rol», API `entityLabel` «Permiso de rol»): la voz NO la lee, dice «una fila Creó sobre un permiso de ese rol». Selector `.sec-audit__row:has-text('#12151') > span:nth-child(4)` (4.ª celda del botón-fila, security-audit.component.html:88-93) sacado del código → confirmar en el ensayo; el id 12151 viene del canon E0. El clic en la fila pasa a anclarse en «Vuelvo a Cambió permisos» (la primera de las dos «Cambió permisos» es la más reciente, 312438, la de Exportar: la que la voz describe). Ensayo 09-27: 0 fallos (4 pasos, 53 acciones). Cambios del ensayo T3: marca previa sobre .gm-sheet__tabs en 01 (las pestañas se ensanchan al llegar los contadores y el clic caía en Integraciones, R12); voz de 02 ajustada a lo que se ve con el filtro Persona (cotizaciones, líneas, precios y versiones; los accesos de Ana quedan abajo); 03: «el setenta y nueve, que es Almacén» (la pantalla dice Rol #79) y el Origen se lee «Chrome en Windows» (D-S13 corregido). Verificado: filtros de texto recargan (Ana 75 → Creó 54 → quotes 3 → IP 0 «No se encontraron resultados…» → Limpiar 671), detalle «Inventario · Productos» antes/después, fila «Creó · Permiso de rol #12151» justo debajo (y 479 vs 433), historial 3 eventos, «Ver a Rosa Almánzar →» → Personas ?q=rosa.almanzar. Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe C 07-1/07-2/07-4 + ronda 8 R8-4): (1) 07-1 la toma cruzó la medianoche: la voz NO nombra días ni «hoy/ayer» (comprobado: solo «últimos siete días» como período y «encabezado de cada día»); el operador debe grabar fuera de 23:30–00:30. (2) 07-2 se QUITÓ la frase de «Cargar eventos anteriores» y del aviso «El evento no está entre los resultados» (no se veían: la pantalla estaba en Personas) y su marca sobre la pestaña Auditoría. (3) 07-4 los colores: la marca va sobre la cabecera «Acción» (sin cursor) y la insignia gris solo al decir «gris para los accesos». (4) R8-4: tras «Historial del registro» la voz lee el filtro fijado «Rol · Almacén» y lo marca (`.sec-audit__pinned:has-text('Almacén')`) — POR VERIFICAR en el ensayo (si sale «Rol #79», cambiar la voz a «Rol, número setenta y nueve» y el selector a `.sec-audit__pinned`). 07-3 (línea cortada en «Qué cambió») es de motor: regrabar con e1810d6. Sin cambio de usuario.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "10.9.9.9"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "IP": "i-pe",
+    "API": "a-pe-i"
+  },
+  "aprenderas": [
+    "Leer la bitácora de Auditoría: quién hizo qué, cuándo, sobre qué registro y desde qué computadora",
+    "Filtrar por período, persona, acción, registro e IP, y volver a empezar con «Limpiar»",
+    "Abrir un evento y leer su antes y su después, y el origen de la petición",
+    "Ver toda la historia de un registro concreto con «Historial del registro»"
+  ],
+  "errores_comunes": [
+    "Buscar un cambio viejo con el período por defecto (últimos 7 días) y creer que no existe",
+    "Dejar filtros puestos y pensar que la bitácora está vacía: pulsa «Limpiar»",
+    "Escribir en Registro el nombre en español: el filtro usa el nombre interno del tipo de registro",
+    "Abrir el enlace de un evento con filtros que lo esconden: sale «El evento no está entre los resultados…»"
+  ],
+  "pasos": [
+    {
+      "id": "01-la-bitacora",
+      "ruta": "Seguridad › Auditoría",
+      "texto_pantalla": "Auditoría · la bitácora de la empresa, agrupada por día",
+      "capitulo": "La bitácora",
+      "rotulo": "La bitácora",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "navegar": "/security/resumen",
+      "acciones": [
+        {
+          "resaltar": ".gm-sheet__tabs",
+          "durante_ms": 2500,
+          "al_decir": "consola de Seguridad"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Auditoría')",
+          "al_decir": "pestaña Auditoría"
+        },
+        {
+          "resaltar": ".sec-audit__row .gm-badge",
+          "durante_ms": 4000,
+          "al_decir": "queda un evento"
+        },
+        {
+          "resaltar": ".gm-sheet-meta:has-text('eventos')",
+          "durante_ms": 4000,
+          "al_decir": "total de eventos"
+        },
+        {
+          "resaltar": ".gm-sheet-group",
+          "durante_ms": 4500,
+          "al_decir": "por día"
+        },
+        {
+          "resaltar": ".sec-audit__row .gm-cell-mono",
+          "durante_ms": 900,
+          "al_decir": "la hora"
+        },
+        {
+          "resaltar": ".sec-audit__who",
+          "durante_ms": 3000,
+          "al_decir": "luego Quién"
+        },
+        {
+          "resaltar": ".gm-th:has-text('Acción')",
+          "durante_ms": 5500,
+          "al_decir": "insignia de color",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-audit__row .gm-badge--neutral",
+          "durante_ms": 2200,
+          "cursor": false,
+          "al_decir": "gris para los accesos"
+        },
+        {
+          "resaltar": ".gm-th:has-text('Registro')",
+          "durante_ms": 3500,
+          "al_decir": "columna Registro"
+        },
+        {
+          "resaltar": ".sec-audit__row .sec-audit__col-ip",
+          "durante_ms": 5000,
+          "al_decir": "la última, IP"
+        }
+      ],
+      "narracion": "Soy Rosa, la administradora de Distribuidora Las Palmas, y estoy en la consola de Seguridad. Abro la pestaña Auditoría, la última de la fila. Esta es la bitácora de la empresa: cada vez que alguien entra, crea, cambia o borra algo, aquí queda un evento con el nombre de quien lo hizo, cuándo y desde dónde. Junto a los filtros está el total de eventos del período elegido; por defecto, los últimos siete días. Los eventos se agrupan por día, con el más reciente arriba: esta franja es el encabezado de cada día. Cada fila es un evento. Primero va la hora; luego Quién, la persona que lo hizo; después la Acción, con una insignia de color: verde si creó algo, azul si lo actualizó, rojo si lo eliminó, ámbar si cambió su estado, y gris para los accesos al sistema. La columna Registro dice qué cosa se tocó, con su número. Y la última, IP, es la dirección de la computadora desde donde se hizo: sirve para saber si fue desde la oficina o desde fuera."
+    },
+    {
+      "id": "02-filtros",
+      "ruta": "Seguridad › Auditoría › Filtros",
+      "texto_pantalla": "Filtros · período, persona, acción, registro e IP",
+      "capitulo": "Los filtros",
+      "rotulo": "Los filtros",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": "button:has(mat-icon:text-is('calendar_today'))",
+          "al_decir": "el Período"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "las opciones"
+        },
+        {
+          "click": ".mat-mdc-menu-panel :text('Últimos 30 días')",
+          "al_decir": "elijo Últimos"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label='Filtrar por persona']",
+            "texto": "ana.mejia"
+          },
+          "al_decir": "campo Persona"
+        },
+        {
+          "resaltar": ".sec-audit__who",
+          "durante_ms": 4500,
+          "al_decir": "lo que hizo ella"
+        },
+        {
+          "click": "button:has(mat-icon:text-is('filter_list'))",
+          "al_decir": "botón Acción"
+        },
+        {
+          "click": ".mat-mdc-menu-panel :text-is('Creó')",
+          "al_decir": "marco Creó"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "lo cierro"
+        },
+        {
+          "resaltar": ".sec-audit__row .gm-badge",
+          "durante_ms": 3500,
+          "al_decir": "Solo quedan"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label='Filtrar por registro']",
+            "texto": "quotes"
+          },
+          "al_decir": "En Registro"
+        },
+        {
+          "resaltar": ".gm-sheet-meta:has-text('evento')",
+          "durante_ms": 4000,
+          "al_decir": "son las cotizaciones"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label='Filtrar por IP']",
+            "texto": "10.9.9.9"
+          },
+          "al_decir": "pruebo con una"
+        },
+        {
+          "resaltar": ".sec-audit :text('No se encontraron resultados')",
+          "durante_ms": 5000,
+          "al_decir": "queda vacía"
+        },
+        {
+          "click": "button:has-text('Limpiar')",
+          "al_decir": "pulso Limpiar"
+        },
+        {
+          "resaltar": ".gm-sheet-meta:has-text('eventos')",
+          "durante_ms": 3000,
+          "al_decir": "como estaba"
+        }
+      ],
+      "narracion": "Con los filtros de arriba se encuentra un evento concreto. Empiezo por el Período: lo abro, y las opciones van de Hoy a Todo el historial; elijo Últimos treinta días. Ahora, en el campo Persona, escribo el usuario de Ana, la vendedora. La lista se queda solo con lo que hizo ella: sus cotizaciones, con sus líneas, precios y versiones. Después abro el botón Acción y marco Creó. Se pueden marcar varias, y el menú sigue abierto hasta que lo cierro. Solo quedan las cosas que Ana creó. En Registro va el tipo de registro, con el nombre interno que usa el sistema, en inglés: escribo quotes, que son las cotizaciones. El último filtro busca por la dirección de la computadora; pruebo con una que nadie usó, y la lista queda vacía, con el aviso No se encontraron resultados para los filtros seleccionados. Cuando pasa eso, pulso Limpiar, a la derecha, y la bitácora vuelve a quedar como estaba."
+    },
+    {
+      "id": "03-detalle-del-evento",
+      "ruta": "Seguridad › Auditoría › Detalle del evento",
+      "texto_pantalla": "Detalle del evento · qué cambió, antes y después, y de dónde vino",
+      "capitulo": "El detalle de un evento",
+      "rotulo": "El detalle de un evento",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": "button:has(mat-icon:text-is('calendar_today'))",
+          "al_decir": "pongo el período"
+        },
+        {
+          "click": ".mat-mdc-menu-panel :text('Todo el historial')",
+          "al_decir": "Todo el historial"
+        },
+        {
+          "resaltar": ".sec-audit__row:has-text('Cambió permisos') .gm-badge",
+          "durante_ms": 3500,
+          "al_decir": "fila Cambió permisos"
+        },
+        {
+          "resaltar": ".sec-audit__row:has-text('#12151') > span:nth-child(4)",
+          "durante_ms": 5500,
+          "al_decir": "Justo debajo"
+        },
+        {
+          "click": ".sec-audit__row:has-text('Cambió permisos')",
+          "al_decir": "Vuelvo a Cambió permisos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle del evento']",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "se abre el detalle"
+        },
+        {
+          "resaltar": ".sec-audit__when",
+          "durante_ms": 2000,
+          "al_decir": "la fecha"
+        },
+        {
+          "resaltar": ".sec-audit__entity",
+          "durante_ms": 4500,
+          "al_decir": "el registro que se tocó"
+        },
+        {
+          "resaltar": ".sec-audit__by",
+          "durante_ms": 2500,
+          "al_decir": "quién lo hizo"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Todo cambio de permisos queda aquí, con su antes y su después."
+          },
+          "durante_ms": 6500,
+          "al_decir": "Qué cambió"
+        },
+        {
+          "resaltar": ".sec-audit__before",
+          "durante_ms": 4300,
+          "al_decir": "Tachado"
+        },
+        {
+          "resaltar": ".sec-audit__after",
+          "durante_ms": 3500,
+          "al_decir": "Resaltado"
+        },
+        {
+          "resaltar": ".sec-audit__facts",
+          "durante_ms": 12000,
+          "al_decir": "la Solicitud"
+        }
+      ],
+      "narracion": "Ahora abro un evento para ver su detalle completo. Para no dejar fuera nada viejo, pongo el período en Todo el historial. Busco la fila Cambió permisos: la deja el sistema cada vez que alguien guarda los permisos de un rol. Justo debajo, a la misma hora, hay otra fila, Creó, sobre un permiso de ese rol: cada permiso que se agrega a un rol deja también su propio renglón, con su número. Vuelvo a Cambió permisos y la pulso, y a la derecha se abre el detalle. Arriba, la fecha y la hora exactas. Debajo, el registro que se tocó: aquí un rol, el setenta y nueve, que es Almacén; y quién lo hizo: Rosa. Luego viene Qué cambió, con el antes y el después. Tachado, lo de antes: en Inventario, Productos, el rol podía ver, crear, editar e importar. Resaltado, lo de después: ahora, además, puede exportar. Al pie está la Solicitud, o sea el origen de la petición: la IP de la computadora; el Origen, que dice desde qué programa llegó: aquí, Chrome en Windows; el código del evento; y un número de solicitud, que sirve si hay que pedir ayuda a soporte."
+    },
+    {
+      "id": "04-historial-y-persona",
+      "ruta": "Seguridad › Auditoría › Historial del registro",
+      "texto_pantalla": "Historial del registro · toda la vida de un rol, y la persona que lo cambió",
+      "capitulo": "El historial de un registro",
+      "rotulo": "El historial de un registro",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "resaltar": ".sec-audit__links",
+          "durante_ms": 3000,
+          "al_decir": "dos atajos"
+        },
+        {
+          "click": ".sec-audit__link:has-text('Historial del registro')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": ".sec-audit__pinned:has-text('Almacén')",
+          "durante_ms": 4500,
+          "al_decir": "se filtra",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-badge--success",
+          "durante_ms": 4500,
+          "al_decir": "en que se creó"
+        },
+        {
+          "click": ".sec-audit__row:has-text('Cambió permisos')",
+          "al_decir": "Abro otra vez"
+        },
+        {
+          "click": ".sec-audit__link:has-text('Ver a')",
+          "al_decir": "enlace Ver a"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Rosa')",
+          "durante_ms": 3300,
+          "al_decir": "filtrada por ella"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Revisa la Auditoría cada semana: un cambio de permisos que nadie pidió se descubre aquí."
+          },
+          "durante_ms": 8000,
+          "al_decir": "En resumen"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs",
+          "durante_ms": 5000,
+          "al_decir": "la vida entera"
+        }
+      ],
+      "narracion": "Desde el detalle salen dos atajos. El primero, Historial del registro, reúne todo lo que le pasó a ese mismo rol. Lo pulso: la lista se filtra por ese registro, y arriba el filtro lo dice con su nombre: Rol, Almacén. Muestra desde el día en que se creó hasta cada cambio de sus permisos. Es la forma más rápida de saber quién le tocó los permisos a un rol, y cuándo. El segundo atajo lleva a la persona. Abro otra vez el cambio de permisos y pulso el enlace Ver a Rosa: me lleva a Personas, filtrada por ella. En resumen: filtra por persona y por período para saber quién hizo algo; abre el evento para leer el antes y el después; y usa el historial para ver la vida entera de un rol o de cualquier registro."
+    }
+  ]
+}

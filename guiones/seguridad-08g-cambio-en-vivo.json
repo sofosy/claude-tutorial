@@ -1,0 +1,484 @@
+{
+  "titulo": "Con y sin permiso · Un cambio en vivo y su rastro en la Auditoría",
+  "_comentario": "Serie Seguridad, caso CAMBIO EN VIVO (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo). Entran EN CÁMARA: ana.mejia (sesion) → rosa.almanzar → ana.mejia → marta.guzman. Qué escribe en BD: quita «Productos · Ver» (PRODUCT_VIEW) del rol Vendedor (77) con el guardado en lote (role_permissions + audit_logs PERMISSIONS_CHANGED «Inventario · Productos: Ver → —»); lo deshace `restaurar.mjs E0`. Contraste sobre el MISMO punto: Inventario › Productos de Ana: antes existe en el menú y lista 1–10 de 25 (01) · después ya no está en el menú (03) y por dirección vuelve a Inicio con «No tienes permiso para ver «Productos». Solicita el acceso al administrador de tu empresa.» (04, verificado v08g). Rastro: Marta (AUDIT_LOG_READ) abre el evento en Auditoría (05). Menú tras el cambio (D-S9, en corrección en la ronda 2): con la sesión abierta el menú no cambiaba y F5 lo arreglaba; aquí Ana VUELVE A ENTRAR (el navegador es uno solo) y la voz lo dice («el menú se arma al entrar»), así que el guion vale con o sin la corrección. DEPENDENCIAS ronda 2: D-S2 (la lista de Productos de Ana abre hoy el modal «Acceso Denegado — Impuestos» y rompe fotos): escrito para el comportamiento CORREGIDO; D-S6/D-S7 (etiqueta «Cambió permisos», actor con nombre): la voz dice «lo hizo Rosa» y no lee la etiqueta del registro. El Origen de este evento será el navegador de la grabación (cambio hecho por la UI; v. a7: «Chrome · Windows»). Ana no tiene panel lateral en Productos (enlace directo): AVISO justificado del primer paso. «Seguridad» del riel de Rosa cae en y=716: el motor desplaza el riel antes del clic (_SELECTORES §0). Ensayo 09-27: 0 fallos (5 pasos, 59 acciones). D-S2 corregido (sin modal, con fotos); Ana ve «1 – 10 de 25». D-S9 CONFIRMADO en sonda aparte (qa-seguridad-ensayos-2026-09-27/seguridad-08g-cambio-en-vivo/ds9-*.png): con la sesión de Ana abierta, tras quitar PRODUCT_VIEW al rol 77, una navegación inmediata (+3 s) aún muestra Inventario (caché de 30 s); a los +35 s, al volver el foco, el riel pierde «Inventario» sin volver a entrar, y la dirección de Productos devuelve a /home con «No tienes permiso para ver «Productos»…». Como hay un solo navegador, Ana sigue volviendo a entrar, pero la voz ya no dice que «el menú se arma al entrar»: dice que se habría puesto al día solo, a más tardar en medio minuto, al volver a la ventana o cambiar de pantalla. Auditoría (Marta): «Cambió permisos · Rol #77 · por Rosa Almánzar · Inventario · Productos: Ver (tachado) → —», Origen «Chrome · Windows»; la voz dice «el setenta y siete, que es Vendedor». Cambios T3: login en cámara con «Iniciar sesión» + marca «Entrando» + relleno (login 5,7–8,7 s); 03 lleva dos marcas más (riel e Inicio) para no pasar de 10 s quieto; «Productos, Ver» marca .table-only-header (h4.page-title llegaba tarde, R5b). Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D 08g + «insignia adelantada» + ronda 8 R8-6): (1) INSIGNIAS: 02 (Ana→Rosa), 03 (Rosa→Ana) y 05 (Ana→Marta) llevan la insignia de quien SALE; `{insignia: null}` en la pantalla de acceso y la de quien ENTRA como acción anclada a «Ya dentro» (02, 05; detrás de la marca sin ancla de `aside.sidebar`) o a «Y aquí está» (03, con el menú de Ana ya en cámara). (2) 05: la marca «al pie» ya no cubre el bloque Solicitud entero (con «Evento PERMISSIONS_CHANGED» y el UUID de la solicitud): marca solo la IP (`dd:nth-of-type(1)`) y el Origen (`dd:nth-of-type(2)`), que es lo que la voz nombra; la marca final del resumen pasa del panel entero al bloque «Qué cambió» (`.sec-audit__block:has(.sec-audit__block-title:text-is('Qué cambió'))`). (3) 04: cartel «Dirección escrita · …/inventory/product/list» (la dirección tecleada no se veía). (4) 01: el paginador se marca sin cursor. (5) R8-6: la barra de guardado se lee sin cifra («y a cuántas personas afecta»): con la herencia contada, la cifra de Vendedor ya no es 3 y no está confirmada en pantalla. El título «QUÉ CAMBIÓ» oculto 3:58–4:14 es de motor: regrabar 05 con e1810d6.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "ana.mejia",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Quitar un permiso a un rol y guardarlo",
+    "Qué nota la persona afectada: la opción sale del menú y la dirección la devuelve al Inicio",
+    "Desde cuándo vale el cambio: en el servidor, desde su siguiente operación; en el menú, al volver a entrar",
+    "Encontrar el cambio en la Auditoría, con quién, cuándo, el antes y el después"
+  ],
+  "errores_comunes": [
+    "Quitar un permiso en el rol sin pensar en todos los que lo tienen",
+    "Esperar que el menú de quien ya estaba dentro cambie solo: se actualiza al volver a entrar",
+    "No revisar la Auditoría cuando alguien dice que «de repente» no ve una pantalla"
+  ],
+  "pasos": [
+    {
+      "id": "01-antes",
+      "ruta": "Inventario › Productos (Ana)",
+      "texto_pantalla": "Antes · Ana ve Inventario › Productos",
+      "capitulo": "Antes: Ana ve Productos",
+      "rotulo": "Antes: con permiso",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Ana · Productos"
+      },
+      "navegar": "/home",
+      "acciones": [
+        {
+          "resaltar": "aside.sidebar a.rail-item[aria-label='Inventario']",
+          "durante_ms": 2500,
+          "al_decir": "Inventario la lleva"
+        },
+        {
+          "click": "aside.sidebar a.rail-item[aria-label='Inventario']",
+          "al_decir": "lo pulso"
+        },
+        {
+          "resaltar": "tr:has-text('Machete de 22') td:nth-child(2)",
+          "durante_ms": 4000,
+          "al_decir": "la lista de productos"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 4000,
+          "al_decir": "Al pie dice",
+          "cursor": false
+        },
+        {
+          "resaltar": ".table-only-header",
+          "durante_ms": 5000,
+          "al_decir": "Productos, Ver"
+        }
+      ],
+      "narracion": "En este video cambiamos un permiso en vivo y seguimos su rastro. Entra Ana, la vendedora. En su menú, Inventario la lleva directo a Productos; lo pulso. Esta es la lista de productos de la empresa: Ana la necesita para cotizar. Al pie dice uno a diez de veinticinco: los ve todos. Llega aquí gracias al permiso Productos, Ver, de su rol Vendedor. Ahora la administradora le va a quitar ese permiso al rol."
+    },
+    {
+      "id": "02-quitar-y-guardar",
+      "ruta": "Acceso › Seguridad › Roles y permisos › Vendedor › Productos",
+      "texto_pantalla": "Rosa quita «Productos · Ver» al rol Vendedor y guarda",
+      "capitulo": "Rosa quita el permiso",
+      "rotulo": "Quitar el permiso",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Ana · Productos"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Rosa"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "rosa.almanzar"
+          },
+          "al_decir": "escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "info",
+            "texto": "Administradora · Rosa"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar a.rail-item[href='/security']",
+          "al_decir": "abro Seguridad"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "al_decir": "la pestaña Roles"
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor'):not(:has-text('sénior'))",
+          "al_decir": "Elijo el rol Vendedor"
+        },
+        {
+          "click": ".rpe__module:has-text('Productos')",
+          "al_decir": "busco Productos"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Productos')) .rpe__act--direct",
+          "durante_ms": 2500,
+          "al_decir": "está concedido"
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Productos')) .rpe__act--direct",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar",
+          "durante_ms": 5000,
+          "al_decir": "La barra de guardado"
+        },
+        {
+          "click": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "al_decir": "Pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Guardar aplica el cambio a todos los que tienen el rol, desde su siguiente operación."
+          },
+          "durante_ms": 8000,
+          "al_decir": "Desde este momento"
+        }
+      ],
+      "narracion": "Cambio de persona: abro el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa, la administradora. En la pantalla de acceso escribo su usuario, rosa punto almanzar, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que Ana sigue con su sesión abierta. El cambio se hace en el rol, no en la persona, así que les llegará a todos los vendedores a la vez. Ya dentro, en el menú, abajo, abro Seguridad, y luego la pestaña Roles y permisos. Elijo el rol Vendedor. En la columna de módulos busco Productos; en el recurso Productos, el permiso Ver está concedido, con su marca de concedido. Lo pulso, y queda sin conceder. La barra de guardado dice: un cambio sin guardar, y a cuántas personas afecta. Pulso Guardar cambios. Sale el aviso de que los permisos del rol se actualizaron. Desde este momento, el servidor ya no le entrega productos a quien los veía solo gracias a este rol."
+    },
+    {
+      "id": "03-despues",
+      "ruta": "Acceso › Inicio de Ana",
+      "texto_pantalla": "Después · el menú de Ana ya no tiene Inventario",
+      "capitulo": "Después: el menú de Ana",
+      "rotulo": "Después: sin permiso",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "pantalla de acceso"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "ana.mejia"
+          },
+          "al_decir": "escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "resaltar": "aside.sidebar .rail-item[aria-label='Inicio']",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "su menú se habría"
+        },
+        {
+          "resaltar": "h1:has-text('Ana')",
+          "durante_ms": 3500,
+          "al_decir": "un solo navegador"
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Sin permiso · Ana · Productos"
+          },
+          "al_decir": "Y aquí está"
+        },
+        {
+          "resaltar": "aside.sidebar >> nth=0",
+          "durante_ms": 1300,
+          "al_decir": "ya no aparece Inventario"
+        },
+        {
+          "resaltar": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "durante_ms": 4000,
+          "al_decir": "Solo le quedan"
+        }
+      ],
+      "narracion": "Ahora vuelvo a entrar como Ana. Abro el menú de mi usuario y pulso Cerrar sesión; en la pantalla de acceso escribo su usuario, ana punto mejia, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, ten en cuenta que al rol de Ana solo le cambiamos los productos. Si Ana hubiera seguido con Productos abierto, su siguiente consulta ya habría sido rechazada, porque el servidor revisa el permiso en cada operación; y su menú se habría puesto al día solo, a más tardar en medio minuto, al volver a la ventana o cambiar de pantalla. Aquí, como hay un solo navegador, entra de nuevo. Y aquí está: en su menú ya no aparece Inventario. Solo le quedan Inicio, Ventas, Calendario y Configuración."
+    },
+    {
+      "id": "04-por-direccion",
+      "ruta": "Dirección escrita › /inventory/product/list › Inicio",
+      "texto_pantalla": "Ana escribe la dirección de Productos · vuelve a Inicio con aviso",
+      "capitulo": "Después: por la dirección",
+      "rotulo": "Después: por dirección",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Ana · Productos"
+      },
+      "navegar": "/inventory/product/list",
+      "al_decir_navegar": "Pruebo",
+      "acciones": [
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Dirección escrita",
+            "texto": "…/inventory/product/list: la pantalla de Productos."
+          },
+          "durante_ms": 5000,
+          "al_decir": "la devuelve al Inicio"
+        },
+        {
+          "resaltar": "h1:has-text('Ana')",
+          "durante_ms": 5000,
+          "al_decir": "El cambio de Rosa"
+        }
+      ],
+      "narracion": "¿Y si escribe la dirección de Productos en el navegador? Pruebo. El sistema la devuelve al Inicio con el aviso: No tienes permiso para ver Productos. Solicita el acceso al administrador de tu empresa. El cambio de Rosa ya vale para ella, por el menú y por la dirección."
+    },
+    {
+      "id": "05-el-rastro",
+      "ruta": "Acceso › Seguridad › Auditoría (Marta)",
+      "texto_pantalla": "El rastro · «Cambió permisos» con quién, cuándo, antes y después",
+      "capitulo": "El rastro en la Auditoría",
+      "rotulo": "El rastro",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Ana · Productos"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "pantalla de acceso"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "marta.guzman"
+          },
+          "al_decir": "escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "info",
+            "texto": "Auditoría · Marta"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar a.rail-item[href='/security']",
+          "al_decir": "abro Seguridad"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Auditoría')",
+          "al_decir": "la pestaña Auditoría"
+        },
+        {
+          "resaltar": ".sec-audit__row:has-text('Cambió permisos') .gm-badge",
+          "durante_ms": 2500,
+          "al_decir": "el cambio que hizo Rosa"
+        },
+        {
+          "click": ".sec-audit__row:has-text('Cambió permisos')",
+          "al_decir": "Lo abro"
+        },
+        {
+          "resaltar": ".sec-audit__entity",
+          "durante_ms": 2500,
+          "al_decir": "El registro"
+        },
+        {
+          "resaltar": ".sec-audit__by",
+          "durante_ms": 2500,
+          "al_decir": "lo hizo Rosa"
+        },
+        {
+          "resaltar": ".sec-audit__before",
+          "durante_ms": 2000,
+          "al_decir": "Productos: antes"
+        },
+        {
+          "resaltar": ".sec-audit__after",
+          "durante_ms": 3000,
+          "al_decir": "después, nada"
+        },
+        {
+          "resaltar": ".sec-audit__facts dd:nth-of-type(1)",
+          "durante_ms": 1900,
+          "cursor": false,
+          "al_decir": "la dirección de la computadora"
+        },
+        {
+          "resaltar": ".sec-audit__facts dd:nth-of-type(2)",
+          "durante_ms": 1900,
+          "cursor": false,
+          "al_decir": "el navegador desde"
+        },
+        {
+          "resaltar": ".sec-audit__block:has(.sec-audit__block-title:text-is('Qué cambió'))",
+          "durante_ms": 9000,
+          "cursor": false,
+          "al_decir": "En resumen"
+        }
+      ],
+      "narracion": "Por último, el rastro. Salgo y entro como Marta, la auditora: abro el menú de mi usuario, pulso Cerrar sesión; en la pantalla de acceso escribo su usuario, marta punto guzman, todo en minúsculas y sin espacios; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que cada guardado de permisos deja su propio evento en la bitácora. Marta no puede cambiar permisos, pero sí revisar la bitácora: su rol, Auditor, es de solo lectura, pensado para revisar. Ya dentro, abro Seguridad, y luego la pestaña Auditoría. Entre los primeros eventos está el cambio que hizo Rosa: Cambió permisos. Lo abro. El registro es un rol, el setenta y siete, que es Vendedor; lo hizo Rosa, y aquí están la fecha y la hora exactas. En Qué cambió, en Inventario, Productos: antes, Ver, tachado; y después, nada, porque ya no tiene ningún permiso ahí. Y más abajo, en Solicitud, la dirección de la computadora y el navegador desde donde se hizo. En resumen: un cambio en el rol vale para todos los que lo tienen desde su siguiente operación; el menú se pone al día solo, a más tardar en medio minuto; y cada cambio queda en la Auditoría, con quién, cuándo, el antes y el después."
+    }
+  ]
+}

@@ -1,0 +1,344 @@
+{
+  "titulo": "Seguridad · Qué es y cómo se organiza",
+  "_comentario": "Video 00 de la serie Seguridad (AUTOR A, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0`). Entra rosa.almanzar (Admin) y NO escribe nada en BD (solo su evento de ingreso). Recorrido: /home (tarjeta y candado del riel) → lámina conceptos-seguridad (6 fases; la tarjeta 04 se corrigió a «propios, equipo o todos» con el chip Equipo) → consola /security/resumen → las cinco pestañas siguiendo a Ana → vuelta al Resumen. AVISOS justificados: (1) el primer paso no contrae el panel del menú: en /home y en /security/* no existe button.panel-collapse (_SELECTORES §0). (2) El candado de Seguridad del riel de Rosa cae en y=716: el motor lo desplaza con scroll_into_view (verificado en la exploración, queda en y=563). DEPENDE de la ronda 2 (D-S7): en 04 la fila de Auditoría se busca por la acción «Acceso», que no cambia; la voz no lee nombres de registro. Re-verificar en el ensayo que la primera fila «Acceso» de la bitácora es el ingreso de Rosa de esa toma. Ensayo 09-27: 0 fallos (4 pasos). Grabación 09-27 (OPERADOR-GRABACIÓN): el ancla «credencial de API» del diagrama no casaba (el motor no aplica la `pronunciacion` del guion a las anclas) y la fase 6 salió 9,3 s antes → ancla «Y la credencial». Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-A): (00-2) en 04 se PULSA Vendedor en el riel (antes solo se marcaba y el panel seguía en Mensajero) y se subraya su título .sec-roles__h2 al decir «qué puede hacer ella»; voz «abro su rol, Vendedor»; (00-3) marca de la fila «Acceso» de Auditoría a 2000 ms para que no quede dibujada sobre el Resumen; (00-4) marca de «Tienda en línea anterior» anclada a «las credenciales» y 2500 ms; (00-5) título «Seguridad» con estilo subrayado (caja del texto, no del h1 de 1050 px) y cursor:false. (00-1) es de motor: se resuelve regrabando con e1810d6. Ronda 8: la voz no lee «Prefijo de la clave de API» ni «Unidades de Medida» ni el total «de 1103 permisos» del panel de Vendedor. Ensayo: confirmar que el clic en Vendedor abre su editor y que el subrayado cae bajo «Seguridad» y bajo «Vendedor». Final T1 (09-28, revisión visual de la toma 1): una marca vive ≈ durante_ms + 1 s en pantalla y SOBREVIVE al cambio de pestaña: la de la fila de Ana quedaba como caja vacía sobre Roles y permisos, el subrayado de Vendedor sobre Integraciones y la de Acceso sobre el Resumen. Ana 5000→2600, subrayado 3000→1800, Acceso 2000→1500 anclada a «arriba está mi»; cifras del Resumen con cursor:false (tapaba el «1» de Administradores). Final T1 toma 2 (revisión visual): la tabla de Personas se desplazaba por dentro para enseñar a Ana (9.ª fila) y se iba la cabecera PERSONA/ROLES/ÚLTIMO INGRESO/ESTADO justo cuando la voz nombra las columnas → ahora «La busco por su nombre» escribe Ana en el buscador de la lista y la fila sale arriba, con la cabecera a la vista; «la frase» subraya el subtítulo (la caja de .gm-sheet__title medía el doble del texto); cursor:false en pestañas, fila de Ana, credencial y pestañas del cierre (tapaba el nombre que se lee).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "almánzar",
+      "féliz",
+      "Tienda en línea anterior"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i",
+    "IP": "i-pe"
+  },
+  "aprenderas": [
+    "Qué resuelve el módulo de Seguridad: quién entra, qué puede hacer y qué cambió",
+    "Los seis conceptos: persona, rol, permiso, alcance, equipo y credencial de API",
+    "Cómo llegar a la consola de Seguridad y para qué sirve cada una de sus cinco pestañas",
+    "Qué hace el botón Nuevo y qué busca el buscador de la consola"
+  ],
+  "errores_comunes": [
+    "Dar permisos persona por persona en lugar de hacerlo con roles",
+    "Creer que meter a alguien en un equipo le da permisos: el equipo solo cuenta para el alcance «Equipo»",
+    "Buscar una pestaña que no aparece: sin su permiso, la pestaña no se muestra",
+    "Confundir la credencial de API con un usuario: es la llave de otro programa, no de una persona"
+  ],
+  "pasos": [
+    {
+      "id": "01-bienvenida",
+      "ruta": "Inicio",
+      "texto_pantalla": "Seguridad · para quién es la serie y dónde está el módulo",
+      "capitulo": "Bienvenida",
+      "rotulo": "Bienvenida",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Módulo de Seguridad"
+      },
+      "acciones": [
+        {
+          "resaltar": "button.topbar-user",
+          "durante_ms": 4500,
+          "al_decir": "administras"
+        },
+        {
+          "resaltar": ".topbar-company",
+          "durante_ms": 5000,
+          "al_decir": "Distribuidora Las Palmas",
+          "cursor": false
+        },
+        {
+          "resaltar": "button:has-text('SeguridadUsuarios, roles, permisos y aud')",
+          "durante_ms": 3000,
+          "al_decir": "tarjeta Seguridad"
+        },
+        {
+          "resaltar": "a.rail-item[href='/security']",
+          "durante_ms": 4500,
+          "al_decir": "ícono del candado"
+        }
+      ],
+      "narracion": "Bienvenida a la serie de Seguridad de Germiva. Es para ti, que administras la empresa: aquí decides quién entra al sistema, qué puede hacer cada persona y cómo revisar lo que cambió. Toda la serie usa una empresa de demostración, Distribuidora Las Palmas, con personas y datos inventados: una vendedora, un encargado de almacén, una auditora y otros que irás conociendo. El módulo se abre desde la tarjeta Seguridad de tus módulos, aquí abajo, o desde el ícono del candado en la franja de la izquierda, que solo ve quien tiene algún permiso de Seguridad. Antes de entrar, veamos los seis conceptos que lo ordenan todo."
+    },
+    {
+      "id": "02-seis-conceptos",
+      "ruta": "Seguridad › Conceptos",
+      "texto_pantalla": "Seis conceptos · persona, rol, permiso, alcance, equipo y credencial",
+      "capitulo": "Los seis conceptos",
+      "rotulo": "Los seis conceptos",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Seis conceptos"
+      },
+      "diagrama": "conceptos-seguridad",
+      "acciones": [
+        {
+          "diagrama_fase": 2,
+          "al_decir": "Un rol es"
+        },
+        {
+          "diagrama_fase": 3,
+          "al_decir": "pieza más pequeña"
+        },
+        {
+          "diagrama_fase": 4,
+          "al_decir": "El alcance dice"
+        },
+        {
+          "diagrama_fase": 5,
+          "al_decir": "El equipo agrupa"
+        },
+        {
+          "diagrama_fase": 6,
+          "al_decir": "Y la credencial"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Da los permisos a los roles, nunca persona por persona."
+          },
+          "durante_ms": 6000,
+          "al_decir": "consejo de oro"
+        }
+      ],
+      "narracion": "Primero, la persona: quien entra al sistema con su propio usuario, como Ana, nuestra vendedora. Cada persona tiene uno o más roles. Un rol es un conjunto de permisos con nombre, como Vendedor o Contador: se lo asignas a las personas y todas reciben lo mismo. El permiso es la pieza más pequeña: une una cosa del sistema, que llamamos recurso, con una acción. Facturas más Crear es un permiso; Facturas más Ver es otro. El alcance dice sobre qué registros vale un permiso de ver: solo los que la persona creó, los de su equipo, o todos. El equipo agrupa personas, como Zona Este. Ojo: un equipo no da permisos; solo sirve para ese alcance de equipo. Y la credencial de API, o sea la llave de otro programa, deja que un sistema externo, como una tienda en línea, consulte o registre datos sin una persona detrás, con sus propios permisos. El consejo de oro: da los permisos a los roles, nunca persona por persona."
+    },
+    {
+      "id": "03-la-consola",
+      "ruta": "Seguridad › Resumen",
+      "texto_pantalla": "La consola de Seguridad · título, pestañas, buscador y botón Nuevo",
+      "capitulo": "La consola",
+      "rotulo": "La consola",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": "a.rail-item[href='/security']",
+          "al_decir": "candado"
+        },
+        {
+          "resaltar": ".gm-sheet__title h1",
+          "estilo": "subrayado",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "consola de Seguridad"
+        },
+        {
+          "resaltar": ".gm-sheet__title p",
+          "durante_ms": 5000,
+          "al_decir": "la frase",
+          "estilo": "subrayado",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet__tabs",
+          "durante_ms": 5500,
+          "al_decir": "cinco pestañas",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "durante_ms": 1500,
+          "al_decir": "nueve personas"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "durante_ms": 1500,
+          "al_decir": "doce roles"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "durante_ms": 2000,
+          "al_decir": "una credencial"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Cada pestaña exige su permiso: sin él, la pestaña desaparece."
+          },
+          "durante_ms": 6000,
+          "al_decir": "propio permiso"
+        },
+        {
+          "resaltar": ".security-console__search",
+          "durante_ms": 5000,
+          "al_decir": "el buscador"
+        },
+        {
+          "click": ".gm-sheet__actions button:has-text('Nuevo')",
+          "al_decir": "botón Nuevo"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "un usuario"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Lo cierro"
+        }
+      ],
+      "narracion": "Ahora sí, entro por el candado de la izquierda. Esta es la consola de Seguridad: una sola hoja con todo el módulo. Arriba, el título y la frase que lo resume: quién entra, qué puede hacer y qué cambió. Debajo están las cinco pestañas: Resumen, Personas, Roles y permisos, Integraciones y Auditoría. El número de cada pestaña es un conteo: nueve personas; en Roles y permisos, doce roles; y en Integraciones, una credencial. Cada pestaña exige su propio permiso; si alguien no lo tiene, esa pestaña ni aparece. A la derecha, el buscador encuentra personas por su nombre o su usuario; y si estás en Roles y permisos, busca roles. Y el botón Nuevo abre un menú para crear un usuario, un rol, un equipo o una integración de API. Lo cierro sin elegir nada: cada alta tiene su propio video."
+    },
+    {
+      "id": "04-recorrido",
+      "ruta": "Seguridad › las cinco pestañas",
+      "texto_pantalla": "Caso práctico · seguir a Ana por las cinco pestañas",
+      "capitulo": "Caso práctico: las cinco pestañas",
+      "rotulo": "Caso práctico",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Caso práctico · Ana (Vendedor)"
+      },
+      "acciones": [
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "al_decir": "En Personas"
+        },
+        {
+          "escribir": {
+            "sel": "input[placeholder='Nombre, usuario o correo']",
+            "texto": "Ana"
+          },
+          "al_decir": "La busco"
+        },
+        {
+          "resaltar": ".sec-people__row:has-text('Ana Mejía')",
+          "durante_ms": 2600,
+          "al_decir": "Ana es una fila",
+          "cursor": false
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "al_decir": "En Roles y permisos"
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor'):not(:has-text('sénior'))",
+          "al_decir": "su rol, Vendedor"
+        },
+        {
+          "resaltar": ".sec-roles__h2",
+          "estilo": "subrayado",
+          "durante_ms": 1800,
+          "cursor": false,
+          "al_decir": "qué puede hacer ella"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "al_decir": "En Integraciones"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Tienda en línea anterior')",
+          "durante_ms": 2500,
+          "al_decir": "las credenciales",
+          "cursor": false
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Auditoría')",
+          "al_decir": "en Auditoría"
+        },
+        {
+          "resaltar": ".sec-audit__row:has-text('Acceso')",
+          "durante_ms": 1500,
+          "al_decir": "arriba está mi"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Resumen')",
+          "al_decir": "Vuelvo al Resumen"
+        },
+        {
+          "resaltar": ".gm-sheet-figs",
+          "durante_ms": 2200,
+          "al_decir": "cifras y asuntos",
+          "cursor": false
+        },
+        {
+          "resaltar": ".console-tabs a:has-text('Personas')",
+          "durante_ms": 1300,
+          "al_decir": "las personas reciben",
+          "cursor": false
+        },
+        {
+          "resaltar": ".console-tabs a:has-text('Roles y permisos')",
+          "durante_ms": 3000,
+          "al_decir": "los roles reúnen",
+          "cursor": false
+        },
+        {
+          "resaltar": ".console-tabs a:has-text('Auditoría')",
+          "durante_ms": 3500,
+          "al_decir": "la auditoría lo",
+          "cursor": false
+        }
+      ],
+      "narracion": "Hagamos un recorrido rápido siguiendo a Ana, la vendedora. En Personas está cada persona que entra a esta empresa. La busco por su nombre, y aquí la tengo, arriba de todo: Ana es una fila, con su rol, su último ingreso y su estado. En Roles y permisos abro su rol, Vendedor, que dice qué puede hacer ella y cualquiera que tenga ese rol. En Integraciones viven las credenciales de otros programas, como la vieja tienda en línea. Y en Auditoría queda cada ingreso y cada cambio, con quién y cuándo; arriba está mi propia entrada de hace un momento. Vuelvo al Resumen, que es la portada: cifras y asuntos por atender. En resumen: las personas reciben roles; los roles reúnen permisos; el alcance y los equipos deciden qué registros ve cada quien; y la auditoría lo comprueba todo. En los próximos videos vemos cada pestaña a fondo."
+    }
+  ]
+}

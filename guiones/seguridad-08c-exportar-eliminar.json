@@ -1,0 +1,411 @@
+{
+  "titulo": "Con y sin permiso · Exportar y eliminar",
+  "_comentario": "Serie Seguridad, caso ACCIÓN exportar/eliminar (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo). Entran EN CÁMARA: pedro.nunez (sesion) → ana.mejia → rosa.almanzar → pedro.nunez. Qué escribe en BD: nada (la exportación descarga `productos_export.xlsx` en 0,15 s sin diálogo nativo; «Eliminar» solo se señala). Contrastes sobre el MISMO punto: «Importar / Exportar» de la lista de Productos (Pedro sí, 01 · Ana no, 02) y el icono «Eliminar» de la fila «Machete de 22 pulgadas» (Rosa sí, 04 · Pedro no, 06: tiene Abrir, Duplicar y Desactivar). Los pasos 03 y 05 solo cambian de usuario (el login deja en /home) y el paso siguiente entra a Productos con `navegar` (para Rosa y Pedro «Inventario» del riel abre un panel con varias opciones; para Ana es enlace directo y se pulsa en cámara). DEPENDENCIA ronda 2 (D-S2): hoy la lista de Productos abre el modal «Acceso Denegado — Impuestos» y rompe las fotos para Pedro y Ana; el guion está escrito para el comportamiento CORREGIDO (sin modal, fotos visibles): re-verificar en el ensayo. Ana no tiene panel lateral en Productos (enlace directo): no se contrae nada en 02. OBSERVACIÓN (no se dice en voz): Ana ve «Alta por foto» (F-257 lo liga a PRODUCT_VIEW); la voz solo afirma que no aparece «Importar / Exportar». AVISOS justificados: ninguno de zona FAB (la fila del machete es la 3.ª, y≈586). Ensayo 09-27: 0 fallos (6 pasos, 49 acciones). D-S2 corregido: sin modal «Impuestos» y con fotos para Pedro y Ana; Ana ya NO ve «Alta por foto» (ni Nuevo ni Importar / Exportar; solo el lápiz Abrir). Contrastes vistos: Rosa lápiz·duplicar·desactivar·papelera; Pedro sin papelera. Cambios T3: 04 y 06 ya no pulsan button.panel-collapse (el panel sigue contraído tras el cierre de sesión: localStorage; el clic fallaba) y la voz lo dice; login en cámara con «Iniciar sesión» + marca «Entrando» y relleno (≈+12 s hasta la acción siguiente; login 6,7–8,2 s); «arriba no aparece» marca .table-only-header (h4.page-title llegaba tarde, R5b). Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D «insignia adelantada» y 08c 3:34): (1) INSIGNIAS: cada paso que cambia de usuario (02 Pedro→Ana, 03 Ana→Rosa, 05 Rosa→Pedro) lleva la insignia de quien SALE; `{insignia: null}` al decir «entro como …» y la de quien ENTRA como acción anclada a «Ya dentro» (≈12 s tras «pulso Iniciar», con su Inicio en cámara; en 02 se añadió «Ya dentro,» a la voz). (2) 06: la marca de «no la papelera» ya no cae sobre el interruptor rojo de Desactivar: marca la celda entera de acciones (`td:has(button[aria-label='Desactivar'])`, sin cursor) y la voz dice que ahí se acaban las acciones. La caja «Entrando» huérfana (2:15) y las cues de una palabra son de motor.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "pedro.nunez",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "CSV": "ce-ese-uve"
+  },
+  "aprenderas": [
+    "Qué da el permiso de exportar: el botón «Importar / Exportar» y la descarga del catálogo",
+    "Qué da el permiso de eliminar: la papelera de cada fila",
+    "Que exportar y eliminar son permisos aparte de ver, crear y editar"
+  ],
+  "errores_comunes": [
+    "Dar «Eliminar» a quien solo carga datos: borrar no tiene vuelta atrás",
+    "Olvidar que exportar saca el catálogo completo de la empresa en un archivo",
+    "Borrar un producto que ya no se vende en vez de desactivarlo"
+  ],
+  "pasos": [
+    {
+      "id": "01-con-exportar",
+      "ruta": "Inventario › Productos",
+      "texto_pantalla": "Pedro, almacén · «Importar / Exportar» existe y descarga el catálogo",
+      "capitulo": "Con permiso: exportar",
+      "rotulo": "Con permiso: exportar",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Pedro · Exportar"
+      },
+      "navegar": "/inventory/product/list",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('Machete de 22') td:nth-child(2)",
+          "durante_ms": 4000,
+          "al_decir": "cada fila es un artículo"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Contraigo el panel"
+        },
+        {
+          "resaltar": "button:has-text('Importar / Exportar')",
+          "durante_ms": 5500,
+          "al_decir": "el botón Importar"
+        },
+        {
+          "click": "button:has-text('Importar / Exportar')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "una ventana"
+        },
+        {
+          "click": "mat-dialog-container :text-is('Exportar')",
+          "al_decir": "pestaña Exportar"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Exportar Excel')",
+          "durante_ms": 3500,
+          "al_decir": "ahí están"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Exportar Excel')",
+          "al_decir": "Pulso Exportar Excel"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Cierro la ventana"
+        }
+      ],
+      "narracion": "Esta es la lista de Productos, dentro de Inventario: el catálogo de la distribuidora, donde cada fila es un artículo que se vende. Entra Pedro, el encargado de almacén. En este video comparamos dos permisos de acción: exportar y eliminar. Contraigo el panel del menú. Arriba a la derecha, Pedro tiene el botón Importar / Exportar, porque su rol, Almacén, incluye el permiso Productos, Exportar. Lo pulso. Se abre una ventana con dos pestañas; paso a la pestaña Exportar, y ahí están Exportar Excel y Exportar CSV, que es un archivo de texto sencillo. Pulso Exportar Excel, y el archivo con todo el catálogo se descarga en su computadora. Cierro la ventana."
+    },
+    {
+      "id": "02-sin-exportar",
+      "ruta": "Acceso › Inventario › Productos (Ana)",
+      "texto_pantalla": "Ana, vendedora · la misma lista sin «Importar / Exportar»",
+      "capitulo": "Sin permiso: exportar",
+      "rotulo": "Sin permiso: exportar",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Pedro · Exportar"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Ana"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "ana.mejia"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Sin permiso · Ana · Exportar"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar a.rail-item[aria-label='Inventario']",
+          "al_decir": "lo pulso"
+        },
+        {
+          "resaltar": "tr:has-text('Machete de 22') td:nth-child(2)",
+          "durante_ms": 1200,
+          "al_decir": "los mismos artículos"
+        },
+        {
+          "resaltar": ".table-only-header",
+          "durante_ms": 4000,
+          "al_decir": "arriba no aparece"
+        },
+        {
+          "resaltar": "tr:has-text('Machete de 22') button[aria-label='Abrir']",
+          "durante_ms": 5000,
+          "al_decir": "solo tiene el lápiz"
+        }
+      ],
+      "narracion": "Ahora la misma lista con alguien que no puede exportar. Cambio de persona: abro el menú de mi usuario, arriba a la derecha, pulso Cerrar sesión, y entro como Ana, la vendedora. Escribo su usuario, ana punto mejia, en minúsculas; luego su clave, que en pantalla se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. El rol de Ana le deja ver los productos, para poder cotizarlos, pero no exportarlos ni cambiarlos: vende, pero no administra el catálogo. Ya dentro, en su menú, Inventario lleva directo a Productos; lo pulso. Es la misma lista, con los mismos artículos. Pero arriba no aparece el botón Importar / Exportar. Y en la fila del machete solo tiene el lápiz, que es Abrir. Sin el permiso de exportar, el botón no está."
+    },
+    {
+      "id": "03-entra-rosa",
+      "ruta": "Acceso › Inicio de Rosa",
+      "texto_pantalla": "Entra Rosa, la administradora",
+      "capitulo": "Con permiso: eliminar",
+      "rotulo": "Entra Rosa",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Ana · Exportar"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "Salgo otra vez"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Rosa"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "rosa.almanzar"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 6000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "con",
+            "texto": "Con permiso · Rosa · Eliminar"
+          },
+          "al_decir": "Ya dentro"
+        }
+      ],
+      "narracion": "Ahora el segundo permiso: eliminar. Salgo otra vez desde el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa, la administradora. Escribo su usuario, rosa punto almanzar, en minúsculas; ahora su clave, que se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Rosa es la administradora de la empresa: su rol le permite todo, eliminar incluido, y por eso conviene dárselo a muy pocas personas. Ya dentro, su menú de la izquierda trae todos los módulos contratados."
+    },
+    {
+      "id": "04-con-eliminar",
+      "ruta": "Inventario › Productos (Rosa)",
+      "texto_pantalla": "Rosa, administradora · la papelera «Eliminar» existe en la fila",
+      "capitulo": "Con permiso: la papelera",
+      "rotulo": "Con permiso: eliminar",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Rosa · Eliminar"
+      },
+      "navegar": "/inventory/product/list",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('Machete de 22') td:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "la fila del machete"
+        },
+        {
+          "resaltar": "tr:has-text('Machete de 22') button[aria-label='Eliminar']",
+          "durante_ms": 8000,
+          "al_decir": "la papelera de Eliminar"
+        }
+      ],
+      "narracion": "Vuelvo a la lista de Productos, ahora como Rosa; el panel del menú sigue contraído. En la fila del machete, a la derecha, están sus acciones: abrir, duplicar, desactivar y, al final, la papelera de Eliminar. Aparece porque su rol tiene Productos, Eliminar. No la pulso: borrar un producto no tiene vuelta atrás, y este lo seguimos usando."
+    },
+    {
+      "id": "05-entra-pedro",
+      "ruta": "Acceso › Inicio de Pedro",
+      "texto_pantalla": "Entra otra vez Pedro, el encargado de almacén",
+      "capitulo": "Sin permiso: eliminar",
+      "rotulo": "Entra Pedro",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Rosa · Eliminar"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "Salgo desde"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "otra vez como Pedro"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "pedro.nunez"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 6000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Sin permiso · Pedro · Eliminar"
+          },
+          "al_decir": "Ya dentro"
+        }
+      ],
+      "narracion": "Y ahora, el mismo punto con alguien que no puede eliminar. Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro otra vez como Pedro, el de almacén. Escribo su usuario, pedro punto nunez, en minúsculas y sin eñe; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Pedro puede crear, editar y exportar productos; pero su rol, Almacén, no incluye eliminar, aunque trabaje con los productos todos los días. Ya dentro, vuelve a su Inicio, con su menú de siempre."
+    },
+    {
+      "id": "06-sin-eliminar",
+      "ruta": "Inventario › Productos (Pedro)",
+      "texto_pantalla": "Pedro, almacén · la misma fila sin «Eliminar»",
+      "capitulo": "Sin permiso: sin papelera",
+      "rotulo": "Sin permiso: eliminar",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Pedro · Eliminar"
+      },
+      "navegar": "/inventory/product/list",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('Machete de 22') td:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "la misma fila"
+        },
+        {
+          "resaltar": "tr:has-text('Machete de 22') td:has(button[aria-label='Desactivar'])",
+          "durante_ms": 6000,
+          "al_decir": "ahí se acaban",
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Separa crear y eliminar: quien carga los datos no tiene por qué poder borrarlos."
+          },
+          "durante_ms": 8000,
+          "al_decir": "En resumen"
+        },
+        {
+          "resaltar": "tr:has-text('Machete de 22') button[aria-label='Desactivar']",
+          "durante_ms": 5000,
+          "al_decir": "puede desactivar"
+        }
+      ],
+      "narracion": "Vuelvo a Productos con Pedro. En la misma fila del machete, Pedro tiene abrir, duplicar y desactivar, y ahí se acaban sus acciones, sin la papelera: Eliminar no aparece. Pedro mantiene el catálogo al día, y aun así no puede borrar nada. En resumen: cada acción es un permiso aparte. Exportar deja sacar el catálogo completo en un archivo, y eliminar borra para siempre; por eso conviene darlos solo a quien los necesita. Y si alguien no debe borrar, no le des Eliminar: igual puede desactivar un producto que ya no se vende, que lo deja inactivo sin borrarlo."
+    }
+  ]
+}

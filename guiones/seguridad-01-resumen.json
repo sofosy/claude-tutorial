@@ -1,0 +1,342 @@
+{
+  "titulo": "Seguridad · El Resumen",
+  "_comentario": "Video 01 de la serie Seguridad (AUTOR A, 2026-09-27). Estado de partida: E0, restaurado JUSTO antes de la toma (`node seeds/seguridad/restaurar.mjs E0`): la Actividad reciente se ve en cámara. Entra rosa.almanzar (Admin). No escribe nada en BD (solo su evento de ingreso). Recorrido: /home → candado → /security/resumen; cifra «Sin ningún rol» → Personas › Sin rol (Luisa) → pestaña Resumen; asunto «rol sin permisos» → Configurar → Roles › Mensajero → Resumen; fila «Cambió permisos» → Auditoría con el evento abierto; caso práctico: Resumen → asunto de Héctor «Revisar» → Personas › Nunca entraron con su panel. AVISOS justificados: primer paso sin button.panel-collapse (no existe en /home ni en /security/*). DEPENDE de la ronda 2 de correcciones: D-S6 (la fila del cambio sembrado debe decir «Cambió permisos»; hoy dice «Actualizó · Roles #79»: el selector del paso 03 es `.sec-ov__row:has-text('Cambió permisos')` y FALLA mientras no se corrija) y D-S7 (actor con nombre y registro legible: la voz dice «los permisos del rol Almacén», válido con «Rol #79» o con el nombre). La fila está 8.ª–9.ª, bajo el pliegue dentro del scroll interno `.gm-sheet-pane .gm-sheet-scroll` (266 px): el motor la centra con scroll_into_view; comprobar en el ensayo que la marca cae entera. La primera fila «Acceso» es el ingreso de Rosa de la toma. Los «Hace N min» cambian con la hora: la voz no lee ninguno. Corregido en el ensayo: tras el re-canon r2 la Actividad reciente ya no trae fila de Pedro ni tiempos en minutos (todo lo sembrado es «Hace 3 h»); la fila «Cambió permisos · Rol #79» es la 2.ª, justo debajo del ingreso de la toma → marca del tiempo sobre la celda `.sec-ov__when` de la fila «Creó» («unas horas»), marca de etiqueta sobre su `.gm-badge`, «Más abajo» → «Justo debajo», y la voz ya no dice «rol Almacén» (la pantalla dice «Rol #79»). D-S6 verificado. Ensayo 09-27: 0 fallos (4 pasos). Grabación 09-27 (OPERADOR-GRABACIÓN): el motor NO aplica la `pronunciacion` del guion a las anclas (solo el mapa global) → «Credenciales de API» nunca casaba con «a-pe-i» y la marca salía 1 s antes; ancla cambiada a «Credenciales». Paso 01: frase de entrada para que «candado» llegue a los ~3,5 s (el clic caía +1,0 s tarde). Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-A): (01-3) fuera «y lo más viejo con el día y la hora» (ninguna fila visible lo trae): la voz dice «o, como aquí, hace unas horas» sobre la celda «Hace 7 h» (1500 ms, cursor:false); (01-4) cursor:false en las 7 marcas de cifras .gm-sheet-fig (pasos 01 y 04) para no tapar «30 días», «60 días», «73 de seguridad»…; (01-5) la enumeración «Acceso, Creó, Actualizó, Cambió permisos» marca la cabecera de columna ACCIÓN (.sec-ov__row.gm-sheet-row--head .gm-th:text-is('Acción'), sacado del código security-overview.component.ts:163, NO de un volcado) y no la etiqueta «Creó»; (01-2) la marca tras «Revisar» espera al panel que ya dice «Héctor Vargas» (aside[aria-label='Detalle de la persona']:has-text('Héctor Vargas')), no al panel vacío (con R8-3 el panel muestra esqueleto mientras carga). (01-1) es de motor: regrabar con e1810d6. Ronda 8 (R8-7, «Asignarlo» / «Inicia sesión»): la voz no lee esas frases. Ensayo: confirmar el selector de la cabecera ACCIÓN y que la marca de Héctor llega con la ficha ya cargada. Final T1 (09-28, revisión visual de la toma 1): la celda CUÁNDO dice «Ayer 11:10» (el canon es del 27), no «hace unas horas» → voz «y lo más viejo, como aquí, con el día y la hora»; marcas que sobrevivían al cambio de vista acortadas (Luisa 2600, «rol sin permisos» 1800, fila Cambió permisos 4400) y cartel Cuidado 4200 (tapaba Requiere atención tras volver al Resumen); cursor:false en la marca de las cifras (tapaba «Acceso total») y en la insignia Vacío; el detalle del evento sin cursor y una marca con cursor sobre «Qué cambió» al decir «el antes y el después» (el cursor quedaba sobre «Exportar»). Pendiente de confirmar con fotograma en la toma 2: si la lista «Requiere atención» se desplaza al marcar los asuntos 3 y 4 (cabecera fuera, asunto cortado). Toma 2 (revisión visual): H-GF-1 CONFIRMADO con fotograma (017 a 1:30 y 018 a 1:38 de la toma 2): la lista «Requiere atención» cabe dos asuntos y medio; para enseñar el 3.º y el 4.º se desplaza por dentro, se va la cabecera «Requiere atención · 4 asuntos» y el asunto anterior queda sin título arriba. No tiene arreglo de guion → BLOQUEANTE ERP. Además: el clic en la fila Cambió permisos va a su celda CUÁNDO (el cursor quedaba encima del antes/después del detalle), «el antes y el después» marca la línea de cambio sin cursor, marcas de asuntos y filas sin cursor, Luisa 2000 ms sin cursor (su caja quedaba vacía sobre Actividad reciente al volver al Resumen).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "almánzar",
+      "féliz",
+      "Tienda en línea anterior"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i",
+    "IP": "i-pe"
+  },
+  "aprenderas": [
+    "Leer las cinco cifras del Resumen y saber a dónde lleva cada una",
+    "Atender los asuntos de «Requiere atención»: personas sin rol, credenciales sin uso, personas que nunca entraron y roles vacíos",
+    "Leer la Actividad reciente y abrir un evento en la Auditoría",
+    "Hacer una revisión semanal de la seguridad en un par de minutos"
+  ],
+  "errores_comunes": [
+    "Dejar a alguien sin ningún rol: entra al sistema pero no ve ningún módulo",
+    "Asignar un rol vacío creyendo que da acceso: no concede nada",
+    "Dejar viva una credencial de API que ya nadie usa",
+    "Olvidar a quien nunca inició sesión: su usuario sigue activo"
+  ],
+  "pasos": [
+    {
+      "id": "01-cifras",
+      "ruta": "Seguridad › Resumen",
+      "texto_pantalla": "Resumen · las cinco cifras y a dónde lleva cada una",
+      "capitulo": "Las cinco cifras",
+      "rotulo": "Las cinco cifras",
+      "acciones": [
+        {
+          "click": "a.rail-item[href='/security']",
+          "al_decir": "candado"
+        },
+        {
+          "resaltar": ".gm-sheet-figs",
+          "durante_ms": 4000,
+          "al_decir": "de un vistazo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet-fig:has-text('Personas con acceso')",
+          "cursor": false,
+          "durante_ms": 5000,
+          "al_decir": "Personas con acceso"
+        },
+        {
+          "resaltar": ".gm-sheet-fig:has-text('Administradores')",
+          "cursor": false,
+          "durante_ms": 3000,
+          "al_decir": "Administradores"
+        },
+        {
+          "resaltar": ".gm-sheet-fig:has-text('Sin ningún rol')",
+          "cursor": false,
+          "durante_ms": 5000,
+          "al_decir": "no ve ningún módulo"
+        },
+        {
+          "resaltar": ".gm-sheet-fig:has-text('Credenciales de API')",
+          "cursor": false,
+          "durante_ms": 4500,
+          "al_decir": "llaves de otros programas"
+        },
+        {
+          "resaltar": ".gm-sheet-fig:has-text('Cambios en 7 días')",
+          "cursor": false,
+          "durante_ms": 5500,
+          "al_decir": "Cambios en siete días"
+        },
+        {
+          "click": ".gm-sheet-fig:has-text('Sin ningún rol')",
+          "al_decir": "Pulso Sin ningún rol"
+        },
+        {
+          "resaltar": ".sec-people__row:has-text('Luisa')",
+          "durante_ms": 2000,
+          "al_decir": "es Luisa",
+          "cursor": false
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Resumen')",
+          "al_decir": "Vuelvo al Resumen"
+        }
+      ],
+      "narracion": "En este video recorremos el Resumen de Seguridad. Abro Seguridad desde el candado de la izquierda, y lo primero que sale es el Resumen: la portada de la consola, pensada para ver de un vistazo si todo está en orden. Arriba hay cinco cifras. Personas con acceso: nueve personas entran a esta empresa, y ocho de ellas entraron en los últimos treinta días. Administradores: una sola, con acceso total. Sin ningún rol: una persona que entra al sistema pero no ve ningún módulo; por eso lleva un punto de alerta. Credenciales de API, o sea las llaves de otros programas: hay una, y lleva más de sesenta días sin uso. Y Cambios en siete días cuenta lo que se modificó en los últimos siete días; el número pequeño dice cuántos cambios fueron de seguridad. Cada cifra es un enlace. Pulso Sin ningún rol, y me lleva a Personas ya filtrado: es Luisa Féliz, que tiene usuario pero ningún rol. Vuelvo al Resumen con su pestaña."
+    },
+    {
+      "id": "02-requiere-atencion",
+      "ruta": "Seguridad › Resumen › Requiere atención",
+      "texto_pantalla": "Requiere atención · los cuatro asuntos y su enlace",
+      "capitulo": "Requiere atención",
+      "rotulo": "Requiere atención",
+      "acciones": [
+        {
+          "resaltar": ".gm-sheet-title:has-text('Requiere atención')",
+          "durante_ms": 2500,
+          "al_decir": "conviene arreglar",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-ov__issue:has-text('sin ningún rol')",
+          "durante_ms": 2000,
+          "al_decir": "una persona sin",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-ov__issue:has-text('sin ningún rol') .sec-ov__cta",
+          "durante_ms": 1800,
+          "al_decir": "Asignar rol"
+        },
+        {
+          "resaltar": ".sec-ov__issue:has-text('credencial')",
+          "durante_ms": 5500,
+          "al_decir": "Dos",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-ov__issue:has-text('nunca')",
+          "durante_ms": 6000,
+          "al_decir": "Tres",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-ov__issue:has-text('rol sin permisos')",
+          "durante_ms": 1800,
+          "al_decir": "rol sin permisos",
+          "cursor": false
+        },
+        {
+          "click": ".sec-ov__issue:has-text('rol sin permisos') .sec-ov__cta",
+          "al_decir": "Pulso Configurar"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Mensajero') .gm-badge--warning",
+          "durante_ms": 3500,
+          "al_decir": "insignia Vacío",
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Un rol vacío no da acceso a nada: asignarlo no sirve."
+          },
+          "durante_ms": 4200,
+          "al_decir": "no da acceso"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Resumen')",
+          "al_decir": "Vuelvo al Resumen"
+        },
+        {
+          "resaltar": ".gm-sheet-title:has-text('Requiere atención')",
+          "durante_ms": 3500,
+          "al_decir": "Nada pendiente",
+          "cursor": false
+        }
+      ],
+      "narracion": "Debajo, Requiere atención reúne lo que conviene arreglar. Ahora hay cuatro asuntos, y cada uno trae un enlace que te lleva a resolverlo. Uno: una persona sin ningún rol; su enlace, Asignar rol, te lleva a ella. Dos: una credencial de API sin uso, la de la tienda en línea anterior; si ya no se usa, lo sano es revocarla. Tres: una persona que nunca inició sesión, Héctor Vargas; comprueba su correo, o desactiva la cuenta si ya no la usa. Y cuatro: un rol sin permisos, el de Mensajero, que alguien tiene asignado. Pulso Configurar, y se abre ese rol en Roles y permisos, con la insignia Vacío. Un rol vacío no da acceso a nada: asignárselo a alguien no le sirve. Vuelvo al Resumen. Cuando todo esté en orden, este bloque dirá Nada pendiente."
+    },
+    {
+      "id": "03-actividad-reciente",
+      "ruta": "Seguridad › Resumen › Actividad reciente",
+      "texto_pantalla": "Actividad reciente · cuándo, quién, acción, registro e IP",
+      "capitulo": "Actividad reciente",
+      "rotulo": "Actividad reciente",
+      "acciones": [
+        {
+          "resaltar": ".gm-sheet-title:has-text('Actividad reciente')",
+          "durante_ms": 2800,
+          "al_decir": "Actividad reciente"
+        },
+        {
+          "resaltar": ".sec-ov__row:has-text('Acceso')",
+          "durante_ms": 7500,
+          "al_decir": "Cada fila",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-ov__row:has-text('Creó') .sec-ov__when",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "el día y la hora"
+        },
+        {
+          "resaltar": ".sec-ov__row:has-text('Acceso')",
+          "durante_ms": 4000,
+          "al_decir": "soy yo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-ov__row.gm-sheet-row--head .gm-th:text-is('Acción')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "etiqueta de color"
+        },
+        {
+          "resaltar": ".sec-ov__link",
+          "durante_ms": 1800,
+          "al_decir": "Ver bitácora"
+        },
+        {
+          "resaltar": ".sec-ov__row:has-text('Cambió permisos')",
+          "durante_ms": 4400,
+          "al_decir": "Justo debajo",
+          "cursor": false
+        },
+        {
+          "click": ".sec-ov__row:has-text('Cambió permisos') .sec-ov__when",
+          "al_decir": "Pulso la fila"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle del evento']",
+          "durante_ms": 2400,
+          "al_decir": "ese evento abierto",
+          "cursor": false
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle del evento'] .sec-audit__change",
+          "durante_ms": 3000,
+          "al_decir": "el antes y el después",
+          "cursor": false
+        }
+      ],
+      "narracion": "A la derecha está la Actividad reciente: los últimos diez movimientos de la empresa. Cada fila dice cuándo pasó, quién lo hizo, qué acción fue, sobre qué registro y desde qué dirección IP, o sea la dirección de red de la computadora. El tiempo se lee en palabras: hace un momento, hace unos minutos; y lo más viejo, como aquí, con el día y la hora. La primera fila soy yo, entrando: los ingresos también quedan anotados. Cada acción lleva su etiqueta de color: Acceso, Creó, Actualizó, Cambió permisos. Si no hubiera movimientos, la tabla diría que no encontró registros. Para ver toda la historia, arriba de la tabla está el enlace Ver bitácora, que abre la Auditoría completa. Justo debajo de mi entrada hay una fila Cambió permisos: ahí se ajustaron los permisos de un rol. Pulso la fila, y la consola me lleva a Auditoría, con ese evento abierto a la derecha. Allí se ve el antes y el después de cada cambio; lo explicamos en el video de Auditoría."
+    },
+    {
+      "id": "04-caso-practico",
+      "ruta": "Seguridad › Resumen › revisión semanal",
+      "texto_pantalla": "Caso práctico · la revisión de cada semana",
+      "capitulo": "Caso práctico: la revisión semanal",
+      "rotulo": "Caso práctico",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Caso práctico · revisión semanal"
+      },
+      "acciones": [
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Resumen')",
+          "al_decir": "Vuelvo al Resumen"
+        },
+        {
+          "resaltar": ".gm-sheet-fig:has-text('Sin ningún rol')",
+          "cursor": false,
+          "durante_ms": 1300,
+          "al_decir": "Sin ningún rol"
+        },
+        {
+          "resaltar": ".gm-sheet-fig:has-text('Credenciales de API')",
+          "cursor": false,
+          "durante_ms": 3500,
+          "al_decir": "Credenciales"
+        },
+        {
+          "click": ".sec-ov__issue:has-text('nunca') .sec-ov__cta",
+          "al_decir": "con su enlace Revisar"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona']:has-text('Héctor Vargas')",
+          "durante_ms": 3000,
+          "al_decir": "su ficha abierta"
+        },
+        {
+          "resaltar": ".sec-people__row:has-text('Héctor Vargas')",
+          "durante_ms": 4500,
+          "al_decir": "Pendiente"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "durante_ms": 3500,
+          "al_decir": "video de Personas"
+        }
+      ],
+      "narracion": "Un caso práctico para cerrar: la revisión de cada semana. Vuelvo al Resumen y miro las cifras: si Sin ningún rol no está en cero, o si Credenciales de API avisa de alguna sin uso, hay trabajo. Después voy a Requiere atención y abro el asunto de Héctor con su enlace Revisar. La consola me lleva a Personas, a la vista Nunca entraron, con su ficha abierta a la derecha. Su estado es Pendiente: tiene usuario, pero nunca ha entrado. Desde aquí compruebo su correo o lo desactivo; eso lo vemos en el video de Personas y en el de alta y edición. Así, en un par de minutos, sabes quién entra, quién sobra y qué cambió."
+    }
+  ]
+}

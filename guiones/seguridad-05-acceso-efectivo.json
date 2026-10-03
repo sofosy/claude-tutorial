@@ -1,0 +1,259 @@
+{
+  "titulo": "Seguridad · El acceso efectivo de una persona",
+  "_comentario": "Serie Seguridad, video 05 (AUTOR B, 2026-09-27). Parte de E0. Graba rosa.almanzar. Qué escribe en BD: nada. Datos de E0 comprobados en _resultados-v05.json y v04a: Carlos «Vendedor sénior · Hereda de Vendedor» 11/1160 (Productos 1/42 · Clientes y Proveedores 1/37 · Facturación 2/79 · Cotizaciones 7/19); José «Almacén + Vendedor» 10/1160 (Productos 5/42 · Inventario 1/47 · Clientes y Proveedores 1/37 · Cotizaciones 3/19); Ana «Vendedor» 5/1160 (Productos 1 · Clientes y Proveedores 1 · Cotizaciones 3) y Zona Este igual que José; Luisa «Sin ningún rol: inicia sesión pero no ve ningún módulo.» 0/1160 «Ningún permiso concedido.». Diagrama acceso-efectivo: sus 4 permisos de ejemplo casan con E0; se CORRIGIÓ el rótulo del resultado («La unión de todos sus permisos» → «11 en total; aquí, 4 de ejemplo») porque listaba 4 de 11. Verdad 2: el equipo NO suma (fase 3 tachada). La voz dice «desde su siguiente operación» (A-022) y no promete que el menú cambie sin volver a entrar (D-S9). AVISOS justificados: el primer paso no contrae el panel del menú (no existe en /security/*; además el paso 01 es la lámina). Ensayo 09-27: 0 fallos (4 pasos, 30 acciones). Sin cambios en T2: diagrama acceso-efectivo con fases 2-4 verificado; orden de roles de José en la ficha = Almacén, Vendedor; cifras 11/10/5/0 confirmadas. Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-C): (05-3) en 04 la frase «…solo cuenta lo que la empresa tiene contratado» ya no marca «Cotizaciones 3/19» (la voz no la nombra): marca el subtítulo «La unión de sus roles, por módulo contratado.» (aside[aria-label='Detalle de la persona'] .sec-people__hint:has-text('La unión de sus roles'), security-people.component.html:302, sacado del código), anclado a «tiene contratado», 4500 ms, cursor:false. (05-1, 05-2) son de motor: regrabar 02 y 04 con e1810d6. Ronda 8 (R8-2): el denominador de la ficha pasará de 1160 a «de 1103» (no verificado en pantalla); la voz no lo lee y solo dice lo concedido (once, diez, cinco, siete de diecinueve en Cotizaciones), que la ronda 8 no toca porque ninguno de esos permisos es interno de administración ni clínico. Ensayo: confirmar el subtítulo y que Cotizaciones sigue en «7/19» para Carlos.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Qué es el acceso efectivo: la suma de los roles de una persona y de lo que esos roles heredan",
+    "Leerlo en la ficha de una persona, módulo por módulo",
+    "Por qué dos roles suman y un equipo no",
+    "Diagnosticar por qué alguien no ve nada"
+  ],
+  "errores_comunes": [
+    "Esperar que meter a alguien en un equipo le dé permisos",
+    "Mirar solo el rol directo y olvidar lo que hereda de su rol padre",
+    "Conceder un permiso de un módulo que la empresa no tiene contratado: no se puede usar"
+  ],
+  "pasos": [
+    {
+      "id": "01-como-se-calcula",
+      "capitulo": "Cómo se calcula",
+      "rotulo": "Acceso efectivo",
+      "ruta": "Seguridad › Acceso efectivo",
+      "texto_pantalla": "Acceso efectivo · roles, herencia y por qué el equipo no suma",
+      "navegar": "/security/personas",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Acceso efectivo = roles + herencia"
+      },
+      "diagrama": "acceso-efectivo",
+      "acciones": [
+        {
+          "diagrama_fase": 2,
+          "al_decir": "hereda de otro"
+        },
+        {
+          "diagrama_fase": 3,
+          "al_decir": "Y el equipo"
+        },
+        {
+          "diagrama_fase": 4,
+          "al_decir": "El resultado"
+        }
+      ],
+      "narracion": "Antes de mirar pantallas, una idea que resuelve muchas dudas: el acceso efectivo. Es todo lo que una persona puede hacer de verdad en la empresa. Tomemos a Carlos Pimentel. Tiene un solo rol, Vendedor sénior, con permisos propios: por ejemplo, aprobar cotizaciones y crear facturas. Pero ese rol hereda de otro, Vendedor: todo lo que tenga Vendedor le llega también, como ver clientes y ver productos. ¿Y el equipo? Zona Este agrupa a Ana y a José, pero un equipo no suma ningún permiso: solo sirve para el alcance Equipo, que decide qué registros se ven. El resultado es la unión: los permisos de sus roles más los que esos roles heredan. En la lámina van cuatro de ejemplo; en su ficha vamos a ver los once."
+    },
+    {
+      "id": "02-herencia-en-la-persona",
+      "capitulo": "La herencia en la ficha",
+      "rotulo": "Carlos: rol que hereda",
+      "ruta": "Seguridad › Personas › Carlos Pimentel",
+      "texto_pantalla": "Ficha de Carlos · Vendedor sénior, que hereda de Vendedor",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Carlos · Vendedor sénior"
+      },
+      "acciones": [
+        {
+          "click": ".sec-people__who:has-text('Carlos Pimentel')",
+          "al_decir": "abro a Carlos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role",
+          "durante_ms": 5500,
+          "al_decir": "Hereda de Vendedor"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__block-head",
+          "durante_ms": 1400,
+          "al_decir": "once permisos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module:has-text('Cotizaciones')",
+          "durante_ms": 5500,
+          "al_decir": "siete de diecinueve"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module:has-text('Facturación')",
+          "durante_ms": 5000,
+          "al_decir": "En Facturación"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module:has-text('Clientes y Proveedores')",
+          "durante_ms": 5000,
+          "al_decir": "le llegan de Vendedor"
+        }
+      ],
+      "narracion": "Ahora lo mismo en la ficha real. En la pestaña Personas abro a Carlos. En Roles dice Vendedor sénior, y debajo, Hereda de Vendedor: así sabes que le llega todo lo de ese otro rol. Sus Permisos efectivos son once permisos. En Cotizaciones tiene siete de diecinueve: ver, crear y editar, como cualquier vendedor, aunque él las ve todas; más aprobar, rechazar, aceptar y convertir, que son solo de su rol. En Facturación, dos: ver y crear facturas, que Ana no tiene. Y ver clientes y ver productos le llegan de Vendedor, sin que nadie se los diera a él directamente."
+    },
+    {
+      "id": "03-dos-roles-suman",
+      "capitulo": "Dos roles suman",
+      "rotulo": "José: dos roles",
+      "ruta": "Seguridad › Personas › José Cabrera",
+      "texto_pantalla": "Ficha de José · Almacén y Vendedor, sumados",
+      "insignia": {
+        "tipo": "info",
+        "texto": "José · dos roles"
+      },
+      "acciones": [
+        {
+          "click": ".sec-people__who:has-text('José Cabrera')",
+          "al_decir": "Abro a José"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role:has-text('Almacén')",
+          "durante_ms": 1500,
+          "al_decir": "El primero"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role:has-text('Vendedor')",
+          "durante_ms": 3000,
+          "al_decir": "el segundo"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__block-head",
+          "durante_ms": 2499,
+          "al_decir": "diez permisos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module:has-text('Productos')",
+          "durante_ms": 7000,
+          "al_decir": "En Productos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module:has-text('Inventario')",
+          "durante_ms": 2499,
+          "al_decir": "Inventario"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module:has-text('Cotizaciones')",
+          "durante_ms": 4500,
+          "al_decir": "Cotizaciones"
+        }
+      ],
+      "narracion": "Otro caso: una persona con dos roles. Abro a José Cabrera. En Roles tiene dos. El primero es Almacén, y el segundo, Vendedor. Su acceso efectivo es la suma de los dos: diez permisos en total, repartidos en cuatro módulos. En Productos tiene cinco, porque su rol de almacén le da ver, crear, editar, importar y exportar; el de vendedor también le da ver productos, pero eso ya estaba, y no cuenta dos veces. Además le llega Inventario. Y del rol de vendedor, Clientes y Cotizaciones, lo mismo que tiene Ana."
+    },
+    {
+      "id": "04-equipo-no-suma",
+      "capitulo": "El equipo no suma · caso práctico",
+      "rotulo": "El equipo no suma",
+      "ruta": "Seguridad › Personas › Ana Mejía · Luisa Féliz",
+      "texto_pantalla": "Ficha de Ana y de Luisa · el equipo no suma; sin rol, nada",
+      "acciones": [
+        {
+          "click": ".sec-people__who:has-text('Ana Mejía')",
+          "al_decir": "Abro a Ana"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__facts",
+          "durante_ms": 2500,
+          "al_decir": "mismo equipo"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__block-head",
+          "durante_ms": 5000,
+          "al_decir": "tiene cinco"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__hint:has-text('La unión de sus roles')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "tiene contratado"
+        },
+        {
+          "click": ".sec-people__who:has-text('Luisa Féliz')",
+          "al_decir": "abro a Luisa"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__norole",
+          "durante_ms": 3799,
+          "al_decir": "Sin ningún rol"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] :text('Ningún permiso concedido')",
+          "durante_ms": 2800,
+          "al_decir": "Ningún permiso"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__assign-roles",
+          "durante_ms": 5000,
+          "al_decir": "Asignar rol"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "¿Por qué alguien puede o no puede algo? Mira aquí su acceso efectivo."
+          },
+          "durante_ms": 7000,
+          "al_decir": "Cuando alguien"
+        }
+      ],
+      "narracion": "¿Y el equipo? Abro a Ana. Arriba dice Zona Este, el mismo equipo de José. Y aun así, Ana tiene cinco permisos y no diez: lo que cambia entre los dos es el rol, no el equipo. Un cambio en un rol vale desde la siguiente operación de cada persona, y solo cuenta lo que la empresa tiene contratado: un permiso de un módulo sin contratar no se puede usar. Ahora un caso práctico: Luisa llama porque entra y no ve nada. En Personas abro a Luisa, y su ficha lo explica: Sin ningún rol, inicia sesión pero no ve ningún módulo; y abajo, Ningún permiso concedido. La solución está aquí mismo, en Asignar rol. Cuando alguien te diga que no puede hacer algo, empieza por su ficha."
+    }
+  ]
+}
