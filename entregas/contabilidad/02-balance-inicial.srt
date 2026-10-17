@@ -1,0 +1,259 @@
+1
+00:00:03,000 --> 00:00:07,472
+Esta es la pantalla de Cuentas por Cobrar, en el menú Contabilidad:
+
+2
+00:00:07,331 --> 00:00:10,769
+aquí aparece cada documento que un cliente te debe.
+
+3
+00:00:10,593 --> 00:00:14,356
+Como la empresa recién empieza en el sistema, está vacía.
+
+4
+00:00:14,237 --> 00:00:16,945
+Ahora recojo el menú para ganar espacio.
+
+5
+00:00:16,768 --> 00:00:21,113
+Cuando empiezas a usar el sistema, la empresa ya trae saldos:
+
+6
+00:00:20,972 --> 00:00:24,712
+dinero en el banco, clientes que deben y un capital.
+
+7
+00:00:24,559 --> 00:00:28,032
+Se cargan en dos partes, y la primera es esta:
+
+8
+00:00:27,902 --> 00:00:32,351
+los auxiliares, lo que te debe cada cliente, factura por factura.
+
+9
+00:00:32,198 --> 00:00:36,184
+Abro Más acciones y elijo Cargar Saldo Inicial.
+
+10
+00:00:36,042 --> 00:00:39,620
+En Cliente escribo ferre, las primeras letras del nombre,
+
+11
+00:00:39,454 --> 00:00:42,395
+y en la lista elijo la Ferretería del Este.
+
+12
+00:00:42,240 --> 00:00:46,180
+En el documento pongo el número de la factura que quedó pendiente.
+
+13
+00:00:46,095 --> 00:00:47,956
+Luego el monto pendiente:
+
+14
+00:00:47,779 --> 00:00:50,823
+cuarenta y cinco mil pesos, sin comas.
+
+15
+00:00:50,680 --> 00:00:55,466
+La fecha del saldo es el primero de octubre, el día en que arrancas en el sistema;
+
+16
+00:00:55,314 --> 00:00:57,627
+tiene que caer en un período abierto.
+
+17
+00:00:57,462 --> 00:01:00,460
+Y el vencimiento, el treinta y uno de octubre,
+
+18
+00:01:00,283 --> 00:01:02,782
+para que el sistema sepa cuándo cobrarla.
+
+19
+00:01:02,604 --> 00:01:04,477
+Pulso Cargar saldo.
+
+20
+00:01:04,403 --> 00:01:05,138
+Listo:
+
+21
+00:01:05,031 --> 00:01:09,225
+la factura aparece en el listado como cuenta por cobrar del cliente,
+
+22
+00:01:09,048 --> 00:01:11,431
+y se podrá cobrar como cualquier otra.
+
+23
+00:01:11,301 --> 00:01:12,209
+Pero ojo:
+
+24
+00:01:12,102 --> 00:01:14,345
+este paso no hace asiento.
+
+25
+00:01:14,180 --> 00:01:17,793
+El dinero en la contabilidad lo pone el balance inicial.
+
+26
+00:01:17,652 --> 00:01:20,824
+Si son muchos clientes, no los cargues uno a uno:
+
+27
+00:01:20,670 --> 00:01:25,166
+en ese mismo menú está Importar Saldos, desde un Excel.
+
+28
+00:01:25,605 --> 00:01:31,774
+La segunda parte es el balance inicial, en Diario y Mayor, pestaña Balance Inicial.
+
+29
+00:01:31,607 --> 00:01:36,985
+Aquí se arma un solo asiento, el de apertura, con el saldo de cada cuenta del mayor.
+
+30
+00:01:36,843 --> 00:01:38,193
+Primero la fecha:
+
+31
+00:01:38,051 --> 00:01:40,085
+el mismo primero de octubre.
+
+32
+00:01:39,955 --> 00:01:42,930
+En la primera línea busco la cuenta del banco:
+
+33
+00:01:42,811 --> 00:01:47,934
+escribo BHD y elijo la cuenta que creamos en el video anterior.
+
+34
+00:01:47,850 --> 00:01:52,265
+Le pongo una descripción corta, para saber de dónde viene el saldo.
+
+35
+00:01:52,157 --> 00:01:56,560
+En la columna Débito van doscientos cincuenta mil pesos,
+
+36
+00:01:56,442 --> 00:01:59,718
+que es lo que dice el estado del banco a esa fecha.
+
+37
+00:01:59,554 --> 00:02:02,819
+Para la cuenta por cobrar no escribo nada a mano:
+
+38
+00:02:02,664 --> 00:02:05,082
+pulso Traer saldos de cartera,
+
+39
+00:02:04,941 --> 00:02:09,795
+y el sistema llena la segunda línea con los cuarenta y cinco mil del auxiliar que
+
+40
+00:02:09,631 --> 00:02:10,956
+acabamos de cargar.
+
+41
+00:02:10,849 --> 00:02:13,963
+Así el mayor y el detalle por cliente coinciden.
+
+42
+00:02:13,810 --> 00:02:16,483
+Falta la contrapartida, que es el capital.
+
+43
+00:02:16,341 --> 00:02:17,748
+Agrego una línea.
+
+44
+00:02:17,594 --> 00:02:22,520
+Busco capital social, la cuenta del patrimonio donde va lo que aportaron los socios,
+
+45
+00:02:22,355 --> 00:02:23,471
+y la elijo.
+
+46
+00:02:23,306 --> 00:02:27,037
+Como descripción escribo capital aportado, para que se entienda.
+
+47
+00:02:26,882 --> 00:02:30,891
+Y en la columna Crédito pongo doscientos noventa y cinco mil,
+
+48
+00:02:30,760 --> 00:02:32,319
+la suma de lo anterior.
+
+49
+00:02:32,235 --> 00:02:34,837
+Abajo, el total dice Cuadra:
+
+50
+00:02:34,812 --> 00:02:37,625
+débitos y créditos son iguales.
+
+51
+00:02:37,598 --> 00:02:39,134
+Pulso Guardar.
+
+52
+00:02:39,599 --> 00:02:41,169
+Sale el aviso:
+
+53
+00:02:41,027 --> 00:02:47,126
+el asiento de apertura se creó y se contabilizó de una vez, sin pasar por borrador.
+
+54
+00:02:47,042 --> 00:02:52,674
+Desde este momento los saldos están en el mayor y en los estados financieros.
+
+55
+00:02:52,533 --> 00:02:56,692
+Pulso Aceptar, y el sistema abre el asiento:
+
+56
+00:02:56,573 --> 00:02:59,060
+arriba, su estado, Contabilizado;
+
+57
+00:02:58,918 --> 00:03:02,229
+abajo, cada línea tal como la cargaste.
+
+58
+00:03:02,670 --> 00:03:06,900
+Para comprobarlo, regreso a la pestaña Balance Inicial.
+
+59
+00:03:06,781 --> 00:03:11,856
+Ahí, el recuadro de arriba compara la cuenta por cobrar del mayor con la suma de
+
+60
+00:03:11,703 --> 00:03:14,225
+los auxiliares, y dice Concilia.
+
+61
+00:03:14,106 --> 00:03:16,593
+Solo puede haber un asiento de apertura.
+
+62
+00:03:16,451 --> 00:03:21,214
+Si después encuentras un error, armas aquí el correcto y eliges Reemplazar:
+
+63
+00:03:21,060 --> 00:03:24,349
+el sistema reversa el anterior y deja el nuevo.
+
+64
+00:03:24,195 --> 00:03:29,120
+Con los saldos cargados, en el próximo video creamos la cuenta bancaria para
+
+65
+00:03:28,990 --> 00:03:30,037
+conciliar.

@@ -90,8 +90,9 @@
    "acciones": [
     {
      "resaltar": "a.panel-item[data-row-key='accounting.receivable']",
-     "durante_ms": 3000,
-     "al_decir": "Cuentas por Cobrar"
+     "durante_ms": 2000,
+     "al_decir": "menú Contabilidad",
+     "cursor": false
     },
     {
      "resaltar": "button:has-text('Filtrar')",
@@ -286,7 +287,7 @@
      "al_decir": "columna Crédito"
     },
     {
-     "resaltar": "text=Cuadra >> nth=0",
+     "resaltar": "span.balance-status.balanced",
      "durante_ms": 4500,
      "al_decir": "dice Cuadra"
     },
