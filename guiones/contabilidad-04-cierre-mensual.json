@@ -182,6 +182,11 @@
      "al_decir": "botón Contabilizar"
     },
     {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
      "click": "mat-dialog-container button:has-text('Confirmar')",
      "al_decir": "Confirmo"
     },
@@ -217,6 +222,11 @@
     {
      "click": "tr:has-text('Septiembre 2026') button[aria-label='Cerrar Período']",
      "al_decir": "Pulso Cerrar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
     },
     {
      "click": "mat-dialog-container button:has-text('Sí, Cerrar')",

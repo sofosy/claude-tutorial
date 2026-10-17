@@ -1,0 +1,269 @@
+{
+ "titulo": "Contabilidad · Cierra el año fiscal",
+ "descripcion": "Cómo hacer el cierre anual en Germiva con el asistente de Cierre Contable: qué debe estar listo antes, las cuentas de resultado del ejercicio y de utilidades retenidas, la provisión del ISR, la vista previa con los asientos que se van a generar y el resultado del cierre.",
+ "_comentario": "Video 5 de la serie Contabilidad (17/10/2026). setup: preparar.sh cierre-anual (calendario 2025 completo, ventas 1,500,000 y sueldos 900,000 en noviembre 2025, enero-noviembre 2025 cerrados; diciembre 2025 abierto).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/cierre/cierres"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh cierre-anual"
+ },
+ "aprenderas": [
+  "Saber qué debe estar listo antes del cierre anual",
+  "Elegir las cuentas de resultado del ejercicio y de utilidades retenidas",
+  "Provisionar el ISR del ejercicio desde el asistente",
+  "Revisar la vista previa y ejecutar el cierre"
+ ],
+ "errores_comunes": [
+  "Intentar el cierre anual con meses anteriores abiertos o con borradores",
+  "Usar la misma cuenta para el resultado del ejercicio y las utilidades retenidas",
+  "Cerrar con utilidad sin provisionar el ISR"
+ ],
+ "pasos": [
+  {
+   "id": "01-historial",
+   "capitulo": "Antes del cierre",
+   "rotulo": "Antes del cierre anual",
+   "ruta": "Contabilidad › Cierre Contable",
+   "texto_pantalla": "Cierre Contable · el historial de cierres",
+   "narracion": "El cierre del año se hace en Contabilidad, Cierre Contable. Ahora recojo el menú para ganar espacio. Este cierre hace dos cosas: lleva los ingresos y los gastos del año a cero, y pasa la utilidad o la pérdida al patrimonio, para que el año siguiente arranque limpio. Antes de empezar, revisa que todos los meses del año, menos diciembre, estén cerrados, y que no queden asientos en borrador. En este ejemplo, de enero a noviembre de dos mil veinticinco ya están cerrados. Pulso Iniciar Cierre.",
+   "acciones": [
+    {
+     "resaltar": "a.panel-item[data-row-key='accounting.reports.closing']",
+     "durante_ms": 2000,
+     "al_decir": "Contabilidad, Cierre",
+     "cursor": false
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "button:has-text('Iniciar Cierre'), button:has-text('Nuevo Cierre')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "dos cosas"
+    },
+    {
+     "resaltar": "button:has-text('Iniciar Cierre'), button:has-text('Nuevo Cierre')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "todos los meses"
+    },
+    {
+     "click": "button:has-text('Iniciar Cierre'), button:has-text('Nuevo Cierre')",
+     "al_decir": "Pulso Iniciar"
+    }
+   ]
+  },
+  {
+   "id": "02-configuracion",
+   "capitulo": "Configuración del cierre",
+   "rotulo": "Período y cuentas",
+   "ruta": "Contabilidad › Cierre Contable › Nuevo cierre",
+   "texto_pantalla": "Configuración · período y cuentas de patrimonio",
+   "narracion": "El asistente tiene cuatro pasos. En el primero eliges el período: abro la lista y tomo diciembre de dos mil veinticinco, el último mes del año. Después, la Cuenta Resultado del Ejercicio, donde se junta la utilidad del año: elijo Utilidad del ejercicio. Y la Cuenta Utilidades Retenidas, a donde pasa ese resultado al final: elijo Ganancias acumuladas. Tienen que ser dos cuentas distintas, las dos de patrimonio. La casilla de abajo crea o activa el período siguiente, para seguir registrando sin pausa. Pulso Continuar.",
+   "acciones": [
+    {
+     "click": "mat-select[formcontrolname='accountingPeriodId']",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('Diciembre 2025')",
+     "al_decir": "tomo diciembre"
+    },
+    {
+     "click": "mat-select[formcontrolname='resultAccountCode']",
+     "al_decir": "Cuenta Resultado"
+    },
+    {
+     "click": "mat-option:has-text('Utilidad del ejercicio')",
+     "al_decir": "elijo Utilidad"
+    },
+    {
+     "click": "mat-select[formcontrolname='retainedEarningsAccountCode']",
+     "al_decir": "Cuenta Utilidades Retenidas"
+    },
+    {
+     "click": "mat-option:has-text('Ganancias acumuladas')",
+     "al_decir": "elijo Ganancias"
+    },
+    {
+     "resaltar": "mat-checkbox[formcontrolname='createNextPeriod']",
+     "durante_ms": 4500,
+     "al_decir": "La casilla"
+    },
+    {
+     "click": "button:has-text('Continuar')",
+     "al_decir": "Pulso Continuar"
+    }
+   ]
+  },
+  {
+   "id": "03-isr",
+   "capitulo": "El impuesto sobre la renta",
+   "rotulo": "Provisionar el ISR",
+   "ruta": "Contabilidad › Cierre Contable › Impuesto sobre la renta",
+   "texto_pantalla": "Impuesto sobre la renta · la provisión del ejercicio",
+   "narracion": "El segundo paso es el impuesto sobre la renta. El sistema toma la utilidad del año, le aplica la tasa del impuesto, y propone cuánto provisionar. Más abajo muestra el asiento que va a registrar: un gasto por impuesto contra el impuesto por pagar. El monto propuesto viene lleno; si tu contador decide otro, lo cambias y el sistema te pide el motivo. Pulso Provisionar ISR; el sistema pide confirmar el asiento, y confirmo. Con el impuesto registrado, pulso Generar vista previa del cierre.",
+   "acciones": [
+    {
+     "resaltar": "app-income-tax-step table, app-income-tax-step .liquidation",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "toma la utilidad"
+    },
+    {
+     "resaltar": "text=Asiento que se registrará",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "el asiento que va"
+    },
+    {
+     "resaltar": "app-money-input[formcontrolname='amount']",
+     "durante_ms": 5000,
+     "al_decir": "El monto propuesto"
+    },
+    {
+     "click": "button:has-text('Provisionar ISR')",
+     "al_decir": "Pulso Provisionar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Confirmar')",
+     "al_decir": "y confirmo"
+    },
+    {
+     "click": "button:has-text('Generar vista previa del cierre')",
+     "al_decir": "pulso Generar"
+    }
+   ]
+  },
+  {
+   "id": "04-vista-previa",
+   "capitulo": "Vista previa y ejecución",
+   "rotulo": "Ejecutar el cierre",
+   "ruta": "Contabilidad › Cierre Contable › Vista Previa",
+   "texto_pantalla": "Vista Previa · lo que el cierre va a hacer",
+   "narracion": "La vista previa dice lo que el cierre va a hacer, antes de hacerlo. El resumen financiero muestra el total de ingresos, el de gastos y la utilidad del año. Debajo están las cuentas que se van a cerrar, con su saldo, y los asientos que se van a generar. Si todo cuadra, pulso Ejecutar Cierre; el sistema avisa que va a generar los asientos y cerrar el período, y confirmo.",
+   "acciones": [
+    {
+     "resaltar": "text=Resumen Financiero",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "resumen financiero"
+    },
+    {
+     "resaltar": "text=Cuentas a Cerrar",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "las cuentas que se van"
+    },
+    {
+     "click": "button:has-text('Ejecutar Cierre')",
+     "al_decir": "pulso Ejecutar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Confirmar')",
+     "al_decir": "y confirmo"
+    }
+   ]
+  },
+  {
+   "id": "05-resultado",
+   "capitulo": "El resultado",
+   "rotulo": "Año cerrado",
+   "ruta": "Contabilidad › Cierre Contable › Resultado",
+   "texto_pantalla": "Resultado · asientos de cierre y período siguiente",
+   "narracion": "Listo. El cierre generó tres asientos: uno que cierra los ingresos, otro que cierra los gastos, y uno que pasa la utilidad a ganancias acumuladas. Diciembre quedó cerrado y el período siguiente queda como actual. Los saldos del balance, como el banco o los clientes, siguen en el mayor sin necesidad de otro asiento. Si hubo un error, el cierre se puede reversar desde el historial, pero antes consulta a tu contador.",
+   "acciones": [
+    {
+     "resaltar": "text=Asientos Generados",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "tres asientos"
+    },
+    {
+     "resaltar": "mat-step-header:has-text('Resultado')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Diciembre quedó cerrado"
+    },
+    {
+     "resaltar": "button:has-text('Ver Historial')",
+     "durante_ms": 5000,
+     "al_decir": "reversar desde el historial"
+    }
+   ]
+  }
+ ]
+}

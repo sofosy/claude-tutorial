@@ -86,7 +86,7 @@
    "rotulo": "Saldos de clientes",
    "ruta": "Contabilidad › Cuentas por Cobrar",
    "texto_pantalla": "Cargar Saldo Inicial · lo que debe cada cliente",
-   "narracion": "Esta es la pantalla de Cuentas por Cobrar, en el menú Contabilidad: cada fila es un documento que un cliente te debe. Recojo el menú para ganar espacio. Cuando empiezas a usar el sistema, la empresa ya trae saldos: dinero en el banco, clientes que deben y un capital. Se cargan en dos partes, y la primera es esta: los auxiliares, lo que te debe cada cliente, factura por factura. Abro Más acciones y elijo Cargar Saldo Inicial. En Cliente escribo ferre, las primeras letras del nombre, y en la lista elijo la Ferretería del Este. En el documento pongo el número de la factura que quedó pendiente. Luego el monto pendiente: cuarenta y cinco mil pesos, sin comas. La fecha del saldo es el primero de octubre, el día en que arrancas en el sistema; tiene que caer en un período abierto. Pulso Cargar saldo. Listo: la factura aparece en el listado como cuenta por cobrar del cliente, y se podrá cobrar como cualquier otra. Pero ojo: este paso no hace asiento. El dinero en la contabilidad lo pone el balance inicial. Si son muchos clientes, no los cargues uno a uno: en ese mismo menú está Importar Saldos, desde un Excel.",
+   "narracion": "Esta es la pantalla de Cuentas por Cobrar, en el menú Contabilidad: aquí aparece cada documento que un cliente te debe. Como la empresa recién empieza en el sistema, está vacía. Ahora recojo el menú para ganar espacio. Cuando empiezas a usar el sistema, la empresa ya trae saldos: dinero en el banco, clientes que deben y un capital. Se cargan en dos partes, y la primera es esta: los auxiliares, lo que te debe cada cliente, factura por factura. Abro Más acciones y elijo Cargar Saldo Inicial. En Cliente escribo ferre, las primeras letras del nombre, y en la lista elijo la Ferretería del Este. En el documento pongo el número de la factura que quedó pendiente. Luego el monto pendiente: cuarenta y cinco mil pesos, sin comas. La fecha del saldo es el primero de octubre, el día en que arrancas en el sistema; tiene que caer en un período abierto. Y el vencimiento, el treinta y uno de octubre, para que el sistema sepa cuándo cobrarla. Pulso Cargar saldo. Listo: la factura aparece en el listado como cuenta por cobrar del cliente, y se podrá cobrar como cualquier otra. Pero ojo: este paso no hace asiento. El dinero en la contabilidad lo pone el balance inicial. Si son muchos clientes, no los cargues uno a uno: en ese mismo menú está Importar Saldos, desde un Excel.",
    "acciones": [
     {
      "resaltar": "a.panel-item[data-row-key='accounting.receivable']",
@@ -94,16 +94,17 @@
      "al_decir": "Cuentas por Cobrar"
     },
     {
-     "resaltar": "table thead",
-     "durante_ms": 3500,
-     "al_decir": "cada fila"
+     "resaltar": "button:has-text('Filtrar')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "está vacía"
     },
     {
      "click": "button.panel-collapse",
      "al_decir": "Recojo el menú"
     },
     {
-     "resaltar": "table tbody tr >> nth=0",
+     "resaltar": "button:has-text('Filtrar')",
      "durante_ms": 4500,
      "cursor": false,
      "al_decir": "ya trae saldos"
@@ -120,6 +121,11 @@
     {
      "click": "button[mat-menu-item]:has-text('Cargar Saldo Inicial')",
      "al_decir": "elijo Cargar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
     },
     {
      "escribir": {
@@ -154,8 +160,21 @@
      "al_decir": "La fecha del saldo"
     },
     {
+     "escribir": {
+      "sel": "input[formcontrolname='dueDate']",
+      "texto": "31/10/2026"
+     },
+     "al_decir": "Y el vencimiento"
+    },
+    {
      "click": "mat-dialog-container button:has-text('Cargar saldo')",
      "al_decir": "Pulso Cargar saldo"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Listo"
     },
     {
      "resaltar": "table tbody tr >> nth=0",
@@ -232,7 +251,7 @@
      "al_decir": "pulso Traer saldos"
     },
     {
-     "resaltar": "tbody tr >> nth=1",
+     "resaltar": "input[formcontrolname='debitAmount'] >> nth=1",
      "durante_ms": 5000,
      "cursor": false,
      "al_decir": "llena la segunda línea"
@@ -283,19 +302,29 @@
    "rotulo": "Apertura contabilizada",
    "ruta": "Contabilidad › Diario y Mayor › Asiento",
    "texto_pantalla": "El asiento de apertura, contabilizado",
-   "narracion": "El sistema crea el asiento y lo contabiliza enseguida: desde este momento los saldos están en el mayor y en los estados financieros. Cada línea muestra la cuenta y su monto, tal como los cargaste.",
+   "narracion": "Sale el aviso: el asiento de apertura se creó y se contabilizó de una vez, sin pasar por borrador. Desde este momento los saldos están en el mayor y en los estados financieros. Pulso Aceptar, y el sistema abre el asiento: arriba, su estado, Contabilizado; abajo, cada línea tal como la cargaste.",
    "acciones": [
     {
-     "resaltar": "text=Contabilizado >> nth=0",
-     "durante_ms": 4000,
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 6000,
      "cursor": false,
-     "al_decir": "lo contabiliza"
+     "al_decir": "Sale el aviso"
     },
     {
-     "resaltar": "table >> nth=0",
-     "durante_ms": 5000,
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
+    },
+    {
+     "resaltar": "text=Contabilizado >> nth=0",
+     "durante_ms": 3000,
      "cursor": false,
-     "al_decir": "Cada línea"
+     "al_decir": "su estado"
+    },
+    {
+     "resaltar": "text=Líneas del Asiento",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "cada línea"
     }
    ]
   },

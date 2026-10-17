@@ -128,6 +128,8 @@ solo donde hace falta una aclaración**.
 ```jsonc
 {
   "spa": true,              // navegación interna sin recargar la app (por defecto)
+  "locale": "es-DO",        // idioma del navegador grabado: los <input type="date"> nativos
+                            // salen DD/MM/AAAA (sin la clave, Chromium headless los pinta en inglés)
   "ruta_neutra": "/",       // por dónde pasar para «volver» a la misma ruta y limpiar filtros
   "pasos": [{
     "navegar": "/health-insurance/agreements",

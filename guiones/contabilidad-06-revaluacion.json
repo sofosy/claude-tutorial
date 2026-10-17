@@ -1,0 +1,238 @@
+{
+ "titulo": "Contabilidad · Revaluación NIC 21 de la moneda extranjera",
+ "descripcion": "Cómo ajustar al cierre del mes los saldos en dólares con la revaluación NIC 21 de Germiva: la tasa de cierre en el Histórico de Tasas, la ejecución de la revaluación, cómo se calcula la ganancia y la pérdida cambiaria no realizada, el historial y cómo anular una corrida. Incluye una aclaración sobre la revaluación de activos fijos (NIC 16).",
+ "_comentario": "Video 6 de la serie Contabilidad (17/10/2026); une los pedidos «Revaluación NIC» y «Reevaluación de moneda»: la revaluación de activos NIC 16 no existe en el sistema (roadmap) y se aclara al final. setup: preparar.sh revaluacion (tasas USD 58.50 al 10/09 y 60.25 al 30/09; CxC USD 2,000 y CxP USD 1,000 a 58.50). Resultado esperado: ganancia 3,500 y pérdida 1,750.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "NIC 21": "nic veintiuno",
+  "NIC 16": "nic dieciséis"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/company/exchange-rate-history"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh revaluacion"
+ },
+ "aprenderas": [
+  "Registrar o revisar la tasa de cierre del mes",
+  "Ejecutar la revaluación NIC 21 de una moneda",
+  "Entender por qué un cliente en dólares da ganancia y un proveedor da pérdida",
+  "Leer el historial y anular una revaluación"
+ ],
+ "errores_comunes": [
+  "Revaluar sin la tasa del cierre registrada",
+  "Revaluar a una fecha futura o en un período cerrado",
+  "Volver a revaluar la misma fecha sin anular antes la corrida anterior"
+ ],
+ "pasos": [
+  {
+   "id": "01-tasa",
+   "capitulo": "La tasa de cierre",
+   "rotulo": "La tasa de cierre",
+   "ruta": "Monedas › Histórico de Tasas",
+   "texto_pantalla": "Histórico de tasas · la tasa del 30 de septiembre",
+   "narracion": "Cuando la empresa tiene clientes o proveedores en dólares, cada factura se registró en pesos a la tasa de su día. Al cierre del mes la tasa es otra, y esa diferencia es una ganancia o una pérdida cambiaria, todavía no realizada: eso es la revaluación de la norma NIC 21. Lo primero es tener la tasa del cierre. Estoy en el Histórico de tasas de cambio, con el dólar elegido. Aquí está la tasa del treinta de septiembre: sesenta con veinticinco. Y esta otra, de cincuenta y ocho con cincuenta, es la del diez de septiembre, el día en que se registraron una factura de un cliente por dos mil dólares y una de un proveedor por mil.",
+   "acciones": [
+    {
+     "resaltar": "text=Histórico de tasas de cambio",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "cada factura"
+    },
+    {
+     "resaltar": "tr:has-text('58.50'), tr:has-text('58,50'), tr:has-text('58.5')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la tasa es otra"
+    },
+    {
+     "resaltar": "tr:has-text('60.25'), tr:has-text('60,25')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "todavía no realizada"
+    },
+    {
+     "resaltar": "mat-form-field:has-text('Moneda')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "con el dólar elegido"
+    },
+    {
+     "resaltar": "tr:has-text('60.25'), tr:has-text('60,25')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Aquí está la tasa"
+    },
+    {
+     "resaltar": "tr:has-text('58.50'), tr:has-text('58,50'), tr:has-text('58.5')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Y esta otra"
+    }
+   ]
+  },
+  {
+   "id": "02-ejecutar",
+   "capitulo": "Ejecutar la revaluación",
+   "rotulo": "Ejecutar la revaluación",
+   "ruta": "Contabilidad › Banca › Revaluación NIC 21",
+   "texto_pantalla": "Revaluación NIC 21 · fecha de cierre y moneda",
+   "navegar": "/accounting/banca/revaluacion",
+   "al_decir_navegar": "pestaña Revaluación",
+   "narracion": "La revaluación está en Contabilidad, Banca, pestaña Revaluación NIC 21. La fecha de cierre ya viene propuesta: el último fin de mes cumplido, treinta de septiembre. En Moneda abro la lista, donde solo aparecen las monedas extranjeras de la empresa, y elijo el dólar. La tasa de cierre la dejo vacía, para que use la registrada en el histórico; solo la escribes si tu contador o la DGII indican otra. Pulso Ejecutar revaluación.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has-text('Fecha de cierre')",
+     "durante_ms": 4500,
+     "al_decir": "La fecha de cierre"
+    },
+    {
+     "click": "mat-form-field:has-text('Moneda') mat-select",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('USD')",
+     "al_decir": "elijo el dólar"
+    },
+    {
+     "resaltar": "mat-form-field:has-text('Tasa de cierre')",
+     "durante_ms": 5000,
+     "al_decir": "La tasa de cierre"
+    },
+    {
+     "click": "button:has-text('Ejecutar revaluación')",
+     "al_decir": "Pulso Ejecutar"
+    }
+   ]
+  },
+  {
+   "id": "03-resultado",
+   "capitulo": "Ganancia y pérdida",
+   "rotulo": "Ganancia y pérdida",
+   "ruta": "Contabilidad › Banca › Revaluación NIC 21",
+   "texto_pantalla": "Revaluación posteada · ganancia y pérdida cambiaria",
+   "narracion": "El sistema confirma la revaluación: ajustó dos saldos, con una ganancia de tres mil quinientos pesos y una pérdida de mil setecientos cincuenta. ¿De dónde salen? El cliente te debe dos mil dólares; a cincuenta y ocho con cincuenta eran ciento diecisiete mil pesos, y a sesenta con veinticinco son ciento veinte mil quinientos: vas a cobrar más pesos, y eso es ganancia. Con el proveedor pasa al revés: le debes mil dólares, ahora valen mil setecientos cincuenta pesos más, y eso es pérdida. Pulso Aceptar.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "confirma la revaluación"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "El cliente te debe"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Con el proveedor"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
+    }
+   ]
+  },
+  {
+   "id": "04-historial",
+   "capitulo": "El historial",
+   "rotulo": "Historial y anulación",
+   "ruta": "Contabilidad › Banca › Revaluación NIC 21",
+   "texto_pantalla": "Revaluaciones previas · y la NIC 16",
+   "narracion": "Abajo, en Revaluaciones previas, queda la corrida: la fecha, la moneda, la tasa, cuántos documentos ajustó, la ganancia, la pérdida, el estado Posteada y el asiento que generó. La próxima revaluación parte de esta tasa. Si te equivocaste, el botón Anular revaluación registra el reverso; pide el motivo, y se anulan siempre de la más reciente a la más antigua. Una aclaración final: esto es la revaluación de moneda. La revaluación de activos fijos, la de la norma NIC 16, todavía no existe como función en el sistema; hoy, si tu contador la necesita, se registra con un asiento manual.",
+   "acciones": [
+    {
+     "resaltar": "text=Revaluaciones previas",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Revaluaciones previas"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "queda la corrida"
+    },
+    {
+     "resaltar": "text=Posteada >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "el estado Posteada"
+    },
+    {
+     "resaltar": "button[mattooltip='Anular revaluación'], button:has(mat-icon:text-is('undo'))",
+     "durante_ms": 6000,
+     "al_decir": "Anular revaluación"
+    },
+    {
+     "resaltar": "text=Ejecutar revaluación al cierre",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Una aclaración final"
+    }
+   ]
+  }
+ ],
+ "locale": "es-DO"
+}
