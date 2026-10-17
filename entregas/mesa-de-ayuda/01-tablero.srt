@@ -1,0 +1,119 @@
+1
+00:00:03,100 --> 00:00:07,490
+Un caso es un problema o una solicitud de un cliente que alguien tiene que resolver:
+
+2
+00:00:07,637 --> 00:00:11,359
+una factura mal hecha, una entrega incompleta, una devolución.
+
+3
+00:00:12,015 --> 00:00:15,711
+La Mesa de Ayuda es donde se registran y se siguen hasta cerrarlos.
+
+4
+00:00:16,380 --> 00:00:18,204
+Entro por el menú de la izquierda.
+
+5
+00:00:18,861 --> 00:00:21,056
+Cada columna es un estado del caso:
+
+6
+00:00:21,117 --> 00:00:26,178
+Abiertos, En proceso, esperando al cliente o a un tercero, y Resueltos.
+
+7
+00:00:26,847 --> 00:00:28,645
+Cada tarjeta es un caso.
+
+8
+00:00:29,314 --> 00:00:33,221
+Arriba, su número, y a la derecha cuánto falta para que venza:
+
+9
+00:00:33,283 --> 00:00:37,227
+el plazo depende de la prioridad, y un urgente vence en horas.
+
+10
+00:00:37,896 --> 00:00:42,151
+Debajo, el asunto, la prioridad y las iniciales de quien lo atiende.
+
+11
+00:00:42,819 --> 00:00:45,251
+Y arriba del tablero, los indicadores:
+
+12
+00:00:45,386 --> 00:00:49,318
+los casos abiertos, los que no tienen responsable, los vencidos,
+
+13
+00:00:49,404 --> 00:00:52,283
+los resueltos hoy y el tiempo de la primera respuesta.
+
+14
+00:00:53,652 --> 00:00:55,525
+El tablero abre con tus casos:
+
+15
+00:00:55,622 --> 00:00:57,769
+el filtro Asignación dice Míos.
+
+16
+00:00:58,438 --> 00:00:59,332
+Lo abro.
+
+17
+00:00:59,987 --> 00:01:02,208
+Con Todos ves los de todo el equipo.
+
+18
+00:01:02,865 --> 00:01:07,243
+Lo elijo, y aparecen la devolución del taladro, que no tiene responsable,
+
+19
+00:01:07,367 --> 00:01:10,852
+y el cambio de dirección que lleva Ana, esperando al cliente.
+
+20
+00:01:11,521 --> 00:01:15,825
+Al lado filtras por estado o por prioridad, y en Filtros, por cliente,
+
+21
+00:01:15,923 --> 00:01:17,251
+tipo o fechas.
+
+22
+00:01:17,920 --> 00:01:23,067
+Para buscar, escribe el número del caso, una palabra del asunto o de la descripción.
+
+23
+00:01:23,722 --> 00:01:27,507
+Y con estos dos botones cambias entre el tablero y la vista de lista.
+
+24
+00:01:28,867 --> 00:01:32,688
+Cuando empiezas a trabajar un caso, muévelo para que el equipo lo sepa.
+
+25
+00:01:33,343 --> 00:01:37,822
+Tomo la factura con el ITBIS mal calculado y la arrastro de Abiertos a En proceso.
+
+26
+00:01:38,478 --> 00:01:41,716
+El cambio se guarda solo y queda en la historia del caso.
+
+27
+00:01:42,384 --> 00:01:46,540
+Si la sueltas en Resueltos, el sistema te pide escribir cómo se resolvió,
+
+28
+00:01:46,513 --> 00:01:49,652
+para que el próximo que reciba un caso igual sepa qué hacer.
+
+29
+00:01:50,320 --> 00:01:53,235
+Para trabajar el caso por dentro, abre su tarjeta:
+
+30
+00:01:53,359 --> 00:01:55,183
+lo vemos en el próximo video.

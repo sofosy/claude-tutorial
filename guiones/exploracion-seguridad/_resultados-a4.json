@@ -1,0 +1,59 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 7.05,
+   "clic_a_networkidle_s": 7.05,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A4_con_titulares": {
+  "toast": "No se puede eliminar el rol porque otros roles heredan de él: Vendedor sénior",
+  "toast_s": 0.37,
+  "red": [
+   {
+    "t": 1790522912.3937268,
+    "m": "DELETE",
+    "url": "role/77",
+    "st": 422,
+    "body": "{\"message\":\"No se puede eliminar el rol porque otros roles heredan de él: Vendedor sénior\",\"error\":\"Unprocessable Entity\",\"statusCode\":422}"
+   }
+  ],
+  "rol_bd": [
+   [
+    "77",
+    "Vendedor",
+    ""
+   ]
+  ]
+ },
+ "A4_sonia": {
+  "toast": "Roles actualizados exitosamente",
+  "roles_bd": [
+   "Vendedor"
+  ]
+ },
+ "A4_sin_titulares": {
+  "toast": "Rol eliminado exitosamente",
+  "toast_s": 0.39,
+  "rol_bd": [
+   [
+    "81",
+    "Mensajero",
+    "2026-09-27 10:28:54.000000"
+   ]
+  ],
+  "red": [
+   {
+    "t": 1790522934.0571966,
+    "m": "DELETE",
+    "url": "role/81",
+    "st": 200,
+    "body": ""
+   }
+  ]
+ }
+}

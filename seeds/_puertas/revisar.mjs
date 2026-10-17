@@ -141,7 +141,7 @@ function revisarGuion(arg) {
     acciones.forEach((acc, ia) => {
       const tipo = tipoDe(acc);
       const sel = selDe(acc);
-      const esClic = ['click', 'escribir', 'marcar', 'click_opcional', 'subir', 'seleccionar'].includes(tipo);
+      const esClic = ['click', 'arrastrar', 'escribir', 'marcar', 'click_opcional', 'subir', 'seleccionar'].includes(tipo);
       const anticipo = tipo === 'resaltar' || TIPOS_CAPA.includes(tipo) ? ANTICIPO_MARCA : ANTICIPO;
 
       if (tipo === 'esperar_ms') {
@@ -173,6 +173,15 @@ function revisarGuion(arg) {
           te = s + ANTICIPO - 0.04;
           cambios.push(BOTON_QUE_CAMBIA.test(sel || '') || /^a[\s[.:]|routerlink/i.test(sel || '') ? [te - 0.6, te + 2] : [te - 0.6, te + 0.8]);
           now = te + 0.18;
+          if (sel) pulsados.add(sel);
+          break;
+        }
+        case 'arrastrar': {
+          // se pulsa al llegar a la tarjeta y el viaje con el botón pulsado
+          // dura ~1,3 s (grabar.py: ARRASTRE_MS + soltar)
+          te = s + ANTICIPO - 0.04;
+          cambios.push([te - 0.6, te + 2.5]);
+          now = te + 1.3;
           if (sel) pulsados.add(sel);
           break;
         }

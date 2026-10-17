@@ -1,0 +1,708 @@
+{
+ "url": "/home",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Buenas tardes, Ana",
+   "caja": [
+    85,
+    116,
+    381,
+    36
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "home-section-title",
+   "texto": "ACCIONES RÁPIDAS",
+   "caja": [
+    85,
+    208,
+    1168,
+    16
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "home-section-title",
+   "texto": "TUS MÓDULOS",
+   "caja": [
+    85,
+    388,
+    1168,
+    16
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    925,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "AMana mejíaana.mejia@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de ana mejía",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1042,
+    8,
+    214,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de ana mejía']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "ClientesDirectorio",
+   "icono": "groups",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "quick-action"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    236,
+    381,
+    124
+   ],
+   "sel": "button:has-text('ClientesDirectorio')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "VentasFacturas, cotizaciones y punto de venta",
+   "icono": "receipt_long",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "module-tile"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    415,
+    224,
+    132
+   ],
+   "sel": "button:has-text('VentasFacturas, cotizaciones y punto de ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "Permisos del rol actualizados exitosamente",
+  "Permisos del rol actualizados exitosamente"
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscree"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications AM "
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 2,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen notifications"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "AM Ana Mejía ana.mejia@germiva.demo expand_more"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     925,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de ana mejía",
+    [
+     1042,
+     8,
+     214,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     10,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     10,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     10,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Configuración",
+    [
+     10,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "nav",
+    "Ruta",
+    [
+     85,
+     88,
+     381,
+     20
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     10,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "/agenda/settings",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications AM Ana Mejía ana.mejia@germiva.demo expand_more home sell calendar_month tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout home Inicio / Módulos Buenas tardes, Ana storefront Distribuidora Las Palmas · domingo, 27 de septiembre ACCIONES RÁPIDAS groups north_east Clientes Directorio TUS MÓDULOS receipt_long Ventas Facturas, cotizaciones y punto de venta"
+ },
+ "video": "r08g",
+ "pantalla": "03-ana-reentrando",
+ "usuario": "ana.mejia",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790525025.8392787,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525026.5065057,
+   "m": "GET",
+   "url": "v1/product?groupVariants=true&active=true&page=1&limit=10&orderBy=createdAt&orderDirection=DESC",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Productos\\\" (PRODUCT_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"PRODUCT_VIEW\",\"name\":\"Productos\",\"description\":\"Ver productos\"}]}"
+  },
+  {
+   "t": 1790525026.5272565,
+   "m": "GET",
+   "url": "v1/taxes?page=1&limit=15",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Impuestos\\\" (TAX_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"TAX_VIEW\",\"name\":\"Impuestos\",\"description\":\"Ver impuestos\"}]}"
+  },
+  {
+   "t": 1790525029.4649117,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525031.187251,
+   "m": "GET",
+   "url": "v1/product?groupVariants=true&active=true&page=1&limit=10&orderBy=createdAt&orderDirection=DESC",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Productos\\\" (PRODUCT_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"PRODUCT_VIEW\",\"name\":\"Productos\",\"description\":\"Ver productos\"}]}"
+  },
+  {
+   "t": 1790525031.189813,
+   "m": "GET",
+   "url": "v1/taxes?page=1&limit=15",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Impuestos\\\" (TAX_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"TAX_VIEW\",\"name\":\"Impuestos\",\"description\":\"Ver impuestos\"}]}"
+  },
+  {
+   "t": 1790525033.9778764,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525042.892164,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  }
+ ]
+}

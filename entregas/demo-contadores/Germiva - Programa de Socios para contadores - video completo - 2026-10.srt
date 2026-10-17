@@ -1,0 +1,611 @@
+1
+00:00:00,500 --> 00:00:02,699
+Germiva para su firma contable.
+
+2
+00:00:02,699 --> 00:00:05,323
+Le presentamos el Programa de Socios:
+
+3
+00:00:05,323 --> 00:00:09,649
+qué es, qué recibe su firma, y cómo funciona en un caso real.
+
+4
+00:00:10,449 --> 00:00:15,741
+El Programa de Socios es un acuerdo de colaboración entre Germiva y los contadores:
+
+5
+00:00:15,741 --> 00:00:22,563
+Germiva le entrega a su firma, sin costo, una herramienta profesional para trabajar con todos sus clientes;
+
+6
+00:00:22,563 --> 00:00:29,768
+nosotros capacitamos y acompañamos a sus clientes, y le pagamos una comisión por cada empresa que nos recomiende.
+
+7
+00:00:30,568 --> 00:00:32,784
+Primero, lo que recibe su firma.
+
+8
+00:00:32,784 --> 00:00:36,663
+Mi Cartera, con todos sus clientes en una sola pantalla.
+
+9
+00:00:36,663 --> 00:00:44,004
+Un semáforo que le avisa qué cliente tiene pendiente el 606 o el 607, o se está quedando sin comprobantes.
+
+10
+00:00:44,004 --> 00:00:49,407
+Con su mismo usuario entra a la empresa de cada cliente, sin pedirle la clave.
+
+11
+00:00:49,407 --> 00:00:53,631
+Y los reportes de la DGII salen de lo que ya está registrado.
+
+12
+00:00:53,631 --> 00:00:56,471
+Su firma no paga nada por la herramienta;
+
+13
+00:00:56,471 --> 00:00:58,757
+cada cliente paga su propio plan.
+
+14
+00:00:59,557 --> 00:01:02,006
+Segundo, lo que reciben sus clientes.
+
+15
+00:01:02,006 --> 00:01:05,580
+A sus clientes los capacitamos y acompañamos nosotros:
+
+16
+00:01:05,580 --> 00:01:15,574
+por WhatsApp con Germi, por teléfono y por correo, con más de setenta videos, y paso a paso hasta que la DGII los autoriza a facturar electrónicamente.
+
+17
+00:01:15,574 --> 00:01:22,126
+Usted no tiene que enseñarles el sistema, y las consultas de contabilidad se las remitimos a usted.
+
+18
+00:01:22,926 --> 00:01:24,747
+Tercero, el reconocimiento.
+
+19
+00:01:24,747 --> 00:01:28,321
+Cada socio es evaluado y aprobado por nuestro equipo;
+
+20
+00:01:28,321 --> 00:01:30,479
+así cuidamos el nivel de la red.
+
+21
+00:01:30,479 --> 00:01:34,525
+Al aprobar su firma, recibe el sello de Contador Verificado.
+
+22
+00:01:34,525 --> 00:01:39,784
+Y cuando un negocio nos pide un contador, se lo presentamos a nuestros socios.
+
+23
+00:01:40,584 --> 00:01:43,381
+Y como beneficio adicional, la comisión.
+
+24
+00:01:43,381 --> 00:01:48,906
+El 20 % de lo que pague cada empresa que nos recomiende, durante su primer año.
+
+25
+00:01:48,906 --> 00:01:54,990
+Y el 5 % de lo que paguen las empresas que recomienden los contadores que usted invite.
+
+26
+00:01:54,990 --> 00:01:58,696
+Se paga el día quince de cada mes, por transferencia.
+
+27
+00:01:59,496 --> 00:02:01,036
+Para que quede claro:
+
+28
+00:02:01,036 --> 00:02:05,656
+ser socio no es invertir dinero, no es vender y no tiene metas.
+
+29
+00:02:05,656 --> 00:02:11,524
+Usted recomienda, nosotros hacemos el resto, y sus clientes siguen siendo suyos.
+
+30
+00:02:12,324 --> 00:02:13,647
+¿Y por qué ahora?
+
+31
+00:02:13,647 --> 00:02:20,574
+Desde noviembre de 2026, la DGII exige la factura electrónica a todos los contribuyentes.
+
+32
+00:02:20,574 --> 00:02:25,711
+Sus clientes van a elegir un sistema, y lo van a elegir con usted.
+
+33
+00:02:25,711 --> 00:02:28,903
+Ahora, véalo funcionando en un caso real.
+
+34
+00:02:32,203 --> 00:02:37,360
+Le mostramos, en un caso real, cómo trabaja una firma contable con Germiva.
+
+35
+00:02:37,195 --> 00:02:40,935
+Ana Reyes, socia de Reyes y Mercedes Contadores,
+
+36
+00:02:40,783 --> 00:02:44,801
+escribe su contraseña y entra con el usuario de siempre.
+
+37
+00:02:45,212 --> 00:02:47,003
+Así empieza su día:
+
+38
+00:02:46,919 --> 00:02:50,834
+en Mi Cartera, todos sus clientes en una sola pantalla.
+
+39
+00:02:50,704 --> 00:02:52,668
+Arriba, lo que importa hoy:
+
+40
+00:02:52,526 --> 00:02:57,800
+doce clientes activos, tres que requieren atención, dos invitaciones abiertas,
+
+41
+00:02:57,635 --> 00:03:02,328
+y cinco días para el cierre del 606 y el 607.
+
+42
+00:03:02,163 --> 00:03:04,465
+Cada cliente tiene su semáforo.
+
+43
+00:03:04,311 --> 00:03:05,056
+Verde:
+
+44
+00:03:04,926 --> 00:03:05,766
+al día.
+
+45
+00:03:05,681 --> 00:03:07,599
+Ámbar, como esta farmacia:
+
+46
+00:03:07,457 --> 00:03:10,769
+se le están acabando los comprobantes fiscales.
+
+47
+00:03:11,179 --> 00:03:13,829
+Sumar un cliente toma segundos.
+
+48
+00:03:13,664 --> 00:03:19,657
+Con Nuevo cliente, elige que es para un cliente, lo busca por RNC o por correo,
+
+49
+00:03:19,515 --> 00:03:21,619
+y propone el nivel de acceso:
+
+50
+00:03:21,512 --> 00:03:26,344
+contabilidad e impuestos, más la nómina, o la administración completa,
+
+51
+00:03:26,227 --> 00:03:27,912
+que el cliente confirma.
+
+52
+00:03:27,758 --> 00:03:31,534
+Y el cliente controla ese acceso desde su lado.
+
+53
+00:03:31,948 --> 00:03:35,132
+Desde la misma pantalla, en Invitaciones,
+
+54
+00:03:34,978 --> 00:03:37,745
+sigue las que están pendientes de respuesta.
+
+55
+00:03:37,602 --> 00:03:42,516
+Y en Mi firma está su perfil profesional, verificado por nuestro equipo:
+
+56
+00:03:42,352 --> 00:03:45,337
+por eso lleva el sello de Contador Verificado.
+
+57
+00:03:45,745 --> 00:03:47,733
+Ahora, el caso del día.
+
+58
+00:03:47,649 --> 00:03:51,030
+Ana vuelve a la cartera y busca a Caribe Fresco,
+
+59
+00:03:50,911 --> 00:03:53,700
+una distribuidora de frutas y vegetales.
+
+60
+00:03:53,524 --> 00:03:54,954
+Está en rojo:
+
+61
+00:03:54,870 --> 00:04:00,190
+el 606 y el 607 de septiembre todavía no se han generado.
+
+62
+00:04:00,072 --> 00:04:01,142
+Abre su ficha:
+
+63
+00:04:01,012 --> 00:04:04,301
+ahí ve qué falta, el nivel de acceso que el cliente le dio,
+
+64
+00:04:04,182 --> 00:04:06,379
+y quién de su equipo lo atiende.
+
+65
+00:04:06,788 --> 00:04:11,028
+Con un clic en Trabajar en esta empresa, entra a Caribe Fresco.
+
+66
+00:04:10,875 --> 00:04:12,956
+Sin pedirle la clave a nadie.
+
+67
+00:04:12,825 --> 00:04:17,112
+La franja de arriba le recuerda en qué empresa está, y con qué firma.
+
+68
+00:04:17,536 --> 00:04:19,686
+Primero, las compras.
+
+69
+00:04:19,556 --> 00:04:25,143
+Las facturas electrónicas de los proveedores llegan al buzón de Facturas Recibidas,
+
+70
+00:04:25,001 --> 00:04:30,333
+ya registradas, con su ITBIS y su clasificación para el 606.
+
+71
+00:04:30,249 --> 00:04:33,909
+Y si el proveedor le manda una foto o un PDF,
+
+72
+00:04:33,860 --> 00:04:37,973
+la inteligencia artificial la lee y la registra por usted.
+
+73
+00:04:37,865 --> 00:04:39,424
+Nada que digitar.
+
+74
+00:04:39,840 --> 00:04:43,244
+Ahora, el 606 del mes pasado.
+
+75
+00:04:43,102 --> 00:04:49,282
+En Reportes DGII abre el calendario, elige el año, después el mes, septiembre,
+
+76
+00:04:49,105 --> 00:04:51,046
+y luego pulsa Generar.
+
+77
+00:04:50,869 --> 00:04:52,486
+En segundos aparece:
+
+78
+00:04:52,321 --> 00:04:57,884
+cada compra con su NCF, su proveedor, su ITBIS y su forma de pago.
+
+79
+00:04:57,719 --> 00:05:01,077
+Con un clic lo descarga en formato TXT,
+
+80
+00:05:00,958 --> 00:05:05,349
+listo para subirlo a la Oficina Virtual de la DGII.
+
+81
+00:05:05,753 --> 00:05:11,364
+Con el 606 ya descargado, cambia el informe al 607,
+
+82
+00:05:11,198 --> 00:05:13,790
+y vuelve a elegir el mes de septiembre.
+
+83
+00:05:13,659 --> 00:05:14,626
+Sale igual:
+
+84
+00:05:14,460 --> 00:05:18,027
+cada venta del mes, con su comprobante y su cliente.
+
+85
+00:05:17,862 --> 00:05:23,322
+Pulsa Generar, revisa las ventas una por una, y también lo descarga en TXT.
+
+86
+00:05:23,732 --> 00:05:29,180
+Y en el mismo lugar está el IT-1, que se arma con lo que ya está registrado:
+
+87
+00:05:29,038 --> 00:05:31,804
+ventas, compras e ITBIS del período.
+
+88
+00:05:31,650 --> 00:05:34,822
+Y el IR-17, con las retenciones.
+
+89
+00:05:34,692 --> 00:05:36,982
+Usted revisa y presenta.
+
+90
+00:05:37,399 --> 00:05:40,351
+Caribe Fresco también le encargó la nómina.
+
+91
+00:05:40,197 --> 00:05:43,880
+El Centro de Nómina muestra sus dieciséis empleados,
+
+92
+00:05:43,761 --> 00:05:48,303
+lo devengado en el año y el próximo pago, el treinta de octubre.
+
+93
+00:05:48,138 --> 00:05:54,085
+Y de aquí salen los archivos para la TSS y el IR-3.
+
+94
+00:05:54,500 --> 00:05:59,716
+En Períodos están julio, agosto y septiembre, calculados y pagados,
+
+95
+00:05:59,550 --> 00:06:02,049
+con su asiento y sus retenciones;
+
+96
+00:06:01,965 --> 00:06:04,174
+y octubre, ya aprobado.
+
+97
+00:06:04,576 --> 00:06:06,715
+Ahora, la contabilidad.
+
+98
+00:06:06,596 --> 00:06:10,256
+Todo lo que se registra genera su asiento automático,
+
+99
+00:06:10,102 --> 00:06:13,739
+y con eso el panel de contabilidad se arma solo.
+
+100
+00:06:13,655 --> 00:06:16,804
+Ahí Ana ve la salud financiera del cliente:
+
+101
+00:06:16,697 --> 00:06:21,494
+los ingresos, los gastos y la utilidad del mes, el efectivo,
+
+102
+00:06:21,422 --> 00:06:23,642
+lo que le deben y lo que debe.
+
+103
+00:06:23,524 --> 00:06:26,649
+Y en doce meses, cómo viene el negocio.
+
+104
+00:06:27,060 --> 00:06:32,252
+En Cuentas por Cobrar ve, factura por factura, quién le debe a su cliente,
+
+105
+00:06:32,099 --> 00:06:36,269
+cuánto y desde cuándo, para gestionar el cobro a tiempo.
+
+106
+00:06:36,676 --> 00:06:41,474
+Y en Banca, mes por mes, concilia el estado de cuenta con los libros,
+
+107
+00:06:41,308 --> 00:06:43,936
+viendo la diferencia que queda por explicar.
+
+108
+00:06:44,346 --> 00:06:48,539
+En Cuentas por Pagar, lo que su cliente debe a sus proveedores,
+
+109
+00:06:48,397 --> 00:06:50,955
+y cuándo vence cada factura.
+
+110
+00:06:51,371 --> 00:06:53,614
+En el Diario están los asientos:
+
+111
+00:06:53,530 --> 00:06:59,152
+cada factura, cada compra, cada cobro y cada nómina ya generó el suyo,
+
+112
+00:06:59,022 --> 00:07:00,720
+de forma automática.
+
+113
+00:07:00,578 --> 00:07:03,042
+Usted revisa, no digita.
+
+114
+00:07:03,457 --> 00:07:07,047
+Y si quiere una respuesta rápida, ahí está Germi,
+
+115
+00:07:06,895 --> 00:07:09,823
+nuestro asistente con inteligencia artificial.
+
+116
+00:07:09,739 --> 00:07:12,794
+Ana le pide las facturas vencidas del cliente.
+
+117
+00:07:12,710 --> 00:07:16,265
+Germi revisa los datos de la empresa y, en segundos,
+
+118
+00:07:16,147 --> 00:07:18,251
+le responde con la lista completa:
+
+119
+00:07:18,167 --> 00:07:21,340
+qué factura, cuánto le deben y desde cuándo.
+
+120
+00:07:21,232 --> 00:07:25,299
+Germi también atiende a sus clientes por WhatsApp, a cualquier hora.
+
+121
+00:07:25,719 --> 00:07:28,671
+Y los estados financieros salen listos:
+
+122
+00:07:28,517 --> 00:07:33,303
+el balance general, el estado de resultados y el flujo de efectivo,
+
+123
+00:07:33,149 --> 00:07:35,625
+para el banco o para los socios.
+
+124
+00:07:36,029 --> 00:07:38,667
+Y mientras usted lleva la contabilidad,
+
+125
+00:07:38,515 --> 00:07:42,325
+su cliente trabaja su negocio en el mismo sistema.
+
+126
+00:07:42,241 --> 00:07:44,681
+Ventas, con su análisis del mes.
+
+127
+00:07:45,094 --> 00:07:50,403
+Sus facturas, cada una con su comprobante fiscal y su estado de cobro.
+
+128
+00:07:50,403 --> 00:07:54,692
+Inventario, con sus existencias y su valor al costo.
+
+129
+00:07:54,692 --> 00:07:58,370
+El punto de venta, para vender en mostrador.
+
+130
+00:07:58,370 --> 00:08:02,040
+Las cajas, con su turno y su cuadre.
+
+131
+00:08:02,040 --> 00:08:05,154
+Ahora el CRM de su cliente:
+
+132
+00:08:05,012 --> 00:08:09,496
+con el filtro de asignación ve a todos los clientes potenciales,
+
+133
+00:08:09,366 --> 00:08:11,528
+organizados por etapa de venta.
+
+134
+00:08:11,935 --> 00:08:16,593
+Y la mesa de ayuda, donde atiende los casos de sus propios clientes,
+
+135
+00:08:16,428 --> 00:08:19,426
+cada uno con su prioridad y su estado.
+
+136
+00:08:19,831 --> 00:08:21,204
+Todo conectado:
+
+137
+00:08:21,073 --> 00:08:25,395
+lo que su cliente vende y compra le llega a usted ya registrado.
+
+138
+00:08:25,288 --> 00:08:27,194
+Listo el trabajo del mes.
+
+139
+00:08:27,052 --> 00:08:28,646
+Ana vuelve a su firma.
+
+140
+00:08:28,538 --> 00:08:31,757
+En su cartera, busca de nuevo a Caribe Fresco…
+
+141
+00:08:31,638 --> 00:08:33,197
+y ya está en verde:
+
+142
+00:08:33,066 --> 00:08:33,963
+al día.
+
+143
+00:08:34,371 --> 00:08:37,555
+Su firma no paga nada por esta herramienta.
+
+144
+00:08:37,424 --> 00:08:41,363
+A sus clientes los capacitamos y acompañamos nosotros.
+
+145
+00:08:41,198 --> 00:08:43,778
+Y por cada empresa que nos recomiende,
+
+146
+00:08:43,659 --> 00:08:48,039
+le pagamos el veinte por ciento de lo que pague durante su primer año.
+
+147
+00:08:47,920 --> 00:08:54,029
+Escriba SOCIO por WhatsApp, y le mostramos Germiva en treinta minutos.
+
+148
+00:08:54,970 --> 00:08:56,388
+Empezar es sencillo:
+
+149
+00:08:56,388 --> 00:09:05,894
+vea una demostración de treinta minutos, registre su firma y su exequátur, y en uno a tres días laborables su herramienta está activa.
+
+150
+00:09:05,894 --> 00:09:07,880
+Sin costo, y sin compromiso.
+
+151
+00:09:09,580 --> 00:09:12,631
+Escriba SOCIO al WhatsApp que ve en pantalla.
+
+152
+00:09:12,631 --> 00:09:13,174
+Germiva:
+
+153
+00:09:13,174 --> 00:09:16,360
+hecho en República Dominicana, por dominicanos.

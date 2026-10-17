@@ -1,0 +1,32 @@
+TÍTULO
+============================================================
+Éxito del Cliente · Contratos de venta y proyectos
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Contratos de venta
+00:34  Registrar un contrato
+01:57  Proyectos
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar el contrato que firmaste con un cliente y cuándo se renueva
+• Leer la lista de contratos: estado, valor, vigencia y gerente
+• Crear el proyecto de una venta grande y llevar su presupuesto y su avance
+
+⚠️ ERRORES COMUNES
+• Registrar el contrato sin fecha de fin: nunca aparece en Renovaciones
+• Elegir mal el tipo de renovación: «Automática» no te avisa antes de renovarse
+• No actualizar el avance del proyecto: la cartera no sabe en qué va la entrega
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:03
+
+TRANSCRIPCIÓN
+============================================================
+Un contrato de venta es el acuerdo firmado con un cliente: qué le vendes, por cuánto y por cuánto tiempo. Entro a Éxito del Cliente y abro Contratos de Venta. Recojo el menú. Cada fila es un contrato: su número, el título, el estado y el tipo, el cliente, el valor y la vigencia, de la fecha de inicio a la de fin. Este de Inversiones Barahona vence pronto, por eso también sale en Renovaciones. Ahora creo uno nuevo con Crear Contrato.
+Constructora Mirador firmó el mantenimiento de sus herramientas por un año. Le doy número al contrato, como lo identifica tu empresa en sus papeles. Luego, y un título que diga qué cubre, para encontrarlo rápido en la lista. Ahora, los datos del acuerdo. En Tipo, abro la lista de tipos y elijo Mantenimiento, porque cubre el servicio a sus herramientas. Y el estado lo dejo en Activo, porque ya está firmado. Ahora el cliente: lo busco por nombre, y la lista muestra los clientes de Ventas que coinciden. Elijo Constructora Mirador. Y el gerente de cuenta, que responde por el contrato: escribo su nombre, la lista la encuentra, y la elijo, Rosa. A la derecha, el valor total, ciento veinte mil pesos, por el año completo. Debajo dice en DOP, que es el peso dominicano. La fecha de inicio, el primero de noviembre de este año. Luego la de fin, un año después. Es la fecha de fin la que hace que el contrato aparezca en Renovaciones a tiempo, así que no la dejes vacía. Abajo eliges cómo se renueva: con Notificación el sistema te avisa antes de que venza, y aquí dices cuántos días antes. Con todo listo, pulso Guardar. Sale el aviso Contrato Creado; lo acepto.
+Cuando una venta se entrega por etapas, como el equipamiento de una plaza, se lleva como proyecto. Desde el menú de Éxito del Cliente abro Proyectos, y pulso Crear Proyecto. Le pongo nombre: instalación eléctrica de la plaza, que es lo que vamos a entregar. El estado arranca en Planificación, y cambia cuando empieza el trabajo. La fecha de inicio, el primero de noviembre, cuando empieza la obra. Debajo va el presupuesto: doscientos cincuenta mil pesos, lo que se acordó cobrar. Abajo, en Relaciones, el cliente: lo busco por nombre, y en la lista aparece. Elijo Inversiones Barahona. Ahora el gerente del proyecto, que es quien responde por la entrega: escribo su nombre, aparece en la lista, y elijo a Rosa. Todo listo: pulso Guardar. El aviso confirma que se creó, con su código. Al aceptarlo queda abierto para editar: desde aquí actualizas el costo real y el avance a medida que se entrega.

@@ -1,0 +1,31 @@
+TÍTULO
+============================================================
+CRM · Reportes y embudo comercial
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Los reportes del CRM
+01:00  El embudo comercial contra la meta
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer los indicadores del CRM: prospectos, conversión, tasa de cierre y valor del pipeline
+• Ver en qué etapa se concentran tus oportunidades y dónde se pierden las ventas
+• Medir la actividad del equipo contra la meta del día, la semana o el mes
+• Revisar el avance de una sola persona del equipo
+
+⚠️ ERRORES COMUNES
+• Mirar los reportes con otro espacio de trabajo seleccionado: las cifras son sólo de ese espacio
+• Registrar las llamadas fuera de la ficha del prospecto: el embudo no las cuenta
+• Confundir el valor del pipeline con lo que vas a vender: lo esperado es el ponderado
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:54
+
+TRANSCRIPCIÓN
+============================================================
+Ahora, cómo medir. Entro al CRM y abro Reportes. Es la foto de tus ventas en un vistazo, para el espacio de trabajo elegido arriba. Recojo el menú. El primer indicador cuenta los prospectos. El segundo, la conversión: de cada cien prospectos, cuántos se volvieron clientes. Luego las oportunidades, con su tasa de cierre: de las que se cerraron, cuántas se ganaron. Y el valor del pipeline, que suma todas las oportunidades abiertas; debajo, el ponderado, que las multiplica por su probabilidad. Abajo, las oportunidades por etapa te dicen dónde se acumula el trabajo. Y el embudo de conversión cuenta cuántos hay en cada paso: prospectos, oportunidades, cotizaciones y facturas, con el porcentaje que avanzó desde el paso anterior. Si un porcentaje se queda bajo, ahí se están perdiendo las ventas.
+Los reportes miden resultados; ahora abro el Embudo Comercial, que mide la actividad que los produce. Cada fila es un paso de la venta: llamadas realizadas, conversaciones, contactos con quien decide, diagnósticos, demostraciones, cotizaciones y ventas. A la derecha ves cuántas llevas contra la meta, y la barra se llena según el avance. Hoy el equipo lleva ocho llamadas de sesenta. Arriba eliges el período: Hoy, Esta semana o Este mes. Elijo Esta semana, y la meta se ajusta a los días laborables. Esta empresa todavía no tiene meta propia, así que compara contra las metas de referencia. Con Colaborador ves el avance de una sola persona. Y con el botón Metas defines las tuyas, que vemos en el video de configuración.

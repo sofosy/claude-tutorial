@@ -101,9 +101,72 @@ def _sintetizar_espeak(texto, voz, velocidad, destino):
             t += d
         concat = Path(tmp) / "lista.txt"
         concat.write_text("".join(f"file '{w.as_posix()}'\n" for w in lista), encoding="utf-8")
-        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
+        subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", "-f", "concat", "-safe", "0",
                         "-i", str(concat), "-ar", "24000", "-ac", "1", "-b:a", "96k",
                         str(destino)], check=True)
+    return palabras
+
+
+def _jota_ms(mp3, t):
+    """ms de fricción sorda desde `t`: distingue «Jermiva» (jota) de «Yermiva».
+    Misma medida que salida/comercial-contadores/tools/probar_marca.py."""
+    import numpy as np
+    b = subprocess.run(["ffmpeg", "-v", "error", "-i", str(mp3), "-ac", "1", "-ar", "16000", "-f", "s16le", "-"],
+                       capture_output=True).stdout
+    x = np.frombuffer(b, np.int16).astype(np.float32) / 32768
+    fr = 160; i0 = max(0, int((t - 0.08) * 16000) // fr); mejor = 0
+    for ini in range(i0, i0 + 12):
+        n = 0
+        for i in range(ini, ini + 25):
+            seg = x[i * fr:(i + 2) * fr]
+            if len(seg) < 2 * fr: break
+            seg = seg - seg.mean()
+            if np.sqrt(np.mean(seg ** 2)) < 0.004: break
+            ac = np.correlate(seg, seg, "full")[len(seg) - 1:]
+            if ac[0] <= 0 or ac[40:230].max() / ac[0] > 0.45: break
+            n += 1
+        mejor = max(mejor, n)
+    return mejor * 10
+
+
+def _sintetizar_eleven(texto, voz, destino):
+    """ElevenLabs (`voz` = "eleven:<voice_id>", clave en la variable ELEVEN_KEY).
+
+    Pide el audio con marcas por carácter y las agrupa en palabras. La marca se
+    dice con JOTA: «Germiva» se manda como «Jermiva» (misma cantidad de palabras)
+    y, si la medida de la jota sale corta («Yermiva»), se repite la toma.
+    """
+    import base64, os, urllib.request
+    vid = voz.split(":", 1)[1]
+    dicho = re.sub(r"Germiva", "Jermiva", texto)
+    cuerpo = json.dumps({"text": dicho, "model_id": "eleven_multilingual_v2", "language_code": "es",
+                         "voice_settings": {"stability": 0.45, "similarity_boost": 0.85, "style": 0.30,
+                                            "use_speaker_boost": True}}, ensure_ascii=False).encode("utf-8")
+    url = f"https://api.elevenlabs.io/v1/text-to-speech/{vid}/with-timestamps?output_format=mp3_44100_128"
+    for intento in range(5):
+        req = urllib.request.Request(url, data=cuerpo, headers={"xi-api-key": os.environ["ELEVEN_KEY"],
+                                                                 "Content-Type": "application/json; charset=utf-8"})
+        with urllib.request.urlopen(req, timeout=300) as r:
+            d = json.loads(r.read())
+        Path(destino).write_bytes(base64.b64decode(d["audio_base64"]))
+        al = d["alignment"]
+        anclas = [m.start() for m in re.finditer("Jermiva", dicho)]
+        if not anclas: break
+        peor = min(_jota_ms(destino, al["character_start_times_seconds"][k]) for k in anclas)
+        if peor >= 80: break
+        print(f"    jota corta ({peor} ms), repito la toma")
+    chars, ini, fin = al["characters"], al["character_start_times_seconds"], al["character_end_times_seconds"]
+    palabras, actual, t0, t1 = [], "", None, None
+    for c, a, b in zip(chars + [" "], ini + [0], fin + [0]):
+        if c.isspace():
+            if actual:
+                limpio = re.sub(r"^\W+|\W+$", "", actual) or actual
+                palabras.append({"t": round(t0, 3), "d": round(t1 - t0, 3), "texto": limpio})
+            actual, t0 = "", None
+        else:
+            actual += c
+            t0 = a if t0 is None else t0
+            t1 = b
     return palabras
 
 
@@ -111,6 +174,8 @@ async def _sintetizar(texto, voz, velocidad, destino):
     """Escribe el MP3 y devuelve las marcas de palabra (segundos)."""
     if voz.startswith("espeak:"):
         return _sintetizar_espeak(texto, voz, velocidad, destino)
+    if voz.startswith("eleven:"):
+        return _sintetizar_eleven(texto, voz, destino)
     import edge_tts  # sólo si se usa: el motor offline no lo necesita
     # edge-tts ≥ 7 manda límites de FRASE por defecto; los de palabra hay que pedirlos
     com = edge_tts.Communicate(texto, voz, rate=velocidad, boundary="WordBoundary")

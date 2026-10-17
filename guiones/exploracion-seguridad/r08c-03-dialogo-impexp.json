@@ -1,0 +1,2708 @@
+{
+ "url": "/inventory/product/list",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [
+  {
+   "el": "mat-dialog-content.mat-mdc-dialog-content.mdc-dialog__content",
+   "scrollHeight": 622,
+   "clientHeight": 468
+  }
+ ],
+ "titulos": [
+  {
+   "tag": "h4",
+   "clase": "page-title",
+   "texto": "Productos",
+   "caja": [
+    357,
+    80,
+    78,
+    24
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "mat-mdc-dialog-title mdc-dialog__title",
+   "texto": "swap_vertImportar / Exportar productos",
+   "caja": [
+    260,
+    63,
+    760,
+    58
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "",
+   "texto": "Descarga la plantilla",
+   "caja": [
+    334,
+    207,
+    658,
+    28
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "",
+   "texto": "Sube el archivo completado",
+   "caja": [
+    334,
+    560,
+    658,
+    28
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    912,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    956,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "PNpedro núñezpedro.nunez@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de pedro núñez",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1029,
+    8,
+    227,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de pedro núñez']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-current",
+    "is-showing"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    283,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Todos",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "is-on"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    346,
+    139,
+    69,
+    34
+   ],
+   "sel": "button:has-text('Todos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Con variantes",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    415,
+    139,
+    113,
+    34
+   ],
+   "sel": "button:has-text('Con variantes')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Sin variantes",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    528,
+    139,
+    107,
+    34
+   ],
+   "sel": "button:has-text('Sin variantes')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "settings",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-config-button"
+   ],
+   "tooltip": "Configurar filtros",
+   "deshabilitado": false,
+   "caja": [
+    1164,
+    197,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('settings'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "clear",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-clear-button"
+   ],
+   "tooltip": "Limpiar filtros",
+   "deshabilitado": true,
+   "caja": [
+    1204,
+    197,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('clear'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nuevo Producto",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    721,
+    349,
+    148,
+    36
+   ],
+   "sel": "button:has-text('Nuevo Producto')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Alta por foto",
+   "icono": "photo_camera",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    882,
+    349,
+    126,
+    36
+   ],
+   "sel": "button:has-text('Alta por foto')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Importar / Exportar",
+   "icono": "swap_vert",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    349,
+    168,
+    36
+   ],
+   "sel": "button:has-text('Importar / Exportar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "view_column",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "columns-config-button"
+   ],
+   "tooltip": "Configurar columnas",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    349,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('view_column'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    456,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    456,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    456,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    516,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    516,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    516,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    576,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    576,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    576,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    636,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    636,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    636,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    696,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    696,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    696,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    756,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    756,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    756,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    816,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    816,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    816,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    876,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    876,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    876,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    936,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    936,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    936,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    996,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    996,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    996,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Primera página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1044,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Primera página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página anterior",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1092,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página anterior']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página siguiente",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1140,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página siguiente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Última página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1188,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Última página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Importar",
+   "icono": "upload_file",
+   "aria": "",
+   "id": "mat-tab-group-0-label-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    284,
+    137,
+    136,
+    48
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container div:has-text('Importar')",
+   "sel_casa": "6 visible(s) de 13"
+  },
+  {
+   "texto": "Exportar",
+   "icono": "download",
+   "aria": "",
+   "id": "mat-tab-group-0-label-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    420,
+    137,
+    135,
+    48
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container div:has-text('Exportar')",
+   "sel_casa": "6 visible(s) de 6"
+  },
+  {
+   "texto": "Plantilla Excel",
+   "icono": "description",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    334,
+    502,
+    160,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Plantilla Excel')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Plantilla CSV",
+   "icono": "list_alt",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "El CSV no incluye las pestañas de referencia",
+   "deshabilitado": false,
+   "caja": [
+    504,
+    502,
+    151,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Plantilla CSV')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Seleccionar archivo e importar",
+   "icono": "upload_file",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    334,
+    663,
+    283,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Seleccionar archivo e importar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cerrar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    948,
+    614,
+    64,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Cerrar')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Buscar",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    237,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Buscar'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Estado",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    237,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Estado'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Tipo",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    953,
+    237,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Tipo'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "ITBIS ventas",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    285,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('ITBIS ventas'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Base presunta",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    285,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Base presunta'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "10",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    821,
+    841,
+    84,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "Agrupar variantes bajo su producto",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    998,
+    136,
+    255,
+    40
+   ]
+  }
+ ],
+ "tablas": [
+  {
+   "clases": [
+    "mat-mdc-table",
+    "mdc-data-table__table",
+    "cdk-table"
+   ],
+   "cabeceras": [
+    "DESPLEGAR",
+    "PRODUCTO drag_indicator",
+    "CÓDIGO drag_indicator",
+    "PRECIO DE VENTA drag_indicator",
+    "STOCK drag_indicator",
+    "ESTADO drag_indicator",
+    "ACCIONES"
+   ],
+   "filas": [
+    [
+     "",
+     "broken_image Manguera de jardín 50' Artículo único",
+     "FER-6003",
+     "RD$890.00",
+     "15",
+     "Activo",
+     "edit content_copy toggle_off"
+    ],
+    [
+     "",
+     "broken_image Fertilizante soluble, 500 g Artículo único",
+     "FER-6002",
+     "RD$380.00",
+     "37",
+     "Activo",
+     "edit content_copy toggle_off"
+    ]
+   ],
+   "total_filas": 10,
+   "caja": [
+    346,
+    398,
+    906,
+    640
+   ]
+  }
+ ],
+ "pestañas": [
+  {
+   "texto": "upload_file Importar",
+   "seleccionada": true,
+   "id": "mat-tab-group-0-label-0",
+   "caja": [
+    284,
+    137,
+    136,
+    48
+   ]
+  },
+  {
+   "texto": "download Exportar",
+   "seleccionada": false,
+   "id": "mat-tab-group-0-label-1",
+   "caja": [
+    420,
+    137,
+    135,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [
+  {
+   "titulo": "swap_vertImportar / Exportar productos",
+   "clases": "cdk-overlay-pane custom-dialog-panel mat-mdc-dialog-panel",
+   "caja": [
+    260,
+    63,
+    760,
+    595
+   ],
+   "texto": "swap_vertImportar / Exportar productos upload_file Importar download Exportar 1 Descarga la plantilla El archivo Excel incluye una pestaña Instrucciones con el paso a paso (costo de compra sin ITBIS, control de caducidad y asiento de apertura), la fila guía con las reglas de cada columna y pestañas de referencia con los valores válidos (Unidades de Medida DGII, Tipos de Entrada, Impuestos, Categorías, Tipos de Producto y Listas de precios). Hay una columna de precio por cada lista de precios de la empresa. inventory_2 Para productos que manejan inventario puedes cargar la existencia inicial y el tipo de entrada. La existencia solo se aplica al crear el producto (no se duplica al reimportar). account_tree Para productos con variantes, pon Plantilla en la columna Tipo del producto que las agrupa y una fila Variante por combinación, con su Código plantilla (el de la plantilla) y su Combinac"
+  }
+ ],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1162,
+    756,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1190,
+    756,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1218,
+    756,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1162,
+    816,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1190,
+    816,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1218,
+    816,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1162,
+    876,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1190,
+    876,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1218,
+    876,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1162,
+    936,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1190,
+    936,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1218,
+    936,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1162,
+    996,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1190,
+    996,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1218,
+    996,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Primera página",
+   "caja": [
+    1044,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Página anterior",
+   "caja": [
+    1092,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Página siguiente",
+   "caja": [
+    1140,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Última página",
+   "caja": [
+    1188,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "",
+   "caja": [
+    821,
+    841,
+    84,
+    36
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscree"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications PN "
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen notifications"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "PN Pedro Núñez pedro.nunez@germiva.demo expand_more"
+   },
+   "panel-collapse": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "chevron_left"
+   },
+   "gm-seg": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todos Con variantes Sin variantes"
+   },
+   "gm-seg--lg": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todos Con variantes Sin variantes"
+   },
+   "gm-table-stack": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DESPLEGAR PRODUCTO drag_indicator CÓDIGO drag_indicator PRECIO DE VENT"
+   },
+   "gm-row-clickable": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "broken_image Manguera de jardín 50' Artículo único FER-6003 RD$890.00 "
+   },
+   "gm-who": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "broken_image Manguera de jardín 50' Artículo único"
+   },
+   "gm-who__id": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Manguera de jardín 50' Artículo único"
+   },
+   "gm-cell-title": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Manguera de jardín 50'"
+   },
+   "gm-cell-meta": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Artículo único"
+   },
+   "gm-cell-mono": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "FER-6003"
+   },
+   "gm-badge": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Activo"
+   },
+   "gm-badge--success": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Activo"
+   },
+   "gm-table-footer": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Elementos por página: 10 1 – 10 de 25"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     283,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Contraer el menú",
+    [
+     336,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     435,
+     11,
+     171,
+     38
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     912,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de pedro núñez",
+    [
+     1029,
+     8,
+     227,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     -1,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     9,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     9,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     9,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Configuración",
+    [
+     9,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     9,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contraer el panel",
+    [
+     283,
+     67,
+     30,
+     30
+    ]
+   ],
+   [
+    "div",
+    "Forma de venta",
+    [
+     345,
+     136,
+     908,
+     40
+    ]
+   ],
+   [
+    "div",
+    "Productos con o sin variantes",
+    [
+     345,
+     138,
+     291,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     456,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     456,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     456,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     516,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     516,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     516,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     576,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     576,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     576,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     636,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     636,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     636,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     696,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     696,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     696,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     756,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     756,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     756,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     816,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     816,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     816,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     876,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     876,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     876,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     936,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     936,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     936,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1162,
+     996,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1190,
+     996,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1218,
+     996,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Primera página",
+    [
+     1044,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página anterior",
+    [
+     1092,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página siguiente",
+    [
+     1140,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Última página",
+    [
+     1188,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar.has-panel",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     320,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "tr.mat-mdc-header-row.mdc-data-table__header-row.cdk-header-row",
+    "pos": "sticky",
+    "caja": [
+     346,
+     398,
+     906,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell",
+    "pos": "sticky",
+    "caja": [
+     346,
+     398,
+     44,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     390,
+     398,
+     293,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     683,
+     398,
+     112,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     795,
+     398,
+     153,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     948,
+     398,
+     90,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     1038,
+     398,
+     112,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     398,
+     102,
+     40
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     438,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     498,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     558,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     618,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     678,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     738,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     798,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     858,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     918,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1150,
+     978,
+     102,
+     60
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   },
+   {
+    "el": "div.cdk-overlay-container",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     720
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     9,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "/agenda/settings",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     9,
+     667,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "chevron_left",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.panel-collapse",
+    "caja": [
+     283,
+     67,
+     30,
+     30
+    ]
+   },
+   {
+    "texto": "inventory_2 Existencias",
+    "href": "/inventory/existencias",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     110,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "shopping_bag Productos",
+    "href": "/inventory/product/list",
+    "clase": "panel-item.is-active",
+    "caja": [
+     67,
+     146,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "settings Configuración",
+    "href": "/inventory/config",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     182,
+     244,
+     36
+    ]
+   }
+  ],
+  "encabezados": [
+   "DESPLEGAR",
+   "PRODUCTO drag_indicator",
+   "CÓDIGO drag_indicator",
+   "PRECIO DE VENTA drag_indicator",
+   "STOCK drag_indicator",
+   "ESTADO drag_indicator",
+   "ACCIONES"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications PN Pedro Núñez pedro.nunez@germiva.demo expand_more home inventory calendar_month tune power_settings_new INVENTARIO chevron_left inventory_2 Existencias shopping_bag Productos settings Configuración Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Productos Inventario Productos Todos Con variantes Sin variantes Agrupar variantes bajo su producto settings clear Buscar search Estado Tipo ITBIS ventas Base presunta inventory_2 Productos add Nuevo Producto photo_camera Alta por foto swap_vert Importar / Exportar view_column DESPLEGAR PRODUCTO drag_indicator CÓDIGO drag_indicator PRECIO DE VENTA drag_indicator STOCK drag_indicator ESTADO drag_indicator ACCIONES broken_image Manguera de jardín 50' Artículo único FER-6003 RD$890.00 15 Activo edit content_copy toggle_off broken_image Fertilizante soluble, 500 g Artículo único FER-6002 RD$380.00 37 Activo edit content_copy toggle_off broken_image Machete de 22\" Artículo único FER-6001 RD$425.00 4 Activo edit content_copy toggle_off broken_image Guantes de trabajo Artículo único FER-5004 RD$150.00 64 Activo edit content_copy toggle_off broken_image Clavos de 2½\", libra Artículo único FER-5003 RD$85.00 75 Activo edit content_copy toggle_off image Varilla corrugada 3/8\" Artículo único FER-5002 RD$310.00 270 Activo edit content_copy toggle_off broken_image Cemento de albañilería, funda 40 kg Artículo único FER-5001 RD$540.00 40 Activo edit content_copy toggle_off broken_image Lija de agua #120 Artículo único FER-4004 RD$25.00 198 Activo edit content_copy toggle_off broken_image Pintura acrílica verde, galón Artículo único FER-4003 RD$1,250.00 20 Activo edit content_copy toggle_off broken_image Rodillo de 9\" con bandeja Artículo único FER-4002 RD$260.00 8 Activo edit content_copy toggle_off Elementos por página: 10 1 – 10 de 25 swap_vertImportar / Exportar productos upload_file Importar download Exportar 1 Descarga la plantilla El archivo Excel incluye una pestaña Instrucciones con el paso a paso (costo de compra sin ITBIS, control de caducidad y asiento de apertura), la fila guía con las reglas de cada columna y pestañas de referencia con los valores válidos (Unidades de Medida DGII, Tipos de Entrada, Impuestos, Categorías, Tipos de Producto y Listas de precios). Hay una columna de precio por cada lista de precios de la empresa. inventory_2 Para productos que manejan inventario puedes cargar la existencia inicial y el tipo de entrada. La existencia solo se aplica al crear el producto (no se duplica al reimportar). account_tree Para productos con variantes, pon Plantilla en la columna Tipo del producto que las agrupa y una fila Variante por combinación, con su Código plantilla (el de la plantilla) y su Combinación (p. ej. Color: Rojo | Talla: M). En una variante, lo que dejes vacío lo toma de su plantilla. description Plantilla Excel list_alt Plantilla CSV 2 Sube el archivo completado Acepta .xlsx o .csv. La coincidencia es por código (en una variante sin código, por plantilla y combinación): si existe se actualiza, si no se crea. Si todo el archivo es válido se importa; si hay errores, no se importa nada y se listan abajo. upload_file Seleccionar archivo e importar arrow_upward Descarga primero la plantilla para conocer el formato. Cerrar"
+ },
+ "video": "r08c",
+ "pantalla": "03-dialogo-impexp",
+ "usuario": "pedro.nunez",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790524535.0000842,
+   "m": "GET",
+   "url": "v1/media/view/183",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0001872,
+   "m": "GET",
+   "url": "v1/media/view/182",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0002458,
+   "m": "GET",
+   "url": "v1/media/view/181",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0002847,
+   "m": "GET",
+   "url": "v1/media/view/180",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0060532,
+   "m": "GET",
+   "url": "v1/media/view/179",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0061307,
+   "m": "GET",
+   "url": "v1/media/view/178",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0061612,
+   "m": "GET",
+   "url": "v1/media/view/177",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524537.6813831,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

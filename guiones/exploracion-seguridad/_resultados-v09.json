@@ -1,0 +1,32 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.11,
+   "clic_a_url_s": 6.09,
+   "clic_a_networkidle_s": 6.09,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "menu_usuario": "RA\nRosa Almánzar\nrosa.almanzar@germiva.demo\naccount_circle\nMi perfil\nevent_available\nMi Espacio\ninbox\nBandeja de entrada\nlogout\nCerrar sesión",
+ "perfil_texto": "menu\nsearch\nCtrl K\nDL\nDistribuidora Las Palmas\nRNC 130555036\nhelp_outline\nfullscreen\nnotifications\nRA\nRosa Almánzar\nrosa.almanzar@germiva.demo\nexpand_more\nhome\nsell\nshopping_cart\ninventory\npeople\npoint_of_sale\nstorefront\naccount_balance\ncredit_score\nsupport_agent\nsmart_toy\ngroups\nhandshake\naccount_balance_wallet\ncalendar_month\nlock\ntune\npower_settings_new\nSetting Panel\n\nSelect Layout\n\nLight\nDark\n\nSidebar Menu Color\n\nLight\nDark\n\nColor Theme\n\nRTL Layout\n\nMi Perfil\nPerfil\nMi Perfil\nRA\nphoto_camera\nRosa Almánzar\n\n@rosa.almanzar\n\nMiembro desde 27/09/2026\n\nmail_outline\nrosa.almanzar@germiva.demo\ncall\n8095550188\nEstado de la cuenta\nActivo\nÚltimo inicio de sesión\n27/09/2026 11:59\nInformación Personal\n\nActualice su nombre y datos de contacto\n\nNombre\nApellido\nTeléfono\nWhatsApp\nCon código de país. Es el número desde el que podrás consultar tu empresa por WhatsApp.\nCorreo Electrónico\nEl correo no se puede modificar desde aquí\nsave\nGuardar\nMi Firma Digital\n\nEsta firma se usará automáticamente en los formularios clínicos\n\nDibuje su firma en el recuadro de abajo usando el mouse o el dedo (en pantalla táctil).\n\nsave\nGuardar Firma\nrefresh\nLimpiar\nPreferencias\n\nPersonalice su experiencia en el sistema\n\nlanguage\nIdioma\nEspañol\nbrightness_medium\nTema\nClaro\nvisibility\nVisibilidad del menú\n\nElige qué módulos y opciones ves en tu menú lateral. Aplica solo para tu usuario en esta empresa.\n\nexpand_more\nSeguridad\n\nCambie su contraseña de acceso\n\nContraseña actual\nvisibility_off\nContraseña nueva\nvisibility_off\nConfirmar contraseña nueva\nvisibility_off\nlock_reset\nActualizar contraseña",
+ "desplegar_count": 1,
+ "visib_texto": "restart_alt\nRestablecer Todo\nsave\nGuardar Cambios\nhome\nInicio\nlock\nsell\nVentas\ninsights\nReportes\ngroups\nClientes\ndescription\nCotizaciones\nlist_alt\nÓrdenes de Venta\nlocal_shipping\nConduces\nrequest_quote\nFacturas (e-CF)\npending_actions\nProformas\nrule_folder\nNotas de Crédito/Débito\nassignment_return\nDevoluciones\npayments\nCobros\nsavings\nAnticipos\naccount_balance_wallet\nEstados de Cuenta\nlocal_offer\nDescuentos\nshopping_cart\nCompras\ninbox\nBandeja\ninsights\nReportes\nstorefront\nProveedores\nrequest_quote\nRequisiciones\nlist_alt\nÓrdenes\ninventory_2\nRecepciones\nreceipt_long\nFacturas\npayments\nPagos a Proveedor\nsavings\nAnticipos a Proveedor\nlocal_shipping\nCostos en Destino\nreceipt\nFacturas Recibidas\nrule_folder\nNotas Crédito/Débito\nassignment_return\nDevoluciones a Proveedor\ninventory\nInventario\ninventory_2\nExistencias\nshopping_bag\nProductos\nwarehouse\nAlmacenes\nsettings\nConfiguración\npeople\nRecursos Humanos\ngroups\nRecursos Humanos\npoint_of_sale\nCajas\nstorefront\nPunto de venta\naccount_balance\nContabilidad\nspace_dashboard\nPanel\nrequest_quote\nCuentas por Cobrar\npayments\nCuentas por Pagar\nmenu_book\nDiario y Mayor\naccount_balance\nBanca\nsummarize\nCierre Contable y Estados Financieros\nCierre Contable\nInformes Financieros\nsavings\nPresupuestos\nPresupuestos\nVariaciones\npercent\nRetenciones e Impuestos\nassured_workload\nReportes DGII\ngroups\nGobierno Corporativo\ndomain\nActivos Fijos\nsettings\nConfiguración Contable\ncredit_score\nCrédito y Cobranzas\nsupport_agent\nMesa de Ayuda\nsmart_toy\nWhatsApp e IA\ngroups\n",
+ "toggles": 91,
+ "compras_textos": 1,
+ "ruta_/security/settings": {
+  "url": "http://localhost:4200/profile",
+  "toasts": []
+ },
+ "ruta_/security/menu-visibility": {
+  "url": "http://localhost:4200/profile",
+  "toasts": []
+ },
+ "ruta_/my-company/perfil-consultorio": {
+  "url": "http://localhost:4200/home",
+  "toasts": []
+ },
+ "ruta_role_77": "http://localhost:4200/security/roles?rol=77"
+}

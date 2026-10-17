@@ -1,0 +1,67 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 6.03,
+   "clic_a_networkidle_s": 6.03,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "carlos.pimentel",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.02,
+   "clic_a_url_s": 6.16,
+   "clic_a_networkidle_s": 6.16,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.12,
+   "clic_a_url_s": 6.41,
+   "clic_a_networkidle_s": 6.41,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "carlos.pimentel",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 6.96,
+   "clic_a_networkidle_s": 6.96,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "recursos_clientes": [
+  "Socios\n1/6\nConceder todo\ncheck\nVer\nCrear\nEditar\nEliminar\nImportar\nExportar\nVer\nPropios\nEquipo\nTodos",
+  "Etiquetas de Socios\n0/1\nConceder todo\nGestionar",
+  "Productos Proveedor\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Anticipos a Proveedor\n0/4\nConceder todo\nVer\nCrear\nAplicar\nCancelar",
+  "Facturas Recibidas de Proveedor\n0/4\nConceder todo\nVer\nSubir\nDar Entrada a Factura de Proveedor\nDescartar Factura Recibida",
+  "Estado de Cuenta\n0/2\nConceder todo\nVer\nPDF",
+  "Segmentos de Clientes\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Analíticas de Clientes\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Configuraciones de Retención de Socios\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar"
+ ],
+ "tooltip_crear_clientes": [
+  "Sin conceder · CUSTOMER_SEGMENT_CREATE"
+ ],
+ "savebar_padre": "1 cambio sin guardar · afectan a 3 personas\nclose\nDescartar\nsave\nGuardar cambios",
+ "guardar_padre": [
+  "Permisos del rol actualizados exitosamente",
+  0.35
+ ],
+ "senior_clientes_crear_clase": "mat-mdc-tooltip-trigger rpe__act rpe__act--inherited",
+ "carlos_nuevo_cliente": 0,
+ "savebar_hijo": "1 cambio sin guardar · afectan a 1 persona\nclose\nDescartar\nsave\nGuardar cambios",
+ "guardar_hijo": [
+  "Permisos del rol actualizados exitosamente",
+  0.29
+ ],
+ "carlos_nuevo_cliente_excluido": 0
+}

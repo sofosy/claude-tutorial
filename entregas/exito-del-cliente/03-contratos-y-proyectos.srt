@@ -1,0 +1,207 @@
+1
+00:00:03,100 --> 00:00:06,076
+Un contrato de venta es el acuerdo firmado con un cliente:
+
+2
+00:00:06,200 --> 00:00:08,905
+qué le vendes, por cuánto y por cuánto tiempo.
+
+3
+00:00:09,571 --> 00:00:12,549
+Entro a Éxito del Cliente y abro Contratos de Venta.
+
+4
+00:00:13,217 --> 00:00:14,360
+Recojo el menú.
+
+5
+00:00:15,028 --> 00:00:16,641
+Cada fila es un contrato:
+
+6
+00:00:16,789 --> 00:00:22,222
+su número, el título, el estado y el tipo, el cliente, el valor y la vigencia,
+
+7
+00:00:22,370 --> 00:00:24,305
+de la fecha de inicio a la de fin.
+
+8
+00:00:24,974 --> 00:00:29,701
+Este de Inversiones Barahona vence pronto, por eso también sale en Renovaciones.
+
+9
+00:00:30,368 --> 00:00:33,073
+Ahora creo uno nuevo con Crear Contrato.
+
+10
+00:00:34,451 --> 00:00:38,493
+Constructora Mirador firmó el mantenimiento de sus herramientas por un año.
+
+11
+00:00:39,161 --> 00:00:43,442
+Le doy número al contrato, como lo identifica tu empresa en sus papeles.
+
+12
+00:00:44,109 --> 00:00:48,750
+Luego, y un título que diga qué cubre, para encontrarlo rápido en la lista.
+
+13
+00:00:49,405 --> 00:00:51,576
+Ahora, los datos del acuerdo.
+
+14
+00:00:52,244 --> 00:00:55,706
+En Tipo, abro la lista de tipos y elijo Mantenimiento,
+
+15
+00:00:55,792 --> 00:00:58,286
+porque cubre el servicio a sus herramientas.
+
+16
+00:00:58,954 --> 00:01:02,280
+Y el estado lo dejo en Activo, porque ya está firmado.
+
+17
+00:01:02,947 --> 00:01:04,001
+Ahora el cliente:
+
+18
+00:01:04,138 --> 00:01:08,443
+lo busco por nombre, y la lista muestra los clientes de Ventas que coinciden.
+
+19
+00:01:09,109 --> 00:01:11,033
+Elijo Constructora Mirador.
+
+20
+00:01:11,689 --> 00:01:14,655
+Y el gerente de cuenta, que responde por el contrato:
+
+21
+00:01:14,789 --> 00:01:18,957
+escribo su nombre, la lista la encuentra, y la elijo, Rosa.
+
+22
+00:01:19,626 --> 00:01:24,626
+A la derecha, el valor total, ciento veinte mil pesos, por el año completo.
+
+23
+00:01:25,281 --> 00:01:28,617
+Debajo dice en DOP, que es el peso dominicano.
+
+24
+00:01:29,286 --> 00:01:32,847
+La fecha de inicio, el primero de noviembre de este año.
+
+25
+00:01:33,503 --> 00:01:35,884
+Luego la de fin, un año después.
+
+26
+00:01:36,552 --> 00:01:40,472
+Es la fecha de fin la que hace que el contrato aparezca en Renovaciones a tiempo,
+
+27
+00:01:40,558 --> 00:01:42,371
+así que no la dejes vacía.
+
+28
+00:01:43,027 --> 00:01:44,826
+Abajo eliges cómo se renueva:
+
+29
+00:01:44,923 --> 00:01:47,950
+con Notificación el sistema te avisa antes de que venza,
+
+30
+00:01:47,986 --> 00:01:50,170
+y aquí dices cuántos días antes.
+
+31
+00:01:50,838 --> 00:01:53,036
+Con todo listo, pulso Guardar.
+
+32
+00:01:53,703 --> 00:01:55,777
+Sale el aviso Contrato Creado;
+
+33
+00:01:55,861 --> 00:01:56,606
+lo acepto.
+
+34
+00:01:57,991 --> 00:02:01,923
+Cuando una venta se entrega por etapas, como el equipamiento de una plaza,
+
+35
+00:02:02,046 --> 00:02:03,486
+se lleva como proyecto.
+
+36
+00:02:04,141 --> 00:02:08,582
+Desde el menú de Éxito del Cliente abro Proyectos, y pulso Crear Proyecto.
+
+37
+00:02:09,251 --> 00:02:10,233
+Le pongo nombre:
+
+38
+00:02:10,268 --> 00:02:14,026
+instalación eléctrica de la plaza, que es lo que vamos a entregar.
+
+39
+00:02:14,682 --> 00:02:18,812
+El estado arranca en Planificación, y cambia cuando empieza el trabajo.
+
+40
+00:02:19,481 --> 00:02:23,637
+La fecha de inicio, el primero de noviembre, cuando empieza la obra.
+
+41
+00:02:24,305 --> 00:02:25,894
+Debajo va el presupuesto:
+
+42
+00:02:26,016 --> 00:02:29,217
+doscientos cincuenta mil pesos, lo que se acordó cobrar.
+
+43
+00:02:29,873 --> 00:02:32,528
+Abajo, en Relaciones, el cliente:
+
+44
+00:02:32,663 --> 00:02:35,418
+lo busco por nombre, y en la lista aparece.
+
+45
+00:02:36,086 --> 00:02:37,873
+Elijo Inversiones Barahona.
+
+46
+00:02:38,528 --> 00:02:42,102
+Ahora el gerente del proyecto, que es quien responde por la entrega:
+
+47
+00:02:42,224 --> 00:02:46,057
+escribo su nombre, aparece en la lista, y elijo a Rosa.
+
+48
+00:02:46,725 --> 00:02:47,657
+Todo listo:
+
+49
+00:02:47,693 --> 00:02:48,760
+pulso Guardar.
+
+50
+00:02:49,417 --> 00:02:52,432
+El aviso confirma que se creó, con su código.
+
+51
+00:02:53,099 --> 00:02:55,334
+Al aceptarlo queda abierto para editar:
+
+52
+00:02:55,443 --> 00:02:59,277
+desde aquí actualizas el costo real y el avance a medida que se entrega.

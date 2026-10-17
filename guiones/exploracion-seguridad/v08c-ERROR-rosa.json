@@ -1,0 +1,3382 @@
+{
+ "url": "/inventory/product/list",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 980,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h4",
+   "clase": "page-title",
+   "texto": "Productos",
+   "caja": [
+    357,
+    80,
+    78,
+    24
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-current",
+    "is-showing"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    283,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Todos",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "is-on"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    346,
+    139,
+    69,
+    34
+   ],
+   "sel": "button:has-text('Todos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Con variantes",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    415,
+    139,
+    113,
+    34
+   ],
+   "sel": "button:has-text('Con variantes')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Sin variantes",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    528,
+    139,
+    107,
+    34
+   ],
+   "sel": "button:has-text('Sin variantes')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "settings",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-config-button"
+   ],
+   "tooltip": "Configurar filtros",
+   "deshabilitado": false,
+   "caja": [
+    1164,
+    197,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('settings'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "clear",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-clear-button"
+   ],
+   "tooltip": "Limpiar filtros",
+   "deshabilitado": true,
+   "caja": [
+    1204,
+    197,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('clear'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nuevo Producto",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    721,
+    349,
+    148,
+    36
+   ],
+   "sel": "button:has-text('Nuevo Producto')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Alta por foto",
+   "icono": "photo_camera",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    882,
+    349,
+    126,
+    36
+   ],
+   "sel": "button:has-text('Alta por foto')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Importar / Exportar",
+   "icono": "swap_vert",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    349,
+    168,
+    36
+   ],
+   "sel": "button:has-text('Importar / Exportar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "view_column",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "columns-config-button"
+   ],
+   "tooltip": "Configurar columnas",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    349,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('view_column'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    466,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    466,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    466,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    466,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    526,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    526,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    526,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    526,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    586,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    586,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    586,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    586,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    646,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    646,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    646,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    646,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    706,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    706,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    706,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    706,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    766,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    766,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    766,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    766,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    830,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    830,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    830,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    830,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    893,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    893,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    893,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    893,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    953,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    953,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    953,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    953,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1134,
+    1013,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "content_copy",
+   "aria": "Duplicar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1162,
+    1013,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Duplicar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "toggle_off",
+   "aria": "Desactivar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1190,
+    1013,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Desactivar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Eliminar",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-warn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1218,
+    1013,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Eliminar']",
+   "sel_casa": "6 visible(s) de 10"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Primera página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1044,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Primera página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página anterior",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1092,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página anterior']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página siguiente",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1140,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página siguiente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Última página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1188,
+    835,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Última página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Buscar",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    237,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Buscar'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Estado",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    237,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Estado'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Tipo",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    953,
+    237,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Tipo'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "ITBIS ventas",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    285,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('ITBIS ventas'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Base presunta",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    285,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Base presunta'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "10",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    821,
+    841,
+    84,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "Agrupar variantes bajo su producto",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    998,
+    136,
+    255,
+    40
+   ]
+  }
+ ],
+ "tablas": [
+  {
+   "clases": [
+    "mat-mdc-table",
+    "mdc-data-table__table",
+    "cdk-table"
+   ],
+   "cabeceras": [
+    "DESPLEGAR",
+    "PRODUCTO drag_indicator",
+    "CÓDIGO drag_indicator",
+    "PRECIO DE VENTA drag_indicator",
+    "STOCK drag_indicator",
+    "ESTADO drag_indicator",
+    "ACCIONES"
+   ],
+   "filas": [
+    [
+     "",
+     "Manguera de jardín 50' Artículo único",
+     "FER-6003",
+     "RD$890.00",
+     "15",
+     "Activo",
+     "edit content_copy toggle_off delete"
+    ],
+    [
+     "",
+     "Fertilizante soluble, 500 g Artículo único",
+     "FER-6002",
+     "RD$380.00",
+     "37",
+     "Activo",
+     "edit content_copy toggle_off delete"
+    ]
+   ],
+   "total_filas": 10,
+   "caja": [
+    346,
+    398,
+    906,
+    657
+   ]
+  }
+ ],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "No tienes permiso para ver «Cotizaciones». Solicita el acceso al administrador de tu empresa."
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1190,
+    646,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1218,
+    646,
+    24,
+    24
+   ]
+  }
+ ],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    6,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1134,
+    706,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1162,
+    706,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1190,
+    706,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1218,
+    706,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1134,
+    766,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1162,
+    766,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1190,
+    766,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1218,
+    766,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1134,
+    830,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1162,
+    830,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1190,
+    830,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1218,
+    830,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1134,
+    893,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1162,
+    893,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1190,
+    893,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1218,
+    893,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1134,
+    953,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1162,
+    953,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1190,
+    953,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1218,
+    953,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1134,
+    1013,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Duplicar",
+   "caja": [
+    1162,
+    1013,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desactivar",
+   "caja": [
+    1190,
+    1013,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1218,
+    1013,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Primera página",
+   "caja": [
+    1044,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Página anterior",
+   "caja": [
+    1092,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Página siguiente",
+   "caja": [
+    1140,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Última página",
+   "caja": [
+    1188,
+    835,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "",
+   "caja": [
+    821,
+    841,
+    84,
+    36
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "panel-collapse": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "chevron_left"
+   },
+   "gm-seg": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todos Con variantes Sin variantes"
+   },
+   "gm-seg--lg": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todos Con variantes Sin variantes"
+   },
+   "gm-table-stack": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DESPLEGAR PRODUCTO drag_indicator CÓDIGO drag_indicator PRECIO DE VENT"
+   },
+   "gm-row-clickable": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Manguera de jardín 50' Artículo único FER-6003 RD$890.00 15 Activo edi"
+   },
+   "gm-who": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Manguera de jardín 50' Artículo único"
+   },
+   "gm-who__id": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Manguera de jardín 50' Artículo único"
+   },
+   "gm-cell-title": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Manguera de jardín 50'"
+   },
+   "gm-cell-meta": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Artículo único"
+   },
+   "gm-cell-mono": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "FER-6003"
+   },
+   "gm-badge": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Activo"
+   },
+   "gm-badge--success": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Activo"
+   },
+   "gm-table-footer": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Elementos por página: 10 1 – 10 de 25"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     283,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Contraer el menú",
+    [
+     336,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     435,
+     11,
+     117,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     -1,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     6,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     6,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     6,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     6,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     6,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     6,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     6,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     6,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     6,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     6,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     6,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     6,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     6,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     6,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     6,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     6,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     6,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     9,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contraer el panel",
+    [
+     283,
+     67,
+     30,
+     30
+    ]
+   ],
+   [
+    "div",
+    "Forma de venta",
+    [
+     345,
+     136,
+     908,
+     40
+    ]
+   ],
+   [
+    "div",
+    "Productos con o sin variantes",
+    [
+     345,
+     138,
+     291,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     466,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     466,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     466,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     466,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     526,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     526,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     526,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     526,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     586,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     586,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     586,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     586,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     646,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     646,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     646,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     646,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     706,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     706,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     706,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     706,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     766,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     766,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     766,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     766,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     830,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     830,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     830,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     830,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     893,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     893,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     893,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     893,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     953,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     953,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     953,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     953,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1134,
+     1013,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Duplicar",
+    [
+     1162,
+     1013,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Desactivar",
+    [
+     1190,
+     1013,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Eliminar",
+    [
+     1218,
+     1013,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Primera página",
+    [
+     1044,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página anterior",
+    [
+     1092,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página siguiente",
+    [
+     1140,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Última página",
+    [
+     1188,
+     835,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar.has-panel",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     320,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "tr.mat-mdc-header-row.mdc-data-table__header-row.cdk-header-row",
+    "pos": "sticky",
+    "caja": [
+     346,
+     398,
+     906,
+     50
+    ]
+   },
+   {
+    "el": "th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell",
+    "pos": "sticky",
+    "caja": [
+     346,
+     398,
+     44,
+     50
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     390,
+     398,
+     278,
+     50
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     668,
+     398,
+     110,
+     50
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     777,
+     398,
+     146,
+     50
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     924,
+     398,
+     88,
+     50
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     1012,
+     398,
+     110,
+     50
+    ]
+   },
+   {
+    "el": "th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     398,
+     130,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     448,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     508,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     568,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     628,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     688,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     748,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     808,
+     130,
+     67
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     875,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     935,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1122,
+     995,
+     130,
+     60
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     6,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     9,
+     667,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "chevron_left",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.panel-collapse",
+    "caja": [
+     283,
+     67,
+     30,
+     30
+    ]
+   },
+   {
+    "texto": "inventory_2 Existencias",
+    "href": "/inventory/existencias",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     110,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "shopping_bag Productos",
+    "href": "/inventory/product/list",
+    "clase": "panel-item.is-active",
+    "caja": [
+     67,
+     146,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "warehouse Almacenes",
+    "href": "/inventory/warehouse",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     182,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "settings Configuración",
+    "href": "/inventory/config",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     218,
+     244,
+     36
+    ]
+   }
+  ],
+  "encabezados": [
+   "DESPLEGAR",
+   "PRODUCTO drag_indicator",
+   "CÓDIGO drag_indicator",
+   "PRECIO DE VENTA drag_indicator",
+   "STOCK drag_indicator",
+   "ESTADO drag_indicator",
+   "ACCIONES"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new INVENTARIO chevron_left inventory_2 Existencias shopping_bag Productos warehouse Almacenes settings Configuración Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Productos Inventario Productos Todos Con variantes Sin variantes Agrupar variantes bajo su producto settings clear Buscar search Estado Tipo ITBIS ventas Base presunta inventory_2 Productos add Nuevo Producto photo_camera Alta por foto swap_vert Importar / Exportar view_column DESPLEGAR PRODUCTO drag_indicator CÓDIGO drag_indicator PRECIO DE VENTA drag_indicator STOCK drag_indicator ESTADO drag_indicator ACCIONES Manguera de jardín 50' Artículo único FER-6003 RD$890.00 15 Activo edit content_copy toggle_off delete Fertilizante soluble, 500 g Artículo único FER-6002 RD$380.00 37 Activo edit content_copy toggle_off delete Machete de 22\" Artículo único FER-6001 RD$425.00 4 Activo edit content_copy toggle_off delete Guantes de trabajo Artículo único FER-5004 RD$150.00 64 Activo edit content_copy toggle_off delete Clavos de 2½\", libra Artículo único FER-5003 RD$85.00 75 Activo edit content_copy toggle_off delete image Varilla corrugada 3/8\" Artículo único FER-5002 RD$310.00 270 Activo edit content_copy toggle_off delete Cemento de albañilería, funda 40 kg Artículo único FER-5001 RD$540.00 40 Activo edit content_copy toggle_off delete Lija de agua #120 Artículo único FER-4004 RD$25.00 198 Activo edit content_copy toggle_off delete Pintura acrílica verde, galón Artículo único FER-4003 RD$1,250.00 20 Activo edit content_copy toggle_off delete Rodillo de 9\" con bandeja Artículo único FER-4002 RD$260.00 8 Activo edit content_copy toggle_off delete Elementos por página: 10 1 – 10 de 25"
+ },
+ "video": "v08c",
+ "pantalla": "ERROR-rosa",
+ "usuario": "rosa.almanzar",
+ "notas": "\n    ~~~~~~~~~~^\n        self._impl_obj.click(\n        ^^^^^^^^^^^^^^^^^^^^^\n    ...<11 lines>...\n        )\n        ^\n    )\n    ^\n  File \"C:\\Users\\isaac\\Desktop\\sofosy\\germiva\\claude-tutorial\\.venv\\Lib\\site-packages\\playwright\\_impl\\_sync_base.py\", line 115, in _sync\n    return task.result()\n           ~~~~~~~~~~~^^\n  File \"C:\\Users\\isaac\\Desktop\\sofosy\\germiva\\claude-tutorial\\.venv\\Lib\\site-packages\\playwright\\_impl\\_locator.py\", line 165, in click\n    return await self._frame._click(self._selector, strict=True, **params)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"C:\\Users\\isaac\\Desktop\\sofosy\\germiva\\claude-tutorial\\.venv\\Lib\\site-packages\\playwright\\_impl\\_frame.py\", line 594, in _click\n    await self._channel.send(\"click\", self._timeout, locals_to_params(locals()))\n  File \"C:\\Users\\isaac\\Desktop\\sofosy\\germiva\\claude-tutorial\\.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 76, in send\n    return await self._connection.wrap_api_call(\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n    ...<3 lines>...\n    )\n    ^\n  File \"C:\\Users\\isaac\\Desktop\\sofosy\\germiva\\claude-tutorial\\.venv\\Lib\\site-packages\\playwright\\_impl\\_connection.py\", line 632, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"tr:has-text('Machete') button:has(mat-icon:text-is('more_vert'))\").first\n\n",
+ "red_reciente": [
+  {
+   "t": 1790524241.4976287,
+   "m": "GET",
+   "url": "v1/media/view/180",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524241.4977045,
+   "m": "GET",
+   "url": "v1/media/view/179",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524241.4977562,
+   "m": "GET",
+   "url": "v1/media/view/178",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524241.497795,
+   "m": "GET",
+   "url": "v1/media/view/177",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524244.2434428,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524251.7302065,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524252.6155417,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524256.6321898,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

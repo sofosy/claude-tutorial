@@ -24,7 +24,7 @@ from .rutas import RAIZ
 
 MIN_PALABRAS = 6          # una narración más corta que esto no explica nada
 DESFASE_MAX = 0.9         # segundos entre la palabra y el clic que se toleran
-ACCIONES_VISIBLES = ("click", "escribir", "seleccionar", "marcar", "presionar", "subir")
+ACCIONES_VISIBLES = ("click", "arrastrar", "escribir", "seleccionar", "marcar", "presionar", "subir")
 # acciones de la capa (insignia/cartel/diagrama, ver GRABACION.md): cambian la
 # pantalla sin mover el cursor, como `resaltar`
 ACCIONES_CAPA = ("cartel", "diagrama", "diagrama_fase", "diagrama_cerrar", "insignia")
@@ -44,6 +44,8 @@ def que_accion(clave, valor):
         return str(valor)
     if clave == "diagrama_cerrar":
         return "cerrar"
+    if clave == "arrastrar":
+        return (valor or {}).get("desde")
     return valor if isinstance(valor, str) else (valor.get("sel") if isinstance(valor, dict) else clave)
 
 
@@ -299,7 +301,7 @@ def informe(guion, salida, video=None):
                     # el fotograma se toma medio segundo después: el cursor ya
                     # llegó, el texto ya está escrito, la marca ya se ve
                     png = revision / f"{pid}-{ev['t']:05.2f}.png"
-                    subprocess.run(["ffmpeg", "-y", "-loglevel", "error",
+                    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-threads", "2",
                                     "-ss", f"{t_video + ev['t'] + 0.5:.3f}", "-i", str(video),
                                     "-frames:v", "1", str(png)], check=False)
                     estado = "CORTADO " if ev.get("visible") is False else ""
@@ -309,7 +311,7 @@ def informe(guion, salida, video=None):
             # `escribir` se mide por el clic que lo inicia: el evento «escribir»
             # se anota al TERMINAR de teclear (para medir que el campo siguió
             # a la vista), y 20 letras tardan casi un segundo
-            TIPO = {"click": "clic", "escribir": "clic", "resaltar": "resaltar",
+            TIPO = {"click": "clic", "arrastrar": "clic", "escribir": "clic", "resaltar": "resaltar",
                     "seleccionar": "seleccionar", "subir": "subir", "marcar": "clic",
                     **{k: k for k in ACCIONES_CAPA}}
             for acc in paso.get("acciones", []):

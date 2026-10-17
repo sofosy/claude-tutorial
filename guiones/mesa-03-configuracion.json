@@ -1,0 +1,89 @@
+{
+  "titulo": "Mesa de Ayuda · Configuración: espacios, estados y avisos",
+  "_comentario": "Serie Mesa de Ayuda, video 3 (2026-10-06). Empresa demo 50 (empresa cliente: sin Contactos ni Avisos enviados), Rosa (Admin). /helpdesk/configuracion con ?seccion= (espacios · estados · avisos). Los estados de fábrica se renombran y se pintan pero no cambian de propósito. En esta rama se quitó el código interno en inglés (OPEN, WAITING_CUSTOMER…) que salía bajo cada estado. Avisos: matriz estado × destinatario con campana (aviso en el sistema) y sobre (correo); «Guardar los avisos» deja el toast «Avisos guardados exitosamente».",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/helpdesk/tickets"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": ["germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar"],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Separar los casos en espacios de trabajo",
+    "Agregar un estado propio y decidir si tiene columna en el tablero",
+    "Elegir a quién se le avisa cuando un caso cambia de estado"
+  ],
+  "errores_comunes": [
+    "Crear un estado nuevo con el propósito equivocado: decide si el caso cuenta como abierto o resuelto",
+    "Avisar a todos de todo: el equipo deja de leer los avisos",
+    "Cambiar la matriz de avisos y salir sin pulsar «Guardar los avisos»"
+  ],
+  "pasos": [
+    {
+      "id": "01-espacios",
+      "capitulo": "Espacios de trabajo",
+      "rotulo": "Espacios de trabajo",
+      "ruta": "Mesa de Ayuda › Configuración › Espacios de trabajo",
+      "texto_pantalla": "Espacios · tableros separados para tipos de casos distintos",
+      "narracion": "La configuración de la Mesa de Ayuda se abre con la rueda dentada, arriba a la derecha del tablero. Tiene tres secciones. La primera son los espacios de trabajo: tableros separados, cada uno con sus columnas y sus casos. Por ejemplo, uno para garantías y otro para todo lo demás. El marcado como predeterminado es donde nacen los casos si nadie elige otro. En cada fila están las acciones: editar las columnas del tablero, editarlo, hacerlo predeterminado o eliminarlo. Para crear uno, pulsa Nuevo espacio, ponle nombre, dile para qué es y elige su color.",
+      "acciones": [
+        { "click": ".gm-toolbar button:has(mat-icon:text-is('settings')), button[aria-label*='onfigur']:has(mat-icon:text-is('settings'))", "al_decir": "la rueda dentada" },
+        { "resaltar": ".hs-nav", "durante_ms": 3000, "al_decir": "tres secciones" },
+        { "resaltar": "table tbody tr:first-child > :first-child", "durante_ms": 5000, "al_decir": "tableros separados" },
+        { "resaltar": "table tbody tr:first-child :text('Predeterminado')", "durante_ms": 4000, "al_decir": "marcado como predeterminado" },
+        { "resaltar": "table tbody tr:first-child td:last-child", "durante_ms": 5000, "al_decir": "las acciones" },
+        { "resaltar": "button:has-text('Nuevo espacio')", "durante_ms": 4000, "al_decir": "pulsa Nuevo espacio" }
+      ]
+    },
+    {
+      "id": "02-estados",
+      "capitulo": "Estados del caso",
+      "rotulo": "Estados del caso",
+      "ruta": "Mesa de Ayuda › Configuración › Estados del caso",
+      "texto_pantalla": "Estados · cada uno dice para qué sirve",
+      "narracion": "La segunda sección son los estados del caso. Cada estado dice su propósito: en curso, en espera, para resolver, para cerrar o para cancelar. Eso decide si el caso sigue contando como abierto o si se da por resuelto. A su lado, cómo se comporta: si es el estado inicial y si tiene columna en el tablero. Vamos a agregar uno. Pulso Agregar estado. Lo llamo Esperando repuesto: es el nombre completo, el que se ve en la ficha de cada caso. Debajo va el nombre corto, el que se lee en la columna del tablero: Repuesto. En para qué sirve elijo En espera, porque el caso está detenido mientras llega la pieza. Marco que tenga columna en el tablero, y pulso Agregar el estado. Ya está en la lista, y desde ahora aparece como columna en la Mesa de Ayuda.",
+      "acciones": [
+        { "click": ".hs-nav button:has-text('Estados del caso')", "al_decir": "los estados del caso" },
+        { "resaltar": "table tbody tr:first-child td:nth-child(2)", "durante_ms": 4500, "al_decir": "su propósito" },
+        { "resaltar": "table tbody tr:first-child td:nth-child(3)", "durante_ms": 4000, "al_decir": "cómo se comporta" },
+        { "click": "button:has-text('Agregar estado')", "al_decir": "Pulso Agregar estado" },
+        { "escribir": { "sel": ".rules__form input[placeholder='Ej.: Esperando repuesto']", "texto": "Esperando repuesto" }, "al_decir": "Lo llamo" },
+        { "escribir": { "sel": ".rules__form input[placeholder='Ej.: Repuesto']", "texto": "Repuesto" }, "al_decir": "Debajo va el nombre corto" },
+        { "seleccionar": { "sel": ".rules__form select", "valor": "WAITING" }, "al_decir": "elijo En espera" },
+        { "click": ".rules__checks label:has-text('Tiene columna en el tablero') input", "al_decir": "Marco que tenga columna" },
+        { "click": ".rules__form button:has-text('Agregar el estado')", "al_decir": "pulso Agregar el estado" },
+        { "resaltar": "table tbody tr:has-text('Esperando repuesto') > :first-child", "durante_ms": 5000, "al_decir": "Ya está en la lista" }
+      ]
+    },
+    {
+      "id": "03-avisos",
+      "capitulo": "A quién se le avisa",
+      "rotulo": "Avisos",
+      "ruta": "Mesa de Ayuda › Configuración › Avisos",
+      "texto_pantalla": "Avisos · quién se entera de cada cambio de estado",
+      "narracion": "La última sección es la de avisos. Cada fila es un estado al que puede pasar un caso, y cada columna, a quién avisar: a quien lo reportó, al responsable, a quienes lo siguen o a los administradores. La campana es un aviso dentro del sistema, y el sobre, un correo. Lo encendido está en azul. Quiero que el responsable se entere cuando un caso nuevo entra como Abierto, así que enciendo su campana en esa fila. Al terminar, pulso Guardar los avisos, abajo a la derecha. El aviso confirma que se guardaron.",
+      "acciones": [
+        { "click": ".hs-nav button:has-text('Avisos')", "al_decir": "la de avisos" },
+        { "resaltar": "table tbody tr:first-child > :first-child", "durante_ms": 3000, "al_decir": "Cada fila" },
+        { "resaltar": "table thead th:nth-child(3)", "durante_ms": 4500, "al_decir": "cada columna" },
+        { "resaltar": "table tbody tr:first-child td:nth-child(5) button:first-child", "durante_ms": 2500, "al_decir": "La campana" },
+        { "resaltar": "table tbody tr:first-child td:nth-child(5) button:last-child", "durante_ms": 2500, "al_decir": "el sobre" },
+        { "click": "table tbody tr:first-child td:nth-child(3) button:first-child", "al_decir": "enciendo su campana" },
+        { "click": "button:has-text('Guardar los avisos')", "al_decir": "pulso Guardar los avisos" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3500, "cursor": false }
+      ]
+    }
+  ]
+}

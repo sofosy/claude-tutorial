@@ -1,0 +1,2088 @@
+{
+ "url": "/sales/quotes/6",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 1535,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "page-hero-title",
+   "texto": "Cotización 6 Aprobada",
+   "caja": [
+    369,
+    129,
+    487,
+    25
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "gm-state__t",
+   "texto": "Sin abonos registrados",
+   "caja": [
+    740,
+    932,
+    144,
+    20
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-current",
+    "is-showing"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    283,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "RD$DOP▾",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "currency-chip-button"
+   ],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    872,
+    134,
+    104,
+    36
+   ],
+   "sel": "button:has-text('RD$DOP▾')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Imprimir",
+   "icono": "print",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-action"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    986,
+    134,
+    117,
+    36
+   ],
+   "sel": "button:has-text('Imprimir')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "gm-doc-action",
+    "gm-doc-action--icon"
+   ],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    1113,
+    134,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nueva",
+   "icono": "add",
+   "aria": "Nueva Cotización",
+   "id": "",
+   "clases": [
+    "new-entity-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1159,
+    134,
+    97,
+    36
+   ],
+   "sel": "button[aria-label='Nueva Cotización']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "event",
+   "aria": "Abrir el calendario",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    763,
+    378,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Abrir el calendario']",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "event",
+   "aria": "Abrir el calendario",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1198,
+    378,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Abrir el calendario']",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "view_week",
+   "aria": "Elegir columnas visibles",
+   "id": "",
+   "clases": [
+    "gm-doc-colbtn"
+   ],
+   "tooltip": "Elegir columnas visibles",
+   "deshabilitado": false,
+   "caja": [
+    1212,
+    449,
+    28,
+    28
+   ],
+   "sel": "button[aria-label='Elegir columnas visibles']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver versiones",
+   "icono": "history",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-tool"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1086,
+    616,
+    143,
+    32
+   ],
+   "sel": "button:has-text('Ver versiones')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Registrar abono",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    385,
+    821,
+    168,
+    36
+   ],
+   "sel": "button:has-text('Registrar abono')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Registrar aceptación",
+   "icono": "thumb_up",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "El cliente aceptó el documento: habilita la liquidación con los abonos",
+   "deshabilitado": false,
+   "caja": [
+    561,
+    821,
+    201,
+    36
+   ],
+   "sel": "button:has-text('Registrar aceptación')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Estado de cuenta",
+   "icono": "account_balance",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "Ver el estado de cuenta completo del cliente",
+   "deshabilitado": false,
+   "caja": [
+    770,
+    821,
+    163,
+    36
+   ],
+   "sel": "button:has-text('Estado de cuenta')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cancelar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    995,
+    674,
+    93,
+    36
+   ],
+   "sel": "button:has-text('Cancelar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Guardar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1097,
+    674,
+    87,
+    36
+   ],
+   "sel": "button:has-text('Guardar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Convertir a factura",
+   "icono": "receipt_long",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "Convertir esta cotización a factura",
+   "deshabilitado": false,
+   "caja": [
+    878,
+    178,
+    272,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Convertir a factura')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Convertir a orden de venta",
+   "icono": "shopping_cart",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "Convertir esta cotización a orden de venta",
+   "deshabilitado": false,
+   "caja": [
+    878,
+    226,
+    272,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Convertir a orden de venta')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Versiones e historial",
+   "icono": "history",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "Ver historial de versiones",
+   "deshabilitado": false,
+   "caja": [
+    878,
+    274,
+    272,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Versiones e historial')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Duplicar",
+   "icono": "content_copy",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    878,
+    322,
+    272,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Duplicar')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Cliente",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "Ferretería Doña Luz",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    385,
+    308,
+    420,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Cliente'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Tipo de Documento",
+   "formcontrolname": "quoteType",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "Cotización",
+   "hint": "",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    821,
+    308,
+    420,
+    58
+   ],
+   "sel": "[formcontrolname='quoteType']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Fecha de Emisión",
+   "formcontrolname": "issuedDate",
+   "tipo": "input:text",
+   "placeholder": "dd/mm/aaaa",
+   "valor": "27/09/2026",
+   "hint": "dd/mm/aaaa",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    385,
+    378,
+    420,
+    58
+   ],
+   "sel": "[formcontrolname='issuedDate']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Fecha de Vencimiento",
+   "formcontrolname": "expiryDate",
+   "tipo": "input:text",
+   "placeholder": "dd/mm/aaaa",
+   "valor": "27/10/2026",
+   "hint": "",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    821,
+    378,
+    420,
+    58
+   ],
+   "sel": "[formcontrolname='expiryDate']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Condición de pago",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "Sin definir",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    821,
+    1080,
+    420,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Condición de pago'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Términos y Condiciones",
+   "formcontrolname": "terms",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    821,
+    1150,
+    420,
+    58
+   ],
+   "sel": "[formcontrolname='terms']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [
+  {
+   "items": [
+    {
+     "texto": "Convertir a factura",
+     "icono": "receipt_long",
+     "caja": [
+      878,
+      178,
+      272,
+      48
+     ]
+    },
+    {
+     "texto": "Convertir a orden de venta",
+     "icono": "shopping_cart",
+     "caja": [
+      878,
+      226,
+      272,
+      48
+     ]
+    },
+    {
+     "texto": "Versiones e historial",
+     "icono": "history",
+     "caja": [
+      878,
+      274,
+      272,
+      48
+     ]
+    },
+    {
+     "texto": "Duplicar",
+     "icono": "content_copy",
+     "caja": [
+      878,
+      322,
+      272,
+      48
+     ]
+    }
+   ],
+   "caja": [
+    878,
+    170,
+    272,
+    208
+   ]
+  }
+ ],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    6,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Registrar abono",
+   "caja": [
+    385,
+    821,
+    168,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Registrar aceptación",
+   "caja": [
+    561,
+    821,
+    201,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Estado de cuenta",
+   "caja": [
+    770,
+    821,
+    163,
+    36
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Condición de pago",
+   "caja": [
+    821,
+    1080,
+    420,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Términos y Condiciones",
+   "caja": [
+    821,
+    1150,
+    420,
+    58
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "panel-collapse": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "chevron_left"
+   },
+   "gm-dense": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Ventas Cotizaciones 6 Cotización 6 Aprobada Cotización N.º 6 Vence 27/"
+   },
+   "gm-doc-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Aprobada"
+   },
+   "gm-doc-chip--ok": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Aprobada"
+   },
+   "gm-doc-meta": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Cotización N.º 6 Vence 27/10/2026"
+   },
+   "gm-doc-action": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "print Imprimir"
+   },
+   "gm-doc-action--icon": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "more_vert"
+   },
+   "gm-doc-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "person Cliente y vigencia Cliente person Tipo de Documento description"
+   },
+   "gm-doc-field": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "Cliente person"
+   },
+   "gm-doc-grid": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "inventory_2 Líneas de la cotización 7 de 9 columnas view_week PRODUCTO"
+   },
+   "gm-doc-colcount": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "7 de 9 columnas"
+   },
+   "gm-doc-colbtn": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "view_week"
+   },
+   "gm-doc-linecount": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "2 líneas · 20 unidades"
+   },
+   "gm-doc-linetools": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "history Ver versiones"
+   },
+   "gm-doc-tool": {
+    "n": 2,
+    "visibles": 1,
+    "ej": "history Ver versiones"
+   },
+   "gm-doc-tool--mobile": {
+    "n": 1,
+    "visibles": 0,
+    "ej": ""
+   },
+   "gm-figs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RD$17,818.00 TOTAL DEL DOCUMENTO RD$0.00 TOTAL ABONADO RD$17,818.00 SA"
+   },
+   "gm-fig": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "RD$17,818.00 TOTAL DEL DOCUMENTO"
+   },
+   "gm-fig--static": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "RD$17,818.00 TOTAL DEL DOCUMENTO"
+   },
+   "gm-fig__v": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "RD$17,818.00"
+   },
+   "gm-fig__l": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "TOTAL DEL DOCUMENTO"
+   },
+   "gm-fig-sep": {
+    "n": 3,
+    "visibles": 3,
+    "ej": ""
+   },
+   "gm-fig--wait": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RD$17,818.00 SALDO PENDIENTE"
+   },
+   "gm-state": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "savings Sin abonos registrados Registre el primer pago del cliente con"
+   },
+   "gm-state__t": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Sin abonos registrados"
+   },
+   "gm-state__s": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Registre el primer pago del cliente con «Registrar abono»."
+   },
+   "gm-doc-close": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calculate Resumen financiero Subtotal RD$15,100.00 Impuestos RD$2,718."
+   },
+   "gm-doc-close__totals": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calculate Resumen financiero Subtotal RD$15,100.00 Impuestos RD$2,718."
+   },
+   "gm-doc-close__notes": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "handshake Condiciones comerciales Condición de pago handshake Términos"
+   },
+   "gm-doc-terms": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "handshake Condiciones comerciales Condición de pago handshake Términos"
+   },
+   "gm-doc-resolved": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Se imprimen en la cotización y viajan a la factura al convertirla. Máx"
+   },
+   "gm-doc-resolved--block": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Se imprimen en la cotización y viajan a la factura al convertirla. Máx"
+   },
+   "gm-doc-notesblock": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "sticky_note_2 Notas de la cotización Sin notas."
+   },
+   "gm-doc-foot-total": {
+    "n": 1,
+    "visibles": 0,
+    "ej": ""
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     283,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Contraer el menú",
+    [
+     336,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     435,
+     11,
+     117,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     -1,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     6,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     6,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     6,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     6,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     6,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     6,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     6,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     6,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     6,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     6,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     6,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     6,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     6,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     6,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     6,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     6,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     6,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     9,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contraer el panel",
+    [
+     283,
+     67,
+     30,
+     30
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1113,
+     134,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Nueva Cotización",
+    [
+     1159,
+     134,
+     97,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Abrir el calendario",
+    [
+     763,
+     378,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Abrir el calendario",
+    [
+     1198,
+     378,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Elegir columnas visibles",
+    [
+     1212,
+     449,
+     28,
+     28
+    ]
+   ],
+   [
+    "mat-icon",
+    "Advertencia de inventario",
+    [
+     548,
+     544,
+     18,
+     18
+    ]
+   ],
+   [
+    "div",
+    "Progreso de pago 0%",
+    [
+     385,
+     777,
+     855,
+     32
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [
+   [
+    "mat-select",
+    "quoteType",
+    true
+   ],
+   [
+    "input",
+    "issuedDate",
+    true
+   ],
+   [
+    "input",
+    "expiryDate",
+    true
+   ],
+   [
+    "input",
+    "quantity",
+    true
+   ],
+   [
+    "input",
+    "discount",
+    true
+   ],
+   [
+    "input",
+    "quantity",
+    true
+   ],
+   [
+    "input",
+    "discount",
+    true
+   ],
+   [
+    "input",
+    "terms",
+    true
+   ]
+  ],
+  "estados": [
+   {
+    "clase": "gm-state adv-empty",
+    "texto": "savings Sin abonos registrados Registre el primer pago del cliente con «Registrar abono».",
+    "caja": [
+     385,
+     869,
+     855,
+     154
+    ]
+   }
+  ],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar.has-panel",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     320,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "footer.form-layout-footer",
+    "pos": "sticky",
+    "caja": [
+     369,
+     663,
+     887,
+     57
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   },
+   {
+    "el": "div.cdk-overlay-container",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     720
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     6,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     6,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     9,
+     667,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "chevron_left",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.panel-collapse",
+    "caja": [
+     283,
+     67,
+     30,
+     30
+    ]
+   },
+   {
+    "texto": "insights Reportes",
+    "href": "/sales/dashboard",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     110,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "groups Clientes",
+    "href": "/sales/partners",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     146,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "description Cotizaciones",
+    "href": "/sales/quotes",
+    "clase": "panel-item.is-active",
+    "caja": [
+     67,
+     182,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "list_alt Órdenes de Venta",
+    "href": "/sales/sales-orders",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     218,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "local_shipping Conduces",
+    "href": "/sales/delivery-notes",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     254,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "request_quote Facturas (e-CF)",
+    "href": "/sales/invoices",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     290,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "pending_actions Proformas",
+    "href": "/sales/proformas",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     326,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "rule_folder Notas de Crédito/Débito",
+    "href": "/sales/credit-debit-notes",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     362,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "assignment_return Devoluciones",
+    "href": "/invoicing/invoice-return",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     398,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "payments Cobros",
+    "href": "/sales/payments",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     434,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "savings Anticipos",
+    "href": "/sales/advance-payments",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     470,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "account_balance_wallet Estados de Cuenta",
+    "href": "/sales/account-statements",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     506,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "local_offer Descuentos",
+    "href": "/discounts/list",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     542,
+     244,
+     36
+    ]
+   }
+  ],
+  "encabezados": [],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new VENTAS chevron_left insights Reportes groups Clientes description Cotizaciones list_alt Órdenes de Venta local_shipping Conduces request_quote Facturas (e-CF) pending_actions Proformas rule_folder Notas de Crédito/Débito assignment_return Devoluciones payments Cobros savings Anticipos account_balance_wallet Estados de Cuenta local_offer Descuentos Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Ventas Cotizaciones 6 Cotización 6 Aprobada Cotización N.º 6 Vence 27/10/2026 RD$ DOP ▾ print Imprimir more_vert add Nueva edit Borrador check_circle Aprobada thumb_up Aceptada cancel Rechazada schedule Vencida block Cancelada transform Convertida a Orden receipt Facturada person Cliente y vigencia Cliente person Tipo de Documento description Cotización Fecha de Emisión today \u0001 event dd/mm/aaaa Fecha de Vencimiento event event inventory_2 Líneas de la cotización 7 de 9 columnas view_week PRODUCTO/SERVICIO CANT. PRECIO UNIT. DESCUENTO ITBIS TOTAL Rodillo de 9\" con bandeja warning_amber RD$260.00 RD$468.00 RD$3,068.00 Pintura acrílica verde, galón RD$1,250.00 RD$2,250.00 RD$14,750.00 2 líneas · 20 unidades history Ver versiones savings Anticipo RD$17,818.00 TOTAL DEL DOCUMENTO RD$0.00 TOTAL ABONADO RD$17,818.00 SALDO PENDIENTE 0 ABONOS Progreso de pago 0% add Registrar abono thumb_up Registrar aceptación account_balance Estado de cuenta savings Sin abonos registrados Registre el primer pago del cliente con «Registrar abono». calculate Resumen financiero Subtotal RD$15,100.00 Impuestos RD$2,718.00 TOTAL RD$17,818.00 handshake Condiciones comerciales Condición de pago handshake Términos y Condiciones assignment Se imprimen en la cotización y viajan a la factura al convertirla. Máximo 500 caracteres. sticky_note_2 Notas de la cotización Sin notas. info Estado actual expand_more Cancelar Guardar receipt_long Convertir a factura shopping_cart Convertir a orden de venta history Versiones e historial content_copy Duplicar"
+ },
+ "selectores_probados": {
+  "convertir": {
+   "sel": ".mat-mdc-menu-panel button:has-text('Convertir a factura')",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    878,
+    178,
+    272,
+    48
+   ],
+   "ok": true
+  }
+ },
+ "video": "fin",
+ "pantalla": "06-q6-mas",
+ "usuario": "rosa.almanzar",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790525379.42556,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525380.170939,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525384.3153074,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525387.8910522,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525391.534062,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525395.4340708,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525402.8833315,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

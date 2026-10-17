@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Seguridad · Qué es y cómo se organiza
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Bienvenida
+00:41  Los seis conceptos
+01:43  La consola
+02:39  Caso práctico: las cinco pestañas
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué resuelve el módulo de Seguridad: quién entra, qué puede hacer y qué cambió
+• Los seis conceptos: persona, rol, permiso, alcance, equipo y credencial de API
+• Cómo llegar a la consola de Seguridad y para qué sirve cada una de sus cinco pestañas
+• Qué hace el botón Nuevo y qué busca el buscador de la consola
+
+⚠️ ERRORES COMUNES
+• Dar permisos persona por persona en lugar de hacerlo con roles
+• Creer que meter a alguien en un equipo le da permisos: el equipo solo cuenta para el alcance «Equipo»
+• Buscar una pestaña que no aparece: sin su permiso, la pestaña no se muestra
+• Confundir la credencial de API con un usuario: es la llave de otro programa, no de una persona
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:37
+
+TRANSCRIPCIÓN
+============================================================
+Bienvenida a la serie de Seguridad de Germiva. Es para ti, que administras la empresa: aquí decides quién entra al sistema, qué puede hacer cada persona y cómo revisar lo que cambió. Toda la serie usa una empresa de demostración, Distribuidora Las Palmas, con personas y datos inventados: una vendedora, un encargado de almacén, una auditora y otros que irás conociendo. El módulo se abre desde la tarjeta Seguridad de tus módulos, aquí abajo, o desde el ícono del candado en la franja de la izquierda, que solo ve quien tiene algún permiso de Seguridad. Antes de entrar, veamos los seis conceptos que lo ordenan todo.
+Primero, la persona: quien entra al sistema con su propio usuario, como Ana, nuestra vendedora. Cada persona tiene uno o más roles. Un rol es un conjunto de permisos con nombre, como Vendedor o Contador: se lo asignas a las personas y todas reciben lo mismo. El permiso es la pieza más pequeña: une una cosa del sistema, que llamamos recurso, con una acción. Facturas más Crear es un permiso; Facturas más Ver es otro. El alcance dice sobre qué registros vale un permiso de ver: solo los que la persona creó, los de su equipo, o todos. El equipo agrupa personas, como Zona Este. Ojo: un equipo no da permisos; solo sirve para ese alcance de equipo. Y la credencial de API, o sea la llave de otro programa, deja que un sistema externo, como una tienda en línea, consulte o registre datos sin una persona detrás, con sus propios permisos. El consejo de oro: da los permisos a los roles, nunca persona por persona.
+Ahora sí, entro por el candado de la izquierda. Esta es la consola de Seguridad: una sola hoja con todo el módulo. Arriba, el título y la frase que lo resume: quién entra, qué puede hacer y qué cambió. Debajo están las cinco pestañas: Resumen, Personas, Roles y permisos, Integraciones y Auditoría. El número de cada pestaña es un conteo: nueve personas; en Roles y permisos, doce roles; y en Integraciones, una credencial. Cada pestaña exige su propio permiso; si alguien no lo tiene, esa pestaña ni aparece. A la derecha, el buscador encuentra personas por su nombre o su usuario; y si estás en Roles y permisos, busca roles. Y el botón Nuevo abre un menú para crear un usuario, un rol, un equipo o una integración de API. Lo cierro sin elegir nada: cada alta tiene su propio video.
+Hagamos un recorrido rápido siguiendo a Ana, la vendedora. En Personas está cada persona que entra a esta empresa. La busco por su nombre, y aquí la tengo, arriba de todo: Ana es una fila, con su rol, su último ingreso y su estado. En Roles y permisos abro su rol, Vendedor, que dice qué puede hacer ella y cualquiera que tenga ese rol. En Integraciones viven las credenciales de otros programas, como la vieja tienda en línea. Y en Auditoría queda cada ingreso y cada cambio, con quién y cuándo; arriba está mi propia entrada de hace un momento. Vuelvo al Resumen, que es la portada: cifras y asuntos por atender. En resumen: las personas reciben roles; los roles reúnen permisos; el alcance y los equipos deciden qué registros ve cada quien; y la auditoría lo comprueba todo. En los próximos videos vemos cada pestaña a fondo.

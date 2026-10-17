@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Con y sin permiso · Aprobar y el estado del documento
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Permiso y estado
+00:38  Con permiso: aprobar
+01:18  Sin permiso: aprobar
+02:19  Estado Aprobada: se puede convertir
+03:22  Estado Borrador: no se puede convertir
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué da el permiso de aprobar: el paso «Aprobada» de la cotización
+• Qué ve quien no tiene ese permiso: el paso existe pero no se puede pulsar
+• Por qué un botón puede no aparecer aunque tengas el permiso: el estado del documento también decide
+• Que las reglas de estado no se configuran en el rol: son del documento
+
+⚠️ ERRORES COMUNES
+• Dar el permiso de aprobar a quien arma las cotizaciones: nadie debería aprobar lo suyo sin revisión
+• Buscar «Convertir a factura» en una cotización en borrador: primero hay que aprobarla
+• Pensar que alguien perdió un permiso cuando lo que cambió es el estado del documento
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:09
+
+TRANSCRIPCIÓN
+============================================================
+En este video juntamos dos cosas que deciden lo que puedes hacer con un documento: el permiso y el estado. Aquí, la cotización uno, en Borrador. Carlos, el vendedor sénior, tiene el permiso Cotizaciones, Aprobar, y por eso puede aprobarla. Pero la acción Convertir a factura todavía está bloqueada: solo existe cuando la cotización ya está aprobada. Carlos la aprueba, y la cotización pasa a Aprobada: ahora sí se puede convertir en factura. El permiso dice qué acción existe; el estado del documento dice cuándo se puede usar.
+Vamos a hacerlo de verdad. Carlos abre Ventas, y luego Cotizaciones; se abre la lista, y contraigo el panel. Abro la cotización número uno, de Ana, con el ojo de su fila. Está en Borrador. En la barra de estados de arriba, pulso el paso Aprobada. El sistema pide confirmación, y avisa que la cotización dejará de ser editable. Pulso Aprobar. El sistema guarda el cambio de estado, y enseguida sale el aviso de éxito: Estado actualizado correctamente. Pulso Aceptar. La cotización uno ya está aprobada, y la aprobó quien tiene el permiso para hacerlo.
+Ahora la otra cara. Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro como Ana, la vendedora. Escribo su usuario, ana punto mejia, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que aprobar es un permiso aparte de crear y de editar. Ana puede crear y editar cotizaciones, pero su rol no tiene el permiso de aprobar: quien vende no aprueba sus propios presupuestos. Ya dentro, abro Ventas, y en su lista elijo Cotizaciones; se abre su lista, y contraigo el panel. Abro la número dos, que es suya y está en Borrador. Ella la puede editar; pero el paso Aprobada, aunque se ve, no está disponible: sale en gris. Si lo pulso, no pasa nada, y la cotización sigue en Borrador. La aprobación la da otra persona con ese permiso, como Carlos.
+Segunda regla: el estado del documento. Vuelvo a entrar como Carlos: abro el menú de mi usuario y pulso Cerrar sesión. En la pantalla de acceso escribo su usuario, carlos punto pimentel, todo en minúsculas y sin espacios; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que una cotización aprobada es la que ya pasó por el paso Aprobada, como hizo Carlos hace un momento. Carlos tiene el permiso de convertir una cotización en factura, y además el de aprobarla: es el vendedor con más experiencia. Ya dentro, abro Ventas, y en su lista elijo Cotizaciones; se abre la lista, y contraigo el panel. Abro otra cotización aprobada, la número seis: en la barra de estados, ya está aprobada. Arriba a la derecha, pulso Más acciones: ahí está Convertir a factura. No la pulso, porque crearía una factura de verdad. Cierro el menú.
+Ahora, con el mismo Carlos y el mismo permiso, vuelvo a la lista. Aquí está la número siete, que sigue en Borrador; la abro, y la barra de estados lo confirma. Arriba a la derecha, pulso otra vez Más acciones. Esta vez solo salen Versiones e historial y Duplicar: Convertir a factura no aparece. Carlos no perdió ningún permiso; lo que cambia es el estado de la cotización. Y esto no se configura en el rol: es la regla del documento. En resumen: el permiso dice qué acciones existen para cada persona, y el estado del documento dice cuándo se pueden usar. Si alguien no encuentra un botón, revisa las dos cosas: su rol y el estado del documento.

@@ -1,0 +1,53 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.01,
+   "clic_a_url_s": 6.26,
+   "clic_a_networkidle_s": 6.27,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "senior_cabecera": "Vendedor sénior\nHereda de Vendedor\n\nVendedor con experiencia: aprueba cotizaciones y las convierte en factura · 1 persona tiene este rol\n\ncontent_copy\nDuplicar\nedit\nEditar\nmore_vert",
+ "senior_meta": "MÓDULOS\n11 de 1103\nAdministración y control\nGeneral\n0/109\nEmpresa\n0/40\nUsuarios\n0/4\nSeguridad\n0/19\nAcceso API\n0/4\nVentas y facturación\nPunto de Venta\n0/36\nClientes y Proveedores\n1/33\nFacturación\n2/79\nFacturación Electrónica\n0/44\nCRM\n0/34\nIA del CRM\n0/2\nVentas\n0/42\nCotizaciones\n7/19\nÓrdenes de Venta\n0/8\nConduces\n0/9\nProformas\n0/3\nDescuentos y Promociones\n0/34\nVenta a Crédito\n0/41\nCompras e inventario\nProductos\n1/42\nInventario\n0/47\nInventario Avanzado\n0/8\nCompras\n0/38\nRequisiciones\n0/7\nCostos en D",
+ "opciones_padre": [
+  "Mensajero",
+  "Auditor (solo lectura)",
+  "Almacén",
+  "Vendedor sénior",
+  "Vendedor",
+  "Empleado Sistema",
+  "Recursos Humanos Sistema",
+  "Compras Sistema",
+  "Contador Sistema",
+  "Supervisor de Caja Sistema",
+  "Cajero Sistema",
+  "Admin Sistema"
+ ],
+ "aviso_herencia": "Crear Rol\nclose\nNombre\nDescripción\nHeredar permisos de otro rol\nRol padre\naccount_tree\nVendedor\ninfo\nEste rol heredará automáticamente los permisos de Vendedor y se mantendrá sincronizado con sus cambios. Podrás excluir permisos individuales desde el detalle del rol.\n\nCancelar\nCrear",
+ "hijo_exito": "check_circle\nOperación completada\nEl rol ha sido creado correctamente.\nAceptar",
+ "rec_cotiz_count": 1,
+ "crear_heredado_clase": "mat-mdc-tooltip-trigger rpe__act rpe__act--inherited",
+ "excluido_clase": "mat-mdc-tooltip-trigger rpe__act cdk-focused cdk-mouse-focused rpe__act--excluded rpe__act--changed",
+ "excluir_toast": [
+  "Permisos del rol actualizados exitosamente",
+  0.32
+ ],
+ "exclusiones_bd": [
+  [
+   "QUOTE_CREATE"
+  ]
+ ],
+ "editar_rol_hijo": "Editar Rol\nclose\nNombre\nDescripción\nHeredar permisos de otro rol\nRol padre\naccount_tree\nVendedor\ninfo\nEste rol heredará automáticamente los permisos de Vendedor y se mantendrá sincronizado con sus cambios. Podrás excluir permisos individuales desde el detalle del rol.\n\nCancelar\nActualizar",
+ "confirmar_eliminar": "help_outline Eliminar rol\n\n¿Está seguro de que desea eliminar el rol \"Vendedor en práctica\"? Esta acción no se puede deshacer.\n\nCancelar\nEliminar",
+ "eliminar_toast": [
+  "Rol eliminado exitosamente",
+  0.34,
+  "http://localhost:4200/security/roles?rol=96"
+ ],
+ "titulares": "PERSONA\nÚLTIMO INGRESO\nESTADO\nJC\nJosé Cabrera\njose.cabrera@germiva.demo\nHace 30 min\nActiva\nAM\nAna Mejía\nana.mejia@germiva.demo\nHace 31 min\nActiva\nHV\nHéctor Vargas\nhector.vargas@germiva.demo\nNunca\nActiva",
+ "historial_vendedor": "Cambió permisos\nrosa.almanzar\nHace 38 min\nProductos · Productos\n—\n→\nVer\nCotizaciones · Cotizaciones\n—\n→\nVer (Propios), Crear, Editar\nClientes y Proveedores · Socios\n—\n→\nVer\nCreó\nrosa.almanzar\nHace 38 min\nid\n—\n→\n77\nname\n—\n→\nVendedor\nactive\n—\n→\ntrue\ncanEdit\n—\n→\ntrue\ncanDelete\n—\n→\ntrue\nisInternal\n—\n→\nfalse\ndescription\n—\n→\nVende en la calle: cotiza a sus clientes y consulta el catálogo\nisAdminRole\n—\n→\nfalse\nisIntegrationRole\n—\n→\nfalse",
+ "admin_texto": "MÓDULOS\n1160 de 1160\nAdministración y control\nGeneral\n141/141\nEmpresa\n56/56\nUsuarios\n4/4\nSeguridad\n24/24\nAcceso API\n4/4\nMulti-Empresa\n16/16\nVentas y facturación\nPunto de Venta\n36/36\nClientes y Proveedores\n37/37\nFacturación\n79/79\nFacturación Electrónica\n44/44\nCRM\n34/34\nIA del CRM\n2/2\nVentas\n42/42\nCotizaciones\n19/19\nÓrdenes de Venta\n8/8\nConduces\n9/9\nProformas\n3/3\nDescuentos y Promociones\n34/34\nVenta a Crédito\n41/41\nCompras e inventario\nProductos\n42/42\nInventario\n47/47\nInventario Avanzado\n8/8\nCompr"
+}

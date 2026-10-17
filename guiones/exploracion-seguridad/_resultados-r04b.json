@@ -1,0 +1,60 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.02,
+   "clic_a_url_s": 6.34,
+   "clic_a_networkidle_s": 6.34,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "hint_verificando": [
+  "Con código de país. Habilita a esta persona a consultar la empresa por WhatsApp.",
+  "Mínimo 6 caracteres, mayúscula y número",
+  "Seleccione los roles que tendrá en esta empresa"
+ ],
+ "scrollers_dlg": [
+  [
+   "MAT-DIALOG-CONTENT",
+   "mat-mdc-dialog-content mdc-dialog__content dialog-body gm-de",
+   632,
+   514
+  ]
+ ],
+ "alta_s": 7.71,
+ "alta_dlg": "check_circle\nOperación completada\nEl usuario ha sido creado correctamente.\nAceptar",
+ "red_alta": [
+  {
+   "t": 1790525196.7560732,
+   "m": "POST",
+   "url": "user",
+   "st": 201,
+   "body": ""
+  }
+ ],
+ "cambiar_dlg": "Editar Usuario\nclose\nNombre(s)\nperson\nApellido(s)\nperson\nCorreo Electrónico\nemail\nNombre de Usuario\nalternate_email\nWhatsApp\nchat\nCon código de país. Habilita a esta persona a consultar la empresa por WhatsApp.\nCambiar la contraseña de este usuario\nContraseña\nvisibility_off\nRoles del Usuario\ngroup\nAgregue o quite roles. Debe conservar al menos uno.\nverified_user\n1 rol(es) asignado(s)\nclear_all\nLimpiar todo\nperson\nVendedor\ncancel\nEstado:\nActivo\nInactivo\nCancelar\nActualizar",
+ "confirm_en_editar": 0,
+ "clave_s": [
+  3.59,
+  "check_circle\nOperación completada\nEl usuario ha sido actualizado correctamente.\nAceptar"
+ ],
+ "conf_desactivar": "help_outline Desactivar usuario\n\n¿Desactivar a \"Julio Santana\"? No podrá iniciar sesión hasta que se active de nuevo.\n\nCancelar\nDesactivar",
+ "desactivar": [
+  "Usuario desactivado exitosamente",
+  3.42
+ ],
+ "activar": [
+  "Usuario activado exitosamente",
+  3.25
+ ],
+ "conf_eliminar": "help_outline Eliminar usuario\n\n¿Está seguro de que desea eliminar el usuario \"Julio Santana\"? Esta acción no se puede deshacer.\n\nCancelar\nEliminar",
+ "eliminar": [
+  "Usuario eliminado exitosamente",
+  6.3,
+  "http://localhost:4200/security/personas"
+ ],
+ "correo_existente": "Crear Usuario\nclose\nNombre(s)\nperson\nApellido(s)\nperson\nCorreo Electrónico\nemail\nNombre de Usuario\nalternate_email\nWhatsApp\nchat\nCon código de país. Habilita a esta persona a consultar la empresa por WhatsApp.\ninfo\nEste correo ya está registrado. Se vinculará el usuario existente a esta empresa sin modificar su contraseña.\nRoles del Usuario\ngroup\nSeleccione los roles que tendrá en esta empresa\nEstado:\nActivo\nInactivo\nCancelar\nGuardar",
+ "correo_eliminado": "Crear Usuario\nclose\nNombre(s)\nperson\nApellido(s)\nperson\nCorreo Electrónico\nemail\nNombre de Usuario\nalternate_email\nWhatsApp\nchat\nCon código de país. Habilita a esta persona a consultar la empresa por WhatsApp.\nrestore\nEste correo pertenece a un usuario eliminado. Se restaurará con los datos proporcionados.\nRoles del Usuario\ngroup\nSeleccione los roles que tendrá en esta empresa\nEstado:\nActivo\nInactivo\nCancelar\nGuardar"
+}

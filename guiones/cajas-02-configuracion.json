@@ -1,0 +1,374 @@
+{
+  "titulo": "Cajas · Denominaciones, políticas e impresora",
+  "_comentario": "Video 2 de la serie Cajas. Graba admin.progreso en DOS tandas: pasos 01–03 desde S0 (tut.py video), luego restaurar S2i y tut.py grabar <guion> --paso 04 + montar-video. Escribe: 01 la denominación «Veinte» (RD$20, Billete, orden 7, nace con company_id=43); 03 los umbrales de alerta 1,000 / 60,000 en cashier_config (= S1); 04 los campos de impresora de Caja Principal (0483/070b, USB). El paso 04 es autosuficiente (navegar + frase de apertura, R23e). «Detectar» se señala y NUNCA se pulsa (abre el selector WebUSB nativo). H-01: la cajera ve «Configurar impresora» pero no puede guardar; por eso la voz dice que lo hace un administrador y no se muestra el error. AVISOS justificados: primer paso sin button.panel-collapse (no existe en Cajas: riel fijo).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "admin.progreso",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador",
+      "veinte"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "USB": "u-ese-be",
+    "ID": "i-de",
+    "IP": "i-pe",
+    "0483": "cero-cuatro-ocho-tres",
+    "070b": "cero-siete-cero-be",
+    "CUPS": "cups"
+  },
+  "aprenderas": [
+    "Qué es una denominación y cómo agregar un billete o una moneda que falte",
+    "Qué regla controla cada bloque de Políticas: fondos, tolerancias, sesiones, aprobaciones, alertas y cuadre",
+    "Configurar las alertas de saldo bajo y de exceso de efectivo",
+    "Configurar la impresora de recibos del equipo donde está conectada"
+  ],
+  "errores_comunes": [
+    "Poner un orden de visualización que desordene la lista de billetes",
+    "Olvidar que la tolerancia se aplica a cada método de pago por separado, no al total",
+    "Activar el conteo ciego sin avisar a los cajeros: dejan de ver cuánto debería haber",
+    "Salir de Políticas sin pulsar «Guardar configuración»: los cambios no quedan",
+    "Pulsar «Detectar» en un equipo que no tiene la impresora conectada"
+  ],
+  "pasos": [
+    {
+      "id": "01-denominaciones",
+      "ruta": "Cajas › Configuración › Denominaciones",
+      "texto_pantalla": "Denominaciones · los billetes y monedas con que se cuenta el efectivo",
+      "navegar": "/cashier?section=cajas",
+      "acciones": [
+        {
+          "click": ".page-hero-actions button:has-text('Configuración')",
+          "al_decir": "Configuración"
+        },
+        {
+          "click": "nav.segmented--sub button.segmented__option:has-text('Denominaciones')",
+          "al_decir": "abro Denominaciones"
+        },
+        {
+          "resaltar": ".denom-list .gm-mini:has-text('Dos Mil') .gm-mini__main",
+          "durante_ms": 5000,
+          "al_decir": "cada billete"
+        },
+        {
+          "resaltar": ".denom-list .gm-grp:has-text('Billetes')",
+          "durante_ms": 3000,
+          "al_decir": "agrupadas"
+        },
+        {
+          "resaltar": ".denom-list .gm-mini:has-text('Cincuenta') .gm-mini__main",
+          "durante_ms": 2000,
+          "al_decir": "falta"
+        },
+        {
+          "click": "button:has-text('Nueva denominación')",
+          "al_decir": "Lo agrego"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(input[formcontrolname='nameCount'])",
+          "durante_ms": 2000,
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='nameCount']",
+            "texto": "Veinte"
+          },
+          "al_decir": "En Nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='valueCount']",
+            "texto": "20"
+          },
+          "al_decir": "en Valor"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-select[formcontrolname='currency'])",
+          "durante_ms": 3000,
+          "al_decir": "Divisa"
+        },
+        {
+          "click": "mat-dialog-container .type-seg button:has-text('Billete')",
+          "al_decir": "Marco el tipo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='sort']",
+            "texto": "7"
+          },
+          "al_decir": "Orden de visualización"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear denominación')",
+          "al_decir": "Pulso Crear"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3300,
+          "cursor": false
+        },
+        {
+          "resaltar": ".denom-list .gm-mini:has-text('Veinte') .gm-mini__main",
+          "durante_ms": 5000,
+          "al_decir": "al final"
+        }
+      ],
+      "narracion": "Este video reúne los ajustes que el administrador hace una sola vez. En Cajas pulso Configuración, arriba a la derecha, y abro Denominaciones. Una denominación es cada billete o moneda con que se cuenta el efectivo: la usan el conteo al abrir una caja, el conteo de cierre y las cajas en modo estricto. Están agrupadas en Billetes y Monedas, y ya vienen las del peso dominicano; pero falta el billete de veinte. Lo agrego con el botón de arriba. En Nombre escribo Veinte, como se lee en el billete; y en Valor, 20, que es lo que vale. La Divisa ya viene en peso dominicano. Marco el tipo Billete, y en Orden de visualización pongo un 7, que decide su lugar en la lista. Pulso Crear denominación. Sale el aviso de que se creó, y el billete de veinte ya aparece al final de los billetes.",
+      "capitulo": "Denominaciones",
+      "rotulo": "Denominaciones"
+    },
+    {
+      "id": "02-politicas-fondo-tolerancia",
+      "ruta": "Cajas › Configuración › Políticas",
+      "texto_pantalla": "Políticas · estaciones, fondo inicial, tolerancias y duración de las sesiones",
+      "acciones": [
+        {
+          "click": "nav.segmented--sub button.segmented__option:has-text('Políticas')",
+          "al_decir": "Políticas"
+        },
+        {
+          "resaltar": "section.policy-card:has(h4:has-text('Estaciones de trabajo'))",
+          "durante_ms": 8000,
+          "al_decir": "Estaciones de trabajo"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='defaultInitialCash'])",
+          "durante_ms": 6000,
+          "al_decir": "Fondo inicial por defecto"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='maxInitialCash'])",
+          "durante_ms": 2000,
+          "al_decir": "vacíos"
+        },
+        {
+          "resaltar": "section.policy-card:has(h4:has-text('Tolerancias de diferencia')) .gm-dialog-note",
+          "durante_ms": 5500,
+          "al_decir": "Tolerancias de diferencia"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='toleranceAmount'])",
+          "durante_ms": 4000,
+          "al_decir": "cincuenta pesos"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='maxConsecutiveDifferences'])",
+          "durante_ms": 6000,
+          "al_decir": "Diferencias consecutivas"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='maxSessionDurationMinutes'])",
+          "durante_ms": 4500,
+          "al_decir": "Control de sesiones"
+        },
+        {
+          "resaltar": "mat-checkbox[formcontrolname='allowOperationOnHolidays']",
+          "durante_ms": 4000,
+          "al_decir": "feriados"
+        }
+      ],
+      "narracion": "Ahora la sección Políticas: son las reglas que valen para todas las cajas de la empresa, repartidas en bloques. El primero, Estaciones de trabajo, está apagado: es el modo Flexible, en el que cada cajero abre su caja desde cualquier computadora, sin vincularla. Así lo dejamos. En Fondos y límites, el Fondo inicial por defecto es de cinco mil pesos: es el efectivo con que arranca cada turno, y ya aparece escrito al abrir la caja. El mínimo y el máximo quedan vacíos, sin límite. Luego vienen las Tolerancias de diferencia: cuánto puede faltar o sobrar al cuadrar sin que cuente como diferencia. El modo es Monto fijo, con cincuenta pesos, y se aplica a cada método de pago por separado. Diferencias consecutivas máximas, tres: si una caja cuadra fuera de tolerancia tres veces seguidas, se bloquea sola. En Control de sesiones, un turno dura como máximo setecientos veinte minutos, o sea doce horas; y en los días feriados no se abre caja.",
+      "capitulo": "Políticas: fondo y tolerancias",
+      "rotulo": "Políticas: fondo y tolerancias"
+    },
+    {
+      "id": "03-politicas-aprobaciones-cuadre",
+      "ruta": "Cajas › Configuración › Políticas",
+      "texto_pantalla": "Políticas · aprobaciones, umbrales de alerta y reglas del cuadre",
+      "acciones": [
+        {
+          "presionar": {
+            "sel": "input[formcontrolname='alertThresholdLow']",
+            "tecla": "Shift"
+          },
+          "al_decir": "el bloque"
+        },
+        {
+          "resaltar": "section.policy-card:has(h4:has-text('Aprobaciones')) .gm-dialog-note",
+          "durante_ms": 2500,
+          "al_decir": "Aprobaciones"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='maxWithdrawalWithoutApproval'])",
+          "durante_ms": 2800,
+          "al_decir": "cinco mil"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='maxDepositWithoutApproval'])",
+          "durante_ms": 4500,
+          "al_decir": "diez mil"
+        },
+        {
+          "resaltar": "mat-checkbox[formcontrolname='requireNotesForWithdrawal']",
+          "durante_ms": 2300,
+          "al_decir": "una nota"
+        },
+        {
+          "resaltar": "section.policy-card:has(h4:has-text('Umbrales de alerta')) .gm-dialog-note",
+          "durante_ms": 3000,
+          "al_decir": "Umbrales de alerta"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='alertThresholdLow']",
+            "texto": "1000"
+          },
+          "al_decir": "saldo bajo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='alertThresholdHigh']",
+            "texto": "60000"
+          },
+          "al_decir": "exceso de efectivo"
+        },
+        {
+          "resaltar": "mat-checkbox[formcontrolname='requireReconciliationForClose']",
+          "durante_ms": 3500,
+          "al_decir": "Cuadre de caja"
+        },
+        {
+          "resaltar": "mat-checkbox[formcontrolname='requireJustificationForDifference']",
+          "durante_ms": 1800,
+          "al_decir": "justificación"
+        },
+        {
+          "resaltar": "section.policy-card:has(h4:has-text('Cuadre de caja')) .toggle-cell:has(mat-checkbox[formcontrolname='blindCount'])",
+          "durante_ms": 6500,
+          "al_decir": "Conteo ciego"
+        },
+        {
+          "presionar": {
+            "sel": "mat-checkbox[formcontrolname='blindCount'] input",
+            "tecla": "End"
+          },
+          "al_decir": "La ventana"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='reconciliationConfirmationHours'])",
+          "durante_ms": 2800,
+          "al_decir": "reabrir"
+        },
+        {
+          "click": "button[type=submit]:has-text('Guardar configuración')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3300,
+          "cursor": false
+        }
+      ],
+      "narracion": "Sigo con el bloque Aprobaciones. Una salida de efectivo de más de cinco mil pesos, o una entrada de más de diez mil, queda esperando a que un supervisor la apruebe antes de tocar el saldo. Y toda salida exige una nota que la explique. Después, los Umbrales de alerta, que vienen vacíos. En Alerta por saldo bajo escribo mil: si una caja queda con menos, el sistema avisa. En Alerta por exceso de efectivo pongo sesenta mil, para retirar dinero a tiempo cuando se acumula. Por último, Cuadre de caja: no se cierra un turno sin su cuadre, y toda diferencia pide una justificación por escrito. En cambio, el Conteo ciego lo dejamos apagado; si lo activas, el cajero cuenta sin ver cuánto debería haber, y el esperado solo lo ve el supervisor. La ventana para reabrir una sesión ya cerrada es de veinticuatro horas. Pulso Guardar configuración, abajo a la derecha, y el aviso confirma que la configuración quedó guardada.",
+      "capitulo": "Políticas: aprobaciones y cuadre",
+      "rotulo": "Políticas: aprobaciones y cuadre"
+    },
+    {
+      "id": "04-impresora",
+      "ruta": "Cajas › Mi caja › Configurar impresora",
+      "texto_pantalla": "Impresora de esta estación · recibo, gaveta y datos de la impresora USB",
+      "navegar": "/cashier?section=caja",
+      "acciones": [
+        {
+          "resaltar": ".session-bar",
+          "durante_ms": 5000,
+          "al_decir": "Estoy en Mi caja"
+        },
+        {
+          "click": "button[aria-label='Ajustes de este equipo']",
+          "al_decir": "tres puntos"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has(mat-icon:text-is('print'))",
+          "al_decir": "Configurar impresora"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-checkbox[formcontrolname='autoPrintReceipt']",
+          "durante_ms": 4000,
+          "al_decir": "Imprimir recibo"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-checkbox[formcontrolname='autoOpenDrawer']",
+          "durante_ms": 3500,
+          "al_decir": "Abrir gaveta"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Detectar')",
+          "durante_ms": 6000,
+          "al_decir": "Detectar"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='printerVendorId']",
+            "texto": "0483"
+          },
+          "al_decir": "fabricante"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='printerProductId']",
+            "texto": "070b"
+          },
+          "al_decir": "del modelo"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-select[formcontrolname='printerConnectionType'])",
+          "durante_ms": 7000,
+          "al_decir": "Tipo de conexión"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3300,
+          "cursor": false
+        }
+      ],
+      "narracion": "Queda un ajuste que no es de la empresa sino de cada equipo: la impresora de recibos. Estoy en Mi caja, con mi turno abierto en Caja Principal, porque se configura en la computadora que tiene la impresora conectada y con una sesión de caja abierta; y lo hace un administrador. Los ajustes de este equipo están en los tres puntos, a la derecha de Cerrar caja; abro Configurar impresora. Arriba hay dos casillas. Imprimir recibo al facturar, ya marcada, saca el recibo al cobrar una factura; y Abrir gaveta al facturar abre la gaveta del dinero en ese momento. El botón Detectar busca la impresora conectada por USB, o sea por cable, y llena los datos solo; pide permiso al navegador, así que aquí no lo pulso y los escribo a mano. El Vendor ID es el código del fabricante: 0483. Y el Product ID, por su parte, es el del modelo: 070b. Los dos vienen en la etiqueta o en el manual de la impresora. Tipo de conexión: USB Directo, la más común; las otras son puerto serial, red por IP y CUPS, para equipos Linux o Mac. Pulso Guardar, y el aviso confirma que la impresora quedó configurada.",
+      "capitulo": "Configurar la impresora",
+      "rotulo": "Configurar la impresora"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

@@ -1,0 +1,51 @@
+{
+ "logins": [
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 6.04,
+   "clic_a_networkidle_s": 6.04,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 6.83,
+   "clic_a_url_s": 6.07,
+   "clic_a_networkidle_s": 6.07,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "marta.guzman",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.01,
+   "clic_a_url_s": 6.52,
+   "clic_a_networkidle_s": 6.52,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "ana_productos": [
+  "1 – 10 de 25"
+ ],
+ "flyout_Inventario": "NO EXISTE",
+ "ana_nav_interna": {
+  "url": "http://localhost:4200/home",
+  "dlg": "",
+  "toasts": [],
+  "red": []
+ },
+ "ana_recarga": {
+  "url": "http://localhost:4200/home",
+  "dlg": "",
+  "toasts": []
+ },
+ "ana_url": [
+  "http://localhost:4200/home",
+  "No tienes permiso para ver «Productos». Solicita el acceso al administrador de tu empresa."
+ ],
+ "rastro": "Cambió permisos\nDomingo, 27 de septiembre de 2026, 11:58\nclose\nRoles #77\npor rosa.almanzar\nQUÉ CAMBIÓ\nProductos · Productos\nVer\n→\n—\nSOLICITUD\nIP\n::1\nOrigen\nCliente de API\nEvento\nPERMISSIONS_CHANGED\nSolicitud\n50e2bbdf-ac5c-49aa-8852-700ddd2cf23e\nHistorial del registro →\nVer a rosa.almanzar →"
+}

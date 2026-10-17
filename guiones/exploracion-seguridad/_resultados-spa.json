@@ -1,0 +1,58 @@
+{
+ "logins": [
+  {
+   "usuario": "pedro.nunez",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.13,
+   "clic_a_url_s": 5.99,
+   "clic_a_networkidle_s": 5.99,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.05,
+   "clic_a_url_s": 6.26,
+   "clic_a_networkidle_s": 6.26,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.08,
+   "clic_a_url_s": 6.23,
+   "clic_a_networkidle_s": 6.23,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "pedro_spa": [
+  "http://localhost:4200/home",
+  "No tienes permiso para ver «Cotizaciones». Solicita el acceso al administrador de tu empresa.",
+  0.27
+ ],
+ "ana_q4_spa": {
+  "url": "http://localhost:4200/sales/quotes",
+  "dlg": "",
+  "toasts": [],
+  "err": [
+   [
+    403,
+    "v1/quotes/4",
+    "{\"message\":\"Tu rol solo te permite ver y trabajar las cotizaciones que creaste tú. Pide acceso a tu administrador si nec"
+   ]
+  ]
+ },
+ "audit_spa": {
+  "url": "http://localhost:4200/security/auditoria?persona=ana.mejia&registro=auth",
+  "total": "calendar_today\nÚltimos 7 días\nperson\nfilter_list\nAcción\ndescription\nlan\nfilter_alt_off\nLimpiar\n5 eventos\nHORA\nQUIÉN\nACCIÓN\nREGISTRO\nIP\nHoy · domingo, 27 de sept",
+  "filas": [
+   "HORA\nQUIÉN\nACCIÓN\nREGISTRO\nIP",
+   "12:08\nana.mejia\nAcceso\nSesión #7944\n::1",
+   "11:10\nana.mejia\nAcceso\nSesión #7944\n::1",
+   "11:07\nana.mejia\nAcceso\nSesión #7944\n::1"
+  ]
+ }
+}

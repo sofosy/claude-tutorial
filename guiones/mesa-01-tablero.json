@@ -1,0 +1,95 @@
+{
+  "titulo": "Mesa de Ayuda · El tablero de casos",
+  "_comentario": "Serie Mesa de Ayuda, video 1 (2026-10-06). Empresa demo 50 (empresa cliente: el tablero sale sin las pestañas de la empresa principal), Rosa (Admin). Siembra (seeds/crm/sembrar.mjs): 5 casos — Factura con ITBIS (Abierto, Alta, Rosa), Entrega incompleta de varillas (En proceso, Urgente, Rosa), Devolución de taladro (Abierto, SIN responsable), Cambio de dirección (Esperando al cliente, Ana), Consulta de precios (Resuelto, Rosa). El tablero abre en «Míos». En esta rama: sin permiso de editar la tarjeta no se arrastra; resolver arrastrando pide la resolución.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/home"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": ["germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar", "Ana", "Mejía", "TKT-2026", "Mirador", "Doña Luz", "Barahona", "La Esquina"],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "pronunciacion": { "ITBIS": "itebís" },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Qué es un caso y cómo se lee el tablero de la Mesa de Ayuda",
+    "Ver tus casos, los del equipo y los que nadie ha tomado",
+    "Saber cuáles están por vencer y cuáles ya vencieron",
+    "Mover un caso de estado arrastrando su tarjeta"
+  ],
+  "errores_comunes": [
+    "Dejar casos sin responsable: el indicador «Sin asignar» lo avisa",
+    "Trabajar un caso sin moverlo a «En proceso»: el equipo cree que nadie lo atiende",
+    "Ignorar la fecha de vencimiento: un caso vencido baja la salud del cliente"
+  ],
+  "pasos": [
+    {
+      "id": "01-tablero",
+      "capitulo": "Qué es la Mesa de Ayuda",
+      "rotulo": "La Mesa de Ayuda",
+      "ruta": "Mesa de Ayuda › Casos",
+      "texto_pantalla": "Casos · una columna por estado, una tarjeta por caso",
+      "narracion": "Un caso es un problema o una solicitud de un cliente que alguien tiene que resolver: una factura mal hecha, una entrega incompleta, una devolución. La Mesa de Ayuda es donde se registran y se siguen hasta cerrarlos. Entro por el menú de la izquierda. Cada columna es un estado del caso: Abiertos, En proceso, esperando al cliente o a un tercero, y Resueltos. Cada tarjeta es un caso. Arriba, su número, y a la derecha cuánto falta para que venza: el plazo depende de la prioridad, y un urgente vence en horas. Debajo, el asunto, la prioridad y las iniciales de quien lo atiende. Y arriba del tablero, los indicadores: los casos abiertos, los que no tienen responsable, los vencidos, los resueltos hoy y el tiempo de la primera respuesta.",
+      "pronunciacion": { "ITBIS": "itebís" },
+      "acciones": [
+        { "resaltar": "nav.module-rail [aria-label='Mesa de Ayuda']", "durante_ms": 4000, "al_decir": "una factura mal hecha" },
+        { "click": "nav.module-rail [aria-label='Mesa de Ayuda']", "al_decir": "Entro por el menú" },
+        { "resaltar": "section.column[aria-label='Abiertos'] .column__head", "durante_ms": 2500, "al_decir": "Cada columna" },
+        { "resaltar": "section.column[aria-label='En proceso'] .column__head", "durante_ms": 3000, "cursor": false, "al_decir": "En proceso" },
+        { "resaltar": ".column__item:has-text('Factura con ITBIS')", "durante_ms": 2500, "al_decir": "Cada tarjeta" },
+        { "resaltar": ".column__item:has-text('Entrega incompleta') .hd-card__number", "durante_ms": 2200, "al_decir": "su número" },
+        { "resaltar": ".column__item:has-text('Entrega incompleta') [class*=due], .column__item:has-text('Entrega incompleta') [class*=sla]", "durante_ms": 5000, "al_decir": "cuánto falta" },
+        { "resaltar": ".column__item:has-text('Entrega incompleta') [class*=priority]", "durante_ms": 3000, "al_decir": "Debajo, el asunto" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(1)", "durante_ms": 1800, "al_decir": "los casos abiertos" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(2)", "durante_ms": 2000, "cursor": false, "al_decir": "no tienen responsable" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(3)", "durante_ms": 1800, "cursor": false, "al_decir": "los vencidos" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(5)", "durante_ms": 3500, "al_decir": "la primera respuesta" }
+      ]
+    },
+    {
+      "id": "02-filtros",
+      "capitulo": "Míos, de todos y sin asignar",
+      "rotulo": "Filtrar casos",
+      "ruta": "Mesa de Ayuda › Casos › Asignación",
+      "texto_pantalla": "Asignación · tus casos, los del equipo o los que nadie tomó",
+      "narracion": "El tablero abre con tus casos: el filtro Asignación dice Míos. Lo abro. Con Todos ves los de todo el equipo. Lo elijo, y aparecen la devolución del taladro, que no tiene responsable, y el cambio de dirección que lleva Ana, esperando al cliente. Al lado filtras por estado o por prioridad, y en Filtros, por cliente, tipo o fechas. Para buscar, escribe el número del caso, una palabra del asunto o de la descripción. Y con estos dos botones cambias entre el tablero y la vista de lista.",
+      "acciones": [
+        { "resaltar": "app-filter-pill:has-text('Asignación')", "durante_ms": 2500, "al_decir": "el filtro Asignación" },
+        { "click": "button.pill:has-text('Asignación')", "al_decir": "Lo abro" },
+        { "resaltar": ".gm-filter-pill-menu button:has-text('Todos')", "durante_ms": 2500, "cursor": false, "al_decir": "Con Todos" },
+        { "click": ".gm-filter-pill-menu button:has-text('Todos')", "al_decir": "Lo elijo" },
+        { "resaltar": ".column__item:has-text('Devolución de taladro')", "durante_ms": 3500, "al_decir": "la devolución" },
+        { "resaltar": ".column__item:has-text('Cambio de dirección')", "durante_ms": 3500, "al_decir": "el cambio de dirección" },
+        { "resaltar": "app-filter-pill:has-text('Prioridad')", "durante_ms": 2500, "al_decir": "por estado o por prioridad" },
+        { "resaltar": "app-filter-popover", "durante_ms": 3000, "al_decir": "en Filtros" },
+        { "resaltar": ".gm-search", "durante_ms": 4000, "al_decir": "Para buscar" },
+        { "resaltar": ".hd-view", "durante_ms": 4000, "al_decir": "estos dos botones" }
+      ]
+    },
+    {
+      "id": "03-mover",
+      "capitulo": "Mover un caso de estado",
+      "rotulo": "Mover un caso",
+      "ruta": "Mesa de Ayuda › Casos",
+      "texto_pantalla": "Arrastra la tarjeta al estado en que va el caso",
+      "narracion": "Cuando empiezas a trabajar un caso, muévelo para que el equipo lo sepa. Tomo la factura con el ITBIS mal calculado y la arrastro de Abiertos a En proceso. El cambio se guarda solo y queda en la historia del caso. Si la sueltas en Resueltos, el sistema te pide escribir cómo se resolvió, para que el próximo que reciba un caso igual sepa qué hacer. Para trabajar el caso por dentro, abre su tarjeta: lo vemos en el próximo video.",
+      "acciones": [
+        { "resaltar": ".column__item:has-text('Factura con ITBIS')", "durante_ms": 3500, "al_decir": "Cuando empiezas" },
+        { "arrastrar": { "desde": ".column__item:has-text('Factura con ITBIS')", "hasta": "section.column[aria-label='En proceso'] .column__list" }, "al_decir": "la arrastro" },
+        { "resaltar": "section.column[aria-label='En proceso'] .column__item:has-text('Factura con ITBIS')", "durante_ms": 4500, "al_decir": "se guarda solo" },
+        { "resaltar": "section.column[aria-label='Resueltos'] .column__head", "durante_ms": 6000, "al_decir": "en Resueltos" },
+        { "resaltar": "section.column[aria-label='En proceso'] .column__item:has-text('Factura con ITBIS')", "durante_ms": 4000, "al_decir": "abre su tarjeta" }
+      ]
+    }
+  ]
+}

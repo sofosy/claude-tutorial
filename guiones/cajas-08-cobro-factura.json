@@ -1,0 +1,359 @@
+{
+  "_comentario": "Video 8 de la serie Cajas (autor video 8, 2026-09-23). Graba admin.progreso (la cajera no tiene Ventas en su menú y al abrir una factura le sale «Acceso Denegado», H-16) partiendo de S8: plan 15 en la empresa 43 (con el plan 2 abrir la factura lanza «Módulo No Disponible», H-17), factura 1000000001 de CONTADO en BORRADOR (Constructora Los Pinos, 10 cemento × 450 + 20 varillas × 150 = 7,500 + ITBIS 1,350 = RD$8,850.00, B01) y sesión del admin abierta en Caja Principal con fondo 5,000. Termina: factura PAGADA con NCF B0100000001, recibo RCP-2026-000001 con 2 líneas (efectivo 5,000 + tarjeta Visa 3,850), efectivo esperado 10,000. Restaurar entre tomas: node seeds/cajas/restaurar.mjs S8; DESPUÉS de grabar: node seeds/cajas/plan-s8.mjs off (S0…S6 no guardan el plan). AVISO justificado de revisar.mjs: el primer paso no contrae el menú porque arranca en Cajas (riel fijo, sin panel); el panel de Ventas se contrae en el paso 02, en cuanto se presenta la factura.",
+  "titulo": "Cajas · Cobrar una factura con pago combinado",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "admin.progreso",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador",
+      "constructora",
+      "los pinos",
+      "ramón",
+      "almonte",
+      "4821",
+      "738214",
+      "1000000001",
+      "b0100000001",
+      "rcp-2026-000001"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "ITBIS": "itebís",
+    "NCF": "ene-ce-efe",
+    "DGII": "de-ge-i-i",
+    "B01": "be cero uno"
+  },
+  "aprenderas": [
+    "Cómo se conecta la caja con las ventas: el cobro de una factura entra a la caja abierta de quien cobra.",
+    "Abrir una factura en borrador y cobrarla con «Guardar y Cobrar», que además le asigna su NCF.",
+    "Cobrar una misma factura con dos métodos a la vez: una parte en efectivo y otra con tarjeta.",
+    "Ver el resultado en la factura: estado «Pagada», resumen de pagos y un recibo con una línea por método.",
+    "Leer el efecto en Mi caja y en el cuadre: el efectivo sube el esperado de la gaveta y la tarjeta se cuadra aparte."
+  ],
+  "errores_comunes": [
+    "Cobrar sin tener tu caja abierta: si la empresa no exige caja, el cobro queda como «Pago directo (sin caja)» y no aparece en ningún turno ni en ningún cuadre.",
+    "Esperar que la tarjeta sume al efectivo de la gaveta: no suma; se cuadra aparte, contra el cierre del datáfono.",
+    "Pulsar «Guardar y Cobrar» antes de que «Falta» llegue a cero: la factura queda pagada solo en parte.",
+    "Anotar mal los últimos cuatro dígitos o el código de autorización: son lo que permite encontrar la transacción en el comprobante del datáfono."
+  ],
+  "pasos": [
+    {
+      "id": "01-caja-y-factura",
+      "ruta": "Cajas › Mi caja  →  Ventas › Facturas",
+      "texto_pantalla": "Tu caja abierta · la factura en borrador",
+      "navegar": "/cashier?section=caja",
+      "narracion": "Así se conecta la caja con las ventas: cuando cobras una factura, el dinero entra a la caja que tienes abierta en ese momento. Por eso, antes de cobrar, abre tu caja. Esta es Mi caja, mi turno en curso: la barra dice que la Caja Principal está abierta a mi nombre. En el «Desglose del efectivo», los cobros en efectivo están en cero, y el efectivo esperado es solo el fondo: cinco mil pesos. Ahora voy a Ventas, en el menú de la izquierda, y abro «Facturas». Esta es la lista de facturas de venta, y cada fila es una factura. La de Constructora Los Pinos está en «Borrador»: la preparó el vendedor y todavía no tiene su comprobante fiscal. Vale ocho mil ochocientos cincuenta pesos. Pulso el lápiz, «Editar», para abrirla.",
+      "acciones": [
+        {
+          "resaltar": ".session-bar",
+          "durante_ms": 4500,
+          "al_decir": "caja que tienes abierta"
+        },
+        {
+          "resaltar": ".session-bar",
+          "durante_ms": 3500,
+          "al_decir": "Caja Principal está abierta"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Cobros en efectivo')",
+          "durante_ms": 3500,
+          "al_decir": "los cobros en efectivo"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Efectivo esperado')",
+          "durante_ms": 3500,
+          "al_decir": "solo el fondo"
+        },
+        {
+          "click": ".module-rail button[aria-label='Ventas']",
+          "al_decir": "voy a Ventas"
+        },
+        {
+          "click": "a[href='/sales/invoices']",
+          "al_decir": "abro Facturas"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Constructora Los Pinos') td:nth-child(3)",
+          "durante_ms": 3000,
+          "al_decir": "cada fila es una"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Constructora Los Pinos') td:nth-child(6)",
+          "durante_ms": 4000,
+          "al_decir": "está en Borrador"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Constructora Los Pinos') td:nth-child(5)",
+          "durante_ms": 3000,
+          "al_decir": "Vale ocho mil"
+        },
+        {
+          "click": "table tbody tr:has-text('Constructora Los Pinos') button[aria-label='Editar']",
+          "al_decir": "Pulso el lápiz"
+        }
+      ],
+      "capitulo": "Tu caja y la factura",
+      "rotulo": "Tu caja y la factura"
+    },
+    {
+      "id": "02-cobro-combinado",
+      "ruta": "Ventas › Facturas › Editar factura › Cobro",
+      "texto_pantalla": "Cobrar la factura con efectivo y tarjeta",
+      "narracion": "Esta es la factura. Contraigo el panel del menú para verla completa. Arriba están el cliente y el tipo de comprobante: B01, de crédito fiscal, porque el cliente es una empresa que va a deducir la compra. El NCF es el número de comprobante fiscal que exige la DGII, la oficina de impuestos, y se le asigna al cobrar. En las líneas van diez fundas de cemento y veinte varillas, y el ITBIS, que es el impuesto a las ventas, suma mil trescientos cincuenta pesos. Más abajo, en la sección «Cobro», fíjate en la etiqueta verde: Caja Principal y el número de mi sesión. Ahí va a entrar este dinero. El cliente paga una parte en efectivo y otra con tarjeta, así que marco «Pago combinado». Con efectivo elegido, en el monto escribo cinco mil, que es lo que me entrega en billetes. Como me da justo esa cantidad, pulso «Exacto», y el vuelto queda en cero. Luego pulso «Agregar al recibo». Arriba queda la ficha del efectivo, y a la derecha, lo que falta: tres mil ochocientos cincuenta. Ahora elijo tarjeta: el monto ya viene con el resto. Anoto los últimos cuatro dígitos de la tarjeta, que salen en el plástico y en el voucher. En «Tipo de tarjeta» elijo Visa. Y escribo el código de autorización que imprime el datáfono; con él se encuentra la transacción si hay un reclamo. Lo agrego también al recibo. La línea de abajo confirma que la factura queda saldada; el formulario de arriba se vacía, listo para otro método, pero ya no hace falta. Pulso «Guardar y Cobrar». El sistema guarda la factura, le pone su NCF y registra los dos pagos en mi caja, y entonces sale el aviso «Cobro procesado». Pulso «Aceptar».",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Contraigo el panel"
+        },
+        {
+          "resaltar": "mat-form-field:has([formcontrolname='ncfType'])",
+          "durante_ms": 6000,
+          "al_decir": "tipo de comprobante"
+        },
+        {
+          "resaltar": ".products-services-section",
+          "durante_ms": 4500,
+          "al_decir": "En las líneas"
+        },
+        {
+          "resaltar": ".summary-panel",
+          "durante_ms": 3500,
+          "al_decir": "suma mil trescientos"
+        },
+        {
+          "resaltar": ".ipp-session-chip",
+          "durante_ms": 5000,
+          "al_decir": "etiqueta verde"
+        },
+        {
+          "click": "mat-checkbox.ipp-split-toggle",
+          "al_decir": "marco Pago combinado"
+        },
+        {
+          "escribir": {
+            "sel": ".inline-payment-panel input[formcontrolname='amount']",
+            "texto": "5000"
+          },
+          "al_decir": "escribo cinco mil"
+        },
+        {
+          "click": ".inline-payment-panel button.ipp-exact-btn",
+          "al_decir": "pulso Exacto"
+        },
+        {
+          "click": "button.ipp-add-tender__btn",
+          "al_decir": "Luego pulso Agregar"
+        },
+        {
+          "resaltar": ".ipp-tender:has-text('Efectivo')",
+          "durante_ms": 2000,
+          "al_decir": "ficha del efectivo"
+        },
+        {
+          "resaltar": ".ipp-tenders__totals",
+          "durante_ms": 3500,
+          "al_decir": "lo que falta"
+        },
+        {
+          "click": ".gm-doc-seg__opt:has-text('Tarjeta')",
+          "al_decir": "elijo tarjeta"
+        },
+        {
+          "escribir": {
+            "sel": ".inline-payment-panel input[formcontrolname='cardNumber']",
+            "texto": "4821"
+          },
+          "al_decir": "últimos cuatro dígitos"
+        },
+        {
+          "click": ".inline-payment-panel mat-select[formcontrolname='cardType']",
+          "al_decir": "Tipo de tarjeta"
+        },
+        {
+          "click": "mat-option:has-text('Visa')",
+          "al_decir": "elijo Visa"
+        },
+        {
+          "escribir": {
+            "sel": ".inline-payment-panel input[formcontrolname='authorizationCode']",
+            "texto": "738214"
+          },
+          "al_decir": "código de autorización"
+        },
+        {
+          "click": "button.ipp-add-tender__btn",
+          "al_decir": "Lo agrego también"
+        },
+        {
+          "resaltar": ".ipp-outcome",
+          "durante_ms": 3500,
+          "al_decir": "queda saldada"
+        },
+        {
+          "click": "button:has-text('Guardar y Cobrar')",
+          "al_decir": "Pulso Guardar y Cobrar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Pulso Aceptar"
+        }
+      ],
+      "capitulo": "Cobrar con pago combinado",
+      "rotulo": "Cobrar con pago combinado"
+    },
+    {
+      "id": "03-factura-pagada",
+      "ruta": "Ventas › Facturas › Ver factura",
+      "texto_pantalla": "La factura: Pagada, con su NCF y un recibo de dos líneas",
+      "narracion": "Al aceptar, la factura se vuelve a cargar, ya cobrada. Arriba ya dice «Pagada», y ahora sí tiene su NCF asignado. Más abajo, en el «Resumen de Pagos», el total pagado son ocho mil ochocientos cincuenta pesos, y no queda nada pendiente. Abro «Versiones e historial» y luego la pestaña «Pagos». Hay un solo recibo, con dos líneas: cinco mil pesos en efectivo y tres mil ochocientos cincuenta con tarjeta. Cada método queda registrado por separado, y eso es justo lo que lee la caja.",
+      "acciones": [
+        {
+          "resaltar": "h1.page-hero-title",
+          "durante_ms": 2500,
+          "al_decir": "Arriba ya dice Pagada"
+        },
+        {
+          "resaltar": ":text('B0100000001')",
+          "durante_ms": 1900,
+          "al_decir": "NCF asignado"
+        },
+        {
+          "resaltar": ".invoice-total-block",
+          "durante_ms": 5000,
+          "al_decir": "Resumen de Pagos"
+        },
+        {
+          "click": "button:has-text('Versiones e historial')",
+          "al_decir": "Abro Versiones"
+        },
+        {
+          "click": ".mat-mdc-tab:has-text('Pagos')",
+          "al_decir": "la pestaña Pagos"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active table tbody tr:nth-child(1) td:nth-child(1)",
+          "durante_ms": 2500,
+          "al_decir": "un solo recibo"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active table tbody tr:nth-child(1) td:nth-child(3)",
+          "durante_ms": 2500,
+          "al_decir": "pesos en efectivo"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active table tbody tr:nth-child(2) td:nth-child(3)",
+          "durante_ms": 1900,
+          "al_decir": "con tarjeta"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active table tbody tr:nth-child(2) td:nth-child(6)",
+          "durante_ms": 3000,
+          "al_decir": "por separado"
+        }
+      ],
+      "capitulo": "La factura pagada",
+      "rotulo": "La factura pagada"
+    },
+    {
+      "id": "04-caja-y-cuadre",
+      "ruta": "Cajas › Mi caja › Cuadre",
+      "texto_pantalla": "El efectivo sube la gaveta; la tarjeta se cuadra aparte",
+      "narracion": "Ahora, la otra mitad de la historia. Vuelvo a Cajas, a Mi caja. En el desglose, los cobros en efectivo subieron a cinco mil pesos, y el efectivo esperado ahora es diez mil: el fondo más el efectivo de la factura. ¿Y la tarjeta? Aquí no suma, porque ese dinero no está en la gaveta: lo deposita el banco. La tarjeta se controla en el cuadre, y lo veo con el botón «Cuadre». Esta es la pantalla de quien cierra la caja. «Cobros del turno» suma todo lo cobrado, ocho mil ochocientos cincuenta, sin importar el método. Y abajo, cada método se cuadra por separado: en efectivo se esperan diez mil pesos, que se cuentan en la gaveta; con tarjeta, tres mil ochocientos cincuenta, que se comparan con el cierre del datáfono. Hoy no lo registro, así que pulso «Volver». Una sola factura, dos métodos, y cada peso queda en su sitio: en la factura, en tu caja y en el cuadre.",
+      "acciones": [
+        {
+          "click": ".module-rail a[href='/cashier']",
+          "al_decir": "Vuelvo a Cajas"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Cobros en efectivo')",
+          "durante_ms": 2800,
+          "al_decir": "subieron a cinco mil"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Efectivo esperado')",
+          "durante_ms": 4000,
+          "al_decir": "ahora es diez mil"
+        },
+        {
+          "resaltar": "section.breakdown-panel",
+          "durante_ms": 5000,
+          "al_decir": "Aquí no suma"
+        },
+        {
+          "click": "button.quick-action--reconcile",
+          "al_decir": "botón Cuadre"
+        },
+        {
+          "resaltar": ".gm-fig:has-text('Cobros del turno')",
+          "durante_ms": 4500,
+          "al_decir": "Cobros del turno"
+        },
+        {
+          "resaltar": ".detail-row:has(.method-label:has-text('Efectivo'))",
+          "durante_ms": 4000,
+          "al_decir": "en efectivo se esperan"
+        },
+        {
+          "resaltar": ".detail-row:has(.method-label:has-text('Tarjeta'))",
+          "durante_ms": 5000,
+          "al_decir": "con tarjeta, tres mil"
+        },
+        {
+          "click": "button:has-text('Volver')",
+          "al_decir": "pulso Volver"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Efectivo esperado')",
+          "durante_ms": 4000,
+          "al_decir": "cada peso"
+        }
+      ],
+      "capitulo": "Cómo se refleja en la caja",
+      "rotulo": "Cómo se refleja en la caja"
+    }
+  ]
+}

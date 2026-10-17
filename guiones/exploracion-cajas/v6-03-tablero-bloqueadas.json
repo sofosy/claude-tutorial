@@ -1,0 +1,686 @@
+{
+ "url": "/cashier?section=cajas&estado=bloqueadas",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "page-hero-title",
+   "texto": "Cajas",
+   "caja": [
+    85,
+    118,
+    994,
+    25
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "page-hero-subtitle",
+   "texto": "Estado de cada caja: ábrela, continúa tu turno o revisa quién la opera.",
+   "caja": [
+    85,
+    145,
+    720,
+    18
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    70,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    923,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications_active",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications_active')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "CRcarmen rosariocarmen.rosario@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de carmen rosario",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1034,
+    10,
+    230,
+    40
+   ],
+   "sel": "button[aria-label='Cuenta de carmen rosario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    243,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Configuración",
+   "icono": "tune",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1095,
+    123,
+    158,
+    36
+   ],
+   "sel": "button:has-text('Configuración')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cajas",
+   "icono": "storefront",
+   "aria": "",
+   "id": "cashier-hub-tab-cajas",
+   "clases": [
+    "segmented__option",
+    "segmented__option--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ],
+   "sel": "#cashier-hub-tab-cajas",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Mi caja",
+   "icono": "point_of_sale",
+   "aria": "",
+   "id": "cashier-hub-tab-caja",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ],
+   "sel": "#cashier-hub-tab-caja",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Por aprobar 1",
+   "icono": "approval",
+   "aria": "",
+   "id": "cashier-hub-tab-aprobaciones",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    284,
+    180,
+    165,
+    34
+   ],
+   "sel": "#cashier-hub-tab-aprobaciones",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Historial",
+   "icono": "history",
+   "aria": "",
+   "id": "cashier-hub-tab-historial",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    451,
+    180,
+    107,
+    34
+   ],
+   "sel": "#cashier-hub-tab-historial",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Análisis",
+   "icono": "insights",
+   "aria": "",
+   "id": "cashier-hub-tab-analisis",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    560,
+    180,
+    104,
+    34
+   ],
+   "sel": "#cashier-hub-tab-analisis",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Todas 3",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    457,
+    245,
+    97,
+    32
+   ],
+   "sel": "button:has-text('Todas 3')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Abiertas 1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    558,
+    245,
+    111,
+    32
+   ],
+   "sel": "button:has-text('Abiertas 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cerradas 2",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    672,
+    245,
+    114,
+    32
+   ],
+   "sel": "button:has-text('Cerradas 2')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Bloqueadas 1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option",
+    "segmented__option--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    790,
+    245,
+    130,
+    32
+   ],
+   "sel": "button:has-text('Bloqueadas 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "gm-icon-btn",
+    "board-card__menu"
+   ],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    325,
+    315,
+    34,
+    34
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Desbloquear",
+   "icono": "lock_open",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    204,
+    484,
+    147,
+    36
+   ],
+   "sel": "button:has-text('Desbloquear')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Buscar",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Nombre, código, ubicación...",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    236,
+    360,
+    52
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Buscar'))",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "storefront Cajas",
+   "seleccionada": true,
+   "id": "cashier-hub-tab-cajas",
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ]
+  },
+  {
+   "texto": "point_of_sale Mi caja",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-caja",
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ]
+  },
+  {
+   "texto": "approval Por aprobar 1",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-aprobaciones",
+   "caja": [
+    284,
+    180,
+    165,
+    34
+   ]
+  },
+  {
+   "texto": "history Historial",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-historial",
+   "caja": [
+    451,
+    180,
+    107,
+    34
+   ]
+  },
+  {
+   "texto": "insights Análisis",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-analisis",
+   "caja": [
+    560,
+    180,
+    104,
+    34
+   ]
+  },
+  {
+   "texto": "Todas 3",
+   "seleccionada": false,
+   "id": "",
+   "caja": [
+    457,
+    245,
+    97,
+    32
+   ]
+  },
+  {
+   "texto": "Abiertas 1",
+   "seleccionada": false,
+   "id": "",
+   "caja": [
+    558,
+    245,
+    111,
+    32
+   ]
+  },
+  {
+   "texto": "Cerradas 2",
+   "seleccionada": false,
+   "id": "",
+   "caja": [
+    672,
+    245,
+    114,
+    32
+   ]
+  },
+  {
+   "texto": "Bloqueadas 1",
+   "seleccionada": true,
+   "id": "",
+   "caja": [
+    790,
+    245,
+    130,
+    32
+   ]
+  }
+ ],
+ "tarjetas": [
+  {
+   "aria": "Caja Caja Sucursal Santiago",
+   "texto": "Caja Sucursal Santiago CAJA-SAN block Bloqueada more_vert Ubicación Sucursal Santiago — Av. Estrella Sadhalá Última actividad 22/09/2026 17:40 lock_open Desbloquear",
+   "caja": [
+    85,
+    304,
+    283,
+    229
+   ]
+  }
+ ],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  }
+ ],
+ "video": "v6",
+ "pantalla": "03-tablero-bloqueadas",
+ "notas": "",
+ "toasts_vistos_hasta_ahora": [
+  "Cuadre aprobado exitosamente",
+  "Arqueo sorpresa registrado exitosamente. La sesión sigue abierta."
+ ]
+}

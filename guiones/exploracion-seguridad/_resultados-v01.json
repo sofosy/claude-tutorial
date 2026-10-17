@@ -1,0 +1,47 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.05,
+   "clic_a_url_s": 5.94,
+   "clic_a_networkidle_s": 5.94,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "rail_seguridad_caja_rosa": {
+  "x": 7,
+  "y": 716,
+  "width": 40,
+  "height": 40
+ },
+ "rail_seguridad_caja_tras_scroll": {
+  "x": 7,
+  "y": 563,
+  "width": 40,
+  "height": 40
+ },
+ "menu_seguridad_aterriza": "http://localhost:4200/security/resumen",
+ "resumen_texto": "Personas con acceso\n9\n8 activas en 30 días\nAdministradores\n1\nAcceso total a la empresa\nSin ningún rol\n1\nEntran y no ven ningún módulo\nCredenciales de API\n1\n1 sin uso en 60 días\nCambios en 7 días\n649\n73 de seguridad\nRequiere atención\n4 asuntos\n1 persona sin ningún rol\nInician sesión pero no ven ningún módulo.\nLuisa Féliz\nAsignar rol →\n1 credencial de API sin uso\nSin llamadas en 60 días. Revócala si ya no se usa.\nTienda en línea anterior\nRevisar →\n1 persona nunca inició sesión\nComprueba su correo o desactiva la cuenta si ya no la usa.\nHéctor Vargas\nRevisar →\n1 rol sin permisos\nAsignarlos no da acceso a nada.\nMensajero\nConfigurar →\nActividad reciente\nActualizado hace un momento\nVer bitácora →\nCUÁNDO\nQUIÉN\nACCIÓN\nREGISTRO\nIP\nHace un momento\nrosa.almanzar\nAcceso\nSesión #7943\n::1\nHace 26 min\npedro.nunez\nAcceso\nSesión #7947\n::1\nHace 26 min\nmarta.guzman\nAcceso\nSesión #7948\n::1\nHace 26 min\ncarlos.pimentel\nAcceso\nSesión #7946\n::1\nHace 26 min\njose.cabrera\nAcceso\nSesión #7945\n::1\nHace 26 min\nana.mejia\nAcceso\nSesión #7944\n::1\nHace 26 min\nrosa.almanzar\nAcceso\nSesión #7943\n::1\nHace 27 min\nrosa.almanzar\nActualizó\nRoles #79\n::1\nHace 27 min\nrosa.almanzar\nCreó\nPermisos por rol #11034\n::1\nHace 27 min\nrosa.almanzar\nActualizó\nUsuarios #7951\n::1",
+ "vuelta_atras_url": "http://localhost:4200/security/resumen",
+ "errores": [
+  {
+   "paso": "v01-fila",
+   "error": "Locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\".sec-ov__row:has-text('Cambió permisos')\").first\n"
+  }
+ ],
+ "filas_actividad": [
+  "CUÁNDO\nQUIÉN\nACCIÓN\nREGISTRO\nIP",
+  "Hace un momento\nrosa.almanzar\nAcceso\nSesión #7943\n::1",
+  "Hace 26 min\npedro.nunez\nAcceso\nSesión #7947\n::1",
+  "Hace 27 min\nmarta.guzman\nAcceso\nSesión #7948\n::1",
+  "Hace 27 min\ncarlos.pimentel\nAcceso\nSesión #7946\n::1",
+  "Hace 27 min\njose.cabrera\nAcceso\nSesión #7945\n::1",
+  "Hace 27 min\nana.mejia\nAcceso\nSesión #7944\n::1",
+  "Hace 27 min\nrosa.almanzar\nAcceso\nSesión #7943\n::1",
+  "Hace 27 min\nrosa.almanzar\nActualizó\nRoles #79\n::1",
+  "Hace 27 min\nrosa.almanzar\nCreó\nPermisos por rol #11034\n::1",
+  "Hace 27 min\nrosa.almanzar\nActualizó\nUsuarios #7951\n::1"
+ ]
+}

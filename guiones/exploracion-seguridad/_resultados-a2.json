@@ -1,0 +1,36 @@
+{
+ "logins": [
+  {
+   "usuario": "marta.guzman",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.13,
+   "clic_a_url_s": 7.28,
+   "clic_a_networkidle_s": 7.28,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A2_rail": {
+  "count": 1,
+  "caja": {
+   "x": 9.5,
+   "y": 243,
+   "width": 40,
+   "height": 40
+  }
+ },
+ "A2_menu": {
+  "url": "http://localhost:4200/security/roles",
+  "denied": 0,
+  "pestanas": [
+   "Roles y permisos",
+   "Auditoría"
+  ]
+ },
+ "A2_url_resumen": {
+  "url": "http://localhost:4200/security/resumen",
+  "denied": [
+   "lock\n\nNo tiene permiso para ver «Resumen». Solicite el acceso al administrador de la empresa."
+  ]
+ }
+}

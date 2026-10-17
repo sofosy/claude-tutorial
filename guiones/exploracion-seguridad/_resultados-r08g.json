@@ -1,0 +1,73 @@
+{
+ "logins": [
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.06,
+   "clic_a_url_s": 5.89,
+   "clic_a_networkidle_s": 5.89,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.07,
+   "clic_a_url_s": 5.96,
+   "clic_a_networkidle_s": 5.96,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "rail_antes": [
+  "Inicio /home",
+  "Ventas ",
+  "Inventario /inventory/product/list",
+  "Calendario /agenda/calendar",
+  "Configuración /agenda/settings",
+  "Cerrar sesión "
+ ],
+ "rail_sin_recargar": [
+  "Inicio /home",
+  "Ventas ",
+  "Inventario /inventory/product/list",
+  "Calendario /agenda/calendar",
+  "Configuración /agenda/settings",
+  "Cerrar sesión "
+ ],
+ "clic_sin_recargar": {
+  "url": "http://localhost:4200/inventory/product/list",
+  "dlg": "warning\nAcceso Denegado\nNo tiene el permiso requerido para acceder a este recurso: \"Productos\". Solicite acceso a su administrador.\nEntendido",
+  "toasts": [],
+  "err": [
+   [
+    403,
+    "v1/product?groupVariants=true&active=true&page=1&limit=10&orderBy=createdAt&orderDirection=DESC"
+   ],
+   [
+    403,
+    "v1/taxes?page=1&limit=15"
+   ]
+  ],
+  "filas": 0
+ },
+ "tras_recarga": {
+  "url": "http://localhost:4200/inventory/product/list",
+  "rail": [
+   "Inicio /home",
+   "Ventas ",
+   "Calendario /agenda/calendar",
+   "Configuración /agenda/settings",
+   "Cerrar sesión "
+  ],
+  "dlg": "warning\nAcceso Denegado\nNo tiene el permiso requerido para acceder a este recurso: \"Productos\". Solicite acceso a su administrador.\nEntendido",
+  "filas": 0
+ },
+ "rail_reentrando": [
+  "Inicio /home",
+  "Ventas ",
+  "Calendario /agenda/calendar",
+  "Configuración /agenda/settings",
+  "Cerrar sesión "
+ ]
+}

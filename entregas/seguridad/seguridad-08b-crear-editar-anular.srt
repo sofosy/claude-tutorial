@@ -1,0 +1,243 @@
+1
+00:00:03,097 --> 00:00:07,355
+Entra Ana, la vendedora, y en este video vemos los permisos de acción:
+
+2
+00:00:07,397 --> 00:00:09,263
+crear, editar y anular.
+
+3
+00:00:09,908 --> 00:00:12,583
+Primero con quien los tiene, después con quien no.
+
+4
+00:00:13,228 --> 00:00:16,496
+Desde el Inicio abro Ventas, y luego Cotizaciones.
+
+5
+00:00:17,143 --> 00:00:18,283
+Se abre la lista;
+
+6
+00:00:18,374 --> 00:00:21,388
+contraigo el panel del menú para ver la tabla completa.
+
+7
+00:00:22,021 --> 00:00:24,189
+Esta es la lista de cotizaciones de Ana:
+
+8
+00:00:24,315 --> 00:00:26,798
+cada fila es un presupuesto para un cliente.
+
+9
+00:00:27,443 --> 00:00:30,108
+Arriba a la derecha está el botón Crear Cotización:
+
+10
+00:00:30,198 --> 00:00:33,936
+aparece porque su rol tiene el permiso Cotizaciones, Crear.
+
+11
+00:00:34,570 --> 00:00:38,236
+En cada fila, los tres puntos de la derecha abren Más acciones;
+
+12
+00:00:38,350 --> 00:00:42,753
+lo pulso en la de Colmado La Esquina, y ahí está Duplicar, que también es crear:
+
+13
+00:00:42,890 --> 00:00:45,289
+hace una cotización nueva copiando esta.
+
+14
+00:00:45,923 --> 00:00:47,004
+Cierro el menú.
+
+15
+00:00:47,637 --> 00:00:51,473
+Con ese mismo permiso, Ana puede empezar una cotización desde cero.
+
+16
+00:00:52,811 --> 00:00:57,070
+Abro esa misma cotización, la número dos, con el ojo de su fila.
+
+17
+00:00:57,701 --> 00:01:01,391
+El título dice Editar Cotización, y abajo está el botón Guardar:
+
+18
+00:01:01,542 --> 00:01:05,414
+Ana puede cambiarla porque tiene el permiso Cotizaciones, Editar.
+
+19
+00:01:06,046 --> 00:01:09,810
+Arriba, la barra de estados muestra por dónde pasa la cotización.
+
+20
+00:01:10,456 --> 00:01:13,215
+En cotizaciones, anular se llama cancelar:
+
+21
+00:01:13,341 --> 00:01:15,751
+el paso Cancelada está disponible para Ana,
+
+22
+00:01:15,757 --> 00:01:18,299
+porque lo cubre ese mismo permiso de editar.
+
+23
+00:01:18,933 --> 00:01:22,490
+No lo pulso, porque esta cotización la usamos después.
+
+24
+00:01:23,137 --> 00:01:24,519
+Hago un cambio de verdad:
+
+25
+00:01:24,597 --> 00:01:28,337
+en la primera línea, la del bombillo, cambio la cantidad a quince;
+
+26
+00:01:28,378 --> 00:01:30,245
+el total se recalcula solo.
+
+27
+00:01:30,890 --> 00:01:33,263
+Y pulso Guardar, abajo a la derecha.
+
+28
+00:01:33,897 --> 00:01:38,252
+El sistema confirma, y la cotización queda guardada con la cantidad nueva.
+
+29
+00:01:39,605 --> 00:01:42,933
+Ahora la misma lista con alguien que no tiene esos permisos.
+
+30
+00:01:43,576 --> 00:01:44,236
+Salgo:
+
+31
+00:01:44,326 --> 00:01:48,500
+abro el menú de mi usuario, arriba a la derecha, pulso Cerrar sesión,
+
+32
+00:01:48,612 --> 00:01:50,612
+y entro como Marta, la auditora.
+
+33
+00:01:51,246 --> 00:01:54,743
+Escribo su usuario, marta punto guzman, en minúsculas;
+
+34
+00:01:54,820 --> 00:01:58,596
+luego su clave, que en pantalla se ve con puntos para que nadie la lea;
+
+35
+00:01:58,722 --> 00:02:00,165
+y pulso Iniciar sesión;
+
+36
+00:02:00,231 --> 00:02:03,620
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+37
+00:02:04,265 --> 00:02:06,700
+Marta tiene el permiso de ver cotizaciones,
+
+38
+00:02:06,826 --> 00:02:09,176
+pero no el de crearlas ni el de editarlas:
+
+39
+00:02:09,325 --> 00:02:12,725
+su rol es de solo lectura, para revisar sin cambiar nada.
+
+40
+00:02:13,372 --> 00:02:17,737
+Ya dentro, abro Ventas, igual que antes, y dentro Cotizaciones;
+
+41
+00:02:17,816 --> 00:02:19,212
+y contraigo el panel.
+
+42
+00:02:19,856 --> 00:02:22,774
+Ella ve las ocho de la empresa, porque revisa todo.
+
+43
+00:02:23,420 --> 00:02:26,095
+Pero arriba ya no está el botón Crear Cotización.
+
+44
+00:02:26,729 --> 00:02:29,586
+Y en cada fila solo queda el ojo, para abrir:
+
+45
+00:02:29,699 --> 00:02:31,905
+no hay tres puntos, ni Duplicar.
+
+46
+00:02:32,550 --> 00:02:34,997
+Lo que el rol no permite no sale en gris:
+
+47
+00:02:35,074 --> 00:02:35,963
+desaparece.
+
+48
+00:02:37,309 --> 00:02:38,898
+Ahora vamos al detalle.
+
+49
+00:02:39,542 --> 00:02:42,737
+Marta abre la misma cotización, la número dos.
+
+50
+00:02:43,382 --> 00:02:46,989
+Ahora el título dice solo Cotización, sin la palabra Editar:
+
+51
+00:02:47,054 --> 00:02:50,177
+la ve completa, pero ningún campo se puede cambiar.
+
+52
+00:02:50,822 --> 00:02:54,826
+En la barra de estados, el paso Cancelada sale en gris, apagado;
+
+53
+00:02:54,915 --> 00:02:56,481
+para Ana estaba en azul.
+
+54
+00:02:57,126 --> 00:02:58,751
+Y abajo solo queda Volver:
+
+55
+00:02:58,866 --> 00:02:59,947
+no hay Guardar.
+
+56
+00:03:00,593 --> 00:03:01,433
+En resumen:
+
+57
+00:03:01,498 --> 00:03:04,477
+ver, crear y editar son permisos distintos.
+
+58
+00:03:05,122 --> 00:03:06,891
+Con ver, se consulta.
+
+59
+00:03:07,537 --> 00:03:10,419
+Con crear aparecen Crear Cotización y Duplicar.
+
+60
+00:03:11,064 --> 00:03:15,201
+Con editar, el botón Guardar y la opción de cancelar, que es anular.
+
+61
+00:03:15,846 --> 00:03:19,307
+Y lo que el rol no tiene, no aparece o no se puede pulsar.

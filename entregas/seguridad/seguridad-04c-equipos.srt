@@ -1,0 +1,283 @@
+1
+00:00:03,097 --> 00:00:06,027
+Un equipo es un grupo de personas que trabajan juntas,
+
+2
+00:00:06,044 --> 00:00:08,696
+por ejemplo los vendedores de una misma zona.
+
+3
+00:00:09,329 --> 00:00:13,839
+Los equipos están en la pestaña Personas, a la izquierda, debajo de las vistas;
+
+4
+00:00:14,002 --> 00:00:18,876
+esta empresa tiene uno solo, y a su lado dice cuántas personas lo forman, en gris.
+
+5
+00:00:19,521 --> 00:00:21,001
+Ahora pulso Zona Este:
+
+6
+00:00:21,115 --> 00:00:24,576
+la lista se queda con sus miembros, que son dos personas.
+
+7
+00:00:25,222 --> 00:00:26,943
+Arriba, José Cabrera;
+
+8
+00:00:27,021 --> 00:00:28,864
+y debajo, Ana Mejía.
+
+9
+00:00:29,510 --> 00:00:30,554
+¿Para qué sirve?
+
+10
+00:00:31,187 --> 00:00:32,414
+Para una sola cosa:
+
+11
+00:00:32,564 --> 00:00:35,543
+cuando un rol deja ver cotizaciones con el alcance Equipo,
+
+12
+00:00:35,633 --> 00:00:38,780
+cada vendedor ve las suyas y las de sus compañeros de equipo.
+
+13
+00:00:39,412 --> 00:00:41,992
+Pero ojo, un equipo no da permisos.
+
+14
+00:00:42,637 --> 00:00:45,072
+Lo que alguien puede hacer lo deciden sus roles;
+
+15
+00:00:45,125 --> 00:00:47,439
+el equipo solo decide qué registros ve.
+
+16
+00:00:48,085 --> 00:00:50,954
+En la lista, el equipo sale al lado de su correo,
+
+17
+00:00:51,067 --> 00:00:54,335
+para saber de un vistazo a qué equipo pertenece cada quien.
+
+18
+00:00:55,686 --> 00:00:58,652
+Ahora creo uno nuevo para los vendedores del norte.
+
+19
+00:00:59,295 --> 00:01:01,682
+Junto al título Equipos está el botón de sumar;
+
+20
+00:01:01,795 --> 00:01:04,399
+lo pulso y se abre el formulario Nuevo Equipo.
+
+21
+00:01:05,031 --> 00:01:08,698
+Esto mismo está en el botón Nuevo, arriba, en la opción Equipo.
+
+22
+00:01:09,331 --> 00:01:13,227
+En Nombre escribo Zona Norte, un nombre corto que todos reconozcan.
+
+23
+00:01:13,873 --> 00:01:16,006
+Y en la Descripción, para qué es:
+
+24
+00:01:16,070 --> 00:01:18,420
+vendedores de Santiago y Puerto Plata.
+
+25
+00:01:19,054 --> 00:01:21,246
+Fíjate que aquí no se eligen miembros:
+
+26
+00:01:21,361 --> 00:01:23,022
+eso se hace desde la lista.
+
+27
+00:01:23,656 --> 00:01:26,753
+Pulso Guardar, y sale el aviso Operación completada:
+
+28
+00:01:26,831 --> 00:01:28,481
+el equipo ha sido creado.
+
+29
+00:01:29,115 --> 00:01:33,444
+Acepto, y Zona Norte ya aparece en el riel, todavía vacío.
+
+30
+00:01:34,787 --> 00:01:36,811
+Los miembros se agregan desde la lista.
+
+31
+00:01:37,444 --> 00:01:39,081
+Primero vuelvo a Todas.
+
+32
+00:01:39,725 --> 00:01:42,039
+Cada fila tiene una casilla a la izquierda,
+
+33
+00:01:42,141 --> 00:01:44,902
+y la casilla de arriba marca todas de una vez.
+
+34
+00:01:45,546 --> 00:01:48,996
+Marco a Carlos, que va a cubrir el norte, y a Héctor.
+
+35
+00:01:49,629 --> 00:01:53,367
+Arriba de la lista aparece una barra que dice cuántas personas marqué,
+
+36
+00:01:53,433 --> 00:01:54,647
+con sus acciones.
+
+37
+00:01:55,293 --> 00:01:59,237
+Si te equivocas, Limpiar quita todas las marcas y empiezas de nuevo.
+
+38
+00:01:59,870 --> 00:02:04,817
+Ahora pulso Agregar a equipo, se abre la lista de equipos, y elijo Zona Norte.
+
+39
+00:02:05,462 --> 00:02:07,269
+El aviso confirma que se agregaron,
+
+40
+00:02:07,370 --> 00:02:10,735
+y en la lista Carlos ya lleva Zona Norte al lado de su correo;
+
+41
+00:02:10,788 --> 00:02:11,846
+Héctor también.
+
+42
+00:02:12,491 --> 00:02:15,783
+Y en el riel, Zona Norte ya dice dos personas.
+
+43
+00:02:17,129 --> 00:02:19,346
+Para quitar a alguien, abro el equipo.
+
+44
+00:02:19,978 --> 00:02:21,094
+Abro Zona Norte:
+
+45
+00:02:21,149 --> 00:02:23,294
+al final Héctor no va a cubrir el norte,
+
+46
+00:02:23,420 --> 00:02:26,409
+así que marco su casilla y pulso Quitar del equipo.
+
+47
+00:02:27,043 --> 00:02:27,823
+No pregunta:
+
+48
+00:02:27,973 --> 00:02:30,830
+sale el aviso, y en el equipo queda Carlos.
+
+49
+00:02:31,474 --> 00:02:35,830
+Arriba a la derecha, Editar equipo abre el mismo formulario con sus datos:
+
+50
+00:02:35,896 --> 00:02:39,537
+cambio la descripción, porque Puerto Plata lo cubre otra persona.
+
+51
+00:02:40,170 --> 00:02:43,584
+Si cierras con cambios sin guardar, te pregunta antes.
+
+52
+00:02:44,229 --> 00:02:48,716
+Pulso Actualizar, y el aviso dice que el equipo se ha actualizado correctamente.
+
+53
+00:02:49,362 --> 00:02:50,504
+Pulso Aceptar.
+
+54
+00:02:51,137 --> 00:02:55,057
+Y en la misma barra, a su derecha, la papelera elimina el equipo;
+
+55
+00:02:55,194 --> 00:02:57,992
+pide confirmar, porque no se puede deshacer.
+
+56
+00:02:58,637 --> 00:03:00,189
+Confirmo con Eliminar.
+
+57
+00:03:00,835 --> 00:03:03,391
+Las personas no se borran ni pierden permisos:
+
+58
+00:03:03,516 --> 00:03:05,444
+solo dejan de estar agrupadas.
+
+59
+00:03:06,088 --> 00:03:08,197
+En el riel queda solo Zona Este.
+
+60
+00:03:09,524 --> 00:03:13,239
+Por último, cómo se ve la consola cuando no queda ningún equipo.
+
+61
+00:03:13,870 --> 00:03:17,210
+Para mostrarlo, abro Zona Este y pulso la papelera.
+
+62
+00:03:17,844 --> 00:03:21,884
+La confirmación trae el nombre del equipo, para no borrar el que no es.
+
+63
+00:03:22,530 --> 00:03:24,554
+Confirmo otra vez con Eliminar.
+
+64
+00:03:25,199 --> 00:03:30,170
+Sale el aviso, y debajo de Equipos, el riel ahora dice Sin equipos todavía.
+
+65
+00:03:30,815 --> 00:03:34,783
+El botón de sumar sigue ahí, para crear el primero cuando haga falta.
+
+66
+00:03:35,428 --> 00:03:39,264
+Ana y José siguen en la lista, con sus mismos roles y permisos:
+
+67
+00:03:39,354 --> 00:03:41,305
+solo dejaron de estar agrupados.
+
+68
+00:03:41,950 --> 00:03:43,044
+Un caso práctico:
+
+69
+00:03:43,134 --> 00:03:47,066
+si mañana quieres que los vendedores del norte vean las cotizaciones entre ellos,
+
+70
+00:03:47,107 --> 00:03:50,472
+los agrupas en un equipo y en su rol pones el alcance Equipo.
+
+71
+00:03:51,105 --> 00:03:53,333
+Eso lo vemos en el video del alcance.

@@ -1,0 +1,319 @@
+1
+00:00:03,097 --> 00:00:06,535
+En este video cambiamos un permiso en vivo y seguimos su rastro.
+
+2
+00:00:07,179 --> 00:00:08,937
+Entra Ana, la vendedora.
+
+3
+00:00:09,582 --> 00:00:12,644
+En su menú, Inventario la lleva directo a Productos;
+
+4
+00:00:12,746 --> 00:00:13,549
+lo pulso.
+
+5
+00:00:14,183 --> 00:00:16,290
+Esta es la lista de productos de la empresa:
+
+6
+00:00:16,405 --> 00:00:18,332
+Ana la necesita para cotizar.
+
+7
+00:00:18,966 --> 00:00:21,231
+Al pie dice uno a diez de veinticinco:
+
+8
+00:00:21,344 --> 00:00:22,487
+los ve todos.
+
+9
+00:00:23,132 --> 00:00:27,365
+Llega aquí gracias al permiso Productos, Ver, de su rol Vendedor.
+
+10
+00:00:28,000 --> 00:00:31,170
+Ahora la administradora le va a quitar ese permiso al rol.
+
+11
+00:00:32,527 --> 00:00:33,549
+Cambio de persona:
+
+12
+00:00:33,652 --> 00:00:37,740
+abro el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa,
+
+13
+00:00:37,758 --> 00:00:38,948
+la administradora.
+
+14
+00:00:39,579 --> 00:00:44,126
+En la pantalla de acceso escribo su usuario, rosa punto almanzar, en minúsculas;
+
+15
+00:00:44,216 --> 00:00:47,049
+luego su clave, con puntos para que nadie la lea;
+
+16
+00:00:47,176 --> 00:00:48,631
+y pulso Iniciar sesión;
+
+17
+00:00:48,698 --> 00:00:52,097
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+18
+00:00:52,743 --> 00:00:56,265
+Mientras entra, recuerda que Ana sigue con su sesión abierta.
+
+19
+00:00:56,911 --> 00:00:59,525
+El cambio se hace en el rol, no en la persona,
+
+20
+00:00:59,652 --> 00:01:02,423
+así que les llegará a todos los vendedores a la vez.
+
+21
+00:01:03,070 --> 00:01:08,897
+Ya dentro, en el menú, abajo, abro Seguridad, y luego la pestaña Roles y permisos.
+
+22
+00:01:09,543 --> 00:01:11,121
+Elijo el rol Vendedor.
+
+23
+00:01:11,753 --> 00:01:14,091
+En la columna de módulos busco Productos;
+
+24
+00:01:14,156 --> 00:01:19,212
+en el recurso Productos, el permiso Ver está concedido, con su marca de concedido.
+
+25
+00:01:19,844 --> 00:01:22,218
+Lo pulso, y queda sin conceder.
+
+26
+00:01:22,853 --> 00:01:24,405
+La barra de guardado dice:
+
+27
+00:01:24,471 --> 00:01:27,677
+un cambio sin guardar, y a cuántas personas afecta.
+
+28
+00:01:28,323 --> 00:01:29,925
+Pulso Guardar cambios.
+
+29
+00:01:30,569 --> 00:01:33,753
+Sale el aviso de que los permisos del rol se actualizaron.
+
+30
+00:01:34,399 --> 00:01:38,692
+Desde este momento, el servidor ya no le entrega productos a quien los veía solo
+
+31
+00:01:38,504 --> 00:01:39,804
+gracias a este rol.
+
+32
+00:01:41,147 --> 00:01:43,087
+Ahora vuelvo a entrar como Ana.
+
+33
+00:01:43,718 --> 00:01:46,479
+Abro el menú de mi usuario y pulso Cerrar sesión;
+
+34
+00:01:46,556 --> 00:01:51,019
+en la pantalla de acceso escribo su usuario, ana punto mejia, en minúsculas;
+
+35
+00:01:51,097 --> 00:01:53,954
+luego su clave, con puntos para que nadie la lea;
+
+36
+00:01:54,092 --> 00:01:55,645
+y pulso Iniciar sesión;
+
+37
+00:01:55,614 --> 00:01:59,087
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+38
+00:01:59,733 --> 00:02:04,002
+Mientras entra, ten en cuenta que al rol de Ana solo le cambiamos los productos.
+
+39
+00:02:04,648 --> 00:02:07,094
+Si Ana hubiera seguido con Productos abierto,
+
+40
+00:02:07,172 --> 00:02:09,752
+su siguiente consulta ya habría sido rechazada,
+
+41
+00:02:09,853 --> 00:02:12,734
+porque el servidor revisa el permiso en cada operación;
+
+42
+00:02:12,812 --> 00:02:16,600
+y su menú se habría puesto al día solo, a más tardar en medio minuto,
+
+43
+00:02:16,725 --> 00:02:19,243
+al volver a la ventana o cambiar de pantalla.
+
+44
+00:02:19,877 --> 00:02:23,133
+Aquí, como hay un solo navegador, entra de nuevo.
+
+45
+00:02:23,778 --> 00:02:24,727
+Y aquí está:
+
+46
+00:02:24,793 --> 00:02:26,986
+en su menú ya no aparece Inventario.
+
+47
+00:02:27,618 --> 00:02:31,634
+Solo le quedan Inicio, Ventas, Calendario y Configuración.
+
+48
+00:02:32,976 --> 00:02:35,906
+¿Y si escribe la dirección de Productos en el navegador?
+
+49
+00:02:36,549 --> 00:02:37,292
+Pruebo.
+
+50
+00:02:37,926 --> 00:02:40,445
+El sistema la devuelve al Inicio con el aviso:
+
+51
+00:02:40,547 --> 00:02:42,703
+No tienes permiso para ver Productos.
+
+52
+00:02:43,349 --> 00:02:46,266
+Solicita el acceso al administrador de tu empresa.
+
+53
+00:02:46,912 --> 00:02:50,820
+El cambio de Rosa ya vale para ella, por el menú y por la dirección.
+
+54
+00:02:52,185 --> 00:02:53,847
+Por último, el rastro.
+
+55
+00:02:54,490 --> 00:02:56,804
+Salgo y entro como Marta, la auditora:
+
+56
+00:02:56,930 --> 00:02:59,763
+abro el menú de mi usuario, pulso Cerrar sesión;
+
+57
+00:02:59,829 --> 00:03:03,314
+en la pantalla de acceso escribo su usuario, marta punto guzman,
+
+58
+00:03:03,416 --> 00:03:05,343
+todo en minúsculas y sin espacios;
+
+59
+00:03:05,420 --> 00:03:08,278
+luego su clave, con puntos para que nadie la lea;
+
+60
+00:03:08,415 --> 00:03:09,908
+y pulso Iniciar sesión;
+
+61
+00:03:09,961 --> 00:03:13,350
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+62
+00:03:13,995 --> 00:03:18,398
+Mientras entra, recuerda que cada guardado de permisos deja su propio evento en la
+
+63
+00:03:18,210 --> 00:03:18,990
+bitácora.
+
+64
+00:03:19,635 --> 00:03:23,108
+Marta no puede cambiar permisos, pero sí revisar la bitácora:
+
+65
+00:03:23,283 --> 00:03:27,468
+su rol, Auditor, es de solo lectura, pensado para revisar.
+
+66
+00:03:28,114 --> 00:03:31,949
+Ya dentro, abro Seguridad, y luego la pestaña Auditoría.
+
+67
+00:03:32,582 --> 00:03:35,463
+Entre los primeros eventos está el cambio que hizo Rosa:
+
+68
+00:03:35,541 --> 00:03:36,841
+Cambió permisos.
+
+69
+00:03:37,486 --> 00:03:38,361
+Lo abro.
+
+70
+00:03:38,995 --> 00:03:42,529
+El registro es un rol, el setenta y siete, que es Vendedor;
+
+71
+00:03:42,582 --> 00:03:46,055
+lo hizo Rosa, y aquí están la fecha y la hora exactas.
+
+72
+00:03:46,701 --> 00:03:49,497
+En Qué cambió, en Inventario, Productos:
+
+73
+00:03:49,551 --> 00:03:51,429
+antes, Ver, tachado;
+
+74
+00:03:51,471 --> 00:03:55,125
+y después, nada, porque ya no tiene ningún permiso ahí.
+
+75
+00:03:55,771 --> 00:04:00,439
+Y más abajo, en Solicitud, la dirección de la computadora y el navegador desde
+
+76
+00:04:00,251 --> 00:04:01,284
+donde se hizo.
+
+77
+00:04:01,918 --> 00:04:02,746
+En resumen:
+
+78
+00:04:02,800 --> 00:04:06,622
+un cambio en el rol vale para todos los que lo tienen desde su siguiente operación;
+
+79
+00:04:06,713 --> 00:04:10,101
+el menú se pone al día solo, a más tardar en medio minuto;
+
+80
+00:04:10,155 --> 00:04:15,088
+y cada cambio queda en la Auditoría, con quién, cuándo, el antes y el después.

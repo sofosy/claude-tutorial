@@ -1,0 +1,1245 @@
+{
+ "url": "/security/integraciones?credencial=7952",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 758,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Seguridad",
+   "caja": [
+    109,
+    136,
+    804,
+    26
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-sheet-title sec-api__title",
+   "texto": "Credenciales de API",
+   "caja": [
+    109,
+    260,
+    459,
+    28
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    901,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    945,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "MGmarta guzmánmarta.guzman@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de marta guzmán",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1018,
+    8,
+    238,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de marta guzmán']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Resumen",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ],
+   "sel": "a:has-text('Resumen')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 9",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ],
+   "sel": "a:has-text('Personas 9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-2",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ],
+   "sel": "a:has-text('Roles y permisos 12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Integraciones 1",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-3",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ],
+   "sel": "a:has-text('Integraciones 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditoría",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-4",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ],
+   "sel": "a:has-text('Auditoría')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Documentación de la API",
+   "icono": "menu_book",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    578,
+    256,
+    231,
+    36
+   ],
+   "sel": "button:has-text('Documentación de la API')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Tienda en línea anterior Creada el Sáb, 30 may · Sincronizaba pedidos de la tienda web (ya no se usa) gv_live_0e9d2d31Jue, 9 jul, 10:10Sin uso",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-api__row",
+    "gm-sheet-row--selected"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    369,
+    748,
+    64
+   ],
+   "sel": "button:has-text('Tienda en línea anterior Creada el Sáb, ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "close",
+   "aria": "Cerrar panel",
+   "id": "",
+   "clases": [],
+   "tooltip": "Cerrar",
+   "deshabilitado": false,
+   "caja": [
+    1197,
+    262,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Cerrar panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver permisos",
+   "icono": "visibility",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-api__permissions"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    854,
+    348,
+    149,
+    36
+   ],
+   "sel": "button:has-text('Ver permisos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:search",
+   "placeholder": "Buscar persona o rol",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    929,
+    143,
+    300,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "Resumen",
+   "seleccionada": false,
+   "id": "mat-tab-link-0",
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ]
+  },
+  {
+   "texto": "Personas 9",
+   "seleccionada": false,
+   "id": "mat-tab-link-1",
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ]
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "seleccionada": false,
+   "id": "mat-tab-link-2",
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ]
+  },
+  {
+   "texto": "Integraciones 1",
+   "seleccionada": true,
+   "id": "mat-tab-link-3",
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ]
+  },
+  {
+   "texto": "Auditoría",
+   "seleccionada": false,
+   "id": "mat-tab-link-4",
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "Este rol está asignado a 2 personas. Quítaselo antes de eliminarlo.",
+  "Permiso concedido exitosamente"
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscree"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications MG "
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen notifications"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "MG Marta Guzmán marta.guzman@germiva.demo expand_more"
+   },
+   "gm-dense": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Integraciones Seguridad Quién entra, qué puede hacer y qué c"
+   },
+   "gm-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Pe"
+   },
+   "gm-sheet__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Pe"
+   },
+   "gm-sheet__title-row": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search"
+   },
+   "gm-sheet__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió."
+   },
+   "gm-sheet__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "security-console__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet__tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "console-tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "gm-sheet__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API CREDENCIAL PREFI"
+   },
+   "gm-sheet-split": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API CREDENCIAL PREFI"
+   },
+   "sec-api": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API CREDENCIAL PREFI"
+   },
+   "sec-api--open": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API CREDENCIAL PREFI"
+   },
+   "gm-sheet-pane": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Credenciales de API menu_book Documentación de la API CREDENCIAL PREFI"
+   },
+   "gm-sheet-bar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API"
+   },
+   "gm-sheet-title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API"
+   },
+   "sec-api__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API"
+   },
+   "gm-sheet-scroll": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO Tienda en línea ant"
+   },
+   "gm-sheet-row": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO"
+   },
+   "gm-sheet-row--head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO"
+   },
+   "sec-api__row": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO"
+   },
+   "gm-th": {
+    "n": 6,
+    "visibles": 6,
+    "ej": "CREDENCIAL"
+   },
+   "gm-sheet-row--selected": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Tienda en línea anterior Creada el Sáb, 30 may · Sincronizaba pedidos "
+   },
+   "sec-api__who": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Tienda en línea anterior Creada el Sáb, 30 may · Sincronizaba pedidos "
+   },
+   "gm-ellipsis": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Tienda en línea anterior"
+   },
+   "sec-api__name": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Tienda en línea anterior"
+   },
+   "gm-sheet-meta": {
+    "n": 6,
+    "visibles": 6,
+    "ej": "Creada el Sáb, 30 may · Sincronizaba pedidos de la tienda web (ya no s"
+   },
+   "gm-cell-mono": {
+    "n": 7,
+    "visibles": 7,
+    "ej": "gv_live_0e9d2d31"
+   },
+   "sec-api__stale": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Jue, 9 jul, 10:10"
+   },
+   "gm-status": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Sin uso"
+   },
+   "gm-status--danger": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Sin uso"
+   },
+   "sec-api__notes": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Cada credencial tiene sus propios permisos: cambiar los de una no toca"
+   },
+   "sec-api__aside": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Tienda en línea anterior gv_live_0e9d2d31 close Sin uso 412 llamadas e"
+   },
+   "sec-api__card": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Tienda en línea anterior gv_live_0e9d2d31 close Sin uso 412 llamadas e"
+   },
+   "sec-api__card-top": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Tienda en línea anterior gv_live_0e9d2d31 close"
+   },
+   "sec-api__card-name": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Tienda en línea anterior"
+   },
+   "sec-api__facts": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Sin uso 412 llamadas en total Sin restricción de IP"
+   },
+   "sec-api__buttons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "visibility Ver permisos"
+   },
+   "sec-api__permissions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "visibility Ver permisos"
+   },
+   "sec-api__block": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "PERMISOS 5 Usa los permisos de la plantilla de integraciones. Al edita"
+   },
+   "sec-api__block-head": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "PERMISOS 5"
+   },
+   "sec-api__hint": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Usa los permisos de la plantilla de integraciones. Al editarlos recibe"
+   },
+   "sec-api__module": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Facturación 3/79 Facturas: Ver, Crear · Facturas de Compra: Crear"
+   },
+   "sec-api__module-top": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Facturación 3/79"
+   },
+   "sec-api__module-name": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Facturación"
+   },
+   "sec-api__bars": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "sec-api__bar-col": {
+    "n": 7,
+    "visibles": 7,
+    "ej": ""
+   },
+   "sec-api__bar": {
+    "n": 7,
+    "visibles": 7,
+    "ej": ""
+   },
+   "sec-api__bar--today": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "sec-api__days": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "lun mar mié jue vie sáb hoy"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     901,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de marta guzmán",
+    [
+     1018,
+     8,
+     238,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     10,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     10,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Inventario",
+    [
+     10,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     10,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     10,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Configuración",
+    [
+     10,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona o rol",
+    [
+     981,
+     152,
+     232,
+     18
+    ]
+   ],
+   [
+    "section",
+    "Credenciales de API",
+    [
+     85,
+     244,
+     748,
+     442
+    ]
+   ],
+   [
+    "aside",
+    "Detalle de la credencial",
+    [
+     833,
+     244,
+     420,
+     442
+    ]
+   ],
+   [
+    "button",
+    "Cerrar panel",
+    [
+     1197,
+     262,
+     36,
+     36
+    ]
+   ],
+   [
+    "div",
+    "0 operaciones registradas en 7 días",
+    [
+     854,
+     719,
+     379,
+     80
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "/inventory/product/list",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     10,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "/agenda/settings",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "CREDENCIAL",
+   "PREFIJO DE LA API KEY",
+   "ÚLTIMO USO",
+   "ESTADO",
+   "PERMISOS",
+   "OPERACIONES EN 7 DÍAS"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications MG Marta Guzmán marta.guzman@germiva.demo expand_more home sell inventory calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Seguridad Integraciones Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría Credenciales de API menu_book Documentación de la API CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO Tienda en línea anterior Creada el Sáb, 30 may · Sincronizaba pedidos de la tienda web (ya no se usa) gv_live_0e9d2d31 Jue, 9 jul, 10:10 Sin uso Cada credencial tiene sus propios permisos: cambiar los de una no toca los de otra. Rotar un secreto invalida el anterior de inmediato. Tienda en línea anterior gv_live_0e9d2d31 close Sin uso 412 llamadas en total Sin restricción de IP visibility Ver permisos PERMISOS 5 Usa los permisos de la plantilla de integraciones. Al editarlos recibe los suyos propios. Facturación 3/79 Facturas: Ver, Crear · Facturas de Compra: Crear Facturación Electrónica 2/44 eCF: Ver, Aprobar Compras 1/38 Facturas de Compra: Crear OPERACIONES EN 7 DÍAS 0 lun mar mié jue vie sáb hoy Lo que la credencial creó, modificó o eliminó, según la bitácora."
+ },
+ "selectores_probados": {
+  "permisos": {
+   "sel": ".sec-api__permissions",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    854,
+    348,
+    149,
+    36
+   ],
+   "ok": true
+  }
+ },
+ "video": "a5",
+ "pantalla": "06-panel-credencial-marta",
+ "usuario": "marta.guzman",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790522965.7771525,
+   "m": "DELETE",
+   "url": "role/79",
+   "st": 422,
+   "body": "{\"message\":\"Este rol está asignado a 2 personas. Quítaselo antes de eliminarlo.\",\"error\":\"Unprocessable Entity\",\"statusCode\":422}"
+  },
+  {
+   "t": 1790522985.135142,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790522986.0298524,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790522990.069493,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790522994.0634115,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790522996.6778405,
+   "m": "POST",
+   "url": "v1/integration-users/7952/permissions/PRODUCT_VIEW",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523003.0959556,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523022.3498642,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  }
+ ]
+}

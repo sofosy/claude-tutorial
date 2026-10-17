@@ -1,0 +1,103 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 6.68,
+   "clic_a_networkidle_s": 6.68,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "rail_roles": [
+  "Mensajero\nVacío\n1",
+  "Auditor (solo lectura)\n1",
+  "Almacén\n2",
+  "Vendedor\n3",
+  "↳\nVendedor sénior\n1",
+  "lock\nEmpleado\n0",
+  "lock\nRecursos Humanos\n0",
+  "lock\nCompras\n0",
+  "lock\nContador\n0",
+  "lock\nSupervisor de Caja\n0",
+  "lock\nCajero\n0",
+  "lock\nAdmin\n1",
+  "General\n0/109",
+  "Empresa\n0/40",
+  "Usuarios\n0/4",
+  "Seguridad\n0/19",
+  "Acceso API\n0/4",
+  "Punto de Venta\n0/36",
+  "Clientes y Proveedores\n0/33",
+  "Facturación\n0/79",
+  "Facturación Electrónica\n0/44",
+  "CRM\n0/34",
+  "IA del CRM\n0/2",
+  "Ventas\n0/42",
+  "Cotizaciones\n0/19",
+  "Órdenes de Venta\n0/8",
+  "Conduces\n0/9",
+  "Proformas\n0/3",
+  "Descuentos y Promociones\n0/34",
+  "Venta a Crédito\n0/41",
+  "Productos\n0/42",
+  "Inventario\n0/47",
+  "Inventario Avanzado\n0/8",
+  "Compras\n0/38",
+  "Requisiciones\n0/7",
+  "Costos en Destino\n0/3",
+  "Contabilidad Básica\n0/136",
+  "Contabilidad Avanzada\n0/46",
+  "Empleados\n0/46",
+  "Nómina\n0/109",
+  "Recursos Humanos\n0/24",
+  "Asistencia y Tiempo\n0/46",
+  "Desempeño y Capacitación\n0/12",
+  "Reclutamiento\n0/23",
+  "Asistente Virtual\n0/4"
+ ],
+ "contador_deshabilitadas": 109,
+ "dialogo_duplicar": "Duplicar rol\nclose\ninfo\nSe creará un nuevo rol copiando los permisos, la herencia y las exclusiones de Contador.\nNombre\nDescripción\n\nCancelar\nDuplicar",
+ "duplicar_exito": "check_circle\nOperación completada\nEl rol ha sido duplicado correctamente con sus permisos, herencia y exclusiones.\nAceptar",
+ "crear_exito": "check_circle\nOperación completada\nEl rol ha sido creado correctamente.\nAceptar",
+ "crear_repetido": "error\nError\nYa existe un rol con este nombre en la empresa\nEntendido",
+ "salir_con_cambios": "warning\nGuardar Cambios\n¿Estás seguro que deseas salir sin guardar los cambios?\nCancelar\nSí, salir",
+ "roles_bd": [
+  [
+   "77",
+   "Vendedor",
+   ""
+  ],
+  [
+   "78",
+   "Vendedor sénior",
+   "77"
+  ],
+  [
+   "79",
+   "Almacén",
+   ""
+  ],
+  [
+   "80",
+   "Auditor (solo lectura)",
+   ""
+  ],
+  [
+   "81",
+   "Mensajero",
+   ""
+  ],
+  [
+   "94",
+   "Contador externo",
+   ""
+  ],
+  [
+   "95",
+   "Cobrador",
+   ""
+  ]
+ ]
+}

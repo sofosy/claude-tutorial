@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Con y sin permiso · Un cambio en vivo y su rastro en la Auditoría
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Antes: Ana ve Productos
+00:32  Rosa quita el permiso
+01:41  Después: el menú de Ana
+02:32  Después: por la dirección
+02:52  El rastro en la Auditoría
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Quitar un permiso a un rol y guardarlo
+• Qué nota la persona afectada: la opción sale del menú y la dirección la devuelve al Inicio
+• Desde cuándo vale el cambio: en el servidor, desde su siguiente operación; en el menú, al volver a entrar
+• Encontrar el cambio en la Auditoría, con quién, cuándo, el antes y el después
+
+⚠️ ERRORES COMUNES
+• Quitar un permiso en el rol sin pensar en todos los que lo tienen
+• Esperar que el menú de quien ya estaba dentro cambie solo: se actualiza al volver a entrar
+• No revisar la Auditoría cuando alguien dice que «de repente» no ve una pantalla
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:19
+
+TRANSCRIPCIÓN
+============================================================
+En este video cambiamos un permiso en vivo y seguimos su rastro. Entra Ana, la vendedora. En su menú, Inventario la lleva directo a Productos; lo pulso. Esta es la lista de productos de la empresa: Ana la necesita para cotizar. Al pie dice uno a diez de veinticinco: los ve todos. Llega aquí gracias al permiso Productos, Ver, de su rol Vendedor. Ahora la administradora le va a quitar ese permiso al rol.
+Cambio de persona: abro el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa, la administradora. En la pantalla de acceso escribo su usuario, rosa punto almanzar, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que Ana sigue con su sesión abierta. El cambio se hace en el rol, no en la persona, así que les llegará a todos los vendedores a la vez. Ya dentro, en el menú, abajo, abro Seguridad, y luego la pestaña Roles y permisos. Elijo el rol Vendedor. En la columna de módulos busco Productos; en el recurso Productos, el permiso Ver está concedido, con su marca de concedido. Lo pulso, y queda sin conceder. La barra de guardado dice: un cambio sin guardar, y a cuántas personas afecta. Pulso Guardar cambios. Sale el aviso de que los permisos del rol se actualizaron. Desde este momento, el servidor ya no le entrega productos a quien los veía solo gracias a este rol.
+Ahora vuelvo a entrar como Ana. Abro el menú de mi usuario y pulso Cerrar sesión; en la pantalla de acceso escribo su usuario, ana punto mejia, en minúsculas; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, ten en cuenta que al rol de Ana solo le cambiamos los productos. Si Ana hubiera seguido con Productos abierto, su siguiente consulta ya habría sido rechazada, porque el servidor revisa el permiso en cada operación; y su menú se habría puesto al día solo, a más tardar en medio minuto, al volver a la ventana o cambiar de pantalla. Aquí, como hay un solo navegador, entra de nuevo. Y aquí está: en su menú ya no aparece Inventario. Solo le quedan Inicio, Ventas, Calendario y Configuración.
+¿Y si escribe la dirección de Productos en el navegador? Pruebo. El sistema la devuelve al Inicio con el aviso: No tienes permiso para ver Productos. Solicita el acceso al administrador de tu empresa. El cambio de Rosa ya vale para ella, por el menú y por la dirección.
+Por último, el rastro. Salgo y entro como Marta, la auditora: abro el menú de mi usuario, pulso Cerrar sesión; en la pantalla de acceso escribo su usuario, marta punto guzman, todo en minúsculas y sin espacios; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que cada guardado de permisos deja su propio evento en la bitácora. Marta no puede cambiar permisos, pero sí revisar la bitácora: su rol, Auditor, es de solo lectura, pensado para revisar. Ya dentro, abro Seguridad, y luego la pestaña Auditoría. Entre los primeros eventos está el cambio que hizo Rosa: Cambió permisos. Lo abro. El registro es un rol, el setenta y siete, que es Vendedor; lo hizo Rosa, y aquí están la fecha y la hora exactas. En Qué cambió, en Inventario, Productos: antes, Ver, tachado; y después, nada, porque ya no tiene ningún permiso ahí. Y más abajo, en Solicitud, la dirección de la computadora y el navegador desde donde se hizo. En resumen: un cambio en el rol vale para todos los que lo tienen desde su siguiente operación; el menú se pone al día solo, a más tardar en medio minuto; y cada cambio queda en la Auditoría, con quién, cuándo, el antes y el después.

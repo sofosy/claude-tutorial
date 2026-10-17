@@ -1,0 +1,223 @@
+1
+00:00:03,100 --> 00:00:05,830
+En esta serie vemos el módulo de citas completo,
+
+2
+00:00:05,977 --> 00:00:08,669
+desde los servicios hasta la atención del paciente.
+
+3
+00:00:09,336 --> 00:00:11,135
+Empezamos por los servicios.
+
+4
+00:00:11,804 --> 00:00:16,567
+Entro a Configuración, en el menú de la izquierda, y abro Recursos y Ajustes.
+
+5
+00:00:17,236 --> 00:00:19,419
+Recojo el panel para ganar espacio.
+
+6
+00:00:20,076 --> 00:00:22,309
+A la izquierda están los recursos del centro;
+
+7
+00:00:22,344 --> 00:00:23,846
+elijo Tipos de cita.
+
+8
+00:00:24,503 --> 00:00:27,245
+Un tipo de cita es un servicio que el centro ofrece:
+
+9
+00:00:27,343 --> 00:00:31,338
+una consulta general, un control, una evaluación del cardiólogo.
+
+10
+00:00:31,992 --> 00:00:34,932
+Cada fila es uno, con su código y su nombre.
+
+11
+00:00:35,601 --> 00:00:38,466
+La columna de color es como se pinta en el calendario,
+
+12
+00:00:38,540 --> 00:00:40,427
+y la siguiente dice cuánto dura.
+
+13
+00:00:41,094 --> 00:00:44,507
+Reserva online indica si el paciente lo puede pedir por internet:
+
+14
+00:00:44,554 --> 00:00:47,967
+la urgencia dice que no, porque una urgencia no se agenda.
+
+15
+00:00:49,359 --> 00:00:54,221
+El centro va a empezar a atender niños, así que creo el servicio de pediatría.
+
+16
+00:00:54,890 --> 00:00:58,475
+Pulso Nuevo tipo de cita, arriba a la derecha de la tabla.
+
+17
+00:00:59,143 --> 00:01:02,083
+El código es una clave corta, sin espacios:
+
+18
+00:01:02,193 --> 00:01:05,977
+escribo consulta pediátrica, con un guion en medio y sin tildes,
+
+19
+00:01:06,063 --> 00:01:07,787
+porque es una clave interna.
+
+20
+00:01:08,456 --> 00:01:11,954
+Ahora el nombre, que es lo que leen la recepción y el paciente.
+
+21
+00:01:12,622 --> 00:01:14,658
+En la descripción digo para quién es:
+
+22
+00:01:14,730 --> 00:01:17,510
+el paciente la ve en el portal antes de reservar.
+
+23
+00:01:18,179 --> 00:01:20,388
+Más abajo están los valores iniciales:
+
+24
+00:01:20,484 --> 00:01:24,728
+la duración, treinta minutos, y los pacientes por turno, uno.
+
+25
+00:01:25,396 --> 00:01:26,935
+Son el punto de partida:
+
+26
+00:01:27,069 --> 00:01:30,817
+los turnos que de verdad se ofrecen salen del horario de cada médico.
+
+27
+00:01:31,472 --> 00:01:35,157
+El orden de visualización decide en qué lugar sale en las listas.
+
+28
+00:01:36,530 --> 00:01:38,801
+Sigo más abajo, con el dinero.
+
+29
+00:01:39,456 --> 00:01:42,447
+El precio base es la tarifa del paciente particular:
+
+30
+00:01:42,519 --> 00:01:43,748
+dos mil pesos.
+
+31
+00:01:44,417 --> 00:01:48,225
+Debajo, el servicio facturable es el artículo con el que se cobra;
+
+32
+00:01:48,335 --> 00:01:52,975
+si lo dejo vacío, al cobrar se crea solo, con este nombre y este precio.
+
+33
+00:01:53,643 --> 00:01:56,447
+En apariencia está el color del calendario y el ícono:
+
+34
+00:01:56,581 --> 00:02:01,183
+escribo child care, el de un bebé, que es el que verá el paciente en el portal.
+
+35
+00:02:01,840 --> 00:02:03,143
+Y las opciones.
+
+36
+00:02:03,799 --> 00:02:07,557
+Permite agendamiento online deja que el paciente lo reserve por internet:
+
+37
+00:02:07,593 --> 00:02:08,835
+lo dejo encendido.
+
+38
+00:02:09,490 --> 00:02:11,750
+Permite telemedicina es la modalidad:
+
+39
+00:02:11,810 --> 00:02:14,825
+si la enciendo, la cita se puede dar por videollamada;
+
+40
+00:02:14,911 --> 00:02:16,698
+esta consulta es presencial.
+
+41
+00:02:17,353 --> 00:02:21,001
+Requiere autorización previa del seguro obliga a tener la aprobación de la
+
+42
+00:02:20,812 --> 00:02:23,790
+aseguradora de salud del paciente antes de atender.
+
+43
+00:02:24,459 --> 00:02:26,569
+La casilla Activo queda marcada.
+
+44
+00:02:27,224 --> 00:02:29,396
+Con todo listo, pulso Crear.
+
+45
+00:02:30,051 --> 00:02:32,745
+El aviso confirma que el tipo de cita se creó,
+
+46
+00:02:32,866 --> 00:02:36,192
+y el servicio aparece en la lista con su color y su duración.
+
+47
+00:02:37,551 --> 00:02:41,247
+Antes de pasar a los médicos, un ajuste que afecta a todos.
+
+48
+00:02:41,915 --> 00:02:46,307
+En Días no laborables están los feriados del país y los cierres del propio centro.
+
+49
+00:02:46,975 --> 00:02:49,953
+Cada fila es un día, con su tipo y su alcance:
+
+50
+00:02:50,026 --> 00:02:53,437
+global, para todo el país, o solo de esta empresa.
+
+51
+00:02:54,105 --> 00:02:56,277
+La columna pagado es para la nómina.
+
+52
+00:02:56,933 --> 00:03:00,519
+Un día de esta lista no ofrece citas en el portal ni en la agenda.
+
+53
+00:03:01,187 --> 00:03:05,503
+Si el centro cierra por algo propio, como un inventario o el aniversario,
+
+54
+00:03:05,627 --> 00:03:08,194
+se agrega aquí con Nuevo día no laborable.
+
+55
+00:03:08,862 --> 00:03:12,560
+En la próxima parte le damos el servicio de pediatría a un médico,
+
+56
+00:03:12,582 --> 00:03:14,246
+con sus días y sus horas.

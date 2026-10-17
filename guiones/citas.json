@@ -1,0 +1,8 @@
+{
+  "titulo": "Citas (base de exploración)",
+  "base_url": "http://localhost:4310",
+  "sesion": { "tipo": "api", "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "admin.losprados@regisalud.test", "password": "admin" },
+    "clave": "aut", "extra": { "__v": 2 }, "navegar": "/home" },
+  "pasos": []
+}

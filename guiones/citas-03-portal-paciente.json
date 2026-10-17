@@ -1,0 +1,354 @@
+{
+  "titulo": "Citas · Parte 3: el paciente reserva por internet",
+  "descripcion": "Tercera parte de la serie de Citas de RegiSalud: los dos modos de la agenda en línea (simple, un enlace por médico y servicio; avanzado, el portal del centro), cómo se activa el portal en Configuración › Preferencias › Operación, y la reserva completa vista desde fuera, como la hace el paciente: elige el servicio, después el médico, la fecha y la hora, deja sus datos y recibe el número de su cita.",
+  "_comentario": "Estado B: Luis Gómez ya ofrece pediatría; agenda en modo SIMPLE. El video pasa a AVANZADO y reserva una consulta general con Ana Pérez a nombre de Gabriela Fernández.",
+  "base_url": "http://localhost:4310",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "Los Prados",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "correo.test",
+      "131456789",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Ramírez",
+      "Gabriela",
+      "Fernández",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "localhost:4310": "regisalud.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/citas/restaurar.mjs B"
+  },
+  "aprenderas": [
+    "Elegir entre el modo simple (un enlace por médico) y el avanzado (el portal del centro)",
+    "Publicar el portal de reservas y copiar su enlace",
+    "Recorrer la reserva del paciente: servicio, médico, fecha y hora, datos y confirmación",
+    "Saber qué recibe el paciente al reservar y cómo cancela si no puede asistir"
+  ],
+  "errores_comunes": [
+    "Elegir el modo avanzado y no pulsar Guardar: el enlace del portal no abre hasta guardar",
+    "Esperar en el portal un médico sin horario visible en el enlace: solo salen los que tienen turnos en línea",
+    "Compartir el enlace de un médico cuando se quería que el paciente eligiera entre varios: para eso es el portal"
+  ],
+  "pasos": [
+    {
+      "id": "01-modo",
+      "capitulo": "Simple o avanzado",
+      "rotulo": "Modo de la agenda en línea",
+      "ruta": "Configuración › Preferencias › Operación › Citas Médicas",
+      "texto_pantalla": "Simple: un enlace por médico · Avanzado: el portal de todo el centro",
+      "narracion": "Hay dos formas de recibir citas por internet, y se eligen en la configuración. Entro a Configuración, en el menú, y abro Preferencias. Después recojo el panel para ganar espacio, y abro la pestaña Operación. En el bloque Citas Médicas, los minutos antes para recordatorio dicen con cuánta anticipación le llega al paciente el recordatorio por correo. Al lado está el modo de la agenda en línea; abro la lista. En el modo simple, cada médico comparte su propio enlace, el que vimos en la parte anterior. En el modo avanzado, el centro tiene un portal: el paciente entra a una sola dirección y elige el servicio, el médico y la hora. Elijo el avanzado. Aparece la dirección del portal, con su botón para copiarla. Como dice la nota, hay que guardar para publicarlo: pulso Guardar, abajo. Sale el aviso de configuración guardada, y lo acepto.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Configuración']",
+          "al_decir": "Entro a Configuración"
+        },
+        {
+          "click": ".panel-item:has-text('Preferencias')",
+          "al_decir": "abro Preferencias"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el panel"
+        },
+        {
+          "click": "[role=tab]:has-text('Operación')",
+          "al_decir": "la pestaña Operación"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Minutos antes para recordatorio'))",
+          "durante_ms": 5500,
+          "al_decir": "minutos antes para recordatorio"
+        },
+        {
+          "click": "mat-select[formcontrolname='agendaMode']",
+          "al_decir": "abro la lista"
+        },
+        {
+          "resaltar": "mat-option:has-text('Simple')",
+          "durante_ms": 5500,
+          "al_decir": "En el modo simple",
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-option:has-text('Avanzado')",
+          "durante_ms": 6000,
+          "al_decir": "el modo avanzado",
+          "cursor": false
+        },
+        {
+          "click": "mat-option:has-text('Avanzado')",
+          "al_decir": "Elijo el avanzado"
+        },
+        {
+          "resaltar": "a[href*='book/centro']",
+          "durante_ms": 4500,
+          "al_decir": "su botón para"
+        },
+        {
+          "click": ".settings-actions button:has-text('Guardar')",
+          "al_decir": "pulso Guardar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "lo acepto"
+        }
+      ]
+    },
+    {
+      "id": "02-portal",
+      "capitulo": "El portal: elegir el servicio",
+      "rotulo": "Paso 1 · el servicio",
+      "ruta": "regisalud.com/book/centro/los-prados",
+      "texto_pantalla": "El portal del centro · el paciente empieza por el servicio",
+      "navegar": "/book/centro/los-prados",
+      "al_decir_navegar": "abro el portal",
+      "narracion": "Ahora me pongo en el lugar del paciente: abro el portal con ese enlace, como lo haría desde su teléfono. Arriba está el nombre del centro y los tres pasos de la reserva: servicio, médico, fecha y hora. Cada tarjeta es un servicio, con su descripción, su duración y cuántos médicos lo ofrecen. Aquí está la consulta pediátrica que configuramos, con el doctor Luis Gómez. Este paciente necesita una consulta general, así que la elige.",
+      "acciones": [
+        {
+          "resaltar": "app-clinic-portal h1",
+          "durante_ms": 3000,
+          "al_decir": "el nombre del centro"
+        },
+        {
+          "resaltar": "app-clinic-portal .steps, app-clinic-portal .portal-steps, app-clinic-portal .stepper",
+          "durante_ms": 4000,
+          "al_decir": "los tres pasos"
+        },
+        {
+          "resaltar": "button.service-card:has-text('Consulta general')",
+          "durante_ms": 4500,
+          "al_decir": "Cada tarjeta"
+        },
+        {
+          "resaltar": "button.service-card:has-text('Consulta pediátrica')",
+          "durante_ms": 4500,
+          "al_decir": "Aquí está la consulta"
+        },
+        {
+          "click": "button.service-card:has-text('Consulta general')",
+          "al_decir": "la elige"
+        }
+      ]
+    },
+    {
+      "id": "03-medico",
+      "capitulo": "Elegir el médico",
+      "rotulo": "Paso 2 · el médico",
+      "ruta": "regisalud.com/book/centro/los-prados",
+      "texto_pantalla": "Los médicos que ofrecen ese servicio",
+      "narracion": "El segundo paso muestra los médicos que ofrecen ese servicio, con su especialidad. Si se equivocó, cambiar servicio lo lleva de vuelta. Elige a la doctora Ana Pérez y pulsa ver horarios. Entra a la página de reservas de la doctora: la misma que se abre con su enlace en el modo simple. Arriba se ve el servicio, la doctora con su especialidad, la descripción y el precio.",
+      "acciones": [
+        {
+          "resaltar": "button.doctor-card:has-text('Jorge Medina')",
+          "durante_ms": 4000,
+          "al_decir": "ofrecen ese servicio"
+        },
+        {
+          "resaltar": "button:has-text('Cambiar servicio')",
+          "durante_ms": 3500,
+          "al_decir": "cambiar servicio"
+        },
+        {
+          "click": "button.doctor-card:has-text('Ana Pérez')",
+          "al_decir": "ver horarios"
+        },
+        {
+          "resaltar": "app-booking-page h1",
+          "durante_ms": 5000,
+          "al_decir": "Arriba se ve",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "04-horario",
+      "capitulo": "Fecha y hora",
+      "rotulo": "Paso 3 · fecha y hora",
+      "ruta": "regisalud.com/book/ana-perez/consulta-general",
+      "texto_pantalla": "Solo se pueden elegir los días con turnos libres",
+      "narracion": "Debajo está el calendario. Los días apagados no se pueden elegir: ya pasaron, la doctora no atiende, o no le quedan turnos. El paciente toca uno de los próximos días, y a la derecha aparecen los turnos libres de ese día, cada uno con su hora de inicio, de fin y su duración. Elige el de las nueve de la mañana, y pulsa siguiente.",
+      "acciones": [
+        {
+          "resaltar": "mat-calendar",
+          "durante_ms": 4500,
+          "al_decir": "el calendario"
+        },
+        {
+          "click": ".mat-calendar-body-cell:not(.mat-calendar-body-disabled) >> nth=1",
+          "al_decir": "toca uno de"
+        },
+        {
+          "resaltar": "button.slot-button >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "aparecen los turnos"
+        },
+        {
+          "click": "button.slot-button:has-text('09:00 a. m.hasta')",
+          "al_decir": "el de las nueve"
+        },
+        {
+          "click": "button.next-button",
+          "al_decir": "pulsa siguiente"
+        }
+      ]
+    },
+    {
+      "id": "05-datos",
+      "capitulo": "Sus datos y la confirmación",
+      "rotulo": "Confirmar la reserva",
+      "ruta": "regisalud.com/book/ana-perez/consulta-general/confirm",
+      "texto_pantalla": "Nombre y correo · el sistema crea la cita y le da su número",
+      "narracion": "Arriba queda el resumen de lo que eligió: doctora, consultorio, duración, fecha y hora. Abajo pone sus datos: el nombre completo, Gabriela Fernández, tal como quiere que aparezca. Después el correo electrónico, que es donde le llega la confirmación de su cita. Y por último el teléfono, que es opcional pero sirve para el recordatorio. Pulsa confirmar reserva. Listo: la cita quedó creada. La pantalla le da su número de cita, el médico, el consultorio, la fecha y la hora. Puede agregarla a su calendario de Google, y si no puede asistir, la cancela desde aquí para liberar el horario. Del lado del centro, esta cita ya está en la agenda: eso lo vemos en la siguiente parte.",
+      "acciones": [
+        {
+          "resaltar": "app-booking-form .summary-details",
+          "durante_ms": 5000,
+          "al_decir": "el resumen"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='bookerName']",
+            "texto": "Gabriela Fernández"
+          },
+          "al_decir": "el nombre completo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='bookerEmail']",
+            "texto": "gabriela.fernandez@correo.test"
+          },
+          "al_decir": "el correo electrónico"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='bookerPhone']",
+            "texto": "809-555-0190"
+          },
+          "al_decir": "por último el teléfono"
+        },
+        {
+          "click": "button.submit-button",
+          "al_decir": "Pulsa confirmar"
+        },
+        {
+          "resaltar": "app-booking-confirmation :text('No. de Cita')",
+          "durante_ms": 5000,
+          "al_decir": "su número",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gcal-button",
+          "durante_ms": 3500,
+          "al_decir": "calendario de"
+        },
+        {
+          "resaltar": ".cancel-button",
+          "durante_ms": 4500,
+          "al_decir": "la cancela desde aquí"
+        }
+      ]
+    }
+  ]
+}

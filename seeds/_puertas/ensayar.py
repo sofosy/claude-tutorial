@@ -61,6 +61,9 @@ def _una(pag, ctx, acc, variables):
     if "click" in acc:
         g._clic(pag, acc["click"], ctx)
         return "click", acc["click"]
+    if "arrastrar" in acc:
+        g._arrastrar(pag, acc["arrastrar"], ctx)
+        return "arrastrar", acc["arrastrar"]["desde"]
     if "escribir" in acc:
         e = acc["escribir"]
         g._escribir(pag, e["sel"], _sub(e["texto"], variables), ctx)
@@ -190,10 +193,12 @@ def main():
     fallos, acciones_ok, pasos_hechos = [], 0, 0
     print(f"ensayo · {nombre} · {len(pasos)} pasos · {base}")
     with sync_playwright() as p:
-        nav = p.chromium.launch(headless=not a.headed, args=[f"--force-device-scale-factor={g.ESCALA}"])
+        nav = p.chromium.launch(headless=not a.headed,
+                                args=[f"--force-device-scale-factor={g.ESCALA}", *g.ARGS_IDIOMA])
         try:
             ctx_nav = nav.new_context(viewport={"width": g.ANCHO_CSS, "height": g.ALTO_CSS},
-                                      device_scale_factor=g.ESCALA)
+                                      device_scale_factor=g.ESCALA,
+                                      **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
             ctx_nav.add_init_script(g.JS_CAPA)  # cursor, marca y sonda de alertas del motor
             pag = ctx_nav.new_page()
             try:

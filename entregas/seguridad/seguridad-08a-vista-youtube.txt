@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Con y sin permiso · Ver una pantalla
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Con permiso: Ana ve Cotizaciones
+00:52  Sin permiso: el menú de Pedro
+01:55  Sin permiso: escribir la dirección
+02:28  Con permiso: Marta ve Seguridad
+03:49  Sin permiso: la pestaña Integraciones
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué hace el permiso de ver: decide qué aparece en el menú y qué pestañas salen
+• Qué pasa si alguien escribe la dirección de una pantalla que no puede ver
+• Que ver no es lo mismo que cambiar: una auditora ve Seguridad sin poder tocar nada
+
+⚠️ ERRORES COMUNES
+• Creer que esconder una opción del menú basta: el sistema también la bloquea si se escribe la dirección
+• Dar el rol de administrador a quien solo necesita revisar: para eso existe un rol de solo lectura
+• Pensar que una pestaña que no aparece está rota: falta el permiso de verla
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:33
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la pantalla de Inicio de Ana Mejía, vendedora de Distribuidora Las Palmas. En este video comparamos el permiso más básico, el de ver una pantalla: primero con alguien que lo tiene, y después con alguien que no. A la izquierda está el menú de módulos, que solo trae lo que el rol de cada persona permite. Ana tiene Ventas; lo abro, y dentro aparece Cotizaciones. Una cotización es el presupuesto que se le da a un cliente antes de venderle. La pulso, y se abre la lista. Contraigo el panel del menú para ganar espacio. Aquí están sus tres cotizaciones. Esta pantalla, Gestión de Cotizaciones y Presupuestos, se le abre porque su rol, Vendedor, tiene el permiso Cotizaciones, Ver. Sin ese permiso, la opción ni siquiera aparece en el menú.
+Cambiamos de persona. Ahora salgo y entro como Pedro Núñez, el encargado de almacén. Abro el menú de mi usuario, arriba a la derecha, y pulso Cerrar sesión. En la pantalla de acceso escribo su usuario, que es pedro punto nunez, en minúsculas y sin eñe; y ahora su clave, que se ve con puntos por seguridad. Pulso Iniciar sesión, y el botón cambia a Entrando: el sistema comprueba quién es y carga los permisos de su rol, Almacén. Con esos permisos arma su menú, que es distinto para cada persona, según sus roles. Mientras entra, recuerda que Pedro es el encargado de almacén: su trabajo diario son los productos y las existencias. Ya estamos en el Inicio de Pedro. Fíjate en el menú de la izquierda: no aparece Ventas. Tiene Inventario, porque su trabajo son los productos; pero su rol no incluye el permiso de ver cotizaciones, así que el sistema ni siquiera le muestra la opción. Esto es lo primero que hace un permiso de ver: decide qué aparece en el menú.
+¿Y si Pedro conoce la dirección de la pantalla de Cotizaciones y la teclea directamente en el navegador? Vamos a probarlo. El sistema no lo deja pasar: lo devuelve al Inicio con un aviso que dice No tienes permiso para ver Cotizaciones. Solicita el acceso al administrador de tu empresa. Aquí está, de vuelta en el Inicio, sin haber visto ni una cotización. Escribir la dirección no salta el permiso: el sistema lo comprueba al abrir cada pantalla, y el servidor lo vuelve a comprobar en cada consulta.
+Ahora el lado contrario: alguien que sí puede ver algo delicado. Salgo otra vez, pulso Cerrar sesión, y entro como Marta Guzmán, la auditora de la empresa. Escribo su usuario, marta punto guzman, también en minúsculas; ahora su clave, que en pantalla se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que Marta no administra nada: solo revisa. El rol de Marta es Auditor, de solo lectura: puede ver casi todo y no puede cambiar nada. Así revisa sin riesgo de tocar algo por error. Ya dentro, su menú sí tiene Seguridad. La abro. Es la misma consola que usa la administradora, pero con cuatro pestañas: falta Integraciones, porque su rol no tiene ese permiso. Arriba a la derecha solo está el buscador: no hay botón Nuevo, porque no puede crear. Abro Roles y permisos, y dentro, el rol Vendedor. En la cabecera no aparecen ni Duplicar ni Editar. Debajo, una franja amarilla con un candado dice Solo lectura: no tiene permiso para cambiar permisos. Los botones se ven más apagados y están bloqueados: si pulsa uno, no cambia nada. Los ve, pero no los puede tocar.
+Última prueba: Marta intenta entrar a Integraciones escribiendo su dirección en el navegador. Veamos qué pasa. La consola no la deja: arriba sale una franja con un candado, que dice No tienes permiso para ver Integraciones. Solicita el acceso al administrador de tu empresa. Y debajo le muestra su primera pestaña permitida, el Resumen. Si alguien no tuviera ninguna pestaña de Seguridad, vería solo ese aviso. En resumen: el permiso de ver decide qué aparece en el menú y qué pestañas salen; escribir la dirección no lo salta; y ver no es lo mismo que cambiar: Marta revisa Seguridad, pero no crea ni edita nada.

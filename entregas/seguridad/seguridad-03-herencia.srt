@@ -1,0 +1,343 @@
+1
+00:00:03,097 --> 00:00:05,364
+La herencia sirve para no repetir trabajo:
+
+2
+00:00:05,429 --> 00:00:09,010
+un rol hijo recibe todo lo de su rol padre y le suma lo suyo.
+
+3
+00:00:09,643 --> 00:00:13,972
+Entro por el candado, abro Roles y permisos y elijo Vendedor sénior.
+
+4
+00:00:14,605 --> 00:00:17,076
+Junto al nombre está el chip Hereda de Vendedor:
+
+5
+00:00:17,214 --> 00:00:18,368
+ese es su padre.
+
+6
+00:00:19,015 --> 00:00:21,544
+La leyenda trae ahora dos marcas más:
+
+7
+00:00:21,586 --> 00:00:24,625
+Heredado de Vendedor, y Excluido de la herencia.
+
+8
+00:00:25,271 --> 00:00:26,835
+Veámoslo en un módulo:
+
+9
+00:00:26,888 --> 00:00:28,320
+abro Cotizaciones.
+
+10
+00:00:28,966 --> 00:00:30,868
+El título del módulo lo confirma:
+
+11
+00:00:31,018 --> 00:00:34,347
+siete permisos, y dos de ellos heredados de Vendedor.
+
+12
+00:00:34,981 --> 00:00:37,222
+Ver, con su check, es directo:
+
+13
+00:00:37,335 --> 00:00:39,902
+se lo dimos al sénior con alcance Todos.
+
+14
+00:00:40,548 --> 00:00:43,490
+Crear, en el tono del padre, es heredado.
+
+15
+00:00:44,134 --> 00:00:47,608
+El filtro Heredados deja solo los recursos que traen algo del padre,
+
+16
+00:00:47,661 --> 00:00:49,661
+y Todos vuelve a mostrarlo todo.
+
+17
+00:00:50,307 --> 00:00:53,514
+Si pulso el chip, se abre el rol padre, Vendedor:
+
+18
+00:00:53,615 --> 00:00:56,714
+lo que le agregues aquí le llega al hijo automáticamente.
+
+19
+00:00:57,347 --> 00:00:58,731
+Regreso al sénior.
+
+20
+00:01:00,094 --> 00:01:01,756
+Ahora creo un rol hijo.
+
+21
+00:01:02,387 --> 00:01:04,591
+Pulso Nuevo, arriba a la derecha;
+
+22
+00:01:04,609 --> 00:01:08,022
+en el menú elijo Rol, y se abre el diálogo Crear rol.
+
+23
+00:01:08,655 --> 00:01:10,667
+En Nombre escribo Vendedor en práctica,
+
+24
+00:01:10,781 --> 00:01:13,215
+para quien todavía está aprendiendo a vender.
+
+25
+00:01:13,861 --> 00:01:18,564
+Enciendo el interruptor Heredar permisos de otro rol, y aparece el campo Rol padre.
+
+26
+00:01:19,210 --> 00:01:19,906
+Lo abro:
+
+27
+00:01:20,008 --> 00:01:24,000
+están los roles de tu empresa y los del sistema, marcados como Sistema.
+
+28
+00:01:24,634 --> 00:01:28,831
+Como padre, elijo Vendedor, y debajo aparece un aviso que lo explica:
+
+29
+00:01:28,873 --> 00:01:32,647
+este rol heredará automáticamente los permisos de Vendedor y se mantendrá
+
+30
+00:01:32,460 --> 00:01:34,326
+sincronizado con sus cambios.
+
+31
+00:01:34,972 --> 00:01:39,411
+La lista nunca ofrece al propio rol ni a sus hijos, para evitar círculos.
+
+32
+00:01:40,056 --> 00:01:41,126
+Pulso Crear.
+
+33
+00:01:41,771 --> 00:01:44,979
+El sistema lo guarda y confirma con Operación completada.
+
+34
+00:01:45,623 --> 00:01:46,525
+Acepto.
+
+35
+00:01:47,146 --> 00:01:50,401
+El rol nuevo queda debajo de Vendedor, con su flechita,
+
+36
+00:01:50,490 --> 00:01:53,118
+y ya tiene todo lo del padre sin marcar nada.
+
+37
+00:01:54,483 --> 00:01:58,090
+Pero alguien en práctica no debería crear cotizaciones por su cuenta.
+
+38
+00:01:58,733 --> 00:02:00,768
+Abro Cotizaciones en el rol nuevo:
+
+39
+00:02:00,798 --> 00:02:04,705
+Ver, Crear y Editar vienen heredados, en el tono del padre.
+
+40
+00:02:05,340 --> 00:02:06,409
+Pulso Crear.
+
+41
+00:02:07,054 --> 00:02:09,103
+Como es heredado, no se quita:
+
+42
+00:02:09,204 --> 00:02:10,105
+se excluye.
+
+43
+00:02:10,739 --> 00:02:13,233
+La barra de abajo cuenta el cambio pendiente.
+
+44
+00:02:13,878 --> 00:02:17,966
+Ahora pulso Guardar cambios, y el aviso confirma que quedó guardado.
+
+45
+00:02:18,600 --> 00:02:20,056
+Ya se ve el resultado:
+
+46
+00:02:20,110 --> 00:02:23,099
+Crear quedó tachado, Excluido de la herencia.
+
+47
+00:02:23,745 --> 00:02:26,881
+Una exclusión quita un permiso heredado solo en este rol;
+
+48
+00:02:26,957 --> 00:02:28,365
+Vendedor sigue igual.
+
+49
+00:02:29,000 --> 00:02:32,449
+Si vuelves a pulsar un excluido, se hereda otra vez.
+
+50
+00:02:33,093 --> 00:02:36,954
+Y si un día le cambias el padre desde Editar, se recalcula lo heredado;
+
+51
+00:02:37,067 --> 00:02:38,582
+lo directo no se toca.
+
+52
+00:02:39,944 --> 00:02:42,027
+Como era una prueba, lo elimino.
+
+53
+00:02:42,671 --> 00:02:47,207
+En Más acciones, los tres puntos arriba a la derecha, elijo Eliminar rol.
+
+54
+00:02:47,841 --> 00:02:51,930
+El sistema pregunta si estoy segura, y avisa que no se puede deshacer.
+
+55
+00:02:52,574 --> 00:02:54,128
+Confirmo con Eliminar.
+
+56
+00:02:54,774 --> 00:02:59,370
+Sale el aviso de rol eliminado, y la consola abre el primer rol de la lista.
+
+57
+00:03:00,015 --> 00:03:01,784
+Hay dos casos en que no te deja:
+
+58
+00:03:01,935 --> 00:03:05,771
+si el rol todavía lo tienen personas, te pide quitárselo primero;
+
+59
+00:03:05,776 --> 00:03:09,731
+y si otro rol hereda de él, como Vendedor sénior hereda de Vendedor,
+
+60
+00:03:09,858 --> 00:03:11,375
+tampoco se puede borrar.
+
+61
+00:03:12,008 --> 00:03:15,311
+Y los roles del sistema ni siquiera tienen esos tres puntos.
+
+62
+00:03:16,675 --> 00:03:17,671
+Caso práctico:
+
+63
+00:03:17,799 --> 00:03:20,269
+quién tiene el rol Vendedor y qué le cambiaron.
+
+64
+00:03:20,913 --> 00:03:22,031
+Abro Vendedor.
+
+65
+00:03:22,663 --> 00:03:26,608
+Debajo del nombre, el enlace dice que tres personas tienen este rol.
+
+66
+00:03:27,252 --> 00:03:29,966
+Lo pulso, y se abre la vista Personas del rol:
+
+67
+00:03:29,983 --> 00:03:34,893
+José Cabrera, Ana Mejía y Héctor Vargas, con su último ingreso y su estado.
+
+68
+00:03:35,526 --> 00:03:36,692
+Héctor dice Nunca:
+
+69
+00:03:36,842 --> 00:03:38,335
+todavía no ha entrado.
+
+70
+00:03:38,979 --> 00:03:42,634
+Si nadie tuviera el rol, aquí diría que nadie lo tiene todavía;
+
+71
+00:03:42,735 --> 00:03:46,353
+y con más de cincuenta, te ofrece verlos todos en Personas.
+
+72
+00:03:47,000 --> 00:03:51,848
+Si pulso a Ana, la consola me lleva a su ficha en Personas, con todo su acceso.
+
+73
+00:03:53,212 --> 00:03:56,563
+Vuelvo al rol Vendedor, esta vez para abrir la vista Historial,
+
+74
+00:03:56,653 --> 00:03:58,980
+que cuenta todo lo que le pasó a este rol.
+
+75
+00:03:59,611 --> 00:04:02,698
+Cada entrada dice qué pasó, quién lo hizo y cuándo.
+
+76
+00:04:03,343 --> 00:04:05,162
+La de arriba es Cambió permisos:
+
+77
+00:04:05,240 --> 00:04:10,318
+debajo, cada línea es un recurso con su módulo, como Inventario, Productos.
+
+78
+00:04:10,963 --> 00:04:12,698
+A la izquierda, el antes:
+
+79
+00:04:12,788 --> 00:04:15,331
+aquí un guion rojo, porque no tenía nada;
+
+80
+00:04:15,396 --> 00:04:17,685
+y tras la flecha, el después en verde.
+
+81
+00:04:18,331 --> 00:04:23,036
+Cotizaciones, dentro de Ventas, pasó de nada a Ver con alcance Propios,
+
+82
+00:04:23,054 --> 00:04:24,220
+Crear y Editar.
+
+83
+00:04:24,865 --> 00:04:28,386
+Esta vista solo aparece si tienes permiso para leer la auditoría.
+
+84
+00:04:29,031 --> 00:04:29,824
+En resumen:
+
+85
+00:04:29,937 --> 00:04:33,374
+la herencia evita repetir, la exclusión recorta al hijo,
+
+86
+00:04:33,379 --> 00:04:37,141
+y los titulares y el historial te dicen a quién afecta un rol y qué le cambió.

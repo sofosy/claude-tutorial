@@ -1,0 +1,50 @@
+TÍTULO
+============================================================
+Certificación e-CF · Parte 1: solicitarla como contador para tus clientes
+
+DESCRIPCIÓN
+============================================================
+Cómo un contador solicita en germiva.com/certificacion la certificación de facturación electrónica (e-CF) de sus clientes: sus datos, su firma contable y el Programa de Socios, la comisión por referir a sus clientes, cada empresa con su plan y su prueba de vida, el resumen de lo que se va a crear y el pago por transferencia con el comprobante que revisa la inteligencia artificial.
+
+⏱️ CAPÍTULOS
+00:00  La página de certificación
+01:05  Tus datos
+01:53  Tu firma y el Programa de Socios
+02:57  Tus clientes: la primera empresa
+04:00  El plan y la prueba de vida
+05:17  Agregar otra empresa
+06:10  Un cliente persona física
+07:08  Resumen, pago y envío
+08:05  Solicitud enviada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Abrir el formulario público de certificación y elegir «Soy el contador»
+• Registrar tu firma contable con su RNC y pedir el ingreso al Programa de Socios con tu exequátur
+• Marcar que tú refieres a tus clientes para cobrar tu comisión
+• Agregar cada cliente (empresa con RNC o persona física con cédula) con su plan y su prueba de vida
+• Pagar por transferencia, subir el comprobante y enviar la solicitud
+
+⚠️ ERRORES COMUNES
+• Escribir el correo de otra persona como dueño: con ese correo entra al sistema y recibe su contraseña
+• Dejar la cédula personal en «Tu firma» cuando trabajas con una firma que tiene RNC
+• Creer que la certificación incluye el certificado digital: se compra aparte a una entidad del INDOTEL
+• Olvidar los días y el horario de la prueba de vida: sin ellos el formulario no avanza
+• Subir una foto de otra cosa como comprobante: la IA la rechaza y no se crea nada
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 08:58
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a solicitar la certificación de facturación electrónica de tres clientes, como lo hace un contador. Facturar electrónicamente es emitir e-CF, los comprobantes fiscales electrónicos que pide la DGII, la Dirección General de Impuestos Internos. Esta es la página de certificación de Germiva, y la abre cualquiera, sin usuario. Arriba dice lo esencial: nosotros hacemos la certificación con la DGII, y toma de uno a tres días si la empresa no tiene nada pendiente. A la izquierda están los pasos del formulario; a la derecha se llena el paso en el que vas. La primera pregunta es quién llena el formulario: el dueño de la empresa, o su contador. Para este video elijo Soy el contador. Fíjate que los pasos cambiaron: tus datos, tu firma, tus clientes y el pago. Y aparece una nota: con este formulario te creamos, o reconocemos, tu cuenta de contador.
+Abajo van tus datos. El primer campo es tu cédula, o el RNC de tu firma; el RNC es el número con el que la DGII identifica a una empresa. Escribo mi cédula. Al terminar, Germiva la busca sola en el padrón de la DGII, la lista oficial de contribuyentes, y completa el nombre: Carolina Méndez Rosario. Si no te encuentra, lo escribes tú. Sigue el correo, que es donde te avisamos el avance de la solicitud. Lo escribo: carolina punto méndez, arroba example punto com, todo en minúsculas. Ahora va el teléfono o WhatsApp, con su código de área: ocho cero nueve, cinco cinco cinco, cero uno ocho siete. Con todo listo, pulso Continuar.
+Paso dos: tu firma contable. Este recuadro dice para qué son estos datos: te creamos tu cuenta de contador en Germiva, y desde Mi Cartera trabajas con todos tus clientes, su contabilidad, sus facturas y sus reportes de la DGII. El formulario trajo mi cédula. Como trabajo con una firma, la cambio por el RNC de la firma, que es el que va en sus facturas. La encontró en el padrón: Méndez Rosario y Asociados. El correo y el teléfono vienen del paso anterior, y ese correo será tu usuario para entrar. Ahora el número de exequátur, el que te autoriza a ejercer como contador. Es opcional, pero con él pedimos tu ingreso al Programa de Socios: tu firma recibe la herramienta completa, sin costo. Por último, activo Yo les recomendé Germiva a estos clientes. Así ganas una comisión por lo que pague cada uno: si es tu primera vez como referidor, el veinte por ciento de lo que pague en sus primeros doce meses. Continuar.
+Paso tres: tus clientes. Arriba está lo que va incluido en cada empresa: el equipo de Germiva hace todo el proceso de certificación por seis mil pesos, con el ITBIS incluido, en un solo pago. El ITBIS es el impuesto a las ventas. El dueño solo hace la prueba de vida, una videollamada corta con la entidad certificadora. Y una aclaración importante: no incluye el certificado digital, el archivo con el que se firman las facturas; se compra aparte a una entidad autorizada por el INDOTEL, el Instituto Dominicano de las Telecomunicaciones; te guiamos. Ahora, el cliente uno: su tarjeta lleva todo lo de esa empresa. Escribo su RNC, el de la empresa que se va a certificar. Germiva lo encontró en el padrón y completó la razón social: Distribuidora Caribe Azul. El dueño o responsable es Pedro Almonte; es quien va a usar el sistema en esa empresa. Su correo es clave: con él entra al sistema, y a ese correo le llega el mensaje para crear su contraseña.
+Ahora el plan de Germiva que va a usar la empresa. Primero el ciclo: anual, con su descuento, o mensual. Elijo Anual. Ahora, en el campo Plan, abro la lista de planes; cada uno trae su precio en el ciclo que elegiste. Escojo Facturación Crecimiento. Debajo aparece la factura de esta empresa: el plan más la certificación. La casilla Factura a nombre de esta empresa viene marcada; si la quitas, la factura sale a tu nombre, porque eres tú quien paga. Luego, Qué tiene ya, que es opcional: si la empresa ya tiene el certificado digital, acceso a la Oficina Virtual de la DGII, o si ya pidió ser emisor electrónico. Cada respuesta le ahorra tiempo al equipo. Marco que sí tiene acceso a la Oficina Virtual. Y la prueba de vida: los días y el horario en que el dueño puede hacer la videollamada. Elijo el lunes, que es el día que más le conviene, y también el miércoles. Ahora el horario: en Desde abro la lista. Abajo sale un aviso en rojo que solo recuerda que falta el horario. Elijo las nueve de la mañana, que es la hora de entrada; y en Hasta abro la otra lista y elijo las doce del mediodía. Con el horario completo, el aviso desaparece.
+Para el segundo cliente pulso Agregar otra empresa, debajo de la tarjeta. Aparece el Cliente dos, en blanco: cada empresa elige su propio plan. Escribo el RNC, y Germiva completa el nombre de la empresa: es el Restaurante Sabor Criollo. La dueña es Yesenia Castillo: ella firma por el restaurante y recibe el acceso. Ahora escribo su correo: yesenia punto castillo, arroba example punto com. Este cliente paga cada mes, así que pulso Mensual. Luego voy al campo Plan, abro la lista, bajo un poco, y elijo ERP Estándar, un plan del sistema de gestión completo. Su prueba de vida: el martes, y si ese día no puede, el jueves. Para el horario de la tarde, en Desde abro la lista y elijo las dos de la tarde, y en Hasta, abro la otra y elijo las cinco.
+El tercero es una persona física: factura con su cédula, no con un RNC. Agrego otra empresa, y en el primer campo escribo su cédula. Con una cédula, fíjate, el campo de al lado cambia: ahora dice Nombre y apellido, como en la cédula, y ya no se pide el dueño aparte, porque es la misma persona: José Miguel Tavárez. Escribo su correo: josé miguel punto tavárez, todo junto, arroba example punto com. Este también paga mensual: pulso Mensual. En el campo Plan abro la lista, y esta vez elijo Facturación Inicial. Su prueba de vida es el sábado. Y para el horario, en Desde abro la lista y elijo las diez de la mañana, y en Hasta, abro la otra y elijo la una de la tarde. Si una empresa sobra, la quitas con Quitar, arriba a la derecha de su tarjeta; y puedes enviar hasta treinta empresas en una sola solicitud. Pulso Continuar.
+Último paso: pago y envío. Arriba, el resumen: cada empresa con su plan más la certificación, y el total. Debajo, Al enviar el formulario: la lista de lo que va a pasar, escrita según tus respuestas. Ahora, cómo vas a pagar. Con tarjeta se paga aquí mismo al enviar, de forma segura con 3D Secure. Yo pagué por transferencia, así que elijo Transferencia o depósito. La lista de arriba cambió: ahora todo empieza con el comprobante validado. Subo el comprobante, la captura de la transferencia; la inteligencia artificial lo revisa al enviar. Si todavía no has pagado, puedes enviar igual y subirlo después desde el enlace del correo. Los datos del pago son opcionales: anoto la referencia, que es el número de la transferencia en tu banco, y el nombre del banco, que ayuda al equipo a encontrar el pago más rápido. Acepto los términos y condiciones, y pulso Enviar solicitud.
+En un par de segundos, Germiva subió la captura y la inteligencia artificial la revisó: confirmó que es un pago real, y tomó el monto, la fecha, la referencia y el banco. Listo: Recibimos tu solicitud, con su número; guárdalo para cualquier consulta. Como el comprobante se validó, ya estamos creando las tres empresas, y te avisamos por correo cuando cada una esté lista. Abajo están las empresas de la solicitud. ¿Qué sigue? Cada dueño recibe su correo para crear su contraseña. Cuando el equipo de Germiva confirma el pago, quedas como contador de cada cliente, se registra tu comisión de referidor, y Éxito del Cliente los acompaña en la certificación con la DGII. Desde Mi Cartera, en tu cuenta de contador, sigues el avance de cada uno.

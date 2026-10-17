@@ -1,0 +1,207 @@
+1
+00:00:03,100 --> 00:00:07,615
+Hay dos formas de recibir citas por internet, y se eligen en la configuración.
+
+2
+00:00:08,269 --> 00:00:11,904
+Entro a Configuración, en el menú, y abro Preferencias.
+
+3
+00:00:12,573 --> 00:00:16,989
+Después recojo el panel para ganar espacio, y abro la pestaña Operación.
+
+4
+00:00:17,644 --> 00:00:22,011
+En el bloque Citas Médicas, los minutos antes para recordatorio dicen con cuánta
+
+5
+00:00:21,824 --> 00:00:25,149
+anticipación le llega al paciente el recordatorio por correo.
+
+6
+00:00:25,817 --> 00:00:28,199
+Al lado está el modo de la agenda en línea;
+
+7
+00:00:28,285 --> 00:00:29,341
+abro la lista.
+
+8
+00:00:30,009 --> 00:00:33,557
+En el modo simple, cada médico comparte su propio enlace,
+
+9
+00:00:33,641 --> 00:00:35,640
+el que vimos en la parte anterior.
+
+10
+00:00:36,295 --> 00:00:39,212
+En el modo avanzado, el centro tiene un portal:
+
+11
+00:00:39,359 --> 00:00:44,011
+el paciente entra a una sola dirección y elige el servicio, el médico y la hora.
+
+12
+00:00:44,667 --> 00:00:46,106
+Elijo el avanzado.
+
+13
+00:00:46,774 --> 00:00:50,285
+Aparece la dirección del portal, con su botón para copiarla.
+
+14
+00:00:50,954 --> 00:00:53,856
+Como dice la nota, hay que guardar para publicarlo:
+
+15
+00:00:53,942 --> 00:00:55,643
+pulso Guardar, abajo.
+
+16
+00:00:56,298 --> 00:00:59,599
+Sale el aviso de configuración guardada, y lo acepto.
+
+17
+00:01:00,943 --> 00:01:03,152
+Ahora me pongo en el lugar del paciente:
+
+18
+00:01:03,237 --> 00:01:06,959
+abro el portal con ese enlace, como lo haría desde su teléfono.
+
+19
+00:01:07,626 --> 00:01:10,753
+Arriba está el nombre del centro y los tres pasos de la reserva:
+
+20
+00:01:10,888 --> 00:01:13,356
+servicio, médico, fecha y hora.
+
+21
+00:01:14,013 --> 00:01:16,990
+Cada tarjeta es un servicio, con su descripción,
+
+22
+00:01:17,125 --> 00:01:19,606
+su duración y cuántos médicos lo ofrecen.
+
+23
+00:01:20,275 --> 00:01:24,963
+Aquí está la consulta pediátrica que configuramos, con el doctor Luis Gómez.
+
+24
+00:01:25,632 --> 00:01:29,664
+Este paciente necesita una consulta general, así que la elige.
+
+25
+00:01:31,052 --> 00:01:35,617
+El segundo paso muestra los médicos que ofrecen ese servicio, con su especialidad.
+
+26
+00:01:36,284 --> 00:01:39,561
+Si se equivocó, cambiar servicio lo lleva de vuelta.
+
+27
+00:01:40,228 --> 00:01:43,430
+Elige a la doctora Ana Pérez y pulsa ver horarios.
+
+28
+00:01:44,085 --> 00:01:46,307
+Entra a la página de reservas de la doctora:
+
+29
+00:01:46,429 --> 00:01:49,432
+la misma que se abre con su enlace en el modo simple.
+
+30
+00:01:50,087 --> 00:01:53,424
+Arriba se ve el servicio, la doctora con su especialidad,
+
+31
+00:01:53,546 --> 00:01:55,099
+la descripción y el precio.
+
+32
+00:01:56,474 --> 00:01:58,224
+Debajo está el calendario.
+
+33
+00:01:58,879 --> 00:02:01,112
+Los días apagados no se pueden elegir:
+
+34
+00:02:01,260 --> 00:02:05,118
+ya pasaron, la doctora no atiende, o no le quedan turnos.
+
+35
+00:02:05,787 --> 00:02:08,257
+El paciente toca uno de los próximos días,
+
+36
+00:02:08,317 --> 00:02:11,245
+y a la derecha aparecen los turnos libres de ese día,
+
+37
+00:02:11,391 --> 00:02:14,729
+cada uno con su hora de inicio, de fin y su duración.
+
+38
+00:02:15,384 --> 00:02:18,686
+Elige el de las nueve de la mañana, y pulsa siguiente.
+
+39
+00:02:20,049 --> 00:02:22,307
+Arriba queda el resumen de lo que eligió:
+
+40
+00:02:22,368 --> 00:02:26,003
+doctora, consultorio, duración, fecha y hora.
+
+41
+00:02:26,658 --> 00:02:28,246
+Abajo pone sus datos:
+
+42
+00:02:28,356 --> 00:02:32,600
+el nombre completo, Gabriela Fernández, tal como quiere que aparezca.
+
+43
+00:02:33,267 --> 00:02:37,832
+Después el correo electrónico, que es donde le llega la confirmación de su cita.
+
+44
+00:02:38,487 --> 00:02:42,731
+Y por último el teléfono, que es opcional pero sirve para el recordatorio.
+
+45
+00:02:43,399 --> 00:02:45,112
+Pulsa confirmar reserva.
+
+46
+00:02:45,767 --> 00:02:46,413
+Listo:
+
+47
+00:02:46,524 --> 00:02:48,063
+la cita quedó creada.
+
+48
+00:02:48,719 --> 00:02:54,065
+La pantalla le da su número de cita, el médico, el consultorio, la fecha y la hora.
+
+49
+00:02:54,721 --> 00:02:58,244
+Puede agregarla a su calendario de Google, y si no puede asistir,
+
+50
+00:02:58,403 --> 00:03:00,910
+la cancela desde aquí para liberar el horario.
+
+51
+00:03:01,566 --> 00:03:04,643
+Del lado del centro, esta cita ya está en la agenda:
+
+52
+00:03:04,778 --> 00:03:06,788
+eso lo vemos en la siguiente parte.

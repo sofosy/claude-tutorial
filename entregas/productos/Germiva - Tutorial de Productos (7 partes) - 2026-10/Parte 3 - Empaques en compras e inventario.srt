@@ -1,0 +1,439 @@
+1
+00:00:03,100 --> 00:00:06,623
+En la parte anterior le pusimos al refresco su caja de veinticuatro.
+
+2
+00:00:07,291 --> 00:00:08,519
+Hoy lo compramos.
+
+3
+00:00:09,176 --> 00:00:11,433
+Entro a Inventario y abro Por reponer.
+
+4
+00:00:12,089 --> 00:00:14,919
+Esta pantalla lista lo que está por debajo de su mínimo,
+
+5
+00:00:15,003 --> 00:00:17,597
+y cada fila es un producto en un almacén.
+
+6
+00:00:18,265 --> 00:00:19,469
+Recojo el panel.
+
+7
+00:00:20,138 --> 00:00:21,713
+El refresco está agotado:
+
+8
+00:00:21,774 --> 00:00:26,352
+hay cero unidades, con un mínimo de cuarenta y ocho y un máximo de doscientos
+
+9
+00:00:26,164 --> 00:00:26,860
+cuarenta.
+
+10
+00:00:27,528 --> 00:00:31,597
+La columna sugerido dice cuánto pedir para llegar al máximo, y fíjate:
+
+11
+00:00:31,719 --> 00:00:35,231
+lo propone en cajas completas, diez cajas de veinticuatro,
+
+12
+00:00:35,329 --> 00:00:38,121
+porque la caja es el empaque que se propone al comprar.
+
+13
+00:00:38,789 --> 00:00:43,118
+Aún no hay último proveedor ni último costo, porque nunca se ha comprado.
+
+14
+00:00:43,774 --> 00:00:46,429
+Marco la fila y pulso crear requisición.
+
+15
+00:00:47,085 --> 00:00:51,402
+El aviso dice que se creará una requisición en borrador con la cantidad sugerida;
+
+16
+00:00:51,475 --> 00:00:52,368
+la confirmo.
+
+17
+00:00:53,036 --> 00:00:56,784
+Se abre la requisición, con la línea en cajas por veinticuatro.
+
+18
+00:00:57,451 --> 00:01:01,831
+La requisición sigue su camino de aprobación en Compras, que tiene su propia serie;
+
+19
+00:01:01,904 --> 00:01:04,609
+aquí lo que importa es que la caja viaja con ella.
+
+20
+00:01:05,960 --> 00:01:08,206
+Ahora la orden de compra al proveedor.
+
+21
+00:01:08,873 --> 00:01:11,145
+Abro una orden nueva en Compras.
+
+22
+00:01:11,812 --> 00:01:12,980
+Elijo el proveedor:
+
+23
+00:01:13,102 --> 00:01:16,823
+escribo embotell, y en la lista aparece Embotelladora del Caribe;
+
+24
+00:01:16,922 --> 00:01:19,899
+la elijo, y debajo aparecen sus datos.
+
+25
+00:01:20,567 --> 00:01:24,748
+Luego, el almacén destino, que es donde va a entrar la mercancía:
+
+26
+00:01:24,821 --> 00:01:25,988
+el almacén Sur.
+
+27
+00:01:26,656 --> 00:01:30,391
+Abajo, en las líneas, busco el refresco escribiendo su nombre;
+
+28
+00:01:30,513 --> 00:01:33,391
+la lista lo muestra con su código, y lo agrego.
+
+29
+00:01:34,059 --> 00:01:35,227
+Fíjate en la línea:
+
+30
+00:01:35,349 --> 00:01:37,943
+la unidad vino sola en caja por veinticuatro,
+
+31
+00:01:38,065 --> 00:01:40,447
+porque es la que tiene la estrella de compra.
+
+32
+00:01:41,115 --> 00:01:43,673
+Y el precio unitario es quinientos veintiocho:
+
+33
+00:01:43,707 --> 00:01:48,670
+el costo de una unidad, veintidós pesos, por las veinticuatro que trae la caja.
+
+34
+00:01:49,325 --> 00:01:52,799
+Si abro el selector de unidad, solo ofrece unidad y caja:
+
+35
+00:01:52,909 --> 00:01:56,568
+el paquete no aparece, porque lo marcamos solo para la venta.
+
+36
+00:01:57,237 --> 00:01:58,106
+Lo cierro.
+
+37
+00:01:58,774 --> 00:02:02,111
+En cantidad escribo diez, diez cajas de veinticuatro.
+
+38
+00:02:02,767 --> 00:02:06,737
+Abajo, el resumen financiero suma el subtotal y el ITBIS.
+
+39
+00:02:07,405 --> 00:02:08,485
+Pulso guardar.
+
+40
+00:02:09,154 --> 00:02:12,045
+La orden se crea, y el aviso lo confirma;
+
+41
+00:02:12,117 --> 00:02:12,813
+acepto.
+
+42
+00:02:14,203 --> 00:02:16,002
+La orden quedó en borrador.
+
+43
+00:02:16,658 --> 00:02:21,186
+Antes de recibir mercancía pasa por tres estados, con botones en la cabecera.
+
+44
+00:02:21,853 --> 00:02:25,402
+Pulso enviar a aprobación y lo confirmo con sí, continuar.
+
+45
+00:02:26,070 --> 00:02:30,040
+El aviso dice que la orden quedó pendiente de aprobación, y lo cierro.
+
+46
+00:02:30,707 --> 00:02:32,085
+Ahora pulso aprobar;
+
+47
+00:02:32,207 --> 00:02:34,776
+se pueden dejar comentarios, y apruebo.
+
+48
+00:02:35,432 --> 00:02:37,716
+El aviso dice que la orden fue aprobada;
+
+49
+00:02:37,826 --> 00:02:39,427
+lo leo, y lo acepto.
+
+50
+00:02:40,082 --> 00:02:44,908
+El tercer paso es confirmar, que significa que el proveedor ya aceptó el pedido.
+
+51
+00:02:45,576 --> 00:02:48,207
+Lo pulso, y en la pregunta digo que sí:
+
+52
+00:02:48,254 --> 00:02:49,063
+confirmo.
+
+53
+00:02:49,730 --> 00:02:53,887
+El aviso dice que la orden ya está confirmada, y lo cierro con aceptar.
+
+54
+00:02:54,554 --> 00:02:57,123
+Con eso aparece el botón crear recepción.
+
+55
+00:02:57,778 --> 00:03:01,487
+El detalle de estas aprobaciones se explica en la serie de Compras.
+
+56
+00:03:02,853 --> 00:03:04,057
+Llegó el camión.
+
+57
+00:03:04,712 --> 00:03:06,276
+Pulso crear recepción.
+
+58
+00:03:06,932 --> 00:03:09,897
+La recepción registra lo que de verdad entró al almacén,
+
+59
+00:03:09,995 --> 00:03:11,869
+y sus líneas salen de la orden.
+
+60
+00:03:12,537 --> 00:03:17,425
+La línea dice ordenada diez, en la unidad caja por veinticuatro, y recibida diez:
+
+61
+00:03:17,560 --> 00:03:20,302
+si llegaran menos cajas, aquí se corrige.
+
+62
+00:03:20,957 --> 00:03:25,708
+Abajo, el resultado de la recepción resume diez cajas recibidas y aceptadas,
+
+63
+00:03:25,756 --> 00:03:26,614
+y su valor.
+
+64
+00:03:27,269 --> 00:03:28,151
+Pulso guardar;
+
+65
+00:03:28,237 --> 00:03:31,400
+el aviso dice que la recepción se creó, y acepto.
+
+66
+00:03:32,056 --> 00:03:33,235
+Queda en borrador.
+
+67
+00:03:33,891 --> 00:03:37,725
+En el menú acciones de arriba pulso aprobar recepción, y apruebo.
+
+68
+00:03:38,380 --> 00:03:41,172
+El aviso dice que ya se puede procesar a inventario;
+
+69
+00:03:41,257 --> 00:03:41,953
+acepto.
+
+70
+00:03:42,609 --> 00:03:45,327
+Y en el mismo menú, procesar a inventario.
+
+71
+00:03:45,982 --> 00:03:50,560
+Antes de mover nada, el sistema valida la línea, y aquí está la conversión:
+
+72
+00:03:50,682 --> 00:03:54,739
+diez cajas por veinticuatro, que son doscientas cuarenta unidades.
+
+73
+00:03:55,407 --> 00:03:57,082
+Pulso procesar una línea.
+
+74
+00:03:57,737 --> 00:04:01,584
+El aviso confirma que la mercancía entró al inventario, y lo cierro.
+
+75
+00:04:02,954 --> 00:04:05,150
+Vamos a ver el resultado en Existencias,
+
+76
+00:04:05,273 --> 00:04:08,237
+la pantalla con lo que hay de cada producto ahora mismo.
+
+77
+00:04:08,906 --> 00:04:12,875
+En el buscador escribo refresco, y luego pulso el botón filtrar.
+
+78
+00:04:13,544 --> 00:04:18,444
+En la fila, la columna disponible dice doscientas cuarenta unidades, y debajo,
+
+79
+00:04:18,540 --> 00:04:19,572
+su equivalencia:
+
+80
+00:04:19,694 --> 00:04:21,432
+diez cajas por veinticuatro.
+
+81
+00:04:22,100 --> 00:04:24,420
+La existencia vive siempre en unidades;
+
+82
+00:04:24,531 --> 00:04:26,417
+la caja es una forma de leerla.
+
+83
+00:04:27,085 --> 00:04:29,293
+Abro el detalle con el ojo de la fila.
+
+84
+00:04:29,949 --> 00:04:34,675
+El panel repite lo disponible en cajas, dice dónde está, en el almacén Sur,
+
+85
+00:04:34,786 --> 00:04:35,668
+y en qué lote.
+
+86
+00:04:36,324 --> 00:04:38,247
+Ahora pulso ver su kardex.
+
+87
+00:04:38,915 --> 00:04:42,377
+El kardex es el historial de entradas y salidas con su costo.
+
+88
+00:04:43,033 --> 00:04:46,170
+La entrada de la recepción dice diez cajas por veinticuatro,
+
+89
+00:04:46,306 --> 00:04:50,412
+doscientas cuarenta unidades, y el costo unitario es veintidós pesos:
+
+90
+00:04:50,509 --> 00:04:55,025
+la caja costó quinientos veintiocho, y el sistema la lleva a la unidad base.
+
+91
+00:04:55,681 --> 00:04:58,213
+El saldo final también se lee en cajas.
+
+92
+00:04:59,573 --> 00:05:01,855
+Por último, un movimiento manual.
+
+93
+00:05:02,511 --> 00:05:05,600
+Abro registrar movimiento, que sirve para entradas,
+
+94
+00:05:05,723 --> 00:05:09,295
+salidas y traslados que no vienen de una compra o una venta.
+
+95
+00:05:09,963 --> 00:05:13,711
+Elijo transferencia, que mueve mercancía de un lugar a otro.
+
+96
+00:05:14,379 --> 00:05:15,112
+Producto:
+
+97
+00:05:15,210 --> 00:05:18,843
+escribo refresco, y cuando aparece en la lista, lo elijo.
+
+98
+00:05:19,500 --> 00:05:21,858
+El tipo de transferencia se pone solo.
+
+99
+00:05:22,526 --> 00:05:25,615
+En inventario disponible se ve el lote del almacén Sur,
+
+100
+00:05:25,725 --> 00:05:28,059
+con sus doscientas cuarenta unidades.
+
+101
+00:05:28,725 --> 00:05:29,547
+El destino:
+
+102
+00:05:29,657 --> 00:05:32,560
+la ubicación principal del almacén en consignación.
+
+103
+00:05:33,216 --> 00:05:34,631
+Ahora, la unidad:
+
+104
+00:05:34,728 --> 00:05:39,021
+aquí también se puede capturar en empaques, y elijo caja por veinticuatro.
+
+105
+00:05:39,689 --> 00:05:40,459
+Cantidad:
+
+106
+00:05:40,458 --> 00:05:41,586
+dos cajas.
+
+107
+00:05:42,256 --> 00:05:46,485
+Debajo del campo, el sistema las convierte en cuarenta y ocho unidades.
+
+108
+00:05:47,153 --> 00:05:50,206
+Pulso guardar, y el aviso confirma el traslado;
+
+109
+00:05:50,242 --> 00:05:50,975
+acepto.
+
+110
+00:05:51,631 --> 00:05:56,158
+En la próxima parte vendemos este refresco por caja, por paquete y por unidad.

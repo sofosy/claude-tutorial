@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Con y sin permiso · Lo que una credencial puede y no puede consultar
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  El programa del contador
+00:41  Consulta permitida
+01:15  Consulta no permitida
+01:46  Conceder el permiso
+02:41  La misma consulta, ahora permitida
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cómo entra otro programa a Germiva con una credencial: clave, secreto y un pase temporal
+• Qué responde Germiva cuando la credencial tiene el permiso: los datos
+• Qué responde cuando no lo tiene: un rechazo 403, sin entregar nada
+• Conceder un permiso a la credencial y comprobar que vale al instante
+
+⚠️ ERRORES COMUNES
+• Dar a la credencial todos los permisos «por si acaso»: se entrega más información de la que el programa necesita
+• Creer que un rechazo 403 es una falla del sistema: es el permiso que falta, y se concede en Integraciones
+• Confundir la credencial con un usuario: no entra por la pantalla de acceso ni tiene roles de persona
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:13
+
+TRANSCRIPCIÓN
+============================================================
+Un caso práctico para ver los permisos de una credencial en acción. Esta página simula el programa del contador: pide datos a Germiva con la credencial que creamos, igual que lo haría el programa real. A la izquierda está su conexión. El programa no entra con el usuario de una persona: se presenta con su clave de API, que es la llave de la puerta por la que dos programas se hablan, y con su secreto, que aquí va tapado. Pulso Conectar. Germiva revisa la clave y el secreto, y le entrega un pase temporal: dice Conectado. A la derecha tiene dos consultas, una para facturas y otra para productos.
+Primero, lo que el contador necesita. Pulso Consultar facturas emitidas. Germiva responde con el código doscientos, que en el idioma de los programas quiere decir: permitido, aquí están los datos. Entregó tres facturas, todas las que tiene la empresa. Cada renglón trae el comprobante fiscal, el cliente, el estado y el total: dos emitidas y un borrador. La credencial tiene el permiso de ver facturas, porque venía en la plantilla con que se creó, así que Germiva entrega todo sin preguntar.
+Ahora algo que no le dimos. Pulso Consultar productos. La respuesta es cuatrocientos tres, que quiere decir rechazado. El mensaje lo dice en español: no tienes el permiso requerido para acceder a este recurso, Productos; solicita acceso a tu administrador. Y Germiva no entregó ni un solo producto: ni nombres, ni precios, ni existencias. No es una falla del sistema: es exactamente lo que tiene que pasar cuando un programa pide algo que su credencial no tiene.
+El contador también necesita consultar productos, para cuadrar el inventario. Vuelvo a Germiva, a la pestaña Integraciones, con su panel abierto: Programa del contador. Arriba pulso Editar permisos. La página tarda un momento, porque trae los más de mil permisos del sistema, y se abre Permisos de Integración. Los módulos donde la credencial ya tiene algo salen abiertos; el módulo Productos está cerrado, en cero. Lo abro. La primera casilla, Productos a secas, es la de ver productos; las de debajo son para crear, editar o eliminar, y esas no se las doy. La marco. El aviso dice que el permiso se concedió, y queda guardado en el acto, sin botón de guardar: el módulo pasa a uno. Listo: ahora pulso Volver a Integraciones, al pie, y el panel ya cuenta cinco permisos.
+Vuelvo al programa del contador, que sigue conectado con el mismo pase. Sin tocar nada más, repito Consultar productos. Ahora responde doscientos, permitido, y entrega los veinticinco productos del catálogo. El cambio valió al instante, desde la siguiente consulta. En resumen: una credencial solo recibe lo que tiene concedido; lo demás se rechaza con cuatrocientos tres. Dale a cada programa solo lo que necesita.

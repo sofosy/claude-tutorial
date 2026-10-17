@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Cómo pagar tu suscripción de Germiva
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Tu suscripción
+00:46  Pagar con tarjeta
+01:43  Pagar por transferencia
+02:51  Tu plan activo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Encontrar «Mi Suscripción» y leer tu plan, tus días de prueba y la fecha de renovación
+• Elegir entre pagar con tarjeta (AZUL) o con transferencia bancaria
+• Qué pide el pago con tarjeta y cómo funciona la renovación automática
+• Pagar por transferencia: subir el comprobante y seguir su revisión
+• Comprobar que el plan quedó activo y el pago registrado
+
+⚠️ ERRORES COMUNES
+• Esperar a que termine la prueba para pagar: ese día el plan se detiene
+• Creer que el plan se activa al subir el comprobante: se activa cuando Germiva lo aprueba
+• Subir una imagen que no se lee o de otro monto: el comprobante se rechaza y hay que subir uno nuevo
+• Pagar por transferencia y olvidar el mes siguiente: con transferencia no hay cobro automático
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:34
+
+TRANSCRIPCIÓN
+============================================================
+Estás en el inicio de Germiva. Tu suscripción se administra desde Configuración, el ícono de ajustes en el menú de la izquierda. Ahí eliges Mi Suscripción. Esta es la pantalla donde la empresa ve qué plan tiene contratado, cuánto paga y cuándo vence. Recojo el menú para ver la pantalla completa. Arriba, el aviso Período de Prueba Activo te dice cuántos días de prueba te quedan. Debajo, la tarjeta Plan Actual: tu plan, Profesional, todavía en período de prueba, con su precio al mes. La próxima renovación es el día en que termina la prueba: si pagas antes, sigues trabajando sin interrupción. Pulso Pagar Ahora.
+Esta es Finalizar suscripción, la pantalla de pago. Arriba eliges el método de pago: tarjeta de crédito o débito, que se cobra a través de AZUL, la plataforma de pagos con tarjeta, o transferencia bancaria. Con tarjeta, escribes el número, la fecha de vencimiento, el CVV, que es el código de tres cifras de atrás, y el nombre del titular tal como aparece en la tarjeta. Más abajo va la dirección de facturación. Al pagar, tu banco puede pedirte que confirmes la compra: es la verificación 3D Secure, una capa más de seguridad. Germiva no guarda el número completo de la tarjeta. Bajando está el Resumen del Pedido: el plan que pagas, el período que cubre y el total. Y la Renovación automática: con tarjeta, el mes siguiente se cobra solo a esa misma tarjeta, y la puedes apagar aquí o después. Hoy voy a pagar por transferencia.
+Así que vuelvo arriba, al método de pago, y elijo Transferencia Bancaria. El recuadro Cómo funciona lo resume en tres pasos. Uno: transfieres el monto desde tu banco a la cuenta de Germiva; si todavía no tienes los datos, el botón Pedir los datos bancarios te los pide por WhatsApp. Dos: subes aquí el comprobante. Tres: el equipo de Germiva lo verifica contra su banco y activa tu plan; es una revisión manual, normalmente el mismo día hábil. Ya transferí, así que toco el recuadro punteado y subo la foto del comprobante. Escribo el banco desde el que transferí; al lado, el número de referencia que me dio el banco. El comentario es opcional. Pulso Ya realicé el pago. Sale el aviso Recibimos tu comprobante: el equipo lo va a verificar contra la cuenta bancaria y te avisa por correo cuando tu plan quede activo. Pulso Aceptar. Debajo ahora dice Tu comprobante está en revisión, con la fecha y el monto. Importante: el plan se activa cuando Germiva lo aprueba, no al subir la imagen.
+Cuando Germiva aprueba el comprobante, te llega un correo, y en Mi Suscripción ya no aparece el aviso de prueba. La tarjeta Plan Actual dice Activa, y la próxima renovación pasa a la fecha del siguiente pago. Bajo un poco: en Historial de Pagos queda registrado el pago, por transferencia bancaria, como completado. Y en Pagos y Renovación, el mensaje Tu suscripción está al día. Recuerda que con transferencia no hay cobro automático: Germiva te avisa antes del próximo vencimiento. Si prefieres que se cobre solo cada mes, agrega una tarjeta aquí con Agregar Tarjeta y deja encendida la renovación automática.

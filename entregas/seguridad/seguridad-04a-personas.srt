@@ -1,0 +1,339 @@
+1
+00:00:03,097 --> 00:00:04,868
+Esta es la consola de Seguridad,
+
+2
+00:00:04,993 --> 00:00:07,827
+donde decides quién entra a la empresa y qué puede hacer.
+
+3
+00:00:08,471 --> 00:00:10,338
+Abro la pestaña Personas.
+
+4
+00:00:10,983 --> 00:00:15,071
+Aquí, cada fila es alguien que puede entrar a Distribuidora Las Palmas con su
+
+5
+00:00:14,884 --> 00:00:16,496
+propio usuario y su clave.
+
+6
+00:00:17,130 --> 00:00:20,240
+Las columnas dicen quién es, con su nombre y su correo;
+
+7
+00:00:20,367 --> 00:00:21,412
+qué roles tiene;
+
+8
+00:00:21,550 --> 00:00:23,103
+cuándo entró por última vez;
+
+9
+00:00:23,157 --> 00:00:23,996
+y su estado.
+
+10
+00:00:24,629 --> 00:00:26,678
+A la izquierda está el riel de Vistas:
+
+11
+00:00:26,803 --> 00:00:30,483
+son atajos que filtran la lista, y cada uno trae su conteo.
+
+12
+00:00:31,115 --> 00:00:32,137
+Todas son nueve;
+
+13
+00:00:32,179 --> 00:00:34,843
+Activas, ocho, las que pueden entrar.
+
+14
+00:00:35,487 --> 00:00:36,835
+Ahora pulso Sin rol:
+
+15
+00:00:36,960 --> 00:00:40,469
+sale Luisa Féliz, que puede entrar pero no tiene ningún rol,
+
+16
+00:00:40,572 --> 00:00:42,959
+y la columna Roles lo avisa con una frase.
+
+17
+00:00:43,603 --> 00:00:44,988
+Sigo con Nunca entraron:
+
+18
+00:00:45,125 --> 00:00:48,937
+Héctor Vargas tiene su cuenta creada, pero no ha entrado ni una vez,
+
+19
+00:00:48,990 --> 00:00:51,847
+y por eso su estado dice Pendiente, a la derecha.
+
+20
+00:00:52,493 --> 00:00:53,804
+Queda la última vista:
+
+21
+00:00:53,893 --> 00:00:58,333
+en Inactivas está Sonia Reyes, a quien se le cortó el acceso hace tiempo.
+
+22
+00:00:58,966 --> 00:01:00,277
+Vuelvo a Todas.
+
+23
+00:01:00,923 --> 00:01:04,179
+Cada estado lleva su color, para verlo de un vistazo.
+
+24
+00:01:04,811 --> 00:01:07,125
+Y el pie dice cuántas personas se muestran:
+
+25
+00:01:07,251 --> 00:01:09,045
+del uno al nueve, de nueve.
+
+26
+00:01:10,384 --> 00:01:14,400
+Para encontrar a alguien uso el buscador, arriba a la derecha de la lista.
+
+27
+00:01:15,043 --> 00:01:19,748
+Escribo su apellido, Pimentel, y la lista queda solo con Carlos Pimentel.
+
+28
+00:01:20,394 --> 00:01:22,599
+También busca por usuario y por correo.
+
+29
+00:01:23,234 --> 00:01:24,533
+Borro la búsqueda.
+
+30
+00:01:25,165 --> 00:01:28,710
+Si lo que necesitas es ver quién tiene un rol, usa el filtro Rol,
+
+31
+00:01:28,801 --> 00:01:30,147
+al lado del buscador.
+
+32
+00:01:30,781 --> 00:01:32,212
+El menú trae cada rol:
+
+33
+00:01:32,254 --> 00:01:36,343
+arriba los de la empresa, como Mensajero, y debajo los del sistema.
+
+34
+00:01:36,977 --> 00:01:38,070
+Elijo Almacén:
+
+35
+00:01:38,159 --> 00:01:42,200
+aparecen Pedro Núñez, el encargado de almacén, y José Cabrera,
+
+36
+00:01:42,302 --> 00:01:44,664
+que tiene ese rol además del de vendedor.
+
+37
+00:01:45,298 --> 00:01:49,109
+Si una búsqueda no encuentra a nadie, la lista lo dice con un mensaje,
+
+38
+00:01:49,198 --> 00:01:50,281
+y no es un error:
+
+39
+00:01:50,383 --> 00:01:52,213
+revisa lo escrito o el filtro.
+
+40
+00:01:52,858 --> 00:01:56,246
+Para quitar el filtro vuelvo al menú y elijo Todos los roles.
+
+41
+00:01:56,891 --> 00:01:59,423
+Y la lista muestra a las nueve otra vez.
+
+42
+00:02:00,773 --> 00:02:02,760
+Ahora la ficha de una persona.
+
+43
+00:02:03,392 --> 00:02:07,530
+Abro a Ana Mejía, la vendedora, y a la derecha se abre su panel.
+
+44
+00:02:08,175 --> 00:02:10,344
+Arriba, su estado, Activa;
+
+45
+00:02:10,457 --> 00:02:12,131
+su equipo, Zona Este;
+
+46
+00:02:12,233 --> 00:02:14,064
+y cuándo entró por última vez.
+
+47
+00:02:14,709 --> 00:02:16,563
+Luego, el bloque Roles:
+
+48
+00:02:16,665 --> 00:02:19,148
+Ana tiene Vendedor, un rol de la empresa.
+
+49
+00:02:19,793 --> 00:02:23,024
+Si lo pulsas, te lleva a ese rol para ver qué concede.
+
+50
+00:02:23,658 --> 00:02:25,911
+Debajo vienen sus Permisos efectivos:
+
+51
+00:02:26,001 --> 00:02:29,087
+todo lo que puede hacer, sumando todos sus roles.
+
+52
+00:02:29,733 --> 00:02:32,047
+Tiene cinco, repartidos por módulo;
+
+53
+00:02:32,064 --> 00:02:35,416
+en Cotizaciones, por ejemplo, tres de diecinueve.
+
+54
+00:02:36,049 --> 00:02:38,302
+Solo se ven los módulos donde tiene algo;
+
+55
+00:02:38,367 --> 00:02:42,143
+con Ver los módulos aparecen todos los que la empresa tiene contratados,
+
+56
+00:02:42,136 --> 00:02:43,834
+y la mayoría está en cero.
+
+57
+00:02:44,479 --> 00:02:46,479
+Al final, Últimos ingresos:
+
+58
+00:02:46,593 --> 00:02:50,838
+cuándo entró, desde qué programa, y desde qué dirección de red, la IP,
+
+59
+00:02:50,879 --> 00:02:53,725
+o sea el número que identifica a la computadora.
+
+60
+00:02:54,371 --> 00:02:56,092
+Aquí dice Chrome en Windows:
+
+61
+00:02:56,170 --> 00:02:58,484
+el navegador y el sistema desde los que entró.
+
+62
+00:02:59,129 --> 00:03:03,339
+Encima de los bloques quedan Editar, Cambiar contraseña y los tres puntos,
+
+63
+00:03:03,417 --> 00:03:05,163
+que vemos en el próximo video.
+
+64
+00:03:06,529 --> 00:03:10,485
+Si necesitas saber qué hizo alguien, no hace falta buscarlo a mano.
+
+65
+00:03:11,129 --> 00:03:13,878
+En los tres puntos del panel elijo Ver su actividad.
+
+66
+00:03:14,523 --> 00:03:17,549
+Me lleva a la Auditoría, ya filtrada por Ana Mejía,
+
+67
+00:03:17,663 --> 00:03:19,445
+con su nombre fijado en el filtro:
+
+68
+00:03:19,547 --> 00:03:23,116
+cada fila es algo que ella hizo, con la hora y desde dónde.
+
+69
+00:03:23,750 --> 00:03:25,362
+Arriba está lo más reciente:
+
+70
+00:03:25,441 --> 00:03:27,391
+aquí, que actualizó un precio.
+
+71
+00:03:28,037 --> 00:03:30,061
+La Auditoría tiene su propio video;
+
+72
+00:03:30,187 --> 00:03:32,814
+por ahora, vuelvo a Personas con la pestaña.
+
+73
+00:03:34,163 --> 00:03:35,498
+Un caso práctico.
+
+74
+00:03:36,141 --> 00:03:39,542
+Cada cierto tiempo conviene revisar las cuentas que nadie usa.
+
+75
+00:03:40,187 --> 00:03:42,984
+Abro la vista Nunca entraron, y abro su ficha:
+
+76
+00:03:43,050 --> 00:03:44,349
+es Héctor Vargas.
+
+77
+00:03:44,995 --> 00:03:47,610
+Arriba dice Pendiente, y Último ingreso:
+
+78
+00:03:47,699 --> 00:03:48,262
+nunca;
+
+79
+00:03:48,365 --> 00:03:50,653
+ni una sola vez desde que se creó la cuenta,
+
+80
+00:03:50,731 --> 00:03:53,588
+y no hay ningún ingreso registrado en esta empresa.
+
+81
+00:03:54,234 --> 00:03:55,545
+Tiene el rol Vendedor:
+
+82
+00:03:55,731 --> 00:03:58,709
+es una puerta abierta a Ventas que nadie está usando.
+
+83
+00:03:59,342 --> 00:04:03,057
+Lo correcto es confirmar su correo con él o, si ya no trabaja aquí,
+
+84
+00:04:03,158 --> 00:04:04,483
+desactivar la cuenta.
+
+85
+00:04:05,127 --> 00:04:07,259
+Hazlo en tu revisión de cada semana.

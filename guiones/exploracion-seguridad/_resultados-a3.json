@@ -1,0 +1,28 @@
+{
+ "logins": [
+  {
+   "usuario": "pedro.nunez",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.03,
+   "clic_a_url_s": 7.15,
+   "clic_a_networkidle_s": 7.15,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A3_/sales/quotes": {
+  "url_final": "http://localhost:4200/home",
+  "toast": "No tienes permiso para ver «Cotizaciones». Solicita el acceso al administrador de tu empresa.",
+  "toast_s": 0.54
+ },
+ "A3_/my-company": {
+  "url_final": "http://localhost:4200/home",
+  "toast": "No tienes permiso para ver «Mi Empresa». Solicita el acceso al administrador de tu empresa.",
+  "toast_s": 0.47
+ },
+ "A3_/sales/quotes/create": {
+  "url_final": "http://localhost:4200/home",
+  "toast": "No tienes permiso para ver «Cotizaciones». Solicita el acceso al administrador de tu empresa.",
+  "toast_s": 0.52
+ }
+}

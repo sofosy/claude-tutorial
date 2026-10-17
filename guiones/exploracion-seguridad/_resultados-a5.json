@@ -1,0 +1,93 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.15,
+   "clic_a_url_s": 7.93,
+   "clic_a_networkidle_s": 7.94,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "marta.guzman",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.15,
+   "clic_a_url_s": 7.42,
+   "clic_a_networkidle_s": 7.42,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A5_boton_rosa": "shield\nEditar permisos",
+ "A5_cb_count": 3,
+ "A5_evento": {
+  "audit": [
+   [
+    "311378",
+    "UPDATE",
+    "PERMISSIONS_CHANGED",
+    "users",
+    "7952",
+    "rosa.almanzar",
+    "{\"Productos\": {\"newValue\": \"Ver\", \"oldValue\": \"—\"}}"
+   ],
+   [
+    "311377",
+    "CREATE",
+    "",
+    "role_permissions",
+    "11458",
+    "rosa.almanzar",
+    ""
+   ],
+   [
+    "311376",
+    "CREATE",
+    "",
+    "role_permissions",
+    "11457",
+    "rosa.almanzar",
+    ""
+   ],
+   [
+    "311375",
+    "CREATE",
+    "",
+    "role_permissions",
+    "11456",
+    "rosa.almanzar",
+    ""
+   ],
+   [
+    "311374",
+    "CREATE",
+    "",
+    "role_permissions",
+    "11455",
+    "rosa.almanzar",
+    ""
+   ]
+  ],
+  "red": [
+   {
+    "t": 1790522996.6778405,
+    "m": "POST",
+    "url": "v1/integration-users/7952/permissions/PRODUCT_VIEW",
+    "st": 200,
+    "body": ""
+   }
+  ],
+  "toasts": [
+   "Permiso concedido exitosamente"
+  ]
+ },
+ "A5_auditoria_detalle": "Cambió permisos\nDomingo, 27 de septiembre de 2026, 11:29\nclose\nUsuarios #7952\npor rosa.almanzar\nQUÉ CAMBIÓ\nProductos\n—\n→\nVer\nSOLICITUD\nIP\n::1\nOrigen\nChrome · Windows\nEvento\nPERMISSIONS_CHANGED\nSolicitud\ncf55b80b-4f21-4e66-b075-42d9482a25e1\nHistorial del registro →\nVer a rosa.almanzar →",
+ "A5_boton_marta": "visibility\nVer permisos",
+ "A5_marta_pagina": {
+  "url": "http://localhost:4200/security/integration-user/7952/permissions",
+  "nota": [],
+  "casillas_deshabilitadas": 0,
+  "casillas": 0
+ }
+}

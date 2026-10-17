@@ -1,0 +1,359 @@
+1
+00:00:03,097 --> 00:00:04,977
+En este video vemos el alcance:
+
+2
+00:00:05,102 --> 00:00:07,283
+sobre qué registros vale un permiso.
+
+3
+00:00:07,915 --> 00:00:11,798
+Dos personas pueden tener el mismo permiso, Cotizaciones, Ver,
+
+4
+00:00:11,936 --> 00:00:14,008
+y aun así no ver la misma lista.
+
+5
+00:00:14,643 --> 00:00:16,774
+A la izquierda, alcance Todos:
+
+6
+00:00:16,804 --> 00:00:20,966
+Carlos, el vendedor sénior, ve las ocho cotizaciones de la empresa.
+
+7
+00:00:21,611 --> 00:00:25,591
+A la derecha, la misma lista para Ana con alcance Solo los propios:
+
+8
+00:00:25,669 --> 00:00:27,897
+ve únicamente las tres que creó ella;
+
+9
+00:00:28,000 --> 00:00:29,431
+las demás ni aparecen.
+
+10
+00:00:30,077 --> 00:00:32,596
+Y hay un punto medio, el alcance Equipo:
+
+11
+00:00:32,661 --> 00:00:34,939
+Ana ve lo suyo y lo de sus compañeros;
+
+12
+00:00:35,005 --> 00:00:38,876
+en su equipo, Zona Este, está José, así que ve cinco.
+
+13
+00:00:39,509 --> 00:00:43,949
+Lo que cuenta es quién creó cada cotización, no a qué vendedor está asignada.
+
+14
+00:00:45,308 --> 00:00:46,850
+Vamos a la lista real.
+
+15
+00:00:47,493 --> 00:00:50,338
+Carlos abre Ventas, y luego Cotizaciones.
+
+16
+00:00:50,983 --> 00:00:53,575
+Se abre la lista, y contraigo el panel.
+
+17
+00:00:54,220 --> 00:00:56,472
+Esta es la lista de cotizaciones de la empresa;
+
+18
+00:00:56,527 --> 00:00:58,647
+al pie dice uno a ocho de ocho:
+
+19
+00:00:58,713 --> 00:00:59,866
+las ve todas.
+
+20
+00:01:00,512 --> 00:01:03,780
+La lista no tiene una columna de autor, así que lo digo yo:
+
+21
+00:01:03,894 --> 00:01:05,640
+la número ocho la hizo Rosa;
+
+22
+00:01:05,741 --> 00:01:07,899
+la siete y la seis, Carlos;
+
+23
+00:01:08,001 --> 00:01:10,012
+la cinco y la cuatro, José;
+
+24
+00:01:10,030 --> 00:01:11,920
+y de la tres a la uno, Ana.
+
+25
+00:01:12,566 --> 00:01:16,305
+Carlos las ve todas porque su permiso de ver tiene alcance Todos.
+
+26
+00:01:17,676 --> 00:01:19,543
+Ahora la misma lista con Ana.
+
+27
+00:01:20,174 --> 00:01:24,698
+Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro como Ana,
+
+28
+00:01:24,740 --> 00:01:25,640
+la vendedora.
+
+29
+00:01:26,274 --> 00:01:29,867
+Escribo su usuario, ana punto mejia, en minúsculas;
+
+30
+00:01:29,945 --> 00:01:32,766
+luego su clave, con puntos para que nadie la lea;
+
+31
+00:01:32,891 --> 00:01:34,361
+y pulso Iniciar sesión;
+
+32
+00:01:34,414 --> 00:01:37,826
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+33
+00:01:38,472 --> 00:01:40,012
+Mientras entra, recuerda:
+
+34
+00:01:40,126 --> 00:01:44,433
+el alcance no cambia qué botones ve Ana, sino qué cotizaciones le aparecen.
+
+35
+00:01:45,078 --> 00:01:49,371
+Ana tiene el mismo permiso de ver cotizaciones, pero con alcance Propios:
+
+36
+00:01:49,486 --> 00:01:51,582
+solo cuenta lo que ella misma creó.
+
+37
+00:01:52,228 --> 00:01:56,063
+Ya dentro, abro Ventas, y en su lista elijo Cotizaciones;
+
+38
+00:01:56,176 --> 00:01:57,729
+luego contraigo el panel.
+
+39
+00:01:58,375 --> 00:02:00,532
+Al pie dice uno a tres de tres.
+
+40
+00:02:01,176 --> 00:02:03,286
+Son la tres, la dos y la uno:
+
+41
+00:02:03,387 --> 00:02:04,650
+las que creó ella.
+
+42
+00:02:05,283 --> 00:02:07,923
+En pantalla no hay ningún rótulo que diga Propios;
+
+43
+00:02:08,061 --> 00:02:09,444
+se nota en lo que falta.
+
+44
+00:02:10,794 --> 00:02:14,919
+¿Y si Ana escribe en el navegador la dirección de una cotización que no es suya?
+
+45
+00:02:15,550 --> 00:02:17,841
+Pruebo con la cuatro, que es de José.
+
+46
+00:02:18,485 --> 00:02:19,918
+El sistema no se la abre:
+
+47
+00:02:20,032 --> 00:02:24,253
+le avisa que su rol solo le permite ver y trabajar las cotizaciones que creó ella,
+
+48
+00:02:24,270 --> 00:02:27,707
+y que pida acceso a su administrador si necesita ese documento.
+
+49
+00:02:28,353 --> 00:02:32,127
+Pulso Entendido, y Ana se queda en su lista, con sus tres.
+
+50
+00:02:32,772 --> 00:02:36,680
+El alcance vale tanto en la lista como al abrir una cotización por su número.
+
+51
+00:02:38,045 --> 00:02:39,391
+Ahora el punto medio:
+
+52
+00:02:39,445 --> 00:02:40,758
+el alcance Equipo.
+
+53
+00:02:41,389 --> 00:02:43,134
+Lo cambia la administradora.
+
+54
+00:02:43,780 --> 00:02:48,377
+Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa.
+
+55
+00:02:49,021 --> 00:02:52,615
+Escribo su usuario, rosa punto almanzar, en minúsculas;
+
+56
+00:02:52,693 --> 00:02:55,526
+luego su clave, con puntos para que nadie la lea;
+
+57
+00:02:55,651 --> 00:02:57,108
+y pulso Iniciar sesión;
+
+58
+00:02:57,174 --> 00:03:00,574
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+59
+00:03:01,219 --> 00:03:05,031
+Rosa va a cambiar el alcance en el rol Vendedor, que es el de Ana,
+
+60
+00:03:05,109 --> 00:03:08,364
+y el cambio le llegará a todas las personas que tienen ese rol.
+
+61
+00:03:08,997 --> 00:03:13,437
+Ya dentro, su menú trae todos los módulos, con Seguridad incluida.
+
+62
+00:03:14,797 --> 00:03:19,055
+Estoy en Seguridad, Roles y permisos, con el rol Vendedor abierto.
+
+63
+00:03:19,699 --> 00:03:24,223
+En la columna de módulos, junto a la lista de roles, elijo Cotizaciones.
+
+64
+00:03:24,868 --> 00:03:28,450
+En el recurso Cotizaciones, el permiso Ver trae su alcance:
+
+65
+00:03:28,515 --> 00:03:30,575
+Propios, Equipo o Todos.
+
+66
+00:03:31,221 --> 00:03:32,664
+Ahora está en Propios;
+
+67
+00:03:32,670 --> 00:03:33,618
+pulso Equipo.
+
+68
+00:03:34,252 --> 00:03:36,240
+Abajo aparece la barra de guardado:
+
+69
+00:03:36,329 --> 00:03:39,512
+un cambio sin guardar, y a cuántas personas afecta.
+
+70
+00:03:40,158 --> 00:03:41,759
+Pulso Guardar cambios.
+
+71
+00:03:42,403 --> 00:03:46,023
+Sale el aviso de que los permisos del rol quedaron actualizados.
+
+72
+00:03:47,383 --> 00:03:49,769
+Para comprobarlo, vuelvo a entrar como Ana:
+
+73
+00:03:49,883 --> 00:03:52,741
+abro el menú de mi usuario y pulso Cerrar sesión.
+
+74
+00:03:53,384 --> 00:03:57,992
+En la pantalla de acceso escribo su usuario, ana punto mejia, en minúsculas;
+
+75
+00:03:58,070 --> 00:04:00,903
+luego su clave, con puntos para que nadie la lea;
+
+76
+00:04:01,029 --> 00:04:02,485
+y pulso Iniciar sesión;
+
+77
+00:04:02,551 --> 00:04:05,963
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+78
+00:04:06,609 --> 00:04:10,117
+Mientras entra, fíjate que no tocamos ni a José ni al equipo:
+
+79
+00:04:10,244 --> 00:04:11,398
+solo el alcance.
+
+80
+00:04:12,031 --> 00:04:14,405
+El equipo Zona Este lo forman Ana y José,
+
+81
+00:04:14,495 --> 00:04:17,956
+y el rol de Ana ahora tiene alcance Equipo en cotizaciones.
+
+82
+00:04:18,600 --> 00:04:22,437
+Ya dentro, abro Ventas, y en su lista elijo Cotizaciones;
+
+83
+00:04:22,551 --> 00:04:24,103
+luego contraigo el panel.
+
+84
+00:04:24,749 --> 00:04:26,905
+Ahora dice uno a cinco de cinco:
+
+85
+00:04:27,068 --> 00:04:30,600
+sus tres, más la cinco y la cuatro, que son de José.
+
+86
+00:04:31,246 --> 00:04:32,050
+En resumen:
+
+87
+00:04:32,140 --> 00:04:33,741
+con Todos se ve lo de cualquiera;
+
+88
+00:04:33,855 --> 00:04:36,253
+con Propios, solo lo que la persona creó;
+
+89
+00:04:36,331 --> 00:04:39,321
+y con Equipo, lo suyo y lo de sus compañeros.
+
+90
+00:04:39,966 --> 00:04:43,270
+Elige siempre el alcance más corto que le permita trabajar.

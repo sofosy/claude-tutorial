@@ -1,0 +1,840 @@
+{
+ "url": "/cashier?section=aprobaciones",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "page-hero-title",
+   "texto": "Cajas",
+   "caja": [
+    85,
+    118,
+    994,
+    25
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "page-hero-subtitle",
+   "texto": "Movimientos, transferencias y cuadres que esperan una decisión del supervisor.",
+   "caja": [
+    85,
+    145,
+    720,
+    18
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "section-title sup-title",
+   "texto": "approval Movimientos pendientes de aprobación 1 refresh Actualizar",
+   "caja": [
+    86,
+    297,
+    1166,
+    59
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "section-title sup-title",
+   "texto": "swap_horiz Transferencias pendientes de aprobación 0 open_in_new Ver todas",
+   "caja": [
+    86,
+    468,
+    1166,
+    59
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "gm-state__t",
+   "texto": "No hay transferencias esperando aprobación",
+   "caja": [
+    529,
+    625,
+    280,
+    20
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "section-title sup-title",
+   "texto": "fact_check Cuadres pendientes de confirmación 0 open_in_new Ver todos",
+   "caja": [
+    86,
+    702,
+    1166,
+    59
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "gm-state__t",
+   "texto": "No hay cuadres esperando confirmación",
+   "caja": [
+    543,
+    859,
+    253,
+    20
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "header-title",
+   "texto": "Aprobar movimiento",
+   "caja": [
+    436,
+    248,
+    452,
+    26
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    70,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    923,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications_active",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications_active')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "CRcarmen rosariocarmen.rosario@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de carmen rosario",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1034,
+    10,
+    230,
+    40
+   ],
+   "sel": "button[aria-label='Cuenta de carmen rosario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    243,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Configuración",
+   "icono": "tune",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1095,
+    123,
+    158,
+    36
+   ],
+   "sel": "button:has-text('Configuración')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cajas",
+   "icono": "storefront",
+   "aria": "",
+   "id": "cashier-hub-tab-cajas",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ],
+   "sel": "#cashier-hub-tab-cajas",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Mi caja",
+   "icono": "point_of_sale",
+   "aria": "",
+   "id": "cashier-hub-tab-caja",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ],
+   "sel": "#cashier-hub-tab-caja",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Por aprobar 1",
+   "icono": "approval",
+   "aria": "",
+   "id": "cashier-hub-tab-aprobaciones",
+   "clases": [
+    "segmented__option",
+    "segmented__option--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    284,
+    180,
+    165,
+    34
+   ],
+   "sel": "#cashier-hub-tab-aprobaciones",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Historial",
+   "icono": "history",
+   "aria": "",
+   "id": "cashier-hub-tab-historial",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    451,
+    180,
+    107,
+    34
+   ],
+   "sel": "#cashier-hub-tab-historial",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Análisis",
+   "icono": "insights",
+   "aria": "",
+   "id": "cashier-hub-tab-analisis",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    560,
+    180,
+    104,
+    34
+   ],
+   "sel": "#cashier-hub-tab-analisis",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "1Movimientos por aprobar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-fig",
+    "gm-fig--link",
+    "gm-fig--wait"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    236,
+    162,
+    44
+   ],
+   "sel": "button:has-text('1Movimientos por aprobar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "0Transferencias por aprobar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-fig",
+    "gm-fig--link"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    292,
+    236,
+    181,
+    44
+   ],
+   "sel": "button:has-text('0Transferencias por aprobar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "0Cuadres por confirmar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-fig",
+    "gm-fig--link"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    518,
+    236,
+    147,
+    44
+   ],
+   "sel": "button:has-text('0Cuadres por confirmar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "1Alertas activas",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-fig",
+    "gm-fig--link",
+    "gm-fig--alert"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    711,
+    236,
+    100,
+    44
+   ],
+   "sel": "button:has-text('1Alertas activas')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "1Cajas bloqueadas",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-fig",
+    "gm-fig--link"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    856,
+    236,
+    114,
+    44
+   ],
+   "sel": "button:has-text('1Cajas bloqueadas')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Actualizar",
+   "icono": "refresh",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1106,
+    311,
+    130,
+    36
+   ],
+   "sel": "button:has-text('Actualizar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "check_circle",
+   "aria": "Aprobar",
+   "id": "",
+   "clases": [],
+   "tooltip": "Aprobar",
+   "deshabilitado": false,
+   "caja": [
+    1168,
+    421,
+    34,
+    34
+   ],
+   "sel": "button[aria-label='Aprobar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "cancel",
+   "aria": "Rechazar",
+   "id": "",
+   "clases": [],
+   "tooltip": "Rechazar",
+   "deshabilitado": false,
+   "caja": [
+    1202,
+    421,
+    34,
+    34
+   ],
+   "sel": "button[aria-label='Rechazar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver todas",
+   "icono": "open_in_new",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1111,
+    482,
+    125,
+    36
+   ],
+   "sel": "button:has-text('Ver todas')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver todos",
+   "icono": "open_in_new",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1111,
+    716,
+    125,
+    36
+   ],
+   "sel": "button:has-text('Ver todos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cancelar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "cancel-button"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    653,
+    433,
+    103,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Cancelar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Aprobar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "confirm-button",
+    "icon-warning"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    768,
+    433,
+    120,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Aprobar')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [
+  {
+   "clases": [
+    "data-table",
+    "gm-table-stack"
+   ],
+   "cabeceras": [
+    "N°",
+    "TIPO",
+    "MONTO",
+    "CAJA / SESIÓN",
+    "SOLICITADO POR",
+    "FECHA",
+    "NOTA",
+    "DECISIÓN"
+   ],
+   "filas": [
+    [
+     "MOV-2026-00010",
+     "Salida",
+     "RD$6,500.00",
+     "Caja Principal · #513",
+     "yohanna.peralta",
+     "23/09/2026 05:10",
+     "Pago del mantenimiento del aire acondicionado",
+     "check_circle cancel"
+    ]
+   ],
+   "total_filas": 1,
+   "caja": [
+    86,
+    368,
+    1166,
+    99
+   ]
+  }
+ ],
+ "pestañas": [
+  {
+   "texto": "storefront Cajas",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-cajas",
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ]
+  },
+  {
+   "texto": "point_of_sale Mi caja",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-caja",
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ]
+  },
+  {
+   "texto": "approval Por aprobar 1",
+   "seleccionada": true,
+   "id": "cashier-hub-tab-aprobaciones",
+   "caja": [
+    284,
+    180,
+    165,
+    34
+   ]
+  },
+  {
+   "texto": "history Historial",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-historial",
+   "caja": [
+    451,
+    180,
+    107,
+    34
+   ]
+  },
+  {
+   "texto": "insights Análisis",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-analisis",
+   "caja": [
+    560,
+    180,
+    104,
+    34
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [
+  {
+   "titulo": "Aprobar movimiento",
+   "clases": "cdk-overlay-pane custom-alert-dialog-panel mat-mdc-dialog-panel",
+   "caja": [
+    365,
+    224,
+    550,
+    272
+   ],
+   "texto": "warning Aprobar movimiento ¿Está seguro de que desea aprobar MOV-2026-00010 por RD$6,500.00? El monto saldrá del saldo de la sesión y se generará su asiento contable. Cancelar Aprobar"
+  }
+ ],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Ver todos",
+   "caja": [
+    1111,
+    716,
+    125,
+    36
+   ]
+  }
+ ],
+ "video": "v4",
+ "pantalla": "01-aprobar-dialogo",
+ "notas": "",
+ "toasts_vistos_hasta_ahora": []
+}

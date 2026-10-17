@@ -1,0 +1,1189 @@
+{
+  "_comentario": "Video COMPLETO del módulo Punto de venta (/pos, front #1206). Un solo video con capítulos, a pedido del usuario (2026-09-25): por eso dura más de 4:10 (AVISO justificado de revisar.mjs). Graba yohanna.peralta (Cajera, + rol de empresa «Cajero POS demo» por el hallazgo H-POS-01) en la empresa demo 43 partiendo de P0: `node seeds/pos/restaurar.mjs P0` antes de CADA toma y ensayo. El POS no tiene panel de menú (button.panel-collapse): AVISO justificado. Los pasos encadenan el ticket (localStorage del contexto): un --paso suelto NO reproduce el estado; se regraba el video entero.",
+  "titulo": "Punto de venta · Vende, cobra y cierra tu turno",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "yohanna.peralta",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "pronunciacion": {
+    "F2": "efe-dos",
+    "F4": "efe-cuatro",
+    "F6": "efe-seis",
+    "F8": "efe-ocho",
+    "F12": "efe-doce",
+    "LED": "led",
+    "X": "equis",
+    "Z": "zeta"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "130555021",
+      "130555206",
+      "130-55520-6",
+      "130-55507-9",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "hermanos",
+      "peña",
+      "constructora",
+      "los pinos",
+      "mostrador",
+      "principal"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Entrar al Punto de venta y abrir tu turno de caja con el fondo inicial.",
+    "Encontrar productos por categoría, por nombre o con el lector de códigos de barras, y leer cada tarjeta: foto, código, existencia, precio con ITBIS y la etiqueta de exento.",
+    "Armar el ticket: cantidades, quitar líneas, descuento global y nota de la venta.",
+    "Cobrar en efectivo con cambio, combinar tarjeta y transferencia en una sola factura, y vender a crédito a un cliente con línea aprobada.",
+    "Elegir el comprobante fiscal (consumo B02 o crédito fiscal B01) y el cliente con su RNC.",
+    "Poner ventas en espera, retomarlas y anular un ticket.",
+    "Registrar una entrada de efectivo, hacer el arqueo por denominaciones y cerrar el turno con el reporte Z."
+  ],
+  "errores_comunes": [
+    "Intentar vender a crédito al consumidor final: el crédito exige un cliente con línea de crédito asignada.",
+    "Pedir crédito fiscal sin cliente con RNC o cédula: el sistema abre el selector de cliente y no deja cobrar hasta elegirlo.",
+    "Cobrar con «Imprimir recibo» marcado sin impresora térmica conectada: el navegador abre su propia ventana de impresión.",
+    "Contar el fondo inicial distinto de lo que hay en la gaveta: el cierre saldrá con diferencia.",
+    "Cerrar el turno con una diferencia sin explicarla en «Observaciones del cierre»: el supervisor la verá sin contexto."
+  ],
+  "pasos": [
+    {
+      "id": "01-entrar",
+      "ruta": "Inicio › Punto de venta",
+      "texto_pantalla": "Punto de venta · Entrar y abrir el turno",
+      "navegar": "/home",
+      "narracion": "Para vender en el mostrador se usa el Punto de venta. Lo abres desde la franja de íconos de la izquierda: es el ícono de la tienda. La pantalla se abre completa, sin el menú del sistema, para que quepan bien los productos y el ticket de la venta. Aquí cada venta es una factura real: lleva su comprobante fiscal, rebaja el inventario y entra en tu caja. Como esta ferretería exige un turno de caja abierto para vender, lo primero que sale es este aviso: «Abre tu turno para vender». El turno es tu jornada en la caja, desde que cuentas el fondo inicial hasta que cierras y cuadras el dinero. Si tu usuario no pudiera abrir turnos, aquí te diría que se lo pidas a tu supervisor. Y el enlace de abajo, «Volver al sistema», te regresa al inicio. Pulso «Abrir turno».",
+      "acciones": [
+        {
+          "resaltar": ".module-rail",
+          "durante_ms": 3000,
+          "al_decir": "franja de íconos"
+        },
+        {
+          "click": ".module-rail a[href='/pos']",
+          "al_decir": "ícono de la tienda"
+        },
+        {
+          "resaltar": ".ps-grid",
+          "durante_ms": 1000,
+          "al_decir": "los productos"
+        },
+        {
+          "resaltar": ".ps-ticket",
+          "durante_ms": 2500,
+          "al_decir": "el ticket"
+        },
+        {
+          "resaltar": ".ps-ncf",
+          "durante_ms": 3500,
+          "al_decir": "comprobante fiscal"
+        },
+        {
+          "resaltar": ".pos-gate__card",
+          "durante_ms": 3000,
+          "al_decir": "este aviso"
+        },
+        {
+          "resaltar": ".pos-gate__text",
+          "durante_ms": 6000,
+          "al_decir": "tu jornada"
+        },
+        {
+          "resaltar": ".pos-gate__link",
+          "durante_ms": 3500,
+          "al_decir": "Volver al sistema"
+        },
+        {
+          "click": ".pos-gate__btn",
+          "al_decir": "Pulso Abrir turno"
+        }
+      ],
+      "capitulo": "Entrar y abrir el turno",
+      "rotulo": "Entrar al punto de venta"
+    },
+    {
+      "id": "02-abrir-turno",
+      "ruta": "Punto de venta › Abrir mi caja",
+      "texto_pantalla": "Abrir mi caja · caja, fondo inicial y notas",
+      "narracion": "Se abre la hoja Abrir mi caja, a la derecha. La caja ya viene elegida, con un candado: es la única disponible para abrir, así que no hay nada que escoger. Si hubiera varias libres, aquí eliges la tuya de la lista. Debajo va el cajero: la sesión se abre a tu nombre y no se puede cambiar. El fondo inicial es el efectivo con el que arrancas la gaveta. Viene con cinco mil pesos, lo que fijó el administrador, y tiene que coincidir con lo que cuentas. En Notas escribo turno de la mañana, así se sabe de qué turno se trata. Al final, el recuadro Conteo del fondo avisa que esta caja no exige contar billete por billete al abrir. Pulso Abrir caja. Sale el aviso verde de caja abierta, y arriba la píldora cambia a Turno abierto, con la hora de apertura. A su lado ves la caja y su ubicación.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container :text('Confirma el fondo inicial')",
+          "durante_ms": 3000,
+          "al_decir": "a la derecha"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Caja'))",
+          "durante_ms": 6000,
+          "al_decir": "ya viene elegida"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Cajero'))",
+          "durante_ms": 4000,
+          "al_decir": "va el cajero"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Fondo inicial'))",
+          "durante_ms": 6500,
+          "al_decir": "arrancas la gaveta"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='notes']",
+            "texto": "Turno de la mañana"
+          },
+          "al_decir": "En Notas escribo"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('no requiere conteo')",
+          "durante_ms": 4500,
+          "al_decir": "Conteo del fondo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Abrir caja')",
+          "al_decir": "Pulso Abrir caja"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".pos-shift-badge",
+          "durante_ms": 4000,
+          "al_decir": "la píldora"
+        },
+        {
+          "resaltar": ".pos-meta",
+          "durante_ms": 3500,
+          "al_decir": "su ubicación"
+        }
+      ],
+      "capitulo": "La hoja de apertura",
+      "rotulo": "Abrir mi caja"
+    },
+    {
+      "id": "03-catalogo",
+      "ruta": "Punto de venta › Catálogo",
+      "texto_pantalla": "Catálogo · tarjetas, categorías y atajos",
+      "narracion": "Esta es la pantalla de venta. A la izquierda está el catálogo: cada tarjeta es un producto activo del inventario. Muestra su foto, el nombre, su código y lo que queda en existencia, y el precio con ITBIS incluido; el ITBIS es el impuesto a las ventas de República Dominicana. Arriba, las categorías filtran el catálogo, y el número dice cuántos productos tiene cada una. Pulso Construcción. La varilla no tiene foto cargada, así que el sistema pinta sus iniciales en un mosaico de color. Pulso Electricidad: el tomacorriente dice «Agotado», ya no queda en el almacén. En Herramientas, la llave ajustable avisa que quedan tres: está por acabarse. Y si abro la categoría Jardín, el fertilizante lleva la etiqueta Exento: no paga ITBIS. Abajo tienes la barra de atajos del teclado, para vender sin soltar el lector: F2 busca, F4 cambia el cliente, F6 el descuento, F7 la propina, F8 pone la venta en espera, y F12 cobra. A la derecha está el ticket con la venta actual, todavía vacío.",
+      "acciones": [
+        {
+          "resaltar": ".ps-card:has-text('Alicate')",
+          "durante_ms": 2500,
+          "al_decir": "cada tarjeta"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Alicate') .ps-card__media",
+          "durante_ms": 1000,
+          "al_decir": "su foto"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Alicate') .ps-card__meta",
+          "durante_ms": 1800,
+          "al_decir": "su código"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Alicate') .ps-card__price",
+          "durante_ms": 3500,
+          "al_decir": "el precio"
+        },
+        {
+          "resaltar": ".ps-chips",
+          "durante_ms": 4000,
+          "al_decir": "las categorías"
+        },
+        {
+          "click": ".ps-chip:has-text('Construcción')",
+          "al_decir": "Pulso Construcción"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Varilla') .ps-card__media",
+          "durante_ms": 3000,
+          "al_decir": "sus iniciales"
+        },
+        {
+          "click": ".ps-chip:has-text('Electricidad')",
+          "al_decir": "Pulso Electricidad"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Tomacorriente') .ps-card__meta",
+          "durante_ms": 3500,
+          "al_decir": "Agotado"
+        },
+        {
+          "click": ".ps-chip:has-text('Herramientas')",
+          "al_decir": "En Herramientas"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Llave ajustable') .ps-card__meta",
+          "durante_ms": 3000,
+          "al_decir": "está por acabarse"
+        },
+        {
+          "click": ".ps-chip:has-text('Jardín')",
+          "al_decir": "abro la categoría Jardín"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Fertilizante') .ps-card__badge",
+          "durante_ms": 3000,
+          "al_decir": "la etiqueta"
+        },
+        {
+          "resaltar": ".ps-shortcuts",
+          "durante_ms": 9000,
+          "al_decir": "barra de atajos"
+        },
+        {
+          "resaltar": ".ps-ticket",
+          "durante_ms": 3500,
+          "al_decir": "la venta actual"
+        }
+      ],
+      "capitulo": "El catálogo",
+      "rotulo": "El catálogo"
+    },
+    {
+      "id": "04-agregar",
+      "ruta": "Punto de venta › Agregar productos",
+      "texto_pantalla": "Agregar productos · tocar, buscar y escanear",
+      "narracion": "Vamos a vender. Un cliente pide dos martillos. Abro Herramientas y, en la segunda fila, toco la tarjeta del martillo, y lo toco otra vez. El círculo azul sobre la foto cuenta cuántos llevas, y a la derecha aparece la línea en el ticket. También puedes buscar. Vuelvo a Todos, y en la barra de arriba escribo cinta: el catálogo se filtra mientras tecleas, por nombre o por código. Ahora pruebo con tornillo, que esta ferretería no vende. Como nada coincide, la pantalla te lo dice, y te sugiere pulsar Enter para buscarlo por código. El lector de códigos de barras trabaja igual: escribe el código y pulsa Enter por ti. Lo simulo con el código de la cinta de teflón, y pulso Enter: se agrega sola, y el buscador queda limpio para el siguiente. Por último abro Jardín, y de ahí agrego también el fertilizante.",
+      "acciones": [
+        {
+          "click": ".ps-chip:has-text('Herramientas')",
+          "al_decir": "Abro Herramientas"
+        },
+        {
+          "click": ".ps-card:has-text('Martillo')",
+          "al_decir": "toco la tarjeta"
+        },
+        {
+          "click": ".ps-card:has-text('Martillo')",
+          "al_decir": "lo toco otra vez"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Martillo') .ps-card__qty",
+          "durante_ms": 3500,
+          "al_decir": "círculo azul"
+        },
+        {
+          "resaltar": ".ps-line:has-text('Martillo')",
+          "durante_ms": 3500,
+          "al_decir": "aparece la línea"
+        },
+        {
+          "click": ".ps-chip:has-text('Todos')",
+          "al_decir": "Vuelvo a Todos"
+        },
+        {
+          "escribir": {
+            "sel": ".ps-search input",
+            "texto": "cinta"
+          },
+          "al_decir": "escribo"
+        },
+        {
+          "escribir": {
+            "sel": ".ps-search input",
+            "texto": "tornillo"
+          },
+          "al_decir": "pruebo con"
+        },
+        {
+          "resaltar": ".ps-grid__state",
+          "durante_ms": 5500,
+          "al_decir": "la pantalla te lo dice"
+        },
+        {
+          "escribir": {
+            "sel": ".ps-search input",
+            "texto": "FER-3003"
+          },
+          "al_decir": "Lo simulo"
+        },
+        {
+          "presionar": {
+            "sel": ".ps-search input",
+            "tecla": "Enter"
+          },
+          "al_decir": "y pulso Enter"
+        },
+        {
+          "resaltar": ".ps-line:has-text('teflón')",
+          "durante_ms": 3500,
+          "al_decir": "se agrega sola"
+        },
+        {
+          "click": ".ps-chip:has-text('Jardín')",
+          "al_decir": "abro Jardín"
+        },
+        {
+          "click": ".ps-card:has-text('Fertilizante')",
+          "al_decir": "también el fertilizante"
+        }
+      ],
+      "capitulo": "Agregar productos al ticket",
+      "rotulo": "Agregar productos"
+    },
+    {
+      "id": "05-ticket",
+      "ruta": "Punto de venta › Ticket",
+      "texto_pantalla": "El ticket · cantidades, descuento y nota",
+      "narracion": "Ahora el ticket. Cada línea trae la miniatura, el nombre, el precio por unidad con ITBIS y el total de la línea. El fertilizante aclara que va exento. Con los botones de más y de menos cambias la cantidad: subo el martillo a tres, y lo bajo otra vez a dos. La papelera quita la línea completa: quito la cinta de teflón, porque el cliente ya no la quiere. Debajo está el resumen: los artículos, el subtotal sin ITBIS, el ITBIS del dieciocho por ciento y, al final, el total a pagar. El descuento global se aplica a toda la venta; esta empresa tiene dos, de cinco y de diez por ciento. Elijo el cinco: aparece la línea Descuento, en rojo, y el ITBIS se recalcula sobre lo rebajado. Debajo está la propina legal: el diez por ciento que la ley manda cobrar en restaurantes y bares, y que no paga ITBIS. Si la activo, aparece su línea en los totales, y el total sube. En una ferretería no aplica, así que la vuelvo a dejar en No. El botón Nota abre un campo para escribir algo que sale en la factura: anoto entregar en funda.",
+      "acciones": [
+        {
+          "resaltar": ".ps-line:has-text('Martillo')",
+          "durante_ms": 4500,
+          "al_decir": "Cada línea"
+        },
+        {
+          "resaltar": ".ps-line:has-text('Fertilizante') .ps-line__unit",
+          "durante_ms": 3000,
+          "al_decir": "va exento"
+        },
+        {
+          "click": ".ps-line:has-text('Martillo') button[aria-label='Agregar una unidad']",
+          "al_decir": "subo el martillo"
+        },
+        {
+          "click": ".ps-line:has-text('Martillo') button[aria-label='Quitar una unidad']",
+          "al_decir": "lo bajo"
+        },
+        {
+          "click": ".ps-line:has-text('teflón') .ps-line__remove",
+          "al_decir": "quito la cinta"
+        },
+        {
+          "resaltar": ".ps-summary__figures",
+          "durante_ms": 4800,
+          "al_decir": "el resumen"
+        },
+        {
+          "resaltar": ".ps-summary__total",
+          "durante_ms": 2000,
+          "al_decir": "al final"
+        },
+        {
+          "resaltar": ".ps-summary__row--discount",
+          "durante_ms": 4500,
+          "al_decir": "descuento global"
+        },
+        {
+          "click": ".ps-summary__row--discount button:has-text('5 %')",
+          "al_decir": "Elijo el cinco"
+        },
+        {
+          "resaltar": ".ps-summary__row--neg",
+          "durante_ms": 4000,
+          "al_decir": "en rojo"
+        },
+        {
+          "resaltar": ".ps-summary__row--discount:has-text('Propina')",
+          "durante_ms": 3500,
+          "al_decir": "la propina legal"
+        },
+        {
+          "click": ".ps-summary__row--discount:has-text('Propina') button:has-text('10 %')",
+          "al_decir": "Si la activo"
+        },
+        {
+          "resaltar": ".ps-summary__row:has-text('Propina legal 10')",
+          "durante_ms": 3500,
+          "al_decir": "aparece su línea"
+        },
+        {
+          "click": ".ps-summary__row--discount:has-text('Propina') button:has-text('No')",
+          "al_decir": "la vuelvo a dejar"
+        },
+        {
+          "click": ".ps-summary__actions button:has-text('Nota')",
+          "al_decir": "El botón Nota"
+        },
+        {
+          "escribir": {
+            "sel": ".ps-summary .pos-field input",
+            "texto": "Entregar en funda"
+          },
+          "al_decir": "anoto"
+        }
+      ],
+      "capitulo": "El ticket: cantidades, descuento y nota",
+      "rotulo": "El ticket"
+    },
+    {
+      "id": "06-cobro-efectivo",
+      "ruta": "Punto de venta › Cobrar venta",
+      "texto_pantalla": "Cobrar venta · efectivo con cambio",
+      "narracion": "Todo listo: pulso Cobrar, abajo a la derecha. También sirve F12. Se abre Cobrar venta. Arriba repite el turno, el cliente y el comprobante: factura de consumo, B02, la que se le da al consumidor final. A la izquierda están las formas de pago, cada una con su tecla. Si elijo Crédito del cliente, me avisa que la venta a crédito necesita un cliente con límite de crédito: al consumidor final no se le fía. Vuelvo a Efectivo. En el centro va el monto recibido. Los botones rápidos proponen billetes redondos; el cliente me da dos mil, así que pulso dos mil. El teclado sirve para marcar otra cantidad. A la derecha, el total a cobrar, que el sistema confirma con el cálculo exacto de la factura; debajo, los pagos aplicados, y en verde el cambio a devolver. Imprimir recibo manda el recibo a la impresora térmica; aquí no hay una conectada, así que lo desmarco. Abrir gaveta abre el cajón del dinero. Pulso Confirmar cobro. Mientras el botón dice registrando, el sistema hace en un solo paso lo que antes eran varias pantallas: crea la factura con su comprobante, registra el cobro en tu turno, rebaja las existencias del inventario y deja hecho el asiento contable. La primera venta del turno tarda unos segundos más. Cuando termina, la ventana cambia a Venta registrada: en grande, el cambio que le devuelves al cliente; debajo, el número de factura y el NCF, que es el número de comprobante fiscal que exige la DGII, que es la oficina de impuestos. Reimprimir recibo lo vuelve a imprimir. Pulso Nueva venta, y el ticket queda limpio.",
+      "acciones": [
+        {
+          "click": ".ps-charge",
+          "al_decir": "pulso Cobrar"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-dlg__sub",
+          "durante_ms": 5000,
+          "al_decir": "Arriba repite"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-methods",
+          "durante_ms": 3500,
+          "al_decir": "las formas de pago"
+        },
+        {
+          "click": ".pd-method:has-text('Crédito del cliente')",
+          "al_decir": "Si elijo"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-alert--warn",
+          "durante_ms": 5000,
+          "al_decir": "me avisa"
+        },
+        {
+          "click": ".pd-method:has-text('Efectivo')",
+          "al_decir": "Vuelvo a Efectivo"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-amount",
+          "durante_ms": 2500,
+          "al_decir": "monto recibido"
+        },
+        {
+          "click": ".pd-quick button:has-text('2,000')",
+          "al_decir": "pulso dos mil"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-keypad",
+          "durante_ms": 3000,
+          "al_decir": "El teclado"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-side__total",
+          "durante_ms": 2500,
+          "al_decir": "el total a cobrar"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-change",
+          "durante_ms": 3500,
+          "al_decir": "en verde"
+        },
+        {
+          "click": ".pd-checks label:has-text('Imprimir recibo')",
+          "al_decir": "lo desmarco"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-checks label:has-text('gaveta')",
+          "durante_ms": 3000,
+          "al_decir": "Abrir gaveta"
+        },
+        {
+          "click": ".pd-btn-confirm",
+          "al_decir": "Pulso Confirmar cobro"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-dlg__title",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "dice registrando"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-dlg__heading",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "rebaja las existencias"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-done__icon",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-done__amount",
+          "durante_ms": 3000,
+          "al_decir": "en grande"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-done__meta",
+          "durante_ms": 6000,
+          "al_decir": "número de factura"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-done__actions button:has-text('Reimprimir recibo')",
+          "durante_ms": 3000,
+          "al_decir": "Reimprimir recibo"
+        },
+        {
+          "click": ".pd-done__actions button:has-text('Nueva venta')",
+          "al_decir": "Pulso Nueva venta"
+        }
+      ],
+      "capitulo": "Cobrar en efectivo",
+      "rotulo": "Cobrar en efectivo"
+    },
+    {
+      "id": "06b-agotado",
+      "ruta": "Punto de venta › Cobrar venta › Sin existencia",
+      "texto_pantalla": "Producto agotado · el cobro lo frena antes de cobrar",
+      "narracion": "¿Y si alguien pide algo que no hay? En Electricidad, el tomacorriente dice agotado, pero el ticket lo acepta igual. Toco su tarjeta para agregarlo, y pulso Cobrar. Al abrirse, el cobro le pide al sistema el total exacto de la factura, y ahí se entera del problema: la ventana avisa en rojo que no se puede cobrar esta venta, porque no hay existencia del tomacorriente. El botón de confirmar cambia a Revisa la venta, así que no hay forma de cobrarle al cliente algo que no se le puede entregar. Cierro con la equis, arriba a la derecha, y quito la línea con su papelera.",
+      "acciones": [
+        {
+          "click": ".ps-chip:has-text('Electricidad')",
+          "al_decir": "En Electricidad"
+        },
+        {
+          "resaltar": ".ps-card:has-text('Tomacorriente') .ps-card__meta",
+          "durante_ms": 3000,
+          "al_decir": "dice agotado"
+        },
+        {
+          "click": ".ps-card:has-text('Tomacorriente')",
+          "al_decir": "Toco su tarjeta"
+        },
+        {
+          "click": ".ps-charge",
+          "al_decir": "pulso Cobrar"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-side__total",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el total exacto"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-alert--error",
+          "durante_ms": 6000,
+          "al_decir": "avisa en rojo"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-btn-confirm",
+          "durante_ms": 3500,
+          "al_decir": "Revisa la venta"
+        },
+        {
+          "click": "mat-dialog-container button[aria-label='Cerrar y volver a la venta']",
+          "al_decir": "Cierro con la equis"
+        },
+        {
+          "click": ".ps-line:has-text('Tomacorriente') .ps-line__remove",
+          "al_decir": "quito la línea"
+        }
+      ],
+      "capitulo": "Producto agotado",
+      "rotulo": "Producto agotado"
+    },
+    {
+      "id": "07-espera-anular",
+      "ruta": "Punto de venta › En espera y Anular",
+      "texto_pantalla": "Ventas en espera · retomar y anular",
+      "narracion": "Llega otro cliente. Empiezo su venta en Electricidad: lleva dos bombillos, así que lo toco una vez, y lo vuelvo a tocar. Pero se le olvidó algo y va a buscarlo. Pulso En espera, y el ticket se guarda aparte; el aviso lo confirma. Arriba, el botón En espera ahora cuenta uno. Mientras tanto atiendo al siguiente, que lleva una brocha. Cuando vuelve el primero, abro En espera, arriba, y elijo su ticket: la lista dice la hora, el cliente y cuántos artículos lleva. Al retomarlo, la venta de la brocha no se pierde: pasa sola a la espera. Los tickets en espera se guardan en esta computadora, aunque recargues la página. Si al final el cliente desiste, Anular vacía el ticket. Pide confirmación, porque se quitan todos los artículos. Pulso Anular venta.",
+      "acciones": [
+        {
+          "click": ".ps-chip:has-text('Electricidad')",
+          "al_decir": "Empiezo su venta"
+        },
+        {
+          "click": ".ps-card:has-text('Bombillo')",
+          "al_decir": "lo toco una vez"
+        },
+        {
+          "click": ".ps-card:has-text('Bombillo')",
+          "al_decir": "lo vuelvo a tocar"
+        },
+        {
+          "click": ".ps-summary__actions button:has-text('En espera')",
+          "al_decir": "Pulso En espera"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".pos-header button.pos-btn:has-text('En espera')",
+          "durante_ms": 3500,
+          "al_decir": "ahora cuenta"
+        },
+        {
+          "click": ".ps-chip:has-text('Pintura')",
+          "al_decir": "atiendo al siguiente"
+        },
+        {
+          "click": ".ps-card:has-text('Brocha')",
+          "al_decir": "una brocha"
+        },
+        {
+          "click": ".pos-header button.pos-btn:has-text('En espera')",
+          "al_decir": "abro En espera"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button.mat-mdc-menu-item",
+          "durante_ms": 3500,
+          "al_decir": "la lista dice"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button.mat-mdc-menu-item",
+          "al_decir": "Al retomarlo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": ".pos-header .pos-count",
+          "durante_ms": 4500,
+          "al_decir": "pasa sola"
+        },
+        {
+          "click": ".ps-summary__actions button:has-text('Anular')",
+          "al_decir": "Anular vacía"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "al_decir": "Pide confirmación"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Anular venta')",
+          "al_decir": "Pulso Anular venta"
+        }
+      ],
+      "capitulo": "Poner en espera, retomar y anular",
+      "rotulo": "En espera y anular"
+    },
+    {
+      "id": "08-cliente",
+      "ruta": "Punto de venta › Cliente de la venta",
+      "texto_pantalla": "Cliente de la venta · crédito fiscal con RNC",
+      "narracion": "Ahora le vendo a una empresa. Una constructora compra un taladro y un martillo, y pide factura de crédito fiscal, la B01, la que le permite descontarse el ITBIS. Pulso Crédito fiscal, en el comprobante. Como el consumidor final no tiene RNC, que es el Registro Nacional del Contribuyente, se abre solo Cliente de la venta: el crédito fiscal exige un cliente con RNC o cédula. Escribo constructora. Mientras tecleas, poco a poco, el buscador trae los clientes que coinciden, con su RNC. Si no existiera, la última opción lo crea ahí mismo, sin salir de la caja; con un RNC nuevo, el sistema consulta el padrón de la DGII y trae el nombre. Elijo Constructora Hermanos Peña. El ticket ya muestra el cliente y su RNC; con Cambiar, o F4, lo cambias cuando quieras, y si el cliente tiene precios especiales el ticket se reprecia solo. Ahora abro Herramientas, y agrego primero el taladro, y después el martillo.",
+      "acciones": [
+        {
+          "resaltar": ".ps-lines__empty",
+          "durante_ms": 2500,
+          "al_decir": "Ahora le vendo"
+        },
+        {
+          "resaltar": ".ps-ncf",
+          "durante_ms": 3500,
+          "al_decir": "factura de crédito fiscal"
+        },
+        {
+          "click": ".ps-ncf button:has-text('Crédito fiscal')",
+          "al_decir": "Pulso Crédito fiscal"
+        },
+        {
+          "resaltar": "mat-dialog-container .pos-cdlg__title",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container .pos-cdlg__hint",
+          "durante_ms": 4500,
+          "al_decir": "se abre solo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input",
+            "texto": "Constructora"
+          },
+          "al_decir": "Escribo"
+        },
+        {
+          "resaltar": "mat-option:has-text('Hermanos Peña')",
+          "durante_ms": 3500,
+          "al_decir": "trae los clientes"
+        },
+        {
+          "resaltar": "mat-option:has-text('Crear cliente')",
+          "durante_ms": 6000,
+          "al_decir": "la última opción"
+        },
+        {
+          "click": "mat-option:has-text('Hermanos Peña')",
+          "al_decir": "Elijo Constructora"
+        },
+        {
+          "resaltar": ".ps-customer",
+          "durante_ms": 5000,
+          "al_decir": "ya muestra el cliente"
+        },
+        {
+          "click": ".ps-chip:has-text('Herramientas')",
+          "al_decir": "abro Herramientas"
+        },
+        {
+          "click": ".ps-card:has-text('Taladro')",
+          "al_decir": "primero el taladro"
+        },
+        {
+          "click": ".ps-card:has-text('Martillo')",
+          "al_decir": "después el martillo"
+        }
+      ],
+      "capitulo": "Cliente con RNC y crédito fiscal",
+      "rotulo": "Cliente y crédito fiscal"
+    },
+    {
+      "id": "09-pago-combinado",
+      "ruta": "Punto de venta › Cobrar venta › Pago combinado",
+      "texto_pantalla": "Pago combinado · tarjeta y transferencia",
+      "narracion": "Con los dos productos en el ticket, pulso Cobrar. Se abre la misma ventana, pero esta vez el comprobante dice crédito fiscal, B01. La constructora paga una parte con tarjeta y el resto por transferencia. Elijo Tarjeta, y en el centro escribo el monto: tres mil pesos, que es lo que pasa por el datáfono. Con tarjeta no hay cambio, así que el monto no puede pasar de lo pendiente. Elijo el tipo de tarjeta, Visa. Escribo los últimos cuatro dígitos de la tarjeta, tal como salen en el voucher, y después el número de autorización que imprime el datáfono. Con eso completo, pulso Agregar pago parcial: el pago pasa a Pagos aplicados, a la derecha, y queda lo pendiente. Para el resto elijo Transferencia: el monto ya viene con lo que falta. Escribo la referencia de la transferencia, la que te da el cliente o sale en su comprobante. Desmarco imprimir recibo, y pulso Confirmar cobro. El sistema aplica los dos pagos a la misma factura, y en unos segundos la ventana lo confirma. Es una sola factura, cobrada con dos formas de pago; en el cierre verás cada una por separado. Pulso Nueva venta.",
+      "acciones": [
+        {
+          "click": ".ps-charge",
+          "al_decir": "Pulso Cobrar"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-dlg__sub",
+          "durante_ms": 3500,
+          "al_decir": "pero esta vez"
+        },
+        {
+          "click": ".pd-method:has-text('Tarjeta')",
+          "al_decir": "Elijo Tarjeta"
+        },
+        {
+          "escribir": {
+            "sel": "#pos-amount",
+            "texto": "3000"
+          },
+          "al_decir": "escribo el monto"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-fields__hint",
+          "durante_ms": 4000,
+          "al_decir": "no hay cambio"
+        },
+        {
+          "seleccionar": {
+            "sel": ".pd-field select",
+            "valor": "Visa"
+          },
+          "al_decir": "Elijo el tipo"
+        },
+        {
+          "escribir": {
+            "sel": ".pd-field input[placeholder='0000']",
+            "texto": "4821"
+          },
+          "al_decir": "los últimos"
+        },
+        {
+          "escribir": {
+            "sel": ".pd-field input[placeholder='Ej.: 482913']",
+            "texto": "730215"
+          },
+          "al_decir": "número de autorización"
+        },
+        {
+          "click": "button:has-text('Agregar pago parcial')",
+          "al_decir": "Pulso Agregar pago"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-applied",
+          "durante_ms": 4000,
+          "al_decir": "Pagos aplicados"
+        },
+        {
+          "click": ".pd-method:has-text('Transferencia')",
+          "al_decir": "elijo Transferencia"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-amount",
+          "durante_ms": 3000,
+          "al_decir": "ya viene"
+        },
+        {
+          "escribir": {
+            "sel": ".pd-field input[placeholder='Número de la transferencia']",
+            "texto": "TRF-88213"
+          },
+          "al_decir": "Escribo la referencia"
+        },
+        {
+          "click": ".pd-checks label:has-text('Imprimir recibo')",
+          "al_decir": "Desmarco"
+        },
+        {
+          "click": ".pd-btn-confirm",
+          "al_decir": "pulso Confirmar cobro"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-dlg__title",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "los dos pagos"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-done__meta",
+          "durante_ms": 5000,
+          "al_decir": "Es una sola factura"
+        },
+        {
+          "click": ".pd-done__actions button:has-text('Nueva venta')",
+          "al_decir": "Pulso Nueva venta"
+        }
+      ],
+      "capitulo": "Pago combinado",
+      "rotulo": "Pago combinado"
+    },
+    {
+      "id": "10-credito",
+      "ruta": "Punto de venta › Venta a crédito",
+      "texto_pantalla": "Venta a crédito · cuenta por cobrar",
+      "narracion": "Ahora una venta a crédito, de las que el cliente paga después. Pulso Cambiar, en el cliente, y busco otra vez a Hermanos Peña. Esta constructora tiene una línea de crédito aprobada. Como es una empresa, marco Crédito fiscal, y abro la categoría Construcción, la de materiales. Toco el cemento para agregar una funda. Con el botón de más subo la cantidad: lo toco una vez para la segunda funda, otra vez para la tercera, y una más para la cuarta. El total se actualiza en cada toque. Pulso Cobrar. En las formas de pago, elijo Crédito del cliente. Ahora sí se permite: el recuadro azul explica que la factura queda emitida y el saldo pasa a las cuentas por cobrar del cliente. En Vence el eliges la fecha en que debe pagar. A la derecha, el total queda marcado a crédito, y el botón ahora dice Vender a crédito: lo pulso. El sistema emite la factura y la carga a la cuenta del cliente. La factura queda registrada con su número y su comprobante. Y la ventana lo dice claro: venta a crédito, saldo por cobrar. Aquí no entra dinero a la caja; el cobro llegará después, desde Ventas. Pulso Nueva venta.",
+      "acciones": [
+        {
+          "click": ".ps-customer",
+          "al_decir": "Pulso Cambiar"
+        },
+        {
+          "resaltar": "mat-dialog-container .pos-cdlg__title",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input",
+            "texto": "Hermanos"
+          },
+          "al_decir": "busco otra vez"
+        },
+        {
+          "click": "mat-option:has-text('Hermanos Peña')",
+          "al_decir": "crédito aprobada"
+        },
+        {
+          "click": ".ps-ncf button:has-text('Crédito fiscal')",
+          "al_decir": "marco Crédito fiscal"
+        },
+        {
+          "click": ".ps-chip:has-text('Construcción')",
+          "al_decir": "abro la categoría"
+        },
+        {
+          "click": ".ps-card:has-text('Cemento')",
+          "al_decir": "Toco el cemento"
+        },
+        {
+          "click": ".ps-line:has-text('Cemento') button[aria-label='Agregar una unidad']",
+          "al_decir": "para la segunda"
+        },
+        {
+          "click": ".ps-line:has-text('Cemento') button[aria-label='Agregar una unidad']",
+          "al_decir": "para la tercera"
+        },
+        {
+          "click": ".ps-line:has-text('Cemento') button[aria-label='Agregar una unidad']",
+          "al_decir": "para la cuarta"
+        },
+        {
+          "click": ".ps-charge",
+          "al_decir": "Pulso Cobrar"
+        },
+        {
+          "click": ".pd-method:has-text('Crédito del cliente')",
+          "al_decir": "elijo Crédito del cliente"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-alert--info",
+          "durante_ms": 6000,
+          "al_decir": "recuadro azul"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-fields input[type='date']",
+          "durante_ms": 3500,
+          "al_decir": "Vence el"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-change--credit",
+          "durante_ms": 3000,
+          "al_decir": "el total queda"
+        },
+        {
+          "click": ".pd-btn-confirm",
+          "al_decir": "lo pulso"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-done__meta",
+          "durante_ms": 2500,
+          "al_decir": "su comprobante"
+        },
+        {
+          "resaltar": "mat-dialog-container .pd-done__label",
+          "durante_ms": 5000,
+          "al_decir": "lo dice claro"
+        },
+        {
+          "click": ".pd-done__actions button:has-text('Nueva venta')",
+          "al_decir": "Pulso Nueva venta"
+        }
+      ],
+      "capitulo": "Venta a crédito",
+      "rotulo": "Venta a crédito"
+    },
+    {
+      "id": "11-devolucion",
+      "ruta": "Punto de venta › Devolución",
+      "texto_pantalla": "Devolución · formulario de Ventas",
+      "narracion": "Ahora, arriba en la cabecera, está el botón Devolución, para cuando un cliente regresa algo que compró. Lo abro. Te lleva al formulario de devoluciones de Ventas, ya con el menú del sistema. Aquí eliges el tipo de devolución y buscas la factura de origen, y el sistema emite una nota de crédito, B04, que rebaja toda la venta o una parte. Eso se explica paso a paso en el tutorial de Devoluciones. Para volver al punto de venta, pulso otra vez el ícono de la tienda, en la franja de la izquierda. Y el botón En espera sigue guardando el ticket de la brocha.",
+      "acciones": [
+        {
+          "resaltar": "a.pos-btn:has-text('Devolución')",
+          "durante_ms": 3000,
+          "al_decir": "el botón Devolución"
+        },
+        {
+          "click": "a.pos-btn:has-text('Devolución')",
+          "al_decir": "Lo abro"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Tipo de Devolución'))",
+          "durante_ms": 2000,
+          "al_decir": "el tipo de devolución"
+        },
+        {
+          "resaltar": ":text('Referencia (factura de origen)')",
+          "durante_ms": 2800,
+          "al_decir": "la factura de origen"
+        },
+        {
+          "resaltar": ":text('Nota de Crédito (E34/B04)')",
+          "durante_ms": 5000,
+          "al_decir": "nota de crédito"
+        },
+        {
+          "click": ".module-rail a[href='/pos']",
+          "al_decir": "el ícono de la tienda"
+        },
+        {
+          "resaltar": ".pos-header .pos-count",
+          "durante_ms": 4000,
+          "al_decir": "sigue guardando"
+        }
+      ],
+      "capitulo": "Devoluciones",
+      "rotulo": "Devolución"
+    },
+    {
+      "id": "12-caja-turno",
+      "ruta": "Punto de venta › Caja y turno",
+      "texto_pantalla": "Turno y cierre de caja · resumen y entrada de efectivo",
+      "narracion": "Ahora el turno. Pulso Caja y turno, arriba a la derecha. Esta pantalla es tu jornada en la caja. A la izquierda, el resumen del turno: los cobros, que son dos, porque la venta a crédito no entra a la caja, y el total cobrado. Debajo, lo cobrado por forma de pago: efectivo, tarjeta y transferencia. Y el efectivo esperado en la gaveta: el fondo de apertura más las ventas en efectivo. A la derecha, los movimientos del turno, empezando por la apertura. Si entra dinero que no es una venta, como el cambio que traes del banco, usas Entrada de efectivo. Lo pulso. Se abre Nuevo movimiento de caja, con la entrada ya elegida en Tipo de movimiento. En Monto escribo mil pesos. La contrapartida dice de dónde viene ese dinero en la contabilidad: busco la cuenta otros ingresos; la lista se filtra mientras escribo, y la elijo. En la nota anoto el motivo, para que cualquiera que revise el turno lo entienda después. Pulso Crear movimiento. Sale el aviso con el número del movimiento registrado, que aparece en la lista, y el esperado sube mil pesos. Retiro de efectivo funciona igual, para sacar dinero de la gaveta. E Imprimir reporte X imprime un corte parcial del turno, sin cerrarlo.",
+      "acciones": [
+        {
+          "click": "a.pos-btn:has-text('Caja y turno')",
+          "al_decir": "Pulso Caja y turno"
+        },
+        {
+          "resaltar": ".sh-stats",
+          "durante_ms": 5500,
+          "al_decir": "los cobros"
+        },
+        {
+          "resaltar": ".sh-block:has-text('Por forma de pago')",
+          "durante_ms": 3200,
+          "al_decir": "por forma de pago"
+        },
+        {
+          "resaltar": ".sh-block:has-text('Efectivo esperado')",
+          "durante_ms": 4500,
+          "al_decir": "efectivo esperado"
+        },
+        {
+          "resaltar": ".sh-col--grow",
+          "durante_ms": 3500,
+          "al_decir": "los movimientos del turno"
+        },
+        {
+          "click": "button:has-text('Entrada de efectivo')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Tipo de movimiento'))",
+          "durante_ms": 3000,
+          "al_decir": "ya elegida"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='amount']",
+            "texto": "1000"
+          },
+          "al_decir": "escribo mil"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container app-autocomplete:has(mat-label:text-is('Cuenta contable')) input",
+            "texto": "Otros ingresos"
+          },
+          "al_decir": "busco la cuenta"
+        },
+        {
+          "click": "mat-option:has-text('Otros ingresos diversos')",
+          "al_decir": "la elijo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='notes']",
+            "texto": "Cambio en monedas traído del banco"
+          },
+          "al_decir": "anoto el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear movimiento')",
+          "al_decir": "Pulso Crear movimiento"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sh-mv:last-child",
+          "durante_ms": 2000,
+          "al_decir": "en la lista"
+        },
+        {
+          "resaltar": ".sh-row--total",
+          "durante_ms": 1800,
+          "al_decir": "sube mil"
+        },
+        {
+          "resaltar": "button:has-text('Retiro de efectivo')",
+          "durante_ms": 3500,
+          "al_decir": "Retiro de efectivo"
+        },
+        {
+          "resaltar": "button:has-text('Imprimir reporte X')",
+          "durante_ms": 4000,
+          "al_decir": "corte parcial"
+        }
+      ],
+      "capitulo": "Caja y turno",
+      "rotulo": "Caja y turno"
+    },
+    {
+      "id": "13-cierre",
+      "ruta": "Punto de venta › Caja y turno › Arqueo y cierre",
+      "texto_pantalla": "Arqueo de efectivo y cierre del turno",
+      "narracion": "Al final del día toca el arqueo: contar el efectivo de la gaveta. En el centro anotas cuántos billetes y monedas hay de cada valor, y el sistema calcula el subtotal. Cuento siete billetes de mil; fíjate que el subtotal de cada fila se calcula solo. Hay tres billetes de cien, que suman trescientos pesos. Encuentro también uno de cincuenta, en el fondo de la gaveta. Y en monedas, cuento dos de diez. Todo eso suma lo contado. Debajo, los otros medios de pago: lo cobrado con tarjeta y por transferencia se declara aparte, con los vouchers y los comprobantes. A la derecha comparas el esperado con lo contado, y ves la diferencia: sobran diez centavos, del redondeo del cambio. Cuando hay diferencia, explícala en Observaciones del cierre; escribo diez centavos de redondeo. Así el supervisor sabe de dónde salió. Si te equivocas contando, Limpiar conteo, arriba, pone todo en cero. Y si la empresa usa conteo ciego, no verás el esperado: cuentas sin saber cuánto debería haber, y el supervisor revisa la diferencia. Pulso Cerrar turno e imprimir reporte Z. Pide confirmación, con el monto contado. Confirmo con Cerrar turno. El conteo queda registrado para que tu supervisor haga el cuadre oficial, y el reporte Z sale a imprimir. La pantalla vuelve a No tienes un turno abierto: mañana empiezas otra vez con Abrir turno.",
+      "acciones": [
+        {
+          "resaltar": ".sh-count",
+          "durante_ms": 5000,
+          "al_decir": "En el centro"
+        },
+        {
+          "escribir": {
+            "sel": ".sh-count__row:has(.sh-count__value:text-is('1,000')) input",
+            "texto": "7"
+          },
+          "al_decir": "siete billetes"
+        },
+        {
+          "escribir": {
+            "sel": ".sh-count__row:has(.sh-count__value:text-is('100')) input",
+            "texto": "3"
+          },
+          "al_decir": "tres billetes de cien"
+        },
+        {
+          "escribir": {
+            "sel": ".sh-count__row:has(.sh-count__value:text-is('50')) input",
+            "texto": "1"
+          },
+          "al_decir": "uno de cincuenta"
+        },
+        {
+          "escribir": {
+            "sel": ".sh-count__row:has(.sh-count__value:text-is('10')) input",
+            "texto": "2"
+          },
+          "al_decir": "dos de diez"
+        },
+        {
+          "resaltar": ".sh-declared",
+          "durante_ms": 5500,
+          "al_decir": "los otros medios"
+        },
+        {
+          "resaltar": ".sh-diff",
+          "durante_ms": 5500,
+          "al_decir": "ves la diferencia"
+        },
+        {
+          "escribir": {
+            "sel": "textarea",
+            "texto": "Diez centavos de redondeo"
+          },
+          "al_decir": "escribo diez"
+        },
+        {
+          "resaltar": ".sh-link-btn",
+          "durante_ms": 3500,
+          "al_decir": "Limpiar conteo"
+        },
+        {
+          "resaltar": ".sh-hint:has-text('sin mirar')",
+          "durante_ms": 6000,
+          "al_decir": "conteo ciego"
+        },
+        {
+          "click": ".sh-close-btn",
+          "al_decir": "Pulso Cerrar turno"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2300,
+          "al_decir": "Pide confirmación"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar turno')",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sh-state__card",
+          "durante_ms": 5000,
+          "al_decir": "vuelve a No tienes"
+        }
+      ],
+      "capitulo": "Arqueo y cierre del turno",
+      "rotulo": "Arqueo y cierre"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

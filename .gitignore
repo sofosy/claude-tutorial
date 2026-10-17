@@ -40,3 +40,17 @@ Note.md
 
 # Binarios de fuentes locales (se regeneran con fuentes/preparar.sh)
 fuentes/*.woff2
+
+# Volcados SQL completos: pasan del límite de 100 MB de GitHub. Se quedan locales.
+seeds/certificacion/canon.sql
+seeds/productos/canon-productos.sql
+seeds/productos/base-limpia.sql
+
+# Capturas de exploración que muestran claves de API (gv_live_…) en pantalla
+guiones/exploracion-seguridad/_resultados-r06b.json
+guiones/exploracion-seguridad/_resultados-v06a.json
+guiones/exploracion-seguridad/r06b-01-secreto-rotado.json
+guiones/exploracion-seguridad/v06a-04-secreto-mostrado.json
+guiones/exploracion-seguridad/v06a-05-secreto-copiado.json
+guiones/exploracion-seguridad/v06b-04-mas-acciones.json
+guiones/exploracion-seguridad/v06b-05-desactivada.json

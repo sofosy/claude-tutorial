@@ -1,0 +1,345 @@
+{
+  "_comentario": "Video 3 de la serie Cajas (autor videos 3-4, 2026-09-23). Graba yohanna.peralta (Cajera) partiendo de S1; termina como S3 (sesión en Caja Principal con fondo 5,000, MOV-2026-00009 entrada 2,000 cuenta 116, MOV-2026-00010 salida 6,500 / ITBIS 991.53 cuenta 167 POR APROBAR; esperado 7,000). Restaurar entre tomas: node seeds/cajas/restaurar.mjs S1. AVISO justificado de revisar.mjs: «el primer paso no contrae el menú (button.panel-collapse)» — en Cajas no existe ese botón (riel fijo, _SELECTORES-CAJAS.md y _BRIEF-CAJAS.md).",
+  "titulo": "Cajas · Abre tu caja y registra entradas y salidas",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "yohanna.peralta",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Abrir tu sesión en una caja desde el tablero de Cajas, con el fondo inicial que fija la empresa.",
+    "Leer «Mi caja»: la barra de la sesión y el desglose que explica el efectivo esperado.",
+    "Registrar una entrada de efectivo con su cuenta contable y su nota.",
+    "Registrar una salida con el ITBIS incluido y entender por qué queda «Por aprobar».",
+    "Revisar los movimientos del turno y el flujo neto en la pestaña «Resumen»."
+  ],
+  "errores_comunes": [
+    "Abrir la caja con un fondo inicial distinto del efectivo que de verdad hay en la gaveta: el cuadre del cierre saldrá con diferencia.",
+    "Registrar una salida sin nota: el sistema no la deja crear, la nota es obligatoria en los retiros.",
+    "Creer que una salida «Por aprobar» ya salió del saldo: no cuenta hasta que un supervisor la apruebe.",
+    "Anular un movimiento para «corregirlo»: la anulación no se deshace; pide un motivo y solo se puede con la sesión abierta."
+  ],
+  "pasos": [
+    {
+      "id": "01-abrir-sesion",
+      "ruta": "Cajas › Cajas",
+      "texto_pantalla": "Tablero de cajas · Abrir mi caja",
+      "navegar": "/cashier?section=cajas",
+      "narracion": "Esta es la pantalla de Cajas. Una caja es un punto de cobro de la ferretería, con su gaveta de efectivo. Y una sesión es el turno de una persona en esa caja, desde que la abre hasta que la cierra. Como cajera, tú ves solo dos pestañas: Cajas y Mi caja. La Caja Mostrador 2 dice «En uso»: la está operando un compañero. La de Santiago está bloqueada por un supervisor: nadie puede abrirla. Yo trabajo en la Principal, que está cerrada. Pulso «Abrir sesión». Se abre el panel «Abrir mi caja». La caja ya viene elegida, y la sesión se abrirá a tu nombre. El «Fondo inicial» es el efectivo con el que arrancas el turno: viene con cinco mil pesos, lo que fijó el administrador, y tiene que coincidir con lo que cuentas en la gaveta. En «Notas» anoto «Turno de la mañana», para saber de qué turno se trata. Más abajo, el recuadro «Conteo del fondo» avisa que esta caja no exige contar billete por billete al abrir. Pulso «Abrir caja». Sale el aviso de que la caja quedó abierta, y el sistema te lleva directo a tu caja.",
+      "acciones": [
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Principal']",
+          "durante_ms": 5000,
+          "al_decir": "punto de cobro"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2']",
+          "durante_ms": 5500,
+          "al_decir": "turno de una persona"
+        },
+        {
+          "resaltar": "#cashier-hub-tab-caja",
+          "durante_ms": 3500,
+          "al_decir": "dos pestañas"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2'] .board-card__note",
+          "durante_ms": 3500,
+          "al_decir": "En uso"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Sucursal Santiago'] .board-card__note",
+          "durante_ms": 4500,
+          "al_decir": "bloqueada"
+        },
+        {
+          "click": "article.board-card[aria-label='Caja Caja Principal'] .board-card__foot button:has-text('Abrir sesión')",
+          "al_decir": "Pulso Abrir sesión"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Caja'))",
+          "durante_ms": 2500,
+          "al_decir": "ya viene elegida"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Fondo inicial'))",
+          "durante_ms": 7000,
+          "al_decir": "Fondo inicial"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='notes']",
+            "texto": "Turno de la mañana"
+          },
+          "al_decir": "anoto"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('no requiere conteo')",
+          "durante_ms": 5000,
+          "al_decir": "Conteo del fondo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Abrir caja')",
+          "al_decir": "pulso Abrir caja"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": ".session-bar",
+          "durante_ms": 3500,
+          "al_decir": "te lleva directo"
+        }
+      ],
+      "capitulo": "Abrir la caja",
+      "rotulo": "Abrir la caja"
+    },
+    {
+      "id": "02-entrada",
+      "ruta": "Cajas › Mi caja › Entrada",
+      "texto_pantalla": "Mi caja · Registrar una entrada de efectivo",
+      "narracion": "Esto es Mi caja: tu turno en curso. Arriba, la barra de la sesión confirma, en verde, que la caja está abierta, con el efectivo que debería haber y quién la opera. Debajo, el «Desglose del efectivo» explica ese número: el fondo inicial, más los cobros en efectivo y las entradas, menos las salidas, más o menos las transferencias, da el efectivo esperado. Por ahora es solo el fondo: cinco mil pesos. Registro una entrada, que es dinero que entra a la gaveta sin ser una venta; como el cambio que traes del banco. Pulso el botón «Entrada». En el panel escribo el monto: dos mil pesos, lo que traje en monedas del banco. La «Contrapartida» es de dónde viene ese dinero en la contabilidad; como esta empresa no tiene cuentas de banco registradas, se usa una cuenta contable. La busco por su nombre, la lista se va filtrando mientras tecleo, y elijo «Otros ingresos diversos». En la nota dejo el motivo: «Cambio en monedas traído del banco». Así queda claro de dónde salió ese dinero. Pulso «Crear movimiento». El aviso confirma el número del movimiento registrado, y el desglose ya suma la entrada: el efectivo esperado sube a siete mil pesos.",
+      "acciones": [
+        {
+          "resaltar": ".session-bar",
+          "durante_ms": 6000,
+          "al_decir": "barra de la sesión"
+        },
+        {
+          "resaltar": "section.breakdown-panel",
+          "durante_ms": 8000,
+          "al_decir": "Desglose del efectivo"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Efectivo esperado')",
+          "durante_ms": 3500,
+          "al_decir": "solo el fondo"
+        },
+        {
+          "click": "button.quick-action--in",
+          "al_decir": "el botón Entrada"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='amount']",
+            "texto": "2000"
+          },
+          "al_decir": "escribo el monto"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Contrapartida'))",
+          "durante_ms": 6000,
+          "al_decir": "Contrapartida"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container app-autocomplete:has(mat-label:text-is('Cuenta contable')) input",
+            "texto": "Otros ingresos"
+          },
+          "al_decir": "La busco"
+        },
+        {
+          "click": "mat-option:has-text('Otros ingresos diversos')",
+          "al_decir": "elijo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='notes']",
+            "texto": "Cambio en monedas traído del banco"
+          },
+          "al_decir": "el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear movimiento')",
+          "al_decir": "Pulso Crear movimiento"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Entradas')",
+          "durante_ms": 2500,
+          "al_decir": "suma la entrada"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Efectivo esperado')",
+          "durante_ms": 3500,
+          "al_decir": "siete mil"
+        }
+      ],
+      "capitulo": "Registrar una entrada",
+      "rotulo": "Registrar una entrada"
+    },
+    {
+      "id": "03-salida-pendiente",
+      "ruta": "Cajas › Mi caja › Salida",
+      "texto_pantalla": "Registrar una salida con ITBIS · queda por aprobar",
+      "narracion": "Ahora una salida: dinero que sale de la gaveta para pagar algo. Pulso el botón «Salida». Escribo seis mil quinientos, para pagarle al técnico del aire acondicionado. Debajo del monto ves el saldo disponible, para no sacar más de lo que hay. El ITBIS es el impuesto a las ventas de República Dominicana, y aquí desglosas la parte que ya va incluida en el monto. El botón del porcentaje la calcula sola: novecientos noventa y uno con cincuenta y tres. La contrapartida ahora es un gasto: la busco por su nombre, espero a que la lista se filtre, y elijo «Otros gastos generales». En las salidas la nota es obligatoria, así que escribo para qué fue el dinero, igual que en el recibo del técnico. Así cualquiera entiende el retiro después. Abajo, el «Resumen del movimiento» separa la base, el impuesto y el total que sale. Pulso «Crear movimiento». Esta vez el aviso es naranja: el movimiento quedó registrado, pero requiere la aprobación de un supervisor, porque la empresa pide aprobación para los retiros de más de cinco mil pesos. Mientras tanto no toca tu saldo: el efectivo esperado sigue en siete mil.",
+      "acciones": [
+        {
+          "click": "button.quick-action--out",
+          "al_decir": "el botón Salida"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='amount']",
+            "texto": "6500"
+          },
+          "al_decir": "Escribo seis mil"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Saldo disponible')",
+          "durante_ms": 4000,
+          "al_decir": "saldo disponible"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:has-text('ITBIS incluido'))",
+          "durante_ms": 6000,
+          "al_decir": "desglosas"
+        },
+        {
+          "click": "mat-dialog-container button:has(mat-icon:text-is('percent'))",
+          "al_decir": "porcentaje"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container app-autocomplete:has(mat-label:text-is('Cuenta contable')) input",
+            "texto": "Otros gastos"
+          },
+          "al_decir": "la busco"
+        },
+        {
+          "click": "mat-option:has-text('Otros gastos generales')",
+          "al_decir": "elijo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='notes']",
+            "texto": "Pago del mantenimiento del aire acondicionado"
+          },
+          "al_decir": "escribo para qué"
+        },
+        {
+          "resaltar": "mat-dialog-container .movement-summary",
+          "durante_ms": 4300,
+          "al_decir": "Resumen del movimiento"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear movimiento')",
+          "al_decir": "Pulso Crear movimiento"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Salidas')",
+          "durante_ms": 2200,
+          "al_decir": "no toca tu saldo"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Efectivo esperado')",
+          "durante_ms": 3000,
+          "al_decir": "sigue en siete mil"
+        }
+      ],
+      "capitulo": "Salida con ITBIS por aprobar",
+      "rotulo": "Salida con ITBIS por aprobar"
+    },
+    {
+      "id": "04-resumen",
+      "ruta": "Cajas › Mi caja › Movimientos y Resumen",
+      "texto_pantalla": "Movimientos del turno y flujo neto",
+      "narracion": "Más abajo, en «Movimientos», está la lista de tu turno, del más reciente al más viejo. La salida lleva la etiqueta «Por aprobar», porque espera al supervisor; la entrada, «Completado». Los botones de arriba, como «Hoy» o «Semana», cambian el período que ves. En cada fila, el ojo abre el detalle del movimiento, y el círculo rojo lo anula: pide un motivo, solo se puede mientras la sesión esté abierta, y no se deshace. Ahora abro la pestaña «Resumen»: es el flujo neto del turno, lo que entró menos lo que salió. Dice dos mil pesos, porque la salida pendiente todavía no cuenta. Y los cobros en efectivo de tus facturas, hechos desde Ventas, se suman solos en el desglose.",
+      "acciones": [
+        {
+          "resaltar": "app-simple-movement-list :text-is('Por aprobar')",
+          "durante_ms": 2600,
+          "al_decir": "Por aprobar"
+        },
+        {
+          "resaltar": "app-simple-movement-list :text-is('Completado')",
+          "durante_ms": 3000,
+          "al_decir": "Completado"
+        },
+        {
+          "resaltar": "app-simple-movement-list button:has-text('Semana')",
+          "durante_ms": 2600,
+          "al_decir": "cambian el período"
+        },
+        {
+          "resaltar": "app-simple-movement-list button[aria-label='Ver detalle']",
+          "durante_ms": 3000,
+          "al_decir": "el ojo"
+        },
+        {
+          "resaltar": "app-simple-movement-list button[aria-label='Anular movimiento']",
+          "durante_ms": 6000,
+          "al_decir": "círculo rojo"
+        },
+        {
+          "click": ".workspace-tabs .mat-mdc-tab:has-text('Resumen')",
+          "al_decir": "abro la pestaña"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active .gm-fig:has-text('Flujo neto')",
+          "durante_ms": 6000,
+          "al_decir": "flujo neto"
+        },
+        {
+          "resaltar": "section.breakdown-panel .gm-fig:has-text('Cobros en efectivo')",
+          "durante_ms": 5000,
+          "al_decir": "cobros en efectivo"
+        }
+      ],
+      "capitulo": "Movimientos y resumen del turno",
+      "rotulo": "Movimientos y resumen del turno"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

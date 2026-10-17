@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Cajas · Historial y análisis
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Historial de una caja
+01:09  Análisis
+02:17  Alertas y auditoría
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Ver la historia completa de una caja: sus sesiones, sus movimientos y sus cuadres
+• Leer las cifras en vivo del módulo y los reportes por período
+• Comparar el rendimiento de cada cajero en sus cuadres
+• Consultar las alertas y la auditoría de quién hizo qué y cuándo
+
+⚠️ ERRORES COMUNES
+• Buscar el turno de hoy con el período «Este mes» y confundirlo con todo el mes: cambia el Período a «Hoy»
+• Pensar que una alerta resuelta sigue pendiente: mira la columna Estado
+• Reabrir una sesión que ya tiene cuadre: el sistema solo lo permite sin cuadre y dentro de las 24 horas
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:16
+
+TRANSCRIPCIÓN
+============================================================
+Este video es para consultar lo que ya pasó. Estoy en el tablero de Cajas, donde cada tarjeta es una caja de la ferretería. Para ver la historia de una sola, abro el menú de tres puntos de la Caja Principal y elijo Sesiones. Me lleva al Historial, ya filtrado por esa caja. Cada fila es una sesión, es decir, un turno: quién lo trabajó, cuándo abrió y cuándo cerró. La primera es el turno de hoy de Yohanna, ya Cerrada. A la derecha, el ojo abre sus detalles, y el candado sirve para reabrir una sesión: queda auditado, y el sistema solo lo permite dentro de las veinticuatro horas y si todavía no tiene cuadre. Ahora paso a Movimientos. Arriba, las cifras suman el flujo de la caja. En la lista están la transferencia recibida y la salida aprobada, cada una con su monto y su estado. Y en Cuadres, cada conteo con su esperado, su contado y su diferencia; el de hoy ya sale Confirmado. El ícono rojo de la fila sirve para anular un cuadre confirmado si hubo un error; entonces la sesión se puede volver a contar.
+Ahora Análisis, la pantalla de números del módulo. La franja de arriba está en vivo y se refresca sola: las sesiones activas, las cajas abiertas, las bloqueadas, los cuadres pendientes, el efectivo que hay ahora mismo en todas las cajas, y las alertas activas. Debajo, las pestañas de reportes. Reporte diario resume las sesiones y el flujo de un período. El Período viene en Este mes; puedes cambiarlo a Hoy, a los últimos siete días o a un rango propio, y filtrar por caja. Aquí ves cuántas sesiones hubo, cuántas de las cerradas quedaron cuadradas, y el flujo de movimientos, con entradas, salidas y transferencias, hasta el flujo neto. Paso a Cuadres y análisis: cuántos cuadres hubo, confirmados y pendientes, y la calidad del conteo, con la diferencia promedio y el porcentaje que quedó dentro de tolerancia. Y en Rendimiento, una fila por caja y cajero: sus sesiones, sus cuadres, qué parte cuadró dentro del margen y cuánto se desvía en promedio. Es la forma de ver, de un vistazo, quién cuenta bien y quién necesita apoyo.
+Quedan dos pestañas. Alertas lista los avisos automáticos del módulo. Aquí está la de saldo bajo en la Caja Principal: saltó cuando, tras aprobar la salida, su saldo bajó de mil pesos, el mínimo configurado. Su estado es Resuelta: se cerró sola cuando llegó la transferencia y el saldo volvió al rango. La de abajo es la de la caja bloqueada, resuelta al desbloquearla. Con el filtro Estado puedes ver solo las activas; en esas, la supervisora las puede reconocer, resolver o descartar. Por último, Auditoría: el registro de quién hizo qué y cuándo. Cada fila es una acción, con la fecha y la hora, el tipo de cambio, la descripción y el usuario que lo hizo. Arriba la puedes filtrar por acción, por tipo de entidad, por usuario o por fechas. Así, cada aprobación, cada desbloqueo y cada cuadre quedan con nombre y hora.

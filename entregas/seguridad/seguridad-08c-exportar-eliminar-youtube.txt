@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Con y sin permiso · Exportar y eliminar
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Con permiso: exportar
+00:50  Sin permiso: exportar
+01:45  Con permiso: eliminar
+02:22  Con permiso: la papelera
+02:47  Sin permiso: eliminar
+03:25  Sin permiso: sin papelera
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué da el permiso de exportar: el botón «Importar / Exportar» y la descarga del catálogo
+• Qué da el permiso de eliminar: la papelera de cada fila
+• Que exportar y eliminar son permisos aparte de ver, crear y editar
+
+⚠️ ERRORES COMUNES
+• Dar «Eliminar» a quien solo carga datos: borrar no tiene vuelta atrás
+• Olvidar que exportar saca el catálogo completo de la empresa en un archivo
+• Borrar un producto que ya no se vende en vez de desactivarlo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:05
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la lista de Productos, dentro de Inventario: el catálogo de la distribuidora, donde cada fila es un artículo que se vende. Entra Pedro, el encargado de almacén. En este video comparamos dos permisos de acción: exportar y eliminar. Contraigo el panel del menú. Arriba a la derecha, Pedro tiene el botón Importar / Exportar, porque su rol, Almacén, incluye el permiso Productos, Exportar. Lo pulso. Se abre una ventana con dos pestañas; paso a la pestaña Exportar, y ahí están Exportar Excel y Exportar CSV, que es un archivo de texto sencillo. Pulso Exportar Excel, y el archivo con todo el catálogo se descarga en su computadora. Cierro la ventana.
+Ahora la misma lista con alguien que no puede exportar. Cambio de persona: abro el menú de mi usuario, arriba a la derecha, pulso Cerrar sesión, y entro como Ana, la vendedora. Escribo su usuario, ana punto mejia, en minúsculas; luego su clave, que en pantalla se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. El rol de Ana le deja ver los productos, para poder cotizarlos, pero no exportarlos ni cambiarlos: vende, pero no administra el catálogo. Ya dentro, en su menú, Inventario lleva directo a Productos; lo pulso. Es la misma lista, con los mismos artículos. Pero arriba no aparece el botón Importar / Exportar. Y en la fila del machete solo tiene el lápiz, que es Abrir. Sin el permiso de exportar, el botón no está.
+Ahora el segundo permiso: eliminar. Salgo otra vez desde el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa, la administradora. Escribo su usuario, rosa punto almanzar, en minúsculas; ahora su clave, que se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Rosa es la administradora de la empresa: su rol le permite todo, eliminar incluido, y por eso conviene dárselo a muy pocas personas. Ya dentro, su menú de la izquierda trae todos los módulos contratados.
+Vuelvo a la lista de Productos, ahora como Rosa; el panel del menú sigue contraído. En la fila del machete, a la derecha, están sus acciones: abrir, duplicar, desactivar y, al final, la papelera de Eliminar. Aparece porque su rol tiene Productos, Eliminar. No la pulso: borrar un producto no tiene vuelta atrás, y este lo seguimos usando.
+Y ahora, el mismo punto con alguien que no puede eliminar. Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro otra vez como Pedro, el de almacén. Escribo su usuario, pedro punto nunez, en minúsculas y sin eñe; luego su clave, con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Pedro puede crear, editar y exportar productos; pero su rol, Almacén, no incluye eliminar, aunque trabaje con los productos todos los días. Ya dentro, vuelve a su Inicio, con su menú de siempre.
+Vuelvo a Productos con Pedro. En la misma fila del machete, Pedro tiene abrir, duplicar y desactivar, y ahí se acaban sus acciones, sin la papelera: Eliminar no aparece. Pedro mantiene el catálogo al día, y aun así no puede borrar nada. En resumen: cada acción es un permiso aparte. Exportar deja sacar el catálogo completo en un archivo, y eliminar borra para siempre; por eso conviene darlos solo a quien los necesita. Y si alguien no debe borrar, no le des Eliminar: igual puede desactivar un producto que ya no se vende, que lo deja inactivo sin borrarlo.

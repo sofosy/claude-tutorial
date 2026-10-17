@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1254" height="1254" viewBox="0 0 1254 1254" role="img" aria-label="Símbolo Germiva"><title>Símbolo Germiva</title><defs>
+<linearGradient id="leaf" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#003148"/><stop offset=".52" stop-color="#079e91"/><stop offset="1" stop-color="#66c963"/></linearGradient>
+<linearGradient id="fold" x1="0" y1=".65" x2="1" y2=".45"><stop stop-color="#4bce7a"/><stop offset=".6" stop-color="#12b398"/><stop offset="1" stop-color="#03978d"/></linearGradient>
+<linearGradient id="blue" x1="0" y1="1" x2="1" y2="0"><stop stop-color="#042745"/><stop offset=".55" stop-color="#033961"/><stop offset="1" stop-color="#056692"/></linearGradient>
+</defs><path fill="url(#leaf)" d="M 214,681 C 214,542 302,419 453,352 L 1011,127 C 1034,116 1049,133 1049,153 L 1049,286 C 1049,425 947,555 803,610 L 530,714 C 468,739 440,779 440,840 L 440,1176 C 337,1145 215,1055 215,922 Z"/>
+<path fill="url(#fold)" d="M 530,714 C 468,739 440,779 440,840 L 440,1176 C 362,1152 286,1093 253,1037 C 196,938 360,795 530,714 Z"/>
+<path fill="url(#blue)" d="M 562,1207 L 562,922 C 558,858 600,807 664,776 L 945,660 C 975,646 999,666 999,692 L 999,910 C 999,986 953,1039 872,1078 Z"/></svg>

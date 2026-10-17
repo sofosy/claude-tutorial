@@ -1,0 +1,57 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.06,
+   "clic_a_url_s": 5.87,
+   "clic_a_networkidle_s": 5.87,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.08,
+   "clic_a_url_s": 6.28,
+   "clic_a_networkidle_s": 6.28,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "pedro.nunez",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.11,
+   "clic_a_url_s": 8.12,
+   "clic_a_networkidle_s": 8.12,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "scroll_act": [
+  514,
+  266,
+  "auto"
+ ],
+ "body_scroll": {
+  "doc": [
+   758,
+   720
+  ],
+  "body": [
+   442,
+   442,
+   "visible"
+  ]
+ },
+ "scope_arias": [
+  "Alcance de Ver en Socios"
+ ],
+ "act_texto_ver": [],
+ "impexp_exportar": "swap_vertImportar / Exportar productos\nupload_file\nImportar\ndownload\nExportar\nExportar productos actuales\n\nDescarga todos los productos de la empresa —cada plantilla seguida de sus variantes— con sus precios por lista de precios y la existencia actual. Útil para editar en masa y reimportar.\n\ndownload\nExportar Excel\ndownload\nExportar CSV\nCerrar",
+ "impexp_botones": [
+  "download Exportar Excel",
+  "download Exportar CSV",
+  "Cerrar"
+ ]
+}

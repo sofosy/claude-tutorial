@@ -1,0 +1,1862 @@
+{
+ "url": "/security/personas?usuario=7944",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 758,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Seguridad",
+   "caja": [
+    109,
+    136,
+    804,
+    26
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-sheet-title",
+   "texto": "Todas · 9",
+   "caja": [
+    330,
+    260,
+    169,
+    28
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    901,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    945,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "MGmarta guzmánmarta.guzman@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de marta guzmán",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1018,
+    8,
+    238,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de marta guzmán']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Resumen",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ],
+   "sel": "a:has-text('Resumen')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 9",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ],
+   "sel": "a:has-text('Personas 9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-2",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ],
+   "sel": "a:has-text('Roles y permisos 12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditoría",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-3",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    476,
+    191,
+    87,
+    48
+   ],
+   "sel": "a:has-text('Auditoría')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Todas9",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "gm-rail-btn--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    290,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Todas9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Activas8",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    326,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Activas8')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Sin rol1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    362,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Sin rol1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nunca entraron1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    398,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Nunca entraron1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Inactivas1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    434,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Inactivas1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Zona Este",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    516,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Zona Este')",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Rol",
+   "icono": "filter_list",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    759,
+    256,
+    80,
+    36
+   ],
+   "sel": "button:has-text('Rol')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "SRSonia Reyes sonia.reyes@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    369,
+    131,
+    40
+   ],
+   "sel": "button:has-text('SRSonia Reyes sonia.reyes@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "LFLuisa Féliz luisa.feliz@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    425,
+    131,
+    40
+   ],
+   "sel": "button:has-text('LFLuisa Féliz luisa.feliz@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "MGMarta Guzmán marta.guzman@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    481,
+    131,
+    40
+   ],
+   "sel": "button:has-text('MGMarta Guzmán marta.guzman@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "PNPedro Núñez pedro.nunez@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    537,
+    131,
+    40
+   ],
+   "sel": "button:has-text('PNPedro Núñez pedro.nunez@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "CPCarlos Pimentel carlos.pimentel@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    593,
+    131,
+    40
+   ],
+   "sel": "button:has-text('CPCarlos Pimentel carlos.pimentel@germiv')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "JCJosé Cabrera jose.cabrera@germiva.demo · Zona Este",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    649,
+    131,
+    40
+   ],
+   "sel": "button:has-text('JCJosé Cabrera jose.cabrera@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "AMAna Mejía ana.mejia@germiva.demo · Zona Este",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    705,
+    131,
+    40
+   ],
+   "sel": "button:has-text('AMAna Mejía ana.mejia@germiva.demo · Zon')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RARosa Almánzar rosa.almanzar@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    761,
+    131,
+    40
+   ],
+   "sel": "button:has-text('RARosa Almánzar rosa.almanzar@germiva.de')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "HVHéctor Vargas hector.vargas@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    817,
+    131,
+    40
+   ],
+   "sel": "button:has-text('HVHéctor Vargas hector.vargas@germiva.de')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "chevron_left",
+   "aria": "Página anterior",
+   "id": "",
+   "clases": [],
+   "tooltip": "Página anterior",
+   "deshabilitado": true,
+   "caja": [
+    771,
+    644,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Página anterior']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "chevron_right",
+   "aria": "Página siguiente",
+   "id": "",
+   "clases": [],
+   "tooltip": "Página siguiente",
+   "deshabilitado": true,
+   "caja": [
+    811,
+    644,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Página siguiente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "close",
+   "aria": "Cerrar panel",
+   "id": "",
+   "clases": [],
+   "tooltip": "Cerrar",
+   "deshabilitado": false,
+   "caja": [
+    1197,
+    268,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Cerrar panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    884,
+    356,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Vendedor De la empresa",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__role"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    884,
+    451,
+    349,
+    35
+   ],
+   "sel": "button:has-text('Vendedor De la empresa')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver los 34 módulos",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__link"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    884,
+    672,
+    112,
+    20
+   ],
+   "sel": "button:has-text('Ver los 34 módulos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:search",
+   "placeholder": "Buscar persona o rol",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    929,
+    143,
+    300,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "Resumen",
+   "seleccionada": false,
+   "id": "mat-tab-link-0",
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ]
+  },
+  {
+   "texto": "Personas 9",
+   "seleccionada": true,
+   "id": "mat-tab-link-1",
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ]
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "seleccionada": false,
+   "id": "mat-tab-link-2",
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ]
+  },
+  {
+   "texto": "Auditoría",
+   "seleccionada": false,
+   "id": "mat-tab-link-3",
+   "caja": [
+    476,
+    191,
+    87,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "AMAna Mejía ana.mejia@germiva.demo · Zona Este",
+   "caja": [
+    362,
+    705,
+    131,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "RARosa Almánzar rosa.almanzar@germiva.demo",
+   "caja": [
+    362,
+    761,
+    131,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "HVHéctor Vargas hector.vargas@germiva.demo",
+   "caja": [
+    362,
+    817,
+    131,
+    40
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscree"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications MG "
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen notifications"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "MG Marta Guzmán marta.guzman@germiva.demo expand_more"
+   },
+   "gm-dense": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Personas Seguridad Quién entra, qué puede hacer y qué cambió"
+   },
+   "gm-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Pe"
+   },
+   "gm-sheet__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Pe"
+   },
+   "gm-sheet__title-row": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search"
+   },
+   "gm-sheet__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió."
+   },
+   "gm-sheet__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "security-console__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet__tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Auditoría"
+   },
+   "console-tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Auditoría"
+   },
+   "gm-sheet__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "gm-sheet-split": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "sec-people": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "sec-people--open": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "gm-sheet-rail": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "gm-rail-label": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "VISTAS"
+   },
+   "gm-th": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "VISTAS"
+   },
+   "gm-rail-btn": {
+    "n": 6,
+    "visibles": 6,
+    "ej": "Todas 9"
+   },
+   "gm-rail-btn--active": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas 9"
+   },
+   "gm-ellipsis": {
+    "n": 37,
+    "visibles": 37,
+    "ej": "Todas"
+   },
+   "gm-rail-count": {
+    "n": 6,
+    "visibles": 5,
+    "ej": "9"
+   },
+   "sec-people__dot": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "sec-people__teams-label": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "EQUIPOS"
+   },
+   "gm-sheet-pane": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Todas · 9 search filter_list Rol PERSONA ROLES ÚLTIMO INGRESO ESTADO S"
+   },
+   "gm-sheet-bar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas · 9 search filter_list Rol"
+   },
+   "sec-people__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas · 9"
+   },
+   "gm-sheet-title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas · 9"
+   },
+   "sec-people__total": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "· 9"
+   },
+   "sec-people__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet-scroll": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO SR Sonia Reyes sonia.reyes@germiva"
+   },
+   "gm-sheet-row": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO"
+   },
+   "gm-sheet-row--head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO"
+   },
+   "sec-people__row": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO"
+   },
+   "sec-people__check": {
+    "n": 10,
+    "visibles": 10,
+    "ej": ""
+   },
+   "sec-people__col-last": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "ÚLTIMO INGRESO"
+   },
+   "sec-people__who": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "SR Sonia Reyes sonia.reyes@germiva.demo"
+   },
+   "gm-initials": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "SR"
+   },
+   "gm-initials--tone-3": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "SR"
+   },
+   "sec-people__text": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Sonia Reyes sonia.reyes@germiva.demo"
+   },
+   "sec-people__name": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "Sonia Reyes"
+   },
+   "gm-sheet-meta": {
+    "n": 22,
+    "visibles": 22,
+    "ej": "sonia.reyes@germiva.demo"
+   },
+   "gm-status": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "Inactiva"
+   },
+   "gm-status--neutral": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Inactiva"
+   },
+   "gm-initials--tone-2": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "LF"
+   },
+   "sec-people__norole": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Sin ningún rol"
+   },
+   "gm-status--success": {
+    "n": 8,
+    "visibles": 8,
+    "ej": "Activa"
+   },
+   "gm-initials--tone-1": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "JC"
+   },
+   "gm-sheet-row--selected": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "AM Ana Mejía ana.mejia@germiva.demo · Zona Este Vendedor Hace un momen"
+   },
+   "gm-status--warning": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Pendiente"
+   },
+   "sec-people__pager": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Mostrando 1–9 de 9 chevron_left chevron_right"
+   },
+   "sec-people__spacer": {
+    "n": 1,
+    "visibles": 0,
+    "ej": ""
+   },
+   "sec-people__aside": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "AM Ana Mejía ana.mejia@germiva.demo close Activa Zona Este Último ingr"
+   },
+   "sec-people__card": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "AM Ana Mejía ana.mejia@germiva.demo close Activa Zona Este Último ingr"
+   },
+   "sec-people__card-top": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "AM Ana Mejía ana.mejia@germiva.demo close"
+   },
+   "gm-initials--lg": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "AM"
+   },
+   "sec-people__card-name": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Ana Mejía"
+   },
+   "sec-people__facts": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Activa Zona Este Último ingreso: hace un momento"
+   },
+   "sec-people__buttons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "more_vert"
+   },
+   "sec-people__block": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "ROLES Vendedor De la empresa"
+   },
+   "sec-people__block-title": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "ROLES"
+   },
+   "sec-people__role": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor De la empresa"
+   },
+   "sec-people__role-name": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor"
+   },
+   "sec-people__block-head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "PERMISOS EFECTIVOS 5 / 1160"
+   },
+   "gm-cell-mono": {
+    "n": 7,
+    "visibles": 7,
+    "ej": "5 / 1160"
+   },
+   "sec-people__hint": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "La unión de sus roles, por módulo contratado."
+   },
+   "sec-people__module": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Productos 1/42"
+   },
+   "gm-coverage": {
+    "n": 3,
+    "visibles": 3,
+    "ej": ""
+   },
+   "sec-people__module-n": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "1/42"
+   },
+   "sec-people__link": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Ver los 34 módulos"
+   },
+   "sec-people__login": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Hace un momento · Chrome · Windows ::1"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     901,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de marta guzmán",
+    [
+     1018,
+     8,
+     238,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     10,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     10,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Inventario",
+    [
+     10,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     10,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     10,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Configuración",
+    [
+     10,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona o rol",
+    [
+     981,
+     152,
+     232,
+     18
+    ]
+   ],
+   [
+    "aside",
+    "Vistas de personas",
+    [
+     85,
+     244,
+     220,
+     442
+    ]
+   ],
+   [
+    "section",
+    "Personas",
+    [
+     305,
+     244,
+     558,
+     442
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona",
+    [
+     544,
+     264,
+     194,
+     21
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar todas",
+    [
+     330,
+     325,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Sonia Reyes",
+    [
+     330,
+     381,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Luisa Féliz",
+    [
+     330,
+     437,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Marta Guzmán",
+    [
+     330,
+     493,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Pedro Núñez",
+    [
+     330,
+     549,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Carlos Pimentel",
+    [
+     330,
+     605,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar José Cabrera",
+    [
+     330,
+     661,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Ana Mejía",
+    [
+     330,
+     717,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Rosa Almánzar",
+    [
+     330,
+     773,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Héctor Vargas",
+    [
+     330,
+     829,
+     15,
+     15
+    ]
+   ],
+   [
+    "button",
+    "Página anterior",
+    [
+     771,
+     644,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Página siguiente",
+    [
+     811,
+     644,
+     36,
+     36
+    ]
+   ],
+   [
+    "aside",
+    "Detalle de la persona",
+    [
+     863,
+     244,
+     390,
+     442
+    ]
+   ],
+   [
+    "button",
+    "Cerrar panel",
+    [
+     1197,
+     268,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     884,
+     356,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [
+   {
+    "clase": "gm-ellipsis sec-people__norole",
+    "texto": "Sin ningún rol",
+    "caja": [
+     507,
+     435,
+     88,
+     20
+    ]
+   },
+   {
+    "clase": "gm-sheet-meta sec-people__hint",
+    "texto": "La unión de sus roles, por módulo contratado.",
+    "caja": [
+     884,
+     539,
+     349,
+     20
+    ]
+   }
+  ],
+  "fijos": [
+   {
+    "el": "div.ngx-bar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     2
+    ]
+   },
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "/inventory/product/list",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     10,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "/agenda/settings",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "VISTAS",
+   "EQUIPOS",
+   "PERSONA",
+   "ROLES",
+   "ÚLTIMO INGRESO",
+   "ESTADO",
+   "ROLES",
+   "PERMISOS EFECTIVOS",
+   "ÚLTIMOS INGRESOS"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications MG Marta Guzmán marta.guzman@germiva.demo expand_more home sell inventory calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Seguridad Personas Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Personas 9 Roles y permisos 12 Auditoría VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPOS Zona Este Todas · 9 search filter_list Rol PERSONA ROLES ÚLTIMO INGRESO ESTADO SR Sonia Reyes sonia.reyes@germiva.demo Mensajero Hace 38 min Inactiva LF Luisa Féliz luisa.feliz@germiva.demo Sin ningún rol Hace 39 min Activa MG Marta Guzmán marta.guzman@germiva.demo Auditor (solo lectura) Hace un momento Activa PN Pedro Núñez pedro.nunez@germiva.demo Almacén Hace un momento Activa CP Carlos Pimentel carlos.pimentel@germiva.demo Vendedor sénior Hace 38 min Activa JC José Cabrera jose.cabrera@germiva.demo · Zona Este Vendedor, Almacén Hace 38 min Activa AM Ana Mejía ana.mejia@germiva.demo · Zona Este Vendedor Hace un momento Activa RA Rosa Almánzar rosa.almanzar@germiva.demo Admin Hace 38 min Activa HV Héctor Vargas hector.vargas@germiva.demo Vendedor Nunca Pendiente Mostrando 1–9 de 9 chevron_left chevron_right AM Ana Mejía ana.mejia@germiva.demo close Activa Zona Este Último ingreso: hace un momento more_vert ROLES Vendedor De la empresa PERMISOS EFECTIVOS 5 / 1160 La unión de sus roles, por módulo contratado. Productos 1/42 Clientes y Proveedores 1/37 Cotizaciones 3/19 Ver los 34 módulos ÚLTIMOS INGRESOS Hace un momento · Chrome · Windows ::1 Hace 38 min · Cliente de API ::1 Hace 42 min · Cliente de API ::1"
+ },
+ "selectores_probados": {
+  "editar": {
+   "sel": ".sec-people__buttons button:has-text('Editar')",
+   "count": 0,
+   "visibles": 0,
+   "caja": null,
+   "ok": false
+  },
+  "mas": {
+   "sel": "button[aria-label='Más acciones']",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    884,
+    356,
+    36,
+    36
+   ],
+   "ok": true
+  },
+  "nuevo_equipo": {
+   "sel": "button[aria-label='Nuevo equipo']",
+   "count": 0,
+   "visibles": 0,
+   "caja": null,
+   "ok": false
+  },
+  "asignar": {
+   "sel": ".sec-people__assign-roles",
+   "count": 0,
+   "visibles": 0,
+   "caja": null,
+   "ok": false
+  }
+ },
+ "video": "v08a",
+ "pantalla": "09-marta-panel-ana",
+ "usuario": "marta.guzman",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790524117.698695,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524120.8429875,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524132.192555,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524141.4895458,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524146.7022126,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524149.9916983,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524153.7954357,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

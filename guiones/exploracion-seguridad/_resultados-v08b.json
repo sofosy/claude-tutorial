@@ -1,0 +1,108 @@
+{
+ "logins": [
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.06,
+   "clic_a_url_s": 6.24,
+   "clic_a_networkidle_s": 6.24,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "marta.guzman",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.14,
+   "clic_a_url_s": 6.6,
+   "clic_a_networkidle_s": 6.6,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "ana_tabla": {
+  "cab": [
+   "N°\ndrag_indicator",
+   "CLIENTE\ndrag_indicator",
+   "ESTADO\ndrag_indicator",
+   "EMISIÓN\ndrag_indicator",
+   "VENCIMIENTO\ndrag_indicator",
+   "SUBTOTAL\ndrag_indicator",
+   "ITBIS\ndrag_indicator",
+   "DESCUENTO\ndrag_indicator",
+   "TOTAL\ndrag_indicator",
+   "ACCIONES"
+  ],
+  "filas": [
+   "COT 3\n\tFerretería Doña Luz\n\tAprobada\n\t27/09/2026\n\t27/10/2026\n\tRD$4,420.00\n\tRD$795.60\n\tRD$0.00\n\tRD$5,215.60\n\t\nvisibility\nmore_vert",
+   "COT 2\n\tColmado La Esquina\n\tBorrador\n\t27/09/2026\n\t27/10/2026\n\tRD$2,100.00\n\tRD$378.00\n\tRD$0.00\n\tRD$2,478.00\n\t\nvisibility\nmore_vert",
+   "COT 1\n\tConstructora Mirador\n\tBorrador\n\t27/09/2026\n\t27/10/2026\n\tRD$5,875.00\n\tRD$1,057.50\n\tRD$0.00\n\tRD$6,932.50\n\t\nvisibility\nmore_vert"
+  ]
+ },
+ "ana_mas_fila": [
+  "content_copy\nDuplicar"
+ ],
+ "ana_q2_dialogo_al_abrir": "warning\nAcceso Denegado\nNo tiene el permiso requerido para acceder a este recurso: \"Configuración Empresa\". Solicite acceso a su administrador.\nEntendido",
+ "stepper_ana": "edit\nBorrador\ncheck_circle\nAprobada\nthumb_up\nAceptada\ncancel\nRechazada\nschedule\nVencida\nblock\nCancelada\ntransform\nConvertida a Orden\nreceipt\nFacturada",
+ "pasos_ana": [
+  {
+   "t": "Aprobada",
+   "tag": "DIV",
+   "cls": "step-content",
+   "dis": null,
+   "style_op": "1",
+   "cursor": "not-allowed"
+  },
+  {
+   "t": "Aceptada",
+   "tag": "DIV",
+   "cls": "step-content",
+   "dis": null,
+   "style_op": "1",
+   "cursor": "not-allowed"
+  },
+  {
+   "t": "Rechazada",
+   "tag": "DIV",
+   "cls": "step-content",
+   "dis": null,
+   "style_op": "1",
+   "cursor": "not-allowed"
+  },
+  {
+   "t": "Cancelada",
+   "tag": "DIV",
+   "cls": "step-content",
+   "dis": null,
+   "style_op": "1",
+   "cursor": "pointer"
+  }
+ ],
+ "inputs_linea": 0,
+ "marta_filas": 8,
+ "marta_create": [
+  "http://localhost:4200/home",
+  "No tienes permiso para ver «Cotizaciones». Solicita el acceso al administrador de tu empresa."
+ ],
+ "marta_q2_dialogo": "warning\nAcceso Denegado\nNo tiene el permiso requerido para acceder a este recurso: \"Configuración Empresa\". Solicite acceso a su administrador.\nEntendido",
+ "marta_q2": {
+  "guardar": 0,
+  "inputs_hab": 0,
+  "titulo": "Cotización 2\nBorrador"
+ },
+ "pasos_marta": [
+  {
+   "t": "Aprobada",
+   "tag": "DIV",
+   "cls": "step-content",
+   "dis": null,
+   "cursor": "not-allowed"
+  },
+  {
+   "t": "Cancelada",
+   "tag": "DIV",
+   "cls": "step-content",
+   "dis": null,
+   "cursor": "not-allowed"
+  }
+ ]
+}

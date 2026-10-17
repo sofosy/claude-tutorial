@@ -1,0 +1,311 @@
+1
+00:00:03,097 --> 00:00:07,211
+En este video juntamos dos cosas que deciden lo que puedes hacer con un documento:
+
+2
+00:00:07,264 --> 00:00:08,782
+el permiso y el estado.
+
+3
+00:00:09,413 --> 00:00:12,232
+Aquí, la cotización uno, en Borrador.
+
+4
+00:00:12,878 --> 00:00:17,354
+Carlos, el vendedor sénior, tiene el permiso Cotizaciones, Aprobar,
+
+5
+00:00:17,481 --> 00:00:19,045
+y por eso puede aprobarla.
+
+6
+00:00:19,690 --> 00:00:22,559
+Pero la acción Convertir a factura todavía está bloqueada:
+
+7
+00:00:22,710 --> 00:00:25,614
+solo existe cuando la cotización ya está aprobada.
+
+8
+00:00:26,260 --> 00:00:29,262
+Carlos la aprueba, y la cotización pasa a Aprobada:
+
+9
+00:00:29,341 --> 00:00:31,592
+ahora sí se puede convertir en factura.
+
+10
+00:00:32,227 --> 00:00:34,129
+El permiso dice qué acción existe;
+
+11
+00:00:34,231 --> 00:00:36,992
+el estado del documento dice cuándo se puede usar.
+
+12
+00:00:38,359 --> 00:00:40,021
+Vamos a hacerlo de verdad.
+
+13
+00:00:40,664 --> 00:00:43,304
+Carlos abre Ventas, y luego Cotizaciones;
+
+14
+00:00:43,442 --> 00:00:45,912
+se abre la lista, y contraigo el panel.
+
+15
+00:00:46,558 --> 00:00:50,585
+Abro la cotización número uno, de Ana, con el ojo de su fila.
+
+16
+00:00:51,219 --> 00:00:52,469
+Está en Borrador.
+
+17
+00:00:53,103 --> 00:00:56,335
+En la barra de estados de arriba, pulso el paso Aprobada.
+
+18
+00:00:56,969 --> 00:01:01,539
+El sistema pide confirmación, y avisa que la cotización dejará de ser editable.
+
+19
+00:01:02,186 --> 00:01:03,278
+Pulso Aprobar.
+
+20
+00:01:03,913 --> 00:01:08,280
+El sistema guarda el cambio de estado, y enseguida sale el aviso de éxito:
+
+21
+00:01:08,406 --> 00:01:10,514
+Estado actualizado correctamente.
+
+22
+00:01:11,159 --> 00:01:12,302
+Pulso Aceptar.
+
+23
+00:01:12,935 --> 00:01:17,567
+La cotización uno ya está aprobada, y la aprobó quien tiene el permiso para hacerlo.
+
+24
+00:01:18,933 --> 00:01:20,401
+Ahora la otra cara.
+
+25
+00:01:21,045 --> 00:01:25,568
+Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro como Ana,
+
+26
+00:01:25,610 --> 00:01:26,511
+la vendedora.
+
+27
+00:01:27,144 --> 00:01:30,737
+Escribo su usuario, ana punto mejia, en minúsculas;
+
+28
+00:01:30,816 --> 00:01:33,637
+luego su clave, con puntos para que nadie la lea;
+
+29
+00:01:33,763 --> 00:01:35,231
+y pulso Iniciar sesión;
+
+30
+00:01:35,284 --> 00:01:38,697
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+31
+00:01:39,342 --> 00:01:43,709
+Mientras entra, recuerda que aprobar es un permiso aparte de crear y de editar.
+
+32
+00:01:44,342 --> 00:01:48,998
+Ana puede crear y editar cotizaciones, pero su rol no tiene el permiso de aprobar:
+
+33
+00:01:49,077 --> 00:01:51,752
+quien vende no aprueba sus propios presupuestos.
+
+34
+00:01:52,398 --> 00:01:56,149
+Ya dentro, abro Ventas, y en su lista elijo Cotizaciones;
+
+35
+00:01:56,275 --> 00:01:58,830
+se abre su lista, y contraigo el panel.
+
+36
+00:01:59,475 --> 00:02:02,779
+Abro la número dos, que es suya y está en Borrador.
+
+37
+00:02:03,412 --> 00:02:04,700
+Ella la puede editar;
+
+38
+00:02:04,789 --> 00:02:08,165
+pero el paso Aprobada, aunque se ve, no está disponible:
+
+39
+00:02:08,242 --> 00:02:09,349
+sale en gris.
+
+40
+00:02:09,993 --> 00:02:13,926
+Si lo pulso, no pasa nada, y la cotización sigue en Borrador.
+
+41
+00:02:14,572 --> 00:02:18,382
+La aprobación la da otra persona con ese permiso, como Carlos.
+
+42
+00:02:19,733 --> 00:02:20,801
+Segunda regla:
+
+43
+00:02:20,843 --> 00:02:22,457
+el estado del documento.
+
+44
+00:02:23,088 --> 00:02:24,665
+Vuelvo a entrar como Carlos:
+
+45
+00:02:24,780 --> 00:02:27,612
+abro el menú de mi usuario y pulso Cerrar sesión.
+
+46
+00:02:28,257 --> 00:02:31,887
+En la pantalla de acceso escribo su usuario, carlos punto pimentel,
+
+47
+00:02:31,977 --> 00:02:33,868
+todo en minúsculas y sin espacios;
+
+48
+00:02:33,947 --> 00:02:36,827
+luego su clave, con puntos para que nadie la lea;
+
+49
+00:02:36,965 --> 00:02:38,530
+y pulso Iniciar sesión;
+
+50
+00:02:38,500 --> 00:02:41,971
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+51
+00:02:42,617 --> 00:02:46,960
+Mientras entra, recuerda que una cotización aprobada es la que ya pasó por el paso
+
+52
+00:02:46,772 --> 00:02:49,508
+Aprobada, como hizo Carlos hace un momento.
+
+53
+00:02:50,153 --> 00:02:53,216
+Carlos tiene el permiso de convertir una cotización en factura,
+
+54
+00:02:53,293 --> 00:02:54,689
+y además el de aprobarla:
+
+55
+00:02:54,780 --> 00:02:56,864
+es el vendedor con más experiencia.
+
+56
+00:02:57,508 --> 00:03:01,259
+Ya dentro, abro Ventas, y en su lista elijo Cotizaciones;
+
+57
+00:03:01,385 --> 00:03:03,906
+se abre la lista, y contraigo el panel.
+
+58
+00:03:04,549 --> 00:03:07,503
+Abro otra cotización aprobada, la número seis:
+
+59
+00:03:07,581 --> 00:03:10,173
+en la barra de estados, ya está aprobada.
+
+60
+00:03:10,806 --> 00:03:13,433
+Arriba a la derecha, pulso Más acciones:
+
+61
+00:03:13,512 --> 00:03:15,365
+ahí está Convertir a factura.
+
+62
+00:03:16,012 --> 00:03:19,206
+No la pulso, porque crearía una factura de verdad.
+
+63
+00:03:19,851 --> 00:03:20,933
+Cierro el menú.
+
+64
+00:03:22,262 --> 00:03:26,423
+Ahora, con el mismo Carlos y el mismo permiso, vuelvo a la lista.
+
+65
+00:03:27,066 --> 00:03:29,924
+Aquí está la número siete, que sigue en Borrador;
+
+66
+00:03:30,001 --> 00:03:32,593
+la abro, y la barra de estados lo confirma.
+
+67
+00:03:33,238 --> 00:03:36,578
+Arriba a la derecha, pulso otra vez Más acciones.
+
+68
+00:03:37,223 --> 00:03:40,068
+Esta vez solo salen Versiones e historial y Duplicar:
+
+69
+00:03:40,146 --> 00:03:42,157
+Convertir a factura no aparece.
+
+70
+00:03:42,803 --> 00:03:44,670
+Carlos no perdió ningún permiso;
+
+71
+00:03:44,772 --> 00:03:47,231
+lo que cambia es el estado de la cotización.
+
+72
+00:03:47,864 --> 00:03:49,790
+Y esto no se configura en el rol:
+
+73
+00:03:49,892 --> 00:03:51,447
+es la regla del documento.
+
+74
+00:03:52,078 --> 00:03:52,870
+En resumen:
+
+75
+00:03:52,960 --> 00:03:55,781
+el permiso dice qué acciones existen para cada persona,
+
+76
+00:03:55,883 --> 00:03:58,776
+y el estado del documento dice cuándo se pueden usar.
+
+77
+00:03:59,421 --> 00:04:02,689
+Si alguien no encuentra un botón, revisa las dos cosas:
+
+78
+00:04:02,839 --> 00:04:04,791
+su rol y el estado del documento.

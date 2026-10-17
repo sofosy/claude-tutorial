@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+CRM · La ficha del prospecto y sus seguimientos
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  La ficha del prospecto
+00:55  Cerrar un seguimiento y anotar la llamada
+01:38  Programar el próximo seguimiento
+02:22  Avanzar de etapa y convertir en oportunidad
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer la ficha de un prospecto: etapa, valor, puntuación y datos de contacto
+• Cerrar un seguimiento que ya hiciste y anotar lo que se habló
+• Programar el próximo seguimiento con fecha y hora
+• Pasar el prospecto a la etapa siguiente y convertirlo en oportunidad
+
+⚠️ ERRORES COMUNES
+• Anotar la llamada en una nota suelta fuera del sistema: el equipo no la ve
+• Cerrar un seguimiento sin programar el siguiente: el prospecto se queda sin próximo paso
+• Convertir antes de calificar: la oportunidad nace sin datos para cotizar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:02
+
+TRANSCRIPCIÓN
+============================================================
+Estamos en el tablero de prospectos. Recojo el menú para tener más espacio. Abro la tarjeta de Carolina Méndez, de Residencial Las Colinas. Esta es la ficha del prospecto: reúne todo lo que sabes de ella y todo lo que se ha hecho para venderle. Arriba, la cinta de etapas: marca en qué columna del tablero está, y desde aquí también se puede mover. A su izquierda, el botón Perdido, para cuando la venta no se da. Debajo, el valor estimado de la venta y la puntuación, de cero a cien: sube con cada contacto y te dice qué tan interesado está. Luego sus datos: empresa, nombre, correo y teléfono. A la derecha, quién la atiende, de dónde llegó, la prioridad y cuándo esperas cerrar. Cualquiera de estos datos se corrige pulsando sobre él.
+A la derecha está el seguimiento del prospecto. En Pendientes, lo que toca hacer: aquí hay uno vencido, enviarle el catálogo de pinturas, que era para ayer. Ya se lo envié, así que lo marco como realizado con este botón de la derecha. El aviso de abajo confirma que quedó hecho. Ahora anoto la llamada que tuve con ella. En Actividad elijo el tipo, Llamada, y escribo lo que se habló. Le interesan cuarenta galones para pintar la plaza, y quiere entrega en la obra. Cuando termino, pulso Publicar. La llamada queda en el historial con mi nombre, la fecha y la hora: cualquiera del equipo que abra la ficha sabe en qué va la venta.
+Una venta no avanza si no hay un siguiente paso. Subo a Pendientes y pulso Programar. El cuadro de abajo cambia a Seguimiento. En el texto, escribo qué hay que hacer: llamar para confirmar el pedido de pintura. Lo escribo como una tarea, para que quien la vea sepa qué hacer. Debajo eliges la fecha y la hora, o usas las fechas rápidas: Hoy, Mañana, En tres días o En una semana. Elijo En tres días. Para terminar, lo confirmo con el botón azul de abajo. El aviso de abajo confirma para cuándo quedó, y aparece en Pendientes, con su fecha. Ese día te sale en el tablero, en el indicador de seguimientos para hoy.
+Carolina ya confirmó que quiere comprar: está calificada. Subo a la cinta de etapas y pulso Calificado. Calificado es una de las etapas que convierten al prospecto, así que el sistema pregunta antes: al convertirlo, crea el cliente, su contacto y una oportunidad de venta con los datos de la ficha. Pulso Convertir. Listo: el aviso dice que se creó la oportunidad, la ficha queda marcada como convertida, y arriba a la izquierda aparece Ver oportunidad. Desde ahí se cotiza y se sigue la venta hasta ganarla; lo vemos en el próximo video.

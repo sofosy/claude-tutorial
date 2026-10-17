@@ -1,0 +1,271 @@
+{
+  "titulo": "Cómo cambiar de plan en Germiva",
+  "_comentario": "Serie Suscripción, video 2 (2026-10-05), master del 05/10. Parte de una suscripción ACTIVA y pagada (Profesional ERP, mensual): setup seeds/suscripcion/preparar.mjs --activa (alta + transferencia declarada y aprobada por API). Comportamiento medido: con la suscripción activa, BAJAR de plan queda «Cambio Programado» para la fecha de renovación (sin cobro) y se cancela con «Cancelar Cambio» → confirmación; SUBIR deja «Cambio pendiente de pago» por la diferencia prorrateada (aquí RD$5,510: el ciclo recién empieza), el plan actual se conserva hasta pagar y el pago se hace en el mismo checkout. En PRUEBA el cambio es inmediato y sin cargo (verificado: «Plan cambiado a Empresarial exitosamente sin cargos adicionales»). HALLAZGOS (no se corrigen aquí): (1) la nota del diálogo dice «El cambio a Estándar se aplica de inmediato» pero la baja queda programada para la renovación; (2) en prueba la nota dice «se te cobrará la diferencia prorrateada» y el resultado es sin cargo; (3) el botón de confirmación dice «Si, Cancelar Cambio» sin tilde. Por (1) la voz no lee esa nota y no se marca.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "ana.martinez@ferreteriaelfaro.do",
+      "password": "Faro2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Ana",
+      "Martínez",
+      "Martinez",
+      "ana.martinez",
+      "ferreteriaelfaro",
+      "Ferretería El Faro",
+      "FERRETERIA EL FARO",
+      "El Faro",
+      "TRF-00458213",
+      "Banco Popular",
+      "829) 623-0629",
+      "soporte@germiva.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/suscripcion/preparar.mjs --activa"
+  },
+  "aprenderas": [
+    "Abrir «Cambiar plan o ciclo» desde Mi Suscripción y leer la lista de planes",
+    "Bajar de plan: el cambio queda programado para tu fecha de renovación, sin cobro",
+    "Cancelar un cambio programado si te arrepientes",
+    "Subir de plan: pagas sólo la diferencia prorrateada y el cambio se aplica al confirmarse el pago",
+    "Qué cambia si todavía estás en período de prueba"
+  ],
+  "errores_comunes": [
+    "Bajar a un plan cuyos límites no cubren tu uso actual (usuarios, almacenes, facturas)",
+    "Creer que al bajar de plan pierdes lo pagado: conservas tu plan hasta la renovación",
+    "Pedir el cambio a un plan mayor y no pagarlo: el plan no cambia y la solicitud vence",
+    "Pagar el plan nuevo completo: sólo se cobra la diferencia por los días que quedan"
+  ],
+  "pasos": [
+    {
+      "id": "01-planes",
+      "capitulo": "Ver los planes",
+      "rotulo": "Cambiar plan o ciclo",
+      "ruta": "Configuración › Mi Suscripción › Cambiar plan o ciclo",
+      "texto_pantalla": "Mi Suscripción · ventana «Cambiar plan o ciclo de facturación»",
+      "narracion": "Para cambiar de plan, entra a Configuración, en el menú de la izquierda, y luego a Mi Suscripción. Recojo el menú para ver la pantalla completa. Aquí está tu plan actual: Profesional, activo y ya pagado. El cambio se pide con el botón Cambiar plan o ciclo. Se abre una ventana. Arriba te recuerda el plan que tienes hoy y lo que pagas. Debajo eliges el ciclo de facturación: mensual o anual; cambiar sólo el ciclo también se hace aquí. Y la lista de planes: primero los de quien sólo factura, después los de la gestión completa de la empresa. El tuyo dice Plan actual. A la derecha de cada plan ves su precio y la diferencia con lo que pagas hoy: con signo menos los más baratos, y con signo más los más caros.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Configuración']",
+          "al_decir": "entra a Configuración"
+        },
+        {
+          "click": ".panel-item:has-text('Mi Suscripción')",
+          "al_decir": "luego a Mi Suscripción"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": ".plan-badges",
+          "durante_ms": 4000,
+          "al_decir": "Profesional, activo"
+        },
+        {
+          "click": "button:has-text('Cambiar plan o ciclo')",
+          "al_decir": "el botón Cambiar plan o ciclo"
+        },
+        {
+          "resaltar": "mat-dialog-container p.current-plan",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "te recuerda el plan"
+        },
+        {
+          "resaltar": "mat-dialog-container .billing-cycle-selection",
+          "durante_ms": 4500,
+          "al_decir": "el ciclo de facturación"
+        },
+        {
+          "resaltar": "mat-dialog-container label.plan-row:has-text('Inicial')",
+          "durante_ms": 3000,
+          "al_decir": "quien sólo factura"
+        },
+        {
+          "resaltar": "mat-dialog-container label.plan-row:has-text('Plan actual')",
+          "durante_ms": 3500,
+          "al_decir": "dice Plan actual"
+        },
+        {
+          "resaltar": "mat-dialog-container label.plan-row:has-text('La solución completa') .plan-delta",
+          "durante_ms": 2300,
+          "al_decir": "con signo menos"
+        },
+        {
+          "resaltar": "mat-dialog-container label.plan-row:has-text('máxima capacidad') .plan-delta",
+          "durante_ms": 3500,
+          "al_decir": "con signo más"
+        }
+      ]
+    },
+    {
+      "id": "02-bajar",
+      "capitulo": "Bajar de plan",
+      "rotulo": "Bajar de plan",
+      "ruta": "Mi Suscripción › Cambiar plan o ciclo › Estándar",
+      "texto_pantalla": "Bajar de plan · el cambio queda programado para la renovación",
+      "narracion": "Primero, bajar de plan. Elijo Estándar, que cuesta menos. Pulso Continuar. Sale el aviso Cambio Programado: como ya pagaste este mes, conservas Profesional hasta tu fecha de renovación, y ese día pasas a Estándar sin cobro adicional. Lo acepto. Arriba queda el aviso Cambio de plan o ciclo programado, con la fecha. Y en la tarjeta del plan aparece el próximo plan y el día del cambio. Antes de bajar, revisa que los límites del plan nuevo cubran lo que usas: usuarios, almacenes y facturas. Si te arrepientes, pulsa Cancelar Cambio. Te pregunta si estás seguro; confirmo. Sale el aviso Cambio Cancelado: continúas con tu plan actual, como si nada. Pulso Aceptar.",
+      "acciones": [
+        {
+          "click": "mat-dialog-container label.plan-row:has-text('La solución completa')",
+          "al_decir": "Elijo Estándar"
+        },
+        {
+          "click": "mat-dialog-container button.mat-primary",
+          "al_decir": "Pulso Continuar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Cambio Programado')",
+          "durante_ms": 5500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container:has-text('Cambio Programado') button:has-text('Aceptar')",
+          "al_decir": "Lo acepto"
+        },
+        {
+          "resaltar": ".alert-banner.scheduled-change",
+          "durante_ms": 4000,
+          "al_decir": "Cambio de plan o ciclo programado"
+        },
+        {
+          "resaltar": ".scheduled-change-info",
+          "durante_ms": 4300,
+          "al_decir": "el próximo plan"
+        },
+        {
+          "resaltar": "text=Uso del Plan",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "los límites del plan nuevo"
+        },
+        {
+          "click": ".alert-banner.scheduled-change button:has-text('Cancelar Cambio')",
+          "al_decir": "pulsa Cancelar Cambio"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Cancelar Cambio Programado')",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "si estás seguro"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar Cambio'):not(:has-text('Mantener'))",
+          "al_decir": "confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Cambio Cancelado')",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container:has-text('Cambio Cancelado') button:has-text('Aceptar')",
+          "al_decir": "como si nada. Pulso Aceptar"
+        }
+      ]
+    },
+    {
+      "id": "03-subir",
+      "capitulo": "Subir de plan",
+      "rotulo": "Subir de plan",
+      "ruta": "Mi Suscripción › Cambiar plan o ciclo › Empresarial",
+      "texto_pantalla": "Subir de plan · se paga la diferencia prorrateada",
+      "narracion": "Ahora, subir de plan. Abro otra vez la ventana de cambio y elijo Empresarial, el de mayor capacidad. La nota de abajo avisa que se cobra la diferencia prorrateada: es decir, sólo la parte proporcional a los días que quedan del ciclo que ya pagaste, no el plan completo. Ahora pulso Continuar. El aviso Cambio pendiente de pago dice cuánto es y que el cambio se aplica al confirmarse el pago. Pulso Aceptar, y me lleva directo a la pantalla de pago. En el resumen ves el cambio, de Profesional a Empresarial, con su importe. Se paga igual que la suscripción: con tarjeta o por transferencia, como en el video anterior. Y si todavía estás en período de prueba, cambiar de plan es inmediato y no cuesta nada. Si sales sin pagar, conservas tu plan actual, y en Mi Suscripción queda un aviso con el importe y la fecha límite para completar el pago.",
+      "acciones": [
+        {
+          "click": "button:has-text('Cambiar plan o ciclo')",
+          "al_decir": "Abro otra vez"
+        },
+        {
+          "click": "mat-dialog-container label.plan-row:has-text('máxima capacidad')",
+          "al_decir": "elijo Empresarial"
+        },
+        {
+          "resaltar": "mat-dialog-container p.confirmation-note",
+          "durante_ms": 6000,
+          "al_decir": "La nota de abajo"
+        },
+        {
+          "click": "mat-dialog-container button.mat-primary",
+          "al_decir": "Ahora pulso Continuar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Cambio pendiente de pago')",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container:has-text('Cambio pendiente de pago') button:has-text('Aceptar')",
+          "al_decir": "Pulso Aceptar"
+        },
+        {
+          "presionar": {
+            "tecla": "End"
+          },
+          "al_decir": "pantalla de pago"
+        },
+        {
+          "resaltar": "text=Cambio de plan: Profesional",
+          "durante_ms": 5000,
+          "al_decir": "En el resumen"
+        },
+        {
+          "resaltar": ".payment-type-selector",
+          "durante_ms": 3500,
+          "al_decir": "con tarjeta o por transferencia"
+        },
+        {
+          "resaltar": ".payment-type-selector mat-radio-button:has-text('Transferencia Bancaria')",
+          "durante_ms": 2800,
+          "cursor": false,
+          "al_decir": "no cuesta nada"
+        },
+        {
+          "resaltar": "button.back-button",
+          "durante_ms": 4000,
+          "al_decir": "Si sales sin pagar"
+        }
+      ]
+    }
+  ]
+}

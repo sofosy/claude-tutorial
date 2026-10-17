@@ -112,7 +112,7 @@ export function cargarGuion(arg) {
 }
 
 /** Tipo de acción de una entrada de `acciones`. */
-export const TIPOS = ['click', 'escribir', 'resaltar', 'subir', 'seleccionar', 'marcar',
+export const TIPOS = ['click', 'arrastrar', 'escribir', 'resaltar', 'subir', 'seleccionar', 'marcar',
   'click_opcional', 'presionar', 'esperar_ms', 'quitar_marca', 'plano_general',
   'cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar', 'insignia'];
 /** Acciones de la capa (insignia/cartel/diagrama): cambian la pantalla sin mover el cursor. */
@@ -120,7 +120,7 @@ export const TIPOS_CAPA = ['cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerr
 export const tipoDe = acc => TIPOS.find(k => k in acc) || ('al_decir' in acc ? 'ritmo' : '?');
 export const selDe = acc => {
   const t = tipoDe(acc), v = acc[t];
-  return typeof v === 'string' ? v : (v && typeof v === 'object' ? (v.sel || v.ancla || null) : null);
+  return typeof v === 'string' ? v : (v && typeof v === 'object' ? (v.sel || v.ancla || v.desde || null) : null);
 };
 
 /** Lo que grabar.py anota como `que` del evento de una acción (verificar.que_accion). */
@@ -203,7 +203,8 @@ export function leerSrt(ruta) {
   }).filter(Boolean);
 }
 
-const DIALOGO = /dialog|snack|alert|toast|swal|modal|aviso|notif|mensaje/i;
+// «-error» / «error»: avisos en línea con role=alert (p. ej. .units-error del panel de empaques).
+const DIALOGO = /dialog|snack|alert|toast|swal|modal|aviso|notif|mensaje|error/i;
 export const esSelDialogo = s => DIALOGO.test(String(s || ''));
 
 /** Firma de una alerta: sus primeras palabras (el título del diálogo). */

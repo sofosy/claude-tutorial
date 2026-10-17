@@ -1,0 +1,19 @@
+{
+  "estado": "C0",
+  "empresa": 50,
+  "fijado_en": "2026-10-06 06:47:22",
+  "conteos": {
+    "crm_workspaces": 1,
+    "pipeline_stages": 6,
+    "crm_goals": 0,
+    "crm_ai_configs": 0,
+    "customer_care_settings": 1,
+    "customer_onboarding_templates": 1,
+    "customer_playbooks": 0,
+    "helpdesk_workspaces": 1,
+    "helpdesk_ticket_statuses": 0,
+    "ticket_notification_rules": 0,
+    "surveys": 0,
+    "partners": 6
+  }
+}

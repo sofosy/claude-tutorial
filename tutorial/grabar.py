@@ -55,6 +55,13 @@ from .rutas import RAIZ
 # salvo que el navegador entero arranque con `--force-device-scale-factor`.
 ANCHO_CSS, ALTO_CSS = 1280, 720
 ESCALA = 1.5
+# El navegador en español de RD, como el del usuario: los controles NATIVOS
+# (`<input type=date>`, `type=time`) se pintan con el idioma del navegador, no
+# con el `lang` de la página, y sin esto el video enseñaba «10/31/2026».
+ARGS_IDIOMA = ["--lang=es-DO"]
+# Navegador liviano: sin extensiones, red de fondo ni audio (la voz va aparte).
+ARGS_LIVIANO = ["--disable-extensions", "--disable-background-networking", "--disable-component-update",
+                "--disable-sync", "--mute-audio", "--no-first-run", "--renderer-process-limit=2"]
 ANCHO, ALTO = int(ANCHO_CSS * ESCALA), int(ALTO_CSS * ESCALA)
 FPS = 30
 PAD = 0.6            # respiro tras cada narración
@@ -345,7 +352,7 @@ class Grabadora:
         self._proc = subprocess.Popen(
             ["ffmpeg", "-y", "-loglevel", "error",
              "-f", "image2pipe", "-framerate", str(FPS), "-vcodec", "mjpeg", "-i", "-",
-             "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-g", str(FPS),
+             "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18", "-threads", "2", "-g", str(FPS),
              "-pix_fmt", "yuv420p", "-r", str(FPS), "-movflags", "+faststart",
              str(self.destino)],
             stdin=subprocess.PIPE, bufsize=0)
@@ -813,6 +820,54 @@ def _clic(pag, sel, ctx):
     return loc
 
 
+ARRASTRE_PASOS = 18   # tramos del viaje con el botón pulsado
+ARRASTRE_MS = 900     # lo que dura el viaje de la tarjeta, a ritmo de persona
+
+
+def _arrastrar(pag, spec, ctx):
+    """Arrastra un elemento hasta otro, a la vista: un tablero kanban se enseña
+    moviendo tarjetas, y eso no se puede contar con clics.
+
+        {"arrastrar": {"desde": "<tarjeta>", "hasta": "<columna destino>"}, "al_decir": "…"}
+
+    El cursor dibujado y el ratón real viajan juntos con el botón pulsado y en
+    tramos cortos (el CDK de Angular sólo empieza a arrastrar tras unos píxeles
+    de movimiento y necesita eventos intermedios para calcular el destino). El
+    destino se mide DESPUÉS de pulsar: al levantar la tarjeta el tablero puede
+    recolocar columnas. Se suelta sobre el tercio superior del destino, donde
+    una columna larga sigue estando dentro del cuadro.
+    """
+    loc, caja = _localizar(pag, spec["desde"])
+    x0, y0 = _centro(caja)
+    ctx.enfocar(caja, ZOOM_ACCION)
+    _mover(pag, x0, y0)
+    ctx.registro("clic", spec["desde"], loc)
+    pag.mouse.down()
+    pag.mouse.move(x0 + 8, y0 + 4, steps=3)  # supera el umbral de arrastre del CDK
+    destino = pag.locator(spec["hasta"]).first
+    destino.wait_for(state="visible", timeout=8000)
+    cd = destino.bounding_box()
+    if not cd:
+        pag.mouse.up()
+        raise SelectorAusente(f"sin caja: {spec['hasta']}")
+    x1 = cd["x"] + cd["width"] / 2
+    y1 = cd["y"] + min(cd["height"] / 3, 160)
+    tramo = ARRASTRE_MS / ARRASTRE_PASOS
+    for i in range(1, ARRASTRE_PASOS + 1):
+        x = x0 + (x1 - x0) * i / ARRASTRE_PASOS
+        y = y0 + (y1 - y0) * i / ARRASTRE_PASOS
+        pag.evaluate("([x,y,ms]) => window.__tut && __tut.move(x,y,ms)", [x, y, int(tramo)])
+        pag.mouse.move(x, y, steps=2)
+        pag.wait_for_timeout(int(tramo))
+    pag.wait_for_timeout(150)
+    pag.mouse.up()
+    # sin medir visibilidad: la zona de destino se mide en pleno arrastre (el
+    # tablero se desplaza y la columna puede quedar a medias) y el informe la
+    # daría por CORTADA aunque la tarjeta se suelte a la vista
+    ctx.registro("clic", spec["hasta"])
+    pag.wait_for_timeout(250)
+
+
 def _escribir(pag, sel, texto, ctx):
     loc = _clic(pag, sel, ctx)
     pag.keyboard.press("Control+A")
@@ -1065,6 +1120,8 @@ def _acciones(pag, ctx, variables):
                              anticipo=0.25 if any(k in acc for k in ACCIONES_MARCA) else ANTICIPO)
         if "click" in acc:
             _clic(pag, acc["click"], ctx)
+        elif "arrastrar" in acc:
+            _arrastrar(pag, acc["arrastrar"], ctx)
         elif "escribir" in acc:
             e = acc["escribir"]
             _escribir(pag, e["sel"], _sub(e["texto"], variables), ctx)
@@ -1221,9 +1278,11 @@ def grabar(guion, pasos, salida):
     cfg_priv = guion.get("privacidad")
 
     with sync_playwright() as p:
-        nav = p.chromium.launch(args=[f"--force-device-scale-factor={ESCALA}"])
+        nav = p.chromium.launch(args=[f"--force-device-scale-factor={ESCALA}", *ARGS_IDIOMA, *ARGS_LIVIANO])
+        # `zona_horaria`: la del público del video (p. ej. America/Santo_Domingo), no la de esta máquina.
         ctx_nav = nav.new_context(viewport={"width": ANCHO_CSS, "height": ALTO_CSS},
-                                  device_scale_factor=ESCALA)
+                                  device_scale_factor=ESCALA,
+                                  **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
         ctx_nav.add_init_script(JS_CAPA)
         _rutas_locales(ctx_nav, guion)
         _setup({"id": "guion", "setup": guion.get("setup")}, variables, db)

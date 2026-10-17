@@ -1,0 +1,116 @@
+{
+  "titulo": "CRM · Oportunidades: de la propuesta a la venta ganada",
+  "_comentario": "Serie CRM, video 3 (2026-10-06). Empresa demo 50, Rosa (Admin). Siembra (seeds/crm/sembrar.mjs): 5 oportunidades — Pinturas (Prospección, Doña Luz), Equipamiento eléctrico (Calificación, Barahona), Torre Mirador (Propuesta), Reposición mensual de herramientas (Negociación, Colmado La Esquina, que NO es cliente de Éxito todavía) y Contrato anual de plomería (Ganada, Doña Luz). Medido: el alta (diálogo «Nueva oportunidad») deja toast «Oportunidad «X» creada»; «Pasar a Éxito del Cliente» abre el diálogo «Marcar como ganada · X» (gerente, plantilla de bienvenida, Crear la bienvenida Sí/No, nota) y al confirmar sale el toast «Oportunidad ganada: el cliente pasó a Éxito del Cliente».",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/home"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": [
+      "germiva", "1305550", "130-55508", "Las Palmas", "Rosa", "Almánzar", "Almanzar",
+      "Mirador", "Doña Luz", "Barahona", "Colmado La Esquina", "La Esquina", "ejemplo.com", "555"
+    ],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Qué es una oportunidad y cómo se lee su tablero: etapas, monto, probabilidad y pronóstico",
+    "Crear una oportunidad para un cliente que ya conoces",
+    "Moverla de etapa a medida que avanza la negociación",
+    "Ganarla y pasar el cliente a Éxito del Cliente con su gerente de cuenta"
+  ],
+  "errores_comunes": [
+    "Dejar la probabilidad en el valor por defecto: el pronóstico deja de decir la verdad",
+    "Ganar la oportunidad sin elegir al gerente de cuenta: nadie acompaña al cliente después de la venta",
+    "Crear la oportunidad a nombre de un cliente nuevo sin buscar antes si ya existe"
+  ],
+  "pasos": [
+    {
+      "id": "01-tablero",
+      "capitulo": "El tablero de oportunidades",
+      "rotulo": "Oportunidades",
+      "ruta": "CRM › Oportunidades",
+      "texto_pantalla": "Oportunidades · una venta concreta: cliente, monto y probabilidad",
+      "narracion": "Vamos a las oportunidades. Entro al CRM, en el menú de la izquierda, y abro Oportunidades. Una oportunidad es una venta concreta: un cliente, un monto y una fecha en que esperas cerrarla. Nace cuando conviertes un prospecto, o la creas aquí directamente. Recojo el menú. Como en los prospectos, cada columna es una etapa: Prospección, Calificación, Análisis de Necesidades, Propuesta y Negociación; al final, Ganada o Perdida. En la tarjeta ves el nombre, el cliente, el monto, la probabilidad de cerrarla y quién la lleva. Arriba, En el embudo suma lo que tienes abierto. Y Pronóstico multiplica cada monto por su probabilidad: es lo que de verdad esperas vender.",
+      "acciones": [
+        { "click": "nav.module-rail [aria-label='CRM']", "al_decir": "Entro al CRM" },
+        { "click": ".panel-item:has-text('Oportunidades')", "al_decir": "abro Oportunidades" },
+        { "resaltar": "article[aria-label^='Oportunidad Equipamiento']", "durante_ms": 4500, "al_decir": "una venta concreta" },
+        { "click": "button.panel-collapse", "al_decir": "Recojo el menú" },
+        { "resaltar": "section.column[aria-label='Columna Prospección'] .col-header", "durante_ms": 2000, "al_decir": "cada columna" },
+        { "resaltar": "section.column[aria-label='Columna Calificación'] .col-header", "durante_ms": 3000, "cursor": false, "al_decir": "Calificación" },
+        { "resaltar": "article[aria-label^='Oportunidad Equipamiento'] .subtitle", "durante_ms": 1500, "al_decir": "el cliente" },
+        { "resaltar": "article[aria-label^='Oportunidad Equipamiento'] .meta", "durante_ms": 1800, "al_decir": "el monto" },
+        { "resaltar": "article[aria-label^='Oportunidad Equipamiento'] .assignee", "durante_ms": 1500, "al_decir": "quién la lleva" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(2)", "durante_ms": 2800, "al_decir": "En el embudo" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(3)", "durante_ms": 6000, "al_decir": "Pronóstico multiplica" }
+      ]
+    },
+    {
+      "id": "02-nueva",
+      "capitulo": "Crear una oportunidad",
+      "rotulo": "Nueva oportunidad",
+      "ruta": "CRM › Oportunidades › Nueva oportunidad",
+      "texto_pantalla": "Nueva oportunidad · cliente, monto, probabilidad y etapa",
+      "narracion": "Inversiones Barahona nos pidió precio para iluminar su parqueo. Pulso Nueva oportunidad. Primero, el cliente: lo busco por nombre o por RNC, el número con que la DGII, la oficina de impuestos, identifica a una empresa. Escribo Barahona, y mientras escribo el sistema busca entre tus clientes. Ahí está: lo elijo de la lista. Si todavía no existiera, se registra aquí mismo. Le pongo nombre a la oportunidad: iluminación del parqueo, para reconocerla en el tablero. Luego, el monto estimado: doscientos veinte mil pesos, lo que costaría el trabajo completo. En la etapa elijo Propuesta, porque ya le enviamos la cotización. La probabilidad se ajusta sola a la etapa, y puedes cambiarla. Pulso Crear oportunidad. El aviso confirma que se creó, y la tarjeta aparece en la columna Propuesta.",
+      "pronunciacion": { "RNC": "erre-ene-ce", "DGII": "de-ge-i-i" },
+      "acciones": [
+        { "click": "button:has-text('Nueva oportunidad')", "al_decir": "Pulso Nueva oportunidad" },
+        { "resaltar": "mat-dialog-container app-partner-document-select", "durante_ms": 3500, "al_decir": "Primero, el cliente" },
+        { "escribir": { "sel": "mat-dialog-container app-partner-document-select input", "texto": "Barahona" }, "al_decir": "Escribo Barahona" },
+        { "click": "mat-option:has-text('Inversiones Barahona')", "al_decir": "lo elijo de la lista" },
+        { "escribir": { "sel": "mat-dialog-container input[formcontrolname='name']", "texto": "Iluminación del parqueo" }, "al_decir": "Le pongo nombre" },
+        { "escribir": { "sel": "mat-dialog-container input[formcontrolname='amount']", "texto": "220000" }, "al_decir": "El monto estimado" },
+        { "click": "mat-dialog-container mat-select[formcontrolname='stage']", "al_decir": "En la etapa" },
+        { "click": "mat-option:has-text('Propuesta')", "al_decir": "elijo Propuesta" },
+        { "resaltar": "mat-dialog-container [formcontrolname='probability']", "durante_ms": 4000, "al_decir": "La probabilidad" },
+        { "click": "mat-dialog-container button:has-text('Crear oportunidad')", "al_decir": "Pulso Crear oportunidad" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3000, "cursor": false },
+        { "resaltar": "article[aria-label='Oportunidad Iluminación del parqueo']", "durante_ms": 5000, "al_decir": "la tarjeta aparece" }
+      ]
+    },
+    {
+      "id": "03-mover",
+      "capitulo": "Avanzar de etapa",
+      "rotulo": "Mover de etapa",
+      "ruta": "CRM › Oportunidades",
+      "texto_pantalla": "Arrastra la tarjeta a la etapa en que va la negociación",
+      "narracion": "La negociación avanza: con la plaza de Barahona ya estamos revisando qué necesitan exactamente. Tomo la tarjeta de Equipamiento eléctrico y la arrastro de Calificación a Análisis de Necesidades. Ojo: la probabilidad no cambia sola al mover la tarjeta. Si con la nueva etapa la venta es más probable, ábrela y ajústala, porque de ese número sale el pronóstico de arriba.",
+      "acciones": [
+        { "resaltar": "article[aria-label^='Oportunidad Equipamiento']", "durante_ms": 3500, "al_decir": "La negociación avanza" },
+        { "arrastrar": { "desde": "article[aria-label^='Oportunidad Equipamiento']", "hasta": "section.column[aria-label='Columna Análisis de Necesidades'] .drop-zone" }, "al_decir": "la arrastro" },
+        { "resaltar": "section.column[aria-label='Columna Análisis de Necesidades'] article[aria-label^='Oportunidad Equipamiento'] .meta", "durante_ms": 4500, "al_decir": "la probabilidad no cambia" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(3)", "durante_ms": 3500, "al_decir": "el pronóstico de arriba" }
+      ]
+    },
+    {
+      "id": "04-ganar",
+      "capitulo": "Ganar la venta y pasar el cliente a Éxito del Cliente",
+      "rotulo": "Ganar la venta",
+      "ruta": "CRM › Oportunidades › Pasar a Éxito del Cliente",
+      "texto_pantalla": "Ganar · el cliente pasa a Éxito del Cliente con su gerente",
+      "narracion": "Y ahora, la mejor parte. Colmado La Esquina aceptó la reposición mensual de herramientas. En su tarjeta, en Negociación, pulso Pasar a Éxito del Cliente. Éxito del Cliente es el equipo que acompaña al cliente después de la venta. Se abre Marcar como ganada. El gerente de cuenta es quien responde por el cliente desde hoy. La plantilla de bienvenida son los primeros pasos con un cliente nuevo: entrega, accesos y capacitación. Dejo en Sí crear la bienvenida. En la nota del traspaso escribo lo que el equipo debe saber: los días de entrega y cómo pagan. Ya está todo, así que pulso Marcar como ganada. El aviso confirma que el cliente pasó a Éxito del Cliente, y la tarjeta queda en la columna Ganada.",
+      "acciones": [
+        { "click": "article[aria-label^='Oportunidad Reposición'] button.kcard-action", "al_decir": "pulso Pasar" },
+        { "resaltar": "mat-dialog-container mat-dialog-content p, mat-dialog-container .mat-mdc-dialog-content > p", "durante_ms": 2200, "cursor": false, "al_decir": "Se abre Marcar" },
+        { "resaltar": "mat-dialog-container mat-form-field:has(mat-label:has-text('Gerente de cuenta'))", "durante_ms": 3500, "al_decir": "El gerente de cuenta" },
+        { "resaltar": "mat-dialog-container mat-form-field:has(mat-label:has-text('Plantilla de bienvenida'))", "durante_ms": 4500, "al_decir": "La plantilla de bienvenida" },
+        { "resaltar": "mat-dialog-container .gm-seg, mat-dialog-container mat-button-toggle-group", "durante_ms": 2500, "al_decir": "Dejo en Sí" },
+        { "escribir": { "sel": "mat-dialog-container textarea[formcontrolname='note']", "texto": "Entregas los lunes; pagan por transferencia." }, "al_decir": "En la nota del traspaso" },
+        { "click": "mat-dialog-container button:has-text('Marcar como ganada')", "al_decir": "así que pulso Marcar como ganada" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3500, "cursor": false },
+        { "resaltar": "section.column[aria-label='Columna Ganada'] article[aria-label^='Oportunidad Reposición']", "durante_ms": 5000, "al_decir": "la columna Ganada" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,219 @@
+1
+00:00:03,097 --> 00:00:06,596
+Antes de mirar pantallas, una idea que resuelve muchas dudas:
+
+2
+00:00:06,708 --> 00:00:08,044
+el acceso efectivo.
+
+3
+00:00:08,676 --> 00:00:11,846
+Es todo lo que una persona puede hacer de verdad en la empresa.
+
+4
+00:00:12,493 --> 00:00:14,141
+Tomemos a Carlos Pimentel.
+
+5
+00:00:14,787 --> 00:00:18,537
+Tiene un solo rol, Vendedor sénior, con permisos propios:
+
+6
+00:00:18,603 --> 00:00:22,063
+por ejemplo, aprobar cotizaciones y crear facturas.
+
+7
+00:00:22,710 --> 00:00:25,132
+Pero ese rol hereda de otro, Vendedor:
+
+8
+00:00:25,234 --> 00:00:29,661
+todo lo que tenga Vendedor le llega también, como ver clientes y ver productos.
+
+9
+00:00:30,306 --> 00:00:31,230
+¿Y el equipo?
+
+10
+00:00:31,876 --> 00:00:36,159
+Zona Este agrupa a Ana y a José, pero un equipo no suma ningún permiso:
+
+11
+00:00:36,273 --> 00:00:40,108
+solo sirve para el alcance Equipo, que decide qué registros se ven.
+
+12
+00:00:40,753 --> 00:00:42,173
+El resultado es la unión:
+
+13
+00:00:42,286 --> 00:00:45,471
+los permisos de sus roles más los que esos roles heredan.
+
+14
+00:00:46,115 --> 00:00:47,947
+En la lámina van cuatro de ejemplo;
+
+15
+00:00:48,012 --> 00:00:49,951
+en su ficha vamos a ver los once.
+
+16
+00:00:51,307 --> 00:00:53,381
+Ahora lo mismo en la ficha real.
+
+17
+00:00:54,024 --> 00:00:56,277
+En la pestaña Personas abro a Carlos.
+
+18
+00:00:56,923 --> 00:01:00,817
+En Roles dice Vendedor sénior, y debajo, Hereda de Vendedor:
+
+19
+00:01:00,944 --> 00:01:03,801
+así sabes que le llega todo lo de ese otro rol.
+
+20
+00:01:04,435 --> 00:01:07,109
+Sus Permisos efectivos son once permisos.
+
+21
+00:01:07,756 --> 00:01:10,105
+En Cotizaciones tiene siete de diecinueve:
+
+22
+00:01:10,135 --> 00:01:14,477
+ver, crear y editar, como cualquier vendedor, aunque él las ve todas;
+
+23
+00:01:14,507 --> 00:01:19,079
+más aprobar, rechazar, aceptar y convertir, que son solo de su rol.
+
+24
+00:01:19,712 --> 00:01:21,445
+En Facturación, dos:
+
+25
+00:01:21,548 --> 00:01:24,176
+ver y crear facturas, que Ana no tiene.
+
+26
+00:01:24,820 --> 00:01:27,570
+Y ver clientes y ver productos le llegan de Vendedor,
+
+27
+00:01:27,707 --> 00:01:30,177
+sin que nadie se los diera a él directamente.
+
+28
+00:01:31,513 --> 00:01:32,365
+Otro caso:
+
+29
+00:01:32,371 --> 00:01:34,189
+una persona con dos roles.
+
+30
+00:01:34,834 --> 00:01:36,361
+Abro a José Cabrera.
+
+31
+00:01:36,995 --> 00:01:38,427
+En Roles tiene dos.
+
+32
+00:01:39,072 --> 00:01:42,280
+El primero es Almacén, y el segundo, Vendedor.
+
+33
+00:01:42,914 --> 00:01:45,179
+Su acceso efectivo es la suma de los dos:
+
+34
+00:01:45,256 --> 00:01:48,632
+diez permisos en total, repartidos en cuatro módulos.
+
+35
+00:01:49,277 --> 00:01:54,007
+En Productos tiene cinco, porque su rol de almacén le da ver, crear, editar,
+
+36
+00:01:54,096 --> 00:01:55,371
+importar y exportar;
+
+37
+00:01:55,473 --> 00:01:58,970
+el de vendedor también le da ver productos, pero eso ya estaba,
+
+38
+00:01:59,072 --> 00:02:00,588
+y no cuenta dos veces.
+
+39
+00:02:01,234 --> 00:02:03,016
+Además le llega Inventario.
+
+40
+00:02:03,662 --> 00:02:08,052
+Y del rol de vendedor, Clientes y Cotizaciones, lo mismo que tiene Ana.
+
+41
+00:02:09,395 --> 00:02:10,319
+¿Y el equipo?
+
+42
+00:02:10,963 --> 00:02:12,032
+Abro a Ana.
+
+43
+00:02:12,679 --> 00:02:15,849
+Arriba dice Zona Este, el mismo equipo de José.
+
+44
+00:02:16,483 --> 00:02:19,376
+Y aun así, Ana tiene cinco permisos y no diez:
+
+45
+00:02:19,502 --> 00:02:22,431
+lo que cambia entre los dos es el rol, no el equipo.
+
+46
+00:02:23,064 --> 00:02:26,646
+Un cambio en un rol vale desde la siguiente operación de cada persona,
+
+47
+00:02:26,736 --> 00:02:29,122
+y solo cuenta lo que la empresa tiene contratado:
+
+48
+00:02:29,163 --> 00:02:32,263
+un permiso de un módulo sin contratar no se puede usar.
+
+49
+00:02:32,895 --> 00:02:34,328
+Ahora un caso práctico:
+
+50
+00:02:34,418 --> 00:02:36,754
+Luisa llama porque entra y no ve nada.
+
+51
+00:02:37,401 --> 00:02:40,137
+En Personas abro a Luisa, y su ficha lo explica:
+
+52
+00:02:40,299 --> 00:02:43,651
+Sin ningún rol, inicia sesión pero no ve ningún módulo;
+
+53
+00:02:43,692 --> 00:02:46,235
+y abajo, Ningún permiso concedido.
+
+54
+00:02:46,882 --> 00:02:49,751
+La solución está aquí mismo, en Asignar rol.
+
+55
+00:02:50,384 --> 00:02:54,098
+Cuando alguien te diga que no puede hacer algo, empieza por su ficha.

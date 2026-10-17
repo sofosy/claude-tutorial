@@ -1,0 +1,726 @@
+{
+  "titulo": "Certificación e-CF · Parte 1: solicitarla como contador para tus clientes",
+  "descripcion": "Cómo un contador solicita en germiva.com/certificacion la certificación de facturación electrónica (e-CF) de sus clientes: sus datos, su firma contable y el Programa de Socios, la comisión por referir a sus clientes, cada empresa con su plan y su prueba de vida, el resumen de lo que se va a crear y el pago por transferencia con el comprobante que revisa la inteligencia artificial.",
+  "_comentario": "Video 1 de la serie Certificación (12/10/2026), master del 12/10 (API #1500/#1502/#1503, web #1356/#1357/#1358). Se graba SIN sesión. setup: restaurar.py A (canon sin solicitudes). Datos del padrón local sembrados en canon.sql: cédula 40238105718 CAROLINA MENDEZ ROSARIO, firma 130555311, clientes 130555321 / 130555338 / cédula 40226441919. Total 31,400 = comprobante-contadora.png. La IA (credencial OpenAI de plataforma, gpt-4o-mini) valida el comprobante y la cola crea las empresas al enviar.",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "e-CF": "e-ce-efe",
+    "IA": "i-a",
+    "ERP": "e-erre-pe",
+    "SOFOSY": "Sofosi",
+    "INDOTEL": "Indotel",
+    "3D": "tres-de"
+  },
+  "privacidad": {
+    "_perfil": "Todos los datos son ficticios (padrón local sembrado por seeds/certificacion, correos @example.com) y la narración los nombra: no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "example.com",
+      "1305553",
+      "130555",
+      "40238105718",
+      "40226441919",
+      "00117350819",
+      "784512369",
+      "8095550187",
+      "8295550143",
+      "4587",
+      "SOFOSY",
+      "germiva",
+      "Méndez",
+      "MENDEZ",
+      "Almonte",
+      "Castillo",
+      "Tavárez",
+      "TAVAREZ",
+      "Guzmán",
+      "GUZMAN",
+      "Banco Ámbar"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "python seeds/certificacion/restaurar.py A"
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "__precarga_tutorial",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/certificacion",
+    "esperar": "button.role-option"
+  },
+  "aprenderas": [
+    "Abrir el formulario público de certificación y elegir «Soy el contador»",
+    "Registrar tu firma contable con su RNC y pedir el ingreso al Programa de Socios con tu exequátur",
+    "Marcar que tú refieres a tus clientes para cobrar tu comisión",
+    "Agregar cada cliente (empresa con RNC o persona física con cédula) con su plan y su prueba de vida",
+    "Pagar por transferencia, subir el comprobante y enviar la solicitud"
+  ],
+  "errores_comunes": [
+    "Escribir el correo de otra persona como dueño: con ese correo entra al sistema y recibe su contraseña",
+    "Dejar la cédula personal en «Tu firma» cuando trabajas con una firma que tiene RNC",
+    "Creer que la certificación incluye el certificado digital: se compra aparte a una entidad del INDOTEL",
+    "Olvidar los días y el horario de la prueba de vida: sin ellos el formulario no avanza",
+    "Subir una foto de otra cosa como comprobante: la IA la rechaza y no se crea nada"
+  ],
+  "pasos": [
+    {
+      "id": "01-inicio",
+      "capitulo": "La página de certificación",
+      "rotulo": "germiva.com/certificacion",
+      "ruta": "germiva.com › Certificación",
+      "texto_pantalla": "Certificación de facturación electrónica · ¿Quién llena el formulario?",
+      "navegar": "/certificacion",
+      "narracion": "Vamos a solicitar la certificación de facturación electrónica de tres clientes, como lo hace un contador. Facturar electrónicamente es emitir e-CF, los comprobantes fiscales electrónicos que pide la DGII, la Dirección General de Impuestos Internos. Esta es la página de certificación de Germiva, y la abre cualquiera, sin usuario. Arriba dice lo esencial: nosotros hacemos la certificación con la DGII, y toma de uno a tres días si la empresa no tiene nada pendiente. A la izquierda están los pasos del formulario; a la derecha se llena el paso en el que vas. La primera pregunta es quién llena el formulario: el dueño de la empresa, o su contador. Para este video elijo Soy el contador. Fíjate que los pasos cambiaron: tus datos, tu firma, tus clientes y el pago. Y aparece una nota: con este formulario te creamos, o reconocemos, tu cuenta de contador.",
+      "acciones": [
+        {
+          "resaltar": "header.page-hero .wrap",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "facturación electrónica de tres"
+        },
+        {
+          "resaltar": "nav.stepper ol li:first-child",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "comprobantes fiscales electrónicos"
+        },
+        {
+          "resaltar": "header.page-hero h1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Esta es la página"
+        },
+        {
+          "resaltar": "header.page-hero p",
+          "durante_ms": 6000,
+          "al_decir": "lo esencial"
+        },
+        {
+          "resaltar": "nav.stepper",
+          "durante_ms": 3500,
+          "al_decir": "los pasos del formulario"
+        },
+        {
+          "resaltar": "form.card h2",
+          "durante_ms": 3500,
+          "al_decir": "se llena el paso"
+        },
+        {
+          "resaltar": "div.role-picker",
+          "durante_ms": 3000,
+          "al_decir": "quién llena"
+        },
+        {
+          "click": "button.role-option:has-text('Soy el contador')",
+          "al_decir": "elijo Soy el contador"
+        },
+        {
+          "resaltar": "nav.stepper ol",
+          "durante_ms": 5000,
+          "al_decir": "pasos cambiaron"
+        },
+        {
+          "resaltar": "p.role-note",
+          "durante_ms": 5000,
+          "al_decir": "una nota"
+        }
+      ]
+    },
+    {
+      "id": "02-datos",
+      "capitulo": "Tus datos",
+      "rotulo": "Tus datos",
+      "ruta": "Certificación › Paso 1: Tus datos",
+      "texto_pantalla": "Tus datos · cédula o RNC, nombre, correo y teléfono",
+      "narracion": "Abajo van tus datos. El primer campo es tu cédula, o el RNC de tu firma; el RNC es el número con el que la DGII identifica a una empresa. Escribo mi cédula. Al terminar, Germiva la busca sola en el padrón de la DGII, la lista oficial de contribuyentes, y completa el nombre: Carolina Méndez Rosario. Si no te encuentra, lo escribes tú. Sigue el correo, que es donde te avisamos el avance de la solicitud. Lo escribo: carolina punto méndez, arroba example punto com, todo en minúsculas. Ahora va el teléfono o WhatsApp, con su código de área: ocho cero nueve, cinco cinco cinco, cero uno ocho siete. Con todo listo, pulso Continuar.",
+      "acciones": [
+        {
+          "resaltar": "app-document-lookup-field input",
+          "durante_ms": 3500,
+          "al_decir": "El primer campo"
+        },
+        {
+          "escribir": {
+            "sel": "app-document-lookup-field input",
+            "texto": "40238105718"
+          },
+          "al_decir": "Escribo mi cédula"
+        },
+        {
+          "resaltar": ".lookup-status__line",
+          "durante_ms": 5000,
+          "al_decir": "la lista oficial"
+        },
+        {
+          "resaltar": "input[formcontrolname='name']",
+          "durante_ms": 4000,
+          "al_decir": "completa el nombre"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='email']",
+            "texto": "carolina.mendez@example.com"
+          },
+          "al_decir": "Lo escribo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='phone']",
+            "texto": "8095550187"
+          },
+          "al_decir": "el teléfono"
+        },
+        {
+          "click": "form .actions button.btn-primary:has-text('Continuar')",
+          "al_decir": "pulso Continuar"
+        }
+      ]
+    },
+    {
+      "id": "03-firma",
+      "capitulo": "Tu firma y el Programa de Socios",
+      "rotulo": "Tu firma contable",
+      "ruta": "Certificación › Paso 2: Tu firma",
+      "texto_pantalla": "Tu firma contable · RNC, exequátur y comisión por referir",
+      "narracion": "Paso dos: tu firma contable. Este recuadro dice para qué son estos datos: te creamos tu cuenta de contador en Germiva, y desde Mi Cartera trabajas con todos tus clientes, su contabilidad, sus facturas y sus reportes de la DGII. El formulario trajo mi cédula. Como trabajo con una firma, la cambio por el RNC de la firma, que es el que va en sus facturas. La encontró en el padrón: Méndez Rosario y Asociados. El correo y el teléfono vienen del paso anterior, y ese correo será tu usuario para entrar. Ahora el número de exequátur, el que te autoriza a ejercer como contador. Es opcional, pero con él pedimos tu ingreso al Programa de Socios: tu firma recibe la herramienta completa, sin costo. Por último, activo Yo les recomendé Germiva a estos clientes. Así ganas una comisión por lo que pague cada uno: si es tu primera vez como referidor, el veinte por ciento de lo que pague en sus primeros doce meses. Continuar.",
+      "acciones": [
+        {
+          "resaltar": "form .note--info p:first-child",
+          "durante_ms": 5000,
+          "al_decir": "Este recuadro"
+        },
+        {
+          "resaltar": "form .note--info p:first-child strong:nth-of-type(2)",
+          "durante_ms": 4500,
+          "al_decir": "desde Mi Cartera"
+        },
+        {
+          "resaltar": "form .note--info p:nth-child(2)",
+          "durante_ms": 4000,
+          "al_decir": "reportes de la DGII"
+        },
+        {
+          "escribir": {
+            "sel": "app-document-lookup-field input",
+            "texto": "130555311"
+          },
+          "al_decir": "la cambio"
+        },
+        {
+          "resaltar": ".lookup-status__line",
+          "durante_ms": 3000,
+          "al_decir": "La encontró"
+        },
+        {
+          "resaltar": "input[formcontrolname='name']",
+          "durante_ms": 3000,
+          "al_decir": "Méndez Rosario"
+        },
+        {
+          "resaltar": "input[formcontrolname='email']",
+          "durante_ms": 3500,
+          "al_decir": "usuario para entrar"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='licenseNumber']",
+            "texto": "4587"
+          },
+          "al_decir": "número de exequátur"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='licenseNumber']) mat-hint",
+          "durante_ms": 5000,
+          "al_decir": "Programa de Socios"
+        },
+        {
+          "click": "mat-slide-toggle[formcontrolname='refersClients'] button",
+          "al_decir": "activo Yo les"
+        },
+        {
+          "resaltar": "form .note--info:has(mat-slide-toggle) ul",
+          "durante_ms": 8000,
+          "al_decir": "ganas una comisión"
+        },
+        {
+          "click": "form .actions button.btn-primary:has-text('Continuar')",
+          "al_decir": "Continuar"
+        }
+      ]
+    },
+    {
+      "id": "04-cliente-1",
+      "capitulo": "Tus clientes: la primera empresa",
+      "rotulo": "Cliente 1",
+      "ruta": "Certificación › Paso 3: Tus clientes",
+      "texto_pantalla": "Tus clientes · lo que incluye cada empresa, RNC, dueño y correo",
+      "narracion": "Paso tres: tus clientes. Arriba está lo que va incluido en cada empresa: el equipo de Germiva hace todo el proceso de certificación por seis mil pesos, con el ITBIS incluido, en un solo pago. El ITBIS es el impuesto a las ventas. El dueño solo hace la prueba de vida, una videollamada corta con la entidad certificadora. Y una aclaración importante: no incluye el certificado digital, el archivo con el que se firman las facturas; se compra aparte a una entidad autorizada por el INDOTEL, el Instituto Dominicano de las Telecomunicaciones; te guiamos. Ahora, el cliente uno: su tarjeta lleva todo lo de esa empresa. Escribo su RNC, el de la empresa que se va a certificar. Germiva lo encontró en el padrón y completó la razón social: Distribuidora Caribe Azul. El dueño o responsable es Pedro Almonte; es quien va a usar el sistema en esa empresa. Su correo es clave: con él entra al sistema, y a ese correo le llega el mensaje para crear su contraseña.",
+      "acciones": [
+        {
+          "resaltar": "form .service-note p:nth-child(1)",
+          "durante_ms": 5500,
+          "al_decir": "va incluido"
+        },
+        {
+          "resaltar": "form .service-note p:nth-child(1) strong:nth-of-type(2)",
+          "durante_ms": 4000,
+          "al_decir": "prueba de vida"
+        },
+        {
+          "resaltar": "form .service-note p:nth-child(2)",
+          "durante_ms": 7000,
+          "al_decir": "no incluye"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) h3",
+          "durante_ms": 3000,
+          "al_decir": "el cliente uno"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(1) app-document-lookup-field input",
+            "texto": "130555321"
+          },
+          "al_decir": "Escribo su RNC"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) .lookup-status__line",
+          "durante_ms": 3000,
+          "al_decir": "lo encontró"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) input[formcontrolname='legalName']",
+          "durante_ms": 3000,
+          "al_decir": "razón social"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(1) input[formcontrolname='ownerName']",
+            "texto": "Pedro Almonte"
+          },
+          "al_decir": "dueño o responsable"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(1) input[formcontrolname='ownerEmail']",
+            "texto": "pedro.almonte@example.com"
+          },
+          "al_decir": "Su correo"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) mat-form-field:has(input[formcontrolname='ownerEmail'])",
+          "durante_ms": 3500,
+          "al_decir": "crear su contraseña"
+        }
+      ]
+    },
+    {
+      "id": "05-plan-y-prueba-de-vida",
+      "capitulo": "El plan y la prueba de vida",
+      "rotulo": "Plan, factura y prueba de vida",
+      "ruta": "Certificación › Paso 3: Tus clientes › Cliente 1",
+      "texto_pantalla": "Ciclo y plan · factura de la empresa · qué tiene ya · prueba de vida",
+      "narracion": "Ahora el plan de Germiva que va a usar la empresa. Primero el ciclo: anual, con su descuento, o mensual. Elijo Anual. Ahora, en el campo Plan, abro la lista de planes; cada uno trae su precio en el ciclo que elegiste. Escojo Facturación Crecimiento. Debajo aparece la factura de esta empresa: el plan más la certificación. La casilla Factura a nombre de esta empresa viene marcada; si la quitas, la factura sale a tu nombre, porque eres tú quien paga. Luego, Qué tiene ya, que es opcional: si la empresa ya tiene el certificado digital, acceso a la Oficina Virtual de la DGII, o si ya pidió ser emisor electrónico. Cada respuesta le ahorra tiempo al equipo. Marco que sí tiene acceso a la Oficina Virtual. Y la prueba de vida: los días y el horario en que el dueño puede hacer la videollamada. Elijo el lunes, que es el día que más le conviene, y también el miércoles. Ahora el horario: en Desde abro la lista. Abajo sale un aviso en rojo que solo recuerda que falta el horario. Elijo las nueve de la mañana, que es la hora de entrada; y en Hasta abro la otra lista y elijo las doce del mediodía. Con el horario completo, el aviso desaparece.",
+      "acciones": [
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) mat-button-toggle-group[formcontrolname='billingCycle']",
+          "durante_ms": 3000,
+          "al_decir": "Primero el ciclo"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(1) mat-button-toggle[value='YEARLY'] button",
+          "al_decir": "Elijo Anual"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(1) mat-select[formcontrolname='plan']",
+          "al_decir": "lista de planes"
+        },
+        {
+          "click": "mat-option:has-text('Facturación · Crecimiento')",
+          "al_decir": "Escojo Facturación"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) .invoice__total",
+          "durante_ms": 4500,
+          "al_decir": "la factura de esta empresa"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) mat-checkbox[formcontrolname='invoiceToCompany']",
+          "durante_ms": 5500,
+          "al_decir": "viene marcada"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) ul.questions",
+          "durante_ms": 6000,
+          "al_decir": "Qué tiene ya"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(1) li.question:nth-child(2) mat-button-toggle:first-child button",
+          "al_decir": "Marco que sí"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) div.life-test",
+          "durante_ms": 3500,
+          "al_decir": "la prueba de vida"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(1) mat-chip-option:has-text('Lun')",
+          "al_decir": "el lunes"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(1) mat-chip-option:has-text('Mié')",
+          "al_decir": "el miércoles"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(1) mat-select[formcontrolname='lifeTestFrom']",
+          "al_decir": "en Desde"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(1) p.field-error",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "un aviso en rojo"
+        },
+        {
+          "click": "mat-option:has-text('9:00 a. m.')",
+          "al_decir": "las nueve"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(1) mat-select[formcontrolname='lifeTestTo']",
+          "al_decir": "en Hasta"
+        },
+        {
+          "click": "mat-option:has-text('12:00 m.')",
+          "al_decir": "las doce"
+        }
+      ]
+    },
+    {
+      "id": "06-cliente-2",
+      "capitulo": "Agregar otra empresa",
+      "rotulo": "Cliente 2",
+      "ruta": "Certificación › Paso 3: Tus clientes › Cliente 2",
+      "texto_pantalla": "Agregar otra empresa · cada una con su propio plan",
+      "narracion": "Para el segundo cliente pulso Agregar otra empresa, debajo de la tarjeta. Aparece el Cliente dos, en blanco: cada empresa elige su propio plan. Escribo el RNC, y Germiva completa el nombre de la empresa: es el Restaurante Sabor Criollo. La dueña es Yesenia Castillo: ella firma por el restaurante y recibe el acceso. Ahora escribo su correo: yesenia punto castillo, arroba example punto com. Este cliente paga cada mes, así que pulso Mensual. Luego voy al campo Plan, abro la lista, bajo un poco, y elijo ERP Estándar, un plan del sistema de gestión completo. Su prueba de vida: el martes, y si ese día no puede, el jueves. Para el horario de la tarde, en Desde abro la lista y elijo las dos de la tarde, y en Hasta, abro la otra y elijo las cinco.",
+      "acciones": [
+        {
+          "click": "button.add-company",
+          "al_decir": "Agregar otra empresa"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(2) h3",
+          "durante_ms": 2500,
+          "al_decir": "Cliente dos"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(2) app-document-lookup-field input",
+            "texto": "130555338"
+          },
+          "al_decir": "Escribo el RNC"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(2) input[formcontrolname='legalName']",
+          "durante_ms": 2500,
+          "al_decir": "es el Restaurante"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(2) input[formcontrolname='ownerName']",
+            "texto": "Yesenia Castillo"
+          },
+          "al_decir": "La dueña"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(2) input[formcontrolname='ownerEmail']",
+            "texto": "yesenia.castillo@example.com"
+          },
+          "al_decir": "escribo su correo"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(2) mat-button-toggle[value='MONTHLY'] button",
+          "al_decir": "pulso Mensual"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(2) mat-select[formcontrolname='plan']",
+          "al_decir": "abro la lista, bajo"
+        },
+        {
+          "click": "mat-option:has-text('ERP · Estándar')",
+          "al_decir": "ERP Estándar"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(2) mat-chip-option:has-text('Mar')",
+          "al_decir": "el martes"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(2) mat-chip-option:has-text('Jue')",
+          "al_decir": "el jueves"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(2) mat-select[formcontrolname='lifeTestFrom']",
+          "al_decir": "en Desde"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(2) p.field-error",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "click": "mat-option:has-text('2:00 p. m.')",
+          "al_decir": "las dos"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(2) mat-select[formcontrolname='lifeTestTo']",
+          "al_decir": "en Hasta"
+        },
+        {
+          "click": "mat-option:has-text('5:00 p. m.')",
+          "al_decir": "las cinco"
+        }
+      ]
+    },
+    {
+      "id": "07-cliente-3",
+      "capitulo": "Un cliente persona física",
+      "rotulo": "Cliente 3 · persona física",
+      "ruta": "Certificación › Paso 3: Tus clientes › Cliente 3",
+      "texto_pantalla": "Persona física · se registra con su cédula",
+      "narracion": "El tercero es una persona física: factura con su cédula, no con un RNC. Agrego otra empresa, y en el primer campo escribo su cédula. Con una cédula, fíjate, el campo de al lado cambia: ahora dice Nombre y apellido, como en la cédula, y ya no se pide el dueño aparte, porque es la misma persona: José Miguel Tavárez. Escribo su correo: josé miguel punto tavárez, todo junto, arroba example punto com. Este también paga mensual: pulso Mensual. En el campo Plan abro la lista, y esta vez elijo Facturación Inicial. Su prueba de vida es el sábado. Y para el horario, en Desde abro la lista y elijo las diez de la mañana, y en Hasta, abro la otra y elijo la una de la tarde. Si una empresa sobra, la quitas con Quitar, arriba a la derecha de su tarjeta; y puedes enviar hasta treinta empresas en una sola solicitud. Pulso Continuar.",
+      "acciones": [
+        {
+          "click": "button.add-company",
+          "al_decir": "Agrego otra empresa"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(3) app-document-lookup-field input",
+            "texto": "40226441919"
+          },
+          "al_decir": "escribo su cédula"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(3) mat-form-field:has(input[formcontrolname='legalName'])",
+          "durante_ms": 5000,
+          "al_decir": "Nombre y apellido"
+        },
+        {
+          "escribir": {
+            "sel": "div.companies app-certification-company-card:nth-child(3) input[formcontrolname='ownerEmail']",
+            "texto": "josemiguel.tavarez@example.com"
+          },
+          "al_decir": "Escribo su correo"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(3) mat-button-toggle[value='MONTHLY'] button",
+          "al_decir": "pulso Mensual"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(3) mat-select[formcontrolname='plan']",
+          "al_decir": "Plan abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Facturación · Inicial')",
+          "al_decir": "Facturación Inicial"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(3) mat-chip-option:has-text('Sáb')",
+          "al_decir": "el sábado"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(3) mat-select[formcontrolname='lifeTestFrom']",
+          "al_decir": "en Desde"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(3) p.field-error",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "click": "mat-option:has-text('10:00 a. m.')",
+          "al_decir": "las diez"
+        },
+        {
+          "click": "div.companies app-certification-company-card:nth-child(3) mat-select[formcontrolname='lifeTestTo']",
+          "al_decir": "en Hasta"
+        },
+        {
+          "click": "mat-option:has-text('1:00 p. m.')",
+          "al_decir": "la una"
+        },
+        {
+          "resaltar": "div.companies app-certification-company-card:nth-child(3) button.company-card__remove",
+          "durante_ms": 3500,
+          "al_decir": "con Quitar"
+        },
+        {
+          "click": "form .actions button.btn-primary:has-text('Continuar')",
+          "al_decir": "Pulso Continuar"
+        }
+      ]
+    },
+    {
+      "id": "08-pago",
+      "capitulo": "Resumen, pago y envío",
+      "rotulo": "Pago y envío",
+      "ruta": "Certificación › Paso 4: Pago y envío",
+      "texto_pantalla": "Resumen · qué pasa al enviar · transferencia con comprobante",
+      "narracion": "Último paso: pago y envío. Arriba, el resumen: cada empresa con su plan más la certificación, y el total. Debajo, Al enviar el formulario: la lista de lo que va a pasar, escrita según tus respuestas. Ahora, cómo vas a pagar. Con tarjeta se paga aquí mismo al enviar, de forma segura con 3D Secure. Yo pagué por transferencia, así que elijo Transferencia o depósito. La lista de arriba cambió: ahora todo empieza con el comprobante validado. Subo el comprobante, la captura de la transferencia; la inteligencia artificial lo revisa al enviar. Si todavía no has pagado, puedes enviar igual y subirlo después desde el enlace del correo. Los datos del pago son opcionales: anoto la referencia, que es el número de la transferencia en tu banco, y el nombre del banco, que ayuda al equipo a encontrar el pago más rápido. Acepto los términos y condiciones, y pulso Enviar solicitud.",
+      "acciones": [
+        {
+          "resaltar": ".summary__list",
+          "durante_ms": 5000,
+          "al_decir": "el resumen"
+        },
+        {
+          "resaltar": "ul.outcomes li:first-child",
+          "durante_ms": 5000,
+          "al_decir": "lo que va a pasar"
+        },
+        {
+          "resaltar": "div.pay-methods",
+          "durante_ms": 2500,
+          "al_decir": "cómo vas a pagar"
+        },
+        {
+          "resaltar": "button.pay-method:has-text('Tarjeta')",
+          "durante_ms": 4500,
+          "al_decir": "Con tarjeta"
+        },
+        {
+          "click": "button.pay-method:has-text('Transferencia')",
+          "al_decir": "elijo Transferencia"
+        },
+        {
+          "resaltar": "ul.outcomes li:nth-child(3)",
+          "durante_ms": 4500,
+          "al_decir": "La lista de arriba"
+        },
+        {
+          "subir": {
+            "sel": "app-payment-proof-picker input[type=file]",
+            "ancla": "app-payment-proof-picker label.proof__pick",
+            "archivo": "seeds/certificacion/comprobante-contadora.png"
+          },
+          "al_decir": "Subo el comprobante"
+        },
+        {
+          "resaltar": "app-payment-proof-picker .proof",
+          "durante_ms": 4000,
+          "al_decir": "lo revisa al enviar"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='reference']",
+            "texto": "784512369"
+          },
+          "al_decir": "la referencia"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='bank']",
+            "texto": "Banco Ámbar"
+          },
+          "al_decir": "el nombre del banco"
+        },
+        {
+          "click": "mat-checkbox[formcontrolname='termsAccepted'] .mdc-checkbox",
+          "al_decir": "Acepto los términos"
+        },
+        {
+          "click": "button[type=submit]",
+          "al_decir": "Enviar solicitud"
+        }
+      ]
+    },
+    {
+      "id": "09-enviada",
+      "capitulo": "Solicitud enviada",
+      "rotulo": "¡Recibimos tu solicitud!",
+      "ruta": "Certificación › Solicitud enviada",
+      "texto_pantalla": "Número de solicitud · las empresas se están creando",
+      "narracion": "En un par de segundos, Germiva subió la captura y la inteligencia artificial la revisó: confirmó que es un pago real, y tomó el monto, la fecha, la referencia y el banco. Listo: Recibimos tu solicitud, con su número; guárdalo para cualquier consulta. Como el comprobante se validó, ya estamos creando las tres empresas, y te avisamos por correo cuando cada una esté lista. Abajo están las empresas de la solicitud. ¿Qué sigue? Cada dueño recibe su correo para crear su contraseña. Cuando el equipo de Germiva confirma el pago, quedas como contador de cada cliente, se registra tu comisión de referidor, y Éxito del Cliente los acompaña en la certificación con la DGII. Desde Mi Cartera, en tu cuenta de contador, sigues el avance de cada uno.",
+      "acciones": [
+        {
+          "resaltar": "section.sent",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sent__code",
+          "durante_ms": 4500,
+          "al_decir": "con su número"
+        },
+        {
+          "resaltar": "section.sent > p:nth-of-type(2)",
+          "durante_ms": 6000,
+          "al_decir": "ya estamos creando"
+        },
+        {
+          "resaltar": "ul.sent__companies",
+          "durante_ms": 5000,
+          "al_decir": "empresas de la solicitud"
+        },
+        {
+          "resaltar": "ul.sent__companies li:nth-child(1)",
+          "durante_ms": 4500,
+          "al_decir": "Cada dueño"
+        },
+        {
+          "resaltar": "ul.sent__companies li:nth-child(2)",
+          "durante_ms": 5000,
+          "al_decir": "quedas como contador"
+        },
+        {
+          "resaltar": "ul.sent__companies li:nth-child(3)",
+          "durante_ms": 5000,
+          "al_decir": "Éxito del Cliente"
+        },
+        {
+          "resaltar": "section.sent h2",
+          "durante_ms": 4000,
+          "al_decir": "Mi Cartera"
+        }
+      ]
+    }
+  ]
+}

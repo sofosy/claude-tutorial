@@ -1,0 +1,227 @@
+1
+00:00:03,097 --> 00:00:05,737
+En este video vemos la herencia de permisos.
+
+2
+00:00:06,381 --> 00:00:10,929
+Aquí está el acceso efectivo de Carlos, o sea todo lo que de verdad puede hacer.
+
+3
+00:00:11,574 --> 00:00:14,612
+Su rol es Vendedor sénior, con permisos propios,
+
+4
+00:00:14,702 --> 00:00:17,439
+como aprobar cotizaciones y crear facturas.
+
+5
+00:00:18,085 --> 00:00:21,062
+Ese rol hereda del rol Vendedor, su rol padre:
+
+6
+00:00:21,128 --> 00:00:24,480
+todo lo que tenga el padre, como ver clientes o ver productos,
+
+7
+00:00:24,533 --> 00:00:26,184
+le llega automáticamente.
+
+8
+00:00:26,827 --> 00:00:27,753
+¿Y el equipo?
+
+9
+00:00:28,399 --> 00:00:32,390
+Ana y José están en Zona Este, pero un equipo no suma permisos:
+
+10
+00:00:32,528 --> 00:00:34,165
+solo sirve para el alcance.
+
+11
+00:00:34,798 --> 00:00:38,804
+Lo que Carlos puede hacer es la suma de sus roles y de lo que esos roles heredan.
+
+12
+00:00:39,448 --> 00:00:40,640
+Vamos a comprobarlo:
+
+13
+00:00:40,753 --> 00:00:44,155
+le damos un permiso al padre y miramos si le llega a Carlos.
+
+14
+00:00:45,513 --> 00:00:49,807
+Estoy en Seguridad, Roles y permisos, con el rol Vendedor abierto:
+
+15
+00:00:49,861 --> 00:00:50,785
+es el padre.
+
+16
+00:00:51,417 --> 00:00:54,661
+El editor se abre en el módulo Clientes y Proveedores.
+
+17
+00:00:55,306 --> 00:01:00,011
+Aquí los clientes están en el recurso Socios, que reúne clientes y proveedores.
+
+18
+00:01:00,658 --> 00:01:03,706
+Vendedor puede ver socios, pero no crearlos.
+
+19
+00:01:04,352 --> 00:01:08,635
+Pulso Crear, y queda concedido, con el fondo marcado como cambio.
+
+20
+00:01:09,269 --> 00:01:11,569
+Abajo, la barra de guardado dice:
+
+21
+00:01:11,635 --> 00:01:14,842
+un cambio sin guardar, y a cuántas personas afecta.
+
+22
+00:01:15,487 --> 00:01:19,444
+Cuenta a las que tienen este rol directamente, Ana, José y Héctor,
+
+23
+00:01:19,570 --> 00:01:22,342
+y también a Carlos, que lo recibe por herencia.
+
+24
+00:01:22,975 --> 00:01:27,621
+Pulso Guardar cambios, y sale el aviso de que los permisos del rol se actualizaron.
+
+25
+00:01:28,990 --> 00:01:33,769
+Ahora, en la lista de roles, abro Vendedor sénior, el rol de Carlos.
+
+26
+00:01:34,412 --> 00:01:37,861
+Arriba, el chip Hereda de Vendedor dice quién es su padre.
+
+27
+00:01:38,493 --> 00:01:42,269
+En Socios, el permiso Crear ya aparece con el color de lo heredado:
+
+28
+00:01:42,382 --> 00:01:45,251
+nadie lo tocó en este rol, le llegó del padre.
+
+29
+00:01:45,897 --> 00:01:50,409
+Para comprobarlo en la persona, voy a la pestaña Personas y abro a Carlos Pimentel.
+
+30
+00:01:51,043 --> 00:01:55,240
+Su ficha muestra su rol, Vendedor sénior, que hereda de Vendedor.
+
+31
+00:01:55,873 --> 00:01:59,250
+Y en Permisos efectivos, la suma de todo lo que puede hacer,
+
+32
+00:01:59,340 --> 00:02:01,713
+Clientes y Proveedores ahora dice dos:
+
+33
+00:02:01,766 --> 00:02:02,740
+ver y crear.
+
+34
+00:02:03,373 --> 00:02:06,786
+Carlos ya puede dar de alta clientes, gracias a la herencia.
+
+35
+00:02:08,152 --> 00:02:11,746
+¿Y si el sénior no debe crear clientes, aunque el vendedor sí?
+
+36
+00:02:12,378 --> 00:02:14,038
+Para eso está la exclusión.
+
+37
+00:02:14,671 --> 00:02:16,598
+Vuelvo al rol Vendedor sénior.
+
+38
+00:02:17,233 --> 00:02:19,569
+En Socios, pulso el Crear heredado:
+
+39
+00:02:19,647 --> 00:02:22,698
+ahora queda tachado, excluido de la herencia.
+
+40
+00:02:23,343 --> 00:02:24,545
+El padre no cambia:
+
+41
+00:02:24,647 --> 00:02:26,841
+Ana y los demás vendedores lo conservan;
+
+42
+00:02:26,967 --> 00:02:28,967
+solo este rol deja de recibirlo.
+
+43
+00:02:29,611 --> 00:02:32,360
+La barra dice que el cambio afecta a una persona:
+
+44
+00:02:32,473 --> 00:02:33,193
+Carlos.
+
+45
+00:02:33,838 --> 00:02:37,118
+Pulso Guardar cambios, y sale el aviso de éxito.
+
+46
+00:02:38,475 --> 00:02:41,562
+Miro otra vez la ficha de Carlos, en Personas.
+
+47
+00:02:42,206 --> 00:02:45,872
+Su rol sigue siendo Vendedor sénior, que hereda de Vendedor.
+
+48
+00:02:46,504 --> 00:02:50,195
+Pero en Permisos efectivos, Clientes y Proveedores volvió a uno:
+
+49
+00:02:50,334 --> 00:02:51,162
+solo ver.
+
+50
+00:02:51,807 --> 00:02:55,920
+Crear clientes ya no está en su acceso efectivo, porque su rol lo excluye.
+
+51
+00:02:56,552 --> 00:02:57,332
+En resumen:
+
+52
+00:02:57,435 --> 00:03:00,353
+lo que le das al rol padre les llega a todos sus hijos;
+
+53
+00:03:00,454 --> 00:03:02,478
+la exclusión lo quita solo en un hijo;
+
+54
+00:03:02,519 --> 00:03:05,895
+y la ficha de cada persona te dice lo que de verdad puede hacer.
+
+55
+00:03:06,540 --> 00:03:07,284
+Y recuerda:
+
+56
+00:03:07,362 --> 00:03:10,014
+meter a alguien en un equipo no le da permisos;
+
+57
+00:03:10,128 --> 00:03:12,115
+eso solo lo hacen sus roles.

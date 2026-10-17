@@ -1,0 +1,203 @@
+1
+00:00:03,100 --> 00:00:05,394
+Estamos en el tablero de prospectos.
+
+2
+00:00:06,063 --> 00:00:08,469
+Recojo el menú para tener más espacio.
+
+3
+00:00:09,126 --> 00:00:13,132
+Abro la tarjeta de Carolina Méndez, de Residencial Las Colinas.
+
+4
+00:00:13,801 --> 00:00:15,502
+Esta es la ficha del prospecto:
+
+5
+00:00:15,624 --> 00:00:19,408
+reúne todo lo que sabes de ella y todo lo que se ha hecho para venderle.
+
+6
+00:00:20,076 --> 00:00:22,123
+Arriba, la cinta de etapas:
+
+7
+00:00:22,221 --> 00:00:26,611
+marca en qué columna del tablero está, y desde aquí también se puede mover.
+
+8
+00:00:27,280 --> 00:00:31,311
+A su izquierda, el botón Perdido, para cuando la venta no se da.
+
+9
+00:00:31,981 --> 00:00:36,372
+Debajo, el valor estimado de la venta y la puntuación, de cero a cien:
+
+10
+00:00:36,494 --> 00:00:39,844
+sube con cada contacto y te dice qué tan interesado está.
+
+11
+00:00:40,512 --> 00:00:41,754
+Luego sus datos:
+
+12
+00:00:41,801 --> 00:00:44,693
+empresa, nombre, correo y teléfono.
+
+13
+00:00:45,360 --> 00:00:48,314
+A la derecha, quién la atiende, de dónde llegó,
+
+14
+00:00:48,436 --> 00:00:50,558
+la prioridad y cuándo esperas cerrar.
+
+15
+00:00:51,226 --> 00:00:54,179
+Cualquiera de estos datos se corrige pulsando sobre él.
+
+16
+00:00:55,553 --> 00:00:58,034
+A la derecha está el seguimiento del prospecto.
+
+17
+00:00:58,702 --> 00:01:00,762
+En Pendientes, lo que toca hacer:
+
+18
+00:01:00,897 --> 00:01:05,808
+aquí hay uno vencido, enviarle el catálogo de pinturas, que era para ayer.
+
+19
+00:01:06,465 --> 00:01:10,882
+Ya se lo envié, así que lo marco como realizado con este botón de la derecha.
+
+20
+00:01:11,549 --> 00:01:14,105
+El aviso de abajo confirma que quedó hecho.
+
+21
+00:01:14,760 --> 00:01:17,305
+Ahora anoto la llamada que tuve con ella.
+
+22
+00:01:17,960 --> 00:01:21,831
+En Actividad elijo el tipo, Llamada, y escribo lo que se habló.
+
+23
+00:01:22,486 --> 00:01:26,692
+Le interesan cuarenta galones para pintar la plaza, y quiere entrega en la obra.
+
+24
+00:01:27,347 --> 00:01:29,569
+Cuando termino, pulso Publicar.
+
+25
+00:01:30,224 --> 00:01:33,873
+La llamada queda en el historial con mi nombre, la fecha y la hora:
+
+26
+00:01:33,981 --> 00:01:37,231
+cualquiera del equipo que abra la ficha sabe en qué va la venta.
+
+27
+00:01:38,615 --> 00:01:41,283
+Una venta no avanza si no hay un siguiente paso.
+
+28
+00:01:41,951 --> 00:01:44,246
+Subo a Pendientes y pulso Programar.
+
+29
+00:01:44,915 --> 00:01:47,322
+El cuadro de abajo cambia a Seguimiento.
+
+30
+00:01:47,990 --> 00:01:50,323
+En el texto, escribo qué hay que hacer:
+
+31
+00:01:50,445 --> 00:01:52,915
+llamar para confirmar el pedido de pintura.
+
+32
+00:01:53,570 --> 00:01:57,367
+Lo escribo como una tarea, para que quien la vea sepa qué hacer.
+
+33
+00:01:58,034 --> 00:02:01,731
+Debajo eliges la fecha y la hora, o usas las fechas rápidas:
+
+34
+00:02:01,755 --> 00:02:04,807
+Hoy, Mañana, En tres días o En una semana.
+
+35
+00:02:05,475 --> 00:02:07,027
+Elijo En tres días.
+
+36
+00:02:07,695 --> 00:02:10,920
+Para terminar, lo confirmo con el botón azul de abajo.
+
+37
+00:02:11,576 --> 00:02:16,513
+El aviso de abajo confirma para cuándo quedó, y aparece en Pendientes, con su fecha.
+
+38
+00:02:17,182 --> 00:02:21,425
+Ese día te sale en el tablero, en el indicador de seguimientos para hoy.
+
+39
+00:02:22,807 --> 00:02:25,127
+Carolina ya confirmó que quiere comprar:
+
+40
+00:02:25,225 --> 00:02:26,503
+está calificada.
+
+41
+00:02:27,159 --> 00:02:29,951
+Subo a la cinta de etapas y pulso Calificado.
+
+42
+00:02:30,606 --> 00:02:33,659
+Calificado es una de las etapas que convierten al prospecto,
+
+43
+00:02:33,757 --> 00:02:35,866
+así que el sistema pregunta antes:
+
+44
+00:02:35,939 --> 00:02:38,025
+al convertirlo, crea el cliente,
+
+45
+00:02:38,121 --> 00:02:41,596
+su contacto y una oportunidad de venta con los datos de la ficha.
+
+46
+00:02:42,264 --> 00:02:43,506
+Pulso Convertir.
+
+47
+00:02:44,174 --> 00:02:44,795
+Listo:
+
+48
+00:02:44,893 --> 00:02:49,496
+el aviso dice que se creó la oportunidad, la ficha queda marcada como convertida,
+
+49
+00:02:49,567 --> 00:02:52,396
+y arriba a la izquierda aparece Ver oportunidad.
+
+50
+00:02:53,064 --> 00:02:55,956
+Desde ahí se cotiza y se sigue la venta hasta ganarla;
+
+51
+00:02:56,091 --> 00:02:57,902
+lo vemos en el próximo video.

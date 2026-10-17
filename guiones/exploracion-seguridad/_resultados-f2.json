@@ -1,0 +1,73 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.36,
+   "clic_a_url_s": 6.09,
+   "clic_a_networkidle_s": 6.09,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "pedro.nunez",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.24,
+   "clic_a_url_s": 6.02,
+   "clic_a_networkidle_s": 6.02,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "acts": [
+  [
+   "check Ver",
+   "rpe__act--direct"
+  ],
+  [
+   "check Crear",
+   "rpe__act--direct"
+  ],
+  [
+   "check Editar",
+   "rpe__act--direct"
+  ],
+  [
+   "Eliminar",
+   "rpe__act--none"
+  ],
+  [
+   "Aprobar",
+   "rpe__act--none"
+  ],
+  [
+   "Rechazar",
+   "rpe__act--none"
+  ],
+  [
+   "Convertir Cotización a Orden",
+   "rpe__act--none"
+  ],
+  [
+   "Convertir Cotización a Factura Directamente",
+   "rpe__act--none"
+  ],
+  [
+   "Aceptar Cotización",
+   "rpe__act--none"
+  ],
+  [
+   "Liquidar Cotización",
+   "rpe__act--none"
+  ]
+ ],
+ "descarga": [
+  "productos_export.xlsx",
+  0.15
+ ],
+ "tras": {
+  "dlg": "swap_vertImportar / Exportar productos\nupload_file\nImportar\ndownload\nExportar\nExportar productos actuales\n\nDescarga todos los productos de la empresa —cada plantilla seguida de sus variantes— con sus ",
+  "toasts": [],
+  "err": []
+ }
+}

@@ -1,0 +1,1502 @@
+{
+ "url": "/sales/invoices/1000000001",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "page-hero-title",
+   "texto": "Editar Factura 1000000001 Borrador",
+   "caja": [
+    369,
+    129,
+    487,
+    25
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "header-title",
+   "texto": "Módulo No Disponible",
+   "caja": [
+    436,
+    260,
+    452,
+    26
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    330,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    923,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications_active",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications_active')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RAramón almonteadmin.progreso@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de ramón almonte",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1034,
+    10,
+    230,
+    40
+   ],
+   "sel": "button[aria-label='Cuenta de ramón almonte']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-current",
+    "is-showing"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "people",
+   "icono": "",
+   "aria": "Recursos Humanos",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    243,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Recursos Humanos']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    415,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    283,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "RD$DOP▾",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "currency-chip-button"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    872,
+    134,
+    104,
+    36
+   ],
+   "sel": "button:has-text('RD$DOP▾')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Imprimir",
+   "icono": "print",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-action"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    986,
+    134,
+    117,
+    36
+   ],
+   "sel": "button:has-text('Imprimir')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "gm-doc-action",
+    "gm-doc-action--icon"
+   ],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    1113,
+    134,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nueva",
+   "icono": "add",
+   "aria": "Nueva Factura",
+   "id": "",
+   "clases": [
+    "new-entity-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1159,
+    134,
+    97,
+    36
+   ],
+   "sel": "button[aria-label='Nueva Factura']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "edit",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "pds-action"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    585,
+    322,
+    32,
+    32
+   ],
+   "sel": "button:has(mat-icon:text-is('edit'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "close",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "pds-action"
+   ],
+   "tooltip": "Limpiar",
+   "deshabilitado": false,
+   "caja": [
+    621,
+    322,
+    32,
+    32
+   ],
+   "sel": "button:has(mat-icon:text-is('close'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "calendar_today",
+   "aria": "Abrir el calendario",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1198,
+    320,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Abrir el calendario']",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "view_week",
+   "aria": "Elegir columnas visibles",
+   "id": "",
+   "clases": [
+    "gm-doc-colbtn"
+   ],
+   "tooltip": "Elegir columnas visibles",
+   "deshabilitado": false,
+   "caja": [
+    1212,
+    390,
+    28,
+    28
+   ],
+   "sel": "button[aria-label='Elegir columnas visibles']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "add_circle_outline",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "add-surcharge-btn"
+   ],
+   "tooltip": "Agregar recargos",
+   "deshabilitado": false,
+   "caja": [
+    861,
+    479,
+    30,
+    30
+   ],
+   "sel": "button:has(mat-icon:text-is('add_circle_outline'))",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "add-retention-perception-btn"
+   ],
+   "tooltip": "Configurar retención/percepción",
+   "deshabilitado": false,
+   "caja": [
+    1095,
+    478,
+    32,
+    32
+   ],
+   "sel": "button:has(mat-icon:text-is('add'))",
+   "sel_casa": "3 visible(s) de 4"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "visibility-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1307,
+    479,
+    30,
+    30
+   ],
+   "sel": "button:has(mat-icon:text-is('visibility'))",
+   "sel_casa": "2 visible(s) de 3"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Quitar línea",
+   "id": "",
+   "clases": [
+    "delete-btn"
+   ],
+   "tooltip": "Quitar línea",
+   "deshabilitado": false,
+   "caja": [
+    1337,
+    479,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Quitar línea']",
+   "sel_casa": "2 visible(s) de 3"
+  },
+  {
+   "texto": "",
+   "icono": "add_circle_outline",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "add-surcharge-btn"
+   ],
+   "tooltip": "Agregar recargos",
+   "deshabilitado": false,
+   "caja": [
+    861,
+    515,
+    30,
+    30
+   ],
+   "sel": "button:has(mat-icon:text-is('add_circle_outline'))",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "add-retention-perception-btn"
+   ],
+   "tooltip": "Configurar retención/percepción",
+   "deshabilitado": false,
+   "caja": [
+    1095,
+    514,
+    32,
+    32
+   ],
+   "sel": "button:has(mat-icon:text-is('add'))",
+   "sel_casa": "3 visible(s) de 4"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "visibility-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1307,
+    515,
+    30,
+    30
+   ],
+   "sel": "button:has(mat-icon:text-is('visibility'))",
+   "sel_casa": "2 visible(s) de 3"
+  },
+  {
+   "texto": "",
+   "icono": "delete",
+   "aria": "Quitar línea",
+   "id": "",
+   "clases": [
+    "delete-btn"
+   ],
+   "tooltip": "Quitar línea",
+   "deshabilitado": false,
+   "caja": [
+    1337,
+    515,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Quitar línea']",
+   "sel_casa": "2 visible(s) de 3"
+  },
+  {
+   "texto": "Recargo global",
+   "icono": "sell",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-tool"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1078,
+    593,
+    151,
+    32
+   ],
+   "sel": "button:has-text('Recargo global')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Aplicar un cupón de descuento",
+   "icono": "confirmation_number",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-coupon"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    401,
+    831,
+    388,
+    32
+   ],
+   "sel": "button:has-text('Aplicar un cupón de descuento')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "calendar_today",
+   "aria": "Abrir el calendario",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1053,
+    698,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Abrir el calendario']",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Efectivo",
+   "icono": "payments",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-seg__opt",
+    "is-on"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    402,
+    1247,
+    88,
+    30
+   ],
+   "sel": "button:has-text('Efectivo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Tarjeta",
+   "icono": "credit_card",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-seg__opt"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    490,
+    1247,
+    83,
+    30
+   ],
+   "sel": "button:has-text('Tarjeta')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Transferencia",
+   "icono": "account_balance",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-seg__opt"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    573,
+    1247,
+    121,
+    30
+   ],
+   "sel": "button:has-text('Transferencia')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cheque",
+   "icono": "receipt_long",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-seg__opt"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    694,
+    1247,
+    87,
+    30
+   ],
+   "sel": "button:has-text('Cheque')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Depósito",
+   "icono": "savings",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-seg__opt"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    780,
+    1247,
+    94,
+    30
+   ],
+   "sel": "button:has-text('Depósito')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Exacto",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "ipp-exact-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    889,
+    1300,
+    51,
+    36
+   ],
+   "sel": "button:has-text('Exacto')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Versiones e historial",
+   "icono": "expand_more",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "notebook-toggle"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    370,
+    1603,
+    885,
+    40
+   ],
+   "sel": "button:has-text('Versiones e historial')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Anular Factura",
+   "icono": "delete_forever",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn-space"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    635,
+    674,
+    161,
+    36
+   ],
+   "sel": "button:has-text('Anular Factura')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Guardar y Cobrar",
+   "icono": "payments",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn-space"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    806,
+    674,
+    177,
+    36
+   ],
+   "sel": "button:has-text('Guardar y Cobrar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cancelar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    995,
+    674,
+    93,
+    36
+   ],
+   "sel": "button:has-text('Cancelar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Guardar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1097,
+    674,
+    87,
+    36
+   ],
+   "sel": "button:has-text('Guardar')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Aceptar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "confirm-button",
+    "icon-warning"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    768,
+    421,
+    120,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Aceptar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cerrar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    767,
+    670,
+    64,
+    36
+   ],
+   "sel": "button:has-text('Cerrar')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Cliente *",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Busque por nombre o RNC/Cédula",
+   "valor": "Constructora Los Pinos (130555079)",
+   "hint": "Constructora Los Pinos location_on contact_phone",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    385,
+    320,
+    274,
+    54
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Cliente *'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Tipo de NCF",
+   "formcontrolname": "ncfType",
+   "tipo": "mat-select",
+   "placeholder": "Tipo de NCF",
+   "valor": "B01 (Factura de Crédito Fiscal)",
+   "hint": "Tradicional · Crédito Fiscal",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    675,
+    320,
+    274,
+    58
+   ],
+   "sel": "[formcontrolname='ncfType']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Fecha de Emisión",
+   "formcontrolname": "issuedDate",
+   "tipo": "input:text",
+   "placeholder": "Seleccionar fecha",
+   "valor": "23/09/2026",
+   "hint": "dd/mm/aaaa",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    966,
+    320,
+    274,
+    58
+   ],
+   "sel": "[formcontrolname='issuedDate']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Escriba el código o el nombre para agregar una línea…",
+   "valor": "Cemento gris Portland 42.5 kg",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    394,
+    476,
+    148,
+    36
+   ],
+   "sel": ""
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Escriba el código o el nombre para agregar una línea…",
+   "valor": "Varilla corrugada 3/8\" x 20 pies",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    394,
+    512,
+    148,
+    36
+   ],
+   "sel": ""
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Escriba el código o el nombre para agregar una línea…",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    394,
+    548,
+    973,
+    36
+   ],
+   "sel": ""
+  },
+  {
+   "label": "Condición de pago",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Escriba para filtrar…",
+   "valor": "Contado",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    821,
+    698,
+    129,
+    54
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Condición de pago'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Vencimiento",
+   "formcontrolname": "paymentDueDate",
+   "tipo": "input:text",
+   "placeholder": "Seleccionar fecha",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    966,
+    698,
+    129,
+    58
+   ],
+   "sel": "[formcontrolname='paymentDueDate']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Término de pago (DGII)",
+   "formcontrolname": "terms",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "CONTADO",
+   "hint": "Va impreso en el comprobante · máx. 15",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    1111,
+    698,
+    129,
+    58
+   ],
+   "sel": "[formcontrolname='terms']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Monto a cobrar",
+   "formcontrolname": "amount",
+   "tipo": "input:number",
+   "placeholder": "0.00",
+   "valor": "8850.00",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    401,
+    1300,
+    266,
+    58
+   ],
+   "sel": "[formcontrolname='amount']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Monto recibido",
+   "formcontrolname": "amountReceived",
+   "tipo": "input:number",
+   "placeholder": "0.00",
+   "valor": "8850.00",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    679,
+    1300,
+    266,
+    58
+   ],
+   "sel": "[formcontrolname='amountReceived']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Cuenta de destino del dinero (opcional)",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Caja/banco — vacío usa la cuenta del método",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    958,
+    1300,
+    266,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Cuenta de destino del dinero (opcional)'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Notas",
+   "formcontrolname": "notes",
+   "tipo": "input:text",
+   "placeholder": "Opcional (máx 100 caracteres)",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    401,
+    1421,
+    823,
+    58
+   ],
+   "sel": "[formcontrolname='notes']",
+   "sel_casa": "2 visible(s) de 2"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "Pago combinado (varios métodos)",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    972,
+    1242,
+    252,
+    40
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [
+  {
+   "titulo": "Módulo No Disponible",
+   "clases": "cdk-overlay-pane mat-mdc-dialog-panel custom-alert-dialog-panel",
+   "caja": [
+    365,
+    236,
+    550,
+    248
+   ],
+   "texto": "warning Módulo No Disponible Su plan no incluye este módulo. Actualice su suscripción para acceder a esta funcionalidad. Aceptar"
+  }
+ ],
+ "menus": [],
+ "toasts": [
+  {
+   "texto": "Error al evaluar descuentos: Error desconocido Cerrar",
+   "caja": [
+    441,
+    664,
+    397,
+    48
+   ]
+  }
+ ],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "visibility",
+   "caja": [
+    1307,
+    479,
+    30,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Quitar línea",
+   "caja": [
+    1337,
+    479,
+    30,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "visibility",
+   "caja": [
+    1307,
+    515,
+    30,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Quitar línea",
+   "caja": [
+    1337,
+    515,
+    30,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Aplicar un cupón de descuento",
+   "caja": [
+    401,
+    831,
+    388,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir el calendario",
+   "caja": [
+    1053,
+    698,
+    36,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Efectivo",
+   "caja": [
+    402,
+    1247,
+    88,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Tarjeta",
+   "caja": [
+    490,
+    1247,
+    83,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Transferencia",
+   "caja": [
+    573,
+    1247,
+    121,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Cheque",
+   "caja": [
+    694,
+    1247,
+    87,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Depósito",
+   "caja": [
+    780,
+    1247,
+    94,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Exacto",
+   "caja": [
+    889,
+    1300,
+    51,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Versiones e historial",
+   "caja": [
+    370,
+    1603,
+    885,
+    40
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "",
+   "caja": [
+    394,
+    548,
+    973,
+    36
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Condición de pago",
+   "caja": [
+    821,
+    698,
+    129,
+    54
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Vencimiento",
+   "caja": [
+    966,
+    698,
+    129,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Término de pago (DGII)",
+   "caja": [
+    1111,
+    698,
+    129,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Monto a cobrar",
+   "caja": [
+    401,
+    1300,
+    266,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Monto recibido",
+   "caja": [
+    679,
+    1300,
+    266,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Cuenta de destino del dinero (opcional)",
+   "caja": [
+    958,
+    1300,
+    266,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Notas",
+   "caja": [
+    401,
+    1421,
+    823,
+    58
+   ]
+  }
+ ],
+ "video": "v8h17",
+ "pantalla": "03-factura-abierta",
+ "notas": "",
+ "toasts_vistos_hasta_ahora": [
+  "Error al evaluar descuentos: Error desconocido"
+ ],
+ "extra": {
+  "errores_http": [
+   "403 GET http://localhost:3001/api/v1/accounts-receivable/payment-history?invoiceId=477&limit=100",
+   "403 POST http://localhost:3001/api/v1/discounts/evaluate-for-invoice"
+  ]
+ }
+}

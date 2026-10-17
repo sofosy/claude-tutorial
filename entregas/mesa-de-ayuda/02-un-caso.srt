@@ -1,0 +1,183 @@
+1
+00:00:03,100 --> 00:00:04,762
+Llamó Constructora Mirador:
+
+2
+00:00:04,884 --> 00:00:07,665
+no les llegaron los tubos de PVC del pedido.
+
+3
+00:00:08,320 --> 00:00:10,640
+Abro un caso con el botón Nuevo caso.
+
+4
+00:00:11,308 --> 00:00:13,727
+El asunto resume el problema en una línea,
+
+5
+00:00:13,851 --> 00:00:16,356
+para reconocerlo en el tablero sin abrirlo.
+
+6
+00:00:17,024 --> 00:00:21,007
+En la descripción cuentas qué pasó como se lo contarías a quien lo va a resolver:
+
+7
+00:00:21,129 --> 00:00:24,207
+qué pedido, qué faltó y para cuándo lo necesitan.
+
+8
+00:00:24,875 --> 00:00:27,157
+A la derecha, los datos del caso.
+
+9
+00:00:27,814 --> 00:00:28,559
+El tipo:
+
+10
+00:00:28,681 --> 00:00:30,195
+problema con un pedido.
+
+11
+00:00:30,852 --> 00:00:31,721
+La prioridad:
+
+12
+00:00:31,806 --> 00:00:34,673
+alta, porque la obra depende de esos tubos;
+
+13
+00:00:34,771 --> 00:00:37,785
+la prioridad decide en cuánto tiempo vence el caso.
+
+14
+00:00:38,454 --> 00:00:39,360
+Y el cliente:
+
+15
+00:00:39,496 --> 00:00:43,539
+lo busco por nombre, y en la lista aparece con su RNC.
+
+16
+00:00:44,207 --> 00:00:46,131
+Elijo Constructora Mirador.
+
+17
+00:00:46,786 --> 00:00:50,323
+Así el caso aparece también en su ficha de Éxito del Cliente.
+
+18
+00:00:50,990 --> 00:00:52,405
+Pulso Crear caso.
+
+19
+00:00:53,073 --> 00:00:57,032
+El aviso de abajo confirma el número del caso, y se abre su ficha.
+
+20
+00:00:58,408 --> 00:01:00,156
+Esta es la ficha del caso.
+
+21
+00:01:00,825 --> 00:01:03,058
+Arriba, su número y el asunto;
+
+22
+00:01:03,168 --> 00:01:06,271
+debajo, las etapas, de Abierto a Cerrado.
+
+23
+00:01:06,938 --> 00:01:08,837
+A la derecha, los detalles:
+
+24
+00:01:08,885 --> 00:01:12,447
+estado, prioridad, cuándo vence y quién lo atiende.
+
+25
+00:01:13,114 --> 00:01:16,513
+Todavía no tiene responsable, así que pulso Asignarme.
+
+26
+00:01:17,182 --> 00:01:18,968
+Abajo está la conversación.
+
+27
+00:01:19,625 --> 00:01:23,594
+Con Responder escribes en la conversación del caso, la que ve quien lo reportó:
+
+28
+00:01:23,668 --> 00:01:27,897
+aquí dejo dicho que ya lo estamos revisando y que hoy le confirmamos al cliente.
+
+29
+00:01:28,566 --> 00:01:32,015
+Es la respuesta oficial del caso, así que escríbela clara.
+
+30
+00:01:32,670 --> 00:01:34,754
+Cuando está listo, pulso Enviar.
+
+31
+00:01:35,411 --> 00:01:38,860
+Ahora, con Nota interna escribes algo que sólo ve tu equipo:
+
+32
+00:01:38,944 --> 00:01:42,778
+aquí le pido a almacén que verifique si los tubos salieron en el camión.
+
+33
+00:01:43,435 --> 00:01:45,718
+Quien reportó el caso no ve esta nota.
+
+34
+00:01:46,385 --> 00:01:48,606
+La guardo con el botón Guardar nota.
+
+35
+00:01:49,275 --> 00:01:53,653
+Las dos quedan en la actividad del caso, cada una marcada como lo que es.
+
+36
+00:01:55,028 --> 00:01:58,266
+Almacén encontró los tubos y salieron en el camión de hoy.
+
+37
+00:01:58,921 --> 00:02:02,111
+Para resolver el caso, cambio el estado en los detalles:
+
+38
+00:02:02,183 --> 00:02:03,971
+lo abro y elijo Resuelto.
+
+39
+00:02:04,626 --> 00:02:06,835
+El sistema pregunta cómo se resolvió.
+
+40
+00:02:07,503 --> 00:02:11,138
+Lo escribo, porque queda para el que reciba el próximo caso igual:
+
+41
+00:02:11,223 --> 00:02:12,800
+qué pasó y qué se hizo.
+
+42
+00:02:13,468 --> 00:02:14,659
+Con eso basta.
+
+43
+00:02:15,316 --> 00:02:16,545
+Pulso Continuar.
+
+44
+00:02:17,200 --> 00:02:20,637
+El caso pasa a Resuelto, con su resolución y la hora.
+
+45
+00:02:21,293 --> 00:02:23,899
+Si el cliente vuelve a escribir, se reabre;
+
+46
+00:02:23,984 --> 00:02:26,217
+y cuando está conforme, se cierra.

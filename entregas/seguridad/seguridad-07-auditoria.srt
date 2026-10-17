@@ -1,0 +1,295 @@
+1
+00:00:03,097 --> 00:00:06,559
+Soy Rosa, la administradora de Distribuidora Las Palmas,
+
+2
+00:00:06,612 --> 00:00:08,637
+y estoy en la consola de Seguridad.
+
+3
+00:00:09,280 --> 00:00:12,353
+Abro la pestaña Auditoría, la última de la fila.
+
+4
+00:00:12,987 --> 00:00:14,625
+Esta es la bitácora de la empresa:
+
+5
+00:00:14,739 --> 00:00:18,115
+cada vez que alguien entra, crea, cambia o borra algo,
+
+6
+00:00:18,228 --> 00:00:22,137
+aquí queda un evento con el nombre de quien lo hizo, cuándo y desde dónde.
+
+7
+00:00:22,783 --> 00:00:26,002
+Junto a los filtros está el total de eventos del período elegido;
+
+8
+00:00:26,018 --> 00:00:28,550
+por defecto, los últimos siete días.
+
+9
+00:00:29,196 --> 00:00:32,426
+Los eventos se agrupan por día, con el más reciente arriba:
+
+10
+00:00:32,504 --> 00:00:35,144
+esta franja es el encabezado de cada día.
+
+11
+00:00:35,777 --> 00:00:37,391
+Cada fila es un evento.
+
+12
+00:00:38,036 --> 00:00:39,130
+Primero va la hora;
+
+13
+00:00:39,207 --> 00:00:41,413
+luego Quién, la persona que lo hizo;
+
+14
+00:00:41,502 --> 00:00:44,094
+después la Acción, con una insignia de color:
+
+15
+00:00:44,195 --> 00:00:48,200
+verde si creó algo, azul si lo actualizó, rojo si lo eliminó,
+
+16
+00:00:48,326 --> 00:00:52,027
+ámbar si cambió su estado, y gris para los accesos al sistema.
+
+17
+00:00:52,661 --> 00:00:56,183
+La columna Registro dice qué cosa se tocó, con su número.
+
+18
+00:00:56,816 --> 00:01:01,147
+Y la última, IP, es la dirección de la computadora desde donde se hizo:
+
+19
+00:01:01,225 --> 00:01:04,201
+sirve para saber si fue desde la oficina o desde fuera.
+
+20
+00:01:05,552 --> 00:01:08,409
+Con los filtros de arriba se encuentra un evento concreto.
+
+21
+00:01:09,053 --> 00:01:10,352
+Empiezo por el Período:
+
+22
+00:01:10,442 --> 00:01:13,541
+lo abro, y las opciones van de Hoy a Todo el historial;
+
+23
+00:01:13,618 --> 00:01:15,557
+elijo Últimos treinta días.
+
+24
+00:01:16,203 --> 00:01:20,799
+Ahora, en el campo Persona, escribo el usuario de Ana, la vendedora.
+
+25
+00:01:21,432 --> 00:01:23,819
+La lista se queda solo con lo que hizo ella:
+
+26
+00:01:23,993 --> 00:01:27,804
+sus cotizaciones, con sus líneas, precios y versiones.
+
+27
+00:01:28,449 --> 00:01:30,883
+Después abro el botón Acción y marco Creó.
+
+28
+00:01:31,529 --> 00:01:35,328
+Se pueden marcar varias, y el menú sigue abierto hasta que lo cierro.
+
+29
+00:01:35,973 --> 00:01:37,985
+Solo quedan las cosas que Ana creó.
+
+30
+00:01:38,630 --> 00:01:42,803
+En Registro va el tipo de registro, con el nombre interno que usa el sistema,
+
+31
+00:01:42,808 --> 00:01:43,625
+en inglés:
+
+32
+00:01:43,667 --> 00:01:46,439
+escribo quotes, que son las cotizaciones.
+
+33
+00:01:47,084 --> 00:01:50,038
+El último filtro busca por la dirección de la computadora;
+
+34
+00:01:50,140 --> 00:01:53,360
+pruebo con una que nadie usó, y la lista queda vacía,
+
+35
+00:01:53,425 --> 00:01:57,236
+con el aviso No se encontraron resultados para los filtros seleccionados.
+
+36
+00:01:57,882 --> 00:02:00,956
+Cuando pasa eso, pulso Limpiar, a la derecha,
+
+37
+00:02:01,022 --> 00:02:03,275
+y la bitácora vuelve a quedar como estaba.
+
+38
+00:02:04,626 --> 00:02:07,543
+Ahora abro un evento para ver su detalle completo.
+
+39
+00:02:08,175 --> 00:02:12,143
+Para no dejar fuera nada viejo, pongo el período en Todo el historial.
+
+40
+00:02:12,777 --> 00:02:14,716
+Busco la fila Cambió permisos:
+
+41
+00:02:14,818 --> 00:02:18,350
+la deja el sistema cada vez que alguien guarda los permisos de un rol.
+
+42
+00:02:18,985 --> 00:02:24,632
+Justo debajo, a la misma hora, hay otra fila, Creó, sobre un permiso de ese rol:
+
+43
+00:02:24,721 --> 00:02:29,257
+cada permiso que se agrega a un rol deja también su propio renglón, con su número.
+
+44
+00:02:29,902 --> 00:02:33,955
+Vuelvo a Cambió permisos y la pulso, y a la derecha se abre el detalle.
+
+45
+00:02:34,599 --> 00:02:37,312
+Arriba, la fecha y la hora exactas.
+
+46
+00:02:37,957 --> 00:02:40,187
+Debajo, el registro que se tocó:
+
+47
+00:02:40,228 --> 00:02:43,399
+aquí un rol, el setenta y nueve, que es Almacén;
+
+48
+00:02:43,501 --> 00:02:44,450
+y quién lo hizo:
+
+49
+00:02:44,480 --> 00:02:45,091
+Rosa.
+
+50
+00:02:45,735 --> 00:02:48,774
+Luego viene Qué cambió, con el antes y el después.
+
+51
+00:02:49,419 --> 00:02:51,117
+Tachado, lo de antes:
+
+52
+00:02:51,146 --> 00:02:56,310
+en Inventario, Productos, el rol podía ver, crear, editar e importar.
+
+53
+00:02:56,956 --> 00:02:58,810
+Resaltado, lo de después:
+
+54
+00:02:58,828 --> 00:03:01,382
+ahora, además, puede exportar.
+
+55
+00:03:02,016 --> 00:03:05,367
+Al pie está la Solicitud, o sea el origen de la petición:
+
+56
+00:03:05,421 --> 00:03:06,950
+la IP de la computadora;
+
+57
+00:03:07,016 --> 00:03:09,788
+el Origen, que dice desde qué programa llegó:
+
+58
+00:03:09,818 --> 00:03:11,660
+aquí, Chrome en Windows;
+
+59
+00:03:11,725 --> 00:03:13,050
+el código del evento;
+
+60
+00:03:13,115 --> 00:03:17,215
+y un número de solicitud, que sirve si hay que pedir ayuda a soporte.
+
+61
+00:03:18,586 --> 00:03:20,888
+Desde el detalle salen dos atajos.
+
+62
+00:03:21,531 --> 00:03:26,320
+El primero, Historial del registro, reúne todo lo que le pasó a ese mismo rol.
+
+63
+00:03:26,954 --> 00:03:27,697
+Lo pulso:
+
+64
+00:03:27,775 --> 00:03:32,153
+la lista se filtra por ese registro, y arriba el filtro lo dice con su nombre:
+
+65
+00:03:32,195 --> 00:03:33,483
+Rol, Almacén.
+
+66
+00:03:34,127 --> 00:03:37,962
+Muestra desde el día en que se creó hasta cada cambio de sus permisos.
+
+67
+00:03:38,609 --> 00:03:42,794
+Es la forma más rápida de saber quién le tocó los permisos a un rol, y cuándo.
+
+68
+00:03:43,427 --> 00:03:45,716
+El segundo atajo lleva a la persona.
+
+69
+00:03:46,349 --> 00:03:49,955
+Abro otra vez el cambio de permisos y pulso el enlace Ver a Rosa:
+
+70
+00:03:50,093 --> 00:03:52,686
+me lleva a Personas, filtrada por ella.
+
+71
+00:03:53,319 --> 00:03:54,146
+En resumen:
+
+72
+00:03:54,212 --> 00:03:57,287
+filtra por persona y por período para saber quién hizo algo;
+
+73
+00:03:57,341 --> 00:03:59,859
+abre el evento para leer el antes y el después;
+
+74
+00:03:59,901 --> 00:04:03,675
+y usa el historial para ver la vida entera de un rol o de cualquier registro.

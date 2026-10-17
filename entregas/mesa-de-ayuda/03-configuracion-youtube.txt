@@ -1,0 +1,32 @@
+TÍTULO
+============================================================
+Mesa de Ayuda · Configuración: espacios, estados y avisos
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Espacios de trabajo
+00:42  Estados del caso
+01:34  A quién se le avisa
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Separar los casos en espacios de trabajo
+• Agregar un estado propio y decidir si tiene columna en el tablero
+• Elegir a quién se le avisa cuando un caso cambia de estado
+
+⚠️ ERRORES COMUNES
+• Crear un estado nuevo con el propósito equivocado: decide si el caso cuenta como abierto o resuelto
+• Avisar a todos de todo: el equipo deja de leer los avisos
+• Cambiar la matriz de avisos y salir sin pulsar «Guardar los avisos»
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:12
+
+TRANSCRIPCIÓN
+============================================================
+La configuración de la Mesa de Ayuda se abre con la rueda dentada, arriba a la derecha del tablero. Tiene tres secciones. La primera son los espacios de trabajo: tableros separados, cada uno con sus columnas y sus casos. Por ejemplo, uno para garantías y otro para todo lo demás. El marcado como predeterminado es donde nacen los casos si nadie elige otro. En cada fila están las acciones: editar las columnas del tablero, editarlo, hacerlo predeterminado o eliminarlo. Para crear uno, pulsa Nuevo espacio, ponle nombre, dile para qué es y elige su color.
+La segunda sección son los estados del caso. Cada estado dice su propósito: en curso, en espera, para resolver, para cerrar o para cancelar. Eso decide si el caso sigue contando como abierto o si se da por resuelto. A su lado, cómo se comporta: si es el estado inicial y si tiene columna en el tablero. Vamos a agregar uno. Pulso Agregar estado. Lo llamo Esperando repuesto: es el nombre completo, el que se ve en la ficha de cada caso. Debajo va el nombre corto, el que se lee en la columna del tablero: Repuesto. En para qué sirve elijo En espera, porque el caso está detenido mientras llega la pieza. Marco que tenga columna en el tablero, y pulso Agregar el estado. Ya está en la lista, y desde ahora aparece como columna en la Mesa de Ayuda.
+La última sección es la de avisos. Cada fila es un estado al que puede pasar un caso, y cada columna, a quién avisar: a quien lo reportó, al responsable, a quienes lo siguen o a los administradores. La campana es un aviso dentro del sistema, y el sobre, un correo. Lo encendido está en azul. Quiero que el responsable se entere cuando un caso nuevo entra como Abierto, así que enciendo su campana en esa fila. Al terminar, pulso Guardar los avisos, abajo a la derecha. El aviso confirma que se guardaron.

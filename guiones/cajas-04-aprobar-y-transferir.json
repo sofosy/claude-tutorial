@@ -1,0 +1,276 @@
+{
+  "_comentario": "Video 4 de la serie Cajas (autor videos 3-4, 2026-09-23). Graba carmen.rosario (Supervisora de Caja) partiendo de S3; termina como S4 (MOV-2026-00010 APPROVED por carmen con su asiento, TRF-2026-00001 3,000 Caja Mostrador 2 → Caja Principal RECEIVED; Principal 3,500, Mostrador 2 3,050; ALT-2026-00002 saldo bajo creada al aprobar y resuelta al recibir). Restaurar entre tomas: node seeds/cajas/restaurar.mjs S3. HALLAZGO nuevo (H-15, no corregido): la nota de «Nueva transferencia» NO se guarda — el front envía `notes` (cash-transfer-form.component.ts:343) y el DTO del API espera `reason` (create-cash-transfer.dto.ts:55); cash_transfers.notes y .reason quedan NULL (también en el canon S4). Por eso el guion deja las notas en blanco y no enseña ese campo como si funcionara. AVISO justificado de revisar.mjs: «el primer paso no contrae el menú (button.panel-collapse)» — en Cajas no existe ese botón (riel fijo, _SELECTORES-CAJAS.md y _BRIEF-CAJAS.md).",
+  "titulo": "Cajas · Aprueba movimientos y mueve efectivo entre cajas",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "carmen.rosario",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Usar la bandeja «Por aprobar» para decidir los movimientos que un cajero no puede hacer solo.",
+    "Aprobar una salida sabiendo qué pasa con el saldo y con la contabilidad, y cuándo conviene rechazarla.",
+    "Crear una transferencia de efectivo entre dos cajas abiertas.",
+    "Recibir la transferencia en la caja destino y comprobar el saldo nuevo en el tablero."
+  ],
+  "errores_comunes": [
+    "Aprobar sin leer la nota del cajero: el dinero sale del saldo y se genera el asiento contable.",
+    "Intentar aprobar un movimiento propio: la regla de los cuatro ojos lo impide; lo aprueba otro supervisor.",
+    "Transferir más de lo que la caja origen tiene disponible en su sesión: el sistema lo rechaza.",
+    "Confirmar la recepción sin contar el efectivo: si no coincide, se cancela la transferencia y se registra de nuevo por el monto correcto."
+  ],
+  "pasos": [
+    {
+      "id": "01-por-aprobar",
+      "ruta": "Cajas › Por aprobar",
+      "texto_pantalla": "Por aprobar · decidir una salida de efectivo",
+      "navegar": "/cashier?section=aprobaciones",
+      "narracion": "Esta es la bandeja «Por aprobar» de la supervisora: aquí llega todo lo que un cajero no puede hacer solo y que espera tu decisión. El número de la pestaña cuenta cuántas cosas esperan. Arriba, las cifras resumen el momento: un movimiento por aprobar, ninguna transferencia ni cuadre pendiente, una alerta activa y una caja bloqueada. En la tabla está la salida de seis mil quinientos pesos de la Caja Principal, que registró la cajera Yohanna Peralta, con su nota: el pago del mantenimiento del aire acondicionado. Léela antes de decidir. Al final de la fila tienes dos botones. La equis roja es «Rechazar»: pide un motivo y el saldo queda como estaba. La marca de verificación es «Aprobar», y descuenta el dinero. Recuerda la regla de los cuatro ojos: nadie aprueba lo que registró él mismo. Esta salida está justificada, así que pulso «Aprobar». El sistema pide confirmar, y explica que el monto saldrá del saldo de la sesión y que se generará su asiento contable, o sea, su registro en la contabilidad. Confirmo. El aviso dice que quedó aprobado, y la bandeja se vacía. Fíjate en las alertas: ahora son dos, porque a la caja le quedaron quinientos pesos, menos del mínimo de mil que fijó el administrador.",
+      "acciones": [
+        {
+          "resaltar": "#cashier-hub-tab-aprobaciones",
+          "durante_ms": 2800,
+          "al_decir": "número de la pestaña"
+        },
+        {
+          "resaltar": ".sup-figs",
+          "durante_ms": 8000,
+          "al_decir": "las cifras"
+        },
+        {
+          "resaltar": "tr:has-text('MOV-2026-00010') td:nth-child(3)",
+          "durante_ms": 2000,
+          "al_decir": "seis mil quinientos"
+        },
+        {
+          "resaltar": "tr:has-text('MOV-2026-00010') td:nth-child(5)",
+          "durante_ms": 1300,
+          "al_decir": "la cajera Yohanna"
+        },
+        {
+          "resaltar": "tr:has-text('MOV-2026-00010') td:nth-child(7)",
+          "durante_ms": 5000,
+          "al_decir": "con su nota"
+        },
+        {
+          "resaltar": "tr:has-text('MOV-2026-00010') button[aria-label='Rechazar']",
+          "durante_ms": 4500,
+          "al_decir": "equis roja"
+        },
+        {
+          "resaltar": "tr:has-text('MOV-2026-00010') button[aria-label='Aprobar']",
+          "durante_ms": 3000,
+          "al_decir": "marca de verificación"
+        },
+        {
+          "resaltar": "tr:has-text('MOV-2026-00010') td:nth-of-type(5)",
+          "durante_ms": 4000,
+          "al_decir": "cuatro ojos"
+        },
+        {
+          "click": "tr:has-text('MOV-2026-00010') button[aria-label='Aprobar']",
+          "al_decir": "pulso Aprobar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "pide confirmar"
+        },
+        {
+          "click": ".custom-alert-dialog-style button.confirm-button",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sup-figs button.gm-fig:has-text('Alertas activas')",
+          "durante_ms": 7000,
+          "al_decir": "las alertas"
+        }
+      ],
+      "capitulo": "Aprobar una salida",
+      "rotulo": "Aprobar una salida"
+    },
+    {
+      "id": "02-nueva-transferencia",
+      "ruta": "Cajas › Historial › Transferencias",
+      "texto_pantalla": "Nueva transferencia entre cajas",
+      "narracion": "Ahora muevo efectivo entre cajas con una transferencia: el dinero sale de una caja abierta y entra en otra, y todo queda registrado. Voy a la pestaña «Historial», donde queda todo lo que pasó en las cajas, y abro «Transferencias». Arriba ves cuánto está por aprobar, por recibir y ya recibido; y debajo, la lista con sus filtros. A la Caja Principal le queda poco cambio, y la Mostrador 2 tiene de sobra. Pulso «Nueva transferencia». En «Caja origen» elijo la Mostrador 2: debajo aparece su saldo disponible en la sesión, seis mil cincuenta pesos, y no puedes enviar más que eso. En «Caja destino» marco la principal. Escribo el monto: tres mil pesos, casi la mitad de lo que tiene disponible, así las dos cajas quedan con cambio suficiente. Las notas son opcionales; esta vez las dejo en blanco. Pulso «Crear transferencia». Como no pasa del límite de cinco mil, no necesita aprobación: el aviso dice que la caja destino ya puede recibirla, y la fila aparece con el estado «Por recibir».",
+      "acciones": [
+        {
+          "resaltar": "#cashier-hub-tab-historial",
+          "durante_ms": 3500,
+          "al_decir": "con una transferencia"
+        },
+        {
+          "click": "#cashier-hub-tab-historial",
+          "al_decir": "la pestaña Historial"
+        },
+        {
+          "click": "nav[aria-label='Listados del historial'] button:has-text('Transferencias')",
+          "al_decir": "abro Transferencias"
+        },
+        {
+          "resaltar": ".gm-fig:has-text('Por recibir')",
+          "durante_ms": 5000,
+          "al_decir": "Arriba ves"
+        },
+        {
+          "click": "button:has-text('Nueva transferencia')",
+          "al_decir": "Pulso Nueva transferencia"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='sourceCashier']",
+          "al_decir": "En Caja origen"
+        },
+        {
+          "click": "mat-option:has-text('Caja Mostrador 2')",
+          "al_decir": "elijo"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Saldo disponible en sesión')",
+          "durante_ms": 5000,
+          "al_decir": "saldo disponible"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='targetCashier']",
+          "al_decir": "En Caja destino"
+        },
+        {
+          "click": "mat-option:has-text('Caja Principal')",
+          "al_decir": "marco"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='amount']",
+            "texto": "3000"
+          },
+          "al_decir": "Escribo el monto"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:has-text('Notas'))",
+          "durante_ms": 3500,
+          "al_decir": "Las notas"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear transferencia')",
+          "al_decir": "Pulso Crear transferencia"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "tr:has-text('TRF-2026-00001') td:nth-child(5)",
+          "durante_ms": 4000,
+          "al_decir": "el estado"
+        }
+      ],
+      "capitulo": "Crear una transferencia",
+      "rotulo": "Crear una transferencia"
+    },
+    {
+      "id": "03-recibir",
+      "ruta": "Cajas › Historial › Transferencias › Recibir",
+      "texto_pantalla": "Recibir la transferencia en la caja destino",
+      "narracion": "La transferencia ya salió de la Mostrador 2, pero la Caja Principal todavía no la cuenta: alguien tiene que recibir el efectivo y confirmarlo. En la fila hay dos botones. El círculo tachado cancela la transferencia, por si hubo un error. El otro botón, «Recibir», abre la confirmación. Aquí repasas el número, el monto a recibir, la caja de origen y la de destino. Y lee la nota: si el efectivo que te entregan no coincide, no confirmes; pide que cancelen la transferencia y que la registren de nuevo por el monto correcto. Conté los tres mil y está completo: pulso «Confirmar recepción». El aviso confirma que se recibió, y el estado cambia a «Recibida». Lo compruebo en la pestaña «Cajas»: la Caja Principal tiene ahora tres mil quinientos pesos en efectivo, y a la Mostrador 2 le quedan tres mil cincuenta.",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('TRF-2026-00001') button:has(mat-icon:text-is('block'))",
+          "durante_ms": 4000,
+          "al_decir": "círculo tachado"
+        },
+        {
+          "click": "tr:has-text('TRF-2026-00001') button[mattooltip='Recibir']",
+          "al_decir": "El otro botón"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "repasas"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('no confirmes')",
+          "durante_ms": 7000,
+          "al_decir": "lee la nota"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Confirmar recepción')",
+          "al_decir": "pulso Confirmar recepción"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "tr:has-text('TRF-2026-00001') td:nth-child(5)",
+          "durante_ms": 3000,
+          "al_decir": "Recibida"
+        },
+        {
+          "click": "#cashier-hub-tab-cajas",
+          "al_decir": "pestaña Cajas"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Principal'] dd.board-card__amount",
+          "durante_ms": 3500,
+          "al_decir": "tres mil quinientos"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2'] dd.board-card__amount",
+          "durante_ms": 4000,
+          "al_decir": "tres mil cincuenta"
+        }
+      ],
+      "capitulo": "Recibir la transferencia",
+      "rotulo": "Recibir la transferencia"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

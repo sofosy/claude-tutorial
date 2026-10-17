@@ -1,0 +1,969 @@
+{
+ "url": "/sales/invoices",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h4",
+   "clase": "page-title",
+   "texto": "Facturas",
+   "caja": [
+    357,
+    80,
+    66,
+    24
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    330,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    923,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications_active",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications_active')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RAramón almonteadmin.progreso@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de ramón almonte",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1034,
+    10,
+    230,
+    40
+   ],
+   "sel": "button[aria-label='Cuenta de ramón almonte']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-showing",
+    "is-current"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "people",
+   "icono": "",
+   "aria": "Recursos Humanos",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    243,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Recursos Humanos']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "credit_score",
+   "icono": "",
+   "aria": "Crédito y Cobranzas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Crédito y Cobranzas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    501,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    716,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    284,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "settings",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-config-button"
+   ],
+   "tooltip": "Configurar filtros",
+   "deshabilitado": false,
+   "caja": [
+    1164,
+    145,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('settings'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "clear",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-clear-button"
+   ],
+   "tooltip": "Limpiar filtros",
+   "deshabilitado": true,
+   "caja": [
+    1204,
+    145,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('clear'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nueva Factura",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1050,
+    297,
+    138,
+    36
+   ],
+   "sel": "button:has-text('Nueva Factura')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "view_column",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "columns-config-button"
+   ],
+   "tooltip": "Configurar columnas",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    297,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('view_column'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Ver Detalles",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-accent"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1184,
+    409,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Ver Detalles']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1212,
+    409,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Primera página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1044,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Primera página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página anterior",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1092,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página anterior']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página siguiente",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1140,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página siguiente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Última página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1188,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Última página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Búsqueda General",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Búsqueda General'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Cliente",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Cliente'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Estado",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    953,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Estado'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Facturación Electrónica",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    233,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Facturación Electrónica'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Facturación Enviada",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    233,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Facturación Enviada'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "10",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    835,
+    601,
+    84,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [
+  {
+   "clases": [
+    "mat-mdc-table",
+    "mdc-data-table__table",
+    "cdk-table"
+   ],
+   "cabeceras": [
+    "NO. FACTURA drag_indicator",
+    "FECHA drag_indicator",
+    "CLIENTE drag_indicator",
+    "NCF drag_indicator",
+    "TOTAL FACTURADO drag_indicator",
+    "ESTADO drag_indicator",
+    "E-CF drag_indicator",
+    "ACCIONES"
+   ],
+   "filas": [
+    [
+     "1000000001",
+     "23/09/2026",
+     "Constructora Los Pinos",
+     "B0100000001",
+     "RD$ 8,850.00",
+     "Emitida",
+     "No aplica",
+     "visibility more_vert"
+    ]
+   ],
+   "total_filas": 1,
+   "caja": [
+    346,
+    346,
+    906,
+    100
+   ]
+  }
+ ],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [
+  {
+   "que": "boton",
+   "txt": "Última página",
+   "caja": [
+    1188,
+    595,
+    48,
+    48
+   ]
+  }
+ ],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    716,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  }
+ ],
+ "video": "v8",
+ "pantalla": "02b-riel-admin",
+ "notas": "",
+ "toasts_vistos_hasta_ahora": [],
+ "extra": {
+  "rail": [
+   [
+    "A",
+    "/home",
+    "Germiva ERP",
+    null,
+    "",
+    "[18,0]"
+   ],
+   [
+    "A",
+    "/home",
+    "Inicio",
+    null,
+    "home",
+    "[7,71]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Ventas",
+    null,
+    "sell",
+    "[7,114]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Compras",
+    null,
+    "shopping_cart",
+    "[7,157]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Inventario",
+    null,
+    "inventory",
+    "[7,200]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Recursos Humanos",
+    null,
+    "people",
+    "[7,243]"
+   ],
+   [
+    "A",
+    "/cashier",
+    "Cajas",
+    null,
+    "point_of_sale",
+    "[7,286]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Contabilidad",
+    null,
+    "account_balance",
+    "[7,329]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Crédito y Cobranzas",
+    null,
+    "credit_score",
+    "[7,372]"
+   ],
+   [
+    "A",
+    "/helpdesk",
+    "Mesa de Ayuda",
+    null,
+    "support_agent",
+    "[7,415]"
+   ],
+   [
+    "A",
+    "/assistant/empresa/canal",
+    "WhatsApp e IA",
+    null,
+    "smart_toy",
+    "[7,458]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "CRM",
+    null,
+    "groups",
+    "[7,501]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Éxito del Cliente",
+    null,
+    "handshake",
+    "[7,544]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Nómina",
+    null,
+    "account_balance_wallet",
+    "[7,587]"
+   ],
+   [
+    "A",
+    "/agenda/calendar",
+    "Calendario",
+    null,
+    "calendar_month",
+    "[7,630]"
+   ],
+   [
+    "A",
+    "/security/resumen",
+    "Seguridad",
+    null,
+    "lock",
+    "[7,673]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Configuración",
+    null,
+    "tune",
+    "[7,716]"
+   ],
+   [
+    "BUTTON",
+    null,
+    "Cerrar sesión",
+    "Cerrar sesión",
+    "power_settings_new",
+    "[9.5,667]"
+   ]
+  ]
+ }
+}

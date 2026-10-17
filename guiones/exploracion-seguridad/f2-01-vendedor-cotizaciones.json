@@ -1,0 +1,3663 @@
+{
+ "url": "/security/roles?rol=77",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 758,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Seguridad",
+   "caja": [
+    109,
+    136,
+    695,
+    26
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "gm-sheet-title sec-roles__h2",
+   "texto": "Vendedor",
+   "caja": [
+    621,
+    262,
+    62,
+    32
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-sheet-title",
+   "texto": "Módulo Cotizaciones",
+   "caja": [
+    621,
+    391,
+    221,
+    28
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Nuevo",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1128,
+    143,
+    101,
+    36
+   ],
+   "sel": "button:has-text('Nuevo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Resumen",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ],
+   "sel": "a:has-text('Resumen')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 9",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ],
+   "sel": "a:has-text('Personas 9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-2",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ],
+   "sel": "a:has-text('Roles y permisos 12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Integraciones 1",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-3",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ],
+   "sel": "a:has-text('Integraciones 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditoría",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-4",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ],
+   "sel": "a:has-text('Auditoría')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "MensajeroVacío1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    327,
+    250,
+    36
+   ],
+   "sel": "button:has-text('MensajeroVacío1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditor (solo lectura)1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    363,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Auditor (solo lectura)1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Almacén2",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    399,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Almacén2')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Vendedor3",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "gm-rail-btn--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    435,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Vendedor3')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "↳Vendedor sénior1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "sec-roles__child"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    471,
+    250,
+    36
+   ],
+   "sel": "button:has-text('↳Vendedor sénior1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Empleado0",
+   "icono": "lock",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    553,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Empleado0')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Recursos Humanos0",
+   "icono": "lock",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    589,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Recursos Humanos0')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Compras0",
+   "icono": "lock",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    625,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Compras0')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Contador0",
+   "icono": "lock",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    661,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Contador0')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Supervisor de Caja0",
+   "icono": "lock",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    697,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Supervisor de Caja0')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cajero0",
+   "icono": "lock",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    733,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Cajero0')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Admin1",
+   "icono": "lock",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    769,
+    250,
+    36
+   ],
+   "sel": "button:has-text('Admin1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "General0/109",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    29,
+    260,
+    32
+   ],
+   "sel": "button:has-text('General0/109')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Empresa0/40",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    61,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Empresa0/40')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Usuarios0/4",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    93,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Usuarios0/4')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Seguridad0/19",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    125,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Seguridad0/19')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Acceso API0/4",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    157,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Acceso API0/4')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Punto de Venta0/36",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    225,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Punto de Venta0/36')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Clientes y Proveedores1/33",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    257,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Clientes y Proveedores1/33')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Facturación0/79",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    289,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Facturación0/79')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Facturación Electrónica0/44",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    321,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Facturación Electrónica0/44')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "CRM0/34",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    353,
+    260,
+    32
+   ],
+   "sel": "button:has-text('CRM0/34')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "IA del CRM0/2",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    385,
+    260,
+    32
+   ],
+   "sel": "button:has-text('IA del CRM0/2')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ventas0/42",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    417,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Ventas0/42')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cotizaciones3/19",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module",
+    "gm-rail-btn--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    449,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Cotizaciones3/19')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Órdenes de Venta0/8",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    481,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Órdenes de Venta0/8')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Conduces0/9",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    513,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Conduces0/9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Proformas0/3",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    545,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Proformas0/3')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Descuentos y Promociones0/34",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    577,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Descuentos y Promociones0/34')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Venta a Crédito0/41",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    609,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Venta a Crédito0/41')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Productos1/42",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    677,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Productos1/42')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Inventario0/47",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    709,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Inventario0/47')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Inventario Avanzado0/8",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    741,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Inventario Avanzado0/8')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Compras0/38",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    773,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Compras0/38')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Requisiciones0/7",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    805,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Requisiciones0/7')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Costos en Destino0/3",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    837,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Costos en Destino0/3')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Contabilidad Básica0/136",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    905,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Contabilidad Básica0/136')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Contabilidad Avanzada0/46",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    937,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Contabilidad Avanzada0/46')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Empleados0/46",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    1005,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Empleados0/46')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nómina0/109",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    1037,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Nómina0/109')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Recursos Humanos0/24",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    1069,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Recursos Humanos0/24')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Asistencia y Tiempo0/46",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    1101,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Asistencia y Tiempo0/46')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Desempeño y Capacitación0/12",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    1133,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Desempeño y Capacitación0/12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Reclutamiento0/23",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    1165,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Reclutamiento0/23')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Asistente Virtual0/4",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "rpe__module"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    1233,
+    260,
+    32
+   ],
+   "sel": "button:has-text('Asistente Virtual0/4')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "3 personas tienen este rol",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-roles__link"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    684,
+    318,
+    149,
+    20
+   ],
+   "sel": "button:has-text('3 personas tienen este rol')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Duplicar",
+   "icono": "content_copy",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    963,
+    262,
+    115,
+    36
+   ],
+   "sel": "button:has-text('Duplicar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Editar",
+   "icono": "edit",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1086,
+    262,
+    99,
+    36
+   ],
+   "sel": "button:has-text('Editar')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    1193,
+    262,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Permisos",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "is-on"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    621,
+    338,
+    55,
+    40
+   ],
+   "sel": "button:has-text('Permisos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 3",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    698,
+    338,
+    69,
+    40
+   ],
+   "sel": "button:has-text('Personas 3')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Historial",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    790,
+    338,
+    49,
+    40
+   ],
+   "sel": "button:has-text('Historial')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Todos",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "is-on"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    853,
+    398,
+    69,
+    34
+   ],
+   "sel": "button:has-text('Todos')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Concedidos",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    922,
+    398,
+    102,
+    34
+   ],
+   "sel": "button:has-text('Concedidos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Heredados",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1024,
+    398,
+    96,
+    34
+   ],
+   "sel": "button:has-text('Heredados')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Sin conceder",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1120,
+    398,
+    108,
+    34
+   ],
+   "sel": "button:has-text('Sin conceder')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Conceder todo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__all"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    656,
+    568,
+    79,
+    20
+   ],
+   "sel": "button:has-text('Conceder todo')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Ver",
+   "icono": "check",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--direct"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    851,
+    545,
+    60,
+    32
+   ],
+   "sel": "button:has-text('Ver')",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "Crear",
+   "icono": "check",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--direct"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    917,
+    545,
+    72,
+    32
+   ],
+   "sel": "button:has-text('Crear')",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Editar",
+   "icono": "check",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--direct"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    994,
+    545,
+    74,
+    32
+   ],
+   "sel": "button:has-text('Editar')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Eliminar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1074,
+    545,
+    69,
+    32
+   ],
+   "sel": "button:has-text('Eliminar')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Aprobar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1149,
+    545,
+    69,
+    32
+   ],
+   "sel": "button:has-text('Aprobar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Rechazar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    851,
+    583,
+    76,
+    32
+   ],
+   "sel": "button:has-text('Rechazar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Convertir Cotización a Orden",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    933,
+    583,
+    189,
+    32
+   ],
+   "sel": "button:has-text('Convertir Cotización a Orden')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Convertir Cotización a Factura Directamente",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    851,
+    621,
+    279,
+    32
+   ],
+   "sel": "button:has-text('Convertir Cotización a Factura Directame')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Aceptar Cotización",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    851,
+    659,
+    133,
+    32
+   ],
+   "sel": "button:has-text('Aceptar Cotización')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Liquidar Cotización",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    990,
+    659,
+    134,
+    32
+   ],
+   "sel": "button:has-text('Liquidar Cotización')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Propios",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "is-on"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    896,
+    698,
+    62,
+    30
+   ],
+   "sel": "button:has-text('Propios')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Equipo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    958,
+    698,
+    58,
+    30
+   ],
+   "sel": "button:has-text('Equipo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Todos",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1016,
+    698,
+    53,
+    30
+   ],
+   "sel": "button:has-text('Todos')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Conceder todo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__all"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    650,
+    777,
+    79,
+    20
+   ],
+   "sel": "button:has-text('Conceder todo')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Ver",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    851,
+    760,
+    42,
+    32
+   ],
+   "sel": "button:has-text('Ver')",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "Crear",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    899,
+    760,
+    54,
+    32
+   ],
+   "sel": "button:has-text('Crear')",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Editar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    958,
+    760,
+    56,
+    32
+   ],
+   "sel": "button:has-text('Editar')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Eliminar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    760,
+    69,
+    32
+   ],
+   "sel": "button:has-text('Eliminar')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Conceder todo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__all"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    650,
+    845,
+    79,
+    20
+   ],
+   "sel": "button:has-text('Conceder todo')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Ver",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    851,
+    828,
+    42,
+    32
+   ],
+   "sel": "button:has-text('Ver')",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "Crear",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    899,
+    828,
+    54,
+    32
+   ],
+   "sel": "button:has-text('Crear')",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Editar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    958,
+    828,
+    56,
+    32
+   ],
+   "sel": "button:has-text('Editar')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Conceder todo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__all"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    650,
+    933,
+    79,
+    20
+   ],
+   "sel": "button:has-text('Conceder todo')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Ver",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    851,
+    906,
+    42,
+    32
+   ],
+   "sel": "button:has-text('Ver')",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "Restaurar Versión de Cotización",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "rpe__act",
+    "rpe__act--none"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    899,
+    906,
+    208,
+    32
+   ],
+   "sel": "button:has-text('Restaurar Versión de Cotización')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:search",
+   "placeholder": "Buscar persona o rol",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    820,
+    143,
+    300,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "Resumen",
+   "seleccionada": false,
+   "id": "mat-tab-link-0",
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ]
+  },
+  {
+   "texto": "Personas 9",
+   "seleccionada": false,
+   "id": "mat-tab-link-1",
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ]
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "seleccionada": true,
+   "id": "mat-tab-link-2",
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ]
+  },
+  {
+   "texto": "Integraciones 1",
+   "seleccionada": false,
+   "id": "mat-tab-link-3",
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ]
+  },
+  {
+   "texto": "Auditoría",
+   "seleccionada": false,
+   "id": "mat-tab-link-4",
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Supervisor de Caja0",
+   "caja": [
+    85,
+    697,
+    250,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Cajero0",
+   "caja": [
+    85,
+    733,
+    250,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Admin1",
+   "caja": [
+    85,
+    769,
+    250,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Inventario0/47",
+   "caja": [
+    336,
+    709,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Inventario Avanzado0/8",
+   "caja": [
+    336,
+    741,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Compras0/38",
+   "caja": [
+    336,
+    773,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Requisiciones0/7",
+   "caja": [
+    336,
+    805,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Costos en Destino0/3",
+   "caja": [
+    336,
+    837,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Contabilidad Básica0/136",
+   "caja": [
+    336,
+    905,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Contabilidad Avanzada0/46",
+   "caja": [
+    336,
+    937,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Empleados0/46",
+   "caja": [
+    336,
+    1005,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Nómina0/109",
+   "caja": [
+    336,
+    1037,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Recursos Humanos0/24",
+   "caja": [
+    336,
+    1069,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Asistencia y Tiempo0/46",
+   "caja": [
+    336,
+    1101,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Desempeño y Capacitación0/12",
+   "caja": [
+    336,
+    1133,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Reclutamiento0/23",
+   "caja": [
+    336,
+    1165,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Asistente Virtual0/4",
+   "caja": [
+    336,
+    1233,
+    260,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Propios",
+   "caja": [
+    896,
+    698,
+    62,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Equipo",
+   "caja": [
+    958,
+    698,
+    58,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Todos",
+   "caja": [
+    1016,
+    698,
+    53,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Conceder todo",
+   "caja": [
+    650,
+    777,
+    79,
+    20
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Ver",
+   "caja": [
+    851,
+    760,
+    42,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Crear",
+   "caja": [
+    899,
+    760,
+    54,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Editar",
+   "caja": [
+    958,
+    760,
+    56,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Eliminar",
+   "caja": [
+    1020,
+    760,
+    69,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Conceder todo",
+   "caja": [
+    650,
+    845,
+    79,
+    20
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Ver",
+   "caja": [
+    851,
+    828,
+    42,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Crear",
+   "caja": [
+    899,
+    828,
+    54,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Editar",
+   "caja": [
+    958,
+    828,
+    56,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Conceder todo",
+   "caja": [
+    650,
+    933,
+    79,
+    20
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Ver",
+   "caja": [
+    851,
+    906,
+    42,
+    32
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Restaurar Versión de Cotización",
+   "caja": [
+    899,
+    906,
+    208,
+    32
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "gm-dense": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Roles y permisos Seguridad Quién entra, qué puede hacer y qu"
+   },
+   "gm-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__title-row": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo"
+   },
+   "gm-sheet__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió."
+   },
+   "gm-sheet__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search add Nuevo"
+   },
+   "security-console__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet__tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "console-tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "gm-sheet__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search DE LA EMPRESA Mensajero Vacío 1 Auditor (solo lectura) 1 Almacé"
+   },
+   "gm-sheet-split": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search DE LA EMPRESA Mensajero Vacío 1 Auditor (solo lectura) 1 Almacé"
+   },
+   "sec-roles": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search DE LA EMPRESA Mensajero Vacío 1 Auditor (solo lectura) 1 Almacé"
+   },
+   "gm-sheet-rail": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "search DE LA EMPRESA Mensajero Vacío 1 Auditor (solo lectura) 1 Almacé"
+   },
+   "sec-roles__rail": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search DE LA EMPRESA Mensajero Vacío 1 Auditor (solo lectura) 1 Almacé"
+   },
+   "sec-roles__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-rail-label": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "DE LA EMPRESA"
+   },
+   "gm-th": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "DE LA EMPRESA"
+   },
+   "gm-rail-btn": {
+    "n": 45,
+    "visibles": 45,
+    "ej": "Mensajero Vacío 1"
+   },
+   "gm-ellipsis": {
+    "n": 45,
+    "visibles": 45,
+    "ej": "Mensajero"
+   },
+   "sec-roles__name": {
+    "n": 12,
+    "visibles": 12,
+    "ej": "Mensajero"
+   },
+   "gm-badge": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vacío"
+   },
+   "gm-badge--compact": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vacío"
+   },
+   "gm-badge--warning": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vacío"
+   },
+   "gm-rail-count": {
+    "n": 13,
+    "visibles": 13,
+    "ej": "1"
+   },
+   "gm-rail-btn--active": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Vendedor 3"
+   },
+   "sec-roles__child": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "↳ Vendedor sénior 1"
+   },
+   "sec-roles__branch": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "↳"
+   },
+   "sec-roles__group": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DEL SISTEMA"
+   },
+   "sec-roles__lock": {
+    "n": 7,
+    "visibles": 7,
+    "ej": "lock"
+   },
+   "sec-roles__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "MÓDULOS 5 de 1103 Administración y control General 0/109 Empresa 0/40 "
+   },
+   "rpe": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "MÓDULOS 5 de 1103 Administración y control General 0/109 Empresa 0/40 "
+   },
+   "rpe__modules": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "MÓDULOS 5 de 1103 Administración y control General 0/109 Empresa 0/40 "
+   },
+   "rpe__section": {
+    "n": 6,
+    "visibles": 6,
+    "ej": "Administración y control"
+   },
+   "rpe__module": {
+    "n": 33,
+    "visibles": 33,
+    "ej": "General 0/109"
+   },
+   "rpe__module-name": {
+    "n": 33,
+    "visibles": 33,
+    "ej": "General"
+   },
+   "gm-coverage": {
+    "n": 33,
+    "visibles": 33,
+    "ej": ""
+   },
+   "gm-cell-mono": {
+    "n": 37,
+    "visibles": 37,
+    "ej": "0/109"
+   },
+   "rpe__module-count": {
+    "n": 33,
+    "visibles": 33,
+    "ej": "0/109"
+   },
+   "gm-sheet-pane": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor Vende en la calle: cotiza a sus clientes y consulta el catálo"
+   },
+   "rpe__main": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor Vende en la calle: cotiza a sus clientes y consulta el catálo"
+   },
+   "sec-roles__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor Vende en la calle: cotiza a sus clientes y consulta el catálo"
+   },
+   "sec-roles__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor Vende en la calle: cotiza a sus clientes y consulta el catálo"
+   },
+   "sec-roles__title-line": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor"
+   },
+   "gm-sheet-title": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Vendedor"
+   },
+   "sec-roles__h2": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vendedor"
+   },
+   "gm-sheet-meta": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Vende en la calle: cotiza a sus clientes y consulta el catálogo · 3 pe"
+   },
+   "sec-roles__desc": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Vende en la calle: cotiza a sus clientes y consulta el catálogo · 3 pe"
+   },
+   "sec-roles__link": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "3 personas tienen este rol"
+   },
+   "sec-roles__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "content_copy Duplicar edit Editar more_vert"
+   },
+   "sec-roles__views": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Permisos Personas 3 Historial"
+   },
+   "sec-roles__views-count": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "3"
+   },
+   "gm-sheet-bar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Módulo Cotizaciones 3 de 19 permisos Todos Concedidos Heredados Sin co"
+   },
+   "rpe__toolbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Módulo Cotizaciones 3 de 19 permisos Todos Concedidos Heredados Sin co"
+   },
+   "rpe__toolbar-title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Módulo Cotizaciones 3 de 19 permisos"
+   },
+   "gm-seg": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Todos Concedidos Heredados Sin conceder"
+   },
+   "gm-seg--lg": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todos Concedidos Heredados Sin conceder"
+   },
+   "rpe__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "rpe__legend": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Concedido Alcance Propios · Equipo · Todos, en los listados que lo adm"
+   },
+   "rpe__swatch": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "rpe__swatch--direct": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "gm-sheet-scroll": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Cotizaciones 3/10 Conceder todo check Ver check Crear check Editar Eli"
+   },
+   "rpe__resource": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "Cotizaciones 3/10 Conceder todo check Ver check Crear check Editar Eli"
+   },
+   "rpe__resource-head": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "Cotizaciones 3/10 Conceder todo"
+   },
+   "rpe__resource-name": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "Cotizaciones"
+   },
+   "rpe__resource-meta": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "3/10 Conceder todo"
+   },
+   "rpe__all": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "Conceder todo"
+   },
+   "rpe__actions": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "check Ver check Crear check Editar Eliminar Aprobar Rechazar Convertir"
+   },
+   "rpe__act": {
+    "n": 19,
+    "visibles": 19,
+    "ej": "check Ver"
+   },
+   "rpe__act--direct": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "check Ver"
+   },
+   "rpe__act--none": {
+    "n": 16,
+    "visibles": 16,
+    "ej": "Eliminar"
+   },
+   "rpe__scope": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Ver Propios Equipo Todos"
+   },
+   "rpe__scope-sep": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "rpe__scope-seg": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Propios Equipo Todos"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     7,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     7,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     7,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     7,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     7,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     7,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     7,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     7,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     7,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     7,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     7,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     7,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     7,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     7,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     7,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     7,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     7,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona o rol",
+    [
+     872,
+     152,
+     232,
+     18
+    ]
+   ],
+   [
+    "aside",
+    "Roles",
+    [
+     85,
+     244,
+     250,
+     442
+    ]
+   ],
+   [
+    "input",
+    "Buscar rol",
+    [
+     134,
+     261,
+     174,
+     21
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     336,
+     244,
+     260,
+     442
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1193,
+     262,
+     36,
+     36
+    ]
+   ],
+   [
+    "nav",
+    "Vistas del rol",
+    [
+     597,
+     338,
+     656,
+     41
+    ]
+   ],
+   [
+    "div",
+    "Filtrar por estado",
+    [
+     852,
+     397,
+     377,
+     36
+    ]
+   ],
+   [
+    "input",
+    "Buscar permiso en todos los módulos",
+    [
+     656,
+     455,
+     144,
+     21
+    ]
+   ],
+   [
+    "span",
+    "Alcance de Ver en Cotizaciones",
+    [
+     895,
+     697,
+     175,
+     32
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     7,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "DE LA EMPRESA",
+   "DEL SISTEMA",
+   "MÓDULOS"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Seguridad Roles y permisos Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría search DE LA EMPRESA Mensajero Vacío 1 Auditor (solo lectura) 1 Almacén 2 Vendedor 3 ↳ Vendedor sénior 1 DEL SISTEMA lock Empleado 0 lock Recursos Humanos 0 lock Compras 0 lock Contador 0 lock Supervisor de Caja 0 lock Cajero 0 lock Admin 1 MÓDULOS 5 de 1103 Administración y control General 0/109 Empresa 0/40 Usuarios 0/4 Seguridad 0/19 Acceso API 0/4 Ventas y facturación Punto de Venta 0/36 Clientes y Proveedores 1/33 Facturación 0/79 Facturación Electrónica 0/44 CRM 0/34 IA del CRM 0/2 Ventas 0/42 Cotizaciones 3/19 Órdenes de Venta 0/8 Conduces 0/9 Proformas 0/3 Descuentos y Promociones 0/34 Venta a Crédito 0/41 Compras e inventario Productos 1/42 Inventario 0/47 Inventario Avanzado 0/8 Compras 0/38 Requisiciones 0/7 Costos en Destino 0/3 Contabilidad Contabilidad Básica 0/136 Contabilidad Avanzada 0/46 Nómina y RR. HH. Empleados 0/46 Nómina 0/109 Recursos Humanos 0/24 Asistencia y Tiempo 0/46 Desempeño y Capacitación 0/12 Reclutamiento 0/23 Inteligencia artificial Asistente Virtual 0/4 Vendedor Vende en la calle: cotiza a sus clientes y consulta el catálogo · 3 personas tienen este rol content_copy Duplicar edit Editar more_vert Permisos Personas 3 Historial Módulo Cotizaciones 3 de 19 permisos Todos Concedidos Heredados Sin conceder search Concedido Alcance Propios · Equipo · Todos, en los listados que lo admiten Cotizaciones 3/10 Conceder todo check Ver check Crear check Editar Eliminar Aprobar Rechazar Convertir Cotización a Orden Convertir Cotización a Factura Directamente Aceptar Cotización Liquidar Cotización Ver Propios Equipo Todos Detalles Cotizaciones 0/4 Conceder todo Ver Crear Editar Eliminar Estados Cotizaciones 0/3 Conceder todo Ver Crear Editar Historial de Versiones de Cotizaciones 0/2 Conceder todo Ver Restaurar Versión de Cotización"
+ },
+ "selectores_probados": {
+  "rec": {
+   "sel": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones'))",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    597,
+    533,
+    656,
+    209
+   ],
+   "ok": true
+  },
+  "ver": {
+   "sel": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act:text-is('Ver')",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    851,
+    545,
+    60,
+    32
+   ],
+   "ok": true
+  },
+  "crear": {
+   "sel": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act:text-is('Crear')",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    917,
+    545,
+    72,
+    32
+   ],
+   "ok": true
+  },
+  "seg": {
+   "sel": ".rpe__scope-seg[aria-label='Alcance de Ver en Cotizaciones']",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    895,
+    697,
+    175,
+    32
+   ],
+   "ok": true
+  },
+  "equipo": {
+   "sel": ".rpe__scope-seg[aria-label='Alcance de Ver en Cotizaciones'] button:has-text('Equipo')",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    958,
+    698,
+    58,
+    30
+   ],
+   "ok": true
+  }
+ },
+ "video": "f2",
+ "pantalla": "01-vendedor-cotizaciones",
+ "usuario": "rosa.almanzar",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790525470.6331604,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525471.5476902,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525475.725938,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

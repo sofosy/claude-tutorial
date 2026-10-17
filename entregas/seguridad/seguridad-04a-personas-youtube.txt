@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Seguridad · Las personas y su ficha
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  La lista de personas y sus vistas
+01:10  Buscar y filtrar por rol
+02:00  La ficha de una persona
+03:06  Ver su actividad
+03:34  Caso práctico: la cuenta que nunca se usó
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué representa cada fila de la pestaña Personas y qué dicen sus columnas
+• Usar las vistas Activas, Sin rol, Nunca entraron e Inactivas para encontrar cuentas que piden atención
+• Buscar a una persona y filtrar la lista por rol
+• Leer la ficha de una persona: roles, permisos efectivos por módulo y últimos ingresos
+• Ir desde la ficha a todo lo que esa persona hizo en la auditoría
+
+⚠️ ERRORES COMUNES
+• Buscar a alguien por su rol en el buscador: el buscador es por nombre, usuario o correo; el rol va en el filtro «Rol»
+• Olvidar quitar el filtro de rol y creer que faltan personas
+• Dejar cuentas en «Nunca entraron» durante meses: son accesos abiertos que nadie usa
+• Leer «Permisos efectivos» como permisos de un solo rol: es la suma de todos sus roles
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:11
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la consola de Seguridad, donde decides quién entra a la empresa y qué puede hacer. Abro la pestaña Personas. Aquí, cada fila es alguien que puede entrar a Distribuidora Las Palmas con su propio usuario y su clave. Las columnas dicen quién es, con su nombre y su correo; qué roles tiene; cuándo entró por última vez; y su estado. A la izquierda está el riel de Vistas: son atajos que filtran la lista, y cada uno trae su conteo. Todas son nueve; Activas, ocho, las que pueden entrar. Ahora pulso Sin rol: sale Luisa Féliz, que puede entrar pero no tiene ningún rol, y la columna Roles lo avisa con una frase. Sigo con Nunca entraron: Héctor Vargas tiene su cuenta creada, pero no ha entrado ni una vez, y por eso su estado dice Pendiente, a la derecha. Queda la última vista: en Inactivas está Sonia Reyes, a quien se le cortó el acceso hace tiempo. Vuelvo a Todas. Cada estado lleva su color, para verlo de un vistazo. Y el pie dice cuántas personas se muestran: del uno al nueve, de nueve.
+Para encontrar a alguien uso el buscador, arriba a la derecha de la lista. Escribo su apellido, Pimentel, y la lista queda solo con Carlos Pimentel. También busca por usuario y por correo. Borro la búsqueda. Si lo que necesitas es ver quién tiene un rol, usa el filtro Rol, al lado del buscador. El menú trae cada rol: arriba los de la empresa, como Mensajero, y debajo los del sistema. Elijo Almacén: aparecen Pedro Núñez, el encargado de almacén, y José Cabrera, que tiene ese rol además del de vendedor. Si una búsqueda no encuentra a nadie, la lista lo dice con un mensaje, y no es un error: revisa lo escrito o el filtro. Para quitar el filtro vuelvo al menú y elijo Todos los roles. Y la lista muestra a las nueve otra vez.
+Ahora la ficha de una persona. Abro a Ana Mejía, la vendedora, y a la derecha se abre su panel. Arriba, su estado, Activa; su equipo, Zona Este; y cuándo entró por última vez. Luego, el bloque Roles: Ana tiene Vendedor, un rol de la empresa. Si lo pulsas, te lleva a ese rol para ver qué concede. Debajo vienen sus Permisos efectivos: todo lo que puede hacer, sumando todos sus roles. Tiene cinco, repartidos por módulo; en Cotizaciones, por ejemplo, tres de diecinueve. Solo se ven los módulos donde tiene algo; con Ver los módulos aparecen todos los que la empresa tiene contratados, y la mayoría está en cero. Al final, Últimos ingresos: cuándo entró, desde qué programa, y desde qué dirección de red, la IP, o sea el número que identifica a la computadora. Aquí dice Chrome en Windows: el navegador y el sistema desde los que entró. Encima de los bloques quedan Editar, Cambiar contraseña y los tres puntos, que vemos en el próximo video.
+Si necesitas saber qué hizo alguien, no hace falta buscarlo a mano. En los tres puntos del panel elijo Ver su actividad. Me lleva a la Auditoría, ya filtrada por Ana Mejía, con su nombre fijado en el filtro: cada fila es algo que ella hizo, con la hora y desde dónde. Arriba está lo más reciente: aquí, que actualizó un precio. La Auditoría tiene su propio video; por ahora, vuelvo a Personas con la pestaña.
+Un caso práctico. Cada cierto tiempo conviene revisar las cuentas que nadie usa. Abro la vista Nunca entraron, y abro su ficha: es Héctor Vargas. Arriba dice Pendiente, y Último ingreso: nunca; ni una sola vez desde que se creó la cuenta, y no hay ningún ingreso registrado en esta empresa. Tiene el rol Vendedor: es una puerta abierta a Ventas que nadie está usando. Lo correcto es confirmar su correo con él o, si ya no trabaja aquí, desactivar la cuenta. Hazlo en tu revisión de cada semana.

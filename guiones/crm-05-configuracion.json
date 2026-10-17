@@ -1,0 +1,124 @@
+{
+  "titulo": "CRM · Configurar espacios, etiquetas, columnas y metas",
+  "_comentario": "Serie CRM, video 5 (2026-10-06). Empresa demo 50, Rosa (Admin). Configuración del CRM (/crm/configuracion): Espacios de trabajo, Etiquetas, Metas comerciales e IA. Las columnas se editan desde el propio tablero (menú de cada columna). El límite de tarjetas se puede quitar dejándolo vacío (corregido en esta rama: antes el API conservaba el límite viejo). Restaurar: node seeds/crm/restaurar.mjs (el canon C0 devuelve columnas y espacios editados).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/home"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": ["germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar", "Ramón", "Peralta", "Manuel", "Tejada", "Patricia", "Gómez"],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Crear un espacio de trabajo para separar dos formas de vender",
+    "Crear etiquetas para clasificar a los prospectos",
+    "Cambiar una columna del tablero y ponerle un límite de tarjetas",
+    "Fijar la meta comercial del mes para medir al equipo"
+  ],
+  "errores_comunes": [
+    "Crear un espacio por cada vendedor: para eso está el filtro «Míos»",
+    "Crear etiquetas repetidas con otro nombre: después nadie sabe cuál usar",
+    "Poner metas diarias en vez de totales del período: el formulario pide totales"
+  ],
+  "pasos": [
+    {
+      "id": "01-espacios",
+      "capitulo": "Espacios de trabajo",
+      "rotulo": "Espacios de trabajo",
+      "ruta": "CRM › Configuración › Espacios de trabajo",
+      "texto_pantalla": "Espacios de trabajo · un tablero independiente para cada forma de vender",
+      "narracion": "Para configurar el CRM, entro al CRM y abro Configuración, al final del menú. Aquí está todo lo administrativo del CRM, ordenado en cuatro secciones, una en cada pestaña de arriba. Ahora recojo el menú. La primera son los espacios de trabajo. Un espacio es un tablero independiente, con sus propias columnas, prospectos, oportunidades y reportes. Sirve para separar dos formas de vender: por ejemplo, las obras grandes, que se negocian por semanas, y las ventas de mostrador, que se cierran el mismo día. Para crear uno, pulso Nuevo espacio. El formulario es corto. Le pongo nombre: Obras y proyectos, el nombre que verá todo el equipo. En la descripción digo qué se gestiona en él: constructoras y obras con entregas por etapas. Así nadie duda dónde va cada prospecto. Elijo un color, el verde. Y también un ícono, para reconocerlo en el selector de espacio de cada pantalla. Pulso Crear espacio. El aviso confirma que se creó. Ya aparece en la lista, listo para usar.",
+      "acciones": [
+        { "click": "nav.module-rail [aria-label='CRM']", "al_decir": "entro al CRM" },
+        { "click": ".panel-item:has-text('Configuración')", "al_decir": "abro Configuración" },
+        { "resaltar": "nav.cs-nav", "durante_ms": 3500, "al_decir": "en cuatro secciones" },
+        { "click": "button.panel-collapse", "al_decir": "Ahora recojo el menú" },
+        { "resaltar": "nav.cs-nav button:has-text('Espacios de trabajo')", "durante_ms": 2500, "al_decir": "La primera" },
+        { "resaltar": ":is(div,article,section):has(> * :text-is('Espacio principal')):not(:has(nav))", "durante_ms": 5000, "al_decir": "Un espacio es un tablero" },
+        { "resaltar": ":is(div,article,section):has(> * :text-is('Espacio principal')):not(:has(nav))", "durante_ms": 3500, "al_decir": "Sirve para separar" },
+        { "resaltar": "button:has-text('Nuevo espacio')", "durante_ms": 3500, "al_decir": "las ventas de mostrador" },
+        { "click": "button:has-text('Nuevo espacio')", "al_decir": "Pulso Nuevo espacio" },
+        { "resaltar": "mat-dialog-container .subtitle", "durante_ms": 2500, "cursor": false },
+        { "escribir": { "sel": "mat-dialog-container input[name='name']", "texto": "Obras y proyectos" }, "al_decir": "Le pongo nombre" },
+        { "escribir": { "sel": "mat-dialog-container textarea[name='description']", "texto": "Constructoras y obras con entregas por etapas" }, "al_decir": "En la descripción" },
+        { "click": "mat-dialog-container button[aria-label='Color Verde']", "al_decir": "Elijo un color" },
+        { "click": "mat-dialog-container button[aria-label='Ícono rocket_launch']", "al_decir": "también un ícono" },
+        { "click": "mat-dialog-container button:has-text('Crear espacio')", "al_decir": "Pulso Crear espacio" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3000, "cursor": false },
+        { "resaltar": ":is(div,article,section):has(> * :text-is('Obras y proyectos')):not(:has(nav))", "durante_ms": 5000, "al_decir": "Ya aparece" }
+      ]
+    },
+    {
+      "id": "02-etiquetas",
+      "capitulo": "Etiquetas",
+      "rotulo": "Etiquetas",
+      "ruta": "CRM › Configuración › Etiquetas",
+      "texto_pantalla": "Etiquetas · para clasificar y filtrar prospectos",
+      "narracion": "La segunda sección son las etiquetas. Una etiqueta clasifica a un prospecto, como constructora, hotelería o volumen alto, y después permite filtrar el tablero por ella. Escribo la nueva: Licitación, para los clientes que compran por concurso. Pulso Agregar. Ya está en la lista. Aquí mismo se le cambia el color, se corrige el nombre, o se elimina con la papelera de la derecha.",
+      "acciones": [
+        { "click": "nav.cs-nav button:has-text('Etiquetas')", "al_decir": "las etiquetas" },
+        { "resaltar": ".cs-tag:has(input[value='Constructora']), .cs-tag:first-of-type", "durante_ms": 4500, "al_decir": "clasifica a un prospecto" },
+        { "escribir": { "sel": "form.cs-tag-new input", "texto": "Licitación" }, "al_decir": "Escribo la nueva" },
+        { "click": "form.cs-tag-new button", "al_decir": "Pulso Agregar" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3000, "cursor": false },
+        { "resaltar": ".cs-tag mat-form-field:has(mat-label:text-is('Color'))", "durante_ms": 2500, "al_decir": "se le cambia el color" },
+        { "resaltar": ".cs-tag button:has(mat-icon:text-is('delete_outline'))", "durante_ms": 3500, "al_decir": "la papelera" }
+      ]
+    },
+    {
+      "id": "03-columnas",
+      "capitulo": "Columnas del tablero y límite de tarjetas",
+      "rotulo": "Columnas del tablero",
+      "ruta": "CRM › Prospectos › Editar columna",
+      "texto_pantalla": "Editar columna · nombre, tipo, conversión y límite",
+      "navegar": "/crm/leads/board",
+      "al_decir_navegar": "voy al tablero",
+      "narracion": "Las columnas no están en esta página: se cambian en el propio tablero. Así que voy al tablero de prospectos. En la columna Propuesta abro el menú de los tres puntos y elijo Editar columna. Aquí cambias el nombre y el tipo: abierta, ganada o perdida. El campo de abajo indica qué oportunidad nace cuando un prospecto entra a esta columna. Y el límite de tarjetas avisa cuando la columna se llena: es una forma de no acumular más propuestas de las que el equipo puede atender. Le pongo cinco y pulso Guardar. La columna ahora muestra cuántas lleva contra su límite. Para quitarlo, se deja la casilla vacía.",
+      "acciones": [
+        { "click": "section.column[aria-label='Columna Propuesta'] button.menu-btn", "al_decir": "abro el menú" },
+        { "click": ".mat-mdc-menu-panel button:has-text('Editar columna')", "al_decir": "elijo Editar columna" },
+        { "resaltar": "mat-dialog-container input[formcontrolname='name']", "durante_ms": 2500, "al_decir": "cambias el nombre" },
+        { "resaltar": "mat-dialog-container [formcontrolname='type']", "durante_ms": 3000, "al_decir": "el tipo" },
+        { "resaltar": "mat-dialog-container [formcontrolname='convertsToStage']", "durante_ms": 4500, "al_decir": "El campo de abajo" },
+        { "escribir": { "sel": "mat-dialog-container input[formcontrolname='wipLimit']", "texto": "5" }, "al_decir": "el límite de tarjetas" },
+        { "click": "mat-dialog-container button:has-text('Guardar')", "al_decir": "pulso Guardar" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 2500, "cursor": false },
+        { "resaltar": "section.column[aria-label='Columna Propuesta'] .wip", "durante_ms": 6000, "al_decir": "contra su límite" }
+      ]
+    },
+    {
+      "id": "04-metas",
+      "capitulo": "La meta comercial del mes",
+      "rotulo": "Metas comerciales",
+      "ruta": "CRM › Configuración › Metas comerciales",
+      "texto_pantalla": "Metas comerciales · lo que el equipo debe lograr en el período",
+      "navegar": "/crm/configuracion?seccion=metas",
+      "al_decir_navegar": "Metas comerciales",
+      "narracion": "Por último, vuelvo a Configuración, a Metas comerciales. La meta es lo que el equipo debe lograr en un período, y contra ella se mide el Embudo Comercial. Pulso Nueva meta. Viene con el mes en curso: el nombre, la fecha de inicio y la de fin. Debajo, los totales del período para cada paso de la venta: llamadas, conversaciones, demostraciones, cotizaciones y ventas. El sistema los sugiere según los días laborables, y puedes ajustarlos. Ojo: son totales del mes, no metas diarias. Abajo marcas qué días se trabaja, y con ellos el sistema calcula el ritmo esperado de cada día. Cuando todo está bien, pulso Crear meta. El aviso confirma que se guardó, y desde hoy el Embudo compara contra ella.",
+      "acciones": [
+        { "resaltar": "nav.cs-nav button:has-text('Metas')", "durante_ms": 3500, "al_decir": "La meta es" },
+        { "click": "button:has-text('Nueva meta')", "al_decir": "Pulso Nueva meta" },
+        { "resaltar": "mat-dialog-container input[placeholder], mat-dialog-container input[type='text']", "durante_ms": 2500, "al_decir": "el nombre" },
+        { "resaltar": "mat-dialog-container input[type='date']", "durante_ms": 3000, "cursor": false, "al_decir": "la fecha de inicio" },
+        { "resaltar": "mat-dialog-container :is(div,label):has(> :text-is('Llamadas realizadas'))", "durante_ms": 4500, "al_decir": "los totales del período" },
+        { "resaltar": "mat-dialog-container button:has-text('Sugerir totales')", "durante_ms": 3000, "al_decir": "El sistema los sugiere" },
+        { "resaltar": "mat-dialog-container :text('Los valores son TOTALES')", "durante_ms": 3000, "cursor": false, "al_decir": "son totales del mes" },
+        { "resaltar": "mat-dialog-container :is(div,section):has(> :text('Días laborables'))", "durante_ms": 3000, "al_decir": "qué días se trabaja" },
+        { "click": "mat-dialog-container button:has-text('Crear meta')", "al_decir": "pulso Crear meta" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3000, "cursor": false },
+        { "resaltar": ":is(div,section,article):has(> * :text('Meta Octubre')):not(:has(nav)), :text('Meta Octubre')", "durante_ms": 5000, "al_decir": "compara contra ella" }
+      ]
+    }
+  ]
+}

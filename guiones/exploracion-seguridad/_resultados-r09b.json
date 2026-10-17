@@ -1,0 +1,68 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 6.59,
+   "clic_a_networkidle_s": 6.59,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "cadena_compras": [
+  "SPAN.node-title",
+  "DIV.node-info",
+  "DIV.node-row",
+  "DIV.menu-node.level-0",
+  "DIV.menu-tree",
+  "DIV.content-block"
+ ],
+ "fila_compras_n": 1,
+ "guardar": [
+  0.25,
+  "check_circle\nCambios Guardados\nLa configuración de visibilidad del menú se ha guardado correctamente.\nAceptar"
+ ],
+ "rail_sin_compras": [
+  "Inicio /home",
+  "Ventas ",
+  "Inventario ",
+  "Recursos Humanos /employee",
+  "Cajas /cashier",
+  "Punto de venta /pos",
+  "Contabilidad ",
+  "Crédito y Cobranzas /credit",
+  "Mesa de Ayuda /helpdesk",
+  "WhatsApp e IA /assistant/empresa/canal",
+  "CRM ",
+  "Éxito del Cliente ",
+  "Nómina ",
+  "Calendario /agenda/calendar",
+  "Seguridad /security",
+  "Configuración ",
+  "Cerrar sesión "
+ ],
+ "conf_restablecer": "warning\n¿Restablecer Todo?\nSe mostrarán todos los menús ocultos. ¿Desea continuar?\nCancelar\nSí, restablecer",
+ "restablecido": "check_circle\nMenús Restablecidos\nTodos los menús han sido restablecidos y son visibles nuevamente.\nAceptar",
+ "rail_final": [
+  "Inicio /home",
+  "Ventas ",
+  "Compras ",
+  "Inventario ",
+  "Recursos Humanos /employee",
+  "Cajas /cashier",
+  "Punto de venta /pos",
+  "Contabilidad ",
+  "Crédito y Cobranzas /credit",
+  "Mesa de Ayuda /helpdesk",
+  "WhatsApp e IA /assistant/empresa/canal",
+  "CRM ",
+  "Éxito del Cliente ",
+  "Nómina ",
+  "Calendario /agenda/calendar",
+  "Seguridad /security",
+  "Configuración ",
+  "Cerrar sesión "
+ ],
+ "lock_items": 3
+}

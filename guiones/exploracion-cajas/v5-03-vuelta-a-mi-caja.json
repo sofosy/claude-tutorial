@@ -1,0 +1,462 @@
+{
+ "url": "/cashier?section=caja",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "page-hero-title",
+   "texto": "Cajas",
+   "caja": [
+    85,
+    118,
+    1168,
+    25
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "page-hero-subtitle",
+   "texto": "Abre tu sesión, registra entradas y salidas de efectivo y ciérrala con su cuadre.",
+   "caja": [
+    85,
+    145,
+    720,
+    18
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "gm-state__t",
+   "texto": "No tienes una sesión activa",
+   "caja": [
+    583,
+    388,
+    172,
+    20
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    70,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    923,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications_active",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications_active')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "YPyohanna peraltayohanna.peralta@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de yohanna peralta",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1034,
+    10,
+    230,
+    40
+   ],
+   "sel": "button[aria-label='Cuenta de yohanna peralta']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    243,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Cajas",
+   "icono": "storefront",
+   "aria": "",
+   "id": "cashier-hub-tab-cajas",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ],
+   "sel": "#cashier-hub-tab-cajas",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Mi caja",
+   "icono": "point_of_sale",
+   "aria": "",
+   "id": "cashier-hub-tab-caja",
+   "clases": [
+    "segmented__option",
+    "segmented__option--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ],
+   "sel": "#cashier-hub-tab-caja",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Abrir mi caja",
+   "icono": "play_arrow",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    594,
+    488,
+    150,
+    36
+   ],
+   "sel": "button:has-text('Abrir mi caja')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver todas las cajas",
+   "icono": "storefront",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    576,
+    536,
+    186,
+    36
+   ],
+   "sel": "button:has-text('Ver todas las cajas')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cerrar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    869,
+    670,
+    64,
+    36
+   ],
+   "sel": "button:has-text('Cerrar')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "storefront Cajas",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-cajas",
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ]
+  },
+  {
+   "texto": "point_of_sale Mi caja",
+   "seleccionada": true,
+   "id": "cashier-hub-tab-caja",
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  {
+   "texto": "Conteo de cierre registrado exitosamente. Un supervisor hará el cuadre oficial. Cerrar",
+   "caja": [
+    339,
+    664,
+    601,
+    48
+   ]
+  }
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  }
+ ],
+ "video": "v5",
+ "pantalla": "03-vuelta-a-mi-caja",
+ "notas": "",
+ "toasts_vistos_hasta_ahora": [
+  "Conteo de cierre registrado exitosamente. Un supervisor hará el cuadre oficial."
+ ]
+}

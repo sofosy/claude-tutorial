@@ -1,0 +1,2727 @@
+{
+ "url": "/security/auditoria?evento=311639",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 758,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Seguridad",
+   "caja": [
+    109,
+    136,
+    804,
+    26
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    901,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    945,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "MGmarta guzmánmarta.guzman@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de marta guzmán",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1018,
+    8,
+    238,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de marta guzmán']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Resumen",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ],
+   "sel": "a:has-text('Resumen')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 9",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ],
+   "sel": "a:has-text('Personas 9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-2",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ],
+   "sel": "a:has-text('Roles y permisos 12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditoría",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-3",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    476,
+    191,
+    87,
+    48
+   ],
+   "sel": "a:has-text('Auditoría')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Últimos 7 días",
+   "icono": "calendar_today",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    256,
+    157,
+    36
+   ],
+   "sel": "button:has-text('Últimos 7 días')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Acción",
+   "icono": "filter_list",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    446,
+    256,
+    105,
+    36
+   ],
+   "sel": "button:has-text('Acción')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:59marta.guzmanAcceso Sesión #7948::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    388,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:59marta.guzmanAcceso Sesión #7948::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:59ana.mejiaAcceso Sesión #7944::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    434,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:59ana.mejiaAcceso Sesión #7944::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:58rosa.almanzarCambió permisos Roles #77::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row",
+    "gm-sheet-row--selected"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    480,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:58rosa.almanzarCambió permisos Roles ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:58rosa.almanzarAcceso Sesión #7943::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    526,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:58rosa.almanzarAcceso Sesión #7943::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:58ana.mejiaAcceso Sesión #7944::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    572,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:58ana.mejiaAcceso Sesión #7944::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:11pedro.nunezAcceso Sesión #7947::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    618,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:11pedro.nunezAcceso Sesión #7947::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:11marta.guzmanAcceso Sesión #7948::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    664,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:11marta.guzmanAcceso Sesión #7948::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10carlos.pimentelAcceso Sesión #7946::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    710,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10carlos.pimentelAcceso Sesión #7946:')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10jose.cabreraAcceso Sesión #7945::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    756,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10jose.cabreraAcceso Sesión #7945::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10ana.mejiaAcceso Sesión #7944::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    802,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10ana.mejiaAcceso Sesión #7944::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10rosa.almanzarAcceso Sesión #7943::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    848,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10rosa.almanzarAcceso Sesión #7943::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10rosa.almanzarCambió permisos Roles #79::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    894,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10rosa.almanzarCambió permisos Roles ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10rosa.almanzarCreó Permisos por rol #11034::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    940,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10rosa.almanzarCreó Permisos por rol ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10rosa.almanzarActualizó Usuarios #7951::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    986,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10rosa.almanzarActualizó Usuarios #79')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:10sonia.reyesAcceso Sesión #7951::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1032,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10sonia.reyesAcceso Sesión #7951::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10rosa.almanzarActualizó Usuarios #7951::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1078,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:10rosa.almanzarActualizó Usuarios #79')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:09rosa.almanzarAcceso Sesión #7943::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1124,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:09rosa.almanzarAcceso Sesión #7943::1')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:09rosa.almanzarAcceso Sesión #7943::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1170,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:09rosa.almanzarAcceso Sesión #7943::1')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:09luisa.felizAcceso Sesión #7950::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1216,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:09luisa.felizAcceso Sesión #7950::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:09marta.guzmanAcceso Sesión #7948::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1262,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:09marta.guzmanAcceso Sesión #7948::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:09pedro.nunezAcceso Sesión #7947::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1308,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:09pedro.nunezAcceso Sesión #7947::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:08rosa.almanzarAcceso Sesión #7943::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1354,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:08rosa.almanzarAcceso Sesión #7943::1')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:08rosa.almanzarAcceso Sesión #7943::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1400,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:08rosa.almanzarAcceso Sesión #7943::1')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarActualizó Quote details #335::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1446,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarActualizó Quote detail')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarActualizó Prices #794::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1492,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarActualizó Prices #794:')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07rosa.almanzarActualizó Quote details #334::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1538,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarActualizó Quote detail')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Price history #1684::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1584,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Price history #16')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarActualizó Prices #790::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1630,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarActualizó Prices #790:')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Price history #1683::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1676,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Price history #16')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote versions #285::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1722,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote versions #2')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Invoice tax group #1822::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1768,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Invoice tax group')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Invoice tax group #1821::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1814,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Invoice tax group')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote detail inventory allocations #38::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1860,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote detail inve')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote details #335::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1906,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote details #33')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote detail inventory allocations #37::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1952,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote detail inve')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote details #334::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1998,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote details #33')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quotes #213::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2044,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quotes #213::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07carlos.pimentelActualizó Prices #806::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2090,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelActualizó Prices #80')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Price history #1682::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2136,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Price history #')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelActualizó Prices #805::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2182,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelActualizó Prices #80')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Price history #1681::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2228,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Price history #')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote versions #284::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2274,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote versions ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1820::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2320,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1819::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2366,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1818::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2412,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1817::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2458,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote detail inventory allocations #36::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2504,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote detail in')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote details #333::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2550,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote details #')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote detail inventory allocations #35::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2596,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote detail in')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote details #332::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2642,
+    748,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote details #')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Cargar eventos anteriores",
+   "icono": "expand_more",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    347,
+    2698,
+    223,
+    36
+   ],
+   "sel": "button:has-text('Cargar eventos anteriores')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "close",
+   "aria": "Cerrar detalle",
+   "id": "",
+   "clases": [],
+   "tooltip": "Cerrar",
+   "deshabilitado": false,
+   "caja": [
+    1197,
+    325,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Cerrar detalle']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Historial del registro →",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-audit__link"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    854,
+    706,
+    134,
+    20
+   ],
+   "sel": "button:has-text('Historial del registro →')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver a rosa.almanzar →",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-audit__link"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1006,
+    706,
+    133,
+    20
+   ],
+   "sel": "button:has-text('Ver a rosa.almanzar →')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:search",
+   "placeholder": "Buscar persona o rol",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    929,
+    143,
+    300,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "Resumen",
+   "seleccionada": false,
+   "id": "mat-tab-link-0",
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ]
+  },
+  {
+   "texto": "Personas 9",
+   "seleccionada": false,
+   "id": "mat-tab-link-1",
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ]
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "seleccionada": false,
+   "id": "mat-tab-link-2",
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ]
+  },
+  {
+   "texto": "Auditoría",
+   "seleccionada": true,
+   "id": "mat-tab-link-3",
+   "caja": [
+    476,
+    191,
+    87,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "Permisos del rol actualizados exitosamente",
+  "Permisos del rol actualizados exitosamente",
+  "No tienes permiso para ver «Productos». Solicita el acceso al administrador de tu empresa."
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10carlos.pimentelAcceso Sesión #7946::1",
+   "caja": [
+    85,
+    710,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10jose.cabreraAcceso Sesión #7945::1",
+   "caja": [
+    85,
+    756,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10ana.mejiaAcceso Sesión #7944::1",
+   "caja": [
+    85,
+    802,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10rosa.almanzarAcceso Sesión #7943::1",
+   "caja": [
+    85,
+    848,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10rosa.almanzarCambió permisos Roles #79::1",
+   "caja": [
+    85,
+    894,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10rosa.almanzarCreó Permisos por rol #11034::1",
+   "caja": [
+    85,
+    940,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10rosa.almanzarActualizó Usuarios #7951::1",
+   "caja": [
+    85,
+    986,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10sonia.reyesAcceso Sesión #7951::1",
+   "caja": [
+    85,
+    1032,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:10rosa.almanzarActualizó Usuarios #7951::1",
+   "caja": [
+    85,
+    1078,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:09rosa.almanzarAcceso Sesión #7943::1",
+   "caja": [
+    85,
+    1124,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:09rosa.almanzarAcceso Sesión #7943::1",
+   "caja": [
+    85,
+    1170,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:09luisa.felizAcceso Sesión #7950::1",
+   "caja": [
+    85,
+    1216,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:09marta.guzmanAcceso Sesión #7948::1",
+   "caja": [
+    85,
+    1262,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:09pedro.nunezAcceso Sesión #7947::1",
+   "caja": [
+    85,
+    1308,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:08rosa.almanzarAcceso Sesión #7943::1",
+   "caja": [
+    85,
+    1354,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:08rosa.almanzarAcceso Sesión #7943::1",
+   "caja": [
+    85,
+    1400,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarActualizó Quote details #335::1",
+   "caja": [
+    85,
+    1446,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarActualizó Prices #794::1",
+   "caja": [
+    85,
+    1492,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarActualizó Quote details #334::1",
+   "caja": [
+    85,
+    1538,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Price history #1684::1",
+   "caja": [
+    85,
+    1584,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarActualizó Prices #790::1",
+   "caja": [
+    85,
+    1630,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Price history #1683::1",
+   "caja": [
+    85,
+    1676,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote versions #285::1",
+   "caja": [
+    85,
+    1722,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Invoice tax group #1822::1",
+   "caja": [
+    85,
+    1768,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Invoice tax group #1821::1",
+   "caja": [
+    85,
+    1814,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote detail inventory allocations #38::1",
+   "caja": [
+    85,
+    1860,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote details #335::1",
+   "caja": [
+    85,
+    1906,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote detail inventory allocations #37::1",
+   "caja": [
+    85,
+    1952,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote details #334::1",
+   "caja": [
+    85,
+    1998,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quotes #213::1",
+   "caja": [
+    85,
+    2044,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelActualizó Prices #806::1",
+   "caja": [
+    85,
+    2090,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Price history #1682::1",
+   "caja": [
+    85,
+    2136,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelActualizó Prices #805::1",
+   "caja": [
+    85,
+    2182,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Price history #1681::1",
+   "caja": [
+    85,
+    2228,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote versions #284::1",
+   "caja": [
+    85,
+    2274,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1820::1",
+   "caja": [
+    85,
+    2320,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1819::1",
+   "caja": [
+    85,
+    2366,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1818::1",
+   "caja": [
+    85,
+    2412,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1817::1",
+   "caja": [
+    85,
+    2458,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote detail inventory allocations #36::1",
+   "caja": [
+    85,
+    2504,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote details #333::1",
+   "caja": [
+    85,
+    2550,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote detail inventory allocations #35::1",
+   "caja": [
+    85,
+    2596,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote details #332::1",
+   "caja": [
+    85,
+    2642,
+    748,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Cargar eventos anteriores",
+   "caja": [
+    347,
+    2698,
+    223,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Historial del registro →",
+   "caja": [
+    854,
+    706,
+    134,
+    20
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Ver a rosa.almanzar →",
+   "caja": [
+    1006,
+    706,
+    133,
+    20
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscree"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications MG "
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen notifications"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "MG Marta Guzmán marta.guzman@germiva.demo expand_more"
+   },
+   "gm-dense": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Auditoría Seguridad Quién entra, qué puede hacer y qué cambi"
+   },
+   "gm-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Pe"
+   },
+   "gm-sheet__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Pe"
+   },
+   "gm-sheet__title-row": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search"
+   },
+   "gm-sheet__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió."
+   },
+   "gm-sheet__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "security-console__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet__tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Auditoría"
+   },
+   "console-tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Auditoría"
+   },
+   "gm-sheet__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calendar_today Últimos 7 días person filter_list Acción description la"
+   },
+   "gm-sheet-bar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calendar_today Últimos 7 días person filter_list Acción description la"
+   },
+   "sec-audit__filters": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calendar_today Últimos 7 días person filter_list Acción description la"
+   },
+   "sec-audit__input": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "person"
+   },
+   "gm-ellipsis": {
+    "n": 102,
+    "visibles": 102,
+    "ej": "Acción"
+   },
+   "sec-audit__action-label": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Acción"
+   },
+   "sec-audit__input--ip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "lan"
+   },
+   "sec-audit__spacer": {
+    "n": 1,
+    "visibles": 0,
+    "ej": ""
+   },
+   "gm-sheet-meta": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "681 eventos"
+   },
+   "gm-sheet-split": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:59 ma"
+   },
+   "sec-audit": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:59 ma"
+   },
+   "sec-audit--open": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:59 ma"
+   },
+   "gm-sheet-pane": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:59 ma"
+   },
+   "gm-sheet-scroll": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:59 ma"
+   },
+   "gm-sheet-row": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP"
+   },
+   "gm-sheet-row--head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP"
+   },
+   "sec-audit__row": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP"
+   },
+   "gm-th": {
+    "n": 7,
+    "visibles": 7,
+    "ej": "HORA"
+   },
+   "sec-audit__col-ip": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "IP"
+   },
+   "gm-sheet-group": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Hoy · domingo, 27 de septiembre"
+   },
+   "gm-cell-mono": {
+    "n": 156,
+    "visibles": 156,
+    "ej": "11:59"
+   },
+   "sec-audit__who": {
+    "n": 50,
+    "visibles": 50,
+    "ej": "marta.guzman"
+   },
+   "gm-badge": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "Acceso"
+   },
+   "gm-badge--compact": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "Acceso"
+   },
+   "gm-badge--neutral": {
+    "n": 18,
+    "visibles": 18,
+    "ej": "Acceso"
+   },
+   "gm-sheet-row--selected": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "11:58 rosa.almanzar Cambió permisos Roles #77 ::1"
+   },
+   "gm-badge--info": {
+    "n": 11,
+    "visibles": 11,
+    "ej": "Cambió permisos"
+   },
+   "gm-badge--success": {
+    "n": 22,
+    "visibles": 22,
+    "ej": "Creó"
+   },
+   "sec-audit__more": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "expand_more Cargar eventos anteriores"
+   },
+   "sec-audit__aside": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Cambió permisos Domingo, 27 de septiembre de 2026, 11:58 close Roles #"
+   },
+   "sec-audit__card": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Cambió permisos Domingo, 27 de septiembre de 2026, 11:58 close Roles #"
+   },
+   "sec-audit__card-top": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Cambió permisos Domingo, 27 de septiembre de 2026, 11:58 close"
+   },
+   "sec-audit__when": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Domingo, 27 de septiembre de 2026, 11:58"
+   },
+   "sec-audit__entity": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Roles #77"
+   },
+   "sec-audit__by": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "rosa.almanzar"
+   },
+   "sec-audit__block": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "QUÉ CAMBIÓ Productos · Productos Ver → —"
+   },
+   "sec-audit__block-title": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "QUÉ CAMBIÓ"
+   },
+   "sec-audit__change": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Productos · Productos Ver → —"
+   },
+   "sec-audit__diff": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Ver → —"
+   },
+   "sec-audit__before": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Ver"
+   },
+   "sec-audit__arrow": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "→"
+   },
+   "sec-audit__after": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "—"
+   },
+   "sec-audit__facts": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "IP ::1 Origen Cliente de API Evento PERMISSIONS_CHANGED Solicitud 50e2"
+   },
+   "sec-audit__links": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Historial del registro → Ver a rosa.almanzar →"
+   },
+   "sec-audit__link": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Historial del registro →"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     901,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de marta guzmán",
+    [
+     1018,
+     8,
+     238,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     10,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     10,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Inventario",
+    [
+     10,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     10,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     10,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Configuración",
+    [
+     10,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona o rol",
+    [
+     981,
+     152,
+     232,
+     18
+    ]
+   ],
+   [
+    "input",
+    "Filtrar por persona",
+    [
+     309,
+     264,
+     116,
+     21
+    ]
+   ],
+   [
+    "input",
+    "Filtrar por registro",
+    [
+     594,
+     264,
+     116,
+     21
+    ]
+   ],
+   [
+    "input",
+    "Filtrar por IP",
+    [
+     764,
+     264,
+     86,
+     21
+    ]
+   ],
+   [
+    "section",
+    "Eventos",
+    [
+     85,
+     305,
+     748,
+     381
+    ]
+   ],
+   [
+    "aside",
+    "Detalle del evento",
+    [
+     833,
+     305,
+     420,
+     381
+    ]
+   ],
+   [
+    "button",
+    "Cerrar detalle",
+    [
+     1197,
+     325,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "/inventory/product/list",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     10,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "/agenda/settings",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     10,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "HORA",
+   "QUIÉN",
+   "ACCIÓN",
+   "REGISTRO",
+   "IP",
+   "QUÉ CAMBIÓ",
+   "SOLICITUD"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications MG Marta Guzmán marta.guzman@germiva.demo expand_more home sell inventory calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Seguridad Auditoría Seguridad Quién entra, qué puede hacer y qué cambió. search Resumen Personas 9 Roles y permisos 12 Auditoría calendar_today Últimos 7 días person filter_list Acción description lan 681 eventos HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:59 marta.guzman Acceso Sesión #7948 ::1 11:59 ana.mejia Acceso Sesión #7944 ::1 11:58 rosa.almanzar Cambió permisos Roles #77 ::1 11:58 rosa.almanzar Acceso Sesión #7943 ::1 11:58 ana.mejia Acceso Sesión #7944 ::1 11:11 pedro.nunez Acceso Sesión #7947 ::1 11:11 marta.guzman Acceso Sesión #7948 ::1 11:10 carlos.pimentel Acceso Sesión #7946 ::1 11:10 jose.cabrera Acceso Sesión #7945 ::1 11:10 ana.mejia Acceso Sesión #7944 ::1 11:10 rosa.almanzar Acceso Sesión #7943 ::1 11:10 rosa.almanzar Cambió permisos Roles #79 ::1 11:10 rosa.almanzar Creó Permisos por rol #11034 ::1 11:10 rosa.almanzar Actualizó Usuarios #7951 ::1 11:10 sonia.reyes Acceso Sesión #7951 ::1 11:10 rosa.almanzar Actualizó Usuarios #7951 ::1 11:09 rosa.almanzar Acceso Sesión #7943 ::1 11:09 rosa.almanzar Acceso Sesión #7943 ::1 11:09 luisa.feliz Acceso Sesión #7950 ::1 11:09 marta.guzman Acceso Sesión #7948 ::1 11:09 pedro.nunez Acceso Sesión #7947 ::1 11:08 rosa.almanzar Acceso Sesión #7943 ::1 11:08 rosa.almanzar Acceso Sesión #7943 ::1 11:07 rosa.almanzar Actualizó Quote details #335 ::1 11:07 rosa.almanzar Actualizó Prices #794 ::1 11:07 rosa.almanzar Actualizó Quote details #334 ::1 11:07 rosa.almanzar Creó Price history #1684 ::1 11:07 rosa.almanzar Actualizó Prices #790 ::1 11:07 rosa.almanzar Creó Price history #1683 ::1 11:07 rosa.almanzar Creó Quote versions #285 ::1 11:07 rosa.almanzar Creó Invoice tax group #1822 ::1 11:07 rosa.almanzar Creó Invoice tax group #1821 ::1 11:07 rosa.almanzar Creó Quote detail inventory allocations #38 ::1 11:07 rosa.almanzar Creó Quote details #335 ::1 11:07 rosa.almanzar Creó Quote detail inventory allocations #37 ::1 11:07 rosa.almanzar Creó Quote details #334 ::1 11:07 rosa.almanzar Creó Quotes #213 ::1 11:07 carlos.pimentel Actualizó Prices #806 ::1 11:07 carlos.pimentel Creó Price history #1682 ::1 11:07 carlos.pimentel Actualizó Prices #805 ::1 11:07 carlos.pimentel Creó Price history #1681 ::1 11:07 carlos.pimentel Creó Quote versions #284 ::1 11:07 carlos.pimentel Creó Invoice tax group #1820 ::1 11:07 carlos.pimentel Creó Invoice tax group #1819 ::1 11:07 carlos.pimentel Creó Invoice tax group #1818 ::1 11:07 carlos.pimentel Creó Invoice tax group #1817 ::1 11:07 carlos.pimentel Creó Quote detail inventory allocations #36 ::1 11:07 carlos.pimentel Creó Quote details #333 ::1 11:07 carlos.pimentel Creó Quote detail inventory allocations #35 ::1 11:07 carlos.pimentel Creó Quote details #332 ::1 expand_more Cargar eventos anteriores Cambió permisos Domingo, 27 de septiembre de 2026, 11:58 close Roles #77 por rosa.almanzar QUÉ CAMBIÓ Productos · Productos Ver → — SOLICITUD IP ::1 Origen Cliente de API Evento PERMISSIONS_CHANGED Solicitud 50e2bbdf-ac5c-49aa-8852-700ddd2cf23e Historial del registro → Ver a rosa.almanzar →"
+ },
+ "video": "v08g",
+ "pantalla": "09-marta-rastro",
+ "usuario": "marta.guzman",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790524723.5613773,
+   "m": "GET",
+   "url": "v1/media/view/179",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524723.5615234,
+   "m": "GET",
+   "url": "v1/media/view/178",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524723.5615835,
+   "m": "GET",
+   "url": "v1/media/view/177",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524726.2796426,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524736.8761082,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524742.217601,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524755.45621,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524766.2340753,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  }
+ ]
+}

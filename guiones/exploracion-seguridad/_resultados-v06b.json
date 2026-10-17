@@ -1,0 +1,34 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.01,
+   "clic_a_url_s": 7.09,
+   "clic_a_networkidle_s": 7.09,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "conf_rotar": "help_outline Rotar secreto\n\n¿Rotar el secreto de \"Programa del contador\"? El actual deja de funcionar de inmediato y la integración se cae hasta que se actualice en su lado.\n\nCancelar\nRotar secreto",
+ "rotado": "SIN FRANJA",
+ "mas_items": [
+  "pause_circle\nDesactivar",
+  "delete\nRevocar y eliminar"
+ ],
+ "desactivar": [
+  "Integración desactivada exitosamente",
+  3.38
+ ],
+ "activar": [
+  "Integración activada exitosamente",
+  3.42
+ ],
+ "conf_revocar": "help_outline Revocar credencial\n\n¿Está seguro de que desea eliminar la integración \"Tienda en línea anterior\"? Sus credenciales dejarán de funcionar. Esta acción no se puede deshacer.\n\nCancelar\nEliminar",
+ "revocar": [
+  "Integración eliminada exitosamente",
+  3.43
+ ],
+ "docs_nav": "menu\nsearch\nCtrl K\nDL\nDistribuidora Las Palmas\nRNC 130555036\nhelp_outline\nfullscreen\nnotifications\nRA\nRosa Almánzar\nrosa.almanzar@germiva.demo\nexpand_more",
+ "docs_login_count": 1
+}

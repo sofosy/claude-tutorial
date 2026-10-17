@@ -1,0 +1,102 @@
+{
+  "titulo": "Éxito del Cliente · La cartera de clientes",
+  "_comentario": "Serie Éxito del Cliente, video 1 (2026-10-06). Empresa demo 50, Rosa (Admin, gerente de cuenta de los 3 clientes). Siembra (seeds/crm/sembrar.mjs): Ferretería Doña Luz (llegó al ganar una oportunidad: etapa Bienvenida, sin contacto), Inversiones Barahona (próxima acción VENCIDA hace 2 días; contrato CTR-2026-014 que vence en ~45 días → Renovaciones) y Constructora Mirador (próxima acción HOY). El nombre del gerente sale «Rosa Almánzar» (antes «Almánzar Rosa», corregido en esta rama). La fecha de la próxima acción se calcula con setup SQL (R13).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/home"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": ["germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar", "Mirador", "Doña Luz", "Barahona", "CTR-2026"],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Qué es Éxito del Cliente y qué es la cartera",
+    "Ver a quién te toca contactar hoy y a quién se le pasó la fecha",
+    "Revisar la bienvenida de los clientes nuevos, la salud de la cartera y las renovaciones",
+    "Registrar un seguimiento y dejar programada la próxima acción"
+  ],
+  "errores_comunes": [
+    "Registrar el contacto sin próxima acción: el cliente sale de tu lista y nadie lo vuelve a llamar",
+    "Esperar a que el contrato venza para hablar de la renovación",
+    "Dejar clientes sin gerente de cuenta: nadie responde por ellos"
+  ],
+  "pasos": [
+    {
+      "id": "01-cartera",
+      "capitulo": "Qué es la cartera de clientes",
+      "rotulo": "Cartera de clientes",
+      "ruta": "Éxito del Cliente › Cartera de clientes",
+      "texto_pantalla": "Cartera · los clientes que acompañas después de la venta",
+      "narracion": "Vender es la mitad del trabajo; la otra mitad es que el cliente se quede y vuelva a comprar. Para eso está Éxito del Cliente: entro por el menú de la izquierda y abro Cartera de clientes. Cada fila es un cliente que ya te compró y que alguien de tu equipo acompaña: su gerente de cuenta, que aquí es Rosa. Ahora recojo el menú para ver la tabla completa. La vista Seguimiento te dice a quién contactar. Arriba, tres indicadores. El primero, los clientes con una acción acordada para hoy; Vencidas, a los que se les pasó la fecha; y Sin contacto, los que nadie ha llamado en el tiempo que fijaste. En la tabla ves la etapa del cliente, su próxima acción, el último contacto y sus tareas. Constructora Mirador vence hoy, e Inversiones Barahona ya está vencida, en rojo.",
+      "acciones": [
+        { "click": "nav.module-rail [aria-label='Éxito del Cliente']", "al_decir": "entro por el menú" },
+        { "click": ".panel-item:has-text('Cartera de clientes')", "al_decir": "abro Cartera de clientes" },
+        { "resaltar": "table tbody tr:has-text('Mirador') td:nth-child(2)", "durante_ms": 4000, "al_decir": "Cada fila" },
+        { "resaltar": "table tbody tr:has-text('Mirador') td:nth-child(7)", "durante_ms": 2500, "al_decir": "su gerente de cuenta" },
+        { "click": "button.panel-collapse", "al_decir": "Ahora recojo el menú" },
+        { "resaltar": "app-view-switch button:has-text('Seguimiento')", "durante_ms": 3000, "al_decir": "La vista Seguimiento" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(1)", "durante_ms": 3500, "al_decir": "El primero" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(2)", "durante_ms": 3000, "al_decir": "Vencidas" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(3)", "durante_ms": 4000, "al_decir": "Sin contacto" },
+        { "resaltar": "table thead th:nth-child(3)", "durante_ms": 1800, "al_decir": "la etapa" },
+        { "resaltar": "table thead th:nth-child(4)", "durante_ms": 1800, "al_decir": "su próxima acción" },
+        { "resaltar": "table thead th:nth-child(6)", "durante_ms": 2200, "al_decir": "sus tareas" },
+        { "resaltar": "table tbody tr:has-text('Mirador') td:nth-child(4)", "durante_ms": 2500, "al_decir": "vence hoy" },
+        { "resaltar": "table tbody tr:has-text('Barahona') td:nth-child(4)", "durante_ms": 3500, "al_decir": "ya está vencida" }
+      ]
+    },
+    {
+      "id": "02-vistas",
+      "capitulo": "Bienvenida, salud y renovaciones",
+      "rotulo": "Las cuatro vistas",
+      "ruta": "Éxito del Cliente › Cartera › Bienvenida · Salud · Renovaciones",
+      "texto_pantalla": "Cuatro vistas de la misma cartera",
+      "narracion": "La misma cartera tiene cuatro vistas. Bienvenida muestra a los clientes nuevos y cuánto llevan de sus primeros pasos: entrega, accesos y capacitación. Ferretería Doña Luz acaba de llegar del CRM. Salud mide qué tan bien está cada cliente, de cero a cien, según sus compras, sus contactos y sus casos abiertos. Sano, a vigilar o crítico. Y la columna Motivos dice por qué: Inversiones Barahona tiene un contrato por vencer. Por eso aparece en Renovaciones, la vista de los contratos que vencen en los próximos noventa días. Ahí ves el contrato, la fecha en que vence y si ya hay una oportunidad de renovación abierta.",
+      "acciones": [
+        { "click": "app-view-switch button:has-text('Bienvenida')", "al_decir": "Bienvenida muestra" },
+        { "resaltar": "table tbody tr:has-text('Doña Luz') td:nth-child(4)", "durante_ms": 4500, "al_decir": "cuánto llevan" },
+        { "resaltar": "table tbody tr:has-text('Doña Luz') td:nth-child(2)", "durante_ms": 3000, "al_decir": "acaba de llegar" },
+        { "click": "app-view-switch button:has-text('Salud')", "al_decir": "Salud mide" },
+        { "resaltar": "app-summary-strip", "durante_ms": 3500, "al_decir": "Sano, a vigilar" },
+        { "resaltar": "table tbody tr:has-text('Barahona') td:nth-child(4)", "durante_ms": 4500, "al_decir": "la columna Motivos" },
+        { "click": "app-view-switch button:has-text('Renovaciones')", "al_decir": "aparece en Renovaciones" },
+        { "resaltar": "table tbody tr:has-text('Barahona') td:nth-child(3)", "durante_ms": 3000, "al_decir": "ves el contrato" },
+        { "resaltar": "table tbody tr:has-text('Barahona') td:nth-child(4)", "durante_ms": 2500, "al_decir": "la fecha en que vence" },
+        { "resaltar": "table tbody tr:has-text('Barahona') td:nth-child(5)", "durante_ms": 4000, "al_decir": "oportunidad de renovación" }
+      ]
+    },
+    {
+      "id": "03-seguimiento",
+      "capitulo": "Registrar un seguimiento",
+      "rotulo": "Registrar un seguimiento",
+      "ruta": "Éxito del Cliente › Cartera › Registrar seguimiento",
+      "texto_pantalla": "Registrar seguimiento · qué se habló y cuál es el próximo paso",
+      "setup": { "tipo": "sql", "guardar_en": "proxima", "query": "SELECT DATE_FORMAT(DATE_ADD(CURDATE(), INTERVAL 7 DAY), '%d/%m/%Y')" },
+      "narracion": "Ahora, a trabajar. Vuelvo a Seguimiento para atender lo vencido. Ya llamé a Inversiones Barahona: marco su casilla y aparecen las acciones para los clientes elegidos. Pulso Registrar seguimiento. La vía fue una llamada, con la fecha y la hora de hoy. En el cuadro grande anoto qué se habló, porque lo lee todo el equipo. Quieren renovar, pero piden mejor precio. Ahora lo más importante: la próxima acción. Le pongo fecha para dentro de una semana; ese día el sistema le crea la tarea a su gerente. Y el asunto: enviar la propuesta de renovación. Reviso que todo esté bien y pulso Guardar. El aviso confirma que quedó registrado; lo acepto. Barahona sale de la lista de hoy y el indicador de vencidas baja a cero: su próxima acción ya tiene fecha.",
+      "acciones": [
+        { "click": "app-view-switch button:has-text('Seguimiento')", "al_decir": "Vuelvo a Seguimiento" },
+        { "click": "table tbody tr:has-text('Barahona') mat-checkbox", "al_decir": "marco su casilla" },
+        { "click": "button:has-text('Registrar seguimiento')", "al_decir": "Pulso Registrar seguimiento" },
+        { "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Vía'))", "durante_ms": 3500, "al_decir": "La vía fue" },
+        { "escribir": { "sel": "mat-dialog-container textarea[formcontrolname='note']", "texto": "Quieren renovar, pero piden mejor precio." }, "al_decir": "En el cuadro grande" },
+        { "escribir": { "sel": "mat-dialog-container input[formcontrolname='nextActionAt']", "texto": "{{proxima}}" }, "al_decir": "Le pongo fecha" },
+        { "escribir": { "sel": "mat-dialog-container input[formcontrolname='nextActionSubject']", "texto": "Enviar propuesta de renovación" }, "al_decir": "Y el asunto" },
+        { "click": "mat-dialog-container button:has-text('Guardar')", "al_decir": "pulso Guardar" },
+        { "resaltar": ".custom-alert-dialog-panel mat-dialog-container", "durante_ms": 3500, "cursor": false },
+        { "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')", "al_decir": "lo acepto" },
+        { "resaltar": "app-summary-strip button.stat:nth-child(2)", "durante_ms": 5000, "al_decir": "baja a cero" }
+      ]
+    }
+  ]
+}

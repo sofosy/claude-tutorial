@@ -1,0 +1,67 @@
+TÍTULO
+============================================================
+Germiva para contadores · Un día de cierre con su cliente
+
+DESCRIPCIÓN
+============================================================
+Así trabaja una firma contable con Germiva, en un caso real: faltan cinco días para el 606, un cliente está en rojo, y la contadora lo resuelve desde su cartera, sin pedirle la clave a nadie. Reportes de la DGII, nómina y TSS, panel financiero, Germi con inteligencia artificial y el resto del sistema de su cliente.
+
+Su firma no paga nada por la herramienta, nosotros capacitamos y acompañamos a sus clientes, y por cada empresa que nos recomiende le pagamos el 20 % de lo que pague en su primer año. Escriba SOCIO por WhatsApp al +1 (829) 623-0629 · germiva.com
+
+⏱️ CAPÍTULOS
+00:00  Entra con su usuario de siempre
+00:16  Mi Cartera: todos sus clientes
+00:41  Sumar un cliente nuevo
+01:02  Invitaciones y Mi firma
+01:16  El caso del día: un cliente en rojo
+01:37  Entrar a la empresa del cliente, sin clave
+01:48  Las compras ya están registradas
+02:10  El 606 en un minuto
+02:36  El 607, igual de rápido
+02:54  IT-1 e IR-17
+03:08  Nómina y TSS
+03:25  Los períodos de nómina
+03:35  La salud financiera del cliente
+04:22  Asientos automáticos
+04:34  Germi, el asistente con inteligencia artificial
+04:56  Estados financieros listos
+05:15  Su cliente, en el mismo sistema: ventas, inventario, punto de venta, cajas, CRM y mesa de ayuda
+05:50  De vuelta en la firma: cliente al día
+06:05  Sé nuestro socio
+
+🏷️ ETIQUETAS
+Germiva, contadores, firma contable, 606, 607, facturación electrónica, DGII, República Dominicana, Programa de Socios
+
+—
+Duración: 06:29
+
+TRANSCRIPCIÓN
+============================================================
+Le mostramos, en un caso real, cómo trabaja una firma contable con Germiva. Ana Reyes, socia de Reyes y Mercedes Contadores, escribe su contraseña y entra con el usuario de siempre.
+Así empieza su día: en Mi Cartera, todos sus clientes en una sola pantalla. Arriba, lo que importa hoy: doce clientes activos, tres que requieren atención, dos invitaciones abiertas, y cinco días para el cierre del 606 y el 607. Cada cliente tiene su semáforo. Verde: al día. Ámbar, como esta farmacia: se le están acabando los comprobantes fiscales.
+Sumar un cliente toma segundos. Con Nuevo cliente, elige que es para un cliente, lo busca por RNC o por correo, y propone el nivel de acceso: contabilidad e impuestos, más la nómina, o la administración completa, que el cliente confirma. Y el cliente controla ese acceso desde su lado.
+Desde la misma pantalla, en Invitaciones, sigue las que están pendientes de respuesta. Y en Mi firma está su perfil profesional, verificado por nuestro equipo: por eso lleva el sello de Contador Verificado.
+Ahora, el caso del día. Ana vuelve a la cartera y busca a Caribe Fresco, una distribuidora de frutas y vegetales. Está en rojo: el 606 y el 607 de septiembre todavía no se han generado. Abre su ficha: ahí ve qué falta, el nivel de acceso que el cliente le dio, y quién de su equipo lo atiende.
+Con un clic en Trabajar en esta empresa, entra a Caribe Fresco. Sin pedirle la clave a nadie. La franja de arriba le recuerda en qué empresa está, y con qué firma.
+Primero, las compras. Las facturas electrónicas de los proveedores llegan al buzón de Facturas Recibidas, ya registradas, con su ITBIS y su clasificación para el 606. Y si el proveedor le manda una foto o un PDF, la inteligencia artificial la lee y la registra por usted. Nada que digitar.
+Ahora, el 606 del mes pasado. En Reportes DGII abre el calendario, elige el año, después el mes, septiembre, y luego pulsa Generar. En segundos aparece: cada compra con su NCF, su proveedor, su ITBIS y su forma de pago. Con un clic lo descarga en formato TXT, listo para subirlo a la Oficina Virtual de la DGII.
+Con el 606 ya descargado, cambia el informe al 607, y vuelve a elegir el mes de septiembre. Sale igual: cada venta del mes, con su comprobante y su cliente. Pulsa Generar, revisa las ventas una por una, y también lo descarga en TXT.
+Y en el mismo lugar está el IT-1, que se arma con lo que ya está registrado: ventas, compras e ITBIS del período. Y el IR-17, con las retenciones. Usted revisa y presenta.
+Caribe Fresco también le encargó la nómina. El Centro de Nómina muestra sus dieciséis empleados, lo devengado en el año y el próximo pago, el treinta de octubre. Y de aquí salen los archivos para la TSS y el IR-3.
+En Períodos están julio, agosto y septiembre, calculados y pagados, con su asiento y sus retenciones; y octubre, ya aprobado.
+Ahora, la contabilidad. Todo lo que se registra genera su asiento automático, y con eso el panel de contabilidad se arma solo. Ahí Ana ve la salud financiera del cliente: los ingresos, los gastos y la utilidad del mes, el efectivo, lo que le deben y lo que debe. Y en doce meses, cómo viene el negocio.
+En Cuentas por Cobrar ve, factura por factura, quién le debe a su cliente, cuánto y desde cuándo, para gestionar el cobro a tiempo.
+Y en Banca, mes por mes, concilia el estado de cuenta con los libros, viendo la diferencia que queda por explicar.
+En Cuentas por Pagar, lo que su cliente debe a sus proveedores, y cuándo vence cada factura.
+En el Diario están los asientos: cada factura, cada compra, cada cobro y cada nómina ya generó el suyo, de forma automática. Usted revisa, no digita.
+Y si quiere una respuesta rápida, ahí está Germi, nuestro asistente con inteligencia artificial. Ana le pide las facturas vencidas del cliente. Germi revisa los datos de la empresa y, en segundos, le responde con la lista completa: qué factura, cuánto le deben y desde cuándo. Germi también atiende a sus clientes por WhatsApp, a cualquier hora.
+Y los estados financieros salen listos: el balance general, el estado de resultados y el flujo de efectivo, para el banco o para los socios.
+Y mientras usted lleva la contabilidad, su cliente trabaja su negocio en el mismo sistema. Ventas, con su análisis del mes.
+Sus facturas, cada una con su comprobante fiscal y su estado de cobro.
+Inventario, con sus existencias y su valor al costo.
+El punto de venta, para vender en mostrador.
+Las cajas, con su turno y su cuadre.
+Ahora el CRM de su cliente: con el filtro de asignación ve a todos los clientes potenciales, organizados por etapa de venta.
+Y la mesa de ayuda, donde atiende los casos de sus propios clientes, cada uno con su prioridad y su estado.
+Todo conectado: lo que su cliente vende y compra le llega a usted ya registrado. Listo el trabajo del mes. Ana vuelve a su firma. En su cartera, busca de nuevo a Caribe Fresco… y ya está en verde: al día.
+Su firma no paga nada por esta herramienta. A sus clientes los capacitamos y acompañamos nosotros. Y por cada empresa que nos recomiende, le pagamos el veinte por ciento de lo que pague durante su primer año. Escriba SOCIO por WhatsApp, y le mostramos Germiva en treinta minutos.

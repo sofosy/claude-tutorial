@@ -1,0 +1,339 @@
+{
+  "titulo": "Cajas · El tablero y tus cajas",
+  "_comentario": "Video 1 de la serie Cajas. Graba admin.progreso desde S0 (restaurar S0 antes y después). Escribe: la caja CAJA-03 «Caja Mostrador 3» (paso 02), que el paso 03 usa. El paso 03 depende del 02: no se regraba solo sin recrear la caja. AVISOS justificados: (1) primer paso sin button.panel-collapse — en Cajas el menú es un riel fijo, ese botón no existe (_SELECTORES-CAJAS, brief).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "admin.progreso",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "CAJA-03": "caja-cero-tres"
+  },
+  "aprenderas": [
+    "Qué es una caja y qué es una sesión (el turno de una persona en una caja)",
+    "Leer el tablero: qué significa una caja Abierta, Cerrada o Bloqueada y quién la opera",
+    "Filtrar las cajas por estado y encontrar sus movimientos, sesiones y cuadres",
+    "Crear una caja nueva con sus métodos de pago y sus umbrales de alerta",
+    "Administrar las cajas desde Configuración: buscar, bloquear y archivar"
+  ],
+  "errores_comunes": [
+    "Dejar sin marcar un método de pago que la caja sí va a recibir, como Transferencia",
+    "Activar el control por denominaciones sin necesitarlo: obliga a contar billete por billete en cada apertura, cobro y cierre",
+    "Confundir los límites de efectivo de la caja con un tope: son umbrales de alerta, no bloquean la operación",
+    "Archivar una caja pensando que se borra: se retira de uso con toda su historia y se restaura desde Archivadas"
+  ],
+  "pasos": [
+    {
+      "id": "01-tablero",
+      "ruta": "Cajas › Cajas",
+      "texto_pantalla": "El tablero de cajas · estado de cada caja y quién la opera",
+      "acciones": [
+        {
+          "click": "a[href='/cashier']",
+          "al_decir": "Entro"
+        },
+        {
+          "resaltar": "h1.page-hero-title",
+          "durante_ms": 2800,
+          "al_decir": "tablero de cajas"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2']",
+          "durante_ms": 6500,
+          "al_decir": "punto de cobro"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2'] .board-card__since",
+          "durante_ms": 6000,
+          "al_decir": "turno de una persona"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2'] .board-card__badges",
+          "durante_ms": 2000,
+          "al_decir": "Abierta"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2'] .board-card__holder",
+          "durante_ms": 3000,
+          "al_decir": "Luis Batista"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 2'] .board-card__amount",
+          "durante_ms": 4000,
+          "al_decir": "efectivo"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Sucursal Santiago'] .board-card__badges",
+          "durante_ms": 5500,
+          "al_decir": "Bloqueada"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Principal'] .board-card__badges",
+          "durante_ms": 3000,
+          "al_decir": "Cerrada"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Principal'] .board-card__foot button:has-text('Abrir sesión')",
+          "durante_ms": 2500,
+          "al_decir": "Abrir sesión"
+        },
+        {
+          "resaltar": ".board-toolbar nav.segmented",
+          "durante_ms": 3000,
+          "al_decir": "filtros"
+        },
+        {
+          "click": ".board-toolbar nav button.segmented__option:has-text('Abiertas')",
+          "al_decir": "Pulso Abiertas"
+        },
+        {
+          "click": ".board-toolbar nav button.segmented__option:has-text('Todas')",
+          "al_decir": "Todas"
+        },
+        {
+          "click": "article.board-card[aria-label='Caja Caja Mostrador 2'] button.board-card__menu",
+          "al_decir": "tres puntos"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "movimientos"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "franja"
+        },
+        {
+          "resaltar": "nav.cashier-hub__nav",
+          "durante_ms": 7000,
+          "al_decir": "secciones del módulo"
+        }
+      ],
+      "narracion": "Vamos a conocer las cajas del negocio. Entro a Cajas desde el menú de la izquierda. Este es el tablero de cajas. En Germiva, una caja es un punto de cobro de tu negocio, como el mostrador de la entrada, y cada tarjeta es una, con su código, su ubicación y su estado. Una sesión es el turno de una persona en una caja: empieza cuando la abre con su fondo y termina cuando la cierra con su cuadre. Caja Mostrador 2 está Abierta: tiene una sesión en curso. La opera Luis Batista desde hace dos horas, y abajo ves el efectivo que debería haber ahora mismo en la gaveta. Caja Sucursal Santiago está Bloqueada: nadie puede usarla hasta que un supervisor la revise y la desbloquee. Y Caja Principal está Cerrada, lista para que una cajera arranque su jornada con Abrir sesión. Encima de las tarjetas tienes los filtros por estado, cada uno con su número de cajas. Pulso Abiertas y queda solo la que está en uso; vuelvo a Todas para verlas otra vez. Los tres puntos de cada tarjeta llevan a sus movimientos, sus sesiones, sus cuadres y a Configurar caja. Y en la franja de arriba están las secciones del módulo: Mi caja, Por aprobar, Historial y Análisis, que verás en los próximos videos.",
+      "capitulo": "El tablero de cajas",
+      "rotulo": "El tablero de cajas"
+    },
+    {
+      "id": "02-nueva-caja",
+      "ruta": "Cajas › Cajas › Nueva caja",
+      "texto_pantalla": "Nueva caja · nombre, código, ubicación, métodos de pago y límites",
+      "acciones": [
+        {
+          "click": "button.board-toolbar__new",
+          "al_decir": "Nueva caja"
+        },
+        {
+          "resaltar": ".cashier-form-dialog",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "se abre su formulario"
+        },
+        {
+          "escribir": {
+            "sel": ".cashier-form-dialog input[formcontrolname='name']",
+            "texto": "Caja Mostrador 3"
+          },
+          "al_decir": "En Nombre"
+        },
+        {
+          "escribir": {
+            "sel": ".cashier-form-dialog input[formcontrolname='code']",
+            "texto": "CAJA-03"
+          },
+          "al_decir": "El Código"
+        },
+        {
+          "escribir": {
+            "sel": ".cashier-form-dialog input[formcontrolname='location']",
+            "texto": "Área de ventas — piso 2"
+          },
+          "al_decir": "Ubicación"
+        },
+        {
+          "resaltar": ".cashier-form-dialog mat-checkbox:has-text('Efectivo')",
+          "durante_ms": 2500,
+          "al_decir": "métodos de pago"
+        },
+        {
+          "click": ".cashier-form-dialog mat-checkbox:has-text('Transferencia')",
+          "al_decir": "le agrego"
+        },
+        {
+          "resaltar": ".cashier-form-dialog mat-checkbox:has-text('Control por denominaciones')",
+          "durante_ms": 8000,
+          "al_decir": "Control por denominaciones"
+        },
+        {
+          "resaltar": ".cashier-form-dialog mat-form-field:has(input[formcontrolname='fixedFund'])",
+          "durante_ms": 3000,
+          "al_decir": "Fondo fijo"
+        },
+        {
+          "escribir": {
+            "sel": ".cashier-form-dialog input[formcontrolname='minCashLimit']",
+            "texto": "1000"
+          },
+          "al_decir": "escribo mil"
+        },
+        {
+          "escribir": {
+            "sel": ".cashier-form-dialog input[formcontrolname='maxCashLimit']",
+            "texto": "60000"
+          },
+          "al_decir": "sesenta mil"
+        },
+        {
+          "click": ".cashier-form-dialog button:has-text('Crear caja')",
+          "al_decir": "Pulso Crear caja"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3300,
+          "cursor": false
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Mostrador 3']",
+          "durante_ms": 5500,
+          "al_decir": "su tarjeta"
+        }
+      ],
+      "narracion": "Ahora creo una caja nueva para el segundo piso. Pulso Nueva caja, arriba a la derecha, y se abre su formulario. Los tres primeros datos son obligatorios. En Nombre escribo Caja Mostrador 3: así la verán todos en el tablero y en los reportes. El Código es un identificador corto y único: CAJA-03. Y en Ubicación, dónde está físicamente: área de ventas, piso 2. Después vienen los métodos de pago que acepta. Efectivo y Tarjeta vienen marcados, y le agrego Transferencia. El Control por denominaciones, o modo estricto, obliga a contar billete por billete al abrir, al cobrar en efectivo y al cerrar; lo dejo apagado, porque esta caja trabaja con montos. Abajo, en Montos y límites, el Fondo fijo es opcional y lo dejo vacío. El Límite mínimo de efectivo es un umbral de alerta: escribo mil, y si la caja baja de ahí, el sistema avisa. En el máximo pongo sesenta mil: avisa cuando se junta demasiado efectivo y conviene retirarlo. Pulso Crear caja. Sale el aviso de que se creó, y su tarjeta ya está en el tablero, Cerrada, lista para su primer turno.",
+      "capitulo": "Crear una caja nueva",
+      "rotulo": "Crear una caja nueva"
+    },
+    {
+      "id": "03-panel-configuracion",
+      "ruta": "Cajas › Configuración › Cajas",
+      "texto_pantalla": "Configuración de cajas · cifras, filtros, archivadas y acciones de cada caja",
+      "acciones": [
+        {
+          "click": ".page-hero-actions button:has-text('Configuración')",
+          "al_decir": "Configuración"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(app-cashier-settings-sheet)",
+          "durante_ms": 1400,
+          "cursor": false,
+          "al_decir": "Se abre un panel"
+        },
+        {
+          "resaltar": "nav.segmented--sub:has(button:has-text('Políticas'))",
+          "durante_ms": 2800,
+          "al_decir": "tres secciones"
+        },
+        {
+          "resaltar": ".config-kpis",
+          "durante_ms": 5000,
+          "al_decir": "cifras"
+        },
+        {
+          "resaltar": "app-cashier-settings-sheet mat-form-field:has(mat-label:text-is('Estado'))",
+          "durante_ms": 3500,
+          "al_decir": "filtros"
+        },
+        {
+          "resaltar": "app-cashier-settings-sheet tr:has-text('Caja Mostrador 3') td:nth-child(1)",
+          "durante_ms": 2500,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": "app-cashier-settings-sheet tr:has-text('Caja Mostrador 3') td:nth-child(5)",
+          "durante_ms": 3000,
+          "al_decir": "balance"
+        },
+        {
+          "resaltar": "app-cashier-settings-sheet tr:has-text('Caja Mostrador 3') button:has(mat-icon:text-is('edit'))",
+          "durante_ms": 2500,
+          "al_decir": "lápiz"
+        },
+        {
+          "click": ".toolbar-archived button:has-text('Archivadas')",
+          "al_decir": "en Archivadas"
+        },
+        {
+          "click": ".toolbar-archived button:has-text('Operativas')",
+          "al_decir": "Vuelvo a Operativas"
+        },
+        {
+          "click": "app-cashier-settings-sheet tr:has-text('Caja Mostrador 3') button:has(mat-icon:text-is('more_vert'))",
+          "al_decir": "tres puntos"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button:has-text('Ver detalles')",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "Ver detalles"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button:has-text('Bloquear')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Bloquear"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button:has-text('Archivar')",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "Archivar"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "No toco"
+        },
+        {
+          "click": ".settings-sheet__header button.cashier-sheet-close",
+          "al_decir": "equis"
+        }
+      ],
+      "narracion": "Todas las cajas también se administran desde Configuración, el botón de arriba a la derecha. Se abre un panel con tres secciones: Cajas, Denominaciones y Políticas. En Cajas, las cifras dicen cuántas hay en total y cuántas están abiertas, cerradas y bloqueadas. Debajo tienes el buscador y los filtros por tipo, estado y bloqueo, para encontrar una caja rápido. Cada fila es una caja, con su nombre y su código, su balance actual y los métodos de pago que acepta; el lápiz la edita. Esta lista muestra las cajas operativas; en Archivadas están las que se sacaron de uso, y ahora no hay ninguna. Vuelvo a Operativas. Los tres puntos quedan al final de la fila de Caja Mostrador 3, así que al abrirlos la tabla se corre un poco a la derecha. Ahí están Ver detalles, que abre su ficha; Bloquear, para impedir que se opere mientras se revisa; y Archivar, que la retira sin borrar su historia, y se puede restaurar desde la lista de archivadas. No toco nada ahora. Cierro el panel con la equis y vuelvo al tablero.",
+      "capitulo": "Configuración de cajas",
+      "rotulo": "Configuración de cajas"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

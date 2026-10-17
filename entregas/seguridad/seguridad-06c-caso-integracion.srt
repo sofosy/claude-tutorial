@@ -1,0 +1,243 @@
+1
+00:00:03,097 --> 00:00:06,631
+Un caso práctico para ver los permisos de una credencial en acción.
+
+2
+00:00:07,275 --> 00:00:09,673
+Esta página simula el programa del contador:
+
+3
+00:00:09,739 --> 00:00:12,571
+pide datos a Germiva con la credencial que creamos,
+
+4
+00:00:12,564 --> 00:00:14,515
+igual que lo haría el programa real.
+
+5
+00:00:15,150 --> 00:00:17,040
+A la izquierda está su conexión.
+
+6
+00:00:17,673 --> 00:00:20,253
+El programa no entra con el usuario de una persona:
+
+7
+00:00:20,390 --> 00:00:22,341
+se presenta con su clave de API,
+
+8
+00:00:22,431 --> 00:00:26,496
+que es la llave de la puerta por la que dos programas se hablan, y con su secreto,
+
+9
+00:00:26,550 --> 00:00:27,753
+que aquí va tapado.
+
+10
+00:00:28,399 --> 00:00:29,576
+Pulso Conectar.
+
+11
+00:00:30,222 --> 00:00:34,177
+Germiva revisa la clave y el secreto, y le entrega un pase temporal:
+
+12
+00:00:34,280 --> 00:00:35,362
+dice Conectado.
+
+13
+00:00:36,006 --> 00:00:40,398
+A la derecha tiene dos consultas, una para facturas y otra para productos.
+
+14
+00:00:41,746 --> 00:00:44,132
+Primero, lo que el contador necesita.
+
+15
+00:00:44,776 --> 00:00:47,054
+Pulso Consultar facturas emitidas.
+
+16
+00:00:47,699 --> 00:00:50,109
+Germiva responde con el código doscientos,
+
+17
+00:00:50,187 --> 00:00:52,451
+que en el idioma de los programas quiere decir:
+
+18
+00:00:52,566 --> 00:00:54,867
+permitido, aquí están los datos.
+
+19
+00:00:55,513 --> 00:00:58,780
+Entregó tres facturas, todas las que tiene la empresa.
+
+20
+00:00:59,426 --> 00:01:03,960
+Cada renglón trae el comprobante fiscal, el cliente, el estado y el total:
+
+21
+00:01:04,063 --> 00:01:05,868
+dos emitidas y un borrador.
+
+22
+00:01:06,503 --> 00:01:09,034
+La credencial tiene el permiso de ver facturas,
+
+23
+00:01:09,063 --> 00:01:11,316
+porque venía en la plantilla con que se creó,
+
+24
+00:01:11,358 --> 00:01:13,877
+así que Germiva entrega todo sin preguntar.
+
+25
+00:01:15,218 --> 00:01:17,073
+Ahora algo que no le dimos.
+
+26
+00:01:17,716 --> 00:01:19,547
+Pulso Consultar productos.
+
+27
+00:01:20,192 --> 00:01:23,846
+La respuesta es cuatrocientos tres, que quiere decir rechazado.
+
+28
+00:01:24,492 --> 00:01:26,225
+El mensaje lo dice en español:
+
+29
+00:01:26,304 --> 00:01:30,127
+no tienes el permiso requerido para acceder a este recurso, Productos;
+
+30
+00:01:30,240 --> 00:01:32,433
+solicita acceso a tu administrador.
+
+31
+00:01:33,067 --> 00:01:35,465
+Y Germiva no entregó ni un solo producto:
+
+32
+00:01:35,531 --> 00:01:38,316
+ni nombres, ni precios, ni existencias.
+
+33
+00:01:38,948 --> 00:01:40,561
+No es una falla del sistema:
+
+34
+00:01:40,651 --> 00:01:44,221
+es exactamente lo que tiene que pasar cuando un programa pide algo que su
+
+35
+00:01:44,033 --> 00:01:45,320
+credencial no tiene.
+
+36
+00:01:46,701 --> 00:01:51,056
+El contador también necesita consultar productos, para cuadrar el inventario.
+
+37
+00:01:51,700 --> 00:01:55,765
+Vuelvo a Germiva, a la pestaña Integraciones, con su panel abierto:
+
+38
+00:01:55,903 --> 00:01:57,323
+Programa del contador.
+
+39
+00:01:57,956 --> 00:02:00,015
+Arriba pulso Editar permisos.
+
+40
+00:02:00,661 --> 00:02:05,076
+La página tarda un momento, porque trae los más de mil permisos del sistema,
+
+41
+00:02:05,130 --> 00:02:07,008
+y se abre Permisos de Integración.
+
+42
+00:02:07,642 --> 00:02:10,980
+Los módulos donde la credencial ya tiene algo salen abiertos;
+
+43
+00:02:11,096 --> 00:02:13,843
+el módulo Productos está cerrado, en cero.
+
+44
+00:02:14,477 --> 00:02:15,353
+Lo abro.
+
+45
+00:02:15,987 --> 00:02:19,931
+La primera casilla, Productos a secas, es la de ver productos;
+
+46
+00:02:20,045 --> 00:02:24,376
+las de debajo son para crear, editar o eliminar, y esas no se las doy.
+
+47
+00:02:25,009 --> 00:02:25,921
+La marco.
+
+48
+00:02:26,555 --> 00:02:30,354
+El aviso dice que el permiso se concedió, y queda guardado en el acto,
+
+49
+00:02:30,444 --> 00:02:31,585
+sin botón de guardar:
+
+50
+00:02:31,688 --> 00:02:33,325
+el módulo pasa a uno.
+
+51
+00:02:33,957 --> 00:02:34,581
+Listo:
+
+52
+00:02:34,670 --> 00:02:39,870
+ahora pulso Volver a Integraciones, al pie, y el panel ya cuenta cinco permisos.
+
+53
+00:02:41,211 --> 00:02:45,240
+Vuelvo al programa del contador, que sigue conectado con el mismo pase.
+
+54
+00:02:45,883 --> 00:02:49,259
+Sin tocar nada más, repito Consultar productos.
+
+55
+00:02:49,905 --> 00:02:52,496
+Ahora responde doscientos, permitido,
+
+56
+00:02:52,574 --> 00:02:55,286
+y entrega los veinticinco productos del catálogo.
+
+57
+00:02:55,919 --> 00:02:59,199
+El cambio valió al instante, desde la siguiente consulta.
+
+58
+00:02:59,844 --> 00:03:00,661
+En resumen:
+
+59
+00:03:00,713 --> 00:03:03,353
+una credencial solo recibe lo que tiene concedido;
+
+60
+00:03:03,467 --> 00:03:05,986
+lo demás se rechaza con cuatrocientos tres.
+
+61
+00:03:06,632 --> 00:03:09,223
+Dale a cada programa solo lo que necesita.

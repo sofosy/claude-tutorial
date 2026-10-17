@@ -1,0 +1,32 @@
+[04:56:23] ── cajas-05-cerrar-caja (parte de S4)
+[05:05:24]       → PUBLICABLE  (540 s)
+[05:05:24] ── cajas-06-cuadre-y-desbloqueo (parte de S5)
+[05:11:01]       → PUBLICABLE  (335 s)
+[05:11:01] ── cajas-07-historial-y-analisis (parte de S6)
+[05:15:41]       → PUBLICABLE  (279 s)
+[05:15:41] FIN serie
+[05:17:55] ── cajas-03-abrir-y-operar (parte de S1)
+[05:18:26] ── cajas-01-tablero (parte de S0)
+[05:24:27]       → PUBLICABLE  (391 s)
+[05:24:27] ── cajas-04-aprobar-y-transferir (parte de S3)
+[05:29:23]       → PUBLICABLE  (295 s)
+[05:29:23] FIN serie
+[05:34:37]       → REGRABAR  (970 s)
+[05:34:37] ── cajas-02-configuracion (parte de S0, extra 04=S2i)
+[05:42:11] ── cajas-01-tablero (parte de S0)
+[05:43:18]       → REGRABAR  (520 s)
+[05:43:18] FIN serie
+[05:48:48]    GRABACIÓN FALLÓ (rc=0 o video.mp4 viejo) — ver salida/cajas-01-tablero/serie.log
+[05:48:48] FIN serie
+[05:57:25] ── cajas-02-configuracion (parte de S0, extra 04=S2i)
+[06:06:00]       → PUBLICABLE  (513 s)
+[06:06:00] FIN serie
+[06:30:44] ── cajas-01-tablero (parte de S0)
+[06:35:41]       → PUBLICABLE  (295 s)
+[06:35:41] FIN serie
+[06:47:13] ── cajas-01-tablero (parte de S0)
+[06:53:05]       → PUBLICABLE  (350 s)
+[06:53:05] FIN serie
+[07:06:50] ── cajas-08-cobro-factura (parte de S8)
+[07:12:53]       → PUBLICABLE  (362 s)
+[07:12:53] FIN serie

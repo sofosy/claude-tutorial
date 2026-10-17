@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Éxito del Cliente · La ficha del cliente y su bienvenida
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  La ficha del cliente
+00:55  La bienvenida del cliente nuevo
+01:25  Los casos del cliente
+01:52  Agregar un cliente a la cartera
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer la ficha de un cliente: su etapa, su salud y su historia
+• Avanzar la bienvenida de un cliente nuevo paso a paso
+• Ver los casos que el cliente tiene abiertos en la Mesa de Ayuda
+• Agregar a la cartera un cliente que ya te compraba
+
+⚠️ ERRORES COMUNES
+• Dejar la bienvenida a medias: el cliente nuevo se queda sin entrega o sin capacitación
+• Atender un caso sin mirar la ficha: no sabes si el cliente está en riesgo
+• Crear el cliente de nuevo en vez de buscarlo: se duplica
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:34
+
+TRANSCRIPCIÓN
+============================================================
+Estamos en la cartera de clientes. Recojo el menú. Para ver todo sobre un cliente, abro su ficha con la flecha de la derecha: Ferretería Doña Luz, que acaba de comprarnos. Arriba, las tres acciones del día a día: registrar un seguimiento, enviarle un mensaje o una encuesta. A la derecha, la cinta de etapas del cliente: Bienvenida, Activo, En riesgo, Renovación pendiente o Perdido. Debajo, lo que te compró en los últimos noventa días, su salud de cero a cien y la última nota que te dio en la encuesta de satisfacción. Luego sus datos y quién responde por él: su gerente de cuenta. Y en la columna de la derecha, la actividad: arriba escribes un comentario para el equipo, y debajo queda todo lo que ha pasado con este cliente, como el traspaso desde la venta y los casos que abrió.
+Más abajo, la pestaña Bienvenida. Es la lista de los primeros pasos con un cliente nuevo, que salió de la plantilla elegida al ganar la venta. Arriba, el avance y la fecha en que te comprometiste a terminarla. Cada paso tiene su fecha. El primero es el contacto de bienvenida: ya llamé a Doña Luz, así que lo marco como hecho. La barra sube. Cuando completes todos los pasos, el cliente pasa de Bienvenida a Activo.
+Ahora, los casos. En la pestaña Casos ves lo que el cliente reportó en la Mesa de Ayuda: aquí, una factura con el ITBIS mal calculado y un cambio de dirección de entrega. El ITBIS es el impuesto a las ventas. Desde aquí puedes abrir un caso nuevo con Abrir caso, y se crea ya ligado a este cliente. Un caso vencido baja la salud del cliente, así que conviene mirar esta pestaña antes de cada llamada.
+Los clientes llegan solos a la cartera cuando ganas una venta en el CRM. Pero también puedes agregar a uno que ya te compraba. Pulso Agregar cliente, arriba. Lo busco por nombre o RNC entre los clientes de Ventas: escribo Colmado, y la lista se va filtrando mientras escribo. Ahí está: elijo Colmado La Esquina. Fíjate en la nota de abajo. No se crea otro cliente: es el mismo registro de Ventas, que ahora además tiene seguimiento. Pulso Incorporar, y se abre su ficha, lista para asignarle gerente y registrar el primer contacto.

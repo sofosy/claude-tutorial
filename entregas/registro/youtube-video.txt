@@ -1,0 +1,42 @@
+TÍTULO
+============================================================
+Cómo crear tu cuenta en Germiva
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Abrir el registro
+00:36  Paso 1 · El plan
+01:23  Paso 2 · El representante legal
+02:24  Paso 3 · La empresa
+03:27  Activar la cuenta
+04:07  Tu primer inicio
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Abrir el registro desde la página de Germiva con «Empezar gratis»
+• Elegir el tipo de uso y el plan con el que empiezas tus 7 días de prueba, sin tarjeta
+• Llenar los datos del representante legal, que serán tu usuario para entrar
+• Registrar la empresa con su RNC: el nombre legal se trae solo desde la DGII
+• Activar la cuenta con el código que llega a tu correo y entrar por primera vez
+
+⚠️ ERRORES COMUNES
+• Poner un correo al que no tienes acceso: el código de activación llega ahí
+• Escribir el nombre legal a mano: con el RNC o la cédula correctos, Germiva lo toma de la DGII
+• Dejar sin marcar «Acepto los términos y condiciones»: la cuenta no se crea
+• Cerrar la ventana mientras dice «Creando la cuenta…»
+• Creer que ya puedes facturar: antes hay que completar la provincia, el municipio y el certificado digital
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:56
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a crear una cuenta de Germiva desde cero. Esta es la página principal, la que ve cualquiera antes de tener usuario. Para registrarte no tienes que llamar a nadie: arriba a la derecha está el botón Empezar gratis. Lo pulso. Se abre el registro, con dos partes. A la izquierda, una guía con los tres pasos: el plan, el representante legal y la empresa. A la derecha, la tarjeta Crear cuenta, donde se llena cada paso; arriba de ella siempre dice en cuál vas.
+Paso uno, el plan. El recuadro verde de arriba te dice lo más importante: tienes siete días gratis, sin tarjeta de crédito, y al terminar decides si lo activas. Debajo, Germiva pregunta qué necesitas hacer. Solo facturar es para quien emite facturas electrónicas y lleva clientes e inventario. Administrar toda la empresa suma compras, contabilidad y nómina; me quedo con esa. Más abajo eliges si pagarás mes a mes o una vez al año, con descuento. Y aquí están los planes, cada uno con su precio a la derecha. Marco Profesional, el recomendado. Si tienes un código promocional, va en este campo; es opcional. Con el plan elegido, pulso Continuar.
+Paso dos, el representante legal: la persona que responde por la empresa. Fíjate en el resumen de arriba: recuerda el plan que elegiste, y si cambias de idea, el botón Cambiar te devuelve al plan. Lo que escribas aquí será también tu usuario para entrar al sistema. Escribo el nombre: Ana. A su lado, en la misma fila, va el apellido. En la fila de abajo, el teléfono; lo puedes poner con o sin guiones. A la derecha va el correo electrónico, y aquí hay que tener cuidado: tiene que ser uno al que tengas acceso, porque ahí llega el código para activar la cuenta. Por último, la contraseña, la que usarás para entrar. Mientras la escribes, debajo te va diciendo lo que le falta: seis caracteres como mínimo, con mayúscula, minúscula, número y símbolo; cuando cumple todo, dice Contraseña segura. Con el ojo de la derecha puedes verla y comprobar que la escribiste bien. Pulso Continuar.
+Paso tres, la empresa. Empiezo por el RNC, el Registro Nacional de Contribuyentes que la DGII, la oficina de impuestos, le asigna a cada empresa; si facturas como persona física, aquí va tu cédula. Al salir del campo, Germiva lo busca en el padrón de la DGII. Aparece la marca de verificado, y el nombre legal se llena solo, con un candado: viene de la DGII y no se puede cambiar, porque es el que saldrá en tus comprobantes fiscales. El nombre comercial es opcional: es como te conocen tus clientes. Escribo Ferretería El Faro. Lo último del formulario es la casilla de abajo: marco que acepto los términos y condiciones; sin esto, la cuenta no se crea. Antes del botón hay dos notas que vale la pena leer: hoy no pagas nada, con la fecha en que termina la prueba; y que al correo que pusiste te llegará un código. Todo listo, así que pulso Crear cuenta gratis. Tarda unos segundos: no cierres la ventana.
+La cuenta ya existe, pero falta activarla. Esta es la pantalla Verifica tu correo: Germiva acaba de enviar un código de seis dígitos al correo que escribiste, y así comprueba que ese correo es tuyo. Búscalo en tu bandeja de entrada, o en correo no deseado. Si no llega, el enlace Reenviar código manda otro; y si te equivocaste al escribir el correo, en Correo incorrecto lo corriges sin empezar de nuevo. Escribo el código en este campo, tal como llegó, sin espacios, y pulso Verificar correo. Sale un aviso: Correo verificado, tu cuenta ya está activa. Pulso Ir al inicio.
+Ya estás dentro de Germiva, en el inicio de tu empresa. Lo primero que aparece es el aviso Configuración incompleta: antes de emitir facturas electrónicas faltan algunos datos. La provincia y el municipio de la empresa, que la DGII pide en cada comprobante; y los certificados digitales, el archivo con el que se firman tus facturas para que la DGII sepa que las emitiste tú. Puedes completarlos con Configurar ahora, o dejarlo para después con Más tarde: mientras falten, no podrás emitir comprobantes válidos, pero sí recorrer todo el sistema. Pulso Más tarde. Arriba está el nombre de tu empresa con su RNC, y a la izquierda, el menú con los módulos de tu plan. Tu prueba de siete días ya empezó.

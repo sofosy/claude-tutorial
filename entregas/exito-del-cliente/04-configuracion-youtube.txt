@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Éxito del Cliente · Configuración
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué se crea al ganar una venta
+00:47  Cómo se mide la salud del cliente
+01:31  Encuestas, plantillas y guardar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Decidir qué se crea solo cuando ganas una venta: bienvenida, caso y proyecto
+• Ajustar cómo se calcula la salud de los clientes
+• Programar las encuestas de satisfacción
+• Dónde están las plantillas de bienvenida y las secuencias automáticas
+
+⚠️ ERRORES COMUNES
+• Crear proyecto en cada venta, aunque sea pequeña: usa el monto mínimo
+• Poner días sin contacto muy cortos: toda la cartera sale en riesgo y nadie sabe por dónde empezar
+• Cambiar los valores y salir sin pulsar Guardar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:14
+
+TRANSCRIPCIÓN
+============================================================
+Para configurar Éxito del Cliente, entro por el menú de la izquierda y abro Configuración, al final. Recojo el menú. La primera sección dice qué se crea solo cuando una venta se gana en el CRM. Crear la bienvenida está en Sí: el cliente nuevo arranca con su lista de primeros pasos. Abrir un caso de bienvenida, en No: sólo hace falta si tu equipo trabaja la bienvenida desde la Mesa de Ayuda. Y Crear un proyecto lo paso a Sí, porque vendemos instalaciones. Para no abrir un proyecto por cada venta pequeña, pongo un monto mínimo: cien mil pesos. A la derecha, la plantilla de bienvenida que se usa si nadie elige otra, y el gerente de cuenta por defecto.
+La segunda sección es la salud del cliente. El puntaje parte de cien y baja con cada motivo de alarma: por debajo de cuarenta el cliente está en riesgo, y de setenta para arriba, sano. Estos son los motivos. Días sin comprar: si pasan noventa días sin una compra, resta puntos. Días sin contacto: si nadie lo llama en treinta días, también. La penalización por cada caso vencido en la Mesa de Ayuda, con un tope de treinta. Y el aviso de renovación: cuántos días antes de que venza un contrato aparece en Renovaciones. La salud se recalcula sola cada madrugada; si cambias estos valores y quieres verlo ya, pulsa Recalcular ahora.
+Luego, las encuestas. Preguntar al resolver un caso envía una encuesta corta de satisfacción cada vez que la Mesa de Ayuda resuelve algo. Y el NPS, la pregunta de cuánto nos recomendaría el cliente, se envía cada tantos meses: aquí cada seis. Más abajo están las plantillas de bienvenida, con sus pasos, y las secuencias automáticas: mensajes y tareas que el sistema le prepara solo al cliente, como este recordatorio de renovación. Cada una se enciende o se apaga por separado. Al terminar, bajo al pie de la página y pulso Guardar. El aviso confirma que se guardó; lo acepto.

@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Seguridad · Dar de alta, editar y desactivar personas
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Dar de alta a una persona
+01:46  Editar y cambiar la contraseña
+02:38  Asignar otro rol
+03:22  Desactivar y activar
+04:23  Eliminar y caso práctico
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dar de alta a una persona con su usuario, su clave y su rol
+• Cambiarle la contraseña a alguien que la olvidó
+• Asignarle otro rol con «+ Asignar rol» y leer qué se agrega y qué se quita antes de guardar
+• Desactivar y volver a activar una cuenta, y cuándo conviene eliminarla
+
+⚠️ ERRORES COMUNES
+• Crear la cuenta sin rol: la persona entra y no ve ningún módulo
+• Compartir un mismo usuario entre varias personas: la auditoría ya no dice quién hizo qué
+• Eliminar a alguien que puede volver: desactivar corta el acceso y conserva todo
+• Intentar cambiarte tus propios roles: lo tiene que hacer otro administrador
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 05:05
+
+TRANSCRIPCIÓN
+============================================================
+Ahora vamos a dar de alta a una persona nueva: Julio Santana, un vendedor que acaba de entrar a la empresa. Se hace con Nuevo, arriba a la derecha, y ahí elijo Usuario. Se abre el formulario Crear usuario. En Nombre escribo Julio, su primer nombre, tal cual. Al lado va el apellido: Santana, como aparece en su cédula. Luego el correo: julio punto santana, arroba germiva punto demo. Si ese correo ya existe en Germiva, aquí mismo sale un aviso: la persona se vincula a esta empresa con su clave de siempre; y si era de alguien eliminado, se restaura. Su nombre de usuario, con el que va a entrar: julio punto santana. Escribo la contraseña, que pide seis caracteres o más, con una mayúscula y un número; y la repito para confirmarla, igualita, letra por letra. Ahora, en Roles del Usuario, abro la lista y elijo Vendedor. Y cierro la lista con la tecla Escape. Sin ningún rol, la persona entraría y no vería ningún módulo. El Estado queda en Activo. Cada persona tiene que tener su propio usuario. Pulso Guardar. El botón dice Creando usuario, y puede tardar unos segundos. Fíjate en el usuario, porque es lo que le vas a entregar a Julio, junto con su clave, en persona. Y fíjate en el rol: Vendedor es lo que decide qué módulos va a ver cuando entre. Mientras tanto, el sistema crea la cuenta, le asigna el rol y lo vincula a Distribuidora Las Palmas. Listo: sale el aviso Operación completada, el usuario ha sido creado. Pulso Aceptar, y Julio ya aparece en la lista.
+Para cambiarle algo a una persona, abro su ficha: pulso Julio Santana. El botón Editar abre su formulario completo: nombre, correo, WhatsApp, roles y estado. Si Julio olvida su clave, uso Cambiar contraseña: es el mismo formulario, Editar usuario, con la casilla de cambiar la contraseña ya marcada. Aquí hay una sola casilla de clave, sin confirmación: escribo la nueva. Desde que la guarde, Julio tiene que usar esta para entrar, y la anterior ya no le sirve. Si cierras este formulario con cambios sin guardar, te pregunta antes de salir. Pulso Actualizar. El sistema guarda la clave nueva; eso toma unos segundos, y mientras tanto el formulario espera. Listo: el aviso dice que el usuario se actualizó correctamente. Aceptar.
+Julio también va a ayudar en el almacén. En su ficha, el bloque Roles tiene, debajo de su rol, el enlace Asignar rol. Lo pulso, y se abre la ventana Asignar roles, con su nombre arriba. Abro la lista de roles y marco Almacén. Cierro la lista con Escape. Antes de guardar, la ventana te dice qué va a cambiar: Se agrega Almacén. Si quitaras uno, diría Se quita. Pulso Guardar, y el aviso confirma que los roles se actualizaron. Ahora Julio tiene dos roles, y lo que puede hacer es la suma de los dos, en sus permisos efectivos. Si abres tu propia ficha, ese enlace no aparece: nadie puede cambiar sus propios roles.
+Si Julio sale de vacaciones largas, o está de licencia, no hace falta borrarlo: se desactiva. Abro los tres puntos de su ficha, a la derecha de Cambiar contraseña, y elijo Desactivar. El sistema pregunta primero: dice que no podrá iniciar sesión hasta que se active de nuevo. Confirmo. Mientras el sistema guarda el cambio, fíjate en el nombre de arriba: es la ficha de Julio, la que va a cambiar de estado. Eso toma unos segundos. Sale el aviso de que se desactivó, y arriba su estado ya dice Inactiva. Su usuario, sus roles y todo lo que hizo se quedan como estaban. Para devolverle el acceso, vuelvo al mismo menú y elijo Activar; esta vez no pregunta, porque devolver el acceso no tiene riesgo. Mientras se guarda, sus roles siguen ahí, igual que antes. Sale el aviso, y en la lista su estado vuelve a Pendiente, igual que antes de desactivarlo, porque Julio todavía no ha entrado nunca.
+Y si la persona ya no va a volver, en los tres puntos también está Eliminar. Lo pulso, y el sistema avisa que esta acción no se puede deshacer. Lo confirmo. Mientras dice Eliminando, el sistema quita a la persona de la empresa con todos sus roles; es lo que más tarda de todo este video. Un caso práctico, mientras tanto: un vendedor se va por tres meses, desactívalo; si renuncia y no vuelve, elimínalo. En los dos casos, lo que hizo sigue en la Auditoría. Cuando termina, sale el aviso de usuario eliminado, el panel se cierra, y la lista tiene otra vez nueve personas.

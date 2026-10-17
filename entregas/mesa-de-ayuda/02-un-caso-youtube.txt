@@ -1,0 +1,32 @@
+TÍTULO
+============================================================
+Mesa de Ayuda · De abrir un caso a resolverlo
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Abrir un caso
+00:58  Tomar el caso, responder y anotar
+01:54  Resolver el caso
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Abrir un caso con un asunto y una descripción que se entiendan
+• Tomar el caso, responder al cliente y dejar notas internas para el equipo
+• Resolverlo dejando escrito cómo se resolvió
+
+⚠️ ERRORES COMUNES
+• Escribir «no funciona» como asunto: quien lo recibe empieza de cero
+• Contestar en una nota interna lo que el cliente debía leer (o al revés)
+• Resolver sin anotar la solución: el próximo caso igual se vuelve a investigar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:30
+
+TRANSCRIPCIÓN
+============================================================
+Llamó Constructora Mirador: no les llegaron los tubos de PVC del pedido. Abro un caso con el botón Nuevo caso. El asunto resume el problema en una línea, para reconocerlo en el tablero sin abrirlo. En la descripción cuentas qué pasó como se lo contarías a quien lo va a resolver: qué pedido, qué faltó y para cuándo lo necesitan. A la derecha, los datos del caso. El tipo: problema con un pedido. La prioridad: alta, porque la obra depende de esos tubos; la prioridad decide en cuánto tiempo vence el caso. Y el cliente: lo busco por nombre, y en la lista aparece con su RNC. Elijo Constructora Mirador. Así el caso aparece también en su ficha de Éxito del Cliente. Pulso Crear caso. El aviso de abajo confirma el número del caso, y se abre su ficha.
+Esta es la ficha del caso. Arriba, su número y el asunto; debajo, las etapas, de Abierto a Cerrado. A la derecha, los detalles: estado, prioridad, cuándo vence y quién lo atiende. Todavía no tiene responsable, así que pulso Asignarme. Abajo está la conversación. Con Responder escribes en la conversación del caso, la que ve quien lo reportó: aquí dejo dicho que ya lo estamos revisando y que hoy le confirmamos al cliente. Es la respuesta oficial del caso, así que escríbela clara. Cuando está listo, pulso Enviar. Ahora, con Nota interna escribes algo que sólo ve tu equipo: aquí le pido a almacén que verifique si los tubos salieron en el camión. Quien reportó el caso no ve esta nota. La guardo con el botón Guardar nota. Las dos quedan en la actividad del caso, cada una marcada como lo que es.
+Almacén encontró los tubos y salieron en el camión de hoy. Para resolver el caso, cambio el estado en los detalles: lo abro y elijo Resuelto. El sistema pregunta cómo se resolvió. Lo escribo, porque queda para el que reciba el próximo caso igual: qué pasó y qué se hizo. Con eso basta. Pulso Continuar. El caso pasa a Resuelto, con su resolución y la hora. Si el cliente vuelve a escribir, se reabre; y cuando está conforme, se cierra.

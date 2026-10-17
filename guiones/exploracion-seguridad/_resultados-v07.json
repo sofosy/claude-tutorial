@@ -1,0 +1,60 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.02,
+   "clic_a_url_s": 6.19,
+   "clic_a_networkidle_s": 6.19,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "audit_texto": "calendar_today\nÚltimos 7 días\nperson\nfilter_list\nAcción\ndescription\nlan\n677 eventos\nHORA\nQUIÉN\nACCIÓN\nREGISTRO\nIP\nHoy · domingo, 27 de septiembre\n11:47\nrosa.almanzar\nAcceso\nSesión #7943\n::1\n11:11\npedro.nunez\nAcceso\nSesión #7947\n::1\n11:11\nmarta.guzman\nAcceso\nSesión #7948\n::1\n11:10\ncarlos.pimentel\nAcceso\nSesión #7946\n::1\n11:10\njose.cabrera\nAcceso\nSesión #7945\n::1\n11:10\nana.mejia\nAcceso\nSesión #7944\n::1\n11:10\nrosa.almanzar\nAcceso\nSesión #7943\n::1\n11:10\nrosa.almanzar\nCambió permisos\nRoles #79\n::1\n11:10\nrosa.almanzar\nCreó\nPermisos por rol #11034\n::1\n11:10\nrosa.almanzar\nActualizó\nUsuarios #7951\n::1\n11:10\nsonia.reyes\nAcceso\nSesión #7951\n::1\n11:10\nrosa.almanzar\nActualizó\nUsuarios #7951\n::1\n11:09\nrosa.almanzar\nAcceso\nSesión #7943\n::1\n11:09\nrosa.almanzar\nAcceso\nSesión #7943\n::1\n11:09\nluisa.feliz\nAcceso\nSesión #7950\n::1\n11:09\nmarta.guzman\nAcceso\nSesión #7948\n::1\n11:09\npedro.nunez\nAcceso\nSesión #7947\n::1\n11:08\nrosa.almanzar\nAcceso\nSesión #7943\n::1\n11:08\nrosa.almanzar\nAcceso\nSesión #7943\n::1\n11:07\nrosa.almanzar\nActualizó\nQuote details #335\n::1\n11:07\nrosa.almanzar\nActualizó\nPrices #794\n::1\n11:07\nrosa.almanzar\nActualizó\nQuote details #334\n::1\n11:07\nrosa.almanzar\nCreó\nPrice history #1684\n::1\n11:07\nrosa.almanzar\nActualizó\nPrices #790\n::1\n11:07\nrosa.almanzar\nCreó\nPrice history #1683\n::1\n11:07\nrosa.almanzar\nCreó\nQuote versions #285\n::1\n11:07\nrosa.almanzar\nCreó\nInvoice tax group #1822\n::1\n11:07\nrosa.almanzar\nCreó\nInvoice tax group #1821\n::1\n11:07\nrosa.almanzar\nCreó\nQuote detail inventory allocations #38\n::1\n11:07\nrosa.almanzar\nCreó\nQuote details #335\n::1\n11:07\nrosa.almanzar\nCreó\nQuote detail inventory allocations #37\n::1\n11:07\nrosa.almanzar\nCreó\nQuote details #334\n::1\n11:07\nrosa.almanzar\nCreó\nQuotes #213\n::1\n11:07\ncarlos.pimentel\nActualizó\nPrices #806\n::1\n11:07\ncarlos.pimentel\nCreó\nPrice history #1682\n::1\n11:07\ncarlos.pimentel\nActualizó\nPrices #805\n::1\n11:07\ncarlos.pimentel\nCreó\nPrice history #1681\n::1\n11:07\ncarlos.pimentel\nCreó\nQuote versions #284\n::1\n11:07\ncarlos.pimentel\nCreó\nInvoice tax group #1820\n::1\n11:07\ncarlos.pimentel\nCreó\nInvoice tax group #1819\n::1\n11:07\ncarlos.pimentel\nCreó\nInvoice tax group #1818\n::1\n11:07\ncarlos.pimentel\nCreó\nInvoice tax group #1817\n::1\n11:07\ncarlos.pimentel\nCreó\nQuote detail inventory allocations #36\n::1\n11:07\ncarlos.pimentel\nCreó\nQuote details #333\n::1\n11:07\ncarlos.pimentel\nCreó\nQuote detail inventory allocations #35\n::1\n11:07\ncarlos.pimentel\nCreó\nQuote details #332\n::1\n11:07\ncarlos.pimentel\nCreó\nQuotes #212\n::1\n11:07\ncarlos.pimentel\nCreó\nQuo",
+ "periodos": [
+  "radio_button_unchecked\nHoy",
+  "radio_button_checked\nÚltimos 7 días",
+  "radio_button_unchecked\nÚltimos 30 días",
+  "radio_button_unchecked\nEste mes",
+  "radio_button_unchecked\nTodo el historial"
+ ],
+ "persona_ana": [
+  "HORA\nQUIÉN\nACCIÓN\nREGISTRO\nIP",
+  "11:47\nrosa.almanzar\nAcceso\nSesión #7943\n::1",
+  "11:11\npedro.nunez\nAcceso\nSesión #7947\n::1",
+  "11:11\nmarta.guzman\nAcceso\nSesión #7948\n::1",
+  "11:10\ncarlos.pimentel\nAcceso\nSesión #7946\n::1",
+  "11:10\njose.cabrera\nAcceso\nSesión #7945\n::1",
+  "11:10\nana.mejia\nAcceso\nSesión #7944\n::1",
+  "11:10\nrosa.almanzar\nAcceso\nSesión #7943\n::1",
+  "11:10\nrosa.almanzar\nCambió permisos\nRoles #79\n::1",
+  "11:10\nrosa.almanzar\nCreó\nPermisos por rol #11034\n::1"
+ ],
+ "persona_nombre_visible_filas": 51,
+ "acciones": [
+  "check_box_outline_blank\nCreó",
+  "check_box_outline_blank\nActualizó",
+  "check_box_outline_blank\nEliminó",
+  "check_box_outline_blank\nCambió estado",
+  "check_box_outline_blank\nAcceso",
+  "check_box_outline_blank\nConsultó",
+  "check_box_outline_blank\nAcción",
+  "check_box_outline_blank\nExportó",
+  "check_box_outline_blank\nImprimió"
+ ],
+ "menu_sigue_abierto": 1,
+ "detalle": "Cambió permisos\nDomingo, 27 de septiembre de 2026, 11:10\nclose\nRoles #79\npor rosa.almanzar\nQUÉ CAMBIÓ\nProductos · Productos\nVer, Crear, Editar, Importar\n→\nVer, Crear, Editar, Importar, Exportar\nSOLICITUD\nIP\n::1\nOrigen\nCliente de API\nEvento\nPERMISSIONS_CHANGED\nSolicitud\nc622744d-ef7b-48b5-ab95-ed936feab1f9\nHistorial del registro →\nVer a rosa.almanzar →",
+ "historial": {
+  "url": "http://localhost:4200/security/auditoria?registro=roles&registroId=79&periodo=todo",
+  "filas": [
+   "HORA\nQUIÉN\nACCIÓN\nREGISTRO\nIP",
+   "11:10\nrosa.almanzar\nCambió permisos\nRoles #79\n::1",
+   "11:03\nrosa.almanzar\nCambió permisos\nRoles #79\n::1",
+   "11:03\nrosa.almanzar\nCreó\nRoles #79\n::1"
+  ]
+ },
+ "cargar_mas": {
+  "filas": 51,
+  "boton": 1
+ }
+}

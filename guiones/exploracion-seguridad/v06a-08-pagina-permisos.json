@@ -1,0 +1,2914 @@
+{
+ "url": "/security/integration-user/7959/permissions",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 12894,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h4",
+   "clase": "page-title",
+   "texto": "Permisos de Integración",
+   "caja": [
+    97,
+    80,
+    186,
+    24
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Volver a Integraciones",
+   "icono": "arrow_back",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    340,
+    12766,
+    223,
+    36
+   ],
+   "sel": "button:has-text('Volver a Integraciones')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Buscar permisos",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Nombre o código...",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    356,
+    490,
+    400,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Buscar permisos'))",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "Impuestos TAX_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1239,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Regímenes Base Presunta PRESUMPTIVE_TAX_REGIME_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1305,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Estados Pedido ORDER_STATUS_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1371,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Estados Pedido ORDER_STATUS_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1437,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Estados Pedido ORDER_STATUS_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1503,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Estados Pedido ORDER_STATUS_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1569,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Pedidos ORDER_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1635,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Pedidos ORDER_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1701,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Pedidos ORDER_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1767,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Pedidos ORDER_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1833,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Detalles Pedido ORDER_DETAIL_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1899,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Detalles Pedido ORDER_DETAIL_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    1965,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Detalles Pedido ORDER_DETAIL_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2031,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Detalles Pedido ORDER_DETAIL_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2097,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Productos Pedido ORDER_PRODUCT_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2163,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Productos Pedido ORDER_PRODUCT_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2229,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Productos Pedido ORDER_PRODUCT_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2295,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Productos Pedido ORDER_PRODUCT_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2361,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Gestión Workflow Órdenes ORDER_WORKFLOW_MANAGE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2427,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Procesos Aprobación ORDER_APPROVAL_PROCESS",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2493,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Vista Financiera Órdenes ORDER_FINANCIAL_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2559,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Reportes Órdenes ORDER_REPORTS_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2625,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Analíticas Órdenes ORDER_ANALYTICS_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2691,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Tipos NCF NCF_TYPE_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2757,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Tipos NCF NCF_TYPE_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2823,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Tipos NCF NCF_TYPE_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2889,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Tipos NCF NCF_TYPE_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    2955,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "NCF NCF_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3021,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear NCF NCF_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3087,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar NCF NCF_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3153,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar NCF NCF_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3219,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Facturas INVOICE_VIEW",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    393,
+    3285,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Facturas INVOICE_CREATE",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    393,
+    3351,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Facturas INVOICE_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3417,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Cambiar Estado de Facturas INVOICE_CHANGE_STATUS",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3483,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Historial de Versiones de Facturas INVOICE_VERSION_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3549,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Pagos PAYMENT_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3615,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Pagos PAYMENT_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3681,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Pagos Directos en Factura PAYMENT_CREATE_DIRECT",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3747,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Pagos PAYMENT_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3813,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Reversar Cobros PAYMENT_REVERSE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3879,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Pagos PAYMENT_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    3945,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Tipos Pago PAYMENT_TYPE_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4011,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Recibo de Pago PAYMENT_RECEIPT",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4077,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Tipos Ingreso INCOME_TYPE_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4143,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Notas Débito DEBIT_NOTE_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4209,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Notas Débito DEBIT_NOTE_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4275,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Notas Débito DEBIT_NOTE_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4341,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Notas Débito DEBIT_NOTE_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4407,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Aprobar Notas Débito DEBIT_NOTE_APPROVE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4473,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Devoluciones INVOICE_RETURN_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4539,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Devoluciones INVOICE_RETURN_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4605,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Devoluciones INVOICE_RETURN_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4671,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Devoluciones INVOICE_RETURN_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4737,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Emitir Devoluciones INVOICE_RETURN_EMIT",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4803,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Reembolsar Devoluciones INVOICE_RETURN_REFUND",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4869,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Anular Devoluciones INVOICE_RETURN_CANCEL",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    4935,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Gestionar Motivos de Devolución INVOICE_RETURN_REASON_MANAGE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5001,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Motivos de Modificación INVOICE_MODIFICATION_REASON_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5067,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Motivos de Modificación INVOICE_MODIFICATION_REASON_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5133,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Motivos de Modificación INVOICE_MODIFICATION_REASON_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5199,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Motivos de Modificación INVOICE_MODIFICATION_REASON_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5265,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Órdenes de Pago PAYMENT_ORDER_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5331,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Órdenes de Pago PAYMENT_ORDER_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5397,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Actualizar Órdenes de Pago PAYMENT_ORDER_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5463,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Exportar Órdenes de Pago PAYMENT_ORDER_EXPORT",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5529,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Cancelar Órdenes de Pago PAYMENT_ORDER_CANCEL",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5595,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Aplicación de Pagos PAYMENT_APPLICATION_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5661,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Aplicaciones de Pagos PAYMENT_APPLICATION_READ",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5727,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Actualizar Aplicaciones de Pagos PAYMENT_APPLICATION_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5793,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Aplicaciones de Pagos PAYMENT_APPLICATION_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5859,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Reversar Aplicaciones de Pagos PAYMENT_APPLICATION_REVERSE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5925,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Revisar Aplicaciones de Pagos PAYMENT_APPLICATION_REVIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    5991,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Reportes de Aplicaciones de Pagos PAYMENT_APPLICATION_REPORTS",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6057,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Gestionar Aplicaciones de Pagos PAYMENT_APPLICATION_MANAGE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6123,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Períodos de Tasa de Impuestos Adicionales ADDITIONAL_TAX_RATE_PERIOD_READ",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6189,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Corregir Datos Fiscales de Compras INVOICE_CORRECT_FISCAL_DATA",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6255,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Registrar Facturas de Compra PURCHASE_INVOICE_CREATE",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    393,
+    6321,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Facturas de Compra PURCHASE_INVOICE_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6387,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "eCF ECF_VIEW",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    393,
+    6602,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Aprobar eCF ECF_APPROVAL_RECEIPT",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    393,
+    6668,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Proceso de Certificación CERTIFICATION_PROCESS_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6734,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Gestionar Proceso de Certificación CERTIFICATION_PROCESS_MANAGE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6800,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Actualizar Paso de Certificación CERTIFICATION_PROCESS_UPDATE_STEP",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6866,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Registrar Facturas Recibidas (Certificación) CERTIFICATION_PROCESS_REGISTER_RECEIVED_INVOICE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6932,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 606 DGII DGII_REPORT_606_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    6998,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 606 DGII DGII_REPORT_606_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7064,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 607 DGII DGII_REPORT_607_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7130,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 607 DGII DGII_REPORT_607_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7196,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 608 DGII DGII_REPORT_608_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7262,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 608 DGII DGII_REPORT_608_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7328,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 609 DGII DGII_REPORT_609_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7394,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 609 DGII DGII_REPORT_609_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7460,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 612 DGII DGII_REPORT_612_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7526,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 612 DGII DGII_REPORT_612_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7592,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 613 DGII DGII_REPORT_613_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7658,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 613 DGII DGII_REPORT_613_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7724,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 615 DGII DGII_REPORT_615_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7790,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 615 DGII DGII_REPORT_615_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7856,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 616 DGII DGII_REPORT_616_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7922,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 616 DGII DGII_REPORT_616_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    7988,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 623 DGII DGII_REPORT_623_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8054,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 623 DGII DGII_REPORT_623_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8120,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 629 DGII DGII_REPORT_629_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8186,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 629 DGII DGII_REPORT_629_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8252,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte 987 DGII DGII_REPORT_987_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8318,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar Reporte 987 DGII DGII_REPORT_987_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8384,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte IT-1 DGII DGII_REPORT_IT1_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8450,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar TXT Reporte IT-1 DGII DGII_REPORT_IT1_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8516,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte IR-2 DGII DGII_REPORT_IR2_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8582,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar TXT Reporte IR-2 DGII DGII_REPORT_IR2_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8648,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Ajustes Fiscales IR-2 DGII_REPORT_IR2_ADJUSTMENT_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8714,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Ajustes Fiscales IR-2 DGII_REPORT_IR2_ADJUSTMENT_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8780,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Ajustes Fiscales IR-2 DGII_REPORT_IR2_ADJUSTMENT_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8846,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Ajustes Fiscales IR-2 DGII_REPORT_IR2_ADJUSTMENT_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8912,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Mapeo de Cuentas IR-2 DGII_REPORT_IR2_MAPPING_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    8978,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Mapeo de Cuentas IR-2 DGII_REPORT_IR2_MAPPING_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    9044,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Gobierno Corporativo CORPORATE_GOVERNANCE_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    9110,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Gobierno Corporativo CORPORATE_GOVERNANCE_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    9176,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte IR-3 DGII DGII_REPORT_IR3_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    9242,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar TXT Reporte IR-3 DGII DGII_REPORT_IR3_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    9308,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Reporte IR-17 DGII DGII_REPORT_IR17_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    9374,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Generar TXT Reporte IR-17 DGII DGII_REPORT_IR17_GENERATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    9440,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Transportistas CARRIER_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10047,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Transportistas CARRIER_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10113,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Transportistas CARRIER_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10179,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Transportistas CARRIER_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10245,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Órdenes de Compra PURCHASE_ORDER_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10311,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Órdenes de Compra PURCHASE_ORDER_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10377,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Actualizar Órdenes de Compra PURCHASE_ORDER_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10443,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Órdenes de Compra PURCHASE_ORDER_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10509,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Aprobar Órdenes de Compra PURCHASE_ORDER_APPROVE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10575,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Enviar Órdenes de Compra PURCHASE_ORDER_SEND",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10641,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Avance Directo de Órdenes de Compra PURCHASE_ORDER_FAST_FORWARD",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10707,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Recibir Órdenes de Compra PURCHASE_ORDER_RECEIVE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10773,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Cancelar Órdenes de Compra PURCHASE_ORDER_CANCEL",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10839,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Recepciones de Compra PURCHASE_RECEIPT_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10905,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Recepciones de Compra PURCHASE_RECEIPT_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    10971,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Actualizar Recepciones de Compra PURCHASE_RECEIPT_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11037,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Recepciones de Compra PURCHASE_RECEIPT_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11103,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Procesar Recepciones a Inventario PURCHASE_RECEIPT_PROCESS",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11169,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Inspeccionar Recepciones de Compra PURCHASE_RECEIPT_INSPECT",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11235,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Capturas por WhatsApp DOCUMENT_CAPTURE_VIEW",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11301,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Registrar Documento Capturado DOCUMENT_CAPTURE_ROUTE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11367,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Descartar Documento Capturado DOCUMENT_CAPTURE_DISCARD",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11433,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Cuentas por Pagar ACCOUNTS_PAYABLE_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11499,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Cuentas por Pagar ACCOUNTS_PAYABLE_READ",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11565,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Actualizar Cuentas por Pagar ACCOUNTS_PAYABLE_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11631,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Cuentas por Pagar ACCOUNTS_PAYABLE_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11697,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Aprobar Cuentas por Pagar ACCOUNTS_PAYABLE_APPROVE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11763,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Disputar Cuentas por Pagar ACCOUNTS_PAYABLE_DISPUTE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11829,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Cancelar Cuentas por Pagar ACCOUNTS_PAYABLE_CANCEL",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11895,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Reportes de Cuentas por Pagar ACCOUNTS_PAYABLE_REPORTS",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    11961,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Gestionar Cuentas por Pagar ACCOUNTS_PAYABLE_MANAGE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    12027,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Aplicar Pagos a Cuentas por Pagar ACCOUNTS_PAYABLE_PAYMENT",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    12093,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Crear Retenciones de Compras PURCHASE_TAX_WITHHOLDING_CREATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    12159,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Ver Retenciones de Compras PURCHASE_TAX_WITHHOLDING_READ",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    12225,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Actualizar Retenciones de Compras PURCHASE_TAX_WITHHOLDING_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    12291,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Eliminar Retenciones de Compras PURCHASE_TAX_WITHHOLDING_DELETE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    12357,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Registrar Facturas de Compra PURCHASE_INVOICE_CREATE",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    393,
+    12423,
+    552,
+    40
+   ]
+  },
+  {
+   "texto": "Editar Facturas de Compra PURCHASE_INVOICE_UPDATE",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    393,
+    12489,
+    552,
+    40
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "Personas agregadas a «Zona Norte» exitosamente",
+  "Persona quitada de «Zona Norte» exitosamente",
+  "Equipo eliminado exitosamente",
+  "Secreto copiado"
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Volver a Integraciones",
+   "caja": [
+    340,
+    12766,
+    223,
+    36
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     7,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     7,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     7,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     7,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     7,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     7,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     7,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     7,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     7,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     7,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     7,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     7,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     7,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     7,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     7,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     7,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     7,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     7,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Permisos de Integración Seguridad Integraciones Programa del contador Permisos integration_instructions Programa del contador PREFIJO DE LA CLAVE: gv_live_6bea049a DESCRIPCIÓN: Consulta las facturas emitidas para la contabilidad ESTADO: Activo PERMISOS ACTIVOS: 5 de 1336 security Permisos Disponibles por Módulo Buscar permisos search check_circle 5 de 1336 permisos activos settings General GENERAL 0 / 109 business Empresa COMPANY 0 / 40 people Usuarios USERS 0 / 4 security Seguridad SECURITY 0 / 19 inventory_2 Productos PRODUCTS 0 / 42 warehouse Inventario INVENTORY 0 / 47 domain Inventario Avanzado INVENTORY_ADVANCED 0 / 8 point_of_sale Punto de Venta POS 0 / 36 contacts Clientes y Proveedores PARTNERS 0 / 33 receipt_long Facturación INVOICING 3 / 79 Facturación, pedidos, cotizaciones y pagos Impuestos TAX_VIEW Regímenes Base Presunta PRESUMPTIVE_TAX_REGIME_VIEW Estados Pedido ORDER_STATUS_VIEW Crear Estados Pedido ORDER_STATUS_CREATE Editar Estados Pedido ORDER_STATUS_UPDATE Eliminar Estados Pedido ORDER_STATUS_DELETE Pedidos ORDER_VIEW Crear Pedidos ORDER_CREATE Editar Pedidos ORDER_UPDATE Eliminar Pedidos ORDER_DELETE Detalles Pedido ORDER_DETAIL_VIEW Crear Detalles Pedido ORDER_DETAIL_CREATE Editar Detalles Pedido ORDER_DETAIL_UPDATE Eliminar Detalles Pedido ORDER_DETAIL_DELETE Productos Pedido ORDER_PRODUCT_VIEW Crear Productos Pedido ORDER_PRODUCT_CREATE Editar Productos Pedido ORDER_PRODUCT_UPDATE Eliminar Productos Pedido ORDER_PRODUCT_DELETE Gestión Workflow Órdenes ORDER_WORKFLOW_MANAGE Procesos Aprobación ORDER_APPROVAL_PROCESS Vista Financiera Órdenes ORDER_FINANCIAL_VIEW Reportes Órdenes ORDER_REPORTS_VIEW Analíticas Órdenes ORDER_ANALYTICS_VIEW Tipos NCF NCF_TYPE_VIEW Crear Tipos NCF NCF_TYPE_CREATE Editar Tipos NCF NCF_TYPE_UPDATE Eliminar Tipos NCF NCF_TYPE_DELETE NCF NCF_VIEW Crear NCF NCF_CREATE Editar NCF NCF_UPDATE Eliminar NCF NCF_DELETE Facturas INVOICE_VIEW Crear Facturas INVOICE_CREATE Editar Facturas INVOICE_UPDATE Cambiar Estado de Facturas INVOICE_CHANGE_STATUS Ver Historial de Versiones de Facturas INVOICE_VERSION_VIEW Pagos PAYMENT_VIEW Crear Pagos PAYMENT_CREATE Crear Pagos Directos en Factura PAYMENT_CREATE_DIRECT Editar Pagos PAYMENT_UPDATE Reversar Cobros PAYMENT_REVERSE Eliminar Pagos PAYMENT_DELETE Tipos Pago PAYMENT_TYPE_VIEW Recibo de Pago PAYMENT_RECEIPT Tipos Ingreso INCOME_TYPE_VIEW Notas Débito DEBIT_NOTE_VIEW Crear Notas Débito DEBIT_NOTE_CREATE Editar Notas Débito DEBIT_NOTE_UPDATE Eliminar Notas Débito DEBIT_NOTE_DELETE Aprobar Notas Débito DEBIT_NOTE_APPROVE Devoluciones INVOICE_RETURN_VIEW Crear Devoluciones INVOICE_RETURN_CREATE Editar Devoluciones INVOICE_RETURN_UPDATE Eliminar Devoluciones INVOICE_RETURN_DELETE Emitir Devoluciones INVOICE_RETURN_EMIT Reembolsar Devoluciones INVOICE_RETURN_REFUND Anular Devoluciones INVOICE_RETURN_CANCEL Gestionar Motivos de Devolución INVOICE_RETURN_REASON_MANAGE Motivos de Modificación INVOICE_MODIFICATION_REASON_VIEW Crear Motivos de Modificación INVOICE_MODIFICATION_REASON_CREATE Editar Motivos de Modificación"
+ },
+ "selectores_probados": {
+  "buscar": {
+   "sel": "input[placeholder='Nombre o código...']",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    408,
+    500,
+    332,
+    18
+   ],
+   "ok": true
+  },
+  "volver": {
+   "sel": "button:has-text('Volver a Integraciones')",
+   "count": 1,
+   "visibles": 1,
+   "caja": [
+    340,
+    12766,
+    223,
+    36
+   ],
+   "ok": true
+  }
+ },
+ "video": "v06a",
+ "pantalla": "08-pagina-permisos",
+ "usuario": "rosa.almanzar",
+ "notas": "http://localhost:4200/security/integration-user/7959/permissions",
+ "red_reciente": [
+  {
+   "t": 1790523927.5540223,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523932.0839128,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523941.8400652,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523942.6927714,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523946.7280452,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523952.494151,
+   "m": "POST",
+   "url": "v1/integration-users",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523955.647662,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523961.594072,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

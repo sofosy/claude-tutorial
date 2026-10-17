@@ -1,0 +1,1291 @@
+1
+00:00:03,097 --> 00:00:06,535
+Esta es la pantalla de Productos, dentro del menú Inventario.
+
+2
+00:00:07,166 --> 00:00:09,684
+Aquí vive todo lo que tu empresa vende o compra:
+
+3
+00:00:09,823 --> 00:00:12,969
+los bienes que guardas en un almacén y también los servicios.
+
+4
+00:00:13,615 --> 00:00:16,256
+Primero cierro el panel del menú para ganar espacio;
+
+5
+00:00:16,356 --> 00:00:18,766
+la franja de íconos de la izquierda se queda.
+
+6
+00:00:19,413 --> 00:00:23,923
+Cada fila es un producto, con su nombre, su código, el precio de venta,
+
+7
+00:00:23,954 --> 00:00:25,385
+el stock y el estado.
+
+8
+00:00:26,018 --> 00:00:28,899
+Arriba de la tabla hay un selector con tres vistas:
+
+9
+00:00:28,978 --> 00:00:32,873
+todos los productos, solo los que tienen variantes, o solo los que no.
+
+10
+00:00:32,686 --> 00:00:36,171
+Una variante es cada combinación que vendes de un mismo artículo,
+
+11
+00:00:36,213 --> 00:00:38,682
+como una camiseta talla M de manga corta;
+
+12
+00:00:38,749 --> 00:00:40,773
+en este video las vemos a fondo.
+
+13
+00:00:41,405 --> 00:00:46,231
+A la derecha, la casilla Agrupar variantes deja cada variante debajo de su producto.
+
+14
+00:00:46,865 --> 00:00:48,538
+Más abajo están los filtros:
+
+15
+00:00:48,640 --> 00:00:52,403
+buscas por nombre o código, y filtras por estado y por tipo.
+
+16
+00:00:53,036 --> 00:00:55,447
+Al final de cada fila están las acciones:
+
+17
+00:00:55,572 --> 00:00:58,538
+abrir, duplicar, desactivar y eliminar.
+
+18
+00:00:59,890 --> 00:01:04,051
+Junto al botón Nuevo Producto hay dos atajos para cargar productos en cantidad.
+
+19
+00:01:04,695 --> 00:01:08,628
+Alta por foto crea el producto a partir de una fotografía del artículo.
+
+20
+00:01:09,262 --> 00:01:11,743
+Importar y Exportar abre este asistente.
+
+21
+00:01:12,378 --> 00:01:17,855
+Primero descargas la plantilla, en Excel o en CSV, que es texto separado por comas:
+
+22
+00:01:17,932 --> 00:01:21,308
+trae las instrucciones y los valores válidos de cada columna.
+
+23
+00:01:21,942 --> 00:01:24,292
+La completas y la subes con este botón.
+
+24
+00:01:24,938 --> 00:01:26,719
+La coincidencia es por código:
+
+25
+00:01:26,822 --> 00:01:29,798
+si el código ya existe, el producto se actualiza;
+
+26
+00:01:29,864 --> 00:01:31,260
+si no, se crea.
+
+27
+00:01:31,906 --> 00:01:36,551
+Y si el archivo trae errores, no se importa nada y se listan para que los corrijas.
+
+28
+00:01:37,195 --> 00:01:40,935
+En la pestaña Exportar descargas todos tus productos con sus precios y su
+
+29
+00:01:40,746 --> 00:01:44,256
+existencia, para editarlos en masa y volver a importarlos.
+
+30
+00:01:44,902 --> 00:01:46,356
+Cierro el asistente.
+
+31
+00:01:47,702 --> 00:01:49,895
+Vamos a crear un producto desde cero.
+
+32
+00:01:50,527 --> 00:01:52,006
+Pulso Nuevo Producto.
+
+33
+00:01:52,640 --> 00:01:53,915
+Empiezo por el nombre:
+
+34
+00:01:53,969 --> 00:01:55,823
+Camiseta Germiva Clásica.
+
+35
+00:01:56,457 --> 00:02:00,304
+Mientras escribes, el sistema busca productos con un nombre parecido,
+
+36
+00:02:00,261 --> 00:02:02,381
+para que no dupliques uno que ya existe;
+
+37
+00:02:02,459 --> 00:02:04,965
+aquí confirma que el nombre está disponible.
+
+38
+00:02:05,599 --> 00:02:06,959
+A la derecha está el tipo:
+
+39
+00:02:07,097 --> 00:02:09,591
+Producto es un bien físico que se puede almacenar;
+
+40
+00:02:09,693 --> 00:02:14,845
+Servicio es algo que se presta, como una consultoría, y nunca lleva existencias.
+
+41
+00:02:15,490 --> 00:02:19,507
+Como la camiseta se guarda en el almacén, dejo activo Maneja inventario:
+
+42
+00:02:19,633 --> 00:02:22,044
+así cada venta descuenta existencias.
+
+43
+00:02:22,689 --> 00:02:26,210
+Al lado está Tiene variantes, que activaremos en un momento.
+
+44
+00:02:26,855 --> 00:02:28,264
+Ahora el precio de venta:
+
+45
+00:02:28,377 --> 00:02:31,282
+escribo ochocientos cincuenta, sin el impuesto.
+
+46
+00:02:31,928 --> 00:02:34,555
+Debajo, el sistema te muestra el desglose:
+
+47
+00:02:34,621 --> 00:02:38,167
+el neto, más el ITBIS, que es el impuesto a las ventas,
+
+48
+00:02:38,233 --> 00:02:40,233
+igual al total que paga el cliente.
+
+49
+00:02:40,877 --> 00:02:42,805
+Si tu precio ya trae el impuesto,
+
+50
+00:02:42,918 --> 00:02:46,693
+marca ITBIS incluido y el sistema calcula el neto hacia atrás.
+
+51
+00:02:48,052 --> 00:02:49,870
+Debajo están los impuestos.
+
+52
+00:02:50,514 --> 00:02:54,410
+El ITBIS de ventas es el que cobras al facturar, y el ITBIS de compras,
+
+53
+00:02:54,476 --> 00:02:56,028
+el que te cobra el proveedor.
+
+54
+00:02:56,662 --> 00:03:01,028
+Los dos son obligatorios y vienen precargados con la tasa general del dieciocho por
+
+55
+00:03:00,840 --> 00:03:01,439
+ciento.
+
+56
+00:03:02,084 --> 00:03:04,628
+En Costo sin ITBIS pongo cuatrocientos.
+
+57
+00:03:05,273 --> 00:03:06,657
+Es solo una referencia:
+
+58
+00:03:06,770 --> 00:03:11,076
+con cada entrada de inventario, el sistema lo reemplaza por el costo promedio.
+
+59
+00:03:11,722 --> 00:03:13,987
+La unidad de medida define cómo se vende:
+
+60
+00:03:14,101 --> 00:03:17,792
+escribo Unidad, y el sistema busca en el catálogo de unidades;
+
+61
+00:03:17,918 --> 00:03:20,364
+cuando aparece la lista, elijo Unidad.
+
+62
+00:03:21,010 --> 00:03:24,048
+La cantidad dice cuántas unidades trae cada artículo;
+
+63
+00:03:24,077 --> 00:03:25,546
+en este caso, una.
+
+64
+00:03:26,191 --> 00:03:28,855
+La categoría agrupa productos parecidos.
+
+65
+00:03:29,500 --> 00:03:32,346
+Todavía no existe, así que escribo Camisetas;
+
+66
+00:03:32,483 --> 00:03:36,065
+como no hay ninguna con ese nombre, el sistema me ofrece crearla,
+
+67
+00:03:36,179 --> 00:03:37,876
+y pulso Crear categoría.
+
+68
+00:03:38,522 --> 00:03:41,548
+En la ventana que se abre escribo el nombre, Camisetas,
+
+69
+00:03:41,626 --> 00:03:45,233
+compruebo que aplica a los productos de tipo Producto, y la guardo.
+
+70
+00:03:45,865 --> 00:03:50,533
+El sistema la registra y, en un momento, sale el aviso de categoría creada;
+
+71
+00:03:50,635 --> 00:03:51,379
+lo acepto.
+
+72
+00:03:52,012 --> 00:03:55,545
+Y en Descripción va el texto que se muestra en el catálogo en línea.
+
+73
+00:03:56,901 --> 00:04:01,134
+Un mismo producto puede tener varios precios, uno por cada lista de precios:
+
+74
+00:04:01,212 --> 00:04:05,072
+el regular, el de mayoristas o el de tus clientes preferenciales.
+
+75
+00:04:05,716 --> 00:04:08,210
+Toco el enlace Agregar precio para otra lista,
+
+76
+00:04:08,300 --> 00:04:10,552
+y aparece la tabla de precios por lista.
+
+77
+00:04:11,199 --> 00:04:12,293
+El primero ya está:
+
+78
+00:04:12,359 --> 00:04:14,877
+es el Precio regular, marcado con la estrella,
+
+79
+00:04:14,942 --> 00:04:18,754
+que es el que toma la factura cuando el cliente no tiene otra lista asignada.
+
+80
+00:04:19,399 --> 00:04:23,596
+Cada fila dice la lista, la moneda, el monto y si incluye ITBIS,
+
+81
+00:04:23,651 --> 00:04:25,735
+con el total calculado a la derecha.
+
+82
+00:04:26,367 --> 00:04:28,211
+Ahora pulso Agregar precio.
+
+83
+00:04:28,843 --> 00:04:31,978
+En la columna Lista abro las opciones y elijo Mayorista,
+
+84
+00:04:32,081 --> 00:04:34,466
+y como monto escribo setecientos cincuenta.
+
+85
+00:04:35,111 --> 00:04:38,331
+Así, al cliente que tenga asignada la lista Mayorista,
+
+86
+00:04:38,432 --> 00:04:40,457
+la factura le propone ese precio.
+
+87
+00:04:41,103 --> 00:04:43,911
+Las listas se definen en la configuración de inventario;
+
+88
+00:04:44,012 --> 00:04:45,735
+lo vemos al final del video.
+
+89
+00:04:47,102 --> 00:04:48,643
+Ahora las variantes.
+
+90
+00:04:49,287 --> 00:04:53,110
+Esta camiseta se vende en tres tallas, con manga corta o larga,
+
+91
+00:04:53,163 --> 00:04:57,009
+y cada combinación necesita su propio código de barras y su propio stock,
+
+92
+00:04:57,088 --> 00:04:58,641
+y a veces su propio precio.
+
+93
+00:04:59,275 --> 00:05:01,346
+Para eso activo Tiene variantes.
+
+94
+00:05:01,992 --> 00:05:05,549
+Debajo de la descripción aparece la sección Opciones y variantes.
+
+95
+00:05:06,194 --> 00:05:09,450
+Una opción es lo que distingue a las variantes, como la talla,
+
+96
+00:05:09,516 --> 00:05:13,134
+y sus valores son las alternativas, como S, M o L.
+
+97
+00:05:12,946 --> 00:05:14,860
+Pulso el atajo Talla de ropa.
+
+98
+00:05:15,494 --> 00:05:18,121
+Como la talla ya existe en el catálogo de la empresa,
+
+99
+00:05:18,224 --> 00:05:20,960
+el sistema la reutiliza y trae sus valores.
+
+100
+00:05:21,605 --> 00:05:26,588
+La XL, la extra grande, no la vendo, así que la quito con su equis.
+
+101
+00:05:27,233 --> 00:05:29,306
+La manga no está entre los atajos:
+
+102
+00:05:29,335 --> 00:05:32,542
+pulso Otra, y en el nombre de la opción escribo Manga.
+
+103
+00:05:33,187 --> 00:05:36,467
+Como es nueva, el sistema avisa que se crea al guardar.
+
+104
+00:05:37,112 --> 00:05:38,557
+Ahora sus valores.
+
+105
+00:05:39,201 --> 00:05:43,713
+Escribo Corta, y para que quede como valor, la confirmo con la tecla Enter.
+
+106
+00:05:44,347 --> 00:05:49,028
+Luego escribo Larga, que es el segundo valor, y otra vez lo confirmo con Enter.
+
+107
+00:05:49,673 --> 00:05:51,624
+Cada valor queda como una etiqueta,
+
+108
+00:05:51,737 --> 00:05:55,054
+y el orden en que los escribes es el orden en que se ven al vender.
+
+109
+00:05:56,393 --> 00:06:00,628
+Con las dos opciones listas, el sistema pregunta si alguna cambia el precio.
+
+110
+00:06:01,259 --> 00:06:02,206
+La talla sí:
+
+111
+00:06:02,237 --> 00:06:03,826
+la L lleva más tela.
+
+112
+00:06:04,459 --> 00:06:07,703
+Elijo Talla, y aparece un campo por cada valor.
+
+113
+00:06:08,348 --> 00:06:10,360
+En el de la L escribo cincuenta.
+
+114
+00:06:10,992 --> 00:06:13,283
+Ese recargo se suma al precio del padre,
+
+115
+00:06:13,348 --> 00:06:16,145
+así que las camisetas L costarán novecientos.
+
+116
+00:06:16,790 --> 00:06:19,418
+Debajo está la matriz de Variantes que se van a crear:
+
+117
+00:06:19,520 --> 00:06:22,305
+las tallas en filas, las mangas en columnas,
+
+118
+00:06:22,382 --> 00:06:25,299
+y en cada cruce el precio que tendrá esa combinación.
+
+119
+00:06:25,932 --> 00:06:27,968
+Aquí se ve la L con su recargo.
+
+120
+00:06:28,614 --> 00:06:30,251
+Todas vienen marcadas.
+
+121
+00:06:30,896 --> 00:06:34,599
+La S de manga larga no la vendo por ahora, así que la desmarco;
+
+122
+00:06:34,725 --> 00:06:36,628
+se puede crear más adelante.
+
+123
+00:06:37,273 --> 00:06:40,227
+El botón de guardar dice cuántas variantes va a crear:
+
+124
+00:06:40,365 --> 00:06:41,012
+cinco.
+
+125
+00:06:41,645 --> 00:06:43,125
+Pulso Guardar producto.
+
+126
+00:06:43,759 --> 00:06:46,483
+El sistema crea el producto padre y, a la vez,
+
+127
+00:06:46,597 --> 00:06:48,825
+cada combinación como un producto hijo…
+
+128
+00:06:48,819 --> 00:06:51,254
+y lo confirma con un aviso, que acepto.
+
+129
+00:06:52,593 --> 00:06:55,377
+Al guardar, se abre la ficha del producto padre,
+
+130
+00:06:55,504 --> 00:06:57,889
+directamente en la pestaña Variantes.
+
+131
+00:06:58,533 --> 00:07:00,980
+Arriba lo dice la etiqueta Producto padre.
+
+132
+00:07:01,612 --> 00:07:04,350
+El padre es la plantilla que agrupa a sus variantes:
+
+133
+00:07:04,463 --> 00:07:08,057
+define lo que tienen en común, como los impuestos, la unidad,
+
+134
+00:07:08,182 --> 00:07:12,754
+la categoría y el precio base, pero él mismo no se vende ni guarda existencias.
+
+135
+00:07:13,401 --> 00:07:15,545
+Por eso sus cifras resumen a los hijos:
+
+136
+00:07:15,622 --> 00:07:20,182
+el stock total, el rango de precios, de ochocientos cincuenta a novecientos,
+
+137
+00:07:20,175 --> 00:07:21,728
+y cuántas están a la venta.
+
+138
+00:07:22,374 --> 00:07:25,098
+Y por eso no tiene el botón para registrar entradas:
+
+139
+00:07:25,187 --> 00:07:27,646
+la mercancía entra siempre a una variante.
+
+140
+00:07:28,292 --> 00:07:30,992
+En la tabla, cada fila es una variante.
+
+141
+00:07:31,637 --> 00:07:36,064
+Cada una tiene su propio código, un EAN-13 que el sistema generó solo,
+
+142
+00:07:36,045 --> 00:07:39,906
+que es el estándar de trece dígitos que leen los escáneres de las cajas.
+
+143
+00:07:40,550 --> 00:07:43,841
+En el precio, las que dicen del padre no tienen precio propio:
+
+144
+00:07:43,848 --> 00:07:47,538
+usan el del padre, y si lo cambias en el padre, cambian con él.
+
+145
+00:07:48,170 --> 00:07:52,923
+Las L sí tienen el suyo, novecientos, y esta flecha lo devuelve al del padre.
+
+146
+00:07:53,557 --> 00:07:58,201
+Luego vienen el costo promedio, el stock de cada variante y la columna A la venta,
+
+147
+00:07:58,279 --> 00:08:00,920
+que retira una variante de la venta sin borrarla.
+
+148
+00:08:02,281 --> 00:08:03,629
+Paso a la vista Matriz:
+
+149
+00:08:03,682 --> 00:08:05,791
+la misma información en una cuadrícula,
+
+150
+00:08:05,904 --> 00:08:08,749
+con las tallas en filas y las mangas en columnas.
+
+151
+00:08:09,393 --> 00:08:14,509
+Cada celda es una variante, con su precio y su stock, y al pulsarla abres su ficha.
+
+152
+00:08:15,142 --> 00:08:16,622
+Esta celda dice Crear:
+
+153
+00:08:16,736 --> 00:08:19,521
+es la S de manga larga, que no creamos.
+
+154
+00:08:20,166 --> 00:08:24,617
+Se puede crear ahí mismo o con el botón Agregar variante, que es lo que hago.
+
+155
+00:08:25,263 --> 00:08:29,424
+La ventana resume el precio del padre y cuántas de las seis combinaciones posibles
+
+156
+00:08:29,236 --> 00:08:30,149
+ya existen.
+
+157
+00:08:30,782 --> 00:08:33,507
+En Combinación eliges un valor de cada opción.
+
+158
+00:08:34,153 --> 00:08:35,874
+Abro Talla y elijo la S.
+
+159
+00:08:35,685 --> 00:08:36,405
+Abro Manga:
+
+160
+00:08:36,543 --> 00:08:40,875
+las que ya existen salen marcadas como Ya existe, así que elijo Larga.
+
+161
+00:08:41,507 --> 00:08:45,706
+Debajo, el sistema confirma lo que va a crear, sin existencia.
+
+162
+00:08:46,350 --> 00:08:48,543
+El precio y el código son opcionales:
+
+163
+00:08:48,669 --> 00:08:53,458
+si los dejas vacíos, la variante usa el precio del padre y recibe un EAN-13
+
+164
+00:08:53,270 --> 00:08:54,158
+automático.
+
+165
+00:08:54,804 --> 00:08:56,151
+Pulso Crear variante…
+
+166
+00:08:56,217 --> 00:08:59,062
+y la celda que estaba vacía ya tiene su variante.
+
+167
+00:09:00,413 --> 00:09:01,966
+Vuelvo a la vista Lista.
+
+168
+00:09:02,598 --> 00:09:05,672
+Para cambiar varias variantes a la vez, las selecciono:
+
+169
+00:09:05,786 --> 00:09:08,437
+con la casilla del encabezado marco todas.
+
+170
+00:09:09,083 --> 00:09:11,047
+Aparece la barra de acciones en lote:
+
+171
+00:09:11,136 --> 00:09:15,189
+cambiar el precio, volver al precio del padre, fijar el stock mínimo,
+
+172
+00:09:15,255 --> 00:09:18,100
+asignar una imagen, desactivar o eliminar.
+
+173
+00:09:18,733 --> 00:09:20,213
+Un detalle sobre Eliminar:
+
+174
+00:09:20,303 --> 00:09:23,860
+una variante sin movimientos se borra, pero si ya tiene ventas,
+
+175
+00:09:23,950 --> 00:09:28,051
+compras o existencia, el sistema la desactiva y conserva su historial.
+
+176
+00:09:28,697 --> 00:09:30,527
+Ahora pulso Stock mínimo.
+
+177
+00:09:31,173 --> 00:09:33,220
+El stock mínimo es el umbral de alerta:
+
+178
+00:09:33,322 --> 00:09:35,925
+cuando las existencias de una variante bajan de ahí,
+
+179
+00:09:36,015 --> 00:09:38,329
+sale como Bajo y el sistema te avisa.
+
+180
+00:09:38,974 --> 00:09:42,955
+Cada variante tiene el suyo, porque cada una tiene su propio stock.
+
+181
+00:09:43,600 --> 00:09:48,160
+Escribo cinco, que es el mínimo para cada combinación, y pulso Aplicar.
+
+182
+00:09:48,805 --> 00:09:52,303
+El sistema lo guarda en las seis variantes y limpia la selección.
+
+183
+00:09:53,648 --> 00:09:56,916
+Veamos cómo se ven las variantes en el listado de Productos.
+
+184
+00:09:57,560 --> 00:10:00,248
+La camiseta aparece arriba como una sola fila:
+
+185
+00:10:00,325 --> 00:10:04,330
+el producto padre, con cuántas variantes tiene y las opciones que las distinguen,
+
+186
+00:10:04,420 --> 00:10:07,276
+el rango de precios y el stock sumado de todas.
+
+187
+00:10:07,922 --> 00:10:10,598
+Con la flecha de la izquierda abro sus variantes.
+
+188
+00:10:11,243 --> 00:10:16,299
+Cada una aparece debajo, sangrada, con su combinación, su código y su precio,
+
+189
+00:10:16,388 --> 00:10:19,571
+marcado como del padre o como propio, y su stock.
+
+190
+00:10:20,217 --> 00:10:24,173
+En el selector de arriba, Con variantes deja solo los productos que tienen
+
+191
+00:10:23,985 --> 00:10:24,825
+variantes.
+
+192
+00:10:25,470 --> 00:10:30,199
+Y si desmarcas Agrupar variantes, cada variante sale como una fila independiente,
+
+193
+00:10:30,301 --> 00:10:31,612
+con su nombre completo:
+
+194
+00:10:31,654 --> 00:10:34,293
+útil para encontrar una combinación por su código.
+
+195
+00:10:34,927 --> 00:10:39,269
+La vuelvo a marcar, despliego otra vez la camiseta, y abro una variante,
+
+196
+00:10:39,395 --> 00:10:42,240
+la M de manga corta, con el botón de su fila.
+
+197
+00:10:43,576 --> 00:10:47,038
+Esta es la ficha de una variante, que es un producto hijo.
+
+198
+00:10:47,669 --> 00:10:49,161
+La barra de arriba lo dice:
+
+199
+00:10:49,263 --> 00:10:53,931
+producto hijo de Camiseta Germiva Clásica, con un enlace para volver al padre.
+
+200
+00:10:54,565 --> 00:10:57,398
+Al lado están sus hermanas, las otras variantes,
+
+201
+00:10:57,500 --> 00:11:01,733
+para saltar de una a otra sin volver al listado, y su estado, Activo.
+
+202
+00:11:02,367 --> 00:11:03,739
+El nombre no se escribe:
+
+203
+00:11:03,840 --> 00:11:08,243
+se arma solo con el nombre del padre y la combinación, y por eso está bloqueado.
+
+204
+00:11:08,877 --> 00:11:10,393
+Lo que sí es de la variante:
+
+205
+00:11:10,531 --> 00:11:14,016
+su código de barras, distinto del padre y de sus hermanas,
+
+206
+00:11:14,094 --> 00:11:15,598
+con su etiqueta para imprimir;
+
+207
+00:11:15,676 --> 00:11:16,987
+su stock, arriba;
+
+208
+00:11:17,125 --> 00:11:19,922
+su stock mínimo, los cinco que pusimos en lote;
+
+209
+00:11:20,000 --> 00:11:21,697
+y su galería de imágenes:
+
+210
+00:11:21,751 --> 00:11:24,982
+si no le subes una, al vender se muestra la del padre.
+
+211
+00:11:25,628 --> 00:11:29,258
+Y a diferencia del padre, la variante sí tiene Registrar Entrada,
+
+212
+00:11:29,372 --> 00:11:32,228
+porque es la que se compra, se guarda y se vende.
+
+213
+00:11:33,579 --> 00:11:35,254
+¿Y qué hereda del padre?
+
+214
+00:11:35,896 --> 00:11:38,669
+Todo lo demás llega del padre como punto de partida:
+
+215
+00:11:38,783 --> 00:11:42,208
+los impuestos, la unidad, la categoría y el precio.
+
+216
+00:11:42,841 --> 00:11:44,140
+Fíjate en el precio:
+
+217
+00:11:44,206 --> 00:11:49,188
+ochocientos cincuenta, el mismo del padre, porque esta variante no tiene uno propio.
+
+218
+00:11:49,822 --> 00:11:52,703
+Si aquí escribes otro precio, o cambias un impuesto,
+
+219
+00:11:52,769 --> 00:11:56,217
+ese dato pasa a ser de esta variante y deja de seguir al padre;
+
+220
+00:11:56,319 --> 00:11:58,342
+lo demás sigue sincronizado con él.
+
+221
+00:11:58,976 --> 00:12:01,591
+Lo ves en su hermana, la L de manga corta:
+
+222
+00:12:01,658 --> 00:12:03,247
+la abro desde su etiqueta.
+
+223
+00:12:03,893 --> 00:12:08,307
+Su precio es novecientos, el suyo propio, por el recargo de la talla.
+
+224
+00:12:08,941 --> 00:12:09,756
+En resumen:
+
+225
+00:12:09,834 --> 00:12:11,435
+el padre define y agrupa;
+
+226
+00:12:11,549 --> 00:12:16,169
+cada variante se compra, se guarda y se vende, con su código, su stock y,
+
+227
+00:12:16,247 --> 00:12:18,150
+si hace falta, su precio.
+
+228
+00:12:19,495 --> 00:12:22,220
+Con la variante lista, falta la mercancía.
+
+229
+00:12:22,851 --> 00:12:25,732
+Pulso Registrar Entrada, arriba a la derecha.
+
+230
+00:12:26,366 --> 00:12:30,962
+La ventana muestra la variante exacta que entra, con su código y su stock actual.
+
+231
+00:12:31,595 --> 00:12:35,056
+En el campo Motivo, que explica por qué entra la mercancía,
+
+232
+00:12:35,170 --> 00:12:36,952
+elijo Compras de mercancía.
+
+233
+00:12:37,598 --> 00:12:39,090
+El proveedor es quien la vende:
+
+234
+00:12:39,216 --> 00:12:43,425
+escribo Textiles, espero un momento a que el sistema lo encuentre en la lista,
+
+235
+00:12:43,443 --> 00:12:44,500
+y lo selecciono.
+
+236
+00:12:45,134 --> 00:12:48,160
+La ubicación es el lugar exacto del almacén donde se guarda:
+
+237
+00:12:48,298 --> 00:12:51,203
+abro la lista de ubicaciones y tomo el Pasillo A.
+
+238
+00:12:51,849 --> 00:12:54,936
+El número de lote lo genera el botón que está junto al campo.
+
+239
+00:12:55,569 --> 00:13:00,141
+Entran veinte unidades, cada una a un costo unitario de cuatrocientos pesos sin
+
+240
+00:12:59,953 --> 00:13:02,725
+ITBIS, y el costo total se calcula solo.
+
+241
+00:13:03,370 --> 00:13:05,165
+Fíjate en el aviso de abajo:
+
+242
+00:13:05,255 --> 00:13:08,075
+esta entrada mueve el inventario y el costo promedio,
+
+243
+00:13:08,141 --> 00:13:10,769
+pero no registra el ITBIS ni la cuenta por pagar;
+
+244
+00:13:10,919 --> 00:13:13,775
+eso sale de la factura del proveedor, en Compras.
+
+245
+00:13:14,421 --> 00:13:17,218
+Termino con el botón Registrar entrada del formulario;
+
+246
+00:13:17,308 --> 00:13:20,128
+el sistema me pide confirmarlo, y confirmo.
+
+247
+00:13:21,493 --> 00:13:23,903
+La ficha de la variante ya refleja la entrada:
+
+248
+00:13:24,091 --> 00:13:26,404
+su stock ahora es veinte unidades.
+
+249
+00:13:27,048 --> 00:13:32,163
+Abajo, en la pestaña Historial, ves sus compras, sus ventas y los cambios de precio;
+
+250
+00:13:32,240 --> 00:13:35,351
+aquí está la entrada que acabamos de hacer, con su proveedor,
+
+251
+00:13:35,442 --> 00:13:36,872
+la cantidad y el costo.
+
+252
+00:13:37,506 --> 00:13:40,557
+Ahora vuelvo al padre con el enlace de la barra de arriba.
+
+253
+00:13:41,190 --> 00:13:44,000
+Su stock total ya suma esas veinte unidades,
+
+254
+00:13:44,064 --> 00:13:46,885
+y conserva su precio base de ochocientos cincuenta.
+
+255
+00:13:47,530 --> 00:13:52,139
+En la tabla de variantes, la L de manga corta muestra su stock y su costo promedio,
+
+256
+00:13:52,192 --> 00:13:53,384
+de cuatrocientos.
+
+257
+00:13:54,028 --> 00:13:55,629
+Las demás siguen agotadas:
+
+258
+00:13:55,755 --> 00:13:59,663
+cada variante lleva su propio inventario, y el padre solo lo suma.
+
+259
+00:14:01,001 --> 00:14:04,197
+Las pestañas de abajo del padre valen para toda la familia.
+
+260
+00:14:04,841 --> 00:14:06,514
+Fiscal reúne lo tributario:
+
+261
+00:14:06,616 --> 00:14:10,789
+la base imponible presunta, que solo se usa en sectores como la construcción,
+
+262
+00:14:10,783 --> 00:14:13,120
+y los impuestos adicionales de la DGII,
+
+263
+00:14:13,222 --> 00:14:18,205
+que es la Dirección General de Impuestos Internos, como la propina legal o el ISC,
+
+264
+00:14:18,270 --> 00:14:22,360
+que es el impuesto selectivo al consumo de bebidas alcohólicas y cigarrillos.
+
+265
+00:14:23,004 --> 00:14:24,967
+La camiseta no lleva ninguno.
+
+266
+00:14:25,601 --> 00:14:27,336
+En Configuración está la marca:
+
+267
+00:14:27,426 --> 00:14:30,427
+escribo Germiva, que es la marca de la camiseta.
+
+268
+00:14:31,061 --> 00:14:33,313
+Más abajo, en la sección Inventario,
+
+269
+00:14:33,392 --> 00:14:37,130
+Controla lote hace obligatorio el número de lote al recibir mercancía,
+
+270
+00:14:37,135 --> 00:14:41,599
+y Controla caducidad pide además la fecha de vencimiento, para perecederos.
+
+271
+00:14:42,245 --> 00:14:45,826
+Y en Tienda en línea decides si el producto se publica en el catálogo.
+
+272
+00:14:46,460 --> 00:14:47,673
+Guardo los cambios:
+
+273
+00:14:47,788 --> 00:14:51,658
+lo que cambias en el padre lo reciben todas las variantes que no lo tengan como
+
+274
+00:14:51,471 --> 00:14:52,095
+propio.
+
+275
+00:14:52,727 --> 00:14:55,633
+El sistema confirma con un aviso, que acepto.
+
+276
+00:14:56,982 --> 00:14:59,865
+Sigo en el padre, con otra de sus pestañas.
+
+277
+00:15:00,508 --> 00:15:02,894
+La pestaña Insumos es la receta de costo:
+
+278
+00:15:03,008 --> 00:15:08,027
+lo que consume cada unidad, útil en restaurantes, combos, kits o manufactura.
+
+279
+00:15:08,672 --> 00:15:10,273
+En el buscador escribo Tela;
+
+280
+00:15:10,338 --> 00:15:14,789
+el sistema busca entre tus insumos, y de la lista agrego la tela de algodón.
+
+281
+00:15:15,423 --> 00:15:18,619
+Arriba el sistema calcula el costo de los insumos por unidad,
+
+282
+00:15:18,683 --> 00:15:21,842
+lo compara con el precio de venta y te da el margen teórico.
+
+283
+00:15:22,476 --> 00:15:26,168
+En la tabla ajustas la cantidad y el porcentaje de merma de cada insumo:
+
+284
+00:15:26,269 --> 00:15:30,261
+la merma es lo que se pierde en el proceso, y aumenta el consumo real.
+
+285
+00:15:30,907 --> 00:15:34,934
+Como la receta está en el padre, la reciben al momento todas sus variantes,
+
+286
+00:15:35,037 --> 00:15:37,193
+salvo la que tenga una receta propia.
+
+287
+00:15:38,567 --> 00:15:43,273
+Para ver el inventario de todos tus productos, voy a Inventario, Existencias.
+
+288
+00:15:43,917 --> 00:15:45,421
+Arriba ves los totales:
+
+289
+00:15:45,547 --> 00:15:50,228
+cuántas referencias tienen existencia, cuántas unidades hay y cuánto valen al costo.
+
+290
+00:15:50,860 --> 00:15:54,033
+En el buscador escribo Camiseta, que es parte del nombre,
+
+291
+00:15:54,122 --> 00:15:56,460
+y para aplicar la búsqueda pulso Filtrar.
+
+292
+00:15:57,105 --> 00:16:01,508
+Aquí cada variante es su propia fila, con el nombre del padre y su combinación:
+
+293
+00:16:01,610 --> 00:16:04,406
+lo disponible, lo reservado por cotizaciones,
+
+294
+00:16:04,471 --> 00:16:06,907
+el estado y en cuántas ubicaciones está.
+
+295
+00:16:07,552 --> 00:16:09,672
+Con el ojo abro el detalle a la derecha:
+
+296
+00:16:09,786 --> 00:16:14,600
+las mismas cantidades, los botones de entrada, salida y mover, y en Dónde está,
+
+297
+00:16:14,629 --> 00:16:17,088
+en qué almacén y pasillo está cada unidad.
+
+298
+00:16:17,733 --> 00:16:21,350
+Y en la pestaña Movimientos queda el registro de cada entrada y salida,
+
+299
+00:16:21,393 --> 00:16:23,863
+con su fecha, su ubicación y su lote.
+
+300
+00:16:25,204 --> 00:16:28,810
+De vuelta al listado de Productos, la camiseta sigue arriba.
+
+301
+00:16:29,442 --> 00:16:33,978
+En las acciones de la fila del padre, Duplicar crea una copia con su configuración,
+
+302
+00:16:34,031 --> 00:16:36,682
+como punto de partida para un producto parecido;
+
+303
+00:16:36,701 --> 00:16:37,794
+aquí cancelo.
+
+304
+00:16:38,427 --> 00:16:42,759
+Desactivar lo oculta de los listados activos, pero su historial se conserva.
+
+305
+00:16:43,403 --> 00:16:46,769
+Y Eliminar lo borra, y esa acción no se puede deshacer.
+
+306
+00:16:47,413 --> 00:16:50,379
+Las filas de las variantes solo tienen abrir y desactivar:
+
+307
+00:16:50,518 --> 00:16:53,302
+una variante se crea y se elimina desde su padre.
+
+308
+00:16:54,656 --> 00:16:58,855
+Por último, las listas de precios que usamos en la ficha se definen en Inventario,
+
+309
+00:16:58,895 --> 00:17:02,996
+Configuración, la pantalla con los ajustes de inventario de toda la empresa.
+
+310
+00:17:03,640 --> 00:17:07,211
+Al final está la sección Listas de precios, donde ves cada lista:
+
+311
+00:17:07,373 --> 00:17:10,170
+su nombre, su forma de cálculo, la moneda,
+
+312
+00:17:10,259 --> 00:17:12,863
+cuántos clientes la tienen asignada y su estado.
+
+313
+00:17:13,495 --> 00:17:15,664
+El Precio regular es la lista por defecto,
+
+314
+00:17:15,778 --> 00:17:18,249
+la que usa todo cliente que no tenga otra.
+
+315
+00:17:18,894 --> 00:17:21,305
+Con Nueva lista creas las que necesites.
+
+316
+00:17:21,950 --> 00:17:24,178
+En Tipo de lista eliges cómo se calcula:
+
+317
+00:17:24,292 --> 00:17:27,500
+con Precio fijo escribes el precio en la ficha de cada producto,
+
+318
+00:17:27,603 --> 00:17:29,143
+como hicimos con Mayorista;
+
+319
+00:17:29,232 --> 00:17:32,850
+con porcentaje sobre otra lista, el precio sale de otra lista,
+
+320
+00:17:32,941 --> 00:17:34,638
+más o menos un porcentaje;
+
+321
+00:17:34,618 --> 00:17:38,757
+y con Costo más margen, del costo promedio del producto más un margen.
+
+322
+00:17:39,402 --> 00:17:40,289
+Cancelo.
+
+323
+00:17:40,923 --> 00:17:44,915
+Con esto ya conoces todo el ciclo de un producto con variantes en Germiva.

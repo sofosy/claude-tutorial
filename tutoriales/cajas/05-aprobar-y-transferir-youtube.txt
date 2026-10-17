@@ -1,0 +1,34 @@
+TÍTULO
+============================================================
+Cajas · Aprueba movimientos y mueve efectivo entre cajas
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Aprobar una salida
+01:23  Crear una transferencia
+02:31  Recibir la transferencia
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Usar la bandeja «Por aprobar» para decidir los movimientos que un cajero no puede hacer solo.
+• Aprobar una salida sabiendo qué pasa con el saldo y con la contabilidad, y cuándo conviene rechazarla.
+• Crear una transferencia de efectivo entre dos cajas abiertas.
+• Recibir la transferencia en la caja destino y comprobar el saldo nuevo en el tablero.
+
+⚠️ ERRORES COMUNES
+• Aprobar sin leer la nota del cajero: el dinero sale del saldo y se genera el asiento contable.
+• Intentar aprobar un movimiento propio: la regla de los cuatro ojos lo impide; lo aprueba otro supervisor.
+• Transferir más de lo que la caja origen tiene disponible en su sesión: el sistema lo rechaza.
+• Confirmar la recepción sin contar el efectivo: si no coincide, se cancela la transferencia y se registra de nuevo por el monto correcto.
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:27
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la bandeja «Por aprobar» de la supervisora: aquí llega todo lo que un cajero no puede hacer solo y que espera tu decisión. El número de la pestaña cuenta cuántas cosas esperan. Arriba, las cifras resumen el momento: un movimiento por aprobar, ninguna transferencia ni cuadre pendiente, una alerta activa y una caja bloqueada. En la tabla está la salida de seis mil quinientos pesos de la Caja Principal, que registró la cajera Yohanna Peralta, con su nota: el pago del mantenimiento del aire acondicionado. Léela antes de decidir. Al final de la fila tienes dos botones. La equis roja es «Rechazar»: pide un motivo y el saldo queda como estaba. La marca de verificación es «Aprobar», y descuenta el dinero. Recuerda la regla de los cuatro ojos: nadie aprueba lo que registró él mismo. Esta salida está justificada, así que pulso «Aprobar». El sistema pide confirmar, y explica que el monto saldrá del saldo de la sesión y que se generará su asiento contable, o sea, su registro en la contabilidad. Confirmo. El aviso dice que quedó aprobado, y la bandeja se vacía. Fíjate en las alertas: ahora son dos, porque a la caja le quedaron quinientos pesos, menos del mínimo de mil que fijó el administrador.
+Ahora muevo efectivo entre cajas con una transferencia: el dinero sale de una caja abierta y entra en otra, y todo queda registrado. Voy a la pestaña «Historial», donde queda todo lo que pasó en las cajas, y abro «Transferencias». Arriba ves cuánto está por aprobar, por recibir y ya recibido; y debajo, la lista con sus filtros. A la Caja Principal le queda poco cambio, y la Mostrador 2 tiene de sobra. Pulso «Nueva transferencia». En «Caja origen» elijo la Mostrador 2: debajo aparece su saldo disponible en la sesión, seis mil cincuenta pesos, y no puedes enviar más que eso. En «Caja destino» marco la principal. Escribo el monto: tres mil pesos, casi la mitad de lo que tiene disponible, así las dos cajas quedan con cambio suficiente. Las notas son opcionales; esta vez las dejo en blanco. Pulso «Crear transferencia». Como no pasa del límite de cinco mil, no necesita aprobación: el aviso dice que la caja destino ya puede recibirla, y la fila aparece con el estado «Por recibir».
+La transferencia ya salió de la Mostrador 2, pero la Caja Principal todavía no la cuenta: alguien tiene que recibir el efectivo y confirmarlo. En la fila hay dos botones. El círculo tachado cancela la transferencia, por si hubo un error. El otro botón, «Recibir», abre la confirmación. Aquí repasas el número, el monto a recibir, la caja de origen y la de destino. Y lee la nota: si el efectivo que te entregan no coincide, no confirmes; pide que cancelen la transferencia y que la registren de nuevo por el monto correcto. Conté los tres mil y está completo: pulso «Confirmar recepción». El aviso confirma que se recibió, y el estado cambia a «Recibida». Lo compruebo en la pestaña «Cajas»: la Caja Principal tiene ahora tres mil quinientos pesos en efectivo, y a la Mostrador 2 le quedan tres mil cincuenta.

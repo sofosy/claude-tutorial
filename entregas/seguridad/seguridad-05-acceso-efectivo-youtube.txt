@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Seguridad · El acceso efectivo de una persona
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Cómo se calcula
+00:51  La herencia en la ficha
+01:31  Dos roles suman
+02:09  El equipo no suma · caso práctico
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es el acceso efectivo: la suma de los roles de una persona y de lo que esos roles heredan
+• Leerlo en la ficha de una persona, módulo por módulo
+• Por qué dos roles suman y un equipo no
+• Diagnosticar por qué alguien no ve nada
+
+⚠️ ERRORES COMUNES
+• Esperar que meter a alguien en un equipo le dé permisos
+• Mirar solo el rol directo y olvidar lo que hereda de su rol padre
+• Conceder un permiso de un módulo que la empresa no tiene contratado: no se puede usar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:58
+
+TRANSCRIPCIÓN
+============================================================
+Antes de mirar pantallas, una idea que resuelve muchas dudas: el acceso efectivo. Es todo lo que una persona puede hacer de verdad en la empresa. Tomemos a Carlos Pimentel. Tiene un solo rol, Vendedor sénior, con permisos propios: por ejemplo, aprobar cotizaciones y crear facturas. Pero ese rol hereda de otro, Vendedor: todo lo que tenga Vendedor le llega también, como ver clientes y ver productos. ¿Y el equipo? Zona Este agrupa a Ana y a José, pero un equipo no suma ningún permiso: solo sirve para el alcance Equipo, que decide qué registros se ven. El resultado es la unión: los permisos de sus roles más los que esos roles heredan. En la lámina van cuatro de ejemplo; en su ficha vamos a ver los once.
+Ahora lo mismo en la ficha real. En la pestaña Personas abro a Carlos. En Roles dice Vendedor sénior, y debajo, Hereda de Vendedor: así sabes que le llega todo lo de ese otro rol. Sus Permisos efectivos son once permisos. En Cotizaciones tiene siete de diecinueve: ver, crear y editar, como cualquier vendedor, aunque él las ve todas; más aprobar, rechazar, aceptar y convertir, que son solo de su rol. En Facturación, dos: ver y crear facturas, que Ana no tiene. Y ver clientes y ver productos le llegan de Vendedor, sin que nadie se los diera a él directamente.
+Otro caso: una persona con dos roles. Abro a José Cabrera. En Roles tiene dos. El primero es Almacén, y el segundo, Vendedor. Su acceso efectivo es la suma de los dos: diez permisos en total, repartidos en cuatro módulos. En Productos tiene cinco, porque su rol de almacén le da ver, crear, editar, importar y exportar; el de vendedor también le da ver productos, pero eso ya estaba, y no cuenta dos veces. Además le llega Inventario. Y del rol de vendedor, Clientes y Cotizaciones, lo mismo que tiene Ana.
+¿Y el equipo? Abro a Ana. Arriba dice Zona Este, el mismo equipo de José. Y aun así, Ana tiene cinco permisos y no diez: lo que cambia entre los dos es el rol, no el equipo. Un cambio en un rol vale desde la siguiente operación de cada persona, y solo cuenta lo que la empresa tiene contratado: un permiso de un módulo sin contratar no se puede usar. Ahora un caso práctico: Luisa llama porque entra y no ve nada. En Personas abro a Luisa, y su ficha lo explica: Sin ningún rol, inicia sesión pero no ve ningún módulo; y abajo, Ningún permiso concedido. La solución está aquí mismo, en Asignar rol. Cuando alguien te diga que no puede hacer algo, empieza por su ficha.

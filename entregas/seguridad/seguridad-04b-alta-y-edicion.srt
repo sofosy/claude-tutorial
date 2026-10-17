@@ -1,0 +1,371 @@
+1
+00:00:03,097 --> 00:00:05,737
+Ahora vamos a dar de alta a una persona nueva:
+
+2
+00:00:05,839 --> 00:00:09,106
+Julio Santana, un vendedor que acaba de entrar a la empresa.
+
+3
+00:00:09,751 --> 00:00:13,791
+Se hace con Nuevo, arriba a la derecha, y ahí elijo Usuario.
+
+4
+00:00:14,436 --> 00:00:16,701
+Se abre el formulario Crear usuario.
+
+5
+00:00:17,335 --> 00:00:20,724
+En Nombre escribo Julio, su primer nombre, tal cual.
+
+6
+00:00:21,370 --> 00:00:22,885
+Al lado va el apellido:
+
+7
+00:00:22,963 --> 00:00:25,397
+Santana, como aparece en su cédula.
+
+8
+00:00:26,030 --> 00:00:27,064
+Luego el correo:
+
+9
+00:00:27,155 --> 00:00:30,253
+julio punto santana, arroba germiva punto demo.
+
+10
+00:00:30,899 --> 00:00:34,769
+Si ese correo ya existe en Germiva, aquí mismo sale un aviso:
+
+11
+00:00:34,859 --> 00:00:37,910
+la persona se vincula a esta empresa con su clave de siempre;
+
+12
+00:00:37,963 --> 00:00:40,652
+y si era de alguien eliminado, se restaura.
+
+13
+00:00:41,284 --> 00:00:43,900
+Su nombre de usuario, con el que va a entrar:
+
+14
+00:00:44,002 --> 00:00:45,434
+julio punto santana.
+
+15
+00:00:46,079 --> 00:00:49,383
+Escribo la contraseña, que pide seis caracteres o más,
+
+16
+00:00:49,448 --> 00:00:51,147
+con una mayúscula y un número;
+
+17
+00:00:51,140 --> 00:00:54,891
+y la repito para confirmarla, igualita, letra por letra.
+
+18
+00:00:55,536 --> 00:00:59,697
+Ahora, en Roles del Usuario, abro la lista y elijo Vendedor.
+
+19
+00:01:00,343 --> 00:01:02,524
+Y cierro la lista con la tecla Escape.
+
+20
+00:01:03,156 --> 00:01:07,028
+Sin ningún rol, la persona entraría y no vería ningún módulo.
+
+21
+00:01:07,662 --> 00:01:09,335
+El Estado queda en Activo.
+
+22
+00:01:09,980 --> 00:01:12,608
+Cada persona tiene que tener su propio usuario.
+
+23
+00:01:13,242 --> 00:01:14,299
+Pulso Guardar.
+
+24
+00:01:14,944 --> 00:01:18,647
+El botón dice Creando usuario, y puede tardar unos segundos.
+
+25
+00:01:19,292 --> 00:01:22,679
+Fíjate en el usuario, porque es lo que le vas a entregar a Julio,
+
+26
+00:01:22,795 --> 00:01:24,770
+junto con su clave, en persona.
+
+27
+00:01:25,403 --> 00:01:26,641
+Y fíjate en el rol:
+
+28
+00:01:26,743 --> 00:01:29,795
+Vendedor es lo que decide qué módulos va a ver cuando entre.
+
+29
+00:01:30,439 --> 00:01:32,861
+Mientras tanto, el sistema crea la cuenta,
+
+30
+00:01:33,000 --> 00:01:36,352
+le asigna el rol y lo vincula a Distribuidora Las Palmas.
+
+31
+00:01:36,998 --> 00:01:37,621
+Listo:
+
+32
+00:01:37,745 --> 00:01:41,654
+sale el aviso Operación completada, el usuario ha sido creado.
+
+33
+00:01:42,287 --> 00:01:45,314
+Pulso Aceptar, y Julio ya aparece en la lista.
+
+34
+00:01:46,640 --> 00:01:49,641
+Para cambiarle algo a una persona, abro su ficha:
+
+35
+00:01:49,695 --> 00:01:51,150
+pulso Julio Santana.
+
+36
+00:01:51,784 --> 00:01:54,194
+El botón Editar abre su formulario completo:
+
+37
+00:01:54,308 --> 00:01:57,659
+nombre, correo, WhatsApp, roles y estado.
+
+38
+00:01:58,293 --> 00:02:01,295
+Si Julio olvida su clave, uso Cambiar contraseña:
+
+39
+00:02:01,385 --> 00:02:03,975
+es el mismo formulario, Editar usuario,
+
+40
+00:02:04,066 --> 00:02:06,873
+con la casilla de cambiar la contraseña ya marcada.
+
+41
+00:02:07,520 --> 00:02:10,800
+Aquí hay una sola casilla de clave, sin confirmación:
+
+42
+00:02:10,901 --> 00:02:12,043
+escribo la nueva.
+
+43
+00:02:12,676 --> 00:02:15,655
+Desde que la guarde, Julio tiene que usar esta para entrar,
+
+44
+00:02:15,781 --> 00:02:17,454
+y la anterior ya no le sirve.
+
+45
+00:02:18,099 --> 00:02:22,600
+Si cierras este formulario con cambios sin guardar, te pregunta antes de salir.
+
+46
+00:02:23,233 --> 00:02:24,460
+Pulso Actualizar.
+
+47
+00:02:25,105 --> 00:02:27,056
+El sistema guarda la clave nueva;
+
+48
+00:02:27,086 --> 00:02:30,764
+eso toma unos segundos, y mientras tanto el formulario espera.
+
+49
+00:02:31,396 --> 00:02:32,020
+Listo:
+
+50
+00:02:32,122 --> 00:02:35,329
+el aviso dice que el usuario se actualizó correctamente.
+
+51
+00:02:35,973 --> 00:02:36,935
+Aceptar.
+
+52
+00:02:38,276 --> 00:02:40,662
+Julio también va a ayudar en el almacén.
+
+53
+00:02:41,305 --> 00:02:46,240
+En su ficha, el bloque Roles tiene, debajo de su rol, el enlace Asignar rol.
+
+54
+00:02:46,873 --> 00:02:51,180
+Lo pulso, y se abre la ventana Asignar roles, con su nombre arriba.
+
+55
+00:02:51,812 --> 00:02:54,235
+Abro la lista de roles y marco Almacén.
+
+56
+00:02:54,881 --> 00:02:56,651
+Cierro la lista con Escape.
+
+57
+00:02:57,295 --> 00:03:00,262
+Antes de guardar, la ventana te dice qué va a cambiar:
+
+58
+00:03:00,388 --> 00:03:01,651
+Se agrega Almacén.
+
+59
+00:03:02,295 --> 00:03:04,778
+Si quitaras uno, diría Se quita.
+
+60
+00:03:05,412 --> 00:03:09,091
+Pulso Guardar, y el aviso confirma que los roles se actualizaron.
+
+61
+00:03:09,735 --> 00:03:13,644
+Ahora Julio tiene dos roles, y lo que puede hacer es la suma de los dos,
+
+62
+00:03:13,733 --> 00:03:15,456
+en sus permisos efectivos.
+
+63
+00:03:16,100 --> 00:03:19,247
+Si abres tu propia ficha, ese enlace no aparece:
+
+64
+00:03:19,349 --> 00:03:21,687
+nadie puede cambiar sus propios roles.
+
+65
+00:03:23,043 --> 00:03:27,893
+Si Julio sale de vacaciones largas, o está de licencia, no hace falta borrarlo:
+
+66
+00:03:28,055 --> 00:03:29,051
+se desactiva.
+
+67
+00:03:29,683 --> 00:03:33,423
+Abro los tres puntos de su ficha, a la derecha de Cambiar contraseña,
+
+68
+00:03:33,463 --> 00:03:34,908
+y elijo Desactivar.
+
+69
+00:03:35,554 --> 00:03:37,129
+El sistema pregunta primero:
+
+70
+00:03:37,231 --> 00:03:40,451
+dice que no podrá iniciar sesión hasta que se active de nuevo.
+
+71
+00:03:41,084 --> 00:03:42,021
+Confirmo.
+
+72
+00:03:42,655 --> 00:03:46,224
+Mientras el sistema guarda el cambio, fíjate en el nombre de arriba:
+
+73
+00:03:46,265 --> 00:03:49,256
+es la ficha de Julio, la que va a cambiar de estado.
+
+74
+00:03:49,888 --> 00:03:51,694
+Eso toma unos segundos.
+
+75
+00:03:52,329 --> 00:03:56,683
+Sale el aviso de que se desactivó, y arriba su estado ya dice Inactiva.
+
+76
+00:03:57,317 --> 00:04:01,163
+Su usuario, sus roles y todo lo que hizo se quedan como estaban.
+
+77
+00:04:01,810 --> 00:04:05,475
+Para devolverle el acceso, vuelvo al mismo menú y elijo Activar;
+
+78
+00:04:05,601 --> 00:04:09,243
+esta vez no pregunta, porque devolver el acceso no tiene riesgo.
+
+79
+00:04:09,889 --> 00:04:13,579
+Mientras se guarda, sus roles siguen ahí, igual que antes.
+
+80
+00:04:14,224 --> 00:04:17,480
+Sale el aviso, y en la lista su estado vuelve a Pendiente,
+
+81
+00:04:17,594 --> 00:04:21,853
+igual que antes de desactivarlo, porque Julio todavía no ha entrado nunca.
+
+82
+00:04:23,228 --> 00:04:27,449
+Y si la persona ya no va a volver, en los tres puntos también está Eliminar.
+
+83
+00:04:28,093 --> 00:04:32,062
+Lo pulso, y el sistema avisa que esta acción no se puede deshacer.
+
+84
+00:04:32,706 --> 00:04:33,776
+Lo confirmo.
+
+85
+00:04:34,421 --> 00:04:38,836
+Mientras dice Eliminando, el sistema quita a la persona de la empresa con todos sus
+
+86
+00:04:38,649 --> 00:04:39,259
+roles;
+
+87
+00:04:39,326 --> 00:04:41,687
+es lo que más tarda de todo este video.
+
+88
+00:04:42,332 --> 00:04:44,368
+Un caso práctico, mientras tanto:
+
+89
+00:04:44,445 --> 00:04:47,254
+un vendedor se va por tres meses, desactívalo;
+
+90
+00:04:47,320 --> 00:04:49,838
+si renuncia y no vuelve, elimínalo.
+
+91
+00:04:50,473 --> 00:04:53,475
+En los dos casos, lo que hizo sigue en la Auditoría.
+
+92
+00:04:54,120 --> 00:04:58,353
+Cuando termina, sale el aviso de usuario eliminado, el panel se cierra,
+
+93
+00:04:58,432 --> 00:05:00,987
+y la lista tiene otra vez nueve personas.

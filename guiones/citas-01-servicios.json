@@ -1,0 +1,344 @@
+{
+  "titulo": "Citas · Parte 1: los servicios del centro",
+  "descripcion": "Primera parte de la serie de Citas de RegiSalud: dónde se configuran los servicios que ofrece el centro (los tipos de cita), qué significa cada columna, y cómo se crea uno nuevo: código, nombre, descripción, duración y pacientes por turno, precio y servicio facturable, color e ícono, reserva en línea, telemedicina y autorización del seguro. Termina con los días no laborables del centro.",
+  "_comentario": "Estado A: servicios base sin «Consulta pediátrica»; el video la crea (queda como el estado P).",
+  "base_url": "http://localhost:4310",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "Los Prados",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "correo.test",
+      "131456789",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Ramírez",
+      "Gabriela",
+      "Fernández",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "localhost:4310": "regisalud.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/citas/restaurar.mjs A"
+  },
+  "aprenderas": [
+    "Encontrar los servicios del centro en Configuración › Recursos y Ajustes › Tipos de cita",
+    "Crear un servicio con su duración, su precio y su color en el calendario",
+    "Decidir si el servicio se reserva por internet, si admite teleconsulta y si la ARS debe autorizarlo",
+    "Saber qué días no se ofrecen citas en todo el centro"
+  ],
+  "errores_comunes": [
+    "Crear el servicio y esperar que ya salga en el portal: falta asignarlo a un médico con su horario (parte 2)",
+    "Apagar «Permite agendamiento online» y luego no encontrarlo en el portal de reservas",
+    "Usar la duración del servicio como horario: los turnos reales los da el horario de cada médico"
+  ],
+  "pasos": [
+    {
+      "id": "01-donde",
+      "capitulo": "Dónde están los servicios",
+      "rotulo": "Los servicios del centro",
+      "ruta": "Configuración › Recursos y Ajustes › Tipos de cita",
+      "texto_pantalla": "Tipos de cita · los servicios que ofrece el centro",
+      "narracion": "En esta serie vemos el módulo de citas completo, desde los servicios hasta la atención del paciente. Empezamos por los servicios. Entro a Configuración, en el menú de la izquierda, y abro Recursos y Ajustes. Recojo el panel para ganar espacio. A la izquierda están los recursos del centro; elijo Tipos de cita. Un tipo de cita es un servicio que el centro ofrece: una consulta general, un control, una evaluación del cardiólogo. Cada fila es uno, con su código y su nombre. La columna de color es como se pinta en el calendario, y la siguiente dice cuánto dura. Reserva online indica si el paciente lo puede pedir por internet: la urgencia dice que no, porque una urgencia no se agenda.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Configuración']",
+          "al_decir": "Entro a Configuración"
+        },
+        {
+          "click": ".panel-item:has-text('Recursos y Ajustes')",
+          "al_decir": "abro Recursos"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el panel"
+        },
+        {
+          "click": ".nav-item:has-text('Tipos de Cita')",
+          "al_decir": "elijo Tipos"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('CONSULTA-GENERAL') td:nth-child(2)",
+          "durante_ms": 4000,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": "table thead th:nth-child(3)",
+          "durante_ms": 3500,
+          "al_decir": "columna de color"
+        },
+        {
+          "resaltar": "table thead th:nth-child(4)",
+          "durante_ms": 3500,
+          "al_decir": "cuánto dura"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('URGENCIA') td:nth-child(5)",
+          "durante_ms": 5000,
+          "al_decir": "la urgencia"
+        }
+      ]
+    },
+    {
+      "id": "02-nuevo",
+      "capitulo": "Crear un servicio",
+      "rotulo": "Nuevo tipo de cita",
+      "ruta": "Recursos y Ajustes › Tipos de cita › Nuevo",
+      "texto_pantalla": "Código, nombre y descripción · lo que el paciente lee en el portal",
+      "narracion": "El centro va a empezar a atender niños, así que creo el servicio de pediatría. Pulso Nuevo tipo de cita, arriba a la derecha de la tabla. El código es una clave corta, sin espacios: escribo consulta pediátrica, con un guion en medio y sin tildes, porque es una clave interna. Ahora el nombre, que es lo que leen la recepción y el paciente. En la descripción digo para quién es: el paciente la ve en el portal antes de reservar. Más abajo están los valores iniciales: la duración, treinta minutos, y los pacientes por turno, uno. Son el punto de partida: los turnos que de verdad se ofrecen salen del horario de cada médico. El orden de visualización decide en qué lugar sale en las listas.",
+      "acciones": [
+        {
+          "click": "button:has-text('Nuevo Tipo de Cita')",
+          "al_decir": "Pulso Nuevo"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='code']",
+            "texto": "CONSULTA-PEDIATRICA"
+          },
+          "al_decir": "escribo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='name']",
+            "texto": "Consulta pediátrica"
+          },
+          "al_decir": "Ahora el nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='description']",
+            "texto": "Control de niño sano y consulta de enfermedad para menores de 18 años."
+          },
+          "al_decir": "En la descripción"
+        },
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='defaultDurationMinutes']",
+          "durante_ms": 3500,
+          "al_decir": "la duración"
+        },
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='maxPatientsPerSlot']",
+          "durante_ms": 3500,
+          "al_decir": "pacientes por turno"
+        },
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='displayOrder']",
+          "durante_ms": 4000,
+          "al_decir": "orden de visualización"
+        }
+      ]
+    },
+    {
+      "id": "03-precio-opciones",
+      "capitulo": "Precio, color y opciones",
+      "rotulo": "Precio y opciones",
+      "ruta": "Recursos y Ajustes › Tipos de cita › Nuevo",
+      "texto_pantalla": "Precio base · reserva en línea · teleconsulta · autorización del seguro",
+      "narracion": "Sigo más abajo, con el dinero. El precio base es la tarifa del paciente particular: dos mil pesos. Debajo, el servicio facturable es el artículo con el que se cobra; si lo dejo vacío, al cobrar se crea solo, con este nombre y este precio. En apariencia está el color del calendario y el ícono: escribo child care, el de un bebé, que es el que verá el paciente en el portal. Y las opciones. Permite agendamiento online deja que el paciente lo reserve por internet: lo dejo encendido. Permite telemedicina es la modalidad: si la enciendo, la cita se puede dar por videollamada; esta consulta es presencial. Requiere autorización previa del seguro obliga a tener la aprobación de la aseguradora de salud del paciente antes de atender. La casilla Activo queda marcada. Con todo listo, pulso Crear. El aviso confirma que el tipo de cita se creó, y el servicio aparece en la lista con su color y su duración.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='basePrice']",
+            "texto": "2000"
+          },
+          "al_decir": "El precio base"
+        },
+        {
+          "resaltar": "mat-dialog-container app-custom-select, mat-dialog-container mat-form-field:has(mat-label:has-text('Servicio facturable'))",
+          "durante_ms": 5000,
+          "al_decir": "servicio facturable"
+        },
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='color']",
+          "durante_ms": 3000,
+          "al_decir": "color del calendario"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='icon']",
+            "texto": "child_care"
+          },
+          "al_decir": "escribo child"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-slide-toggle[formcontrolname='allowOnlineBooking']",
+          "durante_ms": 4500,
+          "al_decir": "agendamiento online"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-slide-toggle[formcontrolname='allowTelemedicine']",
+          "durante_ms": 5000,
+          "al_decir": "telemedicina es"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-checkbox[formcontrolname='requiresAuthorization']",
+          "durante_ms": 5000,
+          "al_decir": "autorización previa"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-checkbox[formcontrolname='active']",
+          "durante_ms": 2500,
+          "al_decir": "La casilla Activo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear')",
+          "al_decir": "pulso Crear"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "table tbody tr:has-text('CONSULTA-PEDIATRICA') td:nth-child(2)",
+          "durante_ms": 5000,
+          "al_decir": "aparece en la"
+        }
+      ]
+    },
+    {
+      "id": "04-no-laborables",
+      "capitulo": "Días no laborables",
+      "rotulo": "Días no laborables",
+      "ruta": "Recursos y Ajustes › Días no laborables",
+      "texto_pantalla": "Feriados y cierres · ese día no se ofrecen citas en el centro",
+      "narracion": "Antes de pasar a los médicos, un ajuste que afecta a todos. En Días no laborables están los feriados del país y los cierres del propio centro. Cada fila es un día, con su tipo y su alcance: global, para todo el país, o solo de esta empresa. La columna pagado es para la nómina. Un día de esta lista no ofrece citas en el portal ni en la agenda. Si el centro cierra por algo propio, como un inventario o el aniversario, se agrega aquí con Nuevo día no laborable. En la próxima parte le damos el servicio de pediatría a un médico, con sus días y sus horas.",
+      "acciones": [
+        {
+          "click": ".nav-item:has-text('Días No Laborables')",
+          "al_decir": "En Días no"
+        },
+        {
+          "resaltar": "table tbody tr:first-child td:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": "table thead th:nth-child(3)",
+          "durante_ms": 2500,
+          "al_decir": "su tipo"
+        },
+        {
+          "resaltar": "table thead th:nth-child(4)",
+          "durante_ms": 4000,
+          "al_decir": "su alcance"
+        },
+        {
+          "resaltar": "table thead th:nth-child(5)",
+          "durante_ms": 3000,
+          "al_decir": "pagado es"
+        },
+        {
+          "resaltar": "table tbody tr:first-child td:nth-child(1)",
+          "durante_ms": 3500,
+          "al_decir": "no ofrece citas"
+        },
+        {
+          "resaltar": "button:has-text('Nuevo día no laborable')",
+          "durante_ms": 4500,
+          "al_decir": "Nuevo día no laborable"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,110 @@
+{
+ "logins": [
+  {
+   "usuario": "pedro.nunez",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.13,
+   "clic_a_url_s": 6.16,
+   "clic_a_networkidle_s": 6.16,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.19,
+   "clic_a_url_s": 6.95,
+   "clic_a_networkidle_s": 6.95,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.15,
+   "clic_a_url_s": 6.22,
+   "clic_a_networkidle_s": 6.22,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "pedro_dlg": "warning\nAcceso Denegado\nNo tiene el permiso requerido para acceder a este recurso: \"Impuestos\". Solicite acceso a su administrador.\nEntendido",
+ "pedro_imgs": [],
+ "pedro_red_err": [
+  {
+   "t": 1790524534.8317983,
+   "m": "GET",
+   "url": "v1/taxes?page=1&limit=15",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Impuestos\\\" (TAX_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"TAX_VIEW\",\"name\":\"Impuestos\",\"description\":\"Ver impuestos\"}]}"
+  },
+  {
+   "t": 1790524534.9998949,
+   "m": "GET",
+   "url": "v1/media/view/185",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.000009,
+   "m": "GET",
+   "url": "v1/media/view/184",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0000842,
+   "m": "GET",
+   "url": "v1/media/view/183",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0001872,
+   "m": "GET",
+   "url": "v1/media/view/182",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0002458,
+   "m": "GET",
+   "url": "v1/media/view/181",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0002847,
+   "m": "GET",
+   "url": "v1/media/view/180",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524535.0060532,
+   "m": "GET",
+   "url": "v1/media/view/179",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  }
+ ],
+ "pedro_acciones_machete": [
+  "Abrir",
+  "Duplicar",
+  "Desactivar"
+ ],
+ "impexp": {
+  "menu": [],
+  "dlg": "swap_vertImportar / Exportar productos\nupload_file\nImportar\ndownload\nExportar\n1\nDescarga la plantilla\n\nEl archivo Excel incluye una pestaña Instrucciones con el paso a paso (costo de compra sin ITBIS, control de caducidad y asiento de apertura), la fila guía con las reglas de cada columna y pestañas de referencia con los valores válidos (Unidades de Medida DGII, Tipos de Entrada, Impuestos, Categorías, Tipos de Producto y Listas de precios). Hay una columna de precio por cada lista de precios de la empresa.\n\ninventory_2\nPara productos que manejan inventario puedes cargar la existencia inicial "
+ },
+ "ana_dlg": "warning\nAcceso Denegado\nNo tiene el permiso requerido para acceder a este recurso: \"Impuestos\". Solicite acceso a su administrador.\nEntendido",
+ "ana_acciones_machete": [
+  "Abrir"
+ ],
+ "rosa_acciones_machete": [
+  "Abrir",
+  "Duplicar",
+  "Desactivar",
+  "Eliminar"
+ ]
+}

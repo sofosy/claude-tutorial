@@ -1,0 +1,90 @@
+{
+  "titulo": "Éxito del Cliente · Configuración",
+  "_comentario": "Serie Éxito del Cliente, video 4 (2026-10-06). Empresa demo 50, Rosa (Admin). /customer-care/ajustes: Al ganar una oportunidad · Salud del cliente · Encuestas · Plantillas de bienvenida · Secuencias automáticas, con un solo Guardar al pie. La penalización por caso vencido admite hasta 30 (lo máximo que resta el cálculo; corregido en esta rama). Restaurar: node seeds/crm/restaurar.mjs (canon C0 devuelve customer_care_settings).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/home"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": ["germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar"],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Decidir qué se crea solo cuando ganas una venta: bienvenida, caso y proyecto",
+    "Ajustar cómo se calcula la salud de los clientes",
+    "Programar las encuestas de satisfacción",
+    "Dónde están las plantillas de bienvenida y las secuencias automáticas"
+  ],
+  "errores_comunes": [
+    "Crear proyecto en cada venta, aunque sea pequeña: usa el monto mínimo",
+    "Poner días sin contacto muy cortos: toda la cartera sale en riesgo y nadie sabe por dónde empezar",
+    "Cambiar los valores y salir sin pulsar Guardar"
+  ],
+  "pasos": [
+    {
+      "id": "01-al-ganar",
+      "capitulo": "Qué se crea al ganar una venta",
+      "rotulo": "Al ganar una oportunidad",
+      "ruta": "Éxito del Cliente › Configuración",
+      "texto_pantalla": "Al ganar · bienvenida, caso y proyecto automáticos",
+      "narracion": "Para configurar Éxito del Cliente, entro por el menú de la izquierda y abro Configuración, al final. Recojo el menú. La primera sección dice qué se crea solo cuando una venta se gana en el CRM. Crear la bienvenida está en Sí: el cliente nuevo arranca con su lista de primeros pasos. Abrir un caso de bienvenida, en No: sólo hace falta si tu equipo trabaja la bienvenida desde la Mesa de Ayuda. Y Crear un proyecto lo paso a Sí, porque vendemos instalaciones. Para no abrir un proyecto por cada venta pequeña, pongo un monto mínimo: cien mil pesos. A la derecha, la plantilla de bienvenida que se usa si nadie elige otra, y el gerente de cuenta por defecto.",
+      "acciones": [
+        { "click": "nav.module-rail [aria-label='Éxito del Cliente']", "al_decir": "entro por el menú" },
+        { "click": ".panel-item:has-text('Configuración')", "al_decir": "abro Configuración" },
+        { "click": "button.panel-collapse", "al_decir": "Recojo el menú" },
+        { "resaltar": ":nth-match(.gm-seg, 1)", "durante_ms": 4000, "al_decir": "Crear la bienvenida" },
+        { "resaltar": ":nth-match(.gm-seg, 2)", "durante_ms": 4000, "al_decir": "Abrir un caso" },
+        { "click": ":nth-match(.gm-seg, 3) button:has-text('Sí')", "al_decir": "lo paso a Sí" },
+        { "escribir": { "sel": "input[formcontrolname='projectAmountThreshold']", "texto": "100000" }, "al_decir": "pongo un monto mínimo" },
+        { "resaltar": "mat-form-field:has(mat-label:has-text('Plantilla de bienvenida'))", "durante_ms": 3500, "al_decir": "la plantilla de bienvenida" },
+        { "resaltar": "app-custom-select:has(mat-label:has-text('Gerente')), mat-form-field:has(mat-label:has-text('Gerente de cuenta'))", "durante_ms": 3500, "al_decir": "el gerente de cuenta por defecto" }
+      ]
+    },
+    {
+      "id": "02-salud",
+      "capitulo": "Cómo se mide la salud del cliente",
+      "rotulo": "Salud del cliente",
+      "ruta": "Éxito del Cliente › Configuración › Salud del cliente",
+      "texto_pantalla": "Salud · parte de 100 y baja con cada motivo",
+      "narracion": "La segunda sección es la salud del cliente. El puntaje parte de cien y baja con cada motivo de alarma: por debajo de cuarenta el cliente está en riesgo, y de setenta para arriba, sano. Estos son los motivos. Días sin comprar: si pasan noventa días sin una compra, resta puntos. Días sin contacto: si nadie lo llama en treinta días, también. La penalización por cada caso vencido en la Mesa de Ayuda, con un tope de treinta. Y el aviso de renovación: cuántos días antes de que venza un contrato aparece en Renovaciones. La salud se recalcula sola cada madrugada; si cambias estos valores y quieres verlo ya, pulsa Recalcular ahora.",
+      "acciones": [
+        { "resaltar": "button:has-text('Recalcular ahora')", "durante_ms": 2500, "al_decir": "la salud del cliente" },
+        { "resaltar": "mat-form-field:has(input[formcontrolname='noPurchaseRiskDays'])", "durante_ms": 4500, "al_decir": "Días sin comprar" },
+        { "resaltar": "mat-form-field:has(input[formcontrolname='noContactDays'])", "durante_ms": 3500, "al_decir": "Días sin contacto" },
+        { "resaltar": "mat-form-field:has(input[formcontrolname='overdueTicketPenalty'])", "durante_ms": 4000, "al_decir": "La penalización" },
+        { "resaltar": "mat-form-field:has(input[formcontrolname='renewalNoticeDays'])", "durante_ms": 5000, "al_decir": "el aviso de renovación" },
+        { "resaltar": "button:has-text('Recalcular ahora')", "durante_ms": 4000, "al_decir": "pulsa Recalcular ahora" }
+      ]
+    },
+    {
+      "id": "03-encuestas-y-guardar",
+      "capitulo": "Encuestas, plantillas y guardar",
+      "rotulo": "Encuestas y plantillas",
+      "ruta": "Éxito del Cliente › Configuración › Encuestas",
+      "texto_pantalla": "Encuestas · satisfacción al resolver y NPS periódico",
+      "narracion": "Luego, las encuestas. Preguntar al resolver un caso envía una encuesta corta de satisfacción cada vez que la Mesa de Ayuda resuelve algo. Y el NPS, la pregunta de cuánto nos recomendaría el cliente, se envía cada tantos meses: aquí cada seis. Más abajo están las plantillas de bienvenida, con sus pasos, y las secuencias automáticas: mensajes y tareas que el sistema le prepara solo al cliente, como este recordatorio de renovación. Cada una se enciende o se apaga por separado. Al terminar, bajo al pie de la página y pulso Guardar. El aviso confirma que se guardó; lo acepto.",
+      "pronunciacion": { "NPS": "ene-pe-ese" },
+      "acciones": [
+        { "resaltar": ":nth-match(.gm-seg, 4)", "durante_ms": 4500, "al_decir": "Preguntar al resolver" },
+        { "resaltar": "mat-form-field:has(input[formcontrolname='npsEveryMonths'])", "durante_ms": 5000, "al_decir": "Y el NPS" },
+        { "resaltar": "app-onboarding-templates-section", "durante_ms": 3500, "al_decir": "las plantillas de bienvenida" },
+        { "resaltar": "app-playbooks-section [class*=row]:has-text('Renovación pendiente')", "durante_ms": 5000, "al_decir": "las secuencias automáticas" },
+        { "resaltar": ".settings__foot", "durante_ms": 2000, "al_decir": "bajo al pie" },
+        { "click": ".settings__foot button:has-text('Guardar')", "al_decir": "pulso Guardar" },
+        { "resaltar": ".custom-alert-dialog-panel mat-dialog-container", "durante_ms": 3000, "cursor": false },
+        { "click": ".custom-alert-dialog-panel mat-dialog-container button", "al_decir": "lo acepto" }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1220 @@
+{
+ "url": "/sales/partners",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h4",
+   "clase": "page-title",
+   "texto": "Clientes",
+   "caja": [
+    357,
+    80,
+    62,
+    24
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    897,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    941,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "CPcarlos pimentelcarlos.pimentel@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de carlos pimentel",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1014,
+    8,
+    242,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de carlos pimentel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-current",
+    "is-showing"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    283,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "settings",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-config-button"
+   ],
+   "tooltip": "Configurar filtros",
+   "deshabilitado": false,
+   "caja": [
+    1164,
+    145,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('settings'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "clear",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-clear-button"
+   ],
+   "tooltip": "Limpiar filtros",
+   "deshabilitado": false,
+   "caja": [
+    1204,
+    145,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('clear'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "view_column",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "columns-config-button"
+   ],
+   "tooltip": "Configurar columnas",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    249,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('view_column'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Primera página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1044,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Primera página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página anterior",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1092,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página anterior']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página siguiente",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1140,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página siguiente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Última página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1188,
+    595,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Última página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Buscar",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Buscar'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Categoría",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Categoría'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Etiqueta",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    953,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Etiqueta'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "10",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    835,
+    601,
+    84,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [
+  {
+   "clases": [
+    "mat-mdc-table",
+    "mdc-data-table__table",
+    "cdk-table"
+   ],
+   "cabeceras": [
+    "ID drag_indicator",
+    "NOMBRE drag_indicator",
+    "DOCUMENTO drag_indicator",
+    "CATEGORÍA drag_indicator",
+    "ETIQUETAS drag_indicator",
+    "ÉXITO DEL CLIENTE drag_indicator",
+    "ACCIONES"
+   ],
+   "filas": [
+    [
+     "8069",
+     "CL Colmado La Esquina",
+     "RNC · 130555095",
+     "Empresa",
+     "—",
+     "—",
+     ""
+    ],
+    [
+     "8068",
+     "IB Inversiones Barahona",
+     "RNC · 130555087",
+     "Empresa",
+     "—",
+     "—",
+     ""
+    ]
+   ],
+   "total_filas": 5,
+   "caja": [
+    346,
+    298,
+    906,
+    270
+   ]
+  }
+ ],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "Permisos del rol actualizados exitosamente",
+  "Permisos del rol actualizados exitosamente"
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [
+  {
+   "que": "boton",
+   "txt": "Última página",
+   "caja": [
+    1188,
+    595,
+    48,
+    48
+   ]
+  }
+ ],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscree"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications CP "
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen notifications"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "CP Carlos Pimentel carlos.pimentel@germiva.demo expand_more"
+   },
+   "panel-collapse": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "chevron_left"
+   },
+   "gm-table-stack": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "ID drag_indicator NOMBRE drag_indicator DOCUMENTO drag_indicator CATEG"
+   },
+   "gm-who": {
+    "n": 5,
+    "visibles": 5,
+    "ej": "CL Colmado La Esquina"
+   },
+   "gm-avatar": {
+    "n": 5,
+    "visibles": 5,
+    "ej": "CL"
+   },
+   "gm-who__id": {
+    "n": 5,
+    "visibles": 5,
+    "ej": "Colmado La Esquina"
+   },
+   "gm-cell-title": {
+    "n": 5,
+    "visibles": 5,
+    "ej": "Colmado La Esquina"
+   },
+   "gm-table-footer": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Elementos por página: 10 1 – 5 de 5"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     283,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Contraer el menú",
+    [
+     336,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     435,
+     11,
+     156,
+     38
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     897,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de carlos pimentel",
+    [
+     1014,
+     8,
+     242,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     -1,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     9,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     9,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Inventario",
+    [
+     9,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     9,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     9,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Configuración",
+    [
+     9,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     9,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contraer el panel",
+    [
+     283,
+     67,
+     30,
+     30
+    ]
+   ],
+   [
+    "button",
+    "Primera página",
+    [
+     1044,
+     595,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página anterior",
+    [
+     1092,
+     595,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página siguiente",
+    [
+     1140,
+     595,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Última página",
+    [
+     1188,
+     595,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar.has-panel",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     320,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "tr.mat-mdc-header-row.mdc-data-table__header-row.cdk-header-row",
+    "pos": "sticky",
+    "caja": [
+     346,
+     298,
+     906,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     346,
+     298,
+     79,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     425,
+     298,
+     199,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     624,
+     298,
+     146,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     770,
+     298,
+     126,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     896,
+     298,
+     118,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     1014,
+     298,
+     158,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell",
+    "pos": "sticky",
+    "caja": [
+     1172,
+     298,
+     80,
+     40
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1172,
+     338,
+     80,
+     46
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1172,
+     384,
+     80,
+     46
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1172,
+     430,
+     80,
+     46
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1172,
+     476,
+     80,
+     46
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1172,
+     522,
+     80,
+     46
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     9,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "/inventory/product/list",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "/agenda/settings",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     9,
+     667,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "chevron_left",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.panel-collapse",
+    "caja": [
+     283,
+     67,
+     30,
+     30
+    ]
+   },
+   {
+    "texto": "groups Clientes",
+    "href": "/sales/partners",
+    "clase": "panel-item.is-active",
+    "caja": [
+     67,
+     110,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "description Cotizaciones",
+    "href": "/sales/quotes",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     146,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "request_quote Facturas (e-CF)",
+    "href": "/sales/invoices",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     182,
+     244,
+     36
+    ]
+   }
+  ],
+  "encabezados": [
+   "ID drag_indicator",
+   "NOMBRE drag_indicator",
+   "DOCUMENTO drag_indicator",
+   "CATEGORÍA drag_indicator",
+   "ETIQUETAS drag_indicator",
+   "ÉXITO DEL CLIENTE drag_indicator",
+   "ACCIONES"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications CP Carlos Pimentel carlos.pimentel@germiva.demo expand_more home sell inventory storefront calendar_month tune power_settings_new VENTAS chevron_left groups Clientes description Cotizaciones request_quote Facturas (e-CF) Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Clientes Ventas Clientes settings clear Buscar search Categoría Etiqueta people Clientes view_column ID drag_indicator NOMBRE drag_indicator DOCUMENTO drag_indicator CATEGORÍA drag_indicator ETIQUETAS drag_indicator ÉXITO DEL CLIENTE drag_indicator ACCIONES 8069 CL Colmado La Esquina RNC · 130555095 Empresa — — 8068 IB Inversiones Barahona RNC · 130555087 Empresa — — 8067 FD Ferretería Doña Luz RNC · 130555052 Empresa — — 8066 CM Constructora Mirador RNC · 130555044 Empresa — — 8063 CF Consumidor Final Sin documento Persona — — Elementos por página: 10 1 – 5 de 5"
+ },
+ "video": "r08f",
+ "pantalla": "05-carlos-clientes-excluido",
+ "usuario": "carlos.pimentel",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790524975.31029,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524980.2338681,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524989.3548062,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524990.2177315,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524994.2262394,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524997.315906,
+   "m": "PATCH",
+   "url": "role/78/permissions",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525004.652707,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525009.588766,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

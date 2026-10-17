@@ -1,0 +1,351 @@
+1
+00:00:03,100 --> 00:00:05,060
+En esta parte vemos las variantes:
+
+2
+00:00:05,133 --> 00:00:08,644
+un mismo producto que se vende en varias presentaciones o sabores,
+
+3
+00:00:08,778 --> 00:00:12,103
+cada uno con su código, su precio y su existencia.
+
+4
+00:00:12,772 --> 00:00:18,018
+El ejemplo es una gaseosa en lata, grande y jumbo, de naranja, piña y fresa.
+
+5
+00:00:18,686 --> 00:00:20,201
+Pulso nuevo producto.
+
+6
+00:00:20,856 --> 00:00:21,552
+El nombre:
+
+7
+00:00:21,614 --> 00:00:25,309
+Gaseosa Brisa, y el sistema confirma que está disponible.
+
+8
+00:00:25,978 --> 00:00:29,513
+En categoría escribo alimentos, y la elijo de la lista.
+
+9
+00:00:30,170 --> 00:00:33,655
+En unidad de medida escribo unidad, y también la elijo.
+
+10
+00:00:34,311 --> 00:00:39,609
+El precio de venta, treinta y cinco pesos con el ITBIS incluido, y el costo, veinte.
+
+11
+00:00:40,277 --> 00:00:43,081
+Estos datos son comunes a todas las variantes.
+
+12
+00:00:43,749 --> 00:00:47,570
+Ahora, en características, enciendo tiene variantes.
+
+13
+00:00:48,954 --> 00:00:50,976
+Aparece opciones y variantes.
+
+14
+00:00:51,644 --> 00:00:55,328
+Una opción es lo que distingue a las variantes, como la presentación,
+
+15
+00:00:55,426 --> 00:00:57,548
+y sus valores son las alternativas.
+
+16
+00:00:58,217 --> 00:01:00,327
+Hay atajos con valores ya escritos;
+
+17
+00:01:00,412 --> 00:01:02,930
+el de cerveza y refresco es el del colmado.
+
+18
+00:01:03,586 --> 00:01:07,494
+Lo pulso, y trae lata, botella, grande y jumbo.
+
+19
+00:01:08,150 --> 00:01:09,614
+La botella no la vendo:
+
+20
+00:01:09,700 --> 00:01:11,203
+la quito con su equis.
+
+21
+00:01:11,870 --> 00:01:15,294
+El sabor no está entre los atajos, así que pulso otra,
+
+22
+00:01:15,429 --> 00:01:17,725
+y en el nombre de la opción escribo sabor.
+
+23
+00:01:18,381 --> 00:01:19,685
+Ahora sus valores:
+
+24
+00:01:19,819 --> 00:01:22,201
+escribo naranja y lo confirmo con Enter;
+
+25
+00:01:22,311 --> 00:01:23,777
+luego piña, Enter;
+
+26
+00:01:23,924 --> 00:01:25,340
+y fresa, Enter.
+
+27
+00:01:25,995 --> 00:01:27,992
+Cada valor queda como una etiqueta,
+
+28
+00:01:28,115 --> 00:01:31,515
+y el orden en que los escribes es el orden en que se ven al vender.
+
+29
+00:01:32,879 --> 00:01:36,093
+Ahora el sistema pregunta si alguna opción cambia el precio.
+
+30
+00:01:36,760 --> 00:01:38,013
+La presentación sí:
+
+31
+00:01:38,087 --> 00:01:40,358
+la grande y la jumbo cuestan más.
+
+32
+00:01:41,027 --> 00:01:44,736
+Elijo presentación, y aparece un campo por cada valor.
+
+33
+00:01:45,391 --> 00:01:49,522
+A la grande le sumo veinticinco pesos, y a la jumbo, cincuenta.
+
+34
+00:01:50,191 --> 00:01:52,871
+Debajo está la matriz de variantes que se van a crear:
+
+35
+00:01:52,956 --> 00:01:57,533
+presentaciones en filas, sabores en columnas, y en cada cruce el precio:
+
+36
+00:01:57,618 --> 00:02:00,174
+treinta y cinco, sesenta y ochenta y cinco.
+
+37
+00:02:00,843 --> 00:02:04,365
+La jumbo de fresa todavía no la vendo, así que la desmarco;
+
+38
+00:02:04,501 --> 00:02:06,462
+se puede crear más adelante.
+
+39
+00:02:07,117 --> 00:02:09,326
+El botón dice cuántas se van a crear:
+
+40
+00:02:09,387 --> 00:02:09,971
+ocho.
+
+41
+00:02:10,627 --> 00:02:12,141
+Pulso guardar producto.
+
+42
+00:02:12,796 --> 00:02:17,510
+El sistema crea el padre y cada combinación como un producto hijo, y lo confirma;
+
+43
+00:02:17,621 --> 00:02:18,329
+acepto.
+
+44
+00:02:19,686 --> 00:02:23,457
+Se abre la ficha del producto padre, en la pestaña variantes.
+
+45
+00:02:24,125 --> 00:02:25,664
+El padre es la plantilla:
+
+46
+00:02:25,737 --> 00:02:29,223
+define lo común, pero no se vende ni guarda existencia.
+
+47
+00:02:29,891 --> 00:02:32,076
+Por eso sus cifras resumen a los hijos:
+
+48
+00:02:32,198 --> 00:02:36,353
+el precio va de treinta y cinco a ochenta y cinco, y ocho están a la venta.
+
+49
+00:02:37,022 --> 00:02:39,540
+En la tabla, cada fila es una variante,
+
+50
+00:02:39,675 --> 00:02:42,628
+con su propio código de barras que el sistema generó.
+
+51
+00:02:43,296 --> 00:02:44,897
+Las latas dicen del padre:
+
+52
+00:02:44,933 --> 00:02:48,668
+usan su precio, y si lo cambias en el padre, cambian con él.
+
+53
+00:02:49,323 --> 00:02:53,801
+Las grandes y las jumbo tienen el suyo, y esta flecha lo devuelve al del padre.
+
+54
+00:02:54,457 --> 00:02:56,121
+Paso a la vista matriz.
+
+55
+00:02:56,788 --> 00:02:58,625
+La jumbo de fresa dice crear:
+
+56
+00:02:58,661 --> 00:03:03,015
+la pulso, escribo su precio, ochenta y cinco, y pulso crear.
+
+57
+00:03:03,671 --> 00:03:07,591
+El aviso de arriba confirma, y ya está la combinación que faltaba.
+
+58
+00:03:08,969 --> 00:03:11,177
+Vuelvo a la lista y abro una variante:
+
+59
+00:03:11,275 --> 00:03:12,665
+la lata de naranja.
+
+60
+00:03:13,333 --> 00:03:14,600
+Es un producto hijo:
+
+61
+00:03:14,685 --> 00:03:18,431
+la barra de arriba lo dice, con el enlace al padre y sus hermanas,
+
+62
+00:03:18,504 --> 00:03:20,329
+para saltar de una a otra.
+
+63
+00:03:20,985 --> 00:03:23,355
+El nombre se arma solo y está bloqueado.
+
+64
+00:03:24,023 --> 00:03:27,310
+A diferencia del padre, la variante sí recibe mercancía:
+
+65
+00:03:27,383 --> 00:03:30,312
+pulso registrar entrada, y se abre su ventana.
+
+66
+00:03:30,967 --> 00:03:33,375
+El motivo, compras de mercancía.
+
+67
+00:03:34,030 --> 00:03:34,801
+El proveedor:
+
+68
+00:03:34,911 --> 00:03:37,888
+escribo embotell, espero a que la lista lo encuentre,
+
+69
+00:03:37,961 --> 00:03:40,157
+y elijo la Embotelladora del Caribe.
+
+70
+00:03:40,826 --> 00:03:45,837
+La ubicación, el pasillo A del almacén Sur, y el lote lo genera el botón de al lado.
+
+71
+00:03:46,493 --> 00:03:49,917
+Entran veinticuatro latas, a veinte pesos cada una.
+
+72
+00:03:50,573 --> 00:03:52,807
+Registro la entrada, y acepto.
+
+73
+00:03:53,475 --> 00:03:56,998
+Arriba, la variante ya tiene veinticuatro en existencia.
+
+74
+00:03:58,365 --> 00:04:00,016
+Por último, la venta.
+
+75
+00:04:00,671 --> 00:04:02,954
+En el punto de venta busco gaseosa.
+
+76
+00:04:03,622 --> 00:04:06,252
+Aparece una sola tarjeta, la del padre,
+
+77
+00:04:06,375 --> 00:04:09,278
+con sus nueve variantes y lo que hay en existencia.
+
+78
+00:04:09,947 --> 00:04:11,833
+Al tocarla se abre el selector:
+
+79
+00:04:11,931 --> 00:04:14,785
+presentaciones en filas y sabores en columnas.
+
+80
+00:04:15,453 --> 00:04:18,789
+Solo la lata de naranja tiene existencia, veinticuatro;
+
+81
+00:04:18,937 --> 00:04:20,551
+las demás dicen agotado.
+
+82
+00:04:21,206 --> 00:04:23,168
+Sumo dos latas con el más.
+
+83
+00:04:23,835 --> 00:04:24,915
+Abajo resume:
+
+84
+00:04:25,013 --> 00:04:27,409
+dos unidades, setenta pesos.
+
+85
+00:04:28,076 --> 00:04:32,666
+Pulso agregar, y el ticket recibe la línea con el nombre completo de la variante.
+
+86
+00:04:33,322 --> 00:04:36,498
+Con lector de código de barras no hace falta el selector:
+
+87
+00:04:36,621 --> 00:04:38,730
+escaneas la lata y entra directo.
+
+88
+00:04:39,386 --> 00:04:43,827
+En la próxima parte vemos comercio exterior, insumos y listas de precios.

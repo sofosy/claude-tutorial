@@ -1,0 +1,89 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.08,
+   "clic_a_url_s": 6.57,
+   "clic_a_networkidle_s": 6.57,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "filas": [
+  "PERSONA\nROLES\nÚLTIMO INGRESO\nESTADO",
+  "SR\nSonia Reyes\nsonia.reyes@germiva.demo\nMensajero\nHace 31 min\nInactiva",
+  "LF\nLuisa Féliz\nluisa.feliz@germiva.demo\nSin ningún rol\nHace 32 min\nActiva",
+  "MG\nMarta Guzmán\nmarta.guzman@germiva.demo\nAuditor (solo lectura)\nHace 31 min\nActiva",
+  "PN\nPedro Núñez\npedro.nunez@germiva.demo\nAlmacén\nHace 31 min\nActiva",
+  "CP\nCarlos Pimentel\ncarlos.pimentel@germiva.demo\nVendedor sénior\nHace 31 min\nActiva",
+  "JC\nJosé Cabrera\njose.cabrera@germiva.demo · Zona Este\nVendedor, Almacén\nHace 31 min\nActiva",
+  "AM\nAna Mejía\nana.mejia@germiva.demo · Zona Este\nVendedor\nHace 31 min\nActiva",
+  "RA\nRosa Almánzar\nrosa.almanzar@germiva.demo\nAdmin\nHace un momento\nActiva",
+  "HV\nHéctor Vargas\nhector.vargas@germiva.demo\nVendedor\nNunca\nPendiente"
+ ],
+ "vista_Activas": {
+  "url": "http://localhost:4200/security/personas?vista=activas",
+  "filas": [
+   "PERSONA\nROLES\nÚLTIMO INGRESO\nESTADO",
+   "LF\nLuisa Féliz\nluisa.feliz@germiva.demo\nSin ningún rol\nHace 32 min\nActiva",
+   "MG\nMarta Guzmán\nmarta.guzman@germiva.demo\nAuditor (solo lectura)\nHace 31 min\nActiva",
+   "PN\nPedro Núñez\npedro.nunez@germiva.demo\nAlmacén\nHace 31 min\nActiva",
+   "CP\nCarlos Pimentel\ncarlos.pimentel@germiva.demo\nVendedor sénior\nHace 31 min\nActiva",
+   "JC\nJosé Cabrera\njose.cabrera@germiva.demo · Zona Este\nVendedor, Almacén\nHace 31 min\nActiva",
+   "AM\nAna Mejía\nana.mejia@germiva.demo · Zona Este\nVendedor\nHace 31 min\nActiva",
+   "RA\nRosa Almánzar\nrosa.almanzar@germiva.demo\nAdmin\nHace un momento\nActiva",
+   "HV\nHéctor Vargas\nhector.vargas@germiva.demo\nVendedor\nNunca\nPendiente"
+  ]
+ },
+ "vista_Sin rol": {
+  "url": "http://localhost:4200/security/personas?vista=sin-rol",
+  "filas": [
+   "PERSONA\nROLES\nÚLTIMO INGRESO\nESTADO",
+   "LF\nLuisa Féliz\nluisa.feliz@germiva.demo\nSin ningún rol\nHace 32 min\nActiva"
+  ]
+ },
+ "vista_Nunca entraron": {
+  "url": "http://localhost:4200/security/personas?vista=nunca",
+  "filas": [
+   "PERSONA\nROLES\nÚLTIMO INGRESO\nESTADO",
+   "HV\nHéctor Vargas\nhector.vargas@germiva.demo\nVendedor\nNunca\nPendiente"
+  ]
+ },
+ "vista_Inactivas": {
+  "url": "http://localhost:4200/security/personas?vista=inactivas",
+  "filas": [
+   "PERSONA\nROLES\nÚLTIMO INGRESO\nESTADO",
+   "SR\nSonia Reyes\nsonia.reyes@germiva.demo\nMensajero\nHace 32 min\nInactiva"
+  ]
+ },
+ "filtro_rol_items": [
+  "Todos los roles",
+  "Mensajero",
+  "Auditor (solo lectura)",
+  "Almacén",
+  "Vendedor sénior",
+  "Vendedor",
+  "Empleado",
+  "Recursos Humanos",
+  "Compras",
+  "Contador",
+  "Supervisor de Caja",
+  "Cajero",
+  "Admin"
+ ],
+ "panel_ana_scroll": {
+  "sh": 442,
+  "ch": 442
+ },
+ "panel_ana_texto": "AM\nAna Mejía\nana.mejia@germiva.demo\nclose\nActiva\nZona Este\nÚltimo ingreso: hace 31 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nVendedor\nDe la empresa\n+ Asignar rol\nPERMISOS EFECTIVOS\n5 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n1/42\nClientes y Proveedores\n1/37\nCotizaciones\n3/19\nGeneral\n0/141\nEmpresa\n0/56\nUsuarios\n0/4\nSeguridad\n0/24\nInventario\n0/47\nInventario Avanzado\n0/8\nPunto de Venta\n0/36\nFacturación\n0/79\nFacturación Electrónica\n0/44\nContabilidad Básica\n0/136\nContabilidad Avanzada\n0/46\nEmpleados\n0/46\nNómina\n0/109\nRecursos Humanos\n0/24\nAsistencia y Tiempo\n0/46\nDesempeño y Capacitación\n0/12\nReclutamiento\n0/23\nCRM\n0/34\nIA del CRM\n0/2\nVentas\n0/42\nÓrdenes de Venta\n0/8\nConduces\n0/9\nProformas\n0/3\nDescuentos y Promociones\n0/34\nVenta a Crédito\n0/41\nCompras\n0/38\nRequisiciones\n0/7\nCostos en Destino\n0/3\nAcceso API\n0/4\nMulti-Empresa\n0/16\nAsistente Virtual\n0/4\nÚLTIMOS INGRESOS\nHace 31 min · Cliente de API\n::1\nHace 35 min · Cliente de API\n::1\nHace 37 min · Cliente de API\n::1",
+ "mas_acciones_items": [
+  "person_off\nDesactivar",
+  "history\nVer su actividad",
+  "delete\nEliminar"
+ ],
+ "su_actividad": {
+  "url": "http://localhost:4200/security/auditoria?persona=ana.mejia",
+  "total": "HORA\nQUIÉN\nACCIÓN\nREGISTRO\nIP\nHoy · domingo, 27 de septiembre\n11:10\nana.mejia\nAcceso\nSesión #7944\n::1\n11:07\nana.mejia\nActualizó\nPrices #797\n::1\n11:07\nana.mejia\nCreó\nPrice history #1674\n::1\n11:07\nana.mejia\nActualizó\nPrices #784\n::1\n11:07\nana.mejia\nCreó\nPrice history #1673\n::1\n11:07\nana.mejia\nCreó\nQuo"
+ }
+}

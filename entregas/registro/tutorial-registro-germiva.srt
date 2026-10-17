@@ -1,0 +1,367 @@
+1
+00:00:03,100 --> 00:00:05,817
+Vamos a crear una cuenta de Germiva desde cero.
+
+2
+00:00:06,471 --> 00:00:10,478
+Esta es la página principal, la que ve cualquiera antes de tener usuario.
+
+3
+00:00:11,134 --> 00:00:13,516
+Para registrarte no tienes que llamar a nadie:
+
+4
+00:00:13,615 --> 00:00:16,493
+arriba a la derecha está el botón Empezar gratis.
+
+5
+00:00:17,161 --> 00:00:18,056
+Lo pulso.
+
+6
+00:00:18,724 --> 00:00:21,465
+Se abre el registro, con dos partes.
+
+7
+00:00:22,134 --> 00:00:24,913
+A la izquierda, una guía con los tres pasos:
+
+8
+00:00:24,986 --> 00:00:27,778
+el plan, el representante legal y la empresa.
+
+9
+00:00:28,446 --> 00:00:32,391
+A la derecha, la tarjeta Crear cuenta, donde se llena cada paso;
+
+10
+00:00:32,463 --> 00:00:35,082
+arriba de ella siempre dice en cuál vas.
+
+11
+00:00:36,481 --> 00:00:38,219
+Paso uno, el plan.
+
+12
+00:00:38,887 --> 00:00:41,814
+El recuadro verde de arriba te dice lo más importante:
+
+13
+00:00:41,912 --> 00:00:45,137
+tienes siete días gratis, sin tarjeta de crédito,
+
+14
+00:00:45,173 --> 00:00:47,407
+y al terminar decides si lo activas.
+
+15
+00:00:48,076 --> 00:00:51,177
+Debajo, Germiva pregunta qué necesitas hacer.
+
+16
+00:00:51,845 --> 00:00:55,703
+Solo facturar es para quien emite facturas electrónicas y lleva clientes e
+
+17
+00:00:55,515 --> 00:00:56,335
+inventario.
+
+18
+00:00:57,003 --> 00:01:00,961
+Administrar toda la empresa suma compras, contabilidad y nómina;
+
+19
+00:01:01,046 --> 00:01:02,201
+me quedo con esa.
+
+20
+00:01:02,869 --> 00:01:07,051
+Más abajo eliges si pagarás mes a mes o una vez al año, con descuento.
+
+21
+00:01:07,718 --> 00:01:11,365
+Y aquí están los planes, cada uno con su precio a la derecha.
+
+22
+00:01:12,021 --> 00:01:14,417
+Marco Profesional, el recomendado.
+
+23
+00:01:15,072 --> 00:01:18,298
+Si tienes un código promocional, va en este campo;
+
+24
+00:01:18,384 --> 00:01:19,314
+es opcional.
+
+25
+00:01:19,983 --> 00:01:22,539
+Con el plan elegido, pulso Continuar.
+
+26
+00:01:23,914 --> 00:01:26,271
+Paso dos, el representante legal:
+
+27
+00:01:26,382 --> 00:01:28,542
+la persona que responde por la empresa.
+
+28
+00:01:29,209 --> 00:01:30,996
+Fíjate en el resumen de arriba:
+
+29
+00:01:31,093 --> 00:01:34,158
+recuerda el plan que elegiste, y si cambias de idea,
+
+30
+00:01:34,269 --> 00:01:36,415
+el botón Cambiar te devuelve al plan.
+
+31
+00:01:37,070 --> 00:01:40,531
+Lo que escribas aquí será también tu usuario para entrar al sistema.
+
+32
+00:01:41,200 --> 00:01:42,442
+Escribo el nombre:
+
+33
+00:01:42,453 --> 00:01:43,061
+Ana.
+
+34
+00:01:43,717 --> 00:01:46,968
+A su lado, en la misma fila, va el apellido.
+
+35
+00:01:47,625 --> 00:01:49,759
+En la fila de abajo, el teléfono;
+
+36
+00:01:49,894 --> 00:01:51,941
+lo puedes poner con o sin guiones.
+
+37
+00:01:52,609 --> 00:01:56,381
+A la derecha va el correo electrónico, y aquí hay que tener cuidado:
+
+38
+00:01:56,429 --> 00:01:58,477
+tiene que ser uno al que tengas acceso,
+
+39
+00:01:58,500 --> 00:02:01,105
+porque ahí llega el código para activar la cuenta.
+
+40
+00:02:01,774 --> 00:02:05,110
+Por último, la contraseña, la que usarás para entrar.
+
+41
+00:02:05,778 --> 00:02:08,980
+Mientras la escribes, debajo te va diciendo lo que le falta:
+
+42
+00:02:09,151 --> 00:02:13,754
+seis caracteres como mínimo, con mayúscula, minúscula, número y símbolo;
+
+43
+00:02:13,901 --> 00:02:16,780
+cuando cumple todo, dice Contraseña segura.
+
+44
+00:02:17,436 --> 00:02:21,170
+Con el ojo de la derecha puedes verla y comprobar que la escribiste bien.
+
+45
+00:02:21,837 --> 00:02:23,068
+Pulso Continuar.
+
+46
+00:02:24,431 --> 00:02:26,243
+Paso tres, la empresa.
+
+47
+00:02:26,911 --> 00:02:31,911
+Empiezo por el RNC, el Registro Nacional de Contribuyentes que la DGII,
+
+48
+00:02:32,020 --> 00:02:34,973
+la oficina de impuestos, le asigna a cada empresa;
+
+49
+00:02:35,096 --> 00:02:38,370
+si facturas como persona física, aquí va tu cédula.
+
+50
+00:02:39,026 --> 00:02:42,959
+Al salir del campo, Germiva lo busca en el padrón de la DGII.
+
+51
+00:02:43,627 --> 00:02:48,576
+Aparece la marca de verificado, y el nombre legal se llena solo, con un candado:
+
+52
+00:02:48,661 --> 00:02:51,081
+viene de la DGII y no se puede cambiar,
+
+53
+00:02:51,155 --> 00:02:54,144
+porque es el que saldrá en tus comprobantes fiscales.
+
+54
+00:02:54,812 --> 00:02:56,574
+El nombre comercial es opcional:
+
+55
+00:02:56,722 --> 00:02:58,709
+es como te conocen tus clientes.
+
+56
+00:02:59,377 --> 00:03:01,188
+Escribo Ferretería El Faro.
+
+57
+00:03:01,843 --> 00:03:04,512
+Lo último del formulario es la casilla de abajo:
+
+58
+00:03:04,572 --> 00:03:06,991
+marco que acepto los términos y condiciones;
+
+59
+00:03:07,151 --> 00:03:09,348
+sin esto, la cuenta no se crea.
+
+60
+00:03:10,016 --> 00:03:12,721
+Antes del botón hay dos notas que vale la pena leer:
+
+61
+00:03:12,855 --> 00:03:15,995
+hoy no pagas nada, con la fecha en que termina la prueba;
+
+62
+00:03:16,067 --> 00:03:18,723
+y que al correo que pusiste te llegará un código.
+
+63
+00:03:19,391 --> 00:03:22,641
+Todo listo, así que pulso Crear cuenta gratis.
+
+64
+00:03:23,310 --> 00:03:24,675
+Tarda unos segundos:
+
+65
+00:03:24,748 --> 00:03:26,250
+no cierres la ventana.
+
+66
+00:03:27,614 --> 00:03:30,455
+La cuenta ya existe, pero falta activarla.
+
+67
+00:03:31,123 --> 00:03:33,257
+Esta es la pantalla Verifica tu correo:
+
+68
+00:03:33,367 --> 00:03:37,288
+Germiva acaba de enviar un código de seis dígitos al correo que escribiste,
+
+69
+00:03:37,348 --> 00:03:39,718
+y así comprueba que ese correo es tuyo.
+
+70
+00:03:40,375 --> 00:03:43,847
+Búscalo en tu bandeja de entrada, o en correo no deseado.
+
+71
+00:03:44,503 --> 00:03:47,828
+Si no llega, el enlace Reenviar código manda otro;
+
+72
+00:03:47,901 --> 00:03:50,072
+y si te equivocaste al escribir el correo,
+
+73
+00:03:50,170 --> 00:03:53,086
+en Correo incorrecto lo corriges sin empezar de nuevo.
+
+74
+00:03:53,754 --> 00:03:57,798
+Escribo el código en este campo, tal como llegó, sin espacios,
+
+75
+00:03:57,846 --> 00:03:59,560
+y pulso Verificar correo.
+
+76
+00:04:00,215 --> 00:04:01,382
+Sale un aviso:
+
+77
+00:04:01,455 --> 00:04:04,495
+Correo verificado, tu cuenta ya está activa.
+
+78
+00:04:05,150 --> 00:04:06,554
+Pulso Ir al inicio.
+
+79
+00:04:07,915 --> 00:04:11,252
+Ya estás dentro de Germiva, en el inicio de tu empresa.
+
+80
+00:04:11,920 --> 00:04:15,108
+Lo primero que aparece es el aviso Configuración incompleta:
+
+81
+00:04:15,206 --> 00:04:18,692
+antes de emitir facturas electrónicas faltan algunos datos.
+
+82
+00:04:19,360 --> 00:04:23,938
+La provincia y el municipio de la empresa, que la DGII pide en cada comprobante;
+
+83
+00:04:24,024 --> 00:04:25,798
+y los certificados digitales,
+
+84
+00:04:25,883 --> 00:04:30,311
+el archivo con el que se firman tus facturas para que la DGII sepa que las emitiste
+
+85
+00:04:30,125 --> 00:04:30,510
+tú.
+
+86
+00:04:31,178 --> 00:04:35,445
+Puedes completarlos con Configurar ahora, o dejarlo para después con Más tarde:
+
+87
+00:04:35,543 --> 00:04:38,806
+mientras falten, no podrás emitir comprobantes válidos,
+
+88
+00:04:38,891 --> 00:04:40,914
+pero sí recorrer todo el sistema.
+
+89
+00:04:41,570 --> 00:04:42,875
+Pulso Más tarde.
+
+90
+00:04:43,542 --> 00:04:47,637
+Arriba está el nombre de tu empresa con su RNC, y a la izquierda,
+
+91
+00:04:47,733 --> 00:04:49,694
+el menú con los módulos de tu plan.
+
+92
+00:04:50,362 --> 00:04:52,584
+Tu prueba de siete días ya empezó.

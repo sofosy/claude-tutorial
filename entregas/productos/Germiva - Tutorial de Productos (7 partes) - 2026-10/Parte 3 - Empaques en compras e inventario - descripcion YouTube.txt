@@ -1,0 +1,42 @@
+TÍTULO
+============================================================
+Productos · Parte 3: empaques en compras e inventario
+
+DESCRIPCIÓN
+============================================================
+Tercera parte de la serie de Productos de Germiva ERP: qué pasa en compras e inventario cuando un producto se compra en cajas. «Por reponer» sugiere cajas completas y crea la requisición; la orden de compra propone la caja con su costo; la recepción recibe cajas y las procesa a inventario como unidades; Existencias y el Kardex muestran la equivalencia en cajas, el costo por unidad y el lote; y un traslado entre almacenes capturado en cajas.
+
+⏱️ CAPÍTULOS
+00:00  Por reponer sugiere cajas
+01:05  La orden de compra en cajas
+02:14  Aprobar y confirmar la orden
+03:02  Recibir las cajas y procesarlas a inventario
+04:02  Existencias y kardex con su equivalencia
+04:59  Un traslado capturado en cajas
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer «Por reponer»: la sugerencia redondeada a cajas completas y la requisición que crea
+• Comprar en cajas: la orden propone la caja y su costo
+• Recibir cajas y procesarlas a inventario como unidades
+• Leer la existencia y el kardex con su equivalencia en cajas y el costo por unidad
+• Registrar un traslado entre almacenes capturado en cajas
+
+⚠️ ERRORES COMUNES
+• Recibir en unidades lo que el proveedor despacha en cajas: la cantidad sale veinticuatro veces menor
+• Dejar la recepción guardada sin procesarla: la mercancía no entra al inventario hasta «Procesar a Inventario»
+• Comparar el costo de la caja con el costo por unidad del kardex: el kardex siempre está en la unidad base
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 06:00
+
+TRANSCRIPCIÓN
+============================================================
+En la parte anterior le pusimos al refresco su caja de veinticuatro. Hoy lo compramos. Entro a Inventario y abro Por reponer. Esta pantalla lista lo que está por debajo de su mínimo, y cada fila es un producto en un almacén. Recojo el panel. El refresco está agotado: hay cero unidades, con un mínimo de cuarenta y ocho y un máximo de doscientos cuarenta. La columna sugerido dice cuánto pedir para llegar al máximo, y fíjate: lo propone en cajas completas, diez cajas de veinticuatro, porque la caja es el empaque que se propone al comprar. Aún no hay último proveedor ni último costo, porque nunca se ha comprado. Marco la fila y pulso crear requisición. El aviso dice que se creará una requisición en borrador con la cantidad sugerida; la confirmo. Se abre la requisición, con la línea en cajas por veinticuatro. La requisición sigue su camino de aprobación en Compras, que tiene su propia serie; aquí lo que importa es que la caja viaja con ella.
+Ahora la orden de compra al proveedor. Abro una orden nueva en Compras. Elijo el proveedor: escribo embotell, y en la lista aparece Embotelladora del Caribe; la elijo, y debajo aparecen sus datos. Luego, el almacén destino, que es donde va a entrar la mercancía: el almacén Sur. Abajo, en las líneas, busco el refresco escribiendo su nombre; la lista lo muestra con su código, y lo agrego. Fíjate en la línea: la unidad vino sola en caja por veinticuatro, porque es la que tiene la estrella de compra. Y el precio unitario es quinientos veintiocho: el costo de una unidad, veintidós pesos, por las veinticuatro que trae la caja. Si abro el selector de unidad, solo ofrece unidad y caja: el paquete no aparece, porque lo marcamos solo para la venta. Lo cierro. En cantidad escribo diez, diez cajas de veinticuatro. Abajo, el resumen financiero suma el subtotal y el ITBIS. Pulso guardar. La orden se crea, y el aviso lo confirma; acepto.
+La orden quedó en borrador. Antes de recibir mercancía pasa por tres estados, con botones en la cabecera. Pulso enviar a aprobación y lo confirmo con sí, continuar. El aviso dice que la orden quedó pendiente de aprobación, y lo cierro. Ahora pulso aprobar; se pueden dejar comentarios, y apruebo. El aviso dice que la orden fue aprobada; lo leo, y lo acepto. El tercer paso es confirmar, que significa que el proveedor ya aceptó el pedido. Lo pulso, y en la pregunta digo que sí: confirmo. El aviso dice que la orden ya está confirmada, y lo cierro con aceptar. Con eso aparece el botón crear recepción. El detalle de estas aprobaciones se explica en la serie de Compras.
+Llegó el camión. Pulso crear recepción. La recepción registra lo que de verdad entró al almacén, y sus líneas salen de la orden. La línea dice ordenada diez, en la unidad caja por veinticuatro, y recibida diez: si llegaran menos cajas, aquí se corrige. Abajo, el resultado de la recepción resume diez cajas recibidas y aceptadas, y su valor. Pulso guardar; el aviso dice que la recepción se creó, y acepto. Queda en borrador. En el menú acciones de arriba pulso aprobar recepción, y apruebo. El aviso dice que ya se puede procesar a inventario; acepto. Y en el mismo menú, procesar a inventario. Antes de mover nada, el sistema valida la línea, y aquí está la conversión: diez cajas por veinticuatro, que son doscientas cuarenta unidades. Pulso procesar una línea. El aviso confirma que la mercancía entró al inventario, y lo cierro.
+Vamos a ver el resultado en Existencias, la pantalla con lo que hay de cada producto ahora mismo. En el buscador escribo refresco, y luego pulso el botón filtrar. En la fila, la columna disponible dice doscientas cuarenta unidades, y debajo, su equivalencia: diez cajas por veinticuatro. La existencia vive siempre en unidades; la caja es una forma de leerla. Abro el detalle con el ojo de la fila. El panel repite lo disponible en cajas, dice dónde está, en el almacén Sur, y en qué lote. Ahora pulso ver su kardex. El kardex es el historial de entradas y salidas con su costo. La entrada de la recepción dice diez cajas por veinticuatro, doscientas cuarenta unidades, y el costo unitario es veintidós pesos: la caja costó quinientos veintiocho, y el sistema la lleva a la unidad base. El saldo final también se lee en cajas.
+Por último, un movimiento manual. Abro registrar movimiento, que sirve para entradas, salidas y traslados que no vienen de una compra o una venta. Elijo transferencia, que mueve mercancía de un lugar a otro. Producto: escribo refresco, y cuando aparece en la lista, lo elijo. El tipo de transferencia se pone solo. En inventario disponible se ve el lote del almacén Sur, con sus doscientas cuarenta unidades. El destino: la ubicación principal del almacén en consignación. Ahora, la unidad: aquí también se puede capturar en empaques, y elijo caja por veinticuatro. Cantidad: dos cajas. Debajo del campo, el sistema las convierte en cuarenta y ocho unidades. Pulso guardar, y el aviso confirma el traslado; acepto. En la próxima parte vendemos este refresco por caja, por paquete y por unidad.

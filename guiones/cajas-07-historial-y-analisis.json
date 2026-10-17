@@ -1,0 +1,282 @@
+{
+  "_comentario": "Video 7 de la serie Cajas. Graba carmen.rosario (Supervisora de Caja). Estado de partida S6 (restaurar.mjs S6). Solo lectura: no escribe nada (no se reconoce ninguna alerta). AVISO justificado: no existe button.panel-collapse en Cajas (riel fijo). La alerta de saldo bajo sale Resuelta y la voz lo dice. H-02 («Autorizado por» muestra a quien creó el movimiento) no se nombra ni se marca esa columna. H-12 («Reabrir» visible en sesiones con cuadre): la voz dice la regla real del sistema, sin pulsarlo. La IP «::1» de Auditoría sale en cámara (no es dato personal).",
+  "titulo": "Cajas · Historial y análisis",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "carmen.rosario",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Ver la historia completa de una caja: sus sesiones, sus movimientos y sus cuadres",
+    "Leer las cifras en vivo del módulo y los reportes por período",
+    "Comparar el rendimiento de cada cajero en sus cuadres",
+    "Consultar las alertas y la auditoría de quién hizo qué y cuándo"
+  ],
+  "errores_comunes": [
+    "Buscar el turno de hoy con el período «Este mes» y confundirlo con todo el mes: cambia el Período a «Hoy»",
+    "Pensar que una alerta resuelta sigue pendiente: mira la columna Estado",
+    "Reabrir una sesión que ya tiene cuadre: el sistema solo lo permite sin cuadre y dentro de las 24 horas"
+  ],
+  "pasos": [
+    {
+      "id": "01-historial-de-una-caja",
+      "ruta": "Cajas › Historial (Caja Principal)",
+      "texto_pantalla": "Historial de una caja · sesiones, movimientos y cuadres",
+      "navegar": "/cashier?section=cajas",
+      "narracion": "Este video es para consultar lo que ya pasó. Estoy en el tablero de Cajas, donde cada tarjeta es una caja de la ferretería. Para ver la historia de una sola, abro el menú de tres puntos de la Caja Principal y elijo Sesiones. Me lleva al Historial, ya filtrado por esa caja. Cada fila es una sesión, es decir, un turno: quién lo trabajó, cuándo abrió y cuándo cerró. La primera es el turno de hoy de Yohanna, ya Cerrada. A la derecha, el ojo abre sus detalles, y el candado sirve para reabrir una sesión: queda auditado, y el sistema solo lo permite dentro de las veinticuatro horas y si todavía no tiene cuadre. Ahora paso a Movimientos. Arriba, las cifras suman el flujo de la caja. En la lista están la transferencia recibida y la salida aprobada, cada una con su monto y su estado. Y en Cuadres, cada conteo con su esperado, su contado y su diferencia; el de hoy ya sale Confirmado. El ícono rojo de la fila sirve para anular un cuadre confirmado si hubo un error; entonces la sesión se puede volver a contar.",
+      "acciones": [
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Principal'] .board-card__head",
+          "durante_ms": 4000,
+          "al_decir": "cada tarjeta"
+        },
+        {
+          "click": "article.board-card[aria-label='Caja Caja Principal'] button.board-card__menu",
+          "al_decir": "tres puntos"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Sesiones')",
+          "al_decir": "elijo Sesiones"
+        },
+        {
+          "resaltar": "app-session-list mat-form-field:has(mat-label:text-is('Caja'))",
+          "durante_ms": 1500,
+          "al_decir": "ya filtrado"
+        },
+        {
+          "resaltar": "app-session-list tbody tr:first-child td:nth-child(2)",
+          "durante_ms": 4000,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": "app-session-list tbody tr:first-child td:nth-child(3)",
+          "durante_ms": 1600,
+          "al_decir": "ya Cerrada"
+        },
+        {
+          "resaltar": "app-session-list tbody tr:first-child button:has(mat-icon:text-is('visibility'))",
+          "durante_ms": 1900,
+          "al_decir": "el ojo"
+        },
+        {
+          "resaltar": "app-session-list tbody tr:first-child button:has(mat-icon:text-is('lock_open'))",
+          "durante_ms": 8000,
+          "al_decir": "el candado"
+        },
+        {
+          "click": "nav[aria-label='Listados del historial'] button:has-text('Movimientos')",
+          "al_decir": "paso a Movimientos"
+        },
+        {
+          "resaltar": "app-cash-movement-list .cash-eq__term:has-text('Flujo neto')",
+          "durante_ms": 3500,
+          "al_decir": "las cifras"
+        },
+        {
+          "resaltar": "app-cash-movement-list tbody tr:first-child td:nth-child(3)",
+          "durante_ms": 1200,
+          "al_decir": "transferencia recibida"
+        },
+        {
+          "resaltar": "app-cash-movement-list tbody tr:nth-child(2) td:nth-child(4)",
+          "durante_ms": 3500,
+          "al_decir": "salida aprobada"
+        },
+        {
+          "click": "nav[aria-label='Listados del historial'] button:has-text('Cuadres')",
+          "al_decir": "en Cuadres"
+        },
+        {
+          "resaltar": "app-cashier-reconciliation-list tbody tr:first-child td:nth-child(5)",
+          "durante_ms": 1900,
+          "al_decir": "su diferencia"
+        },
+        {
+          "resaltar": "app-cashier-reconciliation-list tbody tr:first-child td:nth-child(6)",
+          "durante_ms": 900,
+          "al_decir": "sale Confirmado"
+        },
+        {
+          "resaltar": "app-cashier-reconciliation-list tbody tr:first-child button[aria-label='Anular cuadre']",
+          "durante_ms": 6000,
+          "al_decir": "ícono rojo"
+        }
+      ],
+      "capitulo": "Historial de una caja",
+      "rotulo": "Historial de una caja"
+    },
+    {
+      "id": "02-analisis",
+      "ruta": "Cajas › Análisis › Reporte diario, Cuadres y análisis, Rendimiento",
+      "texto_pantalla": "Análisis · cifras en vivo, reporte del período y rendimiento por cajero",
+      "navegar": "/cashier?section=analisis",
+      "narracion": "Ahora Análisis, la pantalla de números del módulo. La franja de arriba está en vivo y se refresca sola: las sesiones activas, las cajas abiertas, las bloqueadas, los cuadres pendientes, el efectivo que hay ahora mismo en todas las cajas, y las alertas activas. Debajo, las pestañas de reportes. Reporte diario resume las sesiones y el flujo de un período. El Período viene en Este mes; puedes cambiarlo a Hoy, a los últimos siete días o a un rango propio, y filtrar por caja. Aquí ves cuántas sesiones hubo, cuántas de las cerradas quedaron cuadradas, y el flujo de movimientos, con entradas, salidas y transferencias, hasta el flujo neto. Paso a Cuadres y análisis: cuántos cuadres hubo, confirmados y pendientes, y la calidad del conteo, con la diferencia promedio y el porcentaje que quedó dentro de tolerancia. Y en Rendimiento, una fila por caja y cajero: sus sesiones, sus cuadres, qué parte cuadró dentro del margen y cuánto se desvía en promedio. Es la forma de ver, de un vistazo, quién cuenta bien y quién necesita apoyo.",
+      "acciones": [
+        {
+          "resaltar": ".analytics-hero .gm-fig:has-text('Sesiones activas')",
+          "durante_ms": 3000,
+          "al_decir": "las sesiones activas"
+        },
+        {
+          "resaltar": ".analytics-hero .gm-fig:has-text('Efectivo en cajas')",
+          "durante_ms": 3500,
+          "al_decir": "el efectivo que"
+        },
+        {
+          "resaltar": ".analytics-hero .gm-fig:has-text('Alertas activas')",
+          "durante_ms": 2600,
+          "al_decir": "las alertas activas"
+        },
+        {
+          "resaltar": "nav[aria-label='Secciones del análisis'] button:has-text('Reporte diario')",
+          "durante_ms": 3500,
+          "al_decir": "Reporte diario"
+        },
+        {
+          "resaltar": ".period-filter-bar mat-form-field.preset-select",
+          "durante_ms": 6000,
+          "al_decir": "Este mes"
+        },
+        {
+          "resaltar": "app-analytics-daily-section .gm-fig:has-text('Cerradas cuadradas')",
+          "durante_ms": 1300,
+          "al_decir": "quedaron cuadradas"
+        },
+        {
+          "resaltar": "app-analytics-daily-section .cash-eq__term:has-text('Flujo neto')",
+          "durante_ms": 2600,
+          "al_decir": "flujo de movimientos"
+        },
+        {
+          "click": "nav[aria-label='Secciones del análisis'] button:has-text('Cuadres y análisis')",
+          "al_decir": "Paso a Cuadres"
+        },
+        {
+          "resaltar": "app-analytics-reconciliations-section .gm-fig:has-text('Diferencia promedio')",
+          "durante_ms": 1300,
+          "al_decir": "la diferencia promedio"
+        },
+        {
+          "resaltar": "app-analytics-reconciliations-section .gm-fig:has-text('dentro de tolerancia')",
+          "durante_ms": 3000,
+          "al_decir": "el porcentaje"
+        },
+        {
+          "click": "nav[aria-label='Secciones del análisis'] button:has-text('Rendimiento')",
+          "al_decir": "en Rendimiento"
+        },
+        {
+          "resaltar": "app-analytics-performance-section tbody tr:first-child td:nth-child(3)",
+          "durante_ms": 3000,
+          "al_decir": "una fila por"
+        },
+        {
+          "resaltar": "app-analytics-performance-section tbody tr:first-child td:nth-child(7)",
+          "durante_ms": 2600,
+          "al_decir": "qué parte"
+        },
+        {
+          "resaltar": "app-analytics-performance-section tbody tr:first-child td:nth-child(8)",
+          "durante_ms": 5000,
+          "al_decir": "se desvía"
+        }
+      ],
+      "capitulo": "Análisis",
+      "rotulo": "Análisis"
+    },
+    {
+      "id": "03-alertas-auditoria",
+      "ruta": "Cajas › Análisis › Alertas y Auditoría",
+      "texto_pantalla": "Alertas del módulo y registro de auditoría",
+      "narracion": "Quedan dos pestañas. Alertas lista los avisos automáticos del módulo. Aquí está la de saldo bajo en la Caja Principal: saltó cuando, tras aprobar la salida, su saldo bajó de mil pesos, el mínimo configurado. Su estado es Resuelta: se cerró sola cuando llegó la transferencia y el saldo volvió al rango. La de abajo es la de la caja bloqueada, resuelta al desbloquearla. Con el filtro Estado puedes ver solo las activas; en esas, la supervisora las puede reconocer, resolver o descartar. Por último, Auditoría: el registro de quién hizo qué y cuándo. Cada fila es una acción, con la fecha y la hora, el tipo de cambio, la descripción y el usuario que lo hizo. Arriba la puedes filtrar por acción, por tipo de entidad, por usuario o por fechas. Así, cada aprobación, cada desbloqueo y cada cuadre quedan con nombre y hora.",
+      "acciones": [
+        {
+          "click": "nav[aria-label='Secciones del análisis'] button:has-text('Alertas')",
+          "al_decir": "Alertas lista"
+        },
+        {
+          "resaltar": "app-cashier-alert-list tbody tr:first-child td:nth-child(4)",
+          "durante_ms": 5500,
+          "al_decir": "saldo bajo"
+        },
+        {
+          "resaltar": "app-cashier-alert-list tbody tr:first-child td:nth-child(6)",
+          "durante_ms": 5000,
+          "al_decir": "Su estado"
+        },
+        {
+          "resaltar": "app-cashier-alert-list tbody tr:nth-child(2) td:nth-child(4)",
+          "durante_ms": 4000,
+          "al_decir": "La de abajo"
+        },
+        {
+          "resaltar": "app-cashier-alert-list mat-form-field:has(mat-label:text-is('Estado'))",
+          "durante_ms": 5000,
+          "al_decir": "el filtro Estado"
+        },
+        {
+          "click": "nav[aria-label='Secciones del análisis'] button:has-text('Auditoría')",
+          "al_decir": "Por último"
+        },
+        {
+          "resaltar": "app-audit-log tbody tr:first-child td:nth-child(2)",
+          "durante_ms": 2300,
+          "al_decir": "el tipo de cambio"
+        },
+        {
+          "resaltar": "app-audit-log tbody tr:first-child td:nth-child(5)",
+          "durante_ms": 1900,
+          "al_decir": "el usuario"
+        },
+        {
+          "resaltar": "app-audit-log mat-form-field:has(mat-label:text-is('Acción'))",
+          "durante_ms": 5000,
+          "al_decir": "la puedes filtrar"
+        }
+      ],
+      "capitulo": "Alertas y auditoría",
+      "rotulo": "Alertas y auditoría"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

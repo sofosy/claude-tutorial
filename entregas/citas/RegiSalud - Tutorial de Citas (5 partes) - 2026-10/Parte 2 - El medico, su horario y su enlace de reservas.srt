@@ -1,0 +1,311 @@
+1
+00:00:03,100 --> 00:00:07,280
+El servicio de pediatría ya existe, pero ningún médico lo ofrece.
+
+2
+00:00:07,948 --> 00:00:10,144
+Eso se hace en la ficha del médico.
+
+3
+00:00:10,800 --> 00:00:13,442
+Entro a Médicos, en el menú de la izquierda.
+
+4
+00:00:14,111 --> 00:00:16,753
+A la izquierda está la lista de médicos del centro;
+
+5
+00:00:16,864 --> 00:00:21,515
+abro al doctor Luis Gómez, pediatra, y recojo la lista para ganar espacio.
+
+6
+00:00:22,184 --> 00:00:24,380
+En la pestaña Agenda hay dos vistas:
+
+7
+00:00:24,503 --> 00:00:29,167
+Citas, que son las que ya tiene, y Disponibilidad, que es cuándo atiende.
+
+8
+00:00:29,835 --> 00:00:31,336
+Abro Disponibilidad.
+
+9
+00:00:31,992 --> 00:00:34,090
+El aviso de arriba resume el orden:
+
+10
+00:00:34,213 --> 00:00:37,933
+primero se habilita el servicio, y después se le pone el horario.
+
+11
+00:00:38,590 --> 00:00:41,159
+Este médico todavía no ofrece ninguno.
+
+12
+00:00:42,536 --> 00:00:46,653
+Como no tiene ninguno, el botón dice ofrecer el primer tipo de cita.
+
+13
+00:00:47,322 --> 00:00:48,216
+Lo pulso.
+
+14
+00:00:48,884 --> 00:00:50,795
+En la ventana elijo el servicio:
+
+15
+00:00:50,844 --> 00:00:52,396
+consulta pediátrica.
+
+16
+00:00:53,051 --> 00:00:55,333
+Debajo se ve su duración y su precio.
+
+17
+00:00:55,990 --> 00:00:58,086
+Pulso Habilitar para este médico.
+
+18
+00:00:58,742 --> 00:01:02,116
+Al habilitarlo, el sistema crea su enlace de reservas:
+
+19
+00:01:02,189 --> 00:01:05,168
+una dirección propia de este médico y este servicio,
+
+20
+00:01:05,228 --> 00:01:08,021
+que se puede mandar por WhatsApp o poner en redes.
+
+21
+00:01:08,688 --> 00:01:11,753
+El título y la descripción son los que se ven al compartirlo,
+
+22
+00:01:11,837 --> 00:01:13,626
+con la vista previa a la derecha,
+
+23
+00:01:13,611 --> 00:01:17,457
+y el mensaje de invitación se copia junto con el enlace con este botón.
+
+24
+00:01:18,126 --> 00:01:21,722
+Por ahora cierro la ventana, porque falta lo más importante:
+
+25
+00:01:21,808 --> 00:01:22,640
+el horario.
+
+26
+00:01:24,020 --> 00:01:25,348
+Ahora el horario.
+
+27
+00:01:26,016 --> 00:01:30,965
+Cada día de la semana sale en una fila, y el doctor no atiende ninguno todavía.
+
+28
+00:01:31,633 --> 00:01:33,272
+Pulso Agregar en el lunes.
+
+29
+00:01:33,940 --> 00:01:37,030
+Una franja es un bloque de horas que se divide en turnos:
+
+30
+00:01:37,114 --> 00:01:41,419
+de ocho a doce, con turnos de treinta minutos, que vienen del servicio,
+
+31
+00:01:41,467 --> 00:01:42,957
+y un paciente por turno.
+
+32
+00:01:43,625 --> 00:01:46,020
+El consultorio es la sala donde atiende.
+
+33
+00:01:46,688 --> 00:01:51,389
+Escribo el nombre de uno que aún no existe, y elijo crearlo desde aquí mismo.
+
+34
+00:01:52,784 --> 00:01:56,580
+Se abre la ficha del consultorio, con el nombre que ya escribí.
+
+35
+00:01:57,248 --> 00:01:58,985
+Le pongo un código corto:
+
+36
+00:01:59,058 --> 00:02:00,671
+consultorio pediatría.
+
+37
+00:02:01,327 --> 00:02:03,449
+Los datos de ubicación son opcionales:
+
+38
+00:02:03,522 --> 00:02:07,058
+la dirección, el teléfono, el edificio y el piso.
+
+39
+00:02:07,714 --> 00:02:09,997
+Sirven cuando el centro tiene varias sedes,
+
+40
+00:02:10,107 --> 00:02:12,601
+porque el paciente los ve en su confirmación.
+
+41
+00:02:13,269 --> 00:02:16,818
+Pulso Guardar, y el consultorio queda elegido en la franja.
+
+42
+00:02:18,215 --> 00:02:22,370
+Para no repetir lo mismo cinco veces, en Aplicar a marco el martes.
+
+43
+00:02:23,038 --> 00:02:24,962
+Marco también el miércoles.
+
+44
+00:02:25,630 --> 00:02:27,070
+Después el jueves.
+
+45
+00:02:27,738 --> 00:02:29,352
+Y por último el viernes.
+
+46
+00:02:30,020 --> 00:02:32,117
+Abajo están las opciones de reserva.
+
+47
+00:02:32,773 --> 00:02:36,966
+Visible para pacientes en el link de reservas hace que estos turnos se ofrezcan por
+
+48
+00:02:36,778 --> 00:02:37,486
+internet;
+
+49
+00:02:37,522 --> 00:02:40,625
+si se desmarca, solo la recepción los puede usar.
+
+50
+00:02:41,280 --> 00:02:44,431
+Permitir reservas para hoy deja reservar el mismo día.
+
+51
+00:02:45,099 --> 00:02:49,701
+Y horario exclusivo para este tipo de cita aparta estas horas solo para pediatría.
+
+52
+00:02:50,369 --> 00:02:51,252
+Pulso Agregar:
+
+53
+00:02:51,399 --> 00:02:54,959
+se crean las cinco franjas, y cada día muestra su horario,
+
+54
+00:02:55,069 --> 00:02:57,551
+su consultorio y cuántos turnos tiene.
+
+55
+00:02:58,929 --> 00:03:01,163
+Más abajo están los bloqueos de agenda.
+
+56
+00:03:01,818 --> 00:03:03,556
+Un bloqueo no cambia el horario:
+
+57
+00:03:03,678 --> 00:03:06,073
+aparta un tiempo en el que el médico no está,
+
+58
+00:03:06,121 --> 00:03:08,900
+por vacaciones o por una ausencia de unas horas.
+
+59
+00:03:09,568 --> 00:03:11,070
+Pulso Nuevo bloqueo.
+
+60
+00:03:11,738 --> 00:03:14,109
+Por defecto toma el día completo de hoy.
+
+61
+00:03:14,764 --> 00:03:17,742
+Si es solo un rato, elijo la hora de inicio:
+
+62
+00:03:17,839 --> 00:03:18,672
+las diez.
+
+63
+00:03:19,340 --> 00:03:20,842
+Después la hora final:
+
+64
+00:03:20,927 --> 00:03:21,760
+las doce.
+
+65
+00:03:22,415 --> 00:03:24,612
+El último campo es solo para el equipo:
+
+66
+00:03:24,747 --> 00:03:27,154
+escribo el motivo, reunión médica.
+
+67
+00:03:27,810 --> 00:03:30,552
+El aviso de abajo confirma qué se va a bloquear.
+
+68
+00:03:31,207 --> 00:03:32,127
+Pulso Bloquear:
+
+69
+00:03:32,262 --> 00:03:36,876
+el sistema avisa que el horario quedó bloqueado, y el bloqueo aparece en la lista;
+
+70
+00:03:36,912 --> 00:03:41,067
+en esas horas no se ofrece ninguna cita, ni en recepción ni en internet.
+
+71
+00:03:42,459 --> 00:03:44,470
+Para ver el horario de todos a la vez,
+
+72
+00:03:44,604 --> 00:03:47,631
+vuelvo a Configuración y entro a Recursos y Ajustes.
+
+73
+00:03:48,299 --> 00:03:50,893
+Recojo el panel y abro Horarios de atención.
+
+74
+00:03:51,548 --> 00:03:54,190
+Cada fila es un médico con sus días de atención,
+
+75
+00:03:54,289 --> 00:03:57,688
+y cada recuadro una franja con su duración y su consultorio.
+
+76
+00:03:58,356 --> 00:04:01,668
+Aquí está el doctor Luis Gómez con lo que acabamos de configurar.
+
+77
+00:04:02,324 --> 00:04:05,352
+Con el servicio, el médico y el horario listos,
+
+78
+00:04:05,437 --> 00:04:08,539
+en la próxima parte el paciente reserva desde internet.

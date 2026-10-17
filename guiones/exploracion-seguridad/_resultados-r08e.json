@@ -1,0 +1,41 @@
+{
+ "q1_antes": [
+  [
+   "206",
+   "1"
+  ]
+ ],
+ "logins": [
+  {
+   "usuario": "carlos.pimentel",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 6.44,
+   "clic_a_networkidle_s": 6.44,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.0,
+   "clic_a_url_s": 6.73,
+   "clic_a_networkidle_s": 6.73,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "aprobar": {
+  "toast": "",
+  "s": -1,
+  "dlg": "check_circle\nÉxito\nEstado actualizado correctamente\nAceptar",
+  "q1_despues": [
+   [
+    "206",
+    "3"
+   ]
+  ],
+  "titulo": "Editar Cotización 1\nBorrador"
+ },
+ "fatal": "etrying hover action\n      - waiting 500ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div _ngcontent-ng-c802235371=\"\" class=\"step-wrapper chevron-wrapper\">…</div> intercepts pointer events\n    - retrying hover action\n      - waiting 500ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div _ngcontent-ng-c802235371=\"\" class=\"step-wrapper chevron-wrapper\">…</div> intercepts pointer events\n    - retrying hover action\n      - waiting 500ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <input type=\"search\" autocomplete=\"off\" _ngcontent-ng-c1742223206=\"\" aria-controls=\"gm-global-search-list\" aria-label=\"Buscar pantallas del sistema\" placeholder=\"Buscar pantallas: facturas, clientes, productos…\"/> from <app-header _nghost-ng-c1726104979=\"\">…</app-header> subtree intercepts pointer events\n  - retrying hover action\n    - waiting 500ms\n    - waiting for element to be visible and stable\n    - element is visible and stable\n    - scrolling into view if needed\n    - done scrolling\n    - <input type=\"search\" autocomplete=\"off\" _ngcontent-ng-c1742223206=\"\" aria-controls=\"gm-global-search-list\" aria-label=\"Buscar pantallas del sistema\" placeholder=\"Buscar pantallas: facturas, clientes, productos…\"/> from <app-header _nghost-ng-c1726104979=\"\">…</app-header> subtree intercepts pointer events\n  2 × retrying hover action\n      - waiting 500ms\n      - waiting for element to be visible and stable\n      - element is visible and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div _ngcontent-ng-c802235371=\"\" class=\"step-wrapper chevron-wrapper\">…</div> intercepts pointer events\n  - retrying hover action\n    - waiting 500ms\n\n"
+}

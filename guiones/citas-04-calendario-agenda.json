@@ -1,0 +1,382 @@
+{
+  "titulo": "Citas · Parte 4: todas las citas del centro",
+  "descripcion": "Cuarta parte de la serie de Citas de RegiSalud: cómo se ven todas las citas desde dentro. El calendario con sus vistas de mes, semana, día y lista, los colores por estado, la disponibilidad, los filtros por médico, servicio y estado, y el panel de cada cita; la Agenda del Centro, con una columna por médico o una lista por período; y la agenda propia de cada médico en su ficha.",
+  "_comentario": "Estado C: modo avanzado, agenda llena (hoy en todos los estados) y la reserva en línea de Natalia Ramírez con Ana Pérez.",
+  "base_url": "http://localhost:4310",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "Los Prados",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "correo.test",
+      "131456789",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Ramírez",
+      "Gabriela",
+      "Fernández",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "localhost:4310": "regisalud.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/citas/restaurar.mjs C"
+  },
+  "aprenderas": [
+    "Leer el calendario: vistas, colores por estado, disponibilidad y el detalle de una cita",
+    "Filtrar las citas por médico, servicio, consultorio, estado o paciente",
+    "Ver el día de todos los médicos lado a lado en la Agenda del Centro",
+    "Revisar un período completo agrupado por día, con canceladas o sin ellas",
+    "Encontrar la agenda de un solo médico en su ficha"
+  ],
+  "errores_comunes": [
+    "Buscar una cita cancelada sin encender «Mostrar canceladas» o sin elegir ese estado en el filtro",
+    "Olvidar un filtro puesto y pensar que faltan citas: «Limpiar» los quita todos",
+    "Tomar la disponibilidad en verde como citas: son horas libres del médico"
+  ],
+  "pasos": [
+    {
+      "id": "01-calendario",
+      "capitulo": "El calendario",
+      "rotulo": "El calendario",
+      "ruta": "Calendario",
+      "texto_pantalla": "Cada bloque es una cita: hora y paciente, con el color de su estado",
+      "narracion": "Ahora vemos las citas desde dentro del centro. Entro a Calendario, en el menú de la izquierda. Abre en el mes actual, con el día de hoy marcado. Cada bloque es una cita, con su hora y el paciente, y el color dice en qué estado está: programada, confirmada, en espera, atendida o cancelada. Cuando un día tiene muchas, el enlace de más las despliega. Arriba se cambia de mes con las flechas, y Hoy vuelve al día actual. Estos botones cambian la vista: mes, semana, día y lista. Paso a la semana.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Calendario']",
+          "al_decir": "Entro a Calendario"
+        },
+        {
+          "resaltar": ".fc-day-today",
+          "durante_ms": 3500,
+          "al_decir": "el día de hoy"
+        },
+        {
+          "resaltar": ".fc-day-today .fc-event >> nth=0",
+          "durante_ms": 4500,
+          "al_decir": "Cada bloque"
+        },
+        {
+          "resaltar": ".fc-day-today .fc-daygrid-more-link",
+          "durante_ms": 3500,
+          "al_decir": "el enlace de más"
+        },
+        {
+          "resaltar": "button[aria-label='Siguiente'], button:has(mat-icon:text-is('chevron_right')) >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "con las flechas"
+        },
+        {
+          "resaltar": "button:has-text('Hoy') >> nth=0",
+          "durante_ms": 2500,
+          "al_decir": "y Hoy vuelve"
+        },
+        {
+          "resaltar": "button:has(mat-icon:text-is('view_week')) >> xpath=..",
+          "durante_ms": 4000,
+          "al_decir": "Estos botones"
+        },
+        {
+          "click": "button:has(mat-icon:text-is('view_week'))",
+          "al_decir": "Paso a la semana"
+        }
+      ]
+    },
+    {
+      "id": "02-filtros",
+      "capitulo": "Filtrar y ver una cita",
+      "rotulo": "Filtros y detalle",
+      "ruta": "Calendario › Semana",
+      "texto_pantalla": "Filtros: médicos, especialidad, servicio, consultorio, estado y búsqueda",
+      "narracion": "Con todos los médicos juntos, la semana se llena. Para eso están los filtros de esta fila. En Médicos elijo a la doctora Ana Pérez, y el calendario muestra solo sus citas. Al encender Disponibilidad, se pintan en verde las horas en que la doctora atiende y todavía tiene turnos libres. En la semana, las citas de una misma hora se agrupan en un bloque. Abro el de las ocho: a la derecha se listan sus citas, y toco la de Juan Carlos Batista. Sale su panel, con el paciente, el médico, el motivo, el consultorio y los botones para verla, editarla, reprogramarla o cambiar su estado. Los demás filtros funcionan igual: especialidad, servicio, consultorio y estado. Limpiar los quita todos.",
+      "acciones": [
+        {
+          "resaltar": "app-agenda-filters",
+          "durante_ms": 4000,
+          "al_decir": "los filtros de esta fila"
+        },
+        {
+          "click": "app-agenda-filters mat-select[formcontrolname='staffIds']",
+          "al_decir": "En Médicos"
+        },
+        {
+          "click": "mat-option:has-text('Ana Pérez')",
+          "al_decir": "la doctora Ana"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "muestra solo"
+        },
+        {
+          "click": "mat-slide-toggle:has-text('Disponibilidad') button",
+          "al_decir": "encender Disponibilidad"
+        },
+        {
+          "click": ".fc-timegrid-event:has-text('08:00') >> nth=0",
+          "al_decir": "Abro el de las ocho"
+        },
+        {
+          "click": ".hour-group-item:has-text('Juan Carlos Batista')",
+          "al_decir": "toco la de"
+        },
+        {
+          "resaltar": ".detail-actions",
+          "durante_ms": 5500,
+          "al_decir": "los botones para verla"
+        },
+        {
+          "resaltar": "app-agenda-filters mat-select[formcontrolname='appointmentTypeCatalogId']",
+          "durante_ms": 3500,
+          "al_decir": "especialidad, servicio"
+        },
+        {
+          "click": "button:has-text('Limpiar')",
+          "al_decir": "Limpiar los quita"
+        }
+      ]
+    },
+    {
+      "id": "03-lista",
+      "capitulo": "La vista de lista y la búsqueda",
+      "rotulo": "Lista y búsqueda",
+      "ruta": "Calendario › Lista",
+      "texto_pantalla": "Lista: cada fila es una cita, con su hora, el paciente y el médico",
+      "narracion": "Vuelvo a los botones de vista y elijo la de lista. Es la más cómoda para recepción: cada fila es una cita, con su hora, el paciente y el médico, agrupadas por día. Para encontrar a alguien uso la búsqueda: escribo Natalia, y la lista se filtra mientras escribo. Aparece su cita con la doctora Ana Pérez: es la que la paciente reservó por internet, desde el portal. La reserva en línea no necesita que nadie la cargue: llega sola a la agenda.",
+      "acciones": [
+        {
+          "click": "button:has(mat-icon:text-is('view_list'))",
+          "al_decir": "elijo la de lista"
+        },
+        {
+          "resaltar": ".fc-list-event >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "cada fila es"
+        },
+        {
+          "escribir": {
+            "sel": "app-agenda-filters input[formcontrolname='searchTerm']",
+            "texto": "Natalia"
+          },
+          "al_decir": "escribo Natalia"
+        },
+        {
+          "resaltar": ".fc-list-event:has-text('Natalia')",
+          "durante_ms": 6000,
+          "al_decir": "Aparece su cita"
+        }
+      ]
+    },
+    {
+      "id": "04-centro",
+      "capitulo": "La Agenda del Centro",
+      "rotulo": "Agenda del Centro",
+      "ruta": "Calendario › Agenda del Centro",
+      "texto_pantalla": "Una columna por médico · el día de todo el centro en una pantalla",
+      "narracion": "Para ver el día de todo el centro, pulso Agenda del Centro, arriba. Aquí cada columna es un médico, con cuántas citas tiene, y cada tarjeta es una cita, con la hora, el paciente, su estado y el servicio. Con las flechas y el botón Hoy se cambia de día. Solo médicos con citas esconde las columnas vacías, y mostrar canceladas añade las que se cancelaron, que normalmente se ocultan para no estorbar: aparece la de Mariela Guzmán. El más de cada columna agenda una cita nueva con ese médico.",
+      "acciones": [
+        {
+          "click": "button:has-text('Agenda del Centro')",
+          "al_decir": "pulso Agenda"
+        },
+        {
+          "resaltar": "app-center-agenda .col >> nth=0",
+          "durante_ms": 4500,
+          "al_decir": "cada columna es"
+        },
+        {
+          "resaltar": "app-center-agenda .apt >> nth=0",
+          "durante_ms": 4500,
+          "al_decir": "cada tarjeta"
+        },
+        {
+          "resaltar": "app-center-agenda button[aria-label='Día siguiente']",
+          "durante_ms": 3000,
+          "al_decir": "Con las flechas"
+        },
+        {
+          "click": "mat-slide-toggle:has-text('Solo médicos con citas') button",
+          "al_decir": "Solo médicos con citas"
+        },
+        {
+          "click": "mat-slide-toggle:has-text('Mostrar canceladas') button",
+          "al_decir": "mostrar canceladas"
+        },
+        {
+          "resaltar": "app-center-agenda .apt:has-text('Mariela Guzmán')",
+          "durante_ms": 4500,
+          "al_decir": "aparece la de"
+        },
+        {
+          "resaltar": "app-center-agenda button[aria-label='Nueva cita para este médico'] >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "El más de"
+        }
+      ]
+    },
+    {
+      "id": "05-periodo",
+      "capitulo": "Las citas de un período",
+      "rotulo": "Por período",
+      "ruta": "Calendario › Agenda del Centro › Por período",
+      "texto_pantalla": "Por período: todas las citas de varios días, agrupadas por día",
+      "narracion": "Arriba a la derecha está la otra vista, por período. Muestra todas las citas de un rango de fechas, por defecto una semana, agrupadas por día. Cada fila es una cita: la hora, el médico, el paciente, el servicio y el estado. Los mismos filtros sirven aquí: abro el filtro de Servicio, y en la lista elijo evaluación cardiológica. Quedan solo las citas del cardiólogo. Al tocar cualquier fila se abre el detalle de la cita.",
+      "acciones": [
+        {
+          "click": "app-center-agenda button:has-text('Por período')",
+          "al_decir": "la otra vista"
+        },
+        {
+          "resaltar": "app-center-agenda mat-date-range-input, app-center-agenda mat-form-field:has(mat-label:has-text('Período'))",
+          "durante_ms": 4000,
+          "al_decir": "un rango de"
+        },
+        {
+          "resaltar": "app-center-agenda .row-apt >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "Cada fila es"
+        },
+        {
+          "click": "app-agenda-filters mat-select[formcontrolname='appointmentTypeCatalogId']",
+          "al_decir": "abro el filtro"
+        },
+        {
+          "click": "mat-option:has-text('Evaluación cardiológica')",
+          "al_decir": "elijo evaluación"
+        },
+        {
+          "resaltar": "app-center-agenda .row-apt >> nth=0",
+          "durante_ms": 4500,
+          "al_decir": "Quedan solo"
+        }
+      ]
+    },
+    {
+      "id": "06-medico",
+      "capitulo": "La agenda de un médico",
+      "rotulo": "Agenda del médico",
+      "ruta": "Médicos › Ana Pérez › Agenda › Citas",
+      "texto_pantalla": "La agenda propia del médico: su semana y su lista de citas",
+      "narracion": "Y cada médico tiene su propia agenda en su ficha. Entro a Médicos y abro a la doctora Ana Pérez. En la pestaña Agenda, la vista Citas muestra su semana, con cuántas citas tiene cada día, y debajo la lista, con la hora, el paciente, el servicio y el consultorio. Desde el botón Estado de cada cita se confirma, se registra la llegada o se marca que no asistió. En la próxima parte agendamos una cita y la atendemos de principio a fin.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Médicos']",
+          "al_decir": "Entro a Médicos"
+        },
+        {
+          "click": "button.dsel__row:has-text('Ana Pérez')",
+          "al_decir": "abro a la doctora"
+        },
+        {
+          "click": "button.tab:has-text('Agenda')",
+          "al_decir": "En la pestaña"
+        },
+        {
+          "resaltar": ".ag-tab__week",
+          "durante_ms": 4500,
+          "al_decir": "muestra su semana"
+        },
+        {
+          "resaltar": "app-doctor-appointments-tab button:has-text('Estado') >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "Desde el botón Estado"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Seguridad · Equipos
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué es un equipo
+00:55  Crear un equipo
+01:34  Agregar miembros
+02:17  Quitar, editar y eliminar
+03:09  Cuando no queda ningún equipo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es un equipo y para qué sirve de verdad: el alcance «Equipo» de un permiso
+• Crear un equipo y agregarle personas desde la lista, varias a la vez
+• Quitar a alguien de un equipo, editarlo y eliminarlo
+
+⚠️ ERRORES COMUNES
+• Meter a alguien en un equipo esperando que gane permisos: los permisos vienen solo de sus roles
+• Buscar los miembros dentro del formulario del equipo: se agregan y se quitan desde la lista de personas
+• Olvidar que un equipo solo cambia algo cuando un rol usa el alcance «Equipo»
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:57
+
+TRANSCRIPCIÓN
+============================================================
+Un equipo es un grupo de personas que trabajan juntas, por ejemplo los vendedores de una misma zona. Los equipos están en la pestaña Personas, a la izquierda, debajo de las vistas; esta empresa tiene uno solo, y a su lado dice cuántas personas lo forman, en gris. Ahora pulso Zona Este: la lista se queda con sus miembros, que son dos personas. Arriba, José Cabrera; y debajo, Ana Mejía. ¿Para qué sirve? Para una sola cosa: cuando un rol deja ver cotizaciones con el alcance Equipo, cada vendedor ve las suyas y las de sus compañeros de equipo. Pero ojo, un equipo no da permisos. Lo que alguien puede hacer lo deciden sus roles; el equipo solo decide qué registros ve. En la lista, el equipo sale al lado de su correo, para saber de un vistazo a qué equipo pertenece cada quien.
+Ahora creo uno nuevo para los vendedores del norte. Junto al título Equipos está el botón de sumar; lo pulso y se abre el formulario Nuevo Equipo. Esto mismo está en el botón Nuevo, arriba, en la opción Equipo. En Nombre escribo Zona Norte, un nombre corto que todos reconozcan. Y en la Descripción, para qué es: vendedores de Santiago y Puerto Plata. Fíjate que aquí no se eligen miembros: eso se hace desde la lista. Pulso Guardar, y sale el aviso Operación completada: el equipo ha sido creado. Acepto, y Zona Norte ya aparece en el riel, todavía vacío.
+Los miembros se agregan desde la lista. Primero vuelvo a Todas. Cada fila tiene una casilla a la izquierda, y la casilla de arriba marca todas de una vez. Marco a Carlos, que va a cubrir el norte, y a Héctor. Arriba de la lista aparece una barra que dice cuántas personas marqué, con sus acciones. Si te equivocas, Limpiar quita todas las marcas y empiezas de nuevo. Ahora pulso Agregar a equipo, se abre la lista de equipos, y elijo Zona Norte. El aviso confirma que se agregaron, y en la lista Carlos ya lleva Zona Norte al lado de su correo; Héctor también. Y en el riel, Zona Norte ya dice dos personas.
+Para quitar a alguien, abro el equipo. Abro Zona Norte: al final Héctor no va a cubrir el norte, así que marco su casilla y pulso Quitar del equipo. No pregunta: sale el aviso, y en el equipo queda Carlos. Arriba a la derecha, Editar equipo abre el mismo formulario con sus datos: cambio la descripción, porque Puerto Plata lo cubre otra persona. Si cierras con cambios sin guardar, te pregunta antes. Pulso Actualizar, y el aviso dice que el equipo se ha actualizado correctamente. Pulso Aceptar. Y en la misma barra, a su derecha, la papelera elimina el equipo; pide confirmar, porque no se puede deshacer. Confirmo con Eliminar. Las personas no se borran ni pierden permisos: solo dejan de estar agrupadas. En el riel queda solo Zona Este.
+Por último, cómo se ve la consola cuando no queda ningún equipo. Para mostrarlo, abro Zona Este y pulso la papelera. La confirmación trae el nombre del equipo, para no borrar el que no es. Confirmo otra vez con Eliminar. Sale el aviso, y debajo de Equipos, el riel ahora dice Sin equipos todavía. El botón de sumar sigue ahí, para crear el primero cuando haga falta. Ana y José siguen en la lista, con sus mismos roles y permisos: solo dejaron de estar agrupados. Un caso práctico: si mañana quieres que los vendedores del norte vean las cotizaciones entre ellos, los agrupas en un equipo y en su rol pones el alcance Equipo. Eso lo vemos en el video del alcance.
