@@ -1,0 +1,333 @@
+{
+ "titulo": "Contabilidad · Carga los auxiliares y el balance inicial",
+ "descripcion": "Cómo arrancar la contabilidad en Germiva con los saldos que la empresa ya traía: primero los auxiliares de cartera (lo que debe cada cliente, documento por documento) y después el asiento de apertura del Balance Inicial, que fija los saldos del mayor y debe cuadrar.",
+ "_comentario": "Video 2 de la serie Contabilidad (17/10/2026). setup: preparar.sh balance-inicial (cuenta 1.01.01.02.02 y cliente Ferretería Germiva del Este 130555011). Fecha de arranque 01/10/2026 (Octubre 2026 abierto).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/cobros/cuentas"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh balance-inicial"
+ },
+ "aprenderas": [
+  "Cargar el saldo inicial de un cliente como cuenta por cobrar",
+  "Entender por qué el auxiliar no genera asiento",
+  "Registrar el asiento de apertura con los saldos del mayor",
+  "Traer a la apertura el total de los saldos de cartera"
+ ],
+ "errores_comunes": [
+  "Usar una fecha en un período cerrado: el sistema rechaza el saldo",
+  "Cargar la cuenta por cobrar en el balance sin cargar antes el auxiliar de cada cliente",
+  "Guardar una apertura que no cuadra: débitos y créditos deben ser iguales"
+ ],
+ "pasos": [
+  {
+   "id": "01-auxiliares",
+   "capitulo": "Los auxiliares de cartera",
+   "rotulo": "Saldos de clientes",
+   "ruta": "Contabilidad › Cuentas por Cobrar",
+   "texto_pantalla": "Cargar Saldo Inicial · lo que debe cada cliente",
+   "narracion": "Esta es la pantalla de Cuentas por Cobrar, en el menú Contabilidad: cada fila es un documento que un cliente te debe. Recojo el menú para ganar espacio. Cuando empiezas a usar el sistema, la empresa ya trae saldos: dinero en el banco, clientes que deben y un capital. Se cargan en dos partes, y la primera es esta: los auxiliares, lo que te debe cada cliente, factura por factura. Abro Más acciones y elijo Cargar Saldo Inicial. En Cliente escribo ferre, las primeras letras del nombre, y en la lista elijo la Ferretería del Este. En el documento pongo el número de la factura que quedó pendiente. Luego el monto pendiente: cuarenta y cinco mil pesos, sin comas. La fecha del saldo es el primero de octubre, el día en que arrancas en el sistema; tiene que caer en un período abierto. Pulso Cargar saldo. Listo: la factura aparece en el listado como cuenta por cobrar del cliente, y se podrá cobrar como cualquier otra. Pero ojo: este paso no hace asiento. El dinero en la contabilidad lo pone el balance inicial. Si son muchos clientes, no los cargues uno a uno: en ese mismo menú está Importar Saldos, desde un Excel.",
+   "acciones": [
+    {
+     "resaltar": "a.panel-item[data-row-key='accounting.receivable']",
+     "durante_ms": 3000,
+     "al_decir": "Cuentas por Cobrar"
+    },
+    {
+     "resaltar": "table thead",
+     "durante_ms": 3500,
+     "al_decir": "cada fila"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "ya trae saldos"
+    },
+    {
+     "resaltar": "button:has-text('Más acciones')",
+     "durante_ms": 4000,
+     "al_decir": "la primera es esta"
+    },
+    {
+     "click": "button:has-text('Más acciones')",
+     "al_decir": "Abro Más acciones"
+    },
+    {
+     "click": "button[mat-menu-item]:has-text('Cargar Saldo Inicial')",
+     "al_decir": "elijo Cargar"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-autocomplete input",
+      "texto": "ferre"
+     },
+     "al_decir": "escribo ferre"
+    },
+    {
+     "click": "mat-option:has-text('Ferretería Germiva del Este')",
+     "al_decir": "en la lista elijo"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='documentNumber']",
+      "texto": "FAC-2026-0187"
+     },
+     "al_decir": "En el documento"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='amount']",
+      "texto": "45000"
+     },
+     "al_decir": "Luego el monto"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='issueDate']",
+      "texto": "01/10/2026"
+     },
+     "al_decir": "La fecha del saldo"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cargar saldo')",
+     "al_decir": "Pulso Cargar saldo"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "aparece en el listado"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "no hace asiento"
+    },
+    {
+     "click": "button:has-text('Más acciones')",
+     "al_decir": "en ese mismo menú"
+    },
+    {
+     "resaltar": "button[mat-menu-item]:has-text('Importar Saldos')",
+     "durante_ms": 3000,
+     "al_decir": "Importar Saldos"
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     }
+    }
+   ]
+  },
+  {
+   "id": "02-apertura",
+   "capitulo": "El asiento de apertura",
+   "rotulo": "Balance inicial",
+   "ruta": "Contabilidad › Diario y Mayor › Balance Inicial",
+   "texto_pantalla": "Balance Inicial · el asiento de apertura",
+   "navegar": "/accounting/registro/balance-inicial",
+   "al_decir_navegar": "pestaña Balance Inicial",
+   "narracion": "La segunda parte es el balance inicial, en Diario y Mayor, pestaña Balance Inicial. Aquí se arma un solo asiento, el de apertura, con el saldo de cada cuenta del mayor. Primero la fecha: el mismo primero de octubre. En la primera línea busco la cuenta del banco: escribo BHD y elijo la cuenta que creamos en el video anterior. Le pongo una descripción corta, para saber de dónde viene el saldo. En la columna Débito van doscientos cincuenta mil pesos, que es lo que dice el estado del banco a esa fecha. Para la cuenta por cobrar no escribo nada a mano: pulso Traer saldos de cartera, y el sistema llena la segunda línea con los cuarenta y cinco mil del auxiliar que acabamos de cargar. Así el mayor y el detalle por cliente coinciden. Falta la contrapartida, que es el capital. Agrego una línea. Busco capital social, la cuenta del patrimonio donde va lo que aportaron los socios, y la elijo. Como descripción escribo capital aportado, para que se entienda. Y en la columna Crédito pongo doscientos noventa y cinco mil, la suma de lo anterior. Abajo, el total dice Cuadra: débitos y créditos son iguales. Pulso Guardar.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='date']",
+      "texto": "01/10/2026"
+     },
+     "al_decir": "Primero la fecha"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder='Buscar cuenta...'] >> nth=0",
+      "texto": "BHD"
+     },
+     "al_decir": "escribo BHD"
+    },
+    {
+     "click": "mat-option:has-text('Banco BHD')",
+     "al_decir": "en el video anterior"
+    },
+    {
+     "escribir": {
+      "sel": "input.table-input[formcontrolname='description'] >> nth=0",
+      "texto": "Saldo inicial"
+     },
+     "al_decir": "descripción corta"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='debitAmount'] >> nth=0",
+      "texto": "250000"
+     },
+     "al_decir": "columna Débito"
+    },
+    {
+     "click": "button:has-text('Traer saldos de cartera')",
+     "al_decir": "pulso Traer saldos"
+    },
+    {
+     "resaltar": "tbody tr >> nth=1",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "llena la segunda línea"
+    },
+    {
+     "click": "button:has-text('Agregar línea')",
+     "al_decir": "Agrego una línea"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder='Buscar cuenta...'] >> nth=2",
+      "texto": "capital social"
+     },
+     "al_decir": "Busco capital"
+    },
+    {
+     "click": "mat-option:has-text('Capital social autorizado')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "escribir": {
+      "sel": "input.table-input[formcontrolname='description'] >> nth=2",
+      "texto": "Capital aportado"
+     },
+     "al_decir": "Como descripción"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='creditAmount'] >> nth=2",
+      "texto": "295000"
+     },
+     "al_decir": "columna Crédito"
+    },
+    {
+     "resaltar": "text=Cuadra >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "dice Cuadra"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    }
+   ]
+  },
+  {
+   "id": "03-contabilizado",
+   "capitulo": "El asiento contabilizado",
+   "rotulo": "Apertura contabilizada",
+   "ruta": "Contabilidad › Diario y Mayor › Asiento",
+   "texto_pantalla": "El asiento de apertura, contabilizado",
+   "narracion": "El sistema crea el asiento y lo contabiliza enseguida: desde este momento los saldos están en el mayor y en los estados financieros. Cada línea muestra la cuenta y su monto, tal como los cargaste.",
+   "acciones": [
+    {
+     "resaltar": "text=Contabilizado >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "lo contabiliza"
+    },
+    {
+     "resaltar": "table >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Cada línea"
+    }
+   ]
+  },
+  {
+   "id": "04-concilia",
+   "capitulo": "Auxiliar contra mayor",
+   "rotulo": "Auxiliar contra mayor",
+   "ruta": "Contabilidad › Diario y Mayor › Asiento",
+   "texto_pantalla": "El asiento de apertura, contabilizado",
+   "narracion": "Para comprobarlo, regreso a la pestaña Balance Inicial. Ahí, el recuadro de arriba compara la cuenta por cobrar del mayor con la suma de los auxiliares, y dice Concilia. Solo puede haber un asiento de apertura. Si después encuentras un error, armas aquí el correcto y eliges Reemplazar: el sistema reversa el anterior y deja el nuevo. Con los saldos cargados, en el próximo video creamos la cuenta bancaria para conciliar.",
+   "acciones": [
+    {
+     "resaltar": "text=Conciliación auxiliar >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "el recuadro de arriba"
+    },
+    {
+     "resaltar": "text=Concilia >> nth=1",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "dice Concilia"
+    },
+    {
+     "resaltar": "button:has-text('Guardar')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "eliges Reemplazar"
+    }
+   ],
+   "navegar": "/accounting/registro/balance-inicial",
+   "al_decir_navegar": "regreso a la pestaña"
+  }
+ ]
+}

@@ -1,0 +1,303 @@
+{
+ "titulo": "Contabilidad · Crea tus bancos y cuentas bancarias para conciliar",
+ "descripcion": "Cómo dejar lista una cuenta bancaria para conciliar en Germiva: el catálogo de bancos, la cuenta bancaria enlazada a su cuenta contable del mayor, y cómo se abre una conciliación con el estado de cuenta del banco.",
+ "_comentario": "Video 3 de la serie Contabilidad (17/10/2026). setup: preparar.sh bancos (cuenta 1.01.01.02.02 con saldo de apertura 250,000 al 01/10/2026). No se graba «Anular» ni la importación del estado de cuenta.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/bancos"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh bancos"
+ },
+ "aprenderas": [
+  "Encontrar tu banco en el catálogo general o crearlo",
+  "Crear la cuenta bancaria y enlazarla con su cuenta contable",
+  "Abrir una conciliación con las fechas y saldos del estado de cuenta",
+  "Saber qué sigue: importar el estado de cuenta y completar"
+ ],
+ "errores_comunes": [
+  "Dejar la cuenta bancaria sin cuenta contable: no se puede conciliar",
+  "Usar la misma cuenta contable para dos cuentas bancarias: cada una necesita la suya",
+  "Poner una fecha fin anterior a la fecha de inicio del estado de cuenta"
+ ],
+ "pasos": [
+  {
+   "id": "01-bancos",
+   "capitulo": "El catálogo de bancos",
+   "rotulo": "Los bancos",
+   "ruta": "Contabilidad › Configuración Contable › Bancos",
+   "texto_pantalla": "Bancos · las entidades con que trabaja la empresa",
+   "narracion": "Para conciliar necesitas tres cosas: el banco, la cuenta bancaria y su cuenta contable. Empezamos por el banco. Estoy en Contabilidad, Configuración Contable, Bancos. Recojo el menú. Esta lista ya trae los bancos dominicanos más comunes; la columna Alcance dice Catálogo general, porque los comparten todas las empresas. Aquí está el BHD, así que no hace falta crearlo. Si tu banco no aparece, por ejemplo uno del exterior, lo agregas con Crear Banco: basta el nombre, y el código SWIFT si es extranjero.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "table thead",
+     "durante_ms": 4000,
+     "al_decir": "Esta lista"
+    },
+    {
+     "resaltar": "text=Catálogo general >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "columna Alcance"
+    },
+    {
+     "resaltar": "tr:has-text('BHD')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Aquí está el BHD"
+    },
+    {
+     "resaltar": "button:has-text('Crear Banco')",
+     "durante_ms": 5500,
+     "al_decir": "Crear Banco"
+    }
+   ]
+  },
+  {
+   "id": "02-cuenta-bancaria",
+   "capitulo": "La cuenta bancaria",
+   "rotulo": "La cuenta bancaria",
+   "ruta": "Contabilidad › Banca › Cuentas Bancarias",
+   "texto_pantalla": "Crear Cuenta Bancaria · banco, número y cuenta contable",
+   "navegar": "/accounting/banca/cuentas",
+   "al_decir_navegar": "menú Banca",
+   "narracion": "Ahora la cuenta bancaria. Voy al menú Banca, pestaña Cuentas Bancarias, y pulso Crear Cuenta Bancaria. En Banco escribo BHD, y de las opciones que aparecen, elijo el banco BHD. Escribo el número de la cuenta, tal como sale en el estado del banco, para no confundirla con otra. El titular es la empresa, con su nombre legal, como lo tiene registrado el banco. El tipo, Cuenta Corriente, ya viene elegido, y la moneda es el peso. Ahora el campo que hace posible conciliar: Cuenta contable. Escribo BHD otra vez, y de la lista elijo la cuenta del mayor que creamos en el primer video. Cada cuenta bancaria necesita su propia cuenta contable, de activo y que permita movimientos. El saldo inicial aparece bloqueado a propósito: el saldo ya entró con el balance inicial. Pulso Guardar.",
+   "acciones": [
+    {
+     "click": "button:has-text('Crear Cuenta Bancaria')",
+     "al_decir": "pulso Crear"
+    },
+    {
+     "escribir": {
+      "sel": "app-autocomplete:has(mat-label:text-is('Banco')) input",
+      "texto": "BHD"
+     },
+     "al_decir": "En Banco escribo"
+    },
+    {
+     "click": "mat-option:has-text('Banco BHD')",
+     "al_decir": "elijo el banco BHD"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='accountNumber']",
+      "texto": "2318807019"
+     },
+     "al_decir": "el número de la cuenta"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='accountHolderName']",
+      "texto": "Distribuidora Germiva S.R.L."
+     },
+     "al_decir": "El titular"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-select[formcontrolname='accountType'])",
+     "durante_ms": 2500,
+     "al_decir": "El tipo"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-select[formcontrolname='currencyId'])",
+     "durante_ms": 2500,
+     "al_decir": "la moneda"
+    },
+    {
+     "escribir": {
+      "sel": "app-autocomplete:has(mat-label:has-text('Cuenta contable')) input",
+      "texto": "BHD"
+     },
+     "al_decir": "Escribo BHD otra vez"
+    },
+    {
+     "click": "mat-option:has-text('Banco BHD - Cuenta corriente')",
+     "al_decir": "que creamos en el primer video"
+    },
+    {
+     "resaltar": "app-autocomplete:has(mat-label:has-text('Cuenta contable'))",
+     "durante_ms": 5000,
+     "al_decir": "su propia cuenta"
+    },
+    {
+     "resaltar": "mat-form-field:has(input[formcontrolname='openingBalance'])",
+     "durante_ms": 4500,
+     "al_decir": "saldo inicial"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    }
+   ]
+  },
+  {
+   "id": "03-conciliacion",
+   "capitulo": "Abrir la conciliación",
+   "rotulo": "La conciliación",
+   "ruta": "Contabilidad › Banca › Conciliaciones",
+   "texto_pantalla": "Nueva Conciliación · el estado de cuenta del banco",
+   "navegar": "/accounting/banca/conciliaciones",
+   "al_decir_navegar": "pestaña Conciliaciones",
+   "narracion": "Con la cuenta lista, ya se puede conciliar. Abro la pestaña Conciliaciones y pulso Nueva Conciliación. Conciliar es comparar el estado de cuenta que manda el banco con lo que dicen tus libros. La referencia identifica esta conciliación; usa una que diga el banco y el mes, para encontrarla después. En Cuenta Bancaria escribo BHD, y de la lista elijo la cuenta que acabamos de crear. El período contable es octubre: lo escribo y lo elijo de la lista. Las fechas de inicio y fin son las del estado de cuenta. Inicio, el primero de octubre, el día en que arranca el estado. Y fin, el quince de octubre, que es hasta donde llega este estado. Los balances inicial y final los copias del estado del banco. Al inicio, doscientos cincuenta mil, el mismo saldo de la apertura. Y al final, también doscientos cincuenta mil, porque en esos días no hubo movimientos. El balance en libros no lo escribes tú: el sistema lo calcula del mayor. Pulso Guardar.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nueva Conciliación')",
+     "al_decir": "pulso Nueva"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='referenceNumber']",
+      "texto": "CONC-BHD-2026-10"
+     },
+     "al_decir": "La referencia"
+    },
+    {
+     "escribir": {
+      "sel": "app-autocomplete:has(mat-label:has-text('Cuenta Bancaria')) input",
+      "texto": "BHD"
+     },
+     "al_decir": "En Cuenta Bancaria"
+    },
+    {
+     "click": "mat-option:has-text('2318807019')",
+     "al_decir": "elijo la cuenta que acabamos"
+    },
+    {
+     "escribir": {
+      "sel": "app-autocomplete:has(mat-label:has-text('Período Contable')) input",
+      "texto": "Octubre"
+     },
+     "al_decir": "El período contable"
+    },
+    {
+     "click": "mat-option:has-text('Octubre 2026')",
+     "al_decir": "lo elijo de la lista"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='statementStartDate']",
+      "texto": "01/10/2026"
+     },
+     "al_decir": "Inicio, el primero"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='statementEndDate']",
+      "texto": "15/10/2026"
+     },
+     "al_decir": "Y fin, el quince"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='openingBalance']",
+      "texto": "250000"
+     },
+     "al_decir": "Al inicio, doscientos"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='closingBalance']",
+      "texto": "250000"
+     },
+     "al_decir": "Y al final"
+    },
+    {
+     "resaltar": "mat-form-field:has(input[formcontrolname='bookBalance'])",
+     "durante_ms": 4500,
+     "al_decir": "balance en libros"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    }
+   ]
+  },
+  {
+   "id": "04-que-sigue",
+   "capitulo": "Lo que sigue",
+   "rotulo": "Importar y completar",
+   "ruta": "Contabilidad › Banca › Conciliación",
+   "texto_pantalla": "Importar estado de cuenta · Completar",
+   "narracion": "La conciliación queda abierta. Arriba están los dos botones con que se trabaja. Importar estado de cuenta carga el archivo del banco, en CSV o Excel, y cada línea entra como una partida. Después marcas cada partida contra tus libros, y las comisiones o intereses que el banco cobró se registran solos al final. Cuando la diferencia llega a cero y no queda nada pendiente, pulsas Completar.",
+   "acciones": [
+    {
+     "resaltar": "button:has-text('Importar estado de cuenta')",
+     "durante_ms": 6000,
+     "al_decir": "Importar estado"
+    },
+    {
+     "resaltar": "text=Diferencia >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "marcas cada partida"
+    },
+    {
+     "resaltar": "button:has-text('Completar')",
+     "durante_ms": 5000,
+     "al_decir": "pulsas Completar"
+    }
+   ]
+  }
+ ]
+}

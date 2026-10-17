@@ -1,0 +1,244 @@
+{
+ "titulo": "Contabilidad · Cierra el período del mes",
+ "descripcion": "Cómo cerrar un mes contable en Germiva: dónde están los Períodos Contables, qué revisar antes de cerrar, por qué un asiento en borrador bloquea el cierre y cómo resolverlo, y qué significan reabrir y bloquear un período.",
+ "_comentario": "Video 4 de la serie Contabilidad (17/10/2026). setup: preparar.sh cierre-mensual (abril-agosto 2026 cerrados; asiento en borrador «Pago de nómina de septiembre» 85,000).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/periodos"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh cierre-mensual"
+ },
+ "aprenderas": [
+  "Encontrar los períodos contables y leer su estado",
+  "Revisar lo que debe quedar listo antes de cerrar el mes",
+  "Resolver el bloqueo por asientos en borrador",
+  "Cerrar el mes y saber cuándo reabrir o bloquear"
+ ],
+ "errores_comunes": [
+  "Cerrar con asientos en borrador: el sistema no lo permite",
+  "Cerrar sin registrar la depreciación o la revaluación del mes",
+  "Bloquear un período por error: el bloqueo no se deshace"
+ ],
+ "pasos": [
+  {
+   "id": "01-periodos",
+   "capitulo": "Los períodos contables",
+   "rotulo": "Los períodos",
+   "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+   "texto_pantalla": "Períodos Contables · el calendario fiscal",
+   "narracion": "El cierre del mes se hace en Contabilidad, Configuración Contable, Períodos Contables. Ahora recojo el menú para ver la tabla completa. Cada fila es un período, casi siempre un mes, y la columna Estado dice si está abierto, cerrado o bloqueado. En un período abierto se pueden registrar asientos; en uno cerrado, no. Aquí abril, mayo, junio, julio y agosto ya están cerrados, y toca cerrar septiembre. Antes de hacerlo, conviene revisar tres cosas: que no queden asientos en borrador, que la depreciación y la revaluación del mes estén registradas, y que las cuentas de banco estén conciliadas. Busco septiembre: escribo el nombre del mes en la búsqueda general, y pulso Filtrar.",
+   "acciones": [
+    {
+     "resaltar": "a.gm-config-back",
+     "durante_ms": 1500,
+     "al_decir": "Configuración Contable"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "table thead",
+     "durante_ms": 3500,
+     "al_decir": "Cada fila"
+    },
+    {
+     "resaltar": "th:has-text('Estado')",
+     "durante_ms": 4000,
+     "al_decir": "columna Estado"
+    },
+    {
+     "resaltar": "tr:has-text('Abril 2026') >> text=Cerrado",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "ya están cerrados"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder='Buscar por nombre o descripción...']",
+      "texto": "Septiembre"
+     },
+     "al_decir": "escribo el nombre"
+    },
+    {
+     "click": "button:has-text('Filtrar')",
+     "al_decir": "pulso Filtrar"
+    }
+   ]
+  },
+  {
+   "id": "02-bloqueo",
+   "capitulo": "El bloqueo por borradores",
+   "rotulo": "Un asiento en borrador",
+   "ruta": "Contabilidad › Períodos Contables",
+   "texto_pantalla": "Cerrar Período · el sistema revisa los borradores",
+   "narracion": "En la fila de septiembre, al final, está el botón Cerrar Período, el del candado abierto. Lo pulso. El sistema pide confirmar, porque al cerrar ya no se podrán registrar movimientos en el mes. Confirmo con Sí, Cerrar. Pero el cierre no pasa: el aviso dice que el período tiene un asiento en borrador. Un borrador es un asiento que alguien empezó y no contabilizó; si el mes se cerrara así, ese movimiento quedaría fuera. Vamos a resolverlo.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('Septiembre 2026') button[aria-label='Cerrar Período']",
+     "durante_ms": 3500,
+     "al_decir": "botón Cerrar Período"
+    },
+    {
+     "click": "tr:has-text('Septiembre 2026') button[aria-label='Cerrar Período']",
+     "al_decir": "Lo pulso"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "pide confirmar"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, Cerrar')",
+     "al_decir": "Confirmo"
+    },
+    {
+     "resaltar": "text=borrador >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "el aviso dice"
+    }
+   ]
+  },
+  {
+   "id": "03-contabilizar",
+   "capitulo": "Contabilizar el borrador",
+   "rotulo": "Contabilizar el borrador",
+   "ruta": "Contabilidad › Diario y Mayor › Asientos Contables",
+   "texto_pantalla": "Asientos Contables · el borrador de septiembre",
+   "navegar": "/accounting/registro/asientos",
+   "al_decir_navegar": "pestaña Asientos Contables",
+   "narracion": "Los asientos están en Diario y Mayor, pestaña Asientos Contables. Ahí está el borrador: el pago de la nómina de septiembre, con su estado en Borrador. Lo reviso y, si está bien, lo contabilizo con el botón Contabilizar de su fila. Si estuviera mal, lo corriges o lo eliminas. Confirmo. Ahora el asiento está contabilizado y ya no bloquea el cierre.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('Pago de nómina de septiembre')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Ahí está el borrador"
+    },
+    {
+     "click": "tr:has-text('Pago de nómina de septiembre') button[aria-label='Contabilizar']",
+     "al_decir": "botón Contabilizar"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Confirmar')",
+     "al_decir": "Confirmo"
+    },
+    {
+     "resaltar": "tr:has-text('Pago de nómina de septiembre')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "está contabilizado"
+    }
+   ]
+  },
+  {
+   "id": "04-cerrar",
+   "capitulo": "Cerrar el mes",
+   "rotulo": "Cerrar septiembre",
+   "ruta": "Contabilidad › Períodos Contables",
+   "texto_pantalla": "Septiembre 2026 · cerrado",
+   "navegar": "/accounting/configuracion/periodos",
+   "al_decir_navegar": "vuelvo a Períodos",
+   "narracion": "Con eso resuelto, vuelvo a Períodos Contables y busco septiembre otra vez, igual que antes, con su nombre completo, y lo filtro. La lista queda solo con ese mes. Pulso Cerrar Período en su fila, y confirmo en el aviso. Ahora sí: septiembre queda Cerrado. Si después hace falta corregir algo, el botón Reabrir Período lo abre de nuevo, pero pide escribir el motivo, que queda registrado. Y Bloquear es para cuando el mes ya se declaró y no debe tocarse nunca más: el bloqueo no se deshace, así que úsalo solo cuando estés seguro.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[placeholder='Buscar por nombre o descripción...']",
+      "texto": "Septiembre"
+     },
+     "al_decir": "busco septiembre"
+    },
+    {
+     "click": "button:has-text('Filtrar')",
+     "al_decir": "lo filtro"
+    },
+    {
+     "click": "tr:has-text('Septiembre 2026') button[aria-label='Cerrar Período']",
+     "al_decir": "Pulso Cerrar"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, Cerrar')",
+     "al_decir": "confirmo en el aviso"
+    },
+    {
+     "resaltar": "tr:has-text('Septiembre 2026') >> text=Cerrado",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "queda Cerrado"
+    },
+    {
+     "resaltar": "tr:has-text('Septiembre 2026') button[aria-label='Reabrir Período']",
+     "durante_ms": 5000,
+     "al_decir": "Reabrir Período"
+    },
+    {
+     "resaltar": "tr:has-text('Septiembre 2026') button[aria-label='Bloquear (Permanente)']",
+     "durante_ms": 6000,
+     "al_decir": "Y Bloquear"
+    }
+   ]
+  }
+ ]
+}

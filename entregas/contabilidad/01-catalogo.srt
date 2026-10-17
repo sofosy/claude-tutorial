@@ -1,0 +1,187 @@
+1
+00:00:03,000 --> 00:00:06,579
+El catálogo de cuentas está en el menú Contabilidad,
+
+2
+00:00:06,424 --> 00:00:10,664
+en la opción Configuración Contable, tarjeta Plan de Cuentas.
+
+3
+00:00:10,535 --> 00:00:13,057
+Ahora recojo el menú para ganar espacio.
+
+4
+00:00:12,903 --> 00:00:14,531
+Este es el catálogo:
+
+5
+00:00:14,446 --> 00:00:19,209
+la lista de todas las cuentas donde se registra el dinero de tu empresa.
+
+6
+00:00:19,126 --> 00:00:21,602
+Arriba están los grupos principales:
+
+7
+00:00:21,460 --> 00:00:26,616
+activos, pasivos, patrimonio, ingresos, costos y gastos.
+
+8
+00:00:26,452 --> 00:00:32,061
+Cada fila es una cuenta, con su código, su nombre, el tipo y la naturaleza,
+
+9
+00:00:31,943 --> 00:00:35,557
+es decir, si aumenta por el débito o por el crédito.
+
+10
+00:00:35,438 --> 00:00:39,516
+La etiqueta Plantilla dice que la cuenta viene del catálogo base,
+
+11
+00:00:39,374 --> 00:00:41,060
+que es de solo lectura.
+
+12
+00:00:40,941 --> 00:00:44,438
+Las cuentas que tú creas aparecen como Personalizada.
+
+13
+00:00:44,320 --> 00:00:48,118
+Vamos a agregar la cuenta del banco con que trabaja la empresa.
+
+14
+00:00:47,965 --> 00:00:50,441
+Primero busco dónde están los bancos:
+
+15
+00:00:50,298 --> 00:00:52,565
+escribo bancos en el buscador.
+
+16
+00:00:53,009 --> 00:00:59,502
+Ahí está la cuenta Bancos, con el código uno, cero uno, cero uno, cero dos.
+
+17
+00:00:59,325 --> 00:01:01,509
+Es una cuenta agrupadora:
+
+18
+00:01:01,390 --> 00:01:06,618
+debajo de ella va una cuenta por cada banco donde la empresa tiene dinero.
+
+19
+00:01:06,569 --> 00:01:08,557
+Pulso Crear Cuenta.
+
+20
+00:01:08,415 --> 00:01:09,765
+Escribo el nombre:
+
+21
+00:01:09,634 --> 00:01:12,899
+Banco BHD, cuenta corriente.
+
+22
+00:01:12,814 --> 00:01:16,661
+Lo más importante del formulario es la Cuenta Padre,
+
+23
+00:01:16,519 --> 00:01:22,269
+porque decide dónde queda la cuenta en el árbol y en los estados financieros.
+
+24
+00:01:22,091 --> 00:01:24,591
+Escribo bancos en ese campo.
+
+25
+00:01:24,424 --> 00:01:28,397
+En la lista aparecen las cuentas que coinciden con lo escrito,
+
+26
+00:01:28,256 --> 00:01:30,615
+y elijo la cuenta Bancos.
+
+27
+00:01:30,450 --> 00:01:34,761
+Al elegirla, el sistema completa solo el tipo, activo;
+
+28
+00:01:34,712 --> 00:01:36,804
+la naturaleza, débito;
+
+29
+00:01:36,639 --> 00:01:39,602
+el nivel, que es uno más que el del padre;
+
+30
+00:01:39,448 --> 00:01:43,433
+y propone el código siguiente, que termina en cero dos.
+
+31
+00:01:43,325 --> 00:01:47,403
+Puedes cambiar el código, pero siempre tiene que empezar con el del padre.
+
+32
+00:01:47,272 --> 00:01:50,875
+Abajo, Permite Movimientos Contables queda marcada:
+
+33
+00:01:50,756 --> 00:01:53,475
+en esta cuenta se va a registrar dinero.
+
+34
+00:01:53,344 --> 00:01:58,921
+Si la desmarcas, la cuenta solo agrupa a otras y no aparece al hacer asientos.
+
+35
+00:01:58,790 --> 00:02:00,117
+Pulso Guardar.
+
+36
+00:01:59,998 --> 00:02:01,568
+Sale el aviso verde:
+
+37
+00:02:01,426 --> 00:02:04,819
+la cuenta se guardó, y el sistema abre su ficha.
+
+38
+00:02:05,269 --> 00:02:06,944
+La cuenta ya existe.
+
+39
+00:02:06,836 --> 00:02:10,555
+Ahora regreso al catálogo de cuentas para ver dónde quedó.
+
+40
+00:02:10,448 --> 00:02:15,780
+Ahí, busco BHD en el mismo buscador para encontrarla rápido.
+
+41
+00:02:15,649 --> 00:02:21,387
+Ahí aparece la cuenta nueva, debajo de Bancos y marcada como Personalizada:
+
+42
+00:02:21,337 --> 00:02:27,319
+es de tu empresa, así que la puedes editar o eliminar mientras no tenga movimientos.
+
+43
+00:02:27,212 --> 00:02:31,894
+Si te faltan muchas cuentas, no hace falta crearlas una a una.
+
+44
+00:02:31,717 --> 00:02:36,620
+Importar Catálogo carga un archivo de Excel con las que necesites.
+
+45
+00:02:36,466 --> 00:02:41,855
+Y si una cuenta de la plantilla se parece a la que buscas, el botón de duplicar,
+
+46
+00:02:41,713 --> 00:02:47,103
+al final de su fila, crea una cuenta hermana con otro código y otro nombre.
+
+47
+00:02:46,961 --> 00:02:52,514
+Con la cuenta del banco creada, el siguiente paso es cargar los saldos iniciales.
