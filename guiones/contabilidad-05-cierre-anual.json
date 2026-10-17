@@ -165,7 +165,7 @@
    "rotulo": "Provisionar el ISR",
    "ruta": "Contabilidad › Cierre Contable › Impuesto sobre la renta",
    "texto_pantalla": "Impuesto sobre la renta · la provisión del ejercicio",
-   "narracion": "El segundo paso es el impuesto sobre la renta. El sistema toma la utilidad del año, le aplica la tasa del impuesto, y propone cuánto provisionar. Más abajo muestra el asiento que va a registrar: un gasto por impuesto contra el impuesto por pagar. El monto propuesto viene lleno; si tu contador decide otro, lo cambias y el sistema te pide el motivo. Pulso Provisionar ISR; el sistema pide confirmar el asiento, y confirmo. Con el impuesto registrado, pulso Generar vista previa del cierre.",
+   "narracion": "El segundo paso es el impuesto sobre la renta. El sistema toma la utilidad del año, seiscientos mil pesos, le aplica la tasa del veintisiete por ciento, y propone provisionar ciento sesenta y dos mil. Más abajo muestra el asiento que va a registrar: un gasto por impuesto contra el impuesto por pagar. El monto propuesto viene lleno; si tu contador decide otro, lo cambias y el sistema te pide el motivo. Pulso Provisionar ISR; el sistema pide confirmar el asiento, y confirmo. Sale el aviso de que el impuesto quedó provisionado, con el número de su asiento. Pulso Aceptar. Con el impuesto registrado, pulso Generar vista previa del cierre.",
    "acciones": [
     {
      "resaltar": "app-income-tax-step table, app-income-tax-step .liquidation",
@@ -189,13 +189,23 @@
      "al_decir": "Pulso Provisionar"
     },
     {
-     "resaltar": "mat-dialog-container",
+     "resaltar": "mat-dialog-container >> nth=0",
      "durante_ms": 1500,
      "cursor": false
     },
     {
      "click": "mat-dialog-container button:has-text('Confirmar')",
      "al_decir": "y confirmo"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "quedó provisionado"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
     },
     {
      "click": "button:has-text('Generar vista previa del cierre')",
@@ -209,7 +219,7 @@
    "rotulo": "Ejecutar el cierre",
    "ruta": "Contabilidad › Cierre Contable › Vista Previa",
    "texto_pantalla": "Vista Previa · lo que el cierre va a hacer",
-   "narracion": "La vista previa dice lo que el cierre va a hacer, antes de hacerlo. El resumen financiero muestra el total de ingresos, el de gastos y la utilidad del año. Debajo están las cuentas que se van a cerrar, con su saldo, y los asientos que se van a generar. Si todo cuadra, pulso Ejecutar Cierre; el sistema avisa que va a generar los asientos y cerrar el período, y confirmo.",
+   "narracion": "La vista previa dice lo que el cierre va a hacer, antes de hacerlo. El resumen financiero muestra los ingresos del año, un millón quinientos mil; los gastos, un millón sesenta y dos mil, ya con el impuesto; y la utilidad, cuatrocientos treinta y ocho mil. Debajo están las cuentas que se van a cerrar, con su saldo, y los asientos que se van a generar. Si todo cuadra, pulso Ejecutar Cierre; el sistema avisa que va a generar los asientos y cerrar el período, y confirmo.",
    "acciones": [
     {
      "resaltar": "text=Resumen Financiero",
@@ -228,7 +238,7 @@
      "al_decir": "pulso Ejecutar"
     },
     {
-     "resaltar": "mat-dialog-container",
+     "resaltar": "mat-dialog-container >> nth=0",
      "durante_ms": 1500,
      "cursor": false
     },
@@ -244,8 +254,18 @@
    "rotulo": "Año cerrado",
    "ruta": "Contabilidad › Cierre Contable › Resultado",
    "texto_pantalla": "Resultado · asientos de cierre y período siguiente",
-   "narracion": "Listo. El cierre generó tres asientos: uno que cierra los ingresos, otro que cierra los gastos, y uno que pasa la utilidad a ganancias acumuladas. Diciembre quedó cerrado y el período siguiente queda como actual. Los saldos del balance, como el banco o los clientes, siguen en el mayor sin necesidad de otro asiento. Si hubo un error, el cierre se puede reversar desde el historial, pero antes consulta a tu contador.",
+   "narracion": "Listo: el aviso confirma que el cierre contable se completó. Pulso Aceptar. El cierre generó tres asientos: uno que cierra los ingresos, otro que cierra los gastos, y uno que pasa la utilidad a ganancias acumuladas. Diciembre quedó cerrado y el período siguiente queda como actual. Los saldos del balance, como el banco o los clientes, siguen en el mayor sin necesidad de otro asiento. Si hubo un error, el cierre se puede reversar desde el historial, pero antes consulta a tu contador.",
    "acciones": [
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el aviso confirma"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
+    },
     {
      "resaltar": "text=Asientos Generados",
      "durante_ms": 5500,

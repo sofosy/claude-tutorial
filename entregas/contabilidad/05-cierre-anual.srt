@@ -1,0 +1,211 @@
+1
+00:00:03,000 --> 00:00:06,972
+El cierre del año se hace en Contabilidad, Cierre Contable.
+
+2
+00:00:06,855 --> 00:00:09,493
+Ahora recojo el menú para ganar espacio.
+
+3
+00:00:09,339 --> 00:00:11,547
+Este cierre hace dos cosas:
+
+4
+00:00:11,416 --> 00:00:14,333
+lleva los ingresos y los gastos del año a cero,
+
+5
+00:00:14,179 --> 00:00:17,503
+y pasa la utilidad o la pérdida al patrimonio,
+
+6
+00:00:17,350 --> 00:00:20,219
+para que el año siguiente arranque limpio.
+
+7
+00:00:20,100 --> 00:00:24,816
+Antes de empezar, revisa que todos los meses del año, menos diciembre,
+
+8
+00:00:24,652 --> 00:00:28,160
+estén cerrados, y que no queden asientos en borrador.
+
+9
+00:00:28,018 --> 00:00:33,814
+En este ejemplo, de enero a noviembre de dos mil veinticinco ya están cerrados.
+
+10
+00:00:33,765 --> 00:00:36,542
+Pulso Iniciar Cierre.
+
+11
+00:00:37,015 --> 00:00:39,433
+El asistente tiene cuatro pasos.
+
+12
+00:00:39,280 --> 00:00:41,708
+En el primero eliges el período:
+
+13
+00:00:41,625 --> 00:00:46,899
+abro la lista y tomo diciembre de dos mil veinticinco, el último mes del año.
+
+14
+00:00:46,733 --> 00:00:52,169
+Después, la Cuenta Resultado del Ejercicio, donde se junta la utilidad del año:
+
+15
+00:00:52,063 --> 00:00:54,689
+elijo Utilidad del ejercicio.
+
+16
+00:00:54,581 --> 00:00:59,530
+Y la Cuenta Utilidades Retenidas, a donde pasa ese resultado al final:
+
+17
+00:00:59,423 --> 00:01:01,782
+elijo Ganancias acumuladas.
+
+18
+00:01:01,664 --> 00:01:05,521
+Tienen que ser dos cuentas distintas, las dos de patrimonio.
+
+19
+00:01:05,367 --> 00:01:09,283
+La casilla de abajo crea o activa el período siguiente,
+
+20
+00:01:09,117 --> 00:01:11,546
+para seguir registrando sin pausa.
+
+21
+00:01:11,417 --> 00:01:12,882
+Pulso Continuar.
+
+22
+00:01:13,338 --> 00:01:16,638
+El segundo paso es el impuesto sobre la renta.
+
+23
+00:01:16,484 --> 00:01:20,817
+El sistema toma la utilidad del año, seiscientos mil pesos,
+
+24
+00:01:20,688 --> 00:01:23,615
+le aplica la tasa del veintisiete por ciento,
+
+25
+00:01:23,450 --> 00:01:26,959
+y propone provisionar ciento sesenta y dos mil.
+
+26
+00:01:26,829 --> 00:01:30,001
+Más abajo muestra el asiento que va a registrar:
+
+27
+00:01:29,871 --> 00:01:32,905
+un gasto por impuesto contra el impuesto por pagar.
+
+28
+00:01:32,739 --> 00:01:35,098
+El monto propuesto viene lleno;
+
+29
+00:01:34,956 --> 00:01:40,009
+si tu contador decide otro, lo cambias y el sistema te pide el motivo.
+
+30
+00:01:39,879 --> 00:01:42,900
+Pulso Provisionar ISR;
+
+31
+00:01:42,746 --> 00:01:46,117
+el sistema pide confirmar el asiento, y confirmo.
+
+32
+00:01:45,962 --> 00:01:50,854
+Sale el aviso de que el impuesto quedó provisionado, con el número de su asiento.
+
+33
+00:01:50,676 --> 00:01:51,864
+Pulso Aceptar.
+
+34
+00:01:51,686 --> 00:01:56,078
+Con el impuesto registrado, pulso Generar vista previa del cierre.
+
+35
+00:01:56,533 --> 00:02:01,168
+La vista previa dice lo que el cierre va a hacer, antes de hacerlo.
+
+36
+00:02:00,990 --> 00:02:05,766
+El resumen financiero muestra los ingresos del año, un millón quinientos mil;
+
+37
+00:02:05,658 --> 00:02:09,550
+los gastos, un millón sesenta y dos mil, ya con el impuesto;
+
+38
+00:02:09,420 --> 00:02:12,627
+y la utilidad, cuatrocientos treinta y ocho mil.
+
+39
+00:02:12,496 --> 00:02:16,086
+Debajo están las cuentas que se van a cerrar, con su saldo,
+
+40
+00:02:15,920 --> 00:02:18,106
+y los asientos que se van a generar.
+
+41
+00:02:17,987 --> 00:02:20,788
+Si todo cuadra, pulso Ejecutar Cierre;
+
+42
+00:02:20,705 --> 00:02:26,407
+el sistema avisa que va a generar los asientos y cerrar el período, y confirmo.
+
+43
+00:02:26,850 --> 00:02:27,631
+Listo:
+
+44
+00:02:27,501 --> 00:02:31,206
+el aviso confirma que el cierre contable se completó.
+
+45
+00:02:31,031 --> 00:02:32,334
+Pulso Aceptar.
+
+46
+00:02:32,180 --> 00:02:34,724
+El cierre generó tres asientos:
+
+47
+00:02:34,617 --> 00:02:38,312
+uno que cierra los ingresos, otro que cierra los gastos,
+
+48
+00:02:38,193 --> 00:02:41,795
+y uno que pasa la utilidad a ganancias acumuladas.
+
+49
+00:02:41,688 --> 00:02:46,253
+Diciembre quedó cerrado y el período siguiente queda como actual.
+
+50
+00:02:46,123 --> 00:02:49,759
+Los saldos del balance, como el banco o los clientes,
+
+51
+00:02:49,617 --> 00:02:53,115
+siguen en el mayor sin necesidad de otro asiento.
+
+52
+00:02:53,031 --> 00:02:57,098
+Si hubo un error, el cierre se puede reversar desde el historial,
+
+53
+00:02:56,931 --> 00:02:59,605
+pero antes consulta a tu contador.
