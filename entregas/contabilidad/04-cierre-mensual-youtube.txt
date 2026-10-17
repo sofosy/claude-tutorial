@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Cierra el período del mes
+
+DESCRIPCIÓN
+============================================================
+Cómo cerrar un mes contable en Germiva: dónde están los Períodos Contables, qué revisar antes de cerrar, por qué un asiento en borrador bloquea el cierre y cómo resolverlo, y qué significan reabrir y bloquear un período.
+
+⏱️ CAPÍTULOS
+00:00  Los períodos contables
+00:48  El bloqueo por borradores
+01:17  Contabilizar el borrador
+01:40  Cerrar el mes
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Encontrar los períodos contables y leer su estado
+• Revisar lo que debe quedar listo antes de cerrar el mes
+• Resolver el bloqueo por asientos en borrador
+• Cerrar el mes y saber cuándo reabrir o bloquear
+
+⚠️ ERRORES COMUNES
+• Cerrar con asientos en borrador: el sistema no lo permite
+• Cerrar sin registrar la depreciación o la revaluación del mes
+• Bloquear un período por error: el bloqueo no se deshace
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:21
+
+TRANSCRIPCIÓN
+============================================================
+El cierre del mes se hace en Contabilidad, Configuración Contable, Períodos Contables. Ahora recojo el menú para ver la tabla completa. Cada fila es un período, casi siempre un mes, y la columna Estado dice si está abierto, cerrado o bloqueado. En un período abierto se pueden registrar asientos; en uno cerrado, no. Aquí abril, mayo, junio, julio y agosto ya están cerrados, y toca cerrar septiembre. Antes de hacerlo, conviene revisar tres cosas: que no queden asientos en borrador, que la depreciación y la revaluación del mes estén registradas, y que las cuentas de banco estén conciliadas. Busco septiembre: escribo el nombre del mes en la búsqueda general, y pulso Filtrar.
+En la fila de septiembre, al final, está el botón Cerrar Período, el del candado abierto. Lo pulso. El sistema pide confirmar, porque al cerrar ya no se podrán registrar movimientos en el mes. Confirmo con Sí, Cerrar. Pero el cierre no pasa: el aviso dice que el período tiene un asiento en borrador. Un borrador es un asiento que alguien empezó y no contabilizó; si el mes se cerrara así, ese movimiento quedaría fuera. Vamos a resolverlo.
+Los asientos están en Diario y Mayor, pestaña Asientos Contables. Ahí está el borrador: el pago de la nómina de septiembre, con su estado en Borrador. Lo reviso y, si está bien, lo contabilizo con el botón Contabilizar de su fila. Si estuviera mal, lo corriges o lo eliminas. Confirmo. Ahora el asiento está contabilizado y ya no bloquea el cierre.
+Con eso resuelto, vuelvo a Períodos Contables y busco septiembre otra vez, igual que antes, con su nombre completo, y lo filtro. La lista queda solo con ese mes. Pulso Cerrar Período en su fila, y confirmo en el aviso. Ahora sí: septiembre queda Cerrado. Si después hace falta corregir algo, el botón Reabrir Período lo abre de nuevo, pero pide escribir el motivo, que queda registrado. Y Bloquear es para cuando el mes ya se declaró y no debe tocarse nunca más: el bloqueo no se deshace, así que úsalo solo cuando estés seguro.

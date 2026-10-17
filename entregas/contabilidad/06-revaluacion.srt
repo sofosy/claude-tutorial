@@ -1,0 +1,171 @@
+1
+00:00:03,000 --> 00:00:06,671
+Cuando la empresa tiene clientes o proveedores en dólares,
+
+2
+00:00:06,517 --> 00:00:10,153
+cada factura se registró en pesos a la tasa de su día.
+
+3
+00:00:10,070 --> 00:00:12,731
+Al cierre del mes la tasa es otra,
+
+4
+00:00:12,589 --> 00:00:18,640
+y esa diferencia es una ganancia o una pérdida cambiaria, todavía no realizada:
+
+5
+00:00:18,533 --> 00:00:21,938
+eso es la revaluación de la norma NIC 21.
+
+6
+00:00:21,820 --> 00:00:24,317
+Lo primero es tener la tasa del cierre.
+
+7
+00:00:24,164 --> 00:00:28,172
+Estoy en el Histórico de tasas de cambio, con el dólar elegido.
+
+8
+00:00:28,018 --> 00:00:30,855
+Aquí está la tasa del treinta de septiembre:
+
+9
+00:00:30,736 --> 00:00:32,700
+sesenta con veinticinco.
+
+10
+00:00:32,582 --> 00:00:37,588
+Y esta otra, de cincuenta y ocho con cincuenta, es la del diez de septiembre,
+
+11
+00:00:37,435 --> 00:00:42,929
+el día en que se registraron una factura de un cliente por dos mil dólares y una de
+
+12
+00:00:42,811 --> 00:00:44,393
+un proveedor por mil.
+
+13
+00:00:44,829 --> 00:00:50,496
+La revaluación está en Contabilidad, Banca, pestaña Revaluación NIC 21.
+
+14
+00:00:50,424 --> 00:00:53,051
+La fecha de cierre ya viene propuesta:
+
+15
+00:00:52,932 --> 00:00:56,266
+el último fin de mes cumplido, treinta de septiembre.
+
+16
+00:00:56,126 --> 00:01:01,376
+En Moneda abro la lista, donde solo aparecen las monedas extranjeras de la empresa,
+
+17
+00:01:01,246 --> 00:01:02,456
+y elijo el dólar.
+
+18
+00:01:02,337 --> 00:01:06,914
+La tasa de cierre la dejo vacía, para que use la registrada en el histórico;
+
+19
+00:01:06,772 --> 00:01:11,754
+solo la escribes si tu contador o la DGII indican otra.
+
+20
+00:01:11,647 --> 00:01:13,914
+Pulso Ejecutar revaluación.
+
+21
+00:01:14,359 --> 00:01:16,951
+El sistema confirma la revaluación:
+
+22
+00:01:16,867 --> 00:01:22,767
+ajustó dos saldos, con una ganancia de tres mil quinientos pesos y una pérdida de
+
+23
+00:01:22,683 --> 00:01:24,834
+mil setecientos cincuenta.
+
+24
+00:01:24,680 --> 00:01:26,030
+¿De dónde salen?
+
+25
+00:01:25,946 --> 00:01:28,317
+El cliente te debe dos mil dólares;
+
+26
+00:01:28,210 --> 00:01:32,915
+a cincuenta y ocho con cincuenta eran ciento diecisiete mil pesos,
+
+27
+00:01:32,761 --> 00:01:36,955
+y a sesenta con veinticinco son ciento veinte mil quinientos:
+
+28
+00:01:36,836 --> 00:01:40,287
+vas a cobrar más pesos, y eso es ganancia.
+
+29
+00:01:40,122 --> 00:01:42,296
+Con el proveedor pasa al revés:
+
+30
+00:01:42,177 --> 00:01:47,346
+le debes mil dólares, ahora valen mil setecientos cincuenta pesos más,
+
+31
+00:01:47,181 --> 00:01:48,542
+y eso es pérdida.
+
+32
+00:01:48,377 --> 00:01:49,993
+Pulso Aceptar.
+
+33
+00:01:50,451 --> 00:01:54,076
+Abajo, en Revaluaciones previas, queda la corrida:
+
+34
+00:01:53,946 --> 00:02:00,380
+la fecha, la moneda, la tasa, cuántos documentos ajustó, la ganancia, la pérdida,
+
+35
+00:02:00,261 --> 00:02:03,480
+el estado Posteada y el asiento que generó.
+
+36
+00:02:03,396 --> 00:02:06,870
+La próxima revaluación parte de esta tasa.
+
+37
+00:02:06,693 --> 00:02:11,584
+Si te equivocaste, el botón Anular revaluación registra el reverso;
+
+38
+00:02:11,430 --> 00:02:16,737
+pide el motivo, y se anulan siempre de la más reciente a la más antigua.
+
+39
+00:02:16,620 --> 00:02:18,283
+Una aclaración final:
+
+40
+00:02:18,199 --> 00:02:21,197
+esto es la revaluación de moneda.
+
+41
+00:02:21,078 --> 00:02:25,086
+La revaluación de activos fijos, la de la norma NIC 16,
+
+42
+00:02:24,944 --> 00:02:28,302
+todavía no existe como función en el sistema;
+
+43
+00:02:28,182 --> 00:02:32,677
+hoy, si tu contador la necesita, se registra con un asiento manual.

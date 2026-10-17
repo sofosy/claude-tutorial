@@ -1,7 +1,8 @@
-"""C3 — Narración con edge-tts.
+"""C3 — Narración con edge-tts, ElevenLabs o espeak-ng.
 
-Único punto de contacto con el motor de voz: cambiar a ElevenLabs u otro motor
-solo toca este archivo (edge-tts usa un endpoint no oficial de Microsoft).
+Único punto de contacto con el motor de voz. El motor lo elige el prefijo del
+`voz.id`: «eleven:<voice_id>» (clave en ELEVEN_KEY), «espeak:<voz>» o, sin prefijo, una voz de
+edge-tts (endpoint no oficial de Microsoft).
 
 Además del MP3, guarda por paso un sidecar `<paso>.json` con:
 
@@ -15,6 +16,7 @@ import asyncio
 import hashlib
 import json
 import re
+import shutil
 import subprocess
 
 import tempfile
@@ -170,12 +172,31 @@ def _sintetizar_eleven(texto, voz, destino):
     return palabras
 
 
+# ElevenLabs cobra por carácter: el audio ya pagado se guarda por hash de su
+# texto aquí (fuera de cada `salida/<tutorial>/`), para que borrar o rehacer
+# una salida no vuelva a pagar la misma frase.
+CACHE_VOZ = Path(__file__).resolve().parent.parent / "salida" / "_voz"
+
+
+def _sintetizar_eleven_con_cache(texto, voz, destino):
+    clave = hash_narracion(texto, voz, "")
+    mp3, js = CACHE_VOZ / f"{clave}.mp3", CACHE_VOZ / f"{clave}.json"
+    if mp3.exists() and js.exists():
+        shutil.copyfile(mp3, destino)
+        return json.loads(js.read_text(encoding="utf-8"))
+    palabras = _sintetizar_eleven(texto, voz, destino)
+    CACHE_VOZ.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(destino, mp3)
+    js.write_text(json.dumps(palabras, ensure_ascii=False), encoding="utf-8")
+    return palabras
+
+
 async def _sintetizar(texto, voz, velocidad, destino):
     """Escribe el MP3 y devuelve las marcas de palabra (segundos)."""
     if voz.startswith("espeak:"):
         return _sintetizar_espeak(texto, voz, velocidad, destino)
     if voz.startswith("eleven:"):
-        return _sintetizar_eleven(texto, voz, destino)
+        return _sintetizar_eleven_con_cache(texto, voz, destino)
     import edge_tts  # sólo si se usa: el motor offline no lo necesita
     # edge-tts ≥ 7 manda límites de FRASE por defecto; los de palabra hay que pedirlos
     com = edge_tts.Communicate(texto, voz, rate=velocidad, boundary="WordBoundary")

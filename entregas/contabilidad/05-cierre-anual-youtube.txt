@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Contabilidad · Cierra el año fiscal
+
+DESCRIPCIÓN
+============================================================
+Cómo hacer el cierre anual en Germiva con el asistente de Cierre Contable: qué debe estar listo antes, las cuentas de resultado del ejercicio y de utilidades retenidas, la provisión del ISR, la vista previa con los asientos que se van a generar y el resultado del cierre.
+
+⏱️ CAPÍTULOS
+00:00  Antes del cierre
+00:37  Configuración del cierre
+01:13  El impuesto sobre la renta
+01:56  Vista previa y ejecución
+02:26  El resultado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Saber qué debe estar listo antes del cierre anual
+• Elegir las cuentas de resultado del ejercicio y de utilidades retenidas
+• Provisionar el ISR del ejercicio desde el asistente
+• Revisar la vista previa y ejecutar el cierre
+
+⚠️ ERRORES COMUNES
+• Intentar el cierre anual con meses anteriores abiertos o con borradores
+• Usar la misma cuenta para el resultado del ejercicio y las utilidades retenidas
+• Cerrar con utilidad sin provisionar el ISR
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:03
+
+TRANSCRIPCIÓN
+============================================================
+El cierre del año se hace en Contabilidad, Cierre Contable. Ahora recojo el menú para ganar espacio. Este cierre hace dos cosas: lleva los ingresos y los gastos del año a cero, y pasa la utilidad o la pérdida al patrimonio, para que el año siguiente arranque limpio. Antes de empezar, revisa que todos los meses del año, menos diciembre, estén cerrados, y que no queden asientos en borrador. En este ejemplo, de enero a noviembre de dos mil veinticinco ya están cerrados. Pulso Iniciar Cierre.
+El asistente tiene cuatro pasos. En el primero eliges el período: abro la lista y tomo diciembre de dos mil veinticinco, el último mes del año. Después, la Cuenta Resultado del Ejercicio, donde se junta la utilidad del año: elijo Utilidad del ejercicio. Y la Cuenta Utilidades Retenidas, a donde pasa ese resultado al final: elijo Ganancias acumuladas. Tienen que ser dos cuentas distintas, las dos de patrimonio. La casilla de abajo crea o activa el período siguiente, para seguir registrando sin pausa. Pulso Continuar.
+El segundo paso es el impuesto sobre la renta. El sistema toma la utilidad del año, seiscientos mil pesos, le aplica la tasa del veintisiete por ciento, y propone provisionar ciento sesenta y dos mil. Más abajo muestra el asiento que va a registrar: un gasto por impuesto contra el impuesto por pagar. El monto propuesto viene lleno; si tu contador decide otro, lo cambias y el sistema te pide el motivo. Pulso Provisionar ISR; el sistema pide confirmar el asiento, y confirmo. Sale el aviso de que el impuesto quedó provisionado, con el número de su asiento. Pulso Aceptar. Con el impuesto registrado, pulso Generar vista previa del cierre.
+La vista previa dice lo que el cierre va a hacer, antes de hacerlo. El resumen financiero muestra los ingresos del año, un millón quinientos mil; los gastos, un millón sesenta y dos mil, ya con el impuesto; y la utilidad, cuatrocientos treinta y ocho mil. Debajo están las cuentas que se van a cerrar, con su saldo, y los asientos que se van a generar. Si todo cuadra, pulso Ejecutar Cierre; el sistema avisa que va a generar los asientos y cerrar el período, y confirmo.
+Listo: el aviso confirma que el cierre contable se completó. Pulso Aceptar. El cierre generó tres asientos: uno que cierra los ingresos, otro que cierra los gastos, y uno que pasa la utilidad a ganancias acumuladas. Diciembre quedó cerrado y el período siguiente queda como actual. Los saldos del balance, como el banco o los clientes, siguen en el mayor sin necesidad de otro asiento. Si hubo un error, el cierre se puede reversar desde el historial, pero antes consulta a tu contador.

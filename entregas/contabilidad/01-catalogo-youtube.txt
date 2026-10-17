@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Contabilidad · Crea las cuentas que faltan en tu catálogo
+
+DESCRIPCIÓN
+============================================================
+Cómo agregar al catálogo de cuentas de Germiva las cuentas que tu empresa necesita y la plantilla no trae: dónde está el Plan de Cuentas, qué significa Plantilla y Personalizada, cómo elegir la cuenta padre para que el sistema proponga tipo, naturaleza, nivel y código, y cuándo una cuenta debe permitir movimientos.
+
+⏱️ CAPÍTULOS
+00:00  El catálogo de cuentas
+00:53  Crear la cuenta
+02:05  La cuenta en el catálogo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Encontrar el Plan de Cuentas y leer el árbol del catálogo
+• Distinguir las cuentas de la plantilla de las que crea tu empresa
+• Crear una cuenta nueva bajo la cuenta padre correcta
+• Decidir si la cuenta permite movimientos o solo agrupa
+
+⚠️ ERRORES COMUNES
+• Crear la cuenta sin padre: queda suelta en el catálogo y fuera de los estados financieros
+• Desmarcar Permite movimientos en una cuenta donde vas a registrar: no aparecerá al hacer asientos
+• Inventar un código que no empieza con el del padre: el sistema lo rechaza
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:55
+
+TRANSCRIPCIÓN
+============================================================
+El catálogo de cuentas está en el menú Contabilidad, en la opción Configuración Contable, tarjeta Plan de Cuentas. Ahora recojo el menú para ganar espacio. Este es el catálogo: la lista de todas las cuentas donde se registra el dinero de tu empresa. Arriba están los grupos principales: activos, pasivos, patrimonio, ingresos, costos y gastos. Cada fila es una cuenta, con su código, su nombre, el tipo y la naturaleza, es decir, si aumenta por el débito o por el crédito. La etiqueta Plantilla dice que la cuenta viene del catálogo base, que es de solo lectura. Las cuentas que tú creas aparecen como Personalizada. Vamos a agregar la cuenta del banco con que trabaja la empresa. Primero busco dónde están los bancos: escribo bancos en el buscador.
+Ahí está la cuenta Bancos, con el código uno, cero uno, cero uno, cero dos. Es una cuenta agrupadora: debajo de ella va una cuenta por cada banco donde la empresa tiene dinero. Pulso Crear Cuenta. Escribo el nombre: Banco BHD, cuenta corriente. Lo más importante del formulario es la Cuenta Padre, porque decide dónde queda la cuenta en el árbol y en los estados financieros. Escribo bancos en ese campo. En la lista aparecen las cuentas que coinciden con lo escrito, y elijo la cuenta Bancos. Al elegirla, el sistema completa solo el tipo, activo; la naturaleza, débito; el nivel, que es uno más que el del padre; y propone el código siguiente, que termina en cero dos. Puedes cambiar el código, pero siempre tiene que empezar con el del padre. Abajo, Permite Movimientos Contables queda marcada: en esta cuenta se va a registrar dinero. Si la desmarcas, la cuenta solo agrupa a otras y no aparece al hacer asientos. Pulso Guardar. Sale el aviso verde: la cuenta se guardó, y el sistema abre su ficha.
+La cuenta ya existe. Ahora regreso al catálogo de cuentas para ver dónde quedó. Ahí, busco BHD en el mismo buscador para encontrarla rápido. Ahí aparece la cuenta nueva, debajo de Bancos y marcada como Personalizada: es de tu empresa, así que la puedes editar o eliminar mientras no tenga movimientos. Si te faltan muchas cuentas, no hace falta crearlas una a una. Importar Catálogo carga un archivo de Excel con las que necesites. Y si una cuenta de la plantilla se parece a la que buscas, el botón de duplicar, al final de su fila, crea una cuenta hermana con otro código y otro nombre. Con la cuenta del banco creada, el siguiente paso es cargar los saldos iniciales.

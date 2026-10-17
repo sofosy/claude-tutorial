@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Carga los auxiliares y el balance inicial
+
+DESCRIPCIÓN
+============================================================
+Cómo arrancar la contabilidad en Germiva con los saldos que la empresa ya traía: primero los auxiliares de cartera (lo que debe cada cliente, documento por documento) y después el asiento de apertura del Balance Inicial, que fija los saldos del mayor y debe cuadrar.
+
+⏱️ CAPÍTULOS
+00:00  Los auxiliares de cartera
+01:25  El asiento de apertura
+02:39  El asiento contabilizado
+03:02  Auxiliar contra mayor
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cargar el saldo inicial de un cliente como cuenta por cobrar
+• Entender por qué el auxiliar no genera asiento
+• Registrar el asiento de apertura con los saldos del mayor
+• Traer a la apertura el total de los saldos de cartera
+
+⚠️ ERRORES COMUNES
+• Usar una fecha en un período cerrado: el sistema rechaza el saldo
+• Cargar la cuenta por cobrar en el balance sin cargar antes el auxiliar de cada cliente
+• Guardar una apertura que no cuadra: débitos y créditos deben ser iguales
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:33
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la pantalla de Cuentas por Cobrar, en el menú Contabilidad: aquí aparece cada documento que un cliente te debe. Como la empresa recién empieza en el sistema, está vacía. Ahora recojo el menú para ganar espacio. Cuando empiezas a usar el sistema, la empresa ya trae saldos: dinero en el banco, clientes que deben y un capital. Se cargan en dos partes, y la primera es esta: los auxiliares, lo que te debe cada cliente, factura por factura. Abro Más acciones y elijo Cargar Saldo Inicial. En Cliente escribo ferre, las primeras letras del nombre, y en la lista elijo la Ferretería del Este. En el documento pongo el número de la factura que quedó pendiente. Luego el monto pendiente: cuarenta y cinco mil pesos, sin comas. La fecha del saldo es el primero de octubre, el día en que arrancas en el sistema; tiene que caer en un período abierto. Y el vencimiento, el treinta y uno de octubre, para que el sistema sepa cuándo cobrarla. Pulso Cargar saldo. Listo: la factura aparece en el listado como cuenta por cobrar del cliente, y se podrá cobrar como cualquier otra. Pero ojo: este paso no hace asiento. El dinero en la contabilidad lo pone el balance inicial. Si son muchos clientes, no los cargues uno a uno: en ese mismo menú está Importar Saldos, desde un Excel.
+La segunda parte es el balance inicial, en Diario y Mayor, pestaña Balance Inicial. Aquí se arma un solo asiento, el de apertura, con el saldo de cada cuenta del mayor. Primero la fecha: el mismo primero de octubre. En la primera línea busco la cuenta del banco: escribo BHD y elijo la cuenta que creamos en el video anterior. Le pongo una descripción corta, para saber de dónde viene el saldo. En la columna Débito van doscientos cincuenta mil pesos, que es lo que dice el estado del banco a esa fecha. Para la cuenta por cobrar no escribo nada a mano: pulso Traer saldos de cartera, y el sistema llena la segunda línea con los cuarenta y cinco mil del auxiliar que acabamos de cargar. Así el mayor y el detalle por cliente coinciden. Falta la contrapartida, que es el capital. Agrego una línea. Busco capital social, la cuenta del patrimonio donde va lo que aportaron los socios, y la elijo. Como descripción escribo capital aportado, para que se entienda. Y en la columna Crédito pongo doscientos noventa y cinco mil, la suma de lo anterior. Abajo, el total dice Cuadra: débitos y créditos son iguales. Pulso Guardar.
+Sale el aviso: el asiento de apertura se creó y se contabilizó de una vez, sin pasar por borrador. Desde este momento los saldos están en el mayor y en los estados financieros. Pulso Aceptar, y el sistema abre el asiento: arriba, su estado, Contabilizado; abajo, cada línea tal como la cargaste.
+Para comprobarlo, regreso a la pestaña Balance Inicial. Ahí, el recuadro de arriba compara la cuenta por cobrar del mayor con la suma de los auxiliares, y dice Concilia. Solo puede haber un asiento de apertura. Si después encuentras un error, armas aquí el correcto y eliges Reemplazar: el sistema reversa el anterior y deja el nuevo. Con los saldos cargados, en el próximo video creamos la cuenta bancaria para conciliar.

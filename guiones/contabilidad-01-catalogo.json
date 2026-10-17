@@ -1,0 +1,262 @@
+{
+ "titulo": "Contabilidad · Crea las cuentas que faltan en tu catálogo",
+ "descripcion": "Cómo agregar al catálogo de cuentas de Germiva las cuentas que tu empresa necesita y la plantilla no trae: dónde está el Plan de Cuentas, qué significa Plantilla y Personalizada, cómo elegir la cuenta padre para que el sistema proponga tipo, naturaleza, nivel y código, y cuándo una cuenta debe permitir movimientos.",
+ "_comentario": "Video 1 de la serie Contabilidad (17/10/2026). setup: seeds/contabilidad/preparar.sh catalogo. Crea 1.01.01.02.02 «Banco BHD - Cuenta corriente», que usan los videos 2 y 3.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/plan-cuentas",
+  "esperar": "button:has-text('Crear Cuenta')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh catalogo"
+ },
+ "aprenderas": [
+  "Encontrar el Plan de Cuentas y leer el árbol del catálogo",
+  "Distinguir las cuentas de la plantilla de las que crea tu empresa",
+  "Crear una cuenta nueva bajo la cuenta padre correcta",
+  "Decidir si la cuenta permite movimientos o solo agrupa"
+ ],
+ "errores_comunes": [
+  "Crear la cuenta sin padre: queda suelta en el catálogo y fuera de los estados financieros",
+  "Desmarcar Permite movimientos en una cuenta donde vas a registrar: no aparecerá al hacer asientos",
+  "Inventar un código que no empieza con el del padre: el sistema lo rechaza"
+ ],
+ "pasos": [
+  {
+   "id": "01-catalogo",
+   "capitulo": "El catálogo de cuentas",
+   "rotulo": "El catálogo de cuentas",
+   "ruta": "Contabilidad › Configuración Contable › Plan de Cuentas",
+   "texto_pantalla": "Plan de Cuentas · el árbol de cuentas de tu empresa",
+   "narracion": "El catálogo de cuentas está en el menú Contabilidad, en la opción Configuración Contable, tarjeta Plan de Cuentas. Ahora recojo el menú para ganar espacio. Este es el catálogo: la lista de todas las cuentas donde se registra el dinero de tu empresa. Arriba están los grupos principales: activos, pasivos, patrimonio, ingresos, costos y gastos. Cada fila es una cuenta, con su código, su nombre, el tipo y la naturaleza, es decir, si aumenta por el débito o por el crédito. La etiqueta Plantilla dice que la cuenta viene del catálogo base, que es de solo lectura. Las cuentas que tú creas aparecen como Personalizada. Vamos a agregar la cuenta del banco con que trabaja la empresa. Primero busco dónde están los bancos: escribo bancos en el buscador.",
+   "acciones": [
+    {
+     "resaltar": "nav.module-rail [aria-label='Contabilidad']",
+     "durante_ms": 2500,
+     "al_decir": "menú Contabilidad"
+    },
+    {
+     "resaltar": "a.panel-item[data-row-key='accounting.config']",
+     "durante_ms": 2500,
+     "al_decir": "Configuración Contable"
+    },
+    {
+     "resaltar": "a.gm-config-back",
+     "durante_ms": 1500,
+     "al_decir": "tarjeta Plan de Cuentas"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "text=Activos >> nth=0",
+     "durante_ms": 3000,
+     "al_decir": "grupos principales"
+    },
+    {
+     "resaltar": "text=Patrimonio >> nth=1",
+     "durante_ms": 3500,
+     "al_decir": "Cada fila"
+    },
+    {
+     "resaltar": "text=Débito >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "naturaleza"
+    },
+    {
+     "resaltar": "text=Plantilla >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "etiqueta Plantilla"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder='Código, nombre o descripción...']",
+      "texto": "Bancos"
+     },
+     "al_decir": "escribo bancos"
+    }
+   ]
+  },
+  {
+   "id": "02-crear",
+   "capitulo": "Crear la cuenta",
+   "rotulo": "Crear la cuenta",
+   "ruta": "Contabilidad › Plan de Cuentas › Crear Cuenta",
+   "texto_pantalla": "Crear Cuenta · nombre, cuenta padre y código",
+   "narracion": "Ahí está la cuenta Bancos, con el código uno, cero uno, cero uno, cero dos. Es una cuenta agrupadora: debajo de ella va una cuenta por cada banco donde la empresa tiene dinero. Pulso Crear Cuenta. Escribo el nombre: Banco BHD, cuenta corriente. Lo más importante del formulario es la Cuenta Padre, porque decide dónde queda la cuenta en el árbol y en los estados financieros. Escribo bancos en ese campo. En la lista aparecen las cuentas que coinciden con lo escrito, y elijo la cuenta Bancos. Al elegirla, el sistema completa solo el tipo, activo; la naturaleza, débito; el nivel, que es uno más que el del padre; y propone el código siguiente, que termina en cero dos. Puedes cambiar el código, pero siempre tiene que empezar con el del padre. Abajo, Permite Movimientos Contables queda marcada: en esta cuenta se va a registrar dinero. Si la desmarcas, la cuenta solo agrupa a otras y no aparece al hacer asientos. Pulso Guardar. Sale el aviso verde: la cuenta se guardó, y el sistema abre su ficha.",
+   "acciones": [
+    {
+     "resaltar": "text=1.01.01.02 >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "Ahí está"
+    },
+    {
+     "resaltar": "text=Débito >> nth=3",
+     "durante_ms": 3000,
+     "al_decir": "cuenta agrupadora"
+    },
+    {
+     "click": "button:has-text('Crear Cuenta')",
+     "al_decir": "Pulso Crear Cuenta"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='name']",
+      "texto": "Banco BHD - Cuenta corriente"
+     },
+     "al_decir": "Escribo el nombre"
+    },
+    {
+     "resaltar": "mat-form-field:has-text('Cuenta Padre')",
+     "durante_ms": 4500,
+     "al_decir": "Cuenta Padre"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has-text('Cuenta Padre') input",
+      "texto": "Bancos"
+     },
+     "al_decir": "Escribo bancos"
+    },
+    {
+     "click": "mat-option:has-text('1.01.01.02 - Bancos')",
+     "al_decir": "elijo la cuenta Bancos"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-select[formcontrolname='type'])",
+     "durante_ms": 1400,
+     "al_decir": "el tipo"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-select[formcontrolname='nature'])",
+     "durante_ms": 1400,
+     "al_decir": "la naturaleza"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-select[formcontrolname='level'])",
+     "durante_ms": 3000,
+     "al_decir": "el nivel"
+    },
+    {
+     "resaltar": "mat-form-field:has(input[formcontrolname='code'])",
+     "durante_ms": 5000,
+     "al_decir": "propone el código"
+    },
+    {
+     "resaltar": "mat-checkbox[formcontrolname='allowsMovement']",
+     "durante_ms": 6000,
+     "al_decir": "Permite Movimientos"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "aviso verde"
+    }
+   ]
+  },
+  {
+   "id": "03-resultado",
+   "capitulo": "La cuenta en el catálogo",
+   "rotulo": "La cuenta creada",
+   "ruta": "Contabilidad › Plan de Cuentas",
+   "texto_pantalla": "La cuenta nueva, marcada como Personalizada",
+   "narracion": "La cuenta ya existe. Ahora regreso al catálogo de cuentas para ver dónde quedó. Ahí, busco BHD en el mismo buscador para encontrarla rápido. Ahí aparece la cuenta nueva, debajo de Bancos y marcada como Personalizada: es de tu empresa, así que la puedes editar o eliminar mientras no tenga movimientos. Si te faltan muchas cuentas, no hace falta crearlas una a una. Importar Catálogo carga un archivo de Excel con las que necesites. Y si una cuenta de la plantilla se parece a la que buscas, el botón de duplicar, al final de su fila, crea una cuenta hermana con otro código y otro nombre. Con la cuenta del banco creada, el siguiente paso es cargar los saldos iniciales.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[placeholder='Código, nombre o descripción...']",
+      "texto": "BHD"
+     },
+     "al_decir": "busco BHD"
+    },
+    {
+     "resaltar": "text=Banco BHD - Cuenta corriente >> nth=0",
+     "durante_ms": 2500,
+     "al_decir": "aparece la cuenta nueva"
+    },
+    {
+     "resaltar": "text=Personalizada >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "Personalizada"
+    },
+    {
+     "resaltar": "button:has-text('Importar Catálogo')",
+     "durante_ms": 5000,
+     "al_decir": "Importar Catálogo"
+    },
+    {
+     "resaltar": "button:has(mat-icon:text-is('content_copy')) >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "duplicar"
+    }
+   ],
+   "navegar": "/accounting/configuracion/plan-cuentas",
+   "al_decir_navegar": "regreso al catálogo"
+  }
+ ]
+}
