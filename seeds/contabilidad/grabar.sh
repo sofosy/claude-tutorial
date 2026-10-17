@@ -12,6 +12,6 @@ ELEVEN_KEY=$(python3 -c "import json;print(json.load(open('config.local.json'))[
   ./.venv/bin/python tut.py video "contabilidad-$N" > "salida/contabilidad-$N.log" 2>&1 || { tail -20 "salida/contabilidad-$N.log"; exit 1; }
 V=$(node seeds/_puertas/veredicto.mjs "contabilidad-$N" 2>&1)
 echo "$V" | grep -E "✗|→|video"
-if echo "$V" | grep -q "PUBLICABLE" && [[ "${2:-}" == "--entregar" ]]; then
+if echo "$V" | grep -q "→ PUBLICABLE" && [[ "${2:-}" == "--entregar" ]]; then
   seeds/contabilidad/entregar.sh "$N" >/dev/null && echo "entregado: $N"
 fi

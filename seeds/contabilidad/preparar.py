@@ -176,7 +176,19 @@ def panel():
         "documentNumber": "FAC-2026-0142", "description": "Factura de agosto pendiente"})
 
 
-ESTADOS = {"panel": panel, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
+def cuentas():
+    # Dos cuentas propias de la empresa (una para desactivar, otra para
+    # eliminar) y una creada sin padre, que por eso queda sin clasificar.
+    balance_inicial()
+    llamar("POST", "/v1/accounting-chart", {
+        "name": "Caja chica sucursal Santiago", "code": "1.01.01.01.03", "type": "asset",
+        "nature": "debit", "level": 5, "parent": cuenta("1.01.01.01"), "allowsMovement": True})
+    llamar("POST", "/v1/accounting-chart", {
+        "name": "Gastos de representación", "code": "9", "type": "expense",
+        "nature": "debit", "level": 1, "allowsMovement": True})
+
+
+ESTADOS = {"panel": panel, "cuentas": cuentas, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
            "cierre-mensual": cierre_mensual, "cierre-anual": cierre_anual,
            "revaluacion": revaluacion}
 

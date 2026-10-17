@@ -1,0 +1,187 @@
+1
+00:00:03,000 --> 00:00:06,358
+Las cuentas de la plantilla son de solo lectura,
+
+2
+00:00:06,204 --> 00:00:08,737
+porque las comparten otras empresas.
+
+3
+00:00:08,561 --> 00:00:11,790
+Pero puedes ponerles el nombre que usa la tuya.
+
+4
+00:00:11,766 --> 00:00:12,929
+Recojo el menú.
+
+5
+00:00:12,810 --> 00:00:16,074
+Busco banco uno en el buscador del catálogo.
+
+6
+00:00:15,968 --> 00:00:20,789
+Aparece la cuenta del primer banco que trae la plantilla, debajo de Bancos.
+
+7
+00:00:20,670 --> 00:00:25,817
+Al final de su fila, el botón Nombre para esta empresa abre un cuadro.
+
+8
+00:00:25,675 --> 00:00:30,681
+Escribo Banco Popular, cuenta de nómina, que es como la llama la empresa.
+
+9
+00:00:30,597 --> 00:00:34,292
+Ahora pulso Guardar, y el aviso lo confirma.
+
+10
+00:00:34,207 --> 00:00:39,029
+Ese nombre lo ve solo tu empresa, en los selectores y en los reportes;
+
+11
+00:00:38,898 --> 00:00:41,664
+el código y los saldos no cambian.
+
+12
+00:00:41,521 --> 00:00:44,532
+Si borras el nombre, vuelve el de la plantilla.
+
+13
+00:00:44,984 --> 00:00:48,481
+Si una cuenta de la plantilla no aplica a tu negocio,
+
+14
+00:00:48,374 --> 00:00:51,628
+la puedes ocultar para que no aparezca al registrar.
+
+15
+00:00:51,509 --> 00:00:56,643
+Busco arrendamientos, una cuenta que esta empresa no usa porque el local es propio.
+
+16
+00:00:56,489 --> 00:01:00,045
+Con el botón del ojo tachado, Ocultar en los selectores,
+
+17
+00:00:59,914 --> 00:01:02,725
+la cuenta queda marcada como Oculta;
+
+18
+00:01:02,643 --> 00:01:05,570
+ya no se ofrece al hacer asientos ni compras.
+
+19
+00:01:05,451 --> 00:01:10,771
+El sistema no deja ocultar una cuenta que tiene saldo o que usa el mapeo contable:
+
+20
+00:01:10,618 --> 00:01:12,560
+primero hay que moverla ahí.
+
+21
+00:01:12,383 --> 00:01:14,719
+El mismo botón la vuelve a mostrar.
+
+22
+00:01:15,167 --> 00:01:18,432
+Las cuentas propias de tu empresa sí se editan.
+
+23
+00:01:18,313 --> 00:01:19,743
+Busco caja chica:
+
+24
+00:01:19,625 --> 00:01:23,156
+es una caja de la sucursal de Santiago que ya no se usa.
+
+25
+00:01:23,004 --> 00:01:24,899
+Abro su ficha con el lápiz.
+
+26
+00:01:24,745 --> 00:01:30,263
+Arriba está su estado, activa, y a la derecha el botón Acciones.
+
+27
+00:01:30,109 --> 00:01:35,453
+En Acciones elijo Desactivar Cuenta, y confirmo con Sí, Continuar.
+
+28
+00:01:35,299 --> 00:01:37,112
+La cuenta queda inactiva:
+
+29
+00:01:36,948 --> 00:01:39,573
+conserva su historia, pero ya no se usa.
+
+30
+00:01:39,466 --> 00:01:43,439
+El sistema solo deja desactivar una cuenta con saldo cero;
+
+31
+00:01:43,298 --> 00:01:46,807
+si tiene saldo, primero se reclasifica con un asiento.
+
+32
+00:01:46,665 --> 00:01:51,451
+Y si una cuenta propia nunca tuvo movimientos, también se puede eliminar,
+
+33
+00:01:51,320 --> 00:01:54,377
+desde el mismo menú o con el zafacón de su fila.
+
+34
+00:01:54,829 --> 00:01:57,027
+Por último, la clasificación.
+
+35
+00:01:56,873 --> 00:02:01,519
+Cada cuenta tiene que decir en qué parte de los estados financieros va.
+
+36
+00:02:01,390 --> 00:02:07,161
+En Configuración Contable está la tarjeta Clasificación para Estados Financieros.
+
+37
+00:02:07,043 --> 00:02:10,076
+Arriba dice cuántas cuentas faltan:
+
+38
+00:02:09,945 --> 00:02:13,757
+hay una sin clasificar, porque se creó sin cuenta padre.
+
+39
+00:02:13,650 --> 00:02:15,973
+Es la de gastos de representación.
+
+40
+00:02:15,820 --> 00:02:21,082
+En la columna Sección del estado financiero abro la lista y elijo Gastos de
+
+41
+00:02:20,918 --> 00:02:22,092
+administración.
+
+42
+00:02:21,985 --> 00:02:27,526
+Se guarda al instante, y la lista queda vacía, porque solo mostraba las pendientes.
+
+43
+00:02:27,360 --> 00:02:31,403
+Apago el filtro Solo sin clasificar para verlas todas.
+
+44
+00:02:31,319 --> 00:02:35,781
+La casilla Monetaria es para cuentas de balance en moneda extranjera,
+
+45
+00:02:35,639 --> 00:02:37,348
+que se revalúan al cierre.
+
+46
+00:02:37,206 --> 00:02:40,122
+Y las cuentas con candado son de la plantilla:
+
+47
+00:02:40,015 --> 00:02:42,723
+su clasificación ya viene hecha.
