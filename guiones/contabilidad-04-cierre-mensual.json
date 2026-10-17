@@ -89,11 +89,6 @@
    "narracion": "El cierre del mes se hace en Contabilidad, Configuración Contable, Períodos Contables. Ahora recojo el menú para ver la tabla completa. Cada fila es un período, casi siempre un mes, y la columna Estado dice si está abierto, cerrado o bloqueado. En un período abierto se pueden registrar asientos; en uno cerrado, no. Aquí abril, mayo, junio, julio y agosto ya están cerrados, y toca cerrar septiembre. Antes de hacerlo, conviene revisar tres cosas: que no queden asientos en borrador, que la depreciación y la revaluación del mes estén registradas, y que las cuentas de banco estén conciliadas. Busco septiembre: escribo el nombre del mes en la búsqueda general, y pulso Filtrar.",
    "acciones": [
     {
-     "resaltar": "a.gm-config-back",
-     "durante_ms": 1500,
-     "al_decir": "Configuración Contable"
-    },
-    {
      "click": "button.panel-collapse",
      "al_decir": "Recojo el menú"
     },
@@ -112,6 +107,24 @@
      "durante_ms": 3500,
      "cursor": false,
      "al_decir": "ya están cerrados"
+    },
+    {
+     "resaltar": "th:has-text('Asien')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "asientos en borrador"
+    },
+    {
+     "resaltar": "tr:has-text('Agosto 2026')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "la depreciación"
+    },
+    {
+     "resaltar": "input[placeholder='Buscar por nombre o descripción...']",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "estén conciliadas"
     },
     {
      "escribir": {
@@ -154,7 +167,7 @@
      "al_decir": "Confirmo"
     },
     {
-     "resaltar": "text=borrador >> nth=0",
+     "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 6000,
      "cursor": false,
      "al_decir": "el aviso dice"
@@ -187,11 +200,11 @@
      "cursor": false
     },
     {
-     "click": "mat-dialog-container button:has-text('Confirmar')",
+     "click": "mat-dialog-container button:has-text('Sí, Contabilizar')",
      "al_decir": "Confirmo"
     },
     {
-     "resaltar": "tr:has-text('Pago de nómina de septiembre')",
+     "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 4500,
      "cursor": false,
      "al_decir": "está contabilizado"
@@ -231,6 +244,12 @@
     {
      "click": "mat-dialog-container button:has-text('Sí, Cerrar')",
      "al_decir": "confirmo en el aviso"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2000,
+     "cursor": false,
+     "al_decir": "Ahora sí"
     },
     {
      "resaltar": "tr:has-text('Septiembre 2026') >> text=Cerrado",

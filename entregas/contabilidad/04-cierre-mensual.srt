@@ -1,0 +1,167 @@
+1
+00:00:03,000 --> 00:00:07,484
+El cierre del mes se hace en Contabilidad, Configuración Contable,
+
+2
+00:00:07,307 --> 00:00:08,876
+Períodos Contables.
+
+3
+00:00:08,734 --> 00:00:11,767
+Ahora recojo el menú para ver la tabla completa.
+
+4
+00:00:11,615 --> 00:00:15,041
+Cada fila es un período, casi siempre un mes,
+
+5
+00:00:14,877 --> 00:00:19,489
+y la columna Estado dice si está abierto, cerrado o bloqueado.
+
+6
+00:00:19,370 --> 00:00:22,821
+En un período abierto se pueden registrar asientos;
+
+7
+00:00:22,655 --> 00:00:24,236
+en uno cerrado, no.
+
+8
+00:00:24,096 --> 00:00:30,471
+Aquí abril, mayo, junio, julio y agosto ya están cerrados, y toca cerrar septiembre.
+
+9
+00:00:30,306 --> 00:00:33,490
+Antes de hacerlo, conviene revisar tres cosas:
+
+10
+00:00:33,325 --> 00:00:35,441
+que no queden asientos en borrador,
+
+11
+00:00:35,298 --> 00:00:39,655
+que la depreciación y la revaluación del mes estén registradas,
+
+12
+00:00:39,502 --> 00:00:42,720
+y que las cuentas de banco estén conciliadas.
+
+13
+00:00:42,636 --> 00:00:44,044
+Busco septiembre:
+
+14
+00:00:43,878 --> 00:00:48,386
+escribo el nombre del mes en la búsqueda general, y pulso Filtrar.
+
+15
+00:00:48,831 --> 00:00:53,547
+En la fila de septiembre, al final, está el botón Cerrar Período,
+
+16
+00:00:53,382 --> 00:00:55,057
+el del candado abierto.
+
+17
+00:00:54,926 --> 00:00:55,927
+Lo pulso.
+
+18
+00:00:55,762 --> 00:01:00,885
+El sistema pide confirmar, porque al cerrar ya no se podrán registrar movimientos
+
+19
+00:01:00,754 --> 00:01:01,547
+en el mes.
+
+20
+00:01:01,381 --> 00:01:03,612
+Confirmo con Sí, Cerrar.
+
+21
+00:01:03,471 --> 00:01:04,983
+Pero el cierre no pasa:
+
+22
+00:01:04,853 --> 00:01:08,408
+el aviso dice que el período tiene un asiento en borrador.
+
+23
+00:01:08,266 --> 00:01:12,263
+Un borrador es un asiento que alguien empezó y no contabilizó;
+
+24
+00:01:12,133 --> 00:01:15,722
+si el mes se cerrara así, ese movimiento quedaría fuera.
+
+25
+00:01:15,569 --> 00:01:16,987
+Vamos a resolverlo.
+
+26
+00:01:17,439 --> 00:01:22,132
+Los asientos están en Diario y Mayor, pestaña Asientos Contables.
+
+27
+00:01:21,990 --> 00:01:23,631
+Ahí está el borrador:
+
+28
+00:01:23,477 --> 00:01:26,997
+el pago de la nómina de septiembre, con su estado en Borrador.
+
+29
+00:01:26,855 --> 00:01:32,245
+Lo reviso y, si está bien, lo contabilizo con el botón Contabilizar de su fila.
+
+30
+00:01:32,091 --> 00:01:35,158
+Si estuviera mal, lo corriges o lo eliminas.
+
+31
+00:01:34,993 --> 00:01:35,878
+Confirmo.
+
+32
+00:01:35,748 --> 00:01:39,930
+Ahora el asiento está contabilizado y ya no bloquea el cierre.
+
+33
+00:01:40,379 --> 00:01:45,745
+Con eso resuelto, vuelvo a Períodos Contables y busco septiembre otra vez,
+
+34
+00:01:45,592 --> 00:01:49,089
+igual que antes, con su nombre completo, y lo filtro.
+
+35
+00:01:48,947 --> 00:01:51,435
+La lista queda solo con ese mes.
+
+36
+00:01:51,350 --> 00:01:56,218
+Pulso Cerrar Período en su fila, y confirmo en el aviso.
+
+37
+00:01:56,087 --> 00:01:57,123
+Ahora sí:
+
+38
+00:01:57,097 --> 00:01:59,271
+septiembre queda Cerrado.
+
+39
+00:01:59,245 --> 00:02:04,925
+Si después hace falta corregir algo, el botón Reabrir Período lo abre de nuevo,
+
+40
+00:02:04,760 --> 00:02:08,153
+pero pide escribir el motivo, que queda registrado.
+
+41
+00:02:08,022 --> 00:02:13,644
+Y Bloquear es para cuando el mes ya se declaró y no debe tocarse nunca más:
+
+42
+00:02:13,514 --> 00:02:18,242
+el bloqueo no se deshace, así que úsalo solo cuando estés seguro.
