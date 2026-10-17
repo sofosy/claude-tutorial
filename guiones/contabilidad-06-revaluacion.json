@@ -230,9 +230,14 @@
      "durante_ms": 6000,
      "cursor": false,
      "al_decir": "Una aclaración final"
+    },
+    {
+     "resaltar": "a.panel-item[data-row-key='accounting.entries']",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "asiento manual"
     }
    ]
   }
- ],
- "locale": "es-DO"
+ ]
 }

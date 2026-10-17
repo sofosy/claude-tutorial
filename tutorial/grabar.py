@@ -1282,10 +1282,7 @@ def grabar(guion, pasos, salida):
         # `zona_horaria`: la del público del video (p. ej. America/Santo_Domingo), no la de esta máquina.
         ctx_nav = nav.new_context(viewport={"width": ANCHO_CSS, "height": ALTO_CSS},
                                   device_scale_factor=ESCALA,
-                                  **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}),
-                                  # `--lang` no alcanza en headless: los <input type="date">
-                                  # nativos se pintan con el idioma del contexto (MM/DD en inglés).
-                                  **({"locale": guion["locale"]} if guion.get("locale") else {}))
+                                  **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
         ctx_nav.add_init_script(JS_CAPA)
         _rutas_locales(ctx_nav, guion)
         _setup({"id": "guion", "setup": guion.get("setup")}, variables, db)
