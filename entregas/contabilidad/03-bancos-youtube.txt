@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Crea tus bancos y cuentas bancarias para conciliar
+
+DESCRIPCIÓN
+============================================================
+Cómo dejar lista una cuenta bancaria para conciliar en Germiva: el catálogo de bancos, la cuenta bancaria enlazada a su cuenta contable del mayor, y cómo se abre una conciliación con el estado de cuenta del banco.
+
+⏱️ CAPÍTULOS
+00:00  El catálogo de bancos
+00:38  La cuenta bancaria
+01:36  Abrir la conciliación
+02:42  Lo que sigue
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Encontrar tu banco en el catálogo general o crearlo
+• Crear la cuenta bancaria y enlazarla con su cuenta contable
+• Abrir una conciliación con las fechas y saldos del estado de cuenta
+• Saber qué sigue: importar el estado de cuenta y completar
+
+⚠️ ERRORES COMUNES
+• Dejar la cuenta bancaria sin cuenta contable: no se puede conciliar
+• Usar la misma cuenta contable para dos cuentas bancarias: cada una necesita la suya
+• Poner una fecha fin anterior a la fecha de inicio del estado de cuenta
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:12
+
+TRANSCRIPCIÓN
+============================================================
+Para conciliar necesitas tres cosas: el banco, la cuenta bancaria y su cuenta contable. Empezamos por el banco. Estoy en Contabilidad, Configuración Contable, Bancos. Recojo el menú. Esta lista ya trae los bancos dominicanos más comunes; la columna Alcance dice Catálogo general, porque los comparten todas las empresas. Aquí está el BHD, así que no hace falta crearlo. Si tu banco no aparece, por ejemplo uno del exterior, lo agregas con Crear Banco: basta el nombre, y el código SWIFT si es extranjero.
+Ahora la cuenta bancaria. Voy al menú Banca, pestaña Cuentas Bancarias, y pulso Crear Cuenta Bancaria. En Banco escribo BHD, y de las opciones que aparecen, elijo el banco BHD. Escribo el número de la cuenta, tal como sale en el estado del banco, para no confundirla con otra. El titular es la empresa, con su nombre legal, como lo tiene registrado el banco. El tipo, Cuenta Corriente, ya viene elegido, y la moneda es el peso. Ahora el campo que hace posible conciliar: Cuenta contable. Escribo BHD otra vez, y de la lista elijo la cuenta del mayor que creamos en el primer video. Cada cuenta bancaria necesita su propia cuenta contable, de activo y que permita movimientos. El saldo inicial aparece bloqueado a propósito: el saldo ya entró con el balance inicial. Pulso Guardar, y el aviso confirma que la cuenta bancaria quedó creada.
+Con la cuenta lista, ya se puede conciliar. Abro la pestaña Conciliaciones y pulso Nueva Conciliación. Conciliar es comparar el estado de cuenta que manda el banco con lo que dicen tus libros. La referencia identifica esta conciliación; usa una que diga el banco y el mes, para encontrarla después. En Cuenta Bancaria escribo BHD, y de la lista elijo la cuenta que acabamos de crear. El período contable es octubre: lo escribo y lo elijo de la lista. Las fechas de inicio y fin son las del estado de cuenta. Inicio, el primero de octubre, el día en que arranca el estado. Y fin, el quince de octubre, que es hasta donde llega este estado. Los balances inicial y final los copias del estado del banco. Al inicio, doscientos cincuenta mil, el mismo saldo de la apertura. Y al final, también doscientos cincuenta mil, porque en esos días no hubo movimientos. El balance en libros no lo escribes tú: el sistema lo calcula del mayor. Pulso Guardar, y el aviso confirma que la conciliación se creó.
+La conciliación queda abierta. Arriba están los dos botones con que se trabaja. Importar estado de cuenta carga el archivo del banco, en CSV o Excel, y cada línea entra como una partida. Después marcas cada partida contra tus libros, y las comisiones o intereses que el banco cobró se registran solos al final. Cuando la diferencia llega a cero y no queda nada pendiente, pulsas Completar.
