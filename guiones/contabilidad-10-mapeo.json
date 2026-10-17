@@ -1,0 +1,300 @@
+{
+  "titulo": "Contabilidad · Mapeo de Cuentas: a qué cuenta va cada operación",
+  "descripcion": "Cómo funciona el Mapeo de Cuentas en Germiva: qué es un rol, cómo resolver un rol pendiente que bloquea la contabilización, cómo apuntar una operación a otra cuenta (por ejemplo, los cobros por transferencia a tu banco real) y cómo darle cuenta propia a cada impuesto adicional.",
+  "_comentario": "Video 10 de la serie Contabilidad. setup: preparar.sh mapeo (balance inicial con 1.01.01.02.02 Banco BHD; el mapeo «Gasto por Comisiones Bancarias» inactivo → 1 rol pendiente).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "CDT": "ce-de-te",
+    "ISC": "i-ese-ce"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/configuracion/mapeos",
+    "esperar": ".mapping-header__title"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh mapeo"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Qué es un rol y qué dice cada estado del mapeo",
+    "Resolver un rol pendiente para que su operación se pueda contabilizar",
+    "Apuntar una operación a otra cuenta de tu catálogo",
+    "Darle a cada impuesto adicional su propia cuenta"
+  ],
+  "errores_comunes": [
+    "Dejar un rol pendiente: la operación que lo usa no se puede contabilizar",
+    "Esperar que el cambio corrija asientos viejos: solo aplica a los que se generen desde ahora",
+    "Buscar una cuenta agrupadora en el selector: solo se ofrecen cuentas que admiten movimiento"
+  ],
+  "pasos": [
+    {
+      "id": "01-que-es",
+      "capitulo": "Qué es el mapeo",
+      "rotulo": "Mapeo de Cuentas",
+      "ruta": "Contabilidad › Configuración Contable › Mapeo de Cuentas",
+      "texto_pantalla": "Cada operación · cada parte del asiento · una cuenta",
+      "narracion": "Cada operación del sistema se contabiliza sola: una factura, un cobro, una nómina. El Mapeo de Cuentas dice a qué cuenta del catálogo va cada parte de ese asiento, y a cada parte la llamamos rol. Recojo el menú. Arriba, el contador avisa que hay un rol pendiente, y que bloquea su operación. Debajo, la leyenda explica los estados. De la plantilla, cuando la cuenta viene del catálogo. Sobreescrito, cuando tu empresa eligió otra. Propio, cuando la plantilla no trae ese rol y la cuenta la puso la empresa. Y Pendiente, cuando falta la cuenta y esa operación no se puede contabilizar.",
+      "acciones": [
+        {
+          "resaltar": "h6.mapping-header__title",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El Mapeo de Cuentas dice"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": ".mapping-header__count >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "el contador avisa"
+        },
+        {
+          "resaltar": "p.gm-hint >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "la leyenda explica"
+        },
+        {
+          "resaltar": ".legend--heredado",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "De la plantilla, cuando"
+        },
+        {
+          "resaltar": ".legend--sobreescrito",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Sobreescrito, cuando"
+        },
+        {
+          "resaltar": ".legend--propio",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Propio, cuando"
+        },
+        {
+          "resaltar": ".legend--pendiente",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Y Pendiente, cuando"
+        }
+      ]
+    },
+    {
+      "id": "02-pendiente",
+      "capitulo": "Resolver un pendiente",
+      "rotulo": "Rol pendiente",
+      "ruta": "Contabilidad › Configuración Contable › Mapeo de Cuentas",
+      "texto_pantalla": "Solo pendientes · asignar cuenta",
+      "narracion": "Con el botón Solo pendientes, la lista se queda con lo que falta. Es el gasto por comisiones bancarias: sin esa cuenta, el sistema no puede registrar los cargos que cobra el banco. Abro su selector, que solo ofrece cuentas que admiten movimiento, y elijo Comisiones bancarias. Se guarda al instante, sin botón Guardar, y el aviso lo confirma. Ahora el contador dice que todos los roles tienen cuenta. Quito el filtro para volver a la lista completa.",
+      "acciones": [
+        {
+          "click": "button.pending-toggle",
+          "al_decir": "Solo pendientes"
+        },
+        {
+          "resaltar": "li.role-row:has(.role-row__label:text-is('Gasto por Comisiones Bancarias'))",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "gasto por comisiones bancarias"
+        },
+        {
+          "click": "li.role-row:has(.role-row__label:text-is('Gasto por Comisiones Bancarias')) mat-select",
+          "al_decir": "Abro su selector"
+        },
+        {
+          "resaltar": "mat-option:has-text('6.05.01')",
+          "durante_ms": 1200,
+          "al_decir": "que solo ofrece cuentas"
+        },
+        {
+          "click": "mat-option:has-text('6.05.01')",
+          "al_decir": "elijo Comisiones bancarias"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Se guarda al instante"
+        },
+        {
+          "resaltar": ".mapping-header__count >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "todos los roles tienen cuenta"
+        },
+        {
+          "click": "button:has-text('Ver todos los roles')",
+          "al_decir": "Quito el filtro"
+        }
+      ]
+    },
+    {
+      "id": "03-cambiar",
+      "capitulo": "Cambiar la cuenta",
+      "rotulo": "Otra cuenta para una operación",
+      "ruta": "Contabilidad › Configuración Contable › Mapeo de Cuentas",
+      "texto_pantalla": "Sobreescrito · vale desde ahora",
+      "narracion": "Ahora, un cambio de verdad. Esta empresa recibe las transferencias de sus clientes en el Banco BHD, no en el primer banco de la plantilla. Busco cobros por transferencia. El rol Banco para Cobros por Transferencia apunta a Banco 1. Abro el selector y elijo Banco BHD, cuenta corriente. El aviso lo confirma, y el rol pasa a Sobreescrito, ahora agrupado bajo su nueva cuenta. El cambio vale para los asientos que se generen desde ahora; los que ya existen no se tocan.",
+      "acciones": [
+        {
+          "resaltar": ".mapping-filters input",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "un cambio de verdad"
+        },
+        {
+          "escribir": {
+            "sel": ".mapping-filters input",
+            "texto": "Cobros por Transferencia"
+          },
+          "al_decir": "Busco cobros"
+        },
+        {
+          "resaltar": "li.role-row:has(.role-row__label:text-is('Banco para Cobros por Transferencia'))",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "apunta a Banco 1"
+        },
+        {
+          "click": "li.role-row:has(.role-row__label:text-is('Banco para Cobros por Transferencia')) mat-select",
+          "al_decir": "Abro el selector"
+        },
+        {
+          "click": "mat-option:has-text('1.01.01.02.02')",
+          "al_decir": "elijo Banco BHD"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 1800,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        },
+        {
+          "resaltar": "li.role-row:has(.role-row__label:text-is('Banco para Cobros por Transferencia')) .role-row__state",
+          "durante_ms": 1800,
+          "cursor": false,
+          "al_decir": "pasa a Sobreescrito"
+        },
+        {
+          "resaltar": "article.account-group >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "agrupado bajo su nueva cuenta"
+        },
+        {
+          "resaltar": ".account-group__head >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "los que ya existen"
+        }
+      ]
+    },
+    {
+      "id": "04-impuestos",
+      "capitulo": "Impuestos adicionales",
+      "rotulo": "Cuenta por impuesto",
+      "ruta": "Contabilidad › Configuración Contable › Mapeo de Cuentas",
+      "texto_pantalla": "Cuentas por impuesto adicional · opcional",
+      "narracion": "Al final están las cuentas por impuesto adicional, como la contribución a las telecomunicaciones, el CDT, o el impuesto selectivo al consumo, el ISC. Busco impuestos adicionales para llegar rápido. Arriba quedan los dos roles generales, el de compras y el de ventas. Debajo, la tabla permite darle a cada impuesto su propia cuenta de compras y de ventas. En compras, la casilla dice Usa la cuenta general: ese impuesto se asienta en el rol general de arriba. Los selectivos de alcohol y tabaco están plegados en el botón de abajo. Es opcional, y se guarda al elegir, igual que los roles.",
+      "acciones": [
+        {
+          "resaltar": ".tax-accounts h6",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Al final están"
+        },
+        {
+          "escribir": {
+            "sel": ".mapping-filters input",
+            "texto": "Impuestos Adicionales"
+          },
+          "al_decir": "Busco impuestos adicionales"
+        },
+        {
+          "resaltar": "section.module-group >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el de compras y el de ventas"
+        },
+        {
+          "resaltar": ".tax-accounts__table",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "la tabla permite"
+        },
+        {
+          "resaltar": ".tax-accounts__row:has(.tax-accounts__code:text-is('002')) app-account-picker >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Usa la cuenta general"
+        },
+        {
+          "resaltar": "button.tax-accounts__more",
+          "durante_ms": 4000,
+          "al_decir": "están plegados"
+        }
+      ]
+    }
+  ]
+}

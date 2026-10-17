@@ -1,0 +1,375 @@
+{
+  "titulo": "Contabilidad · Auto-posteo, Ajustes y Estado de la Configuración",
+  "descripcion": "Cómo decide Germiva qué operaciones generan su asiento solo y cómo lo deja: editar un tipo de transacción, asignarle centro de costo, deshabilitar lo que tu empresa no usa (sin borrarlo), la política de período y el centro de costo general, y cómo el Estado de la Configuración te dice qué falta, desde el Libro Mayor apagado hasta una cuenta sin clasificar.",
+  "_comentario": "Video 11 de la serie Contabilidad. setup: preparar.sh autoposteo (cuentas de V08 con «9» sin clasificar, centros ADM y VEN, Libro Mayor automático apagado).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/configuracion/auto-posteo",
+    "esperar": "tr.mat-mdc-row"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh autoposteo"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Qué decide el auto-posteo para cada tipo de operación",
+    "Asignar un centro de costo por tipo de operación",
+    "Deshabilitar una operación que tu empresa no usa, sin borrarla",
+    "La política de período y el centro de costo general",
+    "Leer el Estado de la Configuración y resolver lo que señala"
+  ],
+  "errores_comunes": [
+    "Eliminar una configuración para apagarla: sin configuración, el posteo falla; se deshabilita con Cambiar Estado",
+    "Esperar centro de costo en el banco o en cuentas por cobrar: solo lo llevan las líneas de ingreso o gasto",
+    "Dejar apagado el Libro Mayor automático: lo que se contabilice no llega a los estados financieros"
+  ],
+  "pasos": [
+    {
+      "id": "01-lista",
+      "capitulo": "Qué decide el auto-posteo",
+      "rotulo": "Auto-posteo",
+      "ruta": "Contabilidad › Configuración Contable › Auto-posteo",
+      "texto_pantalla": "Por tipo de operación: ¿asiento? ¿contabilizado? ¿centro?",
+      "narracion": "El Mapeo de Cuentas dice a qué cuenta va cada parte del asiento. El Auto-posteo decide, por tipo de operación, si el sistema genera ese asiento y cómo lo deja. Recojo el menú. Cada fila es un tipo de transacción: facturas de venta, pagos, nómina, inventario. Estado dice si está habilitado. Auto-Contabilizar, si el asiento nace contabilizado o queda en borrador para revisarlo. Y Centro de Costo, cuál recibe ese asiento.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El Auto-posteo decide"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has(td:text-is('Pagos Recibidos')) td >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Cada fila es un tipo"
+        },
+        {
+          "resaltar": "th:has-text('Estado')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Estado dice"
+        },
+        {
+          "resaltar": "th:has-text('Auto-Contabilizar')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Auto-Contabilizar, si"
+        },
+        {
+          "resaltar": "th:has-text('Centro de Costo')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Y Centro de Costo"
+        }
+      ]
+    },
+    {
+      "id": "02-editar",
+      "capitulo": "Editar un tipo",
+      "rotulo": "Centro de costo por tipo",
+      "ruta": "Contabilidad › Configuración Contable › Auto-posteo › Editar",
+      "texto_pantalla": "Facturas de Venta → centro Ventas",
+      "narracion": "Edito Facturas de Venta con el lápiz. El tipo no se cambia: para otro tipo se crea otra configuración. Asigno el centro de costo: escribo ventas, y en la lista elijo el centro Ventas. Lo reciben las líneas de ingreso o gasto de ese asiento; las de balance, como el banco o las cuentas por cobrar, no llevan centro. Dejo marcados Habilitado y Auto-Contabilizar. Si quito Auto-Contabilizar, cada factura deja su asiento en borrador. Guardo, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has(td:text-is('Facturas de Venta')) button[aria-label='Editar']",
+          "al_decir": "con el lápiz"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='transactionType'])",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El tipo no se cambia"
+        },
+        {
+          "escribir": {
+            "sel": "app-autocomplete input",
+            "texto": "Ventas"
+          },
+          "al_decir": "Asigno el centro de costo"
+        },
+        {
+          "click": "mat-option:has-text('Ventas')",
+          "al_decir": "elijo el centro Ventas"
+        },
+        {
+          "resaltar": ".field-hint",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "las de balance"
+        },
+        {
+          "resaltar": "mat-checkbox[formcontrolname='autoPost']",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Si quito Auto-Contabilizar"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "03-deshabilitar",
+      "capitulo": "Deshabilitar, no borrar",
+      "rotulo": "Deshabilitar sin borrar",
+      "ruta": "Contabilidad › Configuración Contable › Auto-posteo",
+      "texto_pantalla": "Cambiar Estado · Eliminar no apaga",
+      "narracion": "Si tu empresa no usa una operación, no la borres: deshabilítala. Esta empresa no despacha con conduce. En su fila, el botón Cambiar Estado pregunta, y confirmo con Sí, Deshabilitar. La insignia pasa a Deshabilitado y esas operaciones ya no generan asiento. ¿Y Eliminar? El aviso lo explica: sin configuración, cada operación de ese tipo falla al contabilizarse. Por eso cancelo.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has(td:text-is('Despacho de Conduce')) td >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "no despacha con conduce"
+        },
+        {
+          "click": "tr.mat-mdc-row:has(td:text-is('Despacho de Conduce')) button[aria-label='Cambiar Estado']",
+          "al_decir": "Cambiar Estado"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "Sí, Deshabilitar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has(td:text-is('Despacho de Conduce')) .gm-badge",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "pasa a Deshabilitado"
+        },
+        {
+          "click": "tr.mat-mdc-row:has(td:text-is('Despacho de Conduce')) button[aria-label='Eliminar']",
+          "al_decir": "Y Eliminar"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "El aviso lo explica"
+        },
+        {
+          "click": "mat-dialog-container button.cancel-button",
+          "al_decir": "Por eso cancelo"
+        }
+      ]
+    },
+    {
+      "id": "04-ajustes",
+      "capitulo": "Ajustes de Contabilidad",
+      "rotulo": "Ajustes de Contabilidad",
+      "ruta": "Contabilidad › Configuración Contable › Ajustes de Contabilidad",
+      "navegar": "/accounting/configuracion/ajustes",
+      "texto_pantalla": "Política de período · centro de costo general",
+      "narracion": "En Ajustes de Contabilidad hay dos reglas para toda la empresa. La política de período decide qué pasa si alguien registra con la fecha de un período cerrado: Estricto lo bloquea, y es lo recomendado. Debajo, el centro de costo predeterminado: el respaldo para las líneas de ingreso o gasto que no traigan uno, ni por su tipo de operación. Escribo admin, y en la lista que aparece elijo Administración. Ahora pulso Guardar, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='accountingPeriodEnforcement'])",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "La política de período"
+        },
+        {
+          "resaltar": "p.hint >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Estricto lo bloquea"
+        },
+        {
+          "escribir": {
+            "sel": "app-autocomplete input",
+            "texto": "Admin"
+          },
+          "al_decir": "Escribo admin"
+        },
+        {
+          "click": "mat-option:has-text('Administración')",
+          "al_decir": "elijo Administración"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "05-estado",
+      "capitulo": "Estado de la Configuración",
+      "rotulo": "Estado de la Configuración",
+      "ruta": "Contabilidad › Configuración Contable › Estado de la Configuración",
+      "navegar": "/accounting/configuracion/estado",
+      "texto_pantalla": "Libro Mayor automático apagado → Preferencias",
+      "narracion": "Para saber si todo está en orden, Estado de la Configuración. Arriba, cuatro cifras: roles sin cuenta, cuentas sin clasificar, asientos fuera del Mayor, y si el Mayor automático está activo. Aquí está apagado, y el aviso rojo lo dice: lo que se contabilice desde ahora no llegaría a ningún estado financiero. Abrir preferencias lleva a Mi Empresa, pestaña Operación. Enciendo Auto-generar Libro Mayor y guardo. El sistema confirma que se guardó.",
+      "acciones": [
+        {
+          "resaltar": "app-summary-strip",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "cuatro cifras"
+        },
+        {
+          "resaltar": ".issue >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el aviso rojo"
+        },
+        {
+          "click": "a:has-text('Abrir preferencias')",
+          "al_decir": "Abrir preferencias"
+        },
+        {
+          "click": "mat-slide-toggle:has-text('Auto-generar Libro Mayor')",
+          "al_decir": "Enciendo"
+        },
+        {
+          "click": "button[mat-raised-button]:has-text('Guardar')",
+          "al_decir": "y guardo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "confirma que se guardó"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')"
+        }
+      ]
+    },
+    {
+      "id": "06-completa",
+      "capitulo": "Hasta que esté completa",
+      "rotulo": "Configuración completa",
+      "ruta": "Contabilidad › Configuración Contable › Estado de la Configuración",
+      "navegar": "/accounting/configuracion/estado",
+      "texto_pantalla": "Clasificar la cuenta pendiente · completa",
+      "narracion": "De vuelta en Estado, el Mayor ya está activo y queda una cuenta sin sección de estado financiero: Gastos de representación, creada sin padre. Clasificar cuentas abre la clasificación. Abro su lista y elijo Gastos de administración; se guarda al instante. Regreso a Configuración Contable, abro Estado de la Configuración, y ahora dice que la configuración contable está completa. Cuando algo falte, aquí lo vas a ver primero.",
+      "acciones": [
+        {
+          "resaltar": ".issue >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "queda una cuenta"
+        },
+        {
+          "click": "a:has-text('Clasificar cuentas')",
+          "al_decir": "Clasificar cuentas"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Gastos de representación') mat-select",
+          "al_decir": "Abro su lista"
+        },
+        {
+          "click": "mat-option:has-text('Gastos de administración')",
+          "al_decir": "elijo Gastos"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "se guarda al instante"
+        },
+        {
+          "click": "a.gm-config-back",
+          "al_decir": "Regreso a Configuración Contable"
+        },
+        {
+          "click": "a.gm-config-card:has-text('Estado de la Configuración')",
+          "al_decir": "abro Estado"
+        },
+        {
+          "resaltar": ".state--done",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "está completa"
+        }
+      ]
+    }
+  ]
+}

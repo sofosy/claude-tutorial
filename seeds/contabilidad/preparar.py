@@ -116,6 +116,7 @@ def asiento_contabilizado(fecha, periodo_id, descripcion, lineas):
         "date": fecha, "accountingPeriodId": periodo_id, "description": descripcion,
         "type": "manual", "details": lineas})
     llamar("POST", f"/v1/journal-entry/{je['id']}/post", {})
+    return je
 
 
 def cierre_anual():
@@ -188,7 +189,94 @@ def cuentas():
         "nature": "debit", "level": 1, "allowsMovement": True})
 
 
-ESTADOS = {"panel": panel, "cuentas": cuentas, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
+def mapeo():
+    # Un rol pendiente: el mapeo de «Gasto por comisiones bancarias» quedó
+    # inactivo (alguien lo apagó), así que los cargos del banco no se pueden
+    # contabilizar hasta que se le asigne cuenta desde su propia fila.
+    balance_inicial()
+    sql("UPDATE account_mappings SET active=0 WHERE company_id=1 "
+        "AND required_mapping_type='bank_charge_expense' AND deleted_at IS NULL")
+
+
+def autoposteo():
+    # Dos centros de costo para asignar (por tipo de operación y general), la
+    # cuenta «9» sin clasificar y el Libro Mayor apagado: lo que el Estado de
+    # la Configuración tiene que señalar.
+    cuentas()
+    for codigo, nombre in (("ADM", "Administración"), ("VEN", "Ventas")):
+        llamar("POST", "/v1/cost-centers", {
+            "code": codigo, "name": nombre, "type": "cost", "allowsDirectPosting": True})
+    sql("UPDATE company_configs SET auto_generate_general_ledger=0 WHERE company_id=1")
+
+
+ARRENDAMIENTOS, SERVICIOS_PUBLICOS, OFICINA, HONORARIOS, ONLINE, SEGUROS = 158, 159, 164, 157, 167, 166
+
+
+def linea(cuenta_id, descripcion, debito=0, credito=0):
+    return {"accountId": cuenta_id, "description": descripcion, "debitAmount": debito, "creditAmount": credito}
+
+
+def asientos():
+    # V12: un borrador, un contabilizado y uno aprobado en octubre, para que la
+    # lista muestre las acciones de cada estado.
+    balance_inicial()
+    oct_ = periodo("Octubre 2026")
+    llamar("POST", "/v1/journal-entry", {
+        "date": "2026-10-12", "accountingPeriodId": oct_, "type": "manual",
+        "description": "Factura de luz de octubre",
+        "details": [linea(SERVICIOS_PUBLICOS, "Energía eléctrica", 8750),
+                    linea(CAJA, "Pago en efectivo", credito=8750)]})
+    asiento_contabilizado("2026-10-05", oct_, "Compra de artículos de oficina", [
+        linea(OFICINA, "Papelería y tóner", 4200), linea(CAJA, "Pago en efectivo", credito=4200)])
+    je = asiento_contabilizado("2026-10-03", oct_, "Honorarios del contador de septiembre", [
+        linea(HONORARIOS, "Honorarios profesionales", 15000), linea(CAJA, "Pago en efectivo", credito=15000)])
+    llamar("POST", f"/v1/journal-entry/{je['id']}/approve", {})
+
+
+def plantilla_recurrente(nombre, descripcion, inicio, dia, cuenta_id, monto, frecuencia="monthly"):
+    return llamar("POST", "/v1/journal-entry/recurring", {
+        "name": nombre, "description": descripcion, "frequency": frecuencia,
+        "dayOfMonth": dia, "startDate": inicio,
+        "templateDetails": [linea(cuenta_id, descripcion, monto), linea(CAJA, "Pago en efectivo", credito=monto)]})
+
+
+def reversar():
+    # V13: el alquiler se registró por 52,000 en vez de 25,000 (hay que
+    # reversarlo) y un asiento automático, generado por una recurrente, para
+    # ver el aviso de reversar algo que salió de un documento.
+    balance_inicial()
+    oct_ = periodo("Octubre 2026")
+    asiento_contabilizado("2026-10-15", oct_, "Pago de alquiler de octubre", [
+        linea(ARRENDAMIENTOS, "Alquiler del local", 52000), linea(CAJA, "Pago en efectivo", credito=52000)])
+    rec = plantilla_recurrente("Servicio de internet", "Internet de la oficina", "2026-10-01", 1, ONLINE, 3500)
+    llamar("POST", f"/v1/journal-entry/recurring/{rec['id']}/generate", {})
+
+
+def recurrentes():
+    # V14: una plantilla vencida (Generar Ahora funciona) y una que empieza en
+    # noviembre (todavía no corresponde).
+    balance_inicial()
+    plantilla_recurrente("Servicio de internet", "Internet de la oficina", "2026-10-01", 1, ONLINE, 3500)
+    plantilla_recurrente("Seguro del local", "Póliza del local comercial", "2026-11-01", 5, SEGUROS, 12000,
+                         frecuencia="quarterly")
+
+
+def mayor():
+    # V16: un mes con movimiento en caja, banco, ventas y gastos.
+    bancos()
+    oct_ = periodo("Octubre 2026")
+    asiento_contabilizado("2026-10-05", oct_, "Ventas de contado de la primera quincena", [
+        linea(CAJA, "Cobros en efectivo", 320000), linea(VENTAS, "Ventas", credito=320000)])
+    asiento_contabilizado("2026-10-10", oct_, "Sueldos de la primera quincena", [
+        linea(SUELDOS, "Sueldos", 145000), linea(CAJA, "Pago de nómina", credito=145000)])
+    asiento_contabilizado("2026-10-15", oct_, "Pago de alquiler de octubre", [
+        linea(ARRENDAMIENTOS, "Alquiler del local", 25000), linea(CAJA, "Pago en efectivo", credito=25000)])
+    asiento_contabilizado("2026-10-16", oct_, "Compra de artículos de oficina", [
+        linea(OFICINA, "Papelería y tóner", 4200), linea(CAJA, "Pago en efectivo", credito=4200)])
+
+
+ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": autoposteo,
+           "asientos": asientos, "reversar": reversar, "recurrentes": recurrentes, "mayor": mayor, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
            "cierre-mensual": cierre_mensual, "cierre-anual": cierre_anual,
            "revaluacion": revaluacion}
 
