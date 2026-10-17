@@ -1,7 +1,8 @@
-"""C3 — Narración con edge-tts.
+"""C3 — Narración con edge-tts, ElevenLabs o espeak-ng.
 
-Único punto de contacto con el motor de voz: cambiar a ElevenLabs u otro motor
-solo toca este archivo (edge-tts usa un endpoint no oficial de Microsoft).
+Único punto de contacto con el motor de voz. El motor lo elige el prefijo del
+`voz.id`: «elevenlabs:<voice_id>», «espeak:<voz>» o, sin prefijo, una voz de
+edge-tts (endpoint no oficial de Microsoft).
 
 Además del MP3, guarda por paso un sidecar `<paso>.json` con:
 
@@ -12,10 +13,15 @@ Además del MP3, guarda por paso un sidecar `<paso>.json` con:
   palabra exacta de la narración y cortar los subtítulos por frase.
 """
 import asyncio
+import base64
 import hashlib
 import json
+import os
 import re
+import shutil
 import subprocess
+import urllib.error
+import urllib.request
 
 import tempfile
 from pathlib import Path
@@ -107,10 +113,86 @@ def _sintetizar_espeak(texto, voz, velocidad, destino):
     return palabras
 
 
-async def _sintetizar(texto, voz, velocidad, destino):
+ELEVENLABS_URL = "https://api.elevenlabs.io/v1/text-to-speech/{voz}/with-timestamps"
+ELEVENLABS_MODELO = "eleven_multilingual_v2"
+# Las voces de ElevenLabs cobran por carácter: el audio ya pagado se guarda por
+# hash de su texto aquí (fuera de cada `salida/<tutorial>/`), para que borrar o
+# rehacer una salida no vuelva a pagar la misma frase.
+CACHE_VOZ = Path(__file__).resolve().parent.parent / "salida" / "_voz"
+
+
+def _clave_elevenlabs(guion):
+    """La clave sale del entorno o de config.local.json; nunca de un archivo versionado."""
+    clave = os.environ.get("ELEVENLABS_API_KEY") or (guion or {}).get("elevenlabs_api_key")
+    if not clave:
+        raise SystemExit("Falta ELEVENLABS_API_KEY (entorno) o «elevenlabs_api_key» "
+                         "en config.local.json para usar una voz «elevenlabs:».")
+    return clave
+
+
+def _palabras_de_alineacion(alin):
+    """Agrupa los caracteres alineados en palabras con su inicio y duración."""
+    palabras, actual, ini, fin = [], "", None, 0.0
+    for c, t0, t1 in zip(alin["characters"], alin["character_start_times_seconds"],
+                         alin["character_end_times_seconds"]):
+        if c.isspace():
+            if actual:
+                palabras.append((actual, ini, fin))
+            actual, ini = "", None
+            continue
+        if ini is None:
+            ini = t0
+        actual += c
+        fin = t1
+    if actual:
+        palabras.append((actual, ini, fin))
+    return [{"t": round(a, 3), "d": round(b - a, 3), "texto": re.sub(r"^\W+|\W+$", "", w) or w}
+            for w, a, b in palabras]
+
+
+def _sintetizar_elevenlabs(texto, voz, velocidad, destino, guion):
+    """Voz de ElevenLabs con la marca de tiempo de cada carácter (endpoint with-timestamps).
+
+    `velocidad` = "+12%" se traduce al `speed` de la voz (ElevenLabs admite 0,7–1,2).
+    """
+    voice_id = voz.split(":", 1)[1]
+    pct = int(re.sub(r"[^-+0-9]", "", velocidad) or 0)
+    speed = min(1.2, max(0.7, 1 + pct / 100))
+    ajustes = {**{"stability": 0.5, "similarity_boost": 0.75, "speed": speed},
+               **(guion or {}).get("voz", {}).get("ajustes", {})}
+    cuerpo = json.dumps({"text": texto, "model_id": (guion or {}).get("voz", {}).get(
+        "modelo", ELEVENLABS_MODELO), "voice_settings": ajustes}).encode("utf-8")
+    pedido = urllib.request.Request(
+        ELEVENLABS_URL.format(voz=voice_id) + "?output_format=mp3_44100_128", data=cuerpo,
+        headers={"xi-api-key": _clave_elevenlabs(guion), "Content-Type": "application/json"})
+    try:
+        with urllib.request.urlopen(pedido, timeout=180) as r:
+            resp = json.loads(r.read())
+    except urllib.error.HTTPError as e:
+        raise SystemExit(f"ElevenLabs respondió {e.code}: {e.read().decode('utf-8', 'replace')[:300]}")
+    Path(destino).write_bytes(base64.b64decode(resp["audio_base64"]))
+    return _palabras_de_alineacion(resp.get("normalized_alignment") or resp["alignment"])
+
+
+def _sintetizar_con_cache(texto, voz, velocidad, destino, guion):
+    clave = hash_narracion(texto, voz, velocidad)
+    mp3, js = CACHE_VOZ / f"{clave}.mp3", CACHE_VOZ / f"{clave}.json"
+    if mp3.exists() and js.exists():
+        shutil.copyfile(mp3, destino)
+        return json.loads(js.read_text(encoding="utf-8"))
+    palabras = _sintetizar_elevenlabs(texto, voz, velocidad, destino, guion)
+    CACHE_VOZ.mkdir(parents=True, exist_ok=True)
+    shutil.copyfile(destino, mp3)
+    js.write_text(json.dumps(palabras, ensure_ascii=False), encoding="utf-8")
+    return palabras
+
+
+async def _sintetizar(texto, voz, velocidad, destino, guion=None):
     """Escribe el MP3 y devuelve las marcas de palabra (segundos)."""
     if voz.startswith("espeak:"):
         return _sintetizar_espeak(texto, voz, velocidad, destino)
+    if voz.startswith("elevenlabs:"):
+        return _sintetizar_con_cache(texto, voz, velocidad, destino, guion)
     import edge_tts  # sólo si se usa: el motor offline no lo necesita
     # edge-tts ≥ 7 manda límites de FRASE por defecto; los de palabra hay que pedirlos
     com = edge_tts.Communicate(texto, voz, rate=velocidad, boundary="WordBoundary")
@@ -160,7 +242,7 @@ def narrar(guion, pasos, salida):
         # lo que se le da a la voz no es lo que se lee en el subtítulo: las
         # siglas van escritas como se pronuncian (ver PRONUNCIACION)
         dicho = para_voz(texto, guion.get("pronunciacion"))
-        palabras = asyncio.run(_sintetizar(dicho, vid, vel, mp3))
+        palabras = asyncio.run(_sintetizar(dicho, vid, vel, mp3, guion))
         duraciones[pid] = duracion(mp3)
         (dest / f"{pid}.json").write_text(json.dumps({
             "hash": hash_narracion(dicho, vid, vel),
