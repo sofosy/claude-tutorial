@@ -1,0 +1,243 @@
+1
+00:00:03,097 --> 00:00:06,088
+Algunas cosas que antes estaban en Seguridad se mudaron.
+
+2
+00:00:06,732 --> 00:00:08,743
+La primera, tu contraseña.
+
+3
+00:00:09,376 --> 00:00:13,537
+Abro el menú de mi usuario, arriba a la derecha, y elijo Mi perfil.
+
+4
+00:00:14,183 --> 00:00:15,639
+Aquí están tus datos:
+
+5
+00:00:15,692 --> 00:00:17,981
+nombre, contacto y preferencias.
+
+6
+00:00:18,628 --> 00:00:21,496
+Al pie de la columna derecha está la tarjeta Seguridad,
+
+7
+00:00:21,623 --> 00:00:24,057
+que antes era una pantalla dentro del módulo.
+
+8
+00:00:24,690 --> 00:00:27,764
+Escribo mi Contraseña actual, para probar que soy yo;
+
+9
+00:00:27,867 --> 00:00:30,252
+se ve con puntos, como debe ser.
+
+10
+00:00:30,885 --> 00:00:34,335
+Después la nueva, con mayúsculas, minúsculas y números:
+
+11
+00:00:34,472 --> 00:00:37,801
+fácil de recordar para ti y difícil de adivinar para otros.
+
+12
+00:00:38,447 --> 00:00:41,424
+Y la confirmo, escribiéndola otra vez igual.
+
+13
+00:00:42,057 --> 00:00:44,770
+Cada campo tiene un ojo para ver lo que escribiste.
+
+14
+00:00:45,414 --> 00:00:48,478
+Para cambiarla de verdad pulsarías Actualizar contraseña,
+
+15
+00:00:48,591 --> 00:00:50,627
+y un aviso confirma que se actualizó;
+
+16
+00:00:50,656 --> 00:00:52,162
+esta vez no la cambio.
+
+17
+00:00:52,795 --> 00:00:55,459
+Si tu cuenta tiene el cambio de contraseña bloqueado,
+
+18
+00:00:55,548 --> 00:00:58,019
+aquí verás ese aviso en lugar del formulario.
+
+19
+00:00:59,388 --> 00:01:02,016
+La segunda mudanza es la visibilidad del menú.
+
+20
+00:01:02,660 --> 00:01:06,423
+Está en la tarjeta Preferencias, en la sección Visibilidad del menú:
+
+21
+00:01:06,453 --> 00:01:07,352
+La despliego.
+
+22
+00:01:07,986 --> 00:01:12,123
+Es el árbol de tu menú lateral, con un interruptor por módulo y por opción.
+
+23
+00:01:12,756 --> 00:01:16,977
+Algunos llevan un candado, como Inicio, porque no se pueden ocultar.
+
+24
+00:01:17,611 --> 00:01:21,725
+Apago Compras, que no uso a diario, y pulso Guardar cambios.
+
+25
+00:01:22,358 --> 00:01:25,057
+El sistema lo confirma con Cambios guardados.
+
+26
+00:01:25,703 --> 00:01:26,688
+Lo acepto.
+
+27
+00:01:27,322 --> 00:01:28,753
+Mira el menú de la izquierda:
+
+28
+00:01:28,891 --> 00:01:31,121
+debajo de Ventas ya no está Compras.
+
+29
+00:01:31,754 --> 00:01:32,606
+Importante:
+
+30
+00:01:32,733 --> 00:01:35,360
+esto solo cambia lo que tú ves, en esta empresa;
+
+31
+00:01:35,486 --> 00:01:38,343
+no quita ningún permiso, ni a ti ni a nadie.
+
+32
+00:01:38,989 --> 00:01:41,810
+Para volver atrás, pulso Restablecer todo.
+
+33
+00:01:42,442 --> 00:01:47,281
+Pregunta si quiero mostrar todos los menús ocultos, y respondo Sí, restablecer.
+
+34
+00:01:47,913 --> 00:01:49,805
+Sale Menús restablecidos.
+
+35
+00:01:50,449 --> 00:01:53,525
+Acepto otra vez, y Compras volvió a su lugar.
+
+36
+00:01:54,882 --> 00:01:57,811
+La tercera mudanza solo aplica a los consultorios.
+
+37
+00:01:58,456 --> 00:02:01,530
+Si en el ERP, que es este sistema de gestión,
+
+38
+00:02:01,608 --> 00:02:06,108
+abres la dirección del antiguo Perfil del Consultorio, te trae de vuelta al inicio,
+
+39
+00:02:06,173 --> 00:02:06,953
+sin aviso:
+
+40
+00:02:06,995 --> 00:02:09,743
+esa pantalla no existe en Germiva ERP.
+
+41
+00:02:10,389 --> 00:02:13,052
+En RegiSalud, el sistema para clínicas,
+
+42
+00:02:13,093 --> 00:02:17,292
+el Perfil del Consultorio salió de Seguridad y ahora está en el menú Configuración,
+
+43
+00:02:17,332 --> 00:02:18,813
+como parte de Mi Empresa.
+
+44
+00:02:19,459 --> 00:02:23,704
+Si administras una distribuidora como esta, no tienes nada que buscar.
+
+45
+00:02:25,068 --> 00:02:27,260
+Otro enlace que quizás tengas guardado:
+
+46
+00:02:27,302 --> 00:02:31,849
+el historial de un registro de la auditoría vieja, en este caso el del rol Almacén.
+
+47
+00:02:32,493 --> 00:02:36,147
+Lo abro, y el sistema lo convierte en la pestaña Auditoría.
+
+48
+00:02:36,794 --> 00:02:40,447
+Arriba, en los filtros, ya viene filtrada por ese registro,
+
+49
+00:02:40,562 --> 00:02:43,248
+que se lee con su nombre, Rol, Almacén;
+
+50
+00:02:43,314 --> 00:02:45,435
+y con el período en todo el historial.
+
+51
+00:02:46,068 --> 00:02:47,753
+Aquí están sus tres eventos:
+
+52
+00:02:47,893 --> 00:02:51,776
+cuando se creó el rol, y los dos cambios de permisos que le hizo Rosa.
+
+53
+00:02:53,135 --> 00:02:54,760
+Un caso práctico para cerrar:
+
+54
+00:02:54,837 --> 00:02:58,408
+tenías guardado el enlace de la antigua Configuración de Seguridad.
+
+55
+00:02:59,051 --> 00:03:02,018
+Lo abro, y el sistema me lleva directo a Mi perfil:
+
+56
+00:03:02,106 --> 00:03:04,396
+los enlaces viejos siguen funcionando.
+
+57
+00:03:05,030 --> 00:03:05,846
+En resumen:
+
+58
+00:03:05,960 --> 00:03:08,804
+tu contraseña está en la tarjeta Seguridad de Mi perfil;
+
+59
+00:03:08,882 --> 00:03:11,159
+el menú a tu gusto, en Preferencias;
+
+60
+00:03:11,237 --> 00:03:15,676
+y el módulo de Seguridad, el del candado, sigue siendo el lugar para personas,
+
+61
+00:03:15,742 --> 00:03:18,068
+roles, integraciones y auditoría.

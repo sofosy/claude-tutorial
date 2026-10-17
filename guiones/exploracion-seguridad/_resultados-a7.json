@@ -1,0 +1,40 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.12,
+   "clic_a_url_s": 7.83,
+   "clic_a_networkidle_s": 7.83,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A7_lote": {
+  "savebar": "1 cambio sin guardar · afectan a 2 personas\nclose\nDescartar\nsave\nGuardar cambios",
+  "toast": "Permisos del rol actualizados exitosamente",
+  "toast_s": 0.41,
+  "audit": [
+   [
+    "311390",
+    "UPDATE",
+    "PERMISSIONS_CHANGED",
+    "roles",
+    "79",
+    "rosa.almanzar",
+    "{\"Productos · Productos\": {\"newValue\": \"Ver, Crear, Editar, Eliminar, Importar, Exportar\", \"oldValue\": \"Ver, Crear, Editar, Importar, Exportar\"}}"
+   ],
+   [
+    "311389",
+    "CREATE",
+    "",
+    "role_permissions",
+    "11460",
+    "rosa.almanzar",
+    ""
+   ]
+  ]
+ },
+ "A7_detalle": "Cambió permisos\nDomingo, 27 de septiembre de 2026, 11:31\nclose\nRoles #79\npor rosa.almanzar\nQUÉ CAMBIÓ\nProductos · Productos\nVer, Crear, Editar, Importar, Exportar\n→\nVer, Crear, Editar, Eliminar, Importar, Exportar\nSOLICITUD\nIP\n::1\nOrigen\nChrome · Windows\nEvento\nPERMISSIONS_CHANGED\nSolicitud\n6c738f68-19fc-418b-bdd2-4e0bb407564a\nHistorial del registro →\nVer a rosa.almanzar →",
+ "A7_historial": "Cambió permisos\nrosa.almanzar\nHace un momento\nProductos · Productos\nVer, Crear, Editar, Importar, Exportar\n→\nVer, Crear, Editar, Eliminar, Importar, Exportar\nCambió permisos\nrosa.almanzar\nHace 21 min\nProductos · Productos\nVer, Crear, Editar, Importar\n→\nVer, Crear, Editar, Importar, Exportar\nCambió permisos\nrosa.almanzar\nHace 28 min\nProductos · Productos\n—\n→\nVer, Crear, Editar, Importar\nInventario · Inventario\n—\n→\nVer\nCreó\nrosa.almanzar\nHace 28 min\nid\n—\n→\n79\nname\n—\n→\nAlmacén\nactive\n—\n→\ntrue\ncanEdit\n—\n→\ntrue\ncanDelete\n—\n→\ntrue\nisInternal\n—\n→\nfalse\ndescription\n—\n→\nEncargados del almacén: mantiene"
+}

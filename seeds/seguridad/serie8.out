@@ -1,0 +1,8 @@
+[23:54:54] INICIO serie (seguridad-08a-vista:E0 seguridad-08d-alcance:E0 seguridad-08e-aprobar-y-estado:E0)
+[23:54:54] ── seguridad-08a-vista (parte de E0)
+[00:00:47]       → REGRABAR  (352 s)
+[00:00:47] ── seguridad-08d-alcance (parte de E0)
+[00:07:47]       → PUBLICABLE  (418 s)
+[00:07:47] ── seguridad-08e-aprobar-y-estado (parte de E0)
+[00:13:44]       → PUBLICABLE  (357 s)
+[00:13:44] FIN serie

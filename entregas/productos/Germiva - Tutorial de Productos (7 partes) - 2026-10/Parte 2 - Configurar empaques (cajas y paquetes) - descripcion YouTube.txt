@@ -1,0 +1,47 @@
+TÍTULO
+============================================================
+Productos · Parte 2: unidades y empaques
+
+DESCRIPCIÓN
+============================================================
+Segunda parte de la serie de Productos de Germiva ERP: cómo configurar un producto para comprarlo en un empaque y venderlo en otro. La unidad base, encender «Se compra o se vende en empaques», agregar una caja con su contenido, sus fracciones (media caja), dónde se ofrece y cuál se propone al comprar y al vender, su propio código de barras y su precio propio con ITBIS incluido o derivado; un paquete que solo se vende; el mínimo y el máximo capturados en cajas; el mínimo y máximo por almacén; y qué pasa al quitar un empaque.
+
+⏱️ CAPÍTULOS
+00:00  La unidad base
+00:56  Activar los empaques
+01:37  La caja: contenido, fracciones, compra y venta
+02:38  Código de barras y precio propio de la caja
+03:18  El paquete que solo se vende
+04:15  Mínimo y máximo en cajas
+05:00  Mínimo y máximo por almacén
+06:01  Quitar un empaque y resumen
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Entender la unidad base y por qué la existencia y el costo siempre se llevan en ella
+• Activar los empaques en un producto y agregar una caja con su contenido y sus fracciones
+• Decidir dónde se ofrece cada empaque y cuál se propone al comprar y al vender
+• Darle a la caja su propio código de barras y su precio propio, o dejar que se derive
+• Capturar el mínimo y el máximo en cajas y fijar reglas por almacén
+
+⚠️ ERRORES COMUNES
+• Cambiar la unidad base del producto para venderlo en cajas: la unidad base no se toca, se agrega un empaque
+• Dejar la caja en «Enteras» si se venden medias cajas: el sistema rechazará 0.5
+• Escribir el precio de la caja sin ITBIS cuando el precio base lleva «ITBIS incluido»: el precio propio sigue la misma casilla
+• Ponerle a la caja el mismo código de barras de la unidad: cada empaque necesita el suyo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 06:52
+
+TRANSCRIPCIÓN
+============================================================
+En esta parte vemos las unidades y empaques: cómo un mismo producto se compra en un empaque y se vende en otro. El ejemplo es un refresco en lata. Entro a Inventario, abro Productos y recojo el panel para ganar espacio. En el buscador escribo refresco, y la tabla se filtra sola. Abro su ficha con el lápiz de la fila. Hoy este refresco se vende por unidad, pero el proveedor lo despacha en cajas de veinticuatro, y en el colmado también se vende por paquetes de seis. Fíjate en la unidad de medida: Unidad. Esa es la unidad base, y no se cambia para vender en cajas: en ella se llevan siempre la existencia, el costo y el kardex. Los empaques son otras formas de comprar o vender el mismo producto, y cada uno dice cuántas unidades base trae. Así, la caja y el paquete mueven siempre el mismo inventario.
+La función se enciende en el propio producto, en características: se compra o se vende en empaques. La enciendo. En la pestaña inventario aparece el bloque unidades y empaques, con su explicación: la existencia, el costo y el kardex se llevan en la unidad base, y aquí se agregan las otras unidades, con cuántas trae cada una. Por ahora dice sin empaques: el producto se compra y se vende solo por unidad. Un detalle importante: solo cambian las pantallas de los productos que tienen empaques. En una factura, el selector de unidad aparece únicamente en la línea de un producto como este; las demás líneas se ven igual que siempre.
+Agrego el primero, la caja. Pulso agregar empaque y aparece una fila; debajo, en rojo, el panel avisa lo que le falta. Primero, la unidad, que es el tipo de empaque: abro la lista y elijo caja. El aviso cambia y ahora pide el contenido: escribo veinticuatro, cuántas unidades base trae cada caja. Con eso la etiqueta se propone sola, caja por veinticuatro, que es el nombre con que sale en las facturas; se puede cambiar. En fracciones decido si la caja se puede vender en partes: enteras no admite fracciones, un decimal admite medias cajas, y dos decimales, cuartos. Elijo un decimal, para poder vender media caja. Luego, dónde se usa. En compra, el casillero marcado dice que la caja se ofrece al comprar; y con la estrella la propongo: cuando agregue este refresco a una compra, vendrá en cajas. En venta también se ofrece, pero sin estrella.
+Debajo de la fila va el detalle de la caja. Primero, su propio código de barras, el que trae impreso la caja: así, al escanearla en la venta, entra una caja completa y no una lata. No puede repetir el código de otro producto ni de otro empaque. Después, el precio propio. Fíjate en la pista: si lo dejo vacío, la caja se cobra a veinticuatro por treinta y cinco, ochocientos cuarenta pesos. Pero la caja se vende más barata, así que escribo setecientos ochenta. Como el precio base lleva el ITBIS incluido, el precio de la caja también: la pista lo desglosa en el neto y el impuesto.
+Ahora el paquete de seis. Agrego otro empaque; otra vez el aviso rojo pide la unidad. Abro la lista, bajo hasta paquete, y lo elijo. Luego pide el contenido: seis unidades, y las fracciones quedan en enteras. Este no se le compra al proveedor, así que le quito el casillero de compra. En venta le pongo la estrella: cuando se venda este refresco, el sistema propondrá paquetes. El precio lo dejo vacío, así que se deriva: seis por treinta y cinco, doscientos diez. Arriba, la pestaña inventario ya muestra un dos, los empaques que tiene. Pulso Guardar. Se guardan la ficha y los dos empaques, y sale el aviso de confirmación: acepto. Fíjate ahora en la característica: dice que tiene dos empaques, y ya no se puede apagar mientras los tenga; primero hay que quitarlos, y así se ve lo que se pierde.
+Para que todos los campos de la ficha tomen los empaques nuevos, salgo al catálogo y vuelvo a abrir el refresco con su lápiz. Con empaques, el mínimo y el máximo se pueden escribir en la unidad que más convenga. En existencias apareció un campo nuevo: capturar mínimo y máximo en. Hoy dice que se guarda en unidad. Lo abro y elijo caja por veinticuatro. El mínimo, que eran cuarenta y ocho unidades, se ve ahora como dos cajas; y el máximo, doscientos cuarenta unidades, como diez cajas. La pista confirma la equivalencia: por dentro se guardan siempre en la unidad base. Es más natural pensar el pedido en cajas: cuando quedan menos de dos, toca reponer.
+Debajo está mínimo y máximo por almacén. Sin reglas, el mínimo y el máximo de arriba se miden contra la existencia de toda la empresa, sumando todos los almacenes; así, una sucursal vacía no avisaría si otra tiene de sobra. Para que cada almacén tenga los suyos, pulso agregar almacén. Elijo el almacén: el Sur, la sucursal principal. Luego la unidad: también aquí puedo usar cajas, y elijo caja por veinticuatro. Mínimo: una caja. Debajo del campo, la pista lo traduce a la unidad base: son veinticuatro unidades. Máximo: seis cajas, que serían ciento cuarenta y cuatro unidades. Pulso guardar. La regla queda en la tabla, convertida a unidades: ahora el almacén Sur avisa y sugiere reponer según lo que tiene él solo. Con el lápiz se edita y con la papelera se quita. Guardo la ficha, y el aviso confirma; lo acepto.
+Por último, quitar un empaque, con la papelera roja de su fila. Si el empaque nunca se usó, desaparece. Si ya está en alguna factura, compra o movimiento, no se borra: se retira. Deja de ofrecerse al vender y al comprar, y se conserva para los documentos que lo usaron, que siguen diciendo caja por veinticuatro. En resumen: la unidad base guarda la existencia y el costo; cada empaque dice cuántas unidades trae; las fracciones permiten medias cajas; los casilleros dicen dónde se ofrece, y la estrella, cuál se propone. Y si cambia el contenido de la caja, los documentos viejos no cambian: cada línea guarda el factor que tenía ese día. En la próxima parte compramos este refresco por cajas y vemos cómo entra al inventario.

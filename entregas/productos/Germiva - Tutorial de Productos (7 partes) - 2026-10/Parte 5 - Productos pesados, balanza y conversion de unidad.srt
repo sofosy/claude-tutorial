@@ -1,0 +1,359 @@
+1
+00:00:03,100 --> 00:00:06,041
+En esta parte vemos los productos que se venden por peso,
+
+2
+00:00:06,125 --> 00:00:08,705
+y cómo cambiar la unidad base de un producto.
+
+3
+00:00:09,373 --> 00:00:11,012
+Empezamos por la balanza.
+
+4
+00:00:11,680 --> 00:00:14,037
+Entro a Inventario y abro Configuración.
+
+5
+00:00:14,694 --> 00:00:16,667
+Bajo hasta balanza etiquetadora.
+
+6
+00:00:17,335 --> 00:00:20,126
+La balanza es de la tienda, no de un producto:
+
+7
+00:00:20,187 --> 00:00:24,231
+imprime una etiqueta con el código del producto y el peso dentro del código de
+
+8
+00:00:24,044 --> 00:00:24,801
+barras.
+
+9
+00:00:25,469 --> 00:00:27,802
+Enciendo uso balanza etiquetadora.
+
+10
+00:00:28,458 --> 00:00:29,726
+Aparece el formato:
+
+11
+00:00:29,859 --> 00:00:34,884
+el prefijo veintiuno, cinco dígitos para el código del producto, cinco para el peso,
+
+12
+00:00:34,906 --> 00:00:36,335
+y tres decimales.
+
+13
+00:00:37,003 --> 00:00:39,460
+Son los valores de las balanzas más comunes;
+
+14
+00:00:39,594 --> 00:00:41,295
+se ajustan a la de tu tienda.
+
+15
+00:00:41,951 --> 00:00:43,553
+Debajo, un ejemplo:
+
+16
+00:00:43,625 --> 00:00:48,004
+veintiuno, el producto ciento veintitrés, y dos mil trescientos cincuenta,
+
+17
+00:00:48,127 --> 00:00:50,954
+que con tres decimales son dos punto treinta y cinco.
+
+18
+00:00:51,622 --> 00:00:53,969
+Pulso guardar, y el aviso confirma;
+
+19
+00:00:54,066 --> 00:00:54,836
+lo cierro.
+
+20
+00:00:56,203 --> 00:00:58,435
+Ahora un producto que se vende por peso:
+
+21
+00:00:58,509 --> 00:00:59,639
+las habichuelas.
+
+22
+00:01:00,294 --> 00:01:03,371
+Abro Productos, la lista de todo el catálogo.
+
+23
+00:01:04,039 --> 00:01:07,811
+En el buscador escribo habichuelas, y abro su ficha con el lápiz.
+
+24
+00:01:08,478 --> 00:01:10,129
+Su unidad base es la libra:
+
+25
+00:01:10,153 --> 00:01:14,272
+la existencia y el precio, ochenta y cinco pesos, están por libra.
+
+26
+00:01:14,939 --> 00:01:18,760
+Enciendo se compra o se vende en empaques, y agrego el primero.
+
+27
+00:01:19,417 --> 00:01:23,609
+Debajo, en rojo, el panel avisa que falta elegir la unidad.
+
+28
+00:01:24,265 --> 00:01:26,995
+Abro la lista de unidades y elijo kilogramo.
+
+29
+00:01:27,662 --> 00:01:29,177
+Fíjate en el contenido:
+
+30
+00:01:29,300 --> 00:01:32,067
+dos punto dos libras, y no hay que escribirlo,
+
+31
+00:01:32,078 --> 00:01:36,110
+porque libra y kilo son de la misma familia de peso y el sistema conoce la
+
+32
+00:01:35,921 --> 00:01:36,878
+equivalencia.
+
+33
+00:01:37,545 --> 00:01:41,492
+En fracciones elijo dos decimales, para vender un kilo y medio.
+
+34
+00:01:42,159 --> 00:01:43,550
+Agrego otro empaque:
+
+35
+00:01:43,647 --> 00:01:46,117
+el saco, en que lo trae el proveedor.
+
+36
+00:01:46,784 --> 00:01:48,746
+Abro la lista y elijo saco.
+
+37
+00:01:49,402 --> 00:01:52,318
+El aviso rojo cambia y pide cuántas libras trae:
+
+38
+00:01:52,426 --> 00:01:53,445
+cien libras.
+
+39
+00:01:54,114 --> 00:01:55,443
+Este solo se compra:
+
+40
+00:01:55,515 --> 00:01:58,828
+le quito el casillero de venta y le pongo la estrella de compra.
+
+41
+00:01:59,496 --> 00:02:02,683
+Por último, a la derecha, el código de balanza:
+
+42
+00:02:02,782 --> 00:02:06,032
+escribo ciento veintitrés, el mismo del ejemplo.
+
+43
+00:02:06,687 --> 00:02:09,084
+Guardo la ficha, y acepto el aviso.
+
+44
+00:02:10,442 --> 00:02:12,055
+Vamos al punto de venta.
+
+45
+00:02:12,723 --> 00:02:14,362
+El cliente pide habichuelas;
+
+46
+00:02:14,521 --> 00:02:18,056
+se pesan en la balanza, y la balanza imprime una etiqueta.
+
+47
+00:02:18,713 --> 00:02:20,798
+En el buscador escaneo esa etiqueta;
+
+48
+00:02:20,920 --> 00:02:24,604
+aquí escribo su código y pulso Enter, como hace el lector.
+
+49
+00:02:25,260 --> 00:02:28,932
+El ticket recibe las habichuelas con dos punto treinta y cinco libras:
+
+50
+00:02:29,018 --> 00:02:31,164
+el peso venía dentro del código.
+
+51
+00:02:31,820 --> 00:02:35,566
+El precio es por libra, ochenta y cinco, exento de ITBIS,
+
+52
+00:02:35,590 --> 00:02:38,890
+y la línea suma ciento noventa y nueve con setenta y cinco.
+
+53
+00:02:39,558 --> 00:02:42,300
+Abajo, artículos lo dice en libras.
+
+54
+00:02:42,969 --> 00:02:45,140
+Así se vende cualquier producto pesado:
+
+55
+00:02:45,263 --> 00:02:48,141
+sin teclear el peso, y sin errores al cobrar.
+
+56
+00:02:49,507 --> 00:02:50,562
+Último caso:
+
+57
+00:02:50,610 --> 00:02:51,728
+las galletas.
+
+58
+00:02:52,383 --> 00:02:56,701
+Hasta hoy se llevaban por caja, y ahora la tienda quiere venderlas sueltas.
+
+59
+00:02:57,368 --> 00:03:00,346
+Eso no se resuelve cambiando la unidad de medida a mano:
+
+60
+00:03:00,444 --> 00:03:02,367
+hay que convertir la unidad base.
+
+61
+00:03:03,036 --> 00:03:05,852
+En el catálogo busco galletas y abro su ficha.
+
+62
+00:03:06,508 --> 00:03:11,097
+Enciendo empaques, que se guarda al momento, y abajo, en unidad base,
+
+63
+00:03:11,170 --> 00:03:13,045
+pulso convertir unidad base.
+
+64
+00:03:13,713 --> 00:03:15,313
+Elijo la unidad nueva:
+
+65
+00:03:15,387 --> 00:03:16,071
+unidad.
+
+66
+00:03:16,738 --> 00:03:18,339
+Cuántas trae cada caja:
+
+67
+00:03:18,462 --> 00:03:19,071
+doce.
+
+68
+00:03:19,739 --> 00:03:21,031
+Pulso ver impacto.
+
+69
+00:03:21,686 --> 00:03:23,251
+Arriba, el resumen:
+
+70
+00:03:23,298 --> 00:03:27,851
+una caja son doce unidades, la existencia pasa de veinte a doscientas cuarenta,
+
+71
+00:03:27,949 --> 00:03:30,009
+y el valor del inventario no cambia.
+
+72
+00:03:30,677 --> 00:03:34,536
+El aviso amarillo dice que el precio no se divide exacto y se redondea;
+
+73
+00:03:34,658 --> 00:03:35,390
+lo acepto.
+
+74
+00:03:36,046 --> 00:03:40,091
+En la tabla, el costo pasa de ciento ochenta por caja a quince por unidad,
+
+75
+00:03:40,176 --> 00:03:43,031
+y el mínimo y el máximo se multiplican por doce.
+
+76
+00:03:43,698 --> 00:03:48,560
+Y la caja queda como empaque, a trescientos pesos, para seguir comprándola igual.
+
+77
+00:03:49,228 --> 00:03:54,377
+Pulso convertir, confirmo, y el aviso dice que la caja quedó como empaque por doce.
+
+78
+00:03:55,731 --> 00:03:58,212
+Para ver la ficha con todos sus datos nuevos,
+
+79
+00:03:58,348 --> 00:04:00,756
+vuelvo a abrir las galletas desde el catálogo.
+
+80
+00:04:01,423 --> 00:04:02,962
+Arriba, el stock:
+
+81
+00:04:03,048 --> 00:04:06,867
+doscientas cuarenta, y el costo promedio, quince pesos.
+
+82
+00:04:07,537 --> 00:04:09,856
+La unidad de medida ahora es unidad.
+
+83
+00:04:10,513 --> 00:04:15,537
+El precio de venta, veinticinco pesos con ITBIS, que es trescientos entre doce.
+
+84
+00:04:16,204 --> 00:04:20,497
+Y en unidades y empaques, la caja por doce con su precio de trescientos y la
+
+85
+00:04:20,310 --> 00:04:21,353
+estrella de compra:
+
+86
+00:04:21,512 --> 00:04:25,023
+se sigue comprando por caja, y ahora se vende también suelta.
+
+87
+00:04:25,692 --> 00:04:29,997
+Si te equivocaste, la conversión se puede revertir mientras el producto no tenga
+
+88
+00:04:29,809 --> 00:04:31,223
+movimientos nuevos.
+
+89
+00:04:31,891 --> 00:04:34,199
+En la próxima parte vemos las variantes:
+
+90
+00:04:34,322 --> 00:04:37,423
+tallas, colores y sabores de un mismo producto.

@@ -1,0 +1,48 @@
+{
+ "mi-caja (yohanna, S4)": {
+  "#cashier-hub-tab-cajas": "1/1",
+  "#cashier-hub-tab-caja": "1/1",
+  "button.panel-collapse": "0/0",
+  "a[href='/cashier']": "1/1",
+  "a[href*='cashier']": "1/1",
+  ".sidebar a:has-text('Cajas')": "0/0",
+  "[mattooltip='Cajas']": "0/0",
+  "header.session-bar": "1/1",
+  "section.breakdown-panel": "1/1",
+  "button.quick-action--in": "1/1",
+  "button.quick-action--out": "1/1",
+  "button.quick-action--reconcile": "1/1",
+  ".session-bar__actions button:has-text('Cerrar caja')": "1/1",
+  ".workspace-tabs .mat-mdc-tab:has-text('Movimientos')": "1/1",
+  ".workspace-tabs .mat-mdc-tab:has-text('Resumen')": "1/1",
+  "app-simple-movement-list button[aria-label='Ver detalle']": "3/3",
+  "app-simple-movement-list tr:has-text('MOV-2026-00010')": "0/0",
+  ".chatbot-fab": "1/1"
+ },
+ "conteo (yohanna, S4)": {
+  ".detail-row:has(.method-label:has-text('Efectivo')) input[formcontrolname='actualAmount']": "1/1",
+  "input[formcontrolname='actualAmount'][aria-label='Monto recibido']": "1/1",
+  ".step-label": "3/3",
+  "button:has-text('Ver cálculo')": "1/1",
+  "button:has-text('Siguiente')": "1/1",
+  "h1:has-text('Conteo de cierre (previo al cuadre)')": "1/1",
+  "mat-step-header:has-text('Ingresar montos')": "1/1"
+ },
+ "tablero (carmen, S4)": {
+  "article.board-card[aria-label='Caja Caja Principal']": "1/1",
+  "article.board-card[aria-label='Caja Caja Mostrador 2'] .board-card__foot button:has-text('Ver sesión')": "1/1",
+  "article.board-card[aria-label='Caja Caja Sucursal Santiago'] .board-card__foot button:has-text('Desbloquear')": "1/1",
+  ".board-card__note": "0/0",
+  "button.board-toolbar__new": "0/0",
+  "#cashier-hub-tab-aprobaciones .gm-badge--warning": "0/0",
+  ".page-hero-actions button:has-text('Configuración')": "1/1"
+ },
+ "historial (carmen, S4)": {
+  "nav[aria-label='Listados del historial'] button:has-text('Sesiones')": "1/1",
+  "nav[aria-label='Listados del historial'] button:has-text('Movimientos')": "1/1",
+  "nav[aria-label='Listados del historial'] button:has-text('Transferencias')": "1/1",
+  "nav[aria-label='Listados del historial'] button:has-text('Cuadres')": "1/1",
+  "tr:has-text('MOV-2026-00010') button[aria-label='Ver detalle']": "1/1",
+  "button:has-text('Nuevo movimiento')": "1/1"
+ }
+}

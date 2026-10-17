@@ -1,0 +1,82 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.11,
+   "clic_a_url_s": 7.17,
+   "clic_a_networkidle_s": 7.17,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A8_factur": [
+  "Facturas Recibidas de Proveedor\n0/4\nConceder todo\nVer\nSubir\nDar Entrada a Factura de Proveedor\nDescartar Factura Recibida",
+  "Impuestos\n0/1\nConceder todo\nVer",
+  "Regímenes Base Presunta\n0/1\nConceder todo\nVer",
+  "Estados Pedido\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Pedidos\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Detalles Pedido\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Productos Pedido\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Workflow Órdenes\n0/1\nConceder todo\nGestionar",
+  "Aprobación\n0/1\nConceder todo\nProcesar",
+  "Vista Financiera Órdenes\n0/1\nConceder todo\nVer",
+  "Reportes Órdenes\n0/1\nConceder todo\nVer",
+  "Analíticas Órdenes\n0/1\nConceder todo\nVer",
+  "Tipos NCF\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "NCF\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Facturas\n2/5\nConceder todo\ncheck\nVer\ncheck\nCrear\nEditar\nCambiar Estado de Facturas\nCorregir Datos Fiscales de Compras\nVer\nPropios\nEquipo\nTodos",
+  "Historial de Versiones de Facturas\n0/1\nConceder todo\nVer",
+  "Pagos\n0/7\nConceder todo\nVer\nCrear\nEditar\nEliminar\nReversar\nCrear Pagos Directos en Factura\nRecibo de Pago",
+  "Tipos Pago\n0/1\nConceder todo\nVer",
+  "Tipos Ingreso\n0/1\nConceder todo\nVer",
+  "Notas Débito\n0/5\nConceder todo\nVer\nCrear\nEditar\nEliminar\nAprobar",
+  "Devoluciones\n0/7\nConceder todo\nVer\nCrear\nEditar\nEliminar\nEmitir\nReembolsar\nCancelar",
+  "Motivos de Devolución\n0/1\nConceder todo\nGestionar",
+  "Motivos de Modificación\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Órdenes de Pago\n0/5\nConceder todo\nVer\nCrear\nEditar\nExportar\nCancelar",
+  "Aplicaciones de Pagos\n0/8\nConceder todo\nVer\nCrear\nEditar\nEliminar\nRevisar\nReversar\nGestionar\nReportes"
+ ],
+ "A8_auditor": [
+  "Auditoría\n0/1\nConceder todo\nVer",
+  "Bitácora de Auditoría\n0/1\nConceder todo\nVer",
+  "Cajas\n0/8\nConceder todo\nVer\nCrear\nEditar\nEliminar\nBloquear Caja\nDesbloquear Caja\nAuditoría Sorpresa de Caja\nComandos de Dispositivo de Caja"
+ ],
+ "A8_QUOTE_A": [
+  "Cotizaciones\n7/10\nConceder todo\ncheck\nVer\nCrear\nEditar\nEliminar\ncheck\nAprobar\ncheck\nRechazar\nConvertir Cotización a Orden\ncheck\nConvertir Cotización a Factura Directamente\ncheck\nAceptar Cotización\nLiquidar Cotización\nVer\nPropios\nEquipo\nTodos"
+ ],
+ "A8_bd": [
+  [
+   "AUDIT_LOG_READ",
+   "Bitácora de Auditoría"
+  ],
+  [
+   "INVENTORY_VIEW",
+   "Inventario"
+  ],
+  [
+   "INVOICE_VIEW",
+   "Facturas"
+  ],
+  [
+   "PARTNER_CREATE",
+   "Crear Socios"
+  ],
+  [
+   "PRODUCT_EXPORT",
+   "Exportar Productos"
+  ],
+  [
+   "QUOTE_ACCEPT",
+   "Aceptar Cotización"
+  ],
+  [
+   "QUOTE_CONVERT_DIRECTLY_TO_INVOICE",
+   "Convertir Cotización a Factura Directamente"
+  ],
+  [
+   "QUOTE_VIEW",
+   "Cotizaciones"
+  ]
+ ]
+}

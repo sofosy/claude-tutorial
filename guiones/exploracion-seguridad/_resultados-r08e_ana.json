@@ -1,0 +1,74 @@
+{
+ "logins": [
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.3,
+   "clic_a_url_s": 5.86,
+   "clic_a_networkidle_s": 5.86,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "ana_clic_aprobada": {
+  "dlg": "",
+  "toasts": [],
+  "q2": [
+   [
+    "207",
+    "1"
+   ]
+  ]
+ },
+ "ana_titulo": "Editar Cotización 2\nBorrador",
+ "step_attrs": [
+  [
+   "edit\nBorrador",
+   "step-content",
+   "pointer",
+   ""
+  ],
+  [
+   "check_circle\nAprobada",
+   "step-content",
+   "not-allowed",
+   ""
+  ],
+  [
+   "thumb_up\nAceptada",
+   "step-content",
+   "not-allowed",
+   ""
+  ],
+  [
+   "cancel\nRechazada",
+   "step-content",
+   "not-allowed",
+   ""
+  ],
+  [
+   "schedule\nVencida",
+   "step-content",
+   "not-allowed",
+   ""
+  ],
+  [
+   "block\nCancelada",
+   "step-content",
+   "pointer",
+   ""
+  ],
+  [
+   "transform\nConvertida a Orden",
+   "step-content",
+   "not-allowed",
+   ""
+  ],
+  [
+   "receipt\nFacturada",
+   "step-content",
+   "not-allowed",
+   ""
+  ]
+ ]
+}

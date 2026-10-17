@@ -1,0 +1,1028 @@
+{
+  "titulo": "Productos · Parte 1: lo básico y los servicios",
+  "descripcion": "Primera parte de la serie de Productos de Germiva ERP: el catálogo, cómo buscar y filtrar, las columnas, la importación y el alta por foto; cómo dar de alta un producto paso a paso (nombre, tipo, categoría, marca, unidad de medida, precio con y sin ITBIS, otras listas de precios, costo, características, existencias mínima y máxima, lote y caducidad, código de barras), lo que aparece al guardar (imágenes, etiqueta, pestañas), la primera entrada de inventario, la pestaña fiscal, la descripción y la tienda en línea, cómo se da de alta un servicio y las acciones de cada fila: duplicar, desactivar y eliminar.",
+  "_comentario": "Serie Productos v3 (07/10/2026), video 1 de 6, sobre master (API ee8fc6fcd · web 295c2b96b) con DP-033 (unidades y empaques). Empresa 1 «Tienda Germiva», admin/admin. Datos de partida: seeds/productos/preparar.mjs → canon (fijar.mjs); entre tomas: node seeds/productos/restaurar.mjs A (canon completo, ~3 min). Crea en cámara «Chocolate tradicional Cacao Real» y «Fumigación doméstica». Los nombres de demo no llevan «de», «en» ni números: el buscador de nombres sugiere por palabra suelta.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "ISC": "i-ese-ce",
+    "CDT": "ce-de-te",
+    "EAN-13": "e-a-ene-trece",
+    "CSV": "ce-ese-uve"
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "130555",
+      "Embotelladora",
+      "Agroindustrial",
+      "Cibao",
+      "Galletera",
+      "Colmado",
+      "Esquina",
+      "Cacao Real",
+      "Caribe Cola",
+      "Crocante",
+      "La Finca",
+      "Fumigación",
+      "Fumigacion",
+      "doméstica",
+      "Chocolate",
+      "Habichuelas",
+      "Galletas",
+      "Refresco",
+      "Barbería",
+      "Peluquería"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/productos/restaurar.mjs A"
+  },
+  "aprenderas": [
+    "Encontrar cualquier producto o servicio del catálogo con la búsqueda, los filtros y las columnas",
+    "Dar de alta un producto completo: nombre, tipo, categoría, unidad, precio con o sin ITBIS, otras listas y costo",
+    "Fijar el stock mínimo y máximo, y exigir lote y fecha de vencimiento al recibir la mercancía",
+    "Subir las imágenes, imprimir la etiqueta y registrar la primera entrada de inventario",
+    "Configurar la parte fiscal y publicar el producto en la tienda en línea",
+    "Crear un servicio y usar duplicar, desactivar y eliminar sin perder historial"
+  ],
+  "errores_comunes": [
+    "Escribir el precio con ITBIS sin marcar «ITBIS incluido»: la factura le suma el impuesto otra vez",
+    "Registrar una compra con un motivo de ajuste: los ajustes generan su propio asiento contable",
+    "Eliminar un producto que ya tuvo movimientos: lo correcto es desactivarlo y conservar su historial",
+    "Dejar sin mínimo un producto que se agota: sin mínimo no aparece en «Por reponer»"
+  ],
+  "pasos": [
+    {
+      "id": "01-catalogo",
+      "capitulo": "El catálogo de productos",
+      "rotulo": "El catálogo",
+      "ruta": "Inventario › Productos",
+      "texto_pantalla": "Productos · el catálogo de todo lo que se compra o se vende",
+      "narracion": "Empezamos por el catálogo. En el menú de la izquierda entro a Inventario y abro Productos. Esta es la pantalla de Productos: aquí vive todo lo que la empresa compra o vende, tanto la mercancía como los servicios, y cada fila es uno de ellos. Recojo el panel del menú para ganar espacio. En la columna Producto va el nombre, y debajo, qué clase de registro es: un artículo único, como estas habichuelas, o un servicio, como esta barbería. Después viene el código, que puede ser el código de barras o el que tú le asignes. El precio de venta es el de la lista principal. La columna stock dice cuánto hay en existencia; cuando no queda nada aparece la marca de agotado, y en un servicio dice no aplica, porque un servicio no se almacena. Luego el estado: activo, o inactivo si ya no lo ofreces. Y al final de cada fila están las acciones: abrir la ficha, duplicarla, desactivarla o eliminarla. Las vemos al terminar este video.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Inventario']",
+          "al_decir": "entro a Inventario"
+        },
+        {
+          "click": ".panel-item:has-text('Productos')",
+          "al_decir": "abro Productos"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(2)",
+          "durante_ms": 4000,
+          "al_decir": "cada fila es uno"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el panel"
+        },
+        {
+          "resaltar": "table thead th:nth-child(2)",
+          "durante_ms": 3000,
+          "al_decir": "la columna Producto"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(2)",
+          "durante_ms": 3000,
+          "al_decir": "artículo único"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Barbería y Peluquería') td:nth-child(2)",
+          "durante_ms": 3000,
+          "al_decir": "esta barbería"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(3)",
+          "durante_ms": 4000,
+          "al_decir": "viene el código"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(4)",
+          "durante_ms": 3500,
+          "al_decir": "El precio de venta"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(5)",
+          "durante_ms": 3500,
+          "al_decir": "La columna stock"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(5)",
+          "durante_ms": 3000,
+          "al_decir": "agotado"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Barbería y Peluquería') td:nth-child(5)",
+          "durante_ms": 4000,
+          "al_decir": "no aplica"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(6)",
+          "durante_ms": 3500,
+          "al_decir": "Luego el estado"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(7)",
+          "durante_ms": 5000,
+          "al_decir": "las acciones"
+        }
+      ]
+    },
+    {
+      "id": "02-buscar-filtrar",
+      "capitulo": "Buscar y filtrar",
+      "rotulo": "Buscar y filtrar",
+      "ruta": "Inventario › Productos",
+      "texto_pantalla": "Productos · búsqueda, filtros y agrupación de variantes",
+      "narracion": "Para encontrar algo, arriba están la búsqueda y los filtros. En el campo Buscar escribo parte del nombre o del código, por ejemplo refresco, y la tabla se filtra mientras escribo, sin pulsar nada más. Para volver a ver todo, pulso Limpiar filtros, el botón de la equis. El filtro Estado muestra solo los activos o solo los inactivos. El filtro Tipo separa los productos de los servicios: elijo Servicio, y quedan solo los servicios, como esta barbería. El filtro ITBIS ventas, el impuesto sobre la venta, separa por la tasa con que se vende cada uno, y Base presunta, por los que calculan el ITBIS sobre una base imponible presunta, algo propio de la construcción. Más arriba, estos tres botones separan los productos que tienen variantes, como tallas y colores, de los que se venden como un solo artículo; y la casilla de al lado agrupa las variantes debajo de su producto. Termino limpiando el filtro otra vez.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+            "texto": "Refresco"
+          },
+          "al_decir": "escribo parte del nombre"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(2)",
+          "durante_ms": 3000,
+          "al_decir": "sin pulsar nada más"
+        },
+        {
+          "click": "app-dynamic-filters button:has(mat-icon:text-is('clear'))",
+          "al_decir": "pulso Limpiar filtros"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:text-is('Estado'))",
+          "durante_ms": 3500,
+          "al_decir": "El filtro Estado"
+        },
+        {
+          "click": "mat-form-field:has(mat-label:text-is('Tipo')) mat-select",
+          "al_decir": "El filtro Tipo"
+        },
+        {
+          "click": "mat-option:has-text('Servicio'):not(:has-text('Productos'))",
+          "al_decir": "elijo Servicio"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Barbería y Peluquería') td:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "como esta barbería"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:text-is('ITBIS ventas'))",
+          "durante_ms": 4500,
+          "al_decir": "El filtro ITBIS ventas"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:text-is('Base presunta'))",
+          "durante_ms": 5000,
+          "al_decir": "y Base presunta"
+        },
+        {
+          "resaltar": "button:has-text('Con variantes')",
+          "durante_ms": 5000,
+          "al_decir": "estos tres botones"
+        },
+        {
+          "resaltar": "mat-checkbox:has-text('Agrupar variantes')",
+          "durante_ms": 3500,
+          "al_decir": "la casilla de al lado"
+        },
+        {
+          "click": "app-dynamic-filters button:has(mat-icon:text-is('clear'))",
+          "al_decir": "Termino limpiando"
+        }
+      ]
+    },
+    {
+      "id": "03-columnas-importar",
+      "capitulo": "Columnas, importar y alta por foto",
+      "rotulo": "Columnas e importación",
+      "ruta": "Inventario › Productos",
+      "texto_pantalla": "Productos · columnas visibles, importar o exportar y alta por foto",
+      "narracion": "Tres herramientas más de esta pantalla. El botón de columnas, a la derecha de la tabla, decide qué columnas ves y en qué orden: puedes sumar la marca, la unidad de medida, la categoría o la fecha de creación, y arrastrarlas para ordenarlas. Lo cierro sin cambios. Importar y exportar sirve para cargar muchos productos de una vez. El primer paso es descargar la plantilla, en Excel o en texto separado por comas: trae instrucciones, una fila guía con las reglas de cada columna y los valores válidos de unidades, impuestos y categorías. Para lo que maneja inventario puedes cargar también la existencia inicial. El segundo paso es subir el archivo lleno: si el código de una fila ya existe, ese producto se actualiza; si no, se crea. Y si el archivo trae un error, no se importa nada y te lista qué corregir. Cierro el diálogo. La última es alta por foto: subes fotos de tus productos, o te las mandan por WhatsApp, y el sistema prepara las fichas para que tú las revises antes de crearlas.",
+      "acciones": [
+        {
+          "click": "button:has(mat-icon:text-is('view_column'))",
+          "al_decir": "El botón de columnas"
+        },
+        {
+          "resaltar": ".column-config-menu",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "puedes sumar la marca"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Lo cierro sin cambios"
+        },
+        {
+          "click": "button:has-text('Importar / Exportar')",
+          "al_decir": "Importar y exportar"
+        },
+        {
+          "resaltar": "mat-dialog-container .step:nth-of-type(1)",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "descargar la plantilla"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Plantilla Excel')",
+          "durante_ms": 4500,
+          "al_decir": "trae instrucciones"
+        },
+        {
+          "resaltar": "mat-dialog-container .callout",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "la existencia inicial"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Seleccionar archivo e importar')",
+          "durante_ms": 6000,
+          "al_decir": "subir el archivo lleno"
+        },
+        {
+          "resaltar": "mat-dialog-container .step:nth-of-type(2)",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "te lista qué corregir"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "Cierro el diálogo"
+        },
+        {
+          "resaltar": "button:has-text('Alta por foto')",
+          "durante_ms": 7000,
+          "al_decir": "alta por foto"
+        }
+      ]
+    },
+    {
+      "id": "04-alta-identificacion",
+      "capitulo": "Nuevo producto: nombre, tipo y unidad",
+      "rotulo": "Nuevo producto",
+      "ruta": "Inventario › Productos › Nuevo",
+      "texto_pantalla": "Nuevo producto · nombre, tipo, categoría, marca y unidad de medida",
+      "narracion": "Ahora damos de alta un producto. Pulso Nuevo Producto, arriba de la tabla. Esta es la ficha del producto: una sola hoja que se llena de arriba abajo. Al pie, la barra dice qué falta para poder guardar; por ahora, el nombre. Lo escribo: Chocolate tradicional Cacao Real. Mientras escribo, el sistema busca si ya existe uno igual, porque no puede haber dos productos con el mismo nombre; si lo hubiera, te lo enseñaría para que lo abras. Aquí dice nombre disponible. A la derecha está el tipo: producto es un bien físico que se compra, se vende y puede llevar existencias; servicio es algo que se presta y no lleva inventario. Lo dejo en producto. Abajo va la información general. La categoría agrupa productos parecidos para buscarlos y filtrar los reportes: escribo alimentos, que ya existe en la lista, y la elijo. La marca es el fabricante: Cacao Real, que también sirve para buscarlo. Y la unidad de medida es la unidad base, en la que se llevan la existencia, el costo y el kardex, que es el historial de entradas y salidas. La busco escribiendo unidad; la lista muestra las que coinciden, y elijo la primera opción. El campo contenido es opcional: dice cuánto trae una unidad, por ejemplo doscientos cincuenta si la unidad fuera mililitro. Vacío, vale uno.",
+      "acciones": [
+        {
+          "click": "button:has-text('Nuevo Producto')",
+          "al_decir": "Pulso Nuevo Producto"
+        },
+        {
+          "resaltar": ".gm-doc-blocking",
+          "durante_ms": 4000,
+          "al_decir": "la barra dice"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Chocolate tradicional Cacao Real"
+          },
+          "al_decir": "Lo escribo"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='name'])",
+          "durante_ms": 4000,
+          "al_decir": "porque no puede haber"
+        },
+        {
+          "resaltar": ".name-notice--ok",
+          "durante_ms": 3500,
+          "al_decir": "nombre disponible"
+        },
+        {
+          "resaltar": ".segmented-wrap",
+          "durante_ms": 6000,
+          "al_decir": "está el tipo"
+        },
+        {
+          "resaltar": "h3.section-title:has-text('Información general')",
+          "durante_ms": 2500,
+          "al_decir": "la información general"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Categoría')) input",
+            "texto": "Alimen"
+          },
+          "al_decir": "escribo alimentos"
+        },
+        {
+          "click": "mat-option:has-text('Alimentos')",
+          "al_decir": "y la elijo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='brand']",
+            "texto": "Cacao Real"
+          },
+          "al_decir": "La marca"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Unidad de medida'))",
+          "durante_ms": 4500,
+          "al_decir": "la unidad de medida"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Unidad de medida')) input",
+            "texto": "Unidad"
+          },
+          "al_decir": "La busco escribiendo"
+        },
+        {
+          "click": "mat-option:has-text('Unidad (UND)')",
+          "al_decir": "elijo la primera opción"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='unitMeasureValue'])",
+          "durante_ms": 6000,
+          "al_decir": "El campo contenido"
+        }
+      ]
+    },
+    {
+      "id": "05-precio-costo",
+      "capitulo": "Precio, otras listas, costo e ITBIS",
+      "rotulo": "Precio y costo",
+      "ruta": "Inventario › Productos › Nuevo",
+      "texto_pantalla": "Nuevo producto · precio, ITBIS incluido, otras listas y costo",
+      "narracion": "Sigue el precio, el costo y los impuestos. En precio de venta escribo ciento sesenta y cinco: es lo que cobra la factura por una unidad, en la lista principal. Como ese monto ya trae el ITBIS, el impuesto sobre la venta, marco la casilla ITBIS incluido. Debajo aparece el desglose: el neto, el impuesto y el total que se cobra. El ITBIS de ventas se propone con la tasa general del dieciocho por ciento, y en cada factura se puede cambiar. Si vendes a otros precios, por ejemplo al por mayor, pulsa otras listas. Aparece la tabla de precios por lista, y la estrella marca el precio que toma la factura. Pulso agregar precio. La fila nueva propone la lista Mayorista, y le escribo ciento cincuenta, que también trae el impuesto adentro: enciendo ITBIS incluido. Cierro la tabla. Luego viene el costo, sin ITBIS: noventa y cinco. Es un costo de referencia: cuando empiezan las compras, el sistema pasa a llevar el costo promedio. Y el ITBIS de compras, el que te factura el proveedor; también se propone, y cada compra lo puede cambiar.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "app-inline-product-prices mat-form-field:has(mat-label:has-text('Precio de venta')) input",
+            "texto": "165"
+          },
+          "al_decir": "escribo ciento sesenta y cinco"
+        },
+        {
+          "click": "mat-checkbox:has-text('ITBIS incluido') input",
+          "al_decir": "marco la casilla"
+        },
+        {
+          "resaltar": "mat-hint.sheet-price__hint",
+          "durante_ms": 4500,
+          "al_decir": "el desglose"
+        },
+        {
+          "resaltar": "app-custom-select:has(mat-label:has-text('ITBIS de ventas'))",
+          "durante_ms": 5000,
+          "al_decir": "El ITBIS de ventas"
+        },
+        {
+          "click": "button:has-text('Otras listas')",
+          "al_decir": "pulsa otras listas"
+        },
+        {
+          "resaltar": "app-inline-product-prices table tbody tr:first-child td:first-child",
+          "durante_ms": 3500,
+          "al_decir": "la estrella"
+        },
+        {
+          "click": "button:has-text('Agregar precio')",
+          "al_decir": "Pulso agregar precio"
+        },
+        {
+          "resaltar": "app-inline-product-prices table tbody tr:last-child [aria-label='Lista de precios']",
+          "durante_ms": 3000,
+          "al_decir": "propone la lista Mayorista"
+        },
+        {
+          "escribir": {
+            "sel": "app-inline-product-prices table tbody tr:last-child input[aria-label='Subtotal sin ITBIS']",
+            "texto": "150"
+          },
+          "al_decir": "le escribo ciento cincuenta"
+        },
+        {
+          "click": "app-inline-product-prices table tbody tr:last-child button[aria-label='ITBIS incluido']",
+          "al_decir": "enciendo ITBIS incluido"
+        },
+        {
+          "click": "button:has-text('Ocultar precios por lista')",
+          "al_decir": "Cierro la tabla"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='purchasePrice']",
+            "texto": "95"
+          },
+          "al_decir": "viene el costo"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='purchasePrice'])",
+          "durante_ms": 4500,
+          "al_decir": "un costo de referencia"
+        },
+        {
+          "resaltar": "app-custom-select:has(mat-label:has-text('ITBIS de compras'))",
+          "durante_ms": 5000,
+          "al_decir": "el ITBIS de compras"
+        }
+      ]
+    },
+    {
+      "id": "06-inventario-guardar",
+      "capitulo": "Características, existencias, lote y caducidad",
+      "rotulo": "Existencias y trazabilidad",
+      "ruta": "Inventario › Productos › Nuevo",
+      "texto_pantalla": "Nuevo producto · características, mínimo y máximo, lote y caducidad",
+      "narracion": "Más abajo, las características dicen qué clase de producto es. Maneja inventario viene encendido: el sistema lleva sus existencias, sus entradas y salidas y su costo, y avisa cuando baja del mínimo; se apaga solo para lo que no se almacena. Tener variantes, comprarse o venderse en empaques, e importarse o exportarse son funciones avanzadas, y cada una tiene su propia parte en esta serie. En la pestaña Inventario van las existencias. El stock mínimo es el umbral de aviso: cuando la existencia baja de veinticuatro, el sistema avisa y lo propone en la pantalla Por reponer. El máximo es hasta dónde reponer: ciento veinte. Luego, la trazabilidad. Controla lote viene encendido: al recibir la mercancía, el número de lote será obligatorio. Enciendo controla caducidad, porque el chocolate vence: al recibir un lote se exigirá su fecha de vencimiento. A la derecha está la tarjeta del código de barras: si lo dejas vacío, se genera uno al guardar. Y arriba, la lista de lo que se habilita después de guardar: las imágenes, los impuestos adicionales y el historial. Pulso Guardar. Se guarda la ficha con su precio y sus listas, y aparece un aviso: confirma que el producto se creó. Acepto.",
+      "acciones": [
+        {
+          "resaltar": "h3.section-title:has-text('Características')",
+          "durante_ms": 3000,
+          "al_decir": "las características"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Maneja inventario'])",
+          "durante_ms": 6500,
+          "al_decir": "Maneja inventario viene"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Tiene variantes'])",
+          "durante_ms": 2500,
+          "al_decir": "Tener variantes"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Se compra o se vende en empaques'])",
+          "durante_ms": 2500,
+          "al_decir": "comprarse o venderse"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Se importa o se exporta'])",
+          "durante_ms": 4000,
+          "al_decir": "importarse o exportarse"
+        },
+        {
+          "click": "mat-tab-group.product-tabs [role=tab]:has-text('Inventario')",
+          "al_decir": "la pestaña Inventario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='minStock']",
+            "texto": "24"
+          },
+          "al_decir": "El stock mínimo"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='minStock'])",
+          "durante_ms": 4000,
+          "al_decir": "lo propone en la pantalla"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='maxStock']",
+            "texto": "120"
+          },
+          "al_decir": "El máximo"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Controla lote'])",
+          "durante_ms": 5000,
+          "al_decir": "Controla lote viene"
+        },
+        {
+          "click": "button[aria-label='Controla caducidad']",
+          "al_decir": "Enciendo controla caducidad"
+        },
+        {
+          "resaltar": ".barcode-section",
+          "durante_ms": 4500,
+          "al_decir": "la tarjeta del código"
+        },
+        {
+          "resaltar": ".pending-unlock",
+          "durante_ms": 5000,
+          "al_decir": "Y arriba"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "confirma que el producto"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Acepto."
+        }
+      ]
+    },
+    {
+      "id": "07-ficha-guardada",
+      "capitulo": "La ficha guardada: código, etiqueta e imágenes",
+      "rotulo": "La ficha guardada",
+      "ruta": "Inventario › Productos › Chocolate tradicional Cacao Real",
+      "texto_pantalla": "Ficha del producto · código, etiqueta, pestañas nuevas e imágenes",
+      "narracion": "Al guardar, la ficha queda abierta para editarla y gana partes nuevas. Arriba, junto al nombre, el código y el estado activo, y a la derecha los botones duplicar, registrar entrada y nuevo. En la tarjeta del código ya aparece el código de barras, un EAN-13 válido, el estándar de trece dígitos, con su candado: viene bloqueado para que nadie lo cambie por error. Con el botón imprimir etiqueta sacas la etiqueta con el código, para pegarla en el producto. Abajo se sumaron tres pestañas: variantes, insumos e historial. Y en la columna derecha, las imágenes. Pulso agregar. Se pueden arrastrar hasta diez imágenes de una vez, o seleccionarlas desde el equipo; subo la foto del empaque. Pulso subir todas. La primera queda como imagen principal: es la que se ve en el listado y en la tienda en línea.",
+      "acciones": [
+        {
+          "resaltar": ".page-hero",
+          "durante_ms": 4500,
+          "al_decir": "el código y el estado"
+        },
+        {
+          "resaltar": "button:has-text('Registrar Entrada')",
+          "durante_ms": 3500,
+          "al_decir": "los botones duplicar"
+        },
+        {
+          "resaltar": ".barcode-section",
+          "durante_ms": 4000,
+          "al_decir": "En la tarjeta del código"
+        },
+        {
+          "resaltar": "button[aria-label='Desbloquear código']",
+          "durante_ms": 3500,
+          "al_decir": "su candado"
+        },
+        {
+          "resaltar": "button:has-text('Imprimir etiqueta')",
+          "durante_ms": 4500,
+          "al_decir": "el botón imprimir etiqueta"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-labels",
+          "durante_ms": 4500,
+          "al_decir": "tres pestañas"
+        },
+        {
+          "click": "button.gallery__add",
+          "al_decir": "Pulso agregar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "hasta diez imágenes"
+        },
+        {
+          "subir": {
+            "sel": "mat-dialog-container input[type=file]",
+            "archivo": "seeds/productos/chocolate-cacao-real.jpg",
+            "ancla": "mat-dialog-container button:has-text('Seleccionar imágenes')"
+          },
+          "al_decir": "subo la foto"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Subir Todas')",
+          "al_decir": "Pulso subir todas"
+        },
+        {
+          "resaltar": ".preview__primary-chip",
+          "durante_ms": 5500,
+          "al_decir": "imagen principal"
+        }
+      ]
+    },
+    {
+      "id": "08-entrada",
+      "capitulo": "La primera entrada de inventario",
+      "rotulo": "Registrar entrada",
+      "ruta": "Inventario › Productos › Chocolate tradicional Cacao Real › Registrar entrada",
+      "texto_pantalla": "Registrar entrada · motivo, proveedor, ubicación, lote, cantidad, costo y vencimiento",
+      "narracion": "Para darle existencia, uso el botón registrar entrada de arriba. Arriba se ve el producto y su stock actual, que es cero. Primero, el motivo: como es mercancía comprada, elijo compras de mercancía; los motivos de ajuste, como el conteo físico, son para otra cosa y generan su propio asiento. El proveedor: lo busco escribiendo agro; aparecen los que coinciden, y elijo Agroindustrial del Cibao. La ubicación es el almacén y el estante donde se guarda: elijo Pasillo A, del Almacén Sur. Como el producto controla lote, el número es obligatorio; con este botón lo genero, y queda escrito. Cantidad: cuarenta y ocho unidades, las que llegaron en esta compra. Y el costo unitario, sin ITBIS: noventa y cinco. El costo total se calcula solo. La nota azul aclara algo importante: esta entrada mueve el inventario y el costo promedio, pero el ITBIS y la cuenta por pagar salen de la factura del proveedor, que se registra en Compras. Y como controla caducidad, escribo la fecha de vencimiento del lote, que queda guardada con él. Pulso registrar entrada, y el aviso confirma el movimiento; acepto. Arriba ya se ve el stock actual, cuarenta y ocho, y el costo promedio. En la pestaña historial, la compra aparece con su documento, el proveedor, la cantidad y el precio.",
+      "acciones": [
+        {
+          "click": "button:has-text('Registrar Entrada')",
+          "al_decir": "el botón registrar entrada"
+        },
+        {
+          "resaltar": "mat-dialog-container .mq-summary",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "su stock actual"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='inventoryMovementTypeId']",
+          "al_decir": "Primero, el motivo"
+        },
+        {
+          "click": "mat-option:has-text('Compras de mercancía')",
+          "al_decir": "elijo compras de mercancía"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container mat-form-field:has(mat-label:has-text('Proveedor')) input",
+            "texto": "Agro"
+          },
+          "al_decir": "lo busco escribiendo"
+        },
+        {
+          "click": "mat-option:has-text('Agroindustrial del Cibao')",
+          "al_decir": "elijo Agroindustrial"
+        },
+        {
+          "click": "mat-dialog-container mat-form-field:has(mat-label:has-text('Ubicación')) input",
+          "al_decir": "La ubicación"
+        },
+        {
+          "click": "mat-option:has-text('Pasillo A')",
+          "al_decir": "elijo Pasillo A"
+        },
+        {
+          "click": "mat-dialog-container button[aria-label='Generar número de lote']",
+          "al_decir": "lo genero"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='quantity']",
+            "texto": "48"
+          },
+          "al_decir": "Cantidad cuarenta"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='unitPrice']",
+            "texto": "95"
+          },
+          "al_decir": "Costo unitario"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:has-text('Costo Total'))",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "se calcula solo"
+        },
+        {
+          "resaltar": "mat-dialog-container .mq-callout",
+          "durante_ms": 8000,
+          "cursor": false,
+          "al_decir": "La nota azul"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='expiryDate']",
+            "texto": "15/06/2027"
+          },
+          "al_decir": "escribo la fecha"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Registrar entrada')",
+          "al_decir": "Pulso registrar entrada"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "confirma el movimiento"
+        },
+        {
+          "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        },
+        {
+          "resaltar": ".hero-stock:has-text('Stock')",
+          "durante_ms": 4000,
+          "al_decir": "ya se ve el stock actual"
+        },
+        {
+          "click": "mat-tab-group.product-tabs [role=tab]:has-text('Historial')",
+          "al_decir": "la pestaña historial"
+        },
+        {
+          "resaltar": "app-product-history table tbody tr:first-child td:nth-child(2)",
+          "durante_ms": 5000,
+          "al_decir": "la compra aparece"
+        }
+      ]
+    },
+    {
+      "id": "09-fiscal",
+      "capitulo": "La pestaña fiscal",
+      "rotulo": "Fiscal",
+      "ruta": "Inventario › Productos › Chocolate tradicional Cacao Real › Fiscal",
+      "texto_pantalla": "Fiscal · cuentas contables, base presunta e impuestos adicionales DGII",
+      "narracion": "Ahora vamos a la pestaña fiscal, que reúne lo contable y lo tributario del producto. La cuenta contable de ingreso es a dónde van las ventas de este producto; si no eliges ninguna, se usa la cuenta de ingresos por defecto de la empresa. La cuenta de compra es la que propone una compra cuando la línea no trae otra. La base imponible presunta se activa solo en sectores donde el ITBIS no se calcula sobre el cien por ciento del neto, como la construcción. Y los impuestos adicionales de la DGII, la Dirección General de Impuestos Internos: la propina legal, el CDT, que es la contribución al desarrollo de las telecomunicaciones, y el ISC, el impuesto selectivo al consumo de las bebidas alcohólicas y los cigarrillos. Pulso agregar para ver el formulario: se elige el impuesto, si se aplica a todas las facturas o si se excluye a un cliente, y desde cuándo rige. Este chocolate no lleva ninguno, así que cancelo. Cuando un impuesto exige datos, como los grados de alcohol, aquí mismo aparece la sección de datos fiscales para completarlos.",
+      "acciones": [
+        {
+          "click": "mat-tab-group.product-tabs [role=tab]:has-text('Fiscal')",
+          "al_decir": "la pestaña fiscal"
+        },
+        {
+          "resaltar": "app-account-picker[formcontrolname='incomeAccount']",
+          "durante_ms": 6000,
+          "al_decir": "La cuenta contable de ingreso"
+        },
+        {
+          "resaltar": "app-account-picker[formcontrolname='purchaseExpenseAccount']",
+          "durante_ms": 4500,
+          "al_decir": "La cuenta de compra"
+        },
+        {
+          "resaltar": ".gm-setting:has(mat-slide-toggle[formcontrolname='appliesPresumptiveRegime'])",
+          "durante_ms": 6000,
+          "al_decir": "La base imponible presunta"
+        },
+        {
+          "resaltar": "app-product-tax-mappings",
+          "durante_ms": 8000,
+          "al_decir": "los impuestos adicionales"
+        },
+        {
+          "click": "app-product-tax-mappings button:has-text('Agregar')",
+          "al_decir": "Pulso agregar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "se elige el impuesto"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "así que cancelo"
+        },
+        {
+          "resaltar": "app-product-tax-mappings",
+          "durante_ms": 5000,
+          "al_decir": "datos fiscales"
+        }
+      ]
+    },
+    {
+      "id": "10-descripcion-tienda",
+      "capitulo": "Descripción y tienda en línea",
+      "rotulo": "Descripción y tienda",
+      "ruta": "Inventario › Productos › Chocolate tradicional Cacao Real › Descripción y tienda",
+      "texto_pantalla": "Descripción y tienda · texto con formato y publicación en el catálogo",
+      "narracion": "Ahora abro la pestaña descripción y tienda, donde va lo que ve el cliente del catálogo en línea. La descripción admite formato, como negritas, listas y enlaces, hasta mil caracteres. Escribo una línea sobre el producto: de qué está hecho y para quién es. Con vista previa veo cómo queda. Abajo está la tienda en línea. Enciendo visible en la tienda, y el producto se publica en el catálogo. Indexable en buscadores deja que Google y otros buscadores lo muestren; se apaga si solo quieres compartirlo por enlace directo. El distintivo de arriba ya dice publicado e indexable. Guardo los cambios con el botón guardar del pie, y el aviso confirma que se actualizó. Lo cierro con aceptar.",
+      "acciones": [
+        {
+          "click": "mat-tab-group.product-tabs [role=tab]:has-text('Descripción y tienda')",
+          "al_decir": "descripción y tienda"
+        },
+        {
+          "resaltar": ".description-editor",
+          "durante_ms": 4500,
+          "al_decir": "admite formato"
+        },
+        {
+          "escribir": {
+            "sel": ".ck-editor__editable",
+            "texto": "Chocolate de mesa con cacao dominicano."
+          },
+          "al_decir": "Escribo una línea"
+        },
+        {
+          "click": "mat-button-toggle:has-text('Vista previa') button",
+          "al_decir": "Con vista previa"
+        },
+        {
+          "resaltar": ".description-preview",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "cómo queda"
+        },
+        {
+          "click": "button[aria-label='Visible en la tienda en línea']",
+          "al_decir": "Enciendo visible"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Indexable en buscadores'])",
+          "durante_ms": 6000,
+          "al_decir": "Indexable en buscadores"
+        },
+        {
+          "resaltar": "h3.section-title:has-text('Tienda en línea') .gm-badge",
+          "durante_ms": 3500,
+          "al_decir": "El distintivo"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Guardo los cambios"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "se actualizó"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "con aceptar"
+        }
+      ]
+    },
+    {
+      "id": "11-servicio",
+      "capitulo": "Dar de alta un servicio",
+      "rotulo": "Nuevo servicio",
+      "ruta": "Inventario › Productos › Nuevo · Servicio",
+      "texto_pantalla": "Nuevo servicio · sin inventario, sin código de barras",
+      "narracion": "Ahora un servicio. Pulso nuevo, arriba a la derecha. Cambio el tipo a servicio, y fíjate en lo que desaparece: las características, la pestaña de inventario y la tarjeta del código de barras, porque un servicio no se almacena ni se cuenta. Lo llamo Fumigación doméstica, el nombre que verá el cliente en la factura. Categoría: lo busco escribiendo servicios de limp; la lista ya la muestra, y elijo servicios de limpieza. La unidad de medida: la busco igual que antes, escribiendo unidad; y elijo Unidad, porque se cobra por cada servicio. Precio de venta: dos mil quinientos pesos por cada visita, esta vez sin ITBIS incluido, así que la factura le suma el dieciocho por ciento. El costo, si lo conoces, sirve para medir la ganancia: ochocientos. En la pestaña fiscal, la cuenta de ingreso permite llevar las ventas de servicios a una cuenta distinta de la mercancía. Pulso guardar. Se crea la ficha del servicio y aparece el aviso de confirmación, que acepto. La ficha de un servicio no tiene existencias ni costo promedio: solo lo que hace falta para venderlo.",
+      "acciones": [
+        {
+          "click": "button[aria-label='Nuevo Producto']",
+          "al_decir": "Pulso nuevo"
+        },
+        {
+          "click": "mat-button-toggle:has-text('Servicio') button",
+          "al_decir": "Cambio el tipo"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-labels",
+          "durante_ms": 5000,
+          "al_decir": "lo que desaparece"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Fumigación doméstica"
+          },
+          "al_decir": "Lo llamo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Categoría')) input",
+            "texto": "Servicios de limp"
+          },
+          "al_decir": "lo busco escribiendo"
+        },
+        {
+          "click": "mat-option:has-text('Servicios de Limpieza')",
+          "al_decir": "elijo servicios de limpieza"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Unidad de medida')) input",
+            "texto": "Unidad"
+          },
+          "al_decir": "La unidad de medida"
+        },
+        {
+          "click": "mat-option:has-text('Unidad (UND)')",
+          "al_decir": "elijo Unidad"
+        },
+        {
+          "escribir": {
+            "sel": "app-inline-product-prices mat-form-field:has(mat-label:has-text('Precio de venta')) input",
+            "texto": "2500"
+          },
+          "al_decir": "Precio de venta"
+        },
+        {
+          "resaltar": "mat-checkbox:has-text('ITBIS incluido')",
+          "durante_ms": 4000,
+          "al_decir": "sin ITBIS incluido"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='purchasePrice']",
+            "texto": "800"
+          },
+          "al_decir": "El costo"
+        },
+        {
+          "resaltar": "app-account-picker[formcontrolname='incomeAccount']",
+          "durante_ms": 5500,
+          "al_decir": "la cuenta de ingreso"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Pulso guardar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "aviso de confirmación"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "que acepto"
+        },
+        {
+          "resaltar": ".page-hero",
+          "durante_ms": 5000,
+          "al_decir": "solo lo que hace falta"
+        }
+      ]
+    },
+    {
+      "id": "12-acciones-fila",
+      "capitulo": "Duplicar, desactivar y eliminar",
+      "rotulo": "Acciones de la fila",
+      "ruta": "Inventario › Productos",
+      "texto_pantalla": "Productos · duplicar, desactivar y eliminar",
+      "navegar": "/inventory/product/list",
+      "narracion": "De vuelta en el catálogo, arriba están el servicio y el chocolate recién creados. Repasemos las acciones de cada fila. Duplicar crea una copia con toda la configuración: precios, impuestos e insumos, pero sin las imágenes ni el código de barras; es útil para productos casi iguales. Cancelo. La segunda acción, desactivar, lo oculta de los listados activos y deja de ofrecerse al vender y al comprar, pero conserva su historial: es lo que conviene con un producto que ya tuvo movimientos. Cancelo. Y eliminar lo borra, y no se puede deshacer; úsalo solo con algo creado por error. También cancelo. Con esto tienes lo básico de productos y servicios. En la próxima parte vemos las unidades y empaques: comprar en cajas y vender por unidad.",
+      "acciones": [
+        {
+          "resaltar": "table tbody tr:has-text('Fumigación doméstica') td:nth-child(2)",
+          "durante_ms": 2500,
+          "al_decir": "el servicio"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Chocolate tradicional') td:nth-child(2)",
+          "durante_ms": 3000,
+          "al_decir": "el chocolate"
+        },
+        {
+          "click": "table tbody tr:has-text('Chocolate tradicional') button[aria-label='Duplicar']",
+          "al_decir": "Duplicar crea"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "toda la configuración"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "Cancelo. La segunda"
+        },
+        {
+          "click": "table tbody tr:has-text('Chocolate tradicional') button[aria-label='Desactivar']",
+          "al_decir": "lo oculta"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "conserva su historial"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "tuvo movimientos"
+        },
+        {
+          "click": "table tbody tr:has-text('Chocolate tradicional') button[aria-label='Eliminar']",
+          "al_decir": "eliminar lo borra"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "no se puede deshacer"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "También cancelo"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Chocolate tradicional') td:nth-child(2)",
+          "durante_ms": 6000,
+          "al_decir": "lo básico"
+        }
+      ]
+    }
+  ]
+}

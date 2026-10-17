@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Éxito del Cliente · La cartera de clientes
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué es la cartera de clientes
+00:54  Bienvenida, salud y renovaciones
+01:37  Registrar un seguimiento
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es Éxito del Cliente y qué es la cartera
+• Ver a quién te toca contactar hoy y a quién se le pasó la fecha
+• Revisar la bienvenida de los clientes nuevos, la salud de la cartera y las renovaciones
+• Registrar un seguimiento y dejar programada la próxima acción
+
+⚠️ ERRORES COMUNES
+• Registrar el contacto sin próxima acción: el cliente sale de tu lista y nadie lo vuelve a llamar
+• Esperar a que el contrato venza para hablar de la renovación
+• Dejar clientes sin gerente de cuenta: nadie responde por ellos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:35
+
+TRANSCRIPCIÓN
+============================================================
+Vender es la mitad del trabajo; la otra mitad es que el cliente se quede y vuelva a comprar. Para eso está Éxito del Cliente: entro por el menú de la izquierda y abro Cartera de clientes. Cada fila es un cliente que ya te compró y que alguien de tu equipo acompaña: su gerente de cuenta, que aquí es Rosa. Ahora recojo el menú para ver la tabla completa. La vista Seguimiento te dice a quién contactar. Arriba, tres indicadores. El primero, los clientes con una acción acordada para hoy; Vencidas, a los que se les pasó la fecha; y Sin contacto, los que nadie ha llamado en el tiempo que fijaste. En la tabla ves la etapa del cliente, su próxima acción, el último contacto y sus tareas. Constructora Mirador vence hoy, e Inversiones Barahona ya está vencida, en rojo.
+La misma cartera tiene cuatro vistas. Bienvenida muestra a los clientes nuevos y cuánto llevan de sus primeros pasos: entrega, accesos y capacitación. Ferretería Doña Luz acaba de llegar del CRM. Salud mide qué tan bien está cada cliente, de cero a cien, según sus compras, sus contactos y sus casos abiertos. Sano, a vigilar o crítico. Y la columna Motivos dice por qué: Inversiones Barahona tiene un contrato por vencer. Por eso aparece en Renovaciones, la vista de los contratos que vencen en los próximos noventa días. Ahí ves el contrato, la fecha en que vence y si ya hay una oportunidad de renovación abierta.
+Ahora, a trabajar. Vuelvo a Seguimiento para atender lo vencido. Ya llamé a Inversiones Barahona: marco su casilla y aparecen las acciones para los clientes elegidos. Pulso Registrar seguimiento. La vía fue una llamada, con la fecha y la hora de hoy. En el cuadro grande anoto qué se habló, porque lo lee todo el equipo. Quieren renovar, pero piden mejor precio. Ahora lo más importante: la próxima acción. Le pongo fecha para dentro de una semana; ese día el sistema le crea la tarea a su gerente. Y el asunto: enviar la propuesta de renovación. Reviso que todo esté bien y pulso Guardar. El aviso confirma que quedó registrado; lo acepto. Barahona sale de la lista de hoy y el indicador de vencidas baja a cero: su próxima acción ya tiene fecha.

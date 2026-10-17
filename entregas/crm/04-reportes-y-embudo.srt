@@ -1,0 +1,119 @@
+1
+00:00:03,100 --> 00:00:04,812
+Ahora, cómo medir.
+
+2
+00:00:05,480 --> 00:00:08,035
+Entro al CRM y abro Reportes.
+
+3
+00:00:08,704 --> 00:00:13,505
+Es la foto de tus ventas en un vistazo, para el espacio de trabajo elegido arriba.
+
+4
+00:00:14,160 --> 00:00:15,303
+Recojo el menú.
+
+5
+00:00:15,971 --> 00:00:18,439
+El primer indicador cuenta los prospectos.
+
+6
+00:00:19,109 --> 00:00:20,870
+El segundo, la conversión:
+
+7
+00:00:20,993 --> 00:00:24,455
+de cada cien prospectos, cuántos se volvieron clientes.
+
+8
+00:00:25,123 --> 00:00:28,088
+Luego las oportunidades, con su tasa de cierre:
+
+9
+00:00:28,173 --> 00:00:30,729
+de las que se cerraron, cuántas se ganaron.
+
+10
+00:00:31,397 --> 00:00:35,480
+Y el valor del pipeline, que suma todas las oportunidades abiertas;
+
+11
+00:00:35,576 --> 00:00:39,484
+debajo, el ponderado, que las multiplica por su probabilidad.
+
+12
+00:00:40,152 --> 00:00:44,383
+Abajo, las oportunidades por etapa te dicen dónde se acumula el trabajo.
+
+13
+00:00:45,051 --> 00:00:48,153
+Y el embudo de conversión cuenta cuántos hay en cada paso:
+
+14
+00:00:48,262 --> 00:00:52,009
+prospectos, oportunidades, cotizaciones y facturas,
+
+15
+00:00:52,045 --> 00:00:54,911
+con el porcentaje que avanzó desde el paso anterior.
+
+16
+00:00:55,567 --> 00:00:59,574
+Si un porcentaje se queda bajo, ahí se están perdiendo las ventas.
+
+17
+00:01:00,948 --> 00:01:02,833
+Los reportes miden resultados;
+
+18
+00:01:02,944 --> 00:01:06,987
+ahora abro el Embudo Comercial, que mide la actividad que los produce.
+
+19
+00:01:07,656 --> 00:01:09,617
+Cada fila es un paso de la venta:
+
+20
+00:01:09,739 --> 00:01:15,109
+llamadas realizadas, conversaciones, contactos con quien decide, diagnósticos,
+
+21
+00:01:15,120 --> 00:01:17,998
+demostraciones, cotizaciones y ventas.
+
+22
+00:01:18,668 --> 00:01:23,295
+A la derecha ves cuántas llevas contra la meta, y la barra se llena según el avance.
+
+23
+00:01:23,962 --> 00:01:26,704
+Hoy el equipo lleva ocho llamadas de sesenta.
+
+24
+00:01:27,372 --> 00:01:28,998
+Arriba eliges el período:
+
+25
+00:01:29,009 --> 00:01:31,305
+Hoy, Esta semana o Este mes.
+
+26
+00:01:31,974 --> 00:01:36,019
+Elijo Esta semana, y la meta se ajusta a los días laborables.
+
+27
+00:01:36,686 --> 00:01:38,956
+Esta empresa todavía no tiene meta propia,
+
+28
+00:01:39,103 --> 00:01:41,710
+así que compara contra las metas de referencia.
+
+29
+00:01:42,378 --> 00:01:45,480
+Con Colaborador ves el avance de una sola persona.
+
+30
+00:01:46,147 --> 00:01:50,664
+Y con el botón Metas defines las tuyas, que vemos en el video de configuración.

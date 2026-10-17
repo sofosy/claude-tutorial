@@ -1,0 +1,416 @@
+{
+  "titulo": "Cómo crear tu cuenta en Germiva",
+  "_comentario": "Video del REGISTRO (2026-10-05), front y API de master del 05/10 (registro en 3 pasos: plan → representante → empresa, y verificación del correo). Se graba SIN sesión. El setup del guion corre seeds/registro/restaurar.mjs: libera el correo, el RNC y el teléfono de la demo (renombra y da de baja lógica al usuario y la empresa de la toma anterior), asegura el contribuyente FICTICIO 130555099 «FERRETERIA EL FARO SRL» en el padrón local (el padrón local trae personas reales: no puede salir una real) y publica los planes de empresa. El código de verificación se lee de la base (users.verificationCode) al empezar el paso 05: en local no llega correo. Tiempos medidos en la exploración: Empezar gratis → registro 0,5 s; búsqueda del RNC inmediata; alta 1,9 s; verificación 0,9 s hasta el diálogo «¡Correo verificado!»; el inicio abre con el modal «Configuración incompleta» (sólo la primera vez por usuario). La voz no dice precios ni la fecha de hoy: los precios dependen del catálogo y la fecha cambia en cada toma.",
+  "base_url": "http://localhost:4200",
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/registro/restaurar.mjs"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Ana",
+      "Martínez",
+      "Martinez",
+      "ana.martinez",
+      "ferreteriaelfaro",
+      "Ferretería El Faro",
+      "FERRETERIA EL FARO",
+      "El Faro",
+      "809-555-0142",
+      "8095550142",
+      "Faro2026"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "aprenderas": [
+    "Abrir el registro desde la página de Germiva con «Empezar gratis»",
+    "Elegir el tipo de uso y el plan con el que empiezas tus 7 días de prueba, sin tarjeta",
+    "Llenar los datos del representante legal, que serán tu usuario para entrar",
+    "Registrar la empresa con su RNC: el nombre legal se trae solo desde la DGII",
+    "Activar la cuenta con el código que llega a tu correo y entrar por primera vez"
+  ],
+  "errores_comunes": [
+    "Poner un correo al que no tienes acceso: el código de activación llega ahí",
+    "Escribir el nombre legal a mano: con el RNC o la cédula correctos, Germiva lo toma de la DGII",
+    "Dejar sin marcar «Acepto los términos y condiciones»: la cuenta no se crea",
+    "Cerrar la ventana mientras dice «Creando la cuenta…»",
+    "Creer que ya puedes facturar: antes hay que completar la provincia, el municipio y el certificado digital"
+  ],
+  "pasos": [
+    {
+      "id": "01-entrar",
+      "capitulo": "Abrir el registro",
+      "rotulo": "Empezar gratis",
+      "ruta": "germiva.com › Empezar gratis",
+      "texto_pantalla": "Página principal de Germiva · botón «Empezar gratis»",
+      "navegar": "/",
+      "narracion": "Vamos a crear una cuenta de Germiva desde cero. Esta es la página principal, la que ve cualquiera antes de tener usuario. Para registrarte no tienes que llamar a nadie: arriba a la derecha está el botón Empezar gratis. Lo pulso. Se abre el registro, con dos partes. A la izquierda, una guía con los tres pasos: el plan, el representante legal y la empresa. A la derecha, la tarjeta Crear cuenta, donde se llena cada paso; arriba de ella siempre dice en cuál vas.",
+      "acciones": [
+        {
+          "resaltar": "header nav, .landing-nav, nav:has(a:has-text('Precios'))",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "la que ve cualquiera"
+        },
+        {
+          "resaltar": "button.btn-primary:has-text('Empezar gratis')",
+          "durante_ms": 2500,
+          "al_decir": "arriba a la derecha"
+        },
+        {
+          "click": "button.btn-primary:has-text('Empezar gratis')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": ".auth-aside",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "una guía"
+        },
+        {
+          "resaltar": ".auth-card-header",
+          "durante_ms": 4500,
+          "al_decir": "siempre dice"
+        }
+      ]
+    },
+    {
+      "id": "02-plan",
+      "capitulo": "Paso 1 · El plan",
+      "rotulo": "Elegir el plan",
+      "ruta": "Crear cuenta › Paso 1 · Plan",
+      "texto_pantalla": "Paso 1 de 3 · Plan: tipo de uso, forma de pago y plan",
+      "narracion": "Paso uno, el plan. El recuadro verde de arriba te dice lo más importante: tienes siete días gratis, sin tarjeta de crédito, y al terminar decides si lo activas. Debajo, Germiva pregunta qué necesitas hacer. Solo facturar es para quien emite facturas electrónicas y lleva clientes e inventario. Administrar toda la empresa suma compras, contabilidad y nómina; me quedo con esa. Más abajo eliges si pagarás mes a mes o una vez al año, con descuento. Y aquí están los planes, cada uno con su precio a la derecha. Marco Profesional, el recomendado. Si tienes un código promocional, va en este campo; es opcional. Con el plan elegido, pulso Continuar.",
+      "acciones": [
+        {
+          "resaltar": ".trial-banner",
+          "durante_ms": 6000,
+          "al_decir": "recuadro verde"
+        },
+        {
+          "resaltar": ".need-option[data-line='INVOICING']",
+          "durante_ms": 4000,
+          "al_decir": "Solo facturar"
+        },
+        {
+          "click": ".need-option[data-line='ERP']",
+          "al_decir": "me quedo con esa"
+        },
+        {
+          "resaltar": ".cycle-toggle",
+          "durante_ms": 4000,
+          "al_decir": "mes a mes"
+        },
+        {
+          "resaltar": ".plan-option[data-plan-id='14'] .plan-price",
+          "durante_ms": 3500,
+          "al_decir": "su precio"
+        },
+        {
+          "click": ".plan-option[data-plan-id='14']",
+          "al_decir": "Marco Profesional"
+        },
+        {
+          "resaltar": ".offer-code-field",
+          "durante_ms": 4500,
+          "al_decir": "código promocional"
+        },
+        {
+          "click": ".mat-mdc-tab-body-active .step-actions button.auth-primary-btn",
+          "al_decir": "pulso Continuar"
+        }
+      ]
+    },
+    {
+      "id": "03-representante",
+      "capitulo": "Paso 2 · El representante legal",
+      "rotulo": "Representante legal",
+      "ruta": "Crear cuenta › Paso 2 · Representante",
+      "texto_pantalla": "Paso 2 de 3 · Representante legal: nombre, teléfono, correo y contraseña",
+      "narracion": "Paso dos, el representante legal: la persona que responde por la empresa. Fíjate en el resumen de arriba: recuerda el plan que elegiste, y si cambias de idea, el botón Cambiar te devuelve al plan. Lo que escribas aquí será también tu usuario para entrar al sistema. Escribo el nombre: Ana. A su lado, en la misma fila, va el apellido. En la fila de abajo, el teléfono; lo puedes poner con o sin guiones. A la derecha va el correo electrónico, y aquí hay que tener cuidado: tiene que ser uno al que tengas acceso, porque ahí llega el código para activar la cuenta. Por último, la contraseña, la que usarás para entrar. Mientras la escribes, debajo te va diciendo lo que le falta: seis caracteres como mínimo, con mayúscula, minúscula, número y símbolo; cuando cumple todo, dice Contraseña segura. Con el ojo de la derecha puedes verla y comprobar que la escribiste bien. Pulso Continuar.",
+      "acciones": [
+        {
+          "resaltar": "[data-testid='plan-summary']",
+          "durante_ms": 5000,
+          "al_decir": "el resumen"
+        },
+        {
+          "escribir": {
+            "sel": ".mat-mdc-tab-body-active input[formcontrolname='name']",
+            "texto": "Ana"
+          },
+          "al_decir": "Escribo el nombre"
+        },
+        {
+          "escribir": {
+            "sel": ".mat-mdc-tab-body-active input[formcontrolname='lastName']",
+            "texto": "Martínez"
+          },
+          "al_decir": "va el apellido"
+        },
+        {
+          "escribir": {
+            "sel": ".mat-mdc-tab-body-active input[formcontrolname='phone']",
+            "texto": "8095550142"
+          },
+          "al_decir": "el teléfono"
+        },
+        {
+          "escribir": {
+            "sel": ".mat-mdc-tab-body-active input[formcontrolname='email']",
+            "texto": "ana.martinez@ferreteriaelfaro.do"
+          },
+          "al_decir": "el correo electrónico"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active mat-form-field:has(input[formcontrolname='email'])",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "tengas acceso"
+        },
+        {
+          "escribir": {
+            "sel": ".mat-mdc-tab-body-active input[formcontrolname='password']",
+            "texto": "Faro2026!"
+          },
+          "al_decir": "la contraseña"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active app-password-requirements",
+          "durante_ms": 6000,
+          "al_decir": "lo que le falta"
+        },
+        {
+          "click": ".mat-mdc-tab-body-active button.pwd-toggle",
+          "al_decir": "el ojo"
+        },
+        {
+          "click": ".mat-mdc-tab-body-active .step-actions button.auth-primary-btn",
+          "al_decir": "Pulso Continuar"
+        }
+      ]
+    },
+    {
+      "id": "04-empresa",
+      "capitulo": "Paso 3 · La empresa",
+      "rotulo": "Datos de la empresa",
+      "ruta": "Crear cuenta › Paso 3 · Empresa",
+      "texto_pantalla": "Paso 3 de 3 · Datos de la empresa: RNC, nombre legal y nombre comercial",
+      "narracion": "Paso tres, la empresa. Empiezo por el RNC, el Registro Nacional de Contribuyentes que la DGII, la oficina de impuestos, le asigna a cada empresa; si facturas como persona física, aquí va tu cédula. Al salir del campo, Germiva lo busca en el padrón de la DGII. Aparece la marca de verificado, y el nombre legal se llena solo, con un candado: viene de la DGII y no se puede cambiar, porque es el que saldrá en tus comprobantes fiscales. El nombre comercial es opcional: es como te conocen tus clientes. Escribo Ferretería El Faro. Lo último del formulario es la casilla de abajo: marco que acepto los términos y condiciones; sin esto, la cuenta no se crea. Antes del botón hay dos notas que vale la pena leer: hoy no pagas nada, con la fecha en que termina la prueba; y que al correo que pusiste te llegará un código. Todo listo, así que pulso Crear cuenta gratis. Tarda unos segundos: no cierres la ventana.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": ".mat-mdc-tab-body-active input[formcontrolname='rnc']",
+            "texto": "130555099"
+          },
+          "al_decir": "Empiezo por el RNC"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active .tab-intro",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "persona física"
+        },
+        {
+          "presionar": {
+            "tecla": "Tab"
+          },
+          "al_decir": "Al salir del campo"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active mat-form-field:has(input[formcontrolname='rnc'])",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "en el padrón"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active mat-hint.rnc-verified",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "la marca de verificado"
+        },
+        {
+          "resaltar": ".mat-mdc-tab-body-active mat-form-field:has(input[formcontrolname='legalName'])",
+          "durante_ms": 5500,
+          "al_decir": "con un candado"
+        },
+        {
+          "escribir": {
+            "sel": ".mat-mdc-tab-body-active input[formcontrolname='tradeName']",
+            "texto": "Ferretería El Faro"
+          },
+          "al_decir": "Escribo Ferretería"
+        },
+        {
+          "click": ".mat-mdc-tab-body-active mat-checkbox[formcontrolname='termsAccepted'] .mdc-checkbox",
+          "al_decir": "marco que acepto"
+        },
+        {
+          "resaltar": "[data-testid='charge-note']",
+          "durante_ms": 4500,
+          "al_decir": "hoy no pagas nada"
+        },
+        {
+          "resaltar": "p.step-next:has-text('Te enviaremos')",
+          "durante_ms": 3500,
+          "al_decir": "te llegará un código"
+        },
+        {
+          "click": ".mat-mdc-tab-body-active button[type='submit'].auth-primary-btn",
+          "al_decir": "pulso Crear cuenta gratis"
+        }
+      ]
+    },
+    {
+      "id": "05-verificar",
+      "capitulo": "Activar la cuenta",
+      "rotulo": "Verificar el correo",
+      "ruta": "Crear cuenta › Verifica tu correo",
+      "texto_pantalla": "Verifica tu correo · código de 6 dígitos",
+      "setup": {
+        "tipo": "sql",
+        "query": "SELECT verificationCode FROM users WHERE email='ana.martinez@ferreteriaelfaro.do' AND deleted_at IS NULL ORDER BY id DESC LIMIT 1",
+        "guardar_en": "codigo"
+      },
+      "narracion": "La cuenta ya existe, pero falta activarla. Esta es la pantalla Verifica tu correo: Germiva acaba de enviar un código de seis dígitos al correo que escribiste, y así comprueba que ese correo es tuyo. Búscalo en tu bandeja de entrada, o en correo no deseado. Si no llega, el enlace Reenviar código manda otro; y si te equivocaste al escribir el correo, en Correo incorrecto lo corriges sin empezar de nuevo. Escribo el código en este campo, tal como llegó, sin espacios, y pulso Verificar correo. Sale un aviso: Correo verificado, tu cuenta ya está activa. Pulso Ir al inicio.",
+      "acciones": [
+        {
+          "resaltar": ".auth-card-header",
+          "durante_ms": 1600,
+          "cursor": false,
+          "al_decir": "falta activarla"
+        },
+        {
+          "resaltar": "h1#verify-title",
+          "durante_ms": 2500,
+          "al_decir": "Verifica tu correo"
+        },
+        {
+          "resaltar": ".auth-card-header p strong",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "seis dígitos"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='code'])",
+          "durante_ms": 4400,
+          "cursor": false,
+          "al_decir": "bandeja de entrada"
+        },
+        {
+          "resaltar": "button.auth-secondary-link:has-text('Reenviar código')",
+          "durante_ms": 3500,
+          "al_decir": "Reenviar código"
+        },
+        {
+          "resaltar": "button.auth-secondary-link:has-text('Correo incorrecto')",
+          "durante_ms": 3500,
+          "al_decir": "en Correo incorrecto"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='code']",
+            "texto": "{{codigo}}"
+          },
+          "al_decir": "Escribo el código"
+        },
+        {
+          "click": "button.auth-primary-btn:has-text('Verificar correo')",
+          "al_decir": "pulso Verificar correo"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Ir al inicio')",
+          "al_decir": "Pulso Ir al inicio"
+        }
+      ]
+    },
+    {
+      "id": "06-inicio",
+      "capitulo": "Tu primer inicio",
+      "rotulo": "Dentro de Germiva",
+      "ruta": "Inicio",
+      "texto_pantalla": "Inicio · aviso «Configuración incompleta»",
+      "narracion": "Ya estás dentro de Germiva, en el inicio de tu empresa. Lo primero que aparece es el aviso Configuración incompleta: antes de emitir facturas electrónicas faltan algunos datos. La provincia y el municipio de la empresa, que la DGII pide en cada comprobante; y los certificados digitales, el archivo con el que se firman tus facturas para que la DGII sepa que las emitiste tú. Puedes completarlos con Configurar ahora, o dejarlo para después con Más tarde: mientras falten, no podrás emitir comprobantes válidos, pero sí recorrer todo el sistema. Pulso Más tarde. Arriba está el nombre de tu empresa con su RNC, y a la izquierda, el menú con los módulos de tu plan. Tu prueba de siete días ya empezó.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container:has-text('Configuración incompleta')",
+          "durante_ms": 3800,
+          "cursor": false,
+          "al_decir": "el aviso"
+        },
+        {
+          "resaltar": "mat-dialog-container li.requirement:has-text('Provincia')",
+          "durante_ms": 900,
+          "al_decir": "La provincia"
+        },
+        {
+          "resaltar": "mat-dialog-container li.requirement:has-text('Municipio')",
+          "durante_ms": 3800,
+          "al_decir": "el municipio"
+        },
+        {
+          "resaltar": "mat-dialog-container li.requirement:has-text('Certificados')",
+          "durante_ms": 5500,
+          "al_decir": "los certificados digitales"
+        },
+        {
+          "resaltar": "mat-dialog-container button.btn-configure",
+          "durante_ms": 3000,
+          "al_decir": "con Configurar ahora"
+        },
+        {
+          "click": "mat-dialog-container button.btn-later",
+          "al_decir": "Pulso Más tarde"
+        },
+        {
+          "resaltar": "text=RNC 130555099 >> visible=true",
+          "durante_ms": 3500,
+          "al_decir": "el nombre de tu empresa"
+        },
+        {
+          "resaltar": "nav.module-rail",
+          "durante_ms": 2600,
+          "cursor": false,
+          "al_decir": "el menú"
+        },
+        {
+          "resaltar": "h1, .home-greeting, .page-title",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Tu prueba de siete días"
+        }
+      ]
+    }
+  ]
+}

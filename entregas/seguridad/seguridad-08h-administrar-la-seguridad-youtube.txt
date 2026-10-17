@@ -1,0 +1,40 @@
+TÍTULO
+============================================================
+Con y sin permiso · Quién puede administrar la seguridad
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Con permiso: Rosa administra personas
+00:45  Con permiso: Rosa administra equipos
+01:18  Con permiso: Rosa administra credenciales
+01:54  Rosa le da a la auditora solo «Ver» en Integraciones
+02:41  Sin permiso: Marta en la ficha de una persona
+03:42  Sin permiso: Marta en los equipos
+04:09  Sin permiso: Marta en las credenciales
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué botones de la consola de Seguridad dependen de un permiso propio: editar y eliminar personas, crear y cambiar equipos, gestionar sus miembros, y crear, editar y revocar credenciales
+• Cómo ve la misma consola una auditora de solo lectura: los mismos lugares, sin ningún botón para cambiar
+• Dar a un rol solo el permiso de ver una pestaña, sin darle el de cambiarla
+
+⚠️ ERRORES COMUNES
+• Dar el rol de administrador a quien solo tiene que revisar: para eso está un rol de solo lectura
+• Pensar que ver una pestaña da permiso para cambiar lo que hay en ella: ver y cambiar son permisos distintos
+• Repartir los permisos de administrar la seguridad entre muchas personas: cuantas menos, mejor
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:47
+
+TRANSCRIPCIÓN
+============================================================
+Este video compara quién puede administrar la seguridad y quién solo puede mirarla, sobre los mismos botones. Primero Rosa, la administradora, en la pestaña Personas de Seguridad: cada fila es alguien con acceso a la empresa. Abro la ficha de Ana Mejía, y a la derecha sale su panel. Arriba está el botón Editar, y a su lado Cambiar contraseña. En el bloque Roles, el enlace Asignar rol. Y junto a los botones de arriba, los tres puntos de Más acciones: trae Desactivar, Ver su actividad y, en rojo, Eliminar. No toco nada: cierro con Escape. Cada botón depende de un permiso: editar personas, o eliminarlas.
+Ahora los equipos, que agrupan personas para el alcance Equipo. En el riel de la izquierda abro Zona Este. Junto al título Equipos está el botón de sumar, para crear uno. Arriba de la lista, Editar equipo y, a su derecha, la papelera. Y para mover personas, marco la casilla de Ana: sale una barra con Agregar a equipo y Quitar del equipo. Son tres permisos más: crear equipos, cambiarlos o eliminarlos, y gestionar sus miembros. Pulso Limpiar, y todo queda como estaba.
+Tercer lugar: las credenciales de API, o sea las llaves con las que otro programa se conecta a Germiva. Abro la pestaña Integraciones. Arriba a la derecha está Nueva credencial, para crear una. Ahora abro la credencial Tienda en línea anterior, y en su panel están Editar permisos, para decidir qué consulta ese programa; Rotar secreto, para cambiarle la clave; y en los tres puntos, que ahora lo despliego, Desactivar y Revocar y eliminar. Cierro con la tecla Escape. Crear, editar y eliminar credenciales son permisos separados.
+Ahora el otro lado: Marta Guzmán, la auditora. Abro Roles y permisos y elijo su rol, Auditor, que es de solo lectura. En la columna de módulos abro Seguridad; ahí, el recurso Usuarios de Integración reúne los permisos de las credenciales de API, y el Auditor no tiene ninguno: cero de cuatro. Por eso, cuando Marta entra, la pestaña Integraciones ni siquiera le aparece. Para comparar sobre la misma credencial, le doy solo el de ver, nada más. Pulso Ver, y queda concedido. La barra de guardado dice que el cambio afecta a una persona, Marta. Pulso Guardar cambios, y el aviso confirma que se guardó. Crear, editar y eliminar se quedan sin conceder.
+Salgo y entro como Marta. Abro el menú de mi usuario, pulso Cerrar sesión, y en la pantalla de acceso escribo su usuario, marta punto guzman, todo en minúsculas; ahora su clave, que en pantalla se ve con puntos; y pulso Iniciar sesión. El botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que antes le dimos a su rol solo el permiso de ver credenciales. Marta puede ver personas, equipos, roles y la auditoría, pero no tiene ningún permiso para cambiarlos. Ya dentro, en el menú abro Seguridad. Arriba a la derecha no está el botón Nuevo, porque no puede crear. Ahora voy a Personas y abro la ficha de Ana, la misma de antes. No hay Editar, ni Cambiar contraseña. En Roles ve el rol de Ana, pero no aparece Asignar rol. Los tres puntos sí están: los abro, y solo trae Ver su actividad, porque Marta sí lee la auditoría. Cierro con Escape.
+En los equipos, abro Zona Este: Marta ve el equipo y sus miembros, porque tiene el permiso de ver equipos; a quien no lo tiene, los equipos ni le aparecen. Pero junto al título Equipos no está el botón de sumar, y arriba de la lista no hay Editar equipo ni la papelera. Ahora, igual que antes, marco la casilla de Ana: la barra sale, pero solo con Limpiar, porque no puede gestionar miembros. Lo pulso.
+Por último, las credenciales. Como Marta entró después del cambio, ya tiene la pestaña Integraciones. La abro: ve la lista, pero arriba solo queda Documentación de la API; no está Nueva credencial. Abro la misma credencial: el botón ya no dice Editar permisos, sino Ver permisos, y no están ni Rotar secreto ni los tres puntos, así que no puede desactivarla ni revocarla. Aplica el mínimo privilegio. En resumen: los mismos lugares, pero cada botón que cambia algo pide su propio permiso.

@@ -1,0 +1,299 @@
+1
+00:00:03,097 --> 00:00:06,003
+Esta es la lista de Productos, dentro de Inventario:
+
+2
+00:00:06,092 --> 00:00:10,460
+el catálogo de la distribuidora, donde cada fila es un artículo que se vende.
+
+3
+00:00:11,092 --> 00:00:13,609
+Entra Pedro, el encargado de almacén.
+
+4
+00:00:14,256 --> 00:00:16,919
+En este video comparamos dos permisos de acción:
+
+5
+00:00:17,021 --> 00:00:18,466
+exportar y eliminar.
+
+6
+00:00:19,099 --> 00:00:20,784
+Contraigo el panel del menú.
+
+7
+00:00:21,429 --> 00:00:26,570
+Arriba a la derecha, Pedro tiene el botón Importar / Exportar, porque su rol,
+
+8
+00:00:26,646 --> 00:00:30,167
+Almacén, incluye el permiso Productos, Exportar.
+
+9
+00:00:30,801 --> 00:00:31,678
+Lo pulso.
+
+10
+00:00:32,323 --> 00:00:34,612
+Se abre una ventana con dos pestañas;
+
+11
+00:00:34,679 --> 00:00:39,298
+paso a la pestaña Exportar, y ahí están Exportar Excel y Exportar CSV,
+
+12
+00:00:39,292 --> 00:00:41,496
+que es un archivo de texto sencillo.
+
+13
+00:00:42,130 --> 00:00:46,304
+Pulso Exportar Excel, y el archivo con todo el catálogo se descarga en su
+
+14
+00:00:46,115 --> 00:00:47,041
+computadora.
+
+15
+00:00:47,686 --> 00:00:49,009
+Cierro la ventana.
+
+16
+00:00:50,363 --> 00:00:53,390
+Ahora la misma lista con alguien que no puede exportar.
+
+17
+00:00:54,021 --> 00:00:55,043
+Cambio de persona:
+
+18
+00:00:55,156 --> 00:00:59,330
+abro el menú de mi usuario, arriba a la derecha, pulso Cerrar sesión,
+
+19
+00:00:59,445 --> 00:01:01,455
+y entro como Ana, la vendedora.
+
+20
+00:01:02,089 --> 00:01:05,670
+Escribo su usuario, ana punto mejia, en minúsculas;
+
+21
+00:01:05,748 --> 00:01:09,500
+luego su clave, que en pantalla se ve con puntos para que nadie la lea;
+
+22
+00:01:09,626 --> 00:01:11,068
+y pulso Iniciar sesión;
+
+23
+00:01:11,135 --> 00:01:14,524
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+24
+00:01:15,168 --> 00:01:19,016
+El rol de Ana le deja ver los productos, para poder cotizarlos,
+
+25
+00:01:19,093 --> 00:01:21,105
+pero no exportarlos ni cambiarlos:
+
+26
+00:01:21,159 --> 00:01:23,775
+vende, pero no administra el catálogo.
+
+27
+00:01:24,420 --> 00:01:28,219
+Ya dentro, en su menú, Inventario lleva directo a Productos;
+
+28
+00:01:28,322 --> 00:01:29,076
+lo pulso.
+
+29
+00:01:29,710 --> 00:01:32,616
+Es la misma lista, con los mismos artículos.
+
+30
+00:01:33,260 --> 00:01:36,819
+Pero arriba no aparece el botón Importar / Exportar.
+
+31
+00:01:37,463 --> 00:01:41,045
+Y en la fila del machete solo tiene el lápiz, que es Abrir.
+
+32
+00:01:41,679 --> 00:01:44,524
+Sin el permiso de exportar, el botón no está.
+
+33
+00:01:45,887 --> 00:01:47,585
+Ahora el segundo permiso:
+
+34
+00:01:47,626 --> 00:01:48,489
+eliminar.
+
+35
+00:01:49,134 --> 00:01:54,105
+Salgo otra vez desde el menú de mi usuario, pulso Cerrar sesión, y entro como Rosa,
+
+36
+00:01:54,134 --> 00:01:55,301
+la administradora.
+
+37
+00:01:55,933 --> 00:01:59,575
+Escribo su usuario, rosa punto almanzar, en minúsculas;
+
+38
+00:01:59,629 --> 00:02:02,921
+ahora su clave, que se ve con puntos para que nadie la lea;
+
+39
+00:02:03,060 --> 00:02:04,540
+y pulso Iniciar sesión;
+
+40
+00:02:04,605 --> 00:02:08,018
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+41
+00:02:08,663 --> 00:02:10,723
+Rosa es la administradora de la empresa:
+
+42
+00:02:10,873 --> 00:02:13,694
+su rol le permite todo, eliminar incluido,
+
+43
+00:02:13,735 --> 00:02:16,616
+y por eso conviene dárselo a muy pocas personas.
+
+44
+00:02:17,262 --> 00:02:21,545
+Ya dentro, su menú de la izquierda trae todos los módulos contratados.
+
+45
+00:02:22,900 --> 00:02:25,877
+Vuelvo a la lista de Productos, ahora como Rosa;
+
+46
+00:02:25,931 --> 00:02:28,159
+el panel del menú sigue contraído.
+
+47
+00:02:28,792 --> 00:02:32,385
+En la fila del machete, a la derecha, están sus acciones:
+
+48
+00:02:32,475 --> 00:02:37,168
+abrir, duplicar, desactivar y, al final, la papelera de Eliminar.
+
+49
+00:02:37,813 --> 00:02:41,020
+Aparece porque su rol tiene Productos, Eliminar.
+
+50
+00:02:41,667 --> 00:02:42,566
+No la pulso:
+
+51
+00:02:42,632 --> 00:02:46,564
+borrar un producto no tiene vuelta atrás, y este lo seguimos usando.
+
+52
+00:02:47,919 --> 00:02:51,295
+Y ahora, el mismo punto con alguien que no puede eliminar.
+
+53
+00:02:51,938 --> 00:02:56,947
+Salgo desde el menú de mi usuario, pulso Cerrar sesión, y entro otra vez como Pedro,
+
+54
+00:02:56,987 --> 00:02:57,924
+el de almacén.
+
+55
+00:02:58,569 --> 00:03:02,622
+Escribo su usuario, pedro punto nunez, en minúsculas y sin eñe;
+
+56
+00:03:02,735 --> 00:03:05,556
+luego su clave, con puntos para que nadie la lea;
+
+57
+00:03:05,682 --> 00:03:07,139
+y pulso Iniciar sesión;
+
+58
+00:03:07,204 --> 00:03:10,592
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+59
+00:03:11,239 --> 00:03:14,192
+Pedro puede crear, editar y exportar productos;
+
+60
+00:03:14,281 --> 00:03:17,211
+pero su rol, Almacén, no incluye eliminar,
+
+61
+00:03:17,289 --> 00:03:19,941
+aunque trabaje con los productos todos los días.
+
+62
+00:03:20,586 --> 00:03:24,010
+Ya dentro, vuelve a su Inicio, con su menú de siempre.
+
+63
+00:03:25,362 --> 00:03:27,084
+Vuelvo a Productos con Pedro.
+
+64
+00:03:27,716 --> 00:03:31,962
+En la misma fila del machete, Pedro tiene abrir, duplicar y desactivar,
+
+65
+00:03:32,076 --> 00:03:34,788
+y ahí se acaban sus acciones, sin la papelera:
+
+66
+00:03:34,890 --> 00:03:36,478
+Eliminar no aparece.
+
+67
+00:03:37,124 --> 00:03:41,140
+Pedro mantiene el catálogo al día, y aun así no puede borrar nada.
+
+68
+00:03:41,786 --> 00:03:42,614
+En resumen:
+
+69
+00:03:42,752 --> 00:03:44,739
+cada acción es un permiso aparte.
+
+70
+00:03:45,373 --> 00:03:48,387
+Exportar deja sacar el catálogo completo en un archivo,
+
+71
+00:03:48,367 --> 00:03:50,040
+y eliminar borra para siempre;
+
+72
+00:03:50,059 --> 00:03:52,686
+por eso conviene darlos solo a quien los necesita.
+
+73
+00:03:53,320 --> 00:03:56,128
+Y si alguien no debe borrar, no le des Eliminar:
+
+74
+00:03:56,218 --> 00:03:58,882
+igual puede desactivar un producto que ya no se vende,
+
+75
+00:03:59,020 --> 00:04:00,899
+que lo deja inactivo sin borrarlo.

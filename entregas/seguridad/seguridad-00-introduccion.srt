@@ -1,0 +1,271 @@
+1
+00:00:03,097 --> 00:00:05,943
+Bienvenida a la serie de Seguridad de Germiva.
+
+2
+00:00:06,575 --> 00:00:08,827
+Es para ti, que administras la empresa:
+
+3
+00:00:08,942 --> 00:00:10,929
+aquí decides quién entra al sistema,
+
+4
+00:00:10,995 --> 00:00:13,959
+qué puede hacer cada persona y cómo revisar lo que cambió.
+
+5
+00:00:14,593 --> 00:00:18,827
+Toda la serie usa una empresa de demostración, Distribuidora Las Palmas,
+
+6
+00:00:18,893 --> 00:00:20,844
+con personas y datos inventados:
+
+7
+00:00:20,899 --> 00:00:25,736
+una vendedora, un encargado de almacén, una auditora y otros que irás conociendo.
+
+8
+00:00:26,382 --> 00:00:30,628
+El módulo se abre desde la tarjeta Seguridad de tus módulos, aquí abajo,
+
+9
+00:00:30,704 --> 00:00:33,429
+o desde el ícono del candado en la franja de la izquierda,
+
+10
+00:00:33,543 --> 00:00:36,158
+que solo ve quien tiene algún permiso de Seguridad.
+
+11
+00:00:36,804 --> 00:00:40,289
+Antes de entrar, veamos los seis conceptos que lo ordenan todo.
+
+12
+00:00:41,632 --> 00:00:43,101
+Primero, la persona:
+
+13
+00:00:43,239 --> 00:00:47,533
+quien entra al sistema con su propio usuario, como Ana, nuestra vendedora.
+
+14
+00:00:48,164 --> 00:00:50,538
+Cada persona tiene uno o más roles.
+
+15
+00:00:51,184 --> 00:00:54,971
+Un rol es un conjunto de permisos con nombre, como Vendedor o Contador:
+
+16
+00:00:55,097 --> 00:00:58,062
+se lo asignas a las personas y todas reciben lo mismo.
+
+17
+00:00:58,708 --> 00:01:00,610
+El permiso es la pieza más pequeña:
+
+18
+00:01:00,713 --> 00:01:04,657
+une una cosa del sistema, que llamamos recurso, con una acción.
+
+19
+00:01:05,290 --> 00:01:07,277
+Facturas más Crear es un permiso;
+
+20
+00:01:07,405 --> 00:01:09,006
+Facturas más Ver es otro.
+
+21
+00:01:09,650 --> 00:01:12,834
+El alcance dice sobre qué registros vale un permiso de ver:
+
+22
+00:01:12,995 --> 00:01:16,492
+solo los que la persona creó, los de su equipo, o todos.
+
+23
+00:01:17,138 --> 00:01:20,056
+El equipo agrupa personas, como Zona Este.
+
+24
+00:01:20,689 --> 00:01:21,264
+Ojo:
+
+25
+00:01:21,293 --> 00:01:22,954
+un equipo no da permisos;
+
+26
+00:01:23,092 --> 00:01:25,383
+solo sirve para ese alcance de equipo.
+
+27
+00:01:26,015 --> 00:01:29,391
+Y la credencial de API, o sea la llave de otro programa,
+
+28
+00:01:29,542 --> 00:01:32,568
+deja que un sistema externo, como una tienda en línea,
+
+29
+00:01:32,669 --> 00:01:37,326
+consulte o registre datos sin una persona detrás, con sus propios permisos.
+
+30
+00:01:37,971 --> 00:01:39,174
+El consejo de oro:
+
+31
+00:01:39,300 --> 00:01:42,628
+da los permisos a los roles, nunca persona por persona.
+
+32
+00:01:43,977 --> 00:01:46,859
+Ahora sí, entro por el candado de la izquierda.
+
+33
+00:01:47,503 --> 00:01:49,322
+Esta es la consola de Seguridad:
+
+34
+00:01:49,375 --> 00:01:51,507
+una sola hoja con todo el módulo.
+
+35
+00:01:52,140 --> 00:01:54,876
+Arriba, el título y la frase que lo resume:
+
+36
+00:01:55,003 --> 00:01:57,292
+quién entra, qué puede hacer y qué cambió.
+
+37
+00:01:57,925 --> 00:01:59,816
+Debajo están las cinco pestañas:
+
+38
+00:01:59,918 --> 00:02:04,514
+Resumen, Personas, Roles y permisos, Integraciones y Auditoría.
+
+39
+00:02:05,159 --> 00:02:07,401
+El número de cada pestaña es un conteo:
+
+40
+00:02:07,503 --> 00:02:08,620
+nueve personas;
+
+41
+00:02:08,698 --> 00:02:11,229
+en Roles y permisos, doce roles;
+
+42
+00:02:11,294 --> 00:02:13,561
+y en Integraciones, una credencial.
+
+43
+00:02:14,205 --> 00:02:16,459
+Cada pestaña exige su propio permiso;
+
+44
+00:02:16,548 --> 00:02:19,526
+si alguien no lo tiene, esa pestaña ni aparece.
+
+45
+00:02:20,171 --> 00:02:24,079
+A la derecha, el buscador encuentra personas por su nombre o su usuario;
+
+46
+00:02:24,145 --> 00:02:27,086
+y si estás en Roles y permisos, busca roles.
+
+47
+00:02:27,733 --> 00:02:31,108
+Y el botón Nuevo abre un menú para crear un usuario, un rol,
+
+48
+00:02:31,234 --> 00:02:33,572
+un equipo o una integración de API.
+
+49
+00:02:34,217 --> 00:02:35,891
+Lo cierro sin elegir nada:
+
+50
+00:02:36,018 --> 00:02:38,114
+cada alta tiene su propio video.
+
+51
+00:02:39,480 --> 00:02:42,953
+Hagamos un recorrido rápido siguiendo a Ana, la vendedora.
+
+52
+00:02:43,585 --> 00:02:46,646
+En Personas está cada persona que entra a esta empresa.
+
+53
+00:02:47,293 --> 00:02:50,789
+La busco por su nombre, y aquí la tengo, arriba de todo:
+
+54
+00:02:50,891 --> 00:02:54,848
+Ana es una fila, con su rol, su último ingreso y su estado.
+
+55
+00:02:55,480 --> 00:02:58,157
+En Roles y permisos abro su rol, Vendedor,
+
+56
+00:02:58,271 --> 00:03:01,272
+que dice qué puede hacer ella y cualquiera que tenga ese rol.
+
+57
+00:03:01,918 --> 00:03:04,980
+En Integraciones viven las credenciales de otros programas,
+
+58
+00:03:05,069 --> 00:03:06,852
+como la vieja tienda en línea.
+
+59
+00:03:07,497 --> 00:03:11,356
+Y en Auditoría queda cada ingreso y cada cambio, con quién y cuándo;
+
+60
+00:03:11,447 --> 00:03:14,122
+arriba está mi propia entrada de hace un momento.
+
+61
+00:03:14,768 --> 00:03:17,058
+Vuelvo al Resumen, que es la portada:
+
+62
+00:03:17,195 --> 00:03:19,074
+cifras y asuntos por atender.
+
+63
+00:03:19,707 --> 00:03:20,524
+En resumen:
+
+64
+00:03:20,638 --> 00:03:22,336
+las personas reciben roles;
+
+65
+00:03:22,449 --> 00:03:24,098
+los roles reúnen permisos;
+
+66
+00:03:24,201 --> 00:03:27,468
+el alcance y los equipos deciden qué registros ve cada quien;
+
+67
+00:03:27,533 --> 00:03:29,401
+y la auditoría lo comprueba todo.
+
+68
+00:03:30,045 --> 00:03:33,073
+En los próximos videos vemos cada pestaña a fondo.

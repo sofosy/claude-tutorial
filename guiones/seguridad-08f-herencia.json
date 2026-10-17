@@ -1,0 +1,298 @@
+{
+  "titulo": "Con y sin permiso · La herencia (y por qué el equipo no cuenta)",
+  "_comentario": "Serie Seguridad, caso HERENCIA (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo). Entra SOLO rosa.almanzar (sesion): todo el contraste se comprueba en el ACCESO EFECTIVO de Carlos (panel de Personas), que es lo que pidió el encargo; así el video cabe en 3:30 sin cuatro cambios de usuario. Qué escribe en BD: concede «Socios · Crear» (PARTNER_CREATE, lo que el editor muestra como Clientes y Proveedores › Socios › Crear) al rol Vendedor (77) y lo EXCLUYE en Vendedor sénior (78) (role_permissions, role_permission_exclusions, audit_logs); lo deshace `restaurar.mjs E0`. Contraste sobre el MISMO punto: la ficha de Carlos, bloque «Permisos efectivos» › «Clientes y Proveedores»: 2/37 con el permiso heredado (03, verificado r08f: «Clientes y Proveedores 2/37», «PERMISOS EFECTIVOS 12 / 1160») · 1/37 con la exclusión (05, A VERIFICAR en el ensayo; E0 = 1/37). Barra de guardado: padre «afectan a 3 personas» (Ana, José, Héctor: solo titulares directos; Carlos no cuenta) · hijo «afectan a 1 persona» (verificado v08f). El editor abre cada rol en su primer módulo con algo concedido (Clientes y Proveedores, para los dos). Diagrama `acceso-efectivo` (ya corregido: el equipo NO suma; nombres Carlos, Vendedor, Vendedor sénior, Zona Este) casa con E0. DESVIACIÓN del plan: no se entra como Carlos a /sales/partners para ver «Nuevo Cliente» (verificado en r08f que aparece con el heredado y desaparece con la exclusión); se deja para no pasar de 4:10. Sin dependencias de la ronda 2 (roles, personas y guardado en lote verificados). AVISOS justificados: sin button.panel-collapse (no existe en /security/*; el primer paso es la lámina). Ensayo 09-27: 0 fallos (5 pasos, 39 acciones). Verificado: Vendedor abre en «Clientes y Proveedores», Socios · Crear queda concedido; toast «Permisos del rol actualizados exitosamente»; en Vendedor sénior el Crear heredado pasa a tachado en rojo («Excluido de la herencia»); ficha de Carlos: Permisos efectivos 12/1160 con Clientes y Proveedores 2/37, y 11/1160 con 1/37 tras la exclusión. Lámina acceso-efectivo: fases 2–4 reveladas. Cambio T3: la cifra «2/37»/«1/37» quedaba en x≈1233, y≈641, DEBAJO del botón de Germi (R11), porque el panel no se desplaza si la fila ya está «visible»; la marca de «Permisos efectivos» pasa a .sec-people__block:has(.sec-people__module) (el bloque entero, que el motor centra y deja la fila en y≈560) y en 05 se añade esa misma marca antes de «volvió a uno». Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D 08f + ronda 8 R8-6): la barra de guardado ahora dice «afecta a N personas» (singular) y cuenta también a quien hereda el rol (CTE recursiva): en 02 la voz ya NO dice «tres personas» ni «Carlos no se cuenta»; dice «a cuántas personas afecta» sin cifra y que cuenta a Ana, José, Héctor y a Carlos por herencia (cifra sin confirmar en pantalla; según R8-6 serían 4); en 04 se mantiene «afecta a una persona: Carlos» (Vendedor sénior solo lo tiene Carlos en E0; verificar en el ensayo). Sin cambio de usuario en cámara (solo Rosa): las insignias de contraste describen el acceso efectivo de Carlos y no cambian. La cabecera cortada de Personas (03, 1:54–2:10) y la fila de Carlos cortada en 05 son de motor: regrabar 03 (y 05) con e1810d6.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Cómo un rol hijo recibe solo lo que tiene su rol padre",
+    "Cómo comprobarlo en el acceso efectivo de la persona",
+    "Cómo quitar un permiso heredado solo en un rol con la exclusión",
+    "Por qué meter a alguien en un equipo no le da permisos"
+  ],
+  "errores_comunes": [
+    "Conceder en el rol padre sin pensar que les llega a todos sus hijos",
+    "Creer que un cambio en el rol padre solo afecta a quien lo tiene directamente: «afecta a N personas» cuenta también a quien lo hereda",
+    "Crear un equipo para dar permisos: los equipos solo sirven para el alcance «Equipo»",
+    "Quitar un permiso en el padre cuando solo había que excluirlo en un hijo"
+  ],
+  "pasos": [
+    {
+      "id": "01-la-herencia",
+      "ruta": "Concepto › Acceso efectivo",
+      "texto_pantalla": "Herencia · rol hijo + lo que hereda del padre = acceso efectivo",
+      "capitulo": "Qué es la herencia",
+      "rotulo": "Qué es la herencia",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Herencia · Vendedor → Vendedor sénior"
+      },
+      "navegar": "/home",
+      "diagrama": "acceso-efectivo",
+      "acciones": [
+        {
+          "diagrama_fase": 2,
+          "al_decir": "hereda del rol Vendedor"
+        },
+        {
+          "diagrama_fase": 3,
+          "al_decir": "Y el equipo"
+        },
+        {
+          "diagrama_fase": 4,
+          "al_decir": "la suma de sus roles"
+        }
+      ],
+      "narracion": "En este video vemos la herencia de permisos. Aquí está el acceso efectivo de Carlos, o sea todo lo que de verdad puede hacer. Su rol es Vendedor sénior, con permisos propios, como aprobar cotizaciones y crear facturas. Ese rol hereda del rol Vendedor, su rol padre: todo lo que tenga el padre, como ver clientes o ver productos, le llega automáticamente. ¿Y el equipo? Ana y José están en Zona Este, pero un equipo no suma permisos: solo sirve para el alcance. Lo que Carlos puede hacer es la suma de sus roles y de lo que esos roles heredan. Vamos a comprobarlo: le damos un permiso al padre y miramos si le llega a Carlos."
+    },
+    {
+      "id": "02-conceder-en-el-padre",
+      "ruta": "Seguridad › Roles y permisos › Vendedor",
+      "texto_pantalla": "Rol padre Vendedor · se concede Socios › Crear",
+      "capitulo": "Conceder en el rol padre",
+      "rotulo": "Conceder en el padre",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa · rol padre"
+      },
+      "navegar": "/security/roles?rol=77",
+      "acciones": [
+        {
+          "resaltar": ".sec-roles__h2",
+          "durante_ms": 3000,
+          "al_decir": "el rol Vendedor"
+        },
+        {
+          "resaltar": ".rpe__module:has-text('Clientes y Proveedores')",
+          "durante_ms": 3000,
+          "al_decir": "módulo Clientes y Proveedores"
+        },
+        {
+          "resaltar": ".rpe__resource-name:text-is('Socios')",
+          "durante_ms": 5500,
+          "al_decir": "el recurso Socios"
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act:text-is('Crear')",
+          "al_decir": "Pulso Crear"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar",
+          "durante_ms": 6000,
+          "al_decir": "la barra de guardado"
+        },
+        {
+          "resaltar": ".sec-roles__head :text('personas tienen este rol')",
+          "durante_ms": 4000,
+          "al_decir": "directamente"
+        },
+        {
+          "click": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "al_decir": "Pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        }
+      ],
+      "narracion": "Estoy en Seguridad, Roles y permisos, con el rol Vendedor abierto: es el padre. El editor se abre en el módulo Clientes y Proveedores. Aquí los clientes están en el recurso Socios, que reúne clientes y proveedores. Vendedor puede ver socios, pero no crearlos. Pulso Crear, y queda concedido, con el fondo marcado como cambio. Abajo, la barra de guardado dice: un cambio sin guardar, y a cuántas personas afecta. Cuenta a las que tienen este rol directamente, Ana, José y Héctor, y también a Carlos, que lo recibe por herencia. Pulso Guardar cambios, y sale el aviso de que los permisos del rol se actualizaron."
+    },
+    {
+      "id": "03-llega-al-hijo",
+      "ruta": "Seguridad › Roles › Vendedor sénior › Personas › Carlos",
+      "texto_pantalla": "Rol hijo · Socios › Crear llega heredado; el acceso efectivo de Carlos sube",
+      "capitulo": "Con permiso: le llega por herencia",
+      "rotulo": "Con permiso heredado",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso (heredado) · Carlos"
+      },
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor sénior')",
+          "al_decir": "abro Vendedor sénior"
+        },
+        {
+          "resaltar": ".sec-roles__chip",
+          "durante_ms": 4000,
+          "al_decir": "el chip"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act:text-is('Crear')",
+          "durante_ms": 6000,
+          "al_decir": "el color de lo heredado"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "al_decir": "pestaña Personas"
+        },
+        {
+          "click": ".sec-people__who:has-text('Carlos Pimentel')",
+          "al_decir": "abro a Carlos"
+        },
+        {
+          "resaltar": ".sec-people__role",
+          "durante_ms": 3500,
+          "al_decir": "Su ficha"
+        },
+        {
+          "resaltar": ".sec-people__block:has(.sec-people__module)",
+          "durante_ms": 3500,
+          "al_decir": "Permisos efectivos"
+        },
+        {
+          "resaltar": ".sec-people__module:has-text('Clientes y Proveedores')",
+          "durante_ms": 6000,
+          "al_decir": "ahora dice dos"
+        }
+      ],
+      "narracion": "Ahora, en la lista de roles, abro Vendedor sénior, el rol de Carlos. Arriba, el chip Hereda de Vendedor dice quién es su padre. En Socios, el permiso Crear ya aparece con el color de lo heredado: nadie lo tocó en este rol, le llegó del padre. Para comprobarlo en la persona, voy a la pestaña Personas y abro a Carlos Pimentel. Su ficha muestra su rol, Vendedor sénior, que hereda de Vendedor. Y en Permisos efectivos, la suma de todo lo que puede hacer, Clientes y Proveedores ahora dice dos: ver y crear. Carlos ya puede dar de alta clientes, gracias a la herencia."
+    },
+    {
+      "id": "04-excluir-en-el-hijo",
+      "ruta": "Seguridad › Roles y permisos › Vendedor sénior",
+      "texto_pantalla": "Rol hijo · se excluye Socios › Crear de la herencia",
+      "capitulo": "Excluir en el rol hijo",
+      "rotulo": "Excluir en el hijo",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa · rol hijo"
+      },
+      "navegar": "/security/roles?rol=78",
+      "al_decir_navegar": "Vuelvo al rol",
+      "acciones": [
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act:text-is('Crear')",
+          "al_decir": "pulso el Crear heredado"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act:has-text('Crear')",
+          "durante_ms": 6000,
+          "al_decir": "queda tachado"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar",
+          "durante_ms": 4000,
+          "al_decir": "La barra dice"
+        },
+        {
+          "click": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "al_decir": "Pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        }
+      ],
+      "narracion": "¿Y si el sénior no debe crear clientes, aunque el vendedor sí? Para eso está la exclusión. Vuelvo al rol Vendedor sénior. En Socios, pulso el Crear heredado: ahora queda tachado, excluido de la herencia. El padre no cambia: Ana y los demás vendedores lo conservan; solo este rol deja de recibirlo. La barra dice que el cambio afecta a una persona: Carlos. Pulso Guardar cambios, y sale el aviso de éxito."
+    },
+    {
+      "id": "05-sin-excluido",
+      "ruta": "Seguridad › Personas › Carlos",
+      "texto_pantalla": "Acceso efectivo de Carlos · Socios › Crear ya no está",
+      "capitulo": "Sin permiso: excluido",
+      "rotulo": "Sin permiso: excluido",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso (excluido) · Carlos"
+      },
+      "navegar": "/security/personas?usuario=7946",
+      "acciones": [
+        {
+          "resaltar": ".sec-people__role",
+          "durante_ms": 2800,
+          "al_decir": "sigue siendo"
+        },
+        {
+          "resaltar": ".sec-people__block:has(.sec-people__module)",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "Permisos efectivos"
+        },
+        {
+          "resaltar": ".sec-people__module:has-text('Clientes y Proveedores')",
+          "durante_ms": 6000,
+          "al_decir": "volvió a uno"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Meter a alguien en un equipo no le da permisos: eso lo hacen sus roles."
+          },
+          "durante_ms": 8000,
+          "al_decir": "En resumen"
+        },
+        {
+          "resaltar": ".sec-people__block-head",
+          "durante_ms": 5000,
+          "al_decir": "de verdad puede hacer"
+        }
+      ],
+      "narracion": "Miro otra vez la ficha de Carlos, en Personas. Su rol sigue siendo Vendedor sénior, que hereda de Vendedor. Pero en Permisos efectivos, Clientes y Proveedores volvió a uno: solo ver. Crear clientes ya no está en su acceso efectivo, porque su rol lo excluye. En resumen: lo que le das al rol padre les llega a todos sus hijos; la exclusión lo quita solo en un hijo; y la ficha de cada persona te dice lo que de verdad puede hacer. Y recuerda: meter a alguien en un equipo no le da permisos; eso solo lo hacen sus roles."
+    }
+  ]
+}

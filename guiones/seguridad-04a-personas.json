@@ -1,0 +1,365 @@
+{
+  "titulo": "Seguridad · Las personas y su ficha",
+  "_comentario": "Serie Seguridad, video 04a (AUTOR B, 2026-09-27). Parte de E0 (restaurar.mjs E0). Graba rosa.almanzar. Qué escribe en BD: nada (solo el evento de sesión de Rosa). Usuarios en cámara: ninguno más. Selectores de _SELECTORES-SEGURIDAD.md §3 y de los volcados v04a-* / v05-*. Decisiones: (1) se entra por /security/resumen y se pulsa la pestaña Personas (primera vez que se ve la pantalla, R «navegar como el usuario»); el riel de Rosa tiene Seguridad en y=716, fuera del cuadro. (2) Los colores de las insignias de estado NO se nombran (no verificados): la voz dice «cada una con su color». (3) «Últimos ingresos» del canon dicen «Cliente de API» y «::1» (D-S13): la voz lo explica como datos cargados por un programa; «::1» se sustituye en cámara por 192.168.1.25 (privacidad.mapa_fijo). (4) «Ver su actividad» vuelve a Personas con la pestaña, no con el botón atrás del navegador (el motor no tiene acción de «atrás»). (5) En la Auditoría filtrada solo se marca la fila «Acceso»: las demás filas de Ana dicen «Prices #…»/«Price history» (D-S7) y la voz no las lee. DEPENDE DE LA RONDA 2: paso 04 (nombres de registro legibles, D-S7: la voz ya no los nombra, re-verificar en el ensayo que la fila «Acceso» sigue arriba). AVISOS justificados: el primer paso no contrae el panel del menú (button.panel-collapse no existe en /security/*). Ensayo 09-27: 0 fallos (5 pasos, 48 acciones). Cambios T2: filtro Rol pulsado por `.sec-people button:has(mat-icon:text-is('filter_list'))` (el botón pasa a decir «Almacén»); marca del menú de roles sobre «Mensajero» (el panel entero salía CORTADO); D-S13 corregido → la voz dice «Chrome en Windows» (ya no «Cliente de API»); en «Ver su actividad» la fila de arriba es «Actualizó · Precio», no un «Acceso» → marca `.sec-audit__row >> nth=0` y voz «lo más reciente». Corrección 09-28 (AUTOR-CORRECCIÓN-1): el informe _REVISION-FINAL-B da el 04a por OK; solo se adapta a la ronda 8 (R8-4): «Ver su actividad» ya no rellena el campo Persona con «ana.mejia», sino que fija el filtro con el nombre «Ana Mejía» y una ×. La marca pasa de input[aria-label='Filtrar por persona'] (ya no existe con persona fijada) a .sec-audit__pinned:has-text('Ana Mejía') (sacado del código security-audit.component.html:17, NO de un volcado) y la voz dice «ya filtrada por Ana Mejía, con su nombre fijado en el filtro». Ensayo: confirmar el chip «Ana Mejía» y que la primera fila sigue siendo «Actualizó · Precio» (la voz dice «actualizó un precio»).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i",
+    "IP": "i-pe"
+  },
+  "aprenderas": [
+    "Qué representa cada fila de la pestaña Personas y qué dicen sus columnas",
+    "Usar las vistas Activas, Sin rol, Nunca entraron e Inactivas para encontrar cuentas que piden atención",
+    "Buscar a una persona y filtrar la lista por rol",
+    "Leer la ficha de una persona: roles, permisos efectivos por módulo y últimos ingresos",
+    "Ir desde la ficha a todo lo que esa persona hizo en la auditoría"
+  ],
+  "errores_comunes": [
+    "Buscar a alguien por su rol en el buscador: el buscador es por nombre, usuario o correo; el rol va en el filtro «Rol»",
+    "Olvidar quitar el filtro de rol y creer que faltan personas",
+    "Dejar cuentas en «Nunca entraron» durante meses: son accesos abiertos que nadie usa",
+    "Leer «Permisos efectivos» como permisos de un solo rol: es la suma de todos sus roles"
+  ],
+  "pasos": [
+    {
+      "id": "01-vistas",
+      "capitulo": "La lista de personas y sus vistas",
+      "rotulo": "Personas: la lista",
+      "ruta": "Seguridad › Personas",
+      "texto_pantalla": "Personas · quién puede entrar a la empresa, con sus vistas y columnas",
+      "navegar": "/security/resumen",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "resaltar": ".gm-sheet__tabs",
+          "durante_ms": 4500,
+          "al_decir": "decides quién entra"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "al_decir": "la pestaña Personas"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Ana Mejía')",
+          "durante_ms": 4500,
+          "al_decir": "cada fila"
+        },
+        {
+          "resaltar": ".gm-sheet-row--head",
+          "durante_ms": 6500,
+          "al_decir": "Las columnas"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has(:text-is('Todas'))",
+          "durante_ms": 4000,
+          "al_decir": "riel de Vistas"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has(:text-is('Activas'))",
+          "durante_ms": 3000,
+          "al_decir": "Activas, ocho"
+        },
+        {
+          "click": ".gm-rail-btn:has(:text-is('Sin rol'))",
+          "al_decir": "Ahora pulso Sin rol"
+        },
+        {
+          "resaltar": ".sec-people__row:has-text('Luisa Féliz') .sec-people__norole",
+          "durante_ms": 4000,
+          "al_decir": "lo avisa"
+        },
+        {
+          "click": ".gm-rail-btn:has(:text-is('Nunca entraron'))",
+          "al_decir": "Sigo con Nunca entraron"
+        },
+        {
+          "resaltar": ".sec-people__row:has-text('Héctor Vargas') .gm-status",
+          "durante_ms": 3500,
+          "al_decir": "Pendiente"
+        },
+        {
+          "click": ".gm-rail-btn:has(:text-is('Inactivas'))",
+          "al_decir": "en Inactivas"
+        },
+        {
+          "resaltar": ".sec-people__row:has-text('Sonia Reyes') .gm-status",
+          "durante_ms": 3500,
+          "al_decir": "cortó"
+        },
+        {
+          "click": ".gm-rail-btn:has(:text-is('Todas'))",
+          "al_decir": "Vuelvo a Todas"
+        },
+        {
+          "resaltar": ".sec-people :text('Mostrando')",
+          "durante_ms": 4500,
+          "al_decir": "el pie"
+        }
+      ],
+      "narracion": "Esta es la consola de Seguridad, donde decides quién entra a la empresa y qué puede hacer. Abro la pestaña Personas. Aquí, cada fila es alguien que puede entrar a Distribuidora Las Palmas con su propio usuario y su clave. Las columnas dicen quién es, con su nombre y su correo; qué roles tiene; cuándo entró por última vez; y su estado. A la izquierda está el riel de Vistas: son atajos que filtran la lista, y cada uno trae su conteo. Todas son nueve; Activas, ocho, las que pueden entrar. Ahora pulso Sin rol: sale Luisa Féliz, que puede entrar pero no tiene ningún rol, y la columna Roles lo avisa con una frase. Sigo con Nunca entraron: Héctor Vargas tiene su cuenta creada, pero no ha entrado ni una vez, y por eso su estado dice Pendiente, a la derecha. Queda la última vista: en Inactivas está Sonia Reyes, a quien se le cortó el acceso hace tiempo. Vuelvo a Todas. Cada estado lleva su color, para verlo de un vistazo. Y el pie dice cuántas personas se muestran: del uno al nueve, de nueve."
+    },
+    {
+      "id": "02-buscar-y-filtrar",
+      "capitulo": "Buscar y filtrar por rol",
+      "rotulo": "Buscar y filtrar",
+      "ruta": "Seguridad › Personas",
+      "texto_pantalla": "Personas · buscador y filtro por rol",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[aria-label='Buscar persona']",
+            "texto": "pimentel"
+          },
+          "al_decir": "el buscador"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Carlos Pimentel')",
+          "durante_ms": 4500,
+          "al_decir": "queda solo"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label='Buscar persona']",
+            "texto": ""
+          },
+          "al_decir": "Borro la búsqueda"
+        },
+        {
+          "click": ".sec-people button:has(mat-icon:text-is('filter_list'))",
+          "al_decir": "el filtro Rol"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button:has-text('Mensajero')",
+          "durante_ms": 3500,
+          "al_decir": "El menú trae"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Almacén')",
+          "al_decir": "Elijo Almacén"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('Pedro Núñez')",
+          "durante_ms": 1900,
+          "al_decir": "Pedro Núñez"
+        },
+        {
+          "resaltar": ".sec-people__who:has-text('José Cabrera')",
+          "durante_ms": 4000,
+          "al_decir": "José Cabrera"
+        },
+        {
+          "click": ".sec-people button:has(mat-icon:text-is('filter_list'))",
+          "al_decir": "quitar el filtro"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Todos los roles')",
+          "al_decir": "Todos los roles"
+        },
+        {
+          "resaltar": ".sec-people :text('Mostrando')",
+          "durante_ms": 3500,
+          "al_decir": "otra vez"
+        }
+      ],
+      "narracion": "Para encontrar a alguien uso el buscador, arriba a la derecha de la lista. Escribo su apellido, Pimentel, y la lista queda solo con Carlos Pimentel. También busca por usuario y por correo. Borro la búsqueda. Si lo que necesitas es ver quién tiene un rol, usa el filtro Rol, al lado del buscador. El menú trae cada rol: arriba los de la empresa, como Mensajero, y debajo los del sistema. Elijo Almacén: aparecen Pedro Núñez, el encargado de almacén, y José Cabrera, que tiene ese rol además del de vendedor. Si una búsqueda no encuentra a nadie, la lista lo dice con un mensaje, y no es un error: revisa lo escrito o el filtro. Para quitar el filtro vuelvo al menú y elijo Todos los roles. Y la lista muestra a las nueve otra vez."
+    },
+    {
+      "id": "03-ficha-de-la-persona",
+      "capitulo": "La ficha de una persona",
+      "rotulo": "La ficha de la persona",
+      "ruta": "Seguridad › Personas › Ana Mejía",
+      "texto_pantalla": "Ficha de la persona · roles, permisos efectivos y últimos ingresos",
+      "acciones": [
+        {
+          "click": ".sec-people__who:has-text('Ana Mejía')",
+          "al_decir": "Abro a Ana"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__facts",
+          "durante_ms": 5000,
+          "al_decir": "Arriba"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role",
+          "durante_ms": 5000,
+          "al_decir": "bloque Roles"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__block-head",
+          "durante_ms": 5000,
+          "al_decir": "Permisos efectivos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module:has-text('Cotizaciones')",
+          "durante_ms": 3500,
+          "al_decir": "tres de diecinueve"
+        },
+        {
+          "click": "aside[aria-label='Detalle de la persona'] button:has-text('Ver los')",
+          "al_decir": "Ver los módulos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__module >> nth=3",
+          "durante_ms": 1800,
+          "al_decir": "la mayoría"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__login >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "Últimos ingresos"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__login .gm-cell-mono >> nth=0",
+          "durante_ms": 1600,
+          "al_decir": "dirección de red"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__login span >> nth=0",
+          "durante_ms": 5500,
+          "al_decir": "Chrome en Windows"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__buttons",
+          "durante_ms": 5000,
+          "al_decir": "Cambiar contraseña"
+        }
+      ],
+      "narracion": "Ahora la ficha de una persona. Abro a Ana Mejía, la vendedora, y a la derecha se abre su panel. Arriba, su estado, Activa; su equipo, Zona Este; y cuándo entró por última vez. Luego, el bloque Roles: Ana tiene Vendedor, un rol de la empresa. Si lo pulsas, te lleva a ese rol para ver qué concede. Debajo vienen sus Permisos efectivos: todo lo que puede hacer, sumando todos sus roles. Tiene cinco, repartidos por módulo; en Cotizaciones, por ejemplo, tres de diecinueve. Solo se ven los módulos donde tiene algo; con Ver los módulos aparecen todos los que la empresa tiene contratados, y la mayoría está en cero. Al final, Últimos ingresos: cuándo entró, desde qué programa, y desde qué dirección de red, la IP, o sea el número que identifica a la computadora. Aquí dice Chrome en Windows: el navegador y el sistema desde los que entró. Encima de los bloques quedan Editar, Cambiar contraseña y los tres puntos, que vemos en el próximo video."
+    },
+    {
+      "id": "04-su-actividad",
+      "capitulo": "Ver su actividad",
+      "rotulo": "Ver su actividad",
+      "ruta": "Seguridad › Personas › Ana Mejía › Ver su actividad",
+      "texto_pantalla": "Auditoría filtrada por la persona · lo que hizo Ana",
+      "acciones": [
+        {
+          "click": "aside[aria-label='Detalle de la persona'] .sec-people__buttons button[aria-label='Más acciones']",
+          "al_decir": "tres puntos"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Ver su actividad')",
+          "al_decir": "Ver su actividad"
+        },
+        {
+          "resaltar": ".sec-audit__pinned:has-text('Ana Mejía')",
+          "durante_ms": 4500,
+          "al_decir": "ya filtrada"
+        },
+        {
+          "resaltar": ".sec-audit__row >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "arriba"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "al_decir": "Vuelvo a Personas"
+        }
+      ],
+      "narracion": "Si necesitas saber qué hizo alguien, no hace falta buscarlo a mano. En los tres puntos del panel elijo Ver su actividad. Me lleva a la Auditoría, ya filtrada por Ana Mejía, con su nombre fijado en el filtro: cada fila es algo que ella hizo, con la hora y desde dónde. Arriba está lo más reciente: aquí, que actualizó un precio. La Auditoría tiene su propio video; por ahora, vuelvo a Personas con la pestaña."
+    },
+    {
+      "id": "05-caso-nunca-entro",
+      "capitulo": "Caso práctico: la cuenta que nunca se usó",
+      "rotulo": "Caso: nunca entró",
+      "ruta": "Seguridad › Personas › Nunca entraron",
+      "texto_pantalla": "Caso práctico · revisar una cuenta que nunca se ha usado",
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has(:text-is('Nunca entraron'))",
+          "al_decir": "la vista Nunca entraron"
+        },
+        {
+          "click": ".sec-people__who:has-text('Héctor Vargas')",
+          "al_decir": "abro su ficha"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__facts",
+          "durante_ms": 4000,
+          "al_decir": "Último ingreso"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role",
+          "durante_ms": 5000,
+          "al_decir": "Tiene el rol Vendedor"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Revisa «Nunca entraron» cada semana: una cuenta sin usar es un acceso abierto."
+          },
+          "durante_ms": 7000,
+          "al_decir": "cada semana"
+        }
+      ],
+      "narracion": "Un caso práctico. Cada cierto tiempo conviene revisar las cuentas que nadie usa. Abro la vista Nunca entraron, y abro su ficha: es Héctor Vargas. Arriba dice Pendiente, y Último ingreso: nunca; ni una sola vez desde que se creó la cuenta, y no hay ningún ingreso registrado en esta empresa. Tiene el rol Vendedor: es una puerta abierta a Ventas que nadie está usando. Lo correcto es confirmar su correo con él o, si ya no trabaja aquí, desactivar la cuenta. Hazlo en tu revisión de cada semana."
+    }
+  ]
+}

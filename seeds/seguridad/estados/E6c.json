@@ -1,0 +1,31 @@
+{
+  "estado": "E6c",
+  "empresa": 50,
+  "fijado_en": "2026-09-27 14:08:05",
+  "conteos": {
+    "role_permissions": 34,
+    "role_permission_exclusions": 0,
+    "roles": 6,
+    "team_members": 2,
+    "teams": 1,
+    "user_menu_visibility": 1,
+    "user_company_roles": 11,
+    "user_companies": 11,
+    "user_company_preferences": 9,
+    "profiles": 8,
+    "users": 11,
+    "quotes": 8,
+    "quote_details": 16,
+    "quote_detail_inventory_allocations": 14,
+    "quote_approvals": 3,
+    "quote_versions": 12,
+    "entity_versions": 15,
+    "prices": 25,
+    "price_history": 68,
+    "products": 25,
+    "company_configs": 1,
+    "subscriptions": 1,
+    "sys_sequences": 3,
+    "audit_logs": 680
+  }
+}

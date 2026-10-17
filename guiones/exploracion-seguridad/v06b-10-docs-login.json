@@ -1,0 +1,1370 @@
+{
+ "url": "/security/api-docs/autenticacion",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 2189,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "POST /api/auth/integration/login",
+   "caja": [
+    312,
+    24,
+    936,
+    44
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "",
+   "texto": "Request",
+   "caja": [
+    312,
+    120,
+    936,
+    41
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "",
+   "texto": "Body",
+   "caja": [
+    312,
+    265,
+    936,
+    28
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "",
+   "texto": "Ejemplo",
+   "caja": [
+    312,
+    449,
+    936,
+    28
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "",
+   "texto": "Response Exitoso (201)",
+   "caja": [
+    312,
+    661,
+    936,
+    41
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "",
+   "texto": "Response Error (401)",
+   "caja": [
+    312,
+    1575,
+    936,
+    41
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "",
+   "texto": "Uso del Token",
+   "caja": [
+    312,
+    1820,
+    936,
+    41
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "",
+   "texto": "Notas",
+   "caja": [
+    312,
+    1985,
+    936,
+    41
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Inicio",
+   "icono": "home",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "section-header"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    0,
+    65,
+    279,
+    65
+   ],
+   "sel": "button:has-text('Inicio')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Autenticación",
+   "icono": "vpn_key",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "section-header"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    0,
+    247,
+    279,
+    65
+   ],
+   "sel": "button:has-text('Autenticación')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Facturas Emitidas",
+   "icono": "receipt_long",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "section-header"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    0,
+    356,
+    279,
+    65
+   ],
+   "sel": "button:has-text('Facturas Emitidas')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Facturas Recibidas",
+   "icono": "inbox",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "section-header"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    0,
+    790,
+    279,
+    65
+   ],
+   "sel": "button:has-text('Facturas Recibidas')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Reportes DGII",
+   "icono": "assessment",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "section-header"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    0,
+    971,
+    279,
+    65
+   ],
+   "sel": "button:has-text('Reportes DGII')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cuenta",
+   "icono": "account_circle",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "section-header"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    0,
+    1153,
+    279,
+    65
+   ],
+   "sel": "button:has-text('Cuenta')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [
+  {
+   "clases": [],
+   "cabeceras": [
+    "Campo",
+    "Tipo",
+    "Requerido",
+    "Descripcion"
+   ],
+   "filas": [
+    [
+     "apiKey",
+     "string",
+     "Si",
+     "API Key de integracion"
+    ],
+    [
+     "apiSecret",
+     "string",
+     "Si",
+     "API Secret de integracion"
+    ]
+   ],
+   "total_filas": 2,
+   "caja": [
+    312,
+    309,
+    936,
+    124
+   ]
+  },
+  {
+   "clases": [],
+   "cabeceras": [
+    "Campo",
+    "Tipo",
+    "Descripcion"
+   ],
+   "filas": [
+    [
+     "token",
+     "string",
+     "Token JWT para usar en el header Authorization: Bearer {token}"
+    ],
+    [
+     "user",
+     "object",
+     "Datos del usuario de integracion autenticado"
+    ]
+   ],
+   "total_filas": 11,
+   "caja": [
+    312,
+    1066,
+    936,
+    493
+   ]
+  }
+ ],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "Equipo eliminado exitosamente",
+  "Secreto copiado",
+  "Permiso quitado exitosamente",
+  "Integración desactivada exitosamente",
+  "Integración activada exitosamente",
+  "Integración eliminada exitosamente"
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Facturas Recibidas",
+   "caja": [
+    0,
+    790,
+    279,
+    65
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Reportes DGII",
+   "caja": [
+    0,
+    971,
+    279,
+    65
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Cuenta",
+   "caja": [
+    0,
+    1153,
+    279,
+    65
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     7,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     7,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     7,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     7,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     7,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     7,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     7,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     7,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     7,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     7,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     7,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     7,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     7,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     7,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     7,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     7,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     7,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "aside.api-docs-sidenav.open",
+    "pos": "sticky",
+    "caja": [
+     0,
+     0,
+     280,
+     590
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     7,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "Campo",
+   "Tipo",
+   "Requerido",
+   "Descripcion",
+   "Campo",
+   "Tipo",
+   "Descripcion"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout menu_book Documentación API home INICIO expand_less Referencia de Endpoints Códigos y Respuestas Registro de Cambios vpn_key AUTENTICACIÓN expand_less POST Login receipt_long FACTURAS EMITIDAS expand_less POST Crear Factura GET Listar Facturas GET Consultar Factura GET Estado Fiscal POST Reintentar Envío DGII POST Enviar al Comprador GET Descargar PDF GET Obtener QR PUT Actualizar Factura POST Anular Factura inbox FACTURAS RECIBIDAS expand_less GET Listar Facturas GET Consultar Factura POST Aprobación Comercial assessment REPORTES DGII expand_less GET IT-1 (datos) GET IT-1 (Excel) GET IT-1 (TXT) account_circle CUENTA expand_less GET Estado de Suscripción POST /api/auth/integration/login Autentica un usuario de integracion y retorna un token JWT con validez de 24 horas. Request POST /api/auth/integration/login Content-Type: application/json Body Campo Tipo Requerido Descripcion apiKey string Si API Key de integracion apiSecret string Si API Secret de integracion Ejemplo curl -X POST https://api.germiva.com/api/auth/integration/login \\ -H \"Content-Type: application/json\" \\ -d '{ \"apiKey\": \"gva_live_abc123def456\", \"apiSecret\": \"sk_live_789xyz000111222\" }' Response Exitoso (201) { \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...\", \"user\": { \"id\": 21, \"username\": \"integration_gv_live_64da8321\", \"integrationName\": \"SOFOSY integration user\", \"apiKeyPrefix\": \"gv_live_64da8321\", \"currentCompany\": { \"id\": 4, \"legalName\": \"SOFOSY SRL\", \"tradeName\": \"SOFOSY\" } }, \"expiresAt\": \"2026-03-18T11:03:59.045Z\" } Campo Tipo Descripcion token string Token JWT para usar en el header Authorization: Bearer {token} user object Datos del usuario de integracion autenticado user.id number ID del usuario user.username string Nombre de usuario generado user.integrationName string Nombre descriptivo de la integracion user.apiKeyPrefix string Prefijo del API Key user.currentCompany object Empresa asociada al usuario user.currentCompany.id number ID de la empresa user.currentCompany.legalName string Razon social user.currentCompany.tradeName string Nombre comercial expiresAt string Fecha/hora de expiracion del token (ISO 8601) Response Error (401) { \"success\": false, \"error\": { \"code\": \"INVALID_CREDENTIALS\", \"message\": \"API key o secret invalidos\" } } Uso del Token Incluir en todos los requests subsecuentes: Authorization: Bearer eyJhbGciOiJIUzI1NiIs... Notas El token expira en 24 horas Renovar antes de que expire Si recibe 401 en cualquier endpoint, obtener un nuevo token Rate limit: 30 intentos por minuto"
+ },
+ "video": "v06b",
+ "pantalla": "10-docs-login",
+ "usuario": "rosa.almanzar",
+ "notas": "http://localhost:4200/security/api-docs/autenticacion",
+ "red_reciente": [
+  {
+   "t": 1790523987.8619995,
+   "m": "POST",
+   "url": "v1/integration-users/7957/regenerate-credentials",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523991.6554606,
+   "m": "PATCH",
+   "url": "v1/integration-users/7957/deactivate",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523997.7049408,
+   "m": "PATCH",
+   "url": "v1/integration-users/7957/activate",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524002.0750191,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524007.230883,
+   "m": "DELETE",
+   "url": "v1/integration-users/7952",
+   "st": 204,
+   "body": ""
+  },
+  {
+   "t": 1790524007.3584466,
+   "m": "GET",
+   "url": "v1/integration-users/7952/summary",
+   "st": 404,
+   "body": "{\"message\":\"Usuario de integración no encontrado\",\"error\":\"Not Found\",\"statusCode\":404}"
+  },
+  {
+   "t": 1790524012.5486372,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524018.9719384,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

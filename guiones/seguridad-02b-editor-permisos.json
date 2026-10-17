@@ -1,0 +1,432 @@
+{
+  "titulo": "Seguridad · El editor de permisos",
+  "_comentario": "Video 02b de la serie Seguridad (AUTOR A, 2026-09-27). Estado de partida: E2a (`node seeds/seguridad/restaurar.mjs E2a`: E0 + «Contador externo» y «Cobrador» vacío). Entra rosa.almanzar (Admin). ESCRIBE en BD: permisos del rol Cobrador (Socios · Ver con alcance Propios, Estado de Cuenta · Ver y PDF, Facturas · Ver) en UN guardado por lote; tras la toma, restaurar E2a. Recorrido: candado → Roles y permisos → Vendedor (lectura del editor) → Cobrador → módulo «Clientes y Proveedores» → recurso «Socios» (así se llaman los clientes en el catálogo, _SELECTORES §9) → Ver (ciclo concedido/sin conceder) → «Conceder todo» en Estado de Cuenta → alcance Propios → búsqueda «factur» → Facturas · Ver → clic en «Contador externo» con cambios → «Cambios sin guardar» → Seguir editando → Guardar cambios → toast → filtro Concedidos. Selectores de acción: `:text-is('Ver')` solo casa el botón SIN conceder (el concedido lleva el icono «check» dentro), por eso el segundo clic del ciclo usa `.rpe__act--direct`. DECISIÓN: «Cobros» no es un módulo (plan 02b-02): se usa «Conceder todo» sobre Estado de Cuenta, que es lo que un cobrador enseña al cliente. La barra de guardado dirá «4 cambios sin guardar · afectan a 0 personas» (nadie tiene el rol): la voz no lee el número de cambios. Verificar en el ensayo: (1) al borrar la búsqueda vuelve el módulo Clientes y Proveedores (así el filtro Concedidos enseña Socios y Estado de Cuenta); (2) el FAB tapa el borde derecho de «Guardar cambios» (el clic cae en el centro, x≈1141). AVISO justificado: primer paso sin button.panel-collapse (no existe en /security/*). DEPENDE de la ronda 2 solo en el texto «Guardando…» del botón (no se nombra). Re-ensayo con build final (OPERADOR-GRABACIÓN, 09-27): E-1 corregido en el ERP — al elegir un rol el editor abre el primer módulo con permisos (Vendedor → Clientes y Proveedores); la voz lo dice y se marca `.rpe__module.gm-rail-btn--active` al decir «primer módulo». Ensayo 09-27: 0 fallos (5 pasos). REGRABACIÓN T4 (09-27): con el contador «N de M permisos» sobre la columna de módulos (la voz no lo lee); recortes de apartes para acercar el video a 4:10 (sin quitar cobertura: F-137, F-141 y F-150 siguen en voz). G-14 (T4): las marcas «Cada bloque» (.rpe__resource-head) y «cada botón» (.rpe__actions) de Cotizaciones son más altas que el trozo visible del panel del editor: el motor las centraba en la ventana, el panel se desplazaba y el recurso quedaba debajo de la leyenda (la caja salía sobre la cabecera del rol o sobre las filas de abajo). Ahora marcan el nombre del recurso y el botón «Aprobar», que caben sin desplazar. Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-A, bloque 02b): cursor:false en las cifras «3/19» (Cotizaciones, paso 01) y «1/79» (Facturación, paso 05); «Vendedor tiene Ver, Crear y Editar» pasa a «tres de ellas: Ver, después Crear, y también Editar» con una marca por botón (.rpe__act--direct:has-text('Ver'|'Crear'|'Editar'), antes solo se marcaba Ver); en 02 la marca de «la barra de cambios» cubre la barra entera .gm-sheet-savebar (con Guardar cambios dentro) y la voz lee el texto nuevo de R8-6 «nadie tiene este rol todavía»; en 05 se marca «Guardar cambios» al nombrarlo (2500 ms, Descartar baja a 1900 ms) antes del clic, para que se vea cuando la voz lo dice; el cierre ya no dice «su estado de cuenta» (Estado de Cuenta quedó con alcance Todos): «ve solo los clientes que él registró; además, los estados de cuenta y las facturas». Motor (Socios bajo la leyenda, fila cortada) y ERP R8-5 (módulo en blanco al borrar la búsqueda): se resuelven regrabando con e1810d6 y la rama de la ronda 8. La voz no lee el total «de 1103 permisos». Ensayo: confirmar que la barra no sale CORTADA como marca entera (si sale, volver a .gm-sheet-savebar__text) y que tras borrar la búsqueda se ve Clientes y Proveedores. Final T1 (09-28): toma 1 REGRABAR por +0,92 s (clic en la pestaña, 1,46 s tras el candado) y +1,03 s (marca sobre .rpe__resource-head de Facturas, familia G-14): voz «Entro por el candado de la izquierda; arriba, abro Roles y permisos» y la marca de Facturas pasa al nombre del recurso, anclada a «Aquí, entre». Final T1 toma 2 (revisión visual): cursor:false en todas las marcas (el cursor y su tooltip tapaban Ver/Crear/Editar/Aprobar, Vacío, «Conceder todo»); la cifra 3/19 a 1600 ms y el diálogo Cambios sin guardar a 2800 ms (sus cajas quedaban vacías tras el clic). BLOQUEANTE ERP H-GF-2: con la barra de guardado a la vista, al panel de recursos le quedan ~75 px; para enseñar el alcance de Socios la lista se desplaza y el bloque Socios queda sin título ni botones arriba (toma 2, 2:20). Toma 3 REGRABAR: la marca de Facturas llegó +1,03 s porque la lista de resultados se desplaza para enseñarla; ahora una marca previa sobre el grupo «Facturación» de los resultados (al decir «todo el catálogo») hace ese desplazamiento antes.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "almánzar",
+      "féliz",
+      "Contador externo",
+      "Cobrador",
+      "Cobra facturas a domicilio",
+      "factur"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "PDF": "pe-de-efe"
+  },
+  "aprenderas": [
+    "Leer el editor de permisos: módulos por sección, recursos, acciones y leyenda",
+    "Conceder y quitar un permiso, o todos los de un recurso de una vez",
+    "Elegir el alcance de un permiso de ver: propios, equipo o todos",
+    "Buscar un permiso en todo el catálogo y guardar los cambios de una sola vez"
+  ],
+  "errores_comunes": [
+    "Irse a otro rol sin pulsar «Guardar cambios»: lo pendiente se descarta",
+    "Buscar «Clientes» como recurso: en el catálogo los clientes están en «Socios»",
+    "Creer que el alcance «Propios» sigue al vendedor asignado: sigue a quien creó el registro",
+    "Confundir los filtros Concedidos o Heredados con un filtro por estado del documento"
+  ],
+  "pasos": [
+    {
+      "id": "01-modulos-y-leyenda",
+      "ruta": "Seguridad › Roles y permisos › Vendedor",
+      "texto_pantalla": "El editor de permisos · módulos, recursos, acciones y leyenda",
+      "capitulo": "Cómo se lee el editor",
+      "rotulo": "Cómo se lee el editor",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Permiso = recurso + acción"
+      },
+      "acciones": [
+        {
+          "click": "a.rail-item[href='/security']",
+          "al_decir": "por el candado"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "al_decir": "abro Roles y permisos"
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor'):not(:has-text('sénior'))",
+          "al_decir": "elijo Vendedor"
+        },
+        {
+          "resaltar": ".rpe__section:has-text('Ventas y facturación')",
+          "durante_ms": 4000,
+          "al_decir": "agrupadas por sección",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__section:has-text('Compras e inventario')",
+          "durante_ms": 3500,
+          "al_decir": "tu plan",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__module.gm-rail-btn--active",
+          "durante_ms": 3500,
+          "al_decir": "primer módulo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__module:has-text('Cotizaciones') .rpe__module-count",
+          "durante_ms": 1600,
+          "cursor": false,
+          "al_decir": "tres de diecinueve"
+        },
+        {
+          "click": ".rpe__module:has-text('Cotizaciones')",
+          "al_decir": "La abro"
+        },
+        {
+          "resaltar": ".rpe__toolbar-title",
+          "durante_ms": 2500,
+          "al_decir": "el título del módulo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__legend",
+          "durante_ms": 5000,
+          "al_decir": "la leyenda",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__resource-name",
+          "durante_ms": 4000,
+          "al_decir": "Cada bloque",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act:text-is('Aprobar')",
+          "durante_ms": 5500,
+          "al_decir": "cada botón",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act--direct:has-text('Ver')",
+          "durante_ms": 900,
+          "al_decir": "tres de ellas",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act--direct:has-text('Crear')",
+          "durante_ms": 900,
+          "al_decir": "después Crear",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act--direct:has-text('Editar')",
+          "durante_ms": 2500,
+          "al_decir": "también Editar",
+          "cursor": false
+        }
+      ],
+      "narracion": "En este video abrimos el editor de permisos, donde se decide qué puede hacer cada rol. Entro por el candado de la izquierda; arriba, abro Roles y permisos y elijo Vendedor, un rol ya armado, para leerlo. En el centro está la columna de módulos: las partes del sistema, agrupadas por sección, como Ventas y facturación o Compras e inventario. Solo salen los módulos de tu plan, y al elegir un rol, el editor abre el primer módulo donde ya concede algo: aquí, Clientes y Proveedores. Cada módulo lleva dos números: los permisos concedidos y los que existen. Cotizaciones, por ejemplo, dice tres de diecinueve: tres concedidos. La abro. Arriba, el título del módulo con su cuenta; debajo, la leyenda: el check es Concedido, y el Alcance aplica en los listados que lo admiten. Cada bloque es un recurso, o sea una cosa del sistema: aquí, las cotizaciones. Y cada botón es una acción sobre esa cosa: ver, crear, editar, aprobar. Un permiso es eso: recurso más acción. Aquí Vendedor tiene tres de ellas: Ver, después Crear, y también Editar, cada una con su check."
+    },
+    {
+      "id": "02-conceder",
+      "ruta": "Seguridad › Roles y permisos › Cobrador",
+      "texto_pantalla": "Conceder permisos · una acción, o todas las de un recurso",
+      "capitulo": "Conceder permisos",
+      "rotulo": "Conceder permisos",
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has-text('Cobrador')",
+          "al_decir": "Lo abro"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Cobrador') .gm-badge--warning",
+          "durante_ms": 3000,
+          "al_decir": "insignia Vacío",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__module:has-text('Clientes y Proveedores')",
+          "al_decir": "abro el módulo"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__resource-head",
+          "durante_ms": 5000,
+          "al_decir": "recurso Socios",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act:text-is('Ver')",
+          "al_decir": "Pulso Ver"
+        },
+        {
+          "resaltar": ".rpe__resource--changed",
+          "durante_ms": 3500,
+          "al_decir": "otro color",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act--direct",
+          "al_decir": "pulso otra vez"
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act:text-is('Ver')",
+          "al_decir": "Lo vuelvo a pulsar"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Estado de Cuenta')) .rpe__resource-head",
+          "durante_ms": 3500,
+          "al_decir": "estado de cuenta",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Estado de Cuenta')) .rpe__all",
+          "al_decir": "uso Conceder todo"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar",
+          "durante_ms": 6000,
+          "al_decir": "barra de cambios",
+          "cursor": false
+        }
+      ],
+      "narracion": "Ahora armo el rol Cobrador, que creamos vacío en el video anterior. Lo abro: la insignia Vacío confirma que no tiene nada. Un cobrador necesita ver a los clientes, así que abro el módulo Clientes y Proveedores. Ojo con el nombre: aquí los clientes están en el recurso Socios, que reúne clientes y proveedores. Pulso Ver: se marca con el check, y el bloque se pinta de otro color para avisar que tiene un cambio pendiente. Si pulso otra vez, lo quito: cada clic alterna entre concedido y sin conceder. Lo vuelvo a pulsar para dejarlo concedido. El cobrador también enseña el estado de cuenta del cliente: uso Conceder todo, que marca de una vez Ver y PDF, o sea el documento para imprimir. Abajo aparece la barra de cambios: cuenta lo pendiente y a cuántas personas afecta; aquí dice nadie tiene este rol todavía, porque aún no se lo asignamos a nadie."
+    },
+    {
+      "id": "03-alcance",
+      "ruta": "Seguridad › Roles y permisos › Cobrador › Alcance",
+      "texto_pantalla": "Alcance · Propios, Equipo o Todos en los permisos de ver",
+      "capitulo": "El alcance",
+      "rotulo": "El alcance",
+      "acciones": [
+        {
+          "resaltar": ".rpe__scope-seg[aria-label='Alcance de Ver en Socios']",
+          "durante_ms": 2000,
+          "al_decir": "tres opciones",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__scope-seg[aria-label='Alcance de Ver en Socios'] button:has-text('Todos')",
+          "durante_ms": 2500,
+          "al_decir": "todos los registros",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__scope-seg[aria-label='Alcance de Ver en Socios'] button:has-text('Equipo')",
+          "durante_ms": 3000,
+          "al_decir": "compañeros de equipo",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__scope-seg[aria-label='Alcance de Ver en Socios'] button:has-text('Propios')",
+          "al_decir": "Pulso Propios"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "El alcance recorta lo que se lista según quién lo creó, no según el vendedor asignado."
+          },
+          "durante_ms": 7500,
+          "al_decir": "Fíjate"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Socios')) .rpe__act--direct",
+          "durante_ms": 4000,
+          "al_decir": "permisos de ver",
+          "cursor": false
+        }
+      ],
+      "narracion": "Al conceder un permiso de ver, a su derecha aparece el alcance, con tres opciones. Todos: ve todos los registros. Equipo: ve lo que crearon él y sus compañeros de equipo. Propios: solo lo que creó él mismo. Pulso Propios. Así, en la lista de clientes, este cobrador verá solo los clientes que él registró. Fíjate en la palabra creó: cuenta quién creó el registro, no el cobrador que tenga asignado. Y como recorta listados, solo existe en los permisos de ver."
+    },
+    {
+      "id": "04-buscar-permiso",
+      "ruta": "Seguridad › Roles y permisos › Cobrador › Buscar permiso",
+      "texto_pantalla": "Buscar permiso · en todo el catálogo, agrupado por módulo",
+      "capitulo": "Buscar un permiso",
+      "rotulo": "Buscar un permiso",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": ".rpe__search input",
+            "texto": "factur"
+          },
+          "al_decir": "Buscar permiso"
+        },
+        {
+          "resaltar": ".rpe__toolbar-title",
+          "durante_ms": 3600,
+          "al_decir": "Enseguida el título",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__main .gm-sheet-group:text-is('Facturación')",
+          "durante_ms": 1800,
+          "cursor": false,
+          "al_decir": "todo el catálogo"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Facturas')) .rpe__resource-name",
+          "durante_ms": 3000,
+          "al_decir": "Aquí, entre",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Facturas')) .rpe__act:text-is('Ver')",
+          "al_decir": "pulso su Ver"
+        },
+        {
+          "resaltar": ".rpe__search",
+          "durante_ms": 5500,
+          "al_decir": "algo muy general",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": ".rpe__search input",
+            "texto": ""
+          },
+          "al_decir": "Borro la búsqueda"
+        }
+      ],
+      "narracion": "Si no sabes en qué módulo vive un permiso, búscalo. En Buscar permiso escribo factur, las primeras letras de factura. Enseguida el título cambia a Resultados de factur: la búsqueda recorre todo el catálogo, no solo el módulo abierto. Aquí, entre los resultados, está el recurso Facturas. Pulso su Ver, para que el cobrador vea las facturas que va a cobrar. Si buscas algo muy general, el editor enseña los primeros sesenta recursos y te pide afinar; y si nada coincide, lo dice. Borro la búsqueda y vuelvo a los módulos."
+    },
+    {
+      "id": "05-guardar-o-descartar",
+      "ruta": "Seguridad › Roles y permisos › Cobrador › Guardar",
+      "texto_pantalla": "Guardar o descartar · un solo guardado para todos los cambios",
+      "capitulo": "Guardar y revisar",
+      "rotulo": "Guardar y revisar",
+      "acciones": [
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Nada se aplica hasta pulsar «Guardar cambios»."
+          },
+          "durante_ms": 6000,
+          "al_decir": "Nada de esto"
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Contador externo')",
+          "al_decir": "pulso Contador externo"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2800,
+          "cursor": false,
+          "al_decir": "me para"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Seguir editando')",
+          "al_decir": "Pulso Seguir editando"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar button:has-text('Descartar')",
+          "durante_ms": 1900,
+          "al_decir": "Descartar, que",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "durante_ms": 2500,
+          "al_decir": "y Guardar cambios",
+          "cursor": false
+        },
+        {
+          "click": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "al_decir": "Pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "[aria-label='Filtrar por estado']",
+          "durante_ms": 5000,
+          "al_decir": "los filtros de arriba",
+          "cursor": false
+        },
+        {
+          "click": "[aria-label='Filtrar por estado'] button:has-text('Concedidos')",
+          "al_decir": "Pulso Concedidos"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Socios'))",
+          "durante_ms": 3000,
+          "al_decir": "quedan solo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__module:has-text('Facturación'):not(:has-text('Electrónica')) .rpe__module-count",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "ya marca uno"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Estado de Cuenta'))",
+          "durante_ms": 3500,
+          "al_decir": "los estados de cuenta",
+          "cursor": false
+        }
+      ],
+      "narracion": "Nada de esto está guardado todavía. Mira qué pasa si me voy a otro rol: pulso Contador externo, y el editor me para con Cambios sin guardar: si continúo, se descartan. Pulso Seguir editando y me quedo. En la barra de abajo hay dos botones: Descartar, que deshace todo lo pendiente, y Guardar cambios, que lo aplica de una sola vez. Pulso Guardar cambios. Sale el aviso de permisos actualizados, y la barra desaparece. Para revisar, uso los filtros de arriba: Todos, Concedidos, Heredados y Sin conceder, que filtran por el estado del permiso, no de un documento. Pulso Concedidos, y quedan solo Socios y Estado de Cuenta; en la columna de módulos, Facturación ya marca uno. Caso resuelto: el Cobrador ve solo los clientes que él registró; además, los estados de cuenta y las facturas; y nada más."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+TÍTULO
+============================================================
+Productos · Parte 6: variantes
+
+DESCRIPCIÓN
+============================================================
+Sexta parte de la serie de Productos de Germiva ERP: un producto con variantes. Una gaseosa que se vende en tres presentaciones y tres sabores: las opciones con el atajo para colmados, el recargo que sube el precio de las presentaciones grandes, la matriz de combinaciones, la ficha del producto padre, crear una combinación que faltaba, la ficha de una variante con su entrada de mercancía y la venta en el punto de venta eligiendo presentación y sabor.
+
+⏱️ CAPÍTULOS
+00:00  Un producto con variantes
+00:48  Opciones y valores
+01:32  El recargo y la matriz
+02:19  La ficha del padre
+03:08  La ficha de una variante y su entrada
+03:58  Vender una variante
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Activar variantes y definir sus opciones con los atajos o escribiéndolas
+• Hacer que una opción cambie el precio con un recargo
+• Elegir en la matriz qué combinaciones se crean
+• Leer la ficha del padre: precios propios y heredados
+• Crear después una combinación que faltaba
+• Darle existencia a una variante y venderla en el punto de venta
+
+⚠️ ERRORES COMUNES
+• Crear todas las combinaciones aunque no se vendan: desmarca las que no tienes, se crean después
+• Registrar la entrada en el padre: la mercancía entra siempre a una variante
+• Escribir un precio en una variante sin querer: deja de seguir al padre; la flecha lo devuelve
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:48
+
+TRANSCRIPCIÓN
+============================================================
+En esta parte vemos las variantes: un mismo producto que se vende en varias presentaciones o sabores, cada uno con su código, su precio y su existencia. El ejemplo es una gaseosa en lata, grande y jumbo, de naranja, piña y fresa. Pulso nuevo producto. El nombre: Gaseosa Brisa, y el sistema confirma que está disponible. En categoría escribo alimentos, y la elijo de la lista. En unidad de medida escribo unidad, y también la elijo. El precio de venta, treinta y cinco pesos con el ITBIS incluido, y el costo, veinte. Estos datos son comunes a todas las variantes. Ahora, en características, enciendo tiene variantes.
+Aparece opciones y variantes. Una opción es lo que distingue a las variantes, como la presentación, y sus valores son las alternativas. Hay atajos con valores ya escritos; el de cerveza y refresco es el del colmado. Lo pulso, y trae lata, botella, grande y jumbo. La botella no la vendo: la quito con su equis. El sabor no está entre los atajos, así que pulso otra, y en el nombre de la opción escribo sabor. Ahora sus valores: escribo naranja y lo confirmo con Enter; luego piña, Enter; y fresa, Enter. Cada valor queda como una etiqueta, y el orden en que los escribes es el orden en que se ven al vender.
+Ahora el sistema pregunta si alguna opción cambia el precio. La presentación sí: la grande y la jumbo cuestan más. Elijo presentación, y aparece un campo por cada valor. A la grande le sumo veinticinco pesos, y a la jumbo, cincuenta. Debajo está la matriz de variantes que se van a crear: presentaciones en filas, sabores en columnas, y en cada cruce el precio: treinta y cinco, sesenta y ochenta y cinco. La jumbo de fresa todavía no la vendo, así que la desmarco; se puede crear más adelante. El botón dice cuántas se van a crear: ocho. Pulso guardar producto. El sistema crea el padre y cada combinación como un producto hijo, y lo confirma; acepto.
+Se abre la ficha del producto padre, en la pestaña variantes. El padre es la plantilla: define lo común, pero no se vende ni guarda existencia. Por eso sus cifras resumen a los hijos: el precio va de treinta y cinco a ochenta y cinco, y ocho están a la venta. En la tabla, cada fila es una variante, con su propio código de barras que el sistema generó. Las latas dicen del padre: usan su precio, y si lo cambias en el padre, cambian con él. Las grandes y las jumbo tienen el suyo, y esta flecha lo devuelve al del padre. Paso a la vista matriz. La jumbo de fresa dice crear: la pulso, escribo su precio, ochenta y cinco, y pulso crear. El aviso de arriba confirma, y ya está la combinación que faltaba.
+Vuelvo a la lista y abro una variante: la lata de naranja. Es un producto hijo: la barra de arriba lo dice, con el enlace al padre y sus hermanas, para saltar de una a otra. El nombre se arma solo y está bloqueado. A diferencia del padre, la variante sí recibe mercancía: pulso registrar entrada, y se abre su ventana. El motivo, compras de mercancía. El proveedor: escribo embotell, espero a que la lista lo encuentre, y elijo la Embotelladora del Caribe. La ubicación, el pasillo A del almacén Sur, y el lote lo genera el botón de al lado. Entran veinticuatro latas, a veinte pesos cada una. Registro la entrada, y acepto. Arriba, la variante ya tiene veinticuatro en existencia.
+Por último, la venta. En el punto de venta busco gaseosa. Aparece una sola tarjeta, la del padre, con sus nueve variantes y lo que hay en existencia. Al tocarla se abre el selector: presentaciones en filas y sabores en columnas. Solo la lata de naranja tiene existencia, veinticuatro; las demás dicen agotado. Sumo dos latas con el más. Abajo resume: dos unidades, setenta pesos. Pulso agregar, y el ticket recibe la línea con el nombre completo de la variante. Con lector de código de barras no hace falta el selector: escaneas la lata y entra directo. En la próxima parte vemos comercio exterior, insumos y listas de precios.

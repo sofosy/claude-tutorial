@@ -1,0 +1,332 @@
+{
+    "titulo":  "Éxito del Cliente · Contratos de venta y proyectos",
+    "_comentario":  "Serie Éxito del Cliente, video 3 (2026-10-06). Empresa demo 50, Rosa (Admin). En esta rama se corrigieron: Proyectos (cliente, gerente y oportunidad eran selects vacíos: ningún proyecto se podía crear), Contratos (cliente y gerente se pedían como ID numérico), fechas guardadas un día antes en ambos, columnas del listado que salían «undefined»/vacías, y la búsqueda de contratos que traía los de otras empresas. Fechas fijas en el guion (inicio 01/11/2026): no dependen del día de la grabación.",
+    "base_url":  "http://localhost:4200",
+    "sesion":  {
+                   "tipo":  "api",
+                   "url":  "http://localhost:3001/api/auth/dev/login",
+                   "cuerpo":  {
+                                  "username":  "rosa.almanzar",
+                                  "password":  "Demo2026!"
+                              },
+                   "clave":  "aut",
+                   "extra":  {
+                                 "__v":  2
+                             },
+                   "navegar":  "/home"
+               },
+    "voz":  {
+                "id":  "es-DO-RamonaNeural",
+                "velocidad":  "+12%"
+            },
+    "musica":  {
+                   "archivo":  "marca/musica/elevator-music-mcculloch.mp3",
+                   "volumen_db":  -32,
+                   "ducking":  true,
+                   "fade_s":  2
+               },
+    "loudnorm":  {
+                     "lufs":  -14,
+                     "tp":  -1.5
+                 },
+    "marca_video":  {
+                        "entrada_s":  3,
+                        "cierre_s":  3
+                    },
+    "rotulo_paso":  {
+                        "segundos":  3.5
+                    },
+    "privacidad":  {
+                       "permitidos":  [
+                                          "germiva",
+                                          "1305550",
+                                          "Las Palmas",
+                                          "Rosa",
+                                          "Almánzar",
+                                          "Almanzar",
+                                          "Mirador",
+                                          "Doña Luz",
+                                          "Barahona",
+                                          "La Esquina",
+                                          "CTR-2026",
+                                          "PRJ-"
+                                      ],
+                       "mapa_fijo":  {
+                                         "localhost:3001":  "api.germiva.com",
+                                         "localhost:4200":  "germiva.com"
+                                     }
+                   },
+    "setup":  {
+                  "tipo":  "shell",
+                  "cmd":  "node seeds/crm/restaurar.mjs"
+              },
+    "aprenderas":  [
+                       "Registrar el contrato que firmaste con un cliente y cuándo se renueva",
+                       "Leer la lista de contratos: estado, valor, vigencia y gerente",
+                       "Crear el proyecto de una venta grande y llevar su presupuesto y su avance"
+                   ],
+    "errores_comunes":  [
+                            "Registrar el contrato sin fecha de fin: nunca aparece en Renovaciones",
+                            "Elegir mal el tipo de renovación: «Automática» no te avisa antes de renovarse",
+                            "No actualizar el avance del proyecto: la cartera no sabe en qué va la entrega"
+                        ],
+    "pasos":  [
+                  {
+                      "id":  "01-contratos",
+                      "capitulo":  "Contratos de venta",
+                      "rotulo":  "Contratos de venta",
+                      "ruta":  "Éxito del Cliente › Contratos de Venta",
+                      "texto_pantalla":  "Contratos · lo pactado con el cliente y cuándo se renueva",
+                      "narracion":  "Un contrato de venta es el acuerdo firmado con un cliente: qué le vendes, por cuánto y por cuánto tiempo. Entro a Éxito del Cliente y abro Contratos de Venta. Recojo el menú. Cada fila es un contrato: su número, el título, el estado y el tipo, el cliente, el valor y la vigencia, de la fecha de inicio a la de fin. Este de Inversiones Barahona vence pronto, por eso también sale en Renovaciones. Ahora creo uno nuevo con Crear Contrato.",
+                      "acciones":  [
+                                       {
+                                           "click":  "nav.module-rail [aria-label=\u0027Éxito del Cliente\u0027]",
+                                           "al_decir":  "Entro a Éxito del Cliente"
+                                       },
+                                       {
+                                           "click":  ".panel-item:has-text(\u0027Contratos de Venta\u0027)",
+                                           "al_decir":  "abro Contratos de Venta"
+                                       },
+                                       {
+                                           "click":  "button.panel-collapse",
+                                           "al_decir":  "Recojo el menú"
+                                       },
+                                       {
+                                           "resaltar":  "table tbody tr td[data-column-id=\u0027contractNumber\u0027]",
+                                           "durante_ms":  2500,
+                                           "al_decir":  "su número"
+                                       },
+                                       {
+                                           "resaltar":  "table tbody tr td[data-column-id=\u0027status\u0027]",
+                                           "durante_ms":  2500,
+                                           "al_decir":  "el estado"
+                                       },
+                                       {
+                                           "resaltar":  "table tbody tr td[data-column-id=\u0027client\u0027]",
+                                           "durante_ms":  2200,
+                                           "al_decir":  "el cliente"
+                                       },
+                                       {
+                                           "resaltar":  "table tbody tr td[data-column-id=\u0027totalValue\u0027]",
+                                           "durante_ms":  2200,
+                                           "al_decir":  "el valor"
+                                       },
+                                       {
+                                           "resaltar":  "table tbody tr td[data-column-id=\u0027endDate\u0027]",
+                                           "durante_ms":  3500,
+                                           "al_decir":  "la vigencia"
+                                       },
+                                       {
+                                           "resaltar":  "table tbody tr td[data-column-id=\u0027title\u0027]",
+                                           "durante_ms":  4500,
+                                           "al_decir":  "vence pronto"
+                                       },
+                                       {
+                                           "click":  "button:has-text(\u0027Crear Contrato\u0027)",
+                                           "al_decir":  "con Crear Contrato"
+                                       }
+                                   ]
+                  },
+                  {
+                      "id":  "02-nuevo-contrato",
+                      "capitulo":  "Registrar un contrato",
+                      "rotulo":  "Nuevo contrato",
+                      "ruta":  "Éxito del Cliente › Contratos de Venta › Crear",
+                      "texto_pantalla":  "Nuevo contrato · cliente, valor, vigencia y renovación",
+                      "narracion":  "Constructora Mirador firmó el mantenimiento de sus herramientas por un año. Le doy número al contrato, como lo identifica tu empresa en sus papeles. Luego, y un título que diga qué cubre, para encontrarlo rápido en la lista. Ahora, los datos del acuerdo. En Tipo, abro la lista de tipos y elijo Mantenimiento, porque cubre el servicio a sus herramientas. Y el estado lo dejo en Activo, porque ya está firmado. Ahora el cliente: lo busco por nombre, y la lista muestra los clientes de Ventas que coinciden. Elijo Constructora Mirador. Y el gerente de cuenta, que responde por el contrato: escribo su nombre, la lista la encuentra, y la elijo, Rosa. A la derecha, el valor total, ciento veinte mil pesos, por el año completo. Debajo dice en DOP, que es el peso dominicano. La fecha de inicio, el primero de noviembre de este año. Luego la de fin, un año después. Es la fecha de fin la que hace que el contrato aparezca en Renovaciones a tiempo, así que no la dejes vacía. Abajo eliges cómo se renueva: con Notificación el sistema te avisa antes de que venza, y aquí dices cuántos días antes. Con todo listo, pulso Guardar. Sale el aviso Contrato Creado; lo acepto.",
+                      "acciones":  [
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027contractNumber\u0027]",
+                                                            "texto":  "CTR-2026-021"
+                                                        },
+                                           "al_decir":  "Le doy número"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027title\u0027]",
+                                                            "texto":  "Mantenimiento de herramientas"
+                                                        },
+                                           "al_decir":  "Luego, y un título"
+                                       },
+                                       {
+                                           "click":  "mat-select[formcontrolname=\u0027type\u0027]",
+                                           "al_decir":  "En Tipo"
+                                       },
+                                       {
+                                           "click":  "mat-option:has-text(\u0027Mantenimiento\u0027)",
+                                           "al_decir":  "elijo Mantenimiento"
+                                       },
+                                       {
+                                           "click":  "mat-select[formcontrolname=\u0027status\u0027]",
+                                           "al_decir":  "Y el estado"
+                                       },
+                                       {
+                                           "click":  "mat-option:has-text(\u0027Activo\u0027)",
+                                           "al_decir":  "en Activo"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "app-custom-select:has(mat-label:has-text(\u0027Cliente\u0027)) input",
+                                                            "texto":  "Mirador"
+                                                        },
+                                           "al_decir":  "lo busco por nombre"
+                                       },
+                                       {
+                                           "click":  "mat-option:has-text(\u0027Constructora Mirador\u0027)",
+                                           "al_decir":  "elijo Constructora Mirador"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "app-custom-select:has(mat-label:has-text(\u0027Gerente\u0027)) input",
+                                                            "texto":  "Rosa"
+                                                        },
+                                           "al_decir":  "escribo su nombre"
+                                       },
+                                       {
+                                           "click":  "mat-option:has-text(\u0027Rosa\u0027)",
+                                           "al_decir":  "la elijo, Rosa"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027totalValue\u0027]",
+                                                            "texto":  "120000"
+                                                        },
+                                           "al_decir":  "el valor total"
+                                       },
+                                       {
+                                           "resaltar":  "input[formcontrolname=\u0027currency\u0027]",
+                                           "durante_ms":  3000,
+                                           "al_decir":  "en DOP"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027startDate\u0027]",
+                                                            "texto":  "01/11/2026"
+                                                        },
+                                           "al_decir":  "La fecha de inicio"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027endDate\u0027]",
+                                                            "texto":  "31/10/2027"
+                                                        },
+                                           "al_decir":  "Luego la de fin"
+                                       },
+                                       {
+                                           "click":  "mat-select[formcontrolname=\u0027renewalType\u0027]",
+                                           "al_decir":  "cómo se renueva"
+                                       },
+                                       {
+                                           "click":  "mat-option:has-text(\u0027Notificación\u0027)",
+                                           "al_decir":  "con Notificación"
+                                       },
+                                       {
+                                           "resaltar":  "input[formcontrolname=\u0027renewalNotificationDays\u0027]",
+                                           "durante_ms":  3500,
+                                           "al_decir":  "cuántos días antes"
+                                       },
+                                       {
+                                           "click":  "button[type=submit]",
+                                           "al_decir":  "pulso Guardar"
+                                       },
+                                       {
+                                           "resaltar":  ".custom-alert-dialog-panel mat-dialog-container",
+                                           "durante_ms":  3000,
+                                           "cursor":  false
+                                       },
+                                       {
+                                           "click":  ".custom-alert-dialog-panel mat-dialog-container button",
+                                           "al_decir":  "lo acepto"
+                                       }
+                                   ]
+                  },
+                  {
+                      "id":  "03-proyectos",
+                      "capitulo":  "Proyectos",
+                      "rotulo":  "Proyectos",
+                      "ruta":  "Éxito del Cliente › Proyectos › Crear",
+                      "texto_pantalla":  "Proyecto · la entrega de una venta grande, con presupuesto y avance",
+                      "navegar":  "/crm/projects",
+                      "al_decir_navegar":  "abro Proyectos",
+                      "narracion":  "Cuando una venta se entrega por etapas, como el equipamiento de una plaza, se lleva como proyecto. Desde el menú de Éxito del Cliente abro Proyectos, y pulso Crear Proyecto. Le pongo nombre: instalación eléctrica de la plaza, que es lo que vamos a entregar. El estado arranca en Planificación, y cambia cuando empieza el trabajo. La fecha de inicio, el primero de noviembre, cuando empieza la obra. Debajo va el presupuesto: doscientos cincuenta mil pesos, lo que se acordó cobrar. Abajo, en Relaciones, el cliente: lo busco por nombre, y en la lista aparece. Elijo Inversiones Barahona. Ahora el gerente del proyecto, que es quien responde por la entrega: escribo su nombre, aparece en la lista, y elijo a Rosa. Todo listo: pulso Guardar. El aviso confirma que se creó, con su código. Al aceptarlo queda abierto para editar: desde aquí actualizas el costo real y el avance a medida que se entrega.",
+                      "acciones":  [
+                                       {
+                                           "click":  "button:has-text(\u0027Crear Proyecto\u0027)",
+                                           "al_decir":  "pulso Crear Proyecto"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027name\u0027]",
+                                                            "texto":  "Instalación eléctrica de la plaza"
+                                                        },
+                                           "al_decir":  "Le pongo nombre"
+                                       },
+                                       {
+                                           "resaltar":  "mat-select[formcontrolname=\u0027status\u0027]",
+                                           "durante_ms":  2500,
+                                           "al_decir":  "El estado arranca"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027startDate\u0027]",
+                                                            "texto":  "01/11/2026"
+                                                        },
+                                           "al_decir":  "La fecha de inicio"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "input[formcontrolname=\u0027budget\u0027]",
+                                                            "texto":  "250000"
+                                                        },
+                                           "al_decir":  "Debajo va el presupuesto"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "app-custom-select:has(mat-label:has-text(\u0027Cliente\u0027)) input",
+                                                            "texto":  "Barahona"
+                                                        },
+                                           "al_decir":  "lo busco por nombre"
+                                       },
+                                       {
+                                           "click":  "mat-option:has-text(\u0027Inversiones Barahona\u0027)",
+                                           "al_decir":  "Elijo Inversiones Barahona"
+                                       },
+                                       {
+                                           "escribir":  {
+                                                            "sel":  "app-custom-select:has(mat-label:has-text(\u0027Gerente\u0027)) input",
+                                                            "texto":  "Rosa"
+                                                        },
+                                           "al_decir":  "escribo su nombre"
+                                       },
+                                       {
+                                           "click":  "mat-option:has-text(\u0027Rosa\u0027)",
+                                           "al_decir":  "elijo a Rosa"
+                                       },
+                                       {
+                                           "click":  "button[type=submit]",
+                                           "al_decir":  "pulso Guardar"
+                                       },
+                                       {
+                                           "resaltar":  ".custom-alert-dialog-panel mat-dialog-container",
+                                           "durante_ms":  3500,
+                                           "cursor":  false
+                                       },
+                                       {
+                                           "click":  ".custom-alert-dialog-panel mat-dialog-container button",
+                                           "al_decir":  "Al aceptarlo"
+                                       },
+                                       {
+                                           "resaltar":  "input[formcontrolname=\u0027actualCost\u0027]",
+                                           "durante_ms":  3000,
+                                           "al_decir":  "el costo real"
+                                       },
+                                       {
+                                           "resaltar":  "input[formcontrolname=\u0027progress\u0027]",
+                                           "durante_ms":  3500,
+                                           "al_decir":  "y el avance"
+                                       }
+                                   ]
+                  }
+              ]
+}

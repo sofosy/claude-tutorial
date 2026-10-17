@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Mesa de Ayuda · El tablero de casos
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué es la Mesa de Ayuda
+00:53  Míos, de todos y sin asignar
+01:28  Mover un caso de estado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es un caso y cómo se lee el tablero de la Mesa de Ayuda
+• Ver tus casos, los del equipo y los que nadie ha tomado
+• Saber cuáles están por vencer y cuáles ya vencieron
+• Mover un caso de estado arrastrando su tarjeta
+
+⚠️ ERRORES COMUNES
+• Dejar casos sin responsable: el indicador «Sin asignar» lo avisa
+• Trabajar un caso sin moverlo a «En proceso»: el equipo cree que nadie lo atiende
+• Ignorar la fecha de vencimiento: un caso vencido baja la salud del cliente
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:59
+
+TRANSCRIPCIÓN
+============================================================
+Un caso es un problema o una solicitud de un cliente que alguien tiene que resolver: una factura mal hecha, una entrega incompleta, una devolución. La Mesa de Ayuda es donde se registran y se siguen hasta cerrarlos. Entro por el menú de la izquierda. Cada columna es un estado del caso: Abiertos, En proceso, esperando al cliente o a un tercero, y Resueltos. Cada tarjeta es un caso. Arriba, su número, y a la derecha cuánto falta para que venza: el plazo depende de la prioridad, y un urgente vence en horas. Debajo, el asunto, la prioridad y las iniciales de quien lo atiende. Y arriba del tablero, los indicadores: los casos abiertos, los que no tienen responsable, los vencidos, los resueltos hoy y el tiempo de la primera respuesta.
+El tablero abre con tus casos: el filtro Asignación dice Míos. Lo abro. Con Todos ves los de todo el equipo. Lo elijo, y aparecen la devolución del taladro, que no tiene responsable, y el cambio de dirección que lleva Ana, esperando al cliente. Al lado filtras por estado o por prioridad, y en Filtros, por cliente, tipo o fechas. Para buscar, escribe el número del caso, una palabra del asunto o de la descripción. Y con estos dos botones cambias entre el tablero y la vista de lista.
+Cuando empiezas a trabajar un caso, muévelo para que el equipo lo sepa. Tomo la factura con el ITBIS mal calculado y la arrastro de Abiertos a En proceso. El cambio se guarda solo y queda en la historia del caso. Si la sueltas en Resueltos, el sistema te pide escribir cómo se resolvió, para que el próximo que reciba un caso igual sepa qué hacer. Para trabajar el caso por dentro, abre su tarjeta: lo vemos en el próximo video.

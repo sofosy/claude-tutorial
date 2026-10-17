@@ -1,0 +1,587 @@
+{
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "130555",
+      "Embotelladora",
+      "Agroindustrial",
+      "Cibao",
+      "Galletera",
+      "Colmado",
+      "Esquina",
+      "Cacao Real",
+      "Caribe Cola",
+      "Crocante",
+      "La Finca",
+      "7460001000243",
+      "Fumigación",
+      "doméstica",
+      "Chocolate",
+      "Habichuelas",
+      "Galletas",
+      "Refresco",
+      "Barbería",
+      "Peluquería"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/productos/restaurar.mjs B"
+  },
+  "titulo": "Productos · Parte 3: empaques en compras e inventario",
+  "descripcion": "Tercera parte de la serie de Productos de Germiva ERP: qué pasa en compras e inventario cuando un producto se compra en cajas. «Por reponer» sugiere cajas completas y crea la requisición; la orden de compra propone la caja con su costo; la recepción recibe cajas y las procesa a inventario como unidades; Existencias y el Kardex muestran la equivalencia en cajas, el costo por unidad y el lote; y un traslado entre almacenes capturado en cajas.",
+  "_comentario": "Serie Productos v3, video 3. Estado B (restaurar.mjs B): Refresco con Caja ×24 (compra ★) y Paquete ×6, existencia 0, mínimo 48 · máximo 240. Flujo de la orden: Borrador → Enviar a Aprobación → Aprobar → Confirmar → Crear Recepción → Guardar → Aprobar Recepción → Procesar a Inventario. La requisición creada desde «Por reponer» queda en borrador (su aprobación es de la serie Compras).",
+  "aprenderas": [
+    "Leer «Por reponer»: la sugerencia redondeada a cajas completas y la requisición que crea",
+    "Comprar en cajas: la orden propone la caja y su costo",
+    "Recibir cajas y procesarlas a inventario como unidades",
+    "Leer la existencia y el kardex con su equivalencia en cajas y el costo por unidad",
+    "Registrar un traslado entre almacenes capturado en cajas"
+  ],
+  "errores_comunes": [
+    "Recibir en unidades lo que el proveedor despacha en cajas: la cantidad sale veinticuatro veces menor",
+    "Dejar la recepción guardada sin procesarla: la mercancía no entra al inventario hasta «Procesar a Inventario»",
+    "Comparar el costo de la caja con el costo por unidad del kardex: el kardex siempre está en la unidad base"
+  ],
+  "pasos": [
+    {
+      "id": "01-por-reponer",
+      "capitulo": "Por reponer sugiere cajas",
+      "rotulo": "Por reponer",
+      "ruta": "Inventario › Por reponer",
+      "texto_pantalla": "Por reponer · lo que está bajo el mínimo, con la compra sugerida en cajas",
+      "narracion": "En la parte anterior le pusimos al refresco su caja de veinticuatro. Hoy lo compramos. Entro a Inventario y abro Por reponer. Esta pantalla lista lo que está por debajo de su mínimo, y cada fila es un producto en un almacén. Recojo el panel. El refresco está agotado: hay cero unidades, con un mínimo de cuarenta y ocho y un máximo de doscientos cuarenta. La columna sugerido dice cuánto pedir para llegar al máximo, y fíjate: lo propone en cajas completas, diez cajas de veinticuatro, porque la caja es el empaque que se propone al comprar. Aún no hay último proveedor ni último costo, porque nunca se ha comprado. Marco la fila y pulso crear requisición. El aviso dice que se creará una requisición en borrador con la cantidad sugerida; la confirmo. Se abre la requisición, con la línea en cajas por veinticuatro. La requisición sigue su camino de aprobación en Compras, que tiene su propia serie; aquí lo que importa es que la caja viaja con ella.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Inventario']",
+          "al_decir": "Entro a Inventario"
+        },
+        {
+          "click": ".panel-item:has-text('Por reponer')",
+          "al_decir": "abro Por reponer"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "cada fila es un producto"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el panel"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(4)",
+          "durante_ms": 2500,
+          "al_decir": "está agotado"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(6)",
+          "durante_ms": 4000,
+          "al_decir": "con un mínimo"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(7)",
+          "durante_ms": 9000,
+          "al_decir": "La columna sugerido"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(8)",
+          "durante_ms": 4500,
+          "al_decir": "último proveedor"
+        },
+        {
+          "click": "table tbody tr:has-text('Refresco Caribe Cola lata') mat-checkbox",
+          "al_decir": "Marco la fila"
+        },
+        {
+          "click": "button:has-text('Crear requisición')",
+          "al_decir": "pulso crear requisición"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El aviso dice"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear requisición')",
+          "al_decir": "la confirmo"
+        },
+        {
+          "resaltar": "app-line-unit-select, table tbody tr:has-text('Refresco') td:has-text('Caja')",
+          "durante_ms": 5000,
+          "al_decir": "con la línea en cajas"
+        },
+        {
+          "resaltar": ".page-hero",
+          "durante_ms": 6000,
+          "al_decir": "la caja viaja con ella"
+        }
+      ]
+    },
+    {
+      "id": "02-orden-compra",
+      "capitulo": "La orden de compra en cajas",
+      "rotulo": "Orden de compra",
+      "ruta": "Compras › Órdenes de Compra › Nueva",
+      "texto_pantalla": "Orden de compra · la caja propuesta con su costo",
+      "navegar": "/purchases/purchase-orders/create",
+      "narracion": "Ahora la orden de compra al proveedor. Abro una orden nueva en Compras. Elijo el proveedor: escribo embotell, y en la lista aparece Embotelladora del Caribe; la elijo, y debajo aparecen sus datos. Luego, el almacén destino, que es donde va a entrar la mercancía: el almacén Sur. Abajo, en las líneas, busco el refresco escribiendo su nombre; la lista lo muestra con su código, y lo agrego. Fíjate en la línea: la unidad vino sola en caja por veinticuatro, porque es la que tiene la estrella de compra. Y el precio unitario es quinientos veintiocho: el costo de una unidad, veintidós pesos, por las veinticuatro que trae la caja. Si abro el selector de unidad, solo ofrece unidad y caja: el paquete no aparece, porque lo marcamos solo para la venta. Lo cierro. En cantidad escribo diez, diez cajas de veinticuatro. Abajo, el resumen financiero suma el subtotal y el ITBIS. Pulso guardar. La orden se crea, y el aviso lo confirma; acepto.",
+      "acciones": [
+        {
+          "resaltar": ".page-hero",
+          "durante_ms": 3000,
+          "al_decir": "Abro una orden nueva"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Proveedor')) input",
+            "texto": "Embotell"
+          },
+          "al_decir": "Elijo el proveedor"
+        },
+        {
+          "click": "mat-option:has-text('Embotelladora del Caribe')",
+          "al_decir": "la elijo"
+        },
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Almacén Destino')) input",
+          "al_decir": "Luego, el almacén destino"
+        },
+        {
+          "click": "mat-option:has-text('Almacén Sur')",
+          "al_decir": "el almacén Sur"
+        },
+        {
+          "escribir": {
+            "sel": "input[placeholder='Escriba para buscar producto o servicio...']",
+            "texto": "Refresco"
+          },
+          "al_decir": "busco el refresco"
+        },
+        {
+          "click": "mat-option:has-text('Refresco Caribe Cola lata')",
+          "al_decir": "y lo agrego"
+        },
+        {
+          "resaltar": "mat-card:has(mat-card-title:has-text('Líneas')) app-line-unit-select",
+          "durante_ms": 5000,
+          "al_decir": "la unidad vino sola"
+        },
+        {
+          "resaltar": "mat-card:has(mat-card-title:has-text('Líneas')) input[formcontrolname='price']",
+          "durante_ms": 6500,
+          "al_decir": "el precio unitario"
+        },
+        {
+          "click": "mat-card:has(mat-card-title:has-text('Líneas')) app-line-unit-select mat-select",
+          "al_decir": "Si abro el selector"
+        },
+        {
+          "resaltar": ".cdk-overlay-pane mat-option:has-text('Caja')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "solo ofrece unidad y caja"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Lo cierro"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label='Cantidad']",
+            "texto": "10"
+          },
+          "al_decir": "En cantidad"
+        },
+        {
+          "resaltar": "mat-card:has(mat-card-title:has-text('Resumen'))",
+          "durante_ms": 4000,
+          "al_decir": "Abajo, el resumen financiero"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Pulso guardar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        }
+      ]
+    },
+    {
+      "id": "03-aprobar-confirmar",
+      "capitulo": "Aprobar y confirmar la orden",
+      "rotulo": "Aprobar la orden",
+      "ruta": "Compras › Órdenes de Compra › COM",
+      "texto_pantalla": "Orden de compra · enviar a aprobación, aprobar y confirmar",
+      "narracion": "La orden quedó en borrador. Antes de recibir mercancía pasa por tres estados, con botones en la cabecera. Pulso enviar a aprobación y lo confirmo con sí, continuar. El aviso dice que la orden quedó pendiente de aprobación, y lo cierro. Ahora pulso aprobar; se pueden dejar comentarios, y apruebo. El aviso dice que la orden fue aprobada; lo leo, y lo acepto. El tercer paso es confirmar, que significa que el proveedor ya aceptó el pedido. Lo pulso, y en la pregunta digo que sí: confirmo. El aviso dice que la orden ya está confirmada, y lo cierro con aceptar. Con eso aparece el botón crear recepción. El detalle de estas aprobaciones se explica en la serie de Compras.",
+      "acciones": [
+        {
+          "resaltar": ".page-hero",
+          "durante_ms": 4500,
+          "al_decir": "quedó en borrador"
+        },
+        {
+          "click": ".page-hero button:has-text('Enviar a Aprobación')",
+          "al_decir": "Pulso enviar a aprobación"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, continuar')",
+          "al_decir": "sí, continuar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "quedó pendiente"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "y lo cierro. Ahora"
+        },
+        {
+          "click": ".page-hero button:has-text('Aprobar')",
+          "al_decir": "pulso aprobar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aprobar')",
+          "al_decir": "y apruebo"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "fue aprobada"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "y lo acepto"
+        },
+        {
+          "click": ".page-hero button:has-text('Confirmar')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, continuar')",
+          "al_decir": "confirmo. El aviso"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "está confirmada"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "lo cierro con aceptar"
+        },
+        {
+          "resaltar": ".page-hero button:has-text('Crear Recepción')",
+          "durante_ms": 6000,
+          "al_decir": "crear recepción"
+        }
+      ]
+    },
+    {
+      "id": "04-recepcion",
+      "capitulo": "Recibir las cajas y procesarlas a inventario",
+      "rotulo": "La recepción",
+      "ruta": "Compras › Recepciones › Nueva",
+      "texto_pantalla": "Recepción · cajas recibidas que entran al inventario como unidades",
+      "narracion": "Llegó el camión. Pulso crear recepción. La recepción registra lo que de verdad entró al almacén, y sus líneas salen de la orden. La línea dice ordenada diez, en la unidad caja por veinticuatro, y recibida diez: si llegaran menos cajas, aquí se corrige. Abajo, el resultado de la recepción resume diez cajas recibidas y aceptadas, y su valor. Pulso guardar; el aviso dice que la recepción se creó, y acepto. Queda en borrador. En el menú acciones de arriba pulso aprobar recepción, y apruebo. El aviso dice que ya se puede procesar a inventario; acepto. Y en el mismo menú, procesar a inventario. Antes de mover nada, el sistema valida la línea, y aquí está la conversión: diez cajas por veinticuatro, que son doscientas cuarenta unidades. Pulso procesar una línea. El aviso confirma que la mercancía entró al inventario, y lo cierro.",
+      "acciones": [
+        {
+          "click": ".page-hero button:has-text('Crear Recepción')",
+          "al_decir": "Pulso crear recepción"
+        },
+        {
+          "resaltar": ".page-hero",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "lo que de verdad entró"
+        },
+        {
+          "resaltar": "mat-card:has-text('Líneas a recibir') mat-card-title",
+          "durante_ms": 3000,
+          "al_decir": "ordenada diez"
+        },
+        {
+          "resaltar": "mat-card:has-text('Líneas a recibir') :text-is('Caja ×24')",
+          "durante_ms": 3500,
+          "al_decir": "en la unidad caja"
+        },
+        {
+          "resaltar": "input[aria-label='Cantidad recibida']",
+          "durante_ms": 4000,
+          "al_decir": "y recibida diez"
+        },
+        {
+          "resaltar": "mat-card:has(mat-card-title:has-text('Resultado'))",
+          "durante_ms": 5000,
+          "al_decir": "el resultado de la recepción"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Pulso guardar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "la recepción se creó"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "y acepto. Queda"
+        },
+        {
+          "click": ".page-hero button:has-text('Acciones')",
+          "al_decir": "En el menú acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Aprobar Recepción')",
+          "al_decir": "pulso aprobar recepción"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aprobar')",
+          "al_decir": "y apruebo"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "ya se puede procesar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto. Y en"
+        },
+        {
+          "click": ".page-hero button:has-text('Acciones')",
+          "al_decir": "el mismo menú"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Procesar a Inventario')",
+          "al_decir": "procesar a inventario. Antes"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 8000,
+          "cursor": false,
+          "al_decir": "aquí está la conversión"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Procesar 1 línea')",
+          "al_decir": "Pulso procesar una línea"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "la mercancía entró"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "y lo cierro"
+        }
+      ]
+    },
+    {
+      "id": "05-existencias-kardex",
+      "capitulo": "Existencias y kardex con su equivalencia",
+      "rotulo": "Existencias y kardex",
+      "ruta": "Inventario › Existencias",
+      "texto_pantalla": "Existencias y kardex · siempre en unidades, con su equivalencia en cajas",
+      "navegar": "/inventory/existencias",
+      "narracion": "Vamos a ver el resultado en Existencias, la pantalla con lo que hay de cada producto ahora mismo. En el buscador escribo refresco, y luego pulso el botón filtrar. En la fila, la columna disponible dice doscientas cuarenta unidades, y debajo, su equivalencia: diez cajas por veinticuatro. La existencia vive siempre en unidades; la caja es una forma de leerla. Abro el detalle con el ojo de la fila. El panel repite lo disponible en cajas, dice dónde está, en el almacén Sur, y en qué lote. Ahora pulso ver su kardex. El kardex es el historial de entradas y salidas con su costo. La entrada de la recepción dice diez cajas por veinticuatro, doscientas cuarenta unidades, y el costo unitario es veintidós pesos: la caja costó quinientos veintiocho, y el sistema la lleva a la unidad base. El saldo final también se lee en cajas.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+            "texto": "Refresco"
+          },
+          "al_decir": "En el buscador"
+        },
+        {
+          "click": "button:has(mat-icon:text-is('filter_list'))",
+          "al_decir": "el botón filtrar"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Refresco') td:nth-child(2)",
+          "durante_ms": 8000,
+          "al_decir": "la columna disponible"
+        },
+        {
+          "click": "table tbody tr:has-text('Refresco') button:has(mat-icon:text-is('visibility'))",
+          "al_decir": "con el ojo"
+        },
+        {
+          "resaltar": ".gm-console-split__aside :text('Disponible:')",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "El panel repite"
+        },
+        {
+          "click": ".gm-console-split__aside :text('Ver su kardex')",
+          "al_decir": "pulso ver su kardex"
+        },
+        {
+          "resaltar": "table thead th:nth-child(5)",
+          "durante_ms": 4000,
+          "al_decir": "El kardex es"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Recepción') td:nth-child(5)",
+          "durante_ms": 5000,
+          "al_decir": "La entrada de la recepción"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Recepción') td:nth-child(8)",
+          "durante_ms": 7000,
+          "al_decir": "el costo unitario"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('Saldo final') td:nth-child(7)",
+          "durante_ms": 4000,
+          "al_decir": "El saldo final"
+        }
+      ]
+    },
+    {
+      "id": "06-traslado",
+      "capitulo": "Un traslado capturado en cajas",
+      "rotulo": "Traslado en cajas",
+      "ruta": "Inventario › Registrar movimiento › Transferencia",
+      "texto_pantalla": "Movimiento manual · traslado de dos cajas a otro almacén",
+      "navegar": "/inventory/create",
+      "narracion": "Por último, un movimiento manual. Abro registrar movimiento, que sirve para entradas, salidas y traslados que no vienen de una compra o una venta. Elijo transferencia, que mueve mercancía de un lugar a otro. Producto: escribo refresco, y cuando aparece en la lista, lo elijo. El tipo de transferencia se pone solo. En inventario disponible se ve el lote del almacén Sur, con sus doscientas cuarenta unidades. El destino: la ubicación principal del almacén en consignación. Ahora, la unidad: aquí también se puede capturar en empaques, y elijo caja por veinticuatro. Cantidad: dos cajas. Debajo del campo, el sistema las convierte en cuarenta y ocho unidades. Pulso guardar, y el aviso confirma el traslado; acepto. En la próxima parte vendemos este refresco por caja, por paquete y por unidad.",
+      "acciones": [
+        {
+          "resaltar": ".page-hero",
+          "durante_ms": 4500,
+          "al_decir": "Abro registrar movimiento"
+        },
+        {
+          "click": "mat-button-toggle:has-text('Transferencia') button",
+          "al_decir": "Elijo transferencia"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Producto')) input",
+            "texto": "Refresco"
+          },
+          "al_decir": "escribo refresco"
+        },
+        {
+          "click": "mat-option:has-text('Refresco Caribe Cola lata')",
+          "al_decir": "lo elijo. El tipo"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='inventoryMovementTypeId'])",
+          "durante_ms": 2500,
+          "al_decir": "se pone solo"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Inventario Disponible'))",
+          "durante_ms": 4500,
+          "al_decir": "En inventario disponible"
+        },
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Ubicación Destino')) input",
+          "al_decir": "El destino"
+        },
+        {
+          "click": "mat-option:has-text('Almacén en Consignación')",
+          "al_decir": "almacén en consignación"
+        },
+        {
+          "click": "mat-form-field:has(mat-label:text-is('Unidad')) mat-select",
+          "al_decir": "Ahora, la unidad"
+        },
+        {
+          "click": "mat-option:has-text('Caja ×24')",
+          "al_decir": "elijo caja por veinticuatro"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='quantity']",
+            "texto": "2"
+          },
+          "al_decir": "Cantidad: dos cajas"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='quantity'])",
+          "durante_ms": 4000,
+          "al_decir": "las convierte"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Pulso guardar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "confirma el traslado"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto. En la"
+        }
+      ]
+    }
+  ]
+}

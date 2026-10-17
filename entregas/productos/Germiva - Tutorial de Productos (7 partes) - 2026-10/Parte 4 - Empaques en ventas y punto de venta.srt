@@ -1,0 +1,267 @@
+1
+00:00:03,100 --> 00:00:06,089
+En la parte anterior compramos diez cajas de refresco.
+
+2
+00:00:06,745 --> 00:00:08,594
+Hoy las vendemos de tres formas:
+
+3
+00:00:08,679 --> 00:00:11,012
+por paquete, por caja y por unidad.
+
+4
+00:00:11,667 --> 00:00:16,481
+Desde el inicio pulso nueva factura, y recojo el panel para ver la línea completa.
+
+5
+00:00:17,137 --> 00:00:21,218
+El cliente queda como consumidor final, que basta para este ejemplo.
+
+6
+00:00:21,873 --> 00:00:24,541
+En las líneas busco el refresco escribiendo su nombre;
+
+7
+00:00:24,652 --> 00:00:28,658
+la lista muestra que hay doscientas cuarenta disponibles, y lo agrego.
+
+8
+00:00:29,314 --> 00:00:30,543
+Fíjate en la unidad:
+
+9
+00:00:30,591 --> 00:00:32,429
+vino sola en paquete por seis,
+
+10
+00:00:32,489 --> 00:00:35,256
+porque el paquete es el que tiene la estrella de venta.
+
+11
+00:00:35,911 --> 00:00:38,455
+El total a pagar es doscientos diez pesos:
+
+12
+00:00:38,564 --> 00:00:42,523
+el paquete no tiene precio propio, así que vale seis veces la unidad,
+
+13
+00:00:42,595 --> 00:00:44,606
+treinta y cinco pesos con ITBIS.
+
+14
+00:00:45,262 --> 00:00:50,422
+En cantidad escribo dos, dos paquetes, y el total sube a cuatrocientos veinte.
+
+15
+00:00:51,780 --> 00:00:54,893
+Ahora el mismo cliente se lleva también una caja entera.
+
+16
+00:00:55,561 --> 00:00:57,734
+Agrego otra línea con el refresco;
+
+17
+00:00:57,831 --> 00:00:59,493
+otra vez llega en paquete.
+
+18
+00:01:00,161 --> 00:01:01,640
+Abro el selector de unidad:
+
+19
+00:01:01,725 --> 00:01:05,855
+ofrece unidad, caja y paquete, los tres empaques que se venden.
+
+20
+00:01:06,524 --> 00:01:08,359
+Elijo caja por veinticuatro.
+
+21
+00:01:09,015 --> 00:01:11,212
+Esta línea suma setecientos ochenta:
+
+22
+00:01:11,347 --> 00:01:15,417
+la caja tiene precio propio, más barato que veinticuatro unidades sueltas,
+
+23
+00:01:15,402 --> 00:01:17,289
+que serían ochocientos cuarenta.
+
+24
+00:01:17,956 --> 00:01:21,072
+Debajo de las líneas, el resumen las cuenta por empaque:
+
+25
+00:01:21,194 --> 00:01:22,868
+dos paquetes y una caja.
+
+26
+00:01:23,537 --> 00:01:26,205
+El total a pagar es mil doscientos pesos.
+
+27
+00:01:26,872 --> 00:01:28,239
+Pulso guardar y cobrar;
+
+28
+00:01:28,348 --> 00:01:33,335
+la venta es de contado y en efectivo, así que el cobro se registra en el mismo paso.
+
+29
+00:01:33,991 --> 00:01:36,287
+El aviso lo confirma, y acepto.
+
+30
+00:01:36,954 --> 00:01:41,483
+La factura queda emitida y pagada, con sus dos líneas en paquete y en caja.
+
+31
+00:01:42,858 --> 00:01:46,084
+Pasemos al punto de venta, la pantalla del mostrador.
+
+32
+00:01:46,751 --> 00:01:49,618
+En el buscador escaneo el código de barras de la caja;
+
+33
+00:01:49,740 --> 00:01:52,965
+aquí lo escribo y pulso Enter, como hace el lector.
+
+34
+00:01:53,621 --> 00:01:57,393
+El ticket recibe una caja por veinticuatro, a setecientos ochenta:
+
+35
+00:01:57,503 --> 00:01:59,563
+el código dice qué empaque es.
+
+36
+00:02:00,231 --> 00:02:02,353
+Ahora busco el refresco por nombre.
+
+37
+00:02:03,021 --> 00:02:08,070
+La tarjeta muestra lo que queda, doscientas cuatro unidades, y su precio por unidad.
+
+38
+00:02:08,737 --> 00:02:12,348
+Al tocarla entra una unidad, a treinta y cinco cada una.
+
+39
+00:02:13,016 --> 00:02:14,617
+Con el más subo a tres.
+
+40
+00:02:15,285 --> 00:02:19,415
+El paquete no tiene código de barras, así que en el mostrador no entra;
+
+41
+00:02:19,514 --> 00:02:23,199
+si lo quieres vender aquí, dale un código en la ficha del producto.
+
+42
+00:02:23,867 --> 00:02:26,956
+Abajo, artículos resume el ticket por empaque:
+
+43
+00:02:27,004 --> 00:02:28,903
+una caja y tres unidades.
+
+44
+00:02:30,287 --> 00:02:33,116
+El total es ochocientos ochenta y cinco pesos.
+
+45
+00:02:33,783 --> 00:02:36,563
+Pulso cobrar, y se abre la ventana de cobro.
+
+46
+00:02:37,218 --> 00:02:39,551
+La forma de pago ya está en efectivo.
+
+47
+00:02:40,219 --> 00:02:43,817
+El cliente me paga con mil, y lo marco con el botón rápido.
+
+48
+00:02:44,485 --> 00:02:46,669
+A la derecha, el cambio a devolver:
+
+49
+00:02:46,854 --> 00:02:48,467
+ciento quince pesos.
+
+50
+00:02:49,135 --> 00:02:53,427
+En esta demostración no imprimo el recibo, así que desmarco esa casilla.
+
+51
+00:02:54,083 --> 00:02:55,412
+Confirmo el cobro.
+
+52
+00:02:56,067 --> 00:03:00,806
+La venta queda registrada con su factura y su comprobante, y pulso nueva venta.
+
+53
+00:03:01,474 --> 00:03:03,485
+Fíjate en la tarjeta del refresco:
+
+54
+00:03:03,558 --> 00:03:06,386
+ahora quedan ciento setenta y siete unidades.
+
+55
+00:03:07,759 --> 00:03:09,794
+Veamos cómo quedó el inventario.
+
+56
+00:03:10,449 --> 00:03:14,034
+En Existencias escribo refresco en el buscador y pulso filtrar.
+
+57
+00:03:14,703 --> 00:03:15,523
+Disponible:
+
+58
+00:03:15,645 --> 00:03:17,532
+ciento setenta y siete unidades,
+
+59
+00:03:17,629 --> 00:03:21,326
+que son siete cajas por veinticuatro y nueve unidades sueltas.
+
+60
+00:03:21,994 --> 00:03:25,307
+Abro el detalle con el ojo, y pulso ver su kardex.
+
+61
+00:03:25,975 --> 00:03:29,399
+Cada venta dejó su salida, en el empaque en que se vendió.
+
+62
+00:03:30,067 --> 00:03:35,290
+La factura sacó dos paquetes por seis, doce unidades, y una caja de veinticuatro.
+
+63
+00:03:35,958 --> 00:03:39,184
+El punto de venta sacó otra caja y tres unidades.
+
+64
+00:03:39,851 --> 00:03:44,354
+Todas salen del mismo lote y al mismo costo por unidad, veintidós pesos.
+
+65
+00:03:45,023 --> 00:03:47,889
+El saldo final se lee igual que en Existencias.
+
+66
+00:03:48,557 --> 00:03:51,237
+En la próxima parte vemos los productos pesados,
+
+67
+00:03:51,359 --> 00:03:53,680
+la balanza y el cambio de unidad base.

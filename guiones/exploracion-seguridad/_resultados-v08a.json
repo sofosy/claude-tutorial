@@ -1,0 +1,75 @@
+{
+ "logins": [
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.05,
+   "clic_a_url_s": 6.34,
+   "clic_a_networkidle_s": 6.34,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "pedro.nunez",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.02,
+   "clic_a_url_s": 6.76,
+   "clic_a_networkidle_s": 6.76,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "marta.guzman",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.02,
+   "clic_a_url_s": 6.2,
+   "clic_a_networkidle_s": 6.2,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "rail_ana": [
+  "Inicio",
+  "Ventas",
+  "Inventario",
+  "Calendario",
+  "Configuración",
+  "Cerrar sesión"
+ ],
+ "flyout_Ventas_ana.mejia": "home\nsell\ninventory\ncalendar_month\ntune\npower_settings_new\nVENTAS\nchevron_left\ngroups\nClientes\ndescription\nCotizaciones",
+ "ana_cot_url": "http://localhost:4200/sales/quotes",
+ "rail_pedro": [
+  "Inicio",
+  "Inventario",
+  "Calendario",
+  "Configuración",
+  "Cerrar sesión"
+ ],
+ "flyout_Ventas": "NO EXISTE",
+ "rail_marta": [
+  "Inicio",
+  "Ventas",
+  "Inventario",
+  "Calendario",
+  "Seguridad",
+  "Configuración",
+  "Cerrar sesión"
+ ],
+ "marta_pestanas": [
+  "Resumen",
+  "Personas\n9",
+  "Roles y permisos\n12",
+  "Auditoría"
+ ],
+ "marta_acc_deshab": 33,
+ "marta_mas_items": [
+  "history\nVer su actividad"
+ ],
+ "marta_integ": {
+  "url": "http://localhost:4200/security/integraciones",
+  "denied": [
+   "lock\n\nNo tiene permiso para ver «Integraciones». Solicite el acceso al administrador de la empresa."
+  ],
+  "breadcrumb": "Seguridad\nResumen"
+ }
+}

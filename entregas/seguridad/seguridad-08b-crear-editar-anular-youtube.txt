@@ -1,0 +1,34 @@
+TÍTULO
+============================================================
+Con y sin permiso · Crear, editar y anular
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Con permiso: crear
+00:52  Con permiso: editar y anular
+01:39  Sin permiso: crear
+02:37  Sin permiso: editar y anular
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué botones da el permiso de crear: «Crear Cotización» y «Duplicar»
+• Qué da el permiso de editar: el formulario editable, «Guardar» y el paso «Cancelada», que es como se anula una cotización
+• Cómo se ve la misma lista y la misma cotización para alguien de solo lectura
+
+⚠️ ERRORES COMUNES
+• Buscar un botón en gris: lo que el rol no permite desaparece de la pantalla
+• Olvidar que en cotizaciones anular se llama «Cancelada» y lo cubre el permiso de editar
+• Dar el permiso de editar a quien solo tiene que consultar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:23
+
+TRANSCRIPCIÓN
+============================================================
+Entra Ana, la vendedora, y en este video vemos los permisos de acción: crear, editar y anular. Primero con quien los tiene, después con quien no. Desde el Inicio abro Ventas, y luego Cotizaciones. Se abre la lista; contraigo el panel del menú para ver la tabla completa. Esta es la lista de cotizaciones de Ana: cada fila es un presupuesto para un cliente. Arriba a la derecha está el botón Crear Cotización: aparece porque su rol tiene el permiso Cotizaciones, Crear. En cada fila, los tres puntos de la derecha abren Más acciones; lo pulso en la de Colmado La Esquina, y ahí está Duplicar, que también es crear: hace una cotización nueva copiando esta. Cierro el menú. Con ese mismo permiso, Ana puede empezar una cotización desde cero.
+Abro esa misma cotización, la número dos, con el ojo de su fila. El título dice Editar Cotización, y abajo está el botón Guardar: Ana puede cambiarla porque tiene el permiso Cotizaciones, Editar. Arriba, la barra de estados muestra por dónde pasa la cotización. En cotizaciones, anular se llama cancelar: el paso Cancelada está disponible para Ana, porque lo cubre ese mismo permiso de editar. No lo pulso, porque esta cotización la usamos después. Hago un cambio de verdad: en la primera línea, la del bombillo, cambio la cantidad a quince; el total se recalcula solo. Y pulso Guardar, abajo a la derecha. El sistema confirma, y la cotización queda guardada con la cantidad nueva.
+Ahora la misma lista con alguien que no tiene esos permisos. Salgo: abro el menú de mi usuario, arriba a la derecha, pulso Cerrar sesión, y entro como Marta, la auditora. Escribo su usuario, marta punto guzman, en minúsculas; luego su clave, que en pantalla se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Marta tiene el permiso de ver cotizaciones, pero no el de crearlas ni el de editarlas: su rol es de solo lectura, para revisar sin cambiar nada. Ya dentro, abro Ventas, igual que antes, y dentro Cotizaciones; y contraigo el panel. Ella ve las ocho de la empresa, porque revisa todo. Pero arriba ya no está el botón Crear Cotización. Y en cada fila solo queda el ojo, para abrir: no hay tres puntos, ni Duplicar. Lo que el rol no permite no sale en gris: desaparece.
+Ahora vamos al detalle. Marta abre la misma cotización, la número dos. Ahora el título dice solo Cotización, sin la palabra Editar: la ve completa, pero ningún campo se puede cambiar. En la barra de estados, el paso Cancelada sale en gris, apagado; para Ana estaba en azul. Y abajo solo queda Volver: no hay Guardar. En resumen: ver, crear y editar son permisos distintos. Con ver, se consulta. Con crear aparecen Crear Cotización y Duplicar. Con editar, el botón Guardar y la opción de cancelar, que es anular. Y lo que el rol no tiene, no aparece o no se puede pulsar.

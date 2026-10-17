@@ -1,0 +1,50 @@
+{
+  "empresa": 43,
+  "categorias": {
+    "Herramientas": 35,
+    "Electricidad": 36,
+    "Plomería": 37,
+    "Pintura": 38,
+    "Construcción": 39,
+    "Jardín": 40
+  },
+  "productos": {
+    "FER-1001": 212,
+    "FER-1002": 213,
+    "FER-1003": 214,
+    "FER-1004": 215,
+    "FER-1005": 216,
+    "FER-1006": 217,
+    "FER-2001": 218,
+    "FER-2002": 219,
+    "FER-2003": 220,
+    "FER-2004": 221,
+    "FER-3001": 222,
+    "FER-3002": 223,
+    "FER-3003": 224,
+    "FER-3004": 225,
+    "FER-4001": 226,
+    "FER-4002": 227,
+    "FER-4003": 228,
+    "FER-4004": 229,
+    "FER-5001": 230,
+    "FER-5002": 231,
+    "FER-5003": 232,
+    "FER-5004": 233,
+    "FER-6001": 234,
+    "FER-6002": 235,
+    "FER-6003": 236
+  },
+  "clientes": {
+    "constructora": 8034,
+    "maria": 8035,
+    "consumidorFinal": 7737
+  },
+  "descuentos": {
+    "Descuento de mostrador 5 %": 15,
+    "Cliente frecuente 10 %": 16
+  },
+  "rol": 75,
+  "caja": 49,
+  "ubicacion": 34
+}

@@ -1,0 +1,291 @@
+1
+00:00:03,097 --> 00:00:05,955
+En este video recorremos el Resumen de Seguridad.
+
+2
+00:00:06,599 --> 00:00:09,032
+Abro Seguridad desde el candado de la izquierda,
+
+3
+00:00:09,111 --> 00:00:11,122
+y lo primero que sale es el Resumen:
+
+4
+00:00:11,199 --> 00:00:15,711
+la portada de la consola, pensada para ver de un vistazo si todo está en orden.
+
+5
+00:00:16,356 --> 00:00:18,236
+Arriba hay cinco cifras.
+
+6
+00:00:18,881 --> 00:00:20,155
+Personas con acceso:
+
+7
+00:00:20,257 --> 00:00:22,184
+nueve personas entran a esta empresa,
+
+8
+00:00:22,274 --> 00:00:25,300
+y ocho de ellas entraron en los últimos treinta días.
+
+9
+00:00:25,946 --> 00:00:27,125
+Administradores:
+
+10
+00:00:27,155 --> 00:00:29,274
+una sola, con acceso total.
+
+11
+00:00:29,920 --> 00:00:30,928
+Sin ningún rol:
+
+12
+00:00:30,983 --> 00:00:34,057
+una persona que entra al sistema pero no ve ningún módulo;
+
+13
+00:00:34,135 --> 00:00:36,158
+por eso lleva un punto de alerta.
+
+14
+00:00:36,804 --> 00:00:40,314
+Credenciales de API, o sea las llaves de otros programas:
+
+15
+00:00:40,378 --> 00:00:43,260
+hay una, y lleva más de sesenta días sin uso.
+
+16
+00:00:43,905 --> 00:00:47,874
+Y Cambios en siete días cuenta lo que se modificó en los últimos siete días;
+
+17
+00:00:47,914 --> 00:00:51,014
+el número pequeño dice cuántos cambios fueron de seguridad.
+
+18
+00:00:51,658 --> 00:00:53,332
+Cada cifra es un enlace.
+
+19
+00:00:53,966 --> 00:00:57,185
+Pulso Sin ningún rol, y me lleva a Personas ya filtrado:
+
+20
+00:00:57,262 --> 00:01:00,591
+es Luisa Féliz, que tiene usuario pero ningún rol.
+
+21
+00:01:01,225 --> 00:01:03,200
+Vuelvo al Resumen con su pestaña.
+
+22
+00:01:04,548 --> 00:01:07,925
+Debajo, Requiere atención reúne lo que conviene arreglar.
+
+23
+00:01:08,568 --> 00:01:13,213
+Ahora hay cuatro asuntos, y cada uno trae un enlace que te lleva a resolverlo.
+
+24
+00:01:13,858 --> 00:01:14,312
+Uno:
+
+25
+00:01:14,390 --> 00:01:16,014
+una persona sin ningún rol;
+
+26
+00:01:16,117 --> 00:01:19,131
+su enlace, Asignar rol, te lleva a ella.
+
+27
+00:01:19,764 --> 00:01:20,314
+Dos:
+
+28
+00:01:20,381 --> 00:01:24,082
+una credencial de API sin uso, la de la tienda en línea anterior;
+
+29
+00:01:24,196 --> 00:01:26,872
+si ya no se usa, lo sano es revocarla.
+
+30
+00:01:27,518 --> 00:01:28,056
+Tres:
+
+31
+00:01:28,122 --> 00:01:31,196
+una persona que nunca inició sesión, Héctor Vargas;
+
+32
+00:01:31,322 --> 00:01:34,976
+comprueba su correo, o desactiva la cuenta si ya no la usa.
+
+33
+00:01:35,622 --> 00:01:36,340
+Y cuatro:
+
+34
+00:01:36,394 --> 00:01:40,568
+un rol sin permisos, el de Mensajero, que alguien tiene asignado.
+
+35
+00:01:41,201 --> 00:01:46,209
+Pulso Configurar, y se abre ese rol en Roles y permisos, con la insignia Vacío.
+
+36
+00:01:46,841 --> 00:01:48,902
+Un rol vacío no da acceso a nada:
+
+37
+00:01:49,015 --> 00:01:51,125
+asignárselo a alguien no le sirve.
+
+38
+00:01:51,769 --> 00:01:53,080
+Vuelvo al Resumen.
+
+39
+00:01:53,725 --> 00:01:57,211
+Cuando todo esté en orden, este bloque dirá Nada pendiente.
+
+40
+00:01:58,561 --> 00:02:00,621
+A la derecha está la Actividad reciente:
+
+41
+00:02:00,760 --> 00:02:03,085
+los últimos diez movimientos de la empresa.
+
+42
+00:02:03,730 --> 00:02:07,286
+Cada fila dice cuándo pasó, quién lo hizo, qué acción fue,
+
+43
+00:02:07,400 --> 00:02:09,943
+sobre qué registro y desde qué dirección IP,
+
+44
+00:02:09,949 --> 00:02:12,456
+o sea la dirección de red de la computadora.
+
+45
+00:02:13,102 --> 00:02:14,836
+El tiempo se lee en palabras:
+
+46
+00:02:14,937 --> 00:02:17,191
+hace un momento, hace unos minutos;
+
+47
+00:02:17,268 --> 00:02:20,524
+y lo más viejo, como aquí, con el día y la hora.
+
+48
+00:02:21,157 --> 00:02:23,421
+La primera fila soy yo, entrando:
+
+49
+00:02:23,536 --> 00:02:25,911
+los ingresos también quedan anotados.
+
+50
+00:02:26,555 --> 00:02:28,615
+Cada acción lleva su etiqueta de color:
+
+51
+00:02:28,633 --> 00:02:32,215
+Acceso, Creó, Actualizó, Cambió permisos.
+
+52
+00:02:32,860 --> 00:02:37,093
+Si no hubiera movimientos, la tabla diría que no encontró registros.
+
+53
+00:02:37,739 --> 00:02:41,877
+Para ver toda la historia, arriba de la tabla está el enlace Ver bitácora,
+
+54
+00:02:42,026 --> 00:02:43,784
+que abre la Auditoría completa.
+
+55
+00:02:44,418 --> 00:02:47,600
+Justo debajo de mi entrada hay una fila Cambió permisos:
+
+56
+00:02:47,667 --> 00:02:49,968
+ahí se ajustaron los permisos de un rol.
+
+57
+00:02:50,602 --> 00:02:53,603
+Pulso la fila, y la consola me lleva a Auditoría,
+
+58
+00:02:53,705 --> 00:02:55,680
+con ese evento abierto a la derecha.
+
+59
+00:02:56,325 --> 00:02:58,978
+Allí se ve el antes y el después de cada cambio;
+
+60
+00:02:59,067 --> 00:03:01,284
+lo explicamos en el video de Auditoría.
+
+61
+00:03:02,633 --> 00:03:04,258
+Un caso práctico para cerrar:
+
+62
+00:03:04,323 --> 00:03:06,081
+la revisión de cada semana.
+
+63
+00:03:06,725 --> 00:03:08,688
+Vuelvo al Resumen y miro las cifras:
+
+64
+00:03:08,814 --> 00:03:13,725
+si Sin ningún rol no está en cero, o si Credenciales de API avisa de alguna sin uso,
+
+65
+00:03:13,766 --> 00:03:14,655
+hay trabajo.
+
+66
+00:03:15,300 --> 00:03:19,521
+Después voy a Requiere atención y abro el asunto de Héctor con su enlace Revisar.
+
+67
+00:03:20,168 --> 00:03:23,484
+La consola me lleva a Personas, a la vista Nunca entraron,
+
+68
+00:03:23,585 --> 00:03:25,549
+con su ficha abierta a la derecha.
+
+69
+00:03:26,193 --> 00:03:27,566
+Su estado es Pendiente:
+
+70
+00:03:27,692 --> 00:03:30,187
+tiene usuario, pero nunca ha entrado.
+
+71
+00:03:30,831 --> 00:03:33,266
+Desde aquí compruebo su correo o lo desactivo;
+
+72
+00:03:33,343 --> 00:03:36,769
+eso lo vemos en el video de Personas y en el de alta y edición.
+
+73
+00:03:37,401 --> 00:03:42,118
+Así, en un par de minutos, sabes quién entra, quién sobra y qué cambió.

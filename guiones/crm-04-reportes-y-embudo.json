@@ -1,0 +1,77 @@
+{
+  "titulo": "CRM · Reportes y embudo comercial",
+  "_comentario": "Serie CRM, video 4 (2026-10-06). Empresa demo 50, Rosa (Admin). Datos: seeds/crm/sembrar.mjs (8 prospectos, 5 oportunidades, 1 ganada; 8 llamadas registradas HOY → el Embudo en «Hoy» muestra 8 de 60). Sin meta propia: el Embudo compara contra las «Metas de referencia» (antes rotulado «Plantilla del playbook», corregido en esta rama). Reportes: «Valor del pipeline» ahora con RD$ (corregido en esta rama). La narración no dice cifras que dependan del día salvo las de la siembra.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/home"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": ["germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar", "Ana", "Mejía", "José", "Cabrera", "Carlos", "Pimentel"],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Leer los indicadores del CRM: prospectos, conversión, tasa de cierre y valor del pipeline",
+    "Ver en qué etapa se concentran tus oportunidades y dónde se pierden las ventas",
+    "Medir la actividad del equipo contra la meta del día, la semana o el mes",
+    "Revisar el avance de una sola persona del equipo"
+  ],
+  "errores_comunes": [
+    "Mirar los reportes con otro espacio de trabajo seleccionado: las cifras son sólo de ese espacio",
+    "Registrar las llamadas fuera de la ficha del prospecto: el embudo no las cuenta",
+    "Confundir el valor del pipeline con lo que vas a vender: lo esperado es el ponderado"
+  ],
+  "pasos": [
+    {
+      "id": "01-reportes",
+      "capitulo": "Los reportes del CRM",
+      "rotulo": "Reportes del CRM",
+      "ruta": "CRM › Reportes",
+      "texto_pantalla": "Reportes · la foto de tus ventas en un vistazo",
+      "narracion": "Ahora, cómo medir. Entro al CRM y abro Reportes. Es la foto de tus ventas en un vistazo, para el espacio de trabajo elegido arriba. Recojo el menú. El primer indicador cuenta los prospectos. El segundo, la conversión: de cada cien prospectos, cuántos se volvieron clientes. Luego las oportunidades, con su tasa de cierre: de las que se cerraron, cuántas se ganaron. Y el valor del pipeline, que suma todas las oportunidades abiertas; debajo, el ponderado, que las multiplica por su probabilidad. Abajo, las oportunidades por etapa te dicen dónde se acumula el trabajo. Y el embudo de conversión cuenta cuántos hay en cada paso: prospectos, oportunidades, cotizaciones y facturas, con el porcentaje que avanzó desde el paso anterior. Si un porcentaje se queda bajo, ahí se están perdiendo las ventas.",
+      "acciones": [
+        { "click": "nav.module-rail [aria-label='CRM']", "al_decir": "Entro al CRM" },
+        { "click": ".panel-item:has-text('Reportes')", "al_decir": "abro Reportes" },
+        { "resaltar": "app-workspace-selector", "durante_ms": 3500, "al_decir": "el espacio de trabajo" },
+        { "click": "button.panel-collapse", "al_decir": "Recojo el menú" },
+        { "resaltar": ".kpi-card:nth-child(1)", "durante_ms": 2400, "al_decir": "El primer indicador" },
+        { "resaltar": ".kpi-card:nth-child(2)", "durante_ms": 4500, "al_decir": "la conversión" },
+        { "resaltar": ".kpi-card:nth-child(3)", "durante_ms": 4800, "al_decir": "Luego las oportunidades" },
+        { "resaltar": ".kpi-card:nth-child(4)", "durante_ms": 7000, "al_decir": "el valor del pipeline" },
+        { "resaltar": ":is(div,section):has(> h3:has-text('Oportunidades por etapa'))", "durante_ms": 4500, "al_decir": "las oportunidades por etapa" },
+        { "resaltar": ":is(div,section):has(> h3:has-text('Embudo de conversión'))", "durante_ms": 9000, "al_decir": "el embudo de conversión" }
+      ]
+    },
+    {
+      "id": "02-embudo",
+      "capitulo": "El embudo comercial contra la meta",
+      "rotulo": "Embudo comercial",
+      "ruta": "CRM › Embudo Comercial",
+      "texto_pantalla": "Embudo comercial · la actividad del equipo contra la meta",
+      "navegar": "/crm/funnel",
+      "al_decir_navegar": "abro el Embudo",
+      "narracion": "Los reportes miden resultados; ahora abro el Embudo Comercial, que mide la actividad que los produce. Cada fila es un paso de la venta: llamadas realizadas, conversaciones, contactos con quien decide, diagnósticos, demostraciones, cotizaciones y ventas. A la derecha ves cuántas llevas contra la meta, y la barra se llena según el avance. Hoy el equipo lleva ocho llamadas de sesenta. Arriba eliges el período: Hoy, Esta semana o Este mes. Elijo Esta semana, y la meta se ajusta a los días laborables. Esta empresa todavía no tiene meta propia, así que compara contra las metas de referencia. Con Colaborador ves el avance de una sola persona. Y con el botón Metas defines las tuyas, que vemos en el video de configuración.",
+      "acciones": [
+        { "resaltar": ".f-row:nth-child(1) .f-label", "durante_ms": 3000, "al_decir": "Cada fila" },
+        { "resaltar": ".f-row:has-text('Cotizaciones') .f-label", "durante_ms": 3000, "al_decir": "cotizaciones y ventas" },
+        { "resaltar": ".f-row:nth-child(1) .f-count", "durante_ms": 3000, "al_decir": "A la derecha" },
+        { "resaltar": ".f-row:nth-child(1) .f-track", "durante_ms": 3500, "al_decir": "la barra se llena" },
+        { "resaltar": ".preset-group", "durante_ms": 2500, "al_decir": "eliges el período" },
+        { "click": ".preset-group .preset-btn:has-text('Esta semana')", "al_decir": "Elijo Esta semana" },
+        { "resaltar": ".scope-chip", "durante_ms": 4500, "al_decir": "las metas de referencia" },
+        { "resaltar": "app-autocomplete", "durante_ms": 3500, "al_decir": "Con Colaborador" },
+        { "resaltar": "button:has(mat-icon:text-is('flag'))", "durante_ms": 4500, "al_decir": "el botón Metas" }
+      ]
+    }
+  ]
+}

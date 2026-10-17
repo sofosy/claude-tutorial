@@ -1,0 +1,1967 @@
+{
+ "url": "/sales/quotes",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 908,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h4",
+   "clase": "page-title",
+   "texto": "Cotizaciones",
+   "caja": [
+    357,
+    80,
+    99,
+    24
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    336,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    897,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    941,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "CPcarlos pimentelcarlos.pimentel@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de carlos pimentel",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1014,
+    8,
+    242,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de carlos pimentel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-current",
+    "is-showing"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    283,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "settings",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-config-button"
+   ],
+   "tooltip": "Configurar filtros",
+   "deshabilitado": false,
+   "caja": [
+    1164,
+    145,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('settings'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "clear",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "filters-clear-button"
+   ],
+   "tooltip": "Limpiar filtros",
+   "deshabilitado": true,
+   "caja": [
+    1204,
+    145,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('clear'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir el calendario",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    607,
+    235,
+    32,
+    32
+   ],
+   "sel": "button[aria-label='Abrir el calendario']",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir el calendario",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    235,
+    32,
+    32
+   ],
+   "sel": "button[aria-label='Abrir el calendario']",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "Crear Cotización",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "btn",
+    "waves-effect",
+    "btn-sm"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1036,
+    297,
+    152,
+    36
+   ],
+   "sel": "button:has-text('Crear Cotización')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "view_column",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "columns-config-button"
+   ],
+   "tooltip": "Configurar columnas",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    297,
+    36,
+    36
+   ],
+   "sel": "button:has(mat-icon:text-is('view_column'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    399,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    399,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    449,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    449,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    498,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    498,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    548,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    548,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    598,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    598,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    648,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    648,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    697,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    697,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "Abrir",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    747,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Abrir']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "action-button",
+    "action-color-primary"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1214,
+    747,
+    24,
+    24
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "6 visible(s) de 8"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Primera página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1044,
+    783,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Primera página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página anterior",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1092,
+    783,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página anterior']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Página siguiente",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1140,
+    783,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Página siguiente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Última página",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1188,
+    783,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Última página']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Búsqueda General",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Búsqueda General'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Estado",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Estado'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Tipo",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    953,
+    185,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Tipo'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Fecha Desde",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    233,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Fecha Desde'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Fecha Hasta",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    657,
+    233,
+    283,
+    36
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Fecha Hasta'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "10",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    835,
+    789,
+    84,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [
+  {
+   "clases": [
+    "mat-mdc-table",
+    "mdc-data-table__table",
+    "cdk-table"
+   ],
+   "cabeceras": [
+    "N° drag_indicator",
+    "CLIENTE drag_indicator",
+    "ESTADO drag_indicator",
+    "EMISIÓN drag_indicator",
+    "VENCIMIENTO drag_indicator",
+    "SUBTOTAL drag_indicator",
+    "ITBIS drag_indicator",
+    "DESCUENTO drag_indicator",
+    "TOTAL drag_indicator",
+    "ACCIONES"
+   ],
+   "filas": [
+    [
+     "COT 8",
+     "Colmado La Esquina",
+     "Cancelada",
+     "27/09/2026",
+     "27/10/2026",
+     "RD$4,325.00",
+     "RD$778.50",
+     "RD$0.00",
+     "RD$5,103.50",
+     "visibility more_vert"
+    ],
+    [
+     "COT 7",
+     "Inversiones Barahona",
+     "Borrador",
+     "27/09/2026",
+     "27/10/2026",
+     "RD$4,920.00",
+     "RD$612.00",
+     "RD$0.00",
+     "RD$5,532.00",
+     "visibility more_vert"
+    ]
+   ],
+   "total_filas": 8,
+   "caja": [
+    346,
+    346,
+    1045,
+    438
+   ]
+  }
+ ],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "No tienes permiso para ver «Cotizaciones». Solicita el acceso al administrador de tu empresa."
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1186,
+    648,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Más acciones",
+   "caja": [
+    1214,
+    648,
+    24,
+    24
+   ]
+  }
+ ],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1186,
+    697,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Más acciones",
+   "caja": [
+    1214,
+    697,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir",
+   "caja": [
+    1186,
+    747,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Más acciones",
+   "caja": [
+    1214,
+    747,
+    24,
+    24
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Primera página",
+   "caja": [
+    1044,
+    783,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Página anterior",
+   "caja": [
+    1092,
+    783,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Página siguiente",
+   "caja": [
+    1140,
+    783,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Última página",
+   "caja": [
+    1188,
+    783,
+    48,
+    48
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "",
+   "caja": [
+    835,
+    789,
+    84,
+    36
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscree"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications CP "
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen notifications"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "CP Carlos Pimentel carlos.pimentel@germiva.demo expand_more"
+   },
+   "panel-collapse": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "chevron_left"
+   },
+   "gm-table-stack": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "N° drag_indicator CLIENTE drag_indicator ESTADO drag_indicator EMISIÓN"
+   },
+   "gm-tag": {
+    "n": 8,
+    "visibles": 8,
+    "ej": "COT"
+   },
+   "gm-table-footer": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Elementos por página: 10 1 – 8 de 8"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     283,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Contraer el menú",
+    [
+     336,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     435,
+     11,
+     156,
+     38
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     897,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de carlos pimentel",
+    [
+     1014,
+     8,
+     242,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     -1,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     9,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     9,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Inventario",
+    [
+     9,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     9,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     9,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Configuración",
+    [
+     9,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     9,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contraer el panel",
+    [
+     283,
+     67,
+     30,
+     30
+    ]
+   ],
+   [
+    "button",
+    "Abrir el calendario",
+    [
+     607,
+     235,
+     32,
+     32
+    ]
+   ],
+   [
+    "button",
+    "Abrir el calendario",
+    [
+     903,
+     235,
+     32,
+     32
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     399,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     399,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     449,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     449,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     498,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     498,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     548,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     548,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     598,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     598,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     648,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     648,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     697,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     697,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Abrir",
+    [
+     1186,
+     747,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1214,
+     747,
+     24,
+     24
+    ]
+   ],
+   [
+    "button",
+    "Primera página",
+    [
+     1044,
+     783,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página anterior",
+    [
+     1092,
+     783,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Página siguiente",
+    [
+     1140,
+     783,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Última página",
+    [
+     1188,
+     783,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar.has-panel",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     320,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "tr.mat-mdc-header-row.mdc-data-table__header-row.cdk-header-row",
+    "pos": "sticky",
+    "caja": [
+     346,
+     346,
+     1045,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     346,
+     346,
+     77,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     423,
+     346,
+     113,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     536,
+     346,
+     111,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     647,
+     346,
+     104,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     751,
+     346,
+     124,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     875,
+     346,
+     114,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     989,
+     346,
+     97,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     1086,
+     346,
+     122,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-sort-header.mat-mdc-header-cell.mdc-data-table__header-cell",
+    "pos": "sticky",
+    "caja": [
+     1208,
+     346,
+     105,
+     40
+    ]
+   },
+   {
+    "el": "th.mat-mdc-header-cell.mdc-data-table__header-cell.cdk-header-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     346,
+     78,
+     40
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     386,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     436,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     486,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     535,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     585,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     635,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     685,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "td.mat-mdc-cell.mdc-data-table__cell.cdk-cell",
+    "pos": "sticky",
+    "caja": [
+     1174,
+     734,
+     78,
+     50
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     9,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "/inventory/product/list",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "/agenda/settings",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     9,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     9,
+     667,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "chevron_left",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.panel-collapse",
+    "caja": [
+     283,
+     67,
+     30,
+     30
+    ]
+   },
+   {
+    "texto": "groups Clientes",
+    "href": "/sales/partners",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     110,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "description Cotizaciones",
+    "href": "/sales/quotes",
+    "clase": "panel-item.is-active",
+    "caja": [
+     67,
+     146,
+     244,
+     36
+    ]
+   },
+   {
+    "texto": "request_quote Facturas (e-CF)",
+    "href": "/sales/invoices",
+    "clase": "panel-item",
+    "caja": [
+     67,
+     182,
+     244,
+     36
+    ]
+   }
+  ],
+  "encabezados": [
+   "N° drag_indicator",
+   "CLIENTE drag_indicator",
+   "ESTADO drag_indicator",
+   "EMISIÓN drag_indicator",
+   "VENCIMIENTO drag_indicator",
+   "SUBTOTAL drag_indicator",
+   "ITBIS drag_indicator",
+   "DESCUENTO drag_indicator",
+   "TOTAL drag_indicator",
+   "ACCIONES"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 fullscreen notifications CP Carlos Pimentel carlos.pimentel@germiva.demo expand_more home sell inventory storefront calendar_month tune power_settings_new VENTAS chevron_left groups Clientes description Cotizaciones request_quote Facturas (e-CF) Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Cotizaciones Ventas Cotizaciones settings clear Búsqueda General search Estado Tipo Fecha Desde Fecha Hasta request_quote Gestión de Cotizaciones y Presupuestos add Crear Cotización view_column N° drag_indicator CLIENTE drag_indicator ESTADO drag_indicator EMISIÓN drag_indicator VENCIMIENTO drag_indicator SUBTOTAL drag_indicator ITBIS drag_indicator DESCUENTO drag_indicator TOTAL drag_indicator ACCIONES COT 8 Colmado La Esquina Cancelada 27/09/2026 27/10/2026 RD$4,325.00 RD$778.50 RD$0.00 RD$5,103.50 visibility more_vert COT 7 Inversiones Barahona Borrador 27/09/2026 27/10/2026 RD$4,920.00 RD$612.00 RD$0.00 RD$5,532.00 visibility more_vert COT 6 Ferretería Doña Luz Aprobada 27/09/2026 27/10/2026 RD$15,100.00 RD$2,718.00 RD$0.00 RD$17,818.00 visibility more_vert COT 5 Constructora Mirador Aceptada 27/09/2026 27/10/2026 RD$10,270.00 RD$1,848.60 RD$0.00 RD$12,118.60 visibility more_vert COT 4 Inversiones Barahona Borrador 27/09/2026 27/10/2026 RD$20,850.00 RD$3,753.00 RD$0.00 RD$24,603.00 visibility more_vert COT 3 Ferretería Doña Luz Aprobada 27/09/2026 27/10/2026 RD$4,420.00 RD$795.60 RD$0.00 RD$5,215.60 visibility more_vert COT 2 Colmado La Esquina Borrador 27/09/2026 27/10/2026 RD$2,100.00 RD$378.00 RD$0.00 RD$2,478.00 visibility more_vert COT 1 Constructora Mirador Borrador 27/09/2026 27/10/2026 RD$5,875.00 RD$1,057.50 RD$0.00 RD$6,932.50 visibility more_vert Elementos por página: 10 1 – 8 de 8"
+ },
+ "video": "v08d",
+ "pantalla": "01-carlos-lista",
+ "usuario": "carlos.pimentel",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790524241.4977045,
+   "m": "GET",
+   "url": "v1/media/view/179",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524241.4977562,
+   "m": "GET",
+   "url": "v1/media/view/178",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524241.497795,
+   "m": "GET",
+   "url": "v1/media/view/177",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Multimedia\\\" (MEDIA_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"MEDIA_VIEW\",\"name\":\"Multimedia\",\"description\":\"Ver archivos multimedia\"}]}"
+  },
+  {
+   "t": 1790524244.2434428,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524251.7302065,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524252.6155417,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524256.6321898,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524280.5432093,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  }
+ ]
+}

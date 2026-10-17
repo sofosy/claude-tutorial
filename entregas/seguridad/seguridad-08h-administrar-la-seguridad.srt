@@ -1,0 +1,339 @@
+1
+00:00:03,097 --> 00:00:07,224
+Este video compara quién puede administrar la seguridad y quién solo puede mirarla,
+
+2
+00:00:07,336 --> 00:00:08,987
+sobre los mismos botones.
+
+3
+00:00:09,629 --> 00:00:13,694
+Primero Rosa, la administradora, en la pestaña Personas de Seguridad:
+
+4
+00:00:13,749 --> 00:00:16,303
+cada fila es alguien con acceso a la empresa.
+
+5
+00:00:16,948 --> 00:00:20,603
+Abro la ficha de Ana Mejía, y a la derecha sale su panel.
+
+6
+00:00:21,248 --> 00:00:24,926
+Arriba está el botón Editar, y a su lado Cambiar contraseña.
+
+7
+00:00:25,571 --> 00:00:28,356
+En el bloque Roles, el enlace Asignar rol.
+
+8
+00:00:28,989 --> 00:00:32,427
+Y junto a los botones de arriba, los tres puntos de Más acciones:
+
+9
+00:00:32,528 --> 00:00:36,364
+trae Desactivar, Ver su actividad y, en rojo, Eliminar.
+
+10
+00:00:36,997 --> 00:00:38,019
+No toco nada:
+
+11
+00:00:38,180 --> 00:00:39,396
+cierro con Escape.
+
+12
+00:00:40,040 --> 00:00:42,003
+Cada botón depende de un permiso:
+
+13
+00:00:42,094 --> 00:00:44,383
+editar personas, o eliminarlas.
+
+14
+00:00:45,737 --> 00:00:49,417
+Ahora los equipos, que agrupan personas para el alcance Equipo.
+
+15
+00:00:50,048 --> 00:00:52,457
+En el riel de la izquierda abro Zona Este.
+
+16
+00:00:53,091 --> 00:00:56,588
+Junto al título Equipos está el botón de sumar, para crear uno.
+
+17
+00:00:57,222 --> 00:01:01,444
+Arriba de la lista, Editar equipo y, a su derecha, la papelera.
+
+18
+00:01:02,076 --> 00:01:04,896
+Y para mover personas, marco la casilla de Ana:
+
+19
+00:01:05,036 --> 00:01:08,061
+sale una barra con Agregar a equipo y Quitar del equipo.
+
+20
+00:01:08,695 --> 00:01:10,200
+Son tres permisos más:
+
+21
+00:01:10,192 --> 00:01:14,390
+crear equipos, cambiarlos o eliminarlos, y gestionar sus miembros.
+
+22
+00:01:15,036 --> 00:01:17,688
+Pulso Limpiar, y todo queda como estaba.
+
+23
+00:01:19,034 --> 00:01:19,887
+Tercer lugar:
+
+24
+00:01:19,977 --> 00:01:24,439
+las credenciales de API, o sea las llaves con las que otro programa se conecta a
+
+25
+00:01:24,253 --> 00:01:24,995
+Germiva.
+
+26
+00:01:25,628 --> 00:01:27,676
+Abro la pestaña Integraciones.
+
+27
+00:01:28,320 --> 00:01:31,733
+Arriba a la derecha está Nueva credencial, para crear una.
+
+28
+00:01:32,378 --> 00:01:35,066
+Ahora abro la credencial Tienda en línea anterior,
+
+29
+00:01:35,156 --> 00:01:39,402
+y en su panel están Editar permisos, para decidir qué consulta ese programa;
+
+30
+00:01:39,492 --> 00:01:41,890
+Rotar secreto, para cambiarle la clave;
+
+31
+00:01:41,967 --> 00:01:46,721
+y en los tres puntos, que ahora lo despliego, Desactivar y Revocar y eliminar.
+
+32
+00:01:47,366 --> 00:01:49,064
+Cierro con la tecla Escape.
+
+33
+00:01:49,709 --> 00:01:53,581
+Crear, editar y eliminar credenciales son permisos separados.
+
+34
+00:01:54,944 --> 00:01:56,316
+Ahora el otro lado:
+
+35
+00:01:56,418 --> 00:01:58,344
+Marta Guzmán, la auditora.
+
+36
+00:01:58,975 --> 00:02:03,740
+Abro Roles y permisos y elijo su rol, Auditor, que es de solo lectura.
+
+37
+00:02:04,387 --> 00:02:06,579
+En la columna de módulos abro Seguridad;
+
+38
+00:02:06,609 --> 00:02:11,000
+ahí, el recurso Usuarios de Integración reúne los permisos de las credenciales de
+
+39
+00:02:10,812 --> 00:02:13,283
+API, y el Auditor no tiene ninguno:
+
+40
+00:02:13,372 --> 00:02:14,406
+cero de cuatro.
+
+41
+00:02:15,050 --> 00:02:19,610
+Por eso, cuando Marta entra, la pestaña Integraciones ni siquiera le aparece.
+
+42
+00:02:20,257 --> 00:02:24,707
+Para comparar sobre la misma credencial, le doy solo el de ver, nada más.
+
+43
+00:02:25,353 --> 00:02:27,521
+Pulso Ver, y queda concedido.
+
+44
+00:02:28,155 --> 00:02:32,100
+La barra de guardado dice que el cambio afecta a una persona, Marta.
+
+45
+00:02:32,745 --> 00:02:36,169
+Pulso Guardar cambios, y el aviso confirma que se guardó.
+
+46
+00:02:36,814 --> 00:02:40,045
+Crear, editar y eliminar se quedan sin conceder.
+
+47
+00:02:41,394 --> 00:02:43,115
+Salgo y entro como Marta.
+
+48
+00:02:43,747 --> 00:02:46,640
+Abro el menú de mi usuario, pulso Cerrar sesión,
+
+49
+00:02:46,742 --> 00:02:50,288
+y en la pantalla de acceso escribo su usuario, marta punto guzman,
+
+50
+00:02:50,389 --> 00:02:51,592
+todo en minúsculas;
+
+51
+00:02:51,669 --> 00:02:54,695
+ahora su clave, que en pantalla se ve con puntos;
+
+52
+00:02:54,786 --> 00:02:56,375
+y pulso Iniciar sesión.
+
+53
+00:02:57,008 --> 00:03:00,480
+El botón dice Entrando mientras el sistema carga sus permisos.
+
+54
+00:03:01,126 --> 00:03:05,179
+Mientras entra, recuerda que antes le dimos a su rol solo el permiso de ver
+
+55
+00:03:04,991 --> 00:03:06,061
+credenciales.
+
+56
+00:03:06,706 --> 00:03:10,554
+Marta puede ver personas, equipos, roles y la auditoría,
+
+57
+00:03:10,692 --> 00:03:13,223
+pero no tiene ningún permiso para cambiarlos.
+
+58
+00:03:13,867 --> 00:03:16,362
+Ya dentro, en el menú abro Seguridad.
+
+59
+00:03:17,008 --> 00:03:20,783
+Arriba a la derecha no está el botón Nuevo, porque no puede crear.
+
+60
+00:03:21,417 --> 00:03:25,360
+Ahora voy a Personas y abro la ficha de Ana, la misma de antes.
+
+61
+00:03:26,006 --> 00:03:28,537
+No hay Editar, ni Cambiar contraseña.
+
+62
+00:03:29,181 --> 00:03:32,716
+En Roles ve el rol de Ana, pero no aparece Asignar rol.
+
+63
+00:03:33,348 --> 00:03:34,853
+Los tres puntos sí están:
+
+64
+00:03:34,954 --> 00:03:39,599
+los abro, y solo trae Ver su actividad, porque Marta sí lee la auditoría.
+
+65
+00:03:40,245 --> 00:03:41,579
+Cierro con Escape.
+
+66
+00:03:42,911 --> 00:03:44,959
+En los equipos, abro Zona Este:
+
+67
+00:03:45,072 --> 00:03:49,173
+Marta ve el equipo y sus miembros, porque tiene el permiso de ver equipos;
+
+68
+00:03:49,227 --> 00:03:51,963
+a quien no lo tiene, los equipos ni le aparecen.
+
+69
+00:03:52,607 --> 00:03:55,270
+Pero junto al título Equipos no está el botón de sumar,
+
+70
+00:03:55,384 --> 00:03:58,459
+y arriba de la lista no hay Editar equipo ni la papelera.
+
+71
+00:03:59,104 --> 00:04:02,384
+Ahora, igual que antes, marco la casilla de Ana:
+
+72
+00:04:02,462 --> 00:04:06,695
+la barra sale, pero solo con Limpiar, porque no puede gestionar miembros.
+
+73
+00:04:07,341 --> 00:04:08,217
+Lo pulso.
+
+74
+00:04:09,587 --> 00:04:11,708
+Por último, las credenciales.
+
+75
+00:04:12,351 --> 00:04:16,440
+Como Marta entró después del cambio, ya tiene la pestaña Integraciones.
+
+76
+00:04:17,086 --> 00:04:17,817
+La abro:
+
+77
+00:04:17,907 --> 00:04:21,548
+ve la lista, pero arriba solo queda Documentación de la API;
+
+78
+00:04:21,651 --> 00:04:23,336
+no está Nueva credencial.
+
+79
+00:04:23,983 --> 00:04:25,474
+Abro la misma credencial:
+
+80
+00:04:25,600 --> 00:04:28,916
+el botón ya no dice Editar permisos, sino Ver permisos,
+
+81
+00:04:28,983 --> 00:04:31,597
+y no están ni Rotar secreto ni los tres puntos,
+
+82
+00:04:31,651 --> 00:04:34,158
+así que no puede desactivarla ni revocarla.
+
+83
+00:04:34,803 --> 00:04:36,766
+Aplica el mínimo privilegio.
+
+84
+00:04:37,400 --> 00:04:38,204
+En resumen:
+
+85
+00:04:38,317 --> 00:04:42,805
+los mismos lugares, pero cada botón que cambia algo pide su propio permiso.

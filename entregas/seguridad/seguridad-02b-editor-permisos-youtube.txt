@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Seguridad · El editor de permisos
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Cómo se lee el editor
+01:17  Conceder permisos
+02:14  El alcance
+02:49  Buscar un permiso
+03:25  Guardar y revisar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el editor de permisos: módulos por sección, recursos, acciones y leyenda
+• Conceder y quitar un permiso, o todos los de un recurso de una vez
+• Elegir el alcance de un permiso de ver: propios, equipo o todos
+• Buscar un permiso en todo el catálogo y guardar los cambios de una sola vez
+
+⚠️ ERRORES COMUNES
+• Irse a otro rol sin pulsar «Guardar cambios»: lo pendiente se descarta
+• Buscar «Clientes» como recurso: en el catálogo los clientes están en «Socios»
+• Creer que el alcance «Propios» sigue al vendedor asignado: sigue a quien creó el registro
+• Confundir los filtros Concedidos o Heredados con un filtro por estado del documento
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:24
+
+TRANSCRIPCIÓN
+============================================================
+En este video abrimos el editor de permisos, donde se decide qué puede hacer cada rol. Entro por el candado de la izquierda; arriba, abro Roles y permisos y elijo Vendedor, un rol ya armado, para leerlo. En el centro está la columna de módulos: las partes del sistema, agrupadas por sección, como Ventas y facturación o Compras e inventario. Solo salen los módulos de tu plan, y al elegir un rol, el editor abre el primer módulo donde ya concede algo: aquí, Clientes y Proveedores. Cada módulo lleva dos números: los permisos concedidos y los que existen. Cotizaciones, por ejemplo, dice tres de diecinueve: tres concedidos. La abro. Arriba, el título del módulo con su cuenta; debajo, la leyenda: el check es Concedido, y el Alcance aplica en los listados que lo admiten. Cada bloque es un recurso, o sea una cosa del sistema: aquí, las cotizaciones. Y cada botón es una acción sobre esa cosa: ver, crear, editar, aprobar. Un permiso es eso: recurso más acción. Aquí Vendedor tiene tres de ellas: Ver, después Crear, y también Editar, cada una con su check.
+Ahora armo el rol Cobrador, que creamos vacío en el video anterior. Lo abro: la insignia Vacío confirma que no tiene nada. Un cobrador necesita ver a los clientes, así que abro el módulo Clientes y Proveedores. Ojo con el nombre: aquí los clientes están en el recurso Socios, que reúne clientes y proveedores. Pulso Ver: se marca con el check, y el bloque se pinta de otro color para avisar que tiene un cambio pendiente. Si pulso otra vez, lo quito: cada clic alterna entre concedido y sin conceder. Lo vuelvo a pulsar para dejarlo concedido. El cobrador también enseña el estado de cuenta del cliente: uso Conceder todo, que marca de una vez Ver y PDF, o sea el documento para imprimir. Abajo aparece la barra de cambios: cuenta lo pendiente y a cuántas personas afecta; aquí dice nadie tiene este rol todavía, porque aún no se lo asignamos a nadie.
+Al conceder un permiso de ver, a su derecha aparece el alcance, con tres opciones. Todos: ve todos los registros. Equipo: ve lo que crearon él y sus compañeros de equipo. Propios: solo lo que creó él mismo. Pulso Propios. Así, en la lista de clientes, este cobrador verá solo los clientes que él registró. Fíjate en la palabra creó: cuenta quién creó el registro, no el cobrador que tenga asignado. Y como recorta listados, solo existe en los permisos de ver.
+Si no sabes en qué módulo vive un permiso, búscalo. En Buscar permiso escribo factur, las primeras letras de factura. Enseguida el título cambia a Resultados de factur: la búsqueda recorre todo el catálogo, no solo el módulo abierto. Aquí, entre los resultados, está el recurso Facturas. Pulso su Ver, para que el cobrador vea las facturas que va a cobrar. Si buscas algo muy general, el editor enseña los primeros sesenta recursos y te pide afinar; y si nada coincide, lo dice. Borro la búsqueda y vuelvo a los módulos.
+Nada de esto está guardado todavía. Mira qué pasa si me voy a otro rol: pulso Contador externo, y el editor me para con Cambios sin guardar: si continúo, se descartan. Pulso Seguir editando y me quedo. En la barra de abajo hay dos botones: Descartar, que deshace todo lo pendiente, y Guardar cambios, que lo aplica de una sola vez. Pulso Guardar cambios. Sale el aviso de permisos actualizados, y la barra desaparece. Para revisar, uso los filtros de arriba: Todos, Concedidos, Heredados y Sin conceder, que filtran por el estado del permiso, no de un documento. Pulso Concedidos, y quedan solo Socios y Estado de Cuenta; en la columna de módulos, Facturación ya marca uno. Caso resuelto: el Cobrador ve solo los clientes que él registró; además, los estados de cuenta y las facturas; y nada más.

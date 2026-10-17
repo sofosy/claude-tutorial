@@ -1,0 +1,30 @@
+{
+  "estado": "S3",
+  "empresa": 43,
+  "fijado_en": "2026-09-23 04:09:07",
+  "marca_audit_logs": 256769,
+  "conteos": {
+    "cashiers": 3,
+    "cashier_sessions": 8,
+    "cash_movements": 10,
+    "cash_transfers": 0,
+    "cashier_reconciliations": 6,
+    "cashier_reconciliation_details": 6,
+    "cash_counts": 0,
+    "cash_count_details": 0,
+    "cashier_alerts": 1,
+    "cashier_config": 1,
+    "cash_denominations": 0,
+    "cashier_device_requests": 0,
+    "journal_entries": 11,
+    "journal_entry_details": 22,
+    "general_ledger": 22,
+    "auto_posting_logs": 11,
+    "accounting_periods": 12,
+    "account_period_balances": 0,
+    "user_company_preferences": 4,
+    "company_configs": 1,
+    "sys_sequences": 4,
+    "audit_logs": 100
+  }
+}

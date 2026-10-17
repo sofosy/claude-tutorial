@@ -1,0 +1,141 @@
+<!--
+  Diagrama «acceso-efectivo» · lámina de 1280×720 (viewBox). 4 fases.
+  Fases: 1 rol hijo con sus permisos directos y la persona · 2 rol padre y la
+  flecha «hereda» · 3 equipo (NO suma: flecha cruzada hacia el resultado) ·
+  4 resultado = unión de los permisos del rol y de lo que hereda.
+  Colores por origen del permiso: rol directo (teal), heredado (azul); el
+  mismo punto de color marca cada fila del resultado. El equipo se marca en
+  rojo porque NO aporta ninguna fila al resultado.
+  Corrección 09-27 (_SERIE-SEGURIDAD.md §8/00, verdad 2): antes la fase 3
+  sumaba «Reportes · Ver» del equipo al resultado — un equipo NO da permisos,
+  solo sirve para el alcance «Equipo» (A-020). La persona del ejemplo es
+  Carlos (Vendedor sénior, hereda de Vendedor: A-005/A-022), porque es quien
+  de verdad tiene un rol con padre en esta serie. El equipo Zona Este (Ana y
+  José) se deja como aviso de que NO suma, sin decir que Carlos es miembro
+  (no lo es).
+  Corrección 09-27 (AUTOR B, video 05): el resultado decía «La unión de todos
+  sus permisos» y listaba 4; Carlos tiene 11 en E0 (ficha: Productos 1 ·
+  Clientes y Proveedores 1 · Facturación 2 · Cotizaciones 7). Ahora dice
+  «11 en total; aquí, 4 de ejemplo». Los 4 casan con E0: Vendedor concede
+  Clientes·Ver y Productos·Ver; Vendedor sénior concede DIRECTOS
+  Cotizaciones·Aprobar y Facturas·Crear.
+  Textos: edítalos en su <text>; los nombres (Carlos, Vendedor, Vendedor
+  sénior, Zona Este, Ana, José) se repiten en el resultado.
+-->
+<style>
+  svg{font-family:Inter,'Inter var',system-ui,'Segoe UI',Roboto,sans-serif}
+  .t-tit{font-size:30px;font-weight:800;fill:var(--tinta)}
+  .t-sub{font-size:17px;font-weight:500;fill:var(--tinta-2)}
+  .card{fill:var(--tarjeta);stroke:var(--borde);stroke-width:1.5}
+  .res{fill:var(--tarjeta);stroke:#5BD34E;stroke-width:2.5}
+  .k{font-size:12px;font-weight:700;letter-spacing:.12em;fill:var(--tinta-2)}
+  .n{font-size:22px;font-weight:800;fill:var(--tinta)}
+  .p{font-size:14px;font-weight:600;fill:var(--tinta)}
+  .o{font-size:13px;font-weight:500;fill:var(--tinta-2)}
+  .o-no{font-size:13px;font-weight:500;fill:#C62828}
+  .no{font-size:13px;font-weight:800;fill:#C62828}
+  .tachado{font-size:14px;font-weight:700;fill:#C62828;text-decoration:line-through}
+  .flujo{fill:none;stroke:var(--tinta-2);stroke-width:2.2;stroke-dasharray:7 6;animation:flujo 1s linear infinite}
+  @keyframes flujo{to{stroke-dashoffset:-13}}
+  .flujo-no{fill:none;stroke:#C62828;stroke-width:2.2;stroke-dasharray:4 5}
+  .et{fill:var(--tarjeta);stroke:var(--borde)}
+  .et-t{font-size:13px;font-weight:700;fill:var(--tinta)}
+  .et-no{fill:var(--tarjeta);stroke:#C62828}
+  .et-t-no{font-size:12px;font-weight:700;fill:#C62828}
+  .punta{fill:var(--tinta-2)}
+  .punta-no{fill:#C62828}
+</style>
+<svg viewBox="0 0 1280 720" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="sombra" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#072134" flood-opacity=".10"/>
+    </filter>
+    <marker id="punta" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path class="punta" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <marker id="punta-no" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+      <path class="punta-no" d="M0 0L10 5L0 10z"/>
+    </marker>
+    <g id="equis"><circle cx="11" cy="11" r="11" fill="#C62828"/><path d="M6.5 6.5l9 9M15.5 6.5l-9 9" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round"/></g>
+  </defs>
+
+  <rect x="80" y="60" width="48" height="6" rx="3" fill="#5BD34E"/>
+  <text class="t-tit" x="80" y="106">¿Qué puede hacer Carlos? El acceso efectivo</text>
+  <text class="t-sub" x="80" y="136">Sus permisos se suman: los de sus roles y los que esos roles heredan.</text>
+
+  <!-- 2 · Rol padre + «hereda» -->
+  <g data-fase="2">
+    <g transform="translate(80,176)">
+      <rect class="card" width="340" height="160" rx="12" filter="url(#sombra)"/>
+      <text class="k" x="24" y="38">ROL PADRE</text>
+      <text class="n" x="24" y="66">Vendedor</text>
+      <rect x="24" y="84" width="170" height="28" rx="14" fill="#1273B8" fill-opacity=".14"/>
+      <circle cx="40" cy="98" r="5" fill="#1273B8"/><text class="p" x="52" y="103">Clientes · Ver</text>
+      <rect x="24" y="118" width="170" height="28" rx="14" fill="#1273B8" fill-opacity=".14"/>
+      <circle cx="40" cy="132" r="5" fill="#1273B8"/><text class="p" x="52" y="137">Productos · Ver</text>
+    </g>
+    <path class="flujo" d="M250 340 L250 410" marker-end="url(#punta)"/>
+    <rect class="et" x="266" y="360" width="76" height="28" rx="14"/>
+    <text class="et-t" x="304" y="379" text-anchor="middle">hereda</text>
+  </g>
+
+  <!-- 1 · Rol hijo + persona -->
+  <g data-fase="1">
+    <g transform="translate(80,420)">
+      <rect class="card" width="340" height="176" rx="12" filter="url(#sombra)"/>
+      <text class="k" x="24" y="38">ROL</text>
+      <text class="n" x="24" y="66">Vendedor sénior</text>
+      <rect x="24" y="86" width="220" height="28" rx="14" fill="#04B19E" fill-opacity=".16"/>
+      <circle cx="40" cy="100" r="5" fill="#04B19E"/><text class="p" x="52" y="105">Cotizaciones · Aprobar</text>
+      <rect x="24" y="122" width="190" height="28" rx="14" fill="#04B19E" fill-opacity=".16"/>
+      <circle cx="40" cy="136" r="5" fill="#04B19E"/><text class="p" x="52" y="141">Facturas · Crear</text>
+    </g>
+    <path class="flujo" d="M424 508 L512 508" marker-end="url(#punta)"/>
+    <rect class="et" x="428" y="468" width="80" height="28" rx="14"/>
+    <text class="et-t" x="468" y="487" text-anchor="middle">asignado</text>
+    <g transform="translate(520,448)">
+      <rect class="card" width="230" height="120" rx="12" filter="url(#sombra)"/>
+      <circle cx="56" cy="60" r="30" fill="#1273B8"/>
+      <g fill="none" stroke="#fff" stroke-width="2.4" stroke-linecap="round" transform="translate(41,44) scale(1.25)">
+        <circle cx="12" cy="8" r="4"/><path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7"/>
+      </g>
+      <text class="k" x="102" y="52">PERSONA</text>
+      <text class="n" x="102" y="80">Carlos</text>
+    </g>
+  </g>
+
+  <!-- 3 · Equipo: NO suma -->
+  <g data-fase="3">
+    <g transform="translate(520,176)">
+      <rect class="card" width="230" height="160" rx="12" filter="url(#sombra)"/>
+      <text class="k" x="24" y="38">EQUIPO</text>
+      <text class="n" x="24" y="66">Zona Este</text>
+      <text class="p" x="24" y="100">Miembros: Ana, José</text>
+      <text class="tachado" x="24" y="128">No suma permisos</text>
+    </g>
+    <path class="flujo-no" d="M750 256 L850 256" marker-end="url(#punta-no)"/>
+    <use href="#equis" transform="translate(789,245)"/>
+    <rect class="et-no" x="708" y="284" width="84" height="26" rx="13"/>
+    <text class="et-t-no" x="750" y="302" text-anchor="middle">no suma</text>
+  </g>
+
+  <!-- 4 · Resultado -->
+  <g data-fase="4">
+    <path class="flujo" d="M754 508 L852 508" marker-end="url(#punta)"/>
+    <rect class="et" x="772" y="468" width="60" height="28" rx="14"/>
+    <text class="et-t" x="802" y="487" text-anchor="middle">suma</text>
+    <g transform="translate(860,176)">
+      <rect class="res" width="340" height="420" rx="12" filter="url(#sombra)"/>
+      <text class="k" x="28" y="42">RESULTADO</text>
+      <text class="n" x="28" y="72">Acceso efectivo de Carlos</text>
+      <text class="o" x="28" y="98">11 en total; aquí, 4 de ejemplo</text>
+      <g transform="translate(28,128)">
+        <circle cx="8" cy="14" r="6" fill="#04B19E"/><text class="p" x="24" y="13">Cotizaciones · Aprobar</text><text class="o" x="24" y="32">del rol Vendedor sénior</text>
+        <circle cx="8" cy="62" r="6" fill="#04B19E"/><text class="p" x="24" y="61">Facturas · Crear</text><text class="o" x="24" y="80">del rol Vendedor sénior</text>
+        <circle cx="8" cy="110" r="6" fill="#1273B8"/><text class="p" x="24" y="109">Clientes · Ver</text><text class="o" x="24" y="128">heredado de Vendedor</text>
+        <circle cx="8" cy="158" r="6" fill="#1273B8"/><text class="p" x="24" y="157">Productos · Ver</text><text class="o" x="24" y="176">heredado de Vendedor</text>
+        <text class="tachado" x="8" y="205">Equipo Zona Este</text><text class="o-no" x="8" y="224">no suma (solo alcance «Equipo»)</text>
+      </g>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,545 @@
+{
+  "titulo": "Con y sin permiso · Quién puede administrar la seguridad",
+  "_comentario": "Serie Seguridad, caso ADMINISTRAR LA SEGURIDAD (AUTOR D, 2026-09-27). Cubre F-226…F-231 y F-238…F-240 (+ F-227 de refuerzo). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes y DESPUÉS de cada toma y cada ensayo). Entran EN CÁMARA: rosa.almanzar (sesion) → marta.guzman (una sola vez, receta de _CONVENCIONES). Qué escribe en BD: concede «Ver» del recurso de integraciones (INTEGRATION_USER_VIEW, módulo «Acceso API») al rol Auditor (80) con el guardado por lote (role_permissions + audit_logs PERMISSIONS_CHANGED roles/80) + eventos de acceso; nada más (no se crea, edita ni borra ninguna persona, equipo o credencial: los menús se abren y se cierran con Escape y la casilla se limpia). Lo deshace `restaurar.mjs E0`. DECISIÓN (pedido del orquestador): en E0 Marta NO tiene Integraciones (08a/05); eso se dice en voz en 04 con la marca «Acceso API 0/4» del Auditor, y para el contraste de ACCIÓN sobre credenciales Rosa le concede SOLO «Ver» ANTES de que Marta entre (un único cambio de usuario: Marta entra ya con el permiso, no hace falta que vuelva a entrar). Contrastes sobre los MISMOS puntos: panel de Ana (01 ↔ 05), Zona Este + barra de selección (02 ↔ 06), credencial «Tienda en línea anterior» (03 ↔ 07). VERIFICADO (volcados + código de la rama fix/security-video-findings): Marta en el panel de Ana SIN Editar/Cambiar contraseña/«+ Asignar rol» y SIN «Nuevo equipo», CON «Más acciones» y CON Zona Este (v08a-09; `hasPersonMenu = USER_EDIT || USER_DELETE || AUDIT_LOG_READ`, `security-people.component.ts:97`, el menú solo trae «Ver su actividad» por `canSeeAudit`); consola sin «Nuevo» (v08a-07); Marta con INTEGRATION_USER_VIEW: panel de la credencial con «Ver permisos» y SIN «Rotar secreto», SIN «Más acciones», lista SIN «Nueva credencial» (a5-06 vs a5-01; `security-integrations.component.html:41,125-134`); Rosa: Editar, Cambiar contraseña, ⋮ = Desactivar · Ver su actividad · Eliminar (04a/04b), credencial: Nueva credencial, Editar permisos, Rotar secreto, ⋮ = Desactivar · Revocar y eliminar (a5-01, 06b). Barra de selección de Marta = solo «Limpiar» (`@if (canManageMembers && teams().length)`, html:82) y sin «Editar equipo»/papelera (`canEditTeam`/`canDeleteTeam`, html:64-75): VERIFICADO EN CÓDIGO, NO en volcado → confirmar en el ensayo. F-226 (TEAM_VIEW): Marta lo tiene (ve Zona Este); el lado «sin» va en voz («a quien no tiene ese permiso, los equipos ni le aparecen»), verificado en código (html:19 `teams().length || canCreateTeam`, equipos cargados solo con TEAM_VIEW, inventario F-051); ningún usuario demo carece de TEAM_VIEW con USER_VIEW (D-04). A CONFIRMAR EN EL ENSAYO: (1) el nombre del recurso de «Acceso API» en el editor: el parser del API lo arma quitando «Ver » a «Ver Usuarios de Integración» → «Usuarios de Integración»; el selector usa `:has-text('Integración')` y la voz NO lee el nombre del recurso; (2) que el Auditor tenga «Acceso API 0/4» (la voz dice «cero de cuatro»; E0: Marta sin pestaña Integraciones y el módulo tiene 4 permisos, volcado v08a-08); (3) la barra «1 cambio sin guardar · afectan a 1 persona» (Auditor tiene 1 titular: Marta); (4) toast «Permisos del rol actualizados exitosamente» 0,4 s (marca SIN al_decir, R9). NO se pulsa «Ver permisos» con Marta: la página falla hoy (D-S3: modal «Acceso Denegado — Ver Módulos») y no deshabilita casillas (D-05); la voz no afirma nada de esa página. Cartel consejo: mínimo privilegio para quien administra la seguridad (tema obligatorio de la serie). AVISOS justificados: primer paso sin button.panel-collapse (no existe en /security/*); «Seguridad» del riel de Rosa cae en y=716, por eso 01 entra con navegar; la marca de 06 sobre la barra de la lista es ancha pero cabe (x 305–1230). Ensayo 09-27: 0 fallos (7 pasos, 79 acciones). CORRECCIÓN T3 (1.ª pasada: 10 fallos en cascada): el módulo «Acceso API» del editor NO tiene los permisos de las credenciales: solo trae «Integraciones Avanzadas» (ADVANCED_INTEGRATION_*, 0/4); INTEGRATION_USER_VIEW es el recurso «Usuarios de Integración» del módulo «Seguridad» (E-11). El paso 04 abre ahora Seguridad › Usuarios de Integración (0/4) y concede «Ver»; la voz dice «el recurso Usuarios de Integración reúne los permisos de las credenciales de API». Confirmado con Marta (sonda con el mismo permiso): consola sin «Nuevo»; ficha de Ana sin Editar, Cambiar contraseña ni «+ Asignar rol»; ⋮ = solo «Ver su actividad»; Zona Este sin «+», sin «Editar equipo» ni papelera; barra de selección «1 seleccionada · Limpiar»; Integraciones con solo «Documentación de la API»; credencial con «Ver permisos», sin «Rotar secreto» ni ⋮. Otros cambios T3: login en cámara con «Iniciar sesión» + marca «Entrando» + relleno (login 5,1 s); recortes de voz para no pasar de 4:10 (prevista 3:55 + 6 s ≈ 4:01). Tras cada ensayo se restauró E0 (quita el permiso concedido al Auditor). Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D 08h + «insignia adelantada» + ronda 8): (1) INSIGNIAS: el paso 05 (Rosa→Marta) lleva la insignia de quien SALE («Administradora · Rosa»); `{insignia: null}` en la pantalla de acceso y «Sin permiso · Marta (Auditor)» como acción anclada a «Ya dentro», detrás de la marca sin ancla de `aside.sidebar`. (2) 04 (2:17): se QUITÓ la marca sobre la barra de pestañas de Rosa (donde «Integraciones» sí aparece) y la voz dice «cuando Marta entra, la pestaña Integraciones ni siquiera le aparece»; la marca «cero de cuatro» del recurso se alarga (5,5 s, sin cursor) para sostener la frase. (3) 06: «botón de sumar» y «papelera» anclados a su frase («junto al título», «arriba de la lista»). (4) 02: las marcas de «Editar equipo» y «la papelera» van sin cursor (llegaban una frase tarde). (5) R8-6: «afecta a una persona, Marta» sigue valiendo (singular, un titular del Auditor en E0). Las filas cortadas del editor (04, 2:14–2:40) y la lista de Personas desplazada (01/05) son de motor: regrabar con e1810d6.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "Tienda en línea anterior",
+      "gv_live"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i"
+  },
+  "aprenderas": [
+    "Qué botones de la consola de Seguridad dependen de un permiso propio: editar y eliminar personas, crear y cambiar equipos, gestionar sus miembros, y crear, editar y revocar credenciales",
+    "Cómo ve la misma consola una auditora de solo lectura: los mismos lugares, sin ningún botón para cambiar",
+    "Dar a un rol solo el permiso de ver una pestaña, sin darle el de cambiarla"
+  ],
+  "errores_comunes": [
+    "Dar el rol de administrador a quien solo tiene que revisar: para eso está un rol de solo lectura",
+    "Pensar que ver una pestaña da permiso para cambiar lo que hay en ella: ver y cambiar son permisos distintos",
+    "Repartir los permisos de administrar la seguridad entre muchas personas: cuantas menos, mejor"
+  ],
+  "pasos": [
+    {
+      "id": "01-con-personas",
+      "capitulo": "Con permiso: Rosa administra personas",
+      "rotulo": "Con permiso: personas",
+      "ruta": "Seguridad › Personas › Ana Mejía",
+      "texto_pantalla": "Rosa, administradora · en la ficha de una persona puede editar, cambiar la contraseña, asignar roles y eliminar",
+      "navegar": "/security/personas",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Rosa (Administradora)"
+      },
+      "acciones": [
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "durante_ms": 3500,
+          "al_decir": "pestaña Personas"
+        },
+        {
+          "click": ".sec-people__who:has-text('Ana Mejía')",
+          "al_decir": "Abro la ficha"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__buttons button:has-text('Editar')",
+          "durante_ms": 2000,
+          "al_decir": "el botón Editar"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__buttons button:has-text('Cambiar contraseña')",
+          "durante_ms": 2500,
+          "al_decir": "Cambiar contraseña"
+        },
+        {
+          "resaltar": ".sec-people__assign-roles",
+          "durante_ms": 2500,
+          "al_decir": "Asignar rol"
+        },
+        {
+          "click": "aside[aria-label='Detalle de la persona'] .sec-people__buttons button[aria-label='Más acciones']",
+          "al_decir": "los tres puntos"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "Desactivar"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button:has-text('Eliminar')",
+          "durante_ms": 2000,
+          "al_decir": "en rojo"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "cierro con Escape"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__buttons",
+          "durante_ms": 5000,
+          "al_decir": "depende de un permiso"
+        }
+      ],
+      "narracion": "Este video compara quién puede administrar la seguridad y quién solo puede mirarla, sobre los mismos botones. Primero Rosa, la administradora, en la pestaña Personas de Seguridad: cada fila es alguien con acceso a la empresa. Abro la ficha de Ana Mejía, y a la derecha sale su panel. Arriba está el botón Editar, y a su lado Cambiar contraseña. En el bloque Roles, el enlace Asignar rol. Y junto a los botones de arriba, los tres puntos de Más acciones: trae Desactivar, Ver su actividad y, en rojo, Eliminar. No toco nada: cierro con Escape. Cada botón depende de un permiso: editar personas, o eliminarlas."
+    },
+    {
+      "id": "02-con-equipos",
+      "capitulo": "Con permiso: Rosa administra equipos",
+      "rotulo": "Con permiso: equipos",
+      "ruta": "Seguridad › Personas › Equipos › Zona Este",
+      "texto_pantalla": "Rosa · crear, editar y eliminar equipos, y agregar o quitar miembros",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Rosa (Administradora)"
+      },
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has(:text-is('Zona Este'))",
+          "al_decir": "abro Zona Este"
+        },
+        {
+          "resaltar": "button[aria-label='Nuevo equipo']",
+          "durante_ms": 3000,
+          "al_decir": "botón de sumar"
+        },
+        {
+          "resaltar": "button:has-text('Editar equipo')",
+          "durante_ms": 1800,
+          "al_decir": "Editar equipo",
+          "cursor": false
+        },
+        {
+          "resaltar": "button[aria-label='Eliminar equipo']",
+          "durante_ms": 2500,
+          "al_decir": "la papelera",
+          "cursor": false
+        },
+        {
+          "click": "input[aria-label='Seleccionar Ana Mejía']",
+          "al_decir": "marco la casilla"
+        },
+        {
+          "resaltar": ".sec-people__bulk button:has-text('Agregar a equipo')",
+          "durante_ms": 1100,
+          "al_decir": "Agregar a equipo"
+        },
+        {
+          "resaltar": ".sec-people__bulk button:has-text('Quitar del equipo')",
+          "durante_ms": 1100,
+          "al_decir": "Quitar del equipo"
+        },
+        {
+          "resaltar": ".sec-people__bulk",
+          "durante_ms": 4500,
+          "al_decir": "tres permisos más"
+        },
+        {
+          "click": ".sec-people__bulk button:has-text('Limpiar')",
+          "al_decir": "Pulso Limpiar"
+        }
+      ],
+      "narracion": "Ahora los equipos, que agrupan personas para el alcance Equipo. En el riel de la izquierda abro Zona Este. Junto al título Equipos está el botón de sumar, para crear uno. Arriba de la lista, Editar equipo y, a su derecha, la papelera. Y para mover personas, marco la casilla de Ana: sale una barra con Agregar a equipo y Quitar del equipo. Son tres permisos más: crear equipos, cambiarlos o eliminarlos, y gestionar sus miembros. Pulso Limpiar, y todo queda como estaba."
+    },
+    {
+      "id": "03-con-credenciales",
+      "capitulo": "Con permiso: Rosa administra credenciales",
+      "rotulo": "Con permiso: credenciales",
+      "ruta": "Seguridad › Integraciones › Tienda en línea anterior",
+      "texto_pantalla": "Rosa · crear credenciales, editar sus permisos, rotar el secreto, desactivar y revocar",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Rosa (Administradora)"
+      },
+      "acciones": [
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "al_decir": "pestaña Integraciones"
+        },
+        {
+          "resaltar": "button:has-text('Nueva credencial')",
+          "durante_ms": 3000,
+          "al_decir": "Nueva credencial"
+        },
+        {
+          "click": ".sec-api__row:has-text('Tienda en línea anterior')",
+          "al_decir": "abro la credencial"
+        },
+        {
+          "resaltar": ".sec-api__permissions",
+          "durante_ms": 2500,
+          "al_decir": "Editar permisos"
+        },
+        {
+          "resaltar": ".sec-api__buttons button:has-text('Rotar secreto')",
+          "durante_ms": 2500,
+          "al_decir": "Rotar secreto"
+        },
+        {
+          "click": ".sec-api__buttons button[aria-label='Más acciones']",
+          "al_decir": "lo despliego"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Revocar y eliminar"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "tecla Escape"
+        },
+        {
+          "resaltar": ".sec-api__buttons",
+          "durante_ms": 4500,
+          "al_decir": "permisos separados"
+        }
+      ],
+      "narracion": "Tercer lugar: las credenciales de API, o sea las llaves con las que otro programa se conecta a Germiva. Abro la pestaña Integraciones. Arriba a la derecha está Nueva credencial, para crear una. Ahora abro la credencial Tienda en línea anterior, y en su panel están Editar permisos, para decidir qué consulta ese programa; Rotar secreto, para cambiarle la clave; y en los tres puntos, que ahora lo despliego, Desactivar y Revocar y eliminar. Cierro con la tecla Escape. Crear, editar y eliminar credenciales son permisos separados."
+    },
+    {
+      "id": "04-dar-solo-ver",
+      "capitulo": "Rosa le da a la auditora solo «Ver» en Integraciones",
+      "rotulo": "Dar solo «Ver»",
+      "ruta": "Seguridad › Roles y permisos › Auditor (solo lectura) › Acceso API",
+      "texto_pantalla": "Rosa concede al rol Auditor solo el permiso de ver las integraciones y guarda",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "al_decir": "Abro Roles"
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Auditor')",
+          "al_decir": "elijo su rol"
+        },
+        {
+          "click": ".rpe__module:has(:text-is('Seguridad'))",
+          "al_decir": "abro Seguridad"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Usuarios de Integración')) .rpe__resource-head",
+          "durante_ms": 5500,
+          "al_decir": "cero de cuatro",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Usuarios de Integración')) .rpe__act:text-is('Ver')",
+          "durante_ms": 2500,
+          "al_decir": "solo el de ver"
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Usuarios de Integración')) .rpe__act:text-is('Ver')",
+          "al_decir": "Pulso Ver"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar__text",
+          "durante_ms": 3500,
+          "al_decir": "La barra de guardado"
+        },
+        {
+          "click": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "al_decir": "Pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Usuarios de Integración')) .rpe__actions",
+          "durante_ms": 5000,
+          "al_decir": "se quedan sin conceder"
+        }
+      ],
+      "narracion": "Ahora el otro lado: Marta Guzmán, la auditora. Abro Roles y permisos y elijo su rol, Auditor, que es de solo lectura. En la columna de módulos abro Seguridad; ahí, el recurso Usuarios de Integración reúne los permisos de las credenciales de API, y el Auditor no tiene ninguno: cero de cuatro. Por eso, cuando Marta entra, la pestaña Integraciones ni siquiera le aparece. Para comparar sobre la misma credencial, le doy solo el de ver, nada más. Pulso Ver, y queda concedido. La barra de guardado dice que el cambio afecta a una persona, Marta. Pulso Guardar cambios, y el aviso confirma que se guardó. Crear, editar y eliminar se quedan sin conceder."
+    },
+    {
+      "id": "05-sin-personas",
+      "capitulo": "Sin permiso: Marta en la ficha de una persona",
+      "rotulo": "Sin permiso: personas",
+      "ruta": "Acceso › Seguridad › Personas › Ana Mejía (Marta)",
+      "texto_pantalla": "Marta, auditora · la misma ficha, sin Editar, sin contraseña, sin asignar roles ni eliminar",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "menú de mi usuario"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "pantalla de acceso"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "marta.guzman"
+          },
+          "al_decir": "escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Sin permiso · Marta (Auditor)"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar a.rail-item[href='/security']",
+          "al_decir": "abro Seguridad"
+        },
+        {
+          "resaltar": ".gm-sheet__actions",
+          "durante_ms": 3000,
+          "al_decir": "botón Nuevo"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Personas')",
+          "al_decir": "voy a Personas"
+        },
+        {
+          "click": ".sec-people__who:has-text('Ana Mejía')",
+          "al_decir": "la misma de antes"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__card",
+          "durante_ms": 3500,
+          "al_decir": "ni Cambiar contraseña"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona'] .sec-people__role",
+          "durante_ms": 3000,
+          "al_decir": "no aparece Asignar rol"
+        },
+        {
+          "click": "aside[aria-label='Detalle de la persona'] .sec-people__buttons button[aria-label='Más acciones']",
+          "al_decir": "los abro"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Ver su actividad"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Cierro con Escape"
+        }
+      ],
+      "narracion": "Salgo y entro como Marta. Abro el menú de mi usuario, pulso Cerrar sesión, y en la pantalla de acceso escribo su usuario, marta punto guzman, todo en minúsculas; ahora su clave, que en pantalla se ve con puntos; y pulso Iniciar sesión. El botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que antes le dimos a su rol solo el permiso de ver credenciales. Marta puede ver personas, equipos, roles y la auditoría, pero no tiene ningún permiso para cambiarlos. Ya dentro, en el menú abro Seguridad. Arriba a la derecha no está el botón Nuevo, porque no puede crear. Ahora voy a Personas y abro la ficha de Ana, la misma de antes. No hay Editar, ni Cambiar contraseña. En Roles ve el rol de Ana, pero no aparece Asignar rol. Los tres puntos sí están: los abro, y solo trae Ver su actividad, porque Marta sí lee la auditoría. Cierro con Escape."
+    },
+    {
+      "id": "06-sin-equipos",
+      "capitulo": "Sin permiso: Marta en los equipos",
+      "rotulo": "Sin permiso: equipos",
+      "ruta": "Seguridad › Personas › Equipos › Zona Este (Marta)",
+      "texto_pantalla": "Marta · ve el equipo y sus miembros, pero no puede crear, editar, eliminar ni mover personas",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Marta (Auditor)"
+      },
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has(:text-is('Zona Este'))",
+          "al_decir": "abro Zona Este"
+        },
+        {
+          "resaltar": ".sec-people__title",
+          "durante_ms": 3000,
+          "al_decir": "sus miembros"
+        },
+        {
+          "resaltar": ".gm-rail-btn.gm-rail-btn--active",
+          "durante_ms": 1250,
+          "al_decir": "ni le aparecen"
+        },
+        {
+          "resaltar": ".sec-people__teams-label",
+          "durante_ms": 3000,
+          "al_decir": "junto al título"
+        },
+        {
+          "resaltar": "section[aria-label='Personas'] .gm-sheet-bar",
+          "durante_ms": 3000,
+          "al_decir": "arriba de la lista"
+        },
+        {
+          "click": "input[aria-label='Seleccionar Ana Mejía']",
+          "al_decir": "marco la casilla"
+        },
+        {
+          "resaltar": ".sec-people__bulk",
+          "durante_ms": 4500,
+          "al_decir": "solo con Limpiar"
+        },
+        {
+          "click": ".sec-people__bulk button:has-text('Limpiar')",
+          "al_decir": "Lo pulso"
+        }
+      ],
+      "narracion": "En los equipos, abro Zona Este: Marta ve el equipo y sus miembros, porque tiene el permiso de ver equipos; a quien no lo tiene, los equipos ni le aparecen. Pero junto al título Equipos no está el botón de sumar, y arriba de la lista no hay Editar equipo ni la papelera. Ahora, igual que antes, marco la casilla de Ana: la barra sale, pero solo con Limpiar, porque no puede gestionar miembros. Lo pulso."
+    },
+    {
+      "id": "07-sin-credenciales",
+      "capitulo": "Sin permiso: Marta en las credenciales",
+      "rotulo": "Sin permiso: credenciales",
+      "ruta": "Seguridad › Integraciones › Tienda en línea anterior (Marta)",
+      "texto_pantalla": "Marta · ve la credencial, pero sin Nueva credencial, Rotar secreto, desactivar ni revocar",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Marta (Auditor)"
+      },
+      "acciones": [
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "durante_ms": 3000,
+          "al_decir": "ya tiene la pestaña"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "al_decir": "La abro"
+        },
+        {
+          "resaltar": "section[aria-label='Credenciales de API'] .gm-sheet-bar",
+          "durante_ms": 4000,
+          "al_decir": "solo queda"
+        },
+        {
+          "click": ".sec-api__row:has-text('Tienda en línea anterior')",
+          "al_decir": "la misma credencial"
+        },
+        {
+          "resaltar": ".sec-api__permissions",
+          "durante_ms": 2000,
+          "al_decir": "sino Ver permisos"
+        },
+        {
+          "resaltar": ".sec-api__buttons",
+          "durante_ms": 4500,
+          "al_decir": "ni Rotar secreto"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Mínimo privilegio: administrar la seguridad, solo una o dos personas; al resto, como mucho ver."
+          },
+          "durante_ms": 8000,
+          "al_decir": "mínimo privilegio"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs",
+          "durante_ms": 5000,
+          "al_decir": "En resumen"
+        }
+      ],
+      "narracion": "Por último, las credenciales. Como Marta entró después del cambio, ya tiene la pestaña Integraciones. La abro: ve la lista, pero arriba solo queda Documentación de la API; no está Nueva credencial. Abro la misma credencial: el botón ya no dice Editar permisos, sino Ver permisos, y no están ni Rotar secreto ni los tres puntos, así que no puede desactivarla ni revocarla. Aplica el mínimo privilegio. En resumen: los mismos lugares, pero cada botón que cambia algo pide su propio permiso."
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "titulo": "Cómo pagar tu suscripción de Germiva",
+  "_comentario": "Serie Suscripción, video 1 (2026-10-05), master del 05/10. Parte de una empresa recién registrada EN PRUEBA (plan Profesional ERP, mensual): el setup corre seeds/suscripcion/preparar.mjs (reusa seeds/registro/restaurar.mjs, alta por /auth/dev/register — 1 llamada/min — y marca visto el modal «Configuración incompleta», R18). Se enseña la TARJETA sin pagar y la TRANSFERENCIA completa: el pago con tarjeta en el sandbox de Azul local falla en 3-D Secure (SGS-050716 «3D Secure authentication failed» a los 34 s, probado con la Visa de pruebas 4035874000424977); desactivar 3DS en local fue bloqueado por el clasificador de seguridad, así que la voz no promete el resultado de un cobro con tarjeta que no se ve. La aprobación del comprobante la hace seeds/suscripcion/aprobar.mjs (admin, PATCH /subscriptions/admin/transfer-proofs/:id/review) como setup del paso 04. Tiempos medidos: Pagar Ahora → checkout 1 s; subir comprobante 1-2 s hasta «en revisión»; aprobar 1,3 s. HALLAZGOS (no se corrigen aquí): el resumen del checkout dice «ITBIS (0.00%) · Incluido» en local.",
+  "base_url": "http://localhost:4200",
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/suscripcion/preparar.mjs"
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "ana.martinez@ferreteriaelfaro.do",
+      "password": "Faro2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Ana",
+      "Martínez",
+      "Martinez",
+      "ana.martinez",
+      "ferreteriaelfaro",
+      "Ferretería El Faro",
+      "FERRETERIA EL FARO",
+      "El Faro",
+      "TRF-00458213",
+      "Banco Popular",
+      "829) 623-0629",
+      "soporte@germiva.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "pronunciacion": {
+    "CVV": "ce-uve-uve",
+    "AZUL": "azul",
+    "3D": "tres-de"
+  },
+  "aprenderas": [
+    "Encontrar «Mi Suscripción» y leer tu plan, tus días de prueba y la fecha de renovación",
+    "Elegir entre pagar con tarjeta (AZUL) o con transferencia bancaria",
+    "Qué pide el pago con tarjeta y cómo funciona la renovación automática",
+    "Pagar por transferencia: subir el comprobante y seguir su revisión",
+    "Comprobar que el plan quedó activo y el pago registrado"
+  ],
+  "errores_comunes": [
+    "Esperar a que termine la prueba para pagar: ese día el plan se detiene",
+    "Creer que el plan se activa al subir el comprobante: se activa cuando Germiva lo aprueba",
+    "Subir una imagen que no se lee o de otro monto: el comprobante se rechaza y hay que subir uno nuevo",
+    "Pagar por transferencia y olvidar el mes siguiente: con transferencia no hay cobro automático"
+  ],
+  "pasos": [
+    {
+      "id": "01-mi-suscripcion",
+      "capitulo": "Tu suscripción",
+      "rotulo": "Mi Suscripción",
+      "ruta": "Configuración › Mi Suscripción",
+      "texto_pantalla": "Mi Suscripción · plan actual, días de prueba y próxima renovación",
+      "narracion": "Estás en el inicio de Germiva. Tu suscripción se administra desde Configuración, el ícono de ajustes en el menú de la izquierda. Ahí eliges Mi Suscripción. Esta es la pantalla donde la empresa ve qué plan tiene contratado, cuánto paga y cuándo vence. Recojo el menú para ver la pantalla completa. Arriba, el aviso Período de Prueba Activo te dice cuántos días de prueba te quedan. Debajo, la tarjeta Plan Actual: tu plan, Profesional, todavía en período de prueba, con su precio al mes. La próxima renovación es el día en que termina la prueba: si pagas antes, sigues trabajando sin interrupción. Pulso Pagar Ahora.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Configuración']",
+          "al_decir": "desde Configuración"
+        },
+        {
+          "click": ".panel-item:has-text('Mi Suscripción')",
+          "al_decir": "eliges Mi Suscripción"
+        },
+        {
+          "resaltar": ".plan-info-header",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "qué plan tiene contratado"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": ".alert-banner.trial",
+          "durante_ms": 4500,
+          "al_decir": "Período de Prueba Activo"
+        },
+        {
+          "resaltar": ".plan-badges",
+          "durante_ms": 4300,
+          "al_decir": "tu plan, Profesional"
+        },
+        {
+          "resaltar": ".detail-card:has-text('Próxima renovación')",
+          "durante_ms": 5000,
+          "al_decir": "La próxima renovación"
+        },
+        {
+          "click": ".alert-banner.trial button:has-text('Pagar Ahora')",
+          "al_decir": "Pulso Pagar Ahora"
+        }
+      ]
+    },
+    {
+      "id": "02-tarjeta",
+      "capitulo": "Pagar con tarjeta",
+      "rotulo": "Con tarjeta",
+      "ruta": "Mi Suscripción › Finalizar suscripción",
+      "texto_pantalla": "Finalizar suscripción · método de pago, tarjeta, resumen y renovación automática",
+      "narracion": "Esta es Finalizar suscripción, la pantalla de pago. Arriba eliges el método de pago: tarjeta de crédito o débito, que se cobra a través de AZUL, la plataforma de pagos con tarjeta, o transferencia bancaria. Con tarjeta, escribes el número, la fecha de vencimiento, el CVV, que es el código de tres cifras de atrás, y el nombre del titular tal como aparece en la tarjeta. Más abajo va la dirección de facturación. Al pagar, tu banco puede pedirte que confirmes la compra: es la verificación 3D Secure, una capa más de seguridad. Germiva no guarda el número completo de la tarjeta. Bajando está el Resumen del Pedido: el plan que pagas, el período que cubre y el total. Y la Renovación automática: con tarjeta, el mes siguiente se cobra solo a esa misma tarjeta, y la puedes apagar aquí o después. Hoy voy a pagar por transferencia.",
+      "acciones": [
+        {
+          "resaltar": ".payment-type-selector",
+          "durante_ms": 5000,
+          "al_decir": "el método de pago"
+        },
+        {
+          "resaltar": "app-azul-card-form mat-form-field:has([formcontrolname='cardNumber'])",
+          "durante_ms": 1500,
+          "al_decir": "escribes el número"
+        },
+        {
+          "resaltar": "app-azul-card-form mat-form-field:has([formcontrolname='expiration'])",
+          "durante_ms": 1300,
+          "al_decir": "la fecha de vencimiento"
+        },
+        {
+          "resaltar": "app-azul-card-form mat-form-field:has([formcontrolname='cvc'])",
+          "durante_ms": 3500,
+          "al_decir": "el CVV"
+        },
+        {
+          "resaltar": "app-azul-card-form mat-form-field:has([formcontrolname='holderName'])",
+          "durante_ms": 3500,
+          "al_decir": "el nombre del titular"
+        },
+        {
+          "resaltar": "app-azul-card-form mat-form-field:has([formcontrolname='line1'])",
+          "durante_ms": 3500,
+          "al_decir": "la dirección de facturación"
+        },
+        {
+          "resaltar": "text=Guardamos tu tarjeta de forma segura",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "una capa más de seguridad"
+        },
+        {
+          "resaltar": "text=Este pago cubre",
+          "durante_ms": 2700,
+          "al_decir": "el período que cubre"
+        },
+        {
+          "resaltar": ".renewal-panel",
+          "durante_ms": 6500,
+          "al_decir": "la Renovación automática"
+        }
+      ]
+    },
+    {
+      "id": "03-transferencia",
+      "capitulo": "Pagar por transferencia",
+      "rotulo": "Por transferencia",
+      "ruta": "Finalizar suscripción › Transferencia Bancaria",
+      "texto_pantalla": "Transferencia Bancaria · cómo funciona, subir el comprobante y estado de revisión",
+      "narracion": "Así que vuelvo arriba, al método de pago, y elijo Transferencia Bancaria. El recuadro Cómo funciona lo resume en tres pasos. Uno: transfieres el monto desde tu banco a la cuenta de Germiva; si todavía no tienes los datos, el botón Pedir los datos bancarios te los pide por WhatsApp. Dos: subes aquí el comprobante. Tres: el equipo de Germiva lo verifica contra su banco y activa tu plan; es una revisión manual, normalmente el mismo día hábil. Ya transferí, así que toco el recuadro punteado y subo la foto del comprobante. Escribo el banco desde el que transferí; al lado, el número de referencia que me dio el banco. El comentario es opcional. Pulso Ya realicé el pago. Sale el aviso Recibimos tu comprobante: el equipo lo va a verificar contra la cuenta bancaria y te avisa por correo cuando tu plan quede activo. Pulso Aceptar. Debajo ahora dice Tu comprobante está en revisión, con la fecha y el monto. Importante: el plan se activa cuando Germiva lo aprueba, no al subir la imagen.",
+      "acciones": [
+        {
+          "click": ".payment-type-selector mat-radio-button:has-text('Transferencia Bancaria')",
+          "al_decir": "elijo Transferencia Bancaria"
+        },
+        {
+          "resaltar": ".transfer-notice",
+          "durante_ms": 6000,
+          "al_decir": "Cómo funciona"
+        },
+        {
+          "resaltar": "button.pay-button:has-text('Pedir los datos bancarios')",
+          "durante_ms": 3300,
+          "al_decir": "Pedir los datos bancarios"
+        },
+        {
+          "resaltar": ".proof-dropzone",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "subes aquí el comprobante"
+        },
+        {
+          "resaltar": ".transfer-info",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "una revisión manual"
+        },
+        {
+          "subir": {
+            "sel": ".proof-upload input[type=file]",
+            "archivo": "seeds/suscripcion/comprobante-transferencia.png",
+            "ancla": ".proof-dropzone"
+          },
+          "al_decir": "toco el recuadro punteado"
+        },
+        {
+          "escribir": {
+            "sel": "input[name='bankName']",
+            "texto": "Banco Popular"
+          },
+          "al_decir": "Escribo el banco"
+        },
+        {
+          "escribir": {
+            "sel": "input[name='reference']",
+            "texto": "TRF-00458213"
+          },
+          "al_decir": "el número de referencia"
+        },
+        {
+          "click": "button.proof-submit",
+          "al_decir": "Pulso Ya realicé el pago"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Pulso Aceptar"
+        },
+        {
+          "resaltar": ".proof-status--review",
+          "durante_ms": 6000,
+          "al_decir": "está en revisión"
+        }
+      ]
+    },
+    {
+      "id": "04-activa",
+      "capitulo": "Tu plan activo",
+      "rotulo": "Pago aprobado",
+      "ruta": "Configuración › Mi Suscripción",
+      "texto_pantalla": "Mi Suscripción · plan activo e historial de pagos",
+      "setup": {
+        "tipo": "shell",
+        "cmd": "node seeds/suscripcion/aprobar.mjs"
+      },
+      "navegar": "/plans/subscription-management",
+      "narracion": "Cuando Germiva aprueba el comprobante, te llega un correo, y en Mi Suscripción ya no aparece el aviso de prueba. La tarjeta Plan Actual dice Activa, y la próxima renovación pasa a la fecha del siguiente pago. Bajo un poco: en Historial de Pagos queda registrado el pago, por transferencia bancaria, como completado. Y en Pagos y Renovación, el mensaje Tu suscripción está al día. Recuerda que con transferencia no hay cobro automático: Germiva te avisa antes del próximo vencimiento. Si prefieres que se cobre solo cada mes, agrega una tarjeta aquí con Agregar Tarjeta y deja encendida la renovación automática.",
+      "acciones": [
+        {
+          "click_opcional": "button.panel-collapse"
+        },
+        {
+          "resaltar": ".plan-badges",
+          "durante_ms": 1600,
+          "al_decir": "dice Activa"
+        },
+        {
+          "resaltar": ".detail-card:has-text('Próxima renovación')",
+          "durante_ms": 4000,
+          "al_decir": "la próxima renovación"
+        },
+        {
+          "resaltar": ".payment-history-list .payment-item",
+          "durante_ms": 6000,
+          "al_decir": "en Historial de Pagos"
+        },
+        {
+          "resaltar": "text=Tu suscripción está al día",
+          "durante_ms": 5000,
+          "al_decir": "está al día"
+        },
+        {
+          "resaltar": "button:has-text('Agregar Tarjeta')",
+          "durante_ms": 4500,
+          "al_decir": "con Agregar Tarjeta"
+        }
+      ]
+    }
+  ]
+}

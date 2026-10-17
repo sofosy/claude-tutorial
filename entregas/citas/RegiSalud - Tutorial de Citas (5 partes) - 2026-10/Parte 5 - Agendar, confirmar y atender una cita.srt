@@ -1,0 +1,311 @@
+1
+00:00:03,100 --> 00:00:05,383
+Una paciente llama para pedir cita.
+
+2
+00:00:06,051 --> 00:00:10,231
+Entro al calendario, en el menú de la izquierda, y pulso Nueva cita.
+
+3
+00:00:10,887 --> 00:00:11,991
+Primero el paciente:
+
+4
+00:00:12,138 --> 00:00:15,699
+escribo Laura, y cuando aparece en la lista, la elijo.
+
+5
+00:00:16,356 --> 00:00:20,250
+Debajo sale su ficha, con la edad, la cédula y el teléfono.
+
+6
+00:00:20,919 --> 00:00:22,024
+Ahora el médico:
+
+7
+00:00:22,109 --> 00:00:26,426
+escribo Jorge, y en la lista que se abre elijo al doctor Jorge Medina.
+
+8
+00:00:27,082 --> 00:00:31,461
+Con el médico elegido, el tipo de cita ofrece solo los servicios que él da:
+
+9
+00:00:31,533 --> 00:00:33,259
+elijo consulta general.
+
+10
+00:00:33,927 --> 00:00:37,488
+Debajo se resumen su duración, la modalidad y la tarifa.
+
+11
+00:00:38,155 --> 00:00:41,568
+El motivo de la consulta es lo que necesita atender la paciente:
+
+12
+00:00:41,689 --> 00:00:43,875
+elijo chequeo general en la lista.
+
+13
+00:00:45,259 --> 00:00:47,219
+La prioridad se queda en normal.
+
+14
+00:00:47,887 --> 00:00:51,113
+Más abajo, en Cuándo, está la semana del doctor:
+
+15
+00:00:51,211 --> 00:00:54,015
+cada día dice cuántos turnos libres le quedan.
+
+16
+00:00:54,683 --> 00:00:58,132
+Toco el primer día disponible, y aparecen sus turnos.
+
+17
+00:00:58,800 --> 00:01:00,488
+Elijo uno de la tarde.
+
+18
+00:01:01,156 --> 00:01:04,717
+El consultorio se llena solo, desde el horario del médico.
+
+19
+00:01:05,372 --> 00:01:07,097
+A la derecha está la cobertura:
+
+20
+00:01:07,209 --> 00:01:10,881
+la paciente paga directo, así que paga la tarifa completa.
+
+21
+00:01:11,548 --> 00:01:15,816
+Los recordatorios salen por WhatsApp un día antes y por correo una hora antes;
+
+22
+00:01:15,950 --> 00:01:18,010
+se pueden quitar o agregar otros.
+
+23
+00:01:18,679 --> 00:01:23,069
+En cómo se agendó marco que fue por teléfono, y como la paciente ya la confirmó,
+
+24
+00:01:23,168 --> 00:01:24,557
+marco esa casilla.
+
+25
+00:01:25,215 --> 00:01:28,168
+Pulso Agendar cita, y la cita queda creada.
+
+26
+00:01:29,520 --> 00:01:32,051
+Ahora una cita de hoy que sigue programada:
+
+27
+00:01:32,173 --> 00:01:33,750
+la de Yesenia Castillo.
+
+28
+00:01:34,405 --> 00:01:38,226
+En la vista de lista toco su fila, y a la derecha sale su panel.
+
+29
+00:01:38,894 --> 00:01:41,625
+El botón Estado muestra solo los pasos que tocan:
+
+30
+00:01:41,734 --> 00:01:45,381
+confirmar, registrar la llegada o marcar que no asistió.
+
+31
+00:01:46,037 --> 00:01:46,820
+Confirmo:
+
+32
+00:01:46,930 --> 00:01:49,349
+el sistema pregunta, y digo que sí.
+
+33
+00:01:50,018 --> 00:01:53,652
+El panel se cierra y la cita ya sale en verde, confirmada.
+
+34
+00:01:54,321 --> 00:01:57,720
+Cuando la paciente llega a recepción, la abro otra vez,
+
+35
+00:01:57,818 --> 00:02:00,201
+y en el menú Estado registro su llegada.
+
+36
+00:02:00,868 --> 00:02:02,185
+Acepto el aviso.
+
+37
+00:02:02,840 --> 00:02:07,145
+La cita pasa a en espera y la paciente recibe un turno en la cola de la sala.
+
+38
+00:02:08,525 --> 00:02:11,937
+Lo que pasa con los pacientes de hoy se sigue en la Operación del Día.
+
+39
+00:02:12,604 --> 00:02:16,239
+Arriba están las etapas, con cuántos pacientes hay en cada una:
+
+40
+00:02:16,324 --> 00:02:19,550
+en consulta, en cola, citados y cerrados.
+
+41
+00:02:20,218 --> 00:02:24,721
+Cada fila es un paciente, con su turno, el consultorio y el médico.
+
+42
+00:02:25,389 --> 00:02:26,928
+Abro a Yesenia Castillo:
+
+43
+00:02:27,076 --> 00:02:30,897
+su recorrido de hoy dice que fue citada, llegó y está en cola.
+
+44
+00:02:31,565 --> 00:02:34,146
+Cuando el médico está listo, pulso Llamar.
+
+45
+00:02:34,802 --> 00:02:37,221
+El sistema avisa que la paciente fue llamada,
+
+46
+00:02:37,319 --> 00:02:39,615
+y el turno sale en la pantalla de la sala;
+
+47
+00:02:39,687 --> 00:02:40,942
+acepto el aviso.
+
+48
+00:02:41,597 --> 00:02:43,682
+La ficha dice a qué hora se llamó.
+
+49
+00:02:44,338 --> 00:02:48,692
+Cuando entra al consultorio, pulso Iniciar atención, y otra vez acepto.
+
+50
+00:02:49,348 --> 00:02:51,247
+Ahora sí está en consulta.
+
+51
+00:02:51,915 --> 00:02:56,802
+Al terminar, el médico la cierra desde la historia clínica, con su nota firmada.
+
+52
+00:02:58,165 --> 00:03:02,456
+Otro paciente, Francisco Javier Cabrera, pide moverse de hora.
+
+53
+00:03:03,112 --> 00:03:05,916
+Vuelvo al calendario y entro a la Agenda del Centro.
+
+54
+00:03:06,572 --> 00:03:10,121
+En la columna del doctor Jorge Medina está su cita, y la abro:
+
+55
+00:03:10,218 --> 00:03:11,943
+se ve el detalle completo.
+
+56
+00:03:12,611 --> 00:03:14,349
+Toco el botón Reprogramar.
+
+57
+00:03:15,004 --> 00:03:19,570
+Arriba queda la cita actual, y debajo la semana del médico con los cupos de cada
+
+58
+00:03:19,382 --> 00:03:19,929
+día.
+
+59
+00:03:20,597 --> 00:03:23,736
+Elijo el primer día con cupos y el turno de las cinco.
+
+60
+00:03:24,404 --> 00:03:25,584
+Escribo el motivo:
+
+61
+00:03:25,632 --> 00:03:27,568
+el paciente pidió otra hora.
+
+62
+00:03:28,236 --> 00:03:30,842
+Con todo listo, pulso Reprogramar al pie:
+
+63
+00:03:30,989 --> 00:03:35,071
+se crea la cita nueva, la anterior queda como reprogramada para la historia,
+
+64
+00:03:35,193 --> 00:03:37,229
+y al paciente le llega un correo.
+
+65
+00:03:38,620 --> 00:03:41,981
+Y si un paciente avisa que no vendrá, la cita se cancela.
+
+66
+00:03:42,649 --> 00:03:46,123
+Vuelvo al calendario, entro otra vez a la Agenda del Centro,
+
+67
+00:03:46,134 --> 00:03:50,241
+y en la columna de la doctora Ana Pérez abro la de Rafael Antonio Núñez.
+
+68
+00:03:50,908 --> 00:03:52,460
+Pulso Cancelar cita.
+
+69
+00:03:53,116 --> 00:03:56,714
+El sistema pregunta con el número y la hora, y pide el motivo:
+
+70
+00:03:56,774 --> 00:03:58,350
+solicitud del paciente.
+
+71
+00:03:59,006 --> 00:04:02,566
+Ese motivo queda en la cita y en el informe de cancelaciones.
+
+72
+00:04:03,235 --> 00:04:05,828
+Las notas son opcionales, para el equipo.
+
+73
+00:04:06,484 --> 00:04:09,114
+Ahora sí, pulso Cancelar la cita.
+
+74
+00:04:09,770 --> 00:04:13,876
+La cita queda cancelada, el turno queda libre para otro paciente y los
+
+75
+00:04:13,689 --> 00:04:15,141
+recordatorios se anulan.
+
+76
+00:04:15,809 --> 00:04:18,762
+Si el paciente simplemente no vino, no se cancela:
+
+77
+00:04:18,922 --> 00:04:21,825
+se marca que no asistió, desde el botón Estado.
+
+78
+00:04:22,481 --> 00:04:24,838
+Con esto cerramos la serie de citas.

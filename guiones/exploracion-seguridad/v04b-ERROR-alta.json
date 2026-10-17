@@ -1,0 +1,2434 @@
+{
+ "url": "/security/personas",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [
+  {
+   "el": "mat-dialog-content.mat-mdc-dialog-content.mdc-dialog__content",
+   "scrollHeight": 632,
+   "clientHeight": 514
+  }
+ ],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Seguridad",
+   "caja": [
+    109,
+    136,
+    695,
+    26
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-sheet-title",
+   "texto": "Todas · 9",
+   "caja": [
+    330,
+    260,
+    559,
+    28
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "mat-mdc-dialog-title mdc-dialog__title dialog-title",
+   "texto": "Crear Usuario",
+   "caja": [
+    320,
+    41,
+    147,
+    60
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "header-title",
+   "texto": "Operación completada",
+   "caja": [
+    541,
+    272,
+    242,
+    26
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Nuevo",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1128,
+    143,
+    101,
+    36
+   ],
+   "sel": "button:has-text('Nuevo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Resumen",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ],
+   "sel": "a:has-text('Resumen')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 9",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ],
+   "sel": "a:has-text('Personas 9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-2",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ],
+   "sel": "a:has-text('Roles y permisos 12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Integraciones 1",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-3",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ],
+   "sel": "a:has-text('Integraciones 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditoría",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-4",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ],
+   "sel": "a:has-text('Auditoría')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Todas9",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn",
+    "gm-rail-btn--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    290,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Todas9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Activas8",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    326,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Activas8')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Sin rol1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    362,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Sin rol1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nunca entraron1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    398,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Nunca entraron1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Inactivas1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    434,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Inactivas1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "add",
+   "aria": "Nuevo equipo",
+   "id": "",
+   "clases": [
+    "sec-people__add"
+   ],
+   "tooltip": "Nuevo equipo",
+   "deshabilitado": false,
+   "caja": [
+    261,
+    490,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Nuevo equipo']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Zona Este",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-rail-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    532,
+    220,
+    36
+   ],
+   "sel": "button:has-text('Zona Este')",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Rol",
+   "icono": "filter_list",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1149,
+    256,
+    80,
+    36
+   ],
+   "sel": "button:has-text('Rol')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "SRSonia Reyes sonia.reyes@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    369,
+    365,
+    40
+   ],
+   "sel": "button:has-text('SRSonia Reyes sonia.reyes@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "LFLuisa Féliz luisa.feliz@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    425,
+    365,
+    40
+   ],
+   "sel": "button:has-text('LFLuisa Féliz luisa.feliz@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "MGMarta Guzmán marta.guzman@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    481,
+    365,
+    40
+   ],
+   "sel": "button:has-text('MGMarta Guzmán marta.guzman@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "PNPedro Núñez pedro.nunez@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    537,
+    365,
+    40
+   ],
+   "sel": "button:has-text('PNPedro Núñez pedro.nunez@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "CPCarlos Pimentel carlos.pimentel@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    593,
+    365,
+    40
+   ],
+   "sel": "button:has-text('CPCarlos Pimentel carlos.pimentel@germiv')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "JCJosé Cabrera jose.cabrera@germiva.demo · Zona Este",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    649,
+    365,
+    40
+   ],
+   "sel": "button:has-text('JCJosé Cabrera jose.cabrera@germiva.demo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "AMAna Mejía ana.mejia@germiva.demo · Zona Este",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    705,
+    365,
+    40
+   ],
+   "sel": "button:has-text('AMAna Mejía ana.mejia@germiva.demo · Zon')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RARosa Almánzar rosa.almanzar@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    761,
+    365,
+    40
+   ],
+   "sel": "button:has-text('RARosa Almánzar rosa.almanzar@germiva.de')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "HVHéctor Vargas hector.vargas@germiva.demo",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-people__who"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    362,
+    817,
+    365,
+    40
+   ],
+   "sel": "button:has-text('HVHéctor Vargas hector.vargas@germiva.de')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "chevron_left",
+   "aria": "Página anterior",
+   "id": "",
+   "clases": [],
+   "tooltip": "Página anterior",
+   "deshabilitado": true,
+   "caja": [
+    1161,
+    644,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Página anterior']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "chevron_right",
+   "aria": "Página siguiente",
+   "id": "",
+   "clases": [],
+   "tooltip": "Página siguiente",
+   "deshabilitado": true,
+   "caja": [
+    1201,
+    644,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Página siguiente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "close",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "Cerrar",
+   "deshabilitado": false,
+   "caja": [
+    906,
+    53,
+    36,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has(mat-icon:text-is('close'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Limpiar todo",
+   "icono": "clear_all",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    792,
+    546,
+    131,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Limpiar todo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "cancel",
+   "aria": "Eliminar Vendedor",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    465,
+    612,
+    34,
+    18
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button[aria-label='Eliminar Vendedor']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cancelar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    732,
+    639,
+    101,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Cancelar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Guardar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    843,
+    639,
+    93,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Guardar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Aceptar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "confirm-button",
+    "icon-success"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    663,
+    409,
+    120,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Aceptar')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:search",
+   "placeholder": "Buscar persona o rol",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    820,
+    143,
+    300,
+    36
+   ],
+   "sel": ""
+  },
+  {
+   "label": "Nombre(s)",
+   "formcontrolname": "name",
+   "tipo": "input:text",
+   "placeholder": "Ej: Juan Carlos",
+   "valor": "Julio",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    344,
+    134,
+    284,
+    58
+   ],
+   "sel": "[formcontrolname='name']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Apellido(s)",
+   "formcontrolname": "lastName",
+   "tipo": "input:text",
+   "placeholder": "Ej: Pérez García",
+   "valor": "Santana",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    652,
+    134,
+    284,
+    58
+   ],
+   "sel": "[formcontrolname='lastName']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Correo Electrónico",
+   "formcontrolname": "email",
+   "tipo": "input:email",
+   "placeholder": "usuario@empresa.com",
+   "valor": "julio.santana@germiva.demo",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    344,
+    216,
+    284,
+    58
+   ],
+   "sel": "[formcontrolname='email']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Nombre de Usuario",
+   "formcontrolname": "username",
+   "tipo": "input:text",
+   "placeholder": "Ej: jperez",
+   "valor": "julio.santana",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    652,
+    216,
+    284,
+    58
+   ],
+   "sel": "[formcontrolname='username']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "WhatsApp",
+   "formcontrolname": "whatsappPhone",
+   "tipo": "input:text",
+   "placeholder": "Ej: 18095550000",
+   "valor": "",
+   "hint": "Con código de país. Habilita a esta persona a consultar la empresa por WhatsApp.",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    344,
+    298,
+    284,
+    58
+   ],
+   "sel": "[formcontrolname='whatsappPhone']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Contraseña",
+   "formcontrolname": "password",
+   "tipo": "input:password",
+   "placeholder": "",
+   "valor": "Demo2026!",
+   "hint": "Mínimo 6 caracteres, mayúscula y número",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    344,
+    381,
+    284,
+    58
+   ],
+   "sel": "[formcontrolname='password']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Confirmar Contraseña",
+   "formcontrolname": "confirmPassword",
+   "tipo": "input:password",
+   "placeholder": "",
+   "valor": "Demo2026!",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    652,
+    381,
+    284,
+    58
+   ],
+   "sel": "[formcontrolname='confirmPassword']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Roles del Usuario",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "",
+   "hint": "Seleccione los roles que tendrá en esta empresa",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    344,
+    463,
+    592,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Roles del Usuario'))",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "Activo",
+   "formcontrolname": "",
+   "marcado": true,
+   "caja": [
+    410,
+    686,
+    82,
+    19
+   ]
+  },
+  {
+   "texto": "Inactivo",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    492,
+    686,
+    92,
+    19
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "Resumen",
+   "seleccionada": false,
+   "id": "mat-tab-link-0",
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ]
+  },
+  {
+   "texto": "Personas 9",
+   "seleccionada": true,
+   "id": "mat-tab-link-1",
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ]
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "seleccionada": false,
+   "id": "mat-tab-link-2",
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ]
+  },
+  {
+   "texto": "Integraciones 1",
+   "seleccionada": false,
+   "id": "mat-tab-link-3",
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ]
+  },
+  {
+   "texto": "Auditoría",
+   "seleccionada": false,
+   "id": "mat-tab-link-4",
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [
+  {
+   "titulo": "Crear Usuario",
+   "clases": "cdk-overlay-pane mat-mdc-dialog-panel",
+   "caja": [
+    320,
+    29,
+    640,
+    662
+   ],
+   "texto": "Crear Usuario close Nombre(s) person Apellido(s) person Correo Electrónico email Nombre de Usuario alternate_email WhatsApp chat Con código de país. Habilita a esta persona a consultar la empresa por WhatsApp. Contraseña visibility_off Mínimo 6 caracteres, mayúscula y número Confirmar Contraseña visibility_off Roles del Usuario group Seleccione los roles que tendrá en esta empresa verified_user 1 rol(es) asignado(s) clear_all Limpiar todo person Vendedor cancel Estado: Activo Inactivo Cancelar Guardar"
+  },
+  {
+   "titulo": "Operación completada",
+   "clases": "cdk-overlay-pane custom-alert-dialog-panel mat-mdc-dialog-panel",
+   "caja": [
+    470,
+    248,
+    340,
+    223
+   ],
+   "texto": "check_circle Operación completada El usuario ha sido creado correctamente. Aceptar"
+  }
+ ],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "AMAna Mejía ana.mejia@germiva.demo · Zona Este",
+   "caja": [
+    362,
+    705,
+    365,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "RARosa Almánzar rosa.almanzar@germiva.demo",
+   "caja": [
+    362,
+    761,
+    365,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "HVHéctor Vargas hector.vargas@germiva.demo",
+   "caja": [
+    362,
+    817,
+    365,
+    40
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "gm-dense": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Seguridad Personas Seguridad Quién entra, qué puede hacer y qué cambió"
+   },
+   "gm-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__title-row": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo"
+   },
+   "gm-sheet__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió."
+   },
+   "gm-sheet__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search add Nuevo"
+   },
+   "security-console__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet__tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "console-tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "gm-sheet__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "gm-sheet-split": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "sec-people": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "gm-sheet-rail": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPO"
+   },
+   "gm-rail-label": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "VISTAS"
+   },
+   "gm-th": {
+    "n": 6,
+    "visibles": 6,
+    "ej": "VISTAS"
+   },
+   "gm-rail-btn": {
+    "n": 6,
+    "visibles": 6,
+    "ej": "Todas 9"
+   },
+   "gm-rail-btn--active": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas 9"
+   },
+   "gm-ellipsis": {
+    "n": 33,
+    "visibles": 33,
+    "ej": "Todas"
+   },
+   "gm-rail-count": {
+    "n": 6,
+    "visibles": 5,
+    "ej": "9"
+   },
+   "sec-people__dot": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "sec-people__teams-label": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "EQUIPOS add"
+   },
+   "sec-people__add": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "add"
+   },
+   "gm-sheet-pane": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas · 9 search filter_list Rol PERSONA ROLES ÚLTIMO INGRESO ESTADO S"
+   },
+   "gm-sheet-bar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas · 9 search filter_list Rol"
+   },
+   "sec-people__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas · 9"
+   },
+   "gm-sheet-title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Todas · 9"
+   },
+   "sec-people__total": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "· 9"
+   },
+   "sec-people__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet-scroll": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO SR Sonia Reyes sonia.reyes@germiva"
+   },
+   "gm-sheet-row": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO"
+   },
+   "gm-sheet-row--head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO"
+   },
+   "sec-people__row": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "PERSONA ROLES ÚLTIMO INGRESO ESTADO"
+   },
+   "sec-people__check": {
+    "n": 10,
+    "visibles": 10,
+    "ej": ""
+   },
+   "sec-people__col-last": {
+    "n": 10,
+    "visibles": 10,
+    "ej": "ÚLTIMO INGRESO"
+   },
+   "sec-people__who": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "SR Sonia Reyes sonia.reyes@germiva.demo"
+   },
+   "gm-initials": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "SR"
+   },
+   "gm-initials--tone-3": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "SR"
+   },
+   "sec-people__text": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "Sonia Reyes sonia.reyes@germiva.demo"
+   },
+   "sec-people__name": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "Sonia Reyes"
+   },
+   "gm-sheet-meta": {
+    "n": 19,
+    "visibles": 19,
+    "ej": "sonia.reyes@germiva.demo"
+   },
+   "gm-status": {
+    "n": 9,
+    "visibles": 9,
+    "ej": "Inactiva"
+   },
+   "gm-status--neutral": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Inactiva"
+   },
+   "gm-initials--tone-2": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "LF"
+   },
+   "sec-people__norole": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Sin ningún rol"
+   },
+   "gm-status--success": {
+    "n": 7,
+    "visibles": 7,
+    "ej": "Activa"
+   },
+   "gm-initials--tone-1": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "JC"
+   },
+   "gm-status--warning": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Pendiente"
+   },
+   "sec-people__pager": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Mostrando 1–9 de 9 chevron_left chevron_right"
+   },
+   "sec-people__spacer": {
+    "n": 1,
+    "visibles": 0,
+    "ej": ""
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     7,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     7,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     7,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     7,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     7,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     7,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     7,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     7,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     7,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     7,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     7,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     7,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     7,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     7,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     7,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     7,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     7,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona o rol",
+    [
+     872,
+     152,
+     232,
+     18
+    ]
+   ],
+   [
+    "aside",
+    "Vistas de personas",
+    [
+     85,
+     244,
+     220,
+     442
+    ]
+   ],
+   [
+    "button",
+    "Nuevo equipo",
+    [
+     261,
+     490,
+     36,
+     36
+    ]
+   ],
+   [
+    "section",
+    "Personas",
+    [
+     305,
+     244,
+     948,
+     442
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona",
+    [
+     934,
+     264,
+     194,
+     21
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar todas",
+    [
+     330,
+     325,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Sonia Reyes",
+    [
+     330,
+     381,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Luisa Féliz",
+    [
+     330,
+     437,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Marta Guzmán",
+    [
+     330,
+     493,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Pedro Núñez",
+    [
+     330,
+     549,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Carlos Pimentel",
+    [
+     330,
+     605,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar José Cabrera",
+    [
+     330,
+     661,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Ana Mejía",
+    [
+     330,
+     717,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Rosa Almánzar",
+    [
+     330,
+     773,
+     15,
+     15
+    ]
+   ],
+   [
+    "input",
+    "Seleccionar Héctor Vargas",
+    [
+     330,
+     829,
+     15,
+     15
+    ]
+   ],
+   [
+    "button",
+    "Página anterior",
+    [
+     1161,
+     644,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Página siguiente",
+    [
+     1201,
+     644,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ],
+   [
+    "button",
+    "Eliminar Vendedor",
+    [
+     465,
+     612,
+     34,
+     18
+    ]
+   ]
+  ],
+  "formcontrolname": [
+   [
+    "input",
+    "name",
+    true
+   ],
+   [
+    "input",
+    "lastName",
+    true
+   ],
+   [
+    "input",
+    "email",
+    true
+   ],
+   [
+    "input",
+    "username",
+    true
+   ],
+   [
+    "input",
+    "whatsappPhone",
+    true
+   ],
+   [
+    "input",
+    "password",
+    true
+   ],
+   [
+    "input",
+    "confirmPassword",
+    true
+   ],
+   [
+    "app-role-multi-select",
+    "roles",
+    true
+   ],
+   [
+    "mat-radio-group",
+    "active",
+    true
+   ]
+  ],
+  "estados": [
+   {
+    "clase": "gm-ellipsis sec-people__norole",
+    "texto": "Sin ningún rol",
+    "caja": [
+     741,
+     435,
+     244,
+     20
+    ]
+   }
+  ],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   },
+   {
+    "el": "div.cdk-overlay-container",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     720
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     7,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "VISTAS",
+   "EQUIPOS",
+   "PERSONA",
+   "ROLES",
+   "ÚLTIMO INGRESO",
+   "ESTADO"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Seguridad Personas Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría VISTAS Todas 9 Activas 8 Sin rol 1 Nunca entraron 1 Inactivas 1 EQUIPOS add Zona Este Todas · 9 search filter_list Rol PERSONA ROLES ÚLTIMO INGRESO ESTADO SR Sonia Reyes sonia.reyes@germiva.demo Mensajero Hace 32 min Inactiva LF Luisa Féliz luisa.feliz@germiva.demo Sin ningún rol Hace 33 min Activa MG Marta Guzmán marta.guzman@germiva.demo Auditor (solo lectura) Hace 32 min Activa PN Pedro Núñez pedro.nunez@germiva.demo Almacén Hace 32 min Activa CP Carlos Pimentel carlos.pimentel@germiva.demo Vendedor sénior Hace 32 min Activa JC José Cabrera jose.cabrera@germiva.demo · Zona Este Vendedor, Almacén Hace 32 min Activa AM Ana Mejía ana.mejia@germiva.demo · Zona Este Vendedor Hace 32 min Activa RA Rosa Almánzar rosa.almanzar@germiva.demo Admin Hace un momento Activa HV Héctor Vargas hector.vargas@germiva.demo Vendedor Nunca Pendiente Mostrando 1–9 de 9 chevron_left chevron_right Crear Usuario close Nombre(s) person Apellido(s) person Correo Electrónico email Nombre de Usuario alternate_email WhatsApp chat Con código de país. Habilita a esta persona a consultar la empresa por WhatsApp. Contraseña visibility_off Mínimo 6 caracteres, mayúscula y número Confirmar Contraseña visibility_off Roles del Usuario group Seleccione los roles que tendrá en esta empresa verified_user 1 rol(es) asignado(s) clear_all Limpiar todo person Vendedor cancel Estado: Activo Inactivo Cancelar Guardar check_circle Operación completada El usuario ha sido creado correctamente. Aceptar"
+ },
+ "video": "v04b",
+ "pantalla": "ERROR-alta",
+ "usuario": "rosa.almanzar",
+ "notas": "site-packages\\playwright\\_impl\\_connection.py\", line 632, in wrap_api_call\n    raise rewrite_error(error, f\"{parsed_st['apiName']}: {error}\") from None\nplaywright._impl._errors.TimeoutError: Locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"mat-dialog-container button:has-text('Cancelar')\").last\n    - locator resolved to <button type=\"button\" disabled=\"true\" mat-stroked-button=\"\" _ngcontent-ng-c4024165842=\"\" mat-ripple-loader-disabled=\"\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" class=\"mdc-button mat-mdc-button-base mdc-button--outlined mat-mdc-outlined-button mat-unthemed mat-mdc-button-disabled\">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n    - waiting 20ms\n    2 × waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n      - waiting 100ms\n    8 × waiting for element to be visible, enabled and stable\n      - element is not enabled\n    - retrying click action\n      - waiting 500ms\n    20 × waiting for element to be visible, enabled and stable\n       - element is visible, enabled and stable\n       - scrolling into view if needed\n       - done scrolling\n       - <div class=\"cdk-overlay-backdrop cdk-overlay-dark-backdrop cdk-overlay-backdrop-showing\"></div> intercepts pointer events\n     - retrying click action\n       - waiting 500ms\n\n",
+ "red_reciente": [
+  {
+   "t": 1790523791.0218406,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523791.9081218,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523795.9008026,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523799.347487,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523813.0484447,
+   "m": "POST",
+   "url": "user",
+   "st": 201,
+   "body": ""
+  }
+ ]
+}

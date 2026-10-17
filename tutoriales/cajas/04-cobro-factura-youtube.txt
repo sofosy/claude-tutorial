@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Cajas · Cobrar una factura con pago combinado
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Tu caja y la factura
+00:52  Cobrar con pago combinado
+02:43  La factura pagada
+03:18  Cómo se refleja en la caja
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cómo se conecta la caja con las ventas: el cobro de una factura entra a la caja abierta de quien cobra.
+• Abrir una factura en borrador y cobrarla con «Guardar y Cobrar», que además le asigna su NCF.
+• Cobrar una misma factura con dos métodos a la vez: una parte en efectivo y otra con tarjeta.
+• Ver el resultado en la factura: estado «Pagada», resumen de pagos y un recibo con una línea por método.
+• Leer el efecto en Mi caja y en el cuadre: el efectivo sube el esperado de la gaveta y la tarjeta se cuadra aparte.
+
+⚠️ ERRORES COMUNES
+• Cobrar sin tener tu caja abierta: si la empresa no exige caja, el cobro queda como «Pago directo (sin caja)» y no aparece en ningún turno ni en ningún cuadre.
+• Esperar que la tarjeta sume al efectivo de la gaveta: no suma; se cuadra aparte, contra el cierre del datáfono.
+• Pulsar «Guardar y Cobrar» antes de que «Falta» llegue a cero: la factura queda pagada solo en parte.
+• Anotar mal los últimos cuatro dígitos o el código de autorización: son lo que permite encontrar la transacción en el comprobante del datáfono.
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:21
+
+TRANSCRIPCIÓN
+============================================================
+Así se conecta la caja con las ventas: cuando cobras una factura, el dinero entra a la caja que tienes abierta en ese momento. Por eso, antes de cobrar, abre tu caja. Esta es Mi caja, mi turno en curso: la barra dice que la Caja Principal está abierta a mi nombre. En el «Desglose del efectivo», los cobros en efectivo están en cero, y el efectivo esperado es solo el fondo: cinco mil pesos. Ahora voy a Ventas, en el menú de la izquierda, y abro «Facturas». Esta es la lista de facturas de venta, y cada fila es una factura. La de Constructora Los Pinos está en «Borrador»: la preparó el vendedor y todavía no tiene su comprobante fiscal. Vale ocho mil ochocientos cincuenta pesos. Pulso el lápiz, «Editar», para abrirla.
+Esta es la factura. Contraigo el panel del menú para verla completa. Arriba están el cliente y el tipo de comprobante: B01, de crédito fiscal, porque el cliente es una empresa que va a deducir la compra. El NCF es el número de comprobante fiscal que exige la DGII, la oficina de impuestos, y se le asigna al cobrar. En las líneas van diez fundas de cemento y veinte varillas, y el ITBIS, que es el impuesto a las ventas, suma mil trescientos cincuenta pesos. Más abajo, en la sección «Cobro», fíjate en la etiqueta verde: Caja Principal y el número de mi sesión. Ahí va a entrar este dinero. El cliente paga una parte en efectivo y otra con tarjeta, así que marco «Pago combinado». Con efectivo elegido, en el monto escribo cinco mil, que es lo que me entrega en billetes. Como me da justo esa cantidad, pulso «Exacto», y el vuelto queda en cero. Luego pulso «Agregar al recibo». Arriba queda la ficha del efectivo, y a la derecha, lo que falta: tres mil ochocientos cincuenta. Ahora elijo tarjeta: el monto ya viene con el resto. Anoto los últimos cuatro dígitos de la tarjeta, que salen en el plástico y en el voucher. En «Tipo de tarjeta» elijo Visa. Y escribo el código de autorización que imprime el datáfono; con él se encuentra la transacción si hay un reclamo. Lo agrego también al recibo. La línea de abajo confirma que la factura queda saldada; el formulario de arriba se vacía, listo para otro método, pero ya no hace falta. Pulso «Guardar y Cobrar». El sistema guarda la factura, le pone su NCF y registra los dos pagos en mi caja, y entonces sale el aviso «Cobro procesado». Pulso «Aceptar».
+Al aceptar, la factura se vuelve a cargar, ya cobrada. Arriba ya dice «Pagada», y ahora sí tiene su NCF asignado. Más abajo, en el «Resumen de Pagos», el total pagado son ocho mil ochocientos cincuenta pesos, y no queda nada pendiente. Abro «Versiones e historial» y luego la pestaña «Pagos». Hay un solo recibo, con dos líneas: cinco mil pesos en efectivo y tres mil ochocientos cincuenta con tarjeta. Cada método queda registrado por separado, y eso es justo lo que lee la caja.
+Ahora, la otra mitad de la historia. Vuelvo a Cajas, a Mi caja. En el desglose, los cobros en efectivo subieron a cinco mil pesos, y el efectivo esperado ahora es diez mil: el fondo más el efectivo de la factura. ¿Y la tarjeta? Aquí no suma, porque ese dinero no está en la gaveta: lo deposita el banco. La tarjeta se controla en el cuadre, y lo veo con el botón «Cuadre». Esta es la pantalla de quien cierra la caja. «Cobros del turno» suma todo lo cobrado, ocho mil ochocientos cincuenta, sin importar el método. Y abajo, cada método se cuadra por separado: en efectivo se esperan diez mil pesos, que se cuentan en la gaveta; con tarjeta, tres mil ochocientos cincuenta, que se comparan con el cierre del datáfono. Hoy no lo registro, así que pulso «Volver». Una sola factura, dos métodos, y cada peso queda en su sitio: en la factura, en tu caja y en el cuadre.

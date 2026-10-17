@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Citas · Parte 3: el paciente reserva por internet
+
+DESCRIPCIÓN
+============================================================
+Tercera parte de la serie de Citas de RegiSalud: los dos modos de la agenda en línea (simple, un enlace por médico y servicio; avanzado, el portal del centro), cómo se activa el portal en Configuración › Preferencias › Operación, y la reserva completa vista desde fuera, como la hace el paciente: elige el servicio, después el médico, la fecha y la hora, deja sus datos y recibe el número de su cita.
+
+⏱️ CAPÍTULOS
+00:00  Simple o avanzado
+01:00  El portal: elegir el servicio
+01:30  Elegir el médico
+01:56  Fecha y hora
+02:19  Sus datos y la confirmación
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Elegir entre el modo simple (un enlace por médico) y el avanzado (el portal del centro)
+• Publicar el portal de reservas y copiar su enlace
+• Recorrer la reserva del paciente: servicio, médico, fecha y hora, datos y confirmación
+• Saber qué recibe el paciente al reservar y cómo cancela si no puede asistir
+
+⚠️ ERRORES COMUNES
+• Elegir el modo avanzado y no pulsar Guardar: el enlace del portal no abre hasta guardar
+• Esperar en el portal un médico sin horario visible en el enlace: solo salen los que tienen turnos en línea
+• Compartir el enlace de un médico cuando se quería que el paciente eligiera entre varios: para eso es el portal
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:11
+
+TRANSCRIPCIÓN
+============================================================
+Hay dos formas de recibir citas por internet, y se eligen en la configuración. Entro a Configuración, en el menú, y abro Preferencias. Después recojo el panel para ganar espacio, y abro la pestaña Operación. En el bloque Citas Médicas, los minutos antes para recordatorio dicen con cuánta anticipación le llega al paciente el recordatorio por correo. Al lado está el modo de la agenda en línea; abro la lista. En el modo simple, cada médico comparte su propio enlace, el que vimos en la parte anterior. En el modo avanzado, el centro tiene un portal: el paciente entra a una sola dirección y elige el servicio, el médico y la hora. Elijo el avanzado. Aparece la dirección del portal, con su botón para copiarla. Como dice la nota, hay que guardar para publicarlo: pulso Guardar, abajo. Sale el aviso de configuración guardada, y lo acepto.
+Ahora me pongo en el lugar del paciente: abro el portal con ese enlace, como lo haría desde su teléfono. Arriba está el nombre del centro y los tres pasos de la reserva: servicio, médico, fecha y hora. Cada tarjeta es un servicio, con su descripción, su duración y cuántos médicos lo ofrecen. Aquí está la consulta pediátrica que configuramos, con el doctor Luis Gómez. Este paciente necesita una consulta general, así que la elige.
+El segundo paso muestra los médicos que ofrecen ese servicio, con su especialidad. Si se equivocó, cambiar servicio lo lleva de vuelta. Elige a la doctora Ana Pérez y pulsa ver horarios. Entra a la página de reservas de la doctora: la misma que se abre con su enlace en el modo simple. Arriba se ve el servicio, la doctora con su especialidad, la descripción y el precio.
+Debajo está el calendario. Los días apagados no se pueden elegir: ya pasaron, la doctora no atiende, o no le quedan turnos. El paciente toca uno de los próximos días, y a la derecha aparecen los turnos libres de ese día, cada uno con su hora de inicio, de fin y su duración. Elige el de las nueve de la mañana, y pulsa siguiente.
+Arriba queda el resumen de lo que eligió: doctora, consultorio, duración, fecha y hora. Abajo pone sus datos: el nombre completo, Gabriela Fernández, tal como quiere que aparezca. Después el correo electrónico, que es donde le llega la confirmación de su cita. Y por último el teléfono, que es opcional pero sirve para el recordatorio. Pulsa confirmar reserva. Listo: la cita quedó creada. La pantalla le da su número de cita, el médico, el consultorio, la fecha y la hora. Puede agregarla a su calendario de Google, y si no puede asistir, la cancela desde aquí para liberar el horario. Del lado del centro, esta cita ya está en la agenda: eso lo vemos en la siguiente parte.

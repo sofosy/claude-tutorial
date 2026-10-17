@@ -1,0 +1,331 @@
+1
+00:00:03,097 --> 00:00:07,996
+Esta es la pantalla de Inicio de Ana Mejía, vendedora de Distribuidora Las Palmas.
+
+2
+00:00:08,640 --> 00:00:12,596
+En este video comparamos el permiso más básico, el de ver una pantalla:
+
+3
+00:00:12,710 --> 00:00:15,711
+primero con alguien que lo tiene, y después con alguien que no.
+
+4
+00:00:15,523 --> 00:00:17,426
+A la izquierda está el menú de módulos,
+
+5
+00:00:17,516 --> 00:00:20,336
+que solo trae lo que el rol de cada persona permite.
+
+6
+00:00:20,983 --> 00:00:22,185
+Ana tiene Ventas;
+
+7
+00:00:22,274 --> 00:00:24,914
+lo abro, y dentro aparece Cotizaciones.
+
+8
+00:00:25,559 --> 00:00:29,539
+Una cotización es el presupuesto que se le da a un cliente antes de venderle.
+
+9
+00:00:30,185 --> 00:00:32,307
+La pulso, y se abre la lista.
+
+10
+00:00:32,939 --> 00:00:35,615
+Contraigo el panel del menú para ganar espacio.
+
+11
+00:00:36,249 --> 00:00:38,490
+Aquí están sus tres cotizaciones.
+
+12
+00:00:39,134 --> 00:00:43,840
+Esta pantalla, Gestión de Cotizaciones y Presupuestos, se le abre porque su rol,
+
+13
+00:00:43,929 --> 00:00:47,185
+Vendedor, tiene el permiso Cotizaciones, Ver.
+
+14
+00:00:47,819 --> 00:00:51,182
+Sin ese permiso, la opción ni siquiera aparece en el menú.
+
+15
+00:00:52,521 --> 00:00:53,954
+Cambiamos de persona.
+
+16
+00:00:54,585 --> 00:00:58,492
+Ahora salgo y entro como Pedro Núñez, el encargado de almacén.
+
+17
+00:00:59,138 --> 00:01:03,552
+Abro el menú de mi usuario, arriba a la derecha, y pulso Cerrar sesión.
+
+18
+00:01:04,186 --> 00:01:08,034
+En la pantalla de acceso escribo su usuario, que es pedro punto nunez,
+
+19
+00:01:08,063 --> 00:01:09,532
+en minúsculas y sin eñe;
+
+20
+00:01:09,597 --> 00:01:12,731
+y ahora su clave, que se ve con puntos por seguridad.
+
+21
+00:01:13,377 --> 00:01:16,367
+Pulso Iniciar sesión, y el botón cambia a Entrando:
+
+22
+00:01:16,480 --> 00:01:20,401
+el sistema comprueba quién es y carga los permisos de su rol, Almacén.
+
+23
+00:01:21,034 --> 00:01:26,112
+Con esos permisos arma su menú, que es distinto para cada persona, según sus roles.
+
+24
+00:01:26,759 --> 00:01:30,123
+Mientras entra, recuerda que Pedro es el encargado de almacén:
+
+25
+00:01:30,236 --> 00:01:33,384
+su trabajo diario son los productos y las existencias.
+
+26
+00:01:34,028 --> 00:01:36,078
+Ya estamos en el Inicio de Pedro.
+
+27
+00:01:36,710 --> 00:01:38,540
+Fíjate en el menú de la izquierda:
+
+28
+00:01:38,655 --> 00:01:40,171
+no aparece Ventas.
+
+29
+00:01:40,805 --> 00:01:43,771
+Tiene Inventario, porque su trabajo son los productos;
+
+30
+00:01:43,859 --> 00:01:46,789
+pero su rol no incluye el permiso de ver cotizaciones,
+
+31
+00:01:46,843 --> 00:01:49,652
+así que el sistema ni siquiera le muestra la opción.
+
+32
+00:01:50,284 --> 00:01:52,562
+Esto es lo primero que hace un permiso de ver:
+
+33
+00:01:52,712 --> 00:01:54,459
+decide qué aparece en el menú.
+
+34
+00:01:55,831 --> 00:01:59,727
+¿Y si Pedro conoce la dirección de la pantalla de Cotizaciones y la teclea
+
+35
+00:01:59,539 --> 00:02:01,370
+directamente en el navegador?
+
+36
+00:02:02,013 --> 00:02:03,227
+Vamos a probarlo.
+
+37
+00:02:03,873 --> 00:02:05,558
+El sistema no lo deja pasar:
+
+38
+00:02:05,685 --> 00:02:09,991
+lo devuelve al Inicio con un aviso que dice No tienes permiso para ver Cotizaciones.
+
+39
+00:02:10,635 --> 00:02:13,554
+Solicita el acceso al administrador de tu empresa.
+
+40
+00:02:14,199 --> 00:02:18,602
+Aquí está, de vuelta en el Inicio, sin haber visto ni una cotización.
+
+41
+00:02:19,235 --> 00:02:21,537
+Escribir la dirección no salta el permiso:
+
+42
+00:02:21,603 --> 00:02:24,037
+el sistema lo comprueba al abrir cada pantalla,
+
+43
+00:02:24,054 --> 00:02:26,838
+y el servidor lo vuelve a comprobar en cada consulta.
+
+44
+00:02:28,196 --> 00:02:29,652
+Ahora el lado contrario:
+
+45
+00:02:29,730 --> 00:02:31,947
+alguien que sí puede ver algo delicado.
+
+46
+00:02:32,591 --> 00:02:36,861
+Salgo otra vez, pulso Cerrar sesión, y entro como Marta Guzmán,
+
+47
+00:02:36,987 --> 00:02:38,370
+la auditora de la empresa.
+
+48
+00:02:39,016 --> 00:02:42,985
+Escribo su usuario, marta punto guzman, también en minúsculas;
+
+49
+00:02:43,062 --> 00:02:46,909
+ahora su clave, que en pantalla se ve con puntos para que nadie la lea;
+
+50
+00:02:47,035 --> 00:02:48,479
+y pulso Iniciar sesión;
+
+51
+00:02:48,545 --> 00:02:51,933
+el botón dice Entrando mientras el sistema carga sus permisos.
+
+52
+00:02:52,579 --> 00:02:55,762
+Mientras entra, recuerda que Marta no administra nada:
+
+53
+00:02:55,936 --> 00:02:56,957
+solo revisa.
+
+54
+00:02:57,603 --> 00:03:00,388
+El rol de Marta es Auditor, de solo lectura:
+
+55
+00:03:00,477 --> 00:03:03,092
+puede ver casi todo y no puede cambiar nada.
+
+56
+00:03:03,737 --> 00:03:06,474
+Así revisa sin riesgo de tocar algo por error.
+
+57
+00:03:07,120 --> 00:03:09,784
+Ya dentro, su menú sí tiene Seguridad.
+
+58
+00:03:10,429 --> 00:03:11,317
+La abro.
+
+59
+00:03:11,951 --> 00:03:16,052
+Es la misma consola que usa la administradora, pero con cuatro pestañas:
+
+60
+00:03:16,201 --> 00:03:19,602
+falta Integraciones, porque su rol no tiene ese permiso.
+
+61
+00:03:20,236 --> 00:03:22,441
+Arriba a la derecha solo está el buscador:
+
+62
+00:03:22,555 --> 00:03:25,267
+no hay botón Nuevo, porque no puede crear.
+
+63
+00:03:25,912 --> 00:03:29,434
+Abro Roles y permisos, y dentro, el rol Vendedor.
+
+64
+00:03:30,067 --> 00:03:32,850
+En la cabecera no aparecen ni Duplicar ni Editar.
+
+65
+00:03:33,484 --> 00:03:37,296
+Debajo, una franja amarilla con un candado dice Solo lectura:
+
+66
+00:03:37,434 --> 00:03:39,735
+no tiene permiso para cambiar permisos.
+
+67
+00:03:40,381 --> 00:03:43,201
+Los botones se ven más apagados y están bloqueados:
+
+68
+00:03:43,314 --> 00:03:45,544
+si pulsa uno, no cambia nada.
+
+69
+00:03:46,177 --> 00:03:48,504
+Los ve, pero no los puede tocar.
+
+70
+00:03:49,834 --> 00:03:50,723
+Última prueba:
+
+71
+00:03:50,849 --> 00:03:54,841
+Marta intenta entrar a Integraciones escribiendo su dirección en el navegador.
+
+72
+00:03:55,473 --> 00:03:56,748
+Veamos qué pasa.
+
+73
+00:03:57,393 --> 00:03:58,813
+La consola no la deja:
+
+74
+00:03:58,915 --> 00:04:01,047
+arriba sale una franja con un candado,
+
+75
+00:04:01,149 --> 00:04:03,910
+que dice No tienes permiso para ver Integraciones.
+
+76
+00:04:04,555 --> 00:04:07,472
+Solicita el acceso al administrador de tu empresa.
+
+77
+00:04:08,118 --> 00:04:11,687
+Y debajo le muestra su primera pestaña permitida, el Resumen.
+
+78
+00:04:12,321 --> 00:04:16,759
+Si alguien no tuviera ninguna pestaña de Seguridad, vería solo ese aviso.
+
+79
+00:04:17,405 --> 00:04:18,197
+En resumen:
+
+80
+00:04:18,263 --> 00:04:21,807
+el permiso de ver decide qué aparece en el menú y qué pestañas salen;
+
+81
+00:04:21,910 --> 00:04:23,837
+escribir la dirección no lo salta;
+
+82
+00:04:23,903 --> 00:04:25,660
+y ver no es lo mismo que cambiar:
+
+83
+00:04:25,775 --> 00:04:29,296
+Marta revisa Seguridad, pero no crea ni edita nada.

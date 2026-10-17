@@ -1,0 +1,83 @@
+{
+  "_comentario": "Prueba del motor, NO es un tutorial: insignia, cartel y diagramas de la capa sobre una página estática (sin ERP ni sesión). Sirve la carpeta con: node seeds/_puertas/servir-estatico.mjs seeds/_puertas/prueba-capa 4390. spa=false para que el paso 02 recargue la página entera y se vea que la insignia sobrevive.",
+  "titulo": "Prueba · capa de seguridad",
+  "base_url": "http://localhost:4390",
+  "spa": false,
+  "privacidad": {"perfil": "estricto", "semilla": "prueba", "permitidos": ["FAC-01"]},
+  "pasos": [
+    {
+      "id": "01-insignia-con",
+      "ruta": "Prueba › Facturas",
+      "texto_pantalla": "Facturas · insignia con permiso y consejo",
+      "navegar": "/",
+      "insignia": {"tipo": "con", "texto": "Con permiso · Ana (Vendedor)"},
+      "acciones": [
+        {"cartel": {"tipo": "consejo", "titulo": "Consejo", "texto": "Asigna los permisos a roles, no a personas: así un cambio alcanza a todo el equipo."}, "durante_ms": 6000, "al_decir": "consejo"},
+        {"resaltar": "button.nuevo", "durante_ms": 4000, "al_decir": "botón"}
+      ],
+      "narracion": "Esta es una pantalla de prueba. Arriba al centro, la insignia verde avisa que Ana entra con permiso. Abajo a la izquierda aparece un consejo que se va solo. Y el botón Nuevo queda señalado con su recuadro."
+    },
+    {
+      "id": "02-insignia-sin",
+      "ruta": "Prueba › Facturas",
+      "texto_pantalla": "Facturas · recarga completa, insignia sin permiso",
+      "navegar": "/facturas",
+      "insignia": {"tipo": "sin", "texto": "Sin permiso · Luis (Consulta)"},
+      "acciones": [
+        {"cartel": {"tipo": "cuidado", "titulo": "Cuidado", "texto": "Sin el permiso «Facturas · Crear», el botón Nuevo no aparece y el sistema rechaza el intento."}, "durante_ms": 6500, "al_decir": "cuidado"}
+      ],
+      "narracion": "Ahora la misma pantalla recargada por completo. La insignia roja dice que Luis no tiene permiso para crear facturas. El cartel de cuidado explica qué pasa si alguien lo intenta."
+    },
+    {
+      "id": "03-conceptos",
+      "ruta": "Prueba › Diagrama",
+      "texto_pantalla": "Seguridad · seis conceptos",
+      "insignia": {"tipo": "info", "texto": "Módulo de Seguridad · conceptos"},
+      "diagrama": "conceptos-seguridad",
+      "acciones": [
+        {"diagrama_fase": 2, "al_decir": "rol"},
+        {"diagrama_fase": 3, "al_decir": "permiso"},
+        {"diagrama_fase": 4, "al_decir": "alcance"},
+        {"diagrama_fase": 5, "al_decir": "equipo"},
+        {"diagrama_fase": 6, "al_decir": "credencial"}
+      ],
+      "narracion": "Seis conceptos ordenan la seguridad. Primero, la persona que entra. Luego el rol, que agrupa permisos. Cada permiso une un recurso con una acción. El alcance dice sobre qué registros vale. El equipo suma permisos a sus miembros. Y la credencial sirve a otros sistemas."
+    },
+    {
+      "id": "04-acceso",
+      "ruta": "Prueba › Diagrama",
+      "texto_pantalla": "Seguridad · acceso efectivo",
+      "acciones": [
+        {"diagrama": "acceso-efectivo", "al_decir": "efectivo"},
+        {"diagrama_fase": 2, "al_decir": "hereda"},
+        {"diagrama_fase": 3, "al_decir": "equipo"},
+        {"diagrama_fase": 4, "al_decir": "suma"},
+        {"diagrama_cerrar": true, "al_decir": "listo"}
+      ],
+      "narracion": "El acceso efectivo de Ana se arma por capas. Su rol Vendedor le da dos permisos, y además hereda los del rol Ventas. Su equipo agrega uno más. Lo que puede hacer es la suma de todo. Y listo, se cierra la lámina."
+    },
+    {
+      "id": "05-alcance",
+      "ruta": "Prueba › Diagrama",
+      "texto_pantalla": "Seguridad · alcance propios o todos",
+      "insignia": {"tipo": "info", "texto": "Alcance · Facturas · Ver"},
+      "acciones": [
+        {"diagrama": {"nombre": "alcance-propios-todos", "fondo": "oscuro"}, "pasos_ms": [4500], "durante_ms": 9500, "al_decir": "cambia"}
+      ],
+      "narracion": "El alcance cambia qué registros ve cada persona. Con alcance todos, Ana ve las seis facturas. Con solo los propios, ve únicamente las dos que ella creó."
+    },
+    {
+      "id": "06-estado",
+      "ruta": "Prueba › Diagrama",
+      "texto_pantalla": "Seguridad · estado del documento",
+      "insignia": {"tipo": "sin", "texto": "Sin edición · factura emitida"},
+      "diagrama": "estado-documento",
+      "acciones": [
+        {"diagrama_fase": 2, "al_decir": "emite"},
+        {"diagrama_fase": 3, "al_decir": "anula"},
+        {"diagrama_fase": 4, "al_decir": "ambos"}
+      ],
+      "narracion": "Además del permiso, cuenta el estado del documento. En borrador se puede editar. Cuando se emite, la edición queda bloqueada. Y si se anula, también. Por eso ambos deciden juntos: permiso y documento."
+    }
+  ]
+}

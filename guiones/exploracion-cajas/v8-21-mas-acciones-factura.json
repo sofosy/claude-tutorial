@@ -1,0 +1,973 @@
+{
+ "url": "/sales/invoices/1000000001/view",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 1409,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "page-hero-title",
+   "texto": "Ver Factura 1000000001 Emitida",
+   "caja": [
+    369,
+    129,
+    487,
+    25
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Contraer el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    330,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contraer el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    923,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications_active",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications_active')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RAramón almonteadmin.progreso@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de ramón almonte",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1034,
+    10,
+    230,
+    40
+   ],
+   "sel": "button[aria-label='Cuenta de ramón almonte']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "is-current",
+    "is-showing"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "people",
+   "icono": "",
+   "aria": "Recursos Humanos",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    243,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Recursos Humanos']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "credit_score",
+   "icono": "",
+   "aria": "Crédito y Cobranzas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Crédito y Cobranzas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    501,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    6,
+    716,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    9,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "chevron_left",
+   "icono": "",
+   "aria": "Contraer el panel",
+   "id": "",
+   "clases": [
+    "panel-collapse"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    283,
+    67,
+    30,
+    30
+   ],
+   "sel": "button[aria-label='Contraer el panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "RD$DOP▾",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "currency-chip-button"
+   ],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    872,
+    146,
+    104,
+    36
+   ],
+   "sel": "button:has-text('RD$DOP▾')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Imprimir",
+   "icono": "print",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-doc-action"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    986,
+    146,
+    117,
+    36
+   ],
+   "sel": "button:has-text('Imprimir')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "gm-doc-action",
+    "gm-doc-action--icon"
+   ],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    1113,
+    146,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nueva",
+   "icono": "add",
+   "aria": "Nueva Factura",
+   "id": "",
+   "clases": [
+    "new-entity-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1159,
+    146,
+    97,
+    36
+   ],
+   "sel": "button[aria-label='Nueva Factura']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "view_week",
+   "aria": "Elegir columnas visibles",
+   "id": "",
+   "clases": [
+    "gm-doc-colbtn"
+   ],
+   "tooltip": "Elegir columnas visibles",
+   "deshabilitado": false,
+   "caja": [
+    1212,
+    470,
+    28,
+    28
+   ],
+   "sel": "button[aria-label='Elegir columnas visibles']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "visibility-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    559,
+    30,
+    30
+   ],
+   "sel": "button:has(mat-icon:text-is('visibility'))",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "visibility",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "visibility-btn"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1186,
+    595,
+    30,
+    30
+   ],
+   "sel": "button:has(mat-icon:text-is('visibility'))",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "calendar_today",
+   "aria": "Abrir el calendario",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1053,
+    731,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Abrir el calendario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Versiones e historial",
+   "icono": "expand_more",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "notebook-toggle"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    370,
+    1227,
+    885,
+    40
+   ],
+   "sel": "button:has-text('Versiones e historial')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Volver",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1108,
+    674,
+    76,
+    36
+   ],
+   "sel": "button:has-text('Volver')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Ver asiento contable",
+   "icono": "menu_book",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "Abre el asiento que generó esta factura en el Diario y Mayor",
+   "deshabilitado": false,
+   "caja": [
+    906,
+    190,
+    243,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Ver asiento contable')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nota de crédito/débito",
+   "icono": "rule_folder",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    906,
+    238,
+    243,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Nota de crédito/débito')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Generar conduce",
+   "icono": "local_shipping",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "Documenta el traslado físico de la mercancía facturada (no mueve inventario)",
+   "deshabilitado": false,
+   "caja": [
+    906,
+    286,
+    243,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Generar conduce')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Duplicar",
+   "icono": "content_copy",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    906,
+    334,
+    243,
+    48
+   ],
+   "sel": ".mat-mdc-menu-panel button:has-text('Duplicar')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Cliente",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "Constructora Los Pinos (130555079)",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    385,
+    400,
+    274,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Cliente'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Tipo de NCF",
+   "formcontrolname": "ncfType",
+   "tipo": "mat-select",
+   "placeholder": "Tipo de NCF",
+   "valor": "B01 (Factura de Crédito Fiscal)",
+   "hint": "Tradicional · Crédito Fiscal",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    675,
+    400,
+    274,
+    58
+   ],
+   "sel": "[formcontrolname='ncfType']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Fecha de Emisión",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "23/09/2026",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    966,
+    400,
+    274,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Fecha de Emisión'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Escriba el código o el nombre para agregar una línea…",
+   "valor": "Cemento gris Portland 42.5 kg",
+   "hint": "",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    394,
+    556,
+    190,
+    36
+   ],
+   "sel": ""
+  },
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Escriba el código o el nombre para agregar una línea…",
+   "valor": "Varilla corrugada 3/8\" x 20 pies",
+   "hint": "",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    394,
+    592,
+    190,
+    36
+   ],
+   "sel": ""
+  },
+  {
+   "label": "Condición de pago",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "Crédito",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    821,
+    731,
+    129,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Condición de pago'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Vencimiento",
+   "formcontrolname": "paymentDueDate",
+   "tipo": "input:text",
+   "placeholder": "Seleccionar fecha",
+   "valor": "23/10/2026",
+   "hint": "",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    966,
+    731,
+    129,
+    58
+   ],
+   "sel": "[formcontrolname='paymentDueDate']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Término de pago (DGII)",
+   "formcontrolname": "terms",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "4 semanas",
+   "hint": "Va impreso en el comprobante · máx. 15",
+   "error": "",
+   "deshabilitado": true,
+   "caja": [
+    1111,
+    731,
+    129,
+    58
+   ],
+   "sel": "[formcontrolname='terms']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [
+  {
+   "items": [
+    {
+     "texto": "Ver asiento contable",
+     "icono": "menu_book",
+     "caja": [
+      906,
+      190,
+      243,
+      48
+     ]
+    },
+    {
+     "texto": "Nota de crédito/débito",
+     "icono": "rule_folder",
+     "caja": [
+      906,
+      238,
+      243,
+      48
+     ]
+    },
+    {
+     "texto": "Generar conduce",
+     "icono": "local_shipping",
+     "caja": [
+      906,
+      286,
+      243,
+      48
+     ]
+    },
+    {
+     "texto": "Duplicar",
+     "icono": "content_copy",
+     "caja": [
+      906,
+      334,
+      243,
+      48
+     ]
+    }
+   ],
+   "caja": [
+    906,
+    182,
+    243,
+    208
+   ]
+  }
+ ],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    6,
+    716,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Abrir el calendario",
+   "caja": [
+    1053,
+    731,
+    36,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Versiones e historial",
+   "caja": [
+    370,
+    1227,
+    885,
+    40
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Condición de pago",
+   "caja": [
+    821,
+    731,
+    129,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Vencimiento",
+   "caja": [
+    966,
+    731,
+    129,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Término de pago (DGII)",
+   "caja": [
+    1111,
+    731,
+    129,
+    58
+   ]
+  }
+ ],
+ "video": "v8",
+ "pantalla": "21-mas-acciones-factura",
+ "notas": "",
+ "toasts_vistos_hasta_ahora": []
+}

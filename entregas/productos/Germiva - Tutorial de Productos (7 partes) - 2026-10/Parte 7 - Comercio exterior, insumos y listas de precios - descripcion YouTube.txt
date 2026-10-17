@@ -1,0 +1,42 @@
+TÍTULO
+============================================================
+Productos · Parte 7: comercio exterior, insumos y listas de precios
+
+DESCRIPCIÓN
+============================================================
+Séptima y última parte de la serie de Productos de Germiva ERP: los datos de comercio exterior de un producto importado (partida arancelaria, país de origen, pesos y volumen), la receta de costo con insumos y merma para conocer el margen teórico, y una lista de precios calculada sobre otra, con descuento y redondeo, asignada a un cliente y aplicada en su factura.
+
+⏱️ CAPÍTULOS
+00:00  Comercio exterior
+00:55  Un producto con receta
+01:34  Insumos, merma y margen
+02:27  Una lista de precios calculada
+03:18  La lista en el cliente
+03:40  El precio de la lista en la factura
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar partida arancelaria, país de origen, pesos y volumen de un producto importado
+• Armar la receta de un producto con insumos, cantidades y merma
+• Leer el costo de insumos, el margen teórico y el costo porcentual
+• Crear una lista de precios como porcentaje de otra, con redondeo
+• Asignar la lista a un cliente y verla aplicada en su factura
+
+⚠️ ERRORES COMUNES
+• Confundir el peso neto con el bruto: el neto es solo el contenido, el bruto incluye el envase
+• Olvidar la merma en la receta: el costo real sale más bajo de lo que es
+• Crear la lista y no asignarla a ningún cliente: sin cliente, la factura usa la lista por defecto
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:19
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la última parte de la serie de Productos. Empezamos con comercio exterior: los datos que pide la aduana cuando un producto se importa o se exporta. El refresco lo traemos de fuera. En el catálogo escribo refresco y abro su ficha. En características enciendo se importa o se exporta, y abajo aparece comercio exterior. La partida arancelaria es el código con que la aduana clasifica la mercancía en el Sistema Armonizado: los refrescos y gaseosas van en la veintidós cero dos punto diez. El país de origen: escribo estados, y elijo Estados Unidos. Luego los pesos de una lata en kilos: el bruto, con el envase, cero punto tres ocho cinco; el neto, solo el contenido, cero punto treinta y siete; y el volumen, en metros cúbicos. Guardo, y acepto.
+Ahora los insumos. Sirven para conocer el costo real de lo que preparas: un plato, un combo o un dulce. Muchos colmados venden su habichuela con dulce; vamos a costearla. Pulso nuevo producto y lo llamo dulce criollo casero. En categoría escribo alimentos, y la elijo. En unidad de medida escribo unidad, y también la elijo. El precio: ciento cincuenta pesos el vaso, con el ITBIS incluido. Pulso guardar, y acepto. Las secciones que necesitan el producto ya creado se abren solas, entre ellas la pestaña insumos, que abro.
+Aquí va lo que consume cada vaso. En agregar insumo escribo habichuela, y elijo la habichuela roja para cocinar. Luego leche: la leche evaporada. Y azúcar: el azúcar crema. Arriba aparecen el costo de los insumos, el precio sin ITBIS, el margen teórico y el costo en porcentaje. Ahora mismo el margen sale en rojo: cada insumo entró con cantidad uno, como si un vaso llevara una libra de habichuelas. Ajusto las cantidades reales: un cuarto de libra de habichuela, con diez por ciento de merma, que es lo que se pierde al cocinar; un cuarto de lata de leche; y quince centésimas de libra de azúcar. Cada cambio se guarda solo. Ahora el vaso cuesta treinta y seis pesos con veinticinco en insumos, y el margen teórico es de noventa pesos, el setenta y uno por ciento del precio.
+Por último, las listas de precios: los precios distintos para distintos clientes. Se definen en Inventario, configuración, al final de la página. Hoy hay tres: el precio regular, que es la lista por defecto, la mayorista y la VIP, las tres de precio fijo. Vamos a crear una para los colmados que nos compran para revender, sin tener que escribir un precio por producto. Pulso nueva lista. En tipo elijo porcentaje sobre otra lista. La lista base, el precio regular. El porcentaje, menos diez: diez por ciento menos. Y redondeo a múltiplos de cinco pesos, para que los precios queden redondos. El nombre: colmados, con su descripción. Guardo, y la lista aparece con su cálculo.
+La lista se le asigna a cada cliente, en su ficha. Este es el Colmado La Esquina. En lista de precios escribo colm, y elijo colmados. Debajo, la pista lo explica: son los precios que se aplican en sus documentos, y si queda vacía, usa la lista por defecto. Guardo el cliente, y acepto.
+Ahora una factura nueva para él. Quito el consumidor final, y en cliente escribo esquina y lo elijo. Agrego las habichuelas: su precio regular es ochenta y cinco, pero para este cliente la factura propone setenta y cinco: ochenta y cinco menos diez por ciento, redondeado a cinco pesos. Si el regular cambia, el de los colmados cambia con él. Así termina la serie de Productos: la ficha, los empaques, las compras y las ventas en cajas, los pesados, las variantes, y hoy, comercio exterior, insumos y listas de precios.

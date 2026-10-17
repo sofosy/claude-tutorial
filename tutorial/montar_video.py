@@ -105,7 +105,7 @@ def _filtro_zoom(claves):
     return f"zoompan=z='{z}':x='{ex}':y='{ey}':d=1:s={ANCHO}x{ALTO}:fps={FPS}"
 
 
-CODEC = ["-c:v", "libx264", "-preset", "fast", "-crf", "20", "-pix_fmt", "yuv420p",
+CODEC = ["-c:v", "libx264", "-preset", "veryfast", "-crf", "20", "-threads", "2", "-pix_fmt", "yuv420p",
          "-r", str(FPS), "-c:a", "aac", "-b:a", "192k", "-ar", "44100", "-ac", "2"]
 
 
@@ -158,7 +158,7 @@ def _clip_video(seg, carpeta, mp3, barra, estado, zoom_pedido, destino, zoom_act
     entradas, extra, salida_audio = _cadena_musica(entradas, i_next, musica, dur, "voz")
     audio = f"[1:a]apad[voz]{extra}"
     subprocess.run(
-        ["ffmpeg", "-y", "-loglevel", "error", *entradas,
+        ["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", *entradas,
          "-filter_complex", f"{video};{audio}", "-map", "[v]", "-map", f"[{salida_audio}]",
          "-t", f"{dur:.3f}", *CODEC, str(destino)], check=True)
     return hasta
@@ -325,7 +325,7 @@ def _clip_tarjeta(seg, carpeta, mp3, destino, musica=None):
     entradas, extra, salida_audio = _cadena_musica(entradas, 2, musica, dur, "voz")
     audio = f"[1:a]apad[voz]{extra}"
     subprocess.run(
-        ["ffmpeg", "-y", "-loglevel", "error", *entradas,
+        ["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", *entradas,
          "-filter_complex",
          f"[0:v]scale={ANCHO}:{ALTO},fade=t=in:d={FUNDIDO_TARJETA},"
          f"fade=t=out:st={dur - FUNDIDO_TARJETA:.3f}:d={FUNDIDO_TARJETA},format=yuv420p[v];"
@@ -344,7 +344,7 @@ def _unir(clips, destino):
     lista = destino.with_suffix(".txt")
     lista.write_text("".join(f"file '{c.as_posix()}'\n" for c in clips), encoding="utf-8")
     temporal = destino.with_name(destino.stem + ".tmp.mp4")
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-f", "concat", "-safe", "0",
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", "-f", "concat", "-safe", "0",
                     "-i", str(lista), "-c", "copy", "-movflags", "+faststart",
                     str(temporal)], check=True)
     lista.unlink()
@@ -430,7 +430,7 @@ def _srt(entradas, destino, inicio=0.0):
 def _portada(clips, salida):
     """Un fotograma real del primer clip de pantalla, para la miniatura."""
     destino = salida / "grabacion" / "portada.png"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-ss", "1.5", "-i", str(clips[0]),
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", "-ss", "1.5", "-i", str(clips[0]),
                     "-frames:v", "1", str(destino)], check=True)
     return destino
 
@@ -470,7 +470,7 @@ def _preparar_musica(cfg, total, carpeta):
         filtro += (f",afade=t=in:d={fade:.3f},"
                    f"afade=t=out:st={max(0.0, total - fade):.3f}:d={fade:.3f}")
     subprocess.run(
-        ["ffmpeg", "-y", "-loglevel", "error",
+        ["ffmpeg", "-y", "-loglevel", "error", "-threads", "2",
          "-stream_loop", "-1", "-i", str(cfg["archivo"]),
          "-t", f"{total:.3f}", "-af", filtro,
          "-ar", "44100", "-ac", "2", str(destino)], check=True)
@@ -559,7 +559,7 @@ def montar(guion, salida):
     if marca_cfg:
         marca = guion.get("marca") or {}
         datos = {"logo": marca.get("logo"), "simbolo": marca.get("simbolo"), "titulo": guion["titulo"],
-                 "url": guion.get("url_publica"), "slogan": marca.get("slogan")}
+                 "url": guion.get("url_publica"), "slogan": marca.get("slogan"), "linea": marca.get("linea")}
         piezas = {}
         for tipo, dur, t0 in (("entrada", entrada_s, 0.0), ("cierre", cierre_s, offset)):
             if dur <= 0:

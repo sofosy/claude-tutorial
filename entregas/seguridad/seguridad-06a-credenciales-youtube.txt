@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Seguridad · Credenciales de API para otros programas
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué es una credencial de API
+00:52  Crear una credencial
+02:01  Guardar el secreto
+02:41  El panel de la credencial
+03:23  Quitarle lo que no necesita
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es una credencial de API y cuándo se usa en lugar de un usuario
+• Crear una credencial y guardar su secreto, que se muestra una sola vez
+• Leer su panel: estado, llamadas, restricciones, permisos y operaciones de la semana
+• Quitarle a una credencial lo que no necesita
+
+⚠️ ERRORES COMUNES
+• Cerrar la franja sin copiar el secreto: no se vuelve a mostrar y hay que rotarlo
+• Dejar a una credencial con todos los permisos de la plantilla aunque solo consulte
+• Compartir la misma credencial entre dos programas: no se sabe cuál hizo qué
+• Buscar las consultas de la credencial en «Operaciones en 7 días»: ahí solo cuenta lo que crea, modifica o elimina
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:40
+
+TRANSCRIPCIÓN
+============================================================
+En este video vemos las credenciales. Seguimos en la consola de Seguridad. Abro la pestaña Integraciones, arriba, a la derecha de Roles y permisos. Una credencial de API, o sea la llave de la puerta por la que otro programa habla con Germiva, sirve para que la tienda en línea o el sistema de tu contador consulten o registren datos sin que entre una persona. Cada fila es una credencial, con su nombre y para qué sirve. Luego el prefijo de la clave de API, que sirve para reconocerla sin mostrarla entera; su último uso; y su estado. Esta, Tienda en línea anterior, dice Sin uso, porque lleva más de sesenta días sin llamar al sistema. Al pie hay dos recordatorios: cada credencial tiene sus propios permisos, y rotar un secreto invalida el anterior al momento.
+Vamos a crear una para el programa del contador. Arriba a la derecha pulso Nueva credencial; también está en el botón Nuevo de la consola. Se abre la ventana Nueva integración. La nota de arriba es importante: al guardar se generan una clave y un secreto, y el secreto se enseña una sola vez. En Nombre escribo Programa del contador, para reconocerla de un vistazo en la lista. En Descripción, para qué la quiere: consulta las facturas emitidas para la contabilidad. Luego vienen las Restricciones, que son opcionales. En IP permitida, o sea la dirección de red, pondrías la dirección de la computadora del contador, y solo desde ahí funcionaría. Y en Endpoint permitido, las rutas del sistema que puede usar. Esta vez las dejo vacías, pero acotarla es lo que limita el daño si la clave se filtra. Pulso Generar credenciales. El botón dice Generando: el sistema crea la llave y le pone los permisos de la plantilla; eso toma unos segundos, y al terminar la ventana se cierra. Ahora aparece arriba una franja con la clave y el secreto.
+La franja dice: Credencial lista, copia el secreto ahora, no se vuelve a mostrar. Primero la clave de API, con su botón Copiar clave al lado. Después el secreto, tapado con puntos para que nadie lo lea por encima del hombro. Mostrar lo enseña, pero no hace falta. Pulso Copiar secreto, y el aviso confirma que se copió. Pégalo enseguida en un lugar seguro, o dáselo al técnico del contador por un canal privado, nunca por un chat de grupo. Si lo pierdes, no hay forma de verlo otra vez: se rota y sale uno nuevo. Cierro la franja con la equis, que dice Ya lo guardé.
+Con la franja cerrada queda su panel, a la derecha: el nombre y el prefijo de la clave. Arriba dice Activa, cero llamadas en total, porque todavía no se ha usado, y Sin restricción de IP, porque no pusimos ninguna. Luego el bloque Permisos: cinco, los de la plantilla que el sistema da a toda credencial nueva. En Facturación puede ver y crear facturas, y registrar facturas de compra; en Facturación Electrónica, ver y aprobar comprobantes; y en Compras aparece otra vez el registro de facturas de compra. Abajo, Operaciones en siete días: cuenta lo que la credencial creó, cambió o eliminó, día por día. Las consultas no suman aquí.
+El contador solo va a consultar facturas: registrar compras le sobra. Arriba del panel pulso Editar permisos. La página tarda un momento, porque trae los más de mil permisos del sistema. Se abre Permisos de Integración, con los datos de la credencial y, debajo, todos los permisos, módulo por módulo. Los módulos donde la credencial ya tiene algo salen abiertos, como Facturación, con su cuenta de permisos activos. Para no bajar módulo por módulo, uso el buscador. En Buscar permisos escribo registrar facturas, y la lista se reduce a lo que coincide, en cualquier módulo. La primera casilla es Registrar Facturas de Compra, marcada, en Facturación. Más abajo sale otra vez, en Compras, porque cuenta en los dos módulos, pero es un solo permiso. La desmarco, y se guarda en el acto: aquí no hay botón de guardar. El aviso dice que el permiso se quitó. Desde ese primer cambio, la credencial deja la plantilla y tiene sus propios permisos. Pulso Volver a Integraciones, al pie. En el panel, ahora son cuatro. La regla de oro: a cada programa, solo lo que necesita.

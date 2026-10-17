@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+CRM · El tablero de prospectos
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué es el tablero de prospectos
+01:12  Míos, de todos y sin asignar
+01:57  Añadir un prospecto y moverlo de etapa
+02:48  Los seguimientos que te tocan hoy
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es un prospecto y cómo se lee el tablero: columnas, tarjetas e indicadores
+• Ver sólo tus prospectos, los de todo el equipo o los que nadie ha tomado
+• Buscar un prospecto por nombre, empresa o correo
+• Añadir un prospecto en un segundo y moverlo de etapa arrastrando su tarjeta
+• Encontrar los seguimientos que te tocan hoy y los que se te pasaron
+
+⚠️ ERRORES COMUNES
+• Buscar a un prospecto con el filtro «Míos» puesto: si es de otro vendedor no aparece
+• Dejar prospectos sin asignar: nadie los llama
+• No programar el siguiente seguimiento: la tarjeta se queda quieta y el prospecto se enfría
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:23
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a conocer el tablero de prospectos. Entro al CRM, en el menú de la izquierda: el CRM es el módulo de las ventas, donde sigues a cada cliente posible desde el primer contacto. Abro Prospectos. Un prospecto es una persona o empresa que mostró interés, pero todavía no te ha comprado: alguien que llamó, escribió por la web o te refirieron. Recojo el menú para ver el tablero completo. Cada columna es una etapa de la venta: Nuevo, Contactado, Calificado y Propuesta. Y cada tarjeta es un prospecto. Arriba están los indicadores: cuántos prospectos tienes, cuántos siguen abiertos y los seguimientos para hoy, que son las llamadas o visitas que te tocan. Mira la tarjeta de Ramón Peralta. Debajo del nombre, su empresa y su cargo. Luego el valor estimado de la venta y la fecha del último movimiento. En naranja, el próximo seguimiento. Abajo, de dónde llegó, la prioridad y las etiquetas. Y a la derecha, atajos para escribirle un correo, llamarlo o abrir WhatsApp.
+El tablero abre con tus prospectos: fíjate en el filtro Asignación, que dice Míos. Lo abro. Con Todos ves los de todo el equipo; y con Sin asignar, los que llegaron y nadie ha tomado todavía. Elijo Todos. Ahora aparecen también los de Ana y uno sin dueño: el de Félix Almonte, que entró por teléfono. Al lado puedes filtrar por fuente o por prioridad, y en Filtros hay más: etiquetas, valor y fechas. Para encontrar a alguien, escríbelo en el buscador. Busco patricia.objío@ejemplo.com, y el tablero se filtra mientras escribo. Queda sólo Gisela Rosario, del Colegio San Marcos: el buscador mira el nombre, la empresa y el correo.
+Vamos a dar de alta uno. Primero borro la búsqueda para volver al tablero completo. Llegó un contacto nuevo: lo añado en la columna Nuevo con Añadir prospecto. Basta con el nombre: escribo Luisa Fernández, una clienta que preguntó por cerámica para su casa, y la confirmo con Enter. Ya está en el tablero, y queda a mi nombre. El teléfono, la empresa y el valor se completan después, en su ficha. Cuando avanzas con un prospecto, lo mueves de columna arrastrando su tarjeta. Ya hablé con Yesenia Durán, del hotel: la arrastro de Nuevo a Contactado. El cambio se guarda solo y queda en su historial. A la derecha del tablero están las columnas Ganado y Perdido: al soltar ahí una tarjeta, el sistema te pide confirmar la venta o anotar por qué se perdió.
+Para empezar el día, pulsa el indicador Seguimientos para hoy. El tablero se queda con los prospectos que tienen un seguimiento pendiente para hoy o ya vencido. Ramón Peralta, en naranja, es para hoy. Carolina Méndez sale en rojo y dice Vencido: era para ayer y no se hizo. Esos son los primeros que hay que llamar. Pulso otra vez el indicador para quitar el filtro. En el próximo video abrimos la ficha de un prospecto para registrar la llamada y programar el siguiente paso.

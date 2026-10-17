@@ -1,0 +1,34 @@
+TÍTULO
+============================================================
+Cajas · Cuadre oficial, arqueo sorpresa y desbloqueo
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Aprobar el cuadre
+01:30  Arqueo sorpresa
+02:50  Desbloquear una caja
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Revisar el conteo de cierre de una cajera y aprobarlo como cuadre oficial
+• Corregir el conteo con un reconteo de supervisión cuando tu cifra es otra
+• Hacer un arqueo sorpresa a una caja abierta sin cerrarle la sesión
+• Desbloquear una caja y dejarla lista para operar
+
+⚠️ ERRORES COMUNES
+• Aprobar sin mirar la justificación de la diferencia
+• Rechazar cuando lo que corresponde es corregir el conteo tú misma
+• Elegir «Cierre normal» en vez de «Arqueo sorpresa» y cerrarle la sesión al cajero
+• Desbloquear sin marcar la casilla de confirmación: el botón no se activa
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:56
+
+TRANSCRIPCIÓN
+============================================================
+Esta es Por aprobar, la bandeja de la supervisora de caja: aquí llega todo lo que espera su decisión. Arriba, las cifras dicen cuánto hay pendiente de cada cosa; la de cuadres por confirmar marca uno. Debajo están las colas, una por tipo. En Cuadres pendientes de confirmación está el conteo de cierre que declaró Yohanna en la Caja Principal. Esperaba tres mil quinientos, contó tres mil cuatrocientos ochenta, y la diferencia es de menos veinte. Abro el detalle con el ojo, a la derecha de la fila. Este es el Detalle del cuadre de caja. En Resultado ves lo esperado, lo contado, la diferencia y si quedó dentro de tolerancia; aquí, sí. Más abajo, en la tabla por método de pago, sale el motivo que escribió la cajera. Y al final, el Reconteo de supervisión: si recuentas la gaveta y te da otra cifra, marcas Corregir el conteo y pones el monto oficial; lo que declaró la cajera queda guardado. Aquí el conteo está bien, así que no lo toco. Tienes dos decisiones. Rechazar cuadre se lo devuelve a la cajera para que vuelva a contar. Aprobar cuadre lo confirma y registra el asiento contable del faltante. Ojo: si una caja acumula tres cuadres seguidos fuera de tolerancia, el sistema la bloquea sola. Pulso Aprobar. Pide una confirmación más, y la acepto. Listo: el cuadre quedó aprobado.
+Ahora, un arqueo sorpresa: contar sin avisar el dinero de una caja que sigue abierta, para comprobar que está completo. Estoy en Historial, en la lista de Cuadres, donde queda cada conteo que se ha hecho. Pulso Nuevo cuadre, arriba a la derecha. Esta página se llama Generar cuadre de caja; es la misma del conteo de cierre, pero hecha por la supervisora. Primero, la Sesión de caja: escribo Mostrador, y el sistema busca entre las sesiones abiertas. Elijo la de la Caja Mostrador 2, que opera Luis. Debajo salen sus datos, la caja, el cajero, la apertura y el fondo, para confirmar que es la correcta. Después, el Tipo de cuadre: lo abro y elijo Arqueo sorpresa. La nota de abajo aclara lo importante: no cierra la sesión, la caja sigue operando. Pulso Continuar. En Ingresar montos, el sistema dice que en esa gaveta debe haber tres mil cincuenta pesos. Conté justo eso, así que lo escribo en Monto recibido; como coincide, no hay diferencia que justificar. Paso a Siguiente. El resumen confirma un cuadre exacto: lo contado es igual a lo esperado. Pulso Generar cuadre, y el aviso lo dice claro: arqueo sorpresa registrado, la sesión sigue abierta.
+Por último, desbloquear una caja. Estoy en el tablero de Cajas, filtrado por las bloqueadas: aparece una sola, la Caja Sucursal Santiago. Una caja bloqueada no se puede abrir. Se bloquea sola tras varios cuadres seguidos fuera de tolerancia, o la bloquea un supervisor desde Configuración, en la lista de cajas. Pulso Desbloquear, al pie de la tarjeta. El diálogo muestra por qué se bloqueó: la razón y la fecha. Escribo una nota de desbloqueo, que queda en el historial de la caja. La casilla Resetear contador, que viene marcada, pone en cero las diferencias seguidas de la caja. Y esta otra es obligatoria: confirmo que verifiqué la caja; sin ella, el botón no se activa. Ahora sí, pulso el botón Desbloquear caja. El aviso confirma que quedó desbloqueada. Como el filtro muestra solo las bloqueadas, la lista queda vacía; vuelvo a Todas, y ahí está la Caja Sucursal Santiago, ahora Cerrada y lista para abrirse.

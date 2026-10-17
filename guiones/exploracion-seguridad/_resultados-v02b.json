@@ -1,0 +1,127 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.03,
+   "clic_a_url_s": 7.13,
+   "clic_a_networkidle_s": 7.13,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "modulos_vendedor": [
+  "General\n0/109",
+  "Empresa\n0/40",
+  "Usuarios\n0/4",
+  "Seguridad\n0/19",
+  "Acceso API\n0/4",
+  "Punto de Venta\n0/36",
+  "Clientes y Proveedores\n1/33",
+  "Facturación\n0/79",
+  "Facturación Electrónica\n0/44",
+  "CRM\n0/34",
+  "IA del CRM\n0/2",
+  "Ventas\n0/42",
+  "Cotizaciones\n3/19",
+  "Órdenes de Venta\n0/8",
+  "Conduces\n0/9",
+  "Proformas\n0/3",
+  "Descuentos y Promociones\n0/34",
+  "Venta a Crédito\n0/41",
+  "Productos\n1/42",
+  "Inventario\n0/47",
+  "Inventario Avanzado\n0/8",
+  "Compras\n0/38",
+  "Requisiciones\n0/7",
+  "Costos en Destino\n0/3",
+  "Contabilidad Básica\n0/136",
+  "Contabilidad Avanzada\n0/46",
+  "Empleados\n0/46",
+  "Nómina\n0/109",
+  "Recursos Humanos\n0/24",
+  "Asistencia y Tiempo\n0/46",
+  "Desempeño y Capacitación\n0/12",
+  "Reclutamiento\n0/23",
+  "Asistente Virtual\n0/4"
+ ],
+ "recursos_clientes": [
+  "Socios\n0/6\nConceder todo\nVer\nCrear\nEditar\nEliminar\nImportar\nExportar",
+  "Etiquetas de Socios\n0/1\nConceder todo\nGestionar",
+  "Productos Proveedor\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Anticipos a Proveedor\n0/4\nConceder todo\nVer\nCrear\nAplicar\nCancelar",
+  "Facturas Recibidas de Proveedor\n0/4\nConceder todo\nVer\nSubir\nDar Entrada a Factura de Proveedor\nDescartar Factura Recibida",
+  "Estado de Cuenta\n0/2\nConceder todo\nVer\nPDF",
+  "Segmentos de Clientes\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Analíticas de Clientes\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar",
+  "Configuraciones de Retención de Socios\n0/4\nConceder todo\nVer\nCrear\nEditar\nEliminar"
+ ],
+ "ver_aria_title": {
+  "aria_pressed": "false",
+  "clase": "mat-mdc-tooltip-trigger rpe__act rpe__act--none"
+ },
+ "tooltip_ver": [
+  "Concedido · CUSTOMER_SEGMENT_VIEW"
+ ],
+ "savebar_1": "1 cambio sin guardar · afectan a 0 personas\nclose\nDescartar\nsave\nGuardar cambios",
+ "modulos_todos": [
+  "General\n0/109",
+  "Empresa\n0/40",
+  "Usuarios\n0/4",
+  "Seguridad\n0/19",
+  "Acceso API\n0/4",
+  "Punto de Venta\n0/36",
+  "Clientes y Proveedores\n1/33",
+  "Facturación\n0/79",
+  "Facturación Electrónica\n0/44",
+  "CRM\n0/34",
+  "IA del CRM\n0/2",
+  "Ventas\n0/42",
+  "Cotizaciones\n0/19",
+  "Órdenes de Venta\n0/8",
+  "Conduces\n0/9",
+  "Proformas\n0/3",
+  "Descuentos y Promociones\n0/34",
+  "Venta a Crédito\n0/41",
+  "Productos\n0/42",
+  "Inventario\n0/47",
+  "Inventario Avanzado\n0/8",
+  "Compras\n0/38",
+  "Requisiciones\n0/7",
+  "Costos en Destino\n0/3",
+  "Contabilidad Básica\n0/136",
+  "Contabilidad Avanzada\n0/46",
+  "Empleados\n0/46",
+  "Nómina\n0/109",
+  "Recursos Humanos\n0/24",
+  "Asistencia y Tiempo\n0/46",
+  "Desempeño y Capacitación\n0/12",
+  "Reclutamiento\n0/23",
+  "Asistente Virtual\n0/4"
+ ],
+ "titulo_busqueda": "MÓDULOS\n1 de 1103\nAdministración y control\nGeneral\n0/109\nEmpresa\n0/40\nUsuarios\n0/4\nSeguridad\n0/19\nAcceso API\n0/4\nVentas y facturación\nPunto de Venta\n0/36\nClientes y Proveedores\n1/33\nFacturación\n0/79\nFacturación Electrónica\n0/44\nCRM\n0/34\nIA del CRM\n0/2\nVentas\n0/42\nCotizaciones\n0/19\nÓrdenes de Venta\n0",
+ "dlg_cambios": "help_outline Cambios sin guardar\n\nHay 2 cambios de permisos sin guardar. Si continúas, se descartan.\n\nSeguir editando\nDescartar cambios",
+ "guardar_toast": {
+  "toast": "Permisos del rol actualizados exitosamente",
+  "s": 0.32,
+  "red": [
+   {
+    "t": 1790523653.1477284,
+    "m": "PATCH",
+    "url": "role/91/permissions",
+    "st": 200,
+    "body": ""
+   }
+  ]
+ },
+ "perm_cobrador_bd": [
+  [
+   "INVOICE_VIEW",
+   "ALL"
+  ],
+  [
+   "CUSTOMER_SEGMENT_VIEW",
+   "OWN"
+  ]
+ ]
+}

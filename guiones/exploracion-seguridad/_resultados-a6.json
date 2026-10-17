@@ -1,0 +1,118 @@
+{
+ "logins": [
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.01,
+   "clic_a_url_s": 7.97,
+   "clic_a_networkidle_s": 7.97,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A6_/sales/quotes/4": {
+  "url": "http://localhost:4200/sales/quotes",
+  "toast": "",
+  "red_err": [
+   {
+    "t": 1790523042.743982,
+    "m": "GET",
+    "url": "v1/quotes/4",
+    "st": 403,
+    "body": "{\"message\":\"Tu rol solo te permite ver y trabajar las cotizaciones que creaste tú. Pide acceso a tu administrador si necesitas este documento.\",\"error\":\"Forbidden\",\"statusCode\":403}"
+   }
+  ],
+  "titulo": ""
+ },
+ "A6_/sales/quotes/edit/4": {
+  "url": "http://localhost:4200/sales/quotes",
+  "toast": "",
+  "red_err": [
+   {
+    "t": 1790523052.524876,
+    "m": "GET",
+    "url": "v1/quotes/4",
+    "st": 403,
+    "body": "{\"message\":\"Tu rol solo te permite ver y trabajar las cotizaciones que creaste tú. Pide acceso a tu administrador si necesitas este documento.\",\"error\":\"Forbidden\",\"statusCode\":403}"
+   }
+  ],
+  "titulo": ""
+ },
+ "A6_/sales/quotes/1": {
+  "url": "http://localhost:4200/sales/quotes/1",
+  "toast": "",
+  "red_err": [
+   {
+    "t": 1790523062.3442683,
+    "m": "GET",
+    "url": "v1/company/config/me",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Configuración Empresa\\\" (COMPANY_CONFIG_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"COMPANY_CONFIG_VIEW\",\"name\":\"Configuración Empresa\",\"description\":\"Ver configuración de empresa\"}]}"
+   },
+   {
+    "t": 1790523062.870721,
+    "m": "GET",
+    "url": "v1/company/config/me",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Configuración Empresa\\\" (COMPANY_CONFIG_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"COMPANY_CONFIG_VIEW\",\"name\":\"Configuración Empresa\",\"description\":\"Ver configuración de empresa\"}]}"
+   },
+   {
+    "t": 1790523062.870808,
+    "m": "GET",
+    "url": "v1/inventory?product=506&page=1&limit=15",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Inventario\\\" (INVENTORY_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"INVENTORY_VIEW\",\"name\":\"Inventario\",\"description\":\"Ver inventario\"}]}"
+   },
+   {
+    "t": 1790523062.870853,
+    "m": "GET",
+    "url": "v1/inventory?product=509&page=1&limit=15",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Inventario\\\" (INVENTORY_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"INVENTORY_VIEW\",\"name\":\"Inventario\",\"description\":\"Ver inventario\"}]}"
+   },
+   {
+    "t": 1790523062.9235616,
+    "m": "GET",
+    "url": "v1/company-currencies",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Monedas\\\" (CURRENCY_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"CURRENCY_VIEW\",\"name\":\"Monedas\",\"description\":\"Ver monedas\"}]}"
+   },
+   {
+    "t": 1790523062.9476576,
+    "m": "GET",
+    "url": "v1/payment/types?page=1&limit=15",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Tipos Pago\\\" (PAYMENT_TYPE_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"PAYMENT_TYPE_VIEW\",\"name\":\"Tipos Pago\",\"description\":\"Ver tipos de pago\"}]}"
+   },
+   {
+    "t": 1790523062.9516773,
+    "m": "GET",
+    "url": "v1/company-currencies",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Monedas\\\" (CURRENCY_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"CURRENCY_VIEW\",\"name\":\"Monedas\",\"description\":\"Ver monedas\"}]}"
+   },
+   {
+    "t": 1790523063.0603101,
+    "m": "GET",
+    "url": "v1/price/calculate/all-applicable/product/506?partnerId=8066&quantity=10",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Precios\\\" (PRICE_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"PRICE_VIEW\",\"name\":\"Precios\",\"description\":\"Ver listas de precios\"}]}"
+   },
+   {
+    "t": 1790523063.0611398,
+    "m": "GET",
+    "url": "v1/price/calculate/all-applicable/product/509?partnerId=8066&quantity=5",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Precios\\\" (PRICE_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"PRICE_VIEW\",\"name\":\"Precios\",\"description\":\"Ver listas de precios\"}]}"
+   },
+   {
+    "t": 1790523063.3077717,
+    "m": "POST",
+    "url": "v1/discounts/evaluate-for-invoice",
+    "st": 403,
+    "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Descuentos\\\" (DISCOUNT_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"DISCOUNT_VIEW\",\"name\":\"Descuentos\",\"description\":\"Ver descuentos\"}]}"
+   }
+  ],
+  "titulo": "Editar Cotización 1\nBorrador"
+ }
+}

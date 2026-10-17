@@ -1,0 +1,482 @@
+{
+  "titulo": "Seguridad · Herencia, titulares e historial de un rol",
+  "_comentario": "Video 03 de la serie Seguridad (AUTOR A, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0`). Entra rosa.almanzar (Admin). ESCRIBE en BD: crea «Vendedor en práctica» (hijo de Vendedor), le excluye «Cotizaciones · Crear» (guardado por lote) y lo elimina en el mismo video; queda E0 + bitácora. Restaurar E0 tras la toma. DECISIÓN de orden (difiere del plan): se elimina el rol de prueba ANTES de ver titulares e historial, para que el riel no tenga dos «Vendedor…» hijos al volver a Vendedor y para cerrar con un caso práctico sobre un rol real. Titulares: el enlace «3 personas tienen este rol» abre la subvista Personas (F-128); la fila de Ana lleva a Personas con su panel (F-153); el paso 06 vuelve con `navegar` a /security/roles?rol=77 (Vendedor, id fijo del canon). Historial: solo se marca la entrada «Cambió permisos» (la de «Creó» sale con campos crudos, D-S7: no se señala ni se lee). Voz de eliminar: los casos de error (rol con titulares, rol padre) van en voz y cartel, no se provocan (verificados en la exploración A4). AVISO justificado: primer paso sin button.panel-collapse (no existe en /security/*). DEPENDE de la ronda 2: D-S7 («por rosa.almanzar» pasará a nombre y apellido: la voz dice «quién lo hizo», sin leerlo). Corregido en el ensayo (build viejo): al elegir Vendedor sénior el editor seguía en «Módulo General · 0 heredados»; con el build final (E-1) abre «Clientes y Proveedores 1/33» — la voz no nombra el módulo inicial, así que sigue siendo cierta → la frase del título («siete permisos, dos heredados de Vendedor») y su marca van DESPUÉS de abrir Cotizaciones. Ensayo 09-27: 0 fallos (6 pasos). REGRABACIÓN T4 (09-27): G-1 corregido en el ERP (el Historial dice «Inventario · Productos», «Ventas · Cotizaciones», «Clientes y Proveedores · Socios»): la voz nombra ahora el módulo. G-3: el «antes» es un guion rojo «–» (el rol pasó de nada a algo), no un texto tachado: la voz dice «un guion rojo, porque no tenía nada» (marca .rhis__before al decir «guion rojo»). Recortes de apartes en 02 y 05 (A-007 sigue en voz). G-14 (T4): la marca «vienen heredados» sobre .rpe__actions de Cotizaciones (más alta que el panel visible) desplazaba el panel y la caja salía vacía sobre los filtros; ahora marca el primer botón heredado (Ver). Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-B): (03-2) la marca del enlace «3 personas tienen este rol» baja a 2000 ms y se apaga antes del clic (ya no queda una caja vacía sobre Personas); (03-1) tras pulsar a Ana, la marca espera al panel que ya dice «Ana Mejía» (aside[aria-label='Detalle de la persona']:has-text('Ana Mejía')), no al panel a medio cargar (con R8-3 el ERP muestra esqueleto en vez de «Esta persona no está en la lista actual»). Ronda 8 (R8-10): «Crear rol» en la voz. R8-6: con el rol nuevo sin titulares la barra dirá «nadie tiene este rol todavía»; la voz solo dice «cuenta el cambio pendiente», sigue siendo cierta. Ensayo: confirmar que la ficha de Ana llega sin el aviso de «no está en la lista». Final T1 (09-28, revisión visual de la toma 1): BLOQUEANTE ERP H-GF-2 mitigado en guion: con la barra de guardado a la vista, en un rol que hereda (leyenda de dos líneas y meta del módulo en dos líneas) al panel de recursos le quedan ~30 px y la barra tapa la fila de Cotizaciones; por eso la voz explica «Excluido de la herencia» DESPUÉS de guardar, cuando la barra se va y Crear se ve tachado (marca .rpe__act--excluded reubicada). «El filtro Heredados deja solo los recursos que traen algo del padre» (el recurso visible conserva su Ver directo). Opción del sistema marcada en «Empleado» (visible sin desplazar la lista; «Contador» obligaba a desplazar y cortaba «Almacén»). cursor:false en chip, leyenda, títulos, aviso, filas del historial, Vendedor sénior, candado y vistas; «solo aparece» marca el botón Historial y no toda la barra de vistas; marcas acortadas para que no queden flotando al cerrar diálogos o cambiar de vista (éxito 2800, Eliminar rol 2200, enlace de titulares 1500). Toma 2 (revisión visual): cursor:false en Ver directo / Crear heredado (el tooltip tapaba la fila), barra de cambios 1300 ms (su caja quedaba vacía tras guardar), antes/después del historial subrayados (la caja cubría toda la columna para un guion).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "almánzar",
+      "féliz",
+      "Vendedor en práctica"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Qué es la herencia entre roles y cómo se distingue un permiso heredado de uno directo",
+    "Crear un rol hijo que hereda de otro y se mantiene sincronizado",
+    "Excluir un permiso heredado solo en el rol hijo",
+    "Eliminar un rol, y ver quién tiene un rol y qué le cambiaron"
+  ],
+  "errores_comunes": [
+    "Copiar a mano los permisos del padre en el hijo en vez de heredarlos",
+    "Quitar al padre un permiso que solo querías quitarle al hijo: para eso está la exclusión",
+    "Intentar eliminar un rol que otro hereda o que todavía tienen personas",
+    "Cambiar el padre de un rol sin saber que se recalcula todo lo heredado"
+  ],
+  "pasos": [
+    {
+      "id": "01-rol-hijo",
+      "ruta": "Seguridad › Roles y permisos › Vendedor sénior",
+      "texto_pantalla": "Herencia · el rol hijo recibe lo del padre y suma lo suyo",
+      "capitulo": "Qué es la herencia",
+      "rotulo": "Qué es la herencia",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Hereda de Vendedor"
+      },
+      "acciones": [
+        {
+          "click": "a.rail-item[href='/security']",
+          "al_decir": "por el candado"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "al_decir": "abro Roles y permisos"
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor sénior')",
+          "al_decir": "elijo Vendedor sénior"
+        },
+        {
+          "resaltar": ".sec-roles__chip",
+          "durante_ms": 2600,
+          "al_decir": "chip Hereda de Vendedor",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__legend :text('Heredado de')",
+          "durante_ms": 1800,
+          "al_decir": "dos marcas más",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__legend :text('Excluido de la herencia')",
+          "durante_ms": 1800,
+          "al_decir": "Excluido de la herencia",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__module:has-text('Cotizaciones')",
+          "al_decir": "abro Cotizaciones"
+        },
+        {
+          "resaltar": ".rpe__toolbar-title",
+          "durante_ms": 4000,
+          "al_decir": "El título del módulo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act--direct",
+          "durante_ms": 4000,
+          "al_decir": "con su check",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act--inherited",
+          "durante_ms": 3500,
+          "al_decir": "en el tono del padre",
+          "cursor": false
+        },
+        {
+          "click": "[aria-label='Filtrar por estado'] button:has-text('Heredados')",
+          "al_decir": "El filtro Heredados"
+        },
+        {
+          "click": "[aria-label='Filtrar por estado'] button:has-text('Todos')",
+          "al_decir": "Todos vuelve"
+        },
+        {
+          "click": ".sec-roles__chip",
+          "al_decir": "pulso el chip"
+        },
+        {
+          "resaltar": ".sec-roles__h2",
+          "durante_ms": 3500,
+          "al_decir": "el rol padre",
+          "cursor": false
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor sénior')",
+          "al_decir": "Regreso al sénior"
+        }
+      ],
+      "narracion": "La herencia sirve para no repetir trabajo: un rol hijo recibe todo lo de su rol padre y le suma lo suyo. Entro por el candado, abro Roles y permisos y elijo Vendedor sénior. Junto al nombre está el chip Hereda de Vendedor: ese es su padre. La leyenda trae ahora dos marcas más: Heredado de Vendedor, y Excluido de la herencia. Veámoslo en un módulo: abro Cotizaciones. El título del módulo lo confirma: siete permisos, y dos de ellos heredados de Vendedor. Ver, con su check, es directo: se lo dimos al sénior con alcance Todos. Crear, en el tono del padre, es heredado. El filtro Heredados deja solo los recursos que traen algo del padre, y Todos vuelve a mostrarlo todo. Si pulso el chip, se abre el rol padre, Vendedor: lo que le agregues aquí le llega al hijo automáticamente. Regreso al sénior."
+    },
+    {
+      "id": "02-crear-hijo",
+      "ruta": "Seguridad › Nuevo › Rol hijo",
+      "texto_pantalla": "Crear un rol hijo · interruptor de herencia y rol padre",
+      "capitulo": "Crear un rol hijo",
+      "rotulo": "Crear un rol hijo",
+      "acciones": [
+        {
+          "click": ".gm-sheet__actions button:has-text('Nuevo')",
+          "al_decir": "Pulso Nuevo"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Rol')",
+          "al_decir": "elijo Rol"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='name']",
+            "texto": "Vendedor en práctica"
+          },
+          "al_decir": "En Nombre"
+        },
+        {
+          "click": "mat-dialog-container mat-slide-toggle",
+          "al_decir": "Enciendo el interruptor"
+        },
+        {
+          "click": "mat-dialog-container [formcontrolname='parentRole']",
+          "al_decir": "Lo abro"
+        },
+        {
+          "resaltar": "mat-option:has-text('Empleado')",
+          "durante_ms": 1400,
+          "al_decir": "marcados como Sistema",
+          "cursor": false
+        },
+        {
+          "click": "mat-option:has-text('Vendedor'):not(:has-text('sénior'))",
+          "al_decir": "elijo Vendedor"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Este rol heredará')",
+          "durante_ms": 7000,
+          "al_decir": "aparece un aviso",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear')",
+          "al_decir": "Pulso Crear"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2800,
+          "cursor": false
+        },
+        {
+          "click": ".custom-alert-dialog-panel button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Vendedor en práctica')",
+          "durante_ms": 4000,
+          "al_decir": "queda debajo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__toolbar-title",
+          "durante_ms": 3500,
+          "al_decir": "sin marcar nada",
+          "cursor": false
+        }
+      ],
+      "narracion": "Ahora creo un rol hijo. Pulso Nuevo, arriba a la derecha; en el menú elijo Rol, y se abre el diálogo Crear rol. En Nombre escribo Vendedor en práctica, para quien todavía está aprendiendo a vender. Enciendo el interruptor Heredar permisos de otro rol, y aparece el campo Rol padre. Lo abro: están los roles de tu empresa y los del sistema, marcados como Sistema. Como padre, elijo Vendedor, y debajo aparece un aviso que lo explica: este rol heredará automáticamente los permisos de Vendedor y se mantendrá sincronizado con sus cambios. La lista nunca ofrece al propio rol ni a sus hijos, para evitar círculos. Pulso Crear. El sistema lo guarda y confirma con Operación completada. Acepto. El rol nuevo queda debajo de Vendedor, con su flechita, y ya tiene todo lo del padre sin marcar nada."
+    },
+    {
+      "id": "03-excluir",
+      "ruta": "Seguridad › Roles y permisos › Vendedor en práctica",
+      "texto_pantalla": "Excluir un heredado · solo en este rol, el padre no cambia",
+      "capitulo": "Excluir un permiso heredado",
+      "rotulo": "Excluir un heredado",
+      "acciones": [
+        {
+          "click": ".rpe__module:has-text('Cotizaciones')",
+          "al_decir": "Abro Cotizaciones"
+        },
+        {
+          "resaltar": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act--inherited",
+          "durante_ms": 4500,
+          "al_decir": "vienen heredados",
+          "cursor": false
+        },
+        {
+          "click": ".rpe__resource:has(.rpe__resource-name:text-is('Cotizaciones')) .rpe__act:text-is('Crear')",
+          "al_decir": "Pulso Crear"
+        },
+        {
+          "resaltar": ".gm-sheet-savebar__text",
+          "durante_ms": 1300,
+          "al_decir": "cuenta el cambio",
+          "cursor": false
+        },
+        {
+          "click": ".gm-sheet-savebar button:has-text('Guardar cambios')",
+          "al_decir": "pulso Guardar cambios"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__act--excluded",
+          "durante_ms": 3500,
+          "al_decir": "Excluido de la herencia",
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Excluir quita un heredado solo en este rol; el padre no cambia."
+          },
+          "durante_ms": 6500,
+          "al_decir": "Una exclusión"
+        },
+        {
+          "resaltar": ".sec-roles__actions button:has-text('Editar')",
+          "durante_ms": 5000,
+          "al_decir": "desde Editar"
+        }
+      ],
+      "narracion": "Pero alguien en práctica no debería crear cotizaciones por su cuenta. Abro Cotizaciones en el rol nuevo: Ver, Crear y Editar vienen heredados, en el tono del padre. Pulso Crear. Como es heredado, no se quita: se excluye. La barra de abajo cuenta el cambio pendiente. Ahora pulso Guardar cambios, y el aviso confirma que quedó guardado. Ya se ve el resultado: Crear quedó tachado, Excluido de la herencia. Una exclusión quita un permiso heredado solo en este rol; Vendedor sigue igual. Si vuelves a pulsar un excluido, se hereda otra vez. Y si un día le cambias el padre desde Editar, se recalcula lo heredado; lo directo no se toca."
+    },
+    {
+      "id": "04-eliminar-rol",
+      "ruta": "Seguridad › Roles y permisos › Eliminar rol",
+      "texto_pantalla": "Eliminar un rol · confirmación y cuándo no se puede",
+      "capitulo": "Eliminar un rol",
+      "rotulo": "Eliminar un rol",
+      "acciones": [
+        {
+          "click": ".sec-roles__actions button[aria-label='Más acciones']",
+          "al_decir": "los tres puntos"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Eliminar rol')",
+          "al_decir": "elijo Eliminar rol"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2200,
+          "cursor": false,
+          "al_decir": "si estoy segura"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Eliminar')",
+          "al_decir": "Confirmo con Eliminar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__h2",
+          "durante_ms": 3000,
+          "al_decir": "primer rol de la lista",
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Un rol padre no se elimina mientras otro herede de él."
+          },
+          "durante_ms": 7000,
+          "al_decir": "no te deja"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Vendedor sénior')",
+          "durante_ms": 3500,
+          "al_decir": "como Vendedor sénior",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__lock",
+          "durante_ms": 3500,
+          "al_decir": "roles del sistema",
+          "cursor": false
+        }
+      ],
+      "narracion": "Como era una prueba, lo elimino. En Más acciones, los tres puntos arriba a la derecha, elijo Eliminar rol. El sistema pregunta si estoy segura, y avisa que no se puede deshacer. Confirmo con Eliminar. Sale el aviso de rol eliminado, y la consola abre el primer rol de la lista. Hay dos casos en que no te deja: si el rol todavía lo tienen personas, te pide quitárselo primero; y si otro rol hereda de él, como Vendedor sénior hereda de Vendedor, tampoco se puede borrar. Y los roles del sistema ni siquiera tienen esos tres puntos."
+    },
+    {
+      "id": "05-titulares",
+      "ruta": "Seguridad › Roles y permisos › Vendedor › Personas",
+      "texto_pantalla": "Titulares del rol · quién lo tiene, su último ingreso y su estado",
+      "capitulo": "Caso práctico: quién tiene el rol",
+      "rotulo": "Quién tiene el rol",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Caso práctico · rol Vendedor"
+      },
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor'):not(:has-text('sénior'))",
+          "al_decir": "Abro Vendedor"
+        },
+        {
+          "resaltar": ".sec-roles__link",
+          "durante_ms": 1500,
+          "al_decir": "el enlace",
+          "cursor": false
+        },
+        {
+          "click": ".sec-roles__link",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": "app-role-holders .rh__row:has-text('José Cabrera')",
+          "durante_ms": 4500,
+          "al_decir": "José Cabrera"
+        },
+        {
+          "resaltar": "app-role-holders .rh__row:has-text('Héctor Vargas')",
+          "durante_ms": 4000,
+          "al_decir": "Héctor dice Nunca"
+        },
+        {
+          "click": "app-role-holders .rh__row:has-text('Ana Mejía')",
+          "al_decir": "pulso a Ana"
+        },
+        {
+          "resaltar": "aside[aria-label='Detalle de la persona']:has-text('Ana Mejía') .sec-people__card",
+          "durante_ms": 5000,
+          "al_decir": "su ficha"
+        }
+      ],
+      "narracion": "Caso práctico: quién tiene el rol Vendedor y qué le cambiaron. Abro Vendedor. Debajo del nombre, el enlace dice que tres personas tienen este rol. Lo pulso, y se abre la vista Personas del rol: José Cabrera, Ana Mejía y Héctor Vargas, con su último ingreso y su estado. Héctor dice Nunca: todavía no ha entrado. Si nadie tuviera el rol, aquí diría que nadie lo tiene todavía; y con más de cincuenta, te ofrece verlos todos en Personas. Si pulso a Ana, la consola me lleva a su ficha en Personas, con todo su acceso."
+    },
+    {
+      "id": "06-historial",
+      "ruta": "Seguridad › Roles y permisos › Vendedor › Historial",
+      "texto_pantalla": "Historial del rol · qué cambió, quién y cuándo, con el antes y el después",
+      "capitulo": "Caso práctico: qué le cambiaron",
+      "rotulo": "Historial del rol",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Caso práctico · rol Vendedor"
+      },
+      "navegar": "/security/roles?rol=77",
+      "acciones": [
+        {
+          "click": ".sec-roles__views button:has-text('Historial')",
+          "al_decir": "la vista Historial"
+        },
+        {
+          "resaltar": ".rhis__head",
+          "durante_ms": 4500,
+          "al_decir": "Cada entrada",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rhis__change",
+          "durante_ms": 2500,
+          "al_decir": "cada línea",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rhis__before",
+          "durante_ms": 2500,
+          "al_decir": "guion rojo",
+          "cursor": false,
+          "estilo": "subrayado"
+        },
+        {
+          "resaltar": ".rhis__after",
+          "durante_ms": 1000,
+          "al_decir": "en verde",
+          "cursor": false,
+          "estilo": "subrayado"
+        },
+        {
+          "resaltar": ".rhis__change:has-text('Cotizaciones')",
+          "durante_ms": 4500,
+          "al_decir": "dentro de Ventas",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__views :text-is('Historial')",
+          "durante_ms": 3000,
+          "al_decir": "solo aparece",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Vendedor sénior')",
+          "durante_ms": 3000,
+          "al_decir": "la herencia evita",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__views button:has-text('Personas')",
+          "durante_ms": 3500,
+          "al_decir": "los titulares",
+          "cursor": false
+        }
+      ],
+      "narracion": "Vuelvo al rol Vendedor, esta vez para abrir la vista Historial, que cuenta todo lo que le pasó a este rol. Cada entrada dice qué pasó, quién lo hizo y cuándo. La de arriba es Cambió permisos: debajo, cada línea es un recurso con su módulo, como Inventario, Productos. A la izquierda, el antes: aquí un guion rojo, porque no tenía nada; y tras la flecha, el después en verde. Cotizaciones, dentro de Ventas, pasó de nada a Ver con alcance Propios, Crear y Editar. Esta vista solo aparece si tienes permiso para leer la auditoría. En resumen: la herencia evita repetir, la exclusión recorta al hijo, y los titulares y el historial te dicen a quién afecta un rol y qué le cambió."
+    }
+  ]
+}

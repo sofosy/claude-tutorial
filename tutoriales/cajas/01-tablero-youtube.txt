@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Cajas · El tablero y tus cajas
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  El tablero de cajas
+01:18  Crear una caja nueva
+02:33  Configuración de cajas
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es una caja y qué es una sesión (el turno de una persona en una caja)
+• Leer el tablero: qué significa una caja Abierta, Cerrada o Bloqueada y quién la opera
+• Filtrar las cajas por estado y encontrar sus movimientos, sesiones y cuadres
+• Crear una caja nueva con sus métodos de pago y sus umbrales de alerta
+• Administrar las cajas desde Configuración: buscar, bloquear y archivar
+
+⚠️ ERRORES COMUNES
+• Dejar sin marcar un método de pago que la caja sí va a recibir, como Transferencia
+• Activar el control por denominaciones sin necesitarlo: obliga a contar billete por billete en cada apertura, cobro y cierre
+• Confundir los límites de efectivo de la caja con un tope: son umbrales de alerta, no bloquean la operación
+• Archivar una caja pensando que se borra: se retira de uso con toda su historia y se restaura desde Archivadas
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:42
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a conocer las cajas del negocio. Entro a Cajas desde el menú de la izquierda. Este es el tablero de cajas. En Germiva, una caja es un punto de cobro de tu negocio, como el mostrador de la entrada, y cada tarjeta es una, con su código, su ubicación y su estado. Una sesión es el turno de una persona en una caja: empieza cuando la abre con su fondo y termina cuando la cierra con su cuadre. Caja Mostrador 2 está Abierta: tiene una sesión en curso. La opera Luis Batista desde hace dos horas, y abajo ves el efectivo que debería haber ahora mismo en la gaveta. Caja Sucursal Santiago está Bloqueada: nadie puede usarla hasta que un supervisor la revise y la desbloquee. Y Caja Principal está Cerrada, lista para que una cajera arranque su jornada con Abrir sesión. Encima de las tarjetas tienes los filtros por estado, cada uno con su número de cajas. Pulso Abiertas y queda solo la que está en uso; vuelvo a Todas para verlas otra vez. Los tres puntos de cada tarjeta llevan a sus movimientos, sus sesiones, sus cuadres y a Configurar caja. Y en la franja de arriba están las secciones del módulo: Mi caja, Por aprobar, Historial y Análisis, que verás en los próximos videos.
+Ahora creo una caja nueva para el segundo piso. Pulso Nueva caja, arriba a la derecha, y se abre su formulario. Los tres primeros datos son obligatorios. En Nombre escribo Caja Mostrador 3: así la verán todos en el tablero y en los reportes. El Código es un identificador corto y único: CAJA-03. Y en Ubicación, dónde está físicamente: área de ventas, piso 2. Después vienen los métodos de pago que acepta. Efectivo y Tarjeta vienen marcados, y le agrego Transferencia. El Control por denominaciones, o modo estricto, obliga a contar billete por billete al abrir, al cobrar en efectivo y al cerrar; lo dejo apagado, porque esta caja trabaja con montos. Abajo, en Montos y límites, el Fondo fijo es opcional y lo dejo vacío. El Límite mínimo de efectivo es un umbral de alerta: escribo mil, y si la caja baja de ahí, el sistema avisa. En el máximo pongo sesenta mil: avisa cuando se junta demasiado efectivo y conviene retirarlo. Pulso Crear caja. Sale el aviso de que se creó, y su tarjeta ya está en el tablero, Cerrada, lista para su primer turno.
+Todas las cajas también se administran desde Configuración, el botón de arriba a la derecha. Se abre un panel con tres secciones: Cajas, Denominaciones y Políticas. En Cajas, las cifras dicen cuántas hay en total y cuántas están abiertas, cerradas y bloqueadas. Debajo tienes el buscador y los filtros por tipo, estado y bloqueo, para encontrar una caja rápido. Cada fila es una caja, con su nombre y su código, su balance actual y los métodos de pago que acepta; el lápiz la edita. Esta lista muestra las cajas operativas; en Archivadas están las que se sacaron de uso, y ahora no hay ninguna. Vuelvo a Operativas. Los tres puntos quedan al final de la fila de Caja Mostrador 3, así que al abrirlos la tabla se corre un poco a la derecha. Ahí están Ver detalles, que abre su ficha; Bloquear, para impedir que se opere mientras se revisa; y Archivar, que la retira sin borrar su historia, y se puede restaurar desde la lista de archivadas. No toco nada ahora. Cierro el panel con la equis y vuelvo al tablero.

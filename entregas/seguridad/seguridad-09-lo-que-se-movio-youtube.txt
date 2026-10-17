@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Seguridad · Dónde quedó lo que se movió
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Tu contraseña, en Mi perfil
+00:59  Visibilidad del menú
+01:54  Perfil del Consultorio
+02:24  El enlace viejo del historial
+02:53  Caso práctico: los enlaces viejos
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cambiar tu contraseña desde Mi perfil
+• Ocultar o mostrar módulos de tu menú lateral con Visibilidad del menú, y restablecerlo
+• Por qué ocultar un menú no quita ningún permiso
+• A dónde llevan los enlaces viejos de Seguridad y dónde quedó el Perfil del Consultorio
+
+⚠️ ERRORES COMUNES
+• Buscar el cambio de contraseña dentro de Seguridad: ahora está en Mi perfil
+• Creer que ocultar un menú a tu gusto le quita el permiso a alguien
+• Olvidar pulsar «Guardar cambios» después de apagar un menú
+• Buscar el Perfil del Consultorio en el ERP: solo existe en RegiSalud
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:22
+
+TRANSCRIPCIÓN
+============================================================
+Algunas cosas que antes estaban en Seguridad se mudaron. La primera, tu contraseña. Abro el menú de mi usuario, arriba a la derecha, y elijo Mi perfil. Aquí están tus datos: nombre, contacto y preferencias. Al pie de la columna derecha está la tarjeta Seguridad, que antes era una pantalla dentro del módulo. Escribo mi Contraseña actual, para probar que soy yo; se ve con puntos, como debe ser. Después la nueva, con mayúsculas, minúsculas y números: fácil de recordar para ti y difícil de adivinar para otros. Y la confirmo, escribiéndola otra vez igual. Cada campo tiene un ojo para ver lo que escribiste. Para cambiarla de verdad pulsarías Actualizar contraseña, y un aviso confirma que se actualizó; esta vez no la cambio. Si tu cuenta tiene el cambio de contraseña bloqueado, aquí verás ese aviso en lugar del formulario.
+La segunda mudanza es la visibilidad del menú. Está en la tarjeta Preferencias, en la sección Visibilidad del menú: La despliego. Es el árbol de tu menú lateral, con un interruptor por módulo y por opción. Algunos llevan un candado, como Inicio, porque no se pueden ocultar. Apago Compras, que no uso a diario, y pulso Guardar cambios. El sistema lo confirma con Cambios guardados. Lo acepto. Mira el menú de la izquierda: debajo de Ventas ya no está Compras. Importante: esto solo cambia lo que tú ves, en esta empresa; no quita ningún permiso, ni a ti ni a nadie. Para volver atrás, pulso Restablecer todo. Pregunta si quiero mostrar todos los menús ocultos, y respondo Sí, restablecer. Sale Menús restablecidos. Acepto otra vez, y Compras volvió a su lugar.
+La tercera mudanza solo aplica a los consultorios. Si en el ERP, que es este sistema de gestión, abres la dirección del antiguo Perfil del Consultorio, te trae de vuelta al inicio, sin aviso: esa pantalla no existe en Germiva ERP. En RegiSalud, el sistema para clínicas, el Perfil del Consultorio salió de Seguridad y ahora está en el menú Configuración, como parte de Mi Empresa. Si administras una distribuidora como esta, no tienes nada que buscar.
+Otro enlace que quizás tengas guardado: el historial de un registro de la auditoría vieja, en este caso el del rol Almacén. Lo abro, y el sistema lo convierte en la pestaña Auditoría. Arriba, en los filtros, ya viene filtrada por ese registro, que se lee con su nombre, Rol, Almacén; y con el período en todo el historial. Aquí están sus tres eventos: cuando se creó el rol, y los dos cambios de permisos que le hizo Rosa.
+Un caso práctico para cerrar: tenías guardado el enlace de la antigua Configuración de Seguridad. Lo abro, y el sistema me lleva directo a Mi perfil: los enlaces viejos siguen funcionando. En resumen: tu contraseña está en la tarjeta Seguridad de Mi perfil; el menú a tu gusto, en Preferencias; y el módulo de Seguridad, el del candado, sigue siendo el lugar para personas, roles, integraciones y auditoría.

@@ -1,0 +1,453 @@
+{
+  "titulo": "Citas · Parte 2: el médico, su horario y su enlace",
+  "descripcion": "Segunda parte de la serie de Citas de RegiSalud: cómo se le asigna un servicio a un médico desde su ficha (Médicos › Agenda › Disponibilidad), el enlace de reservas que se genera para ese médico y ese servicio, el horario de atención por día con la duración de cada turno, los pacientes por turno y el consultorio (creado desde el mismo campo), las opciones de reserva en línea, los bloqueos de agenda por vacaciones o ausencias, y el resumen de horarios de todos los médicos.",
+  "_comentario": "Estado P: «Consulta pediátrica» existe y Luis Gómez no la ofrece. Termina como el estado B (más el bloqueo de hoy 10-12).",
+  "base_url": "http://localhost:4310",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "Los Prados",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "correo.test",
+      "131456789",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Ramírez",
+      "Gabriela",
+      "Fernández",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "localhost:4310": "regisalud.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/citas/restaurar.mjs P"
+  },
+  "aprenderas": [
+    "Habilitar un servicio para un médico y entender el enlace de reservas que se genera",
+    "Configurar el horario de atención de varios días de una vez, con turnos, capacidad y consultorio",
+    "Crear un consultorio sin salir del horario",
+    "Bloquear horas o días del médico para que no se ofrezcan citas",
+    "Ver el horario de todos los médicos en una sola pantalla"
+  ],
+  "errores_comunes": [
+    "Crear el servicio y no darle horario: el médico no aparece en el portal hasta que tiene una franja visible",
+    "Desmarcar «Visible para pacientes en el link de reservas»: la franja sirve en recepción pero no en internet",
+    "Cargar las vacaciones como un horario nuevo en vez de un bloqueo"
+  ],
+  "pasos": [
+    {
+      "id": "01-ficha",
+      "capitulo": "La agenda del médico",
+      "rotulo": "La agenda del médico",
+      "ruta": "Médicos › Luis Gómez › Agenda › Disponibilidad",
+      "texto_pantalla": "Disponibilidad · qué servicios ofrece el médico, cuándo y dónde",
+      "narracion": "El servicio de pediatría ya existe, pero ningún médico lo ofrece. Eso se hace en la ficha del médico. Entro a Médicos, en el menú de la izquierda. A la izquierda está la lista de médicos del centro; abro al doctor Luis Gómez, pediatra, y recojo la lista para ganar espacio. En la pestaña Agenda hay dos vistas: Citas, que son las que ya tiene, y Disponibilidad, que es cuándo atiende. Abro Disponibilidad. El aviso de arriba resume el orden: primero se habilita el servicio, y después se le pone el horario. Este médico todavía no ofrece ninguno.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Médicos']",
+          "al_decir": "Entro a Médicos"
+        },
+        {
+          "click": "button.dsel__row:has-text('Luis Gómez')",
+          "al_decir": "abro al doctor"
+        },
+        {
+          "click": "button.dsel__collapse",
+          "al_decir": "recojo la lista"
+        },
+        {
+          "click": "button.tab:has-text('Agenda')",
+          "al_decir": "la pestaña Agenda"
+        },
+        {
+          "resaltar": ".gm-seg button:has-text('Citas')",
+          "durante_ms": 3000,
+          "al_decir": "Citas, que son"
+        },
+        {
+          "click": ".gm-seg button:has-text('Disponibilidad')",
+          "al_decir": "Abro Disponibilidad"
+        },
+        {
+          "resaltar": ".ag-tab__hint",
+          "durante_ms": 5500,
+          "al_decir": "El aviso"
+        },
+        {
+          "resaltar": "button:has-text('Ofrecer el primer tipo de cita')",
+          "durante_ms": 3500,
+          "al_decir": "no ofrece ninguno"
+        }
+      ]
+    },
+    {
+      "id": "02-ofrecer",
+      "capitulo": "Habilitar el servicio y su enlace",
+      "rotulo": "Ofrecer el servicio",
+      "ruta": "Médicos › Luis Gómez › Disponibilidad › Ofrecer un tipo de cita",
+      "texto_pantalla": "Un enlace de reservas por médico y servicio",
+      "narracion": "Como no tiene ninguno, el botón dice ofrecer el primer tipo de cita. Lo pulso. En la ventana elijo el servicio: consulta pediátrica. Debajo se ve su duración y su precio. Pulso Habilitar para este médico. Al habilitarlo, el sistema crea su enlace de reservas: una dirección propia de este médico y este servicio, que se puede mandar por WhatsApp o poner en redes. El título y la descripción son los que se ven al compartirlo, con la vista previa a la derecha, y el mensaje de invitación se copia junto con el enlace con este botón. Por ahora cierro la ventana, porque falta lo más importante: el horario.",
+      "acciones": [
+        {
+          "click": "button:has-text('Ofrecer el primer tipo de cita')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "click": "mat-dialog-container app-custom-select input",
+          "al_decir": "elijo el servicio"
+        },
+        {
+          "click": "mat-option:has-text('Consulta pediátrica')",
+          "al_decir": "consulta pediátrica"
+        },
+        {
+          "resaltar": "mat-dialog-container .ctx-type-meta, mat-dialog-container .type-meta, mat-dialog-container app-custom-select",
+          "durante_ms": 3500,
+          "al_decir": "su duración"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Habilitar para este médico')",
+          "al_decir": "Pulso Habilitar"
+        },
+        {
+          "resaltar": "mat-dialog-container .copybar, mat-dialog-container .urlbar",
+          "durante_ms": 5000,
+          "al_decir": "una dirección propia",
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='title']",
+          "durante_ms": 3500,
+          "al_decir": "El título"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Copiar mensaje + link')",
+          "durante_ms": 3500,
+          "al_decir": "con este botón"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "cierro la ventana"
+        }
+      ]
+    },
+    {
+      "id": "03-horario",
+      "capitulo": "El horario de atención",
+      "rotulo": "Horario de atención",
+      "ruta": "Médicos › Luis Gómez › Disponibilidad › Horario de atención",
+      "texto_pantalla": "Una franja: inicio, fin, duración del turno, pacientes y consultorio",
+      "narracion": "Ahora el horario. Cada día de la semana sale en una fila, y el doctor no atiende ninguno todavía. Pulso Agregar en el lunes. Una franja es un bloque de horas que se divide en turnos: de ocho a doce, con turnos de treinta minutos, que vienen del servicio, y un paciente por turno. El consultorio es la sala donde atiende. Escribo el nombre de uno que aún no existe, y elijo crearlo desde aquí mismo.",
+      "acciones": [
+        {
+          "resaltar": "app-doctor-schedule-tab .day-line:has-text('Lunes') .day-line__label",
+          "durante_ms": 3500,
+          "al_decir": "Cada día"
+        },
+        {
+          "click": "button.add-franja >> nth=0",
+          "al_decir": "Pulso Agregar"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab mat-select[formcontrolname='startTime']",
+          "durante_ms": 3000,
+          "al_decir": "de ocho"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab mat-select[formcontrolname='slotDurationMinutes']",
+          "durante_ms": 3500,
+          "al_decir": "turnos de treinta"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab input[formcontrolname='maxClientsPerSlot']",
+          "durante_ms": 3000,
+          "al_decir": "un paciente"
+        },
+        {
+          "escribir": {
+            "sel": "app-doctor-schedule-tab app-custom-select[formcontrolname='consultorioId'] input",
+            "texto": "Consultorio Pediátrico"
+          },
+          "al_decir": "Escribo el nombre"
+        },
+        {
+          "click": "mat-option.cs-create",
+          "al_decir": "elijo crearlo"
+        }
+      ]
+    },
+    {
+      "id": "04-consultorio",
+      "capitulo": "Crear el consultorio",
+      "rotulo": "Nuevo consultorio",
+      "ruta": "Disponibilidad › Horario › Nuevo consultorio",
+      "texto_pantalla": "El consultorio · la sala o sede donde se atiende",
+      "narracion": "Se abre la ficha del consultorio, con el nombre que ya escribí. Le pongo un código corto: consultorio pediatría. Los datos de ubicación son opcionales: la dirección, el teléfono, el edificio y el piso. Sirven cuando el centro tiene varias sedes, porque el paciente los ve en su confirmación. Pulso Guardar, y el consultorio queda elegido en la franja.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='name']",
+          "durante_ms": 3500,
+          "al_decir": "con el nombre",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='code']",
+            "texto": "CONS-PED"
+          },
+          "al_decir": "un código corto"
+        },
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='address']",
+          "durante_ms": 3500,
+          "al_decir": "la dirección"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab app-custom-select[formcontrolname='consultorioId']",
+          "durante_ms": 4000,
+          "al_decir": "queda elegido"
+        }
+      ]
+    },
+    {
+      "id": "05-dias-opciones",
+      "capitulo": "Varios días y opciones de reserva",
+      "rotulo": "Días y opciones",
+      "ruta": "Médicos › Luis Gómez › Disponibilidad › Horario de atención",
+      "texto_pantalla": "Aplicar a varios días · visible en el enlace · reservas para hoy · exclusivo",
+      "narracion": "Para no repetir lo mismo cinco veces, en Aplicar a marco el martes. Marco también el miércoles. Después el jueves. Y por último el viernes. Abajo están las opciones de reserva. Visible para pacientes en el link de reservas hace que estos turnos se ofrezcan por internet; si se desmarca, solo la recepción los puede usar. Permitir reservas para hoy deja reservar el mismo día. Y horario exclusivo para este tipo de cita aparta estas horas solo para pediatría. Pulso Agregar: se crean las cinco franjas, y cada día muestra su horario, su consultorio y cuántos turnos tiene.",
+      "acciones": [
+        {
+          "click": "app-doctor-schedule-tab button.day-chip:has-text('Mar')",
+          "al_decir": "el martes"
+        },
+        {
+          "click": "app-doctor-schedule-tab button.day-chip:has-text('Mié')",
+          "al_decir": "el miércoles"
+        },
+        {
+          "click": "app-doctor-schedule-tab button.day-chip:has-text('Jue')",
+          "al_decir": "el jueves"
+        },
+        {
+          "click": "app-doctor-schedule-tab button.day-chip:has-text('Vie')",
+          "al_decir": "el viernes"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab mat-checkbox[formcontrolname='allowOnlineBooking']",
+          "durante_ms": 5500,
+          "al_decir": "Visible para"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab mat-checkbox[formcontrolname='allowSameDayBooking']",
+          "durante_ms": 3500,
+          "al_decir": "el mismo día"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab mat-checkbox[formcontrolname='strictMode']",
+          "durante_ms": 4000,
+          "al_decir": "horario exclusivo"
+        },
+        {
+          "click": "app-doctor-schedule-tab button[type='submit']",
+          "al_decir": "Pulso Agregar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "al_decir": "cinco franjas",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "06-bloqueo",
+      "capitulo": "Bloqueos de agenda",
+      "rotulo": "Bloquear horas",
+      "ruta": "Médicos › Luis Gómez › Disponibilidad › Bloqueos de agenda",
+      "texto_pantalla": "Bloqueo · vacaciones o ausencias: en ese tiempo no se ofrecen citas",
+      "narracion": "Más abajo están los bloqueos de agenda. Un bloqueo no cambia el horario: aparta un tiempo en el que el médico no está, por vacaciones o por una ausencia de unas horas. Pulso Nuevo bloqueo. Por defecto toma el día completo de hoy. Si es solo un rato, elijo la hora de inicio: las diez. Después la hora final: las doce. El último campo es solo para el equipo: escribo el motivo, reunión médica. El aviso de abajo confirma qué se va a bloquear. Pulso Bloquear: el sistema avisa que el horario quedó bloqueado, y el bloqueo aparece en la lista; en esas horas no se ofrece ninguna cita, ni en recepción ni en internet.",
+      "acciones": [
+        {
+          "resaltar": "app-doctor-schedule-tab section.exc-panel",
+          "durante_ms": 3500,
+          "al_decir": "los bloqueos de agenda"
+        },
+        {
+          "click": "button:has-text('Nuevo bloqueo')",
+          "al_decir": "Pulso Nuevo bloqueo"
+        },
+        {
+          "click": "app-doctor-schedule-tab mat-form-field:has(mat-label:has-text('Hora inicio')) mat-select",
+          "al_decir": "la hora de inicio"
+        },
+        {
+          "click": "mat-option:has-text('10:00 a. m.')",
+          "al_decir": "las diez"
+        },
+        {
+          "click": "app-doctor-schedule-tab mat-form-field:has(mat-label:has-text('Hora fin')) mat-select",
+          "al_decir": "la hora final"
+        },
+        {
+          "click": "mat-option:has-text('12:00 p. m.')",
+          "al_decir": "las doce"
+        },
+        {
+          "escribir": {
+            "sel": "app-doctor-schedule-tab mat-form-field:has(mat-label:has-text('Motivo del bloqueo')) input",
+            "texto": "Reunión médica"
+          },
+          "al_decir": "escribo el motivo"
+        },
+        {
+          "click": "app-doctor-schedule-tab .exc-form__foot button:has-text('Bloquear')",
+          "al_decir": "Pulso Bloquear"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab .exc-row:has-text('Reunión médica')",
+          "durante_ms": 5000,
+          "al_decir": "aparece en la lista"
+        }
+      ]
+    },
+    {
+      "id": "07-resumen",
+      "capitulo": "El horario de todos los médicos",
+      "rotulo": "Horarios de atención",
+      "ruta": "Configuración › Recursos y Ajustes › Horarios de atención",
+      "texto_pantalla": "Horarios de atención · la semana de todos los médicos",
+      "narracion": "Para ver el horario de todos a la vez, vuelvo a Configuración y entro a Recursos y Ajustes. Recojo el panel y abro Horarios de atención. Cada fila es un médico con sus días de atención, y cada recuadro una franja con su duración y su consultorio. Aquí está el doctor Luis Gómez con lo que acabamos de configurar. Con el servicio, el médico y el horario listos, en la próxima parte el paciente reserva desde internet.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Configuración']",
+          "al_decir": "vuelvo a Configuración"
+        },
+        {
+          "click": ".panel-item:has-text('Recursos y Ajustes')",
+          "al_decir": "entro a Recursos"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el panel"
+        },
+        {
+          "click": ".nav-item:has-text('Horarios de Atención')",
+          "al_decir": "abro Horarios"
+        },
+        {
+          "resaltar": "table.sch__grid tbody tr:first-child th.sch__staff",
+          "durante_ms": 3500,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": "table.sch__grid tbody tr:has-text('Luis Gómez') th.sch__staff",
+          "durante_ms": 5000,
+          "al_decir": "Aquí está"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,366 @@
+{
+  "titulo": "Seguridad · Credenciales de API para otros programas",
+  "_comentario": "Serie Seguridad, video 06a (AUTOR B, 2026-09-27). Parte de E0. Graba rosa.almanzar. Qué escribe en BD: crea la credencial «Programa del contador» (usuario de integración + rol propio al quitar «Registrar Facturas de Compra»); restaurar.mjs E0 después. Tiempos medidos (_resultados-v06a.json): la franja del secreto aparece ≈3,5 s después de «Generar credenciales» (marca anclada a ≈+6 s, R25); «Secreto copiado» 0,2 s (CDK Clipboard, sin permiso de portapapeles); quitar la casilla ≈1,9 s → toast «Permiso quitado exitosamente»; el filtro de la página de permisos tarda ≈2,7 s. «Mostrar» NO se pulsa: el secreto no sale en claro en cámara. La API Key completa (gv_live_…) sí se ve en la franja: es de demo local, se borra al restaurar; si el revisor la quiere tapada, hay que añadir el valor a privacidad.mapa_fijo tras el ensayo (cambia en cada toma). En la página de permisos se busca por el código del permiso (lo único que filtra a 2 casillas: la misma en Facturación y en Compras) y la voz NO lee el código. Carteles: 2 (secreto una vez, mínimo privilegio); «limitar IP» va solo en voz. D-S3 no afecta: graba Rosa (Editar permisos). La voz no promete antes/después en la Auditoría para permisos de credenciales (A-075). AVISOS justificados: el primer paso no contrae el panel del menú (no existe en /security/*). Ensayo 09-27: 0 fallos (5 pasos, 42 acciones). Cambios T2: `.page-title` de la página de permisos está pegado al borde superior (no se puede centrar, R5b) → marca `mat-card.info-card` anclada a «los datos de la credencial». Confirmado: tras quitar la casilla, el panel dice 4 (Compras desaparece). GRABACIÓN T2 (2026-09-27): E-8 quitó los códigos de las casillas y el buscador «Buscar permisos» NO filtra (G-5: `filteredHierarchicalGroups` es un computed() que lee `searchTerm`, campo sin signal; al escribir solo se despliegan los 21 módulos). El paso 05 ya no usa el buscador: baja a «Registrar Facturas de Compra» dentro de Facturación (abierto porque tiene permisos) y la desmarca. T2 toma 1: generar la credencial tardó 12 s y la página de permisos 8,4 s en cargar: voz de relleno + marca «.sec-api__title». T2 revisión visual: la marca de relleno `.sec-api__title` caía detrás del diálogo; ahora marca el botón «Generando…» del propio diálogo. REGRABACIÓN T4 (09-27): G-5 corregido en el ERP (el buscador filtra). F-191 del inventario incluye el buscador «Buscar permisos», así que el paso 05 vuelve a usarlo: escribe «Registrar Facturas» → 3 casillas (Registrar Facturas de Compra en Facturación y en Compras + «Registrar Facturas Recibidas (Certificación)» en Facturación Electrónica; sondeado en vivo) y desmarca la primera. La voz no lee códigos. Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe C 06a-2/06a-3 + ronda 8 R8-8): las marcas de «IP permitida» y «Endpoint permitido» van sobre `.mat-mdc-text-field-wrapper` (sin el hueco de la ayuda); la marca de las barras de «Operaciones en 7 días» lleva `cursor: false` (el tooltip «0 operaciones» tapaba los días); la voz dice «clave de API» y «Copiar clave» (antes «API Key») y «prefijo de la clave de API» como la cabecera nueva. 06a-1 (fila cortada bajo la cabecera del panel) es de motor: regrabar el paso 04 con e1810d6. Sin cambio de usuario: insignia info única.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "féliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "Programa del contador",
+      "Tienda en línea anterior",
+      "gv_live"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i",
+    "IP": "i-pe"
+  },
+  "aprenderas": [
+    "Qué es una credencial de API y cuándo se usa en lugar de un usuario",
+    "Crear una credencial y guardar su secreto, que se muestra una sola vez",
+    "Leer su panel: estado, llamadas, restricciones, permisos y operaciones de la semana",
+    "Quitarle a una credencial lo que no necesita"
+  ],
+  "errores_comunes": [
+    "Cerrar la franja sin copiar el secreto: no se vuelve a mostrar y hay que rotarlo",
+    "Dejar a una credencial con todos los permisos de la plantilla aunque solo consulte",
+    "Compartir la misma credencial entre dos programas: no se sabe cuál hizo qué",
+    "Buscar las consultas de la credencial en «Operaciones en 7 días»: ahí solo cuenta lo que crea, modifica o elimina"
+  ],
+  "pasos": [
+    {
+      "id": "01-que-es-una-credencial",
+      "capitulo": "Qué es una credencial de API",
+      "rotulo": "Credenciales de API",
+      "ruta": "Seguridad › Integraciones",
+      "texto_pantalla": "Integraciones · las credenciales con que otros programas entran al ERP",
+      "navegar": "/security/resumen",
+      "insignia": {
+        "tipo": "info",
+        "texto": "Administradora · Rosa"
+      },
+      "acciones": [
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
+          "al_decir": "Abro la pestaña Integraciones"
+        },
+        {
+          "resaltar": ".sec-api__title",
+          "durante_ms": 5000,
+          "al_decir": "la llave"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Tienda en línea anterior') .sec-api__name",
+          "durante_ms": 4500,
+          "al_decir": "la tienda en línea"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Tienda en línea anterior') .sec-api__who",
+          "durante_ms": 4199,
+          "al_decir": "Cada fila"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Tienda en línea anterior') :text('gv_live_0e9d2d31')",
+          "durante_ms": 3800,
+          "al_decir": "el prefijo"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Tienda en línea anterior') .sec-api__stale",
+          "durante_ms": 3700,
+          "al_decir": "su último uso"
+        },
+        {
+          "resaltar": ".sec-api__row:has-text('Tienda en línea anterior') .gm-status",
+          "durante_ms": 3800,
+          "al_decir": "Sin uso"
+        },
+        {
+          "resaltar": ".sec-api__notes",
+          "durante_ms": 6000,
+          "al_decir": "Al pie"
+        }
+      ],
+      "narracion": "En este video vemos las credenciales. Seguimos en la consola de Seguridad. Abro la pestaña Integraciones, arriba, a la derecha de Roles y permisos. Una credencial de API, o sea la llave de la puerta por la que otro programa habla con Germiva, sirve para que la tienda en línea o el sistema de tu contador consulten o registren datos sin que entre una persona. Cada fila es una credencial, con su nombre y para qué sirve. Luego el prefijo de la clave de API, que sirve para reconocerla sin mostrarla entera; su último uso; y su estado. Esta, Tienda en línea anterior, dice Sin uso, porque lleva más de sesenta días sin llamar al sistema. Al pie hay dos recordatorios: cada credencial tiene sus propios permisos, y rotar un secreto invalida el anterior al momento."
+    },
+    {
+      "id": "02-crear-credencial",
+      "capitulo": "Crear una credencial",
+      "rotulo": "Nueva credencial",
+      "ruta": "Seguridad › Integraciones › Nueva credencial",
+      "texto_pantalla": "Nueva integración · nombre, descripción y restricciones opcionales",
+      "acciones": [
+        {
+          "click": "button:has-text('Nueva credencial')",
+          "al_decir": "Nueva credencial"
+        },
+        {
+          "resaltar": "mat-dialog-container .gm-dialog-note",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "La nota de arriba"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='integrationName']",
+            "texto": "Programa del contador"
+          },
+          "al_decir": "En Nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='integrationDescription']",
+            "texto": "Consulta las facturas emitidas para la contabilidad"
+          },
+          "al_decir": "En Descripción"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(input[placeholder='192.168.1.1']) .mat-mdc-text-field-wrapper",
+          "durante_ms": 5000,
+          "al_decir": "IP permitida"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(input[placeholder='/api/v1/invoice']) .mat-mdc-text-field-wrapper",
+          "durante_ms": 6000,
+          "al_decir": "Endpoint permitido"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar credenciales')",
+          "al_decir": "Pulso Generar credenciales"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Generando')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "dice Generando"
+        },
+        {
+          "resaltar": ".sec-api__secret",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "aparece arriba"
+        }
+      ],
+      "narracion": "Vamos a crear una para el programa del contador. Arriba a la derecha pulso Nueva credencial; también está en el botón Nuevo de la consola. Se abre la ventana Nueva integración. La nota de arriba es importante: al guardar se generan una clave y un secreto, y el secreto se enseña una sola vez. En Nombre escribo Programa del contador, para reconocerla de un vistazo en la lista. En Descripción, para qué la quiere: consulta las facturas emitidas para la contabilidad. Luego vienen las Restricciones, que son opcionales. En IP permitida, o sea la dirección de red, pondrías la dirección de la computadora del contador, y solo desde ahí funcionaría. Y en Endpoint permitido, las rutas del sistema que puede usar. Esta vez las dejo vacías, pero acotarla es lo que limita el daño si la clave se filtra. Pulso Generar credenciales. El botón dice Generando: el sistema crea la llave y le pone los permisos de la plantilla; eso toma unos segundos, y al terminar la ventana se cierra. Ahora aparece arriba una franja con la clave y el secreto."
+    },
+    {
+      "id": "03-guardar-el-secreto",
+      "capitulo": "Guardar el secreto",
+      "rotulo": "El secreto, una sola vez",
+      "ruta": "Seguridad › Integraciones › Programa del contador",
+      "texto_pantalla": "Franja del secreto · copiar la clave y el secreto antes de cerrarla",
+      "acciones": [
+        {
+          "resaltar": ".sec-api__secret-text",
+          "durante_ms": 3399,
+          "cursor": false,
+          "al_decir": "Credencial lista"
+        },
+        {
+          "resaltar": ".sec-api__secret .sec-api__value >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "Primero la clave"
+        },
+        {
+          "resaltar": ".sec-api__secret .sec-api__value >> nth=1",
+          "durante_ms": 3500,
+          "al_decir": "tapado con puntos"
+        },
+        {
+          "resaltar": ".sec-api__secret button:has-text('Mostrar')",
+          "durante_ms": 2500,
+          "al_decir": "Mostrar lo enseña"
+        },
+        {
+          "click": ".sec-api__secret button:has-text('Copiar secreto')",
+          "al_decir": "Pulso Copiar secreto"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('copiado')",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "El secreto se ve una sola vez: si se pierde, hay que rotarlo."
+          },
+          "durante_ms": 7000,
+          "al_decir": "Si lo pierdes"
+        },
+        {
+          "click": ".sec-api__secret button[aria-label='Cerrar aviso']",
+          "al_decir": "Ya lo guardé"
+        }
+      ],
+      "narracion": "La franja dice: Credencial lista, copia el secreto ahora, no se vuelve a mostrar. Primero la clave de API, con su botón Copiar clave al lado. Después el secreto, tapado con puntos para que nadie lo lea por encima del hombro. Mostrar lo enseña, pero no hace falta. Pulso Copiar secreto, y el aviso confirma que se copió. Pégalo enseguida en un lugar seguro, o dáselo al técnico del contador por un canal privado, nunca por un chat de grupo. Si lo pierdes, no hay forma de verlo otra vez: se rota y sale uno nuevo. Cierro la franja con la equis, que dice Ya lo guardé."
+    },
+    {
+      "id": "04-panel",
+      "capitulo": "El panel de la credencial",
+      "rotulo": "El panel",
+      "ruta": "Seguridad › Integraciones › Programa del contador",
+      "texto_pantalla": "Panel de la credencial · estado, llamadas, permisos y operaciones de 7 días",
+      "acciones": [
+        {
+          "resaltar": ".sec-api__card-top",
+          "durante_ms": 4500,
+          "al_decir": "su panel"
+        },
+        {
+          "resaltar": ".sec-api__facts",
+          "durante_ms": 6000,
+          "al_decir": "Activa"
+        },
+        {
+          "resaltar": ".sec-api__block-head >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "Permisos"
+        },
+        {
+          "resaltar": ".sec-api__module:has(.sec-api__module-name:text-is('Facturación'))",
+          "durante_ms": 5000,
+          "al_decir": "puede ver y crear facturas"
+        },
+        {
+          "resaltar": ".sec-api__module:has(.sec-api__module-name:text-is('Compras'))",
+          "durante_ms": 3800,
+          "al_decir": "en Compras"
+        },
+        {
+          "resaltar": ".sec-api__bars",
+          "durante_ms": 6500,
+          "al_decir": "Operaciones en siete días",
+          "cursor": false
+        }
+      ],
+      "narracion": "Con la franja cerrada queda su panel, a la derecha: el nombre y el prefijo de la clave. Arriba dice Activa, cero llamadas en total, porque todavía no se ha usado, y Sin restricción de IP, porque no pusimos ninguna. Luego el bloque Permisos: cinco, los de la plantilla que el sistema da a toda credencial nueva. En Facturación puede ver y crear facturas, y registrar facturas de compra; en Facturación Electrónica, ver y aprobar comprobantes; y en Compras aparece otra vez el registro de facturas de compra. Abajo, Operaciones en siete días: cuenta lo que la credencial creó, cambió o eliminó, día por día. Las consultas no suman aquí."
+    },
+    {
+      "id": "05-sus-permisos",
+      "capitulo": "Quitarle lo que no necesita",
+      "rotulo": "Sus permisos",
+      "ruta": "Seguridad › Integraciones › Programa del contador › Permisos",
+      "texto_pantalla": "Permisos de Integración · casillas por módulo que guardan al instante",
+      "acciones": [
+        {
+          "click": ".sec-api__permissions",
+          "al_decir": "Editar permisos"
+        },
+        {
+          "resaltar": "mat-card.info-card",
+          "durante_ms": 4500,
+          "al_decir": "los datos de la credencial"
+        },
+        {
+          "resaltar": "mat-expansion-panel-header:has(mat-icon:text-is('receipt_long'))",
+          "durante_ms": 4500,
+          "al_decir": "como Facturación"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:text-is('Buscar permisos')) input",
+            "texto": "Registrar Facturas"
+          },
+          "al_decir": "En Buscar permisos"
+        },
+        {
+          "resaltar": "mat-checkbox:has(.permission-name:text-is('Registrar Facturas de Compra')) >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "La primera casilla"
+        },
+        {
+          "resaltar": "mat-checkbox:has(.permission-name:text-is('Registrar Facturas de Compra')) >> nth=1",
+          "durante_ms": 4000,
+          "al_decir": "sale otra vez"
+        },
+        {
+          "click": "mat-checkbox:has(.permission-name:text-is('Registrar Facturas de Compra')) >> nth=0 >> input",
+          "al_decir": "La desmarco"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container:has-text('quitado')",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Volver a Integraciones')",
+          "al_decir": "Volver a Integraciones"
+        },
+        {
+          "resaltar": ".sec-api__block-head >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "ahora son cuatro"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Da a cada programa solo lo que necesita, y nada más."
+          },
+          "durante_ms": 6500,
+          "al_decir": "lo que necesita"
+        }
+      ],
+      "narracion": "El contador solo va a consultar facturas: registrar compras le sobra. Arriba del panel pulso Editar permisos. La página tarda un momento, porque trae los más de mil permisos del sistema. Se abre Permisos de Integración, con los datos de la credencial y, debajo, todos los permisos, módulo por módulo. Los módulos donde la credencial ya tiene algo salen abiertos, como Facturación, con su cuenta de permisos activos. Para no bajar módulo por módulo, uso el buscador. En Buscar permisos escribo registrar facturas, y la lista se reduce a lo que coincide, en cualquier módulo. La primera casilla es Registrar Facturas de Compra, marcada, en Facturación. Más abajo sale otra vez, en Compras, porque cuenta en los dos módulos, pero es un solo permiso. La desmarco, y se guarda en el acto: aquí no hay botón de guardar. El aviso dice que el permiso se quitó. Desde ese primer cambio, la credencial deja la plantilla y tiene sus propios permisos. Pulso Volver a Integraciones, al pie. En el panel, ahora son cuatro. La regla de oro: a cada programa, solo lo que necesita."
+    }
+  ]
+}

@@ -1,0 +1,40 @@
+TÍTULO
+============================================================
+Seguridad · Herencia, titulares e historial de un rol
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué es la herencia
+00:59  Crear un rol hijo
+01:54  Excluir un permiso heredado
+02:39  Eliminar un rol
+03:16  Caso práctico: quién tiene el rol
+03:53  Caso práctico: qué le cambiaron
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es la herencia entre roles y cómo se distingue un permiso heredado de uno directo
+• Crear un rol hijo que hereda de otro y se mantiene sincronizado
+• Excluir un permiso heredado solo en el rol hijo
+• Eliminar un rol, y ver quién tiene un rol y qué le cambiaron
+
+⚠️ ERRORES COMUNES
+• Copiar a mano los permisos del padre en el hijo en vez de heredarlos
+• Quitar al padre un permiso que solo querías quitarle al hijo: para eso está la exclusión
+• Intentar eliminar un rol que otro hereda o que todavía tienen personas
+• Cambiar el padre de un rol sin saber que se recalcula todo lo heredado
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:41
+
+TRANSCRIPCIÓN
+============================================================
+La herencia sirve para no repetir trabajo: un rol hijo recibe todo lo de su rol padre y le suma lo suyo. Entro por el candado, abro Roles y permisos y elijo Vendedor sénior. Junto al nombre está el chip Hereda de Vendedor: ese es su padre. La leyenda trae ahora dos marcas más: Heredado de Vendedor, y Excluido de la herencia. Veámoslo en un módulo: abro Cotizaciones. El título del módulo lo confirma: siete permisos, y dos de ellos heredados de Vendedor. Ver, con su check, es directo: se lo dimos al sénior con alcance Todos. Crear, en el tono del padre, es heredado. El filtro Heredados deja solo los recursos que traen algo del padre, y Todos vuelve a mostrarlo todo. Si pulso el chip, se abre el rol padre, Vendedor: lo que le agregues aquí le llega al hijo automáticamente. Regreso al sénior.
+Ahora creo un rol hijo. Pulso Nuevo, arriba a la derecha; en el menú elijo Rol, y se abre el diálogo Crear rol. En Nombre escribo Vendedor en práctica, para quien todavía está aprendiendo a vender. Enciendo el interruptor Heredar permisos de otro rol, y aparece el campo Rol padre. Lo abro: están los roles de tu empresa y los del sistema, marcados como Sistema. Como padre, elijo Vendedor, y debajo aparece un aviso que lo explica: este rol heredará automáticamente los permisos de Vendedor y se mantendrá sincronizado con sus cambios. La lista nunca ofrece al propio rol ni a sus hijos, para evitar círculos. Pulso Crear. El sistema lo guarda y confirma con Operación completada. Acepto. El rol nuevo queda debajo de Vendedor, con su flechita, y ya tiene todo lo del padre sin marcar nada.
+Pero alguien en práctica no debería crear cotizaciones por su cuenta. Abro Cotizaciones en el rol nuevo: Ver, Crear y Editar vienen heredados, en el tono del padre. Pulso Crear. Como es heredado, no se quita: se excluye. La barra de abajo cuenta el cambio pendiente. Ahora pulso Guardar cambios, y el aviso confirma que quedó guardado. Ya se ve el resultado: Crear quedó tachado, Excluido de la herencia. Una exclusión quita un permiso heredado solo en este rol; Vendedor sigue igual. Si vuelves a pulsar un excluido, se hereda otra vez. Y si un día le cambias el padre desde Editar, se recalcula lo heredado; lo directo no se toca.
+Como era una prueba, lo elimino. En Más acciones, los tres puntos arriba a la derecha, elijo Eliminar rol. El sistema pregunta si estoy segura, y avisa que no se puede deshacer. Confirmo con Eliminar. Sale el aviso de rol eliminado, y la consola abre el primer rol de la lista. Hay dos casos en que no te deja: si el rol todavía lo tienen personas, te pide quitárselo primero; y si otro rol hereda de él, como Vendedor sénior hereda de Vendedor, tampoco se puede borrar. Y los roles del sistema ni siquiera tienen esos tres puntos.
+Caso práctico: quién tiene el rol Vendedor y qué le cambiaron. Abro Vendedor. Debajo del nombre, el enlace dice que tres personas tienen este rol. Lo pulso, y se abre la vista Personas del rol: José Cabrera, Ana Mejía y Héctor Vargas, con su último ingreso y su estado. Héctor dice Nunca: todavía no ha entrado. Si nadie tuviera el rol, aquí diría que nadie lo tiene todavía; y con más de cincuenta, te ofrece verlos todos en Personas. Si pulso a Ana, la consola me lleva a su ficha en Personas, con todo su acceso.
+Vuelvo al rol Vendedor, esta vez para abrir la vista Historial, que cuenta todo lo que le pasó a este rol. Cada entrada dice qué pasó, quién lo hizo y cuándo. La de arriba es Cambió permisos: debajo, cada línea es un recurso con su módulo, como Inventario, Productos. A la izquierda, el antes: aquí un guion rojo, porque no tenía nada; y tras la flecha, el después en verde. Cotizaciones, dentro de Ventas, pasó de nada a Ver con alcance Propios, Crear y Editar. Esta vista solo aparece si tienes permiso para leer la auditoría. En resumen: la herencia evita repetir, la exclusión recorta al hijo, y los titulares y el historial te dicen a quién afecta un rol y qué le cambió.

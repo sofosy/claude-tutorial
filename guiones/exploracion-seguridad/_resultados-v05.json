@@ -1,0 +1,18 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.14,
+   "clic_a_url_s": 6.88,
+   "clic_a_networkidle_s": 6.88,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "panel_carlos": "CP\nCarlos Pimentel\ncarlos.pimentel@germiva.demo\nclose\nActiva\nÚltimo ingreso: hace 34 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nVendedor sénior\nHereda de Vendedor\n+ Asignar rol\nPERMISOS EFECTIVOS\n11 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n1/42\nClientes y Proveedores\n1/37\nFacturación\n2/79\nCotizaciones\n7/19\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace 34 min · Cliente de API\n::1\nHace 37 min · Cliente de API\n::1\nHace 39 min · Cliente de API\n::1",
+ "panel_jose": "JC\nJosé Cabrera\njose.cabrera@germiva.demo\nclose\nActiva\nZona Este\nÚltimo ingreso: hace 34 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nAlmacén\nDe la empresa\nVendedor\nDe la empresa\n+ Asignar rol\nPERMISOS EFECTIVOS\n10 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n5/42\nInventario\n1/47\nClientes y Proveedores\n1/37\nCotizaciones\n3/19\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace 34 min · Cliente de API\n::1\nHace 37 min · Cliente de API\n::1\nHace 39 min · Cliente de API\n::1",
+ "panel_luisa": "LF\nLuisa Féliz\nluisa.feliz@germiva.demo\nclose\nActiva\nÚltimo ingreso: hace 35 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\n\nSin ningún rol: inicia sesión pero no ve ningún módulo.\n\n+ Asignar rol\nPERMISOS EFECTIVOS\n0 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nNingún permiso concedido.\n\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace 35 min · Cliente de API\n::1",
+ "panel_hector": "HV\nHéctor Vargas\nhector.vargas@germiva.demo\nclose\nPendiente\nÚltimo ingreso: nunca\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nVendedor\nDe la empresa\n+ Asignar rol\nPERMISOS EFECTIVOS\n5 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n1/42\nClientes y Proveedores\n1/37\nCotizaciones\n3/19\nVer los 34 módulos\nÚLTIMOS INGRESOS\n\nSin ingresos registrados en esta empresa.",
+ "panel_sonia": "SR\nSonia Reyes\nsonia.reyes@germiva.demo\nclose\nInactiva\nÚltimo ingreso: hace 35 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nMensajero\nDe la empresa\n+ Asignar rol\nPERMISOS EFECTIVOS\n0 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nNingún permiso concedido.\n\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace 35 min · Cliente de API\n::1"
+}

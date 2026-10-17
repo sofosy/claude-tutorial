@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Seguridad · Rotar, pausar y revocar credenciales
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Rotar el secreto
+00:59  Pausar y reactivar
+01:49  Revocar una credencial
+02:36  La documentación de la API
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Rotar el secreto de una credencial cuando se filtra o cuando cambia quien la maneja
+• Pausar una credencial sin perder su configuración, y volver a activarla
+• Revocar una credencial que ya no se usa
+• Dónde está la documentación de la API para el técnico que conecta el otro programa
+
+⚠️ ERRORES COMUNES
+• Rotar el secreto sin avisar al otro programa: la integración se cae hasta que use el nuevo
+• Revocar en vez de pausar cuando la pausa es temporal: revocar no se puede deshacer
+• Dejar credenciales sin uso activas: son llaves abiertas que nadie vigila
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:24
+
+TRANSCRIPCIÓN
+============================================================
+Seguimos con las credenciales de API, o sea las llaves con que otros programas entran a Germiva. Aquí, en la pestaña Integraciones, están las credenciales de la empresa. Rotar el secreto es cambiarlo por uno nuevo. Se hace cuando alguien lo pudo ver, o cuando cambia la persona que maneja el otro programa. Abro Programa del contador, y en su panel pulso Rotar secreto. El sistema avisa: el secreto actual deja de funcionar de inmediato, y la integración se cae hasta que se actualice del otro lado. Lo confirmo. Desde este momento, el programa del contador no entra con el secreto viejo. Mientras el sistema genera el nuevo, piensa a quién se lo vas a pasar: solo al técnico que configura ese programa. En unos segundos vuelve la franja con el secreto nuevo, igual que al crearla. Copio el secreto, se lo paso al técnico del contador por un canal privado, y cierro la franja.
+A veces solo hace falta una pausa: el contador cierra por vacaciones, o sospechas algo y quieres cortar mientras averiguas. En los tres puntos del panel elijo Desactivar. No pregunta: sale el aviso, y el sistema le corta el paso al otro programa. Fíjate arriba, debajo del nombre: el estado ya dice Inactiva, en gris. Además, el número de la pestaña Integraciones bajó a uno: cuenta solo las credenciales activas. Mientras está así, el otro programa no puede entrar, pero su clave, su secreto y sus permisos se quedan como estaban. Para devolverle el paso, vuelvo al menú de los tres puntos, y ahí elijo Activar; tampoco pregunta. Sale otra vez el aviso, y en la lista, donde también se ve el estado de cada credencial, la fila dice otra vez Activa.
+Y cuando una credencial ya no se usa, lo correcto es revocarla. Abro Tienda en línea anterior: la tienda vieja ya no existe, y en la lista se ve que su último uso fue hace meses. En los tres puntos elijo Revocar y eliminar. El sistema pide confirmar: sus credenciales dejan de funcionar y no se puede deshacer. Confirmo con Eliminar, y sale el aviso: el sistema borró su acceso. Fíjate en la pestaña Integraciones, arriba: su número cuenta solo las credenciales activas. Y en la lista queda una sola credencial. ¿Y en el Resumen? Lo abro. El aviso de credencial sin uso desaparece: el contador de Requiere atención dice ahora tres asuntos, y ninguno es de credenciales.
+Por último, la ayuda para el técnico. Vuelvo a Integraciones y, arriba, pulso Documentación de la API. Es un manual para quien conecta el otro programa, no para ti. A la izquierda están las secciones: Autenticación, que explica cómo entra el programa con su clave y su secreto; las facturas, emitidas y recibidas; los reportes para la DGII, o sea la dirección de impuestos; y la cuenta. Abro el primero de esa sección: explica paso a paso cómo entra un programa y qué le responde el sistema. Un caso práctico: tu contador pide acceso para su programa. Creas una credencial solo con lo que necesita, le pasas la clave y el secreto por un canal privado, y le mandas este manual.

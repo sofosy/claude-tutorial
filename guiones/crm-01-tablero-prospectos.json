@@ -1,0 +1,121 @@
+{
+  "titulo": "CRM · El tablero de prospectos",
+  "_comentario": "Serie CRM, video 1 (2026-10-06), master del 06/10 + rama fix/crm-exito-cliente-mesa-ayuda. Empresa demo 50 «Distribuidora Las Palmas» (la de Seguridad), Rosa Almánzar (Admin). Datos: seeds/crm/sembrar.mjs (8 prospectos, 5 de Rosa; seguimiento de Ramón HOY 15:00 y de Carolina VENCIDO ayer). Restaurar entre tomas: node seeds/crm/restaurar.mjs (marca de agua M0 + canon C0 + siembra, ~11 s). La narración no dice día ni fecha (R13).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/home"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": [
+      "germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar", "Ana", "Mejía",
+      "Ramón", "Peralta", "Yesenia", "Durán", "Félix", "Almonte", "Carolina", "Méndez", "Luis", "Ventura",
+      "Gisela", "Rosario", "Manuel", "Tejada", "Patricia", "Gómez", "Luisa", "Fernández",
+      "Playa Dorada", "Las Colinas", "San Marcos", "Bella Vista", "ejemplo.com", "555"
+    ],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Qué es un prospecto y cómo se lee el tablero: columnas, tarjetas e indicadores",
+    "Ver sólo tus prospectos, los de todo el equipo o los que nadie ha tomado",
+    "Buscar un prospecto por nombre, empresa o correo",
+    "Añadir un prospecto en un segundo y moverlo de etapa arrastrando su tarjeta",
+    "Encontrar los seguimientos que te tocan hoy y los que se te pasaron"
+  ],
+  "errores_comunes": [
+    "Buscar a un prospecto con el filtro «Míos» puesto: si es de otro vendedor no aparece",
+    "Dejar prospectos sin asignar: nadie los llama",
+    "No programar el siguiente seguimiento: la tarjeta se queda quieta y el prospecto se enfría"
+  ],
+  "pasos": [
+    {
+      "id": "01-tablero",
+      "capitulo": "Qué es el tablero de prospectos",
+      "rotulo": "El tablero de prospectos",
+      "ruta": "CRM › Prospectos",
+      "texto_pantalla": "Prospectos · una columna por etapa, una tarjeta por prospecto",
+      "narracion": "Vamos a conocer el tablero de prospectos. Entro al CRM, en el menú de la izquierda: el CRM es el módulo de las ventas, donde sigues a cada cliente posible desde el primer contacto. Abro Prospectos. Un prospecto es una persona o empresa que mostró interés, pero todavía no te ha comprado: alguien que llamó, escribió por la web o te refirieron. Recojo el menú para ver el tablero completo. Cada columna es una etapa de la venta: Nuevo, Contactado, Calificado y Propuesta. Y cada tarjeta es un prospecto. Arriba están los indicadores: cuántos prospectos tienes, cuántos siguen abiertos y los seguimientos para hoy, que son las llamadas o visitas que te tocan. Mira la tarjeta de Ramón Peralta. Debajo del nombre, su empresa y su cargo. Luego el valor estimado de la venta y la fecha del último movimiento. En naranja, el próximo seguimiento. Abajo, de dónde llegó, la prioridad y las etiquetas. Y a la derecha, atajos para escribirle un correo, llamarlo o abrir WhatsApp.",
+      "acciones": [
+        { "click": "nav.module-rail [aria-label='CRM']", "al_decir": "Entro al CRM" },
+        { "resaltar": ".panel-item:has-text('Prospectos (Leads)')", "durante_ms": 3500, "al_decir": "el módulo de las ventas" },
+        { "click": ".panel-item:has-text('Prospectos (Leads)')", "al_decir": "Abro Prospectos" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Ramón Peralta']", "durante_ms": 3500, "al_decir": "alguien que llamó" },
+        { "click": "button.panel-collapse", "al_decir": "Recojo el menú" },
+        { "resaltar": "section.column[aria-label='Columna Nuevo'] .col-header", "durante_ms": 4000, "al_decir": "Cada columna" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Carolina Méndez']", "durante_ms": 2500, "al_decir": "cada tarjeta" },
+        { "resaltar": "app-lead-stats-bar button.stat:nth-child(1)", "durante_ms": 1500, "al_decir": "los indicadores" },
+        { "resaltar": "app-lead-stats-bar button.stat:nth-child(2)", "durante_ms": 1500, "cursor": false, "al_decir": "siguen abiertos" },
+        { "resaltar": "app-lead-stats-bar button.stat:nth-child(5)", "durante_ms": 4500, "al_decir": "seguimientos para hoy" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Ramón Peralta'] p.subtitle", "durante_ms": 2400, "al_decir": "su empresa" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Ramón Peralta'] .meta", "durante_ms": 3600, "al_decir": "el valor estimado" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Ramón Peralta'] .next-follow-up", "durante_ms": 2200, "al_decir": "En naranja" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Ramón Peralta'] .chips", "durante_ms": 3000, "al_decir": "de dónde llegó" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Ramón Peralta'] .contact-icons", "durante_ms": 4000, "al_decir": "atajos" }
+      ]
+    },
+    {
+      "id": "02-filtros",
+      "capitulo": "Míos, de todos y sin asignar",
+      "rotulo": "Filtrar y buscar",
+      "ruta": "CRM › Prospectos › Asignación",
+      "texto_pantalla": "Asignación · Míos, Todos o Sin asignar",
+      "narracion": "El tablero abre con tus prospectos: fíjate en el filtro Asignación, que dice Míos. Lo abro. Con Todos ves los de todo el equipo; y con Sin asignar, los que llegaron y nadie ha tomado todavía. Elijo Todos. Ahora aparecen también los de Ana y uno sin dueño: el de Félix Almonte, que entró por teléfono. Al lado puedes filtrar por fuente o por prioridad, y en Filtros hay más: etiquetas, valor y fechas. Para encontrar a alguien, escríbelo en el buscador. Busco colegio, y el tablero se filtra mientras escribo. Queda sólo Gisela Rosario, del Colegio San Marcos: el buscador mira el nombre, la empresa y el correo.",
+      "acciones": [
+        { "resaltar": "app-filter-pill:has-text('Asignación')", "durante_ms": 2500, "al_decir": "el filtro Asignación" },
+        { "click": "button.pill:has-text('Asignación')", "al_decir": "Lo abro" },
+        { "resaltar": ".gm-filter-pill-menu button:has-text('Todos')", "durante_ms": 2500, "cursor": false, "al_decir": "Con Todos" },
+        { "resaltar": ".gm-filter-pill-menu button:has-text('Sin asignar')", "durante_ms": 3000, "cursor": false, "al_decir": "con Sin asignar" },
+        { "click": ".gm-filter-pill-menu button:has-text('Todos')", "al_decir": "Elijo Todos" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Félix Almonte']", "durante_ms": 4000, "al_decir": "uno sin dueño" },
+        { "resaltar": "app-filter-pill:has-text('Fuente')", "durante_ms": 2000, "al_decir": "por fuente" },
+        { "resaltar": "app-filter-popover", "durante_ms": 3500, "al_decir": "en Filtros" },
+        { "escribir": { "sel": "input[aria-label='Buscar prospectos']", "texto": "colegio" }, "al_decir": "Busco colegio" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Gisela Rosario']", "durante_ms": 5000, "al_decir": "Gisela Rosario" }
+      ]
+    },
+    {
+      "id": "03-anadir-y-mover",
+      "capitulo": "Añadir un prospecto y moverlo de etapa",
+      "rotulo": "Añadir y mover",
+      "ruta": "CRM › Prospectos › Añadir prospecto",
+      "texto_pantalla": "Añadir prospecto · sólo el nombre; el resto, en su ficha",
+      "narracion": "Vamos a dar de alta uno. Primero borro la búsqueda para volver al tablero completo. Llegó un contacto nuevo: lo añado en la columna Nuevo con Añadir prospecto. Basta con el nombre: escribo Luisa Fernández, una clienta que preguntó por cerámica para su casa, y la confirmo con Enter. Ya está en el tablero, y queda a mi nombre. El teléfono, la empresa y el valor se completan después, en su ficha. Cuando avanzas con un prospecto, lo mueves de columna arrastrando su tarjeta. Ya hablé con Yesenia Durán, del hotel: la arrastro de Nuevo a Contactado. El cambio se guarda solo y queda en su historial. A la derecha del tablero están las columnas Ganado y Perdido: al soltar ahí una tarjeta, el sistema te pide confirmar la venta o anotar por qué se perdió.",
+      "acciones": [
+        { "escribir": { "sel": "input[aria-label='Buscar prospectos']", "texto": "" }, "al_decir": "Borro la búsqueda" },
+        { "click": "section.column[aria-label='Columna Nuevo'] button.trigger[aria-label='Añadir prospecto']", "al_decir": "con Añadir prospecto" },
+        { "escribir": { "sel": "input[aria-label='Nombre del prospecto']", "texto": "Luisa Fernández" }, "al_decir": "escribo Luisa" },
+        { "presionar": { "tecla": "Enter" }, "al_decir": "con Enter" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Luisa Fernández']", "durante_ms": 5500, "al_decir": "Ya está en el tablero" },
+        { "arrastrar": { "desde": "article.kcard[aria-label='Prospecto Yesenia Durán']", "hasta": "section.column[aria-label='Columna Contactado'] .drop-zone" }, "al_decir": "la arrastro" },
+        { "resaltar": "section.column[aria-label='Columna Contactado'] article.kcard[aria-label='Prospecto Yesenia Durán']", "durante_ms": 4500, "al_decir": "se guarda solo" },
+        { "resaltar": "section.column[aria-label='Columna Ganado'] .col-header", "durante_ms": 5500, "al_decir": "Ganado y Perdido" }
+      ]
+    },
+    {
+      "id": "04-seguimientos-hoy",
+      "capitulo": "Los seguimientos que te tocan hoy",
+      "rotulo": "Seguimientos para hoy",
+      "ruta": "CRM › Prospectos › Seguimientos para hoy",
+      "texto_pantalla": "Seguimientos para hoy · lo que toca hoy y lo que se pasó",
+      "narracion": "Para empezar el día, pulsa el indicador Seguimientos para hoy. El tablero se queda con los prospectos que tienen un seguimiento pendiente para hoy o ya vencido. Ramón Peralta, en naranja, es para hoy. Carolina Méndez sale en rojo y dice Vencido: era para ayer y no se hizo. Esos son los primeros que hay que llamar. Pulso otra vez el indicador para quitar el filtro. En el próximo video abrimos la ficha de un prospecto para registrar la llamada y programar el siguiente paso.",
+      "acciones": [
+        { "click": "app-lead-stats-bar button.stat:nth-child(5)", "al_decir": "pulsa el indicador" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Ramón Peralta'] .next-follow-up", "durante_ms": 2300, "al_decir": "en naranja" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Carolina Méndez'] .next-follow-up", "durante_ms": 5000, "al_decir": "sale en rojo" },
+        { "resaltar": "article.kcard[aria-label='Prospecto Carolina Méndez']", "durante_ms": 2800, "cursor": false, "al_decir": "los primeros" },
+        { "click": "app-lead-stats-bar button.stat:nth-child(5)", "al_decir": "Pulso otra vez" },
+        { "resaltar": "section.column[aria-label='Columna Nuevo'] .col-header", "durante_ms": 4000, "al_decir": "próximo video" }
+      ]
+    }
+  ]
+}

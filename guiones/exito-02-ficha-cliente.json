@@ -1,0 +1,104 @@
+{
+  "titulo": "Éxito del Cliente · La ficha del cliente y su bienvenida",
+  "_comentario": "Serie Éxito del Cliente, video 2 (2026-10-06). Empresa demo 50, Rosa (Admin). Ferretería Doña Luz llegó al ganar una oportunidad en la siembra: etapa Bienvenida, plantilla «Bienvenida estándar» (5 pasos), 2 casos abiertos en la Mesa de Ayuda. Colmado La Esquina NO está en la cartera (se incorpora en el paso 4). «Cliente desde» se pinta con plainDay (antes salía un día antes, corregido en esta rama).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/customer-care/seguimiento"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": ["germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar", "Mirador", "Doña Luz", "Barahona", "La Esquina", "Colmado"],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Leer la ficha de un cliente: su etapa, su salud y su historia",
+    "Avanzar la bienvenida de un cliente nuevo paso a paso",
+    "Ver los casos que el cliente tiene abiertos en la Mesa de Ayuda",
+    "Agregar a la cartera un cliente que ya te compraba"
+  ],
+  "errores_comunes": [
+    "Dejar la bienvenida a medias: el cliente nuevo se queda sin entrega o sin capacitación",
+    "Atender un caso sin mirar la ficha: no sabes si el cliente está en riesgo",
+    "Crear el cliente de nuevo en vez de buscarlo: se duplica"
+  ],
+  "pasos": [
+    {
+      "id": "01-ficha",
+      "capitulo": "La ficha del cliente",
+      "rotulo": "La ficha del cliente",
+      "ruta": "Éxito del Cliente › Cartera › Ferretería Doña Luz",
+      "texto_pantalla": "Ficha del cliente · su etapa, su salud y su historia",
+      "narracion": "Estamos en la cartera de clientes. Recojo el menú. Para ver todo sobre un cliente, abro su ficha con la flecha de la derecha: Ferretería Doña Luz, que acaba de comprarnos. Arriba, las tres acciones del día a día: registrar un seguimiento, enviarle un mensaje o una encuesta. A la derecha, la cinta de etapas del cliente: Bienvenida, Activo, En riesgo, Renovación pendiente o Perdido. Debajo, lo que te compró en los últimos noventa días, su salud de cero a cien y la última nota que te dio en la encuesta de satisfacción. Luego sus datos y quién responde por él: su gerente de cuenta. Y en la columna de la derecha, la actividad: arriba escribes un comentario para el equipo, y debajo queda todo lo que ha pasado con este cliente, como el traspaso desde la venta y los casos que abrió.",
+      "acciones": [
+        { "click": "button.panel-collapse", "al_decir": "Recojo el menú" },
+        { "click": "table tbody tr:has-text('Doña Luz') button:has(mat-icon:text-is('chevron_right'))", "al_decir": "con la flecha" },
+        { "resaltar": ".cr-bar__actions", "durante_ms": 5000, "al_decir": "las tres acciones" },
+        { "resaltar": ".cr-bar__stages", "durante_ms": 5500, "al_decir": "la cinta de etapas" },
+        { "resaltar": "app-record-field:has-text('Ventas')", "durante_ms": 2500, "al_decir": "lo que te compró" },
+        { "resaltar": "app-record-field:has-text('Salud')", "durante_ms": 2200, "al_decir": "su salud" },
+        { "resaltar": "app-record-field:has-text('Último NPS')", "durante_ms": 3000, "al_decir": "la última nota" },
+        { "resaltar": "app-record-field:has-text('Gerente de cuenta')", "durante_ms": 3500, "al_decir": "su gerente de cuenta" },
+        { "resaltar": ".cr-chatter textarea", "durante_ms": 3500, "al_decir": "un comentario para el equipo" }
+      ]
+    },
+    {
+      "id": "02-bienvenida",
+      "capitulo": "La bienvenida del cliente nuevo",
+      "rotulo": "La bienvenida",
+      "ruta": "Éxito del Cliente › Ficha › Bienvenida",
+      "texto_pantalla": "Bienvenida · los primeros pasos con un cliente nuevo",
+      "narracion": "Más abajo, la pestaña Bienvenida. Es la lista de los primeros pasos con un cliente nuevo, que salió de la plantilla elegida al ganar la venta. Arriba, el avance y la fecha en que te comprometiste a terminarla. Cada paso tiene su fecha. El primero es el contacto de bienvenida: ya llamé a Doña Luz, así que lo marco como hecho. La barra sube. Cuando completes todos los pasos, el cliente pasa de Bienvenida a Activo.",
+      "acciones": [
+        { "click": ".cr-tabs .cr-tab:has-text('Bienvenida')", "al_decir": "la pestaña Bienvenida" },
+        { "resaltar": ".cr-tab-panel ul.rows", "durante_ms": 4000, "al_decir": "los primeros pasos" },
+        { "resaltar": ".cr-tab-panel .tab-head", "durante_ms": 4000, "al_decir": "el avance" },
+        { "resaltar": ".cr-tab-panel li.cr-row:has-text('Entrega') .gm-mini__m", "durante_ms": 2500, "al_decir": "su fecha" },
+        { "click": ".cr-tab-panel li.cr-row:has-text('Contacto de bienvenida') mat-checkbox .mdc-checkbox", "al_decir": "lo marco como hecho" },
+        { "resaltar": ".cr-tab-panel .tab-head__score", "durante_ms": 3500, "al_decir": "La barra sube" },
+        { "resaltar": ".cr-bar__stages", "durante_ms": 4000, "al_decir": "pasa de Bienvenida a Activo" }
+      ]
+    },
+    {
+      "id": "03-casos",
+      "capitulo": "Los casos del cliente",
+      "rotulo": "Casos del cliente",
+      "ruta": "Éxito del Cliente › Ficha › Casos",
+      "texto_pantalla": "Casos · lo que el cliente reportó en la Mesa de Ayuda",
+      "narracion": "Ahora, los casos. En la pestaña Casos ves lo que el cliente reportó en la Mesa de Ayuda: aquí, una factura con el ITBIS mal calculado y un cambio de dirección de entrega. El ITBIS es el impuesto a las ventas. Desde aquí puedes abrir un caso nuevo con Abrir caso, y se crea ya ligado a este cliente. Un caso vencido baja la salud del cliente, así que conviene mirar esta pestaña antes de cada llamada.",
+      "acciones": [
+        { "click": ".cr-tabs .cr-tab:has-text('Casos')", "al_decir": "la pestaña Casos" },
+        { "resaltar": ".cr-tab-panel li:has-text('ITBIS')", "durante_ms": 4500, "al_decir": "una factura" },
+        { "resaltar": ".cr-tab-panel button:has-text('Abrir caso')", "durante_ms": 5000, "al_decir": "con Abrir caso" },
+        { "resaltar": "app-record-field:has-text('Salud')", "durante_ms": 4500, "al_decir": "baja la salud" }
+      ]
+    },
+    {
+      "id": "04-agregar",
+      "capitulo": "Agregar un cliente a la cartera",
+      "rotulo": "Agregar cliente",
+      "ruta": "Éxito del Cliente › Agregar cliente",
+      "texto_pantalla": "Agregar cliente · un cliente de siempre entra a la cartera",
+      "narracion": "Los clientes llegan solos a la cartera cuando ganas una venta en el CRM. Pero también puedes agregar a uno que ya te compraba. Pulso Agregar cliente, arriba. Lo busco por nombre o RNC entre los clientes de Ventas: escribo Colmado, y la lista se va filtrando mientras escribo. Ahí está: elijo Colmado La Esquina. Fíjate en la nota de abajo. No se crea otro cliente: es el mismo registro de Ventas, que ahora además tiene seguimiento. Pulso Incorporar, y se abre su ficha, lista para asignarle gerente y registrar el primer contacto.",
+      "pronunciacion": { "RNC": "erre-ene-ce" },
+      "acciones": [
+        { "click": ":is(a,button):has-text('Agregar cliente')", "al_decir": "Pulso Agregar cliente" },
+        { "escribir": { "sel": "mat-dialog-container app-custom-select input", "texto": "Colmado" }, "al_decir": "escribo Colmado" },
+        { "click": "mat-option:has-text('Colmado La Esquina')", "al_decir": "elijo Colmado La Esquina" },
+        { "resaltar": "mat-dialog-container .gm-dialog-note", "durante_ms": 5000, "cursor": false, "al_decir": "No se crea otro cliente" },
+        { "click": "mat-dialog-container button:has-text('Incorporar')", "al_decir": "Pulso Incorporar" },
+        { "resaltar": ".cr-title", "durante_ms": 4000, "al_decir": "se abre su ficha" },
+        { "resaltar": "app-record-field:has-text('Gerente de cuenta')", "durante_ms": 4000, "al_decir": "asignarle gerente" }
+      ]
+    }
+  ]
+}

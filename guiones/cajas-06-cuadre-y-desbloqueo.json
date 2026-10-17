@@ -1,0 +1,324 @@
+{
+  "_comentario": "Video 6 de la serie Cajas. Graba carmen.rosario (Supervisora de Caja). Estado de partida S5 (restaurar.mjs S5); termina como S6 (REC-2026-00007 confirmado, arqueo REC-2026-00008 de 3,050 pendiente sobre la sesión de luis.batista, Santiago desbloqueada). Restaurar S5 entre tomas. AVISO justificado: no existe button.panel-collapse en Cajas (riel fijo). H-13 («Bloqueado por Sistema») no se nombra ni se marca: solo la razón. H-06 (segunda confirmación genérica) se muestra tal cual, sin leer su texto. H-11 (el arqueo queda Pendiente en la bandeja de la propia supervisora) no se menciona.",
+  "titulo": "Cajas · Cuadre oficial, arqueo sorpresa y desbloqueo",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "carmen.rosario",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Revisar el conteo de cierre de una cajera y aprobarlo como cuadre oficial",
+    "Corregir el conteo con un reconteo de supervisión cuando tu cifra es otra",
+    "Hacer un arqueo sorpresa a una caja abierta sin cerrarle la sesión",
+    "Desbloquear una caja y dejarla lista para operar"
+  ],
+  "errores_comunes": [
+    "Aprobar sin mirar la justificación de la diferencia",
+    "Rechazar cuando lo que corresponde es corregir el conteo tú misma",
+    "Elegir «Cierre normal» en vez de «Arqueo sorpresa» y cerrarle la sesión al cajero",
+    "Desbloquear sin marcar la casilla de confirmación: el botón no se activa"
+  ],
+  "pasos": [
+    {
+      "id": "01-aprobar-cuadre",
+      "ruta": "Cajas › Por aprobar",
+      "texto_pantalla": "Por aprobar · cuadres pendientes de confirmación",
+      "navegar": "/cashier?section=aprobaciones",
+      "narracion": "Esta es Por aprobar, la bandeja de la supervisora de caja: aquí llega todo lo que espera su decisión. Arriba, las cifras dicen cuánto hay pendiente de cada cosa; la de cuadres por confirmar marca uno. Debajo están las colas, una por tipo. En Cuadres pendientes de confirmación está el conteo de cierre que declaró Yohanna en la Caja Principal. Esperaba tres mil quinientos, contó tres mil cuatrocientos ochenta, y la diferencia es de menos veinte. Abro el detalle con el ojo, a la derecha de la fila. Este es el Detalle del cuadre de caja. En Resultado ves lo esperado, lo contado, la diferencia y si quedó dentro de tolerancia; aquí, sí. Más abajo, en la tabla por método de pago, sale el motivo que escribió la cajera. Y al final, el Reconteo de supervisión: si recuentas la gaveta y te da otra cifra, marcas Corregir el conteo y pones el monto oficial; lo que declaró la cajera queda guardado. Aquí el conteo está bien, así que no lo toco. Tienes dos decisiones. Rechazar cuadre se lo devuelve a la cajera para que vuelva a contar. Aprobar cuadre lo confirma y registra el asiento contable del faltante. Ojo: si una caja acumula tres cuadres seguidos fuera de tolerancia, el sistema la bloquea sola. Pulso Aprobar. Pide una confirmación más, y la acepto. Listo: el cuadre quedó aprobado.",
+      "acciones": [
+        {
+          "resaltar": ".sup-figs button.gm-fig:has-text('Cuadres por confirmar')",
+          "durante_ms": 1900,
+          "al_decir": "por confirmar"
+        },
+        {
+          "resaltar": "h3.sup-title:has-text('Cuadres pendientes de confirmación')",
+          "durante_ms": 5000,
+          "al_decir": "las colas"
+        },
+        {
+          "resaltar": "section.sup-block:has(h3:has-text('Cuadres pendientes')) tbody tr:first-child td:nth-child(4)",
+          "durante_ms": 1200,
+          "al_decir": "Esperaba"
+        },
+        {
+          "resaltar": "section.sup-block:has(h3:has-text('Cuadres pendientes')) tbody tr:first-child td:nth-child(5)",
+          "durante_ms": 1900,
+          "al_decir": "contó"
+        },
+        {
+          "resaltar": "section.sup-block:has(h3:has-text('Cuadres pendientes')) tbody tr:first-child td:nth-child(6)",
+          "durante_ms": 3000,
+          "al_decir": "la diferencia es"
+        },
+        {
+          "click": "button[aria-label='Ver detalle del cuadre']",
+          "al_decir": "Abro el detalle"
+        },
+        {
+          "resaltar": "mat-dialog-container .cashier-dialog-header",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Este es"
+        },
+        {
+          "resaltar": "mat-dialog-container section.gm-dialog-section:has(h3:text-is('Resultado'))",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "En Resultado"
+        },
+        {
+          "resaltar": "mat-dialog-container td:has-text('Faltan 20 pesos')",
+          "durante_ms": 2300,
+          "al_decir": "el motivo"
+        },
+        {
+          "resaltar": "mat-dialog-container h3:has-text('Reconteo de supervisión')",
+          "durante_ms": 3500,
+          "al_decir": "al final"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-checkbox:has-text('Corregir el conteo')",
+          "durante_ms": 7000,
+          "al_decir": "marcas Corregir"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Rechazar cuadre')",
+          "durante_ms": 4500,
+          "al_decir": "Rechazar cuadre"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Aprobar cuadre')",
+          "durante_ms": 4500,
+          "al_decir": "lo confirma"
+        },
+        {
+          "resaltar": "mat-dialog-container .gm-dialog-section:has(h3:text-is('Resultado')) .gm-badge",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "tres cuadres"
+        },
+        {
+          "click": "mat-dialog-container .recon-actions button:has-text('Aprobar')",
+          "al_decir": "Pulso Aprobar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-style",
+          "durante_ms": 1200,
+          "cursor": false,
+          "al_decir": "una confirmación"
+        },
+        {
+          "click": ".custom-alert-dialog-style button.confirm-button",
+          "al_decir": "la acepto"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3200,
+          "cursor": false
+        }
+      ],
+      "capitulo": "Aprobar el cuadre",
+      "rotulo": "Aprobar el cuadre"
+    },
+    {
+      "id": "02-arqueo-sorpresa",
+      "ruta": "Cajas › Historial › Cuadres › Nuevo cuadre",
+      "texto_pantalla": "Generar cuadre de caja · arqueo sorpresa a una caja abierta",
+      "navegar": "/cashier?section=historial&tab=cuadres",
+      "narracion": "Ahora, un arqueo sorpresa: contar sin avisar el dinero de una caja que sigue abierta, para comprobar que está completo. Estoy en Historial, en la lista de Cuadres, donde queda cada conteo que se ha hecho. Pulso Nuevo cuadre, arriba a la derecha. Esta página se llama Generar cuadre de caja; es la misma del conteo de cierre, pero hecha por la supervisora. Primero, la Sesión de caja: escribo Mostrador, y el sistema busca entre las sesiones abiertas. Elijo la de la Caja Mostrador 2, que opera Luis. Debajo salen sus datos, la caja, el cajero, la apertura y el fondo, para confirmar que es la correcta. Después, el Tipo de cuadre: lo abro y elijo Arqueo sorpresa. La nota de abajo aclara lo importante: no cierra la sesión, la caja sigue operando. Pulso Continuar. En Ingresar montos, el sistema dice que en esa gaveta debe haber tres mil cincuenta pesos. Conté justo eso, así que lo escribo en Monto recibido; como coincide, no hay diferencia que justificar. Paso a Siguiente. El resumen confirma un cuadre exacto: lo contado es igual a lo esperado. Pulso Generar cuadre, y el aviso lo dice claro: arqueo sorpresa registrado, la sesión sigue abierta.",
+      "acciones": [
+        {
+          "resaltar": "nav[aria-label='Listados del historial'] button:has-text('Cuadres')",
+          "durante_ms": 5000,
+          "al_decir": "lista de Cuadres"
+        },
+        {
+          "click": "button:has-text('Nuevo cuadre')",
+          "al_decir": "Pulso Nuevo"
+        },
+        {
+          "resaltar": "h1.page-hero-title",
+          "durante_ms": 5000,
+          "al_decir": "se llama"
+        },
+        {
+          "escribir": {
+            "sel": "app-autocomplete:has(mat-label:text-is('Sesión de caja')) input",
+            "texto": "Mostrador"
+          },
+          "al_decir": "escribo Mostrador"
+        },
+        {
+          "click": "mat-option:has-text('Caja Mostrador 2')",
+          "al_decir": "Elijo la de"
+        },
+        {
+          "resaltar": "dl.session-facts",
+          "durante_ms": 6000,
+          "al_decir": "sus datos"
+        },
+        {
+          "click": "mat-select[formcontrolname='reconciliationType']",
+          "al_decir": "lo abro"
+        },
+        {
+          "click": "mat-option:has-text('Arqueo sorpresa')",
+          "al_decir": "elijo Arqueo"
+        },
+        {
+          "resaltar": ".gm-hint:has-text('No cierra la sesión')",
+          "durante_ms": 5000,
+          "al_decir": "La nota"
+        },
+        {
+          "click": "button:has-text('Continuar')",
+          "al_decir": "Pulso Continuar"
+        },
+        {
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Total esperado en caja'))",
+          "durante_ms": 4000,
+          "al_decir": "debe haber"
+        },
+        {
+          "escribir": {
+            "sel": ".detail-row:has(.method-label:has-text('Efectivo')) input[formcontrolname='actualAmount']",
+            "texto": "3050"
+          },
+          "al_decir": "lo escribo"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "Paso a Siguiente"
+        },
+        {
+          "resaltar": ".gm-dialog-alert--success:has-text('Cuadre exacto')",
+          "durante_ms": 3000,
+          "al_decir": "cuadre exacto"
+        },
+        {
+          "click": "button:has-text('Generar cuadre')",
+          "al_decir": "Pulso Generar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3200,
+          "cursor": false
+        }
+      ],
+      "capitulo": "Arqueo sorpresa",
+      "rotulo": "Arqueo sorpresa"
+    },
+    {
+      "id": "03-desbloquear",
+      "ruta": "Cajas › Cajas (Bloqueadas) › Desbloquear",
+      "texto_pantalla": "Desbloquear una caja desde el tablero",
+      "navegar": "/cashier?section=cajas&estado=bloqueadas",
+      "narracion": "Por último, desbloquear una caja. Estoy en el tablero de Cajas, filtrado por las bloqueadas: aparece una sola, la Caja Sucursal Santiago. Una caja bloqueada no se puede abrir. Se bloquea sola tras varios cuadres seguidos fuera de tolerancia, o la bloquea un supervisor desde Configuración, en la lista de cajas. Pulso Desbloquear, al pie de la tarjeta. El diálogo muestra por qué se bloqueó: la razón y la fecha. Escribo una nota de desbloqueo, que queda en el historial de la caja. La casilla Resetear contador, que viene marcada, pone en cero las diferencias seguidas de la caja. Y esta otra es obligatoria: confirmo que verifiqué la caja; sin ella, el botón no se activa. Ahora sí, pulso el botón Desbloquear caja. El aviso confirma que quedó desbloqueada. Como el filtro muestra solo las bloqueadas, la lista queda vacía; vuelvo a Todas, y ahí está la Caja Sucursal Santiago, ahora Cerrada y lista para abrirse.",
+      "acciones": [
+        {
+          "resaltar": ".board-toolbar nav button.segmented__option:has-text('Bloqueadas')",
+          "durante_ms": 1600,
+          "al_decir": "filtrado"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Sucursal Santiago'] .board-card__head",
+          "durante_ms": 5500,
+          "al_decir": "una sola"
+        },
+        {
+          "resaltar": ".page-hero-actions button:has-text('Configuración')",
+          "durante_ms": 4500,
+          "al_decir": "desde Configuración"
+        },
+        {
+          "click": "article.board-card[aria-label='Caja Caja Sucursal Santiago'] .board-card__foot button:has-text('Desbloquear')",
+          "al_decir": "Pulso Desbloquear"
+        },
+        {
+          "resaltar": "mat-dialog-container .facts-wide",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "la razón"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='notes']",
+            "texto": "Arqueo revisado con la gerencia"
+          },
+          "al_decir": "Escribo una nota"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-checkbox[formcontrolname='resetDifferences']",
+          "durante_ms": 5000,
+          "al_decir": "Resetear contador"
+        },
+        {
+          "click": "mat-dialog-container mat-checkbox[formcontrolname='confirmed']",
+          "al_decir": "confirmo que verifiqué"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Desbloquear caja')",
+          "al_decir": "el botón Desbloquear"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3200,
+          "cursor": false
+        },
+        {
+          "click": ".board-toolbar nav button.segmented__option:has-text('Todas')",
+          "al_decir": "vuelvo a Todas"
+        },
+        {
+          "resaltar": "article.board-card[aria-label='Caja Caja Sucursal Santiago'] .board-card__badges",
+          "durante_ms": 5000,
+          "al_decir": "ahora Cerrada"
+        }
+      ],
+      "capitulo": "Desbloquear una caja",
+      "rotulo": "Desbloquear una caja"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Con y sin permiso · La herencia (y por qué el equipo no cuenta)
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Qué es la herencia
+00:45  Conceder en el rol padre
+01:28  Con permiso: le llega por herencia
+02:08  Excluir en el rol hijo
+02:38  Sin permiso: excluido
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cómo un rol hijo recibe solo lo que tiene su rol padre
+• Cómo comprobarlo en el acceso efectivo de la persona
+• Cómo quitar un permiso heredado solo en un rol con la exclusión
+• Por qué meter a alguien en un equipo no le da permisos
+
+⚠️ ERRORES COMUNES
+• Conceder en el rol padre sin pensar que les llega a todos sus hijos
+• Creer que un cambio en el rol padre solo afecta a quien lo tiene directamente: «afecta a N personas» cuenta también a quien lo hereda
+• Crear un equipo para dar permisos: los equipos solo sirven para el alcance «Equipo»
+• Quitar un permiso en el padre cuando solo había que excluirlo en un hijo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:16
+
+TRANSCRIPCIÓN
+============================================================
+En este video vemos la herencia de permisos. Aquí está el acceso efectivo de Carlos, o sea todo lo que de verdad puede hacer. Su rol es Vendedor sénior, con permisos propios, como aprobar cotizaciones y crear facturas. Ese rol hereda del rol Vendedor, su rol padre: todo lo que tenga el padre, como ver clientes o ver productos, le llega automáticamente. ¿Y el equipo? Ana y José están en Zona Este, pero un equipo no suma permisos: solo sirve para el alcance. Lo que Carlos puede hacer es la suma de sus roles y de lo que esos roles heredan. Vamos a comprobarlo: le damos un permiso al padre y miramos si le llega a Carlos.
+Estoy en Seguridad, Roles y permisos, con el rol Vendedor abierto: es el padre. El editor se abre en el módulo Clientes y Proveedores. Aquí los clientes están en el recurso Socios, que reúne clientes y proveedores. Vendedor puede ver socios, pero no crearlos. Pulso Crear, y queda concedido, con el fondo marcado como cambio. Abajo, la barra de guardado dice: un cambio sin guardar, y a cuántas personas afecta. Cuenta a las que tienen este rol directamente, Ana, José y Héctor, y también a Carlos, que lo recibe por herencia. Pulso Guardar cambios, y sale el aviso de que los permisos del rol se actualizaron.
+Ahora, en la lista de roles, abro Vendedor sénior, el rol de Carlos. Arriba, el chip Hereda de Vendedor dice quién es su padre. En Socios, el permiso Crear ya aparece con el color de lo heredado: nadie lo tocó en este rol, le llegó del padre. Para comprobarlo en la persona, voy a la pestaña Personas y abro a Carlos Pimentel. Su ficha muestra su rol, Vendedor sénior, que hereda de Vendedor. Y en Permisos efectivos, la suma de todo lo que puede hacer, Clientes y Proveedores ahora dice dos: ver y crear. Carlos ya puede dar de alta clientes, gracias a la herencia.
+¿Y si el sénior no debe crear clientes, aunque el vendedor sí? Para eso está la exclusión. Vuelvo al rol Vendedor sénior. En Socios, pulso el Crear heredado: ahora queda tachado, excluido de la herencia. El padre no cambia: Ana y los demás vendedores lo conservan; solo este rol deja de recibirlo. La barra dice que el cambio afecta a una persona: Carlos. Pulso Guardar cambios, y sale el aviso de éxito.
+Miro otra vez la ficha de Carlos, en Personas. Su rol sigue siendo Vendedor sénior, que hereda de Vendedor. Pero en Permisos efectivos, Clientes y Proveedores volvió a uno: solo ver. Crear clientes ya no está en su acceso efectivo, porque su rol lo excluye. En resumen: lo que le das al rol padre les llega a todos sus hijos; la exclusión lo quita solo en un hijo; y la ficha de cada persona te dice lo que de verdad puede hacer. Y recuerda: meter a alguien en un equipo no le da permisos; eso solo lo hacen sus roles.

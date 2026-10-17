@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Productos · Parte 4: empaques en ventas y punto de venta
+
+DESCRIPCIÓN
+============================================================
+Cuarta parte de la serie de Productos de Germiva ERP: vender un mismo producto por paquete, por caja y por unidad. La factura propone el empaque marcado para la venta, calcula su precio (propio o base por factor) y resume las líneas por empaque; el punto de venta agrega la caja al escanear su código de barras y la unidad al tocar la tarjeta; y Existencias y el Kardex descuentan todo en unidades, con cada salida leída en su empaque.
+
+⏱️ CAPÍTULOS
+00:00  Facturar por paquete
+00:51  La caja con su precio propio
+01:42  Punto de venta: la caja por su código
+02:30  Cobrar en el punto de venta
+03:07  Las ventas en el kardex
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Facturar por paquete: el empaque marcado para la venta llega solo, con su precio
+• Cambiar la línea a caja y ver su precio propio
+• Vender en el punto de venta: la caja por su código de barras y la unidad tocando la tarjeta
+• Leer las ventas en Existencias y en el Kardex: todo baja en unidades, cada salida con su empaque
+
+⚠️ ERRORES COMUNES
+• Escribir en la cantidad las unidades sueltas con la línea en caja: dos cajas son cuarenta y ocho unidades, no dos
+• Esperar que el punto de venta ofrezca el paquete sin código de barras: la tarjeta siempre agrega la unidad
+• Dejar el empaque sin precio propio cuando la caja lleva descuento: sin él, la caja vale el precio de la unidad por el factor
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:57
+
+TRANSCRIPCIÓN
+============================================================
+En la parte anterior compramos diez cajas de refresco. Hoy las vendemos de tres formas: por paquete, por caja y por unidad. Desde el inicio pulso nueva factura, y recojo el panel para ver la línea completa. El cliente queda como consumidor final, que basta para este ejemplo. En las líneas busco el refresco escribiendo su nombre; la lista muestra que hay doscientas cuarenta disponibles, y lo agrego. Fíjate en la unidad: vino sola en paquete por seis, porque el paquete es el que tiene la estrella de venta. El total a pagar es doscientos diez pesos: el paquete no tiene precio propio, así que vale seis veces la unidad, treinta y cinco pesos con ITBIS. En cantidad escribo dos, dos paquetes, y el total sube a cuatrocientos veinte.
+Ahora el mismo cliente se lleva también una caja entera. Agrego otra línea con el refresco; otra vez llega en paquete. Abro el selector de unidad: ofrece unidad, caja y paquete, los tres empaques que se venden. Elijo caja por veinticuatro. Esta línea suma setecientos ochenta: la caja tiene precio propio, más barato que veinticuatro unidades sueltas, que serían ochocientos cuarenta. Debajo de las líneas, el resumen las cuenta por empaque: dos paquetes y una caja. El total a pagar es mil doscientos pesos. Pulso guardar y cobrar; la venta es de contado y en efectivo, así que el cobro se registra en el mismo paso. El aviso lo confirma, y acepto. La factura queda emitida y pagada, con sus dos líneas en paquete y en caja.
+Pasemos al punto de venta, la pantalla del mostrador. En el buscador escaneo el código de barras de la caja; aquí lo escribo y pulso Enter, como hace el lector. El ticket recibe una caja por veinticuatro, a setecientos ochenta: el código dice qué empaque es. Ahora busco el refresco por nombre. La tarjeta muestra lo que queda, doscientas cuatro unidades, y su precio por unidad. Al tocarla entra una unidad, a treinta y cinco cada una. Con el más subo a tres. El paquete no tiene código de barras, así que en el mostrador no entra; si lo quieres vender aquí, dale un código en la ficha del producto. Abajo, artículos resume el ticket por empaque: una caja y tres unidades.
+El total es ochocientos ochenta y cinco pesos. Pulso cobrar, y se abre la ventana de cobro. La forma de pago ya está en efectivo. El cliente me paga con mil, y lo marco con el botón rápido. A la derecha, el cambio a devolver: ciento quince pesos. En esta demostración no imprimo el recibo, así que desmarco esa casilla. Confirmo el cobro. La venta queda registrada con su factura y su comprobante, y pulso nueva venta. Fíjate en la tarjeta del refresco: ahora quedan ciento setenta y siete unidades.
+Veamos cómo quedó el inventario. En Existencias escribo refresco en el buscador y pulso filtrar. Disponible: ciento setenta y siete unidades, que son siete cajas por veinticuatro y nueve unidades sueltas. Abro el detalle con el ojo, y pulso ver su kardex. Cada venta dejó su salida, en el empaque en que se vendió. La factura sacó dos paquetes por seis, doce unidades, y una caja de veinticuatro. El punto de venta sacó otra caja y tres unidades. Todas salen del mismo lote y al mismo costo por unidad, veintidós pesos. El saldo final se lee igual que en Existencias. En la próxima parte vemos los productos pesados, la balanza y el cambio de unidad base.

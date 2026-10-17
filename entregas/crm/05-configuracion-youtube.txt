@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+CRM · Configurar espacios, etiquetas, columnas y metas
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Espacios de trabajo
+01:15  Etiquetas
+01:43  Columnas del tablero y límite de tarjetas
+02:24  La meta comercial del mes
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear un espacio de trabajo para separar dos formas de vender
+• Crear etiquetas para clasificar a los prospectos
+• Cambiar una columna del tablero y ponerle un límite de tarjetas
+• Fijar la meta comercial del mes para medir al equipo
+
+⚠️ ERRORES COMUNES
+• Crear un espacio por cada vendedor: para eso está el filtro «Míos»
+• Crear etiquetas repetidas con otro nombre: después nadie sabe cuál usar
+• Poner metas diarias en vez de totales del período: el formulario pide totales
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:19
+
+TRANSCRIPCIÓN
+============================================================
+Para configurar el CRM, entro al CRM y abro Configuración, al final del menú. Aquí está todo lo administrativo del CRM, ordenado en cuatro secciones, una en cada pestaña de arriba. Ahora recojo el menú. La primera son los espacios de trabajo. Un espacio es un tablero independiente, con sus propias columnas, prospectos, oportunidades y reportes. Sirve para separar dos formas de vender: por ejemplo, las obras grandes, que se negocian por semanas, y las ventas de mostrador, que se cierran el mismo día. Para crear uno, pulso Nuevo espacio. El formulario es corto. Le pongo nombre: Obras y proyectos, el nombre que verá todo el equipo. En la descripción digo qué se gestiona en él: constructoras y obras con entregas por etapas. Así nadie duda dónde va cada prospecto. Elijo un color, el verde. Y también un ícono, para reconocerlo en el selector de espacio de cada pantalla. Pulso Crear espacio. El aviso confirma que se creó. Ya aparece en la lista, listo para usar.
+La segunda sección son las etiquetas. Una etiqueta clasifica a un prospecto, como constructora, hotelería o volumen alto, y después permite filtrar el tablero por ella. Escribo la nueva: Licitación, para los clientes que compran por concurso. Pulso Agregar. Ya está en la lista. Aquí mismo se le cambia el color, se corrige el nombre, o se elimina con la papelera de la derecha.
+Las columnas no están en esta página: se cambian en el propio tablero. Así que voy al tablero de prospectos. En la columna Propuesta abro el menú de los tres puntos y elijo Editar columna. Aquí cambias el nombre y el tipo: abierta, ganada o perdida. El campo de abajo indica qué oportunidad nace cuando un prospecto entra a esta columna. Y el límite de tarjetas avisa cuando la columna se llena: es una forma de no acumular más propuestas de las que el equipo puede atender. Le pongo cinco y pulso Guardar. La columna ahora muestra cuántas lleva contra su límite. Para quitarlo, se deja la casilla vacía.
+Por último, vuelvo a Configuración, a Metas comerciales. La meta es lo que el equipo debe lograr en un período, y contra ella se mide el Embudo Comercial. Pulso Nueva meta. Viene con el mes en curso: el nombre, la fecha de inicio y la de fin. Debajo, los totales del período para cada paso de la venta: llamadas, conversaciones, demostraciones, cotizaciones y ventas. El sistema los sugiere según los días laborables, y puedes ajustarlos. Ojo: son totales del mes, no metas diarias. Abajo marcas qué días se trabaja, y con ellos el sistema calcula el ritmo esperado de cada día. Cuando todo está bien, pulso Crear meta. El aviso confirma que se guardó, y desde hoy el Embudo compara contra ella.

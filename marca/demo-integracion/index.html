@@ -1,0 +1,258 @@
+<!doctype html>
+<!--
+  Lámina «Programa del contador (prueba)» · video seguridad-06c (AUTOR B, 2026-09-27).
+
+  Simula el programa EXTERNO que se conecta a Germiva con una credencial de API:
+    1) «Conectar»  → POST {api}/auth/integration/login  {apiKey, apiSecret} → token (JWT 24 h)
+    2) «Consultar facturas emitidas» → GET {api}/v1/invoices/sales  (INVOICE_VIEW  → 200 en E6c)
+    3) «Consultar productos»         → GET {api}/v1/product         (PRODUCT_VIEW  → 403 en E6c)
+  Sin secretos en el repo: la clave y el secreto se leen de ./credencial.local.json (junto a esta
+  página, en .gitignore). Formato = el de seeds/seguridad/credencial.json:
+    {"nombre": "...", "apiKey": "gv_live_...", "apiSecret": "...", "prefijo": "gv_live_xxxxxxxx",
+     "apiBase": "http://localhost:3001/api"   ← opcional (por defecto ese)}
+  Se sirve en el MISMO origen que el front (el motor no navega a otro origen):
+    - grabación: el guion lleva `rutas_locales` → http://localhost:4200/demo-integracion/*
+      se sirve desde claude-tutorial/marca/demo-integracion/ (index.html + credencial.local.json).
+    - ensayo (ensayar.py no aplica rutas_locales): copiar la carpeta a
+      fe-estatico-seguridad/browser/demo-integracion/ y abrir /demo-integracion/index.html
+      (el servidor estático manda las CARPETAS al index del SPA: hay que pedir index.html).
+  CORS: el API arranca con `cors: true` (Germiva-api/src/main.ts): acepta cualquier origen y la
+  cabecera Authorization. El token se guarda en sessionStorage para que, tras volver del ERP, la
+  página siga «conectada» (el guion lo usa en el paso 05).
+  Selectores estables para el guion: #btn-conectar, #estado-conexion, #tarjeta-conexion,
+  #btn-facturas, #btn-productos, #res-facturas / #res-productos con .res-codigo, .res-resumen,
+  .res-mensaje, .res-tecnico, .filas, .fila. Sin role=alert/status (la sonda del motor los tomaría
+  por alertas de la app).
+-->
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Programa del contador</title>
+<style>
+  :root{
+    --fondo:#F3F5F8; --tarjeta:#FFFFFF; --tinta:#16202B; --tinta-2:#5B6776; --borde:#DCE2EA;
+    --acento:#4338CA; --acento-2:#EEF0FF; --ok:#15803D; --ok-2:#E7F6EC; --no:#B42318; --no-2:#FDECEA;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0;height:100%}
+  body{background:var(--fondo);color:var(--tinta);font:15px/1.45 Inter,'Segoe UI',system-ui,Roboto,sans-serif}
+  header{display:flex;align-items:center;gap:14px;padding:16px 32px;background:#1E1B4B;color:#fff}
+  .logo{width:40px;height:40px;border-radius:10px;background:#6366F1;display:grid;place-items:center;font-weight:800;font-size:16px}
+  header h1{margin:0;font-size:20px;font-weight:800}
+  header p{margin:0;font-size:13px;color:#C7CBF5}
+  .aviso-demo{margin:14px 32px 0;padding:10px 14px;border:1px dashed #A5B4FC;border-radius:10px;background:var(--acento-2);color:#312E81;font-size:13.5px}
+  main{display:grid;grid-template-columns:340px 1fr;gap:20px;padding:16px 32px 96px}
+  .card{background:var(--tarjeta);border:1px solid var(--borde);border-radius:12px;padding:18px 20px}
+  .card h2{margin:0 0 12px;font-size:15px;font-weight:800;letter-spacing:.02em}
+  .dato{display:flex;justify-content:space-between;gap:10px;padding:7px 0;border-bottom:1px solid var(--borde);font-size:14px}
+  .dato:last-of-type{border-bottom:0}
+  .dato span:first-child{color:var(--tinta-2)}
+  .mono{font-family:Consolas,'Cascadia Mono',monospace;font-size:13px}
+  button{font:inherit;font-weight:700;border-radius:9px;border:0;cursor:pointer;padding:10px 16px}
+  .primario{background:var(--acento);color:#fff}
+  .secundario{background:#fff;color:var(--acento);border:1.5px solid var(--acento)}
+  button:disabled{opacity:.45;cursor:not-allowed}
+  #btn-conectar{width:100%;margin-top:14px}
+  #estado-conexion{margin-top:12px;padding:9px 12px;border-radius:9px;font-size:13.5px;font-weight:600;background:#F1F3F6;color:var(--tinta-2)}
+  #estado-conexion.ok{background:var(--ok-2);color:var(--ok)}
+  #estado-conexion.no{background:var(--no-2);color:var(--no)}
+  .nota{margin:12px 0 0;font-size:12.5px;color:var(--tinta-2)}
+  .acciones{display:flex;gap:12px;margin-bottom:14px}
+  .resultados{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .res{border:1px solid var(--borde);border-radius:12px;padding:14px 16px;min-height:230px;background:#FBFCFD}
+  .res h3{margin:0 0 10px;font-size:13px;font-weight:700;color:var(--tinta-2);text-transform:uppercase;letter-spacing:.06em}
+  .res-vacio{color:var(--tinta-2);font-size:13.5px}
+  .res-codigo{display:inline-flex;align-items:center;gap:8px;padding:5px 12px;border-radius:999px;font-weight:800;font-size:14px}
+  .res-codigo.ok{background:var(--ok-2);color:var(--ok)}
+  .res-codigo.no{background:var(--no-2);color:var(--no)}
+  .res-resumen{margin:10px 0 8px;font-weight:700;font-size:14.5px}
+  .res-mensaje{margin:10px 0 6px;padding:10px 12px;border-radius:9px;background:var(--no-2);color:#7A1A12;font-size:15px;font-weight:600}
+  .res-tecnico{font-size:12px;color:var(--tinta-2)}
+  .filas{border:1px solid var(--borde);border-radius:9px;overflow:hidden;background:#fff}
+  .fila{display:grid;gap:8px;padding:6px 10px;font-size:13px;border-top:1px solid var(--borde);align-items:center}
+  .fila:first-child{border-top:0;background:#F1F3F6;font-weight:700;color:var(--tinta-2);font-size:11.5px;text-transform:uppercase;letter-spacing:.04em}
+  #res-facturas .fila{grid-template-columns:1.1fr 1.6fr .9fr 1fr}
+  #res-productos .fila{grid-template-columns:.8fr 2fr}
+  .fila .der{text-align:right}
+  .mas{padding:6px 10px;font-size:12.5px;color:var(--tinta-2);border-top:1px solid var(--borde)}
+</style>
+</head>
+<body>
+  <header>
+    <div class="logo">PC</div>
+    <div>
+      <h1>Programa del contador</h1>
+      <p>Sistema de contabilidad del despacho externo · se conecta a Germiva</p>
+    </div>
+  </header>
+  <div class="aviso-demo" id="aviso-demo">Página de prueba: simula el programa del contador. Pide datos a Germiva con una credencial de API, como lo haría el programa real.</div>
+
+  <main>
+    <section class="card" id="tarjeta-conexion">
+      <h2>Conexión con Germiva</h2>
+      <div class="dato"><span>Credencial</span><b id="dato-nombre">—</b></div>
+      <div class="dato"><span>Clave de API</span><span class="mono" id="dato-clave">—</span></div>
+      <div class="dato"><span>Secreto</span><span class="mono">••••••••••••••••</span></div>
+      <button class="primario" id="btn-conectar" type="button">Conectar</button>
+      <div id="estado-conexion">Sin conectar</div>
+      <p class="nota">Entra con su clave y su secreto, no con el usuario de una persona. A cambio recibe un pase temporal para hacer sus consultas.</p>
+    </section>
+
+    <section class="card">
+      <h2>Consultas</h2>
+      <div class="acciones">
+        <button class="secundario" id="btn-facturas" type="button" disabled>Consultar facturas emitidas</button>
+        <button class="secundario" id="btn-productos" type="button" disabled>Consultar productos</button>
+      </div>
+      <div class="resultados">
+        <div class="res" id="res-facturas"><h3>Facturas emitidas</h3><div class="res-vacio">Todavía no se ha consultado.</div></div>
+        <div class="res" id="res-productos"><h3>Productos</h3><div class="res-vacio">Todavía no se ha consultado.</div></div>
+      </div>
+    </section>
+  </main>
+
+<script>
+(() => {
+  const $ = (s) => document.querySelector(s);
+  const CLAVE_TOKEN = 'demoIntegracion.token';
+  let cfg = null;
+  let token = null;
+  try { token = sessionStorage.getItem(CLAVE_TOKEN); } catch { token = null; }
+
+  const esc = (t) => String(t ?? '').replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const api = () => (cfg && cfg.apiBase) || 'http://localhost:3001/api';
+  const dinero = (n) => {
+    const v = Number(n);
+    return Number.isFinite(v) ? 'RD$ ' + v.toLocaleString('es-DO', { minimumFractionDigits: 2, maximumFractionDigits: 2 }) : '—';
+  };
+
+  function estado(texto, tipo) {
+    const e = $('#estado-conexion');
+    e.textContent = texto;
+    e.className = tipo || '';
+  }
+
+  function conectado(si) {
+    $('#btn-facturas').disabled = !si;
+    $('#btn-productos').disabled = !si;
+    if (si) estado('Conectado · Germiva entregó un pase válido por 24 horas', 'ok');
+  }
+
+  async function cargarCredencial() {
+    try {
+      const r = await fetch('./credencial.local.json', { cache: 'no-store' });
+      if (!r.ok) throw new Error(String(r.status));
+      cfg = await r.json();
+      if (!cfg.apiKey || !cfg.apiSecret) throw new Error('incompleta');
+      $('#dato-nombre').textContent = cfg.nombre || 'Programa del contador';
+      const prefijo = cfg.prefijo || String(cfg.apiKey).slice(0, 16);
+      $('#dato-clave').textContent = prefijo + '••••';
+      if (token) conectado(true);
+    } catch {
+      cfg = null;
+      $('#btn-conectar').disabled = true;
+      estado('Falta credencial.local.json junto a esta página (ver el comentario del HTML).', 'no');
+    }
+  }
+
+  async function conectar() {
+    if (!cfg) return;
+    estado('Conectando…', '');
+    try {
+      const r = await fetch(api() + '/auth/integration/login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ apiKey: cfg.apiKey, apiSecret: cfg.apiSecret }),
+      });
+      const j = await r.json().catch(() => ({}));
+      if (!r.ok || !j.token) {
+        conectado(false);
+        estado(r.status + ' · ' + (j.message || 'No se pudo conectar'), 'no');
+        return;
+      }
+      token = j.token;
+      try { sessionStorage.setItem(CLAVE_TOKEN, token); } catch { /* sin almacenamiento: sigue en memoria */ }
+      conectado(true);
+    } catch {
+      estado('Germiva no responde en ' + api(), 'no');
+    }
+  }
+
+  function cabecera(caja, titulo) {
+    return '<h3>' + esc(titulo) + '</h3>';
+  }
+
+  function pintarRechazo(caja, titulo, status, j) {
+    const crudo = Array.isArray(j.message) ? j.message.join(' ') : String(j.message || 'Sin permiso');
+    // El mensaje del API trae el código técnico entre paréntesis («"Productos" (PRODUCT_VIEW)»):
+    // se quita (corrección 09-28, revisión C 06c-1): en cámara no se enseña ningún código técnico.
+    const limpio = crudo.replace(/\s*\([A-Z0-9_]+\)/g, '').replace(/"([^"]+)"/g, '«$1»');
+    caja.innerHTML = cabecera(caja, titulo)
+      + '<span class="res-codigo no">' + status + ' · Rechazado</span>'
+      + '<div class="res-mensaje">' + esc(limpio) + '</div>'
+      + '<div class="res-resumen">Germiva no entregó ningún dato.</div>';
+  }
+
+  async function consultar(ruta, caja, titulo, pintar) {
+    if (!token) return;
+    caja.innerHTML = cabecera(caja, titulo) + '<div class="res-vacio">Consultando…</div>';
+    try {
+      const r = await fetch(api() + ruta, { headers: { Authorization: 'Bearer ' + token } });
+      const j = await r.json().catch(() => ({}));
+      if (r.status === 401) {
+        token = null;
+        try { sessionStorage.removeItem(CLAVE_TOKEN); } catch { /* nada */ }
+        conectado(false);
+        estado('El pase venció: vuelve a conectar', 'no');
+      }
+      if (!r.ok) return pintarRechazo(caja, titulo, r.status, j);
+      pintar(caja, titulo, r.status, j);
+    } catch {
+      caja.innerHTML = cabecera(caja, titulo) + '<div class="res-vacio">Germiva no responde.</div>';
+    }
+  }
+
+  function lista(j) {
+    const datos = Array.isArray(j) ? j : (j.data || j.items || []);
+    const total = Array.isArray(j) ? j.length : (j.total ?? datos.length);
+    return { datos, total };
+  }
+
+  function pintarFacturas(caja, titulo, status, j) {
+    const { datos, total } = lista(j);
+    const filas = datos.slice(0, 6).map((f) => '<div class="fila">'
+      + '<span class="mono">' + esc(f.ncf || f.invoiceNumber || '—') + '</span>'
+      + '<span>' + esc((f.partner && f.partner.name) || f.partnerName || '—') + '</span>'
+      + '<span>' + esc((f.invoiceStatus && f.invoiceStatus.name) || '—') + '</span>'
+      + '<span class="der">' + dinero(f.total) + '</span></div>').join('');
+    caja.innerHTML = cabecera(caja, titulo)
+      + '<span class="res-codigo ok">' + status + ' · Permitido</span>'
+      + '<div class="res-resumen">Germiva entregó ' + total + (total === 1 ? ' factura' : ' facturas') + '.</div>'
+      + '<div class="filas"><div class="fila"><span>Comprobante</span><span>Cliente</span><span>Estado</span><span class="der">Total</span></div>'
+      + filas + '</div>';
+  }
+
+  function pintarProductos(caja, titulo, status, j) {
+    const { datos, total } = lista(j);
+    const filas = datos.slice(0, 5).map((p) => '<div class="fila">'
+      + '<span class="mono">' + esc(p.code || p.sku || '—') + '</span>'
+      + '<span>' + esc(p.name || '—') + '</span></div>').join('');
+    caja.innerHTML = cabecera(caja, titulo)
+      + '<span class="res-codigo ok">' + status + ' · Permitido</span>'
+      + '<div class="res-resumen">Germiva entregó ' + total + (total === 1 ? ' producto' : ' productos') + '.</div>'
+      + '<div class="filas"><div class="fila"><span>Código</span><span>Nombre</span></div>' + filas
+      + (total > 5 ? '<div class="mas">… y ' + (total - 5) + ' más</div>' : '') + '</div>';
+  }
+
+  $('#btn-conectar').addEventListener('click', conectar);
+  $('#btn-facturas').addEventListener('click', () =>
+    consultar('/v1/invoices/sales', $('#res-facturas'), 'Facturas emitidas', pintarFacturas));
+  $('#btn-productos').addEventListener('click', () =>
+    consultar('/v1/product', $('#res-productos'), 'Productos', pintarProductos));
+
+  cargarCredencial();
+})();
+</script>
+</body>
+</html>

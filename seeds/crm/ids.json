@@ -1,0 +1,26 @@
+{
+  "leads": {
+    "Ramón Peralta": 592,
+    "Yesenia Durán": 593,
+    "Félix Almonte": 594,
+    "Carolina Méndez": 595,
+    "Luis Ventura": 596,
+    "Gisela Rosario": 597,
+    "Manuel Tejada": 598,
+    "Patricia Gómez": 599
+  },
+  "ops": {
+    "Suministro de cemento y varillas — Torre Mirador": 402,
+    "Reposición mensual de herramientas": 403,
+    "Equipamiento eléctrico — Plaza Barahona": 404,
+    "Pinturas para remodelación del local": 405,
+    "Contrato anual de suministro de plomería": 406
+  },
+  "tags": {
+    "Constructora": 267,
+    "Hotelería": 268,
+    "Volumen alto": 269,
+    "Educación": 270
+  },
+  "sembrado": "2026-10-06T18:16:46.794Z"
+}

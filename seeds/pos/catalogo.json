@@ -1,0 +1,31 @@
+{
+  "_comentario": "Catálogo demo del video de Punto de Venta — empresa 43 «Ferretería El Progreso». Precios en DOP SIN ITBIS salvo exento. slug = nombre del archivo de imagen en imagenes/<slug>.jpg (null = sin foto a propósito, enseña el mosaico de iniciales).",
+  "categorias": ["Herramientas", "Electricidad", "Plomería", "Pintura", "Construcción", "Jardín"],
+  "productos": [
+    {"sku": "FER-1001", "nombre": "Martillo de uña 16 oz", "categoria": "Herramientas", "precio": 450, "costo": 290, "stock": 38, "exento": false, "slug": "martillo", "buscar_foto": "claw hammer"},
+    {"sku": "FER-1002", "nombre": "Destornillador de estrías", "categoria": "Herramientas", "precio": 185, "costo": 110, "stock": 60, "exento": false, "slug": "destornillador", "buscar_foto": "phillips screwdriver"},
+    {"sku": "FER-1003", "nombre": "Alicate universal 8\"", "categoria": "Herramientas", "precio": 395, "costo": 240, "stock": 25, "exento": false, "slug": "alicate", "buscar_foto": "combination pliers"},
+    {"sku": "FER-1004", "nombre": "Cinta métrica 5 m", "categoria": "Herramientas", "precio": 275, "costo": 160, "stock": 42, "exento": false, "slug": "cinta-metrica", "buscar_foto": "tape measure"},
+    {"sku": "FER-1005", "nombre": "Llave ajustable 10\"", "categoria": "Herramientas", "precio": 520, "costo": 330, "stock": 3, "exento": false, "slug": "llave-ajustable", "buscar_foto": "adjustable wrench"},
+    {"sku": "FER-1006", "nombre": "Taladro percutor 1/2\"", "categoria": "Herramientas", "precio": 3950, "costo": 2700, "stock": 8, "exento": false, "slug": "taladro", "buscar_foto": "cordless drill"},
+    {"sku": "FER-2001", "nombre": "Bombillo LED 9 W", "categoria": "Electricidad", "precio": 95, "costo": 50, "stock": 150, "exento": false, "slug": "bombillo-led", "buscar_foto": "LED light bulb"},
+    {"sku": "FER-2002", "nombre": "Extensión eléctrica 3 m", "categoria": "Electricidad", "precio": 350, "costo": 210, "stock": 30, "exento": false, "slug": "extension", "buscar_foto": "extension cord"},
+    {"sku": "FER-2003", "nombre": "Cinta aislante negra", "categoria": "Electricidad", "precio": 60, "costo": 30, "stock": 90, "exento": false, "slug": "cinta-aislante", "buscar_foto": "electrical insulating tape"},
+    {"sku": "FER-2004", "nombre": "Tomacorriente doble", "categoria": "Electricidad", "precio": 145, "costo": 80, "stock": 0, "exento": false, "slug": "tomacorriente", "buscar_foto": "electrical outlet socket"},
+    {"sku": "FER-3001", "nombre": "Llave de paso 1/2\"", "categoria": "Plomería", "precio": 240, "costo": 140, "stock": 35, "exento": false, "slug": "llave-de-paso", "buscar_foto": "ball valve"},
+    {"sku": "FER-3002", "nombre": "Tubo PVC 1/2\" x 19'", "categoria": "Plomería", "precio": 165, "costo": 95, "stock": 80, "exento": false, "slug": "tubo-pvc", "buscar_foto": "PVC pipe"},
+    {"sku": "FER-3003", "nombre": "Cinta de teflón", "categoria": "Plomería", "precio": 35, "costo": 15, "stock": 120, "exento": false, "slug": "teflon", "buscar_foto": "PTFE thread seal tape"},
+    {"sku": "FER-3004", "nombre": "Grifo para fregadero", "categoria": "Plomería", "precio": 1150, "costo": 720, "stock": 12, "exento": false, "slug": "grifo", "buscar_foto": "kitchen faucet tap"},
+    {"sku": "FER-4001", "nombre": "Brocha de 3\"", "categoria": "Pintura", "precio": 120, "costo": 65, "stock": 55, "exento": false, "slug": "brocha", "buscar_foto": "paint brush"},
+    {"sku": "FER-4002", "nombre": "Rodillo de 9\" con bandeja", "categoria": "Pintura", "precio": 260, "costo": 150, "stock": 28, "exento": false, "slug": "rodillo", "buscar_foto": "paint roller"},
+    {"sku": "FER-4003", "nombre": "Pintura acrílica verde, galón", "categoria": "Pintura", "precio": 1250, "costo": 820, "stock": 40, "exento": false, "slug": "pintura", "buscar_foto": "paint can bucket"},
+    {"sku": "FER-4004", "nombre": "Lija de agua #120", "categoria": "Pintura", "precio": 25, "costo": 10, "stock": 200, "exento": false, "slug": "lija", "buscar_foto": "sandpaper"},
+    {"sku": "FER-5001", "nombre": "Cemento de albañilería, funda 40 kg", "categoria": "Construcción", "precio": 540, "costo": 430, "stock": 120, "exento": false, "slug": "cemento", "buscar_foto": "cement bag"},
+    {"sku": "FER-5002", "nombre": "Varilla corrugada 3/8\"", "categoria": "Construcción", "precio": 310, "costo": 240, "stock": 300, "exento": false, "slug": null, "buscar_foto": null},
+    {"sku": "FER-5003", "nombre": "Clavos de 2½\", libra", "categoria": "Construcción", "precio": 85, "costo": 45, "stock": 75, "exento": false, "slug": "clavos", "buscar_foto": "nails"},
+    {"sku": "FER-5004", "nombre": "Guantes de trabajo", "categoria": "Construcción", "precio": 150, "costo": 80, "stock": 64, "exento": false, "slug": "guantes", "buscar_foto": "work gloves"},
+    {"sku": "FER-6001", "nombre": "Machete de 22\"", "categoria": "Jardín", "precio": 425, "costo": 260, "stock": 20, "exento": false, "slug": "machete", "buscar_foto": "machete"},
+    {"sku": "FER-6002", "nombre": "Fertilizante soluble, 500 g", "categoria": "Jardín", "precio": 380, "costo": 250, "stock": 45, "exento": true, "slug": "fertilizante", "buscar_foto": "fertilizer granules"},
+    {"sku": "FER-6003", "nombre": "Manguera de jardín 50'", "categoria": "Jardín", "precio": 890, "costo": 560, "stock": 15, "exento": false, "slug": "manguera", "buscar_foto": "garden hose"}
+  ]
+}

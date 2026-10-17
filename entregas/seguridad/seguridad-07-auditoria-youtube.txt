@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Seguridad · La auditoría
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  La bitácora
+01:05  Los filtros
+02:04  El detalle de un evento
+03:18  El historial de un registro
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer la bitácora de Auditoría: quién hizo qué, cuándo, sobre qué registro y desde qué computadora
+• Filtrar por período, persona, acción, registro e IP, y volver a empezar con «Limpiar»
+• Abrir un evento y leer su antes y su después, y el origen de la petición
+• Ver toda la historia de un registro concreto con «Historial del registro»
+
+⚠️ ERRORES COMUNES
+• Buscar un cambio viejo con el período por defecto (últimos 7 días) y creer que no existe
+• Dejar filtros puestos y pensar que la bitácora está vacía: pulsa «Limpiar»
+• Escribir en Registro el nombre en español: el filtro usa el nombre interno del tipo de registro
+• Abrir el enlace de un evento con filtros que lo esconden: sale «El evento no está entre los resultados…»
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:07
+
+TRANSCRIPCIÓN
+============================================================
+Soy Rosa, la administradora de Distribuidora Las Palmas, y estoy en la consola de Seguridad. Abro la pestaña Auditoría, la última de la fila. Esta es la bitácora de la empresa: cada vez que alguien entra, crea, cambia o borra algo, aquí queda un evento con el nombre de quien lo hizo, cuándo y desde dónde. Junto a los filtros está el total de eventos del período elegido; por defecto, los últimos siete días. Los eventos se agrupan por día, con el más reciente arriba: esta franja es el encabezado de cada día. Cada fila es un evento. Primero va la hora; luego Quién, la persona que lo hizo; después la Acción, con una insignia de color: verde si creó algo, azul si lo actualizó, rojo si lo eliminó, ámbar si cambió su estado, y gris para los accesos al sistema. La columna Registro dice qué cosa se tocó, con su número. Y la última, IP, es la dirección de la computadora desde donde se hizo: sirve para saber si fue desde la oficina o desde fuera.
+Con los filtros de arriba se encuentra un evento concreto. Empiezo por el Período: lo abro, y las opciones van de Hoy a Todo el historial; elijo Últimos treinta días. Ahora, en el campo Persona, escribo el usuario de Ana, la vendedora. La lista se queda solo con lo que hizo ella: sus cotizaciones, con sus líneas, precios y versiones. Después abro el botón Acción y marco Creó. Se pueden marcar varias, y el menú sigue abierto hasta que lo cierro. Solo quedan las cosas que Ana creó. En Registro va el tipo de registro, con el nombre interno que usa el sistema, en inglés: escribo quotes, que son las cotizaciones. El último filtro busca por la dirección de la computadora; pruebo con una que nadie usó, y la lista queda vacía, con el aviso No se encontraron resultados para los filtros seleccionados. Cuando pasa eso, pulso Limpiar, a la derecha, y la bitácora vuelve a quedar como estaba.
+Ahora abro un evento para ver su detalle completo. Para no dejar fuera nada viejo, pongo el período en Todo el historial. Busco la fila Cambió permisos: la deja el sistema cada vez que alguien guarda los permisos de un rol. Justo debajo, a la misma hora, hay otra fila, Creó, sobre un permiso de ese rol: cada permiso que se agrega a un rol deja también su propio renglón, con su número. Vuelvo a Cambió permisos y la pulso, y a la derecha se abre el detalle. Arriba, la fecha y la hora exactas. Debajo, el registro que se tocó: aquí un rol, el setenta y nueve, que es Almacén; y quién lo hizo: Rosa. Luego viene Qué cambió, con el antes y el después. Tachado, lo de antes: en Inventario, Productos, el rol podía ver, crear, editar e importar. Resaltado, lo de después: ahora, además, puede exportar. Al pie está la Solicitud, o sea el origen de la petición: la IP de la computadora; el Origen, que dice desde qué programa llegó: aquí, Chrome en Windows; el código del evento; y un número de solicitud, que sirve si hay que pedir ayuda a soporte.
+Desde el detalle salen dos atajos. El primero, Historial del registro, reúne todo lo que le pasó a ese mismo rol. Lo pulso: la lista se filtra por ese registro, y arriba el filtro lo dice con su nombre: Rol, Almacén. Muestra desde el día en que se creó hasta cada cambio de sus permisos. Es la forma más rápida de saber quién le tocó los permisos a un rol, y cuándo. El segundo atajo lleva a la persona. Abro otra vez el cambio de permisos y pulso el enlace Ver a Rosa: me lleva a Personas, filtrada por ella. En resumen: filtra por persona y por período para saber quién hizo algo; abre el evento para leer el antes y el después; y usa el historial para ver la vida entera de un rol o de cualquier registro.

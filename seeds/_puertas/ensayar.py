@@ -61,6 +61,9 @@ def _una(pag, ctx, acc, variables):
     if "click" in acc:
         g._clic(pag, acc["click"], ctx)
         return "click", acc["click"]
+    if "arrastrar" in acc:
+        g._arrastrar(pag, acc["arrastrar"], ctx)
+        return "arrastrar", acc["arrastrar"]["desde"]
     if "escribir" in acc:
         e = acc["escribir"]
         g._escribir(pag, e["sel"], _sub(e["texto"], variables), ctx)
@@ -106,9 +109,69 @@ def _una(pag, ctx, acc, variables):
     if "quitar_marca" in acc or "plano_general" in acc:
         pag.evaluate("window.__tut && __tut.clear()")
         return "quitar_marca" if "quitar_marca" in acc else "plano_general", ""
+    if "insignia" in acc:
+        datos = acc["insignia"]
+        g._insignia_accion(pag, ctx, acc)
+        if datos:
+            _capa_ok(pag, "ins", datos.get("texto", ""))
+        else:
+            pag.wait_for_timeout(350)
+            on = pag.evaluate("""() => { const h = document.getElementById('__tut_ui');
+                const e = h && h.shadowRoot && h.shadowRoot.getElementById('ins');
+                return e ? e.classList.contains('on') : null; }""")
+            if on:
+                raise RuntimeError("insignia: sigue mostrando la anterior tras quitarla con null")
+        return "insignia", (datos or {}).get("texto", "quitar")
+    if "cartel" in acc:
+        g._cartel(pag, ctx, acc)
+        _capa_ok(pag, "car", acc["cartel"].get("texto", ""))
+        pag.evaluate("window.__tut && __tut.cartelFuera(null)")  # sin reloj no se va sola
+        return "cartel", acc["cartel"].get("titulo") or acc["cartel"].get("tipo", "consejo")
+    if "diagrama" in acc:
+        spec = g._spec_diagrama(acc["diagrama"])
+        for k in ("fondo", "fase", "pasos_ms"):
+            if k in acc:
+                spec[k] = acc[k]
+        g._abrir_diagrama(pag, ctx, spec, acc.get("durante_ms"))
+        _capa_ok(pag, "lam", "")
+        return "diagrama", spec["nombre"]
+    if "diagrama_fase" in acc:
+        n = int(acc["diagrama_fase"])
+        g._fase_diagrama(pag, ctx, n)
+        _fase_ok(pag, n)
+        return "diagrama_fase", str(n)
+    if "diagrama_cerrar" in acc:
+        g._cerrar_diagrama(pag, ctx)
+        return "diagrama_cerrar", ""
     if "al_decir" in acc and len(acc) == 1:
         return "ritmo", ""
     raise ValueError(f"acción desconocida: {acc}")
+
+
+def _capa_ok(pag, ident, texto):
+    """La capa del motor (shadow root de #__tut_ui) pintó el elemento: `on` y con su texto."""
+    pag.wait_for_timeout(350)
+    est = pag.evaluate("""([i, t]) => { const h = document.getElementById('__tut_ui');
+        const e = h && h.shadowRoot && h.shadowRoot.getElementById(i);
+        return e ? {on: e.classList.contains('on'), txt: e.innerText || ''} : null; }""", [ident, texto])
+    if not est or not est["on"]:
+        raise RuntimeError(f"la capa no muestra #{ident}")
+    if texto and texto[:30] not in est["txt"]:
+        raise RuntimeError(f"#{ident} no trae el texto «{texto[:30]}…»: «{est['txt'][:60]}»")
+
+
+def _fase_ok(pag, n):
+    """La lámina tiene elementos data-fase=n y quedaron visibles."""
+    pag.wait_for_timeout(350)
+    r = pag.evaluate("""n => { const h = document.getElementById('__tut_ui');
+        const l = h && h.shadowRoot && h.shadowRoot.getElementById('lam');
+        if (!l || !l.classList.contains('on')) return -1;
+        const e = [...l.querySelectorAll(`[data-fase="${n}"]`)];
+        return e.length ? e.filter(x => x.classList.contains('on')).length : 0; }""", n)
+    if r == -1:
+        raise RuntimeError("no hay lámina abierta")
+    if r == 0:
+        raise RuntimeError(f"la lámina no tiene (o no revela) elementos data-fase={n}")
 
 
 def main():
@@ -130,10 +193,12 @@ def main():
     fallos, acciones_ok, pasos_hechos = [], 0, 0
     print(f"ensayo · {nombre} · {len(pasos)} pasos · {base}")
     with sync_playwright() as p:
-        nav = p.chromium.launch(headless=not a.headed, args=[f"--force-device-scale-factor={g.ESCALA}"])
+        nav = p.chromium.launch(headless=not a.headed,
+                                args=[f"--force-device-scale-factor={g.ESCALA}", *g.ARGS_IDIOMA])
         try:
             ctx_nav = nav.new_context(viewport={"width": g.ANCHO_CSS, "height": g.ALTO_CSS},
-                                      device_scale_factor=g.ESCALA)
+                                      device_scale_factor=g.ESCALA,
+                                      **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
             ctx_nav.add_init_script(g.JS_CAPA)  # cursor, marca y sonda de alertas del motor
             pag = ctx_nav.new_page()
             try:
@@ -185,13 +250,24 @@ def main():
                     continue
                 pasos_hechos += 1
 
+                insignia = paso.get("insignia") or None
+                g._insignia(pag, insignia)
                 if paso.get("navegar"):
                     ruta = _sub(paso["navegar"], variables)
 
                     def nav_fn():
                         g._navegar(pag, base, ruta, guion)
                         pag.evaluate("window.__tut && __tut.clear()")
+                        g._insignia(pag, insignia)
                     correr("navegar", ruta, nav_fn)
+                if insignia:
+                    correr("insignia", insignia.get("texto", ""),
+                           lambda: _capa_ok(pag, "ins", insignia.get("texto", "")))
+                if paso.get("diagrama"):
+                    def diag_fn():
+                        g._abrir_diagrama(pag, ctx, g._spec_diagrama(paso["diagrama"]))
+                        _capa_ok(pag, "lam", "")
+                    correr("diagrama(paso)", str(paso["diagrama"]), diag_fn)
 
                 for acc in paso.get("acciones", []):
                     info = {}
@@ -223,6 +299,9 @@ def main():
                 except Exception as e:  # noqa: BLE001
                     print(f"   (sin captura: {e})")
                 pag.evaluate("window.__tut && __tut.clear()")
+                if ctx.diagrama is not None:  # el motor cierra la lámina al acabar la voz del paso
+                    g._cerrar_diagrama(pag, ctx)
+                    pag.wait_for_timeout(500)
         finally:
             nav.close()
 

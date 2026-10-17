@@ -1,0 +1,187 @@
+1
+00:00:03,100 --> 00:00:04,825
+Vender es la mitad del trabajo;
+
+2
+00:00:04,947 --> 00:00:08,234
+la otra mitad es que el cliente se quede y vuelva a comprar.
+
+3
+00:00:08,902 --> 00:00:10,801
+Para eso está Éxito del Cliente:
+
+4
+00:00:10,911 --> 00:00:14,136
+entro por el menú de la izquierda y abro Cartera de clientes.
+
+5
+00:00:14,805 --> 00:00:18,602
+Cada fila es un cliente que ya te compró y que alguien de tu equipo acompaña:
+
+6
+00:00:18,786 --> 00:00:21,268
+su gerente de cuenta, que aquí es Rosa.
+
+7
+00:00:21,936 --> 00:00:24,814
+Ahora recojo el menú para ver la tabla completa.
+
+8
+00:00:25,483 --> 00:00:28,174
+La vista Seguimiento te dice a quién contactar.
+
+9
+00:00:28,843 --> 00:00:31,065
+Arriba, tres indicadores.
+
+10
+00:00:31,733 --> 00:00:34,994
+El primero, los clientes con una acción acordada para hoy;
+
+11
+00:00:35,006 --> 00:00:37,538
+Vencidas, a los que se les pasó la fecha;
+
+12
+00:00:37,634 --> 00:00:41,393
+y Sin contacto, los que nadie ha llamado en el tiempo que fijaste.
+
+13
+00:00:42,049 --> 00:00:45,313
+En la tabla ves la etapa del cliente, su próxima acción,
+
+14
+00:00:45,448 --> 00:00:47,582
+el último contacto y sus tareas.
+
+15
+00:00:48,250 --> 00:00:53,225
+Constructora Mirador vence hoy, e Inversiones Barahona ya está vencida, en rojo.
+
+16
+00:00:54,590 --> 00:00:56,984
+La misma cartera tiene cuatro vistas.
+
+17
+00:00:57,652 --> 00:01:01,807
+Bienvenida muestra a los clientes nuevos y cuánto llevan de sus primeros pasos:
+
+18
+00:01:01,881 --> 00:01:04,400
+entrega, accesos y capacitación.
+
+19
+00:01:05,067 --> 00:01:08,182
+Ferretería Doña Luz acaba de llegar del CRM.
+
+20
+00:01:08,849 --> 00:01:13,513
+Salud mide qué tan bien está cada cliente, de cero a cien, según sus compras,
+
+21
+00:01:13,599 --> 00:01:15,981
+sus contactos y sus casos abiertos.
+
+22
+00:01:16,650 --> 00:01:18,834
+Sano, a vigilar o crítico.
+
+23
+00:01:19,502 --> 00:01:21,463
+Y la columna Motivos dice por qué:
+
+24
+00:01:21,498 --> 00:01:24,328
+Inversiones Barahona tiene un contrato por vencer.
+
+25
+00:01:24,996 --> 00:01:26,870
+Por eso aparece en Renovaciones,
+
+26
+00:01:26,992 --> 00:01:30,652
+la vista de los contratos que vencen en los próximos noventa días.
+
+27
+00:01:31,319 --> 00:01:35,475
+Ahí ves el contrato, la fecha en que vence y si ya hay una oportunidad de
+
+28
+00:01:35,289 --> 00:01:36,604
+renovación abierta.
+
+29
+00:01:37,986 --> 00:01:39,700
+Ahora, a trabajar.
+
+30
+00:01:40,355 --> 00:01:42,861
+Vuelvo a Seguimiento para atender lo vencido.
+
+31
+00:01:43,516 --> 00:01:45,415
+Ya llamé a Inversiones Barahona:
+
+32
+00:01:45,537 --> 00:01:49,396
+marco su casilla y aparecen las acciones para los clientes elegidos.
+
+33
+00:01:50,064 --> 00:01:51,914
+Pulso Registrar seguimiento.
+
+34
+00:01:52,569 --> 00:01:55,870
+La vía fue una llamada, con la fecha y la hora de hoy.
+
+35
+00:01:56,525 --> 00:02:00,334
+En el cuadro grande anoto qué se habló, porque lo lee todo el equipo.
+
+36
+00:02:00,990 --> 00:02:03,632
+Quieren renovar, pero piden mejor precio.
+
+37
+00:02:04,287 --> 00:02:05,902
+Ahora lo más importante:
+
+38
+00:02:06,024 --> 00:02:07,266
+la próxima acción.
+
+39
+00:02:07,933 --> 00:02:10,266
+Le pongo fecha para dentro de una semana;
+
+40
+00:02:10,340 --> 00:02:13,280
+ese día el sistema le crea la tarea a su gerente.
+
+41
+00:02:13,949 --> 00:02:14,930
+Y el asunto:
+
+42
+00:02:15,026 --> 00:02:17,111
+enviar la propuesta de renovación.
+
+43
+00:02:17,768 --> 00:02:20,348
+Reviso que todo esté bien y pulso Guardar.
+
+44
+00:02:21,016 --> 00:02:23,350
+El aviso confirma que quedó registrado;
+
+45
+00:02:23,435 --> 00:02:24,217
+lo acepto.
+
+46
+00:02:24,873 --> 00:02:28,867
+Barahona sale de la lista de hoy y el indicador de vencidas baja a cero:
+
+47
+00:02:29,002 --> 00:02:31,111
+su próxima acción ya tiene fecha.

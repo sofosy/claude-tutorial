@@ -1,0 +1,265 @@
+{
+  "_comentario": "Video 5 de la serie Cajas. Graba yohanna.peralta (Cajera). Estado de partida S4 (restaurar.mjs S4); termina como S5 (conteo REC-2026-00007 de 3,480 pendiente, sesión cerrada). Restaurar S4 entre tomas. AVISO justificado: no existe button.panel-collapse en Cajas (riel fijo, ver _BRIEF-CAJAS.md). H-04 («0 transacciones» bajo el esperado) no se nombra ni se marca: se marca la cabecera «Monto esperado».",
+  "titulo": "Cajas · Cierra tu caja con el conteo de cierre",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "yohanna.peralta",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "progreso",
+      "yohanna",
+      "peralta",
+      "luis.batista",
+      "batista",
+      "carmen",
+      "rosario",
+      "admin.progreso",
+      "santiago",
+      "mostrador"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Leer el desglose del efectivo de tu caja y entender de dónde sale el efectivo esperado",
+    "Cerrar la caja con el conteo de cierre guiado en tres pasos",
+    "Declarar lo que contaste, ver la diferencia y justificarla cuando la hay",
+    "Saber qué pasa después: la supervisora hace el cuadre oficial con tu conteo"
+  ],
+  "errores_comunes": [
+    "Dejar el monto que el sistema trae lleno en vez de escribir lo que de verdad contaste",
+    "No justificar una diferencia: fuera de tolerancia, el conteo no se puede registrar sin explicarla",
+    "Intentar cerrar con movimientos pendientes de aprobación: primero los debe decidir un supervisor"
+  ],
+  "pasos": [
+    {
+      "id": "01-cerrar-caja",
+      "ruta": "Cajas › Mi caja",
+      "texto_pantalla": "Mi caja · desglose del efectivo y Cerrar caja",
+      "navegar": "/cashier?section=caja",
+      "narracion": "Esta es Mi caja, la pantalla donde la cajera trabaja su turno. La barra de arriba dice que la Caja Principal está abierta a nombre de Yohanna. Se acabó el turno y toca cerrar, pero antes mira el Desglose del efectivo: es la cuenta de cuánto dinero debería haber en la gaveta. Arranca con el fondo inicial, cinco mil pesos. Suma los cobros en efectivo, que hoy son cero, y las entradas, dos mil. Resta las salidas: los seis mil quinientos del pago del aire acondicionado, que la supervisora ya aprobó. Y suma las transferencias recibidas: los tres mil que llegaron de la Caja Mostrador 2. El resultado, abajo, es el efectivo esperado: tres mil quinientos pesos. Ahora pulso Cerrar caja, arriba a la derecha. El sistema no deja cerrar a ciegas: sale el aviso Conteo de cierre requerido. Ese conteo es un arqueo: contar el dinero que hay de verdad y compararlo con lo esperado. La cajera declara lo que contó, y después una supervisora lo revisa y hace el cuadre oficial. Pulso Iniciar conteo.",
+      "acciones": [
+        {
+          "resaltar": ".session-bar__primary",
+          "durante_ms": 5000,
+          "al_decir": "barra de arriba"
+        },
+        {
+          "resaltar": "section.breakdown-panel .breakdown-panel__header",
+          "durante_ms": 5000,
+          "al_decir": "Desglose"
+        },
+        {
+          "resaltar": "section.breakdown-panel .cash-eq__term:has-text('Fondo inicial')",
+          "durante_ms": 2200,
+          "al_decir": "fondo inicial"
+        },
+        {
+          "resaltar": "section.breakdown-panel .cash-eq__term:has-text('Cobros en efectivo')",
+          "durante_ms": 2900,
+          "al_decir": "cobros"
+        },
+        {
+          "resaltar": "section.breakdown-panel .cash-eq__term:has-text('Entradas')",
+          "durante_ms": 1600,
+          "al_decir": "entradas"
+        },
+        {
+          "resaltar": "section.breakdown-panel .cash-eq__term:has-text('Salidas')",
+          "durante_ms": 5000,
+          "al_decir": "salidas"
+        },
+        {
+          "resaltar": "section.breakdown-panel .cash-eq__term:has-text('Transf. recibidas')",
+          "durante_ms": 3600,
+          "al_decir": "recibidas"
+        },
+        {
+          "resaltar": "section.breakdown-panel .cash-eq__term--result",
+          "durante_ms": 5000,
+          "al_decir": "El resultado"
+        },
+        {
+          "click": ".session-bar__actions button:has-text('Cerrar caja')",
+          "al_decir": "pulso Cerrar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3200,
+          "cursor": false,
+          "al_decir": "el aviso"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-style button:has-text('Iniciar conteo')",
+          "durante_ms": 6000,
+          "al_decir": "arqueo"
+        },
+        {
+          "click": ".custom-alert-dialog-style button.confirm-button",
+          "al_decir": "Iniciar conteo"
+        }
+      ],
+      "capitulo": "Cerrar la caja",
+      "rotulo": "Cerrar la caja"
+    },
+    {
+      "id": "02-ingresar-montos",
+      "ruta": "Cajas › Conteo de cierre › Ingresar montos",
+      "texto_pantalla": "Conteo de cierre · paso 2, Ingresar montos",
+      "narracion": "Esta es la página de Conteo de cierre. Arriba hay tres pasos; el primero, elegir la sesión, lo hizo el sistema por ti, así que ya estás en Ingresar montos. El Resumen de la sesión repite las cifras clave: el fondo con que abriste, los cobros del turno y el total que debería haber en caja. Si quieres ver de dónde sale ese total, pulsa Ver cálculo: despliega la misma cuenta que viste en Mi caja. Más abajo, en Detalles por método de pago, hay una fila por cada forma en que entró dinero; aquí solo Efectivo. La columna Monto esperado dice cuánto debería haber, y en Monto recibido va lo que contaste de verdad, billete por billete. Viene lleno con lo esperado, así que lo corrijo: escribo tres mil cuatrocientos ochenta. Al momento, el sistema calcula la Diferencia: faltan veinte pesos, y debajo aclara que está dentro de la tolerancia de cincuenta, el margen que la empresa acepta. Como hay diferencia, se abre la Justificación de esa línea. Explico el motivo: veinte pesos en monedas. Todo coincide con lo contado, así que paso a Siguiente.",
+      "acciones": [
+        {
+          "resaltar": "mat-step-header:has-text('Ingresar montos')",
+          "durante_ms": 4500,
+          "al_decir": "tres pasos"
+        },
+        {
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Fondo inicial'))",
+          "durante_ms": 3500,
+          "al_decir": "Resumen"
+        },
+        {
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Total esperado en caja'))",
+          "durante_ms": 3500,
+          "al_decir": "el total que"
+        },
+        {
+          "click": "button:has-text('Ver cálculo')",
+          "al_decir": "pulsa Ver"
+        },
+        {
+          "resaltar": ".wizard-section app-cash-equation",
+          "durante_ms": 3200,
+          "cursor": false,
+          "al_decir": "misma cuenta"
+        },
+        {
+          "resaltar": ".details-table-header .header-col.method",
+          "durante_ms": 5000,
+          "al_decir": "Detalles"
+        },
+        {
+          "resaltar": ".details-table-header .header-col.expected",
+          "durante_ms": 3500,
+          "al_decir": "La columna"
+        },
+        {
+          "resaltar": ".details-table-header .header-col.actual",
+          "durante_ms": 3500,
+          "al_decir": "va lo que"
+        },
+        {
+          "escribir": {
+            "sel": ".detail-row:has(.method-label:has-text('Efectivo')) input[formcontrolname='actualAmount']",
+            "texto": "3480"
+          },
+          "al_decir": "escribo"
+        },
+        {
+          "resaltar": ".detail-row .detail-col.difference",
+          "durante_ms": 6000,
+          "al_decir": "calcula"
+        },
+        {
+          "escribir": {
+            "sel": ".detail-row input[formcontrolname='justification']",
+            "texto": "Faltan 20 pesos en monedas"
+          },
+          "al_decir": "Explico el motivo"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "paso a Siguiente"
+        }
+      ],
+      "capitulo": "Ingresar lo contado",
+      "rotulo": "Ingresar lo contado"
+    },
+    {
+      "id": "03-registrar-conteo",
+      "ruta": "Cajas › Conteo de cierre › Confirmar cuadre",
+      "texto_pantalla": "Conteo de cierre · paso 3, Confirmar cuadre y Registrar conteo",
+      "narracion": "Último paso: Confirmar cuadre. El Resumen de totales pone lado a lado lo esperado, tres mil quinientos, lo recibido, tres mil cuatrocientos ochenta, y la diferencia total, menos veinte. Debajo, el aviso verde confirma que todos los métodos de pago están dentro de la tolerancia. Si alguno se saliera del margen, verías una advertencia, y tendrías que justificar esa diferencia antes de poder registrar. La lista Revisa las diferencias muestra solo las líneas que no cuadraron exacto. La Justificación global es opcional: sirve para explicar el cuadre completo; como ya expliqué la línea, la dejo en blanco. Pulso Registrar conteo. Sale el mensaje: conteo de cierre registrado, un supervisor hará el cuadre oficial. El sistema cierra la sesión y te devuelve a Mi caja, que ahora dice que no tienes una sesión activa. Tu turno terminó, y tu conteo queda esperando la revisión de la supervisora.",
+      "acciones": [
+        {
+          "resaltar": "mat-step-header:has-text('Confirmar cuadre')",
+          "durante_ms": 3500,
+          "al_decir": "Último paso"
+        },
+        {
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Total esperado'))",
+          "durante_ms": 1600,
+          "al_decir": "lo esperado"
+        },
+        {
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Total recibido'))",
+          "durante_ms": 2600,
+          "al_decir": "lo recibido"
+        },
+        {
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Diferencia total'))",
+          "durante_ms": 1900,
+          "al_decir": "diferencia total"
+        },
+        {
+          "resaltar": ".gm-dialog-alert--success:has-text('dentro de la tolerancia')",
+          "durante_ms": 9000,
+          "al_decir": "aviso verde"
+        },
+        {
+          "resaltar": ".diff-row",
+          "durante_ms": 4500,
+          "al_decir": "La lista"
+        },
+        {
+          "resaltar": "textarea[formcontrolname='globalJustification']",
+          "durante_ms": 6000,
+          "al_decir": "Justificación global"
+        },
+        {
+          "click": "button:has-text('Registrar conteo')",
+          "al_decir": "Pulso Registrar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3200,
+          "cursor": false
+        },
+        {
+          "resaltar": "p.gm-state__t:has-text('No tienes una sesión activa')",
+          "durante_ms": 6000,
+          "al_decir": "sesión activa"
+        }
+      ],
+      "capitulo": "Registrar el conteo",
+      "rotulo": "Registrar el conteo"
+    }
+  ],
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  }
+}

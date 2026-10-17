@@ -55,6 +55,13 @@ from .rutas import RAIZ
 # salvo que el navegador entero arranque con `--force-device-scale-factor`.
 ANCHO_CSS, ALTO_CSS = 1280, 720
 ESCALA = 1.5
+# El navegador en español de RD, como el del usuario: los controles NATIVOS
+# (`<input type=date>`, `type=time`) se pintan con el idioma del navegador, no
+# con el `lang` de la página, y sin esto el video enseñaba «10/31/2026».
+ARGS_IDIOMA = ["--lang=es-DO"]
+# Navegador liviano: sin extensiones, red de fondo ni audio (la voz va aparte).
+ARGS_LIVIANO = ["--disable-extensions", "--disable-background-networking", "--disable-component-update",
+                "--disable-sync", "--mute-audio", "--no-first-run", "--renderer-process-limit=2"]
 ANCHO, ALTO = int(ANCHO_CSS * ESCALA), int(ALTO_CSS * ESCALA)
 FPS = 30
 PAD = 0.6            # respiro tras cada narración
@@ -65,6 +72,10 @@ CALIDAD_JPEG = 90
 ZOOM_MARCA = 1.3     # acercamiento cuando la voz señala algo
 ZOOM_ACCION = 1.18   # acercamiento suave sobre lo que se pulsa o se escribe
 MARCA_MS = 4500      # una marca transitoria sin `durante_ms` dura esto
+CARTEL_MS = 6000     # un cartel sin `durante_ms` dura esto
+DIAGRAMAS = RAIZ / "marca" / "diagramas"
+# acciones que no mueven el cursor: caen en su palabra con el anticipo corto
+ACCIONES_MARCA = ("resaltar", "cartel", "diagrama", "diagrama_fase", "diagrama_cerrar", "insignia")
 
 _HEX = {k: "#%02x%02x%02x" % v for k, v in COLORES.items()}
 
@@ -145,6 +156,77 @@ JS_CAPA = r"""
   halo.style.transitionDuration = '0ms';
   halo.style.transform = `translate(${pos[0]}px,${pos[1]}px) scale(.6)`;
 
+  // ---- insignia de paso, cartel y lámina de diagrama. Viven en un shadow
+  // root: el CSS global de la app no los toca, el suyo no se escapa a la app,
+  // y ni la sustitución de privacidad ni las sondas (alertas, barras fijas)
+  // los ven. Van DEBAJO del cursor (primer hijo de la capa).
+  const ui = document.createElement('div'); ui.id = '__tut_ui';
+  ui.style.cssText = 'position:absolute;inset:0;pointer-events:none';
+  capa.insertBefore(ui, capa.firstChild);
+  const sr = ui.attachShadow({mode: 'open'});
+  sr.innerHTML = `<style>
+    :host{all:initial}
+    *{box-sizing:border-box}
+    #ins,#car,#lam{font-family:Inter,'Inter var',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;
+      -webkit-font-smoothing:antialiased}
+    #ins{position:absolute;top:64px;left:50%;height:36px;max-width:640px;display:flex;align-items:center;gap:9px;
+      padding:0 16px 0 7px;border-radius:18px;background:rgba(7,33,52,.9);color:#fff;font-size:14px;font-weight:600;
+      white-space:nowrap;border:1px solid rgba(255,255,255,.14);box-shadow:0 6px 18px rgba(7,33,52,.28);
+      opacity:0;transform:translate(-50%,-8px);transition:opacity .3s ease,transform .3s ease}
+    #ins.on{opacity:1;transform:translate(-50%,0)}
+    #ins svg{width:22px;height:22px;flex:none}
+    #ins span{overflow:hidden;text-overflow:ellipsis}
+    #car{position:absolute;left:88px;bottom:72px;width:max-content;max-width:420px;display:flex;gap:14px;
+      align-items:flex-start;padding:16px 20px 16px 16px;border-radius:12px;background:rgba(7,33,52,.94);color:#fff;
+      border:1px solid rgba(255,255,255,.12);box-shadow:0 12px 32px rgba(7,33,52,.32),0 2px 6px rgba(0,0,0,.12);
+      opacity:0;transform:translateY(16px);transition:opacity .3s ease,transform .3s cubic-bezier(.22,.8,.25,1)}
+    #car.on{opacity:1;transform:none}
+    #car .ico{width:40px;height:40px;border-radius:10px;flex:none;display:grid;place-items:center}
+    #car .ico svg{width:24px;height:24px}
+    #car b{display:block;font-size:15px;font-weight:700;margin:1px 0 4px}
+    #car p{margin:0;font-size:14.5px;line-height:1.45;font-weight:400;color:rgba(255,255,255,.88)}
+    #lam{position:absolute;inset:0;display:none;opacity:0;transition:opacity .4s ease}
+    #lam.on{opacity:1}
+    #lam.claro{background:#F6F8FA;--tinta:#072134;--tinta-2:#4A5D6E;--tarjeta:#FFFFFF;--borde:#DCE3EA;--suave:#EEF2F6}
+    #lam.oscuro{background:#072134;--tinta:#FFFFFF;--tinta-2:#B6C6D4;--tarjeta:#0E2E47;--borde:#2A4C66;--suave:#123754}
+    #lam .dg{position:absolute;inset:0}
+    #lam .dg>svg{display:block;width:100%;height:100%}
+    #lam [data-fase]{opacity:0;transform:translateY(14px);
+      transition:opacity .5s ease,transform .6s cubic-bezier(.22,.8,.25,1)}
+    #lam [data-fase].on{opacity:1;transform:none}
+  </style><div id="ins"></div><div id="lam"></div><div id="car"></div>`;
+  const ins = sr.getElementById('ins'), car = sr.getElementById('car'), lam = sr.getElementById('lam');
+  const esc = s => String(s == null ? '' : s).replace(/[&<>"]/g, c => ({'&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;'}[c]));
+  const ICONO_INS = {
+    con: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#5BD34E"/><path d="M7 12.4l3.3 3.3L17.2 8.8" fill="none" stroke="#072134" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>',
+    sin: '<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="11" fill="#C62828"/><rect x="7.5" y="10.8" width="9" height="7.2" rx="1.6" fill="#fff"/><path d="M9.4 10.8V9a2.6 2.6 0 0 1 5.2 0v1.8" fill="none" stroke="#fff" stroke-width="1.9"/></svg>',
+    info: '<svg viewBox="0 0 24 24"><path d="M12 1.5l8.5 3.2v6.1c0 5.3-3.6 9.2-8.5 11.5C7.1 20 3.5 16.1 3.5 10.8V4.7z" fill="#2F8FDB"/><circle cx="12" cy="7.6" r="1.4" fill="#fff"/><rect x="10.8" y="10.2" width="2.4" height="6.6" rx="1.2" fill="#fff"/></svg>',
+  };
+  const ICONO_CAR = {
+    consejo: ['#F5A623', '<svg viewBox="0 0 24 24" fill="none" stroke="#072134" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21.2h4"/><path d="M12 2.8a6.2 6.2 0 0 0-3.7 11.2c.7.5 1.1 1.2 1.1 2V17h5.2v-1c0-.8.4-1.5 1.1-2A6.2 6.2 0 0 0 12 2.8z"/></svg>'],
+    cuidado: ['#C62828', '<svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.2L2.4 20h19.2z"/><path d="M12 9.6v4.8"/><circle cx="12" cy="17.2" r=".6" fill="#fff"/></svg>'],
+  };
+  let insActual = null, carSeq = 0, lamCierre = null;
+  const pintarIns = (d, animar) => {
+    const clave = d ? JSON.stringify(d) : null;
+    if (clave === insActual) return;
+    insActual = clave;
+    try { d ? sessionStorage.setItem('__tutIns', clave) : sessionStorage.removeItem('__tutIns'); } catch (e) {}
+    if (!d) { ins.classList.remove('on'); return; }
+    ins.innerHTML = (ICONO_INS[d.tipo] || ICONO_INS.info) + `<span>${esc(d.texto)}</span>`;
+    ins.style.top = d.arriba != null ? d.arriba + 'px' : '';
+    if (animar) { ins.classList.remove('on'); void ins.offsetWidth; ins.classList.add('on'); return; }
+    // tras una recarga completa la insignia ya estaba: vuelve sin animación
+    ins.style.transition = 'none'; ins.classList.add('on'); void ins.offsetWidth; ins.style.transition = '';
+  };
+  try { const g = sessionStorage.getItem('__tutIns'); if (g) pintarIns(JSON.parse(g), false); } catch (e) {}
+  const faseLam = n => {
+    const dg = lam.querySelector('.dg'); if (!dg) return;
+    dg.querySelectorAll('[data-fase]').forEach(e => e.classList.toggle('on', +e.dataset.fase <= n));
+    for (let k = 1; k <= 12; k++) dg.classList.toggle('fase-' + k, k <= n);
+    dg.dataset.actual = n;
+  };
+
   window.__tut = {
     move(x, y, ms) {
       cur.style.transitionDuration = ms + 'ms';
@@ -180,6 +262,53 @@ JS_CAPA = r"""
     priv(p) {
       pares = p; try { sessionStorage.setItem('__tutPares', JSON.stringify(p)); } catch (e) {}
       aplicar(document.body);
+    },
+    // insignia del paso: {tipo: con|sin|info, texto, arriba?} o null. Queda en
+    // sessionStorage, así que una recarga completa la vuelve a pintar.
+    insignia(d) { pintarIns(d || null, true); },
+    cartel(d) {
+      const [fondo, svg] = ICONO_CAR[d.tipo] || ICONO_CAR.consejo;
+      const titulo = d.titulo || (d.tipo === 'cuidado' ? 'Cuidado' : 'Consejo');
+      car.innerHTML = `<div class="ico" style="background:${fondo}">${svg}</div>` +
+        `<div><b>${esc(titulo)}</b><p>${esc(d.texto)}</p></div>`;
+      // Sobre una lámina de diagrama el sitio de abajo a la izquierda tapa
+      // tarjetas: el cartel prueba arriba a la derecha, luego abajo a la
+      // derecha y luego su sitio de siempre, y se queda en la primera esquina
+      // que no pisa ningún texto ni tarjeta de la lámina (también los de las
+      // fases que aún no se revelan). Un subtítulo largo ocupa arriba a la
+      // derecha (estado-documento), por eso no basta una esquina fija.
+      const sitios = [['auto', '40px', '28px', 'auto'], ['auto', '40px', 'auto', '28px'], ['', '', '', '']];
+      const poner = s => { [car.style.left, car.style.right, car.style.top, car.style.bottom] = s; };
+      poner(sitios[2]);
+      if (lam.classList.contains('on')) {
+        const obst = [...lam.querySelectorAll('.dg text, .dg rect, .dg [data-fase]')].map(e => e.getBoundingClientRect())
+          .filter(r => r.width > 2 && r.height > 2 && !(r.width > innerWidth * .8 && r.height > innerHeight * .8));
+        const libre = () => { const c = car.getBoundingClientRect();
+          return !obst.some(r => r.right > c.left && r.left < c.right && r.bottom > c.top - 16 && r.top < c.bottom + 16); };
+        poner(sitios.find(s => { poner(s); return libre(); }) || sitios[0]);
+      }
+      car.classList.remove('on'); void car.offsetWidth; car.classList.add('on');
+      return ++carSeq;
+    },
+    cartelFuera(id) { if (id == null || id === carSeq) car.classList.remove('on'); },
+    // lámina a pantalla completa con un diagrama (fragmento HTML+SVG). Los
+    // elementos con data-fase="N" aparecen cuando la fase llega a N; el
+    // contenedor lleva además las clases fase-1…fase-N para efectos de CSS.
+    diagrama(html, o) {
+      o = o || {};
+      if (lamCierre) { clearTimeout(lamCierre); lamCierre = null; }
+      lam.className = o.fondo === 'oscuro' ? 'oscuro' : 'claro';
+      lam.innerHTML = `<div class="dg">${html}</div>`;
+      lam.style.display = 'block'; void lam.offsetWidth; lam.classList.add('on');
+      cur.style.opacity = 0; halo.style.visibility = 'hidden';
+      const f = o.fase == null ? 1 : o.fase;
+      setTimeout(() => faseLam(f), 250);
+    },
+    fase(n) { faseLam(n); },
+    diagramaCerrar() {
+      lam.classList.remove('on');
+      cur.style.opacity = ''; halo.style.visibility = '';
+      lamCierre = setTimeout(() => { lam.style.display = 'none'; lam.innerHTML = ''; lamCierre = null; }, 450);
     }
   };
   };
@@ -223,7 +352,7 @@ class Grabadora:
         self._proc = subprocess.Popen(
             ["ffmpeg", "-y", "-loglevel", "error",
              "-f", "image2pipe", "-framerate", str(FPS), "-vcodec", "mjpeg", "-i", "-",
-             "-c:v", "libx264", "-preset", "veryfast", "-crf", "18", "-g", str(FPS),
+             "-c:v", "libx264", "-preset", "ultrafast", "-crf", "18", "-threads", "2", "-g", str(FPS),
              "-pix_fmt", "yuv420p", "-r", str(FPS), "-movflags", "+faststart",
              str(self.destino)],
             stdin=subprocess.PIPE, bufsize=0)
@@ -323,10 +452,15 @@ class Contexto:
     """Lo que toda acción necesita del paso en curso: reloj, línea de tiempo,
     palabras de la narración y dónde registrar eventos y enfoques."""
 
-    def __init__(self, paso, reloj, inicio, palabras):
+    def __init__(self, paso, reloj, inicio, palabras, pronunciacion=None):
         self.paso, self.reloj, self.inicio, self.palabras = paso, reloj, inicio, palabras
+        # extra de `pronunciacion` propio del guion: el ancla `al_decir` tiene
+        # que pasar por el MISMO mapa combinado que usó narrar.py al sintetizar
+        # la voz, o una sigla remapeada solo por el guion nunca se encuentra.
+        self.pronunciacion = pronunciacion
         self.eventos, self.enfoques = [], []
         self.alertas_vistas = set()
+        self.diagrama = None   # número del diagrama que cierra el fin del paso
 
     def sondear_alertas(self, pag):
         """Registra cada diálogo o aviso que la app muestre durante el paso.
@@ -347,9 +481,13 @@ class Contexto:
     def t(self):
         return round(self.reloj.ahora() - self.inicio, 3) if self.reloj else 0.0
 
-    def registro(self, tipo, que, loc=None):
-        """Anota el evento y, si hay elemento, la medición de si se ve entero."""
-        ev = {"t": self.t(), "tipo": tipo, "que": que}
+    def registro(self, tipo, que, loc=None, **extra):
+        """Anota el evento y, si hay elemento, la medición de si se ve entero.
+
+        `extra` va tal cual al evento (p. ej. `dur`: segundos que el cambio
+        sigue en pantalla, que las puertas cuentan como «pantalla que cambia»).
+        """
+        ev = {"t": self.t(), "tipo": tipo, "que": que, **extra}
         if loc is not None:
             m = _medir_visible(loc)
             ev["visible"] = m.get("ok")
@@ -390,6 +528,7 @@ def _mover(pag, x, y, ms=MOVER_MS):
 
 
 MARGEN_VISTA = 28  # aire mínimo entre el elemento y las barras fijas
+AIRE_INTERNO = 12  # holgura al meter un elemento en una lista interna con scroll
 
 # Un formulario de ERP es más alto que la pantalla y tiene cabecera fija arriba
 # y barra de acciones fija abajo. "Estar en el viewport" no basta: un campo
@@ -433,33 +572,152 @@ JS_FRANJA = """
   const enFijo = () => {
     if (el.closest('.cdk-overlay-container, .cdk-overlay-pane')) return true;
     for (let n = el; n && n !== document.body; n = n.parentElement) {
-      const p = getComputedStyle(n).position;
-      if (p === 'fixed' || p === 'sticky') return true;
+      const cs = getComputedStyle(n), p = cs.position;
+      if (p === 'fixed') return true;
+      // columna fija de una tabla: se pega a un lado, no arriba ni abajo, y
+      // sube y baja con la página como cualquier fila
+      if (p === 'sticky' && cs.top === 'auto' && cs.bottom === 'auto') continue;
+      // un sticky es una barra (cabecera, filtros) si es bajo; un panel lateral
+      // de más de media ventana también se pega, pero lo de dentro sí hay que
+      // bajarlo desplazando la página
+      if (p === 'sticky' && n.getBoundingClientRect().height <= window.innerHeight * 0.5) return true;
     }
     return false;
   };
 """
 
-JS_A_LA_VISTA = "(el, margen) => {" + JS_FRANJA + """
-  if (enFijo()) return {ok: true};
-  const [tope, fondo] = franja();
-  const r = el.getBoundingClientRect();
-  if (r.top >= tope + margen && r.bottom <= fondo - margen) return {ok: true};
-  const util = fondo - tope;
-  const objetivo = r.height > util - 2 * margen ? tope + margen : tope + (util - r.height) / 2;
-  const delta = Math.round(r.top - objetivo);
-  let n = el.parentElement, contenedor = null;
-  while (n) {
+# G-14/G-19: antes se desplazaba el PRIMER ancestro con scroll (a menudo una
+# lista interna) para centrar el elemento en la ventana, y además
+# `scroll_into_view_if_needed` de Playwright centraba en cada contenedor. En
+# pantallas con listas internas (consola de Seguridad) eso dejaba cabeceras de
+# tabla cortadas y filas medio tapadas bajo el thead fijo. Ahora:
+#  1. si el elemento YA se ve entero (franja de la ventana y rectángulo útil de
+#     cada ancestro con scroll, descontando sus cabeceras/pies sticky) no se
+#     mueve nada;
+#  2. los contenedores INTERNOS se desplazan lo mínimo para que entre entero,
+#     con `aire` px de holgura, sin quedar bajo sus elementos sticky;
+#  3. la caja PRINCIPAL (la ventana, o el contenedor de página que ocupa casi
+#     toda la franja) conserva el centrado de siempre cuando está fuera.
+JS_A_LA_VISTA = "(el, [margen, aire]) => {" + JS_FRANJA + """
+  const fijo = enFijo();
+  const [tope, fondo] = fijo ? [0, window.innerHeight] : franja();
+  const r0 = el.getBoundingClientRect();
+  let top = r0.top, bot = r0.bottom, izq = r0.left, der = r0.right;
+  const rueda = (s) => /(auto|scroll|overlay)/.test(s);
+  const cajas = [];
+  for (let n = el.parentElement; n && n !== document.body && n !== document.documentElement; n = n.parentElement) {
     const s = getComputedStyle(n);
-    if (/(auto|scroll)/.test(s.overflowY) && n.scrollHeight > n.clientHeight + 1) { contenedor = n; break; }
-    n = n.parentElement;
+    const v = rueda(s.overflowY) && n.scrollHeight > n.clientHeight + 1;
+    const h = rueda(s.overflowX) && n.scrollWidth > n.clientWidth + 1;
+    if (v || h) cajas.push({n, v, h});
   }
-  const caja = contenedor || document.scrollingElement;
+  const doc = document.scrollingElement;
+  const docRueda = !!doc && doc.scrollHeight > window.innerHeight + 1;
+  // la caja principal: la más externa si ocupa casi toda la franja; si no, la ventana
+  let principal = null, sobresale = false;
+  if (!fijo) {
+    const ult = cajas.filter(c => c.v).pop();
+    // una lista interna que sobresale por debajo de la ventana (panel lateral
+    // aún sin pegar, con la página desplazable) no basta: hay que bajar también
+    // la ventana, o lo del fondo de la lista queda fuera del cuadro
+    if (ult && docRueda) {
+      const rb = ult.n.getBoundingClientRect();
+      sobresale = rb.bottom > fondo + 2 || rb.top < tope - 2;
+    }
+    if (ult && ult.n.clientHeight >= 0.6 * (fondo - tope) && !sobresale) principal = ult.n;
+    else if (docRueda) principal = window;
+  }
+  // rectángulo útil de un contenedor: su área de contenido menos lo sticky/fixed
+  // que vive dentro y se pega arriba o abajo (thead, cabeceras de bloque, leyendas)
+  const SEL = 'thead, th, tfoot, [class*=sticky], [class*=header], [class*=head], [class*=footer],' +
+              ' [class*=legend], [class*=leyenda], [class*=toolbar], [class*=actions]';
+  const banda = (c) => {
+    const cr = c.getBoundingClientRect();
+    let a = cr.top + c.clientTop, b = a + c.clientHeight;
+    const l = cr.left + c.clientLeft, rr = l + c.clientWidth;
+    const alto = b - a;
+    const cand = new Set(c.querySelectorAll(SEL));
+    for (const h of c.children) { cand.add(h); for (const k of h.children) cand.add(k); }
+    let k = 0, a2 = a, b2 = b;
+    for (const e of cand) {
+      if (++k > 400) break;
+      if (e === el || e.contains(el) || el.contains(e)) continue;
+      const s = getComputedStyle(e);
+      if (s.position !== 'sticky' && s.position !== 'fixed') continue;
+      if (s.visibility === 'hidden' || s.display === 'none') continue;
+      const q = e.getBoundingClientRect();
+      if (!q.height || !q.width || q.right <= l || q.left >= rr) continue;
+      if (q.top <= a + 2 && q.bottom > a && q.bottom < a + alto * 0.5) a2 = Math.max(a2, q.bottom);
+      if (q.bottom >= b - 2 && q.top < b && q.top > b - alto * 0.5) b2 = Math.min(b2, q.top);
+    }
+    return [a2, b2, l, rr];
+  };
+  const pos = cajas.map(c => Math.round(c.n.scrollTop) + ',' + Math.round(c.n.scrollLeft))
+                   .join('|') + '|' + Math.round(window.scrollY);
+  // cuánto mover para que [p, q] entre en [a, b] con `aire`: mínimo, o alineado
+  // al principio si no cabe
+  const minimo = (p, q, a, b) => {
+    if (p >= a && q <= b) return 0;
+    if (q - p > b - a - 2 * aire || p < a) return p - (a + aire);
+    return q - (b - aire);
+  };
+  const plan = [];
+  // con la ventana como principal y una lista que sobresale: primero se baja la
+  // ventana (el panel se pega arriba) y, ya en cuadro el elemento, se ajusta la
+  // lista recortada a lo que cabe en pantalla
+  const soloVentana = sobresale && principal === window;
+  // cuánto se va a mover la ventana (lo que pida el centrado, hasta donde llegue
+  // la página): la lista se ajusta en el mismo intento contando con ello, en vez
+  // de esperar al siguiente. Si un panel pegado no se mueve lo previsto, el
+  // intento siguiente corrige.
+  let dWin = 0;
+  if (soloVentana && (top < tope || bot > fondo)) {
+    const util = fondo - tope, alto = bot - top;
+    const objetivo = alto > util - 2 * margen ? tope + margen : tope + (util - alto) / 2;
+    dWin = Math.max(-doc.scrollTop,
+                    Math.min(doc.scrollHeight - window.innerHeight - doc.scrollTop, Math.round(top - objetivo)));
+  }
+  for (const c of cajas) {
+    if (c.n === principal) continue;
+    let [a, b, l, rr] = banda(c.n);
+    if (soloVentana) { a = Math.max(a - dWin, tope); b = Math.min(b - dWin, fondo); }
+    let dy = c.v ? minimo(top - dWin, bot - dWin, a, b) : 0;
+    let dx = c.h ? minimo(izq, der, l, rr) : 0;
+    const maxY = c.n.scrollHeight - c.n.clientHeight, maxX = c.n.scrollWidth - c.n.clientWidth;
+    const y = Math.max(0, Math.min(maxY, c.n.scrollTop + dy));
+    const x = Math.max(0, Math.min(maxX, c.n.scrollLeft + dx));
+    const ry = y - c.n.scrollTop, rx = x - c.n.scrollLeft;
+    if (Math.abs(ry) < 1 && Math.abs(rx) < 1) continue;
+    plan.push(() => c.n.scrollTo({top: y, left: x, behavior: 'smooth'}));
+    top -= ry; bot -= ry; izq -= rx; der -= rx;
+  }
+  let a = tope, b = fondo;
+  if (principal && principal !== window) {
+    const [ca, cb] = banda(principal);
+    a = Math.max(a, ca); b = Math.min(b, cb);
+  }
+  let visible = top >= a && bot <= b;
+  if (!visible && principal) {
+    const util = b - a, alto = bot - top;
+    const objetivo = alto > util - 2 * margen ? a + margen : a + (util - alto) / 2;
+    const delta = Math.round(top - objetivo);
+    // un salto de varias pantallas, animado entero, tarda más de un segundo y
+    // deja el clic por detrás de su palabra: se salta de golpe hasta quedar a
+    // una pantalla del destino y solo se anima el último tramo
+    const pantalla = fondo - tope;
+    plan.push(() => {
+      if (Math.abs(delta) > 1.5 * pantalla) {
+        principal.scrollBy({top: delta - Math.sign(delta) * pantalla, behavior: 'instant'});
+        principal.scrollBy({top: Math.sign(delta) * pantalla, behavior: 'smooth'});
+      } else {
+        principal.scrollBy({top: delta, behavior: 'smooth'});
+      }
+    });
+  }
+  plan.forEach(f => f());
   // posición ANTES de pedir el desplazamiento: si en el siguiente intento no ha
-  // cambiado, es que la caja ya estaba topada y volver a pedirlo no hará nada
-  const pos = Math.round(caja ? caja.scrollTop : window.scrollY);
-  (contenedor || window).scrollBy({top: delta, behavior: 'smooth'});
-  return {ok: false, delta, tope, fondo, pos};
+  // cambiado, es que las cajas ya estaban topadas y volver a pedirlo no hará nada
+  return {ok: !plan.length && visible, pasos: plan.length, tope, fondo, pos};
 }"""
 
 
@@ -467,7 +725,8 @@ JS_A_LA_VISTA = "(el, margen) => {" + JS_FRANJA + """
 # Es la evidencia que queda en cada evento; no se da por hecho.
 JS_VISIBLE = "(el, margen) => {" + JS_FRANJA + """
   const r = el.getBoundingClientRect();
-  const dentroViewport = r.top >= 0 && r.bottom <= window.innerHeight && r.left >= 0 && r.right <= window.innerWidth;
+  // 1 px de holgura: una barra pegada al borde mide 720,4 y no está cortada
+  const dentroViewport = r.top >= -1 && r.bottom <= window.innerHeight + 1 && r.left >= -1 && r.right <= window.innerWidth + 1;
   if (enFijo()) return {ok: dentroViewport, tope: 0, fondo: window.innerHeight,
                         arriba: Math.round(r.top), abajo: Math.round(r.bottom)};
   const [tope, fondo] = franja();
@@ -484,6 +743,28 @@ def _medir_visible(loc):
         return {"ok": None}
 
 
+def _esperar_quieto(pag, loc, tope_ms=520):
+    """Espera a que acabe el desplazamiento suave, sin gastar el tope entero.
+
+    Un desplazamiento corto termina en ~250 ms; con dos seguidos (la página y
+    luego una lista interna) la espera fija de 520 ms dejaba la marca más de
+    0,9 s por detrás de su palabra. Se da por quieto cuando el elemento repite
+    posición en dos lecturas, nunca antes de 210 ms (el arranque es lento).
+    """
+    anterior, t = None, 0
+    while t < tope_ms:
+        pag.wait_for_timeout(70)
+        t += 70
+        try:
+            caja = loc.bounding_box()
+        except Exception:
+            caja = None
+        y = round(caja["y"]) if caja else None
+        if t >= 210 and y is not None and y == anterior:
+            return
+        anterior = y
+
+
 def _a_la_vista(pag, loc):
     """Desplaza suavemente hasta que el elemento quede entero en la franja visible.
 
@@ -498,15 +779,15 @@ def _a_la_vista(pag, loc):
     """
     anterior = None
     for _ in range(3):
-        r = loc.evaluate(JS_A_LA_VISTA, MARGEN_VISTA, timeout=8000)
+        r = loc.evaluate(JS_A_LA_VISTA, [MARGEN_VISTA, AIRE_INTERNO], timeout=8000)
         if r.get("ok"):
             return True
         pos = r.get("pos")
         if anterior is not None and pos == anterior:
             return False  # topado: no hay desplazamiento que lo arregle
         anterior = pos
-        pag.wait_for_timeout(520)  # lo que dura el desplazamiento suave
-    return bool(loc.evaluate(JS_A_LA_VISTA, MARGEN_VISTA, timeout=8000).get("ok"))
+        _esperar_quieto(pag, loc)  # lo que dura el desplazamiento suave
+    return bool(loc.evaluate(JS_A_LA_VISTA, [MARGEN_VISTA, AIRE_INTERNO], timeout=8000).get("ok"))
 
 
 def _localizar(pag, sel, timeout=8000):
@@ -515,7 +796,8 @@ def _localizar(pag, sel, timeout=8000):
         loc.wait_for(state="visible", timeout=timeout)
     except PlaywrightTimeout:
         raise SelectorAusente(f"no aparece o no es visible: {sel}")
-    loc.scroll_into_view_if_needed()
+    # sin `scroll_into_view_if_needed`: centra en CADA contenedor y cortaba
+    # cabeceras de listas internas (G-14/G-19); `_a_la_vista` lo hace a medida
     if not _a_la_vista(pag, loc):
         print(f"    AVISO: «{sel}» no cabe entero en la franja visible;"
               " el video puede mostrarlo cortado.")
@@ -538,6 +820,54 @@ def _clic(pag, sel, ctx):
     return loc
 
 
+ARRASTRE_PASOS = 18   # tramos del viaje con el botón pulsado
+ARRASTRE_MS = 900     # lo que dura el viaje de la tarjeta, a ritmo de persona
+
+
+def _arrastrar(pag, spec, ctx):
+    """Arrastra un elemento hasta otro, a la vista: un tablero kanban se enseña
+    moviendo tarjetas, y eso no se puede contar con clics.
+
+        {"arrastrar": {"desde": "<tarjeta>", "hasta": "<columna destino>"}, "al_decir": "…"}
+
+    El cursor dibujado y el ratón real viajan juntos con el botón pulsado y en
+    tramos cortos (el CDK de Angular sólo empieza a arrastrar tras unos píxeles
+    de movimiento y necesita eventos intermedios para calcular el destino). El
+    destino se mide DESPUÉS de pulsar: al levantar la tarjeta el tablero puede
+    recolocar columnas. Se suelta sobre el tercio superior del destino, donde
+    una columna larga sigue estando dentro del cuadro.
+    """
+    loc, caja = _localizar(pag, spec["desde"])
+    x0, y0 = _centro(caja)
+    ctx.enfocar(caja, ZOOM_ACCION)
+    _mover(pag, x0, y0)
+    ctx.registro("clic", spec["desde"], loc)
+    pag.mouse.down()
+    pag.mouse.move(x0 + 8, y0 + 4, steps=3)  # supera el umbral de arrastre del CDK
+    destino = pag.locator(spec["hasta"]).first
+    destino.wait_for(state="visible", timeout=8000)
+    cd = destino.bounding_box()
+    if not cd:
+        pag.mouse.up()
+        raise SelectorAusente(f"sin caja: {spec['hasta']}")
+    x1 = cd["x"] + cd["width"] / 2
+    y1 = cd["y"] + min(cd["height"] / 3, 160)
+    tramo = ARRASTRE_MS / ARRASTRE_PASOS
+    for i in range(1, ARRASTRE_PASOS + 1):
+        x = x0 + (x1 - x0) * i / ARRASTRE_PASOS
+        y = y0 + (y1 - y0) * i / ARRASTRE_PASOS
+        pag.evaluate("([x,y,ms]) => window.__tut && __tut.move(x,y,ms)", [x, y, int(tramo)])
+        pag.mouse.move(x, y, steps=2)
+        pag.wait_for_timeout(int(tramo))
+    pag.wait_for_timeout(150)
+    pag.mouse.up()
+    # sin medir visibilidad: la zona de destino se mide en pleno arrastre (el
+    # tablero se desplaza y la columna puede quedar a medias) y el informe la
+    # daría por CORTADA aunque la tarjeta se suelte a la vista
+    ctx.registro("clic", spec["hasta"])
+    pag.wait_for_timeout(250)
+
+
 def _escribir(pag, sel, texto, ctx):
     loc = _clic(pag, sel, ctx)
     pag.keyboard.press("Control+A")
@@ -554,7 +884,7 @@ def _normal(palabra):
     return "".join(c for c in palabra.lower() if c.isalnum())
 
 
-def instante(palabras, clave):
+def instante(palabras, clave, pronunciacion=None):
     """Segundo en que la narración pronuncia `clave` (una o varias palabras).
 
     Es lo que sincroniza la acción con la voz: «Elijo *Borrador* en el filtro»
@@ -565,9 +895,10 @@ def instante(palabras, clave):
     if isinstance(clave, (int, float)):
         return float(clave)
     # las palabras vienen del motor de voz, que oyó las siglas escritas como se
-    # pronuncian: el ancla del guion pasa por el mismo mapa o «Tipo de NCF» no
-    # encontraría nunca su «ene-ce-efe».
-    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave)).split()]
+    # pronuncian: el ancla del guion pasa por el MISMO mapa combinado (global +
+    # `pronunciacion` del guion) que usó narrar.para_voz al sintetizar, o una
+    # sigla remapeada solo por el guion («API» → «a-pe-i») nunca se encuentra.
+    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave), pronunciacion).split()]
     dichas = [_normal(p["texto"]) for p in palabras]
     for i in range(len(dichas) - len(buscadas) + 1):
         if dichas[i:i + len(buscadas)] == buscadas:
@@ -575,20 +906,18 @@ def instante(palabras, clave):
     return None
 
 
-def _instante_desde(palabras, clave, desde):
+def _instante_desde(palabras, clave, desde, pronunciacion=None):
     """Como `instante`, pero busca la primera aparición posterior a `desde`:
     en una narración larga la misma palabra puede repetirse."""
     if isinstance(clave, (int, float)):
         return float(clave)
-    # las palabras vienen del motor de voz, que oyó las siglas escritas como se
-    # pronuncian: el ancla del guion pasa por el mismo mapa o «Tipo de NCF» no
-    # encontraría nunca su «ene-ce-efe».
-    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave)).split()]
+    # ver comentario de `instante`: mismo mapa combinado (global + del guion).
+    buscadas = [_normal(w) for w in m_narrar.para_voz(str(clave), pronunciacion).split()]
     dichas = [_normal(p["texto"]) for p in palabras]
     for i in range(len(dichas) - len(buscadas) + 1):
         if palabras[i]["t"] >= desde and dichas[i:i + len(buscadas)] == buscadas:
             return palabras[i]["t"]
-    return instante(palabras, clave)
+    return instante(palabras, clave, pronunciacion)
 
 
 # lo que tarda el cursor en llegar y pulsar: viaje + localizar el elemento,
@@ -608,7 +937,7 @@ def _esperar_palabra(ctx, clave, minimo=ADELANTO, anticipo=ANTICIPO):
     if clave is None:
         ctx.reloj.esperar_hasta(ctx.inicio + minimo)
         return
-    t = _instante_desde(ctx.palabras, clave, ctx.t() + anticipo - 0.3)
+    t = _instante_desde(ctx.palabras, clave, ctx.t() + anticipo - 0.3, ctx.pronunciacion)
     if t is None:
         print(f"    AVISO [{ctx.paso['id']}]: la narración no dice «{clave}»;"
               " la acción va al inicio.")
@@ -667,6 +996,101 @@ def _resaltar(pag, marca, ctx, cursor=True):
 
 
 _MARCA_SEQ = [0]
+_DIAG_SEQ = [0]   # número del diagrama abierto: los temporizadores solo tocan el suyo
+_CTX = [None]     # contexto del paso en curso (un temporizador puede caer en el siguiente)
+
+
+def _ctx_vivo(ctx):
+    return _CTX[0] or ctx
+
+
+# ------------------------------------------ insignia, cartel y diagrama (capa)
+
+def _insignia(pag, datos):
+    """Pinta (o quita, con None) la insignia fija del paso: arriba al centro."""
+    try:
+        pag.evaluate("d => window.__tut && __tut.insignia(d)", datos or None)
+    except Exception:
+        pass  # página a medio cargar: el init script la repinta desde sessionStorage
+
+
+def _insignia_accion(pag, ctx, acc):
+    """Cambia (o quita, con None) la insignia en el instante de la palabra.
+
+    Para los pasos que cambian de usuario en cámara: la insignia de la
+    persona que la voz nombra al ENTRAR no puede aparecer antes de que su
+    sesión ya esté dentro (ver GRABACION.md «Insignia, cartel y diagrama»).
+    Sin duración propia, como `diagrama_fase`; la insignia queda hasta que
+    otra acción o el siguiente paso la cambie.
+    """
+    datos = acc["insignia"]
+    _insignia(pag, datos)
+    ctx.registro("insignia", datos.get("texto", "") if datos else "")
+
+
+def _cartel(pag, ctx, acc):
+    """Tarjeta flotante abajo a la izquierda que se va sola a los `durante_ms`."""
+    datos = acc["cartel"]
+    durante = acc.get("durante_ms", CARTEL_MS)
+    mia = pag.evaluate("d => window.__tut ? __tut.cartel(d) : null", datos)
+    ctx.registro("cartel", datos.get("titulo") or datos.get("tipo", "consejo"),
+                 dur=round(durante / 1000, 3))
+    if ctx.reloj:
+        ctx.reloj.programar(ctx.reloj.ahora() + durante / 1000,
+                            lambda: pag.evaluate("i => window.__tut && __tut.cartelFuera(i)", mia))
+
+
+def _spec_diagrama(spec):
+    """`"nombre"` o `{"nombre", "fondo", "fase", "pasos_ms"}` → dict."""
+    return {"nombre": spec} if isinstance(spec, str) else dict(spec)
+
+
+def _abrir_diagrama(pag, ctx, spec, durante=None):
+    """Lámina a pantalla completa con `marca/diagramas/<nombre>.html`.
+
+    Arranca en la fase 1 (o `fase`). `pasos_ms` revela las fases siguientes
+    solas, a esos milisegundos desde la apertura; `diagrama_fase` las ancla a
+    una palabra. Con `durante` se cierra sola; sin él, al acabar la voz del
+    paso o con `diagrama_cerrar`.
+    """
+    nombre = spec["nombre"]
+    ruta = DIAGRAMAS / f"{nombre}.html"
+    if not ruta.exists():
+        raise SelectorAusente(f"no existe el diagrama marca/diagramas/{nombre}.html")
+    fase = spec.get("fase", 1)
+    pag.evaluate("([h,o]) => window.__tut && __tut.diagrama(h,o)",
+                 [ruta.read_text(encoding="utf-8"), {"fondo": spec.get("fondo", "claro"), "fase": fase}])
+    _DIAG_SEQ[0] += 1
+    mia = _DIAG_SEQ[0]
+    extra = {"dur": round(durante / 1000, 3)} if durante else {}
+    ctx.registro("diagrama", nombre, **extra)
+    ctx.enfocar(None, 1.0)
+    ctx.diagrama = None if durante else mia   # sin tiempo propio: lo cierra el fin del paso
+    if not ctx.reloj:
+        return
+    t0 = ctx.reloj.ahora()
+    for i, ms in enumerate(spec.get("pasos_ms") or []):
+        def revelar(n=fase + 1 + i):
+            if _DIAG_SEQ[0] == mia:
+                _fase_diagrama(pag, _ctx_vivo(ctx), n)
+        ctx.reloj.programar(t0 + ms / 1000, revelar)
+    if durante:
+        def cerrar():
+            if _DIAG_SEQ[0] == mia:
+                _cerrar_diagrama(pag, _ctx_vivo(ctx))
+        ctx.reloj.programar(t0 + durante / 1000, cerrar)
+
+
+def _fase_diagrama(pag, ctx, n):
+    pag.evaluate("n => window.__tut && __tut.fase(n)", n)
+    ctx.registro("diagrama_fase", str(n))
+
+
+def _cerrar_diagrama(pag, ctx):
+    _DIAG_SEQ[0] += 1   # invalida los temporizadores del que se cierra
+    ctx.diagrama = None
+    pag.evaluate("window.__tut && __tut.diagramaCerrar()")
+    ctx.registro("diagrama_cerrar", "cerrar")
 
 
 def _acciones(pag, ctx, variables):
@@ -680,6 +1104,11 @@ def _acciones(pag, ctx, variables):
     - `resaltar`: marca transitoria sobre un elemento (con `durante_ms`).
     - `quitar_marca`: apaga la marca y abre el plano.
     - `plano_general`: solo abre el plano (zoom 1) sin tocar la marca.
+    - `cartel`: tarjeta de consejo/cuidado abajo a la izquierda (`durante_ms`).
+    - `diagrama`, `diagrama_fase`, `diagrama_cerrar`: lámina a pantalla
+      completa con revelado por fases (ver GRABACION.md).
+    - `insignia`: cambia (o, con `null`, quita) la insignia del paso en esa
+      palabra — para cambios de usuario en cámara (ver GRABACION.md).
     """
     paso = ctx.paso
     for acc in paso.get("acciones", []):
@@ -688,9 +1117,11 @@ def _acciones(pag, ctx, variables):
         if acc.get("al_decir") is not None:
             # una marca no necesita que el cursor «llegue»: cae en la palabra
             _esperar_palabra(ctx, acc["al_decir"], minimo=0,
-                             anticipo=0.25 if "resaltar" in acc else ANTICIPO)
+                             anticipo=0.25 if any(k in acc for k in ACCIONES_MARCA) else ANTICIPO)
         if "click" in acc:
             _clic(pag, acc["click"], ctx)
+        elif "arrastrar" in acc:
+            _arrastrar(pag, acc["arrastrar"], ctx)
         elif "escribir" in acc:
             e = acc["escribir"]
             _escribir(pag, e["sel"], _sub(e["texto"], variables), ctx)
@@ -699,6 +1130,20 @@ def _acciones(pag, ctx, variables):
                 else dict(acc["resaltar"])
             marca.setdefault("durante_ms", MARCA_MS)
             _resaltar(pag, marca, ctx, cursor=acc.get("cursor", True))
+        elif "insignia" in acc:
+            _insignia_accion(pag, ctx, acc)
+        elif "cartel" in acc:
+            _cartel(pag, ctx, acc)
+        elif "diagrama" in acc:
+            spec = _spec_diagrama(acc["diagrama"])
+            for k in ("fondo", "fase", "pasos_ms"):
+                if k in acc:
+                    spec[k] = acc[k]
+            _abrir_diagrama(pag, ctx, spec, acc.get("durante_ms"))
+        elif "diagrama_fase" in acc:
+            _fase_diagrama(pag, ctx, int(acc["diagrama_fase"]))
+        elif "diagrama_cerrar" in acc:
+            _cerrar_diagrama(pag, ctx)
         elif "quitar_marca" in acc:
             pag.evaluate("window.__tut && __tut.clear()")
             ctx.enfocar(None, 1.0)
@@ -833,9 +1278,11 @@ def grabar(guion, pasos, salida):
     cfg_priv = guion.get("privacidad")
 
     with sync_playwright() as p:
-        nav = p.chromium.launch(args=[f"--force-device-scale-factor={ESCALA}"])
+        nav = p.chromium.launch(args=[f"--force-device-scale-factor={ESCALA}", *ARGS_IDIOMA, *ARGS_LIVIANO])
+        # `zona_horaria`: la del público del video (p. ej. America/Santo_Domingo), no la de esta máquina.
         ctx_nav = nav.new_context(viewport={"width": ANCHO_CSS, "height": ALTO_CSS},
-                                  device_scale_factor=ESCALA)
+                                  device_scale_factor=ESCALA,
+                                  **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
         ctx_nav.add_init_script(JS_CAPA)
         _rutas_locales(ctx_nav, guion)
         _setup({"id": "guion", "setup": guion.get("setup")}, variables, db)
@@ -852,6 +1299,7 @@ def grabar(guion, pasos, salida):
             _empujar_privacidad(pag, mapa_priv)
 
         grab = None
+        insignia_previa = None
         for paso in pasos:
             pid = paso["id"]
             print(f"  · {pid}")
@@ -875,9 +1323,16 @@ def grabar(guion, pasos, salida):
                 grab.arrancar()
 
             inicio = grab.ahora()
-            ctx = Contexto(paso, grab, inicio, palabras)
+            ctx = Contexto(paso, grab, inicio, palabras, guion.get("pronunciacion"))
+            _CTX[0] = ctx
             grab.sonda = lambda: ctx.sondear_alertas(pag)
             navego, error, meta_marcas, cursor = False, None, [], None
+            # la insignia dura TODO el paso; un paso sin ella la quita
+            insignia = paso.get("insignia") or None
+            _insignia(pag, insignia)
+            if insignia != insignia_previa:
+                ctx.registro("insignia", insignia.get("texto", "") if insignia else "")
+            insignia_previa = insignia
             try:
                 if paso.get("navegar"):
                     # la marca del paso anterior no debe sobrevivir bajo la barra nueva
@@ -888,8 +1343,12 @@ def grabar(guion, pasos, salida):
                     ctx.registro("navegar", paso["navegar"])
                     pag.evaluate("window.__tut && __tut.clear()")
                     _empujar_privacidad(pag, mapa_priv)
+                    # la navegación pudo cambiar de documento (u origen): se re-empuja
+                    _insignia(pag, insignia)
                 elif paso.get("acciones") and paso["acciones"][0].get("al_decir") is None:
                     grab.esperar_hasta(inicio + ADELANTO)
+                if paso.get("diagrama"):
+                    _abrir_diagrama(pag, ctx, _spec_diagrama(paso["diagrama"]))
 
                 _acciones(pag, ctx, variables)
                 if paso.get("esperar"):
@@ -899,7 +1358,7 @@ def grabar(guion, pasos, salida):
                     except PlaywrightTimeout:
                         print(f"    sin respuesta; reintento las acciones de {pid}")
                         pag.wait_for_timeout(2000)
-                        _acciones(pag, Contexto(paso, None, 0, palabras), variables)
+                        _acciones(pag, Contexto(paso, None, 0, palabras, guion.get("pronunciacion")), variables)
                         pag.wait_for_selector(paso["esperar"], timeout=espera)
                 if paso.get("pausa_ms"):
                     pag.wait_for_timeout(paso["pausa_ms"])
@@ -943,6 +1402,10 @@ def grabar(guion, pasos, salida):
                 print(f"    ERROR [{pid}]: {error}")
                 pag.evaluate("window.__tut && __tut.clear()")
 
+            if ctx.diagrama is not None and _DIAG_SEQ[0] == ctx.diagrama:
+                # la lámina se va con la última palabra: el fundido cae en este paso
+                grab.esperar_hasta(inicio + dur_audio + 0.1)
+                _cerrar_diagrama(pag, ctx)
             grab.esperar_hasta(inicio + dur_audio + PAD)
             grab.tick()
             ctx.sondear_alertas(pag)

@@ -1,0 +1,29 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.05,
+   "clic_a_url_s": 6.06,
+   "clic_a_networkidle_s": 6.06,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "equipo_creado": "check_circle\nOperación completada\nEl equipo ha sido creado correctamente.\nAceptar",
+ "agregar": [
+  "Personas agregadas a «Zona Norte» exitosamente",
+  0.29
+ ],
+ "quitar": [
+  "Persona quitada de «Zona Norte» exitosamente",
+  0.29
+ ],
+ "editar_eq": "check_circle\nOperación completada\nEl equipo ha sido actualizado correctamente.\nAceptar",
+ "conf_eliminar_eq": "help_outline Eliminar equipo\n\n¿Está seguro de que desea eliminar el equipo \"Zona Norte\"? Esta acción no se puede deshacer.\n\nCancelar\nEliminar",
+ "eliminar_eq": [
+  "Equipo eliminado exitosamente",
+  0.39,
+  "http://localhost:4200/security/personas"
+ ]
+}

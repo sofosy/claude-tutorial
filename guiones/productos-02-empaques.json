@@ -1,0 +1,577 @@
+{
+  "titulo": "Productos · Parte 2: unidades y empaques",
+  "descripcion": "Segunda parte de la serie de Productos de Germiva ERP: cómo configurar un producto para comprarlo en un empaque y venderlo en otro. La unidad base, encender «Se compra o se vende en empaques», agregar una caja con su contenido, sus fracciones (media caja), dónde se ofrece y cuál se propone al comprar y al vender, su propio código de barras y su precio propio con ITBIS incluido o derivado; un paquete que solo se vende; el mínimo y el máximo capturados en cajas; el mínimo y máximo por almacén; y qué pasa al quitar un empaque.",
+  "_comentario": "Serie Productos v3 (07/10/2026), video 2. Estado A: «Refresco Caribe Cola lata» se vende solo por unidad (35 con ITBIS, costo 22, mínimo 48, máximo 240). El video le agrega «Caja ×24» (1 decimal, compra ★, código 7460001000243, precio propio 780 con ITBIS) y «Paquete ×6» (solo venta ★, precio derivado 210): es exactamente el estado B de restaurar.mjs. HALLAZGO H-VP-01 (no corregido aquí, regla de solo lectura): al guardar empaques nuevos, «Capturar mínimo y máximo en» y el selector de unidad de «Mínimo y máximo por almacén» no los ven hasta reabrir la ficha (stock-bounds-unit recarga opciones con la revisión del producto, antes de que termine el PUT de unidades). El paso 06 sale al catálogo y vuelve a abrir la ficha. HALLAZGO H-VP-02: el aviso de la fila dice «Indica cuántas Unidad trae cada Caja/Cajón» (sin plural).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "130555",
+      "Embotelladora",
+      "Agroindustrial",
+      "Cibao",
+      "Galletera",
+      "Colmado",
+      "Esquina",
+      "Cacao Real",
+      "Caribe Cola",
+      "Crocante",
+      "La Finca",
+      "7460001000243",
+      "Fumigación",
+      "doméstica",
+      "Chocolate",
+      "Habichuelas",
+      "Galletas",
+      "Refresco",
+      "Barbería",
+      "Peluquería"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/productos/restaurar.mjs A"
+  },
+  "aprenderas": [
+    "Entender la unidad base y por qué la existencia y el costo siempre se llevan en ella",
+    "Activar los empaques en un producto y agregar una caja con su contenido y sus fracciones",
+    "Decidir dónde se ofrece cada empaque y cuál se propone al comprar y al vender",
+    "Darle a la caja su propio código de barras y su precio propio, o dejar que se derive",
+    "Capturar el mínimo y el máximo en cajas y fijar reglas por almacén"
+  ],
+  "errores_comunes": [
+    "Cambiar la unidad base del producto para venderlo en cajas: la unidad base no se toca, se agrega un empaque",
+    "Dejar la caja en «Enteras» si se venden medias cajas: el sistema rechazará 0.5",
+    "Escribir el precio de la caja sin ITBIS cuando el precio base lleva «ITBIS incluido»: el precio propio sigue la misma casilla",
+    "Ponerle a la caja el mismo código de barras de la unidad: cada empaque necesita el suyo"
+  ],
+  "pasos": [
+    {
+      "id": "01-unidad-base",
+      "capitulo": "La unidad base",
+      "rotulo": "La unidad base",
+      "ruta": "Inventario › Productos › Refresco Caribe Cola lata",
+      "texto_pantalla": "Unidad base · en ella se llevan la existencia, el costo y el kardex",
+      "narracion": "En esta parte vemos las unidades y empaques: cómo un mismo producto se compra en un empaque y se vende en otro. El ejemplo es un refresco en lata. Entro a Inventario, abro Productos y recojo el panel para ganar espacio. En el buscador escribo refresco, y la tabla se filtra sola. Abro su ficha con el lápiz de la fila. Hoy este refresco se vende por unidad, pero el proveedor lo despacha en cajas de veinticuatro, y en el colmado también se vende por paquetes de seis. Fíjate en la unidad de medida: Unidad. Esa es la unidad base, y no se cambia para vender en cajas: en ella se llevan siempre la existencia, el costo y el kardex. Los empaques son otras formas de comprar o vender el mismo producto, y cada uno dice cuántas unidades base trae. Así, la caja y el paquete mueven siempre el mismo inventario.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Inventario']",
+          "al_decir": "Entro a Inventario"
+        },
+        {
+          "click": ".panel-item:has-text('Productos')",
+          "al_decir": "abro Productos"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "recojo el panel"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+            "texto": "Refresco"
+          },
+          "al_decir": "En el buscador"
+        },
+        {
+          "click": "table tbody tr:has-text('Refresco Caribe Cola lata') button[aria-label='Abrir']",
+          "al_decir": "el lápiz de la fila"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Unidad de medida'))",
+          "durante_ms": 6000,
+          "al_decir": "Fíjate en la unidad"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Unidad de medida'))",
+          "durante_ms": 5000,
+          "al_decir": "no se cambia"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Se compra o se vende en empaques'])",
+          "durante_ms": 6000,
+          "al_decir": "Los empaques son"
+        },
+        {
+          "resaltar": "app-inline-product-prices mat-form-field:has(mat-label:has-text('Precio de venta'))",
+          "durante_ms": 4500,
+          "al_decir": "el mismo inventario"
+        }
+      ]
+    },
+    {
+      "id": "02-activar",
+      "capitulo": "Activar los empaques",
+      "rotulo": "Activar empaques",
+      "ruta": "Inventario › Productos › Refresco Caribe Cola lata",
+      "texto_pantalla": "Se compra o se vende en empaques · se enciende en cada producto",
+      "narracion": "La función se enciende en el propio producto, en características: se compra o se vende en empaques. La enciendo. En la pestaña inventario aparece el bloque unidades y empaques, con su explicación: la existencia, el costo y el kardex se llevan en la unidad base, y aquí se agregan las otras unidades, con cuántas trae cada una. Por ahora dice sin empaques: el producto se compra y se vende solo por unidad. Un detalle importante: solo cambian las pantallas de los productos que tienen empaques. En una factura, el selector de unidad aparece únicamente en la línea de un producto como este; las demás líneas se ven igual que siempre.",
+      "acciones": [
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Se compra o se vende en empaques'])",
+          "durante_ms": 4000,
+          "al_decir": "en características"
+        },
+        {
+          "click": "button[aria-label='Se compra o se vende en empaques']",
+          "al_decir": "La enciendo"
+        },
+        {
+          "resaltar": "app-product-units-panel h3.section-title",
+          "durante_ms": 4500,
+          "al_decir": "el bloque unidades y empaques"
+        },
+        {
+          "resaltar": "app-product-units-panel .gm-dialog-note",
+          "durante_ms": 6500,
+          "al_decir": "con su explicación"
+        },
+        {
+          "resaltar": "app-product-units-panel .gm-empty",
+          "durante_ms": 5000,
+          "al_decir": "dice sin empaques"
+        },
+        {
+          "resaltar": "app-product-units-panel button:has-text('Agregar empaque')",
+          "durante_ms": 5000,
+          "al_decir": "solo cambian las pantallas"
+        },
+        {
+          "resaltar": "app-product-units-panel .gm-empty",
+          "durante_ms": 5500,
+          "al_decir": "el selector de unidad"
+        }
+      ]
+    },
+    {
+      "id": "03-caja",
+      "capitulo": "La caja: contenido, fracciones, compra y venta",
+      "rotulo": "La caja de 24",
+      "ruta": "Inventario › Productos › Refresco › Unidades y empaques",
+      "texto_pantalla": "Caja ×24 · contenido, fracciones, dónde se ofrece y cuál se propone",
+      "narracion": "Agrego el primero, la caja. Pulso agregar empaque y aparece una fila; debajo, en rojo, el panel avisa lo que le falta. Primero, la unidad, que es el tipo de empaque: abro la lista y elijo caja. El aviso cambia y ahora pide el contenido: escribo veinticuatro, cuántas unidades base trae cada caja. Con eso la etiqueta se propone sola, caja por veinticuatro, que es el nombre con que sale en las facturas; se puede cambiar. En fracciones decido si la caja se puede vender en partes: enteras no admite fracciones, un decimal admite medias cajas, y dos decimales, cuartos. Elijo un decimal, para poder vender media caja. Luego, dónde se usa. En compra, el casillero marcado dice que la caja se ofrece al comprar; y con la estrella la propongo: cuando agregue este refresco a una compra, vendrá en cajas. En venta también se ofrece, pero sin estrella.",
+      "acciones": [
+        {
+          "click": "app-product-units-panel button:has-text('Agregar empaque')",
+          "al_decir": "Pulso agregar empaque"
+        },
+        {
+          "resaltar": "app-product-units-panel .units-error",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "en rojo"
+        },
+        {
+          "click": "app-product-units-panel tbody tr:nth-child(1) mat-select[aria-label='Unidad del empaque']",
+          "al_decir": "abro la lista y elijo"
+        },
+        {
+          "click": "mat-option:has-text('Caja/Cajón')",
+          "al_decir": "elijo caja"
+        },
+        {
+          "resaltar": "app-product-units-panel .units-error",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El aviso cambia"
+        },
+        {
+          "escribir": {
+            "sel": "app-product-units-panel tbody tr:nth-child(1) input[aria-label='Contenido en unidades base']",
+            "texto": "24"
+          },
+          "al_decir": "escribo veinticuatro"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) input[aria-label='Etiqueta']",
+          "durante_ms": 5500,
+          "al_decir": "la etiqueta se propone"
+        },
+        {
+          "click": "app-product-units-panel tbody tr:nth-child(1) mat-select[aria-label='Fracciones permitidas']",
+          "al_decir": "En fracciones"
+        },
+        {
+          "resaltar": ".cdk-overlay-pane mat-option:has-text('1 decimal')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "un decimal admite"
+        },
+        {
+          "click": "mat-option:has-text('1 decimal')",
+          "al_decir": "Elijo un decimal"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Compra'] mat-checkbox",
+          "durante_ms": 3500,
+          "al_decir": "el casillero marcado"
+        },
+        {
+          "click": "app-product-units-panel tbody tr:nth-child(1) button[aria-label='Proponer al comprar']",
+          "al_decir": "con la estrella"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Venta']",
+          "durante_ms": 4000,
+          "al_decir": "En venta"
+        }
+      ]
+    },
+    {
+      "id": "04-codigo-precio",
+      "capitulo": "Código de barras y precio propio de la caja",
+      "rotulo": "Código y precio",
+      "ruta": "Inventario › Productos › Refresco › Unidades y empaques",
+      "texto_pantalla": "Caja ×24 · código de barras propio y precio propio con ITBIS",
+      "narracion": "Debajo de la fila va el detalle de la caja. Primero, su propio código de barras, el que trae impreso la caja: así, al escanearla en la venta, entra una caja completa y no una lata. No puede repetir el código de otro producto ni de otro empaque. Después, el precio propio. Fíjate en la pista: si lo dejo vacío, la caja se cobra a veinticuatro por treinta y cinco, ochocientos cuarenta pesos. Pero la caja se vende más barata, así que escribo setecientos ochenta. Como el precio base lleva el ITBIS incluido, el precio de la caja también: la pista lo desglosa en el neto y el impuesto.",
+      "acciones": [
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(2)",
+          "durante_ms": 3000,
+          "al_decir": "el detalle de la caja"
+        },
+        {
+          "escribir": {
+            "sel": "app-product-units-panel tbody tr:nth-child(2) input[aria-label='Código de barras del empaque']",
+            "texto": "7460001000243"
+          },
+          "al_decir": "su propio código"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(2) .units-detail__field--barcode",
+          "durante_ms": 5000,
+          "al_decir": "No puede repetir"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(2) .units-detail__hint",
+          "durante_ms": 6500,
+          "al_decir": "Fíjate en la pista"
+        },
+        {
+          "escribir": {
+            "sel": "app-product-units-panel tbody tr:nth-child(2) input[aria-label='Precio propio del empaque']",
+            "texto": "780"
+          },
+          "al_decir": "escribo setecientos ochenta"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(2) .units-detail__hint",
+          "durante_ms": 6000,
+          "al_decir": "la pista lo desglosa"
+        }
+      ]
+    },
+    {
+      "id": "05-paquete-guardar",
+      "capitulo": "El paquete que solo se vende",
+      "rotulo": "El paquete de 6",
+      "ruta": "Inventario › Productos › Refresco › Unidades y empaques",
+      "texto_pantalla": "Paquete ×6 · solo para la venta, con precio derivado",
+      "narracion": "Ahora el paquete de seis. Agrego otro empaque; otra vez el aviso rojo pide la unidad. Abro la lista, bajo hasta paquete, y lo elijo. Luego pide el contenido: seis unidades, y las fracciones quedan en enteras. Este no se le compra al proveedor, así que le quito el casillero de compra. En venta le pongo la estrella: cuando se venda este refresco, el sistema propondrá paquetes. El precio lo dejo vacío, así que se deriva: seis por treinta y cinco, doscientos diez. Arriba, la pestaña inventario ya muestra un dos, los empaques que tiene. Pulso Guardar. Se guardan la ficha y los dos empaques, y sale el aviso de confirmación: acepto. Fíjate ahora en la característica: dice que tiene dos empaques, y ya no se puede apagar mientras los tenga; primero hay que quitarlos, y así se ve lo que se pierde.",
+      "acciones": [
+        {
+          "click": "app-product-units-panel button:has-text('Agregar empaque')",
+          "al_decir": "Agrego otro empaque"
+        },
+        {
+          "resaltar": "app-product-units-panel .units-error",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el aviso rojo"
+        },
+        {
+          "click": "app-product-units-panel tbody tr:nth-child(3) mat-select[aria-label='Unidad del empaque']",
+          "al_decir": "Abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Paquete'):not(:has-text('promocional'))",
+          "al_decir": "y lo elijo"
+        },
+        {
+          "resaltar": "app-product-units-panel .units-error",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Luego pide"
+        },
+        {
+          "escribir": {
+            "sel": "app-product-units-panel tbody tr:nth-child(3) input[aria-label='Contenido en unidades base']",
+            "texto": "6"
+          },
+          "al_decir": "seis unidades"
+        },
+        {
+          "click": "app-product-units-panel tbody tr:nth-child(3) td[data-label='Compra'] mat-checkbox",
+          "al_decir": "le quito el casillero"
+        },
+        {
+          "click": "app-product-units-panel tbody tr:nth-child(3) button[aria-label='Proponer al vender']",
+          "al_decir": "le pongo la estrella"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(4) .units-detail__hint",
+          "durante_ms": 5500,
+          "al_decir": "lo dejo vacío"
+        },
+        {
+          "resaltar": "mat-tab-group.product-tabs [role=tab]:has-text('Inventario')",
+          "durante_ms": 3500,
+          "al_decir": "muestra un dos"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "aviso de confirmación"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        },
+        {
+          "resaltar": ".gm-setting:has(button[aria-label='Se compra o se vende en empaques'])",
+          "durante_ms": 8000,
+          "al_decir": "Fíjate ahora"
+        }
+      ]
+    },
+    {
+      "id": "06-minimo-maximo",
+      "capitulo": "Mínimo y máximo en cajas",
+      "rotulo": "Mínimo y máximo en cajas",
+      "ruta": "Inventario › Productos › Refresco › Existencias",
+      "texto_pantalla": "Capturar mínimo y máximo en · cajas, guardado en unidades",
+      "navegar": "/inventory/product/list",
+      "narracion": "Para que todos los campos de la ficha tomen los empaques nuevos, salgo al catálogo y vuelvo a abrir el refresco con su lápiz. Con empaques, el mínimo y el máximo se pueden escribir en la unidad que más convenga. En existencias apareció un campo nuevo: capturar mínimo y máximo en. Hoy dice que se guarda en unidad. Lo abro y elijo caja por veinticuatro. El mínimo, que eran cuarenta y ocho unidades, se ve ahora como dos cajas; y el máximo, doscientos cuarenta unidades, como diez cajas. La pista confirma la equivalencia: por dentro se guardan siempre en la unidad base. Es más natural pensar el pedido en cajas: cuando quedan menos de dos, toca reponer.",
+      "acciones": [
+        {
+          "click": "table tbody tr:has-text('Refresco Caribe Cola lata') button[aria-label='Abrir']",
+          "al_decir": "con su lápiz"
+        },
+        {
+          "resaltar": "h3.section-title:has-text('Existencias')",
+          "durante_ms": 3500,
+          "al_decir": "se pueden escribir"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Capturar mínimo y máximo en'))",
+          "durante_ms": 4500,
+          "al_decir": "un campo nuevo"
+        },
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Capturar mínimo y máximo en')) mat-select",
+          "al_decir": "Lo abro"
+        },
+        {
+          "click": "mat-option:has-text('Caja ×24')",
+          "al_decir": "elijo caja por veinticuatro"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='minStock'])",
+          "durante_ms": 4500,
+          "al_decir": "se ve ahora como dos cajas"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='maxStock'])",
+          "durante_ms": 4000,
+          "al_decir": "como diez cajas"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Capturar mínimo y máximo en'))",
+          "durante_ms": 5000,
+          "al_decir": "La pista confirma"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='minStock'])",
+          "durante_ms": 4500,
+          "al_decir": "toca reponer"
+        }
+      ]
+    },
+    {
+      "id": "07-regla-almacen",
+      "capitulo": "Mínimo y máximo por almacén",
+      "rotulo": "Reglas por almacén",
+      "ruta": "Inventario › Productos › Refresco › Mínimo y máximo por almacén",
+      "texto_pantalla": "Mínimo y máximo por almacén · cada sucursal con sus propios límites",
+      "narracion": "Debajo está mínimo y máximo por almacén. Sin reglas, el mínimo y el máximo de arriba se miden contra la existencia de toda la empresa, sumando todos los almacenes; así, una sucursal vacía no avisaría si otra tiene de sobra. Para que cada almacén tenga los suyos, pulso agregar almacén. Elijo el almacén: el Sur, la sucursal principal. Luego la unidad: también aquí puedo usar cajas, y elijo caja por veinticuatro. Mínimo: una caja. Debajo del campo, la pista lo traduce a la unidad base: son veinticuatro unidades. Máximo: seis cajas, que serían ciento cuarenta y cuatro unidades. Pulso guardar. La regla queda en la tabla, convertida a unidades: ahora el almacén Sur avisa y sugiere reponer según lo que tiene él solo. Con el lápiz se edita y con la papelera se quita. Guardo la ficha, y el aviso confirma; lo acepto.",
+      "acciones": [
+        {
+          "resaltar": "app-product-stock-rules h3.section-title",
+          "durante_ms": 3500,
+          "al_decir": "Debajo está mínimo"
+        },
+        {
+          "resaltar": "app-product-stock-rules .gm-empty",
+          "durante_ms": 7000,
+          "al_decir": "Sin reglas"
+        },
+        {
+          "click": "app-product-stock-rules button:has-text('Agregar almacén')",
+          "al_decir": "pulso agregar almacén"
+        },
+        {
+          "click": "mat-dialog-container mat-form-field:has(mat-label:text-is('Almacén')) mat-select",
+          "al_decir": "Elijo el almacén"
+        },
+        {
+          "click": "mat-option:has-text('Almacén Sur')",
+          "al_decir": "el Sur"
+        },
+        {
+          "click": "mat-dialog-container app-line-unit-select mat-select",
+          "al_decir": "Luego la unidad"
+        },
+        {
+          "click": "mat-option:has-text('Caja ×24')",
+          "al_decir": "elijo caja por veinticuatro"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container mat-form-field:has(mat-label:text-is('Mínimo')) input",
+            "texto": "1"
+          },
+          "al_decir": "Mínimo: una caja"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Mínimo'))",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "lo traduce"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container mat-form-field:has(mat-label:text-is('Máximo')) input",
+            "texto": "6"
+          },
+          "al_decir": "Máximo: seis cajas"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso guardar"
+        },
+        {
+          "resaltar": "app-product-stock-rules table tbody tr td:nth-child(1)",
+          "durante_ms": 5500,
+          "al_decir": "La regla queda"
+        },
+        {
+          "resaltar": "app-product-stock-rules button[aria-label='Editar la regla del almacén']",
+          "durante_ms": 3000,
+          "al_decir": "Con el lápiz"
+        },
+        {
+          "click": ".form-layout-footer button:has-text('Guardar')",
+          "al_decir": "Guardo la ficha"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "el aviso confirma"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "lo acepto"
+        }
+      ]
+    },
+    {
+      "id": "08-quitar-y-resumen",
+      "capitulo": "Quitar un empaque y resumen",
+      "rotulo": "Quitar y resumen",
+      "ruta": "Inventario › Productos › Refresco › Unidades y empaques",
+      "texto_pantalla": "Quitar empaque · los usados se retiran, no se borran",
+      "narracion": "Por último, quitar un empaque, con la papelera roja de su fila. Si el empaque nunca se usó, desaparece. Si ya está en alguna factura, compra o movimiento, no se borra: se retira. Deja de ofrecerse al vender y al comprar, y se conserva para los documentos que lo usaron, que siguen diciendo caja por veinticuatro. En resumen: la unidad base guarda la existencia y el costo; cada empaque dice cuántas unidades trae; las fracciones permiten medias cajas; los casilleros dicen dónde se ofrece, y la estrella, cuál se propone. Y si cambia el contenido de la caja, los documentos viejos no cambian: cada línea guarda el factor que tenía ese día. En la próxima parte compramos este refresco por cajas y vemos cómo entra al inventario.",
+      "acciones": [
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) button[aria-label='Quitar empaque']",
+          "durante_ms": 4500,
+          "al_decir": "la papelera roja"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(3) td[data-label='Etiqueta']",
+          "durante_ms": 3500,
+          "al_decir": "nunca se usó"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Etiqueta']",
+          "durante_ms": 6500,
+          "al_decir": "no se borra"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Unidad de medida'))",
+          "durante_ms": 4000,
+          "al_decir": "En resumen"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Contenido']",
+          "durante_ms": 3000,
+          "al_decir": "cuántas unidades trae"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Fracciones']",
+          "durante_ms": 3000,
+          "al_decir": "medias cajas"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Compra']",
+          "durante_ms": 4500,
+          "al_decir": "los casilleros"
+        },
+        {
+          "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Contenido']",
+          "durante_ms": 7000,
+          "al_decir": "si cambia el contenido"
+        }
+      ]
+    }
+  ]
+}

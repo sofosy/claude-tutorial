@@ -1,0 +1,199 @@
+1
+00:00:03,100 --> 00:00:07,056
+Para cambiar de plan, entra a Configuración, en el menú de la izquierda,
+
+2
+00:00:07,092 --> 00:00:08,693
+y luego a Mi Suscripción.
+
+3
+00:00:09,349 --> 00:00:11,978
+Recojo el menú para ver la pantalla completa.
+
+4
+00:00:12,647 --> 00:00:14,149
+Aquí está tu plan actual:
+
+5
+00:00:14,259 --> 00:00:16,841
+Profesional, activo y ya pagado.
+
+6
+00:00:17,509 --> 00:00:20,512
+El cambio se pide con el botón Cambiar plan o ciclo.
+
+7
+00:00:21,167 --> 00:00:22,718
+Se abre una ventana.
+
+8
+00:00:23,375 --> 00:00:26,500
+Arriba te recuerda el plan que tienes hoy y lo que pagas.
+
+9
+00:00:27,169 --> 00:00:29,402
+Debajo eliges el ciclo de facturación:
+
+10
+00:00:29,513 --> 00:00:30,631
+mensual o anual;
+
+11
+00:00:30,702 --> 00:00:33,122
+cambiar sólo el ciclo también se hace aquí.
+
+12
+00:00:33,790 --> 00:00:35,194
+Y la lista de planes:
+
+13
+00:00:35,316 --> 00:00:39,857
+primero los de quien sólo factura, después los de la gestión completa de la empresa.
+
+14
+00:00:40,524 --> 00:00:42,250
+El tuyo dice Plan actual.
+
+15
+00:00:42,905 --> 00:00:46,603
+A la derecha de cada plan ves su precio y la diferencia con lo que pagas hoy:
+
+16
+00:00:46,651 --> 00:00:50,782
+con signo menos los más baratos, y con signo más los más caros.
+
+17
+00:00:52,161 --> 00:00:53,935
+Primero, bajar de plan.
+
+18
+00:00:54,603 --> 00:00:57,121
+Elijo Estándar, que cuesta menos.
+
+19
+00:00:57,789 --> 00:00:59,020
+Pulso Continuar.
+
+20
+00:00:59,674 --> 00:01:01,611
+Sale el aviso Cambio Programado:
+
+21
+00:01:01,709 --> 00:01:06,248
+como ya pagaste este mes, conservas Profesional hasta tu fecha de renovación,
+
+22
+00:01:06,308 --> 00:01:09,063
+y ese día pasas a Estándar sin cobro adicional.
+
+23
+00:01:09,731 --> 00:01:10,739
+Lo acepto.
+
+24
+00:01:11,394 --> 00:01:15,549
+Arriba queda el aviso Cambio de plan o ciclo programado, con la fecha.
+
+25
+00:01:16,204 --> 00:01:19,902
+Y en la tarjeta del plan aparece el próximo plan y el día del cambio.
+
+26
+00:01:20,557 --> 00:01:24,664
+Antes de bajar, revisa que los límites del plan nuevo cubran lo que usas:
+
+27
+00:01:24,762 --> 00:01:27,182
+usuarios, almacenes y facturas.
+
+28
+00:01:27,849 --> 00:01:30,591
+Si te arrepientes, pulsa Cancelar Cambio.
+
+29
+00:01:31,259 --> 00:01:32,948
+Te pregunta si estás seguro;
+
+30
+00:01:32,984 --> 00:01:33,792
+confirmo.
+
+31
+00:01:34,459 --> 00:01:36,408
+Sale el aviso Cambio Cancelado:
+
+32
+00:01:36,456 --> 00:01:39,174
+continúas con tu plan actual, como si nada.
+
+33
+00:01:39,841 --> 00:01:41,009
+Pulso Aceptar.
+
+34
+00:01:42,375 --> 00:01:44,273
+Ahora, subir de plan.
+
+35
+00:01:44,941 --> 00:01:49,493
+Abro otra vez la ventana de cambio y elijo Empresarial, el de mayor capacidad.
+
+36
+00:01:50,162 --> 00:01:53,375
+La nota de abajo avisa que se cobra la diferencia prorrateada:
+
+37
+00:01:53,485 --> 00:01:58,175
+es decir, sólo la parte proporcional a los días que quedan del ciclo que ya pagaste,
+
+38
+00:01:58,272 --> 00:01:59,612
+no el plan completo.
+
+39
+00:02:00,281 --> 00:02:01,907
+Ahora pulso Continuar.
+
+40
+00:02:02,563 --> 00:02:06,457
+El aviso Cambio pendiente de pago dice cuánto es y que el cambio se aplica al
+
+41
+00:02:06,271 --> 00:02:07,599
+confirmarse el pago.
+
+42
+00:02:08,254 --> 00:02:11,629
+Pulso Aceptar, y me lleva directo a la pantalla de pago.
+
+43
+00:02:12,284 --> 00:02:16,701
+En el resumen ves el cambio, de Profesional a Empresarial, con su importe.
+
+44
+00:02:17,356 --> 00:02:19,206
+Se paga igual que la suscripción:
+
+45
+00:02:19,266 --> 00:02:22,926
+con tarjeta o por transferencia, como en el video anterior.
+
+46
+00:02:23,593 --> 00:02:25,704
+Y si todavía estás en período de prueba,
+
+47
+00:02:25,838 --> 00:02:28,557
+cambiar de plan es inmediato y no cuesta nada.
+
+48
+00:02:29,223 --> 00:02:32,028
+Si sales sin pagar, conservas tu plan actual,
+
+49
+00:02:32,088 --> 00:02:36,394
+y en Mi Suscripción queda un aviso con el importe y la fecha límite para completar
+
+50
+00:02:36,206 --> 00:02:36,890
+el pago.

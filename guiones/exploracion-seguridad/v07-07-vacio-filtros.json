@@ -1,0 +1,3011 @@
+{
+ "url": "/security/auditoria?periodo=30d&acciones=CREATE,STATUS_CHANGE&registro=roles&ip=10.9.9.9",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 758,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Seguridad",
+   "caja": [
+    109,
+    136,
+    695,
+    26
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Nuevo",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1128,
+    143,
+    101,
+    36
+   ],
+   "sel": "button:has-text('Nuevo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Resumen",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ],
+   "sel": "a:has-text('Resumen')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 9",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ],
+   "sel": "a:has-text('Personas 9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-2",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ],
+   "sel": "a:has-text('Roles y permisos 12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Integraciones 1",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-3",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ],
+   "sel": "a:has-text('Integraciones 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditoría",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-4",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ],
+   "sel": "a:has-text('Auditoría')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Últimos 30 días",
+   "icono": "calendar_today",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    256,
+    166,
+    36
+   ],
+   "sel": "button:has-text('Últimos 30 días')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Acción: Creó, Cambió estado",
+   "icono": "filter_list",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-audit__on"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    455,
+    256,
+    257,
+    36
+   ],
+   "sel": "button:has-text('Acción: Creó, Cambió estado')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Limpiar",
+   "icono": "filter_alt_off",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1032,
+    256,
+    96,
+    36
+   ],
+   "sel": "button:has-text('Limpiar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:10rosa.almanzarCreó Permisos por rol #11034::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    388,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:10rosa.almanzarCreó Permisos por rol ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Price history #1684::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    434,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Price history #16')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Price history #1683::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    480,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Price history #16')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote versions #285::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    526,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote versions #2')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Invoice tax group #1822::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    572,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Invoice tax group')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Invoice tax group #1821::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    618,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Invoice tax group')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote detail inventory allocations #38::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    664,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote detail inve')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote details #335::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    710,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote details #33')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote detail inventory allocations #37::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    756,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote detail inve')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quote details #334::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    802,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quote details #33')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07rosa.almanzarCreó Quotes #213::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    848,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07rosa.almanzarCreó Quotes #213::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Price history #1682::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    894,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Price history #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Price history #1681::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    940,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Price history #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote versions #284::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    986,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote versions ')",
+   "sel_casa": "5 visible(s) de 5"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1820::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1032,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "6 visible(s) de 6"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1819::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1078,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "6 visible(s) de 6"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1818::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1124,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "6 visible(s) de 6"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1817::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1170,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "6 visible(s) de 6"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote detail inventory allocations #36::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1216,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote detail in')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote details #333::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1262,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote details #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote detail inventory allocations #35::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1308,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote detail in')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote details #332::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1354,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote details #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quotes #212::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1400,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quotes #212::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote versions #283::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1446,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote versions ')",
+   "sel_casa": "5 visible(s) de 5"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote approvals #6::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1492,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote approvals')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Price history #1680::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1538,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Price history #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Price history #1679::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1584,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Price history #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote versions #282::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1630,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote versions ')",
+   "sel_casa": "5 visible(s) de 5"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1816::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1676,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "6 visible(s) de 6"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Invoice tax group #1815::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1722,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Invoice tax gro')",
+   "sel_casa": "6 visible(s) de 6"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote detail inventory allocations #34::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1768,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote detail in')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote details #331::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1814,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote details #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote detail inventory allocations #33::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1860,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote detail in')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote details #330::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1906,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote details #')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quotes #211::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1952,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quotes #211::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote versions #281::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    1998,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote versions ')",
+   "sel_casa": "5 visible(s) de 5"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote versions #280::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2044,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote versions ')",
+   "sel_casa": "5 visible(s) de 5"
+  },
+  {
+   "texto": "11:07carlos.pimentelCreó Quote approvals #5::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2090,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07carlos.pimentelCreó Quote approvals')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Price history #1678::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2136,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Price history #167')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Price history #1677::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2182,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Price history #167')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Quote versions #279::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2228,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Quote versions #27')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Invoice tax group #1814::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2274,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Invoice tax group ')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Invoice tax group #1813::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2320,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Invoice tax group ')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Quote detail inventory allocations #32::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2366,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Quote detail inven')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Quote details #329::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2412,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Quote details #329')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Quote detail inventory allocations #31::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2458,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Quote detail inven')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Quote details #328::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2504,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Quote details #328')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Quotes #210::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2550,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Quotes #210::1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Price history #1676::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2596,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Price history #167')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "11:07jose.cabreraCreó Price history #1675::1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-audit__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    2642,
+    1168,
+    46
+   ],
+   "sel": "button:has-text('11:07jose.cabreraCreó Price history #167')",
+   "sel_casa": "4 visible(s) de 4"
+  },
+  {
+   "texto": "Cargar eventos anteriores",
+   "icono": "expand_more",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    557,
+    2698,
+    223,
+    36
+   ],
+   "sel": "button:has-text('Cargar eventos anteriores')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:search",
+   "placeholder": "Buscar persona o rol",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    820,
+    143,
+    300,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "Resumen",
+   "seleccionada": false,
+   "id": "mat-tab-link-0",
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ]
+  },
+  {
+   "texto": "Personas 9",
+   "seleccionada": false,
+   "id": "mat-tab-link-1",
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ]
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "seleccionada": false,
+   "id": "mat-tab-link-2",
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ]
+  },
+  {
+   "texto": "Integraciones 1",
+   "seleccionada": false,
+   "id": "mat-tab-link-3",
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ]
+  },
+  {
+   "texto": "Auditoría",
+   "seleccionada": true,
+   "id": "mat-tab-link-4",
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [],
+ "menus": [],
+ "toasts": [
+  "Equipo eliminado exitosamente",
+  "Secreto copiado",
+  "Permiso quitado exitosamente",
+  "Integración desactivada exitosamente",
+  "Integración activada exitosamente",
+  "Integración eliminada exitosamente"
+ ],
+ "avisos": [],
+ "chatbot_fab": [
+  1200,
+  640,
+  56,
+  56
+ ],
+ "chocan_con_fab": [
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Invoice tax group #1821::1",
+   "caja": [
+    85,
+    618,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote detail inventory allocations #38::1",
+   "caja": [
+    85,
+    664,
+    1168,
+    46
+   ]
+  }
+ ],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote details #335::1",
+   "caja": [
+    85,
+    710,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote detail inventory allocations #37::1",
+   "caja": [
+    85,
+    756,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quote details #334::1",
+   "caja": [
+    85,
+    802,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07rosa.almanzarCreó Quotes #213::1",
+   "caja": [
+    85,
+    848,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Price history #1682::1",
+   "caja": [
+    85,
+    894,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Price history #1681::1",
+   "caja": [
+    85,
+    940,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote versions #284::1",
+   "caja": [
+    85,
+    986,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1820::1",
+   "caja": [
+    85,
+    1032,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1819::1",
+   "caja": [
+    85,
+    1078,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1818::1",
+   "caja": [
+    85,
+    1124,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1817::1",
+   "caja": [
+    85,
+    1170,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote detail inventory allocations #36::1",
+   "caja": [
+    85,
+    1216,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote details #333::1",
+   "caja": [
+    85,
+    1262,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote detail inventory allocations #35::1",
+   "caja": [
+    85,
+    1308,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote details #332::1",
+   "caja": [
+    85,
+    1354,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quotes #212::1",
+   "caja": [
+    85,
+    1400,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote versions #283::1",
+   "caja": [
+    85,
+    1446,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote approvals #6::1",
+   "caja": [
+    85,
+    1492,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Price history #1680::1",
+   "caja": [
+    85,
+    1538,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Price history #1679::1",
+   "caja": [
+    85,
+    1584,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote versions #282::1",
+   "caja": [
+    85,
+    1630,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1816::1",
+   "caja": [
+    85,
+    1676,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Invoice tax group #1815::1",
+   "caja": [
+    85,
+    1722,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote detail inventory allocations #34::1",
+   "caja": [
+    85,
+    1768,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote details #331::1",
+   "caja": [
+    85,
+    1814,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote detail inventory allocations #33::1",
+   "caja": [
+    85,
+    1860,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote details #330::1",
+   "caja": [
+    85,
+    1906,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quotes #211::1",
+   "caja": [
+    85,
+    1952,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote versions #281::1",
+   "caja": [
+    85,
+    1998,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote versions #280::1",
+   "caja": [
+    85,
+    2044,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07carlos.pimentelCreó Quote approvals #5::1",
+   "caja": [
+    85,
+    2090,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Price history #1678::1",
+   "caja": [
+    85,
+    2136,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Price history #1677::1",
+   "caja": [
+    85,
+    2182,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Quote versions #279::1",
+   "caja": [
+    85,
+    2228,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Invoice tax group #1814::1",
+   "caja": [
+    85,
+    2274,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Invoice tax group #1813::1",
+   "caja": [
+    85,
+    2320,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Quote detail inventory allocations #32::1",
+   "caja": [
+    85,
+    2366,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Quote details #329::1",
+   "caja": [
+    85,
+    2412,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Quote detail inventory allocations #31::1",
+   "caja": [
+    85,
+    2458,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Quote details #328::1",
+   "caja": [
+    85,
+    2504,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Quotes #210::1",
+   "caja": [
+    85,
+    2550,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Price history #1676::1",
+   "caja": [
+    85,
+    2596,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "11:07jose.cabreraCreó Price history #1675::1",
+   "caja": [
+    85,
+    2642,
+    1168,
+    46
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Cargar eventos anteriores",
+   "caja": [
+    557,
+    2698,
+    223,
+    36
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "gm-dense": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Auditoría Seguridad Quién entra, qué puede hacer y qué cambi"
+   },
+   "gm-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__title-row": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo"
+   },
+   "gm-sheet__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió."
+   },
+   "gm-sheet__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search add Nuevo"
+   },
+   "security-console__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet__tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "console-tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría"
+   },
+   "gm-sheet__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calendar_today Últimos 30 días person filter_list Acción: Creó, Cambió"
+   },
+   "gm-sheet-bar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calendar_today Últimos 30 días person filter_list Acción: Creó, Cambió"
+   },
+   "sec-audit__filters": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "calendar_today Últimos 30 días person filter_list Acción: Creó, Cambió"
+   },
+   "sec-audit__input": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "person"
+   },
+   "sec-audit__on": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "filter_list Acción: Creó, Cambió estado"
+   },
+   "gm-ellipsis": {
+    "n": 101,
+    "visibles": 101,
+    "ej": "Acción: Creó, Cambió estado"
+   },
+   "sec-audit__action-label": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Acción: Creó, Cambió estado"
+   },
+   "sec-audit__input--ip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "lan"
+   },
+   "sec-audit__spacer": {
+    "n": 1,
+    "visibles": 0,
+    "ej": ""
+   },
+   "gm-sheet-meta": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "583 eventos"
+   },
+   "gm-sheet-split": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:10 ro"
+   },
+   "sec-audit": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:10 ro"
+   },
+   "gm-sheet-pane": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:10 ro"
+   },
+   "gm-sheet-scroll": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:10 ro"
+   },
+   "gm-sheet-row": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP"
+   },
+   "gm-sheet-row--head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP"
+   },
+   "sec-audit__row": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "HORA QUIÉN ACCIÓN REGISTRO IP"
+   },
+   "gm-th": {
+    "n": 5,
+    "visibles": 5,
+    "ej": "HORA"
+   },
+   "sec-audit__col-ip": {
+    "n": 51,
+    "visibles": 51,
+    "ej": "IP"
+   },
+   "gm-sheet-group": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Hoy · domingo, 27 de septiembre"
+   },
+   "gm-cell-mono": {
+    "n": 150,
+    "visibles": 150,
+    "ej": "11:10"
+   },
+   "sec-audit__who": {
+    "n": 50,
+    "visibles": 50,
+    "ej": "rosa.almanzar"
+   },
+   "gm-badge": {
+    "n": 50,
+    "visibles": 50,
+    "ej": "Creó"
+   },
+   "gm-badge--compact": {
+    "n": 50,
+    "visibles": 50,
+    "ej": "Creó"
+   },
+   "gm-badge--success": {
+    "n": 50,
+    "visibles": 50,
+    "ej": "Creó"
+   },
+   "sec-audit__more": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "expand_more Cargar eventos anteriores"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     7,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     7,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     7,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     7,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     7,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     7,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     7,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     7,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     7,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     7,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     7,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     7,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     7,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     7,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     7,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     7,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     7,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona o rol",
+    [
+     872,
+     152,
+     232,
+     18
+    ]
+   ],
+   [
+    "input",
+    "Filtrar por persona",
+    [
+     318,
+     264,
+     116,
+     21
+    ]
+   ],
+   [
+    "input",
+    "Filtrar por registro",
+    [
+     755,
+     264,
+     116,
+     21
+    ]
+   ],
+   [
+    "input",
+    "Filtrar por IP",
+    [
+     925,
+     264,
+     86,
+     21
+    ]
+   ],
+   [
+    "section",
+    "Eventos",
+    [
+     85,
+     305,
+     1168,
+     381
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     7,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "HORA",
+   "QUIÉN",
+   "ACCIÓN",
+   "REGISTRO",
+   "IP"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Seguridad Auditoría Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo Resumen Personas 9 Roles y permisos 12 Integraciones 1 Auditoría calendar_today Últimos 30 días person filter_list Acción: Creó, Cambió estado description lan filter_alt_off Limpiar 583 eventos HORA QUIÉN ACCIÓN REGISTRO IP Hoy · domingo, 27 de septiembre 11:10 rosa.almanzar Creó Permisos por rol #11034 ::1 11:07 rosa.almanzar Creó Price history #1684 ::1 11:07 rosa.almanzar Creó Price history #1683 ::1 11:07 rosa.almanzar Creó Quote versions #285 ::1 11:07 rosa.almanzar Creó Invoice tax group #1822 ::1 11:07 rosa.almanzar Creó Invoice tax group #1821 ::1 11:07 rosa.almanzar Creó Quote detail inventory allocations #38 ::1 11:07 rosa.almanzar Creó Quote details #335 ::1 11:07 rosa.almanzar Creó Quote detail inventory allocations #37 ::1 11:07 rosa.almanzar Creó Quote details #334 ::1 11:07 rosa.almanzar Creó Quotes #213 ::1 11:07 carlos.pimentel Creó Price history #1682 ::1 11:07 carlos.pimentel Creó Price history #1681 ::1 11:07 carlos.pimentel Creó Quote versions #284 ::1 11:07 carlos.pimentel Creó Invoice tax group #1820 ::1 11:07 carlos.pimentel Creó Invoice tax group #1819 ::1 11:07 carlos.pimentel Creó Invoice tax group #1818 ::1 11:07 carlos.pimentel Creó Invoice tax group #1817 ::1 11:07 carlos.pimentel Creó Quote detail inventory allocations #36 ::1 11:07 carlos.pimentel Creó Quote details #333 ::1 11:07 carlos.pimentel Creó Quote detail inventory allocations #35 ::1 11:07 carlos.pimentel Creó Quote details #332 ::1 11:07 carlos.pimentel Creó Quotes #212 ::1 11:07 carlos.pimentel Creó Quote versions #283 ::1 11:07 carlos.pimentel Creó Quote approvals #6 ::1 11:07 carlos.pimentel Creó Price history #1680 ::1 11:07 carlos.pimentel Creó Price history #1679 ::1 11:07 carlos.pimentel Creó Quote versions #282 ::1 11:07 carlos.pimentel Creó Invoice tax group #1816 ::1 11:07 carlos.pimentel Creó Invoice tax group #1815 ::1 11:07 carlos.pimentel Creó Quote detail inventory allocations #34 ::1 11:07 carlos.pimentel Creó Quote details #331 ::1 11:07 carlos.pimentel Creó Quote detail inventory allocations #33 ::1 11:07 carlos.pimentel Creó Quote details #330 ::1 11:07 carlos.pimentel Creó Quotes #211 ::1 11:07 carlos.pimentel Creó Quote versions #281 ::1 11:07 carlos.pimentel Creó Quote versions #280 ::1 11:07 carlos.pimentel Creó Quote approvals #5 ::1 11:07 jose.cabrera Creó Price history #1678 ::1 11:07 jose.cabrera Creó Price history #1677 ::1 11:07 jose.cabrera Creó Quote versions #279 ::1 11:07 jose.cabrera Creó Invoice tax group #1814 ::1 11:07 jose.cabrera Creó Invoice tax group #1813 ::1 11:07 jose.cabrera Creó Quote detail inventory allocations #32 ::1 11:07 jose.cabrera Creó Quote details #329 ::1 11:07 jose.cabrera Creó Quote detail inventory allocations #31 ::1 11:07 jose.cabrera Creó Quote details #328 ::1 11:07 jose.cabrera Creó Quotes #210 ::1 11:07 jose.cabrera Creó Price history #1676 ::1 11:07 jose.cabrera Creó Price history #1675 ::1 expand_more Cargar eventos anteriores"
+ },
+ "video": "v07",
+ "pantalla": "07-vacio-filtros",
+ "usuario": "rosa.almanzar",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790524007.230883,
+   "m": "DELETE",
+   "url": "v1/integration-users/7952",
+   "st": 204,
+   "body": ""
+  },
+  {
+   "t": 1790524007.3584466,
+   "m": "GET",
+   "url": "v1/integration-users/7952/summary",
+   "st": 404,
+   "body": "{\"message\":\"Usuario de integración no encontrado\",\"error\":\"Not Found\",\"statusCode\":404}"
+  },
+  {
+   "t": 1790524012.5486372,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524018.9719384,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524022.464117,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790524029.6816082,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524030.453774,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790524034.5863488,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

@@ -1,0 +1,51 @@
+{
+ "logins": [
+  {
+   "usuario": "pedro.nunez",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.0,
+   "clic_a_url_s": 6.56,
+   "clic_a_networkidle_s": 6.56,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.13,
+   "clic_a_url_s": 5.98,
+   "clic_a_networkidle_s": 5.99,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.14,
+   "clic_a_url_s": 6.33,
+   "clic_a_networkidle_s": 6.33,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "pedro_cab": [
+  "DESPLEGAR",
+  "PRODUCTO\ndrag_indicator",
+  "CÓDIGO\ndrag_indicator",
+  "PRECIO DE VENTA\ndrag_indicator",
+  "STOCK\ndrag_indicator",
+  "ESTADO\ndrag_indicator",
+  "ACCIONES"
+ ],
+ "pedro_filas": 10,
+ "errores": [
+  {
+   "paso": "v08c-pedro",
+   "error": "Locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"button:has-text('Importar / Exportar')\").first\n    - locator resolved to <button type=\"button\" cdk-describedby-host=\"ng-1\" _ngcontent-ng-c2521060883=\"\" aria-describedby=\"cdk-describedby-message-ng-1-5\" class=\"mat-mdc-tooltip-trigger btn waves-effect btn-sm btn-secondary-action\">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scrolling into view if needed\n      - done scrolling\n      - <div class=\"cdk-overlay-back"
+  },
+  {
+   "paso": "v08c-rosa",
+   "error": "Locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"tr:has-text('Machete') button:has(mat-icon:text-is('more_vert'))\").first\n"
+  }
+ ]
+}

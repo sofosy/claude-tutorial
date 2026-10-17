@@ -1,0 +1,511 @@
+1
+00:00:03,100 --> 00:00:05,655
+En esta parte vemos las unidades y empaques:
+
+2
+00:00:05,753 --> 00:00:09,277
+cómo un mismo producto se compra en un empaque y se vende en otro.
+
+3
+00:00:09,943 --> 00:00:11,991
+El ejemplo es un refresco en lata.
+
+4
+00:00:12,647 --> 00:00:16,926
+Entro a Inventario, abro Productos y recojo el panel para ganar espacio.
+
+5
+00:00:17,596 --> 00:00:21,304
+En el buscador escribo refresco, y la tabla se filtra sola.
+
+6
+00:00:21,960 --> 00:00:24,144
+Abro su ficha con el lápiz de la fila.
+
+7
+00:00:24,800 --> 00:00:26,873
+Hoy este refresco se vende por unidad,
+
+8
+00:00:26,971 --> 00:00:29,687
+pero el proveedor lo despacha en cajas de veinticuatro,
+
+9
+00:00:29,686 --> 00:00:32,615
+y en el colmado también se vende por paquetes de seis.
+
+10
+00:00:33,283 --> 00:00:35,145
+Fíjate en la unidad de medida:
+
+11
+00:00:35,241 --> 00:00:35,901
+Unidad.
+
+12
+00:00:36,569 --> 00:00:39,956
+Esa es la unidad base, y no se cambia para vender en cajas:
+
+13
+00:00:40,066 --> 00:00:43,875
+en ella se llevan siempre la existencia, el costo y el kardex.
+
+14
+00:00:44,542 --> 00:00:47,980
+Los empaques son otras formas de comprar o vender el mismo producto,
+
+15
+00:00:48,051 --> 00:00:50,856
+y cada uno dice cuántas unidades base trae.
+
+16
+00:00:51,524 --> 00:00:55,344
+Así, la caja y el paquete mueven siempre el mismo inventario.
+
+17
+00:00:56,722 --> 00:01:00,381
+La función se enciende en el propio producto, en características:
+
+18
+00:01:00,515 --> 00:01:02,737
+se compra o se vende en empaques.
+
+19
+00:01:03,405 --> 00:01:04,424
+La enciendo.
+
+20
+00:01:05,067 --> 00:01:09,495
+En la pestaña inventario aparece el bloque unidades y empaques, con su explicación:
+
+21
+00:01:09,593 --> 00:01:13,277
+la existencia, el costo y el kardex se llevan en la unidad base,
+
+22
+00:01:13,375 --> 00:01:17,332
+y aquí se agregan las otras unidades, con cuántas trae cada una.
+
+23
+00:01:17,989 --> 00:01:19,626
+Por ahora dice sin empaques:
+
+24
+00:01:19,774 --> 00:01:22,566
+el producto se compra y se vende solo por unidad.
+
+25
+00:01:23,233 --> 00:01:24,513
+Un detalle importante:
+
+26
+00:01:24,635 --> 00:01:28,009
+solo cambian las pantallas de los productos que tienen empaques.
+
+27
+00:01:28,677 --> 00:01:33,490
+En una factura, el selector de unidad aparece únicamente en la línea de un producto
+
+28
+00:01:33,304 --> 00:01:34,087
+como este;
+
+29
+00:01:34,209 --> 00:01:36,418
+las demás líneas se ven igual que siempre.
+
+30
+00:01:37,771 --> 00:01:39,881
+Agrego el primero, la caja.
+
+31
+00:01:40,536 --> 00:01:42,918
+Pulso agregar empaque y aparece una fila;
+
+32
+00:01:42,991 --> 00:01:46,391
+debajo, en rojo, el panel avisa lo que le falta.
+
+33
+00:01:47,058 --> 00:01:50,147
+Primero, la unidad, que es el tipo de empaque:
+
+34
+00:01:50,197 --> 00:01:52,182
+abro la lista y elijo caja.
+
+35
+00:01:52,850 --> 00:01:55,257
+El aviso cambia y ahora pide el contenido:
+
+36
+00:01:55,393 --> 00:01:59,301
+escribo veinticuatro, cuántas unidades base trae cada caja.
+
+37
+00:01:59,968 --> 00:02:03,429
+Con eso la etiqueta se propone sola, caja por veinticuatro,
+
+38
+00:02:03,551 --> 00:02:05,935
+que es el nombre con que sale en las facturas;
+
+39
+00:02:06,069 --> 00:02:07,274
+se puede cambiar.
+
+40
+00:02:07,941 --> 00:02:10,956
+En fracciones decido si la caja se puede vender en partes:
+
+41
+00:02:11,030 --> 00:02:16,228
+enteras no admite fracciones, un decimal admite medias cajas, y dos decimales,
+
+42
+00:02:16,312 --> 00:02:17,082
+cuartos.
+
+43
+00:02:17,739 --> 00:02:20,990
+Elijo un decimal, para poder vender media caja.
+
+44
+00:02:21,657 --> 00:02:23,420
+Luego, dónde se usa.
+
+45
+00:02:24,075 --> 00:02:27,959
+En compra, el casillero marcado dice que la caja se ofrece al comprar;
+
+46
+00:02:28,068 --> 00:02:29,582
+y con la estrella la propongo:
+
+47
+00:02:29,742 --> 00:02:33,365
+cuando agregue este refresco a una compra, vendrá en cajas.
+
+48
+00:02:34,033 --> 00:02:36,800
+En venta también se ofrece, pero sin estrella.
+
+49
+00:02:38,167 --> 00:02:40,773
+Debajo de la fila va el detalle de la caja.
+
+50
+00:02:41,428 --> 00:02:45,620
+Primero, su propio código de barras, el que trae impreso la caja:
+
+51
+00:02:45,669 --> 00:02:50,284
+así, al escanearla en la venta, entra una caja completa y no una lata.
+
+52
+00:02:50,939 --> 00:02:54,475
+No puede repetir el código de otro producto ni de otro empaque.
+
+53
+00:02:55,131 --> 00:02:57,178
+Después, el precio propio.
+
+54
+00:02:57,834 --> 00:02:59,001
+Fíjate en la pista:
+
+55
+00:02:59,161 --> 00:03:03,094
+si lo dejo vacío, la caja se cobra a veinticuatro por treinta y cinco,
+
+56
+00:03:03,141 --> 00:03:04,966
+ochocientos cuarenta pesos.
+
+57
+00:03:05,634 --> 00:03:09,752
+Pero la caja se vende más barata, así que escribo setecientos ochenta.
+
+58
+00:03:10,421 --> 00:03:14,651
+Como el precio base lleva el ITBIS incluido, el precio de la caja también:
+
+59
+00:03:14,736 --> 00:03:17,454
+la pista lo desglosa en el neto y el impuesto.
+
+60
+00:03:18,837 --> 00:03:20,550
+Ahora el paquete de seis.
+
+61
+00:03:21,217 --> 00:03:22,633
+Agrego otro empaque;
+
+62
+00:03:22,730 --> 00:03:25,212
+otra vez el aviso rojo pide la unidad.
+
+63
+00:03:25,881 --> 00:03:28,969
+Abro la lista, bajo hasta paquete, y lo elijo.
+
+64
+00:03:29,626 --> 00:03:31,201
+Luego pide el contenido:
+
+65
+00:03:31,336 --> 00:03:34,687
+seis unidades, y las fracciones quedan en enteras.
+
+66
+00:03:35,354 --> 00:03:39,473
+Este no se le compra al proveedor, así que le quito el casillero de compra.
+
+67
+00:03:40,141 --> 00:03:41,766
+En venta le pongo la estrella:
+
+68
+00:03:41,926 --> 00:03:45,649
+cuando se venda este refresco, el sistema propondrá paquetes.
+
+69
+00:03:46,317 --> 00:03:48,985
+El precio lo dejo vacío, así que se deriva:
+
+70
+00:03:49,120 --> 00:03:51,824
+seis por treinta y cinco, doscientos diez.
+
+71
+00:03:52,492 --> 00:03:56,947
+Arriba, la pestaña inventario ya muestra un dos, los empaques que tiene.
+
+72
+00:03:57,615 --> 00:03:58,694
+Pulso Guardar.
+
+73
+00:03:59,362 --> 00:04:03,718
+Se guardan la ficha y los dos empaques, y sale el aviso de confirmación:
+
+74
+00:04:03,777 --> 00:04:04,449
+acepto.
+
+75
+00:04:05,116 --> 00:04:07,015
+Fíjate ahora en la característica:
+
+76
+00:04:07,151 --> 00:04:10,984
+dice que tiene dos empaques, y ya no se puede apagar mientras los tenga;
+
+77
+00:04:11,144 --> 00:04:14,444
+primero hay que quitarlos, y así se ve lo que se pierde.
+
+78
+00:04:15,824 --> 00:04:18,951
+Para que todos los campos de la ficha tomen los empaques nuevos,
+
+79
+00:04:19,060 --> 00:04:22,522
+salgo al catálogo y vuelvo a abrir el refresco con su lápiz.
+
+80
+00:04:23,189 --> 00:04:27,483
+Con empaques, el mínimo y el máximo se pueden escribir en la unidad que más
+
+81
+00:04:27,295 --> 00:04:28,016
+convenga.
+
+82
+00:04:28,670 --> 00:04:30,992
+En existencias apareció un campo nuevo:
+
+83
+00:04:31,002 --> 00:04:33,137
+capturar mínimo y máximo en.
+
+84
+00:04:33,805 --> 00:04:35,740
+Hoy dice que se guarda en unidad.
+
+85
+00:04:36,396 --> 00:04:38,803
+Lo abro y elijo caja por veinticuatro.
+
+86
+00:04:39,459 --> 00:04:44,086
+El mínimo, que eran cuarenta y ocho unidades, se ve ahora como dos cajas;
+
+87
+00:04:44,159 --> 00:04:48,339
+y el máximo, doscientos cuarenta unidades, como diez cajas.
+
+88
+00:04:49,009 --> 00:04:50,981
+La pista confirma la equivalencia:
+
+89
+00:04:51,141 --> 00:04:53,771
+por dentro se guardan siempre en la unidad base.
+
+90
+00:04:54,439 --> 00:04:56,773
+Es más natural pensar el pedido en cajas:
+
+91
+00:04:56,920 --> 00:04:59,576
+cuando quedan menos de dos, toca reponer.
+
+92
+00:05:00,948 --> 00:05:03,566
+Debajo está mínimo y máximo por almacén.
+
+93
+00:05:04,233 --> 00:05:08,898
+Sin reglas, el mínimo y el máximo de arriba se miden contra la existencia de toda
+
+94
+00:05:08,710 --> 00:05:11,353
+la empresa, sumando todos los almacenes;
+
+95
+00:05:11,437 --> 00:05:15,295
+así, una sucursal vacía no avisaría si otra tiene de sobra.
+
+96
+00:05:15,965 --> 00:05:19,649
+Para que cada almacén tenga los suyos, pulso agregar almacén.
+
+97
+00:05:20,317 --> 00:05:21,559
+Elijo el almacén:
+
+98
+00:05:21,657 --> 00:05:23,901
+el Sur, la sucursal principal.
+
+99
+00:05:24,571 --> 00:05:25,725
+Luego la unidad:
+
+100
+00:05:25,836 --> 00:05:29,706
+también aquí puedo usar cajas, y elijo caja por veinticuatro.
+
+101
+00:05:30,374 --> 00:05:31,069
+Mínimo:
+
+102
+00:05:31,105 --> 00:05:32,050
+una caja.
+
+103
+00:05:32,718 --> 00:05:36,167
+Debajo del campo, la pista lo traduce a la unidad base:
+
+104
+00:05:36,288 --> 00:05:38,139
+son veinticuatro unidades.
+
+105
+00:05:38,807 --> 00:05:39,540
+Máximo:
+
+106
+00:05:39,687 --> 00:05:43,396
+seis cajas, que serían ciento cuarenta y cuatro unidades.
+
+107
+00:05:44,064 --> 00:05:45,145
+Pulso guardar.
+
+108
+00:05:45,812 --> 00:05:48,951
+La regla queda en la tabla, convertida a unidades:
+
+109
+00:05:49,025 --> 00:05:52,970
+ahora el almacén Sur avisa y sugiere reponer según lo que tiene él solo.
+
+110
+00:05:53,638 --> 00:05:56,442
+Con el lápiz se edita y con la papelera se quita.
+
+111
+00:05:57,098 --> 00:05:59,591
+Guardo la ficha, y el aviso confirma;
+
+112
+00:05:59,665 --> 00:06:00,436
+lo acepto.
+
+113
+00:06:01,792 --> 00:06:05,762
+Por último, quitar un empaque, con la papelera roja de su fila.
+
+114
+00:06:06,417 --> 00:06:09,331
+Si el empaque nunca se usó, desaparece.
+
+115
+00:06:09,987 --> 00:06:13,970
+Si ya está en alguna factura, compra o movimiento, no se borra:
+
+116
+00:06:14,129 --> 00:06:14,961
+se retira.
+
+117
+00:06:15,629 --> 00:06:17,703
+Deja de ofrecerse al vender y al comprar,
+
+118
+00:06:17,800 --> 00:06:20,182
+y se conserva para los documentos que lo usaron,
+
+119
+00:06:20,268 --> 00:06:22,526
+que siguen diciendo caja por veinticuatro.
+
+120
+00:06:23,194 --> 00:06:24,002
+En resumen:
+
+121
+00:06:24,100 --> 00:06:26,742
+la unidad base guarda la existencia y el costo;
+
+122
+00:06:26,853 --> 00:06:29,098
+cada empaque dice cuántas unidades trae;
+
+123
+00:06:29,234 --> 00:06:31,430
+las fracciones permiten medias cajas;
+
+124
+00:06:31,552 --> 00:06:35,561
+los casilleros dicen dónde se ofrece, y la estrella, cuál se propone.
+
+125
+00:06:36,216 --> 00:06:40,061
+Y si cambia el contenido de la caja, los documentos viejos no cambian:
+
+126
+00:06:40,184 --> 00:06:42,864
+cada línea guarda el factor que tenía ese día.
+
+127
+00:06:43,532 --> 00:06:47,552
+En la próxima parte compramos este refresco por cajas y vemos cómo entra al
+
+128
+00:06:47,364 --> 00:06:48,209
+inventario.

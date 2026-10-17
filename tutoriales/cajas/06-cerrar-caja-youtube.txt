@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Cajas · Cierra tu caja con el conteo de cierre
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Cerrar la caja
+01:10  Ingresar lo contado
+02:19  Registrar el conteo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el desglose del efectivo de tu caja y entender de dónde sale el efectivo esperado
+• Cerrar la caja con el conteo de cierre guiado en tres pasos
+• Declarar lo que contaste, ver la diferencia y justificarla cuando la hay
+• Saber qué pasa después: la supervisora hace el cuadre oficial con tu conteo
+
+⚠️ ERRORES COMUNES
+• Dejar el monto que el sistema trae lleno en vez de escribir lo que de verdad contaste
+• No justificar una diferencia: fuera de tolerancia, el conteo no se puede registrar sin explicarla
+• Intentar cerrar con movimientos pendientes de aprobación: primero los debe decidir un supervisor
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:20
+
+TRANSCRIPCIÓN
+============================================================
+Esta es Mi caja, la pantalla donde la cajera trabaja su turno. La barra de arriba dice que la Caja Principal está abierta a nombre de Yohanna. Se acabó el turno y toca cerrar, pero antes mira el Desglose del efectivo: es la cuenta de cuánto dinero debería haber en la gaveta. Arranca con el fondo inicial, cinco mil pesos. Suma los cobros en efectivo, que hoy son cero, y las entradas, dos mil. Resta las salidas: los seis mil quinientos del pago del aire acondicionado, que la supervisora ya aprobó. Y suma las transferencias recibidas: los tres mil que llegaron de la Caja Mostrador 2. El resultado, abajo, es el efectivo esperado: tres mil quinientos pesos. Ahora pulso Cerrar caja, arriba a la derecha. El sistema no deja cerrar a ciegas: sale el aviso Conteo de cierre requerido. Ese conteo es un arqueo: contar el dinero que hay de verdad y compararlo con lo esperado. La cajera declara lo que contó, y después una supervisora lo revisa y hace el cuadre oficial. Pulso Iniciar conteo.
+Esta es la página de Conteo de cierre. Arriba hay tres pasos; el primero, elegir la sesión, lo hizo el sistema por ti, así que ya estás en Ingresar montos. El Resumen de la sesión repite las cifras clave: el fondo con que abriste, los cobros del turno y el total que debería haber en caja. Si quieres ver de dónde sale ese total, pulsa Ver cálculo: despliega la misma cuenta que viste en Mi caja. Más abajo, en Detalles por método de pago, hay una fila por cada forma en que entró dinero; aquí solo Efectivo. La columna Monto esperado dice cuánto debería haber, y en Monto recibido va lo que contaste de verdad, billete por billete. Viene lleno con lo esperado, así que lo corrijo: escribo tres mil cuatrocientos ochenta. Al momento, el sistema calcula la Diferencia: faltan veinte pesos, y debajo aclara que está dentro de la tolerancia de cincuenta, el margen que la empresa acepta. Como hay diferencia, se abre la Justificación de esa línea. Explico el motivo: veinte pesos en monedas. Todo coincide con lo contado, así que paso a Siguiente.
+Último paso: Confirmar cuadre. El Resumen de totales pone lado a lado lo esperado, tres mil quinientos, lo recibido, tres mil cuatrocientos ochenta, y la diferencia total, menos veinte. Debajo, el aviso verde confirma que todos los métodos de pago están dentro de la tolerancia. Si alguno se saliera del margen, verías una advertencia, y tendrías que justificar esa diferencia antes de poder registrar. La lista Revisa las diferencias muestra solo las líneas que no cuadraron exacto. La Justificación global es opcional: sirve para explicar el cuadre completo; como ya expliqué la línea, la dejo en blanco. Pulso Registrar conteo. Sale el mensaje: conteo de cierre registrado, un supervisor hará el cuadre oficial. El sistema cierra la sesión y te devuelve a Mi caja, que ahora dice que no tienes una sesión activa. Tu turno terminó, y tu conteo queda esperando la revisión de la supervisora.

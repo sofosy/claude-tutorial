@@ -1,0 +1,402 @@
+{
+  "titulo": "Con y sin permiso · Ver una pantalla",
+  "_comentario": "Serie Seguridad, caso VISTA (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo). Entran, EN CÁMARA y en este orden: ana.mejia (sesion) → pedro.nunez → marta.guzman (receta de _CONVENCIONES: button.topbar-user → Cerrar sesión → usuario/clave → button.auth-primary-btn; login 6–8 s cubierto por la voz y una marca SIN al_decir sobre aside.sidebar, que solo existe tras entrar). Qué escribe en BD: nada (solo eventos de acceso). Contrastes sobre el MISMO punto: (1) menú Ventas › Cotizaciones: Ana lo tiene (01) · Pedro no (02) y por dirección vuelve a Inicio con el toast «No tienes permiso para ver «Cotizaciones»…» (03, verificado A3/spa-01, 0,3–0,5 s tras navegar; la marca va SIN al_decir, R9); (2) consola Seguridad: Marta la ve en solo lectura (04) · la pestaña Integraciones no, y por dirección sale la franja .console-denied (05). Ya no hay contraste «sin aviso / con aviso» (las dos rutas avisan con toast, _SELECTORES §8.12). DEPENDENCIA ronda 2: ninguna de las pantallas usadas abre modales «Acceso Denegado» (Cotizaciones lista y consola: verificados sin modal). RIESGO a ensayar: que el cierre de sesión conserve la insignia (sessionStorage); el selector del riel de Pedro es `.rail-item[aria-label='Inventario']` sin tag porque para él puede ser botón con panel. AVISOS justificados: marca sobre el paginador (zona del FAB; el rango queda a la izquierda de los botones, x≈1000). Ensayo 09-27: 0 fallos (5 pasos, 47 acciones). Cambios del ensayo T3: el botón de acceso dice «Iniciar sesión» (no «Entrar») y durante el login muestra spinner + «Entrando…»: la voz lo nombra y una marca anclada a «Entrando» (button.auth-primary-btn:has-text('Entrando'), +2 s del clic) cubre la espera; la voz de relleno lleva «Ya estamos…» a ≈+11 s del clic (login medido 6,2 s Pedro y 8,2–10,8 s Marta); la insignia sobrevive al cierre de sesión (sessionStorage, capturas 02 y 04). AVISO «dos marcas a la vez» (Entrando/aside.sidebar) = artefacto de la predicción: la marca del menú sale cuando termina el login, 6–11 s después. 01: la última marca pasa de h4.page-title (pegado arriba, R5b) a table thead th:nth-child(2). 04: los botones del editor NO salen en gris para Marta (E-10): la voz dice «se ven, pero están bloqueados: si pulsa uno, no cambia nada» y el guion pulsa uno (sigue 0/4 y sin barra de guardado). Corrección 09-28 (AUTOR-CORRECCIÓN-2, informes C 08a-1/08a-2 y D «insignia adelantada» + ronda 8 R8-1): (1) INSIGNIAS: el paso que cambia de usuario lleva la insignia de quien SALE (02 = Ana, 04 = Pedro); la acción `{insignia: null}` la quita en la pantalla de acceso («pantalla de acceso» / «entro como Marta») y la de quien ENTRA se pone con una acción anclada a «Ya estamos» (Pedro) / «Ya dentro» (Marta), ≈11–15 s después de «Pulso Iniciar», cuando su Inicio ya está en cámara. (2) 08a-1: la marca de «Cotizaciones, Ver» ya no cae en la cabecera «CLIENTE»: va sobre el título de la tabla «Gestión de Cotizaciones y Presupuestos» (`.table-container h6`, del código de dynamic-table: confirmar en el ensayo), sin cursor, y la voz lo nombra. (3) R8-1: la franja de la consola se lee en tú («No tienes permiso para ver «Integraciones». Solicita el acceso al administrador de tu empresa.»).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "ana.mejia",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Qué hace el permiso de ver: decide qué aparece en el menú y qué pestañas salen",
+    "Qué pasa si alguien escribe la dirección de una pantalla que no puede ver",
+    "Que ver no es lo mismo que cambiar: una auditora ve Seguridad sin poder tocar nada"
+  ],
+  "errores_comunes": [
+    "Creer que esconder una opción del menú basta: el sistema también la bloquea si se escribe la dirección",
+    "Dar el rol de administrador a quien solo necesita revisar: para eso existe un rol de solo lectura",
+    "Pensar que una pestaña que no aparece está rota: falta el permiso de verla"
+  ],
+  "pasos": [
+    {
+      "id": "01-con-ventas",
+      "ruta": "Inicio › Ventas › Cotizaciones",
+      "texto_pantalla": "Ana, vendedora · el menú Ventas › Cotizaciones existe y abre su lista",
+      "capitulo": "Con permiso: Ana ve Cotizaciones",
+      "rotulo": "Con permiso: Ana",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Ana (Vendedor)"
+      },
+      "navegar": "/home",
+      "acciones": [
+        {
+          "resaltar": "h1:has-text('Ana')",
+          "durante_ms": 5000,
+          "al_decir": "Ana Mejía"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "al_decir": "menú de módulos"
+        },
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "tiene Ventas"
+        },
+        {
+          "resaltar": "aside.sidebar a:has-text('Cotizaciones')",
+          "durante_ms": 3000,
+          "al_decir": "aparece Cotizaciones"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "La pulso"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Contraigo"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 4000,
+          "al_decir": "sus tres cotizaciones"
+        },
+        {
+          "resaltar": ".table-container h6:has-text('Gestión de Cotizaciones')",
+          "durante_ms": 6000,
+          "al_decir": "Cotizaciones, Ver",
+          "cursor": false
+        }
+      ],
+      "narracion": "Esta es la pantalla de Inicio de Ana Mejía, vendedora de Distribuidora Las Palmas. En este video comparamos el permiso más básico, el de ver una pantalla: primero con alguien que lo tiene, y después con alguien que no. A la izquierda está el menú de módulos, que solo trae lo que el rol de cada persona permite. Ana tiene Ventas; lo abro, y dentro aparece Cotizaciones. Una cotización es el presupuesto que se le da a un cliente antes de venderle. La pulso, y se abre la lista. Contraigo el panel del menú para ganar espacio. Aquí están sus tres cotizaciones. Esta pantalla, Gestión de Cotizaciones y Presupuestos, se le abre porque su rol, Vendedor, tiene el permiso Cotizaciones, Ver. Sin ese permiso, la opción ni siquiera aparece en el menú."
+    },
+    {
+      "id": "02-sin-ventas-menu",
+      "ruta": "Acceso › Inicio de Pedro",
+      "texto_pantalla": "Pedro, almacén · su menú no tiene Ventas",
+      "capitulo": "Sin permiso: el menú de Pedro",
+      "rotulo": "Sin permiso: Pedro",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Ana (Vendedor)"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "salgo"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "pantalla de acceso"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "pedro.nunez"
+          },
+          "al_decir": "su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "Pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Con esos permisos"
+        },
+        {
+          "resaltar": "aside.sidebar, button.auth-primary-btn:has-text('Entrando')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Sin permiso · Pedro (Almacén)"
+          },
+          "al_decir": "Ya estamos"
+        },
+        {
+          "resaltar": "aside.sidebar .rail-item[aria-label='Inventario']",
+          "durante_ms": 4000,
+          "al_decir": "Tiene Inventario"
+        },
+        {
+          "resaltar": "aside.sidebar >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "ni siquiera le muestra"
+        }
+      ],
+      "narracion": "Cambiamos de persona. Ahora salgo y entro como Pedro Núñez, el encargado de almacén. Abro el menú de mi usuario, arriba a la derecha, y pulso Cerrar sesión. En la pantalla de acceso escribo su usuario, que es pedro punto nunez, en minúsculas y sin eñe; y ahora su clave, que se ve con puntos por seguridad. Pulso Iniciar sesión, y el botón cambia a Entrando: el sistema comprueba quién es y carga los permisos de su rol, Almacén. Con esos permisos arma su menú, que es distinto para cada persona, según sus roles. Mientras entra, recuerda que Pedro es el encargado de almacén: su trabajo diario son los productos y las existencias. Ya estamos en el Inicio de Pedro. Fíjate en el menú de la izquierda: no aparece Ventas. Tiene Inventario, porque su trabajo son los productos; pero su rol no incluye el permiso de ver cotizaciones, así que el sistema ni siquiera le muestra la opción. Esto es lo primero que hace un permiso de ver: decide qué aparece en el menú."
+    },
+    {
+      "id": "03-sin-ventas-url",
+      "ruta": "Dirección escrita › /sales/quotes › Inicio",
+      "texto_pantalla": "Pedro escribe la dirección de Cotizaciones · vuelve a Inicio con aviso",
+      "capitulo": "Sin permiso: escribir la dirección",
+      "rotulo": "Sin permiso: por dirección",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Pedro (Almacén)"
+      },
+      "navegar": "/sales/quotes",
+      "al_decir_navegar": "probarlo",
+      "acciones": [
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "resaltar": "h1:has-text('Pedro')",
+          "durante_ms": 4000,
+          "al_decir": "de vuelta en el Inicio"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Escribir la dirección no salta el permiso: el sistema lo revisa en cada pantalla."
+          },
+          "durante_ms": 7000,
+          "al_decir": "no salta el permiso"
+        }
+      ],
+      "narracion": "¿Y si Pedro conoce la dirección de la pantalla de Cotizaciones y la teclea directamente en el navegador? Vamos a probarlo. El sistema no lo deja pasar: lo devuelve al Inicio con un aviso que dice No tienes permiso para ver Cotizaciones. Solicita el acceso al administrador de tu empresa. Aquí está, de vuelta en el Inicio, sin haber visto ni una cotización. Escribir la dirección no salta el permiso: el sistema lo comprueba al abrir cada pantalla, y el servidor lo vuelve a comprobar en cada consulta."
+    },
+    {
+      "id": "04-con-seguridad",
+      "ruta": "Acceso › Seguridad (Marta)",
+      "texto_pantalla": "Marta, auditora · ve Seguridad, en solo lectura",
+      "capitulo": "Con permiso: Marta ve Seguridad",
+      "rotulo": "Con permiso: Marta",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Pedro (Almacén)"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "Salgo otra vez"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Marta"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "marta.guzman"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras entra"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 5000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "con",
+            "texto": "Con permiso · Marta (Auditor)"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar a.rail-item[href='/security']",
+          "al_decir": "La abro"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs",
+          "durante_ms": 5000,
+          "al_decir": "cuatro pestañas"
+        },
+        {
+          "resaltar": ".gm-sheet__actions",
+          "durante_ms": 4000,
+          "al_decir": "solo está el buscador"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "al_decir": "Abro Roles"
+        },
+        {
+          "click": ".gm-rail-btn:has-text('Vendedor'):not(:has-text('sénior'))",
+          "al_decir": "el rol Vendedor"
+        },
+        {
+          "resaltar": ".sec-roles__head",
+          "durante_ms": 3500,
+          "al_decir": "En la cabecera"
+        },
+        {
+          "resaltar": ".rpe__readonly",
+          "durante_ms": 4500,
+          "al_decir": "franja amarilla"
+        },
+        {
+          "click": ".rpe__act[disabled]",
+          "al_decir": "si pulsa uno"
+        },
+        {
+          "resaltar": ".rpe__resource >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Los ve"
+        }
+      ],
+      "narracion": "Ahora el lado contrario: alguien que sí puede ver algo delicado. Salgo otra vez, pulso Cerrar sesión, y entro como Marta Guzmán, la auditora de la empresa. Escribo su usuario, marta punto guzman, también en minúsculas; ahora su clave, que en pantalla se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Mientras entra, recuerda que Marta no administra nada: solo revisa. El rol de Marta es Auditor, de solo lectura: puede ver casi todo y no puede cambiar nada. Así revisa sin riesgo de tocar algo por error. Ya dentro, su menú sí tiene Seguridad. La abro. Es la misma consola que usa la administradora, pero con cuatro pestañas: falta Integraciones, porque su rol no tiene ese permiso. Arriba a la derecha solo está el buscador: no hay botón Nuevo, porque no puede crear. Abro Roles y permisos, y dentro, el rol Vendedor. En la cabecera no aparecen ni Duplicar ni Editar. Debajo, una franja amarilla con un candado dice Solo lectura: no tiene permiso para cambiar permisos. Los botones se ven más apagados y están bloqueados: si pulsa uno, no cambia nada. Los ve, pero no los puede tocar."
+    },
+    {
+      "id": "05-sin-integraciones",
+      "ruta": "Dirección escrita › Seguridad › Integraciones",
+      "texto_pantalla": "Marta escribe la dirección de Integraciones · franja «No tienes permiso»",
+      "capitulo": "Sin permiso: la pestaña Integraciones",
+      "rotulo": "Sin permiso: Integraciones",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Marta · Integraciones"
+      },
+      "navegar": "/security/integraciones",
+      "al_decir_navegar": "Veamos",
+      "acciones": [
+        {
+          "resaltar": ".console-denied",
+          "durante_ms": 7000,
+          "al_decir": "una franja con un candado"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Resumen')",
+          "durante_ms": 4000,
+          "al_decir": "su primera pestaña"
+        },
+        {
+          "cartel": {
+            "tipo": "cuidado",
+            "titulo": "Cuidado",
+            "texto": "Ver no es cambiar: son permisos distintos. Da solo el de ver a quien solo revisa."
+          },
+          "durante_ms": 8000,
+          "al_decir": "En resumen"
+        },
+        {
+          "resaltar": ".gm-sheet__tabs",
+          "durante_ms": 5000,
+          "al_decir": "qué pestañas salen"
+        }
+      ],
+      "narracion": "Última prueba: Marta intenta entrar a Integraciones escribiendo su dirección en el navegador. Veamos qué pasa. La consola no la deja: arriba sale una franja con un candado, que dice No tienes permiso para ver Integraciones. Solicita el acceso al administrador de tu empresa. Y debajo le muestra su primera pestaña permitida, el Resumen. Si alguien no tuviera ninguna pestaña de Seguridad, vería solo ese aviso. En resumen: el permiso de ver decide qué aparece en el menú y qué pestañas salen; escribir la dirección no lo salta; y ver no es lo mismo que cambiar: Marta revisa Seguridad, pero no crea ni edita nada."
+    }
+  ]
+}

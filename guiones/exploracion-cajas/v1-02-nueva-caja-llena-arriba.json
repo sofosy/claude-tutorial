@@ -1,0 +1,1165 @@
+{
+ "url": "/cashier?section=cajas",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [
+  {
+   "el": "div.mat-mdc-dialog-content.mdc-dialog__content",
+   "scrollHeight": 638,
+   "clientHeight": 468
+  }
+ ],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "page-hero-title",
+   "texto": "Cajas",
+   "caja": [
+    85,
+    118,
+    994,
+    25
+   ]
+  },
+  {
+   "tag": "p",
+   "clase": "page-hero-subtitle",
+   "texto": "Estado de cada caja: ábrela, continúa tu turno o revisa quién la opera.",
+   "caja": [
+    85,
+    145,
+    720,
+    18
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "",
+   "texto": "Nueva caja",
+   "caja": [
+    416,
+    85,
+    80,
+    21
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-dialog-section__title",
+   "texto": "INFORMACIÓN GENERAL",
+   "caja": [
+    384,
+    144,
+    512,
+    20
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-dialog-section__title",
+   "texto": "MÉTODOS DE PAGO ACEPTADOS",
+   "caja": [
+    384,
+    318,
+    512,
+    20
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-dialog-section__title",
+   "texto": "MODO DE OPERACIÓN",
+   "caja": [
+    384,
+    408,
+    512,
+    20
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-dialog-section__title",
+   "texto": "MONTOS Y LÍMITES",
+   "caja": [
+    384,
+    568,
+    512,
+    20
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    70,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    923,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications_active",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    969,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications_active')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RAramón almonteadmin.progreso@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de ramón almonte",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1034,
+    10,
+    230,
+    40
+   ],
+   "sel": "button[aria-label='Cuenta de ramón almonte']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "people",
+   "icono": "",
+   "aria": "Recursos Humanos",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    243,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Recursos Humanos']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    415,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Configuración",
+   "icono": "tune",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1095,
+    123,
+    158,
+    36
+   ],
+   "sel": "button:has-text('Configuración')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cajas",
+   "icono": "storefront",
+   "aria": "",
+   "id": "cashier-hub-tab-cajas",
+   "clases": [
+    "segmented__option",
+    "segmented__option--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ],
+   "sel": "#cashier-hub-tab-cajas",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Mi caja",
+   "icono": "point_of_sale",
+   "aria": "",
+   "id": "cashier-hub-tab-caja",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ],
+   "sel": "#cashier-hub-tab-caja",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Por aprobar",
+   "icono": "approval",
+   "aria": "",
+   "id": "cashier-hub-tab-aprobaciones",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    284,
+    180,
+    128,
+    34
+   ],
+   "sel": "#cashier-hub-tab-aprobaciones",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Historial",
+   "icono": "history",
+   "aria": "",
+   "id": "cashier-hub-tab-historial",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    414,
+    180,
+    107,
+    34
+   ],
+   "sel": "#cashier-hub-tab-historial",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Análisis",
+   "icono": "insights",
+   "aria": "",
+   "id": "cashier-hub-tab-analisis",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    523,
+    180,
+    104,
+    34
+   ],
+   "sel": "#cashier-hub-tab-analisis",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Todas 3",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option",
+    "segmented__option--active"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    457,
+    245,
+    97,
+    32
+   ],
+   "sel": "button:has-text('Todas 3')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Abiertas 1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    558,
+    245,
+    111,
+    32
+   ],
+   "sel": "button:has-text('Abiertas 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cerradas 2",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    672,
+    245,
+    114,
+    32
+   ],
+   "sel": "button:has-text('Cerradas 2')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Bloqueadas 1",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "segmented__option"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    790,
+    245,
+    130,
+    32
+   ],
+   "sel": "button:has-text('Bloqueadas 1')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nueva caja",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "board-toolbar__new"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1119,
+    243,
+    134,
+    36
+   ],
+   "sel": "button:has-text('Nueva caja')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "gm-icon-btn",
+    "board-card__menu"
+   ],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    325,
+    314,
+    34,
+    34
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Ver sesión",
+   "icono": "visibility",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    219,
+    551,
+    132,
+    36
+   ],
+   "sel": "button:has-text('Ver sesión')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "gm-icon-btn",
+    "board-card__menu"
+   ],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    620,
+    314,
+    34,
+    34
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Desbloquear",
+   "icono": "lock_open",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    499,
+    551,
+    147,
+    36
+   ],
+   "sel": "button:has-text('Desbloquear')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [
+    "gm-icon-btn",
+    "board-card__menu"
+   ],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    915,
+    314,
+    34,
+    34
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Abrir sesión",
+   "icono": "play_arrow",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    797,
+    551,
+    144,
+    36
+   ],
+   "sel": "button:has-text('Abrir sesión')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "close",
+   "aria": "Cerrar",
+   "id": "",
+   "clases": [
+    "cashier-sheet-close"
+   ],
+   "tooltip": "Cerrar",
+   "deshabilitado": false,
+   "caja": [
+    866,
+    77,
+    36,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button[aria-label='Cerrar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cancelar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    653,
+    605,
+    97,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Cancelar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Crear caja",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    766,
+    605,
+    130,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Crear caja')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Buscar",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "Nombre, código, ubicación...",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    235,
+    360,
+    52
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Buscar'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Nombre",
+   "formcontrolname": "name",
+   "tipo": "input:text",
+   "placeholder": "Ej: Caja principal",
+   "valor": "Caja Mostrador 3",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    384,
+    174,
+    248,
+    58
+   ],
+   "sel": "[formcontrolname='name']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Código",
+   "formcontrolname": "code",
+   "tipo": "input:text",
+   "placeholder": "Ej: CAJA-001",
+   "valor": "CAJA-03",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    648,
+    174,
+    248,
+    58
+   ],
+   "sel": "[formcontrolname='code']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Ubicación",
+   "formcontrolname": "location",
+   "tipo": "input:text",
+   "placeholder": "Ej: Sucursal Centro",
+   "valor": "Área de ventas — piso 2",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    384,
+    240,
+    512,
+    58
+   ],
+   "sel": "[formcontrolname='location']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Fondo fijo",
+   "formcontrolname": "fixedFund",
+   "tipo": "input:number",
+   "placeholder": "0.00",
+   "valor": "",
+   "hint": "Monto base que permanece en la caja (opcional)",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    384,
+    597,
+    512,
+    58
+   ],
+   "sel": "[formcontrolname='fixedFund']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Límite mínimo de efectivo",
+   "formcontrolname": "minCashLimit",
+   "tipo": "input:number",
+   "placeholder": "0.00",
+   "valor": "",
+   "hint": "Umbral de alerta por saldo bajo (opcional)",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    384,
+    663,
+    248,
+    58
+   ],
+   "sel": "[formcontrolname='minCashLimit']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Límite máximo de efectivo",
+   "formcontrolname": "maxCashLimit",
+   "tipo": "input:number",
+   "placeholder": "0.00",
+   "valor": "",
+   "hint": "Umbral de alerta por exceso de efectivo (opcional)",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    648,
+    663,
+    248,
+    58
+   ],
+   "sel": "[formcontrolname='maxCashLimit']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "Efectivo",
+   "formcontrolname": "acceptCash",
+   "marcado": true,
+   "caja": [
+    384,
+    348,
+    92,
+    40
+   ]
+  },
+  {
+   "texto": "Tarjeta",
+   "formcontrolname": "acceptCard",
+   "marcado": true,
+   "caja": [
+    500,
+    348,
+    86,
+    40
+   ]
+  },
+  {
+   "texto": "Transferencia",
+   "formcontrolname": "acceptTransfer",
+   "marcado": true,
+   "caja": [
+    610,
+    348,
+    126,
+    40
+   ]
+  },
+  {
+   "texto": "Control por denominaciones (modo estricto)",
+   "formcontrolname": "requireDenominationControl",
+   "marcado": false,
+   "caja": [
+    384,
+    437,
+    311,
+    40
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "storefront Cajas",
+   "seleccionada": true,
+   "id": "cashier-hub-tab-cajas",
+   "caja": [
+    90,
+    180,
+    90,
+    34
+   ]
+  },
+  {
+   "texto": "point_of_sale Mi caja",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-caja",
+   "caja": [
+    182,
+    180,
+    100,
+    34
+   ]
+  },
+  {
+   "texto": "approval Por aprobar",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-aprobaciones",
+   "caja": [
+    284,
+    180,
+    128,
+    34
+   ]
+  },
+  {
+   "texto": "history Historial",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-historial",
+   "caja": [
+    414,
+    180,
+    107,
+    34
+   ]
+  },
+  {
+   "texto": "insights Análisis",
+   "seleccionada": false,
+   "id": "cashier-hub-tab-analisis",
+   "caja": [
+    523,
+    180,
+    104,
+    34
+   ]
+  },
+  {
+   "texto": "Todas 3",
+   "seleccionada": true,
+   "id": "",
+   "caja": [
+    457,
+    245,
+    97,
+    32
+   ]
+  },
+  {
+   "texto": "Abiertas 1",
+   "seleccionada": false,
+   "id": "",
+   "caja": [
+    558,
+    245,
+    111,
+    32
+   ]
+  },
+  {
+   "texto": "Cerradas 2",
+   "seleccionada": false,
+   "id": "",
+   "caja": [
+    672,
+    245,
+    114,
+    32
+   ]
+  },
+  {
+   "texto": "Bloqueadas 1",
+   "seleccionada": false,
+   "id": "",
+   "caja": [
+    790,
+    245,
+    130,
+    32
+   ]
+  }
+ ],
+ "tarjetas": [
+  {
+   "aria": "Caja Caja Mostrador 2",
+   "texto": "Caja Mostrador 2 CAJA-02 lock_open Abierta more_vert Ubicación Área de pinturas y herramientas La opera luis.batista Abierta hace 2 h 1 min Efectivo en caja RD$6,050.00 visibility Ver sesión",
+   "caja": [
+    85,
+    303,
+    283,
+    297
+   ]
+  },
+  {
+   "aria": "Caja Caja Sucursal Santiago",
+   "texto": "Caja Sucursal Santiago CAJA-SAN block Bloqueada more_vert Ubicación Sucursal Santiago — Av. Estrella Sadhalá Última actividad 22/09/2026 17:40 lock_open Desbloquear",
+   "caja": [
+    380,
+    303,
+    283,
+    297
+   ]
+  },
+  {
+   "aria": "Caja Caja Principal",
+   "texto": "Caja Principal CAJA-01 lock Cerrada more_vert Ubicación Mostrador de entrada — frente a la puerta Última actividad 22/09/2026 14:05 play_arrow Abrir sesión",
+   "caja": [
+    675,
+    303,
+    283,
+    297
+   ]
+  }
+ ],
+ "dialogos": [
+  {
+   "titulo": "Nueva caja",
+   "clases": "cdk-overlay-pane mat-mdc-dialog-panel",
+   "caja": [
+    360,
+    63,
+    560,
+    594
+   ],
+   "texto": "point_of_sale Nueva caja close INFORMACIÓN GENERAL Nombre Código Ubicación MÉTODOS DE PAGO ACEPTADOS Efectivo Tarjeta Transferencia MODO DE OPERACIÓN Control por denominaciones (modo estricto) Al activarlo, la apertura de sesión exige el conteo inicial por denominaciones (debe cuadrar con el fondo), los cobros en efectivo piden el desglose de billetes/monedas recibidos y el cuadre exige el conteo físico final. MONTOS Y LÍMITES Fondo fijo RD$ Monto base que permanece en la caja (opcional) Límite mínimo de efectivo RD$ Umbral de alerta por saldo bajo (opcional) Límite máximo de efectivo RD$ Umbral de alerta por exceso de efectivo (opcional) Cancelar add Crear caja"
+  }
+ ],
+ "menus": [],
+ "toasts": [],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Límite mínimo de efectivo",
+   "caja": [
+    384,
+    663,
+    248,
+    58
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Límite máximo de efectivo",
+   "caja": [
+    648,
+    663,
+    248,
+    58
+   ]
+  }
+ ],
+ "video": "v1",
+ "pantalla": "02-nueva-caja-llena-arriba",
+ "notas": "",
+ "toasts_vistos_hasta_ahora": []
+}

@@ -1,0 +1,243 @@
+1
+00:00:03,100 --> 00:00:05,605
+Vamos a conocer el tablero de prospectos.
+
+2
+00:00:06,274 --> 00:00:08,978
+Entro al CRM, en el menú de la izquierda:
+
+3
+00:00:09,064 --> 00:00:11,669
+el CRM es el módulo de las ventas,
+
+4
+00:00:11,743 --> 00:00:15,017
+donde sigues a cada cliente posible desde el primer contacto.
+
+5
+00:00:15,686 --> 00:00:17,050
+Abro Prospectos.
+
+6
+00:00:17,719 --> 00:00:20,846
+Un prospecto es una persona o empresa que mostró interés,
+
+7
+00:00:20,931 --> 00:00:22,693
+pero todavía no te ha comprado:
+
+8
+00:00:22,742 --> 00:00:26,079
+alguien que llamó, escribió por la web o te refirieron.
+
+9
+00:00:26,746 --> 00:00:29,266
+Recojo el menú para ver el tablero completo.
+
+10
+00:00:29,922 --> 00:00:32,081
+Cada columna es una etapa de la venta:
+
+11
+00:00:32,167 --> 00:00:35,343
+Nuevo, Contactado, Calificado y Propuesta.
+
+12
+00:00:36,011 --> 00:00:38,133
+Y cada tarjeta es un prospecto.
+
+13
+00:00:38,801 --> 00:00:40,489
+Arriba están los indicadores:
+
+14
+00:00:40,624 --> 00:00:44,865
+cuántos prospectos tienes, cuántos siguen abiertos y los seguimientos para hoy,
+
+15
+00:00:44,963 --> 00:00:47,359
+que son las llamadas o visitas que te tocan.
+
+16
+00:00:48,027 --> 00:00:50,162
+Mira la tarjeta de Ramón Peralta.
+
+17
+00:00:50,817 --> 00:00:53,484
+Debajo del nombre, su empresa y su cargo.
+
+18
+00:00:54,152 --> 00:00:57,912
+Luego el valor estimado de la venta y la fecha del último movimiento.
+
+19
+00:00:58,579 --> 00:01:01,012
+En naranja, el próximo seguimiento.
+
+20
+00:01:01,667 --> 00:01:05,439
+Abajo, de dónde llegó, la prioridad y las etiquetas.
+
+21
+00:01:06,108 --> 00:01:10,981
+Y a la derecha, atajos para escribirle un correo, llamarlo o abrir WhatsApp.
+
+22
+00:01:12,358 --> 00:01:14,394
+El tablero abre con tus prospectos:
+
+23
+00:01:14,554 --> 00:01:17,692
+fíjate en el filtro Asignación, que dice Míos.
+
+24
+00:01:18,359 --> 00:01:19,254
+Lo abro.
+
+25
+00:01:19,909 --> 00:01:21,920
+Con Todos ves los de todo el equipo;
+
+26
+00:01:21,980 --> 00:01:25,814
+y con Sin asignar, los que llegaron y nadie ha tomado todavía.
+
+27
+00:01:26,483 --> 00:01:27,810
+Elijo Todos.
+
+28
+00:01:28,478 --> 00:01:31,307
+Ahora aparecen también los de Ana y uno sin dueño:
+
+29
+00:01:31,393 --> 00:01:34,259
+el de Félix Almonte, que entró por teléfono.
+
+30
+00:01:34,927 --> 00:01:39,108
+Al lado puedes filtrar por fuente o por prioridad, y en Filtros hay más:
+
+31
+00:01:39,156 --> 00:01:41,266
+etiquetas, valor y fechas.
+
+32
+00:01:41,933 --> 00:01:45,049
+Para encontrar a alguien, escríbelo en el buscador.
+
+33
+00:01:45,716 --> 00:01:49,302
+Busco patricia.objío@ejemplo.com, y el tablero se filtra mientras escribo.
+
+34
+00:01:49,956 --> 00:01:53,245
+Queda sólo Gisela Rosario, del Colegio San Marcos:
+
+35
+00:01:53,354 --> 00:01:56,445
+el buscador mira el nombre, la empresa y el correo.
+
+36
+00:01:57,824 --> 00:01:59,548
+Vamos a dar de alta uno.
+
+37
+00:02:00,204 --> 00:02:03,306
+Primero borro la búsqueda para volver al tablero completo.
+
+38
+00:02:03,962 --> 00:02:05,550
+Llegó un contacto nuevo:
+
+39
+00:02:05,623 --> 00:02:08,429
+lo añado en la columna Nuevo con Añadir prospecto.
+
+40
+00:02:09,084 --> 00:02:10,275
+Basta con el nombre:
+
+41
+00:02:10,348 --> 00:02:14,777
+escribo Luisa Fernández, una clienta que preguntó por cerámica para su casa,
+
+42
+00:02:14,812 --> 00:02:16,376
+y la confirmo con Enter.
+
+43
+00:02:17,032 --> 00:02:19,873
+Ya está en el tablero, y queda a mi nombre.
+
+44
+00:02:20,530 --> 00:02:24,734
+El teléfono, la empresa y el valor se completan después, en su ficha.
+
+45
+00:02:25,390 --> 00:02:29,707
+Cuando avanzas con un prospecto, lo mueves de columna arrastrando su tarjeta.
+
+46
+00:02:30,376 --> 00:02:32,908
+Ya hablé con Yesenia Durán, del hotel:
+
+47
+00:02:32,979 --> 00:02:35,002
+la arrastro de Nuevo a Contactado.
+
+48
+00:02:35,658 --> 00:02:38,425
+El cambio se guarda solo y queda en su historial.
+
+49
+00:02:39,093 --> 00:02:42,219
+A la derecha del tablero están las columnas Ganado y Perdido:
+
+50
+00:02:42,269 --> 00:02:46,995
+al soltar ahí una tarjeta, el sistema te pide confirmar la venta o anotar por qué
+
+51
+00:02:46,806 --> 00:02:47,527
+se perdió.
+
+52
+00:02:48,917 --> 00:02:52,378
+Para empezar el día, pulsa el indicador Seguimientos para hoy.
+
+53
+00:02:53,046 --> 00:02:57,128
+El tablero se queda con los prospectos que tienen un seguimiento pendiente para hoy
+
+54
+00:02:56,939 --> 00:02:57,971
+o ya vencido.
+
+55
+00:02:58,626 --> 00:03:01,504
+Ramón Peralta, en naranja, es para hoy.
+
+56
+00:03:02,173 --> 00:03:04,865
+Carolina Méndez sale en rojo y dice Vencido:
+
+57
+00:03:04,926 --> 00:03:06,676
+era para ayer y no se hizo.
+
+58
+00:03:07,331 --> 00:03:09,391
+Esos son los primeros que hay que llamar.
+
+59
+00:03:10,060 --> 00:03:12,913
+Pulso otra vez el indicador para quitar el filtro.
+
+60
+00:03:13,581 --> 00:03:17,812
+En el próximo video abrimos la ficha de un prospecto para registrar la llamada y
+
+61
+00:03:17,623 --> 00:03:19,336
+programar el siguiente paso.

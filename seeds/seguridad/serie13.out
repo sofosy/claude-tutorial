@@ -1,0 +1,12 @@
+[12:54:58] INICIO serie (seguridad-00-introduccion:E0 seguridad-01-resumen:E0 seguridad-02a-roles:E0 seguridad-02b-editor-permisos:E2a seguridad-03-herencia:E0)
+[12:54:58] ── seguridad-00-introduccion (parte de E0)
+[13:00:30]       → PUBLICABLE  (332 s)
+[13:00:30] ── seguridad-01-resumen (parte de E0)
+[13:06:23]       → PUBLICABLE  (352 s)
+[13:06:24] ── seguridad-02a-roles (parte de E0)
+[13:11:52]       → PUBLICABLE  (328 s)
+[13:11:52] ── seguridad-02b-editor-permisos (parte de E2a)
+[13:18:20]       → REGRABAR  (387 s)
+[13:18:20] ── seguridad-03-herencia (parte de E0)
+[13:25:19]       → PUBLICABLE  (418 s)
+[13:25:19] FIN serie

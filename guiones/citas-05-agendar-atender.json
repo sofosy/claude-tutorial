@@ -1,0 +1,521 @@
+{
+  "titulo": "Citas · Parte 5: agendar, confirmar y atender",
+  "descripcion": "Quinta parte de la serie de Citas de RegiSalud: la cita de punta a punta desde recepción. Agendar una cita nueva (paciente, médico, servicio, motivo, prioridad, turno, cobertura, recordatorios por WhatsApp y correo), confirmarla, registrar la llegada del paciente, verlo en la Operación del Día y llamarlo a consulta, reprogramar una cita a otro turno y cancelar otra con su motivo.",
+  "_comentario": "Estado C. Laura Patricia Santana con Jorge Medina (primer día con cupos, 16:00); confirma y registra la llegada de Yesenia Castillo (Ana, 11:00 de hoy); la llama en la Operación del Día; reprograma a Francisco Javier Cabrera (Jorge 15:00) y cancela a Rafael Antonio Núñez (Ana 10:30).",
+  "base_url": "http://localhost:4310",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "Los Prados",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "correo.test",
+      "131456789",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Ramírez",
+      "Gabriela",
+      "Fernández",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "localhost:4310": "regisalud.com"
+    }
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "node seeds/citas/restaurar.mjs C"
+  },
+  "aprenderas": [
+    "Agendar una cita eligiendo el turno libre del médico y los recordatorios del paciente",
+    "Confirmar la cita y registrar la llegada del paciente",
+    "Seguir al paciente en la Operación del Día y llamarlo a consulta",
+    "Reprogramar una cita a otro día u hora sin perder su historia",
+    "Cancelar una cita dejando el motivo para los informes"
+  ],
+  "errores_comunes": [
+    "Elegir el turno antes del servicio: los turnos dependen del servicio y del horario del médico",
+    "Editar la hora de una cita en vez de reprogramarla: reprogramar avisa al paciente y deja el rastro",
+    "Cancelar cuando el paciente simplemente no vino: para eso está «Marcar no asistió»"
+  ],
+  "pasos": [
+    {
+      "id": "01-nueva",
+      "capitulo": "Agendar una cita",
+      "rotulo": "Nueva cita",
+      "ruta": "Calendario › Nueva cita",
+      "texto_pantalla": "Paciente, médico y servicio · después el turno",
+      "narracion": "Una paciente llama para pedir cita. Entro al calendario, en el menú de la izquierda, y pulso Nueva cita. Primero el paciente: escribo Laura, y cuando aparece en la lista, la elijo. Debajo sale su ficha, con la edad, la cédula y el teléfono. Ahora el médico: escribo Jorge, y en la lista que se abre elijo al doctor Jorge Medina. Con el médico elegido, el tipo de cita ofrece solo los servicios que él da: elijo consulta general. Debajo se resumen su duración, la modalidad y la tarifa. El motivo de la consulta es lo que necesita atender la paciente: elijo chequeo general en la lista.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Calendario']",
+          "al_decir": "Entro al calendario"
+        },
+        {
+          "click": "button:has-text('Nueva Cita')",
+          "al_decir": "pulso Nueva"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='patientSearch']",
+            "texto": "Laura"
+          },
+          "al_decir": "escribo Laura"
+        },
+        {
+          "click": "mat-option:has-text('Laura Patricia')",
+          "al_decir": "la elijo"
+        },
+        {
+          "resaltar": "mat-dialog-container .patient-card, mat-dialog-container .pc, mat-dialog-container :text('Cédula 402-0555009-9')",
+          "durante_ms": 3500,
+          "al_decir": "su ficha"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='doctorSearch']",
+            "texto": "Jorge"
+          },
+          "al_decir": "escribo Jorge"
+        },
+        {
+          "click": "mat-option:has-text('Jorge Medina')",
+          "al_decir": "elijo al doctor"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='appointmentTypeCatalogId']",
+          "al_decir": "el tipo de cita"
+        },
+        {
+          "click": "mat-option:has-text('Consulta general')",
+          "al_decir": "elijo consulta general"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('TIPO DE CITA') >> xpath=..",
+          "durante_ms": 4000,
+          "al_decir": "se resumen su duración"
+        },
+        {
+          "click": "mat-dialog-container app-custom-select[formcontrolname='reasonForVisit'] input",
+          "al_decir": "El motivo de la consulta"
+        },
+        {
+          "click": "mat-option:has-text('Chequeo General')",
+          "al_decir": "elijo chequeo"
+        }
+      ]
+    },
+    {
+      "id": "02-turno",
+      "capitulo": "El turno y los recordatorios",
+      "rotulo": "Turno y recordatorios",
+      "ruta": "Calendario › Nueva cita",
+      "texto_pantalla": "Turnos libres del médico · cobertura · recordatorios por WhatsApp y correo",
+      "narracion": "La prioridad se queda en normal. Más abajo, en Cuándo, está la semana del doctor: cada día dice cuántos turnos libres le quedan. Toco el primer día disponible, y aparecen sus turnos. Elijo uno de la tarde. El consultorio se llena solo, desde el horario del médico. A la derecha está la cobertura: la paciente paga directo, así que paga la tarifa completa. Los recordatorios salen por WhatsApp un día antes y por correo una hora antes; se pueden quitar o agregar otros. En cómo se agendó marco que fue por teléfono, y como la paciente ya la confirmó, marco esa casilla. Pulso Agendar cita, y la cita queda creada.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container button:has-text('Normal')",
+          "durante_ms": 2500,
+          "al_decir": "La prioridad"
+        },
+        {
+          "resaltar": "mat-dialog-container .apt-days",
+          "durante_ms": 4000,
+          "al_decir": "la semana del doctor"
+        },
+        {
+          "click": "mat-dialog-container button.apt-day:not(.is-dead) >> nth=0",
+          "al_decir": "el primer día disponible"
+        },
+        {
+          "click": "mat-dialog-container button.apt-slot:has-text('16:00')",
+          "al_decir": "Elijo uno"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Consultorio del turno') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "El consultorio se llena"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-select[formcontrolname='patientInsuranceId']",
+          "durante_ms": 4000,
+          "al_decir": "la cobertura"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Recordatorios') >> xpath=../..",
+          "durante_ms": 6000,
+          "al_decir": "Los recordatorios salen"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='source']",
+          "al_decir": "en cómo se agendó"
+        },
+        {
+          "click": "mat-option:has-text('Teléfono')",
+          "al_decir": "por teléfono"
+        },
+        {
+          "click": "mat-dialog-container mat-checkbox[formcontrolname='isConfirmed']",
+          "al_decir": "marco esa casilla"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Agendar cita')",
+          "al_decir": "Pulso Agendar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container, .custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 3500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "03-confirmar-llegada",
+      "capitulo": "Confirmar y registrar la llegada",
+      "rotulo": "Confirmar y llegada",
+      "ruta": "Calendario › Lista › Panel de la cita",
+      "texto_pantalla": "Programada → Confirmada → En espera",
+      "narracion": "Ahora una cita de hoy que sigue programada: la de Yesenia Castillo. En la vista de lista toco su fila, y a la derecha sale su panel. El botón Estado muestra solo los pasos que tocan: confirmar, registrar la llegada o marcar que no asistió. Confirmo: el sistema pregunta, y digo que sí. El panel se cierra y la cita ya sale en verde, confirmada. Cuando la paciente llega a recepción, la abro otra vez, y en el menú Estado registro su llegada. Acepto el aviso. La cita pasa a en espera y la paciente recibe un turno en la cola de la sala.",
+      "acciones": [
+        {
+          "click": "button:has(mat-icon:text-is('view_list'))",
+          "al_decir": "En la vista de lista"
+        },
+        {
+          "click": ".fc-list-event:has-text('Yesenia Castillo')",
+          "al_decir": "toco su fila"
+        },
+        {
+          "click": "button.status-menu-trigger",
+          "al_decir": "El botón Estado"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 4000,
+          "al_decir": "solo los pasos",
+          "cursor": false
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Confirmar')",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, confirmar')",
+          "al_decir": "digo que sí"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".fc-list-event:has-text('Yesenia Castillo') .fc-list-event-dot",
+          "durante_ms": 3500,
+          "al_decir": "sale en verde"
+        },
+        {
+          "click": ".fc-list-event:has-text('Yesenia Castillo')",
+          "al_decir": "la abro otra vez"
+        },
+        {
+          "click": "button.status-menu-trigger",
+          "al_decir": "en el menú Estado"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Registrar llegada')",
+          "al_decir": "registro su llegada"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, registrar')",
+          "al_decir": "Acepto el aviso"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "04-operacion",
+      "capitulo": "La Operación del Día",
+      "rotulo": "Operación del Día",
+      "ruta": "Operación del Día",
+      "texto_pantalla": "Citado → Llegó → En cola → En consulta → Cerrado",
+      "narracion": "Lo que pasa con los pacientes de hoy se sigue en la Operación del Día. Arriba están las etapas, con cuántos pacientes hay en cada una: en consulta, en cola, citados y cerrados. Cada fila es un paciente, con su turno, el consultorio y el médico. Abro a Yesenia Castillo: su recorrido de hoy dice que fue citada, llegó y está en cola. Cuando el médico está listo, pulso Llamar. El sistema avisa que la paciente fue llamada, y el turno sale en la pantalla de la sala; acepto el aviso. La ficha dice a qué hora se llamó. Cuando entra al consultorio, pulso Iniciar atención, y otra vez acepto. Ahora sí está en consulta. Al terminar, el médico la cierra desde la historia clínica, con su nota firmada.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Operación del Día']",
+          "al_decir": "en la Operación del Día"
+        },
+        {
+          "resaltar": ".op-rail__item >> nth=1",
+          "durante_ms": 4500,
+          "al_decir": "las etapas"
+        },
+        {
+          "resaltar": "button.op-tbl__r >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "Cada fila es"
+        },
+        {
+          "click": "button.op-tbl__r:has-text('Yesenia Castillo')",
+          "al_decir": "Abro a Yesenia"
+        },
+        {
+          "resaltar": ":text('Recorrido de hoy') >> xpath=..",
+          "durante_ms": 5000,
+          "al_decir": "su recorrido"
+        },
+        {
+          "click": "button:has-text('Llamar')",
+          "al_decir": "pulso Llamar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto el aviso"
+        },
+        {
+          "resaltar": ":text('Falta iniciar la atención') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "a qué hora se llamó",
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Iniciar atención')",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "otra vez acepto"
+        },
+        {
+          "resaltar": "button:has-text('Finalizar atención')",
+          "durante_ms": 3500,
+          "al_decir": "Ahora sí está"
+        },
+        {
+          "resaltar": "button:has-text('Historia clínica')",
+          "durante_ms": 4000,
+          "al_decir": "desde la historia"
+        }
+      ]
+    },
+    {
+      "id": "05-reprogramar",
+      "capitulo": "Reprogramar una cita",
+      "rotulo": "Reprogramar",
+      "ruta": "Agenda del Centro › Detalle de la cita › Reprogramar",
+      "texto_pantalla": "Reprogramar crea la cita nueva y avisa al paciente",
+      "narracion": "Otro paciente, Francisco Javier Cabrera, pide moverse de hora. Vuelvo al calendario y entro a la Agenda del Centro. En la columna del doctor Jorge Medina está su cita, y la abro: se ve el detalle completo. Toco el botón Reprogramar. Arriba queda la cita actual, y debajo la semana del médico con los cupos de cada día. Elijo el primer día con cupos y el turno de las cinco. Escribo el motivo: el paciente pidió otra hora. Con todo listo, pulso Reprogramar al pie: se crea la cita nueva, la anterior queda como reprogramada para la historia, y al paciente le llega un correo.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Calendario']",
+          "al_decir": "Vuelvo al calendario"
+        },
+        {
+          "click": "button:has-text('Agenda del Centro')",
+          "al_decir": "entro a la"
+        },
+        {
+          "click": "app-center-agenda .apt:has-text('Francisco Javier')",
+          "al_decir": "y la abro"
+        },
+        {
+          "click": "button:has-text('Reprogramar')",
+          "al_decir": "Toco el botón"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Cita actual') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "la cita actual"
+        },
+        {
+          "click": "mat-dialog-container button.day:not(.off) >> nth=0",
+          "al_decir": "el primer día con cupos"
+        },
+        {
+          "click": "mat-dialog-container button.slot:has-text('17:00')",
+          "al_decir": "el turno de las"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "El paciente pidió otra hora."
+          },
+          "al_decir": "Escribo el motivo"
+        },
+        {
+          "click": "mat-dialog-container .mat-mdc-dialog-actions button:has-text('Reprogramar'), mat-dialog-container button.mat-mdc-unelevated-button:has-text('Reprogramar')",
+          "al_decir": "Reprogramar al pie"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "06-cancelar",
+      "capitulo": "Cancelar una cita",
+      "rotulo": "Cancelar",
+      "ruta": "Agenda del Centro › Detalle de la cita › Cancelar",
+      "texto_pantalla": "Cancelar con motivo · el hueco queda libre para otro paciente",
+      "narracion": "Y si un paciente avisa que no vendrá, la cita se cancela. Vuelvo al calendario, entro otra vez a la Agenda del Centro, y en la columna de la doctora Ana Pérez abro la de Rafael Antonio Núñez. Pulso Cancelar cita. El sistema pregunta con el número y la hora, y pide el motivo: solicitud del paciente. Ese motivo queda en la cita y en el informe de cancelaciones. Las notas son opcionales, para el equipo. Ahora sí, pulso Cancelar la cita. La cita queda cancelada, el turno queda libre para otro paciente y los recordatorios se anulan. Si el paciente simplemente no vino, no se cancela: se marca que no asistió, desde el botón Estado. Con esto cerramos la serie de citas.",
+      "acciones": [
+        {
+          "click": "nav.module-rail [aria-label='Calendario']",
+          "al_decir": "Vuelvo al calendario"
+        },
+        {
+          "click": "button:has-text('Agenda del Centro')",
+          "al_decir": "entro otra vez"
+        },
+        {
+          "click": "app-center-agenda .apt:has-text('Rafael Antonio') >> nth=0",
+          "al_decir": "abro la de Rafael"
+        },
+        {
+          "click": "button:has-text('Cancelar cita')",
+          "al_decir": "Pulso Cancelar cita"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-select",
+          "durante_ms": 4500,
+          "al_decir": "solicitud del paciente"
+        },
+        {
+          "resaltar": "mat-dialog-container textarea",
+          "durante_ms": 2500,
+          "al_decir": "Las notas son"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar la cita')",
+          "al_decir": "pulso Cancelar la cita"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": ":text-is('Cancelada') >> nth=0",
+          "durante_ms": 5000,
+          "al_decir": "queda cancelada",
+          "cursor": false
+        },
+        {
+          "resaltar": ":text('Rafael Antonio Núñez') >> nth=0",
+          "durante_ms": 6000,
+          "al_decir": "no se cancela",
+          "cursor": false
+        }
+      ]
+    }
+  ]
+}

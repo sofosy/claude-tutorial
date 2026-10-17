@@ -1,0 +1,331 @@
+{
+  "titulo": "Con y sin permiso · Crear, editar y anular",
+  "_comentario": "Serie Seguridad, caso ACCIÓN crear/editar/anular (AUTOR C, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0` antes de cada toma y cada ensayo). Entran EN CÁMARA: ana.mejia (sesion) → marta.guzman. Qué escribe en BD: la cantidad de la PRIMERA línea de la cotización 2 (Q2, Colmado La Esquina, «Bombillo LED 9 W», 12 → 15) y la versión que genere el guardado (quotes, quote_details, quote_versions, audit_logs); la restaura `restaurar.mjs E0`. Q2 NO se cancela: el paso «Cancelada» solo se señala. Contrastes sobre el MISMO punto: lista de Cotizaciones (Crear Cotización + Más acciones › Duplicar: Ana sí · Marta no, desaparecen) y la MISMA Q2 (título «Editar Cotización» + Guardar + paso Cancelada pulsable: Ana · «Cotización» + solo «Volver» + pasos bloqueados: Marta). DEPENDENCIA ronda 2 (D-S1): al abrir una cotización hoy salta el modal «Acceso Denegado — Configuración Empresa» para Ana y Marta; el guion está escrito para el comportamiento CORREGIDO (sin modal): re-verificar en el ensayo. A VERIFICAR EN EL ENSAYO (no explorado): `input[formcontrolname='quantity']` (primera línea, hay 2) y qué muestra el guardado (se marca la unión toast|diálogo sin al_decir y `click_opcional` de «Aceptar»; si sale otro diálogo, p. ej. de versión, añadir su marca). No se usa `/sales/quotes/create` con Marta: hoy avisa «No tienes permiso para ver «Cotizaciones»» (D-S8, nombra lo que SÍ puede ver). AVISOS justificados: marcas sobre el pie del formulario (footer, falso positivo conocido) y el paginador. Ensayo 09-27: 0 fallos (4 pasos, 42 acciones). D-S1 corregido: Ana y Marta abren la cotización 2 sin modal. Verificado: la primera línea es «Bombillo LED 9 W» (12 → 15) y su total se recalcula al teclear (RD$1,681.50); Guardar → diálogo «Éxito · Cotización actualizada exitosamente» [Aceptar]; Marta ve la cantidad 15, título «Cotización 2», pasos en gris y solo «Volver». Cambios T3: login en cámara con «Iniciar sesión» + marca «Entrando» y relleno hasta «Ya dentro, abro Ventas» (+≈13 s; login 5,7–9,7 s); la marca de «ya no está» pasa de h4.page-title (R5b) a .table-only-header (la barra donde Ana tenía «Crear Cotización»); el ojo de COT 2 en la lista de Marta cae sobre el FAB (x≈1197, y≈650, R11): la marca va al ojo de COT 7 y el paso 04 entra con navegar /sales/quotes/2; «el puntero indica que no está permitido» no se ve en video (el cursor es el del motor): ahora «sale en gris, apagado; para Ana estaba en azul». Corrección 09-28 (AUTOR-CORRECCIÓN-2, informe D «insignia adelantada»): el paso 03 (Ana → Marta) lleva la insignia de quien SALE («Con permiso · Ana · Editar y cancelar»); `{insignia: null}` al decir «entro como Marta» y «Sin permiso · Marta · Crear» como acción anclada a «Ya dentro» (≈13 s tras «pulso Iniciar», con su Inicio en cámara). 08b-1/08b-2 son de motor o sin arreglo en el guion: `.page-hero-title` es un h1 sin span propio para el texto (título + chip); se deja.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "ana.mejia",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "Colmado La Esquina"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "aprenderas": [
+    "Qué botones da el permiso de crear: «Crear Cotización» y «Duplicar»",
+    "Qué da el permiso de editar: el formulario editable, «Guardar» y el paso «Cancelada», que es como se anula una cotización",
+    "Cómo se ve la misma lista y la misma cotización para alguien de solo lectura"
+  ],
+  "errores_comunes": [
+    "Buscar un botón en gris: lo que el rol no permite desaparece de la pantalla",
+    "Olvidar que en cotizaciones anular se llama «Cancelada» y lo cubre el permiso de editar",
+    "Dar el permiso de editar a quien solo tiene que consultar"
+  ],
+  "pasos": [
+    {
+      "id": "01-con-crear",
+      "ruta": "Ventas › Cotizaciones",
+      "texto_pantalla": "Ana, vendedora · «Crear Cotización» y «Duplicar» existen",
+      "capitulo": "Con permiso: crear",
+      "rotulo": "Con permiso: crear",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Ana · Crear"
+      },
+      "navegar": "/home",
+      "acciones": [
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abro Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "luego Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "contraigo el panel"
+        },
+        {
+          "resaltar": "tr:has-text('COT 2') td:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "un presupuesto"
+        },
+        {
+          "resaltar": "button:has-text('Crear Cotización')",
+          "durante_ms": 6000,
+          "al_decir": "botón Crear Cotización"
+        },
+        {
+          "click": "tr:has-text('Colmado La Esquina') button:has(mat-icon:text-is('more_vert'))",
+          "al_decir": "lo pulso"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel button:has-text('Duplicar')",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "está Duplicar"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Cierro el menú"
+        },
+        {
+          "resaltar": "button:has-text('Crear Cotización')",
+          "durante_ms": 4000,
+          "al_decir": "desde cero"
+        }
+      ],
+      "narracion": "Entra Ana, la vendedora, y en este video vemos los permisos de acción: crear, editar y anular. Primero con quien los tiene, después con quien no. Desde el Inicio abro Ventas, y luego Cotizaciones. Se abre la lista; contraigo el panel del menú para ver la tabla completa. Esta es la lista de cotizaciones de Ana: cada fila es un presupuesto para un cliente. Arriba a la derecha está el botón Crear Cotización: aparece porque su rol tiene el permiso Cotizaciones, Crear. En cada fila, los tres puntos de la derecha abren Más acciones; lo pulso en la de Colmado La Esquina, y ahí está Duplicar, que también es crear: hace una cotización nueva copiando esta. Cierro el menú. Con ese mismo permiso, Ana puede empezar una cotización desde cero."
+    },
+    {
+      "id": "02-con-editar-anular",
+      "ruta": "Ventas › Cotizaciones › Cotización 2",
+      "texto_pantalla": "Ana edita la cotización 2 · Guardar y el paso Cancelada existen",
+      "capitulo": "Con permiso: editar y anular",
+      "rotulo": "Con permiso: editar y anular",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Ana · Editar y cancelar"
+      },
+      "acciones": [
+        {
+          "click": "tr:has-text('COT 2') button[aria-label='Abrir']",
+          "al_decir": "con el ojo"
+        },
+        {
+          "resaltar": ".page-hero-title",
+          "durante_ms": 2000,
+          "al_decir": "El título dice"
+        },
+        {
+          "resaltar": "footer.form-layout-footer button:has-text('Guardar')",
+          "durante_ms": 4000,
+          "al_decir": "abajo está el botón"
+        },
+        {
+          "resaltar": ".step-content:has-text('Borrador')",
+          "durante_ms": 3000,
+          "al_decir": "la barra de estados"
+        },
+        {
+          "resaltar": ".step-content:has-text('Cancelada')",
+          "durante_ms": 7000,
+          "al_decir": "el paso Cancelada"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='quantity']",
+            "texto": "15"
+          },
+          "al_decir": "cambio la cantidad"
+        },
+        {
+          "click": "footer.form-layout-footer button:has-text('Guardar')",
+          "al_decir": "pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "click_opcional": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "la cantidad nueva"
+        }
+      ],
+      "narracion": "Abro esa misma cotización, la número dos, con el ojo de su fila. El título dice Editar Cotización, y abajo está el botón Guardar: Ana puede cambiarla porque tiene el permiso Cotizaciones, Editar. Arriba, la barra de estados muestra por dónde pasa la cotización. En cotizaciones, anular se llama cancelar: el paso Cancelada está disponible para Ana, porque lo cubre ese mismo permiso de editar. No lo pulso, porque esta cotización la usamos después. Hago un cambio de verdad: en la primera línea, la del bombillo, cambio la cantidad a quince; el total se recalcula solo. Y pulso Guardar, abajo a la derecha. El sistema confirma, y la cotización queda guardada con la cantidad nueva."
+    },
+    {
+      "id": "03-sin-crear",
+      "ruta": "Acceso › Ventas › Cotizaciones (Marta)",
+      "texto_pantalla": "Marta, auditora · la misma lista sin «Crear Cotización» ni «Duplicar»",
+      "capitulo": "Sin permiso: crear",
+      "rotulo": "Sin permiso: crear",
+      "insignia": {
+        "tipo": "con",
+        "texto": "Con permiso · Ana · Editar y cancelar"
+      },
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "Salgo"
+        },
+        {
+          "click": ".user-item-list:has-text('Cerrar sesión')",
+          "al_decir": "Cerrar sesión"
+        },
+        {
+          "insignia": null,
+          "al_decir": "entro como Marta"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "marta.guzman"
+          },
+          "al_decir": "Escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso Iniciar"
+        },
+        {
+          "resaltar": "button.auth-primary-btn:has-text('Entrando'), aside.sidebar",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Entrando"
+        },
+        {
+          "resaltar": "aside.sidebar",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "insignia": {
+            "tipo": "sin",
+            "texto": "Sin permiso · Marta · Crear"
+          },
+          "al_decir": "Ya dentro"
+        },
+        {
+          "click": "aside.sidebar button.rail-item[aria-label='Ventas']",
+          "al_decir": "abro Ventas"
+        },
+        {
+          "click": "aside.sidebar a:has-text('Cotizaciones')",
+          "al_decir": "dentro Cotizaciones"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "contraigo el panel"
+        },
+        {
+          "resaltar": ".mat-mdc-paginator-range-label",
+          "durante_ms": 3000,
+          "al_decir": "las ocho"
+        },
+        {
+          "resaltar": ".table-only-header",
+          "durante_ms": 3300,
+          "al_decir": "ya no está"
+        },
+        {
+          "resaltar": "tr:has-text('COT 7') button[aria-label='Abrir']",
+          "durante_ms": 5000,
+          "al_decir": "solo queda el ojo"
+        }
+      ],
+      "narracion": "Ahora la misma lista con alguien que no tiene esos permisos. Salgo: abro el menú de mi usuario, arriba a la derecha, pulso Cerrar sesión, y entro como Marta, la auditora. Escribo su usuario, marta punto guzman, en minúsculas; luego su clave, que en pantalla se ve con puntos para que nadie la lea; y pulso Iniciar sesión; el botón dice Entrando mientras el sistema carga sus permisos. Marta tiene el permiso de ver cotizaciones, pero no el de crearlas ni el de editarlas: su rol es de solo lectura, para revisar sin cambiar nada. Ya dentro, abro Ventas, igual que antes, y dentro Cotizaciones; y contraigo el panel. Ella ve las ocho de la empresa, porque revisa todo. Pero arriba ya no está el botón Crear Cotización. Y en cada fila solo queda el ojo, para abrir: no hay tres puntos, ni Duplicar. Lo que el rol no permite no sale en gris: desaparece."
+    },
+    {
+      "id": "04-sin-editar-anular",
+      "ruta": "Ventas › Cotizaciones › Cotización 2 (Marta)",
+      "texto_pantalla": "Marta abre la misma cotización 2 · solo lectura, sin Guardar ni Cancelada",
+      "capitulo": "Sin permiso: editar y anular",
+      "rotulo": "Sin permiso: editar y anular",
+      "insignia": {
+        "tipo": "sin",
+        "texto": "Sin permiso · Marta · Editar y cancelar"
+      },
+      "navegar": "/sales/quotes/2",
+      "al_decir_navegar": "la número dos",
+      "acciones": [
+        {
+          "resaltar": ".page-hero-title",
+          "durante_ms": 5000,
+          "al_decir": "el título dice solo"
+        },
+        {
+          "resaltar": ".step-content:has-text('Cancelada')",
+          "durante_ms": 4500,
+          "al_decir": "el paso Cancelada"
+        },
+        {
+          "resaltar": "footer.form-layout-footer button:has-text('Volver')",
+          "durante_ms": 4500,
+          "al_decir": "solo queda Volver"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Un rol de consulta es ver sin crear ni editar: revisa todo y no cambia nada."
+          },
+          "durante_ms": 8000,
+          "al_decir": "En resumen"
+        },
+        {
+          "resaltar": ".step-content:has-text('Borrador')",
+          "durante_ms": 5000,
+          "al_decir": "no se puede pulsar"
+        }
+      ],
+      "narracion": "Ahora vamos al detalle. Marta abre la misma cotización, la número dos. Ahora el título dice solo Cotización, sin la palabra Editar: la ve completa, pero ningún campo se puede cambiar. En la barra de estados, el paso Cancelada sale en gris, apagado; para Ana estaba en azul. Y abajo solo queda Volver: no hay Guardar. En resumen: ver, crear y editar son permisos distintos. Con ver, se consulta. Con crear aparecen Crear Cotización y Duplicar. Con editar, el botón Guardar y la opción de cancelar, que es anular. Y lo que el rol no tiene, no aparece o no se puede pulsar."
+    }
+  ]
+}

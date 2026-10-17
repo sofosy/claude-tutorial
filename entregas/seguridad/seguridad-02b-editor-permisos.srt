@@ -1,0 +1,339 @@
+1
+00:00:03,097 --> 00:00:05,592
+En este video abrimos el editor de permisos,
+
+2
+00:00:05,682 --> 00:00:07,971
+donde se decide qué puede hacer cada rol.
+
+3
+00:00:08,615 --> 00:00:10,397
+Entro por el candado de la izquierda;
+
+4
+00:00:10,414 --> 00:00:15,868
+arriba, abro Roles y permisos y elijo Vendedor, un rol ya armado, para leerlo.
+
+5
+00:00:16,513 --> 00:00:18,743
+En el centro está la columna de módulos:
+
+6
+00:00:18,856 --> 00:00:21,641
+las partes del sistema, agrupadas por sección,
+
+7
+00:00:21,658 --> 00:00:24,334
+como Ventas y facturación o Compras e inventario.
+
+8
+00:00:24,981 --> 00:00:28,102
+Solo salen los módulos de tu plan, y al elegir un rol,
+
+9
+00:00:28,242 --> 00:00:31,195
+el editor abre el primer módulo donde ya concede algo:
+
+10
+00:00:31,248 --> 00:00:33,332
+aquí, Clientes y Proveedores.
+
+11
+00:00:33,978 --> 00:00:35,868
+Cada módulo lleva dos números:
+
+12
+00:00:36,006 --> 00:00:38,405
+los permisos concedidos y los que existen.
+
+13
+00:00:39,051 --> 00:00:42,572
+Cotizaciones, por ejemplo, dice tres de diecinueve:
+
+14
+00:00:42,613 --> 00:00:43,851
+tres concedidos.
+
+15
+00:00:44,497 --> 00:00:45,386
+La abro.
+
+16
+00:00:46,018 --> 00:00:48,658
+Arriba, el título del módulo con su cuenta;
+
+17
+00:00:48,737 --> 00:00:50,241
+debajo, la leyenda:
+
+18
+00:00:50,354 --> 00:00:54,551
+el check es Concedido, y el Alcance aplica en los listados que lo admiten.
+
+19
+00:00:55,198 --> 00:00:58,573
+Cada bloque es un recurso, o sea una cosa del sistema:
+
+20
+00:00:58,615 --> 00:01:00,542
+aquí, las cotizaciones.
+
+21
+00:01:01,188 --> 00:01:03,635
+Y cada botón es una acción sobre esa cosa:
+
+22
+00:01:03,761 --> 00:01:06,412
+ver, crear, editar, aprobar.
+
+23
+00:01:07,046 --> 00:01:08,224
+Un permiso es eso:
+
+24
+00:01:08,325 --> 00:01:09,674
+recurso más acción.
+
+25
+00:01:10,307 --> 00:01:12,415
+Aquí Vendedor tiene tres de ellas:
+
+26
+00:01:12,480 --> 00:01:16,725
+Ver, después Crear, y también Editar, cada una con su check.
+
+27
+00:01:18,079 --> 00:01:22,337
+Ahora armo el rol Cobrador, que creamos vacío en el video anterior.
+
+28
+00:01:22,981 --> 00:01:23,664
+Lo abro:
+
+29
+00:01:23,778 --> 00:01:26,429
+la insignia Vacío confirma que no tiene nada.
+
+30
+00:01:27,063 --> 00:01:29,292
+Un cobrador necesita ver a los clientes,
+
+31
+00:01:29,406 --> 00:01:32,106
+así que abro el módulo Clientes y Proveedores.
+
+32
+00:01:32,753 --> 00:01:33,822
+Ojo con el nombre:
+
+33
+00:01:33,876 --> 00:01:38,569
+aquí los clientes están en el recurso Socios, que reúne clientes y proveedores.
+
+34
+00:01:39,213 --> 00:01:39,944
+Pulso Ver:
+
+35
+00:01:40,082 --> 00:01:44,450
+se marca con el check, y el bloque se pinta de otro color para avisar que tiene un
+
+36
+00:01:44,262 --> 00:01:45,379
+cambio pendiente.
+
+37
+00:01:46,013 --> 00:01:48,097
+Si pulso otra vez, lo quito:
+
+38
+00:01:48,186 --> 00:01:51,164
+cada clic alterna entre concedido y sin conceder.
+
+39
+00:01:51,798 --> 00:01:54,245
+Lo vuelvo a pulsar para dejarlo concedido.
+
+40
+00:01:54,878 --> 00:01:58,013
+El cobrador también enseña el estado de cuenta del cliente:
+
+41
+00:01:58,079 --> 00:02:03,387
+uso Conceder todo, que marca de una vez Ver y PDF, o sea el documento para imprimir.
+
+42
+00:02:04,021 --> 00:02:06,008
+Abajo aparece la barra de cambios:
+
+43
+00:02:06,134 --> 00:02:08,641
+cuenta lo pendiente y a cuántas personas afecta;
+
+44
+00:02:08,754 --> 00:02:13,194
+aquí dice nadie tiene este rol todavía, porque aún no se lo asignamos a nadie.
+
+45
+00:02:14,534 --> 00:02:19,576
+Al conceder un permiso de ver, a su derecha aparece el alcance, con tres opciones.
+
+46
+00:02:20,221 --> 00:02:20,891
+Todos:
+
+47
+00:02:20,957 --> 00:02:22,632
+ve todos los registros.
+
+48
+00:02:23,277 --> 00:02:23,936
+Equipo:
+
+49
+00:02:24,050 --> 00:02:26,617
+ve lo que crearon él y sus compañeros de equipo.
+
+50
+00:02:27,250 --> 00:02:27,944
+Propios:
+
+51
+00:02:28,094 --> 00:02:29,842
+solo lo que creó él mismo.
+
+52
+00:02:30,475 --> 00:02:31,665
+Pulso Propios.
+
+53
+00:02:32,310 --> 00:02:37,243
+Así, en la lista de clientes, este cobrador verá solo los clientes que él registró.
+
+54
+00:02:37,890 --> 00:02:39,443
+Fíjate en la palabra creó:
+
+55
+00:02:39,557 --> 00:02:43,415
+cuenta quién creó el registro, no el cobrador que tenga asignado.
+
+56
+00:02:44,050 --> 00:02:47,776
+Y como recorta listados, solo existe en los permisos de ver.
+
+57
+00:02:49,134 --> 00:02:52,378
+Si no sabes en qué módulo vive un permiso, búscalo.
+
+58
+00:02:53,009 --> 00:02:56,795
+En Buscar permiso escribo factur, las primeras letras de factura.
+
+59
+00:02:57,442 --> 00:03:00,116
+Enseguida el título cambia a Resultados de factur:
+
+60
+00:03:00,243 --> 00:03:04,151
+la búsqueda recorre todo el catálogo, no solo el módulo abierto.
+
+61
+00:03:04,784 --> 00:03:08,365
+Aquí, entre los resultados, está el recurso Facturas.
+
+62
+00:03:09,012 --> 00:03:12,787
+Pulso su Ver, para que el cobrador vea las facturas que va a cobrar.
+
+63
+00:03:13,432 --> 00:03:18,040
+Si buscas algo muy general, el editor enseña los primeros sesenta recursos y te
+
+64
+00:03:17,852 --> 00:03:18,668
+pide afinar;
+
+65
+00:03:18,770 --> 00:03:20,829
+y si nada coincide, lo dice.
+
+66
+00:03:21,463 --> 00:03:23,969
+Borro la búsqueda y vuelvo a los módulos.
+
+67
+00:03:25,345 --> 00:03:27,647
+Nada de esto está guardado todavía.
+
+68
+00:03:28,278 --> 00:03:30,302
+Mira qué pasa si me voy a otro rol:
+
+69
+00:03:30,344 --> 00:03:34,118
+pulso Contador externo, y el editor me para con Cambios sin guardar:
+
+70
+00:03:34,208 --> 00:03:36,195
+si continúo, se descartan.
+
+71
+00:03:36,829 --> 00:03:38,828
+Pulso Seguir editando y me quedo.
+
+72
+00:03:39,462 --> 00:03:41,546
+En la barra de abajo hay dos botones:
+
+73
+00:03:41,624 --> 00:03:45,507
+Descartar, que deshace todo lo pendiente, y Guardar cambios,
+
+74
+00:03:45,573 --> 00:03:47,439
+que lo aplica de una sola vez.
+
+75
+00:03:48,085 --> 00:03:49,686
+Pulso Guardar cambios.
+
+76
+00:03:50,332 --> 00:03:54,348
+Sale el aviso de permisos actualizados, y la barra desaparece.
+
+77
+00:03:54,993 --> 00:03:57,391
+Para revisar, uso los filtros de arriba:
+
+78
+00:03:57,421 --> 00:04:02,778
+Todos, Concedidos, Heredados y Sin conceder, que filtran por el estado del permiso,
+
+79
+00:04:02,832 --> 00:04:04,106
+no de un documento.
+
+80
+00:04:04,752 --> 00:04:08,261
+Pulso Concedidos, y quedan solo Socios y Estado de Cuenta;
+
+81
+00:04:08,350 --> 00:04:11,679
+en la columna de módulos, Facturación ya marca uno.
+
+82
+00:04:12,312 --> 00:04:13,285
+Caso resuelto:
+
+83
+00:04:13,399 --> 00:04:16,110
+el Cobrador ve solo los clientes que él registró;
+
+84
+00:04:16,117 --> 00:04:18,950
+además, los estados de cuenta y las facturas;
+
+85
+00:04:19,014 --> 00:04:20,073
+y nada más.

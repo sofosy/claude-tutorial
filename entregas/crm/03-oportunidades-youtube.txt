@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+CRM · Oportunidades: de la propuesta a la venta ganada
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  El tablero de oportunidades
+00:51  Crear una oportunidad
+01:50  Avanzar de etapa
+02:14  Ganar la venta y pasar el cliente a Éxito del Cliente
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es una oportunidad y cómo se lee su tablero: etapas, monto, probabilidad y pronóstico
+• Crear una oportunidad para un cliente que ya conoces
+• Moverla de etapa a medida que avanza la negociación
+• Ganarla y pasar el cliente a Éxito del Cliente con su gerente de cuenta
+
+⚠️ ERRORES COMUNES
+• Dejar la probabilidad en el valor por defecto: el pronóstico deja de decir la verdad
+• Ganar la oportunidad sin elegir al gerente de cuenta: nadie acompaña al cliente después de la venta
+• Crear la oportunidad a nombre de un cliente nuevo sin buscar antes si ya existe
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:07
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a las oportunidades. Entro al CRM, en el menú de la izquierda, y abro Oportunidades. Una oportunidad es una venta concreta: un cliente, un monto y una fecha en que esperas cerrarla. Nace cuando conviertes un prospecto, o la creas aquí directamente. Recojo el menú. Como en los prospectos, cada columna es una etapa: Prospección, Calificación, Análisis de Necesidades, Propuesta y Negociación; al final, Ganada o Perdida. En la tarjeta ves el nombre, el cliente, el monto, la probabilidad de cerrarla y quién la lleva. Arriba, En el embudo suma lo que tienes abierto. Y Pronóstico multiplica cada monto por su probabilidad: es lo que de verdad esperas vender.
+Inversiones Barahona nos pidió precio para iluminar su parqueo. Pulso Nueva oportunidad. Primero, el cliente: lo busco por nombre o por RNC, el número con que la DGII, la oficina de impuestos, identifica a una empresa. Escribo Barahona, y mientras escribo el sistema busca entre tus clientes. Ahí está: lo elijo de la lista. Si todavía no existiera, se registra aquí mismo. Le pongo nombre a la oportunidad: iluminación del parqueo, para reconocerla en el tablero. Luego, el monto estimado: doscientos veinte mil pesos, lo que costaría el trabajo completo. En la etapa elijo Propuesta, porque ya le enviamos la cotización. La probabilidad se ajusta sola a la etapa, y puedes cambiarla. Pulso Crear oportunidad. El aviso confirma que se creó, y la tarjeta aparece en la columna Propuesta.
+La negociación avanza: con la plaza de Barahona ya estamos revisando qué necesitan exactamente. Tomo la tarjeta de Equipamiento eléctrico y la arrastro de Calificación a Análisis de Necesidades. Ojo: la probabilidad no cambia sola al mover la tarjeta. Si con la nueva etapa la venta es más probable, ábrela y ajústala, porque de ese número sale el pronóstico de arriba.
+Y ahora, la mejor parte. Colmado La Esquina aceptó la reposición mensual de herramientas. En su tarjeta, en Negociación, pulso Pasar a Éxito del Cliente. Éxito del Cliente es el equipo que acompaña al cliente después de la venta. Se abre Marcar como ganada. El gerente de cuenta es quien responde por el cliente desde hoy. La plantilla de bienvenida son los primeros pasos con un cliente nuevo: entrega, accesos y capacitación. Dejo en Sí crear la bienvenida. En la nota del traspaso escribo lo que el equipo debe saber: los días de entrega y cómo pagan. Ya está todo, así que pulso Marcar como ganada. El aviso confirma que el cliente pasó a Éxito del Cliente, y la tarjeta queda en la columna Ganada.

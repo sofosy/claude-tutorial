@@ -1,0 +1,568 @@
+{
+  "titulo": "Certificación e-CF · Parte 2: aprobar y confirmar las solicitudes (equipo de Germiva)",
+  "descripcion": "Para el equipo de Germiva: dónde llegan las solicitudes del formulario de certificación, qué crea el sistema solo cuando la IA valida el comprobante (la empresa del contador, su solicitud al Programa de Socios, cada empresa en prueba con su plan y el cargo de la certificación), qué hace «Confirmar el pago» (firma verificada, contador vinculado, referidor y referidos, cobro de cada suscripción y Éxito del Cliente), cómo aprobar a mano un comprobante que la IA no pudo leer y cuándo rechazar.",
+  "_comentario": "Video 2 de la serie Certificación (12/10/2026). setup: restaurar.py B = canon + SC-000001 (contadora, Validado por IA, 3 empresas creadas por la cola) + SC-000002 (Ramón Guzmán, PDF escaneado, Sin verificar), enviadas por el formulario real; las notificaciones se atrasan un día para que no salga el aviso emergente al entrar. La empresa principal local (id 1) se renombró a SOFOSY S.R.L. en canon.sql para que el video muestre la empresa real del equipo; al terminar la serie se devuelve a «Tienda Germiva».",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "pronunciacion": {
+    "e-CF": "e-ce-efe",
+    "IA": "i-a",
+    "ERP": "e-erre-pe",
+    "SOFOSY": "Sofosi",
+    "INDOTEL": "Indotel",
+    "3D": "tres-de"
+  },
+  "privacidad": {
+    "_perfil": "Todos los datos son ficticios (padrón local sembrado por seeds/certificacion, correos @example.com) y la narración los nombra: no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "example.com",
+      "1305553",
+      "130555",
+      "40238105718",
+      "40226441919",
+      "00117350819",
+      "784512369",
+      "8095550187",
+      "8295550143",
+      "4587",
+      "SOFOSY",
+      "germiva",
+      "Méndez",
+      "MENDEZ",
+      "Almonte",
+      "Castillo",
+      "Tavárez",
+      "TAVAREZ",
+      "Guzmán",
+      "GUZMAN",
+      "Banco Ámbar"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "python seeds/certificacion/restaurar.py B"
+  },
+  "aprenderas": [
+    "Encontrar las solicitudes de certificación en Éxito del Cliente",
+    "Leer una solicitud: quién la envió, el contador, el comprobante y lo que leyó la IA",
+    "Entender todo lo que el sistema crea al recibir el formulario con el comprobante válido",
+    "Confirmar el pago y saber qué se crea: firma, vínculos, referidos, cobros y Éxito del Cliente",
+    "Aprobar a mano un comprobante que la IA no pudo verificar, y cuándo rechazar"
+  ],
+  "errores_comunes": [
+    "Confirmar el pago sin haber visto el dinero en el banco: «Validado por IA» no es el estado de cuenta",
+    "Aprobar a mano un comprobante sin verificarlo: al aprobarlo se crean las empresas",
+    "Desmarcar «Aprobar la firma del contador»: sin firma verificada no se vincula a sus clientes",
+    "Rechazar esperando que se borren las empresas: las ya creadas quedan en su prueba"
+  ],
+  "pasos": [
+    {
+      "id": "01-bandeja",
+      "capitulo": "La bandeja de solicitudes",
+      "rotulo": "Solicitudes de certificación",
+      "ruta": "Éxito del Cliente › Solicitudes de certificación",
+      "texto_pantalla": "Solicitudes de certificación · lo que llega del formulario público",
+      "narracion": "Este video es para el equipo de Germiva que atiende las solicitudes de certificación de facturación electrónica: las que llegan del formulario público, el de germiva punto com barra certificación. Cuando llega una, el sistema te avisa en la campanita de notificaciones. Para verlas entro a Éxito del Cliente y abro Solicitudes de certificación. Esta pantalla solo existe en la empresa principal, SOFOSY, y la ve quien tiene el permiso. Recojo el panel del menú para ganar espacio. Cada fila es una solicitud: su número, quién la envió, si es un cliente o un contador, y su correo; las empresas que trae; el estado del comprobante de pago, revisado por la inteligencia artificial; la fecha, y el estado de la solicitud. Las dos dicen Validando el pago: esperan por nosotros. Arriba se filtran por número, estado o tipo de solicitante.",
+      "acciones": [
+        {
+          "resaltar": "nav.module-rail",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "equipo de Germiva"
+        },
+        {
+          "resaltar": "nav.module-rail [aria-label='Éxito del Cliente']",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "las que llegan"
+        },
+        {
+          "resaltar": "app-unified-notification-bell",
+          "durante_ms": 3500,
+          "al_decir": "la campanita"
+        },
+        {
+          "click": "nav.module-rail [aria-label='Éxito del Cliente']",
+          "al_decir": "entro a Éxito del Cliente"
+        },
+        {
+          "click": ".panel-item:has-text('Solicitudes de certificación')",
+          "al_decir": "abro Solicitudes"
+        },
+        {
+          "resaltar": "button.gm-company-chip",
+          "durante_ms": 3500,
+          "al_decir": "SOFOSY"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el panel"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('SC-000001') td:nth-child(1)",
+          "durante_ms": 2500,
+          "al_decir": "su número"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('SC-000001') td:nth-child(2)",
+          "durante_ms": 4500,
+          "al_decir": "quién la envió"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('SC-000001') td:nth-child(3)",
+          "durante_ms": 3000,
+          "al_decir": "las empresas que trae"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('SC-000001') td:nth-child(4)",
+          "durante_ms": 4500,
+          "al_decir": "el estado del comprobante"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('SC-000001') td:nth-child(6)",
+          "durante_ms": 4500,
+          "al_decir": "Validando el pago"
+        },
+        {
+          "resaltar": "app-dynamic-filters",
+          "durante_ms": 4000,
+          "al_decir": "se filtran"
+        }
+      ]
+    },
+    {
+      "id": "02-solicitud",
+      "capitulo": "Leer una solicitud",
+      "rotulo": "La solicitud de la contadora",
+      "ruta": "Solicitudes de certificación › Revisar",
+      "texto_pantalla": "Quién la envió · el contador · el comprobante y lo que leyó la IA",
+      "narracion": "Abro la de Carolina Méndez con Revisar, al final de su fila. Arriba, el número y el estado. Debajo, que la envió un contador y que paga por transferencia. Quien la envió: su nombre, su cédula, su correo y su teléfono. Al lado, el contador: su firma, Méndez Rosario y Asociados. Dice Empresa creada por la solicitud, porque no estaba en Germiva; trae su exequátur, y Refiere a sus clientes, o sea, que cobra comisión por ellos. Más abajo, el comprobante de pago: la captura que subió, y lo que leyó la inteligencia artificial: el monto, la fecha, la referencia, el banco, a quién se le pagó, y qué tan segura está. Validado por IA, es decir, por la inteligencia artificial, quiere decir que la reconoció como un pago real y completo. Aun así, antes de confirmar, se comprueba en el banco que el dinero entró.",
+      "acciones": [
+        {
+          "click": "table tbody tr:has-text('SC-000001') td:last-child button",
+          "al_decir": "con Revisar"
+        },
+        {
+          "resaltar": "mat-dialog-container h2",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el número y el estado"
+        },
+        {
+          "resaltar": "mat-dialog-container p.meta",
+          "durante_ms": 4000,
+          "al_decir": "envió un contador"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box:has(h3:has-text('Quien la envió'))",
+          "durante_ms": 4500,
+          "al_decir": "Quien la envió"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box:has(h3:has-text('Contador'))",
+          "durante_ms": 4000,
+          "al_decir": "el contador"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box:has(h3:has-text('Contador')) p.small",
+          "durante_ms": 7500,
+          "al_decir": "Empresa creada"
+        },
+        {
+          "resaltar": "mat-dialog-container .proof__image",
+          "durante_ms": 3500,
+          "al_decir": "la captura que subió"
+        },
+        {
+          "resaltar": "mat-dialog-container .proof__data dl",
+          "durante_ms": 8000,
+          "al_decir": "lo que leyó"
+        },
+        {
+          "resaltar": "mat-dialog-container .proof__data .chip",
+          "durante_ms": 4500,
+          "al_decir": "Validado por IA"
+        },
+        {
+          "resaltar": "mat-dialog-container .proof__data dd:nth-of-type(1)",
+          "durante_ms": 4000,
+          "al_decir": "en el banco"
+        }
+      ]
+    },
+    {
+      "id": "03-lo-que-se-creo",
+      "capitulo": "Lo que se creó al enviar el formulario",
+      "rotulo": "Empresas y bitácora",
+      "ruta": "Solicitudes de certificación › Revisar › Empresas y bitácora",
+      "texto_pantalla": "Empresas de la solicitud · bitácora de pasos automáticos",
+      "narracion": "Bajo el comprobante están las empresas. Cada una con su RNC, su plan y su precio; el dueño y su correo; lo que ya tiene; los días y horas de su prueba de vida, y que el proceso completo lo hace el equipo, con su cargo de seis mil pesos. Al pie de cada empresa hay cinco estados. Empresa creada ya está en verde; los otros cuatro esperan a que confirmemos el pago. Y al final, la bitácora de pasos automáticos: todo lo que el sistema hizo solo, en cuanto la IA validó el comprobante. Uno: creó la empresa del contador y le envió su acceso. Dos: pidió su ingreso al Programa de Socios con el exequátur. Tres: creó cada empresa en la prueba del plan elegido, y su dueño recibió el correo para crear su contraseña. Y cuatro: cargó la certificación en la suscripción de cada empresa, para su próximo cobro. Nada de esto está pagado todavía: eso lo hace el siguiente paso.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container article.company:nth-of-type(1) header",
+          "durante_ms": 4500,
+          "al_decir": "están las empresas"
+        },
+        {
+          "resaltar": "mat-dialog-container article.company:nth-of-type(1) ul.tags",
+          "durante_ms": 3000,
+          "al_decir": "lo que ya tiene"
+        },
+        {
+          "resaltar": "mat-dialog-container article.company:nth-of-type(1) ul.tags + p.small",
+          "durante_ms": 5500,
+          "al_decir": "prueba de vida"
+        },
+        {
+          "resaltar": "mat-dialog-container article.company:nth-of-type(1) ul.states",
+          "durante_ms": 3500,
+          "al_decir": "cinco estados"
+        },
+        {
+          "resaltar": "mat-dialog-container article.company:nth-of-type(1) ul.states li:first-child",
+          "durante_ms": 3000,
+          "al_decir": "Empresa creada"
+        },
+        {
+          "resaltar": "mat-dialog-container article.company:nth-of-type(1) ul.states li:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "los otros cuatro"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log",
+          "durante_ms": 4000,
+          "al_decir": "la bitácora"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:nth-child(1)",
+          "durante_ms": 4000,
+          "al_decir": "Uno"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:nth-child(2)",
+          "durante_ms": 4000,
+          "al_decir": "Dos"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:nth-child(3)",
+          "durante_ms": 5500,
+          "al_decir": "Tres"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:nth-child(4)",
+          "durante_ms": 5000,
+          "al_decir": "Y cuatro"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:last-child",
+          "durante_ms": 3500,
+          "al_decir": "Nada de esto"
+        }
+      ]
+    },
+    {
+      "id": "04-confirmar",
+      "capitulo": "Confirmar el pago",
+      "rotulo": "Confirmar el pago",
+      "ruta": "Solicitudes de certificación › Revisar › Confirmar el pago",
+      "texto_pantalla": "Confirmar el pago · qué se registra y qué se crea",
+      "narracion": "Ya comprobé en el banco que entraron los treinta y un mil cuatrocientos pesos. Pulso Confirmar el pago, abajo a la derecha. Se abre un panel que dice lo que va a pasar: se vincula al contador con sus clientes, se registra al referidor con su veinte por ciento, se cobra cada suscripción con su plan, y cada empresa entra a la cartera de Éxito del Cliente. Debajo, lo que se registrará como cobrado, lo que se le pidió y lo que dice el comprobante. El cobro puede ser unos pesos distinto al precio de lista, porque el primer mes se ajusta al día de facturación. Dos casillas, marcadas: Registrar el cobro de cada suscripción, que las activa, y Aprobar la firma del contador en el Programa de Socios; sin firma verificada, el contador no puede quedar vinculado a sus clientes. Hay un campo de notas, opcional. Ahora pulso el botón azul, Confirmar el pago. Los botones se apagan mientras el sistema trabaja, una empresa detrás de otra: aprueba la firma, vincula al contador con cada cliente, registra al referidor, cobra cada suscripción con su factura y pasa cada empresa a Éxito del Cliente. Con tres empresas toma unos segundos: no cierres la ventana. Al terminar avisa: Pago confirmado; revisa la bitácora, y si algo quedó pendiente, corrígelo y vuelve a confirmar. Acepto.",
+      "acciones": [
+        {
+          "click": "mat-dialog-actions button:has-text('Confirmar el pago')",
+          "al_decir": "pago, abajo"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box--action > p.small",
+          "durante_ms": 9000,
+          "al_decir": "lo que va a pasar"
+        },
+        {
+          "resaltar": "mat-dialog-container p.amounts",
+          "durante_ms": 9000,
+          "al_decir": "registrará como cobrado"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box--action mat-checkbox:nth-of-type(1)",
+          "durante_ms": 3500,
+          "al_decir": "Registrar el cobro"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box--action mat-checkbox:nth-of-type(2)",
+          "durante_ms": 6000,
+          "al_decir": "Aprobar la firma"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box--action mat-form-field",
+          "durante_ms": 2500,
+          "al_decir": "campo de notas"
+        },
+        {
+          "click": "mat-dialog-actions button.mat-primary:has-text('Confirmar el pago')",
+          "al_decir": "botón azul"
+        },
+        {
+          "resaltar": "mat-dialog-actions",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Los botones se apagan"
+        },
+        {
+          "resaltar": "mat-dialog-container h2",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "con cada cliente"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 9000,
+          "cursor": false
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Al terminar avisa"
+        },
+        {
+          "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        }
+      ]
+    },
+    {
+      "id": "05-confirmada",
+      "capitulo": "Lo que creó la confirmación",
+      "rotulo": "Pago confirmado",
+      "ruta": "Solicitudes de certificación › Revisar › Bitácora",
+      "texto_pantalla": "Pago confirmado · firma, vínculos, referidos, cobros y Éxito del Cliente",
+      "narracion": "La solicitud pasó a Pago confirmado, y en cada empresa los cinco estados están en verde. La bitácora suma lo que hizo la confirmación. La firma quedó verificada en el Programa de Socios, con el plan Contador sin costo. La firma quedó como contador de cada empresa, con el nivel Contabilidad: ya puede entrar a trabajar en ellas. El contador quedó dado de alta como referidor, con el plan del veinte por ciento el primer año, y recibió su acceso al portal. Cada empresa quedó atribuida a él como referida. El monto del comprobante cubre lo que se pidió. Se registró el cobro del plan de cada empresa, con la certificación, y su suscripción quedó activa; la factura la emite SOFOSY a nombre de cada empresa. Y por último, cada empresa entró a la cartera de Éxito del Cliente con su plan de bienvenida. Y a quien llenó el formulario le llega el correo de confirmación. Cierro el detalle.",
+      "acciones": [
+        {
+          "click_opcional": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+          "espera_ms": 150
+        },
+        {
+          "resaltar": "mat-dialog-container h2 .chip",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container article.company:nth-of-type(1) ul.states",
+          "durante_ms": 4000,
+          "al_decir": "los cinco estados"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:has-text('Firma verificada')",
+          "durante_ms": 5000,
+          "al_decir": "La firma quedó verificada"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:has-text('Contador de DISTRIBUIDORA')",
+          "durante_ms": 6000,
+          "al_decir": "como contador de cada"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:has-text('Referidor')",
+          "durante_ms": 7000,
+          "al_decir": "dado de alta"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:has-text('Referido DISTRIBUIDORA')",
+          "durante_ms": 3500,
+          "al_decir": "atribuida"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:has-text('Monto del comprobante')",
+          "durante_ms": 3500,
+          "al_decir": "El monto"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:has-text('Cobro del plan de DISTRIBUIDORA')",
+          "durante_ms": 8000,
+          "al_decir": "Se registró el cobro"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:has-text('Éxito del Cliente: DISTRIBUIDORA')",
+          "durante_ms": 5000,
+          "al_decir": "entró a la cartera"
+        },
+        {
+          "click": "mat-dialog-actions button:has-text('Cerrar')",
+          "al_decir": "Cierro el detalle"
+        }
+      ]
+    },
+    {
+      "id": "06-aprobar-a-mano",
+      "capitulo": "Un comprobante sin verificar",
+      "rotulo": "Aprobar el comprobante a mano",
+      "ruta": "Solicitudes de certificación › Revisar › Aprobar el comprobante",
+      "texto_pantalla": "Sin verificar · aprobar el comprobante a mano para crear las empresas",
+      "narracion": "En la lista, la primera ya dice Pago confirmado. La otra la envió un dueño, Ramón Guzmán, y su comprobante dice Sin verificar. Para revisarla, la abro con su botón. Se abre el detalle: subió un PDF escaneado, y la IA no pudo leerlo; la advertencia de abajo lo dice: revisa el comprobante a mano. Mientras el comprobante no esté aceptado no se crea nada: la empresa sale pendiente, y Confirmar el pago está apagado, con el motivo al lado: falta aceptar el comprobante de pago. Verifico el pago en el banco, y pulso Aprobar el comprobante. El panel avisa: hazlo solo si verificaste el pago, porque al aprobarlo se crean las empresas. Anoto qué verifiqué: transferencia vista en el estado de cuenta, que es lo que confirma el pago. Y pulso Aprobar y crear las empresas. El sistema lo registra, y enseguida sale un aviso: comprobante aprobado, las empresas se están creando. Acepto.",
+      "acciones": [
+        {
+          "click_opcional": "mat-dialog-actions button:has-text('Cerrar')",
+          "espera_ms": 800
+        },
+        {
+          "resaltar": "table tbody tr:has-text('SC-000001') td:nth-child(6)",
+          "durante_ms": 3000,
+          "al_decir": "Pago confirmado"
+        },
+        {
+          "resaltar": "table tbody tr:has-text('SC-000002') td:nth-child(4)",
+          "durante_ms": 4000,
+          "al_decir": "Sin verificar"
+        },
+        {
+          "click": "table tbody tr:has-text('SC-000002') td:last-child button",
+          "al_decir": "con su botón"
+        },
+        {
+          "resaltar": "mat-dialog-container a.proof__pdf",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "PDF escaneado"
+        },
+        {
+          "resaltar": "mat-dialog-container .proof__data p.alert",
+          "durante_ms": 4500,
+          "al_decir": "la advertencia"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.states li:first-child",
+          "durante_ms": 3000,
+          "al_decir": "sale pendiente"
+        },
+        {
+          "resaltar": "mat-dialog-actions span.blocker",
+          "durante_ms": 5000,
+          "al_decir": "el motivo al lado"
+        },
+        {
+          "click": "mat-dialog-actions button:has-text('Aprobar el comprobante')",
+          "al_decir": "pulso Aprobar el comprobante"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box--action",
+          "durante_ms": 6000,
+          "al_decir": "El panel avisa"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container section.box--action input",
+            "texto": "Transferencia vista en el estado de cuenta"
+          },
+          "al_decir": "Anoto"
+        },
+        {
+          "click": "mat-dialog-actions button:has-text('Aprobar y crear las empresas')",
+          "al_decir": "pulso Aprobar y crear"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "sale un aviso"
+        },
+        {
+          "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        }
+      ]
+    },
+    {
+      "id": "07-creada-y-rechazar",
+      "capitulo": "Después de aprobar, y cuándo rechazar",
+      "rotulo": "Bitácora y rechazo",
+      "ruta": "Solicitudes de certificación › Revisar",
+      "texto_pantalla": "Empresa creada · Confirmar el pago se enciende · Rechazar",
+      "narracion": "En unos segundos la bitácora muestra lo mismo que vimos en la otra: la empresa, creada en la prueba de su plan, y el cargo de la certificación en su suscripción. Ahora Confirmar el pago está encendido, y se confirma igual que la anterior. ¿Y si el pago nunca llegó? Para eso está Rechazar. Se escribe el motivo, y se lo enviamos por correo a quien llenó el formulario. Ojo: las empresas ya creadas no se borran; quedan en su prueba. Como este pago sí está, pulso Volver y no la rechazo. Así se atienden las solicitudes de certificación: revisar, aprobar el comprobante si la IA no pudo, y confirmar el pago cuando el dinero está en el banco.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container ul.log li:nth-child(1)",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "la empresa, creada"
+        },
+        {
+          "resaltar": "mat-dialog-container ul.log li:nth-child(2)",
+          "durante_ms": 3500,
+          "al_decir": "el cargo"
+        },
+        {
+          "resaltar": "mat-dialog-actions button:has-text('Confirmar el pago')",
+          "durante_ms": 4000,
+          "al_decir": "está encendido"
+        },
+        {
+          "click": "mat-dialog-actions button:has-text('Rechazar')",
+          "al_decir": "Para eso está Rechazar"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box--action textarea",
+          "durante_ms": 4500,
+          "al_decir": "el motivo"
+        },
+        {
+          "resaltar": "mat-dialog-container section.box--action p.small",
+          "durante_ms": 5000,
+          "al_decir": "no se borran"
+        },
+        {
+          "click": "mat-dialog-actions button:has-text('Volver')",
+          "al_decir": "pulso Volver"
+        },
+        {
+          "resaltar": "mat-dialog-actions button:has-text('Confirmar el pago')",
+          "durante_ms": 4000,
+          "al_decir": "confirmar el pago cuando"
+        }
+      ]
+    }
+  ]
+}

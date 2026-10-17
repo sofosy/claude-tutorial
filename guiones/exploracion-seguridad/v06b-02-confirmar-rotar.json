@@ -1,0 +1,1788 @@
+{
+ "url": "/security/integraciones?credencial=7957",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h1",
+   "clase": "",
+   "texto": "Seguridad",
+   "caja": [
+    109,
+    136,
+    695,
+    26
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "gm-sheet-title sec-api__title",
+   "texto": "Credenciales de API",
+   "caja": [
+    109,
+    260,
+    272,
+    28
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "mat-mdc-dialog-title mdc-dialog__title",
+   "texto": "help_outline Rotar secreto",
+   "caja": [
+    415,
+    251,
+    450,
+    58
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "shopping_cart",
+   "icono": "",
+   "aria": "Compras",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Compras']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    200,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    372,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    630,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "Nuevo",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1128,
+    143,
+    101,
+    36
+   ],
+   "sel": "button:has-text('Nuevo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Resumen",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-0",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ],
+   "sel": "a:has-text('Resumen')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Personas 9",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-1",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ],
+   "sel": "a:has-text('Personas 9')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-2",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ],
+   "sel": "a:has-text('Roles y permisos 12')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Integraciones 2",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-3",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ],
+   "sel": "a:has-text('Integraciones 2')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Auditoría",
+   "icono": "",
+   "aria": "",
+   "id": "mat-tab-link-4",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ],
+   "sel": "a:has-text('Auditoría')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Documentación de la API",
+   "icono": "menu_book",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    391,
+    256,
+    231,
+    36
+   ],
+   "sel": "button:has-text('Documentación de la API')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Nueva credencial",
+   "icono": "add",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    632,
+    256,
+    177,
+    36
+   ],
+   "sel": "button:has-text('Nueva credencial')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Programa del contador Creada el 27 sept · Consulta las facturas emitidas para la contabilidad gv_live_0ff350fdNuncaActiva",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-api__row",
+    "gm-sheet-row--selected"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    369,
+    748,
+    64
+   ],
+   "sel": "button:has-text('Programa del contador Creada el 27 sept ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Tienda en línea anterior Creada el Sáb, 30 may · Sincronizaba pedidos de la tienda web (ya no se usa) gv_live_0e9d2d31Jue, 9 jul, 10:10Sin uso",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "gm-sheet-row",
+    "sec-api__row"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    85,
+    433,
+    748,
+    64
+   ],
+   "sel": "button:has-text('Tienda en línea anterior Creada el Sáb, ')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "close",
+   "aria": "Cerrar panel",
+   "id": "",
+   "clases": [],
+   "tooltip": "Cerrar",
+   "deshabilitado": false,
+   "caja": [
+    1197,
+    262,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Cerrar panel']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Editar permisos",
+   "icono": "shield",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "sec-api__permissions"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    854,
+    348,
+    167,
+    36
+   ],
+   "sel": "button:has-text('Editar permisos')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Rotar secreto",
+   "icono": "autorenew",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1029,
+    348,
+    151,
+    36
+   ],
+   "sel": "button:has-text('Rotar secreto')",
+   "sel_casa": "2 visible(s) de 2"
+  },
+  {
+   "texto": "",
+   "icono": "more_vert",
+   "aria": "Más acciones",
+   "id": "",
+   "clases": [],
+   "tooltip": "Más acciones",
+   "deshabilitado": false,
+   "caja": [
+    1188,
+    348,
+    36,
+    36
+   ],
+   "sel": "button[aria-label='Más acciones']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cancelar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    635,
+    426,
+    81,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Cancelar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Rotar secreto",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    725,
+    426,
+    132,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Rotar secreto')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "",
+   "formcontrolname": "",
+   "tipo": "input:search",
+   "placeholder": "Buscar persona o rol",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    820,
+    143,
+    300,
+    36
+   ],
+   "sel": ""
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [
+  {
+   "texto": "Resumen",
+   "seleccionada": false,
+   "id": "mat-tab-link-0",
+   "caja": [
+    109,
+    191,
+    89,
+    48
+   ]
+  },
+  {
+   "texto": "Personas 9",
+   "seleccionada": false,
+   "id": "mat-tab-link-1",
+   "caja": [
+    198,
+    191,
+    113,
+    48
+   ]
+  },
+  {
+   "texto": "Roles y permisos 12",
+   "seleccionada": false,
+   "id": "mat-tab-link-2",
+   "caja": [
+    311,
+    191,
+    165,
+    48
+   ]
+  },
+  {
+   "texto": "Integraciones 2",
+   "seleccionada": true,
+   "id": "mat-tab-link-3",
+   "caja": [
+    476,
+    191,
+    139,
+    48
+   ]
+  },
+  {
+   "texto": "Auditoría",
+   "seleccionada": false,
+   "id": "mat-tab-link-4",
+   "caja": [
+    615,
+    191,
+    87,
+    48
+   ]
+  }
+ ],
+ "tarjetas": [],
+ "dialogos": [
+  {
+   "titulo": "help_outline Rotar secreto",
+   "clases": "cdk-overlay-pane mat-mdc-dialog-panel",
+   "caja": [
+    415,
+    251,
+    450,
+    219
+   ],
+   "texto": "help_outline Rotar secreto ¿Rotar el secreto de \"Programa del contador\"? El actual deja de funcionar de inmediato y la integración se cae hasta que se actualice en su lado. Cancelar Rotar secreto"
+  }
+ ],
+ "menus": [],
+ "toasts": [
+  "Personas agregadas a «Zona Norte» exitosamente",
+  "Persona quitada de «Zona Norte» exitosamente",
+  "Equipo eliminado exitosamente",
+  "Secreto copiado",
+  "Permiso quitado exitosamente"
+ ],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    759,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "gm-dense": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Integraciones Seguridad Quién entra, qué puede hacer y qué c"
+   },
+   "gm-sheet": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo "
+   },
+   "gm-sheet__title-row": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo"
+   },
+   "gm-sheet__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Seguridad Quién entra, qué puede hacer y qué cambió."
+   },
+   "gm-sheet__actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search add Nuevo"
+   },
+   "security-console__search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search"
+   },
+   "gm-sheet__tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 2 Auditoría"
+   },
+   "console-tabs": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Resumen Personas 9 Roles y permisos 12 Integraciones 2 Auditoría"
+   },
+   "gm-sheet__body": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API add Nueva creden"
+   },
+   "gm-sheet-split": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API add Nueva creden"
+   },
+   "sec-api": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API add Nueva creden"
+   },
+   "sec-api--open": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API add Nueva creden"
+   },
+   "gm-sheet-pane": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Credenciales de API menu_book Documentación de la API add Nueva creden"
+   },
+   "gm-sheet-bar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API menu_book Documentación de la API add Nueva creden"
+   },
+   "gm-sheet-title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API"
+   },
+   "sec-api__title": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Credenciales de API"
+   },
+   "gm-sheet-scroll": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO Programa del contad"
+   },
+   "gm-sheet-row": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO"
+   },
+   "gm-sheet-row--head": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO"
+   },
+   "sec-api__row": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO"
+   },
+   "gm-th": {
+    "n": 6,
+    "visibles": 6,
+    "ej": "CREDENCIAL"
+   },
+   "gm-sheet-row--selected": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Programa del contador Creada el 27 sept · Consulta las facturas emitid"
+   },
+   "sec-api__who": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Programa del contador Creada el 27 sept · Consulta las facturas emitid"
+   },
+   "gm-ellipsis": {
+    "n": 4,
+    "visibles": 4,
+    "ej": "Programa del contador"
+   },
+   "sec-api__name": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Programa del contador"
+   },
+   "gm-sheet-meta": {
+    "n": 5,
+    "visibles": 5,
+    "ej": "Creada el 27 sept · Consulta las facturas emitidas para la contabilida"
+   },
+   "gm-cell-mono": {
+    "n": 7,
+    "visibles": 7,
+    "ej": "gv_live_0ff350fd"
+   },
+   "gm-status": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "Activa"
+   },
+   "gm-status--success": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Activa"
+   },
+   "sec-api__stale": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Jue, 9 jul, 10:10"
+   },
+   "gm-status--danger": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Sin uso"
+   },
+   "sec-api__notes": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Cada credencial tiene sus propios permisos: cambiar los de una no toca"
+   },
+   "sec-api__aside": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Programa del contador gv_live_0ff350fd close Activa 0 llamadas en tota"
+   },
+   "sec-api__card": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Programa del contador gv_live_0ff350fd close Activa 0 llamadas en tota"
+   },
+   "sec-api__card-top": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Programa del contador gv_live_0ff350fd close"
+   },
+   "sec-api__card-name": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Programa del contador"
+   },
+   "sec-api__facts": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Activa 0 llamadas en total Sin restricción de IP"
+   },
+   "sec-api__buttons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "shield Editar permisos autorenew Rotar secreto more_vert"
+   },
+   "sec-api__permissions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "shield Editar permisos"
+   },
+   "sec-api__block": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "PERMISOS 4 Facturación 2/79 Facturas: Ver, Crear Facturación Electróni"
+   },
+   "sec-api__block-head": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "PERMISOS 4"
+   },
+   "sec-api__module": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Facturación 2/79 Facturas: Ver, Crear"
+   },
+   "sec-api__module-top": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Facturación 2/79"
+   },
+   "sec-api__module-name": {
+    "n": 2,
+    "visibles": 2,
+    "ej": "Facturación"
+   },
+   "sec-api__bars": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "sec-api__bar-col": {
+    "n": 7,
+    "visibles": 7,
+    "ej": ""
+   },
+   "sec-api__bar": {
+    "n": 7,
+    "visibles": 7,
+    "ej": ""
+   },
+   "sec-api__bar--today": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "sec-api__days": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "lun mar mié jue vie sáb hoy"
+   },
+   "sec-api__hint": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "Lo que la credencial creó, modificó o eliminó, según la bitácora."
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     7,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     7,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Compras",
+    [
+     7,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     7,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     7,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     7,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     7,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     7,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     7,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     7,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     7,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     7,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     7,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     7,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     7,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     7,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     7,
+     759,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar persona o rol",
+    [
+     872,
+     152,
+     232,
+     18
+    ]
+   ],
+   [
+    "section",
+    "Credenciales de API",
+    [
+     85,
+     244,
+     748,
+     442
+    ]
+   ],
+   [
+    "aside",
+    "Detalle de la credencial",
+    [
+     833,
+     244,
+     420,
+     442
+    ]
+   ],
+   [
+    "button",
+    "Cerrar panel",
+    [
+     1197,
+     262,
+     36,
+     36
+    ]
+   ],
+   [
+    "button",
+    "Más acciones",
+    [
+     1188,
+     348,
+     36,
+     36
+    ]
+   ],
+   [
+    "div",
+    "0 operaciones registradas en 7 días",
+    [
+     854,
+     614,
+     379,
+     80
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   },
+   {
+    "el": "div.cdk-overlay-container",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     720
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "shopping_cart",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.is-current",
+    "caja": [
+     7,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     759,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [
+   "CREDENCIAL",
+   "PREFIJO DE LA API KEY",
+   "ÚLTIMO USO",
+   "ESTADO",
+   "PERMISOS",
+   "OPERACIONES EN 7 DÍAS"
+  ],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell shopping_cart inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Seguridad Integraciones Seguridad Quién entra, qué puede hacer y qué cambió. search add Nuevo Resumen Personas 9 Roles y permisos 12 Integraciones 2 Auditoría Credenciales de API menu_book Documentación de la API add Nueva credencial CREDENCIAL PREFIJO DE LA API KEY ÚLTIMO USO ESTADO Programa del contador Creada el 27 sept · Consulta las facturas emitidas para la contabilidad gv_live_0ff350fd Nunca Activa Tienda en línea anterior Creada el Sáb, 30 may · Sincronizaba pedidos de la tienda web (ya no se usa) gv_live_0e9d2d31 Jue, 9 jul, 10:10 Sin uso Cada credencial tiene sus propios permisos: cambiar los de una no toca los de otra. Rotar un secreto invalida el anterior de inmediato. Programa del contador gv_live_0ff350fd close Activa 0 llamadas en total Sin restricción de IP shield Editar permisos autorenew Rotar secreto more_vert PERMISOS 4 Facturación 2/79 Facturas: Ver, Crear Facturación Electrónica 2/44 eCF: Ver, Aprobar OPERACIONES EN 7 DÍAS 0 lun mar mié jue vie sáb hoy Lo que la credencial creó, modificó o eliminó, según la bitácora. help_outline Rotar secreto ¿Rotar el secreto de \"Programa del contador\"? El actual deja de funcionar de inmediato y la integración se cae hasta que se actualice en su lado. Cancelar Rotar secreto"
+ },
+ "video": "v06b",
+ "pantalla": "02-confirmar-rotar",
+ "usuario": "rosa.almanzar",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790523952.494151,
+   "m": "POST",
+   "url": "v1/integration-users",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523955.647662,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523961.594072,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523964.0137198,
+   "m": "DELETE",
+   "url": "v1/integration-users/7959/permissions/PURCHASE_INVOICE_CREATE",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523969.5786147,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790523977.6919596,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523978.5342178,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790523982.5870144,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

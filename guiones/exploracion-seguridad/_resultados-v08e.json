@@ -1,0 +1,64 @@
+{
+ "logins": [
+  {
+   "usuario": "carlos.pimentel",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.14,
+   "clic_a_url_s": 6.52,
+   "clic_a_networkidle_s": 6.52,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "ana.mejia",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.04,
+   "clic_a_url_s": 6.41,
+   "clic_a_networkidle_s": 6.41,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "carlos_q1_dialogo": "warning\nAcceso Denegado\nNo tiene el permiso requerido para acceder a este recurso: \"Configuración Empresa\". Solicite acceso a su administrador.\nEntendido",
+ "aprobar_dlg": "warning\nAprobar cotización\n¿Está seguro de que desea aprobar la cotización \"1\"? Dejará de ser editable.\nCancelar\nAprobar",
+ "aprobar_botones": [
+  "Cancelar",
+  "Aprobar"
+ ],
+ "errores": [
+  {
+   "paso": "v08e-q1",
+   "error": "ERROR 1054 (42S22) at line 1: Unknown column 'status' in 'field list'\n"
+  },
+  {
+   "paso": "v08e-ana",
+   "error": "ERROR 1054 (42S22) at line 1: Unknown column 'status' in 'field list'\n"
+  }
+ ],
+ "mas_count_q6": 1,
+ "mas_q6": [
+  {
+   "t": "receipt_long Convertir a factura",
+   "dis": false
+  },
+  {
+   "t": "history Versiones e historial",
+   "dis": false
+  },
+  {
+   "t": "content_copy Duplicar",
+   "dis": false
+  }
+ ],
+ "mas_count_q7": 1,
+ "mas_q7": [
+  {
+   "t": "history Versiones e historial",
+   "dis": false
+  },
+  {
+   "t": "content_copy Duplicar",
+   "dis": false
+  }
+ ]
+}

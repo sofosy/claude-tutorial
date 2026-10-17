@@ -1,0 +1,388 @@
+{
+  "titulo": "Seguridad · Roles del sistema y roles de tu empresa",
+  "_comentario": "Video 02a de la serie Seguridad (AUTOR A, 2026-09-27). Estado de partida: E0 (`node seeds/seguridad/restaurar.mjs E0`). Entra rosa.almanzar (Admin). ESCRIBE en BD: crea el rol «Contador externo» (duplicado de Contador) y el rol «Cobrador» (vacío) = estado E2a; tras la toma, restaurar E0 (o fijar E2a si aún no existe). Recorrido: /home → candado → pestaña Roles y permisos (abre Mensajero, primer rol de la empresa) → buscar «vend» → Contador (sistema, solo lectura) → Duplicar → «Duplicar rol» → «Operación completada» → Nuevo › Rol → «Crear Rol» Cobrador → «Operación completada». Decisión (_SELECTORES §9): el diálogo ya se llama «Duplicar rol» con botón «Duplicar»: la voz NO explica «duplicar = clonar». El error de nombre repetido y el aviso de salir con cambios van en voz (se verificaron en la exploración, no se provocan). Diálogos de éxito marcados por panelClass (R20) y SIN al_decir (R10), con relleno de voz antes de «Acepto». AVISO justificado: primer paso sin button.panel-collapse (no existe en /security/*). `.gm-rail-btn:has-text('Contador')` se usa en el paso 02, antes de que exista «Contador externo». AÑADIDO (AUTOR D, F-157): en 02 se abre la subvista Historial de Contador (rol del sistema, id 4) para enseñar el vacío «No se encontraron registros» (icono inbox, `role-history.component.ts:57-62`) y se vuelve a Permisos antes de Duplicar. Por qué está vacío: `GET v1/audit-logs/entity/roles/4` filtra por la empresa de la sesión (`audit-log.service.ts:105-120`) y el canon E0 solo trae eventos de roles 77–81 (`seeds/seguridad/estados/E0.sql`: roles/77 ×2, 78 ×3, 79 ×3, 80 ×2, 81 ×1; ninguno del 4). Selector `app-role-history .gm-sheet-state` sacado del código, NO de un volcado → confirmar en el ensayo. El paso 03 sigue abriendo Duplicar en la vista Permisos (el botón está en la cabecera, común a las tres vistas). Ensayo 09-27: 0 fallos (4 pasos). Grabación 09-27 (OPERADOR-GRABACIÓN): el candado caía +1,5 s tarde (el primer clic del video no llega antes de ~2,3 s) → frase de entrada «En este video vemos los roles de tu empresa.» Toma 2: el diálogo de trabajo «Crear Rol» (5,0 s) quedaba sin marca hasta el interruptor (19,6 s) → marca `mat-dialog-container` al decir «Se abre Crear Rol» (R10). Corrección 09-28 (AUTOR-CORRECCIÓN-1, informe _REVISION-FINAL-A): (02a-1) quitada la frase «Dos avisos útiles…» (nombre repetido y salir sin guardar no se ven en cámara) con sus dos marcas sobre Cobrador; esos errores siguen en errores_comunes; (02a-2) cursor:false en el contador de Almacén; (02a-4) «con Editar y Más acciones arriba» marca solo el botón Editar y luego el ⋮ (antes la caja abarcaba Duplicar), en 01 y en 03; (02a-5) voz «los dos vendedores: Vendedor y Vendedor sénior» con una marca por cada uno; (02a-6) «y lo confirma con el aviso Operación completada» (ya está en pantalla cuando se nombra). Ronda 8 (R8-10): «Crear rol» en voz, ancla y texto_pantalla. (02a-3) es de motor: regrabar con e1810d6. Ensayo: confirmar que el ⋮ de Mensajero y de Contador externo casa con .sec-roles__actions button[aria-label='Más acciones'] y el título «Crear rol». Final T1 (09-28, revisión visual de la toma 1): cursor:false en las marcas de la lista de roles, del título, de las insignias Del sistema/Vacío, del aviso Solo lectura, del Ver gris, del Historial vacío, del aviso y la descripción del diálogo Duplicar, del interruptor y de Contador externo/Cobrador (el cursor tapaba justo lo que la voz nombraba: «Vacío», «Del sistema», «No se encontraron registros»…); marcas acortadas para que no queden flotando al cambiar de vista o cuando el diálogo se reacomoda al guardar (Historial 2800, descripción 1800, interruptor 3000, ⋮ 1800). Toma 2 (revisión visual): cursor:false también en Editar, Más acciones y Duplicar (el cursor tapaba la etiqueta y el tooltip «Más acciones»).",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "usuario": "rosa.almanzar",
+    "clave": "Demo2026!",
+    "sel_entrar": "button.auth-primary-btn"
+  },
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+15%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "privacidad": {
+    "permitidos": [
+      "germiva",
+      "1305550",
+      "Las Palmas",
+      "rosa",
+      "almanzar",
+      "ana",
+      "mejia",
+      "mejía",
+      "jose",
+      "josé",
+      "cabrera",
+      "carlos",
+      "pimentel",
+      "pedro",
+      "nunez",
+      "núñez",
+      "marta",
+      "guzman",
+      "guzmán",
+      "hector",
+      "héctor",
+      "vargas",
+      "luisa",
+      "feliz",
+      "sonia",
+      "reyes",
+      "Zona Este",
+      "Villa Mella",
+      "809-555-0188",
+      "germiva.demo",
+      "almánzar",
+      "féliz",
+      "Contador externo",
+      "Cobrador",
+      "Cobra facturas a domicilio"
+    ],
+    "mapa_fijo": {
+      "::1": "192.168.1.25"
+    }
+  },
+  "pronunciacion": {
+    "API": "a-pe-i"
+  },
+  "aprenderas": [
+    "Qué es un rol y cómo se lee la lista de roles de la consola",
+    "La diferencia entre un rol del sistema (solo lectura) y un rol de tu empresa",
+    "Duplicar un rol del sistema para tener una copia propia que puedes ajustar",
+    "Crear un rol nuevo desde cero"
+  ],
+  "errores_comunes": [
+    "Buscar el botón Editar en un rol del sistema: no existe; hay que duplicarlo",
+    "Repetir el nombre de un rol que ya existe en la empresa",
+    "Asignar un rol recién creado sin darle permisos: queda vacío y no da acceso a nada",
+    "Cerrar el diálogo con datos escritos y perderlos"
+  ],
+  "pasos": [
+    {
+      "id": "01-lista-de-roles",
+      "ruta": "Seguridad › Roles y permisos",
+      "texto_pantalla": "Roles y permisos · la lista de roles, de la empresa y del sistema",
+      "capitulo": "La lista de roles",
+      "rotulo": "La lista de roles",
+      "acciones": [
+        {
+          "click": "a.rail-item[href='/security']",
+          "al_decir": "por el candado"
+        },
+        {
+          "click": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
+          "al_decir": "abro la pestaña"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Vendedor'):not(:has-text('sénior'))",
+          "durante_ms": 4500,
+          "al_decir": "como Vendedor",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-sheet-rail :text('De la empresa')",
+          "durante_ms": 4500,
+          "al_decir": "Arriba, De la empresa",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__child",
+          "durante_ms": 2700,
+          "al_decir": "flechita",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Mensajero') .gm-badge--warning",
+          "durante_ms": 3500,
+          "al_decir": "insignia Vacío",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Almacén') .gm-rail-count",
+          "durante_ms": 3800,
+          "cursor": false,
+          "al_decir": "sus titulares"
+        },
+        {
+          "resaltar": ".gm-sheet-rail :text('Del sistema')",
+          "durante_ms": 5000,
+          "al_decir": "Del sistema",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__h2",
+          "durante_ms": 1800,
+          "al_decir": "primer rol",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__actions button:has-text('Editar')",
+          "durante_ms": 900,
+          "al_decir": "con Editar",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__actions button[aria-label='Más acciones']",
+          "durante_ms": 1800,
+          "al_decir": "Más acciones arriba",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": ".sec-roles__search input",
+            "texto": "vend"
+          },
+          "al_decir": "escribo vend"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Vendedor'):not(:has-text('sénior'))",
+          "durante_ms": 1200,
+          "al_decir": "los dos vendedores",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Vendedor sénior')",
+          "durante_ms": 2500,
+          "al_decir": "y Vendedor sénior",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": ".sec-roles__search input",
+            "texto": ""
+          },
+          "al_decir": "Borro la búsqueda"
+        }
+      ],
+      "narracion": "En este video vemos los roles de tu empresa. Entro a Seguridad por el candado de la izquierda y abro la pestaña Roles y permisos. Un rol es un conjunto de permisos con nombre, como Vendedor o Almacén, que se asigna a las personas. A la izquierda está la lista, en dos grupos. Arriba, De la empresa: los roles que creó tu empresa y que puedes cambiar. Vendedor sénior sale debajo de Vendedor, con una flechita, porque hereda de él. Mensajero lleva la insignia Vacío: no concede ningún permiso. Y el número a la derecha de cada rol cuenta sus titulares, o sea las personas que lo tienen: Almacén, dos. Más abajo, Del sistema, con candado: son los que trae Germiva para todas las empresas; los que no aplican a tu plan ni siquiera salen. Al abrir la pestaña se muestra el primer rol de la empresa, Mensajero, con Editar y Más acciones arriba, porque es tuyo. Para encontrar un rol, escribo vend en el buscador de la lista, y quedan solo los dos vendedores: Vendedor y Vendedor sénior. Si nada coincide, la lista lo avisa. Borro la búsqueda."
+    },
+    {
+      "id": "02-rol-del-sistema",
+      "ruta": "Seguridad › Roles y permisos › Contador",
+      "texto_pantalla": "Rol del sistema · solo lectura, sin Editar ni Más acciones",
+      "capitulo": "Un rol del sistema",
+      "rotulo": "Un rol del sistema",
+      "acciones": [
+        {
+          "click": ".gm-rail-btn:has-text('Contador')",
+          "al_decir": "Abro Contador"
+        },
+        {
+          "resaltar": ".sec-roles__head .gm-badge:has-text('Del sistema')",
+          "durante_ms": 3000,
+          "al_decir": "la insignia",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__readonly",
+          "durante_ms": 6000,
+          "al_decir": "un aviso",
+          "cursor": false
+        },
+        {
+          "resaltar": ".rpe__act[disabled]",
+          "durante_ms": 2800,
+          "al_decir": "en gris",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__actions button:has-text('Duplicar')",
+          "durante_ms": 4500,
+          "al_decir": "solo queda Duplicar",
+          "cursor": false
+        },
+        {
+          "click": ".sec-roles__views button:has-text('Historial')",
+          "al_decir": "Abro su Historial"
+        },
+        {
+          "resaltar": "app-role-history .gm-sheet-state",
+          "durante_ms": 2800,
+          "al_decir": "No se encontraron registros",
+          "cursor": false
+        },
+        {
+          "click": ".sec-roles__views button:has-text('Permisos')",
+          "al_decir": "Vuelvo a Permisos"
+        },
+        {
+          "cartel": {
+            "tipo": "consejo",
+            "titulo": "Consejo",
+            "texto": "Para ajustar un rol del sistema, duplícalo y cambia la copia."
+          },
+          "durante_ms": 6500,
+          "al_decir": "a tu medida"
+        }
+      ],
+      "narracion": "Ahora miremos un rol del sistema. Abro Contador, un rol del sistema. Lleva la insignia Del sistema, y encima de los permisos sale un aviso: se ve aquí para saber qué concede, pero no se puede cambiar. Por eso las acciones salen en gris y no responden al clic, y arriba solo queda Duplicar: no hay Editar ni Más acciones. ¿Por qué? Porque estos roles los mantiene Germiva y valen igual para todas las empresas: si uno cambiara, cambiaría para todos. Abro su Historial, la vista que cuenta quién cambió el rol y cuándo: está vacío, con el aviso No se encontraron registros, porque en tu empresa nadie lo ha tocado. Vuelvo a Permisos. Si necesitas un Contador a tu medida, lo duplicas, y ajustas la copia, que ya es de tu empresa."
+    },
+    {
+      "id": "03-duplicar",
+      "ruta": "Seguridad › Roles y permisos › Duplicar rol",
+      "texto_pantalla": "Duplicar rol · copia permisos, herencia y exclusiones",
+      "capitulo": "Duplicar un rol",
+      "rotulo": "Duplicar un rol",
+      "acciones": [
+        {
+          "click": ".sec-roles__actions button:has-text('Duplicar')",
+          "al_decir": "Pulso Duplicar"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Se creará un nuevo rol')",
+          "durante_ms": 6000,
+          "al_decir": "qué se copia",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='name']",
+            "texto": "Contador externo"
+          },
+          "al_decir": "escribo Contador"
+        },
+        {
+          "resaltar": "mat-dialog-container [formcontrolname='description']",
+          "durante_ms": 1800,
+          "al_decir": "ya viene copiada",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Duplicar')",
+          "al_decir": "botón Duplicar del"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 4000,
+          "cursor": false
+        },
+        {
+          "click": ".custom-alert-dialog-panel button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Contador externo')",
+          "durante_ms": 4500,
+          "al_decir": "El rol nuevo",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__actions button:has-text('Editar')",
+          "durante_ms": 900,
+          "al_decir": "con Editar",
+          "cursor": false
+        },
+        {
+          "resaltar": ".sec-roles__actions button[aria-label='Más acciones']",
+          "durante_ms": 1800,
+          "al_decir": "Más acciones arriba",
+          "cursor": false
+        }
+      ],
+      "narracion": "Lo hago ahora. Pulso Duplicar. Se abre Duplicar rol, y el aviso de arriba dice qué se copia: los permisos, la herencia y las exclusiones de Contador. El Nombre viene vacío, porque no se puede repetir: escribo Contador externo, para el contador de afuera que nos lleva los libros. La Descripción ya viene copiada, y la dejo así. Pulso el botón Duplicar del diálogo. El sistema crea la copia con todos sus permisos, y lo confirma con el aviso Operación completada. Acepto. El rol nuevo ya aparece en De la empresa, sin candado, y queda abierto: este sí lo puedes cambiar, con Editar y Más acciones arriba."
+    },
+    {
+      "id": "04-crear-rol",
+      "ruta": "Seguridad › Nuevo › Rol",
+      "texto_pantalla": "Crear rol · nombre, descripción y herencia opcional",
+      "capitulo": "Crear un rol nuevo",
+      "rotulo": "Crear un rol",
+      "acciones": [
+        {
+          "click": ".gm-sheet__actions button:has-text('Nuevo')",
+          "al_decir": "Pulso Nuevo"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Rol')",
+          "al_decir": "elijo Rol"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2200,
+          "cursor": false,
+          "al_decir": "Se abre Crear rol"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='name']",
+            "texto": "Cobrador"
+          },
+          "al_decir": "En Nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='description']",
+            "texto": "Cobra facturas a domicilio"
+          },
+          "al_decir": "En Descripción"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-slide-toggle",
+          "durante_ms": 3000,
+          "al_decir": "el interruptor",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Crear')",
+          "al_decir": "Pulso Crear"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "click": ".custom-alert-dialog-panel button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Cobrador') .gm-badge--warning",
+          "durante_ms": 4500,
+          "al_decir": "insignia Vacío",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Contador externo')",
+          "durante_ms": 2800,
+          "al_decir": "como hicimos",
+          "cursor": false
+        },
+        {
+          "resaltar": ".gm-rail-btn:has-text('Cobrador')",
+          "durante_ms": 4000,
+          "al_decir": "créalo vacío",
+          "cursor": false
+        }
+      ],
+      "narracion": "Ahora un rol desde cero. Pulso Nuevo, arriba a la derecha, y elijo Rol. Se abre Crear rol. En Nombre escribo Cobrador, el que sale a cobrar. En Descripción pongo para qué sirve: cobra facturas a domicilio. Así cualquiera entiende para qué existe. Debajo está el interruptor Heredar permisos de otro rol; lo dejo apagado, la herencia la vemos en otro video. Pulso Crear. El sistema guarda el rol y lo confirma con Operación completada. Acepto. Cobrador aparece en De la empresa con la insignia Vacío: todavía no concede nada; sus permisos se dan en el editor, que es el próximo video. En resumen: para ajustar un rol del sistema, duplícalo, como hicimos con Contador externo; para un puesto nuevo, créalo vacío y dale solo lo que necesita."
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+TÍTULO
+============================================================
+Citas · Parte 5: agendar, confirmar y atender
+
+DESCRIPCIÓN
+============================================================
+Quinta parte de la serie de Citas de RegiSalud: la cita de punta a punta desde recepción. Agendar una cita nueva (paciente, médico, servicio, motivo, prioridad, turno, cobertura, recordatorios por WhatsApp y correo), confirmarla, registrar la llegada del paciente, verlo en la Operación del Día y llamarlo a consulta, reprogramar una cita a otro turno y cancelar otra con su motivo.
+
+⏱️ CAPÍTULOS
+00:00  Agendar una cita
+00:45  El turno y los recordatorios
+01:29  Confirmar y registrar la llegada
+02:08  La Operación del Día
+02:58  Reprogramar una cita
+03:38  Cancelar una cita
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Agendar una cita eligiendo el turno libre del médico y los recordatorios del paciente
+• Confirmar la cita y registrar la llegada del paciente
+• Seguir al paciente en la Operación del Día y llamarlo a consulta
+• Reprogramar una cita a otro día u hora sin perder su historia
+• Cancelar una cita dejando el motivo para los informes
+
+⚠️ ERRORES COMUNES
+• Elegir el turno antes del servicio: los turnos dependen del servicio y del horario del médico
+• Editar la hora de una cita en vez de reprogramarla: reprogramar avisa al paciente y deja el rastro
+• Cancelar cuando el paciente simplemente no vino: para eso está «Marcar no asistió»
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:29
+
+TRANSCRIPCIÓN
+============================================================
+Una paciente llama para pedir cita. Entro al calendario, en el menú de la izquierda, y pulso Nueva cita. Primero el paciente: escribo Laura, y cuando aparece en la lista, la elijo. Debajo sale su ficha, con la edad, la cédula y el teléfono. Ahora el médico: escribo Jorge, y en la lista que se abre elijo al doctor Jorge Medina. Con el médico elegido, el tipo de cita ofrece solo los servicios que él da: elijo consulta general. Debajo se resumen su duración, la modalidad y la tarifa. El motivo de la consulta es lo que necesita atender la paciente: elijo chequeo general en la lista.
+La prioridad se queda en normal. Más abajo, en Cuándo, está la semana del doctor: cada día dice cuántos turnos libres le quedan. Toco el primer día disponible, y aparecen sus turnos. Elijo uno de la tarde. El consultorio se llena solo, desde el horario del médico. A la derecha está la cobertura: la paciente paga directo, así que paga la tarifa completa. Los recordatorios salen por WhatsApp un día antes y por correo una hora antes; se pueden quitar o agregar otros. En cómo se agendó marco que fue por teléfono, y como la paciente ya la confirmó, marco esa casilla. Pulso Agendar cita, y la cita queda creada.
+Ahora una cita de hoy que sigue programada: la de Yesenia Castillo. En la vista de lista toco su fila, y a la derecha sale su panel. El botón Estado muestra solo los pasos que tocan: confirmar, registrar la llegada o marcar que no asistió. Confirmo: el sistema pregunta, y digo que sí. El panel se cierra y la cita ya sale en verde, confirmada. Cuando la paciente llega a recepción, la abro otra vez, y en el menú Estado registro su llegada. Acepto el aviso. La cita pasa a en espera y la paciente recibe un turno en la cola de la sala.
+Lo que pasa con los pacientes de hoy se sigue en la Operación del Día. Arriba están las etapas, con cuántos pacientes hay en cada una: en consulta, en cola, citados y cerrados. Cada fila es un paciente, con su turno, el consultorio y el médico. Abro a Yesenia Castillo: su recorrido de hoy dice que fue citada, llegó y está en cola. Cuando el médico está listo, pulso Llamar. El sistema avisa que la paciente fue llamada, y el turno sale en la pantalla de la sala; acepto el aviso. La ficha dice a qué hora se llamó. Cuando entra al consultorio, pulso Iniciar atención, y otra vez acepto. Ahora sí está en consulta. Al terminar, el médico la cierra desde la historia clínica, con su nota firmada.
+Otro paciente, Francisco Javier Cabrera, pide moverse de hora. Vuelvo al calendario y entro a la Agenda del Centro. En la columna del doctor Jorge Medina está su cita, y la abro: se ve el detalle completo. Toco el botón Reprogramar. Arriba queda la cita actual, y debajo la semana del médico con los cupos de cada día. Elijo el primer día con cupos y el turno de las cinco. Escribo el motivo: el paciente pidió otra hora. Con todo listo, pulso Reprogramar al pie: se crea la cita nueva, la anterior queda como reprogramada para la historia, y al paciente le llega un correo.
+Y si un paciente avisa que no vendrá, la cita se cancela. Vuelvo al calendario, entro otra vez a la Agenda del Centro, y en la columna de la doctora Ana Pérez abro la de Rafael Antonio Núñez. Pulso Cancelar cita. El sistema pregunta con el número y la hora, y pide el motivo: solicitud del paciente. Ese motivo queda en la cita y en el informe de cancelaciones. Las notas son opcionales, para el equipo. Ahora sí, pulso Cancelar la cita. La cita queda cancelada, el turno queda libre para otro paciente y los recordatorios se anulan. Si el paciente simplemente no vino, no se cancela: se marca que no asistió, desde el botón Estado. Con esto cerramos la serie de citas.

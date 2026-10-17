@@ -1,0 +1,44 @@
+TÍTULO
+============================================================
+Citas · Parte 2: el médico, su horario y su enlace
+
+DESCRIPCIÓN
+============================================================
+Segunda parte de la serie de Citas de RegiSalud: cómo se le asigna un servicio a un médico desde su ficha (Médicos › Agenda › Disponibilidad), el enlace de reservas que se genera para ese médico y ese servicio, el horario de atención por día con la duración de cada turno, los pacientes por turno y el consultorio (creado desde el mismo campo), las opciones de reserva en línea, los bloqueos de agenda por vacaciones o ausencias, y el resumen de horarios de todos los médicos.
+
+⏱️ CAPÍTULOS
+00:00  La agenda del médico
+00:42  Habilitar el servicio y su enlace
+01:23  El horario de atención
+01:52  Crear el consultorio
+02:18  Varios días y opciones de reserva
+02:58  Bloqueos de agenda
+03:42  El horario de todos los médicos
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Habilitar un servicio para un médico y entender el enlace de reservas que se genera
+• Configurar el horario de atención de varios días de una vez, con turnos, capacidad y consultorio
+• Crear un consultorio sin salir del horario
+• Bloquear horas o días del médico para que no se ofrezcan citas
+• Ver el horario de todos los médicos en una sola pantalla
+
+⚠️ ERRORES COMUNES
+• Crear el servicio y no darle horario: el médico no aparece en el portal hasta que tiene una franja visible
+• Desmarcar «Visible para pacientes en el link de reservas»: la franja sirve en recepción pero no en internet
+• Cargar las vacaciones como un horario nuevo en vez de un bloqueo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:12
+
+TRANSCRIPCIÓN
+============================================================
+El servicio de pediatría ya existe, pero ningún médico lo ofrece. Eso se hace en la ficha del médico. Entro a Médicos, en el menú de la izquierda. A la izquierda está la lista de médicos del centro; abro al doctor Luis Gómez, pediatra, y recojo la lista para ganar espacio. En la pestaña Agenda hay dos vistas: Citas, que son las que ya tiene, y Disponibilidad, que es cuándo atiende. Abro Disponibilidad. El aviso de arriba resume el orden: primero se habilita el servicio, y después se le pone el horario. Este médico todavía no ofrece ninguno.
+Como no tiene ninguno, el botón dice ofrecer el primer tipo de cita. Lo pulso. En la ventana elijo el servicio: consulta pediátrica. Debajo se ve su duración y su precio. Pulso Habilitar para este médico. Al habilitarlo, el sistema crea su enlace de reservas: una dirección propia de este médico y este servicio, que se puede mandar por WhatsApp o poner en redes. El título y la descripción son los que se ven al compartirlo, con la vista previa a la derecha, y el mensaje de invitación se copia junto con el enlace con este botón. Por ahora cierro la ventana, porque falta lo más importante: el horario.
+Ahora el horario. Cada día de la semana sale en una fila, y el doctor no atiende ninguno todavía. Pulso Agregar en el lunes. Una franja es un bloque de horas que se divide en turnos: de ocho a doce, con turnos de treinta minutos, que vienen del servicio, y un paciente por turno. El consultorio es la sala donde atiende. Escribo el nombre de uno que aún no existe, y elijo crearlo desde aquí mismo.
+Se abre la ficha del consultorio, con el nombre que ya escribí. Le pongo un código corto: consultorio pediatría. Los datos de ubicación son opcionales: la dirección, el teléfono, el edificio y el piso. Sirven cuando el centro tiene varias sedes, porque el paciente los ve en su confirmación. Pulso Guardar, y el consultorio queda elegido en la franja.
+Para no repetir lo mismo cinco veces, en Aplicar a marco el martes. Marco también el miércoles. Después el jueves. Y por último el viernes. Abajo están las opciones de reserva. Visible para pacientes en el link de reservas hace que estos turnos se ofrezcan por internet; si se desmarca, solo la recepción los puede usar. Permitir reservas para hoy deja reservar el mismo día. Y horario exclusivo para este tipo de cita aparta estas horas solo para pediatría. Pulso Agregar: se crean las cinco franjas, y cada día muestra su horario, su consultorio y cuántos turnos tiene.
+Más abajo están los bloqueos de agenda. Un bloqueo no cambia el horario: aparta un tiempo en el que el médico no está, por vacaciones o por una ausencia de unas horas. Pulso Nuevo bloqueo. Por defecto toma el día completo de hoy. Si es solo un rato, elijo la hora de inicio: las diez. Después la hora final: las doce. El último campo es solo para el equipo: escribo el motivo, reunión médica. El aviso de abajo confirma qué se va a bloquear. Pulso Bloquear: el sistema avisa que el horario quedó bloqueado, y el bloqueo aparece en la lista; en esas horas no se ofrece ninguna cita, ni en recepción ni en internet.
+Para ver el horario de todos a la vez, vuelvo a Configuración y entro a Recursos y Ajustes. Recojo el panel y abro Horarios de atención. Cada fila es un médico con sus días de atención, y cada recuadro una franja con su duración y su consultorio. Aquí está el doctor Luis Gómez con lo que acabamos de configurar. Con el servicio, el médico y el horario listos, en la próxima parte el paciente reserva desde internet.

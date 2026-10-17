@@ -1,0 +1,33 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.1,
+   "clic_a_url_s": 7.08,
+   "clic_a_networkidle_s": 7.08,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "dlg_scroll": {
+  "sh": 501,
+  "ch": 501
+ },
+ "crear_usuario": "Crear Usuario\nclose\nNombre(s)\nperson\nApellido(s)\nperson\nCorreo Electrónico\nemail\nNombre de Usuario\nalternate_email\nWhatsApp\nchat\nCon código de país. Habilita a esta persona a consultar la empresa por WhatsApp.\nContraseña\nvisibility_off\nMínimo 6 caracteres, mayúscula y número\nConfirmar Contraseña\nvisibility_off\nRoles del Usuario\ngroup\nSeleccione los roles que tendrá en esta empresa\nverified_user\n1 rol(es) asignado(s)\nclear_all\nLimpiar todo\nperson\nVendedor\ncancel\nEstado:\nActivo\nInactivo\nCancelar",
+ "errores": [
+  {
+   "paso": "v04b-alta",
+   "error": "Locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"mat-dialog-container button:has-text('Cancelar')\").last\n    - locator resolved to <button type=\"button\" disabled=\"true\" mat-stroked-button=\"\" _ngcontent-ng-c4024165842=\"\" mat-ripple-loader-disabled=\"\" mat-ripple-loader-uninitialized=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" class=\"mdc-button mat-mdc-button-base mdc-button--outlined mat-mdc-outlined-button mat-unthemed mat-mdc-button-disabled\">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - eleme"
+  },
+  {
+   "paso": "v04b-emailex",
+   "error": "Locator.click: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\".gm-sheet__actions button:has-text('Nuevo')\").first\n    - locator resolved to <button color=\"primary\" mat-flat-button=\"\" aria-haspopup=\"menu\" aria-expanded=\"false\" _ngcontent-ng-c88685602=\"\" mat-ripple-loader-class-name=\"mat-mdc-button-ripple\" class=\"mdc-button mat-mdc-button-base mat-mdc-menu-trigger mdc-button--unelevated mat-mdc-unelevated-button mat-primary\">…</button>\n  - attempting click action\n    2 × waiting for element to be visible, enabled and stable\n      - element is visible, enabled and stable\n      - scr"
+  },
+  {
+   "paso": "v04b-editar",
+   "error": "Locator.fill: Timeout 15000ms exceeded.\nCall log:\n  - waiting for locator(\"mat-dialog-container [formcontrolname='confirmPassword']\")\n"
+  }
+ ],
+ "julio_id": "7958"
+}

@@ -1,0 +1,71 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.07,
+   "clic_a_url_s": 7.36,
+   "clic_a_networkidle_s": 7.36,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A1_asignar": {
+  "toast": "Roles actualizados exitosamente",
+  "toast_s": 0.45,
+  "roles_bd": [
+   "Almacén"
+  ],
+  "panel_antes": "AM\nAna Mejía\nana.mejia@germiva.demo\nclose\nActiva\nZona Este\nÚltimo ingreso: hace 15 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nVendedor\nDe la empresa\n+ Asignar rol\nPERMISOS EFECTIVOS\n5 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n1/42\nClientes y Proveedores\n1/37\nCotizaciones\n3/19\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace 15 min · Cliente de API\n::1\nHace 19 min · Cliente de API\n::1\nHace 20 min · Cliente de API\n::1",
+  "panel_despues": "AM\nAna Mejía\nana.mejia@germiva.demo\nclose\nActiva\nZona Este\nÚltimo ingreso: hace 15 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nAlmacén\nDe la empresa\n+ Asignar rol\nPERMISOS EFECTIVOS\n6 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n5/42\nInventario\n1/47\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace 15 min · Cliente de API\n::1\nHace 19 min · Cliente de API\n::1\nHace 21 min · Cliente de API\n::1",
+  "lista_fila": "AM\nAna Mejía\nana.mejia@germiva.demo · Zona Este\nAlmacén\nHace 15 min\nActiva",
+  "audit": [
+   [
+    "311352",
+    "UPDATE",
+    "ROLES_REMOVED",
+    "users",
+    "7944",
+    "rosa.almanzar",
+    "{\"Roles\": {\"newValue\": \"Almacén\", \"oldValue\": \"Almacén, Vendedor\"}}"
+   ],
+   [
+    "311351",
+    "UPDATE",
+    "ROLES_ASSIGNED",
+    "users",
+    "7944",
+    "rosa.almanzar",
+    "{\"Roles\": {\"newValue\": \"Almacén, Vendedor\", \"oldValue\": \"Vendedor\"}}"
+   ],
+   [
+    "311350",
+    "CREATE",
+    "",
+    "user_company_roles",
+    "8214",
+    "rosa.almanzar",
+    "{\"id\": {\"newValue\": 8214, \"oldValue\": null}, \"role\": {\"newValue\": 79, \"oldValue\": null}, \"user\": {\"newValue\": 7944, \"oldValue\": null}, \"company\": {\"newValue\": 50, \"oldValue\": null}}"
+   ]
+  ]
+ },
+ "A1_auditoria_detalle": "Actualizó\nDomingo, 27 de septiembre de 2026, 11:26\nclose\nUsuarios #7944\npor rosa.almanzar\nQUÉ CAMBIÓ\nRoles\nAlmacén, Vendedor\n→\nAlmacén\nSOLICITUD\nIP\n::1\nOrigen\nChrome · Windows\nEvento\nROLES_REMOVED\nSolicitud\n51515cba-e940-419f-a02d-7bdb6232c6a4\nHistorial del registro →\nVer a rosa.almanzar →",
+ "A1_editar": {
+  "dialogo": "check_circle\nOperación completada\nEl usuario ha sido actualizado correctamente.\nAceptar",
+  "roles_bd": [
+   "Vendedor"
+  ],
+  "audit": [
+   [
+    "311353",
+    "UPDATE",
+    "ROLES_REMOVED",
+    "users",
+    "7945",
+    "rosa.almanzar",
+    "{\"Roles\": {\"newValue\": \"Vendedor\", \"oldValue\": \"Almacén, Vendedor\"}}"
+   ]
+  ],
+  "panel": "JC\nJosé Cabrera\njose.cabrera@germiva.demo\nclose\nActiva\nZona Este\nÚltimo ingreso: hace 16 min\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nVendedor\nDe la empresa\n+ Asignar rol\nPERMISOS EFECTIVOS\n5 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n1/42\nClientes y Proveedores\n1/37\nCotizaciones\n3/19\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace 16 min · Cliente de API\n::1\nHace 19 min ·"
+ }
+}

@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Seguridad · Roles del sistema y roles de tu empresa
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  La lista de roles
+01:13  Un rol del sistema
+02:02  Duplicar un rol
+02:45  Crear un rol nuevo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es un rol y cómo se lee la lista de roles de la consola
+• La diferencia entre un rol del sistema (solo lectura) y un rol de tu empresa
+• Duplicar un rol del sistema para tener una copia propia que puedes ajustar
+• Crear un rol nuevo desde cero
+
+⚠️ ERRORES COMUNES
+• Buscar el botón Editar en un rol del sistema: no existe; hay que duplicarlo
+• Repetir el nombre de un rol que ya existe en la empresa
+• Asignar un rol recién creado sin darle permisos: queda vacío y no da acceso a nada
+• Cerrar el diálogo con datos escritos y perderlos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:40
+
+TRANSCRIPCIÓN
+============================================================
+En este video vemos los roles de tu empresa. Entro a Seguridad por el candado de la izquierda y abro la pestaña Roles y permisos. Un rol es un conjunto de permisos con nombre, como Vendedor o Almacén, que se asigna a las personas. A la izquierda está la lista, en dos grupos. Arriba, De la empresa: los roles que creó tu empresa y que puedes cambiar. Vendedor sénior sale debajo de Vendedor, con una flechita, porque hereda de él. Mensajero lleva la insignia Vacío: no concede ningún permiso. Y el número a la derecha de cada rol cuenta sus titulares, o sea las personas que lo tienen: Almacén, dos. Más abajo, Del sistema, con candado: son los que trae Germiva para todas las empresas; los que no aplican a tu plan ni siquiera salen. Al abrir la pestaña se muestra el primer rol de la empresa, Mensajero, con Editar y Más acciones arriba, porque es tuyo. Para encontrar un rol, escribo vend en el buscador de la lista, y quedan solo los dos vendedores: Vendedor y Vendedor sénior. Si nada coincide, la lista lo avisa. Borro la búsqueda.
+Ahora miremos un rol del sistema. Abro Contador, un rol del sistema. Lleva la insignia Del sistema, y encima de los permisos sale un aviso: se ve aquí para saber qué concede, pero no se puede cambiar. Por eso las acciones salen en gris y no responden al clic, y arriba solo queda Duplicar: no hay Editar ni Más acciones. ¿Por qué? Porque estos roles los mantiene Germiva y valen igual para todas las empresas: si uno cambiara, cambiaría para todos. Abro su Historial, la vista que cuenta quién cambió el rol y cuándo: está vacío, con el aviso No se encontraron registros, porque en tu empresa nadie lo ha tocado. Vuelvo a Permisos. Si necesitas un Contador a tu medida, lo duplicas, y ajustas la copia, que ya es de tu empresa.
+Lo hago ahora. Pulso Duplicar. Se abre Duplicar rol, y el aviso de arriba dice qué se copia: los permisos, la herencia y las exclusiones de Contador. El Nombre viene vacío, porque no se puede repetir: escribo Contador externo, para el contador de afuera que nos lleva los libros. La Descripción ya viene copiada, y la dejo así. Pulso el botón Duplicar del diálogo. El sistema crea la copia con todos sus permisos, y lo confirma con el aviso Operación completada. Acepto. El rol nuevo ya aparece en De la empresa, sin candado, y queda abierto: este sí lo puedes cambiar, con Editar y Más acciones arriba.
+Ahora un rol desde cero. Pulso Nuevo, arriba a la derecha, y elijo Rol. Se abre Crear rol. En Nombre escribo Cobrador, el que sale a cobrar. En Descripción pongo para qué sirve: cobra facturas a domicilio. Así cualquiera entiende para qué existe. Debajo está el interruptor Heredar permisos de otro rol; lo dejo apagado, la herencia la vemos en otro video. Pulso Crear. El sistema guarda el rol y lo confirma con Operación completada. Acepto. Cobrador aparece en De la empresa con la insignia Vacío: todavía no concede nada; sus permisos se dan en el editor, que es el próximo video. En resumen: para ajustar un rol del sistema, duplícalo, como hicimos con Contador externo; para un puesto nuevo, créalo vacío y dale solo lo que necesita.

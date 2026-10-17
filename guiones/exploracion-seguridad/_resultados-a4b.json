@@ -1,0 +1,34 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.33,
+   "clic_a_url_s": 6.51,
+   "clic_a_networkidle_s": 6.51,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "A4b_titulares": {
+  "toast": "Este rol está asignado a 2 personas. Quítaselo antes de eliminarlo.",
+  "toast_s": 0.36,
+  "red": [
+   {
+    "t": 1790522965.7771525,
+    "m": "DELETE",
+    "url": "role/79",
+    "st": 422,
+    "body": "{\"message\":\"Este rol está asignado a 2 personas. Quítaselo antes de eliminarlo.\",\"error\":\"Unprocessable Entity\",\"statusCode\":422}"
+   }
+  ],
+  "rol_bd": [
+   [
+    "79",
+    "Almacén",
+    ""
+   ]
+  ]
+ },
+ "A4b_toast_sigue_a_6s": 0
+}

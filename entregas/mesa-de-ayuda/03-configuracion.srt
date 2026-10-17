@@ -1,0 +1,143 @@
+1
+00:00:03,100 --> 00:00:06,425
+La configuración de la Mesa de Ayuda se abre con la rueda dentada,
+
+2
+00:00:06,535 --> 00:00:08,495
+arriba a la derecha del tablero.
+
+3
+00:00:09,150 --> 00:00:10,652
+Tiene tres secciones.
+
+4
+00:00:11,320 --> 00:00:13,405
+La primera son los espacios de trabajo:
+
+5
+00:00:13,490 --> 00:00:17,448
+tableros separados, cada uno con sus columnas y sus casos.
+
+6
+00:00:18,117 --> 00:00:21,975
+Por ejemplo, uno para garantías y otro para todo lo demás.
+
+7
+00:00:22,643 --> 00:00:27,083
+El marcado como predeterminado es donde nacen los casos si nadie elige otro.
+
+8
+00:00:27,751 --> 00:00:29,700
+En cada fila están las acciones:
+
+9
+00:00:29,797 --> 00:00:34,871
+editar las columnas del tablero, editarlo, hacerlo predeterminado o eliminarlo.
+
+10
+00:00:35,539 --> 00:00:38,803
+Para crear uno, pulsa Nuevo espacio, ponle nombre,
+
+11
+00:00:38,924 --> 00:00:41,134
+dile para qué es y elige su color.
+
+12
+00:00:42,515 --> 00:00:45,045
+La segunda sección son los estados del caso.
+
+13
+00:00:45,713 --> 00:00:47,600
+Cada estado dice su propósito:
+
+14
+00:00:47,673 --> 00:00:52,027
+en curso, en espera, para resolver, para cerrar o para cancelar.
+
+15
+00:00:52,695 --> 00:00:56,938
+Eso decide si el caso sigue contando como abierto o si se da por resuelto.
+
+16
+00:00:57,594 --> 00:00:59,479
+A su lado, cómo se comporta:
+
+17
+00:00:59,614 --> 00:01:02,740
+si es el estado inicial y si tiene columna en el tablero.
+
+18
+00:01:03,396 --> 00:01:04,873
+Vamos a agregar uno.
+
+19
+00:01:05,543 --> 00:01:07,043
+Pulso Agregar estado.
+
+20
+00:01:07,700 --> 00:01:09,263
+Lo llamo Esperando repuesto:
+
+21
+00:01:09,387 --> 00:01:13,058
+es el nombre completo, el que se ve en la ficha de cada caso.
+
+22
+00:01:13,727 --> 00:01:17,646
+Debajo va el nombre corto, el que se lee en la columna del tablero:
+
+23
+00:01:17,731 --> 00:01:18,453
+Repuesto.
+
+24
+00:01:19,121 --> 00:01:20,883
+En para qué sirve elijo En espera,
+
+25
+00:01:21,006 --> 00:01:23,847
+porque el caso está detenido mientras llega la pieza.
+
+26
+00:01:24,515 --> 00:01:28,436
+Marco que tenga columna en el tablero, y pulso Agregar el estado.
+
+27
+00:01:29,091 --> 00:01:33,496
+Ya está en la lista, y desde ahora aparece como columna en la Mesa de Ayuda.
+
+28
+00:01:34,863 --> 00:01:37,072
+La última sección es la de avisos.
+
+29
+00:01:37,739 --> 00:01:42,539
+Cada fila es un estado al que puede pasar un caso, y cada columna, a quién avisar:
+
+30
+00:01:42,688 --> 00:01:47,290
+a quien lo reportó, al responsable, a quienes lo siguen o a los administradores.
+
+31
+00:01:47,957 --> 00:01:52,089
+La campana es un aviso dentro del sistema, y el sobre, un correo.
+
+32
+00:01:52,757 --> 00:01:54,457
+Lo encendido está en azul.
+
+33
+00:01:55,125 --> 00:01:58,562
+Quiero que el responsable se entere cuando un caso nuevo entra como Abierto,
+
+34
+00:01:58,659 --> 00:02:01,004
+así que enciendo su campana en esa fila.
+
+35
+00:02:01,661 --> 00:02:05,556
+Al terminar, pulso Guardar los avisos, abajo a la derecha.
+
+36
+00:02:06,211 --> 00:02:08,310
+El aviso confirma que se guardaron.

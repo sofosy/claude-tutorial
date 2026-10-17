@@ -1,0 +1,519 @@
+1
+00:00:03,000 --> 00:00:08,111
+Este video es para el equipo de Germiva que atiende las solicitudes de
+
+2
+00:00:07,956 --> 00:00:10,769
+certificación de facturación electrónica:
+
+3
+00:00:10,650 --> 00:00:16,144
+las que llegan del formulario público, el de germiva punto com barra certificación.
+
+4
+00:00:15,992 --> 00:00:20,824
+Cuando llega una, el sistema te avisa en la campanita de notificaciones.
+
+5
+00:00:20,646 --> 00:00:25,967
+Para verlas entro a Éxito del Cliente y abro Solicitudes de certificación.
+
+6
+00:00:25,791 --> 00:00:29,752
+Esta pantalla solo existe en la empresa principal, SOFOSY,
+
+7
+00:00:29,586 --> 00:00:31,481
+y la ve quien tiene el permiso.
+
+8
+00:00:31,397 --> 00:00:34,244
+Recojo el panel del menú para ganar espacio.
+
+9
+00:00:34,114 --> 00:00:36,335
+Cada fila es una solicitud:
+
+10
+00:00:36,226 --> 00:00:41,396
+su número, quién la envió, si es un cliente o un contador, y su correo;
+
+11
+00:00:41,265 --> 00:00:42,813
+las empresas que trae;
+
+12
+00:00:42,648 --> 00:00:47,422
+el estado del comprobante de pago, revisado por la inteligencia artificial;
+
+13
+00:00:47,338 --> 00:00:50,046
+la fecha, y el estado de la solicitud.
+
+14
+00:00:49,973 --> 00:00:52,600
+Las dos dicen Validando el pago:
+
+15
+00:00:52,481 --> 00:00:54,237
+esperan por nosotros.
+
+16
+00:00:54,084 --> 00:00:58,603
+Arriba se filtran por número, estado o tipo de solicitante.
+
+17
+00:00:59,014 --> 00:01:03,173
+Abro la de Carolina Méndez con Revisar, al final de su fila.
+
+18
+00:01:03,019 --> 00:01:05,576
+Arriba, el número y el estado.
+
+19
+00:01:05,457 --> 00:01:09,826
+Debajo, que la envió un contador y que paga por transferencia.
+
+20
+00:01:09,659 --> 00:01:10,685
+Quien la envió:
+
+21
+00:01:10,554 --> 00:01:14,085
+su nombre, su cédula, su correo y su teléfono.
+
+22
+00:01:13,933 --> 00:01:15,478
+Al lado, el contador:
+
+23
+00:01:15,337 --> 00:01:18,591
+su firma, Méndez Rosario y Asociados.
+
+24
+00:01:18,472 --> 00:01:22,897
+Dice Empresa creada por la solicitud, porque no estaba en Germiva;
+
+25
+00:01:22,743 --> 00:01:28,597
+trae su exequátur, y Refiere a sus clientes, o sea, que cobra comisión por ellos.
+
+26
+00:01:28,456 --> 00:01:30,746
+Más abajo, el comprobante de pago:
+
+27
+00:01:30,603 --> 00:01:34,332
+la captura que subió, y lo que leyó la inteligencia artificial:
+
+28
+00:01:34,215 --> 00:01:39,070
+el monto, la fecha, la referencia, el banco, a quién se le pagó,
+
+29
+00:01:38,927 --> 00:01:40,742
+y qué tan segura está.
+
+30
+00:01:40,611 --> 00:01:44,759
+Validado por IA, es decir, por la inteligencia artificial,
+
+31
+00:01:44,605 --> 00:01:48,219
+quiere decir que la reconoció como un pago real y completo.
+
+32
+00:01:48,088 --> 00:01:52,897
+Aun así, antes de confirmar, se comprueba en el banco que el dinero entró.
+
+33
+00:01:53,306 --> 00:01:56,258
+Bajo el comprobante están las empresas.
+
+34
+00:01:56,116 --> 00:02:00,367
+Cada una con su RNC, su plan y su precio;
+
+35
+00:02:00,249 --> 00:02:02,109
+el dueño y su correo;
+
+36
+00:02:02,002 --> 00:02:03,154
+lo que ya tiene;
+
+37
+00:02:03,035 --> 00:02:08,239
+los días y horas de su prueba de vida, y que el proceso completo lo hace el equipo,
+
+38
+00:02:08,074 --> 00:02:10,224
+con su cargo de seis mil pesos.
+
+39
+00:02:10,140 --> 00:02:12,953
+Al pie de cada empresa hay cinco estados.
+
+40
+00:02:12,787 --> 00:02:15,182
+Empresa creada ya está en verde;
+
+41
+00:02:15,063 --> 00:02:18,073
+los otros cuatro esperan a que confirmemos el pago.
+
+42
+00:02:17,931 --> 00:02:21,415
+Y al final, la bitácora de pasos automáticos:
+
+43
+00:02:21,251 --> 00:02:25,956
+todo lo que el sistema hizo solo, en cuanto la IA validó el comprobante.
+
+44
+00:02:25,849 --> 00:02:26,513
+Uno:
+
+45
+00:02:26,371 --> 00:02:30,031
+creó la empresa del contador y le envió su acceso.
+
+46
+00:02:29,947 --> 00:02:30,646
+Dos:
+
+47
+00:02:30,480 --> 00:02:34,350
+pidió su ingreso al Programa de Socios con el exequátur.
+
+48
+00:02:34,230 --> 00:02:34,989
+Tres:
+
+49
+00:02:34,847 --> 00:02:38,146
+creó cada empresa en la prueba del plan elegido,
+
+50
+00:02:38,004 --> 00:02:41,421
+y su dueño recibió el correo para crear su contraseña.
+
+51
+00:02:41,244 --> 00:02:42,187
+Y cuatro:
+
+52
+00:02:42,045 --> 00:02:47,318
+cargó la certificación en la suscripción de cada empresa, para su próximo cobro.
+
+53
+00:02:47,177 --> 00:02:49,513
+Nada de esto está pagado todavía:
+
+54
+00:02:49,382 --> 00:02:51,556
+eso lo hace el siguiente paso.
+
+55
+00:02:51,965 --> 00:02:56,995
+Ya comprobé en el banco que entraron los treinta y un mil cuatrocientos pesos.
+
+56
+00:02:56,818 --> 00:03:00,337
+Pulso Confirmar el pago, abajo a la derecha.
+
+57
+00:03:00,230 --> 00:03:02,950
+Se abre un panel que dice lo que va a pasar:
+
+58
+00:03:02,843 --> 00:03:05,609
+se vincula al contador con sus clientes,
+
+59
+00:03:05,491 --> 00:03:08,534
+se registra al referidor con su veinte por ciento,
+
+60
+00:03:08,393 --> 00:03:10,834
+se cobra cada suscripción con su plan,
+
+61
+00:03:10,669 --> 00:03:14,676
+y cada empresa entra a la cartera de Éxito del Cliente.
+
+62
+00:03:14,534 --> 00:03:17,497
+Debajo, lo que se registrará como cobrado,
+
+63
+00:03:17,379 --> 00:03:20,457
+lo que se le pidió y lo que dice el comprobante.
+
+64
+00:03:20,317 --> 00:03:24,475
+El cobro puede ser unos pesos distinto al precio de lista,
+
+65
+00:03:24,310 --> 00:03:27,912
+porque el primer mes se ajusta al día de facturación.
+
+66
+00:03:27,782 --> 00:03:30,060
+Dos casillas, marcadas:
+
+67
+00:03:30,010 --> 00:03:33,473
+Registrar el cobro de cada suscripción, que las activa,
+
+68
+00:03:33,389 --> 00:03:36,885
+y Aprobar la firma del contador en el Programa de Socios;
+
+69
+00:03:36,768 --> 00:03:41,913
+sin firma verificada, el contador no puede quedar vinculado a sus clientes.
+
+70
+00:03:41,830 --> 00:03:44,352
+Hay un campo de notas, opcional.
+
+71
+00:03:44,210 --> 00:03:47,486
+Ahora pulso el botón azul, Confirmar el pago.
+
+72
+00:03:47,401 --> 00:03:52,617
+Los botones se apagan mientras el sistema trabaja, una empresa detrás de otra:
+
+73
+00:03:52,498 --> 00:03:57,980
+aprueba la firma, vincula al contador con cada cliente, registra al referidor,
+
+74
+00:03:57,838 --> 00:04:03,484
+cobra cada suscripción con su factura y pasa cada empresa a Éxito del Cliente.
+
+75
+00:04:03,400 --> 00:04:06,398
+Con tres empresas toma unos segundos:
+
+76
+00:04:06,290 --> 00:04:07,931
+no cierres la ventana.
+
+77
+00:04:07,766 --> 00:04:09,475
+Al terminar avisa:
+
+78
+00:04:09,322 --> 00:04:10,625
+Pago confirmado;
+
+79
+00:04:10,540 --> 00:04:15,884
+revisa la bitácora, y si algo quedó pendiente, corrígelo y vuelve a confirmar.
+
+80
+00:04:15,754 --> 00:04:16,685
+Acepto.
+
+81
+00:04:17,096 --> 00:04:19,930
+La solicitud pasó a Pago confirmado,
+
+82
+00:04:19,800 --> 00:04:23,588
+y en cada empresa los cinco estados están en verde.
+
+83
+00:04:23,458 --> 00:04:26,629
+La bitácora suma lo que hizo la confirmación.
+
+84
+00:04:26,557 --> 00:04:32,435
+La firma quedó verificada en el Programa de Socios, con el plan Contador sin costo.
+
+85
+00:04:32,386 --> 00:04:37,346
+La firma quedó como contador de cada empresa, con el nivel Contabilidad:
+
+86
+00:04:37,298 --> 00:04:39,564
+ya puede entrar a trabajar en ellas.
+
+87
+00:04:39,434 --> 00:04:42,721
+El contador quedó dado de alta como referidor,
+
+88
+00:04:42,603 --> 00:04:47,865
+con el plan del veinte por ciento el primer año, y recibió su acceso al portal.
+
+89
+00:04:47,735 --> 00:04:51,662
+Cada empresa quedó atribuida a él como referida.
+
+90
+00:04:51,543 --> 00:04:54,576
+El monto del comprobante cubre lo que se pidió.
+
+91
+00:04:54,468 --> 00:04:58,812
+Se registró el cobro del plan de cada empresa, con la certificación,
+
+92
+00:04:58,648 --> 00:05:00,867
+y su suscripción quedó activa;
+
+93
+00:05:00,783 --> 00:05:04,653
+la factura la emite SOFOSY a nombre de cada empresa.
+
+94
+00:05:04,523 --> 00:05:10,098
+Y por último, cada empresa entró a la cartera de Éxito del Cliente con su plan de
+
+95
+00:05:09,944 --> 00:05:10,946
+bienvenida.
+
+96
+00:05:10,814 --> 00:05:14,800
+Y a quien llenó el formulario le llega el correo de confirmación.
+
+97
+00:05:14,692 --> 00:05:16,088
+Cierro el detalle.
+
+98
+00:05:16,495 --> 00:05:20,294
+En la lista, la primera ya dice Pago confirmado.
+
+99
+00:05:20,152 --> 00:05:26,459
+La otra la envió un dueño, Ramón Guzmán, y su comprobante dice Sin verificar.
+
+100
+00:05:26,294 --> 00:05:28,805
+Para revisarla, la abro con su botón.
+
+101
+00:05:28,733 --> 00:05:30,081
+Se abre el detalle:
+
+102
+00:05:29,963 --> 00:05:33,798
+subió un PDF escaneado, y la IA no pudo leerlo;
+
+103
+00:05:33,713 --> 00:05:36,317
+la advertencia de abajo lo dice:
+
+104
+00:05:36,267 --> 00:05:38,476
+revisa el comprobante a mano.
+
+105
+00:05:38,346 --> 00:05:42,609
+Mientras el comprobante no esté aceptado no se crea nada:
+
+106
+00:05:42,478 --> 00:05:48,065
+la empresa sale pendiente, y Confirmar el pago está apagado, con el motivo al lado:
+
+107
+00:05:47,959 --> 00:05:50,527
+falta aceptar el comprobante de pago.
+
+108
+00:05:50,397 --> 00:05:54,673
+Verifico el pago en el banco, y pulso Aprobar el comprobante.
+
+109
+00:05:54,519 --> 00:05:55,822
+El panel avisa:
+
+110
+00:05:55,644 --> 00:06:00,767
+hazlo solo si verificaste el pago, porque al aprobarlo se crean las empresas.
+
+111
+00:06:00,613 --> 00:06:01,963
+Anoto qué verifiqué:
+
+112
+00:06:01,786 --> 00:06:06,027
+transferencia vista en el estado de cuenta, que es lo que confirma el pago.
+
+113
+00:06:05,873 --> 00:06:09,045
+Y pulso Aprobar y crear las empresas.
+
+114
+00:06:08,961 --> 00:06:12,424
+El sistema lo registra, y enseguida sale un aviso:
+
+115
+00:06:12,258 --> 00:06:15,791
+comprobante aprobado, las empresas se están creando.
+
+116
+00:06:15,649 --> 00:06:16,510
+Acepto.
+
+117
+00:06:16,918 --> 00:06:21,077
+En unos segundos la bitácora muestra lo mismo que vimos en la otra:
+
+118
+00:06:21,028 --> 00:06:23,736
+la empresa, creada en la prueba de su plan,
+
+119
+00:06:23,582 --> 00:06:26,650
+y el cargo de la certificación en su suscripción.
+
+120
+00:06:26,567 --> 00:06:31,411
+Ahora Confirmar el pago está encendido, y se confirma igual que la anterior.
+
+121
+00:06:31,384 --> 00:06:33,337
+¿Y si el pago nunca llegó?
+
+122
+00:06:33,161 --> 00:06:34,765
+Para eso está Rechazar.
+
+123
+00:06:34,681 --> 00:06:39,711
+Se escribe el motivo, y se lo enviamos por correo a quien llenó el formulario.
+
+124
+00:06:39,592 --> 00:06:40,257
+Ojo:
+
+125
+00:06:40,139 --> 00:06:42,729
+las empresas ya creadas no se borran;
+
+126
+00:06:42,564 --> 00:06:43,822
+quedan en su prueba.
+
+127
+00:06:43,668 --> 00:06:47,907
+Como este pago sí está, pulso Volver y no la rechazo.
+
+128
+00:06:47,788 --> 00:06:50,949
+Así se atienden las solicitudes de certificación:
+
+129
+00:06:50,865 --> 00:06:54,826
+revisar, aprobar el comprobante si la IA no pudo,
+
+130
+00:06:54,685 --> 00:06:57,891
+y confirmar el pago cuando el dinero está en el banco.

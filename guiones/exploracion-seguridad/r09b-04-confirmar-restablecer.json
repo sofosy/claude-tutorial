@@ -1,0 +1,4970 @@
+{
+ "url": "/profile",
+ "viewport": [
+  1280,
+  720
+ ],
+ "documento": {
+  "scrollHeight": 720,
+  "clientHeight": 720
+ },
+ "con_scroll": [],
+ "titulos": [
+  {
+   "tag": "h4",
+   "clase": "page-title",
+   "texto": "Mi Perfil",
+   "caja": [
+    97,
+    -332,
+    65,
+    24
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "hero-name",
+   "texto": "Rosa Almánzar",
+   "caja": [
+    264,
+    -241,
+    348,
+    29
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "panel-title",
+   "texto": "Información Personal",
+   "caja": [
+    124,
+    -23,
+    710,
+    28
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "panel-title",
+   "texto": "Mi Firma Digital",
+   "caja": [
+    124,
+    431,
+    710,
+    28
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "panel-title",
+   "texto": "Preferencias",
+   "caja": [
+    900,
+    -23,
+    314,
+    28
+   ]
+  },
+  {
+   "tag": "h4",
+   "clase": "",
+   "texto": "Visibilidad del menú",
+   "caja": [
+    936,
+    212,
+    218,
+    24
+   ]
+  },
+  {
+   "tag": "h3",
+   "clase": "panel-title",
+   "texto": "Seguridad",
+   "caja": [
+    900,
+    4474,
+    314,
+    28
+   ]
+  },
+  {
+   "tag": "h2",
+   "clase": "header-title",
+   "texto": "¿Restablecer Todo?",
+   "caja": [
+    481,
+    272,
+    362,
+    26
+   ]
+  }
+ ],
+ "botones": [
+  {
+   "texto": "menu",
+   "icono": "",
+   "aria": "Mostrar el menú",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-menu"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    76,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Mostrar el menú']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "fullscreen",
+   "icono": "",
+   "aria": "Pantalla completa",
+   "id": "",
+   "clases": [
+    "topbar-icon",
+    "topbar-fullscreen"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    903,
+    10,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Pantalla completa']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "notifications",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "nav-notification-icons"
+   ],
+   "tooltip": "Notificaciones",
+   "deshabilitado": false,
+   "caja": [
+    947,
+    10,
+    40,
+    40
+   ],
+   "sel": "button:has-text('notifications')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "RArosa almánzarrosa.almanzar@germiva.demoexpand_more",
+   "icono": "",
+   "aria": "Cuenta de rosa almánzar",
+   "id": "",
+   "clases": [
+    "topbar-user"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1020,
+    8,
+    236,
+    44
+   ],
+   "sel": "button[aria-label='Cuenta de rosa almánzar']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "sell",
+   "icono": "",
+   "aria": "Ventas",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    114,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Ventas']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "inventory",
+   "icono": "",
+   "aria": "Inventario",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    157,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Inventario']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance",
+   "icono": "",
+   "aria": "Contabilidad",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    329,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Contabilidad']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "groups",
+   "icono": "",
+   "aria": "CRM",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    501,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='CRM']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "handshake",
+   "icono": "",
+   "aria": "Éxito del Cliente",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    544,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Éxito del Cliente']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "account_balance_wallet",
+   "icono": "",
+   "aria": "Nómina",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    587,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Nómina']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "tune",
+   "icono": "",
+   "aria": "Configuración",
+   "id": "",
+   "clases": [
+    "rail-item"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    7,
+    716,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Configuración']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "power_settings_new",
+   "icono": "",
+   "aria": "Cerrar sesión",
+   "id": "",
+   "clases": [
+    "rail-item",
+    "rail-action"
+   ],
+   "tooltip": "Cerrar sesión",
+   "deshabilitado": false,
+   "caja": [
+    10,
+    667,
+    40,
+    40
+   ],
+   "sel": "button[aria-label='Cerrar sesión']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Light",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ],
+   "sel": "button:has-text('Light')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Dark",
+   "icono": "",
+   "aria": "",
+   "id": "mat-button-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ],
+   "sel": "button:has-text('Dark')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-0-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "photo_camera",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "avatar-edit-btn"
+   ],
+   "tooltip": "Cambiar foto",
+   "deshabilitado": false,
+   "caja": [
+    211,
+    -155,
+    31,
+    31
+   ],
+   "sel": "button:has(mat-icon:text-is('photo_camera'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Guardar",
+   "icono": "save",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    717,
+    309,
+    117,
+    36
+   ],
+   "sel": "button:has-text('Guardar')",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Guardar Firma",
+   "icono": "save",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    124,
+    717,
+    164,
+    36
+   ],
+   "sel": "button:has-text('Guardar Firma')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Limpiar",
+   "icono": "refresh",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    298,
+    717,
+    114,
+    36
+   ],
+   "sel": "button:has-text('Limpiar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "expand_less",
+   "aria": "Contraer",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1166,
+    212,
+    48,
+    48
+   ],
+   "sel": "button[aria-label='Contraer']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Restablecer Todo",
+   "icono": "restart_alt",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    900,
+    298,
+    314,
+    36
+   ],
+   "sel": "button:has-text('Restablecer Todo')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Guardar Cambios",
+   "icono": "save",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    900,
+    342,
+    314,
+    36
+   ],
+   "sel": "button:has-text('Guardar Cambios')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-1-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    461,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-2-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    501,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-3-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    541,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-4-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    581,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-5-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    621,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-6-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    661,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-7-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    701,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-8-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    741,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-9-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    781,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-10-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    821,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-11-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    861,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-12-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    901,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-13-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    941,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-14-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    981,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-15-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1037,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-16-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1077,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-17-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1117,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-18-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1157,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-19-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1197,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-20-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1237,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-21-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1277,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-22-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1317,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-23-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1357,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-24-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1397,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-25-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1437,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-26-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1477,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-27-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1517,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-28-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    1157,
+    1557,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-29-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1613,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-30-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1653,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-31-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1693,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-32-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1733,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-33-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1773,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-34-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1829,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-35-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1869,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-36-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1925,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-37-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    1977,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-38-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2029,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-39-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2069,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-40-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2109,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-41-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2149,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-42-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2189,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-43-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2229,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-44-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2279,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-45-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2329,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-46-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2369,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-47-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2413,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-48-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2453,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-49-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2493,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-50-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2537,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-51-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2577,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-52-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2617,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-53-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2657,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-54-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2697,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-55-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2753,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-56-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2805,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-57-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2857,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-58-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2909,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-59-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2949,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-60-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    2989,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-61-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3029,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-62-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3069,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-63-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3109,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-64-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3165,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-65-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3205,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-66-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3245,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-67-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3285,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-68-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3325,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-69-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3365,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-70-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3421,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-71-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3461,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-72-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3501,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-73-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3541,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-74-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3581,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-75-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3621,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-76-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3661,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-77-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3717,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-78-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3813,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-79-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3869,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-80-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3909,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-81-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3949,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-82-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    3989,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-83-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4029,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-84-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4069,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-85-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4109,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-86-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4149,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-87-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4189,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-88-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4229,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-89-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4269,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-90-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4309,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "",
+   "id": "mat-mdc-slide-toggle-91-button",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1157,
+    4349,
+    36,
+    14
+   ],
+   "sel": null
+  },
+  {
+   "texto": "",
+   "icono": "visibility_off",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1172,
+    4554,
+    36,
+    48
+   ],
+   "sel": "button:has(mat-icon:text-is('visibility_off'))",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "",
+   "icono": "visibility_off",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1172,
+    4620,
+    36,
+    48
+   ],
+   "sel": "button:has(mat-icon:text-is('visibility_off'))",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "",
+   "icono": "visibility_off",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1172,
+    4686,
+    36,
+    48
+   ],
+   "sel": "button:has(mat-icon:text-is('visibility_off'))",
+   "sel_casa": "3 visible(s) de 3"
+  },
+  {
+   "texto": "Actualizar contraseña",
+   "icono": "lock_reset",
+   "aria": "",
+   "id": "",
+   "clases": [],
+   "tooltip": "",
+   "deshabilitado": true,
+   "caja": [
+    993,
+    4777,
+    221,
+    36
+   ],
+   "sel": "button:has-text('Actualizar contraseña')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "",
+   "icono": "",
+   "aria": "Abrir a Germi",
+   "id": "",
+   "clases": [
+    "chatbot-fab"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    1200,
+    640,
+    56,
+    56
+   ],
+   "sel": "button[aria-label='Abrir a Germi']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Cancelar",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "cancel-button"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    579,
+    409,
+    103,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Cancelar')",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "texto": "Sí, restablecer",
+   "icono": "",
+   "aria": "",
+   "id": "",
+   "clases": [
+    "confirm-button",
+    "icon-warning"
+   ],
+   "tooltip": "",
+   "deshabilitado": false,
+   "caja": [
+    694,
+    409,
+    149,
+    36
+   ],
+   "sel": ".cdk-overlay-pane mat-dialog-container button:has-text('Sí, restablecer')",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "campos": [
+  {
+   "label": "Nombre",
+   "formcontrolname": "name",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "Rosa",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    124,
+    63,
+    347,
+    52
+   ],
+   "sel": "[formcontrolname='name']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Apellido",
+   "formcontrolname": "lastName",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "Almánzar",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    487,
+    63,
+    347,
+    52
+   ],
+   "sel": "[formcontrolname='lastName']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Teléfono",
+   "formcontrolname": "phone",
+   "tipo": "input:text",
+   "placeholder": "809-000-0000",
+   "valor": "8095550188",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    124,
+    129,
+    347,
+    73
+   ],
+   "sel": "[formcontrolname='phone']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "WhatsApp",
+   "formcontrolname": "whatsappPhone",
+   "tipo": "input:text",
+   "placeholder": "18095550000",
+   "valor": "",
+   "hint": "Con código de país. Es el número desde el que podrás consultar tu empresa por WhatsApp.",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    487,
+    129,
+    347,
+    73
+   ],
+   "sel": "[formcontrolname='whatsappPhone']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Correo Electrónico",
+   "formcontrolname": "",
+   "tipo": "input:text",
+   "placeholder": "",
+   "valor": "rosa.almanzar@germiva.demo",
+   "hint": "El correo no se puede modificar desde aquí",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    124,
+    216,
+    347,
+    58
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Correo Electrónico'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Idioma",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "Español",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    950,
+    63,
+    264,
+    52
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Idioma'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Tema",
+   "formcontrolname": "",
+   "tipo": "mat-select",
+   "placeholder": "",
+   "valor": "Claro",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    950,
+    129,
+    264,
+    52
+   ],
+   "sel": "mat-form-field:has(mat-label:text-is('Tema'))",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Contraseña actual",
+   "formcontrolname": "password",
+   "tipo": "input:password",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    900,
+    4560,
+    314,
+    52
+   ],
+   "sel": "[formcontrolname='password']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Contraseña nueva",
+   "formcontrolname": "new_password",
+   "tipo": "input:password",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    900,
+    4626,
+    314,
+    52
+   ],
+   "sel": "[formcontrolname='new_password']",
+   "sel_casa": "1 visible(s) de 1"
+  },
+  {
+   "label": "Confirmar contraseña nueva",
+   "formcontrolname": "confirm_new_password",
+   "tipo": "input:password",
+   "placeholder": "",
+   "valor": "",
+   "hint": "",
+   "error": "",
+   "deshabilitado": false,
+   "caja": [
+    900,
+    4692,
+    314,
+    52
+   ],
+   "sel": "[formcontrolname='confirm_new_password']",
+   "sel_casa": "1 visible(s) de 1"
+  }
+ ],
+ "casillas": [
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1305,
+    735,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    457,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    497,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    537,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    577,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    617,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    657,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    697,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    737,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    777,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    817,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    857,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    897,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    937,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    977,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1033,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1073,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1113,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1153,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1193,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1233,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1273,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1313,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1353,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1393,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1433,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1473,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1513,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1553,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1609,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1649,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1689,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1729,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1769,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1825,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1865,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1921,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    1973,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2025,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2065,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2105,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2145,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2185,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2225,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2275,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2325,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2365,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2409,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2449,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2489,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2533,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2573,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2613,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2653,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2693,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2749,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2801,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2853,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2905,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2945,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    2985,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3025,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3065,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3105,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3161,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3201,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3241,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3281,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3321,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3361,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3417,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3457,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3497,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3537,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3577,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3617,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3657,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3713,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3809,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3865,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3905,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3945,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    3985,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4025,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4065,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4105,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4145,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4185,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4225,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4265,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4305,
+    40,
+    20
+   ]
+  },
+  {
+   "texto": "",
+   "formcontrolname": "",
+   "marcado": false,
+   "caja": [
+    1157,
+    4345,
+    40,
+    20
+   ]
+  }
+ ],
+ "tablas": [],
+ "pestañas": [],
+ "tarjetas": [],
+ "dialogos": [
+  {
+   "titulo": "¿Restablecer Todo?",
+   "clases": "cdk-overlay-pane custom-alert-dialog-panel mat-mdc-dialog-panel",
+   "caja": [
+    410,
+    248,
+    460,
+    223
+   ],
+   "texto": "warning ¿Restablecer Todo? Se mostrarán todos los menús ocultos. ¿Desea continuar? Cancelar Sí, restablecer"
+  }
+ ],
+ "menus": [],
+ "toasts": [
+  "Permisos del rol actualizados exitosamente",
+  "Permisos del rol actualizados exitosamente"
+ ],
+ "avisos": [],
+ "chatbot_fab": null,
+ "chocan_con_fab": [],
+ "fuera_de_1280x720": [
+  {
+   "que": "boton",
+   "txt": "tune",
+   "caja": [
+    7,
+    716,
+    40,
+    40
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Light",
+   "caja": [
+    1306,
+    551,
+    60,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Dark",
+   "caja": [
+    1367,
+    551,
+    59,
+    30
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1305,
+    738,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Guardar Firma",
+   "caja": [
+    124,
+    717,
+    164,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Limpiar",
+   "caja": [
+    298,
+    717,
+    114,
+    36
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    741,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    781,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    821,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    861,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    901,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    941,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    981,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1037,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1077,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1117,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1157,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1197,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1237,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1277,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1317,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1357,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1397,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1437,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1477,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1517,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1557,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1613,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1653,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1693,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1733,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1773,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1829,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1869,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1925,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    1977,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2029,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2069,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2109,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2149,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2189,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2229,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2279,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2329,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2369,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2413,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2453,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2493,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2537,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2577,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2617,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2657,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2697,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2753,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2805,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2857,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2909,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2949,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    2989,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3029,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3069,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3109,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3165,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3205,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3245,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3285,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3325,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3365,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3421,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3461,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3501,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3541,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3581,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3621,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3661,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3717,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3813,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3869,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3909,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3949,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    3989,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4029,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4069,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4109,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4149,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4189,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4229,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4269,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4309,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "",
+   "caja": [
+    1157,
+    4349,
+    36,
+    14
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "visibility_off",
+   "caja": [
+    1172,
+    4554,
+    36,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "visibility_off",
+   "caja": [
+    1172,
+    4620,
+    36,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "visibility_off",
+   "caja": [
+    1172,
+    4686,
+    36,
+    48
+   ]
+  },
+  {
+   "que": "boton",
+   "txt": "Actualizar contraseña",
+   "caja": [
+    993,
+    4777,
+    221,
+    36
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Contraseña actual",
+   "caja": [
+    900,
+    4560,
+    314,
+    52
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Contraseña nueva",
+   "caja": [
+    900,
+    4626,
+    314,
+    52
+   ]
+  },
+  {
+   "que": "campo",
+   "txt": "Confirmar contraseña nueva",
+   "caja": [
+    900,
+    4692,
+    314,
+    52
+   ]
+  }
+ ],
+ "extra_dom": {
+  "clases": {
+   "gm-topbar": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outl"
+   },
+   "topbar-brand": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-icon": {
+    "n": 3,
+    "visibles": 3,
+    "ej": "menu"
+   },
+   "topbar-menu": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "menu"
+   },
+   "topbar-search": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "search Ctrl K"
+   },
+   "topbar-actions": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen noti"
+   },
+   "topbar-company": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "gm-company-chip": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "DL Distribuidora Las Palmas RNC 130555036"
+   },
+   "topbar-icons": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline fullscreen notifications"
+   },
+   "topbar-help": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "help_outline"
+   },
+   "topbar-fullscreen": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "fullscreen"
+   },
+   "topbar-divider": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   },
+   "topbar-user": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more"
+   },
+   "gm-embedded-view": {
+    "n": 1,
+    "visibles": 1,
+    "ej": "restart_alt Restablecer Todo save Guardar Cambios home Inicio lock sel"
+   },
+   "chatbot-fab": {
+    "n": 1,
+    "visibles": 1,
+    "ej": ""
+   }
+  },
+  "aria": [
+   [
+    "a",
+    "Germiva ERP",
+    [
+     18,
+     0,
+     23,
+     59
+    ]
+   ],
+   [
+    "button",
+    "Mostrar el menú",
+    [
+     76,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "input",
+    "Buscar pantallas del sistema",
+    [
+     175,
+     11,
+     335,
+     38
+    ]
+   ],
+   [
+    "a",
+    "Ayuda",
+    [
+     859,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Pantalla completa",
+    [
+     903,
+     10,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cuenta de rosa almánzar",
+    [
+     1020,
+     8,
+     236,
+     44
+    ]
+   ],
+   [
+    "nav",
+    "Módulos",
+    [
+     0,
+     60,
+     60,
+     660
+    ]
+   ],
+   [
+    "a",
+    "Inicio",
+    [
+     7,
+     71,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Ventas",
+    [
+     7,
+     114,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Inventario",
+    [
+     7,
+     157,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Recursos Humanos",
+    [
+     7,
+     200,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Cajas",
+    [
+     7,
+     243,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Punto de venta",
+    [
+     7,
+     286,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contabilidad",
+    [
+     7,
+     329,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Crédito y Cobranzas",
+    [
+     7,
+     372,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Mesa de Ayuda",
+    [
+     7,
+     415,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "WhatsApp e IA",
+    [
+     7,
+     458,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "CRM",
+    [
+     7,
+     501,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Éxito del Cliente",
+    [
+     7,
+     544,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Nómina",
+    [
+     7,
+     587,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Calendario",
+    [
+     7,
+     630,
+     40,
+     40
+    ]
+   ],
+   [
+    "a",
+    "Seguridad",
+    [
+     7,
+     673,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Configuración",
+    [
+     7,
+     716,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Cerrar sesión",
+    [
+     10,
+     667,
+     40,
+     40
+    ]
+   ],
+   [
+    "button",
+    "Contraer",
+    [
+     1166,
+     212,
+     48,
+     48
+    ]
+   ],
+   [
+    "button",
+    "Abrir a Germi",
+    [
+     1200,
+     640,
+     56,
+     56
+    ]
+   ]
+  ],
+  "formcontrolname": [
+   [
+    "input",
+    "name",
+    true
+   ],
+   [
+    "input",
+    "lastName",
+    true
+   ],
+   [
+    "input",
+    "phone",
+    true
+   ],
+   [
+    "input",
+    "whatsappPhone",
+    true
+   ],
+   [
+    "input",
+    "password",
+    true
+   ],
+   [
+    "input",
+    "new_password",
+    true
+   ],
+   [
+    "input",
+    "confirm_new_password",
+    true
+   ]
+  ],
+  "estados": [],
+  "fijos": [
+   {
+    "el": "nav.navbar.gm-topbar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     60
+    ]
+   },
+   {
+    "el": "aside.sidebar",
+    "pos": "fixed",
+    "caja": [
+     0,
+     60,
+     60,
+     660
+    ]
+   },
+   {
+    "el": "div.settingSidebar",
+    "pos": "fixed",
+    "caja": [
+     1280,
+     62,
+     280,
+     720
+    ]
+   },
+   {
+    "el": "button.chatbot-fab",
+    "pos": "fixed",
+    "caja": [
+     1200,
+     640,
+     56,
+     56
+    ]
+   },
+   {
+    "el": "div.cdk-overlay-container",
+    "pos": "fixed",
+    "caja": [
+     0,
+     0,
+     1280,
+     720
+    ]
+   }
+  ],
+  "menu_lateral": [
+   {
+    "texto": "home",
+    "href": "/home",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     71,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "sell",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     114,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "inventory",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     157,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "people",
+    "href": "/employee",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     200,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "point_of_sale",
+    "href": "/cashier",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     243,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "storefront",
+    "href": "/pos",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     286,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     329,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "credit_score",
+    "href": "/credit",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     372,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "support_agent",
+    "href": "/helpdesk",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     415,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "smart_toy",
+    "href": "/assistant/empresa/canal",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     458,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "groups",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     501,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "handshake",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     544,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "account_balance_wallet",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     587,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "calendar_month",
+    "href": "/agenda/calendar",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     630,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "lock",
+    "href": "/security",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     673,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "tune",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item",
+    "caja": [
+     7,
+     716,
+     40,
+     40
+    ]
+   },
+   {
+    "texto": "power_settings_new",
+    "href": "",
+    "clase": "mat-mdc-tooltip-trigger.rail-item.rail-action",
+    "caja": [
+     10,
+     667,
+     40,
+     40
+    ]
+   }
+  ],
+  "encabezados": [],
+  "chatbot_fab_caja": [
+   1200,
+   640,
+   56,
+   56
+  ],
+  "texto_visible": "menu search Ctrl K DL Distribuidora Las Palmas RNC 130555036 help_outline fullscreen notifications RA Rosa Almánzar rosa.almanzar@germiva.demo expand_more home sell inventory people point_of_sale storefront account_balance credit_score support_agent smart_toy groups handshake account_balance_wallet calendar_month lock tune power_settings_new Setting Panel Select Layout Light Dark Sidebar Menu Color Light Dark Color Theme RTL Layout Mi Perfil Perfil Mi Perfil RA photo_camera Rosa Almánzar @rosa.almanzar Miembro desde 27/09/2026 mail_outline rosa.almanzar@germiva.demo call 8095550188 Estado de la cuenta Activo Último inicio de sesión 27/09/2026 12:04 Información Personal Actualice su nombre y datos de contacto Nombre Apellido Teléfono WhatsApp Con código de país. Es el número desde el que podrás consultar tu empresa por WhatsApp. Correo Electrónico El correo no se puede modificar desde aquí save Guardar Mi Firma Digital Esta firma se usará automáticamente en los formularios clínicos Dibuje su firma en el recuadro de abajo usando el mouse o el dedo (en pantalla táctil). save Guardar Firma refresh Limpiar Preferencias Personalice su experiencia en el sistema language Idioma Español brightness_medium Tema Claro visibility Visibilidad del menú Elige qué módulos y opciones ves en tu menú lateral. Aplica solo para tu usuario en esta empresa. expand_less restart_alt Restablecer Todo save Guardar Cambios home Inicio lock sell Ventas insights Reportes groups Clientes description Cotizaciones list_alt Órdenes de Venta local_shipping Conduces request_quote Facturas (e-CF) pending_actions Proformas rule_folder Notas de Crédito/Débito assignment_return Devoluciones payments Cobros savings Anticipos account_balance_wallet Estados de Cuenta local_offer Descuentos shopping_cart Compras inbox Bandeja insights Reportes storefront Proveedores request_quote Requisiciones list_alt Órdenes inventory_2 Recepciones receipt_long Facturas payments Pagos a Proveedor savings Anticipos a Proveedor local_shipping Costos en Destino receipt Facturas Recibidas rule_folder Notas Crédito/Débito assignment_return Devoluciones a Proveedor inventory Inventario inventory_2 Existencias shopping_bag Productos warehouse Almacenes settings Configuración people Recursos Humanos groups Recursos Humanos point_of_sale Cajas storefront Punto de venta account_balance Contabilidad space_dashboard Panel request_quote Cuentas por Cobrar payments Cuentas por Pagar menu_book Diario y Mayor account_balance Banca summarize Cierre Contable y Estados Financieros Cierre Contable Informes Financieros savings Presupuestos Presupuestos Variaciones percent Retenciones e Impuestos assured_workload Reportes DGII groups Gobierno Corporativo domain Activos Fijos settings Configuración Contable credit_score Crédito y Cobranzas support_agent Mesa de Ayuda smart_toy WhatsApp e IA groups CRM person_search Prospectos (Leads) trending_up Oportunidades filter_alt Embudo Comercial monitoring Reportes tune Configuración handshake Éxito del Cliente handshake Cartera de clientes description Contratos de Venta work Proyectos poll Encuestas tune Configuración account_balance_wallet Nómina dashboard Centro de Nómina settings Configuración date_range Períodos badge Empleados assessment Informes person Mis Recibos calendar_month Calendario lock Seguridad lock shield Seguridad tune Configuración business Mi Empresa subscriptions Mi Suscripción room_preferences Preferencias notifications_active Notificaciones supervisor_a"
+ },
+ "video": "r09b",
+ "pantalla": "04-confirmar-restablecer",
+ "usuario": "rosa.almanzar",
+ "notas": "",
+ "red_reciente": [
+  {
+   "t": 1790525031.187251,
+   "m": "GET",
+   "url": "v1/product?groupVariants=true&active=true&page=1&limit=10&orderBy=createdAt&orderDirection=DESC",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Productos\\\" (PRODUCT_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"PRODUCT_VIEW\",\"name\":\"Productos\",\"description\":\"Ver productos\"}]}"
+  },
+  {
+   "t": 1790525031.189813,
+   "m": "GET",
+   "url": "v1/taxes?page=1&limit=15",
+   "st": 403,
+   "body": "{\"statusCode\":403,\"error\":\"Forbidden\",\"message\":\"No tienes el permiso requerido para acceder a este recurso: \\\"Impuestos\\\" (TAX_VIEW). Solicita acceso a tu administrador.\",\"missingPermissions\":[{\"code\":\"TAX_VIEW\",\"name\":\"Impuestos\",\"description\":\"Ver impuestos\"}]}"
+  },
+  {
+   "t": 1790525033.9778764,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525042.892164,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525053.4243832,
+   "m": "POST",
+   "url": "auth/login",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525054.3315864,
+   "m": "POST",
+   "url": "v1/user-preferences/incomplete-config-notice/claim",
+   "st": 201,
+   "body": ""
+  },
+  {
+   "t": 1790525058.3329961,
+   "m": "PATCH",
+   "url": "v1/user-preferences/last-route",
+   "st": 200,
+   "body": ""
+  },
+  {
+   "t": 1790525060.9867852,
+   "m": "PATCH",
+   "url": "v1/user-menu-visibility",
+   "st": 200,
+   "body": ""
+  }
+ ]
+}

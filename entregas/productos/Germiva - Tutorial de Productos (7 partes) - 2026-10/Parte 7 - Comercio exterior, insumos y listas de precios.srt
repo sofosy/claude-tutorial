@@ -1,0 +1,331 @@
+1
+00:00:03,100 --> 00:00:05,941
+Esta es la última parte de la serie de Productos.
+
+2
+00:00:06,609 --> 00:00:08,407
+Empezamos con comercio exterior:
+
+3
+00:00:08,530 --> 00:00:12,413
+los datos que pide la aduana cuando un producto se importa o se exporta.
+
+4
+00:00:13,082 --> 00:00:15,092
+El refresco lo traemos de fuera.
+
+5
+00:00:15,747 --> 00:00:18,564
+En el catálogo escribo refresco y abro su ficha.
+
+6
+00:00:19,233 --> 00:00:22,135
+En características enciendo se importa o se exporta,
+
+7
+00:00:22,234 --> 00:00:24,454
+y abajo aparece comercio exterior.
+
+8
+00:00:25,123 --> 00:00:29,439
+La partida arancelaria es el código con que la aduana clasifica la mercancía en el
+
+9
+00:00:29,253 --> 00:00:30,568
+Sistema Armonizado:
+
+10
+00:00:30,640 --> 00:00:34,376
+los refrescos y gaseosas van en la veintidós cero dos punto diez.
+
+11
+00:00:35,043 --> 00:00:36,249
+El país de origen:
+
+12
+00:00:36,371 --> 00:00:39,361
+escribo estados, y elijo Estados Unidos.
+
+13
+00:00:40,029 --> 00:00:42,323
+Luego los pesos de una lata en kilos:
+
+14
+00:00:42,435 --> 00:00:45,945
+el bruto, con el envase, cero punto tres ocho cinco;
+
+15
+00:00:46,030 --> 00:00:49,579
+el neto, solo el contenido, cero punto treinta y siete;
+
+16
+00:00:49,701 --> 00:00:52,009
+y el volumen, en metros cúbicos.
+
+17
+00:00:52,677 --> 00:00:54,180
+Guardo, y acepto.
+
+18
+00:00:55,553 --> 00:00:57,079
+Ahora los insumos.
+
+19
+00:00:57,746 --> 00:01:00,576
+Sirven para conocer el costo real de lo que preparas:
+
+20
+00:01:00,637 --> 00:01:02,970
+un plato, un combo o un dulce.
+
+21
+00:01:03,625 --> 00:01:06,094
+Muchos colmados venden su habichuela con dulce;
+
+22
+00:01:06,216 --> 00:01:07,459
+vamos a costearla.
+
+23
+00:01:08,127 --> 00:01:11,278
+Pulso nuevo producto y lo llamo dulce criollo casero.
+
+24
+00:01:11,933 --> 00:01:14,873
+En categoría escribo alimentos, y la elijo.
+
+25
+00:01:15,530 --> 00:01:19,016
+En unidad de medida escribo unidad, y también la elijo.
+
+26
+00:01:19,671 --> 00:01:20,417
+El precio:
+
+27
+00:01:20,540 --> 00:01:24,025
+ciento cincuenta pesos el vaso, con el ITBIS incluido.
+
+28
+00:01:24,682 --> 00:01:26,543
+Pulso guardar, y acepto.
+
+29
+00:01:27,198 --> 00:01:30,661
+Las secciones que necesitan el producto ya creado se abren solas,
+
+30
+00:01:30,770 --> 00:01:33,512
+entre ellas la pestaña insumos, que abro.
+
+31
+00:01:34,905 --> 00:01:36,952
+Aquí va lo que consume cada vaso.
+
+32
+00:01:37,608 --> 00:01:42,147
+En agregar insumo escribo habichuela, y elijo la habichuela roja para cocinar.
+
+33
+00:01:42,816 --> 00:01:43,747
+Luego leche:
+
+34
+00:01:43,833 --> 00:01:45,261
+la leche evaporada.
+
+35
+00:01:45,916 --> 00:01:46,811
+Y azúcar:
+
+36
+00:01:46,921 --> 00:01:48,162
+el azúcar crema.
+
+37
+00:01:48,818 --> 00:01:52,701
+Arriba aparecen el costo de los insumos, el precio sin ITBIS,
+
+38
+00:01:52,811 --> 00:01:55,516
+el margen teórico y el costo en porcentaje.
+
+39
+00:01:56,172 --> 00:01:58,331
+Ahora mismo el margen sale en rojo:
+
+40
+00:01:58,404 --> 00:02:00,377
+cada insumo entró con cantidad uno,
+
+41
+00:02:00,475 --> 00:02:03,341
+como si un vaso llevara una libra de habichuelas.
+
+42
+00:02:04,009 --> 00:02:05,945
+Ajusto las cantidades reales:
+
+43
+00:02:06,005 --> 00:02:09,318
+un cuarto de libra de habichuela, con diez por ciento de merma,
+
+44
+00:02:09,439 --> 00:02:11,165
+que es lo que se pierde al cocinar;
+
+45
+00:02:11,263 --> 00:02:12,828
+un cuarto de lata de leche;
+
+46
+00:02:12,900 --> 00:02:15,295
+y quince centésimas de libra de azúcar.
+
+47
+00:02:15,951 --> 00:02:17,688
+Cada cambio se guarda solo.
+
+48
+00:02:18,356 --> 00:02:22,103
+Ahora el vaso cuesta treinta y seis pesos con veinticinco en insumos,
+
+49
+00:02:22,114 --> 00:02:26,653
+y el margen teórico es de noventa pesos, el setenta y uno por ciento del precio.
+
+50
+00:02:28,036 --> 00:02:30,158
+Por último, las listas de precios:
+
+51
+00:02:30,280 --> 00:02:32,923
+los precios distintos para distintos clientes.
+
+52
+00:02:33,578 --> 00:02:37,771
+Se definen en Inventario, configuración, al final de la página.
+
+53
+00:02:38,427 --> 00:02:39,408
+Hoy hay tres:
+
+54
+00:02:39,531 --> 00:02:43,724
+el precio regular, que es la lista por defecto, la mayorista y la VIP,
+
+55
+00:02:43,796 --> 00:02:45,323
+las tres de precio fijo.
+
+56
+00:02:45,979 --> 00:02:49,304
+Vamos a crear una para los colmados que nos compran para revender,
+
+57
+00:02:49,451 --> 00:02:51,796
+sin tener que escribir un precio por producto.
+
+58
+00:02:52,451 --> 00:02:53,818
+Pulso nueva lista.
+
+59
+00:02:54,474 --> 00:02:57,179
+En tipo elijo porcentaje sobre otra lista.
+
+60
+00:02:57,847 --> 00:03:00,179
+La lista base, el precio regular.
+
+61
+00:03:00,848 --> 00:03:02,908
+El porcentaje, menos diez:
+
+62
+00:03:02,968 --> 00:03:04,520
+diez por ciento menos.
+
+63
+00:03:05,188 --> 00:03:09,802
+Y redondeo a múltiplos de cinco pesos, para que los precios queden redondos.
+
+64
+00:03:10,471 --> 00:03:11,191
+El nombre:
+
+65
+00:03:11,189 --> 00:03:13,374
+colmados, con su descripción.
+
+66
+00:03:14,030 --> 00:03:16,809
+Guardo, y la lista aparece con su cálculo.
+
+67
+00:03:18,186 --> 00:03:21,324
+La lista se le asigna a cada cliente, en su ficha.
+
+68
+00:03:21,980 --> 00:03:23,916
+Este es el Colmado La Esquina.
+
+69
+00:03:24,572 --> 00:03:27,934
+En lista de precios escribo colm, y elijo colmados.
+
+70
+00:03:28,602 --> 00:03:30,711
+Debajo, la pista lo explica:
+
+71
+00:03:30,859 --> 00:03:34,432
+son los precios que se aplican en sus documentos, y si queda vacía,
+
+72
+00:03:34,529 --> 00:03:36,131
+usa la lista por defecto.
+
+73
+00:03:36,786 --> 00:03:38,772
+Guardo el cliente, y acepto.
+
+74
+00:03:40,157 --> 00:03:42,353
+Ahora una factura nueva para él.
+
+75
+00:03:43,021 --> 00:03:46,879
+Quito el consumidor final, y en cliente escribo esquina y lo elijo.
+
+76
+00:03:47,535 --> 00:03:49,036
+Agrego las habichuelas:
+
+77
+00:03:49,184 --> 00:03:51,219
+su precio regular es ochenta y cinco,
+
+78
+00:03:51,305 --> 00:03:54,320
+pero para este cliente la factura propone setenta y cinco:
+
+79
+00:03:54,367 --> 00:03:58,375
+ochenta y cinco menos diez por ciento, redondeado a cinco pesos.
+
+80
+00:03:59,043 --> 00:04:02,330
+Si el regular cambia, el de los colmados cambia con él.
+
+81
+00:04:02,998 --> 00:04:05,046
+Así termina la serie de Productos:
+
+82
+00:04:05,107 --> 00:04:09,883
+la ficha, los empaques, las compras y las ventas en cajas, los pesados,
+
+83
+00:04:09,955 --> 00:04:14,780
+las variantes, y hoy, comercio exterior, insumos y listas de precios.

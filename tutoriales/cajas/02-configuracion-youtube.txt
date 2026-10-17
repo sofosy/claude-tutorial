@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Cajas · Denominaciones, políticas e impresora
+
+DESCRIPCIÓN
+============================================================
+⏱️ CAPÍTULOS
+00:00  Denominaciones
+00:56  Políticas: fondo y tolerancias
+01:58  Políticas: aprobaciones y cuadre
+02:58  Configurar la impresora
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es una denominación y cómo agregar un billete o una moneda que falte
+• Qué regla controla cada bloque de Políticas: fondos, tolerancias, sesiones, aprobaciones, alertas y cuadre
+• Configurar las alertas de saldo bajo y de exceso de efectivo
+• Configurar la impresora de recibos del equipo donde está conectada
+
+⚠️ ERRORES COMUNES
+• Poner un orden de visualización que desordene la lista de billetes
+• Olvidar que la tolerancia se aplica a cada método de pago por separado, no al total
+• Activar el conteo ciego sin avisar a los cajeros: dejan de ver cuánto debería haber
+• Salir de Políticas sin pulsar «Guardar configuración»: los cambios no quedan
+• Pulsar «Detectar» en un equipo que no tiene la impresora conectada
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:14
+
+TRANSCRIPCIÓN
+============================================================
+Este video reúne los ajustes que el administrador hace una sola vez. En Cajas pulso Configuración, arriba a la derecha, y abro Denominaciones. Una denominación es cada billete o moneda con que se cuenta el efectivo: la usan el conteo al abrir una caja, el conteo de cierre y las cajas en modo estricto. Están agrupadas en Billetes y Monedas, y ya vienen las del peso dominicano; pero falta el billete de veinte. Lo agrego con el botón de arriba. En Nombre escribo Veinte, como se lee en el billete; y en Valor, 20, que es lo que vale. La Divisa ya viene en peso dominicano. Marco el tipo Billete, y en Orden de visualización pongo un 7, que decide su lugar en la lista. Pulso Crear denominación. Sale el aviso de que se creó, y el billete de veinte ya aparece al final de los billetes.
+Ahora la sección Políticas: son las reglas que valen para todas las cajas de la empresa, repartidas en bloques. El primero, Estaciones de trabajo, está apagado: es el modo Flexible, en el que cada cajero abre su caja desde cualquier computadora, sin vincularla. Así lo dejamos. En Fondos y límites, el Fondo inicial por defecto es de cinco mil pesos: es el efectivo con que arranca cada turno, y ya aparece escrito al abrir la caja. El mínimo y el máximo quedan vacíos, sin límite. Luego vienen las Tolerancias de diferencia: cuánto puede faltar o sobrar al cuadrar sin que cuente como diferencia. El modo es Monto fijo, con cincuenta pesos, y se aplica a cada método de pago por separado. Diferencias consecutivas máximas, tres: si una caja cuadra fuera de tolerancia tres veces seguidas, se bloquea sola. En Control de sesiones, un turno dura como máximo setecientos veinte minutos, o sea doce horas; y en los días feriados no se abre caja.
+Sigo con el bloque Aprobaciones. Una salida de efectivo de más de cinco mil pesos, o una entrada de más de diez mil, queda esperando a que un supervisor la apruebe antes de tocar el saldo. Y toda salida exige una nota que la explique. Después, los Umbrales de alerta, que vienen vacíos. En Alerta por saldo bajo escribo mil: si una caja queda con menos, el sistema avisa. En Alerta por exceso de efectivo pongo sesenta mil, para retirar dinero a tiempo cuando se acumula. Por último, Cuadre de caja: no se cierra un turno sin su cuadre, y toda diferencia pide una justificación por escrito. En cambio, el Conteo ciego lo dejamos apagado; si lo activas, el cajero cuenta sin ver cuánto debería haber, y el esperado solo lo ve el supervisor. La ventana para reabrir una sesión ya cerrada es de veinticuatro horas. Pulso Guardar configuración, abajo a la derecha, y el aviso confirma que la configuración quedó guardada.
+Queda un ajuste que no es de la empresa sino de cada equipo: la impresora de recibos. Estoy en Mi caja, con mi turno abierto en Caja Principal, porque se configura en la computadora que tiene la impresora conectada y con una sesión de caja abierta; y lo hace un administrador. Los ajustes de este equipo están en los tres puntos, a la derecha de Cerrar caja; abro Configurar impresora. Arriba hay dos casillas. Imprimir recibo al facturar, ya marcada, saca el recibo al cobrar una factura; y Abrir gaveta al facturar abre la gaveta del dinero en ese momento. El botón Detectar busca la impresora conectada por USB, o sea por cable, y llena los datos solo; pide permiso al navegador, así que aquí no lo pulso y los escribo a mano. El Vendor ID es el código del fabricante: 0483. Y el Product ID, por su parte, es el del modelo: 070b. Los dos vienen en la etiqueta o en el manual de la impresora. Tipo de conexión: USB Directo, la más común; las otras son puerto serial, red por IP y CUPS, para equipos Linux o Mac. Pulso Guardar, y el aviso confirma que la impresora quedó configurada.

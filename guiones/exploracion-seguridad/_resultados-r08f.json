@@ -1,0 +1,110 @@
+{
+ "logins": [
+  {
+   "usuario": "carlos.pimentel",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.03,
+   "clic_a_url_s": 6.7,
+   "clic_a_networkidle_s": 6.7,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.16,
+   "clic_a_url_s": 7.04,
+   "clic_a_networkidle_s": 7.04,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "carlos.pimentel",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.09,
+   "clic_a_url_s": 6.0,
+   "clic_a_networkidle_s": 6.0,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.08,
+   "clic_a_url_s": 7.17,
+   "clic_a_networkidle_s": 7.17,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  },
+  {
+   "usuario": "carlos.pimentel",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 1.01,
+   "clic_a_url_s": 6.09,
+   "clic_a_networkidle_s": 6.09,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ],
+ "carlos_botones_e0": [
+  "menu",
+  "fullscreen",
+  "notifications",
+  "CP Carlos Pimentel carlos.pimentel@germiva.demo expand_more",
+  "sell",
+  "power_settings_new",
+  "chevron_left",
+  "Light",
+  "Dark",
+  "settings",
+  "clear",
+  "view_column"
+ ],
+ "tooltip_socios_crear": [
+  "Sin conceder · PARTNER_CREATE"
+ ],
+ "savebar_padre": "1 cambio sin guardar · afectan a 3 personas\nclose\nDescartar\nsave\nGuardar cambios",
+ "guardar_padre": [
+  "Permisos del rol actualizados exitosamente",
+  0.34
+ ],
+ "senior_crear_clase": "mat-mdc-tooltip-trigger rpe__act rpe__act--inherited",
+ "tooltip_heredado": [
+  "Heredado del rol padre · PARTNER_CREATE"
+ ],
+ "panel_carlos": "CP\nCarlos Pimentel\ncarlos.pimentel@germiva.demo\nclose\nActiva\nÚltimo ingreso: hace un momento\nedit\nEditar\nkey\nCambiar contraseña\nmore_vert\nROLES\nVendedor sénior\nHereda de Vendedor\n+ Asignar rol\nPERMISOS EFECTIVOS\n12 / 1160\n\nLa unión de sus roles, por módulo contratado.\n\nProductos\n1/42\nClientes y Proveedores\n2/37\nFacturación\n2/79\nCotizaciones\n7/19\nVer los 34 módulos\nÚLTIMOS INGRESOS\nHace un momento · Chrome · Windows\n::1\nHace 51 min · Cliente de API\n::1\nHace 55 min · Cliente de API\n::1",
+ "carlos_botones_heredado": [
+  "menu",
+  "fullscreen",
+  "notifications",
+  "CP Carlos Pimentel carlos.pimentel@germiva.demo expand_more",
+  "sell",
+  "power_settings_new",
+  "chevron_left",
+  "Light",
+  "Dark",
+  "settings",
+  "clear",
+  "add Nuevo Cliente",
+  "view_column"
+ ],
+ "savebar_hijo": "1 cambio sin guardar · afectan a 1 persona\nclose\nDescartar\nsave\nGuardar cambios",
+ "guardar_hijo": [
+  "Permisos del rol actualizados exitosamente",
+  0.3
+ ],
+ "carlos_botones_excluido": [
+  "menu",
+  "fullscreen",
+  "notifications",
+  "CP Carlos Pimentel carlos.pimentel@germiva.demo expand_more",
+  "sell",
+  "power_settings_new",
+  "chevron_left",
+  "Light",
+  "Dark",
+  "settings",
+  "clear",
+  "view_column"
+ ]
+}

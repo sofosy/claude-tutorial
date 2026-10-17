@@ -1,0 +1,113 @@
+{
+  "titulo": "CRM · La ficha del prospecto y sus seguimientos",
+  "_comentario": "Serie CRM, video 2 (2026-10-06). Empresa demo 50, Rosa (Admin). Datos: seeds/crm/sembrar.mjs — Carolina Méndez (Residencial Las Colinas) en Contactado con un seguimiento VENCIDO de ayer. Comportamiento medido: «Marcar como realizado» es inmediato con toast «Seguimiento marcado como realizado»; Publicar una llamada la agrega a Actividad; Programar deja el redactor en «Seguimiento» con fecha/hora y fechas rápidas; pulsar «Calificado» en la cinta abre el diálogo «Convertir a oportunidad» (crea cliente, contacto y oportunidad) y al confirmar sale el toast «Movido a «Calificado»: se creó la oportunidad», la ficha queda CONVERTIDO y aparece «Ver oportunidad». Restaurar: node seeds/crm/restaurar.mjs.",
+  "base_url": "http://localhost:4200",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": { "username": "rosa.almanzar", "password": "Demo2026!" },
+    "clave": "aut",
+    "extra": { "__v": 2 },
+    "navegar": "/crm/leads/board"
+  },
+  "voz": { "id": "es-DO-RamonaNeural", "velocidad": "+12%" },
+  "musica": { "archivo": "marca/musica/elevator-music-mcculloch.mp3", "volumen_db": -32, "ducking": true, "fade_s": 2 },
+  "loudnorm": { "lufs": -14, "tp": -1.5 },
+  "marca_video": { "entrada_s": 3, "cierre_s": 3 },
+  "rotulo_paso": { "segundos": 3.5 },
+  "privacidad": {
+    "permitidos": [
+      "germiva", "1305550", "Las Palmas", "Rosa", "Almánzar", "Almanzar", "Ana", "Mejía",
+      "Ramón", "Peralta", "Yesenia", "Durán", "Félix", "Almonte", "Carolina", "Méndez", "Luis", "Ventura",
+      "Gisela", "Rosario", "Manuel", "Tejada", "Patricia", "Gómez", "Playa Dorada", "Las Colinas",
+      "San Marcos", "Bella Vista", "Administradora", "ejemplo.com", "555"
+    ],
+    "mapa_fijo": { "localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com" }
+  },
+  "setup": { "tipo": "shell", "cmd": "node seeds/crm/restaurar.mjs" },
+  "aprenderas": [
+    "Leer la ficha de un prospecto: etapa, valor, puntuación y datos de contacto",
+    "Cerrar un seguimiento que ya hiciste y anotar lo que se habló",
+    "Programar el próximo seguimiento con fecha y hora",
+    "Pasar el prospecto a la etapa siguiente y convertirlo en oportunidad"
+  ],
+  "errores_comunes": [
+    "Anotar la llamada en una nota suelta fuera del sistema: el equipo no la ve",
+    "Cerrar un seguimiento sin programar el siguiente: el prospecto se queda sin próximo paso",
+    "Convertir antes de calificar: la oportunidad nace sin datos para cotizar"
+  ],
+  "pasos": [
+    {
+      "id": "01-ficha",
+      "capitulo": "La ficha del prospecto",
+      "rotulo": "La ficha del prospecto",
+      "ruta": "CRM › Prospectos › Carolina Méndez",
+      "texto_pantalla": "Ficha del prospecto · todo lo que sabes y todo lo que se hizo",
+      "narracion": "Estamos en el tablero de prospectos. Recojo el menú para tener más espacio. Abro la tarjeta de Carolina Méndez, de Residencial Las Colinas. Esta es la ficha del prospecto: reúne todo lo que sabes de ella y todo lo que se ha hecho para venderle. Arriba, la cinta de etapas: marca en qué columna del tablero está, y desde aquí también se puede mover. A su izquierda, el botón Perdido, para cuando la venta no se da. Debajo, el valor estimado de la venta y la puntuación, de cero a cien: sube con cada contacto y te dice qué tan interesado está. Luego sus datos: empresa, nombre, correo y teléfono. A la derecha, quién la atiende, de dónde llegó, la prioridad y cuándo esperas cerrar. Cualquiera de estos datos se corrige pulsando sobre él.",
+      "acciones": [
+        { "click": "button.panel-collapse", "al_decir": "Recojo el menú" },
+        { "click": "article.kcard[aria-label='Prospecto Carolina Méndez']", "al_decir": "Abro la tarjeta" },
+        { "resaltar": ".cr-title", "durante_ms": 4500, "al_decir": "Esta es la ficha" },
+        { "resaltar": ".cr-bar__stages", "durante_ms": 5000, "al_decir": "la cinta de etapas" },
+        { "resaltar": ".cr-bar__actions button", "durante_ms": 3500, "al_decir": "el botón Perdido" },
+        { "resaltar": "app-record-field:has-text('Valor estimado')", "durante_ms": 2200, "al_decir": "el valor estimado" },
+        { "resaltar": "app-record-field:has-text('Puntuación')", "durante_ms": 5000, "al_decir": "la puntuación" },
+        { "resaltar": "app-record-field:has-text('Teléfono')", "durante_ms": 3600, "al_decir": "Luego sus datos" },
+        { "resaltar": "app-record-field:has-text('Vendedor')", "durante_ms": 2600, "al_decir": "quién la atiende" },
+        { "resaltar": "app-record-field:has-text('Cierre esperado')", "durante_ms": 3800, "al_decir": "cuándo esperas cerrar" }
+      ]
+    },
+    {
+      "id": "02-registrar-llamada",
+      "capitulo": "Cerrar un seguimiento y anotar la llamada",
+      "rotulo": "Anotar lo que se habló",
+      "ruta": "CRM › Prospectos › Ficha › Pendientes y Actividad",
+      "texto_pantalla": "Pendientes · lo que toca hacer; Actividad · lo que ya se hizo",
+      "narracion": "A la derecha está el seguimiento del prospecto. En Pendientes, lo que toca hacer: aquí hay uno vencido, enviarle el catálogo de pinturas, que era para ayer. Ya se lo envié, así que lo marco como realizado con este botón de la derecha. El aviso de abajo confirma que quedó hecho. Ahora anoto la llamada que tuve con ella. En Actividad elijo el tipo, Llamada, y escribo lo que se habló. Le interesan cuarenta galones para pintar la plaza, y quiere entrega en la obra. Cuando termino, pulso Publicar. La llamada queda en el historial con mi nombre, la fecha y la hora: cualquiera del equipo que abra la ficha sabe en qué va la venta.",
+      "acciones": [
+        { "resaltar": "section.ch-block[aria-label='Seguimientos pendientes']", "durante_ms": 2500, "al_decir": "En Pendientes" },
+        { "resaltar": "section.ch-block[aria-label='Seguimientos pendientes'] li.ch-planned", "durante_ms": 4500, "al_decir": "uno vencido" },
+        { "click": "[aria-label='Marcar el seguimiento como realizado']", "al_decir": "lo marco como realizado" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3000, "cursor": false },
+        { "click": "section.ch-block[aria-label='Actividad'] button.ch-type:has-text('Llamada')", "al_decir": "elijo el tipo" },
+        { "escribir": { "sel": "textarea[aria-label='Contenido de la actividad']", "texto": "Le interesan 40 galones de pintura blanca para la plaza." }, "al_decir": "escribo lo que se habló" },
+        { "click": "section.ch-block[aria-label='Actividad'] .ch-actions button[type=submit]", "al_decir": "pulso Publicar" },
+        { "resaltar": "section.ch-block[aria-label='Actividad'] li:has-text('40 galones')", "durante_ms": 6000, "al_decir": "queda en el historial" }
+      ]
+    },
+    {
+      "id": "03-programar",
+      "capitulo": "Programar el próximo seguimiento",
+      "rotulo": "Programar el siguiente paso",
+      "ruta": "CRM › Prospectos › Ficha › Programar",
+      "texto_pantalla": "Programar · qué hacer, cuándo y a qué hora",
+      "narracion": "Una venta no avanza si no hay un siguiente paso. Subo a Pendientes y pulso Programar. El cuadro de abajo cambia a Seguimiento. En el texto, escribo qué hay que hacer: llamar para confirmar el pedido de pintura. Lo escribo como una tarea, para que quien la vea sepa qué hacer. Debajo eliges la fecha y la hora, o usas las fechas rápidas: Hoy, Mañana, En tres días o En una semana. Elijo En tres días. Para terminar, lo confirmo con el botón azul de abajo. El aviso de abajo confirma para cuándo quedó, y aparece en Pendientes, con su fecha. Ese día te sale en el tablero, en el indicador de seguimientos para hoy.",
+      "acciones": [
+        { "click": "section.ch-block[aria-label='Seguimientos pendientes'] button:has-text('Programar')", "al_decir": "y pulso Programar" },
+        { "resaltar": "section.ch-block[aria-label='Actividad'] button.ch-type:has-text('Seguimiento')", "durante_ms": 2500, "al_decir": "cambia a Seguimiento" },
+        { "escribir": { "sel": "textarea[aria-label='Contenido de la actividad']", "texto": "Llamar para confirmar el pedido de pintura" }, "al_decir": "escribo qué hay que hacer" },
+        { "resaltar": ".ch-when", "durante_ms": 2600, "al_decir": "la fecha y la hora" },
+        { "resaltar": "[aria-label='Fechas rápidas']", "durante_ms": 3000, "al_decir": "las fechas rápidas" },
+        { "click": "[aria-label='Fechas rápidas'] button:has-text('En 3 días')", "al_decir": "Elijo En tres días" },
+        { "click": "section.ch-block[aria-label='Actividad'] .ch-actions button[type=submit]", "al_decir": "el botón azul" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3000, "cursor": false },
+        { "resaltar": "section.ch-block[aria-label='Seguimientos pendientes'] li.ch-planned", "durante_ms": 5500, "al_decir": "Aparece en Pendientes" }
+      ]
+    },
+    {
+      "id": "04-convertir",
+      "capitulo": "Avanzar de etapa y convertir en oportunidad",
+      "rotulo": "Convertir en oportunidad",
+      "ruta": "CRM › Prospectos › Ficha › Calificado",
+      "texto_pantalla": "Calificado · el prospecto se convierte en oportunidad",
+      "narracion": "Carolina ya confirmó que quiere comprar: está calificada. Subo a la cinta de etapas y pulso Calificado. Calificado es una de las etapas que convierten al prospecto, así que el sistema pregunta antes: al convertirlo, crea el cliente, su contacto y una oportunidad de venta con los datos de la ficha. Pulso Convertir. Listo: el aviso dice que se creó la oportunidad, la ficha queda marcada como convertida, y arriba a la izquierda aparece Ver oportunidad. Desde ahí se cotiza y se sigue la venta hasta ganarla; lo vemos en el próximo video.",
+      "acciones": [
+        { "click": ".cr-bar__stages :text('Calificado')", "al_decir": "pulso Calificado" },
+        { "resaltar": "mat-dialog-container", "durante_ms": 6500, "cursor": false, "al_decir": "El sistema pregunta" },
+        { "click": "mat-dialog-container button:has-text('Convertir')", "al_decir": "Pulso Convertir" },
+        { "resaltar": "mat-snack-bar-container", "durante_ms": 3000, "cursor": false },
+        { "resaltar": ":is(a,button):has-text('Ver oportunidad')", "durante_ms": 6000, "al_decir": "Ver oportunidad" }
+      ]
+    }
+  ]
+}

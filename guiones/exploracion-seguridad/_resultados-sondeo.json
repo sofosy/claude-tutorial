@@ -1,0 +1,13 @@
+{
+ "logins": [
+  {
+   "usuario": "rosa.almanzar",
+   "url": "http://localhost:4200/home",
+   "carga_signin_s": 4.19,
+   "clic_a_url_s": 7.71,
+   "clic_a_networkidle_s": 7.71,
+   "dialogos_al_entrar": 0,
+   "recaptcha_visible": 0
+  }
+ ]
+}

@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Productos · Parte 5: productos pesados, balanza y cambio de unidad base
+
+DESCRIPCIÓN
+============================================================
+Quinta parte de la serie de Productos de Germiva ERP: los productos que se venden por peso y el cambio de unidad base. Se activa la balanza etiquetadora de la tienda; las habichuelas, que se llevan por libra, reciben el kilo (con su factor automático), el saco de cien libras para comprar y su código de balanza; en el punto de venta, la etiqueta de peso entra con las libras exactas. Por último, las galletas que se llevaban por caja pasan a llevarse por unidad con «Convertir unidad base», viendo antes el impacto.
+
+⏱️ CAPÍTULOS
+00:00  Activar la balanza
+00:56  Un producto por libra: kilo, saco y código de balanza
+02:10  Vender con la etiqueta de peso
+02:49  Convertir la unidad base
+03:55  La ficha después de convertir
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Activar la balanza etiquetadora de la tienda y leer su formato
+• Agregar el kilo a un producto por libra: el factor sale solo
+• Dar código de balanza a un producto y venderlo escaneando la etiqueta de peso
+• Convertir la unidad base de caja a unidad, revisando antes el impacto en existencia, costo, precios y límites
+
+⚠️ ERRORES COMUNES
+• Usar el prefijo 20 para la balanza: es el de los códigos internos del sistema
+• Cambiar la unidad de medida a mano en la ficha en vez de convertir: la existencia y el costo quedarían en la unidad vieja
+• Convertir sin leer el impacto: los precios que no se dividen exacto se redondean
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:41
+
+TRANSCRIPCIÓN
+============================================================
+En esta parte vemos los productos que se venden por peso, y cómo cambiar la unidad base de un producto. Empezamos por la balanza. Entro a Inventario y abro Configuración. Bajo hasta balanza etiquetadora. La balanza es de la tienda, no de un producto: imprime una etiqueta con el código del producto y el peso dentro del código de barras. Enciendo uso balanza etiquetadora. Aparece el formato: el prefijo veintiuno, cinco dígitos para el código del producto, cinco para el peso, y tres decimales. Son los valores de las balanzas más comunes; se ajustan a la de tu tienda. Debajo, un ejemplo: veintiuno, el producto ciento veintitrés, y dos mil trescientos cincuenta, que con tres decimales son dos punto treinta y cinco. Pulso guardar, y el aviso confirma; lo cierro.
+Ahora un producto que se vende por peso: las habichuelas. Abro Productos, la lista de todo el catálogo. En el buscador escribo habichuelas, y abro su ficha con el lápiz. Su unidad base es la libra: la existencia y el precio, ochenta y cinco pesos, están por libra. Enciendo se compra o se vende en empaques, y agrego el primero. Debajo, en rojo, el panel avisa que falta elegir la unidad. Abro la lista de unidades y elijo kilogramo. Fíjate en el contenido: dos punto dos libras, y no hay que escribirlo, porque libra y kilo son de la misma familia de peso y el sistema conoce la equivalencia. En fracciones elijo dos decimales, para vender un kilo y medio. Agrego otro empaque: el saco, en que lo trae el proveedor. Abro la lista y elijo saco. El aviso rojo cambia y pide cuántas libras trae: cien libras. Este solo se compra: le quito el casillero de venta y le pongo la estrella de compra. Por último, a la derecha, el código de balanza: escribo ciento veintitrés, el mismo del ejemplo. Guardo la ficha, y acepto el aviso.
+Vamos al punto de venta. El cliente pide habichuelas; se pesan en la balanza, y la balanza imprime una etiqueta. En el buscador escaneo esa etiqueta; aquí escribo su código y pulso Enter, como hace el lector. El ticket recibe las habichuelas con dos punto treinta y cinco libras: el peso venía dentro del código. El precio es por libra, ochenta y cinco, exento de ITBIS, y la línea suma ciento noventa y nueve con setenta y cinco. Abajo, artículos lo dice en libras. Así se vende cualquier producto pesado: sin teclear el peso, y sin errores al cobrar.
+Último caso: las galletas. Hasta hoy se llevaban por caja, y ahora la tienda quiere venderlas sueltas. Eso no se resuelve cambiando la unidad de medida a mano: hay que convertir la unidad base. En el catálogo busco galletas y abro su ficha. Enciendo empaques, que se guarda al momento, y abajo, en unidad base, pulso convertir unidad base. Elijo la unidad nueva: unidad. Cuántas trae cada caja: doce. Pulso ver impacto. Arriba, el resumen: una caja son doce unidades, la existencia pasa de veinte a doscientas cuarenta, y el valor del inventario no cambia. El aviso amarillo dice que el precio no se divide exacto y se redondea; lo acepto. En la tabla, el costo pasa de ciento ochenta por caja a quince por unidad, y el mínimo y el máximo se multiplican por doce. Y la caja queda como empaque, a trescientos pesos, para seguir comprándola igual. Pulso convertir, confirmo, y el aviso dice que la caja quedó como empaque por doce.
+Para ver la ficha con todos sus datos nuevos, vuelvo a abrir las galletas desde el catálogo. Arriba, el stock: doscientas cuarenta, y el costo promedio, quince pesos. La unidad de medida ahora es unidad. El precio de venta, veinticinco pesos con ITBIS, que es trescientos entre doce. Y en unidades y empaques, la caja por doce con su precio de trescientos y la estrella de compra: se sigue comprando por caja, y ahora se vende también suelta. Si te equivocaste, la conversión se puede revertir mientras el producto no tenga movimientos nuevos. En la próxima parte vemos las variantes: tallas, colores y sabores de un mismo producto.

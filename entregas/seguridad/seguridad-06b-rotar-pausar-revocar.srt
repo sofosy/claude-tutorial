@@ -1,0 +1,251 @@
+1
+00:00:03,097 --> 00:00:05,171
+Seguimos con las credenciales de API,
+
+2
+00:00:05,283 --> 00:00:08,346
+o sea las llaves con que otros programas entran a Germiva.
+
+3
+00:00:08,977 --> 00:00:13,176
+Aquí, en la pestaña Integraciones, están las credenciales de la empresa.
+
+4
+00:00:13,820 --> 00:00:16,339
+Rotar el secreto es cambiarlo por uno nuevo.
+
+5
+00:00:16,986 --> 00:00:18,815
+Se hace cuando alguien lo pudo ver,
+
+6
+00:00:18,942 --> 00:00:21,629
+o cuando cambia la persona que maneja el otro programa.
+
+7
+00:00:22,274 --> 00:00:26,025
+Abro Programa del contador, y en su panel pulso Rotar secreto.
+
+8
+00:00:26,672 --> 00:00:27,860
+El sistema avisa:
+
+9
+00:00:27,914 --> 00:00:30,469
+el secreto actual deja de funcionar de inmediato,
+
+10
+00:00:30,428 --> 00:00:33,609
+y la integración se cae hasta que se actualice del otro lado.
+
+11
+00:00:34,243 --> 00:00:35,313
+Lo confirmo.
+
+12
+00:00:35,959 --> 00:00:40,265
+Desde este momento, el programa del contador no entra con el secreto viejo.
+
+13
+00:00:40,911 --> 00:00:44,710
+Mientras el sistema genera el nuevo, piensa a quién se lo vas a pasar:
+
+14
+00:00:44,859 --> 00:00:47,354
+solo al técnico que configura ese programa.
+
+15
+00:00:48,000 --> 00:00:52,137
+En unos segundos vuelve la franja con el secreto nuevo, igual que al crearla.
+
+16
+00:00:52,783 --> 00:00:56,775
+Copio el secreto, se lo paso al técnico del contador por un canal privado,
+
+17
+00:00:56,792 --> 00:00:58,091
+y cierro la franja.
+
+18
+00:00:59,441 --> 00:01:01,380
+A veces solo hace falta una pausa:
+
+19
+00:01:01,470 --> 00:01:03,433
+el contador cierra por vacaciones,
+
+20
+00:01:03,463 --> 00:01:06,427
+o sospechas algo y quieres cortar mientras averiguas.
+
+21
+00:01:07,072 --> 00:01:09,713
+En los tres puntos del panel elijo Desactivar.
+
+22
+00:01:10,356 --> 00:01:11,138
+No pregunta:
+
+23
+00:01:11,300 --> 00:01:15,147
+sale el aviso, y el sistema le corta el paso al otro programa.
+
+24
+00:01:15,792 --> 00:01:17,889
+Fíjate arriba, debajo del nombre:
+
+25
+00:01:17,906 --> 00:01:20,472
+el estado ya dice Inactiva, en gris.
+
+26
+00:01:21,117 --> 00:01:24,603
+Además, el número de la pestaña Integraciones bajó a uno:
+
+27
+00:01:24,728 --> 00:01:27,055
+cuenta solo las credenciales activas.
+
+28
+00:01:27,701 --> 00:01:31,510
+Mientras está así, el otro programa no puede entrar, pero su clave,
+
+29
+00:01:31,626 --> 00:01:34,265
+su secreto y sus permisos se quedan como estaban.
+
+30
+00:01:34,911 --> 00:01:39,616
+Para devolverle el paso, vuelvo al menú de los tres puntos, y ahí elijo Activar;
+
+31
+00:01:39,669 --> 00:01:40,847
+tampoco pregunta.
+
+32
+00:01:41,480 --> 00:01:43,903
+Sale otra vez el aviso, y en la lista,
+
+33
+00:01:44,016 --> 00:01:48,710
+donde también se ve el estado de cada credencial, la fila dice otra vez Activa.
+
+34
+00:01:50,066 --> 00:01:53,683
+Y cuando una credencial ya no se usa, lo correcto es revocarla.
+
+35
+00:01:54,328 --> 00:01:56,013
+Abro Tienda en línea anterior:
+
+36
+00:01:56,103 --> 00:02:01,013
+la tienda vieja ya no existe, y en la lista se ve que su último uso fue hace meses.
+
+37
+00:02:01,659 --> 00:02:04,213
+En los tres puntos elijo Revocar y eliminar.
+
+38
+00:02:04,847 --> 00:02:06,460
+El sistema pide confirmar:
+
+39
+00:02:06,574 --> 00:02:09,758
+sus credenciales dejan de funcionar y no se puede deshacer.
+
+40
+00:02:10,402 --> 00:02:12,969
+Confirmo con Eliminar, y sale el aviso:
+
+41
+00:02:13,036 --> 00:02:14,842
+el sistema borró su acceso.
+
+42
+00:02:15,486 --> 00:02:18,163
+Fíjate en la pestaña Integraciones, arriba:
+
+43
+00:02:18,337 --> 00:02:21,158
+su número cuenta solo las credenciales activas.
+
+44
+00:02:21,804 --> 00:02:24,153
+Y en la lista queda una sola credencial.
+
+45
+00:02:24,799 --> 00:02:25,903
+¿Y en el Resumen?
+
+46
+00:02:26,550 --> 00:02:27,426
+Lo abro.
+
+47
+00:02:28,060 --> 00:02:30,493
+El aviso de credencial sin uso desaparece:
+
+48
+00:02:30,572 --> 00:02:33,694
+el contador de Requiere atención dice ahora tres asuntos,
+
+49
+00:02:33,723 --> 00:02:35,723
+y ninguno es de credenciales.
+
+50
+00:02:37,073 --> 00:02:39,423
+Por último, la ayuda para el técnico.
+
+51
+00:02:40,055 --> 00:02:44,299
+Vuelvo a Integraciones y, arriba, pulso Documentación de la API.
+
+52
+00:02:44,945 --> 00:02:48,286
+Es un manual para quien conecta el otro programa, no para ti.
+
+53
+00:02:48,931 --> 00:02:50,725
+A la izquierda están las secciones:
+
+54
+00:02:50,804 --> 00:02:54,953
+Autenticación, que explica cómo entra el programa con su clave y su secreto;
+
+55
+00:02:55,043 --> 00:02:57,525
+las facturas, emitidas y recibidas;
+
+56
+00:02:57,627 --> 00:03:01,269
+los reportes para la DGII, o sea la dirección de impuestos;
+
+57
+00:03:01,299 --> 00:03:02,270
+y la cuenta.
+
+58
+00:03:02,917 --> 00:03:04,650
+Abro el primero de esa sección:
+
+59
+00:03:04,752 --> 00:03:08,551
+explica paso a paso cómo entra un programa y qué le responde el sistema.
+
+60
+00:03:09,197 --> 00:03:10,290
+Un caso práctico:
+
+61
+00:03:10,417 --> 00:03:12,778
+tu contador pide acceso para su programa.
+
+62
+00:03:13,423 --> 00:03:15,798
+Creas una credencial solo con lo que necesita,
+
+63
+00:03:15,864 --> 00:03:20,086
+le pasas la clave y el secreto por un canal privado, y le mandas este manual.

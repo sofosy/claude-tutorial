@@ -15,14 +15,85 @@ rectificación no sea «ver el video entero», hay dos herramientas:
   vistazo.
 """
 import json
+import re
 import subprocess
 from collections import Counter
 
 from . import narrar, privacidad
+from .rutas import RAIZ
 
 MIN_PALABRAS = 6          # una narración más corta que esto no explica nada
 DESFASE_MAX = 0.9         # segundos entre la palabra y el clic que se toleran
-ACCIONES_VISIBLES = ("click", "escribir", "seleccionar", "marcar", "presionar", "subir")
+ACCIONES_VISIBLES = ("click", "arrastrar", "escribir", "seleccionar", "marcar", "presionar", "subir")
+# acciones de la capa (insignia/cartel/diagrama, ver GRABACION.md): cambian la
+# pantalla sin mover el cursor, como `resaltar`
+ACCIONES_CAPA = ("cartel", "diagrama", "diagrama_fase", "diagrama_cerrar", "insignia")
+TIPOS_INSIGNIA = ("con", "sin", "info")
+TIPOS_CARTEL = ("consejo", "cuidado")
+
+
+def que_accion(clave, valor):
+    """Lo que el motor anota como `que` del evento de una acción (para emparejarlos)."""
+    if clave == "cartel":
+        return (valor or {}).get("titulo") or (valor or {}).get("tipo", "consejo")
+    if clave == "insignia":
+        return (valor or {}).get("texto") or "quitar"
+    if clave == "diagrama":
+        return valor if isinstance(valor, str) else (valor or {}).get("nombre")
+    if clave == "diagrama_fase":
+        return str(valor)
+    if clave == "diagrama_cerrar":
+        return "cerrar"
+    if clave == "arrastrar":
+        return (valor or {}).get("desde")
+    return valor if isinstance(valor, str) else (valor.get("sel") if isinstance(valor, dict) else clave)
+
+
+def _fases_diagrama(nombre):
+    """Fases que declara el diagrama (máximo `data-fase`), o None si no existe."""
+    ruta = RAIZ / "marca" / "diagramas" / f"{nombre}.html"
+    if not ruta.exists():
+        return None
+    return max([int(n) for n in re.findall(r'data-fase="(\d+)"', ruta.read_text(encoding="utf-8"))] or [0])
+
+
+def _revisar_capa(h, p):
+    """Insignia, cartel y diagramas del paso: forma válida y archivo existente."""
+    pid = p["id"]
+    ins = p.get("insignia")
+    if ins is not None:
+        if not isinstance(ins, dict) or ins.get("tipo") not in TIPOS_INSIGNIA or not ins.get("texto"):
+            _hallazgo(h, "ERROR", pid, "`insignia` debe ser {tipo: con|sin|info, texto}")
+    fases = None   # fases del diagrama abierto en este punto del paso
+    if p.get("diagrama"):
+        nombre = que_accion("diagrama", p["diagrama"])
+        fases = _fases_diagrama(nombre)
+        if fases is None:
+            _hallazgo(h, "ERROR", pid, f"no existe marca/diagramas/{nombre}.html")
+    for acc in p.get("acciones", []):
+        if "insignia" in acc:
+            ins2 = acc["insignia"]
+            if ins2 is not None:
+                if not isinstance(ins2, dict) or ins2.get("tipo") not in TIPOS_INSIGNIA or not ins2.get("texto"):
+                    _hallazgo(h, "ERROR", pid,
+                              "`insignia` (acción) debe ser {tipo: con|sin|info, texto} o null")
+        elif "cartel" in acc:
+            c = acc["cartel"]
+            if not isinstance(c, dict) or c.get("tipo", "consejo") not in TIPOS_CARTEL or not c.get("texto"):
+                _hallazgo(h, "ERROR", pid, "`cartel` debe ser {tipo: consejo|cuidado, titulo?, texto}")
+        elif "diagrama" in acc:
+            nombre = que_accion("diagrama", acc["diagrama"])
+            fases = _fases_diagrama(nombre)
+            if fases is None:
+                _hallazgo(h, "ERROR", pid, f"no existe marca/diagramas/{nombre}.html")
+        elif "diagrama_fase" in acc:
+            n = acc["diagrama_fase"]
+            if fases is None:
+                _hallazgo(h, "ERROR", pid, f"`diagrama_fase` {n} sin un diagrama abierto antes en el paso")
+            elif not isinstance(n, int) or n < 1 or n > fases:
+                _hallazgo(h, "ERROR", pid, f"`diagrama_fase` {n}: el diagrama tiene fases 1–{fases}")
+        elif "diagrama_cerrar" in acc:
+            fases = None
 
 
 def _hallazgo(lista, nivel, paso, texto):
@@ -43,9 +114,14 @@ def _posicion(narracion, clave, desde=0):
     return None
 
 
-def _instante_cercano(palabras, clave, t_evento):
-    """De todas las veces que la voz dice `clave`, la más cercana al evento."""
-    buscadas = [_normal(w) for w in str(clave).split()]
+def _instante_cercano(palabras, clave, t_evento, extra=None):
+    """De todas las veces que la voz dice `clave`, la más cercana al evento.
+
+    `palabras` viene del sidecar de audio: la voz oyó las siglas ya pasadas
+    por el mapa combinado (global + `pronunciacion` del guion), así que la
+    clave se busca de la misma forma o nunca calzaría con lo que se oyó.
+    """
+    buscadas = [_normal(w) for w in narrar.para_voz(str(clave), extra).split()]
     dichas = [_normal(p["texto"]) for p in palabras]
     candidatos = [palabras[i]["t"] for i in range(len(dichas) - len(buscadas) + 1)
                   if dichas[i:i + len(buscadas)] == buscadas]
@@ -70,11 +146,14 @@ def revisar_guion(guion):
             _hallazgo(h, "AVISO", pid, "sin `texto_pantalla`: la barra inferior saldrá vacía")
         if not p.get("ruta"):
             _hallazgo(h, "AVISO", pid, "sin `ruta`: quien caiga al video por la mitad no sabrá dónde está")
-        if not p.get("resaltar") and not p.get("acciones") and not p.get("navegar"):
+        _revisar_capa(h, p)
+        if not p.get("resaltar") and not p.get("acciones") and not p.get("navegar") \
+                and not p.get("diagrama"):
             _hallazgo(h, "AVISO", pid, "paso sin marca, sin acciones y sin navegación: ¿qué mira el usuario?")
 
         # cada clic se explica: lleva palabra de sincronía y la narración la dice
         from .grabar import instante
+        extra = guion.get("pronunciacion")
         palabras_narr = [{"t": i, "texto": w} for i, w in enumerate(narr.split())]
         espera_previa = 0
         clics = []
@@ -84,11 +163,10 @@ def revisar_guion(guion):
                 espera_previa += acc["esperar_ms"]
                 continue
             clave = next((k for k in ACCIONES_VISIBLES + ("resaltar", "plano_general", "quitar_marca")
-                          if k in acc), None)
+                          + ACCIONES_CAPA if k in acc), None)
             if not clave:
                 continue
-            que = acc[clave] if isinstance(acc[clave], str) else (
-                acc[clave].get("sel") if isinstance(acc[clave], dict) else clave)
+            que = que_accion(clave, acc[clave])
             if clave in ACCIONES_VISIBLES:
                 clics.append(que)
             if acc.get("al_decir") is None:
@@ -97,7 +175,7 @@ def revisar_guion(guion):
             elif isinstance(acc["al_decir"], str):
                 pos = _posicion(narr, acc["al_decir"], desde=ultimo + 1)
                 if pos is None:
-                    if instante(palabras_narr, acc["al_decir"]) is None:
+                    if instante(palabras_narr, acc["al_decir"], extra) is None:
                         _hallazgo(h, "ERROR", pid, f"la narración no dice «{acc['al_decir']}» ({clave} «{que}»)")
                     else:
                         _hallazgo(h, "ERROR", pid, f"«{acc['al_decir']}» ({clave} «{que}») aparece en la"
@@ -118,7 +196,7 @@ def revisar_guion(guion):
                 _hallazgo(h, "AVISO", pid, f"se resalta «{m['sel']}» después de pulsarlo: si el clic"
                           " cambia de pantalla el botón ya no existe. Resalta el RESULTADO"
                           " (la fila nueva, el aviso, el diálogo).")
-        if p.get("al_decir") and instante(palabras_narr, p["al_decir"]) is None:
+        if p.get("al_decir") and instante(palabras_narr, p["al_decir"], extra) is None:
             _hallazgo(h, "ERROR", pid, f"la narración no dice «{p['al_decir']}» (marca)")
         for m in p.get("resaltar", []):
             selectores[m["sel"]] += 1
@@ -218,11 +296,12 @@ def informe(guion, salida, video=None):
                     if not explicada:
                         avisos.append(f"{pid}: la alerta «{ev['que'][:70]}…» apareció a {ev['t']:.1f}s"
                                       " y no se señaló ni se explicó (regla: toda alerta se explica)")
-                if ev["tipo"] in ("clic", "escribir", "subir", "alerta", "resaltar"):
+                if ev["tipo"] in ("clic", "escribir", "subir", "alerta", "resaltar",
+                                  "cartel", "diagrama", "diagrama_fase", "insignia"):
                     # el fotograma se toma medio segundo después: el cursor ya
                     # llegó, el texto ya está escrito, la marca ya se ve
                     png = revision / f"{pid}-{ev['t']:05.2f}.png"
-                    subprocess.run(["ffmpeg", "-y", "-loglevel", "error",
+                    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-threads", "2",
                                     "-ss", f"{t_video + ev['t'] + 0.5:.3f}", "-i", str(video),
                                     "-frames:v", "1", str(png)], check=False)
                     estado = "CORTADO " if ev.get("visible") is False else ""
@@ -232,8 +311,9 @@ def informe(guion, salida, video=None):
             # `escribir` se mide por el clic que lo inicia: el evento «escribir»
             # se anota al TERMINAR de teclear (para medir que el campo siguió
             # a la vista), y 20 letras tardan casi un segundo
-            TIPO = {"click": "clic", "escribir": "clic", "resaltar": "resaltar",
-                    "seleccionar": "seleccionar", "subir": "subir", "marcar": "clic"}
+            TIPO = {"click": "clic", "arrastrar": "clic", "escribir": "clic", "resaltar": "resaltar",
+                    "seleccionar": "seleccionar", "subir": "subir", "marcar": "clic",
+                    **{k: k for k in ACCIONES_CAPA}}
             for acc in paso.get("acciones", []):
                 clave = acc.get("al_decir")
                 if not isinstance(clave, str):
@@ -241,15 +321,14 @@ def informe(guion, salida, video=None):
                 accion = next((k for k in acc if k in TIPO), None)
                 if not accion:
                     continue
-                v = acc[accion]
-                sel = v if isinstance(v, str) else v.get("sel")
+                sel = que_accion(accion, acc[accion])
                 # el mismo campo puede teclearse dos veces: se empareja por
                 # tipo Y selector, en orden, sin reutilizar eventos
                 ev = next((e for i, e in enumerate(seg.get("eventos", []))
                            if e["que"] == sel and e["tipo"] == TIPO[accion] and i not in usados), None)
                 if ev:
                     usados.add(seg["eventos"].index(ev))
-                t_pal = _instante_cercano(palabras, clave, ev["t"]) if ev else None
+                t_pal = _instante_cercano(palabras, clave, ev["t"], guion.get("pronunciacion")) if ev else None
                 if t_pal is not None and ev:
                     desfase = ev["t"] - t_pal
                     lineas.append(f"  · «{clave}» a {t_pal:.2f}s, clic a {ev['t']:.2f}s"
