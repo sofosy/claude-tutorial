@@ -128,6 +128,8 @@ solo donde hace falta una aclaración**.
 ```jsonc
 {
   "spa": true,              // navegación interna sin recargar la app (por defecto)
+  "portada_s": 8,           // segundo del primer paso del que sale la miniatura (por defecto 1.5;
+                            // súbelo si la primera pantalla tarda en cargar y la miniatura sale en blanco)
   "ruta_neutra": "/",       // por dónde pasar para «volver» a la misma ruta y limpiar filtros
   "pasos": [{
     "navegar": "/health-insurance/agreements",

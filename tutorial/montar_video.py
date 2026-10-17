@@ -197,12 +197,12 @@ def _rotulo_conf(guion):
     return {"segundos": float((r if isinstance(r, dict) else {}).get("segundos", 3.5))}
 
 
-def _portada_limpia(seg, carpeta, barra, destino_png):
+def _portada_limpia(seg, carpeta, barra, destino_png, segundo=1.5):
     """Portada SIN rótulo: el mismo cuadro que `_portada` toma del primer clip
     (1,5 s), sacado del maestro con la barra (si la hay) y sin el rótulo, para
     que la miniatura no cambie al encender `rotulo_paso`. No reaplica el zoom:
     a 1,5 s del primer paso la cámara está en el plano general."""
-    entradas = ["-ss", f"{seg['inicio']:.3f}", "-t", "1.534", "-i", str(carpeta / seg["master"])]
+    entradas = ["-ss", f"{seg['inicio']:.3f}", "-t", f"{segundo + 0.034:.3f}", "-i", str(carpeta / seg["master"])]
     if barra.exists():
         entradas += ["-i", str(barra)]
         filtro = f"[0:v]scale={ANCHO}:{ALTO}[z];[z][1:v]overlay=0:0[v]"
@@ -427,10 +427,13 @@ def _srt(entradas, destino, inicio=0.0):
     destino.write_text("\n".join(lineas), encoding="utf-8")
 
 
-def _portada(clips, salida):
-    """Un fotograma real del primer clip de pantalla, para la miniatura."""
+def _portada(clips, salida, segundo=1.5):
+    """Un fotograma real del primer clip de pantalla, para la miniatura.
+
+    `segundo` sale de la clave opcional `portada_s` del guion: a 1,5 s una
+    pantalla lenta todavía está en blanco y la miniatura queda sin imagen."""
     destino = salida / "grabacion" / "portada.png"
-    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", "-ss", "1.5", "-i", str(clips[0]),
+    subprocess.run(["ffmpeg", "-y", "-loglevel", "error", "-threads", "2", "-ss", str(segundo), "-i", str(clips[0]),
                     "-frames:v", "1", str(destino)], check=True)
     return destino
 
@@ -548,7 +551,8 @@ def montar(guion, salida):
                 portada = destino
                 if rotulo:  # la miniatura sale del cuadro SIN rótulo
                     portada_png = _portada_limpia(seg, carpeta, barra,
-                                                  salida / "grabacion" / "portada.png")
+                                                  salida / "grabacion" / "portada.png",
+                                                  guion.get("portada_s", 1.5))
         offset += seg["duracion"]
         rutas.append(destino)
         side = narrar.sidecar(salida, pid) or {}
@@ -591,7 +595,8 @@ def montar(guion, salida):
         duraciones[0] += entrada_s
         duraciones[-1] += cierre_s
     publicar(guion, salida, duraciones, 0.0, mapa_priv, sufijo="-video",
-             portada=(portada_png or _portada([portada], salida)) if portada else None)
+             portada=(portada_png or _portada([portada], salida, guion.get("portada_s", 1.5)))
+             if portada else None)
 
     from .verificar import informe
     ruta, avisos = informe(guion, salida, video=cuerpo or final)
