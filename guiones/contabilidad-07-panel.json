@@ -1,0 +1,216 @@
+{
+ "titulo": "Contabilidad · El Panel de Contabilidad y cómo viaja un hecho",
+ "descripcion": "Qué muestra el Panel de Contabilidad de Germiva y cómo leerlo cada día: el período abierto, los asientos en borrador, las cuentas por cobrar vencidas, las conciliaciones abiertas y la Situación financiera; y cómo una venta o un pago llega solo al asiento, al Mayor y a los reportes.",
+ "_comentario": "Video 7 de la serie Contabilidad. setup: preparar.sh panel (ventas 320,000 y sueldos 145,000 contabilizados en octubre 2026, alquiler 25,000 en borrador, CxC FAC-2026-0142 vencida el 30/09).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/panel"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh panel"
+ },
+ "portada_s": 10,
+ "aprenderas": [
+  "Leer los cuatro indicadores del Panel y saber a dónde lleva cada uno",
+  "Encontrar los borradores y las facturas vencidas que piden atención",
+  "Entender cómo un documento llega al asiento, al Mayor y a los reportes",
+  "Usar la Situación financiera para ver ingresos, gastos y utilidad del período"
+ ],
+ "errores_comunes": [
+  "Dejar asientos en borrador: no cuentan en los reportes y bloquean el cierre del mes",
+  "Registrar a mano lo que ya contabiliza el sistema solo: queda duplicado",
+  "Mirar los reportes sin revisar antes el Panel: ahí aparecen los pendientes"
+ ],
+ "pasos": [
+  {
+   "id": "01-indicadores",
+   "capitulo": "Los indicadores",
+   "rotulo": "Los indicadores del día",
+   "ruta": "Contabilidad › Panel",
+   "texto_pantalla": "Panel de Contabilidad · lo que pide atención hoy",
+   "narracion": "El Panel de Contabilidad es la primera pantalla del menú Contabilidad: dice qué está pendiente hoy. Recojo el menú para verlo completo. Arriba están los accesos directos: crear un asiento, las cuentas por cobrar y por pagar, el Libro Mayor y los informes financieros. Debajo, cuatro indicadores. El primero es el período abierto, octubre, con los días que faltan para su cierre. El segundo cuenta los asientos en borrador: hay uno, y se marca en amarillo porque un borrador no cuenta en los reportes hasta que se contabiliza. El tercero son las cuentas por cobrar vencidas, en rojo: una factura que pasó su fecha y nadie ha gestionado. Y el cuarto, las conciliaciones bancarias que siguen abiertas. Cada indicador es un enlace: lleva directo a la pantalla donde se resuelve.",
+   "acciones": [
+    {
+     "resaltar": "a.panel-item[data-row-key='accounting.dashboard'], a.panel-item:has-text('Panel')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "primera pantalla"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": ".panel-actions",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "accesos directos"
+    },
+    {
+     "resaltar": "a.kpi-link:has-text('Período abierto')",
+     "durante_ms": 4000,
+     "al_decir": "período abierto"
+    },
+    {
+     "resaltar": "a.kpi-link:has-text('Asientos en borrador')",
+     "durante_ms": 6000,
+     "al_decir": "asientos en borrador"
+    },
+    {
+     "resaltar": "a.kpi-link:has-text('CxC vencidas')",
+     "durante_ms": 5000,
+     "al_decir": "cuentas por cobrar vencidas"
+    },
+    {
+     "resaltar": "a.kpi-link:has-text('Conciliaciones abiertas')",
+     "durante_ms": 3500,
+     "al_decir": "conciliaciones bancarias"
+    },
+    {
+     "resaltar": "a.kpi-link:has-text('Asientos en borrador')",
+     "durante_ms": 3000,
+     "al_decir": "Cada indicador es un enlace"
+    }
+   ]
+  },
+  {
+   "id": "02-bandejas",
+   "capitulo": "Vencidas y borradores",
+   "rotulo": "Lo pendiente",
+   "ruta": "Contabilidad › Panel",
+   "texto_pantalla": "Vencidas más atrasadas · Borradores recientes",
+   "narracion": "Debajo de los indicadores hay dos bandejas con el detalle. Vencidas más atrasadas muestra las facturas que más tiempo llevan sin cobrarse: esta es de la Ferretería del Este, con los días de atraso y el monto. Borradores recientes muestra los últimos asientos que alguien dejó sin contabilizar: aquí está el pago del alquiler de octubre. Pulso sobre él y el sistema abre el asiento, para revisarlo y contabilizarlo. Con eso el Panel queda al día.",
+   "acciones": [
+    {
+     "resaltar": "mat-card:has-text('Vencidas más atrasadas')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Vencidas más atrasadas"
+    },
+    {
+     "resaltar": "mat-card:has-text('Borradores recientes')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Borradores recientes"
+    },
+    {
+     "click": "mat-card:has-text('Borradores recientes') a.panel-row >> nth=0",
+     "al_decir": "Pulso sobre él"
+    },
+    {
+     "resaltar": "text=Borrador >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "revisarlo y contabilizarlo"
+    }
+   ]
+  },
+  {
+   "id": "03-viaje",
+   "capitulo": "Cómo viaja un hecho",
+   "rotulo": "Cómo viaja un hecho",
+   "ruta": "Contabilidad › Panel › Situación financiera",
+   "texto_pantalla": "Situación financiera · el resultado de los asientos",
+   "navegar": "/accounting/panel",
+   "al_decir_navegar": "vuelvo a la portada",
+   "narracion": "Falta lo más importante. Ahora vuelvo a la portada del Panel para ver cómo se llena. En el sistema, casi nada se registra a mano. Cuando facturas, cobras, compras o pagas la nómina, ese documento genera su asiento contable solo, con las cuentas que configuraste en el mapeo. El asiento entra al Libro Mayor, y del Mayor salen los reportes. Por eso, abajo, la Situación financiera ya muestra los ingresos del mes, trescientos veinte mil; los gastos, ciento cuarenta y cinco mil; y la utilidad. El alquiler en borrador todavía no aparece: entrará cuando se contabilice. Tu trabajo como contador es revisar, completar lo que el sistema no puede saber, y cerrar los períodos.",
+   "acciones": [
+    {
+     "resaltar": "h6:has-text('Situación financiera')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "casi nada"
+    },
+    {
+     "resaltar": "app-financial-360 >> text=Ingresos >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "genera su asiento"
+    },
+    {
+     "resaltar": "app-financial-360 >> text=Ingresos >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "los ingresos del mes"
+    },
+    {
+     "resaltar": "app-financial-360 >> text=Gastos >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "los gastos"
+    },
+    {
+     "resaltar": "app-financial-360 >> text=Utilidad Neta >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "la utilidad"
+    },
+    {
+     "resaltar": "a.kpi-link:has-text('Asientos en borrador')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "todavía no aparece"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,151 @@
+1
+00:00:03,000 --> 00:00:07,740
+El Panel de Contabilidad es la primera pantalla del menú Contabilidad:
+
+2
+00:00:07,655 --> 00:00:09,829
+dice qué está pendiente hoy.
+
+3
+00:00:09,780 --> 00:00:12,185
+Recojo el menú para verlo completo.
+
+4
+00:00:12,102 --> 00:00:14,832
+Arriba están los accesos directos:
+
+5
+00:00:14,679 --> 00:00:18,443
+crear un asiento, las cuentas por cobrar y por pagar,
+
+6
+00:00:18,301 --> 00:00:21,288
+el Libro Mayor y los informes financieros.
+
+7
+00:00:21,146 --> 00:00:23,319
+Debajo, cuatro indicadores.
+
+8
+00:00:23,178 --> 00:00:28,439
+El primero es el período abierto, octubre, con los días que faltan para su cierre.
+
+9
+00:00:28,286 --> 00:00:31,075
+El segundo cuenta los asientos en borrador:
+
+10
+00:00:30,910 --> 00:00:36,033
+hay uno, y se marca en amarillo porque un borrador no cuenta en los reportes hasta
+
+11
+00:00:35,880 --> 00:00:37,216
+que se contabiliza.
+
+12
+00:00:37,098 --> 00:00:41,095
+El tercero son las cuentas por cobrar vencidas, en rojo:
+
+13
+00:00:40,965 --> 00:00:44,799
+una factura que pasó su fecha y nadie ha gestionado.
+
+14
+00:00:44,667 --> 00:00:48,712
+Y el cuarto, las conciliaciones bancarias que siguen abiertas.
+
+15
+00:00:48,545 --> 00:00:50,731
+Cada indicador es un enlace:
+
+16
+00:00:50,590 --> 00:00:53,634
+lleva directo a la pantalla donde se resuelve.
+
+17
+00:00:54,073 --> 00:00:57,801
+Debajo de los indicadores hay dos bandejas con el detalle.
+
+18
+00:00:57,649 --> 00:01:02,539
+Vencidas más atrasadas muestra las facturas que más tiempo llevan sin cobrarse:
+
+19
+00:01:02,454 --> 00:01:06,754
+esta es de la Ferretería del Este, con los días de atraso y el monto.
+
+20
+00:01:06,623 --> 00:01:11,884
+Borradores recientes muestra los últimos asientos que alguien dejó sin contabilizar:
+
+21
+00:01:11,766 --> 00:01:14,346
+aquí está el pago del alquiler de octubre.
+
+22
+00:01:14,180 --> 00:01:19,733
+Pulso sobre él y el sistema abre el asiento, para revisarlo y contabilizarlo.
+
+23
+00:01:19,555 --> 00:01:22,090
+Con eso el Panel queda al día.
+
+24
+00:01:22,525 --> 00:01:24,444
+Falta lo más importante.
+
+25
+00:01:24,313 --> 00:01:28,066
+Ahora vuelvo a la portada del Panel para ver cómo se llena.
+
+26
+00:01:27,912 --> 00:01:31,165
+En el sistema, casi nada se registra a mano.
+
+27
+00:01:31,058 --> 00:01:35,182
+Cuando facturas, cobras, compras o pagas la nómina,
+
+28
+00:01:35,052 --> 00:01:38,167
+ese documento genera su asiento contable solo,
+
+29
+00:01:38,001 --> 00:01:40,628
+con las cuentas que configuraste en el mapeo.
+
+30
+00:01:40,486 --> 00:01:44,831
+El asiento entra al Libro Mayor, y del Mayor salen los reportes.
+
+31
+00:01:44,700 --> 00:01:50,009
+Por eso, abajo, la Situación financiera ya muestra los ingresos del mes,
+
+32
+00:01:49,867 --> 00:01:51,530
+trescientos veinte mil;
+
+33
+00:01:51,447 --> 00:01:54,177
+los gastos, ciento cuarenta y cinco mil;
+
+34
+00:01:54,024 --> 00:01:55,164
+y la utilidad.
+
+35
+00:01:55,022 --> 00:01:58,009
+El alquiler en borrador todavía no aparece:
+
+36
+00:01:57,854 --> 00:01:59,901
+entrará cuando se contabilice.
+
+37
+00:01:59,735 --> 00:02:05,438
+Tu trabajo como contador es revisar, completar lo que el sistema no puede saber,
+
+38
+00:02:05,274 --> 00:02:07,075
+y cerrar los períodos.

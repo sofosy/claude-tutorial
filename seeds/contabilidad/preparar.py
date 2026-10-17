@@ -55,6 +55,12 @@ def periodo(nombre):
                    "AND deleted_at IS NULL LIMIT 1"))
 
 
+def cuenta(codigo):
+    """Id de una cuenta del catálogo base por su código."""
+    return int(sql(f"SELECT id FROM accounting_chart WHERE code='{codigo}' AND deleted_at IS NULL "
+                   "ORDER BY company_id IS NULL, id LIMIT 1"))
+
+
 def socio(nombre, rnc, tipo):
     cuerpo = {"name": nombre, "tin": rnc, "partnerType": [tipo], "partnerCategory": "BUSINESS"}
     if tipo == "CUSTOMER":
@@ -147,7 +153,30 @@ def revaluacion():
         "description": "Compra en dólares pendiente de pago"})
 
 
-ESTADOS = {"catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
+def panel():
+    # Un mes con movimiento: ventas y sueldos contabilizados, un alquiler en
+    # borrador y un cliente con su factura vencida, para que el panel y la
+    # Vista 360 tengan qué mostrar.
+    catalogo()
+    oct_ = periodo("Octubre 2026")
+    asiento_contabilizado("2026-10-05", oct_, "Ventas de contado de la primera quincena", [
+        {"accountId": CAJA, "description": "Cobros en efectivo", "debitAmount": 320000},
+        {"accountId": VENTAS, "description": "Ventas", "creditAmount": 320000}])
+    asiento_contabilizado("2026-10-10", oct_, "Sueldos de la primera quincena", [
+        {"accountId": SUELDOS, "description": "Sueldos", "debitAmount": 145000},
+        {"accountId": CAJA, "description": "Pago de nómina", "creditAmount": 145000}])
+    llamar("POST", "/v1/journal-entry", {
+        "date": "2026-10-15", "accountingPeriodId": oct_, "description": "Pago de alquiler de octubre",
+        "type": "manual", "details": [
+            {"accountId": cuenta("6.03.02"), "description": "Alquiler del local", "debitAmount": 25000},
+            {"accountId": CAJA, "description": "Pago en efectivo", "creditAmount": 25000}]})
+    cliente = int(sql("SELECT id FROM partners WHERE company_id=1 AND tin='130555011'"))
+    llamar("POST", "/v1/accounts-receivable/opening-balance", {
+        "partner": cliente, "amount": 38500, "issueDate": "2026-09-01", "dueDate": "2026-09-30",
+        "documentNumber": "FAC-2026-0142", "description": "Factura de agosto pendiente"})
+
+
+ESTADOS = {"panel": panel, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
            "cierre-mensual": cierre_mensual, "cierre-anual": cierre_anual,
            "revaluacion": revaluacion}
 
