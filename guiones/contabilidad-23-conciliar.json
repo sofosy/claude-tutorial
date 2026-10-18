@@ -248,10 +248,10 @@
     {
       "id": "03-conciliar",
       "capitulo": "Conciliar partidas",
-      "rotulo": "Marcar conciliada",
+      "rotulo": "Conciliar con sugerencias",
       "ruta": "Contabilidad › Banca › Conciliación",
-      "texto_pantalla": "Banco = libros → conciliada",
-      "narracion": "Las cinco partidas llegan como pendientes, y la diferencia es de diecisiete mil. El depósito y el pago del alquiler ya están en libros con el mismo monto: los concilio. Marco el depósito con el visto. Ahora el pago del alquiler. La diferencia queda en cero. Las comisiones y los intereses solo están en el banco: no se marcan, porque se registran al completar.",
+      "texto_pantalla": "Sugerencias → el asiento del banco → Usar",
+      "narracion": "Las cinco partidas llegan como Falta en libros, y la diferencia es de diecisiete mil. El depósito y el pago del alquiler ya están registrados en libros, cada uno con un asiento. En el depósito pulso la bombilla de sugerencias. El sistema encontró el asiento del depósito, con el mismo monto y la misma fecha. Pulso Usar, y la partida queda Conciliada. Con el pago del alquiler hago lo mismo: abro sus sugerencias, aparece el asiento del alquiler con su monto, y lo uso. La diferencia queda en cero. Las comisiones y los intereses solo están en el banco: no se concilian, porque se registran al completar.",
       "acciones": [
         {
           "resaltar": ".total-item:has-text('Diferencia')",
@@ -260,12 +260,44 @@
           "al_decir": "la diferencia es de diecisiete mil"
         },
         {
-          "click": "tr:has-text('DEPOSITO') button:has(mat-icon:text-is('done'))",
-          "al_decir": "Marco el depósito"
+          "resaltar": "tr:has-text('DEPOSITO') td >> nth=1",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "ya están registrados en libros"
         },
         {
-          "click": "tr:has-text('PAGO ALQUILER') button:has(mat-icon:text-is('done'))",
-          "al_decir": "Ahora el pago del alquiler"
+          "click": "tr:has-text('DEPOSITO') button:has(mat-icon:text-is('lightbulb'))",
+          "al_decir": "pulso la bombilla"
+        },
+        {
+          "resaltar": "mat-dialog-container .candidate >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "encontró el asiento del depósito"
+        },
+        {
+          "click": "mat-dialog-container .candidate >> nth=0 >> button:has-text('Usar')",
+          "al_decir": "Pulso Usar"
+        },
+        {
+          "resaltar": "tr:has-text('DEPOSITO') mat-chip",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "queda Conciliada"
+        },
+        {
+          "click": "tr:has-text('PAGO ALQUILER') button:has(mat-icon:text-is('lightbulb'))",
+          "al_decir": "abro sus sugerencias"
+        },
+        {
+          "resaltar": "mat-dialog-container .candidate >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "aparece el asiento del alquiler"
+        },
+        {
+          "click": "mat-dialog-container .candidate >> nth=0 >> button:has-text('Usar')",
+          "al_decir": "y lo uso"
         },
         {
           "resaltar": ".total-item:has-text('Diferencia')",
@@ -274,7 +306,7 @@
           "al_decir": "La diferencia queda en cero"
         },
         {
-          "resaltar": "tr:has-text('COMISION MANEJO')",
+          "resaltar": "tr:has-text('COMISION MANEJO') td >> nth=1",
           "durante_ms": 4000,
           "cursor": false,
           "al_decir": "Las comisiones y los intereses"
@@ -289,6 +321,12 @@
       "texto_pantalla": "Tipo: comisión, interés, depósito, retiro",
       "narracion": "El sistema clasifica cada partida por su descripción. El servicio de banca en línea quedó como retiro, pero es una comisión del banco. Pulso su tipo y elijo Comisión bancaria. Así se contabilizará con las demás comisiones.",
       "acciones": [
+        {
+          "resaltar": "tr:has-text('COMISION MANEJO') button.type-chip",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El sistema clasifica cada partida"
+        },
         {
           "resaltar": "tr:has-text('SERVICIO BANCA') button.type-chip",
           "durante_ms": 3000,
@@ -338,6 +376,18 @@
           "durante_ms": 3500,
           "cursor": false,
           "al_decir": "El aviso confirma"
+        },
+        {
+          "resaltar": "tr:has-text('COMISION MANEJO')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "un asiento de comisiones"
+        },
+        {
+          "resaltar": "tr:has-text('INTERESES GANADOS')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "uno de intereses"
         },
         {
           "resaltar": ".total-item:has-text('Balance Conciliado')",

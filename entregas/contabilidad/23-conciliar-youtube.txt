@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Contabilidad · Conciliación bancaria: importar el estado de cuenta y conciliar
+
+DESCRIPCIÓN
+============================================================
+Cómo conciliar en Germiva una cuenta bancaria: crear la conciliación, importar el estado de cuenta en CSV con su mapeo de columnas, marcar las partidas que ya están en libros, reclasificar una comisión y completar para que comisiones e intereses se contabilicen solos.
+
+⏱️ CAPÍTULOS
+00:00  Nueva conciliación
+00:52  Importar el estado de cuenta
+01:38  Conciliar partidas
+02:35  Completar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear la conciliación con los saldos del extracto
+• Importar el estado de cuenta y mapear sus columnas
+• Conciliar partidas y reclasificar una comisión
+• Completar para contabilizar comisiones e intereses
+
+⚠️ ERRORES COMUNES
+• Marcar conciliada una comisión que solo está en el banco: se registra al completar
+• Mapear mal la columna del monto o el formato de fecha
+• Completar con diferencia: el sistema exige que sea cero
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:05
+
+TRANSCRIPCIÓN
+============================================================
+Conciliar es comparar el estado de cuenta del banco con lo registrado en libros. Recojo el menú y pulso Nueva Conciliación. Le pongo una referencia para encontrarla después: CONC-BHD-SEP. Luego, en Cuenta Bancaria, escribo BHD para buscarla. Aparece la cuenta del BHD, y la elijo. El período contable ya viene con el actual. Las fechas del extracto: del primero de septiembre de dos mil veintiséis. Hasta el treinta de septiembre del mismo año. Copio los saldos del extracto: el inicial, cien mil pesos, que debe coincidir con el cierre del mes anterior. Y el saldo final del extracto, ciento dieciséis mil setecientos veinte. El saldo en libros lo calcula el sistema desde el Mayor. Guardo.
+Con la conciliación creada, pulso Importar estado de cuenta. El asistente tiene tres pasos: archivo, columnas y revisión. Subo el archivo que exporté del banco, en CSV. El sistema detectó sus columnas, así que paso al siguiente paso. Ahora le digo qué trae cada columna. La fecha está en la primera columna del archivo. La descripción del movimiento está en la segunda columna. La referencia del banco viene en la tercera. Y el monto, que viene con signo, está en la cuarta. Con eso, pulso Previsualizar y reviso las líneas antes de importarlas. Si le pongo nombre, el mapeo se guarda como plantilla para el próximo mes. Importo: el asistente confirma las cinco líneas importadas, y pulso Listo.
+Las cinco partidas llegan como Falta en libros, y la diferencia es de diecisiete mil. El depósito y el pago del alquiler ya están registrados en libros, cada uno con un asiento. En el depósito pulso la bombilla de sugerencias. El sistema encontró el asiento del depósito, con el mismo monto y la misma fecha. Pulso Usar, y la partida queda Conciliada. Con el pago del alquiler hago lo mismo: abro sus sugerencias, aparece el asiento del alquiler con su monto, y lo uso. La diferencia queda en cero. Las comisiones y los intereses solo están en el banco: no se concilian, porque se registran al completar.
+El sistema clasifica cada partida por su descripción. El servicio de banca en línea quedó como retiro, pero es una comisión del banco. Pulso su tipo y elijo Comisión bancaria. Así se contabilizará con las demás comisiones.
+Con la diferencia en cero, pulso Completar. La confirmación explica que se contabilizan las comisiones e intereses y la conciliación queda cerrada. Confirmo. El aviso confirma que los ajustes quedaron contabilizados: un asiento de comisiones por cuatrocientos pesos y uno de intereses por ciento veinte, con fecha del corte. La conciliación queda Completada, y el saldo del banco en libros es igual al del extracto.
