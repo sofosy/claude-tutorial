@@ -201,7 +201,8 @@
         {
           "resaltar": "mat-dialog-container >> nth=0",
           "durante_ms": 1500,
-          "cursor": false
+          "cursor": false,
+          "al_decir": "pregunta"
         },
         {
           "click": "mat-dialog-container button.confirm-button",

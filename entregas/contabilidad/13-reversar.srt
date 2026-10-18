@@ -1,0 +1,135 @@
+1
+00:00:03,000 --> 00:00:06,091
+Un asiento contabilizado ya no se edita:
+
+2
+00:00:05,984 --> 00:00:07,820
+se corrige con un reverso.
+
+3
+00:00:07,655 --> 00:00:13,102
+El alquiler de octubre se registró por cincuenta y dos mil, y eran veinticinco mil.
+
+4
+00:00:12,973 --> 00:00:16,574
+Recojo el menú y abro el asiento con Ver Detalles.
+
+5
+00:00:16,432 --> 00:00:17,771
+Pulso Reversar.
+
+6
+00:00:17,744 --> 00:00:22,007
+La fecha del reverso se propone igual a la del asiento original,
+
+7
+00:00:21,843 --> 00:00:23,993
+para no tocar el mes corriente.
+
+8
+00:00:23,817 --> 00:00:25,223
+Escribo el motivo:
+
+9
+00:00:25,106 --> 00:00:28,114
+el monto correcto era veinticinco mil.
+
+10
+00:00:27,972 --> 00:00:30,355
+Queda guardado en el asiento de reverso.
+
+11
+00:00:30,178 --> 00:00:32,247
+Confirmo con Reversar Asiento.
+
+12
+00:00:32,117 --> 00:00:36,103
+El aviso da el número del reverso, que empieza por REV,
+
+13
+00:00:35,984 --> 00:00:39,237
+y el original queda marcado como reversado.
+
+14
+00:00:39,679 --> 00:00:41,609
+En la lista quedan los dos.
+
+15
+00:00:41,467 --> 00:00:45,789
+El original sigue contabilizado, con la insignia Reversado.
+
+16
+00:00:45,647 --> 00:00:49,411
+Y el reverso, de tipo Reversión, invierte cada línea,
+
+17
+00:00:49,269 --> 00:00:51,802
+así que el efecto neto es cero.
+
+18
+00:00:51,753 --> 00:00:55,482
+Ahora se registra el asiento correcto, por veinticinco mil,
+
+19
+00:00:55,329 --> 00:00:57,515
+como vimos en el video anterior.
+
+20
+00:00:57,373 --> 00:00:59,280
+Ninguno de los dos se borra:
+
+21
+00:00:59,149 --> 00:01:01,473
+el historial queda completo.
+
+22
+00:01:01,914 --> 00:01:03,403
+Dos cuidados más.
+
+23
+00:01:03,284 --> 00:01:08,257
+Abro el asiento automático del internet, que generó una plantilla recurrente.
+
+24
+00:01:08,173 --> 00:01:13,805
+Al pulsar Reversar, el sistema avisa que este asiento salió de un documento:
+
+25
+00:01:13,757 --> 00:01:19,263
+reversarlo aquí no anula el documento ni su cuenta por cobrar o por pagar,
+
+26
+00:01:19,109 --> 00:01:21,967
+y lo correcto es corregirlo en su origen.
+
+27
+00:01:21,790 --> 00:01:22,816
+Y la fecha:
+
+28
+00:01:22,697 --> 00:01:26,658
+si pongo una de septiembre, fuera del período del original,
+
+29
+00:01:26,539 --> 00:01:29,816
+el sistema no lo reversa y explica por qué.
+
+30
+00:01:29,709 --> 00:01:30,593
+Lo pruebo.
+
+31
+00:01:30,441 --> 00:01:35,308
+Escribo un motivo cualquiera, porque es obligatorio, y luego confirmo.
+
+32
+00:01:35,177 --> 00:01:36,969
+Ahí está la explicación:
+
+33
+00:01:36,861 --> 00:01:40,451
+el reverso hereda el período del asiento original,
+
+34
+00:01:40,298 --> 00:01:43,028
+así que su fecha tiene que caer en él.

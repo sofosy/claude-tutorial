@@ -1,0 +1,247 @@
+{
+  "titulo": "Contabilidad · Activos fijos: alta y depreciación",
+  "descripcion": "Cómo registrar en Germiva un activo fijo con su categoría, qué asiento genera el alta y cómo se contabiliza la depreciación mensual hasta la fecha.",
+  "_comentario": "Video 24 de la serie Contabilidad. setup: preparar.sh activos (la empresa no tiene activos propios; el video crea ACT-OF-001).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/fixed-assets/list",
+    "esperar": "button:has-text('Crear Activo')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh activos"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Registrar un activo fijo con su categoría",
+    "Qué asiento genera el alta",
+    "Contabilizar la depreciación pendiente",
+    "Qué pasa con la cuota del mes en curso"
+  ],
+  "errores_comunes": [
+    "Elegir una categoría con cuentas que no existen en tu catálogo",
+    "Fechar la adquisición en un período cerrado",
+    "Esperar la cuota del mes en curso antes de su último día"
+  ],
+  "pasos": [
+    {
+      "id": "01-crear",
+      "capitulo": "Alta del activo",
+      "rotulo": "Nuevo Activo Fijo",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "Categoría: vida útil, método y cuentas",
+      "narracion": "En Activos Fijos se registran los bienes de la empresa que se deprecian. Recojo el menú y pulso Crear Activo. Le pongo un código, ACT-OF-001, que el sistema guarda en mayúsculas. Después escribo el nombre: escritorio ejecutivo. La categoría es lo más importante: define la vida útil, el método y las cuentas de la depreciación. Abro la lista y elijo Equipos de Oficina, a cinco años. El costo de adquisición: sesenta mil pesos, sin el ITBIS. La fecha de adquisición, primero de abril de dos mil veintiséis. Y la misma fecha para la puesta en servicio. Guardo.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button:has-text('Crear Activo')",
+          "al_decir": "pulso Crear Activo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='code']",
+            "texto": "ACT-OF-001"
+          },
+          "al_decir": "Le pongo un código"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Escritorio ejecutivo"
+          },
+          "al_decir": "Después escribo el nombre"
+        },
+        {
+          "click": "mat-select[formcontrolname='categoryId']",
+          "al_decir": "Abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Equipos de Oficina')",
+          "al_decir": "y elijo Equipos de Oficina"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='acquisitionCost']",
+            "texto": "60000"
+          },
+          "al_decir": "El costo de adquisición"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='acquisitionDate']",
+            "texto": "01/04/2026"
+          },
+          "al_decir": "La fecha de adquisición"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='inServiceDate']",
+            "texto": "01/04/2026"
+          },
+          "al_decir": "Y la misma fecha"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        }
+      ]
+    },
+    {
+      "id": "02-alta",
+      "capitulo": "Alta del activo",
+      "rotulo": "Asiento de alta",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "Débito al activo · crédito a cuentas por pagar",
+      "narracion": "El aviso confirma el alta, y el activo aparece en la lista con su costo y su valor en libros. Al guardarlo, el sistema registró el asiento de alta: débito a la cuenta del activo y crédito a cuentas por pagar por compra de activos. Si el escritorio vino en una factura de compra ya registrada, se indica su número y el sistema reclasifica ese gasto en vez de duplicarlo.",
+      "acciones": [
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El aviso confirma el alta"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "el activo aparece en la lista"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001') td >> nth=4",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el sistema registró el asiento"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001') td >> nth=1",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Si el escritorio vino en una factura"
+        }
+      ]
+    },
+    {
+      "id": "03-depreciar",
+      "capitulo": "Depreciación",
+      "rotulo": "Depreciar",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "Una cuota por mes cumplido",
+      "narracion": "La depreciación se contabiliza cada mes. Para ponerla al día, en Más acciones elijo Depreciar. Se pide confirmación, y confirmo con Sí, Depreciar. El sistema registra una cuota por cada mes cumplido desde la puesta en servicio, de abril a septiembre: seis cuotas de mil pesos, cada una fechada el último día de su mes. El valor en libros baja a cincuenta y cuatro mil.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('ACT-OF-001') button[aria-label='Más acciones']",
+          "al_decir": "en Más acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Depreciar')",
+          "al_decir": "elijo Depreciar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, Depreciar')",
+          "al_decir": "y confirmo con Sí"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El sistema registra una cuota"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001') td >> nth=5",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El valor en libros baja"
+        }
+      ]
+    },
+    {
+      "id": "04-al-dia",
+      "capitulo": "Depreciación",
+      "rotulo": "Ya está al día",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "La cuota del mes en curso, el último día",
+      "narracion": "Una cosa más sobre la cuota del mes en curso. Si vuelvo a abrir Más acciones y elijo Depreciar, y confirmo otra vez, el sistema avisa que el activo ya está al día: la cuota de octubre se registra a partir del treinta y uno. Además, la depreciación corre sola el primer día de cada mes, así que normalmente no hace falta pulsar nada.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('ACT-OF-001') button[aria-label='Más acciones']",
+          "al_decir": "Si vuelvo a abrir Más acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Depreciar')",
+          "al_decir": "y elijo Depreciar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, Depreciar')",
+          "al_decir": "y confirmo otra vez"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el sistema avisa"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "titulo": "Contabilidad · Centros de costo: crear, jerarquía y centro predeterminado",
+  "descripcion": "Cómo crear en Germiva centros de costo con su presupuesto, ver su jerarquía, elegir el centro predeterminado de la empresa y dónde se usan: asientos, presupuestos e informes.",
+  "_comentario": "Video 26 de la serie Contabilidad. setup: preparar.sh centros-costo (CC-ADM Administración de la instantánea, CC-VEN Ventas y CC-OPS Operaciones bajo Administración).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/configuracion/centros-costo",
+    "esperar": "button:has-text('Crear Centro de Costo')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh centros-costo"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Crear un centro de costo con su presupuesto",
+    "Ver la jerarquía de centros",
+    "Elegir el centro predeterminado",
+    "Dónde se usan los centros de costo"
+  ],
+  "errores_comunes": [
+    "Repetir un código: cada centro tiene el suyo",
+    "Eliminar un centro con subcentros",
+    "Olvidar el centro predeterminado: las líneas sin centro quedan sin imputar"
+  ],
+  "pasos": [
+    {
+      "id": "01-lista",
+      "capitulo": "Los centros de costo",
+      "rotulo": "Centros de Costo",
+      "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
+      "texto_pantalla": "Unidades a las que se imputa el gasto",
+      "narracion": "Los centros de costo son las áreas de la empresa a las que se imputan ingresos y gastos, como administración o ventas. Recojo el menú. Cada uno trae su código, su nombre, el tipo, el nivel en la jerarquía, el presupuesto y el estado.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Cada uno trae su código"
+        }
+      ]
+    },
+    {
+      "id": "02-crear",
+      "capitulo": "Crear",
+      "rotulo": "Nuevo Centro de Costo",
+      "ruta": "Contabilidad › Centros de Costo › Nuevo",
+      "texto_pantalla": "Código · nombre · tipo · presupuesto",
+      "narracion": "Para agregar el área de logística, pulso Crear Centro de Costo. Escribo el código, CC-LOG, que identifica al centro y no se repite. Luego escribo el nombre: Logística. Con el código y el nombre listos, paso al tipo: dice si es un centro de costo, de ingresos, de utilidad o de inversión; lo dejo en Costo. El presupuesto es el monto asignado al área: ciento veinte mil pesos. La casilla de abajo lo crea activo. Guardo, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button:has-text('Crear Centro de Costo')",
+          "al_decir": "pulso Crear Centro de Costo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='code']",
+            "texto": "CC-LOG"
+          },
+          "al_decir": "Escribo el código"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Logística"
+          },
+          "al_decir": "Luego escribo el nombre"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='type'])",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "paso al tipo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='budgetAmount']",
+            "texto": "120000"
+          },
+          "al_decir": "El presupuesto es"
+        },
+        {
+          "resaltar": "mat-checkbox[formcontrolname='active']",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "La casilla de abajo"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "03-jerarquia",
+      "capitulo": "Jerarquía",
+      "rotulo": "Ver Jerarquía",
+      "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
+      "texto_pantalla": "Centros y subcentros",
+      "narracion": "Un centro puede tener subcentros, como Operaciones dentro de Administración. Ver Jerarquía muestra el árbol completo, con cada centro bajo su padre. Lo cierro.",
+      "acciones": [
+        {
+          "click": "button:has-text('Ver Jerarquía')",
+          "al_decir": "Ver Jerarquía muestra"
+        },
+        {
+          "resaltar": "mat-dialog-container .cc-tree",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "con cada centro bajo su padre"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "Lo cierro"
+        }
+      ]
+    },
+    {
+      "id": "04-predeterminado",
+      "capitulo": "Centro predeterminado",
+      "rotulo": "Marcar como predeterminado",
+      "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
+      "texto_pantalla": "Las líneas sin centro heredan el predeterminado",
+      "narracion": "El centro predeterminado es el que reciben las líneas que se registran sin centro. En la fila de Administración pulso Marcar como predeterminado. El aviso lo confirma. Desde ahí, los centros aparecen en cada línea de los asientos, en las líneas de los presupuestos y como filtro del Estado de Resultados y las Razones Financieras.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('CC-ADM') button[aria-label='Marcar como predeterminado']",
+          "al_decir": "pulso Marcar como predeterminado"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CC-ADM')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "los centros aparecen en cada línea"
+        }
+      ]
+    }
+  ]
+}

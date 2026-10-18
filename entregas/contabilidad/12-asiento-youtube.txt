@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Asiento manual: registrar, contabilizar y aprobar
+
+DESCRIPCIÓN
+============================================================
+Cómo registrar un asiento contable manual en Germiva: la lista de asientos y sus estados, crear un asiento con sus líneas, contabilizarlo para que afecte los saldos, aprobarlo y qué hacer con un borrador.
+
+⏱️ CAPÍTULOS
+00:00  La lista de asientos
+00:31  Registrar un asiento
+01:30  Contabilizar y aprobar
+02:03  Qué hacer con un borrador
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer la lista de asientos y lo que permite cada estado
+• Registrar un asiento con sus líneas
+• Contabilizarlo y aprobarlo
+• Qué hacer con un borrador
+
+⚠️ ERRORES COMUNES
+• Esperar que un borrador afecte los saldos: solo cuenta cuando se contabiliza
+• Elegir un período cerrado: el asiento no se guarda
+• Editar un asiento contabilizado: se corrige con un reverso
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:26
+
+TRANSCRIPCIÓN
+============================================================
+Diario y Mayor reúne los asientos contables de la empresa. Recojo el menú. Cada fila es un asiento, con su número, fecha, tipo, totales y estado. Las acciones dependen del estado: un borrador se edita, se elimina o se contabiliza; uno contabilizado se puede aprobar; y uno aprobado solo se consulta. Arriba se busca por número o descripción, y se filtra por tipo y estado.
+Registro el pago del alquiler de octubre. Pulso Crear Asiento. La fecha es hoy, y el período se propone solo según la fecha: octubre; si cambias la fecha, cambia con ella. El tipo es Manual, el que se usa para lo que registras a mano. Escribo la descripción del asiento: pago de alquiler de octubre. Es el concepto que se verá en los libros. Ahora las líneas. Agrego la primera, y en la cuenta busco arrendamientos; la lista solo ofrece cuentas que aceptan movimiento. La elijo, y en el débito anoto veinticinco mil pesos, el gasto del mes. Agrego la segunda línea, y busco la caja general, de donde salió el dinero. La elijo, y en el crédito anoto los mismos veinticinco mil. Las líneas que no tienen descripción propia usan la del asiento. Abajo, el total dice Balanceado: débitos y créditos son iguales. Guardo, y el aviso lo confirma. El asiento queda en borrador, todavía sin efecto en los saldos.
+Para que afecte los saldos, lo contabilizo. Contabilizar, en la cabecera, pide confirmación: Sí, Contabilizar. Un aviso lo confirma: el estado dice Contabilizado, el formulario queda en solo lectura, y aparecen Aprobar y Reversar. Aprobar deja constancia de que alguien lo revisó: no cambia importes ni el Mayor. Pulso Aprobar. Se abre una ventana para confirmarlo, y elijo Sí, Aprobar. El aviso lo confirma, y el asiento queda aprobado.
+De vuelta en la lista, el borrador de la luz todavía se puede corregir antes de contabilizarlo. Si sobra, Eliminar lo descarta, después de confirmarlo; su número no se vuelve a usar. Un asiento contabilizado, en cambio, ya no se edita ni se elimina: se corrige con un reverso, que vemos en el siguiente video.

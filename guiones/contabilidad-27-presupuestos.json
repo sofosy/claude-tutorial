@@ -1,0 +1,293 @@
+{
+  "titulo": "Contabilidad · Presupuestos: crear, aprobar y comparar contra lo real",
+  "descripcion": "Cómo crear en Germiva un presupuesto por cuenta y mes, aprobarlo, y ver sus variaciones contra lo contabilizado: qué se pasó, qué quedó por debajo y por cuánto.",
+  "_comentario": "Video 27 de la serie Contabilidad. setup: preparar.sh presupuestos (septiembre 2026: otros ingresos 25,000, alquiler 8,000 y comisiones bancarias 400 contabilizados).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/budgets/list",
+    "esperar": "button:has-text('Nuevo Presupuesto')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh presupuestos"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Crear un presupuesto por cuenta y período",
+    "Aprobarlo",
+    "Recalcular lo ejecutado",
+    "Leer las variaciones por cuenta"
+  ],
+  "errores_comunes": [
+    "Presupuestar una cuenta de grupo: solo se presupuestan cuentas de movimiento",
+    "Repetir la misma cuenta y período en dos líneas",
+    "Esperar lo ejecutado sin recalcular: el resumen no recalcula solo"
+  ],
+  "pasos": [
+    {
+      "id": "01-crear",
+      "capitulo": "Crear el presupuesto",
+      "rotulo": "Nuevo Presupuesto",
+      "ruta": "Contabilidad › Presupuestos › Presupuestos",
+      "texto_pantalla": "Código · tipo · fechas · período",
+      "narracion": "Un presupuesto fija cuánto se espera ganar y gastar en cada cuenta, para compararlo después con lo real. Recojo el menú y pulso Nuevo Presupuesto. El código lo identifica: PRES-2026-09, que no se puede repetir. Luego el nombre, para reconocerlo en la lista: operativo de septiembre. Con eso escrito, en Tipo de Presupuesto abro la lista, y de las opciones elijo Mensual. Las fechas del presupuesto: desde el primero de septiembre de dos mil veintiséis. Hasta el treinta de septiembre del mismo año, un solo mes. Y el período contable al que pertenece: escribo sept en el buscador. Aparece en la lista, y elijo septiembre.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button:has-text('Nuevo Presupuesto')",
+          "al_decir": "pulso Nuevo Presupuesto"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='code']",
+            "texto": "PRES-2026-09"
+          },
+          "al_decir": "El código lo identifica"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Operativo de septiembre"
+          },
+          "al_decir": "Luego el nombre"
+        },
+        {
+          "click": "mat-select[formcontrolname='type']",
+          "al_decir": "abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Mensual')",
+          "al_decir": "de las opciones elijo Mensual"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='startDate']",
+            "texto": "01/09/2026"
+          },
+          "al_decir": "Las fechas del presupuesto"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='endDate']",
+            "texto": "30/09/2026"
+          },
+          "al_decir": "Hasta el treinta"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:text-is('Período Contable')) input",
+            "texto": "Sept"
+          },
+          "al_decir": "escribo sept"
+        },
+        {
+          "click": "mat-option:has-text('Septiembre 2026')",
+          "al_decir": "y elijo septiembre"
+        }
+      ]
+    },
+    {
+      "id": "02-lineas",
+      "capitulo": "Crear el presupuesto",
+      "rotulo": "Líneas del presupuesto",
+      "ruta": "Contabilidad › Presupuestos › Nuevo",
+      "texto_pantalla": "Cuenta · período · monto",
+      "narracion": "Ahora las líneas, una por cuenta y período. Pulso Agregar Línea. En la cuenta escribo diversos para buscarla. Aparece en la lista, y elijo Otros ingresos diversos. En el período abro la lista, y elijo el mes de septiembre. En el monto escribo veinte mil pesos, lo que se espera cobrar. Agrego otra línea, para el alquiler. En su cuenta escribo arrend para buscarla. Aparece en la lista, y elijo Arrendamientos. Ahora abro su período, y elijo también septiembre. Y el monto del alquiler: diez mil pesos. Abajo se ven los totales: ingresos y gastos presupuestados, y el resultado neto esperado. Guardo, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button:has-text('Agregar Línea')",
+          "al_decir": "Pulso Agregar Línea"
+        },
+        {
+          "escribir": {
+            "sel": "input[placeholder='Buscar cuenta...'] >> nth=0",
+            "texto": "diversos"
+          },
+          "al_decir": "En la cuenta escribo diversos"
+        },
+        {
+          "click": "mat-option:has-text('4.02.01.02.01')",
+          "al_decir": "y elijo Otros ingresos"
+        },
+        {
+          "click": "mat-select[formcontrolname='period'] >> nth=0",
+          "al_decir": "En el período abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Septiembre')",
+          "al_decir": "y elijo el mes de septiembre"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='budgetAmount'] >> nth=0",
+            "texto": "20000"
+          },
+          "al_decir": "En el monto escribo"
+        },
+        {
+          "click": "button:has-text('Agregar Línea')",
+          "al_decir": "Agrego otra línea"
+        },
+        {
+          "escribir": {
+            "sel": "input[placeholder='Buscar cuenta...'] >> nth=1",
+            "texto": "Arrend"
+          },
+          "al_decir": "En su cuenta escribo arrend"
+        },
+        {
+          "click": "mat-option:has-text('6.03.02')",
+          "al_decir": "y elijo Arrendamientos"
+        },
+        {
+          "click": "mat-select[formcontrolname='period'] >> nth=1",
+          "al_decir": "Ahora abro su período"
+        },
+        {
+          "click": "mat-option:has-text('Septiembre')",
+          "al_decir": "y elijo también septiembre"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='budgetAmount'] >> nth=1",
+            "texto": "10000"
+          },
+          "al_decir": "Y el monto del alquiler"
+        },
+        {
+          "resaltar": ".budget-totals, .totals-section",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Abajo se ven los totales"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "03-aprobar",
+      "capitulo": "Aprobar",
+      "rotulo": "Aprobar",
+      "ruta": "Contabilidad › Presupuestos › Presupuesto",
+      "texto_pantalla": "Aprobado: las líneas quedan fijas",
+      "narracion": "El presupuesto queda en borrador hasta que se aprueba. Pulso Aprobar, en la cabecera, y confirmo con Sí, Aprobar. El aviso lo confirma, y las líneas quedan en solo lectura. Para cambiarlas habría que reabrirlo y aprobarlo de nuevo.",
+      "acciones": [
+        {
+          "click": "button:has-text('Aprobar')",
+          "al_decir": "Pulso Aprobar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, Aprobar')",
+          "al_decir": "y confirmo con Sí"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "04-variaciones",
+      "capitulo": "Variaciones",
+      "rotulo": "Variaciones Presupuestarias",
+      "ruta": "Contabilidad › Presupuestos › Variaciones",
+      "texto_pantalla": "Ejecutado contra presupuestado",
+      "navegar": "/accounting/budget-variance/resumen",
+      "al_decir_navegar": "En Variaciones",
+      "narracion": "Para comparar con lo real voy a Variaciones. En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo ejecutado de cada línea. Lo pulso, y espero a que termine. Luego abro el análisis del presupuesto de septiembre. Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto; el alquiler, ocho mil, dos mil por debajo. Cada variación trae su porcentaje y su categoría.",
+      "acciones": [
+        {
+          "click": "button:has-text('Recalcular')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "click": "button[mattooltip='Ver Análisis'] >> nth=0",
+          "al_decir": "Luego abro el análisis"
+        },
+        {
+          "resaltar": "tr:has-text('4.02.01.02.01')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Los otros ingresos se ejecutaron"
+        },
+        {
+          "resaltar": "tr:has-text('6.03.02')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el alquiler, ocho mil"
+        }
+      ]
+    }
+  ]
+}

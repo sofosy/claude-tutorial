@@ -1,0 +1,275 @@
+{
+  "titulo": "Contabilidad · Activos fijos: dar de baja, vender y deshacer",
+  "descripcion": "Cómo dar de baja en Germiva un activo fijo con su pérdida, deshacer una baja, y vender un activo con su factura y la ganancia o pérdida de la venta.",
+  "_comentario": "Video 25 de la serie Contabilidad. setup: preparar.sh activos-baja (ACT-OF-002 y ACT-OF-003, 60,000 cada uno desde el 1/4/2026, Equipos de Oficina).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/fixed-assets/list",
+    "esperar": "tr.mat-mdc-row:has-text('ACT-OF-002')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh activos-baja"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Dar de baja un activo con su pérdida",
+    "Deshacer una baja",
+    "Vender un activo con factura",
+    "Por qué una venta no se deshace sin anular la factura"
+  ],
+  "errores_comunes": [
+    "Eliminar un activo en uso pensando que se borra: se registra su baja",
+    "Deshacer una venta sin anular antes la factura",
+    "Vender con fecha anterior a la última depreciación"
+  ],
+  "pasos": [
+    {
+      "id": "01-baja",
+      "capitulo": "Dar de baja",
+      "rotulo": "Dar de baja",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "Depreciación al día + pérdida por el valor en libros",
+      "narracion": "Cuando un activo se daña o se retira sin venderse, se da de baja. Recojo el menú. En el escritorio de recepción abro Más acciones y elijo Dar de baja. El aviso explica el orden: primero se contabiliza la depreciación pendiente hasta este mes, y luego la pérdida por el valor en libros que queda. Escribo el motivo: se dañó en la mudanza. El motivo queda guardado en las notas del activo. Con el motivo escrito, confirmo. El asiento de baja queda registrado; acepto.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('ACT-OF-002') button[aria-label='Más acciones']",
+          "al_decir": "abro Más acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Dar de baja')",
+          "al_decir": "y elijo Dar de baja"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "El aviso explica el orden"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "Se dañó en la mudanza"
+          },
+          "al_decir": "Escribo el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Confirmar')",
+          "al_decir": "Con el motivo escrito, confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El asiento de baja queda registrado"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "acepto"
+        }
+      ]
+    },
+    {
+      "id": "02-deshacer",
+      "capitulo": "Deshacer la baja",
+      "rotulo": "Deshacer baja o venta",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "Revierte el asiento de la baja",
+      "narracion": "El estado ahora dice Dado de baja, y el valor en libros es cero. Si la baja fue un error, en Más acciones elijo Deshacer baja o venta. Escribo el motivo: se reparó. Ese motivo también queda registrado. Con el motivo escrito, confirmo. El sistema avisa que revirtió el asiento de la baja con su misma fecha, y acepto. El activo vuelve a estar activo con el valor en libros que tenía. Las cuotas de depreciación ya registradas se quedan.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-002') .gm-chip",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El estado ahora dice"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('ACT-OF-002') button[aria-label='Más acciones']",
+          "al_decir": "en Más acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Deshacer baja o venta')",
+          "al_decir": "elijo Deshacer"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "Se reparó"
+          },
+          "al_decir": "Escribo el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Confirmar')",
+          "al_decir": "Con el motivo escrito, confirmo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "y acepto"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-002') .gm-chip",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El activo vuelve a estar activo"
+        }
+      ]
+    },
+    {
+      "id": "03-vender",
+      "capitulo": "Vender",
+      "rotulo": "Vender",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "Factura de cliente + ganancia o pérdida",
+      "narracion": "Vender un activo es otra cosa: se emite una factura. En el archivo metálico, en Más acciones elijo Vender. Arriba se ve su valor en libros. En Cliente escribo las primeras letras del nombre. Aparece la lista de clientes, y en la lista elijo Consumidor Final. El tipo de comprobante y el impuesto vienen propuestos. Escribo el precio sin ITBIS: cincuenta mil pesos. Con los datos completos, pulso Vender. El sistema emitió la factura a crédito y registró la baja, con la diferencia entre el precio y el valor en libros como pérdida o ganancia. Acepto.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('ACT-OF-003') button[aria-label='Más acciones']",
+          "al_decir": "en Más acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Vender')",
+          "al_decir": "elijo Vender"
+        },
+        {
+          "resaltar": "mat-dialog-container p >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Arriba se ve su valor"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container mat-form-field:has(mat-label:text-is('Cliente')) input",
+            "texto": "Consu"
+          },
+          "al_decir": "En Cliente escribo"
+        },
+        {
+          "click": "mat-option:has-text('Consumidor Final')",
+          "al_decir": "en la lista elijo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='salePrice']",
+            "texto": "50000"
+          },
+          "al_decir": "Escribo el precio"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Vender')",
+          "al_decir": "pulso Vender"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El sistema emitió la factura"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Acepto"
+        }
+      ]
+    },
+    {
+      "id": "04-no-deshace",
+      "capitulo": "Vender",
+      "rotulo": "Una venta no se deshace sola",
+      "ruta": "Contabilidad › Activos Fijos",
+      "texto_pantalla": "Primero se anula la factura",
+      "narracion": "Una venta no se deshace igual que una baja. Si abro Más acciones y elijo Deshacer baja o venta, escribo un motivo, que el diálogo exige antes de continuar, y confirmo, entonces el sistema no lo permite mientras la factura siga viva: primero hay que anularla o emitir una nota de crédito desde Ventas, y después se deshace la venta. Así no queda una factura emitida por un activo que sigue en los libros.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('ACT-OF-003') button[aria-label='Más acciones']",
+          "al_decir": "Si abro Más acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Deshacer baja o venta')",
+          "al_decir": "y elijo Deshacer"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "Prueba"
+          },
+          "al_decir": "escribo un motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Confirmar')",
+          "al_decir": "y confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el sistema no lo permite"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Así no queda"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,195 @@
+1
+00:00:03,000 --> 00:00:08,541
+Plantillas de Catálogo muestra los catálogos de cuentas que tu empresa puede usar.
+
+2
+00:00:08,550 --> 00:00:09,818
+Recojo el menú.
+
+3
+00:00:09,711 --> 00:00:13,276
+La franja de arriba dice cómo usa hoy su catálogo:
+
+4
+00:00:13,194 --> 00:00:16,992
+compartido, con las cuentas de la plantilla tal como vienen.
+
+5
+00:00:16,944 --> 00:00:19,105
+Cada tarjeta es una plantilla:
+
+6
+00:00:19,056 --> 00:00:22,158
+la que está en uso, las que vienen con el sistema,
+
+7
+00:00:21,993 --> 00:00:24,747
+y las que cree tu empresa o tu contador.
+
+8
+00:00:24,664 --> 00:00:29,135
+Muestra cuántas cuentas trae, su formato y los roles que declara.
+
+9
+00:00:29,006 --> 00:00:32,781
+Con Ver detalle abro el catálogo dominicano ampliado:
+
+10
+00:00:32,674 --> 00:00:36,972
+puedo buscar una cuenta, o descargarlo en Excel o en PDF.
+
+11
+00:00:36,923 --> 00:00:37,983
+Lo cierro.
+
+12
+00:00:38,432 --> 00:00:44,100
+Mientras el catálogo no tenga asientos contabilizados, se puede cambiar libremente.
+
+13
+00:00:43,923 --> 00:00:47,874
+En la tarjeta del ampliado pulso Usar este catálogo.
+
+14
+00:00:47,707 --> 00:00:49,778
+El aviso explica lo que pasa:
+
+15
+00:00:49,647 --> 00:00:51,960
+el catálogo actual se reemplaza,
+
+16
+00:00:51,817 --> 00:00:55,721
+la configuración contable se vuelve a sembrar contra el nuevo,
+
+17
+00:00:55,579 --> 00:00:57,475
+y no se puede deshacer.
+
+18
+00:00:57,332 --> 00:01:00,225
+Confirmo con Cambiar catálogo.
+
+19
+00:01:00,680 --> 00:01:01,542
+Listo:
+
+20
+00:01:01,458 --> 00:01:03,225
+el aviso lo confirma.
+
+21
+00:01:03,095 --> 00:01:08,635
+El sistema reemplazó el catálogo y volvió a sembrar la configuración contable,
+
+22
+00:01:08,459 --> 00:01:12,281
+y la insignia En uso pasa a esa plantilla.
+
+23
+00:01:12,197 --> 00:01:17,215
+Si tu empresa ya tiene asientos, el mismo botón abre un asistente:
+
+24
+00:01:17,108 --> 00:01:21,058
+dices a qué cuenta nueva va cada cuenta con movimiento,
+
+25
+00:01:20,929 --> 00:01:24,983
+y el sistema registra un asiento de reclasificación.
+
+26
+00:01:25,423 --> 00:01:28,653
+También puedes guardar tu catálogo como plantilla,
+
+27
+00:01:28,488 --> 00:01:31,138
+para usarlo de base en otra empresa.
+
+28
+00:01:31,054 --> 00:01:35,759
+Abro Crear plantilla desde mi catálogo, que explica qué se copia.
+
+29
+00:01:35,605 --> 00:01:41,006
+Escribo el código, propio dos mil veintiséis, en mayúsculas y sin espacios.
+
+30
+00:01:40,887 --> 00:01:41,853
+Y el nombre:
+
+31
+00:01:41,723 --> 00:01:45,510
+Catálogo de la distribuidora, que es como la verán en la lista.
+
+32
+00:01:45,393 --> 00:01:47,519
+Ahora pulso el botón de crear.
+
+33
+00:01:47,389 --> 00:01:49,980
+Copiar el catálogo toma un momento.
+
+34
+00:01:49,815 --> 00:01:53,928
+El aviso lo confirma y se abre su detalle con las cuentas copiadas.
+
+35
+00:01:53,797 --> 00:01:54,694
+Lo cierro.
+
+36
+00:01:54,587 --> 00:01:58,688
+La lista ya muestra la tarjeta nueva, que queda marcada como Propia.
+
+37
+00:01:59,127 --> 00:02:01,533
+Por último, el catálogo propio.
+
+38
+00:02:01,403 --> 00:02:06,397
+Mientras sea compartido, tu empresa puede renombrar u ocultar las cuentas de la
+
+39
+00:02:06,232 --> 00:02:09,497
+plantilla, pero no reorganizar sus códigos.
+
+40
+00:02:09,379 --> 00:02:14,513
+Si lo necesitas, Pasar a catálogo propio copia las cuentas a tu empresa con sus
+
+41
+00:02:14,336 --> 00:02:15,140
+saldos.
+
+42
+00:02:15,010 --> 00:02:20,202
+El aviso explica que el sistema comprueba cuenta por cuenta que la balanza quede
+
+43
+00:02:20,025 --> 00:02:22,419
+igual, y que no se puede deshacer.
+
+44
+00:02:22,335 --> 00:02:23,348
+Confirmo.
+
+45
+00:02:23,264 --> 00:02:26,831
+El sistema copia las cuentas y comprueba la balanza;
+
+46
+00:02:26,678 --> 00:02:28,375
+tarda unos segundos.
+
+47
+00:02:28,257 --> 00:02:29,049
+Listo:
+
+48
+00:02:28,965 --> 00:02:32,288
+la franja dice Catálogo propio, desde hoy.
+
+49
+00:02:32,239 --> 00:02:36,990
+Las cuentas ya son de tu empresa, y no cambian cuando cambia la plantilla.

@@ -1,0 +1,249 @@
+{
+  "titulo": "Contabilidad · Bancos: saldo, transferencias entre cuentas propias y anulación",
+  "descripcion": "Cómo ver en Germiva el saldo de cada cuenta bancaria, transferir fondos entre dos cuentas propias con su asiento automático, y anular una transferencia equivocada desde el historial.",
+  "_comentario": "Video 22 de la serie Contabilidad. setup: preparar.sh transferencias (Banco BHD 100,000 desde el 1/9 y Banco Popular 50,000 desde el 1/10, cada una con su cuenta contable).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/banca/cuentas",
+    "esperar": "tr.mat-mdc-row"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh transferencias"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer el saldo de cada cuenta bancaria",
+    "Transferir fondos entre dos cuentas propias",
+    "Qué asiento registra la transferencia",
+    "Anular una transferencia equivocada"
+  ],
+  "errores_comunes": [
+    "Transferir entre cuentas de distinta moneda: eso es una operación cambiaria",
+    "Una cuenta bancaria sin cuenta contable no puede transferir",
+    "Corregir con otra transferencia en vez de anular la equivocada"
+  ],
+  "pasos": [
+    {
+      "id": "01-saldos",
+      "capitulo": "Saldo de las cuentas",
+      "rotulo": "Cuentas Bancarias",
+      "ruta": "Contabilidad › Banca › Cuentas Bancarias",
+      "texto_pantalla": "El saldo sale del Mayor",
+      "narracion": "En Banca están las cuentas bancarias de la empresa. Recojo el menú. Cada cuenta trae su banco, el número, el tipo y la moneda. El saldo sale del Mayor de su cuenta contable: lo contabilizado, no lo que se escribió al crearla. Por eso cada cuenta bancaria necesita su cuenta contable, la que aparece en esta columna.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('9600123456') td >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Cada cuenta trae su banco"
+        },
+        {
+          "resaltar": "th:has-text('Saldo')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El saldo sale del Mayor"
+        },
+        {
+          "resaltar": "th:has-text('Cuenta Contable')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "la que aparece en esta columna"
+        }
+      ]
+    },
+    {
+      "id": "02-transferir",
+      "capitulo": "Transferir fondos",
+      "rotulo": "Transferir fondos",
+      "ruta": "Contabilidad › Banca › Cuentas Bancarias",
+      "texto_pantalla": "Misma moneda · cuenta contable en ambas",
+      "narracion": "Para pasar dinero del BHD al Popular, en la fila del BHD pulso Transferir fondos. Arriba se ve la cuenta de origen y su saldo disponible. Abro la lista de destino: solo ofrece cuentas activas, en la misma moneda y con cuenta contable. Elijo el Popular. Escribo el monto: quince mil pesos, que no puede pasar del saldo disponible. La referencia es el número de confirmación del banco. Y pulso Transferir. El aviso confirma que los saldos se movieron y que el asiento quedó registrado: débito al banco de destino y crédito al de origen.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('9600123456') button[aria-label='Transferir fondos']",
+          "al_decir": "pulso Transferir fondos"
+        },
+        {
+          "resaltar": "mat-dialog-container .gm-dialog-facts",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Arriba se ve la cuenta de origen"
+        },
+        {
+          "click": "mat-dialog-container mat-select",
+          "al_decir": "Abro la lista de destino"
+        },
+        {
+          "click": "mat-option:has-text('Banco Popular')",
+          "al_decir": "Elijo el Popular"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[type=number]",
+            "texto": "15000"
+          },
+          "al_decir": "Escribo el monto"
+        },
+        {
+          "escribir": {
+            "sel": "input[placeholder='Nº de confirmación bancaria']",
+            "texto": "TRF-88231"
+          },
+          "al_decir": "La referencia es"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Transferir')",
+          "al_decir": "Y pulso Transferir"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El aviso confirma"
+        }
+      ]
+    },
+    {
+      "id": "03-saldos-nuevos",
+      "capitulo": "Transferir fondos",
+      "rotulo": "Saldos actualizados",
+      "ruta": "Contabilidad › Banca › Cuentas Bancarias",
+      "texto_pantalla": "BHD 85,000 · Popular 65,000",
+      "narracion": "Los saldos ya cambiaron: el BHD baja a ochenta y cinco mil y el Popular sube a sesenta y cinco mil. La transferencia queda numerada y con su asiento automático en el Diario.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('9600123456') td >> nth=5",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el BHD baja"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('0001234567') td >> nth=5",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el Popular sube"
+        }
+      ]
+    },
+    {
+      "id": "04-anular",
+      "capitulo": "Anular una transferencia",
+      "rotulo": "Anular",
+      "ruta": "Contabilidad › Banca › Cuentas Bancarias › Transferencias",
+      "texto_pantalla": "Restaura los saldos y revierte el asiento",
+      "narracion": "Si una transferencia se hizo por error, no se compensa con otra: se anula. Arriba, Transferencias abre el historial, con el número, la fecha, las cuentas, el monto y el estado. En la fila pulso Anular. El sistema pide el motivo: se transfirió a la cuenta equivocada. Confirmo con Anular transferencia. El aviso lo confirma, y el estado pasa a Anulada. Cierro, y los dos saldos vuelven a como estaban.",
+      "acciones": [
+        {
+          "click": "button:has-text('Transferencias')",
+          "al_decir": "Transferencias abre el historial"
+        },
+        {
+          "resaltar": "mat-dialog-container tr.mat-mdc-row >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "con el número, la fecha"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Anular')",
+          "al_decir": "En la fila pulso Anular"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "Cuenta equivocada"
+          },
+          "al_decir": "El sistema pide el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Anular transferencia')",
+          "al_decir": "Confirmo con Anular transferencia"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        },
+        {
+          "resaltar": "mat-dialog-container .gm-badge >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el estado pasa a Anulada"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "Cierro"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('9600123456') td >> nth=5",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "los dos saldos vuelven"
+        }
+      ]
+    }
+  ]
+}

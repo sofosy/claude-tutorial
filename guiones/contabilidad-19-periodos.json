@@ -1,0 +1,249 @@
+{
+  "titulo": "Contabilidad · Períodos contables: tipos, generar el año fiscal y período actual",
+  "descripcion": "Cómo manejar en Germiva el calendario contable: los tipos de período, generar de una vez los períodos de un año fiscal, crear un período a mano y establecer el período actual.",
+  "_comentario": "Video 19 de la serie Contabilidad. setup: preparar.sh periodos (la instantánea: 2025 enero-abril cerrado, 2026 enero-marzo cerrado, abril-diciembre abierto, trimestres, año fiscal 2026, ajustes 2026, enero y febrero 2027; Septiembre 2026 es el actual).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/configuracion/periodos",
+    "esperar": "button:has-text('Generar Año Fiscal')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh periodos"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer la lista de períodos y sus estados",
+    "Generar todos los períodos de un año fiscal",
+    "Crear un período a mano",
+    "Establecer el período actual"
+  ],
+  "errores_comunes": [
+    "Crear un período que se cruza con otro: el sistema lo rechaza",
+    "Generar un año que ya tiene períodos: se editan los existentes",
+    "Olvidar cambiar el período actual al empezar el mes"
+  ],
+  "pasos": [
+    {
+      "id": "01-lista",
+      "capitulo": "Los períodos",
+      "rotulo": "Períodos Contables",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "Abierto · Cerrado · Bloqueado",
+      "narracion": "Los períodos contables son el calendario en que se registra la contabilidad: solo se contabiliza en un período abierto. Recojo el menú. Cada fila trae el nombre, el tipo, el año fiscal, las fechas y el estado: abierto, cerrado o bloqueado. La insignia Actual marca el período de trabajo, y la columna Asientos cuenta los asientos contabilizados en él. Hay períodos mensuales, trimestrales, semestrales, anuales y personalizados.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Cada fila trae"
+        },
+        {
+          "resaltar": "th:has-text('Estado')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "abierto, cerrado o bloqueado"
+        },
+        {
+          "resaltar": "th:has-text('Asientos')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "la columna Asientos"
+        }
+      ]
+    },
+    {
+      "id": "02-generar",
+      "capitulo": "Generar el año fiscal",
+      "rotulo": "Generar Año Fiscal",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "Todos los períodos del año de una vez",
+      "narracion": "Para no crear los meses uno por uno está Generar Año Fiscal. Lo abro. En el campo del año, abro la lista y elijo dos mil veinticuatro. El sistema revisa el año y avisa si ya tiene períodos. Elijo el tipo: trimestral, que serán cuatro. Confirmo con Generar. El aviso dice cuántos períodos se crearon, todos abiertos y listos para recibir asientos.",
+      "acciones": [
+        {
+          "click": "button:has-text('Generar Año Fiscal')",
+          "al_decir": "Lo abro"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='fiscalYear']",
+          "al_decir": "abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('2024')",
+          "al_decir": "y elijo dos mil veinticuatro"
+        },
+        {
+          "resaltar": "mat-dialog-container .state",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "avisa si ya tiene períodos"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='type']",
+          "al_decir": "Elijo el tipo"
+        },
+        {
+          "click": "mat-option:has-text('Trimestral')",
+          "al_decir": "trimestral, que serán cuatro"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar')",
+          "al_decir": "Confirmo con Generar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El aviso dice"
+        }
+      ]
+    },
+    {
+      "id": "03-crear",
+      "capitulo": "Crear un período",
+      "rotulo": "Crear Período",
+      "ruta": "Contabilidad › Períodos Contables › Nuevo",
+      "texto_pantalla": "Tipo · año · mes → nombre y fechas",
+      "narracion": "Un período suelto se crea con Crear Período. Elijo el tipo, mensual, y el año, dos mil veintisiete. Luego abro la lista de meses y elijo marzo. Con eso, el nombre y las fechas se completan solos, del primero al treinta y uno de marzo. Las casillas de abajo dicen si admite asientos y si es un período de ajuste. Guardo, y el aviso lo confirma. Si las fechas se cruzan con otro período del mismo tipo de calendario, el sistema no lo deja guardar.",
+      "acciones": [
+        {
+          "click": "button:has-text('Crear Período')",
+          "al_decir": "Crear Período. Elijo"
+        },
+        {
+          "click": "mat-select[formcontrolname='year']",
+          "al_decir": "y el año"
+        },
+        {
+          "click": "mat-option:has-text('2027')",
+          "al_decir": "dos mil veintisiete"
+        },
+        {
+          "click": "mat-select[formcontrolname='month']",
+          "al_decir": "abro la lista de meses"
+        },
+        {
+          "click": "mat-option:has-text('Marzo')",
+          "al_decir": "y elijo marzo"
+        },
+        {
+          "resaltar": "input[formcontrolname='name']",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el nombre y las fechas"
+        },
+        {
+          "resaltar": "mat-checkbox[formcontrolname='allowJournalEntries']",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Las casillas de abajo"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "04-actual",
+      "capitulo": "Período actual",
+      "rotulo": "Establecer como Actual",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "El período de trabajo",
+      "navegar": "/accounting/configuracion/periodos",
+      "al_decir_navegar": "Vuelvo a la lista",
+      "narracion": "Para terminar, el período actual. Vuelvo a la lista. Estamos en octubre, pero el período actual sigue siendo septiembre. Busco octubre en el buscador de arriba. Ya filtrado, en su fila pulso Establecer como Actual. Confirmo con Sí, Establecer. El aviso lo confirma: octubre queda como período actual, y septiembre deja de serlo.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "texto": "Octubre 2026"
+          },
+          "al_decir": "Busco octubre"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Octubre 2026') button[aria-label='Establecer como Actual']",
+          "al_decir": "en su fila pulso"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, Establecer')",
+          "al_decir": "Confirmo con Sí"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        }
+      ]
+    }
+  ]
+}

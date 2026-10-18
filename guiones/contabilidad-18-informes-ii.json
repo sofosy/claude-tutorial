@@ -1,0 +1,318 @@
+{
+  "titulo": "Contabilidad · Informes financieros: Flujo de Efectivo, Patrimonio y análisis",
+  "descripcion": "Cómo generar en Germiva el Estado de Flujo de Efectivo por método indirecto y directo, el Estado de Cambios en el Patrimonio, las Tendencias Financieras y la Proyección, y qué revisar cuando un informe no cuadra.",
+  "_comentario": "Video 18 de la serie Contabilidad. setup: preparar.sh informes (misma operación que el video 17).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ROA": "erre-o-a",
+    "ROE": "erre-o-e",
+    "EBITDA": "ebitda",
+    "CSV": "ce-ese-uve"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/financial-statements/cash-flow",
+    "esperar": "mat-label:has-text('Tipo de informe')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh informes"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Generar el Flujo de Efectivo por método indirecto y directo",
+    "Leer el Estado de Cambios en el Patrimonio",
+    "Revisar Tendencias y la Proyección de resultados",
+    "Qué revisar cuando un informe no cuadra"
+  ],
+  "errores_comunes": [
+    "Dejar cuentas sin clasificar: quedan fuera de los estados",
+    "Esperar los borradores en un informe: solo cuentan los contabilizados",
+    "Tomar la proyección como flujo de caja: proyecta la utilidad neta"
+  ],
+  "pasos": [
+    {
+      "id": "01-flujo",
+      "capitulo": "Flujo de Efectivo",
+      "rotulo": "Flujo de Efectivo",
+      "ruta": "Contabilidad › Cierre Contable y Estados Financieros › Informes Financieros",
+      "texto_pantalla": "Operación · inversión · financiamiento",
+      "narracion": "El Estado de Flujo de Efectivo explica cómo cambió el efectivo de la empresa. Recojo el menú. Escribo el rango: desde el primero de enero de dos mil veintiséis. Hasta el treinta de septiembre del mismo año, ya con las dos fechas. En Método, el indirecto, que viene marcado, parte de la utilidad. Pulso Generar. Las actividades de operación arrancan con la utilidad neta y la ajustan por lo que cambió en clientes, inventario y proveedores. La compra del vehículo sale en inversión, y el abono al préstamo y el aporte de capital, en financiamiento. Abajo, el flujo neto y el efectivo al inicio y al final del período.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='startDate']",
+            "texto": "01/01/2026"
+          },
+          "al_decir": "Escribo el rango"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='endDate']",
+            "texto": "30/09/2026"
+          },
+          "al_decir": "Hasta el treinta"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Método'))",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "En Método, el indirecto"
+        },
+        {
+          "click": "button.rp-toolbar__generate",
+          "al_decir": "Pulso Generar"
+        },
+        {
+          "resaltar": "mat-expansion-panel.panel-operating",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Las actividades de operación"
+        },
+        {
+          "resaltar": "mat-expansion-panel.panel-investing",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "sale en inversión"
+        },
+        {
+          "resaltar": "mat-expansion-panel.panel-financing",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "en financiamiento"
+        },
+        {
+          "resaltar": ".grand-total-block",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Abajo, el flujo neto"
+        }
+      ]
+    },
+    {
+      "id": "02-directo",
+      "capitulo": "Flujo de Efectivo",
+      "rotulo": "Método directo",
+      "ruta": "Contabilidad › Informes Financieros › Flujo de Efectivo",
+      "texto_pantalla": "Directo: cobros y pagos por su contrapartida",
+      "narracion": "El método directo muestra lo mismo desde los cobros y pagos. Lo elijo en Método y vuelvo a generar. Ahora cada movimiento de caja se clasifica por su contrapartida: cobros a clientes, pagos de gastos, compra de activos. El efectivo final es el mismo por los dos caminos. Si no coincidiera con el saldo de efectivo del Mayor, el estado lo avisa en rojo con la diferencia.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Método')) mat-select",
+          "al_decir": "Lo elijo en Método"
+        },
+        {
+          "click": "mat-option:has-text('Directo')",
+          "al_decir": "y vuelvo a generar"
+        },
+        {
+          "click": "button.rp-toolbar__generate",
+          "al_decir": "generar. Ahora"
+        },
+        {
+          "resaltar": "mat-expansion-panel.panel-operating",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "cada movimiento de caja"
+        },
+        {
+          "resaltar": ".grand-total-block",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El efectivo final es el mismo"
+        }
+      ]
+    },
+    {
+      "id": "03-patrimonio",
+      "capitulo": "Cambios en el Patrimonio",
+      "rotulo": "Cambios en el Patrimonio",
+      "ruta": "Contabilidad › Informes Financieros › Cambios en Patrimonio",
+      "texto_pantalla": "Saldo inicial + aumentos − disminuciones",
+      "narracion": "Cambios en Patrimonio explica cómo se movió el patrimonio en el rango. Lo elijo en el selector de informes; las fechas siguen siendo las mismas, así que solo genero. Por cada concepto, capital, utilidades retenidas y otras reservas, se ve el saldo inicial, los aumentos, las disminuciones y el saldo final. Aquí el aporte adicional de capital aumenta el capital. Al pie, el total del patrimonio.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
+          "al_decir": "Lo elijo en el selector"
+        },
+        {
+          "click": "mat-option:has-text('Cambios en Patrimonio')",
+          "al_decir": "las fechas siguen siendo"
+        },
+        {
+          "click": "button.rp-toolbar__generate",
+          "al_decir": "así que solo genero"
+        },
+        {
+          "resaltar": "table.equity-table thead",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Por cada concepto"
+        },
+        {
+          "resaltar": "table.equity-table tbody tr >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el aporte adicional de capital"
+        },
+        {
+          "resaltar": ".totals-row",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Al pie, el total"
+        }
+      ]
+    },
+    {
+      "id": "04-tendencias",
+      "capitulo": "Análisis",
+      "rotulo": "Tendencias Financieras",
+      "ruta": "Contabilidad › Informes Financieros › Tendencias Financieras",
+      "texto_pantalla": "Mes a mes · anomalías",
+      "narracion": "Además de los estados, el selector trae un grupo de análisis. Abro el selector y elijo Tendencias Financieras, que muestra mes a mes una métrica: ingresos, gastos, utilidad o liquidez. Se calcula sola al abrirla. Cambio la métrica a utilidad neta. El gráfico marca los meses que se desvían mucho de lo normal, y debajo están los indicadores del período.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
+          "al_decir": "Abro el selector"
+        },
+        {
+          "click": "mat-option:has-text('Tendencias Financieras')",
+          "al_decir": "y elijo Tendencias Financieras"
+        },
+        {
+          "click": "mat-select[formcontrolname='metric']",
+          "al_decir": "Cambio la métrica"
+        },
+        {
+          "click": "mat-option:has-text('Utilidad neta')",
+          "al_decir": "a utilidad neta"
+        },
+        {
+          "resaltar": ".chart-card",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El gráfico marca"
+        },
+        {
+          "resaltar": ".kpi-card >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "debajo están los indicadores"
+        }
+      ]
+    },
+    {
+      "id": "05-proyeccion",
+      "capitulo": "Análisis",
+      "rotulo": "Proyección",
+      "ruta": "Contabilidad › Informes Financieros › Proyección de Flujo de Efectivo",
+      "texto_pantalla": "Proyecta la utilidad neta, con banda de confianza",
+      "narracion": "El otro análisis que conviene conocer es la proyección. Abro el selector y elijo Proyección de Flujo de Efectivo. Estima el resultado de los próximos meses a partir de la tendencia de los anteriores: proyecta la utilidad neta, no los cobros y pagos pendientes. Eliges cuántos meses mirar atrás y cuántos proyectar. La banda alrededor de la línea es el margen de confianza; con pocos meses de historia el sistema advierte que la estimación es débil.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
+          "al_decir": "Abro el selector"
+        },
+        {
+          "click": "mat-option:has-text('Proyección de Flujo de Efectivo')",
+          "al_decir": "y elijo Proyección"
+        },
+        {
+          "resaltar": ".filters-card",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Eliges cuántos meses"
+        },
+        {
+          "resaltar": ".chart-card",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "La banda alrededor"
+        }
+      ]
+    },
+    {
+      "id": "06-no-cuadra",
+      "capitulo": "Si un informe no cuadra",
+      "rotulo": "Si un informe no cuadra",
+      "ruta": "Contabilidad › Configuración Contable › Estado de la Configuración",
+      "texto_pantalla": "Borradores · cuentas sin clasificar · Libro Mayor",
+      "navegar": "/accounting/configuracion/estado",
+      "al_decir_navegar": "empieza por el Estado",
+      "narracion": "Si un informe no cuadra o no muestra lo que esperas, empieza por el Estado de la Configuración. Ahí se ve si hay cuentas sin clasificar, que quedan fuera de los estados, y si el Libro Mayor se genera solo. Recuerda también que los informes leen solo lo contabilizado: un asiento en borrador no aparece hasta que lo contabilizas.",
+      "acciones": [
+        {
+          "resaltar": "app-summary-strip",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Ahí se ve"
+        },
+        {
+          "resaltar": ".issue >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "cuentas sin clasificar"
+        }
+      ]
+    }
+  ]
+}

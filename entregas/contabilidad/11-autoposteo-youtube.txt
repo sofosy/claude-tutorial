@@ -1,0 +1,42 @@
+TÍTULO
+============================================================
+Contabilidad · Auto-posteo, Ajustes y Estado de la Configuración
+
+DESCRIPCIÓN
+============================================================
+Cómo decide Germiva qué operaciones generan su asiento solo y cómo lo deja: editar un tipo de transacción, asignarle centro de costo, deshabilitar lo que tu empresa no usa (sin borrarlo), la política de período y el centro de costo general, y cómo el Estado de la Configuración te dice qué falta, desde el Libro Mayor apagado hasta una cuenta sin clasificar.
+
+⏱️ CAPÍTULOS
+00:00  Qué decide el auto-posteo
+00:34  Editar un tipo
+01:05  Deshabilitar, no borrar
+01:34  Ajustes de Contabilidad
+02:03  Estado de la Configuración
+02:34  Hasta que esté completa
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué decide el auto-posteo para cada tipo de operación
+• Asignar un centro de costo por tipo de operación
+• Deshabilitar una operación que tu empresa no usa, sin borrarla
+• La política de período y el centro de costo general
+• Leer el Estado de la Configuración y resolver lo que señala
+
+⚠️ ERRORES COMUNES
+• Eliminar una configuración para apagarla: sin configuración, el posteo falla; se deshabilita con Cambiar Estado
+• Esperar centro de costo en el banco o en cuentas por cobrar: solo lo llevan las líneas de ingreso o gasto
+• Dejar apagado el Libro Mayor automático: lo que se contabilice no llega a los estados financieros
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:05
+
+TRANSCRIPCIÓN
+============================================================
+El Mapeo de Cuentas dice a qué cuenta va cada parte del asiento. El Auto-posteo decide, por tipo de operación, si el sistema genera ese asiento y cómo lo deja. Recojo el menú. Cada fila es un tipo de transacción: facturas de venta, pagos, nómina, inventario. Estado dice si está habilitado. Auto-Contabilizar, si el asiento nace contabilizado o queda en borrador para revisarlo. Y Centro de Costo, cuál recibe ese asiento.
+Edito Facturas de Venta con el lápiz. El tipo no se cambia: para otro tipo se crea otra configuración. Asigno el centro de costo: escribo ventas, y en la lista elijo el centro Ventas. Lo reciben las líneas de ingreso o gasto de ese asiento; las de balance, como el banco o las cuentas por cobrar, no llevan centro. Dejo marcados Habilitado y Auto-Contabilizar. Si quito Auto-Contabilizar, cada factura deja su asiento en borrador. Guardo, y el aviso lo confirma.
+Si tu empresa no usa una operación, no la borres: deshabilítala. Esta empresa no despacha con conduce. En su fila, el botón Cambiar Estado pregunta, y confirmo con Sí, Deshabilitar. La insignia pasa a Deshabilitado y esas operaciones ya no generan asiento. ¿Y Eliminar? El aviso lo explica: sin configuración, cada operación de ese tipo falla al contabilizarse. Por eso cancelo.
+En Ajustes de Contabilidad hay dos reglas para toda la empresa. La política de período decide qué pasa si alguien registra con la fecha de un período cerrado: Estricto lo bloquea, y es lo recomendado. Debajo, el centro de costo predeterminado: el respaldo para las líneas de ingreso o gasto que no traigan uno, ni por su tipo de operación. Escribo admin, y en la lista que aparece elijo Administración. Ahora pulso Guardar, y el aviso lo confirma.
+Para saber si todo está en orden, Estado de la Configuración. Arriba, cuatro cifras: roles sin cuenta, cuentas sin clasificar, asientos fuera del Mayor, y si el Mayor automático está activo. Aquí está apagado, y el aviso rojo lo dice: lo que se contabilice desde ahora no llegaría a ningún estado financiero. Abrir preferencias lleva a Mi Empresa, pestaña Operación. Enciendo Auto-generar Libro Mayor y guardo. El sistema confirma que se guardó.
+De vuelta en Estado, el Mayor ya está activo y queda una cuenta sin sección de estado financiero: Gastos de representación, creada sin padre. Clasificar cuentas abre la clasificación. Abro su lista y elijo Gastos de administración; se guarda al instante. Regreso a Configuración Contable, abro Estado de la Configuración, y ahora dice que la configuración contable está completa. Cuando algo falte, aquí lo vas a ver primero.

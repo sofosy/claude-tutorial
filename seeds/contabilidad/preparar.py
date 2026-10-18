@@ -275,10 +275,203 @@ def mayor():
         linea(OFICINA, "Papelería y tóner", 4200), linea(CAJA, "Pago en efectivo", credito=4200)])
 
 
+def automaticos():
+    # V15: un ajuste de inventario por conteo físico que no se pudo
+    # contabilizar (el mapeo «Otros Ingresos por Ajuste de Inventario» estaba
+    # apagado) y cuya causa ya se corrigió: el video lo encuentra en el
+    # Registro de Integración y lo contabiliza.
+    balance_inicial()
+    mapeo_id = sql("SELECT id FROM account_mappings WHERE company_id=1 AND deleted_at IS NULL "
+                   "AND required_mapping_type='inventory_adjustment_gain_other_income'")
+    llamar("PATCH", f"/v1/accounting-integration/account-mappings/{mapeo_id}", {"active": False})
+    ubicacion = llamar("POST", "/v1/inventory/location", {
+        "warehouse": 1, "position": "A-01", "description": "Estante principal"})
+    llamar("POST", "/v1/inventory/movement/entry", {
+        "product": 1, "batchNumber": "L-CONTEO-10", "quantity": 12, "inventoryMovementType": 3,
+        "unitPrice": "85.00", "inventoryLocation": ubicacion["id"], "notes": "Conteo físico de octubre"})
+    llamar("PATCH", f"/v1/accounting-integration/account-mappings/{mapeo_id}", {"active": True})
+
+
+# ── lote C: informes, períodos y cierre ─────────────────────────────────────
+
+def completar_2025():
+    """El calendario de 2025 solo traía de enero a abril."""
+    for n in range(5, 13):
+        fin = sql(f"SELECT LAST_DAY('2025-{n:02d}-01')")
+        llamar("POST", "/v1/accounting-periods", {
+            "name": f"{MESES[n - 1]} 2025", "type": "monthly", "startDate": f"2025-{n:02d}-01",
+            "endDate": fin, "fiscalYear": 2025, "periodNumber": n})
+
+
+def prestamo_largo_plazo():
+    """Sin una cuenta de pasivo no corriente el préstamo caería en Operación."""
+    return llamar("POST", "/v1/accounting-chart", {
+        "code": "2.02.01.01.01", "name": "Préstamo Banco Popular a largo plazo", "type": "liability",
+        "nature": "credit", "level": 5, "parent": cuenta("2.02.01.01"), "allowsMovement": True,
+        "reportSection": "LONG_TERM_DEBT", "isMonetary": True})["id"]
+
+
+# Año de operación de la distribuidora: resultado 2025 = 96,000 y 2026 hasta
+# septiembre = 238,000 (Banco nunca queda en negativo).
+OPERACION = [
+    ("2025-05-02", "Aporte de capital inicial", [("1.01.01.02.01", 1000000, 0), ("3.01.01.01.01", 0, 1000000)]),
+    ("2025-05-05", "Préstamo bancario a largo plazo", [("1.01.01.02.01", 500000, 0), ("2.02.01.01.01", 0, 500000)]),
+    ("2025-05-10", "Compra de mobiliario de oficina", [("1.02.01.03.01", 240000, 0), ("1.01.04.02", 43200, 0),
+                                                      ("1.01.01.02.01", 0, 283200)]),
+    ("2025-06-15", "Compra de inventario a crédito", [("1.01.06.01", 400000, 0), ("1.01.04.02", 72000, 0),
+                                                     ("2.01.01.01.01", 0, 472000)]),
+    ("2025-07-20", "Venta a crédito", [("1.01.02.01.01", 472000, 0), ("4.01.01", 0, 400000),
+                                       ("2.01.04.01.01.01", 0, 72000)]),
+    ("2025-07-20", "Costo de la venta a crédito", [("5.01.01.01", 220000, 0), ("1.01.06.01", 0, 220000)]),
+    ("2025-08-31", "Gastos de agosto", [("6.02.01.01", 120000, 0), ("6.03.02", 60000, 0), ("6.03.03", 15000, 0),
+                                        ("1.01.01.02.01", 0, 195000)]),
+    ("2025-09-15", "Cobro a cliente", [("1.01.01.02.01", 472000, 0), ("1.01.02.01.01", 0, 472000)]),
+    ("2025-10-10", "Pago a proveedor", [("2.01.01.01.01", 472000, 0), ("1.01.01.02.01", 0, 472000)]),
+    ("2025-11-30", "Venta al contado", [("1.01.01.02.01", 354000, 0), ("4.01.01", 0, 300000),
+                                        ("2.01.04.01.01.01", 0, 54000)]),
+    ("2025-11-30", "Costo de la venta al contado", [("5.01.01.01", 150000, 0), ("1.01.06.01", 0, 150000)]),
+    ("2025-12-31", "Depreciación del mobiliario", [("6.03.22.02.02", 14000, 0), ("1.02.01.03.01.01", 0, 14000)]),
+    ("2025-12-31", "Intereses del préstamo", [("6.04.01", 25000, 0), ("1.01.01.02.01", 0, 25000)]),
+    ("2026-04-15", "Compra de inventario al contado", [("1.01.06.01", 200000, 0), ("1.01.04.02", 36000, 0),
+                                                      ("1.01.01.02.01", 0, 236000)]),
+    ("2026-05-20", "Venta a crédito", [("1.01.02.01.01", 590000, 0), ("4.01.01", 0, 500000),
+                                       ("2.01.04.01.01.01", 0, 90000)]),
+    ("2026-05-20", "Costo de la venta a crédito", [("5.01.01.01", 180000, 0), ("1.01.06.01", 0, 180000)]),
+    ("2026-06-10", "Compra de vehículo de reparto", [("1.02.01.03.02", 800000, 0), ("1.01.01.02.01", 0, 800000)]),
+    ("2026-06-30", "Gastos de junio", [("6.02.01.01", 130000, 0), ("6.03.02", 60000, 0), ("6.03.03", 18000, 0),
+                                       ("6.05.01", 2000, 0), ("1.01.01.02.01", 0, 210000)]),
+    ("2026-07-15", "Cobro parcial a cliente", [("1.01.01.02.01", 400000, 0), ("1.01.02.01.01", 0, 400000)]),
+    ("2026-08-05", "Abono al préstamo e intereses", [("2.02.01.01.01", 100000, 0), ("6.04.01", 20000, 0),
+                                                    ("1.01.01.02.01", 0, 120000)]),
+    ("2026-09-10", "Venta al contado", [("1.01.01.01.02", 236000, 0), ("4.01.01", 0, 200000),
+                                        ("2.01.04.01.01.01", 0, 36000)]),
+    ("2026-09-10", "Costo de la venta al contado", [("5.01.01.01", 40000, 0), ("1.01.06.01", 0, 40000)]),
+    ("2026-09-30", "Aporte adicional de capital", [("1.01.01.02.01", 200000, 0), ("3.01.01.01.01", 0, 200000)]),
+    ("2026-09-30", "Depreciación del mobiliario", [("6.03.22.02.02", 12000, 0), ("1.02.01.03.01.01", 0, 12000)]),
+]
+
+
+def informes():
+    # V17/V18: año y medio de operación, con el préstamo en una cuenta de
+    # largo plazo para que salga en Financiamiento.
+    completar_2025()
+    prestamo_largo_plazo()
+    ids = {}
+    for fecha, descripcion, lineas in OPERACION:
+        anio, mes = int(fecha[:4]), int(fecha[5:7])
+        detalles = []
+        for codigo, debito, credito in lineas:
+            ids.setdefault(codigo, cuenta(codigo))
+            detalles.append(linea(ids[codigo], descripcion, debito, credito))
+        asiento_contabilizado(fecha, periodo(f"{MESES[mes - 1]} {anio}"), descripcion, detalles)
+
+
+def cierre_reversar():
+    # V21: el ejercicio 2025 cerrado (CIE-2025-0001). Mayo a noviembre se
+    # cierran antes: el cierre anual exige que no quede ningún período previo
+    # abierto.
+    informes()
+    for n in range(5, 12):
+        llamar("PUT", f"/v1/accounting-periods/{periodo(f'{MESES[n - 1]} 2025')}/close", {})
+    llamar("POST", "/v1/accounting-closing/execute", {
+        "accountingPeriodId": periodo("Diciembre 2025"), "resultAccountCode": "3.03.01",
+        "retainedEarningsAccountCode": "3.04", "notes": "Cierre del ejercicio 2025",
+        "createNextPeriod": False, "confirmWithoutIncomeTaxProvision": True})
+
+
+def periodos():
+    # V19 y V20 parten de la instantánea: meses de 2025 y 2026 cerrados y
+    # abiertos, trimestres, el año fiscal y el período de ajustes.
+    pass
+
+
+# ── lote D: banca, activos, centros de costo y presupuestos ─────────────────
+
+POPULAR, BHD = 1, 3        # bancos del catálogo global
+BANCO_1 = 7                # 1.01.01.02.01 Banco 1
+TITULAR = "Distribuidora Germiva Demo S.R.L."
+
+
+def cuentas_bancarias():
+    """Banco BHD con su propia cuenta contable y Banco Popular sobre «Banco 1»."""
+    gl = llamar("POST", "/v1/accounting-chart", {
+        "code": "1.01.01.02.02", "name": "Banco BHD", "type": "asset", "nature": "debit", "level": 5,
+        "parent": CUENTA_BANCOS, "allowsMovement": True, "reportSection": "CASH_AND_EQUIVALENTS",
+        "isMonetary": True})["id"]
+    llamar("POST", "/v1/bank-accounts", {
+        "accountNumber": "9600123456", "accountType": "checking", "accountHolder": TITULAR, "bank": BHD,
+        "currency": DOP, "glAccount": gl, "initialBalance": 100000, "openingDate": "2026-09-01"})
+    llamar("POST", "/v1/bank-accounts", {
+        "accountNumber": "0001234567", "accountType": "checking", "accountHolder": TITULAR, "bank": POPULAR,
+        "currency": DOP, "glAccount": BANCO_1, "initialBalance": 50000, "openingDate": "2026-10-01"})
+    return gl
+
+
+def transferencias():
+    # V22: dos cuentas en pesos con saldo, para transferir y anular.
+    cuentas_bancarias()
+
+
+def movimientos_bhd():
+    gl = cuentas_bancarias()
+    sep = periodo("Septiembre 2026")
+    asiento_contabilizado("2026-09-10", sep, "Depósito transferencia cliente", [
+        linea(gl, "Depósito en Banco BHD", 25000), linea(cuenta("4.02.01.02.01"), "Otros ingresos", credito=25000)])
+    asiento_contabilizado("2026-09-20", sep, "Pago alquiler septiembre", [
+        linea(cuenta("6.03.02"), "Alquiler septiembre", 8000), linea(gl, "Salida Banco BHD", credito=8000)])
+    return gl
+
+
+def conciliar():
+    # V23: libros del BHD a 117,000 al 30/09 (apertura 100,000 + depósito −
+    # alquiler); el extracto trae además comisiones e intereses.
+    movimientos_bhd()
+
+
+def activo(codigo, nombre):
+    return llamar("POST", "/v1/fixed-assets", {
+        "code": codigo, "name": nombre, "categoryId": 3, "acquisitionCost": 60000, "salvageValue": 0,
+        "acquisitionDate": "2026-04-01", "inServiceDate": "2026-04-01", "status": "active",
+        "condition": "good"})["id"]
+
+
+def activos():
+    # V24 crea el activo en pantalla; la instantánea no trae ninguno de la empresa.
+    pass
+
+
+def activos_baja():
+    # V25: dos escritorios en uso desde abril, uno para dar de baja y otro
+    # para vender.
+    activo("ACT-OF-002", "Escritorio de recepción")
+    activo("ACT-OF-003", "Archivo metálico")
+
+
+def centros_costo():
+    # V26: Ventas al primer nivel y Operaciones bajo Administración, para que
+    # la jerarquía tenga dos niveles.
+    adm = int(sql("SELECT id FROM cost_centers WHERE company_id=1 AND code='CC-ADM' AND deleted_at IS NULL"))
+    llamar("POST", "/v1/cost-centers", {"code": "CC-VEN", "name": "Ventas", "type": "revenue",
+                                         "budgetAmount": "150000"})
+    llamar("POST", "/v1/cost-centers", {"code": "CC-OPS", "name": "Operaciones", "type": "cost",
+                                         "budgetAmount": "300000", "parent": adm})
+
+
+def presupuestos():
+    # V27: septiembre con ingresos, alquiler y comisiones contabilizados, para
+    # comparar contra el presupuesto que el video crea.
+    gl = movimientos_bhd()
+    asiento_contabilizado("2026-09-30", periodo("Septiembre 2026"), "Comisiones bancarias de septiembre", [
+        linea(cuenta("6.05.01"), "Comisiones y servicios", 400), linea(gl, "Cargo del banco", credito=400)])
+
+
 ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": autoposteo,
-           "asientos": asientos, "reversar": reversar, "recurrentes": recurrentes, "mayor": mayor, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
+           "asientos": asientos, "reversar": reversar, "recurrentes": recurrentes, "mayor": mayor, "automaticos": automaticos, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
            "cierre-mensual": cierre_mensual, "cierre-anual": cierre_anual,
-           "revaluacion": revaluacion}
+           "revaluacion": revaluacion, "informes": informes,
+           "cierre-reversar": cierre_reversar, "periodos": periodos,
+           "transferencias": transferencias, "conciliar": conciliar, "activos": activos,
+           "activos-baja": activos_baja, "centros-costo": centros_costo, "presupuestos": presupuestos}
 
 if __name__ == "__main__":
     TOKEN = token()

@@ -20,10 +20,13 @@ memoria_mysql_mb() {
   docker stats --no-stream --format '{{.MemUsage}}' germiva-dev-mysql 2>/dev/null | cut -d/ -f1 \
     | awk '/GiB/{sub("GiB","");print int($1*1024)} /MiB/{sub("MiB","");print int($1)}'
 }
+# El apagado espera hasta 90 s: con el plazo de 10 s de `docker restart`, una
+# consulta colgada hacía que lo mataran (137) y el contenedor quedaba detenido.
 if [[ "$(memoria_mysql_mb || echo 0)" -gt 2560 ]]; then
-  docker restart germiva-dev-mysql >/dev/null
-  for _ in $(seq 1 60); do $M -e 'SELECT 1' >/dev/null 2>&1 && break; sleep 2; done
+  docker stop -t 90 germiva-dev-mysql >/dev/null || true
 fi
+docker start germiva-dev-mysql >/dev/null
+for _ in $(seq 1 60); do $M -e 'SELECT 1' >/dev/null 2>&1 && break; sleep 2; done
 restaurar() {
   $M -e "DROP DATABASE IF EXISTS germiva; CREATE DATABASE germiva CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
   gunzip -c "$1" | $M germiva

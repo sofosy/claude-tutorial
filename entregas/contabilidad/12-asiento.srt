@@ -1,0 +1,179 @@
+1
+00:00:03,000 --> 00:00:07,205
+Diario y Mayor reúne los asientos contables de la empresa.
+
+2
+00:00:07,179 --> 00:00:08,378
+Recojo el menú.
+
+3
+00:00:08,224 --> 00:00:13,927
+Cada fila es un asiento, con su número, fecha, tipo, totales y estado.
+
+4
+00:00:13,808 --> 00:00:15,971
+Las acciones dependen del estado:
+
+5
+00:00:15,864 --> 00:00:19,861
+un borrador se edita, se elimina o se contabiliza;
+
+6
+00:00:19,812 --> 00:00:22,530
+uno contabilizado se puede aprobar;
+
+7
+00:00:22,504 --> 00:00:25,467
+y uno aprobado solo se consulta.
+
+8
+00:00:25,384 --> 00:00:30,878
+Arriba se busca por número o descripción, y se filtra por tipo y estado.
+
+9
+00:00:31,321 --> 00:00:34,121
+Registro el pago del alquiler de octubre.
+
+10
+00:00:34,003 --> 00:00:36,164
+Pulso Crear Asiento.
+
+11
+00:00:36,035 --> 00:00:40,403
+La fecha es hoy, y el período se propone solo según la fecha:
+
+12
+00:00:40,272 --> 00:00:41,134
+octubre;
+
+13
+00:00:40,981 --> 00:00:43,468
+si cambias la fecha, cambia con ella.
+
+14
+00:00:43,361 --> 00:00:47,578
+El tipo es Manual, el que se usa para lo que registras a mano.
+
+15
+00:00:47,424 --> 00:00:49,771
+Escribo la descripción del asiento:
+
+16
+00:00:49,642 --> 00:00:51,501
+pago de alquiler de octubre.
+
+17
+00:00:51,371 --> 00:00:53,951
+Es el concepto que se verá en los libros.
+
+18
+00:00:53,844 --> 00:00:55,239
+Ahora las líneas.
+
+19
+00:00:55,097 --> 00:00:58,410
+Agrego la primera, y en la cuenta busco arrendamientos;
+
+20
+00:00:58,302 --> 00:01:01,683
+la lista solo ofrece cuentas que aceptan movimiento.
+
+21
+00:01:01,552 --> 00:01:06,780
+La elijo, y en el débito anoto veinticinco mil pesos, el gasto del mes.
+
+22
+00:01:06,626 --> 00:01:11,111
+Agrego la segunda línea, y busco la caja general, de donde salió el dinero.
+
+23
+00:01:10,957 --> 00:01:15,046
+La elijo, y en el crédito anoto los mismos veinticinco mil.
+
+24
+00:01:14,927 --> 00:01:19,064
+Las líneas que no tienen descripción propia usan la del asiento.
+
+25
+00:01:18,980 --> 00:01:22,140
+Abajo, el total dice Balanceado:
+
+26
+00:01:22,055 --> 00:01:24,567
+débitos y créditos son iguales.
+
+27
+00:01:24,483 --> 00:01:26,587
+Guardo, y el aviso lo confirma.
+
+28
+00:01:26,503 --> 00:01:30,499
+El asiento queda en borrador, todavía sin efecto en los saldos.
+
+29
+00:01:30,941 --> 00:01:33,893
+Para que afecte los saldos, lo contabilizo.
+
+30
+00:01:33,739 --> 00:01:37,049
+Contabilizar, en la cabecera, pide confirmación:
+
+31
+00:01:36,932 --> 00:01:38,502
+Sí, Contabilizar.
+
+32
+00:01:38,359 --> 00:01:39,882
+Un aviso lo confirma:
+
+33
+00:01:39,753 --> 00:01:44,945
+el estado dice Contabilizado, el formulario queda en solo lectura,
+
+34
+00:01:44,802 --> 00:01:47,510
+y aparecen Aprobar y Reversar.
+
+35
+00:01:47,403 --> 00:01:50,948
+Aprobar deja constancia de que alguien lo revisó:
+
+36
+00:01:50,864 --> 00:01:53,245
+no cambia importes ni el Mayor.
+
+37
+00:01:53,115 --> 00:01:54,709
+Pulso Aprobar.
+
+38
+00:01:54,590 --> 00:01:58,969
+Se abre una ventana para confirmarlo, y elijo Sí, Aprobar.
+
+39
+00:01:58,816 --> 00:02:02,581
+El aviso lo confirma, y el asiento queda aprobado.
+
+40
+00:02:03,024 --> 00:02:07,914
+De vuelta en la lista, el borrador de la luz todavía se puede corregir antes de
+
+41
+00:02:07,772 --> 00:02:09,006
+contabilizarlo.
+
+42
+00:02:08,852 --> 00:02:12,872
+Si sobra, Eliminar lo descarta, después de confirmarlo;
+
+43
+00:02:12,706 --> 00:02:14,741
+su número no se vuelve a usar.
+
+44
+00:02:14,610 --> 00:02:19,234
+Un asiento contabilizado, en cambio, ya no se edita ni se elimina:
+
+45
+00:02:19,080 --> 00:02:22,681
+se corrige con un reverso, que vemos en el siguiente video.

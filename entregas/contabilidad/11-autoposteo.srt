@@ -1,0 +1,223 @@
+1
+00:00:03,000 --> 00:00:07,669
+El Mapeo de Cuentas dice a qué cuenta va cada parte del asiento.
+
+2
+00:00:07,586 --> 00:00:11,163
+El Auto-posteo decide, por tipo de operación,
+
+3
+00:00:11,080 --> 00:00:14,891
+si el sistema genera ese asiento y cómo lo deja.
+
+4
+00:00:14,819 --> 00:00:16,040
+Recojo el menú.
+
+5
+00:00:15,898 --> 00:00:18,338
+Cada fila es un tipo de transacción:
+
+6
+00:00:18,185 --> 00:00:21,775
+facturas de venta, pagos, nómina, inventario.
+
+7
+00:00:21,646 --> 00:00:24,412
+Estado dice si está habilitado.
+
+8
+00:00:24,304 --> 00:00:29,705
+Auto-Contabilizar, si el asiento nace contabilizado o queda en borrador para
+
+9
+00:00:29,564 --> 00:00:30,541
+revisarlo.
+
+10
+00:00:30,422 --> 00:00:33,804
+Y Centro de Costo, cuál recibe ese asiento.
+
+11
+00:00:34,245 --> 00:00:37,139
+Edito Facturas de Venta con el lápiz.
+
+12
+00:00:37,031 --> 00:00:38,717
+El tipo no se cambia:
+
+13
+00:00:38,564 --> 00:00:41,550
+para otro tipo se crea otra configuración.
+
+14
+00:00:41,432 --> 00:00:43,408
+Asigno el centro de costo:
+
+15
+00:00:43,324 --> 00:00:47,297
+escribo ventas, y en la lista elijo el centro Ventas.
+
+16
+00:00:47,213 --> 00:00:50,908
+Lo reciben las líneas de ingreso o gasto de ese asiento;
+
+17
+00:00:50,825 --> 00:00:55,367
+las de balance, como el banco o las cuentas por cobrar, no llevan centro.
+
+18
+00:00:55,283 --> 00:00:58,699
+Dejo marcados Habilitado y Auto-Contabilizar.
+
+19
+00:00:58,592 --> 00:01:02,867
+Si quito Auto-Contabilizar, cada factura deja su asiento en borrador.
+
+20
+00:01:02,736 --> 00:01:04,956
+Guardo, y el aviso lo confirma.
+
+21
+00:01:05,393 --> 00:01:09,680
+Si tu empresa no usa una operación, no la borres:
+
+22
+00:01:09,561 --> 00:01:10,806
+deshabilítala.
+
+23
+00:01:10,687 --> 00:01:13,534
+Esta empresa no despacha con conduce.
+
+24
+00:01:13,369 --> 00:01:19,525
+En su fila, el botón Cambiar Estado pregunta, y confirmo con Sí, Deshabilitar.
+
+25
+00:01:19,441 --> 00:01:24,981
+La insignia pasa a Deshabilitado y esas operaciones ya no generan asiento.
+
+26
+00:01:24,804 --> 00:01:25,933
+¿Y Eliminar?
+
+27
+00:01:25,780 --> 00:01:27,408
+El aviso lo explica:
+
+28
+00:01:27,324 --> 00:01:32,481
+sin configuración, cada operación de ese tipo falla al contabilizarse.
+
+29
+00:01:32,304 --> 00:01:33,642
+Por eso cancelo.
+
+30
+00:01:34,091 --> 00:01:38,204
+En Ajustes de Contabilidad hay dos reglas para toda la empresa.
+
+31
+00:01:38,062 --> 00:01:42,998
+La política de período decide qué pasa si alguien registra con la fecha de un
+
+32
+00:01:42,845 --> 00:01:44,043
+período cerrado:
+
+33
+00:01:43,901 --> 00:01:46,690
+Estricto lo bloquea, y es lo recomendado.
+
+34
+00:01:46,525 --> 00:01:49,627
+Debajo, el centro de costo predeterminado:
+
+35
+00:01:49,543 --> 00:01:53,714
+el respaldo para las líneas de ingreso o gasto que no traigan uno,
+
+36
+00:01:53,584 --> 00:01:55,305
+ni por su tipo de operación.
+
+37
+00:01:55,174 --> 00:01:59,647
+Escribo admin, y en la lista que aparece elijo Administración.
+
+38
+00:01:59,516 --> 00:02:02,712
+Ahora pulso Guardar, y el aviso lo confirma.
+
+39
+00:02:03,170 --> 00:02:07,050
+Para saber si todo está en orden, Estado de la Configuración.
+
+40
+00:02:06,908 --> 00:02:08,896
+Arriba, cuatro cifras:
+
+41
+00:02:08,789 --> 00:02:13,286
+roles sin cuenta, cuentas sin clasificar, asientos fuera del Mayor,
+
+42
+00:02:13,167 --> 00:02:15,909
+y si el Mayor automático está activo.
+
+43
+00:02:15,790 --> 00:02:19,241
+Aquí está apagado, y el aviso rojo lo dice:
+
+44
+00:02:19,099 --> 00:02:23,746
+lo que se contabilice desde ahora no llegaría a ningún estado financiero.
+
+45
+00:02:23,604 --> 00:02:27,856
+Abrir preferencias lleva a Mi Empresa, pestaña Operación.
+
+46
+00:02:27,750 --> 00:02:31,385
+Enciendo Auto-generar Libro Mayor y guardo.
+
+47
+00:02:31,266 --> 00:02:33,882
+El sistema confirma que se guardó.
+
+48
+00:02:34,338 --> 00:02:39,623
+De vuelta en Estado, el Mayor ya está activo y queda una cuenta sin sección de
+
+49
+00:02:39,459 --> 00:02:40,807
+estado financiero:
+
+50
+00:02:40,655 --> 00:02:43,826
+Gastos de representación, creada sin padre.
+
+51
+00:02:43,650 --> 00:02:46,520
+Clasificar cuentas abre la clasificación.
+
+52
+00:02:46,413 --> 00:02:49,574
+Abro su lista y elijo Gastos de administración;
+
+53
+00:02:49,455 --> 00:02:51,049
+se guarda al instante.
+
+54
+00:02:50,965 --> 00:02:55,066
+Regreso a Configuración Contable, abro Estado de la Configuración,
+
+55
+00:02:54,924 --> 00:02:58,896
+y ahora dice que la configuración contable está completa.
+
+56
+00:02:58,731 --> 00:03:01,984
+Cuando algo falte, aquí lo vas a ver primero.
