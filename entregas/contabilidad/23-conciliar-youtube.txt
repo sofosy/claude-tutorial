@@ -4,7 +4,7 @@ Contabilidad · Conciliación bancaria: importar el estado de cuenta y conciliar
 
 DESCRIPCIÓN
 ============================================================
-Cómo conciliar en Germiva una cuenta bancaria: crear la conciliación, importar el estado de cuenta en CSV con su mapeo de columnas, marcar las partidas que ya están en libros, reclasificar una comisión y completar para que comisiones e intereses se contabilicen solos.
+Cómo conciliar en Germiva una cuenta bancaria: crear la conciliación, importar el estado de cuenta en CSV con su mapeo de columnas, conciliar con las sugerencias las partidas que ya están en libros, reclasificar una comisión y completar para que comisiones e intereses se contabilicen solos.
 
 ⏱️ CAPÍTULOS
 00:00  Nueva conciliación

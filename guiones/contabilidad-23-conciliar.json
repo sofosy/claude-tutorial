@@ -1,6 +1,6 @@
 {
   "titulo": "Contabilidad · Conciliación bancaria: importar el estado de cuenta y conciliar",
-  "descripcion": "Cómo conciliar en Germiva una cuenta bancaria: crear la conciliación, importar el estado de cuenta en CSV con su mapeo de columnas, marcar las partidas que ya están en libros, reclasificar una comisión y completar para que comisiones e intereses se contabilicen solos.",
+  "descripcion": "Cómo conciliar en Germiva una cuenta bancaria: crear la conciliación, importar el estado de cuenta en CSV con su mapeo de columnas, conciliar con las sugerencias las partidas que ya están en libros, reclasificar una comisión y completar para que comisiones e intereses se contabilicen solos.",
   "_comentario": "Video 23 de la serie Contabilidad. setup: preparar.sh conciliar (Banco BHD: apertura 100,000 el 1/9, depósito 25,000 el 10/9 y alquiler 8,000 el 20/9 contabilizados; libros 117,000 al 30/9). Extracto: seeds/contabilidad/estado-bhd-septiembre.csv (cierra en 116,720).",
   "base_url": "http://localhost:4200",
   "zona_horaria": "America/Santo_Domingo",
