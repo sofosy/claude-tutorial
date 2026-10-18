@@ -24,7 +24,8 @@ unió en el lote 2 (api#1563, web#1409).
 Ramas y repos:
 - **claude-tutorial** (`claude/cool-johnson-q9dpzp`): este plan, guiones, semillas y videos.
 - **Germiva-api** y **germiva-website**: `feature/contabilidad-catalogo-firma-clientes` para el
-  bloque A ([api#1569](https://github.com/sofosy/Germiva-api/pull/1569)); los arreglos de
+  bloque A ([api#1569](https://github.com/sofosy/Germiva-api/pull/1569),
+  [web#1416](https://github.com/sofosy/germiva-website/pull/1416)); los arreglos de
   multimoneda y de retenciones van en ramas propias (`fix/contabilidad-multimoneda`,
   `fix/fiscal-retenciones`) para que cada PR se revise solo.
 - Cada tarea terminada sale en su propio commit, y este plan se actualiza en el mismo commit.
@@ -43,7 +44,7 @@ terminar; nunca aparece en un video.
 | 2b | Investigar multimoneda: monedas y tasa del día, diferencia cambiaria realizada y no realizada (configuración y cuentas), revaluación, estados en USD y en DOP; qué cubren ya los videos 01–27 | Hecho |
 | 2c | Investigar retenciones de ISR e ITBIS y la carta de retención: configuración, compras, ventas (las que nos hacen), asientos, 606/IR-17/IT-1, emisión de cartas; qué cubren ya los videos | En curso |
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
-| 4 | Corregir los defectos que aparezcan (API y web), con pruebas | En curso: API del bloque A subido (api#1569); falta la web |
+| 4 | Corregir los defectos que aparezcan (API y web), con pruebas | En curso: bloque A subido (api#1569, web#1416); faltan multimoneda y retenciones |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` para la firma y sus clientes | Por hacer |
 | 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | Por hacer |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | Por hacer |
@@ -116,12 +117,12 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 
 | # | Hallazgo | Decisión | Estado |
 |---|----------|----------|--------|
-| F1 | Los clientes que crea la firma nacen con catálogo propio y después NO se les puede cambiar de plantilla, ni siquiera sin asientos (`assertSharedCatalog`) | Arreglar: permitir el cambio libre en catálogo propio mientras no haya asientos | Hecho (api#1569; falta la web) |
+| F1 | Los clientes que crea la firma nacen con catálogo propio y después NO se les puede cambiar de plantilla, ni siquiera sin asientos (`assertSharedCatalog`) | Arreglar: permitir el cambio libre en catálogo propio mientras no haya asientos | Hecho (api#1569, web#1416) |
 | F2 | Una plantilla de la firma ya usada no se puede eliminar: cuenta también a los clientes con catálogo propio, que ya no dependen de ella, y el mensaje pide «cámbielas de catálogo», imposible para ellos | Arreglar | Hecho (api#1569) |
 | F3 | Eliminar una plantilla deja colgado el catálogo por defecto de la firma (borrado suave: el `ON DELETE SET NULL` no corre) y la próxima alta falla | Arreglar | Hecho (api#1569) |
 | F4 | Crear empresa por `CreateCompanyDto.chartTemplate` acepta plantillas de OTRA firma y plantillas incompletas | Arreglar | Hecho (api#1569) |
 | F5 | El alcance «Mi firma contable» solo lo esconde la web: el API deja crear plantillas de firma a cualquiera | Arreglar | Hecho (api#1569) |
-| F6 | En la empresa de la firma, sus propias plantillas salen como «De mi contador» | Arreglar | Por hacer |
+| F6 | En la empresa de la firma, sus propias plantillas salen como «De mi contador» | Arreglar | Hecho (web#1416) |
 | F7 | La plantilla de firma es de un USUARIO (`owner_user_id`), no de la firma: si ese contador sale de la firma, la plantilla deja de poder elegirse | REU | Por hacer |
 | F8 | Dos tablas de pertenencia distintas para la misma pregunta (`user_companies` al elegir, `user_company_roles` al ver) | Revisado: no es una inconsistencia (una pregunta es «¿es miembro de la firma?», la otra «¿está vinculado a esta empresa?») | No aplica |
 | F9 | El acceso «Contabilidad e Impuestos» (rol Contador) no puede cambiar el catálogo de un cliente (le falta `ACCOUNTING_INTEGRATION_CONFIGURE`) | REU | Por hacer |
@@ -131,10 +132,10 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | F13 | Una plantilla incompleta no se puede completar en el sitio (no hay edición de roles) | REU | Por hacer |
 | F14 | Reusar el código de una plantilla eliminada da un error genérico de duplicado | Arreglar | Hecho (api#1569) |
 | F15 | El cambio con asientos no es atómico (la plantilla nueva y el asiento se confirman antes del paso 3) y no reapunta referencias ni resiembra cuentas por impuesto | Verificar y arreglar | Hecho el reapunte y el resembrado (api#1569); la atomicidad del asiento queda anotada |
-| F16 | Errata «o dela de alta» en el diálogo de Nuevo cliente | Arreglar | Por hacer |
-| F17 | Tú y usted mezclados en Plantillas de Catálogo, el asistente y mensajes del API | Arreglar en las pantallas de la tanda | Por hacer |
+| F16 | Errata «o dela de alta» en el diálogo de Nuevo cliente | Arreglar | Hecho (web#1416) |
+| F17 | Tú y usted mezclados en Plantillas de Catálogo, el asistente y mensajes del API | Arreglar en las pantallas de la tanda | Hecho en Plantillas, asistente, catálogo y Nuevo cliente (web#1416) |
 | F18 | Manual desfasado: CAT-01 (nombres viejos de plantillas), CAT-13/OBJ-22 (ruta del alta), OBJ-22 (cambio para clientes con catálogo propio), CTD-06 (falta el campo «Catálogo de cuentas») | Arreglar | Por hacer |
-| F19 | El video 09 dice que una plantilla «Solo esta empresa» sirve «de base en otra empresa», y el diálogo promete lo mismo: solo es cierto para las de firma | Arreglar el texto y regrabar el 09 | Por hacer |
+| F19 | El video 09 dice que una plantilla «Solo esta empresa» sirve «de base en otra empresa», y el diálogo promete lo mismo: solo es cierto para las de firma | Arreglar el texto y regrabar el 09 | Hecho el texto (web#1416); falta regrabar el 09 |
 
 - **Investigación multimoneda (tarea 2b).** Los arreglos van en `fix/contabilidad-multimoneda`.
 
