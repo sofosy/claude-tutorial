@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Contabilidad · La plantilla de catálogo de tu firma contable
+
+DESCRIPCIÓN
+============================================================
+Cómo una firma contable guarda en Germiva su catálogo de cuentas como plantilla con el alcance «Mi firma contable», para que sus clientes arranquen con el catálogo que su equipo ya conoce, y quién la puede ver.
+
+⏱️ CAPÍTULOS
+00:00  El catálogo de la firma
+00:44  Guardar la plantilla
+01:54  Quién la ve
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dónde arma la firma el catálogo que quiere dar a sus clientes
+• Guardarlo como plantilla con el alcance «Mi firma contable»
+• Quién ve la plantilla de la firma y cómo la ve cada uno
+
+⚠️ ERRORES COMUNES
+• Crear la plantilla con «Solo esta empresa»: no aparece al dar de alta a un cliente
+• Armar el catálogo dentro de un cliente y no en la empresa de la firma
+• Esperar que un cambio posterior en la plantilla llegue a los clientes ya creados: cada uno tiene su copia
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:19
+
+TRANSCRIPCIÓN
+============================================================
+Una firma contable lleva la contabilidad de muchos clientes, y le conviene que todos arranquen con el mismo catálogo de cuentas, el que su equipo ya conoce. Ese catálogo se arma en la empresa de la firma: aquí estamos en Germiva Contadores, como dice el selector de empresa. Recojo el menú. Busco uno, cero uno, cero uno: el efectivo y los bancos. La firma ya lo ajustó a su manera. El banco uno ahora se llama Banco Popular, cuenta corriente. También agregó la cuenta del Banco BHD, y la Caja chica, que salen como Personalizada. Este catálogo, tal como está, es el que vamos a guardar como plantilla de la firma.
+Ahora voy a Plantillas de Catálogo y abro Crear plantilla desde mi catálogo. El cuadro explica qué se copia: las cuentas con los nombres que les pusiste, su clasificación para los estados financieros y los roles contables. Escribo el código, germiva contadores, en mayúsculas y sin espacios. Luego el nombre, que es como lo verán en las listas: Catálogo Germiva Contadores. Y una descripción corta, para que el equipo sepa para qué sirve. Ahora, lo importante es el alcance. Solo esta empresa la deja aquí, como referencia. Mi firma contable la pone a disposición de los clientes de la firma: esa es la que quiero. Pulso Crear plantilla. Copiar el catálogo toma un momento. El aviso lo confirma y se abre el detalle de la plantilla.
+Arriba, en verde, el detalle dice que la plantilla está completa: cada rol contable tiene su cuenta y cada cuenta su sección en los estados financieros, así que sirve para dar de alta clientes. Abajo están sus cuentas. Busco caja chica en el buscador del detalle. Y ahí está la cuenta que agregó la firma, que viaja con la plantilla. La cierro.
+La tarjeta nueva dice De la firma. La ven la empresa de la firma y cada cliente donde trabaja este contador; en el cliente aparece como De mi contador. Una plantilla con Solo esta empresa no sale en ninguna de esas listas. Lo que viene es ponerla como el catálogo por defecto de los clientes nuevos, en Mi Cartera.

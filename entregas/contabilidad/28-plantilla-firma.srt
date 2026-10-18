@@ -1,0 +1,163 @@
+1
+00:00:03,000 --> 00:00:07,043
+Una firma contable lleva la contabilidad de muchos clientes,
+
+2
+00:00:06,878 --> 00:00:11,210
+y le conviene que todos arranquen con el mismo catálogo de cuentas,
+
+3
+00:00:11,069 --> 00:00:13,137
+el que su equipo ya conoce.
+
+4
+00:00:12,996 --> 00:00:15,820
+Ese catálogo se arma en la empresa de la firma:
+
+5
+00:00:15,666 --> 00:00:19,975
+aquí estamos en Germiva Contadores, como dice el selector de empresa.
+
+6
+00:00:19,891 --> 00:00:20,939
+Recojo el menú.
+
+7
+00:00:20,856 --> 00:00:23,609
+Busco uno, cero uno, cero uno:
+
+8
+00:00:23,492 --> 00:00:25,653
+el efectivo y los bancos.
+
+9
+00:00:25,522 --> 00:00:28,056
+La firma ya lo ajustó a su manera.
+
+10
+00:00:27,949 --> 00:00:32,224
+El banco uno ahora se llama Banco Popular, cuenta corriente.
+
+11
+00:00:32,176 --> 00:00:36,811
+También agregó la cuenta del Banco BHD, y la Caja chica,
+
+12
+00:00:36,658 --> 00:00:38,657
+que salen como Personalizada.
+
+13
+00:00:38,527 --> 00:00:44,207
+Este catálogo, tal como está, es el que vamos a guardar como plantilla de la firma.
+
+14
+00:00:44,649 --> 00:00:50,143
+Ahora voy a Plantillas de Catálogo y abro Crear plantilla desde mi catálogo.
+
+15
+00:00:49,990 --> 00:00:52,256
+El cuadro explica qué se copia:
+
+16
+00:00:52,171 --> 00:00:54,740
+las cuentas con los nombres que les pusiste,
+
+17
+00:00:54,609 --> 00:00:59,164
+su clasificación para los estados financieros y los roles contables.
+
+18
+00:00:58,998 --> 00:01:03,900
+Escribo el código, germiva contadores, en mayúsculas y sin espacios.
+
+19
+00:01:03,792 --> 00:01:06,745
+Luego el nombre, que es como lo verán en las listas:
+
+20
+00:01:06,579 --> 00:01:08,903
+Catálogo Germiva Contadores.
+
+21
+00:01:08,774 --> 00:01:12,724
+Y una descripción corta, para que el equipo sepa para qué sirve.
+
+22
+00:01:12,593 --> 00:01:15,418
+Ahora, lo importante es el alcance.
+
+23
+00:01:15,275 --> 00:01:18,576
+Solo esta empresa la deja aquí, como referencia.
+
+24
+00:01:18,421 --> 00:01:22,442
+Mi firma contable la pone a disposición de los clientes de la firma:
+
+25
+00:01:22,358 --> 00:01:23,835
+esa es la que quiero.
+
+26
+00:01:23,680 --> 00:01:25,460
+Pulso Crear plantilla.
+
+27
+00:01:25,295 --> 00:01:27,805
+Copiar el catálogo toma un momento.
+
+28
+00:01:27,640 --> 00:01:31,335
+El aviso lo confirma y se abre el detalle de la plantilla.
+
+29
+00:01:31,780 --> 00:01:36,450
+Arriba, en verde, el detalle dice que la plantilla está completa:
+
+30
+00:01:36,284 --> 00:01:40,837
+cada rol contable tiene su cuenta y cada cuenta su sección en los estados
+
+31
+00:01:40,673 --> 00:01:44,287
+financieros, así que sirve para dar de alta clientes.
+
+32
+00:01:44,156 --> 00:01:46,272
+Abajo están sus cuentas.
+
+33
+00:01:46,222 --> 00:01:49,081
+Busco caja chica en el buscador del detalle.
+
+34
+00:01:48,950 --> 00:01:53,132
+Y ahí está la cuenta que agregó la firma, que viaja con la plantilla.
+
+35
+00:01:53,025 --> 00:01:53,992
+La cierro.
+
+36
+00:01:54,444 --> 00:01:57,198
+La tarjeta nueva dice De la firma.
+
+37
+00:01:57,067 --> 00:02:02,028
+La ven la empresa de la firma y cada cliente donde trabaja este contador;
+
+38
+00:02:01,944 --> 00:02:05,139
+en el cliente aparece como De mi contador.
+
+39
+00:02:05,009 --> 00:02:10,155
+Una plantilla con Solo esta empresa no sale en ninguna de esas listas.
+
+40
+00:02:10,048 --> 00:02:15,078
+Lo que viene es ponerla como el catálogo por defecto de los clientes nuevos,
+
+41
+00:02:14,947 --> 00:02:16,284
+en Mi Cartera.
