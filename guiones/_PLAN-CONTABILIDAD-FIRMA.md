@@ -26,8 +26,9 @@ Ramas y repos:
 - **Germiva-api** y **germiva-website**: `feature/contabilidad-catalogo-firma-clientes` para el
   bloque A ([api#1569](https://github.com/sofosy/Germiva-api/pull/1569),
   [web#1416](https://github.com/sofosy/germiva-website/pull/1416)); los arreglos de
-  multimoneda y de retenciones van en ramas propias (`fix/contabilidad-multimoneda`,
-  `fix/fiscal-retenciones`) para que cada PR se revise solo.
+  multimoneda y de retenciones van en ramas propias (`fix/contabilidad-multimoneda`;
+  `fix/fiscal-retenciones`: [api#1574](https://github.com/sofosy/Germiva-api/pull/1574),
+  [web#1418](https://github.com/sofosy/germiva-website/pull/1418)) para que cada PR se revise solo.
 - Cada tarea terminada sale en su propio commit, y este plan se actualiza en el mismo commit.
 
 **Regla de datos (pedido del usuario):** los videos usan SOLO datos y escenarios creados
@@ -46,7 +47,7 @@ terminar; nunca aparece en un video.
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | En curso: bloque A subido (api#1569, web#1416); faltan multimoneda y retenciones |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos |
-| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: 28–30 ensayados y grabándose |
+| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: 28–33 guionados; 28–30 a regrabar (ritmo); 31–33 ensayados |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | Por hacer |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Por hacer |
 | 9 | Validación final contra PROD si el cambio toca migraciones o contabilidad; `down.sh --all` y verificación vacía | Por hacer |
@@ -176,25 +177,33 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | # | Hallazgo | Decisión | Estado |
 |---|----------|----------|--------|
 | G1 | La carta dice que lo retenido se declaró en el IR-17/IT-1 del mes del PAGO, pero el IR-17 y el IT-1 de Germiva lo ponen en el mes de la FACTURA | REU (decide el contador) | Por hacer |
-| G2 | «Monto pagado» de la carta ignora ISC, otros impuestos y propina | Arreglar | Por hacer |
-| G3 | Reimprimir una carta no da el mismo documento: logo, membrete, firma y sello se leen al descargar | Arreglar | Por hacer |
+| G2 | «Monto pagado» de la carta ignora ISC, otros impuestos y propina | Arreglar | Hecho (api#1574, web#1418) |
+| G3 | Reimprimir una carta no da el mismo documento: logo, membrete, firma y sello se leen al descargar | Arreglar | Hecho (api#1574, web#1418) |
 | G4 | El código de verificación no se puede consultar en ninguna parte | REU (funcionalidad nueva) | Por hacer |
-| G5 | Cambios que no marcan la carta (solo el tipo en «Corregir retenciones», cambiar la fecha del pago); la reemisión no es atómica | Arreglar | Por hacer |
-| G6 | Probable: las retenciones de una compra estándar caen también en «Retenciones recibidas» | Verificar y arreglar | Por hacer |
-| G7 | Sin período abierto, la retención de la compra se omite en silencio | Arreglar | Por hacer |
+| G5 | Cambios que no marcan la carta (solo el tipo en «Corregir retenciones», cambiar la fecha del pago); la reemisión no es atómica | Arreglar | Hecho (api#1574, web#1418) |
+| G6 | Probable: las retenciones de una compra estándar caen también en «Retenciones recibidas» | Verificar y arreglar | Hecho (api#1574, web#1418) |
+| G7 | Sin período abierto, la retención de la compra se omite en silencio | Arreglar | Hecho (api#1574, web#1418) |
 | G8 | 606, casilla 17: el código 4 (rentas presuntas) nunca se usa | REU (decide el contador) | Por hacer |
-| G9 | Cualquier empresa puede editar o eliminar un tipo de retención del catálogo global | Arreglar | Por hacer |
-| G10 | «Firma y destinatario» visible con solo ver (guardar da 403); «Retenciones practicadas» pide un permiso distinto al del API | Arreglar | Por hacer |
-| G11 | La retención al cobrar acepta montos negativos | Arreglar | Por hacer |
+| G9 | Cualquier empresa puede editar o eliminar un tipo de retención del catálogo global | Arreglar | Hecho (api#1574, web#1418) |
+| G10 | «Firma y destinatario» visible con solo ver (guardar da 403); «Retenciones practicadas» pide un permiso distinto al del API | Arreglar | Hecho (api#1574, web#1418) |
+| G11 | La retención al cobrar acepta montos negativos | Arreglar | Hecho (api#1574, web#1418) |
 | G12 | Código sin uso: `retention-operations`, «Agente Fiscal», el formulario de retención por proveedor (sin pantalla), el viejo «generar certificado» | REU (limpieza) | Por hacer |
 | G13 | NG 02-2026 (sin ITBIS 30 % a quien factura con e-CF) no está aplicada; la matriz corre en modo aviso | REU (ya pendiente) | Por hacer |
-| G14 | Tú y usted en un mismo mensaje («Indique … Selecciona …») | Arreglar | Por hacer |
-| G15 | Inglés que llega al usuario («Invoice … not found», estado «applied») | Arreglar | Por hacer |
-| G16 | Textos erróneos («no puede ser negativa», «Retención sobre el ISR del documento», ejemplo 18 en Swagger) | Arreglar | Por hacer |
-| G17 | Nombres desfasados («Contabilidad › Fiscal», «Archivos de marca», «certificado» vs «carta», cita a DP-096) | Arreglar | Por hacer |
-| G18 | El manual fiscal no tiene la carta de retención; compras manda a buscarla allí | Arreglar | Por hacer |
+| G14 | Tú y usted en un mismo mensaje («Indique … Selecciona …») | Arreglar | Hecho (api#1574, web#1418) |
+| G15 | Inglés que llega al usuario («Invoice … not found», estado «applied») | Arreglar | Hecho (api#1574, web#1418) |
+| G16 | Textos erróneos («no puede ser negativa», «Retención sobre el ISR del documento», ejemplo 18 en Swagger) | Arreglar | Hecho (api#1574, web#1418) |
+| G17 | Nombres desfasados («Contabilidad › Fiscal», «Archivos de marca», «certificado» vs «carta», cita a DP-096) | Arreglar | Hecho (api#1574, web#1418) |
+| G18 | El manual fiscal no tiene la carta de retención; compras manda a buscarla allí | Arreglar | Hecho (api#1574, web#1418) |
 
 - **PROD, contexto:** 20 firmas aprobadas, ninguna con catálogo por defecto
   (`default_chart_template_id`); solo existen las 3 plantillas del sistema (ninguna
   propia de una firma); 125 empresas usan GERMIVA_BASE, 5 RD_AMPLIADO y 1 RD_UNIFICADO;
   3 tienen catálogo propio (`chart_mode = OWN`).
+- **Motor de grabación:** la sesión del login se volvía a inyectar en cada carga completa de la
+  página, así que cambiar de empresa dentro de un video (que recarga la app) volvía a la empresa
+  del login. Ahora se inyecta una sola vez por pestaña (`tutorial/capturar.py`).
+- **Retenciones, pendientes que dejó el arreglo:** las compras emitidas antes de G6 pueden tener
+  filas en `tax_withholdings` (`TW-<factura>-ITBIS|ISR`) que inflan el IR-2 y «Retenciones
+  recibidas» (saneo → REU); las cartas ya emitidas con ISC, propina o percepciones saldrán
+  «desactualizadas» porque su «Monto pagado» estaba mal.
+

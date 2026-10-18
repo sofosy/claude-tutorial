@@ -89,7 +89,7 @@
    "rotulo": "Nuevo cliente",
    "ruta": "Mi Cartera › Cartera › Nuevo cliente",
    "texto_pantalla": "Para un cliente · buscar por RNC",
-   "narracion": "La Cartera reúne los clientes de la firma. Para agregar uno, pulso Nuevo cliente y elijo Para un cliente. Primero el sistema busca si la empresa ya existe en la plataforma. Escribo su RNC: uno, tres, cero, cinco, cinco, cinco, dos, dos, cero. Dejo el nivel de acceso en Contabilidad e Impuestos y pulso Enviar invitación.",
+   "narracion": "La Cartera reúne los clientes de la firma. Para agregar uno, pulso Nuevo cliente. El cuadro pregunta para quién es la empresa: elijo Para un cliente. Ahora el sistema busca si la empresa ya existe en la plataforma, por su RNC o por el correo de su administrador. Escribo el RNC: uno, tres, cero, cinco, cinco, cinco, dos, dos, cero. Dejo el nivel de acceso en Contabilidad e Impuestos y pulso Enviar invitación.",
    "acciones": [
     {
      "resaltar": ":text('Clientes activos') >> nth=0",
@@ -102,15 +102,27 @@
      "al_decir": "pulso Nuevo cliente"
     },
     {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El cuadro pregunta"
+    },
+    {
      "click": "mat-dialog-container button:has-text('Para un cliente')",
      "al_decir": "elijo Para un cliente"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el sistema busca si la empresa"
     },
     {
      "escribir": {
       "sel": "mat-dialog-container input[formcontrolname='rnc']",
       "texto": "130555220"
      },
-     "al_decir": "Escribo su RNC"
+     "al_decir": "Escribo el RNC"
     },
     {
      "resaltar": "mat-dialog-container mat-radio-group",

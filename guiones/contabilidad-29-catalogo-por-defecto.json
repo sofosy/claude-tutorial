@@ -117,17 +117,35 @@
    "rotulo": "Plantilla por defecto",
    "ruta": "Mi Cartera › Mi firma",
    "texto_pantalla": "Del sistema · De su firma · Incompleta",
-   "narracion": "Para cambiarlo, abro la lista. Cada opción dice cuántas cuentas trae y de dónde viene: Del sistema, o De su firma. Una plantilla incompleta sale desactivada, porque haría nacer al cliente con la contabilidad a medias. Elijo Catálogo Germiva Contadores, la plantilla de la firma, y pulso Guardar plantilla.",
+   "narracion": "Para cambiarlo, abro la lista. Cada opción dice cuántas cuentas trae y de dónde viene: el catálogo base, el ampliado y el unificado son Del sistema, y el Catálogo Germiva Contadores es De su firma. Una plantilla incompleta sale desactivada, porque haría nacer al cliente con la contabilidad a medias. Elijo Catálogo Germiva Contadores, la plantilla de la firma, y pulso Guardar plantilla.",
    "acciones": [
     {
      "click": "section.firm-catalog mat-select",
      "al_decir": "abro la lista"
     },
     {
-     "resaltar": ".mat-mdc-select-panel",
-     "durante_ms": 5000,
+     "resaltar": "mat-option:has-text('Catálogo base Germiva')",
+     "durante_ms": 2500,
      "cursor": false,
-     "al_decir": "Cada opción dice"
+     "al_decir": "el catálogo base"
+    },
+    {
+     "resaltar": "mat-option:has-text('Catálogo dominicano unificado')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "y el unificado son Del sistema"
+    },
+    {
+     "resaltar": "mat-option:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "es De su firma"
+    },
+    {
+     "resaltar": ".mat-mdc-select-panel",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Una plantilla incompleta"
     },
     {
      "click": "mat-option:has-text('Catálogo Germiva Contadores')",
