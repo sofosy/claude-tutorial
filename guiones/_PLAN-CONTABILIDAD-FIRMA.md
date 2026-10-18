@@ -46,13 +46,13 @@ terminar; nunca aparece en un video.
 | 2b | Investigar multimoneda: monedas y tasa del día, diferencia cambiaria realizada y no realizada (configuración y cuentas), revaluación, estados en USD y en DOP; qué cubren ya los videos 01–27 | Hecho |
 | 2c | Investigar retenciones de ISR e ITBIS y la carta de retención: configuración, compras, ventas (las que nos hacen), asientos, 606/IR-17/IT-1, emisión de cartas; qué cubren ya los videos | Hecho |
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
-| 4 | Corregir los defectos que aparezcan (API y web), con pruebas | En curso: bloque A subido (api#1569, web#1416); faltan multimoneda y retenciones |
+| 4 | Corregir los defectos que aparezcan (API y web), con pruebas | Hecho: firma (api#1569, web#1416), multimoneda (api#1575, web#1419), retenciones (api#1574, web#1418) |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos |
 | 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: 28–33 guionados; 28–30 a regrabar (ritmo); 31–33 ensayados |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | En curso: manual y definición de la experta hechos (api#1569); faltan catálogo de videos y textos de YouTube |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Hecho: DP-124 a DP-138 (DP-135 a DP-138 renumeradas por choque con comisiones), DP-016, DP-005 y DP-002 al día |
 | 9 | Validación final contra PROD si el cambio toca migraciones o contabilidad; `down.sh --all` y verificación vacía | Por hacer |
-| 10 | PR a master/main con CI en verde | En curso: unidos api#1569, web#1416, web#1419, web#1418; faltan api#1574 y api#1575 (pruebas de integración corriendo) |
+| 10 | PR a master/main con CI en verde | Hecho para los arreglos: los 6 PR unidos a master con CI en verde (2026-10-18). Pruebas completas del API sobre la unión: 10 991 en verde; 7 fallos, todos de archivos que ya fallan en master o que pasan solos. Falta el PR de los videos (claude-tutorial) al final |
 
 ## Videos
 
@@ -215,4 +215,7 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 - **Entorno:** `ng serve` (≈6 GB) cayó dos veces por falta de memoria con agentes trabajando en
   paralelo. Para grabar se sirve la compilación estática del frontend (poca RAM); se recompila
   cuando cambia el código de la web.
+- **Entorno de grabación sobre master** (2026-10-18): API y web en `master` con los tres bloques de
+  arreglos; la base de partida de los videos (`contabilidad-base.sql.gz`) se regeneró con las
+  migraciones nuevas de master.
 

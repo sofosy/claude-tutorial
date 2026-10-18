@@ -132,7 +132,7 @@
      "al_decir": "y confirmo"
     },
     {
-     "resaltar": "mat-dialog-container >> nth=0, .mat-mdc-snack-bar-container >> nth=0",
+     "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 6000,
      "cursor": false,
      "al_decir": "el sistema no me deja"
@@ -224,7 +224,7 @@
      "al_decir": "confirmo la eliminación"
     },
     {
-     "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container >> nth=0",
+     "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 2500,
      "cursor": false,
      "al_decir": "El aviso lo confirma"
