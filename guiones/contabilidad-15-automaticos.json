@@ -175,6 +175,18 @@
           "durante_ms": 5000,
           "cursor": false,
           "al_decir": "y la fila sale de la lista"
+        },
+        {
+          "resaltar": "button:has-text('Más filtros')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "está filtrado en lo que queda"
+        },
+        {
+          "resaltar": "text=No se encontraron registros",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Si la causa no estuviera"
         }
       ]
     },

@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Asientos automáticos y Registro de Integración
+
+DESCRIPCIÓN
+============================================================
+Qué pasa cuando un documento no se puede contabilizar en Germiva: el aviso en Diario y Mayor, el Registro de Integración con el motivo, cómo contabilizar el documento una vez corregida la causa y dónde ver su asiento.
+
+⏱️ CAPÍTULOS
+00:00  El aviso
+00:23  Registro de Integración
+00:46  Contabilizar el documento
+01:14  El asiento del documento
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué asientos genera el sistema solo
+• Leer el aviso de documentos sin asiento
+• Encontrar el motivo en el Registro de Integración
+• Contabilizar el documento cuando la causa está corregida
+
+⚠️ ERRORES COMUNES
+• Reintentar sin corregir la causa: vuelve a fallar con el mismo motivo
+• Apagar el auto-posteo para que el aviso desaparezca: el documento sigue sin asiento
+• Registrar a mano el asiento que faltaba: después se duplica
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:42
+
+TRANSCRIPCIÓN
+============================================================
+Muchos asientos los genera el sistema solo: al emitir una factura, cobrar, pagar o mover inventario. Si uno falla, Diario y Mayor lo avisa arriba: un documento no se pudo contabilizar, y por eso no está en los libros. Recojo el menú. El botón Revisar lleva al Registro de Integración, filtrado en lo que queda por resolver.
+El Registro de Integración es la bitácora de cada asiento automático. Esta fila es el ajuste de inventario por conteo físico: está Fallido, y la columna del error dice el motivo: faltaba la cuenta de otros ingresos por ajuste de inventario en el mapeo. Ver Detalle muestra el tipo de operación, el documento y el error completo. Lo cierro.
+La causa ya se corrigió: se volvió a activar ese rol en el Mapeo de Cuentas. Ahora Contabilizar genera el asiento que faltaba; si el asiento ya existiera, no lo duplica. Confirmo. El aviso dice que quedó contabilizado, y la fila sale de la lista: como el registro está filtrado en lo que queda por resolver, ya no queda nada pendiente. Si la causa no estuviera corregida, el aviso diría el motivo del nuevo intento.
+De vuelta en Diario y Mayor, el aviso ya no está, y el asiento aparece en la lista, de tipo Automático. Lo abro para ver sus líneas: el inventario al débito y los otros ingresos al crédito. En una factura, el mismo asiento se abre desde Más acciones, Ver asiento contable. Y recuerda: un asiento automático se corrige en su documento, no en el diario.
