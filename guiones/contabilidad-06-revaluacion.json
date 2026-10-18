@@ -200,7 +200,7 @@
    "rotulo": "Historial y anulación",
    "ruta": "Contabilidad › Banca › Revaluación NIC 21",
    "texto_pantalla": "Revaluaciones previas · y la NIC 16",
-   "narracion": "Abajo, en Revaluaciones previas, queda la corrida: la fecha, la moneda, la tasa, cuántos documentos ajustó, la ganancia, la pérdida, el estado Posteada y el asiento que generó. La próxima revaluación parte de esta tasa. Si te equivocaste, el botón Anular revaluación registra el reverso; pide el motivo, y se anulan siempre de la más reciente a la más antigua. Una aclaración final: esto es la revaluación de moneda. La revaluación de activos fijos, la de la norma NIC 16, todavía no existe como función en el sistema; hoy, si tu contador la necesita, se registra con un asiento manual.",
+   "narracion": "Abajo, en Revaluaciones previas, queda la corrida: la fecha, la moneda, la tasa, cuántos documentos ajustó, la ganancia, la pérdida, el estado Contabilizada y el asiento que generó. La próxima revaluación parte de esta tasa. Si te equivocaste, el botón Anular revaluación registra el reverso; pide el motivo, y se anulan siempre de la más reciente a la más antigua. Una aclaración final: esto es la revaluación de moneda. La revaluación de activos fijos, la de la norma NIC 16, todavía no existe como función en el sistema; hoy, si tu contador la necesita, se registra con un asiento manual.",
    "acciones": [
     {
      "resaltar": "text=Revaluaciones previas",
@@ -215,10 +215,10 @@
      "al_decir": "queda la corrida"
     },
     {
-     "resaltar": "text=Posteada >> nth=0",
+     "resaltar": "text=Contabilizada >> nth=0",
      "durante_ms": 3000,
      "cursor": false,
-     "al_decir": "el estado Posteada"
+     "al_decir": "el estado Contabilizada"
     },
     {
      "resaltar": "button[mattooltip='Anular revaluación'], button:has(mat-icon:text-is('undo'))",

@@ -1,0 +1,87 @@
+1
+00:00:03,000 --> 00:00:08,483
+El catálogo por defecto de los clientes se fija en Mi Cartera, pestaña Mi firma,
+
+2
+00:00:08,329 --> 00:00:11,221
+que reúne los datos profesionales de la firma.
+
+3
+00:00:11,092 --> 00:00:15,041
+Al final está la sección Catálogo de cuentas de sus clientes:
+
+4
+00:00:14,958 --> 00:00:19,233
+es el catálogo con el que nacen los clientes que la firma da de alta.
+
+5
+00:00:19,068 --> 00:00:22,889
+Hoy dice Catálogo base Germiva, el del sistema,
+
+6
+00:00:22,713 --> 00:00:25,722
+porque la firma todavía no eligió otro.
+
+7
+00:00:26,176 --> 00:00:28,501
+Para cambiarlo, abro la lista.
+
+8
+00:00:28,382 --> 00:00:32,484
+Cada opción dice cuántas cuentas trae y de dónde viene:
+
+9
+00:00:32,341 --> 00:00:37,557
+el catálogo base, el ampliado y el unificado son Del sistema,
+
+10
+00:00:37,450 --> 00:00:41,469
+y el Catálogo Germiva Contadores es De su firma.
+
+11
+00:00:41,385 --> 00:00:44,557
+Una plantilla incompleta sale desactivada,
+
+12
+00:00:44,393 --> 00:00:48,180
+porque haría nacer al cliente con la contabilidad a medias.
+
+13
+00:00:48,097 --> 00:00:52,314
+Elijo Catálogo Germiva Contadores, la plantilla de la firma,
+
+14
+00:00:52,159 --> 00:00:54,751
+y pulso Guardar plantilla.
+
+15
+00:00:55,222 --> 00:00:57,859
+El aviso verde confirma que se guardó;
+
+16
+00:00:57,753 --> 00:00:59,381
+pulso Aceptar.
+
+17
+00:00:59,251 --> 00:01:04,117
+Desde ahora, cada cliente que la firma dé de alta nace con una copia de este
+
+18
+00:01:03,963 --> 00:01:04,814
+catálogo.
+
+19
+00:01:04,683 --> 00:01:07,682
+Los clientes que ya existen no cambian:
+
+20
+00:01:07,528 --> 00:01:09,632
+cada uno tiene su propia copia.
+
+21
+00:01:09,513 --> 00:01:13,661
+Y en cada alta se puede elegir otra plantilla para ese cliente.
+
+22
+00:01:13,531 --> 00:01:18,409
+Si un día quieres volver al catálogo del sistema, lo eliges aquí mismo.

@@ -263,7 +263,7 @@
    "texto_pantalla": "Clasificación para Estados Financieros",
    "navegar": "/accounting/configuracion/clasificacion",
    "al_decir_navegar": "tarjeta Clasificación",
-   "narracion": "Por último, la clasificación. Cada cuenta tiene que decir en qué parte de los estados financieros va. En Configuración Contable está la tarjeta Clasificación para Estados Financieros. Arriba dice cuántas cuentas faltan: hay una sin clasificar, porque se creó sin cuenta padre. Es la de gastos de representación. En la columna Sección del estado financiero abro la lista y elijo Gastos de administración. Se guarda al instante, y la lista queda vacía, porque solo mostraba las pendientes. Apago el filtro Solo sin clasificar para verlas todas. La casilla Monetaria es para cuentas de balance en moneda extranjera, que se revalúan al cierre. Y las cuentas con candado son de la plantilla: su clasificación ya viene hecha.",
+   "narracion": "Por último, la clasificación. Cada cuenta tiene que decir en qué parte de los estados financieros va. En Configuración Contable está la tarjeta Clasificación para Estados Financieros. Arriba dice cuántas cuentas faltan: hay una sin clasificar, porque se creó sin cuenta padre. Es la de gastos de representación. En la columna Sección del estado financiero abro la lista y elijo Gastos de administración. Se guarda al instante, y la lista queda vacía, porque solo mostraba las pendientes. Apago el filtro Solo sin clasificar para verlas todas. La casilla Monetaria marca las partidas en moneda extranjera: la revaluación de cierre ajusta los bancos, las cuentas por cobrar y las cuentas por pagar en divisa, y si la desmarcas en la cuenta de un banco, ese banco queda fuera de la revaluación. Y las cuentas con candado son de la plantilla: su clasificación ya viene hecha.",
    "acciones": [
     {
      "resaltar": "text=Clasificación del catálogo",
@@ -303,9 +303,15 @@
     },
     {
      "resaltar": "th:has-text('Monetaria')",
-     "durante_ms": 4500,
+     "durante_ms": 4000,
      "cursor": false,
      "al_decir": "La casilla Monetaria"
+    },
+    {
+     "resaltar": "tr.mat-mdc-row:has-text('Banco 1') td.col-monetary, td.col-monetary",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "si la desmarcas en la cuenta de un banco"
     },
     {
      "resaltar": "tr.mat-mdc-row:has(mat-icon:text-is('lock')) >> nth=0",

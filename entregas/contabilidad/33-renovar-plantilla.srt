@@ -1,0 +1,111 @@
+1
+00:00:03,000 --> 00:00:06,310
+Las cuentas de una plantilla no se editan:
+
+2
+00:00:06,192 --> 00:00:08,528
+cuando la firma mejora su catálogo,
+
+3
+00:00:08,387 --> 00:00:13,056
+arma la versión nueva desde el catálogo de su empresa, como vimos antes.
+
+4
+00:00:13,031 --> 00:00:14,217
+Recojo el menú.
+
+5
+00:00:14,099 --> 00:00:16,074
+Aquí ya están las dos:
+
+6
+00:00:15,957 --> 00:00:19,535
+la plantilla de siempre, y la versión dos mil veintisiete,
+
+7
+00:00:19,393 --> 00:00:21,961
+que suma la cuenta del Banco Santa Cruz.
+
+8
+00:00:21,878 --> 00:00:23,818
+Las dos son De la firma.
+
+9
+00:00:24,268 --> 00:00:29,658
+Si intento eliminar la plantilla vieja con el ícono rojo de su tarjeta, y confirmo,
+
+10
+00:00:29,539 --> 00:00:31,190
+el sistema no me deja:
+
+11
+00:00:31,083 --> 00:00:34,754
+es la plantilla por defecto de la firma para sus clientes nuevos,
+
+12
+00:00:34,589 --> 00:00:36,461
+y la próxima alta fallaría.
+
+13
+00:00:36,296 --> 00:00:38,819
+Primero hay que elegir otra en Mi firma.
+
+14
+00:00:39,269 --> 00:00:42,221
+Voy a Mi Cartera, pestaña Mi firma.
+
+15
+00:00:42,067 --> 00:00:47,550
+En el catálogo de cuentas de sus clientes, la plantilla por defecto es la vieja.
+
+16
+00:00:48,001 --> 00:00:52,857
+Para cambiarla, abro la lista y elijo la versión dos mil veintisiete.
+
+17
+00:00:52,680 --> 00:00:56,282
+Pulso Guardar plantilla, y el aviso verde lo confirma.
+
+18
+00:00:56,140 --> 00:00:57,025
+Acepto.
+
+19
+00:00:56,917 --> 00:01:00,740
+Desde ahora, los clientes nuevos nacen con la versión nueva.
+
+20
+00:01:01,173 --> 00:01:03,463
+De vuelta en Plantillas de Catálogo,
+
+21
+00:01:03,356 --> 00:01:07,317
+la plantilla vieja ya no es la por defecto de nadie.
+
+22
+00:01:07,767 --> 00:01:08,745
+Ahora sí:
+
+23
+00:01:08,626 --> 00:01:12,414
+pulso su ícono rojo y confirmo la eliminación.
+
+24
+00:01:12,272 --> 00:01:14,167
+El aviso lo confirma.
+
+25
+00:01:14,083 --> 00:01:18,671
+La Ferretería del Cibao, que nació de esa plantilla, no se entera:
+
+26
+00:01:18,587 --> 00:01:20,819
+tiene su propia copia del catálogo.
+
+27
+00:01:20,770 --> 00:01:26,148
+Lo único que impide eliminar una plantilla es que una empresa comparta sus cuentas
+
+28
+00:01:26,041 --> 00:01:30,119
+sin copia propia, o que sea la por defecto de una firma.

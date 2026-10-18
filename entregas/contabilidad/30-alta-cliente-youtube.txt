@@ -1,0 +1,34 @@
+TÍTULO
+============================================================
+Contabilidad · Dar de alta a un cliente con su catálogo
+
+DESCRIPCIÓN
+============================================================
+Cómo una firma contable da de alta en Germiva a un cliente que aún no está en la plataforma, con qué catálogo de cuentas nace (el por defecto de la firma u otro elegido en el alta) y por qué el cliente queda con su propio catálogo.
+
+⏱️ CAPÍTULOS
+00:00  Nuevo cliente
+00:32  Dar de alta
+01:13  El cliente y su catálogo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dar de alta a un cliente nuevo desde Mi Cartera
+• Elegir con qué catálogo nace
+• Por qué el cliente queda con catálogo propio
+
+⚠️ ERRORES COMUNES
+• Escribir el correo de la firma como dueño: el dueño es el cliente
+• Dejar la plantilla por defecto cuando ese cliente necesita otra: se elige en el alta
+• Creer que el cliente comparte la plantilla: tiene su propia copia
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:00
+
+TRANSCRIPCIÓN
+============================================================
+La Cartera reúne los clientes de la firma. Para agregar uno, pulso Nuevo cliente. El cuadro pregunta para quién es la empresa: elijo Para un cliente. Ahora el sistema busca si la empresa ya existe en la plataforma, por su RNC o por el correo de su administrador. Escribo el RNC: uno, tres, cero, cinco, cinco, cinco, dos, dos, cero. Dejo el nivel de acceso en Contabilidad e Impuestos y pulso Enviar invitación.
+Como la empresa no está en la plataforma, el sistema ofrece darla de alta a nombre de su dueño, que recibirá un correo para crear su contraseña. Escribo la razón social: Ferretería Germiva del Cibao, S.R.L., tal como aparece en sus documentos. Debajo va el nombre comercial: Ferretería del Cibao. Y a la derecha, el correo del dueño del negocio, no el de la firma. Más abajo está el catálogo de cuentas: ya viene la plantilla por defecto de la firma. Si este cliente necesitara otro catálogo, lo cambias aquí, solo para él. Lo dejo así y pulso Crear empresa.
+Crear la empresa toma unos segundos: el sistema copia el catálogo y deja lista su configuración contable. El aviso confirma que el cliente se creó: su dueño recibirá un correo para entrar, y la firma ya puede trabajar en la empresa. Pulso Aceptar. El cliente ya aparece en la Cartera, y el contador de clientes activos lo suma. Nace con su propio catálogo: una copia de la plantilla de la firma que es solo de él. Así la firma puede ajustar sus cuentas sin tocar a los demás clientes, y si más adelante cambia la plantilla, este cliente no cambia. Mientras no tenga asientos, todavía se le puede cambiar el catálogo completo: lo vemos en el siguiente video.

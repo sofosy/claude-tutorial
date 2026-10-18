@@ -1,0 +1,279 @@
+{
+ "titulo": "Contabilidad · Las cuentas de diferencia cambiaria",
+ "descripcion": "Dónde registra Germiva la ganancia y la pérdida cambiaria de los cobros y pagos en moneda extranjera: el orden en que busca la cuenta (por moneda, cuentas generales y Mapeo de cuentas) y cómo configurar cuentas propias para el dólar.",
+ "_comentario": "Video 35 de la serie Contabilidad (bloque B). setup: preparar.sh diferencia-cambiaria (tasas USD hasta hoy, 59.50). Cuentas de GERMIVA_BASE: 4.02.01.03 Ganancia por diferencia en cambio y 6.05.02 Pérdida por diferencia en cambio.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "NIC 21": "nic veintiuno",
+  "NIC 16": "nic dieciséis"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/company/multi-currency-settings",
+  "esperar": ".account-row"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh diferencia-cambiaria"
+ },
+ "aprenderas": [
+  "Qué es la diferencia cambiaria realizada y cuándo se registra",
+  "En qué orden busca el sistema la cuenta",
+  "Configurar cuentas de ganancia y pérdida para el dólar",
+  "El respaldo del Mapeo de cuentas"
+ ],
+ "errores_comunes": [
+  "Cambiar de catálogo y dejar sin cuenta los roles de diferencia cambiaria",
+  "Usar una cuenta que no admite movimiento",
+  "Creer que la diferencia se registra a mano: el cobro la calcula solo"
+ ],
+ "portada_s": 8,
+ "pasos": [
+  {
+   "id": "01-que-es",
+   "capitulo": "Qué es la diferencia cambiaria",
+   "rotulo": "Configuración multi-moneda",
+   "ruta": "Configuración Contable › Ajustes › Configuración Multimoneda",
+   "texto_pantalla": "Ganancia o pérdida cambiaria realizada",
+   "narracion": "Si una factura en dólares se registró a una tasa y se cobra o se paga a otra, en pesos no cuadra: esa diferencia es una ganancia o una pérdida cambiaria, y el sistema la registra sola en el asiento del cobro o del pago. Para eso necesita saber en qué cuentas. Estamos en Configuración multi-moneda, en Configuración Contable. Recojo el menú. El recuadro lo explica con un ejemplo: factura a cincuenta y ocho con setenta y cinco, cobro a cincuenta y nueve con cincuenta.",
+   "acciones": [
+    {
+     "resaltar": ".page-title",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Si una factura en dólares"
+    },
+    {
+     "resaltar": ".info-banner >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "esa diferencia es una ganancia"
+    },
+    {
+     "resaltar": ".page-title",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Estamos en Configuración multi-moneda"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": ".info-banner >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El recuadro lo explica"
+    }
+   ]
+  },
+  {
+   "id": "02-orden",
+   "capitulo": "Dónde busca la cuenta",
+   "rotulo": "El orden de búsqueda",
+   "ruta": "Configuración Multimoneda",
+   "texto_pantalla": "1. por moneda · 2. cuentas generales · 3. Mapeo de cuentas",
+   "narracion": "La cuenta se busca en este orden. Primero, la configurada para esa moneda, más abajo. Si no hay, las cuentas generales de esta pantalla. Y si tampoco, el rol Ganancia o Pérdida por diferencia cambiaria del Mapeo de cuentas. Si no encuentra ninguna, el cobro o el pago no se contabiliza y el sistema avisa qué falta. Las generales ya vienen puestas al crear la empresa: la ganancia en la cuatro cero dos cero uno cero tres, Ganancia por diferencia en cambio, y la pérdida en la seis cero cinco cero dos.",
+   "acciones": [
+    {
+     "resaltar": ".info-banner >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "La cuenta se busca en este orden"
+    },
+    {
+     "resaltar": "h3.section-title >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Primero, la configurada"
+    },
+    {
+     "resaltar": ".account-row >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "las cuentas generales"
+    },
+    {
+     "resaltar": ".info-banner >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "el rol Ganancia o Pérdida"
+    },
+    {
+     "resaltar": ".account-row >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Las generales ya vienen puestas"
+    },
+    {
+     "resaltar": ".account-row >> nth=1",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "y la pérdida"
+    }
+   ]
+  },
+  {
+   "id": "03-por-moneda",
+   "capitulo": "Cuentas por moneda",
+   "rotulo": "Cuentas para el dólar",
+   "ruta": "Configuración Multimoneda › Cuentas por moneda",
+   "texto_pantalla": "USD · Separada · ganancia y pérdida",
+   "narracion": "Si quieres ver la diferencia del dólar aparte, la configuras por moneda. Pulso Agregar moneda. Elijo el dólar. Neta usa una sola cuenta para ganar y perder; Separada, una para cada cosa: elijo Separada. En la cuenta de ganancia busco cuatro cero dos cero uno cero tres. En la lista aparece Ganancia por diferencia en cambio, y la selecciono. En la de pérdida busco seis cero cinco cero dos: aparece Pérdida por diferencia en cambio, y la elijo también. Pulso Guardar cuentas por moneda, y el aviso lo confirma. Desde ahora, los cobros y pagos en dólares usan estas cuentas.",
+   "acciones": [
+    {
+     "click": "button:has-text('Agregar moneda')",
+     "al_decir": "Pulso Agregar moneda"
+    },
+    {
+     "click": ".exchange-row >> nth=0 mat-select",
+     "al_decir": "Elijo el dólar"
+    },
+    {
+     "click": "mat-option:has-text('USD')",
+     "al_decir": "Neta usa una sola cuenta"
+    },
+    {
+     "click": ".exchange-row >> nth=0 mat-radio-button[value='GROSS'] label",
+     "al_decir": "elijo Separada"
+    },
+    {
+     "escribir": {
+      "sel": ".exchange-row >> nth=0 app-autocomplete >> nth=0 >> input",
+      "texto": "4.02.01.03"
+     },
+     "al_decir": "busco cuatro cero dos"
+    },
+    {
+     "click": "mat-option:has-text('4.02.01.03')",
+     "al_decir": "y la selecciono"
+    },
+    {
+     "escribir": {
+      "sel": ".exchange-row >> nth=0 app-autocomplete >> nth=1 >> input",
+      "texto": "6.05.02"
+     },
+     "al_decir": "En la de pérdida busco"
+    },
+    {
+     "click": "mat-option:has-text('6.05.02')",
+     "al_decir": "y la elijo también"
+    },
+    {
+     "click": "button:has-text('Guardar cuentas por moneda')",
+     "al_decir": "Pulso Guardar cuentas por moneda"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2000,
+     "cursor": false,
+     "al_decir": "el aviso lo confirma"
+    },
+    {
+     "resaltar": ".exchange-row >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Desde ahora"
+    }
+   ]
+  },
+  {
+   "id": "04-mapeo",
+   "capitulo": "El respaldo del mapeo",
+   "rotulo": "Mapeo de cuentas › Multimoneda",
+   "ruta": "Configuración Contable › Mapeo de Cuentas",
+   "texto_pantalla": "Ganancia y Pérdida por Diferencia Cambiaria",
+   "navegar": "/accounting/configuracion/mapeos",
+   "esperar": "h6.module-group__title",
+   "narracion": "El último respaldo está en el Mapeo de cuentas. Busco cambiaria, para filtrar la lista de roles contables. En el grupo Multimoneda hay dos: Ganancia y Pérdida por Diferencia Cambiaria. Los usa también la revaluación de fin de mes. Si cambias de catálogo, revisa que estos dos roles tengan cuenta: sin ellos, ni la configuración por moneda ni la general, el cobro en dólares no se puede contabilizar.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[placeholder*='Rol']",
+      "texto": "cambiaria"
+     },
+     "al_decir": "Busco cambiaria"
+    },
+    {
+     "resaltar": "h6.module-group__title:has-text('Multimoneda')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "En el grupo Multimoneda"
+    },
+    {
+     "resaltar": ":text('Ganancia por Diferencia Cambiaria') >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Los usa también la revaluación"
+    },
+    {
+     "resaltar": ":text('Pérdida por Diferencia Cambiaria') >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Si cambias de catálogo"
+    },
+    {
+     "resaltar": "h6.module-group__title:has-text('Multimoneda')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "sin ellos"
+    }
+   ]
+  }
+ ]
+}

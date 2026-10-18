@@ -1,0 +1,231 @@
+{
+ "titulo": "Contabilidad · Dar de alta a un cliente con su catálogo",
+ "descripcion": "Cómo una firma contable da de alta en Germiva a un cliente que aún no está en la plataforma, con qué catálogo de cuentas nace (el por defecto de la firma u otro elegido en el alta) y por qué el cliente queda con su propio catálogo.",
+ "_comentario": "Video 30 de la serie Contabilidad (bloque A). setup: preparar.sh firma-alta (la plantilla GERMIVA_CONTADORES es la por defecto de la firma). Crea al cliente Ferretería Germiva del Cibao (RNC 130555220).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "RNC": "erre-ene-ce",
+  "GERMIVA_CONTADORES": "germiva contadores"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 8,
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accountants/cartera",
+  "esperar": "button:has-text('Nuevo cliente')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh firma-alta"
+ },
+ "aprenderas": [
+  "Dar de alta a un cliente nuevo desde Mi Cartera",
+  "Elegir con qué catálogo nace",
+  "Por qué el cliente queda con catálogo propio"
+ ],
+ "errores_comunes": [
+  "Escribir el correo de la firma como dueño: el dueño es el cliente",
+  "Dejar la plantilla por defecto cuando ese cliente necesita otra: se elige en el alta",
+  "Creer que el cliente comparte la plantilla: tiene su propia copia"
+ ],
+ "pasos": [
+  {
+   "id": "01-nuevo",
+   "capitulo": "Nuevo cliente",
+   "rotulo": "Nuevo cliente",
+   "ruta": "Mi Cartera › Cartera › Nuevo cliente",
+   "texto_pantalla": "Para un cliente · buscar por RNC",
+   "narracion": "La Cartera reúne los clientes de la firma. Para agregar uno, pulso Nuevo cliente. El cuadro pregunta para quién es la empresa: elijo Para un cliente. Ahora el sistema busca si la empresa ya existe en la plataforma, por su RNC o por el correo de su administrador. Escribo el RNC: uno, tres, cero, cinco, cinco, cinco, dos, dos, cero. Dejo el nivel de acceso en Contabilidad e Impuestos y pulso Enviar invitación.",
+   "acciones": [
+    {
+     "resaltar": ":text('Clientes activos') >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "La Cartera reúne"
+    },
+    {
+     "click": "button:has-text('Nuevo cliente')",
+     "al_decir": "pulso Nuevo cliente"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El cuadro pregunta"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Para un cliente')",
+     "al_decir": "elijo Para un cliente"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el sistema busca si la empresa"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='rnc']",
+      "texto": "130555220"
+     },
+     "al_decir": "Escribo el RNC"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-radio-group",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Dejo el nivel de acceso"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Enviar invitación')",
+     "al_decir": "pulso Enviar invitación"
+    }
+   ]
+  },
+  {
+   "id": "02-alta",
+   "capitulo": "Dar de alta",
+   "rotulo": "Dar de alta a un cliente nuevo",
+   "ruta": "Mi Cartera › Nuevo cliente › Dar de alta",
+   "texto_pantalla": "Datos del cliente · correo del dueño · catálogo de cuentas",
+   "narracion": "Como la empresa no está en la plataforma, el sistema ofrece darla de alta a nombre de su dueño, que recibirá un correo para crear su contraseña. Escribo la razón social: Ferretería Germiva del Cibao, S.R.L., tal como aparece en sus documentos. Debajo va el nombre comercial: Ferretería del Cibao. Y a la derecha, el correo del dueño del negocio, no el de la firma. Más abajo está el catálogo de cuentas: ya viene la plantilla por defecto de la firma. Si este cliente necesitara otro catálogo, lo cambias aquí, solo para él. Lo dejo así y pulso Crear empresa.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .info-box, mat-dialog-container [class*='notice'], mat-dialog-container p >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "el sistema ofrece darla de alta"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='legalName']",
+      "texto": "Ferretería Germiva del Cibao S.R.L."
+     },
+     "al_decir": "Escribo la razón social"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='tradeName']",
+      "texto": "Ferretería del Cibao"
+     },
+     "al_decir": "Debajo va el nombre comercial"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='ownerEmail']",
+      "texto": "admin@ferreteria.germiva.com"
+     },
+     "al_decir": "el correo del dueño"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-select[formcontrolname='chartTemplateId']",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "ya viene la plantilla por defecto"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Crear empresa')",
+     "al_decir": "pulso Crear empresa"
+    }
+   ]
+  },
+  {
+   "id": "03-creado",
+   "capitulo": "El cliente y su catálogo",
+   "rotulo": "Cliente creado",
+   "ruta": "Mi Cartera › Cartera",
+   "texto_pantalla": "El cliente nace con su propio catálogo",
+   "narracion": "Crear la empresa toma unos segundos: el sistema copia el catálogo y deja lista su configuración contable. El aviso confirma que el cliente se creó: su dueño recibirá un correo para entrar, y la firma ya puede trabajar en la empresa. Pulso Aceptar. El cliente ya aparece en la Cartera, y el contador de clientes activos lo suma. Nace con su propio catálogo: una copia de la plantilla de la firma que es solo de él. Así la firma puede ajustar sus cuentas sin tocar a los demás clientes, y si más adelante cambia la plantilla, este cliente no cambia. Mientras no tenga asientos, todavía se le puede cambiar el catálogo completo: lo vemos en el siguiente video.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "El aviso confirma"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Cibao') td >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El cliente ya aparece"
+    },
+    {
+     "resaltar": ":text('Clientes activos') >> nth=0",
+     "durante_ms": 2800,
+     "cursor": false,
+     "al_decir": "el contador de clientes activos"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Cibao') td >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Así la firma puede ajustar"
+    },
+    {
+     "resaltar": "button:has-text('Nuevo cliente')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "todavía se le puede cambiar"
+    }
+   ]
+  }
+ ]
+}

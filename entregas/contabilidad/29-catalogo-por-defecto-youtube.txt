@@ -1,0 +1,34 @@
+TÍTULO
+============================================================
+Contabilidad · El catálogo con el que nacen los clientes de tu firma
+
+DESCRIPCIÓN
+============================================================
+Cómo una firma contable elige en Mi Cartera › Mi firma la plantilla de catálogo con la que nacen los clientes que da de alta: una del sistema o la plantilla propia de la firma.
+
+⏱️ CAPÍTULOS
+00:00  Mi firma
+00:26  Elegir la plantilla
+00:55  Qué cambia
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dónde se fija el catálogo por defecto de los clientes nuevos
+• Elegir la plantilla de la firma o una del sistema
+• Qué pasa con los clientes que ya existen
+
+⚠️ ERRORES COMUNES
+• Esperar que los clientes ya creados cambien de catálogo: no cambian
+• Buscar la plantilla de la firma en la lista sin haberla creado con el alcance «Mi firma contable»
+• Elegir una plantilla incompleta: sale desactivada hasta que se complete
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:21
+
+TRANSCRIPCIÓN
+============================================================
+El catálogo por defecto de los clientes se fija en Mi Cartera, pestaña Mi firma, que reúne los datos profesionales de la firma. Al final está la sección Catálogo de cuentas de sus clientes: es el catálogo con el que nacen los clientes que la firma da de alta. Hoy dice Catálogo base Germiva, el del sistema, porque la firma todavía no eligió otro.
+Para cambiarlo, abro la lista. Cada opción dice cuántas cuentas trae y de dónde viene: el catálogo base, el ampliado y el unificado son Del sistema, y el Catálogo Germiva Contadores es De su firma. Una plantilla incompleta sale desactivada, porque haría nacer al cliente con la contabilidad a medias. Elijo Catálogo Germiva Contadores, la plantilla de la firma, y pulso Guardar plantilla.
+El aviso verde confirma que se guardó; pulso Aceptar. Desde ahora, cada cliente que la firma dé de alta nace con una copia de este catálogo. Los clientes que ya existen no cambian: cada uno tiene su propia copia. Y en cada alta se puede elegir otra plantilla para ese cliente. Si un día quieres volver al catálogo del sistema, lo eliges aquí mismo.

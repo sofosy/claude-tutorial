@@ -1,0 +1,273 @@
+{
+ "titulo": "Contabilidad · La plantilla de catálogo de tu firma contable",
+ "descripcion": "Cómo una firma contable guarda en Germiva su catálogo de cuentas como plantilla con el alcance «Mi firma contable», para que sus clientes arranquen con el catálogo que su equipo ya conoce, y quién la puede ver.",
+ "_comentario": "Video 28 de la serie Contabilidad (bloque A: la firma y sus clientes). setup: preparar.sh firma (Germiva Contadores, firma verificada, con Banco 1 renombrado a Banco Popular y Banco BHD y Caja chica agregados).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "RNC": "erre-ene-ce",
+  "GERMIVA_CONTADORES": "germiva contadores"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 8,
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/plan-cuentas",
+  "esperar": "button:has-text('Crear Cuenta')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh firma"
+ },
+ "aprenderas": [
+  "Dónde arma la firma el catálogo que quiere dar a sus clientes",
+  "Guardarlo como plantilla con el alcance «Mi firma contable»",
+  "Quién ve la plantilla de la firma y cómo la ve cada uno"
+ ],
+ "errores_comunes": [
+  "Crear la plantilla con «Solo esta empresa»: no aparece al dar de alta a un cliente",
+  "Armar el catálogo dentro de un cliente y no en la empresa de la firma",
+  "Esperar que un cambio posterior en la plantilla llegue a los clientes ya creados: cada uno tiene su copia"
+ ],
+ "pasos": [
+  {
+   "id": "01-catalogo-firma",
+   "capitulo": "El catálogo de la firma",
+   "rotulo": "El catálogo de la firma",
+   "ruta": "Contabilidad › Configuración Contable › Plan de Cuentas",
+   "texto_pantalla": "Germiva Contadores · el catálogo que la firma quiere repetir",
+   "narracion": "Una firma contable lleva la contabilidad de muchos clientes, y le conviene que todos arranquen con el mismo catálogo de cuentas, el que su equipo ya conoce. Ese catálogo se arma en la empresa de la firma: aquí estamos en Germiva Contadores, como dice el selector de empresa. Recojo el menú. Busco uno, cero uno, cero uno: el efectivo y los bancos. La firma ya lo ajustó a su manera. El banco uno ahora se llama Banco Popular, cuenta corriente. También agregó la cuenta del Banco BHD, y la Caja chica, que salen como Personalizada. Este catálogo, tal como está, es el que vamos a guardar como plantilla de la firma.",
+   "acciones": [
+    {
+     "resaltar": "h1, .page-title, app-breadcrumb >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Una firma contable"
+    },
+    {
+     "resaltar": ".tree-container",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "el mismo catálogo de cuentas"
+    },
+    {
+     "resaltar": "app-company-selector",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "aquí estamos en Germiva Contadores"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder='Código, nombre o descripción...']",
+      "texto": "1.01.01"
+     },
+     "al_decir": "Busco uno, cero uno"
+    },
+    {
+     "resaltar": "text=Banco Popular - Cuenta corriente >> nth=0",
+     "durante_ms": 2800,
+     "cursor": false,
+     "al_decir": "ahora se llama Banco Popular"
+    },
+    {
+     "resaltar": "text=Banco BHD - Cuenta corriente >> nth=0",
+     "durante_ms": 1800,
+     "cursor": false,
+     "al_decir": "la cuenta del Banco BHD"
+    },
+    {
+     "resaltar": "text=Caja chica >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "la Caja chica"
+    }
+   ]
+  },
+  {
+   "id": "02-crear",
+   "capitulo": "Guardar la plantilla",
+   "rotulo": "Crear plantilla de la firma",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Crear plantilla desde mi catálogo · alcance «Mi firma contable»",
+   "navegar": "/accounting/configuracion/plantillas",
+   "narracion": "Ahora voy a Plantillas de Catálogo y abro Crear plantilla desde mi catálogo. El cuadro explica qué se copia: las cuentas con los nombres que les pusiste, su clasificación para los estados financieros y los roles contables. Escribo el código, germiva contadores, en mayúsculas y sin espacios. Luego el nombre, que es como lo verán en las listas: Catálogo Germiva Contadores. Y una descripción corta, para que el equipo sepa para qué sirve. Ahora, lo importante es el alcance. Solo esta empresa la deja aquí, como referencia. Mi firma contable la pone a disposición de los clientes de la firma: esa es la que quiero. Pulso Crear plantilla. Copiar el catálogo toma un momento. El aviso lo confirma y se abre el detalle de la plantilla.",
+   "acciones": [
+    {
+     "click": "button:has-text('Crear plantilla desde mi catálogo')",
+     "al_decir": "abro Crear plantilla"
+    },
+    {
+     "resaltar": "mat-dialog-container p.gm-hint",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "El cuadro explica"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='code']",
+      "texto": "GERMIVA_CONTADORES"
+     },
+     "al_decir": "Escribo el código"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='name']",
+      "texto": "Catálogo Germiva Contadores"
+     },
+     "al_decir": "Luego el nombre"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='description']",
+      "texto": "Catálogo base para comercios y servicios"
+     },
+     "al_decir": "Y una descripción corta"
+    },
+    {
+     "resaltar": "mat-dialog-container .scope-field",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "lo importante es el alcance"
+    },
+    {
+     "click": "mat-dialog-container mat-radio-button[value='firm'] label",
+     "al_decir": "esa es la que quiero"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Crear plantilla')",
+     "al_decir": "Pulso Crear plantilla"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso lo confirma"
+    }
+   ]
+  },
+  {
+   "id": "03-detalle",
+   "capitulo": "Guardar la plantilla",
+   "rotulo": "La plantilla creada",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Plantilla completa · lista para sembrar clientes",
+   "narracion": "Arriba, en verde, el detalle dice que la plantilla está completa: cada rol contable tiene su cuenta y cada cuenta su sección en los estados financieros, así que sirve para dar de alta clientes. Abajo están sus cuentas. Busco caja chica en el buscador del detalle. Y ahí está la cuenta que agregó la firma, que viaja con la plantilla. La cierro.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container p.status--ok",
+     "durante_ms": 6500,
+     "cursor": false,
+     "al_decir": "en verde, el detalle dice"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field.search input",
+      "texto": "caja chica"
+     },
+     "al_decir": "Busco caja chica"
+    },
+    {
+     "resaltar": "mat-dialog-container .catalog-table tbody tr >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "ahí está la cuenta"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar')",
+     "al_decir": "La cierro"
+    }
+   ]
+  },
+  {
+   "id": "04-quien-la-ve",
+   "capitulo": "Quién la ve",
+   "rotulo": "La plantilla de la firma",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "«De la firma» aquí · «De mi contador» en tus clientes",
+   "narracion": "La tarjeta nueva dice De la firma. La ven la empresa de la firma y cada cliente donde trabaja este contador; en el cliente aparece como De mi contador. Una plantilla con Solo esta empresa no sale en ninguna de esas listas. Lo que viene es ponerla como el catálogo por defecto de los clientes nuevos, en Mi Cartera.",
+   "acciones": [
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "La ven la empresa de la firma"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores') .badge--firm",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "aparece como De mi contador"
+    },
+    {
+     "resaltar": "button:has-text('Crear plantilla desde mi catálogo')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Una plantilla con Solo esta empresa"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Lo que viene es ponerla"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,247 @@
+{
+ "titulo": "Contabilidad · Renovar la plantilla de catálogo de tu firma",
+ "descripcion": "Cómo una firma contable renueva en Germiva la plantilla de catálogo de sus clientes: armar la versión nueva, ponerla por defecto y eliminar la anterior sin tocar a los clientes que ya nacieron de ella.",
+ "_comentario": "Video 33 de la serie Contabilidad (bloque A). setup: preparar.sh firma-mantener (la plantilla GERMIVA_CONTADORES es la por defecto y ya tiene un cliente, la Ferretería del Cibao, con su copia; la firma armó GERMIVA_CONTADORES_2027).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "RNC": "erre-ene-ce",
+  "GERMIVA_CONTADORES": "germiva contadores"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 8,
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/plantillas",
+  "esperar": "article.template-card"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh firma-mantener"
+ },
+ "aprenderas": [
+  "Renovar la plantilla de la firma con una versión nueva",
+  "Por qué no se elimina la plantilla por defecto",
+  "Qué pasa con los clientes que nacieron de la plantilla vieja"
+ ],
+ "errores_comunes": [
+  "Querer editar las cuentas de una plantilla: se arma la versión nueva desde el catálogo de la firma",
+  "Eliminar la plantilla vieja antes de cambiar la por defecto",
+  "Creer que los clientes viejos reciben la versión nueva: conservan su copia"
+ ],
+ "pasos": [
+  {
+   "id": "01-dos-versiones",
+   "capitulo": "La versión nueva",
+   "rotulo": "Dos versiones de la plantilla",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Catálogo Germiva Contadores · versión 2027",
+   "narracion": "Las cuentas de una plantilla no se editan: cuando la firma mejora su catálogo, arma la versión nueva desde el catálogo de su empresa, como vimos antes. Recojo el menú. Aquí ya están las dos: la plantilla de siempre, y la versión dos mil veintisiete, que suma la cuenta del Banco Santa Cruz. Las dos son De la firma.",
+   "acciones": [
+    {
+     "resaltar": "h6.templates-header__title",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Las cuentas de una plantilla"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "article.template-card:has-text('GERMIVA_CONTADORES'):not(:has-text('2027'))",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "la plantilla de siempre"
+    },
+    {
+     "resaltar": "article.template-card:has-text('GERMIVA_CONTADORES_2027')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la versión dos mil veintisiete"
+    }
+   ]
+  },
+  {
+   "id": "02-no-se-elimina",
+   "capitulo": "La plantilla por defecto",
+   "rotulo": "Eliminar la plantilla vieja",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "La plantilla por defecto de la firma no se elimina",
+   "narracion": "Si intento eliminar la plantilla vieja con el ícono rojo de su tarjeta, y confirmo, el sistema no me deja: es la plantilla por defecto de la firma para sus clientes nuevos, y la próxima alta fallaría. Primero hay que elegir otra en Mi firma.",
+   "acciones": [
+    {
+     "click": "article.template-card:has-text('GERMIVA_CONTADORES'):not(:has-text('2027')) button.delete-btn",
+     "al_decir": "con el ícono rojo"
+    },
+    {
+     "click": "mat-dialog-container button.confirm-button",
+     "al_decir": "y confirmo"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "el sistema no me deja"
+    }
+   ]
+  },
+  {
+   "id": "03-nueva-por-defecto",
+   "capitulo": "La plantilla por defecto",
+   "rotulo": "Mi firma · la versión nueva",
+   "ruta": "Mi Cartera › Mi firma",
+   "texto_pantalla": "Plantilla por defecto: la versión 2027",
+   "navegar": "/accountants/firma",
+   "esperar": "section.firm-catalog mat-select",
+   "narracion": "Voy a Mi Cartera, pestaña Mi firma. En el catálogo de cuentas de sus clientes, la plantilla por defecto es la vieja.",
+   "acciones": [
+    {
+     "resaltar": "section.firm-catalog mat-form-field",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "la plantilla por defecto es la vieja"
+    }
+   ]
+  },
+  {
+   "id": "03b-guardar",
+   "capitulo": "La plantilla por defecto",
+   "rotulo": "Guardar plantilla",
+   "ruta": "Mi Cartera › Mi firma",
+   "texto_pantalla": "Plantilla por defecto: la versión 2027",
+   "narracion": "Para cambiarla, abro la lista y elijo la versión dos mil veintisiete. Pulso Guardar plantilla, y el aviso verde lo confirma. Acepto. Desde ahora, los clientes nuevos nacen con la versión nueva.",
+   "acciones": [
+    {
+     "click": "section.firm-catalog mat-select",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('2027')",
+     "al_decir": "elijo la versión"
+    },
+    {
+     "click": "section.firm-catalog button:has-text('Guardar plantilla')",
+     "al_decir": "Pulso Guardar plantilla"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "el aviso verde lo confirma"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Acepto"
+    }
+   ]
+  },
+  {
+   "id": "04-eliminar",
+   "capitulo": "Eliminar la vieja",
+   "rotulo": "Eliminar la plantilla vieja",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Los clientes que nacieron de ella conservan su copia",
+   "navegar": "/accounting/configuracion/plantillas",
+   "esperar": "article.template-card",
+   "narracion": "De vuelta en Plantillas de Catálogo, la plantilla vieja ya no es la por defecto de nadie.",
+   "acciones": [
+    {
+     "resaltar": "article.template-card:has-text('GERMIVA_CONTADORES'):not(:has-text('2027'))",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la plantilla vieja ya no es"
+    }
+   ]
+  },
+  {
+   "id": "04b-eliminada",
+   "capitulo": "Eliminar la vieja",
+   "rotulo": "Plantilla eliminada",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Los clientes que nacieron de ella conservan su copia",
+   "narracion": "Ahora sí: pulso su ícono rojo y confirmo la eliminación. El aviso lo confirma. La Ferretería del Cibao, que nació de esa plantilla, no se entera: tiene su propia copia del catálogo. Lo único que impide eliminar una plantilla es que una empresa comparta sus cuentas sin copia propia, o que sea la por defecto de una firma.",
+   "acciones": [
+    {
+     "click": "article.template-card:has-text('GERMIVA_CONTADORES'):not(:has-text('2027')) button.delete-btn",
+     "al_decir": "pulso su ícono rojo"
+    },
+    {
+     "click": "mat-dialog-container button.confirm-button",
+     "al_decir": "confirmo la eliminación"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso lo confirma"
+    },
+    {
+     "resaltar": "article.template-card:has-text('GERMIVA_CONTADORES_2027')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "La Ferretería del Cibao"
+    },
+    {
+     "resaltar": "h6.templates-header__title",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Lo único que impide"
+    }
+   ]
+  }
+ ]
+}

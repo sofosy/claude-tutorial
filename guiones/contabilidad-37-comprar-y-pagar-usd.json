@@ -1,0 +1,279 @@
+{
+ "titulo": "Contabilidad · Comprar y pagar en dólares",
+ "descripcion": "Cómo se paga en Germiva una compra en dólares a una tasa distinta a la de la factura, desde una cuenta bancaria en dólares, el asiento con la pérdida cambiaria realizada, y cómo funcionan los anticipos a proveedor en moneda extranjera.",
+ "_comentario": "Video 37 de la serie Contabilidad (bloque B). setup: preparar.sh compra-usd (además de la venta del 36, compra B17 del 26/09 a Germiva Cloud Tools Inc. por USD 500 a 59.00 pendiente de pago; tasa de hoy 59.50). Resultado esperado del pago: DR CxP 29,500 / DR Pérdida 250 / CR Banco 29,750.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "NIC 21": "nic veintiuno",
+  "NIC 16": "nic dieciséis"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/invoices/list"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh compra-usd"
+ },
+ "aprenderas": [
+  "Pagar una compra en dólares a la tasa del día",
+  "Por qué el mismo monto en dólares da una pérdida en pesos",
+  "Leer el asiento del pago con la pérdida cambiaria",
+  "Cómo se manejan los anticipos a proveedor en dólares"
+ ],
+ "errores_comunes": [
+  "Pagar desde una cuenta en pesos sin revisar la tasa del pago",
+  "Aplicar un anticipo en dólares a una factura en pesos",
+  "Registrar la pérdida cambiaria con un asiento manual: el pago la calcula"
+ ],
+ "portada_s": 8,
+ "pasos": [
+  {
+   "id": "01-compra-usd",
+   "capitulo": "La compra en dólares",
+   "rotulo": "Una compra al exterior en dólares",
+   "ruta": "Compras › Facturas",
+   "texto_pantalla": "Germiva Cloud Tools Inc. · US$500.00 · tasa 59.00",
+   "navegar": "/purchases/invoices/list",
+   "narracion": "Con las compras en dólares pasa lo mismo, al revés. Recojo el menú. Esta es la suscripción anual de licencias que la empresa le compró a Germiva Cloud Tools, un proveedor del exterior, el veintiséis de septiembre: quinientos dólares a cincuenta y nueve. Quedó registrada en pesos a esa tasa, veintinueve mil quinientos, como cuenta por pagar. Hoy se paga, y el dólar está a cincuenta y nueve con cincuenta.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "tr:has-text('Cloud Tools') td >> nth=1",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Esta es la suscripción anual"
+    },
+    {
+     "resaltar": "tr:has-text('Cloud Tools') td >> nth=2",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Quedó registrada en pesos"
+    },
+    {
+     "resaltar": "tr:has-text('Cloud Tools') td >> nth=1",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Hoy se paga"
+    }
+   ]
+  },
+  {
+   "id": "02-pago",
+   "capitulo": "Pagar a otra tasa",
+   "rotulo": "Registrar el pago",
+   "ruta": "Compras › Pagos a Proveedor › Registrar pago",
+   "texto_pantalla": "Factura a 59.00 · pago a 59.50 · pérdida de RD$250",
+   "navegar": "/purchases/payments",
+   "narracion": "En Pagos a Proveedor, el registro empieza con el botón Registrar pago: lo pulso. En el cuadro busco la factura de Cloud Tools por el nombre del proveedor, y la elijo de la lista. En Tasa del pago viene la de hoy, cincuenta y nueve con cincuenta. Ahora la diferencia va en contra: factura a cincuenta y nueve, pago a cincuenta y nueve con cincuenta, pérdida cambiaria de doscientos cincuenta pesos. Pagar los mismos quinientos dólares cuesta hoy más pesos que cuando se registró la compra.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar pago')",
+     "al_decir": "lo pulso"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-autocomplete input",
+      "texto": "Cloud"
+     },
+     "al_decir": "busco la factura de Cloud Tools"
+    },
+    {
+     "click": "mat-option:has-text('Cloud Tools')",
+     "al_decir": "y la elijo de la lista"
+    },
+    {
+     "resaltar": "mat-dialog-container app-exchange-rate-input",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "En Tasa del pago"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-section:has-text('Tasa del pago') .gm-dialog-note",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Ahora la diferencia va en contra"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-facts",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Pagar los mismos quinientos dólares"
+    }
+   ]
+  },
+  {
+   "id": "03-registrar",
+   "capitulo": "Pagar a otra tasa",
+   "rotulo": "Desde la cuenta en dólares",
+   "ruta": "Compras › Pagos a Proveedor › Registrar pago",
+   "texto_pantalla": "Transferencia · Banco Popular - Cuenta en dólares",
+   "narracion": "Se paga por transferencia: elijo Transferencia. Ahora, en el campo Cuenta de origen, busco la cuenta del Banco Popular en dólares, de donde sale el dinero. El monto ya viene completo. Pulso Registrar pago. El aviso lo confirma.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container .gm-doc-seg__opt:has-text('Transferencia')",
+     "al_decir": "elijo Transferencia"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-account-picker input",
+      "texto": "dólares"
+     },
+     "al_decir": "busco la cuenta del Banco Popular"
+    },
+    {
+     "click": "mat-option:has-text('dólares')",
+     "al_decir": "de donde sale el dinero"
+    },
+    {
+     "resaltar": "mat-dialog-container app-inline-payment-panel",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El monto ya viene completo"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar pago')",
+     "al_decir": "Pulso Registrar pago"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container:has-text('Aceptar')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso lo confirma"
+    }
+   ]
+  },
+  {
+   "id": "04-asiento",
+   "capitulo": "El asiento",
+   "rotulo": "El asiento del pago",
+   "ruta": "Contabilidad › Diario y Mayor › Asientos Contables",
+   "texto_pantalla": "CxP 29,500 · Pérdida 250 · Banco 29,750",
+   "navegar": "/accounting/registro/asientos",
+   "narracion": "En Asientos Contables, el asiento más reciente es Pago realizado. Lo abro. La cuenta por pagar baja veintinueve mil quinientos, lo que valía la deuda a su tasa. Del banco en dólares salen veintinueve mil setecientos cincuenta: quinientos dólares a la tasa de hoy. Y la diferencia, doscientos cincuenta, va a Pérdida por diferencia en cambio.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('Pago realizado') td >> nth=2",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "es Pago realizado"
+    },
+    {
+     "click": "tr:has-text('Pago realizado') mat-icon:text-is('visibility')",
+     "al_decir": "Lo abro"
+    },
+    {
+     "resaltar": ".table-row:has-text('Cuentas por pagar'), .table-row >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "La cuenta por pagar baja"
+    },
+    {
+     "resaltar": ".table-row:has-text('Banco Popular'), .table-row >> nth=2",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Del banco en dólares"
+    },
+    {
+     "resaltar": ".table-row:has-text('Pérdida'), .table-row >> nth=1",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Y la diferencia"
+    }
+   ]
+  },
+  {
+   "id": "05-anticipo",
+   "capitulo": "Anticipos en dólares",
+   "rotulo": "Anticipos a proveedor",
+   "ruta": "Compras › Anticipos a Proveedor",
+   "texto_pantalla": "Anticipo en USD · se aplica a deudas en USD",
+   "navegar": "/purchases/supplier-advances",
+   "narracion": "Si le adelantas dinero a un proveedor del exterior, regístralo en Anticipos a Proveedor con Registrar Anticipo, en dólares y a la tasa de ese día. Cuando llegue su factura, Aplicar a Factura descuenta el anticipo de la deuda, que tiene que estar en la misma moneda. Si la tasa del anticipo y la de la factura no coinciden, la diferencia también va a las cuentas de diferencia cambiaria. Los anticipos de clientes, en cambio, por ahora solo existen en pesos.",
+   "acciones": [
+    {
+     "resaltar": "button:has-text('Registrar Anticipo')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "regístralo en Anticipos a Proveedor"
+    },
+    {
+     "resaltar": "button:has-text('Aplicar a Factura')",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Cuando llegue su factura"
+    },
+    {
+     "resaltar": "button:has-text('Aplicar a Factura')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Si la tasa del anticipo"
+    },
+    {
+     "resaltar": ".page-title, h1, app-breadcrumb >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Los anticipos de clientes"
+    }
+   ]
+  }
+ ]
+}

@@ -242,9 +242,14 @@ def _sesion_api(pag, s, variables, base):
                                  headers={"Content-Type": "application/json"})
     with urllib.request.urlopen(req, timeout=30) as r:
         datos = {**s.get("extra", {}), **json.loads(r.read().decode("utf-8"))}
+    # Una sola vez por pestaña: el script de inicio corre en CADA carga
+    # completa, y re-escribir la sesión deshacía lo que la app guarda después
+    # (cambiar de empresa recarga la app y volvía a la empresa del login).
     pag.context.add_init_script(
-        "localStorage.setItem(%s, %s);" % (json.dumps(s.get("clave", "aut")),
-                                           json.dumps(json.dumps(datos))))
+        "if (!sessionStorage.getItem('__tut_sesion')) {"
+        " localStorage.setItem(%s, %s);"
+        " sessionStorage.setItem('__tut_sesion', '1'); }"
+        % (json.dumps(s.get("clave", "aut")), json.dumps(json.dumps(datos))))
     pag.goto(base + s.get("navegar", "/"), wait_until="networkidle")
     if s.get("esperar"):
         pag.wait_for_selector(s["esperar"], timeout=s.get("esperar_timeout_ms", 30000))

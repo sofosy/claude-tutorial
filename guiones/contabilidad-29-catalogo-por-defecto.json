@@ -1,0 +1,199 @@
+{
+ "titulo": "Contabilidad · El catálogo con el que nacen los clientes de tu firma",
+ "descripcion": "Cómo una firma contable elige en Mi Cartera › Mi firma la plantilla de catálogo con la que nacen los clientes que da de alta: una del sistema o la plantilla propia de la firma.",
+ "_comentario": "Video 29 de la serie Contabilidad (bloque A). setup: preparar.sh firma-plantilla (Germiva Contadores con su plantilla GERMIVA_CONTADORES de alcance firma; sin plantilla por defecto).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "RNC": "erre-ene-ce",
+  "GERMIVA_CONTADORES": "germiva contadores"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 8,
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accountants/firma",
+  "esperar": "h2:has-text('Catálogo de cuentas de sus clientes')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh firma-plantilla"
+ },
+ "aprenderas": [
+  "Dónde se fija el catálogo por defecto de los clientes nuevos",
+  "Elegir la plantilla de la firma o una del sistema",
+  "Qué pasa con los clientes que ya existen"
+ ],
+ "errores_comunes": [
+  "Esperar que los clientes ya creados cambien de catálogo: no cambian",
+  "Buscar la plantilla de la firma en la lista sin haberla creado con el alcance «Mi firma contable»",
+  "Elegir una plantilla incompleta: sale desactivada hasta que se complete"
+ ],
+ "pasos": [
+  {
+   "id": "01-mi-firma",
+   "capitulo": "Mi firma",
+   "rotulo": "Mi Cartera › Mi firma",
+   "ruta": "Mi Cartera › Mi firma",
+   "texto_pantalla": "Catálogo de cuentas de sus clientes",
+   "narracion": "El catálogo por defecto de los clientes se fija en Mi Cartera, pestaña Mi firma, que reúne los datos profesionales de la firma. Al final está la sección Catálogo de cuentas de sus clientes: es el catálogo con el que nacen los clientes que la firma da de alta. Hoy dice Catálogo base Germiva, el del sistema, porque la firma todavía no eligió otro.",
+   "acciones": [
+    {
+     "resaltar": "a.mat-mdc-tab-link:has-text('Mi firma'), .mat-mdc-tab:has-text('Mi firma'), a:has-text('Mi firma') >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "pestaña Mi firma"
+    },
+    {
+     "resaltar": "section.firm-catalog",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Al final está la sección"
+    },
+    {
+     "resaltar": "section.firm-catalog mat-form-field",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Hoy dice Catálogo base Germiva"
+    }
+   ]
+  },
+  {
+   "id": "02-elegir",
+   "capitulo": "Elegir la plantilla",
+   "rotulo": "Plantilla por defecto",
+   "ruta": "Mi Cartera › Mi firma",
+   "texto_pantalla": "Del sistema · De su firma · Incompleta",
+   "narracion": "Para cambiarlo, abro la lista. Cada opción dice cuántas cuentas trae y de dónde viene: el catálogo base, el ampliado y el unificado son Del sistema, y el Catálogo Germiva Contadores es De su firma. Una plantilla incompleta sale desactivada, porque haría nacer al cliente con la contabilidad a medias. Elijo Catálogo Germiva Contadores, la plantilla de la firma, y pulso Guardar plantilla.",
+   "acciones": [
+    {
+     "click": "section.firm-catalog mat-select",
+     "al_decir": "abro la lista"
+    },
+    {
+     "resaltar": "mat-option:has-text('Catálogo base Germiva')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "el catálogo base"
+    },
+    {
+     "resaltar": "mat-option:has-text('Catálogo dominicano unificado')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "y el unificado son Del sistema"
+    },
+    {
+     "resaltar": "mat-option:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "es De su firma"
+    },
+    {
+     "resaltar": ".mat-mdc-select-panel",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Una plantilla incompleta"
+    },
+    {
+     "click": "mat-option:has-text('Catálogo Germiva Contadores')",
+     "al_decir": "Elijo Catálogo Germiva Contadores"
+    },
+    {
+     "click": "section.firm-catalog button:has-text('Guardar plantilla')",
+     "al_decir": "pulso Guardar plantilla"
+    }
+   ]
+  },
+  {
+   "id": "03-efecto",
+   "capitulo": "Qué cambia",
+   "rotulo": "Plantilla guardada",
+   "ruta": "Mi Cartera › Mi firma",
+   "texto_pantalla": "Los clientes actuales no cambian · en cada alta puedes elegir otra",
+   "narracion": "El aviso verde confirma que se guardó; pulso Aceptar. Desde ahora, cada cliente que la firma dé de alta nace con una copia de este catálogo. Los clientes que ya existen no cambian: cada uno tiene su propia copia. Y en cada alta se puede elegir otra plantilla para ese cliente. Si un día quieres volver al catálogo del sistema, lo eliges aquí mismo.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso verde confirma"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "pulso Aceptar"
+    },
+    {
+     "resaltar": "section.firm-catalog mat-form-field",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "cada cliente que la firma dé de alta"
+    },
+    {
+     "resaltar": "section.firm-catalog mat-hint",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Los clientes que ya existen no cambian"
+    },
+    {
+     "resaltar": "section.firm-catalog mat-form-field",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "lo eliges aquí mismo"
+    }
+   ]
+  }
+ ]
+}

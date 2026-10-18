@@ -1,300 +1,312 @@
 {
-  "titulo": "Contabilidad · Plantillas de catálogo y catálogo propio",
-  "descripcion": "Cómo elegir el catálogo de cuentas en Germiva: qué es una plantilla, cómo cambiar de catálogo mientras no haya asientos, cómo guardar tu catálogo como plantilla y cuándo pasar a catálogo propio para reorganizar las cuentas a tu medida.",
-  "_comentario": "Video 9 de la serie Contabilidad. setup: preparar.sh catalogo (sin asientos: el cambio de plantilla es libre). Destructivo: cambia la plantilla y pasa a catálogo propio; cada video restaura su base.",
-  "base_url": "http://localhost:4200",
-  "zona_horaria": "America/Santo_Domingo",
-  "musica": {
-    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
-    "volumen_db": -32,
-    "ducking": true,
-    "fade_s": 2
-  },
-  "loudnorm": {
-    "lufs": -14,
-    "tp": -1.5
-  },
-  "marca_video": {
-    "entrada_s": 3,
-    "cierre_s": 3
-  },
-  "rotulo_paso": {
-    "segundos": 3.5
-  },
-  "css_global": [
-    "app-chatbot-widget{display:none!important}",
-    ".chatbot-fab{display:none!important}"
+ "titulo": "Contabilidad · Plantillas de catálogo y catálogo propio",
+ "descripcion": "Cómo elegir el catálogo de cuentas en Germiva: qué es una plantilla, cómo cambiar de catálogo mientras no haya asientos, cómo guardar tu catálogo como plantilla y cuándo pasar a catálogo propio para reorganizar las cuentas a tu medida.",
+ "_comentario": "Video 9 de la serie Contabilidad. setup: preparar.sh catalogo (sin asientos: el cambio de plantilla es libre). Destructivo: cambia la plantilla y pasa a catálogo propio; cada video restaura su base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
   ],
-  "voz": {
-    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
-    "velocidad": "+0%"
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
   },
-  "pronunciacion": {
-    "NIC": "nic",
-    "CxC": "ce-por-ce",
-    "CxP": "ce-por-pe",
-    "ISR": "i-ese-erre",
-    "BHD": "be-hache-de",
-    "USD": "dólares",
-    "DOP": "pesos"
+  "clave": "aut",
+  "extra": {
+   "__v": 2
   },
-  "privacidad": {
-    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
-    "perfil": "ninguno",
-    "permitidos": [
-      "germiva",
-      "130555",
-      "example.com"
-    ],
-    "mapa_fijo": {
-      "localhost:3001": "api.germiva.com",
-      "localhost:4200": "germiva.com"
+  "navegar": "/accounting/configuracion/plantillas",
+  "esperar": "article.template-card"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh catalogo"
+ },
+ "portada_s": 8,
+ "aprenderas": [
+  "Qué es una plantilla de catálogo y de dónde vienen",
+  "Cambiar de catálogo mientras no haya asientos",
+  "Guardar tu catálogo como plantilla",
+  "Cuándo y cómo pasar a catálogo propio"
+ ],
+ "errores_comunes": [
+  "Cambiar de catálogo con asientos sin preparar la correspondencia: el asistente la pide cuenta por cuenta",
+  "Pasar a catálogo propio solo para renombrar: eso se hace con «Nombre para esta empresa»",
+  "Olvidar que pasar a catálogo propio no se puede deshacer"
+ ],
+ "pasos": [
+  {
+   "id": "01-catalogos",
+   "capitulo": "Plantillas disponibles",
+   "rotulo": "Plantillas de Catálogo",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Compartido · plantillas del sistema · Ver detalle",
+   "narracion": "Plantillas de Catálogo muestra los catálogos de cuentas que tu empresa puede usar. Recojo el menú. La franja de arriba dice cómo usa hoy su catálogo: compartido, con las cuentas de la plantilla tal como vienen. Cada tarjeta es una plantilla: la que está en uso, las que vienen con el sistema, y las que cree tu empresa o tu contador. Muestra cuántas cuentas trae, su formato y los roles que declara. Con Ver detalle abro el catálogo dominicano ampliado: puedo buscar una cuenta, o descargarlo en Excel o en PDF. Lo cierro.",
+   "acciones": [
+    {
+     "resaltar": "h6.templates-header__title",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "muestra los catálogos"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "La franja de arriba"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo base Germiva')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Cada tarjeta es una plantilla"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo dominicano unificado')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "vienen con el sistema"
+    },
+    {
+     "click": "article.template-card:has-text('Catálogo dominicano ampliado') button:has-text('Ver detalle')",
+     "al_decir": "Con Ver detalle"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "puedo buscar una cuenta"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar')",
+     "al_decir": "Lo cierro"
     }
+   ]
   },
-  "sesion": {
-    "tipo": "api",
-    "url": "http://localhost:3001/api/auth/dev/login",
-    "cuerpo": {
-      "username": "admin",
-      "password": "admin"
-    },
-    "clave": "aut",
-    "extra": {
-      "__v": 2
-    },
-    "navegar": "/accounting/configuracion/plantillas",
-    "esperar": "article.template-card"
-  },
-  "setup": {
-    "tipo": "shell",
-    "cmd": "seeds/contabilidad/preparar.sh catalogo"
-  },
-  "portada_s": 8,
-  "aprenderas": [
-    "Qué es una plantilla de catálogo y de dónde vienen",
-    "Cambiar de catálogo mientras no haya asientos",
-    "Guardar tu catálogo como plantilla",
-    "Cuándo y cómo pasar a catálogo propio"
-  ],
-  "errores_comunes": [
-    "Cambiar de catálogo con asientos sin preparar la correspondencia: el asistente la pide cuenta por cuenta",
-    "Pasar a catálogo propio solo para renombrar: eso se hace con «Nombre para esta empresa»",
-    "Olvidar que pasar a catálogo propio no se puede deshacer"
-  ],
-  "pasos": [
+  {
+   "id": "02-cambiar",
+   "capitulo": "Cambiar de catálogo",
+   "rotulo": "Usar otro catálogo",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Sin asientos: cambio libre · con asientos: asistente",
+   "narracion": "Mientras el catálogo no tenga asientos contabilizados, se puede cambiar libremente. En la tarjeta del ampliado pulso Usar este catálogo. El aviso explica lo que pasa: el catálogo actual se reemplaza, la configuración contable se vuelve a sembrar contra el nuevo, y no se puede deshacer. Confirmo con Cambiar catálogo.",
+   "acciones": [
     {
-      "id": "01-catalogos",
-      "capitulo": "Plantillas disponibles",
-      "rotulo": "Plantillas de Catálogo",
-      "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
-      "texto_pantalla": "Compartido · plantillas del sistema · Ver detalle",
-      "narracion": "Plantillas de Catálogo muestra los catálogos de cuentas que tu empresa puede usar. Recojo el menú. La franja de arriba dice cómo usa hoy su catálogo: compartido, con las cuentas de la plantilla tal como vienen. Cada tarjeta es una plantilla: la que está en uso, las que vienen con el sistema, y las que cree tu empresa o tu contador. Muestra cuántas cuentas trae, su formato y los roles que declara. Con Ver detalle abro el catálogo dominicano ampliado: puedo buscar una cuenta, o descargarlo en Excel o en PDF. Lo cierro.",
-      "acciones": [
-        {
-          "resaltar": "h6.templates-header__title",
-          "durante_ms": 3500,
-          "cursor": false,
-          "al_decir": "muestra los catálogos"
-        },
-        {
-          "click": "button.panel-collapse",
-          "al_decir": "Recojo el menú"
-        },
-        {
-          "resaltar": ".ownership",
-          "durante_ms": 5000,
-          "cursor": false,
-          "al_decir": "La franja de arriba"
-        },
-        {
-          "resaltar": "article.template-card:has-text('Catálogo base Germiva')",
-          "durante_ms": 4000,
-          "cursor": false,
-          "al_decir": "Cada tarjeta es una plantilla"
-        },
-        {
-          "resaltar": "article.template-card:has-text('Catálogo dominicano unificado')",
-          "durante_ms": 3500,
-          "cursor": false,
-          "al_decir": "vienen con el sistema"
-        },
-        {
-          "click": "article.template-card:has-text('Catálogo dominicano ampliado') button:has-text('Ver detalle')",
-          "al_decir": "Con Ver detalle"
-        },
-        {
-          "resaltar": "mat-dialog-container >> nth=0",
-          "durante_ms": 5000,
-          "cursor": false,
-          "al_decir": "puedo buscar una cuenta"
-        },
-        {
-          "click": "mat-dialog-container button:has-text('Cerrar')",
-          "al_decir": "Lo cierro"
-        }
-      ]
+     "resaltar": "p.gm-hint >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "se puede cambiar libremente"
     },
     {
-      "id": "02-cambiar",
-      "capitulo": "Cambiar de catálogo",
-      "rotulo": "Usar otro catálogo",
-      "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
-      "texto_pantalla": "Sin asientos: cambio libre · con asientos: asistente",
-      "narracion": "Mientras el catálogo no tenga asientos contabilizados, se puede cambiar libremente. En la tarjeta del ampliado pulso Usar este catálogo. El aviso explica lo que pasa: el catálogo actual se reemplaza, la configuración contable se vuelve a sembrar contra el nuevo, y no se puede deshacer. Confirmo con Cambiar catálogo.",
-      "acciones": [
-        {
-          "resaltar": "p.gm-hint >> nth=0",
-          "durante_ms": 3500,
-          "cursor": false,
-          "al_decir": "se puede cambiar libremente"
-        },
-        {
-          "click": "article.template-card:has-text('Catálogo dominicano ampliado') button:has-text('Usar este catálogo')",
-          "al_decir": "pulso Usar este catálogo"
-        },
-        {
-          "resaltar": "mat-dialog-container >> nth=0",
-          "durante_ms": 6000,
-          "cursor": false,
-          "al_decir": "El aviso explica"
-        },
-        {
-          "click": "mat-dialog-container button.confirm-button",
-          "al_decir": "Confirmo con Cambiar catálogo"
-        }
-      ],
-      "esperar": ".mat-mdc-snack-bar-container",
-      "esperar_timeout_ms": 60000
+     "click": "article.template-card:has-text('Catálogo dominicano ampliado') button:has-text('Usar este catálogo')",
+     "al_decir": "pulso Usar este catálogo"
     },
     {
-      "id": "02b-cambiado",
-      "capitulo": "Cambiar de catálogo",
-      "rotulo": "Catálogo cambiado",
-      "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
-      "texto_pantalla": "Sin asientos: cambio libre · con asientos: asistente",
-      "narracion": "Listo: el aviso lo confirma. El sistema reemplazó el catálogo y volvió a sembrar la configuración contable, y la insignia En uso pasa a esa plantilla. Si tu empresa ya tiene asientos, el mismo botón abre un asistente: dices a qué cuenta nueva va cada cuenta con movimiento, y el sistema registra un asiento de reclasificación.",
-      "acciones": [
-        {
-          "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 2500,
-          "cursor": false,
-          "al_decir": "el aviso lo confirma"
-        },
-        {
-          "resaltar": "article.template-card:has-text('Catálogo dominicano ampliado')",
-          "durante_ms": 4000,
-          "cursor": false,
-          "al_decir": "la insignia En uso"
-        },
-        {
-          "resaltar": "article.template-card:has-text('Catálogo base Germiva')",
-          "durante_ms": 6000,
-          "cursor": false,
-          "al_decir": "el mismo botón abre un asistente"
-        }
-      ]
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El aviso explica"
     },
     {
-      "id": "03-crear",
-      "capitulo": "Guardar como plantilla",
-      "rotulo": "Crear plantilla",
-      "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
-      "texto_pantalla": "Crear plantilla desde mi catálogo",
-      "narracion": "También puedes guardar tu catálogo como plantilla, para usarlo de base en otra empresa. Abro Crear plantilla desde mi catálogo, que explica qué se copia. Escribo el código, propio dos mil veintiséis, en mayúsculas y sin espacios. Y el nombre: Catálogo de la distribuidora, que es como la verán en la lista. Ahora pulso el botón de crear. Copiar el catálogo toma un momento. El aviso lo confirma y se abre su detalle con las cuentas copiadas. Lo cierro. La lista ya muestra la tarjeta nueva, que queda marcada como Propia.",
-      "acciones": [
-        {
-          "click": "button:has-text('Crear plantilla desde mi catálogo')",
-          "al_decir": "Abro Crear plantilla"
-        },
-        {
-          "resaltar": "mat-dialog-container >> nth=0",
-          "durante_ms": 2500,
-          "cursor": false,
-          "al_decir": "que explica qué se copia"
-        },
-        {
-          "escribir": {
-            "sel": "mat-dialog-container input[formcontrolname='code']",
-            "texto": "PROPIO_2026"
-          },
-          "al_decir": "Escribo el código"
-        },
-        {
-          "escribir": {
-            "sel": "mat-dialog-container input[formcontrolname='name']",
-            "texto": "Catálogo de la distribuidora"
-          },
-          "al_decir": "Y el nombre"
-        },
-        {
-          "click": "mat-dialog-container button:has-text('Crear plantilla')",
-          "al_decir": "pulso el botón de crear"
-        },
-        {
-          "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 2500,
-          "cursor": false,
-          "al_decir": "El aviso lo confirma"
-        },
-        {
-          "resaltar": "mat-dialog-container >> nth=0",
-          "durante_ms": 3000,
-          "cursor": false,
-          "al_decir": "se abre su detalle"
-        },
-        {
-          "click": "mat-dialog-container button:has-text('Cerrar')",
-          "al_decir": "Lo cierro"
-        },
-        {
-          "resaltar": "article.template-card:has-text('Catálogo de la distribuidora')",
-          "durante_ms": 4000,
-          "cursor": false,
-          "al_decir": "marcada como Propia"
-        }
-      ]
-    },
-    {
-      "id": "04-propio",
-      "capitulo": "Catálogo propio",
-      "rotulo": "Pasar a catálogo propio",
-      "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
-      "texto_pantalla": "Copia las cuentas con sus saldos · no se deshace",
-      "narracion": "Por último, el catálogo propio. Mientras sea compartido, tu empresa puede renombrar u ocultar las cuentas de la plantilla, pero no reorganizar sus códigos. Si lo necesitas, Pasar a catálogo propio copia las cuentas a tu empresa con sus saldos. El aviso explica que el sistema comprueba cuenta por cuenta que la balanza quede igual, y que no se puede deshacer. Confirmo. El sistema copia las cuentas y comprueba la balanza; tarda unos segundos. Listo: la franja dice Catálogo propio, desde hoy. Las cuentas ya son de tu empresa, y no cambian cuando cambia la plantilla.",
-      "acciones": [
-        {
-          "resaltar": ".ownership",
-          "durante_ms": 4500,
-          "cursor": false,
-          "al_decir": "Mientras sea compartido"
-        },
-        {
-          "click": "button:has-text('Pasar a catálogo propio')",
-          "al_decir": "Pasar a catálogo propio copia"
-        },
-        {
-          "resaltar": "mat-dialog-container >> nth=0",
-          "durante_ms": 6000,
-          "cursor": false,
-          "al_decir": "El aviso explica"
-        },
-        {
-          "click": "mat-dialog-container button.confirm-button",
-          "al_decir": "Confirmo"
-        },
-        {
-          "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 2500,
-          "cursor": false,
-          "al_decir": "Listo"
-        },
-        {
-          "resaltar": ".ownership",
-          "durante_ms": 6000,
-          "cursor": false,
-          "al_decir": "la franja dice Catálogo propio"
-        }
-      ]
+     "click": "mat-dialog-container button.confirm-button",
+     "al_decir": "Confirmo con Cambiar catálogo"
     }
-  ]
+   ],
+   "esperar": ".mat-mdc-snack-bar-container",
+   "esperar_timeout_ms": 60000
+  },
+  {
+   "id": "02b-cambiado",
+   "capitulo": "Cambiar de catálogo",
+   "rotulo": "Catálogo cambiado",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Sin asientos: cambio libre · con asientos: asistente",
+   "narracion": "Listo: el aviso lo confirma. El sistema reemplazó el catálogo y volvió a sembrar la configuración contable, y la insignia En uso pasa a esa plantilla. Si tu empresa ya tiene asientos, el mismo botón abre un asistente: dices a qué cuenta nueva va cada cuenta con movimiento, y el sistema registra un asiento de reclasificación.",
+   "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "el aviso lo confirma"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo dominicano ampliado')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la insignia En uso"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo base Germiva')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "el mismo botón abre un asistente"
+    }
+   ]
+  },
+  {
+   "id": "03-crear",
+   "capitulo": "Guardar como plantilla",
+   "rotulo": "Crear plantilla",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Crear plantilla desde mi catálogo",
+   "narracion": "También puedes guardar tu catálogo como plantilla, como referencia o para volver a él más adelante. Si trabajas como firma contable, la plantilla también puede servir para tus clientes: eso lo vemos en los videos de la firma. Abro Crear plantilla desde mi catálogo, que explica qué se copia. Escribo el código, propio dos mil veintiséis, en mayúsculas y sin espacios. Y el nombre: Catálogo de la distribuidora, que es como la verán en la lista. Ahora pulso el botón de crear. Copiar el catálogo completo toma un momento. El aviso lo confirma y se abre su detalle con las cuentas copiadas. Lo cierro. La lista ya muestra la tarjeta nueva, que queda marcada como Propia.",
+   "acciones": [
+    {
+     "resaltar": "button:has-text('Crear plantilla desde mi catálogo')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "guardar tu catálogo como plantilla"
+    },
+    {
+     "resaltar": "h6.templates-header__title",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Si trabajas como firma contable"
+    },
+    {
+     "click": "button:has-text('Crear plantilla desde mi catálogo')",
+     "al_decir": "Abro Crear plantilla"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "que explica qué se copia"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='code']",
+      "texto": "PROPIO_2026"
+     },
+     "al_decir": "Escribo el código"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='name']",
+      "texto": "Catálogo de la distribuidora"
+     },
+     "al_decir": "Y el nombre"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Crear plantilla')",
+     "al_decir": "pulso el botón de crear"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso lo confirma"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "se abre su detalle"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar')",
+     "al_decir": "Lo cierro"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo de la distribuidora')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "marcada como Propia"
+    }
+   ]
+  },
+  {
+   "id": "04-propio",
+   "capitulo": "Catálogo propio",
+   "rotulo": "Pasar a catálogo propio",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Copia las cuentas con sus saldos · no se deshace",
+   "narracion": "Por último, el catálogo propio. Mientras sea compartido, tu empresa puede renombrar u ocultar las cuentas de la plantilla, pero no reorganizar sus códigos. Si lo necesitas, Pasar a catálogo propio copia las cuentas a tu empresa con sus saldos. El aviso explica que el sistema comprueba cuenta por cuenta que la balanza quede igual, y que no se puede deshacer. Confirmo. El sistema copia las cuentas y comprueba la balanza; tarda unos segundos. Listo: la franja dice Catálogo propio, desde hoy. Las cuentas ya son de tu empresa, y no cambian cuando cambia la plantilla.",
+   "acciones": [
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Mientras sea compartido"
+    },
+    {
+     "click": "button:has-text('Pasar a catálogo propio')",
+     "al_decir": "Pasar a catálogo propio copia"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El aviso explica"
+    },
+    {
+     "click": "mat-dialog-container button.confirm-button",
+     "al_decir": "Confirmo"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "tarda unos segundos"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "la franja dice Catálogo propio"
+    }
+   ]
+  }
+ ]
 }

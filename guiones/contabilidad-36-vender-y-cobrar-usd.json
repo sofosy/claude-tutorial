@@ -1,0 +1,304 @@
+{
+ "titulo": "Contabilidad · Vender y cobrar en dólares",
+ "descripcion": "Cómo se ve una factura en dólares en Germiva (montos en USD y su equivalencia en pesos), cómo se elige la moneda de una factura nueva y cómo se cobra a otra tasa en una cuenta bancaria en dólares, con la ganancia cambiaria realizada que el sistema registra solo.",
+ "_comentario": "Video 36 de la serie Contabilidad (bloque B). setup: preparar.sh venta-usd (venta B01 del 24/09 al Hotel Germiva Caribe por USD 1,000 a 58.75 pendiente de cobro; Popular Corriente USD con 2,000 a 58.40; tasa de hoy 59.50). Resultado esperado del cobro: DR Banco 59,500 / CR CxC 58,750 / CR Ganancia 750.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "NIC 21": "nic veintiuno",
+  "NIC 16": "nic dieciséis"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/invoices/1000000050/view",
+  "esperar": ".dgii-equivalence"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh venta-usd"
+ },
+ "aprenderas": [
+  "Cómo se ve una factura en dólares y su equivalencia en pesos",
+  "Elegir la moneda de una factura nueva",
+  "Cobrar a la tasa del día en una cuenta en dólares",
+  "Leer el asiento con la ganancia cambiaria"
+ ],
+ "errores_comunes": [
+  "Cobrar una factura en dólares en una cuenta en pesos sin revisar la tasa",
+  "Corregir a mano la ganancia cambiaria: el cobro la calcula",
+  "Facturar en dólares sin la tasa del día registrada"
+ ],
+ "portada_s": 8,
+ "pasos": [
+  {
+   "id": "01-factura-usd",
+   "capitulo": "Una factura en dólares",
+   "rotulo": "La factura en dólares",
+   "ruta": "Ventas › Facturas",
+   "texto_pantalla": "US$1,000.00 · tasa 58.75 · RD$58,750.00 a la DGII",
+   "navegar": "/sales/invoices/1000000050/view",
+   "narracion": "Esta es una factura en dólares: la consultoría de implementación que se le vendió al Hotel Germiva Caribe el veinticuatro de septiembre, por mil dólares. Recojo el menú. Los montos se ven en la moneda del documento, con el símbolo de dólar. Debajo del resumen está la equivalencia: la tasa de ese día, cincuenta y ocho con setenta y cinco, y lo que se reporta a la DGII, cincuenta y ocho mil setecientos cincuenta pesos. En la contabilidad la venta quedó registrada en pesos, a esa tasa.",
+   "acciones": [
+    {
+     "resaltar": ".page-title, h1 >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la consultoría de implementación"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": ".summary-panel, app-document-cost-summary",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Los montos se ven en la moneda"
+    },
+    {
+     "resaltar": ".dgii-equivalence",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Debajo del resumen está la equivalencia"
+    },
+    {
+     "resaltar": ".dgii-equivalence",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "En la contabilidad la venta"
+    }
+   ]
+  },
+  {
+   "id": "02-moneda",
+   "capitulo": "Facturar en dólares",
+   "rotulo": "Elegir la moneda",
+   "ruta": "Ventas › Facturas › Nueva",
+   "texto_pantalla": "Moneda del documento · USD · tasa del día 59.50",
+   "navegar": "/sales/invoices/create",
+   "narracion": "Para facturar en dólares, en la factura nueva pulso el selector de moneda, arriba a la derecha. Se abre Moneda del documento. En la lista elijo el dólar. El sistema toma la tasa del día que registraste en Monedas: cincuenta y nueve con cincuenta, y la muestra en el selector. Si hoy no hubiera tasa, te la pide aquí mismo. A partir de ahí, la factura se llena igual que en pesos, con los precios en dólares.",
+   "acciones": [
+    {
+     "click": "button.currency-chip-button",
+     "al_decir": "pulso el selector de moneda"
+    },
+    {
+     "resaltar": ".mat-mdc-menu-panel, .cdk-overlay-pane:has-text('Moneda del documento')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Se abre Moneda del documento"
+    },
+    {
+     "click": ".cdk-overlay-pane mat-select",
+     "al_decir": "En la lista elijo"
+    },
+    {
+     "click": "mat-option:has-text('USD')",
+     "al_decir": "el dólar"
+    },
+    {
+     "resaltar": "app-document-currency",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "El sistema toma la tasa del día"
+    },
+    {
+     "resaltar": "app-document-currency",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Si hoy no hubiera tasa"
+    },
+    {
+     "resaltar": ".page-title, h1 >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la factura se llena igual"
+    }
+   ]
+  },
+  {
+   "id": "03-cobro",
+   "capitulo": "Cobrar a otra tasa",
+   "rotulo": "Registrar el cobro",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Factura a 58.75 · pago a 59.50 · ganancia de RD$750",
+   "navegar": "/sales/payments",
+   "narracion": "Hoy el hotel paga la factura de septiembre por transferencia. En Cobros pulso Registrar cobro. Busco la factura del hotel por su nombre, y la elijo de la lista. El cuadro trae el cliente, el total y el saldo, en dólares. En Tasa del pago viene la de hoy, cincuenta y nueve con cincuenta; si el banco aplicó otra, la cambias aquí. Debajo, el sistema calcula la diferencia: factura a cincuenta y ocho con setenta y cinco, pago a cincuenta y nueve con cincuenta, ganancia cambiaria de setecientos cincuenta pesos.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "pulso Registrar cobro"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-autocomplete input",
+      "texto": "Hotel"
+     },
+     "al_decir": "Busco la factura del hotel"
+    },
+    {
+     "click": "mat-option:has-text('Hotel Germiva Caribe')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-facts",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "El cuadro trae el cliente"
+    },
+    {
+     "resaltar": "mat-dialog-container app-exchange-rate-input",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "En Tasa del pago"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-section:has-text('Tasa del pago') .gm-dialog-note",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "el sistema calcula la diferencia"
+    }
+   ]
+  },
+  {
+   "id": "04-registrar",
+   "capitulo": "Cobrar a otra tasa",
+   "rotulo": "A la cuenta en dólares",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Transferencia · Banco Popular - Cuenta en dólares",
+   "narracion": "Como pagó por transferencia, elijo Transferencia. Ahora, en el campo Cuenta de destino, busco la cuenta del Banco Popular en dólares, porque ahí entró el dinero. El monto ya viene: mil dólares, el saldo completo. Pulso Registrar cobro. El aviso lo confirma, y la factura queda saldada.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container .gm-doc-seg__opt:has-text('Transferencia')",
+     "al_decir": "elijo Transferencia"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-account-picker input",
+      "texto": "dólares"
+     },
+     "al_decir": "busco la cuenta del Banco Popular"
+    },
+    {
+     "click": "mat-option:has-text('dólares')",
+     "al_decir": "porque ahí entró el dinero"
+    },
+    {
+     "resaltar": "mat-dialog-container app-inline-payment-panel",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El monto ya viene"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "Pulso Registrar cobro"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container:has-text('Aceptar')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso lo confirma"
+    }
+   ]
+  },
+  {
+   "id": "05-asiento",
+   "capitulo": "El asiento",
+   "rotulo": "El asiento del cobro",
+   "ruta": "Contabilidad › Diario y Mayor › Asientos Contables",
+   "texto_pantalla": "Banco 59,500 · CxC 58,750 · Ganancia 750",
+   "navegar": "/accounting/registro/asientos",
+   "narracion": "El cobro generó su asiento solo. En Asientos Contables, el primero es Pago recibido. Lo abro. El banco en dólares recibe cincuenta y nueve mil quinientos pesos: mil dólares a la tasa de hoy. La cuenta por cobrar baja cincuenta y ocho mil setecientos cincuenta: lo que valía la factura a su tasa. Y la diferencia, setecientos cincuenta, va a Ganancia por diferencia en cambio. Si la tasa hubiera bajado, sería una pérdida, en la cuenta de pérdida cambiaria.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('Pago recibido') td >> nth=2",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "el primero es Pago recibido"
+    },
+    {
+     "click": "tr:has-text('Pago recibido') button:has(mat-icon:text-is('visibility')), tr:has-text('Pago recibido') mat-icon:text-is('visibility')",
+     "al_decir": "Lo abro"
+    },
+    {
+     "resaltar": ".table-row:has-text('Banco Popular'), .table-row >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "El banco en dólares recibe"
+    },
+    {
+     "resaltar": ".table-row:has-text('Cuentas por cobrar'), .table-row >> nth=1",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "La cuenta por cobrar baja"
+    },
+    {
+     "resaltar": ".table-row:has-text('Ganancia'), .table-row >> nth=2",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Y la diferencia"
+    },
+    {
+     "resaltar": ".table-row:has-text('Ganancia'), .table-row >> nth=2",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Si la tasa hubiera bajado"
+    }
+   ]
+  }
+ ]
+}

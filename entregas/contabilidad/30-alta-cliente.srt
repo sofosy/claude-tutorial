@@ -1,0 +1,131 @@
+1
+00:00:03,000 --> 00:00:05,870
+La Cartera reúne los clientes de la firma.
+
+2
+00:00:05,694 --> 00:00:08,609
+Para agregar uno, pulso Nuevo cliente.
+
+3
+00:00:08,468 --> 00:00:11,269
+El cuadro pregunta para quién es la empresa:
+
+4
+00:00:11,138 --> 00:00:13,137
+elijo Para un cliente.
+
+5
+00:00:13,031 --> 00:00:16,935
+Ahora el sistema busca si la empresa ya existe en la plataforma,
+
+6
+00:00:16,780 --> 00:00:20,649
+por su RNC o por el correo de su administrador.
+
+7
+00:00:20,495 --> 00:00:22,867
+Escribo el RNC:
+
+8
+00:00:22,760 --> 00:00:27,138
+uno, tres, cero, cinco, cinco, cinco, dos, dos, cero.
+
+9
+00:00:26,998 --> 00:00:32,177
+Dejo el nivel de acceso en Contabilidad e Impuestos y pulso Enviar invitación.
+
+10
+00:00:32,643 --> 00:00:35,490
+Como la empresa no está en la plataforma,
+
+11
+00:00:35,384 --> 00:00:39,345
+el sistema ofrece darla de alta a nombre de su dueño,
+
+12
+00:00:39,192 --> 00:00:42,515
+que recibirá un correo para crear su contraseña.
+
+13
+00:00:42,640 --> 00:00:44,534
+Escribo la razón social:
+
+14
+00:00:44,567 --> 00:00:51,664
+Ferretería Germiva del Cibao, S.R.L., tal como aparece en sus documentos.
+
+15
+00:00:51,846 --> 00:00:53,997
+Debajo va el nombre comercial:
+
+16
+00:00:53,890 --> 00:00:55,831
+Ferretería del Cibao.
+
+17
+00:00:55,747 --> 00:01:00,254
+Y a la derecha, el correo del dueño del negocio, no el de la firma.
+
+18
+00:01:00,171 --> 00:01:02,716
+Más abajo está el catálogo de cuentas:
+
+19
+00:01:02,691 --> 00:01:05,503
+ya viene la plantilla por defecto de la firma.
+
+20
+00:01:05,418 --> 00:01:10,241
+Si este cliente necesitara otro catálogo, lo cambias aquí, solo para él.
+
+21
+00:01:10,121 --> 00:01:13,246
+Lo dejo así y pulso Crear empresa.
+
+22
+00:01:13,713 --> 00:01:16,572
+Crear la empresa toma unos segundos:
+
+23
+00:01:16,441 --> 00:01:21,146
+el sistema copia el catálogo y deja lista su configuración contable.
+
+24
+00:01:20,981 --> 00:01:23,816
+El aviso confirma que el cliente se creó:
+
+25
+00:01:23,745 --> 00:01:29,227
+su dueño recibirá un correo para entrar, y la firma ya puede trabajar en la empresa.
+
+26
+00:01:29,120 --> 00:01:30,435
+Pulso Aceptar.
+
+27
+00:01:30,385 --> 00:01:35,810
+El cliente ya aparece en la Cartera, y el contador de clientes activos lo suma.
+
+28
+00:01:35,680 --> 00:01:37,715
+Nace con su propio catálogo:
+
+29
+00:01:37,608 --> 00:01:41,477
+una copia de la plantilla de la firma que es solo de él.
+
+30
+00:01:41,403 --> 00:01:45,980
+Así la firma puede ajustar sus cuentas sin tocar a los demás clientes,
+
+31
+00:01:45,816 --> 00:01:50,242
+y si más adelante cambia la plantilla, este cliente no cambia.
+
+32
+00:01:50,099 --> 00:01:54,967
+Mientras no tenga asientos, todavía se le puede cambiar el catálogo completo:
+
+33
+00:01:54,847 --> 00:01:57,195
+lo vemos en el siguiente video.

@@ -1,0 +1,312 @@
+{
+ "titulo": "Contabilidad · Cambiar de catálogo con asientos: el asistente de correspondencia",
+ "descripcion": "Cómo se cambia en Germiva el catálogo de cuentas de una empresa que ya tiene asientos contabilizados: el asistente de correspondencia cuenta por cuenta, la fecha de corte y el asiento de reclasificación que traslada los saldos.",
+ "_comentario": "Video 32 de la serie Contabilidad (bloque A). setup: preparar.sh firma-asistente (Colmado Germiva, invitado y con catálogo compartido, con su balance inicial contabilizado el 01/10/2026 y un banco 1.01.01.02.05 creado por él).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "RNC": "erre-ene-ce",
+  "GERMIVA_CONTADORES": "germiva contadores"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 8,
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/plantillas",
+  "esperar": "article.template-card"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh firma-asistente"
+ },
+ "aprenderas": [
+  "Por qué con asientos el cambio de catálogo pide correspondencia",
+  "Asignar a cada cuenta con movimiento su cuenta nueva",
+  "Elegir la fecha de corte y leer el asiento de reclasificación"
+ ],
+ "errores_comunes": [
+  "Hacer el cambio a mitad de año: conviene en el corte del ejercicio fiscal",
+  "Elegir una fecha de corte anterior al último asiento: el sistema la rechaza",
+  "Esperar que los asientos viejos cambien de cuenta: no se tocan; el saldo se traslada con un asiento"
+ ],
+ "pasos": [
+  {
+   "id": "01-con-asientos",
+   "capitulo": "Con asientos",
+   "rotulo": "El asistente de correspondencia",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Con asientos contabilizados · asistente de correspondencia",
+   "narracion": "El Colmado Germiva ya contabilizó su balance inicial, así que su catálogo tiene historia. Recojo el menú. El aviso de arriba lo dice: con asientos contabilizados, el cambio se hace con el asistente de correspondencia, idealmente en el corte del ejercicio fiscal. Igual que antes, en la plantilla de la firma pulso Usar este catálogo, y esta vez se abre el asistente.",
+   "acciones": [
+    {
+     "resaltar": "app-company-selector",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El Colmado Germiva"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "p.gm-hint >> nth=0",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "El aviso de arriba lo dice"
+    },
+    {
+     "click": "article.template-card:has-text('Catálogo Germiva Contadores') button:has-text('Usar este catálogo')",
+     "al_decir": "pulso Usar este catálogo"
+    }
+   ]
+  },
+  {
+   "id": "02-que-pasa",
+   "capitulo": "Qué va a pasar",
+   "rotulo": "1 · Qué va a pasar",
+   "ruta": "Plantillas de Catálogo › Cambiar al catálogo",
+   "texto_pantalla": "Correspondencia · asiento de reclasificación · historia intacta",
+   "narracion": "El primer paso explica lo que va a pasar. Cada cuenta con movimiento tiene que apuntar a una cuenta del catálogo nuevo. Se registra un asiento de reclasificación en la fecha de corte, que traslada el saldo de cada cuenta vieja a la nueva. Los asientos históricos no se tocan, y las cuentas propias con movimiento se archivan, nunca se borran. Los mapeos contables se reapuntan al catálogo nuevo. Pulso Continuar.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .summary__list li >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Cada cuenta con movimiento"
+    },
+    {
+     "resaltar": "mat-dialog-container .summary__list li >> nth=1",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Se registra un asiento"
+    },
+    {
+     "resaltar": "mat-dialog-container .summary__list li >> nth=2",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Los asientos históricos"
+    },
+    {
+     "resaltar": "mat-dialog-container .summary__list li >> nth=3",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Los mapeos contables"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Continuar')",
+     "al_decir": "Pulso Continuar"
+    }
+   ]
+  },
+  {
+   "id": "03-correspondencia",
+   "capitulo": "Correspondencia",
+   "rotulo": "2 · Correspondencia",
+   "ruta": "Plantillas de Catálogo › Cambiar al catálogo",
+   "texto_pantalla": "Cada cuenta con movimiento → su cuenta en el catálogo nuevo",
+   "narracion": "El segundo paso es la correspondencia. Cada fila es una cuenta con movimiento, con su saldo. Cuando el catálogo nuevo tiene una cuenta con el mismo código, el sistema ya la propone, como la Caja general y el capital. El Banco Popular que creó el Colmado tiene un código que la plantilla no trae, así que lo asigno yo: abro su selector, y elijo el Banco Popular, cuenta corriente, de la firma. Con las tres cuentas asignadas, pulso Continuar.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .mapping-head__progress",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El segundo paso"
+    },
+    {
+     "resaltar": "mat-dialog-container tr:has-text('1.01.01.01.02') td >> nth=2",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el sistema ya la propone"
+    },
+    {
+     "resaltar": "mat-dialog-container tr:has-text('1.01.01.02.05') td >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El Banco Popular que creó"
+    },
+    {
+     "click": "mat-dialog-container tr:has-text('1.01.01.02.05') mat-select",
+     "al_decir": "abro su selector"
+    },
+    {
+     "click": "mat-option:has-text('1.01.01.02.01')",
+     "al_decir": "y elijo el Banco Popular"
+    },
+    {
+     "resaltar": "mat-dialog-container .mapping-head__progress",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Con las tres cuentas asignadas"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Continuar')",
+     "al_decir": "pulso Continuar"
+    }
+   ]
+  },
+  {
+   "id": "04-ejecutar",
+   "capitulo": "Ejecutar",
+   "rotulo": "3 · Ejecutar",
+   "ruta": "Plantillas de Catálogo › Cambiar al catálogo",
+   "texto_pantalla": "Fecha de corte · asiento de reclasificación",
+   "narracion": "El último paso pide la fecha de corte: el asiento de reclasificación se registra en esa fecha, y no puede haber asientos posteriores. Escribo el treinta y uno de octubre de dos mil veintiséis, el cierre del mes. El aviso recuerda que el cambio no se puede deshacer y queda auditado. Pulso Ejecutar cambio de catálogo. El sistema registra el asiento y reapunta la configuración.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .execute p.gm-hint",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "El último paso pide"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[type='date']",
+      "texto": "10/31/2026"
+     },
+     "al_decir": "Escribo el treinta y uno"
+    },
+    {
+     "resaltar": "mat-dialog-container .execute__warning",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El aviso recuerda"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Ejecutar cambio de catálogo')",
+     "al_decir": "Pulso Ejecutar"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El sistema registra el asiento"
+    }
+   ]
+  },
+  {
+   "id": "05-asiento",
+   "capitulo": "El asiento de reclasificación",
+   "rotulo": "El asiento del cambio",
+   "ruta": "Contabilidad › Diario y Mayor",
+   "texto_pantalla": "Cambio de catálogo · reclasificación de saldos al corte",
+   "narracion": "El aviso confirmó que el catálogo cambió y que el asiento de reclasificación quedó contabilizado. El asistente se cierra, y la marca En uso pasa a la plantilla de la firma.",
+   "acciones": [
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El aviso confirmó"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El asistente se cierra"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "la marca En uso pasa"
+    }
+   ]
+  },
+  {
+   "id": "06-diario",
+   "capitulo": "El asiento de reclasificación",
+   "rotulo": "El asiento del cambio",
+   "ruta": "Contabilidad › Diario y Mayor",
+   "texto_pantalla": "Cambio de catálogo · reclasificación de saldos al corte",
+   "navegar": "/accounting/registro/asientos",
+   "esperar": "button:has-text('Crear Asiento')",
+   "narracion": "Vamos a buscar ese asiento. El asiento está en Diario y Mayor, con la fecha del corte y el número que le dio el sistema.",
+   "acciones": [
+    {
+     "resaltar": "tr.mat-mdc-row:has-text('Cambio de catálogo') td >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "El asiento está en Diario y Mayor"
+    }
+   ]
+  },
+  {
+   "id": "06b-lineas",
+   "capitulo": "El asiento de reclasificación",
+   "rotulo": "Las líneas del asiento",
+   "ruta": "Contabilidad › Diario y Mayor",
+   "texto_pantalla": "Cada cuenta vieja se salda contra su cuenta nueva",
+   "narracion": "Es el primero de la lista. Ahora lo abro para ver sus líneas. Cada cuenta vieja se salda contra su cuenta nueva: el Banco Popular del Colmado pasa al Banco Popular de la firma, y lo mismo la caja y el capital. Los asientos anteriores siguen en sus cuentas de siempre: el cambio queda como una sola huella, auditada.",
+   "acciones": [
+    {
+     "click": "tr.mat-mdc-row:has-text('Cambio de catálogo') td >> nth=1",
+     "al_decir": "Ahora lo abro"
+    },
+    {
+     "resaltar": "table >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "Cada cuenta vieja se salda"
+    },
+    {
+     "resaltar": "table >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Los asientos anteriores"
+    }
+   ]
+  }
+ ]
+}

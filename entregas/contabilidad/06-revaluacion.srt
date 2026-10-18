@@ -127,45 +127,45 @@ y eso es pérdida.
 Pulso Aceptar.
 
 33
-00:01:50,451 --> 00:01:54,076
+00:01:50,456 --> 00:01:53,976
 Abajo, en Revaluaciones previas, queda la corrida:
 
 34
-00:01:53,946 --> 00:02:00,380
+00:01:53,846 --> 00:01:59,491
 la fecha, la moneda, la tasa, cuántos documentos ajustó, la ganancia, la pérdida,
 
 35
-00:02:00,261 --> 00:02:03,480
-el estado Posteada y el asiento que generó.
+00:01:59,338 --> 00:02:02,452
+el estado Contabilizada y el asiento que generó.
 
 36
-00:02:03,396 --> 00:02:06,870
+00:02:02,321 --> 00:02:05,528
 La próxima revaluación parte de esta tasa.
 
 37
-00:02:06,693 --> 00:02:11,584
+00:02:05,410 --> 00:02:10,625
 Si te equivocaste, el botón Anular revaluación registra el reverso;
 
 38
-00:02:11,430 --> 00:02:16,737
+00:02:10,449 --> 00:02:15,362
 pide el motivo, y se anulan siempre de la más reciente a la más antigua.
 
 39
-00:02:16,620 --> 00:02:18,283
+00:02:15,220 --> 00:02:16,860
 Una aclaración final:
 
 40
-00:02:18,199 --> 00:02:21,197
+00:02:16,741 --> 00:02:19,228
 esto es la revaluación de moneda.
 
 41
-00:02:21,078 --> 00:02:25,086
+00:02:19,121 --> 00:02:23,129
 La revaluación de activos fijos, la de la norma NIC 16,
 
 42
-00:02:24,944 --> 00:02:28,302
+00:02:22,987 --> 00:02:26,044
 todavía no existe como función en el sistema;
 
 43
-00:02:28,182 --> 00:02:32,677
+00:02:25,890 --> 00:02:30,223
 hoy, si tu contador la necesita, se registra con un asiento manual.
