@@ -26,7 +26,8 @@ Ramas y repos:
 - **Germiva-api** y **germiva-website**: `feature/contabilidad-catalogo-firma-clientes` para el
   bloque A ([api#1569](https://github.com/sofosy/Germiva-api/pull/1569),
   [web#1416](https://github.com/sofosy/germiva-website/pull/1416)); los arreglos de
-  multimoneda y de retenciones van en ramas propias (`fix/contabilidad-multimoneda`;
+  multimoneda y de retenciones van en ramas propias (`fix/contabilidad-multimoneda`:
+  [api#1575](https://github.com/sofosy/Germiva-api/pull/1575), [web#1419](https://github.com/sofosy/germiva-website/pull/1419);
   `fix/fiscal-retenciones`: [api#1574](https://github.com/sofosy/Germiva-api/pull/1574),
   [web#1418](https://github.com/sofosy/germiva-website/pull/1418)) para que cada PR se revise solo.
 - Cada tarea terminada sale en su propio commit, y este plan se actualiza en el mismo commit.
@@ -158,18 +159,18 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 
 | # | Hallazgo | Decisión | Estado |
 |---|----------|----------|--------|
-| M1 | Vista 360: la tarjeta de un banco en USD suma líneas USD y DOP (y borradores) y luego multiplica por la tasa de hoy; «Total bancos» no cuadra con el efectivo | Arreglar | Por hacer |
-| M2 | El estado de cuenta del proveedor mezcla monedas con el total rotulado «RD$»; la búsqueda del proveedor no filtra por empresa | Arreglar | Por hacer |
-| M3 | Conciliación: comisiones e intereses de una cuenta en USD se contabilizan como pesos, sin convertir; las sugerencias comparan USD contra DOP | Arreglar | Por hacer |
-| M4 | La casilla «Monetaria» promete revaluar cualquier cuenta y solo excluye bancos (préstamos y caja en USD no se revalúan) | Corregir el texto + REU (revaluar cuentas monetarias) | Por hacer |
-| M5 | Mensajes que mandan a registrar la tasa en «Histórico de Tasas», que es de solo lectura; ninguna pantalla registra una tasa con fecha pasada | Arreglar mensajes + evaluar fecha en el registro | Por hacer |
-| M6 | «Configuración multi-moneda»: ayuda falsa («el asiento queda desbalanceado»), errores de carga tragados, permiso del menú | Arreglar | Por hacer |
-| M7 | Las cuentas generales de diferencia cambiaria se guardan sin validar empresa, catálogo ni que admitan movimiento | Arreglar | Por hacer |
-| M8 | `getRate` sin empresa lee tasas de todas; el GET de revaluaciones sin guardia de empresa; se acepta tasa 0 | Arreglar | Por hacer |
-| M9 | Inglés en asientos y pantallas: «Pago CASH», «AccountReceivable#123», «Default», «NET/GROSS», «Posteada» | Arreglar | Por hacer |
-| M10 | Diálogos de pago con `'DOP'` fijo en vez de la moneda local de la empresa | Arreglar si es local | Por hacer |
-| M11 | Una revaluación sin saldos queda «Posteada» y bloquea esa fecha; sin cuentas configuradas, falla aunque no haya saldos | Arreglar | Por hacer |
-| M12 | Diario y Mayor: las filas muestran el importe en USD y los totales en DOP, sin columna de moneda | Arreglar | Por hacer |
+| M1 | Vista 360: la tarjeta de un banco en USD suma líneas USD y DOP (y borradores) y luego multiplica por la tasa de hoy; «Total bancos» no cuadra con el efectivo | Arreglar | Hecho (api#1575, web#1419) |
+| M2 | El estado de cuenta del proveedor mezcla monedas con el total rotulado «RD$»; la búsqueda del proveedor no filtra por empresa | Arreglar | Hecho (api#1575, web#1419) |
+| M3 | Conciliación: comisiones e intereses de una cuenta en USD se contabilizan como pesos, sin convertir; las sugerencias comparan USD contra DOP | Arreglar | Hecho (api#1575, web#1419) |
+| M4 | La casilla «Monetaria» promete revaluar cualquier cuenta y solo excluye bancos (préstamos y caja en USD no se revalúan) | Corregir el texto + REU (revaluar cuentas monetarias) | Hecho el texto (api#1575, web#1419); revaluar otras cuentas → REU |
+| M5 | Mensajes que mandan a registrar la tasa en «Histórico de Tasas», que es de solo lectura; ninguna pantalla registra una tasa con fecha pasada | Arreglar mensajes + evaluar fecha en el registro | Hecho (api#1575, web#1419) |
+| M6 | «Configuración multi-moneda»: ayuda falsa («el asiento queda desbalanceado»), errores de carga tragados, permiso del menú | Arreglar | Hecho (api#1575, web#1419) |
+| M7 | Las cuentas generales de diferencia cambiaria se guardan sin validar empresa, catálogo ni que admitan movimiento | Arreglar | Hecho (api#1575, web#1419) |
+| M8 | `getRate` sin empresa lee tasas de todas; el GET de revaluaciones sin guardia de empresa; se acepta tasa 0 | Arreglar | Hecho (api#1575, web#1419) |
+| M9 | Inglés en asientos y pantallas: «Pago CASH», «AccountReceivable#123», «Default», «NET/GROSS», «Posteada» | Arreglar | Hecho (api#1575, web#1419) |
+| M10 | Diálogos de pago con `'DOP'` fijo en vez de la moneda local de la empresa | Arreglar si es local | Hecho (api#1575, web#1419) |
+| M11 | Una revaluación sin saldos queda «Posteada» y bloquea esa fecha; sin cuentas configuradas, falla aunque no haya saldos | Arreglar | Hecho (api#1575, web#1419) |
+| M12 | Diario y Mayor: las filas muestran el importe en USD y los totales en DOP, sin columna de moneda | Arreglar | Hecho (api#1575, web#1419) |
 | M13 | Sin asiento manual en USD en pantalla, sin anticipos de cliente en USD, sin compra de dólares (transferencia entre monedas) | REU (funcionalidad nueva) | Por hacer |
 
 - **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
@@ -206,4 +207,12 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
   filas en `tax_withholdings` (`TW-<factura>-ITBIS|ISR`) que inflan el IR-2 y «Retenciones
   recibidas» (saneo → REU); las cartas ya emitidas con ISC, propina o percepciones saldrán
   «desactualizadas» porque su «Monto pagado» estaba mal.
+- **Multimoneda, decisiones que dejó el arreglo:** `allowPaymentCurrencyOverride` se guarda y
+  nadie lo lee (quitar o implementar); la Vista 360 muestra el valor en libros en DOP, no a la tasa
+  de hoy; una cuenta bancaria en USD sin cuenta contable se valora a la tasa de la última
+  revaluación; la pantalla no registra una tasa con fecha pasada; la revaluación rotula «Ganancia
+  DOP» / RD$ fijo. → REU.
+- **Entorno:** `ng serve` (≈6 GB) cayó dos veces por falta de memoria con agentes trabajando en
+  paralelo. Para grabar se sirve la compilación estática del frontend (poca RAM); se recompila
+  cuando cambia el código de la web.
 
