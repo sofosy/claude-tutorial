@@ -49,10 +49,10 @@ terminar; nunca aparece en un video.
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | En curso: bloque A subido (api#1569, web#1416); faltan multimoneda y retenciones |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos |
 | 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: 28–33 guionados; 28–30 a regrabar (ritmo); 31–33 ensayados |
-| 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | Por hacer |
-| 8 | REU: fichas que la tanda toque o deje abiertas | Por hacer |
+| 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | En curso: manual y definición de la experta hechos (api#1569); faltan catálogo de videos y textos de YouTube |
+| 8 | REU: fichas que la tanda toque o deje abiertas | Hecho: DP-124 a DP-138 (DP-135 a DP-138 renumeradas por choque con comisiones), DP-016, DP-005 y DP-002 al día |
 | 9 | Validación final contra PROD si el cambio toca migraciones o contabilidad; `down.sh --all` y verificación vacía | Por hacer |
-| 10 | PR a master/main con CI en verde | Por hacer |
+| 10 | PR a master/main con CI en verde | En curso: unidos api#1569, web#1416, web#1419, web#1418; faltan api#1574 y api#1575 (pruebas de integración corriendo) |
 
 ## Videos
 
