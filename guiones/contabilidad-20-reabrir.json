@@ -176,6 +176,18 @@
           "durante_ms": 2500,
           "cursor": false,
           "al_decir": "El aviso confirma el cierre"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Marzo 2026') .gm-badge >> nth=-1",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el estado vuelve a Cerrado"
+        },
+        {
+          "resaltar": "th:has-text('Asientos')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El sistema no cierra un período"
         }
       ]
     },
@@ -185,8 +197,14 @@
       "rotulo": "Bloquear (Permanente)",
       "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
       "texto_pantalla": "Bloqueado: no se reabre nunca",
-      "narracion": "Cuando un período ya se declaró y no debe tocarse más, se bloquea. Busco enero de dos mil veinticinco en el buscador. Ya filtrado, en su fila pulso Bloquear, Permanente. La advertencia es clara: no se puede deshacer. Confirmo con Sí, Bloquear Permanentemente. El estado pasa a Bloqueado, y la fila ya no ofrece reabrir.",
+      "narracion": "Cuando un período ya se declaró y no debe tocarse más, se bloquea. Busco enero de dos mil veinticinco en el buscador. Ya filtrado, en su fila pulso Bloquear, Permanente. La advertencia es clara: no se puede deshacer. Confirmo con Sí, Bloquear Permanentemente. El aviso lo confirma. Ya en la lista, el estado pasa a Bloqueado, y en sus acciones ya no se ofrece reabrir.",
       "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "no debe tocarse más"
+        },
         {
           "escribir": {
             "sel": "app-console-filter-bar input >> nth=0",
@@ -218,13 +236,19 @@
           "resaltar": ".mat-mdc-snack-bar-container",
           "durante_ms": 2000,
           "cursor": false,
-          "al_decir": "El estado pasa a Bloqueado"
+          "al_decir": "El aviso lo confirma"
         },
         {
           "resaltar": "tr.mat-mdc-row:has-text('Enero 2025') .gm-badge >> nth=-1",
-          "durante_ms": 3500,
+          "durante_ms": 2500,
           "cursor": false,
-          "al_decir": "la fila ya no ofrece reabrir"
+          "al_decir": "el estado pasa a Bloqueado"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Enero 2025') td:last-child",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "ya no se ofrece reabrir"
         }
       ]
     },

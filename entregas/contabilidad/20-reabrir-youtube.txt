@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Reabrir, cerrar y bloquear un período, y corregir lo que ya se cerró
+
+DESCRIPCIÓN
+============================================================
+Cómo reabrir en Germiva un período cerrado dejando el motivo, volver a cerrarlo con sus notas, bloquearlo para siempre y qué caminos hay para corregir algo de un período cerrado.
+
+⏱️ CAPÍTULOS
+00:00  Reabrir
+00:35  Volver a cerrar
+00:58  Bloquear
+01:27  Corregir lo cerrado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Reabrir un período cerrado con su motivo
+• Volver a cerrarlo con notas del cierre
+• Bloquear un período para siempre
+• Elegir cómo corregir algo de un período cerrado
+
+⚠️ ERRORES COMUNES
+• Bloquear un período que todavía puede necesitar ajustes: no se puede deshacer
+• Reabrir sin motivo: queda en la auditoría y lo exige la pantalla
+• Reabrir un mes de un año ya cerrado: primero se reversa el cierre del ejercicio
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:56
+
+TRANSCRIPCIÓN
+============================================================
+Un período cerrado no admite asientos. Si hay que registrar algo que faltó, se reabre. Recojo el menú. Busco marzo de dos mil veintiséis, que está cerrado. Ya filtrado, en su fila pulso Reabrir Período. El sistema pide el motivo, porque la reapertura queda en la auditoría y en las notas del período. Escribo el motivo: falta un ajuste de depreciación. Revisado el texto, confirmo con Reabrir período. El aviso lo confirma, y el estado vuelve a Abierto.
+Registrado el ajuste, el período se vuelve a cerrar. En la misma fila pulso Cerrar Período. Aquí las notas son opcionales; dejo una para quien revise después. Con la nota escrita, confirmo con Cerrar período. El aviso confirma el cierre, y el estado vuelve a Cerrado. El sistema no cierra un período con asientos en borrador ni descuadrado.
+Cuando un período ya se declaró y no debe tocarse más, se bloquea. Busco enero de dos mil veinticinco en el buscador. Ya filtrado, en su fila pulso Bloquear, Permanente. La advertencia es clara: no se puede deshacer. Confirmo con Sí, Bloquear Permanentemente. El aviso lo confirma. Ya en la lista, el estado pasa a Bloqueado, y en sus acciones ya no se ofrece reabrir.
+Para corregir algo de un período cerrado hay tres caminos. Si el período se puede reabrir, se reabre, se corrige y se vuelve a cerrar, como acabamos de hacer. Si ya se declaró, lo usual es un asiento de ajuste en el período abierto. Y si el año ya pasó por el cierre del ejercicio, primero se reversa ese cierre desde Cierre Contable: mientras esté completado, sus meses no se reabren.
