@@ -83,7 +83,8 @@ Orden lógico (el 06 queda como pieza de cierre entre el 37 y el 38):
 | 35 | Las cuentas de diferencia cambiaria | Orden en que se buscan: por moneda (Neta / Separada) › cuentas generales › roles «Multimoneda» del mapeo (4.02.01.03 y 6.05.02 en GERMIVA_BASE); qué pasa si faltan | Guionado (pasa la revisión); por ensayar. Semilla `diferencia-cambiaria` |
 | 36 | Vender y cobrar en dólares | Factura en USD con la tasa del día (chip de moneda y equivalencia en pesos) y cobro de la venta del 24/09 (USD 1,000 a 58.75) a 59.50 en la cuenta del Popular en dólares: DR Banco 59,500 / CR CxC 58,750 / CR Ganancia 750 | Semilla `venta-usd` escrita (Hotel Germiva Caribe, Popular Corriente USD con 2,000 a 58.40) |
 | 37 | Comprar y pagar en dólares | Pago de la compra al exterior del 26/09 (B17, USD 500 a 59.00) a 59.50: la pérdida de 250; el anticipo a proveedor en USD | Semilla `compra-usd` escrita (Germiva Cloud Tools Inc.) |
-| 06 | (existente) Revaluación de cierre | Se mantiene; el 38 lo complementa | Hecho |
+| 06 | (existente) Revaluación de cierre | Se mantiene; el 38 lo complementa. Se regraba: decía el estado «Posteada», que el arreglo M9 cambió a «Contabilizada» | Narración corregida; por regrabar |
+| 08 | (existente) El plan de cuentas | Se regraba: prometía que la casilla «Monetaria» revalúa cualquier cuenta (M4); ahora dice lo que hace | Narración corregida; por regrabar |
 | 38 | La revaluación por dentro | Revaluación al 30/09 a 59.20 con lo cobrado y pagado en octubre: el asiento principal (CxC, CxP y el banco) y el «-POST» que retira lo liquidado después del corte; anular la corrida | Semilla `revaluacion-usd` escrita |
 | 39 | Ver la operación en USD y en DOP | La factura (USD y su equivalente), antigüedad y estado de cuenta por moneda (cliente y proveedor), el saldo del banco en USD, el Mayor con el importe en dólares y los estados financieros siempre en pesos | Semilla `usd-y-dop` escrita (con la revaluación contabilizada) |
 
