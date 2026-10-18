@@ -178,7 +178,7 @@
       "texto_pantalla": "Diciembre abierto y marcado como actual",
       "navegar": "/accounting/configuracion/periodos",
       "al_decir_navegar": "En Períodos Contables",
-      "narracion": "Veamos el período. En Períodos Contables busco diciembre de dos mil veinticinco con el buscador. Ya filtrado, se ve que está abierto otra vez, y el reverso lo marcó como período actual, para que la corrección se haga ahí. Los demás meses del año siguen cerrados. Cuando termines de corregir, se cierra el año de nuevo desde Cierre Contable, y el período actual vuelve al mes de trabajo con Establecer como Actual.",
+      "narracion": "Veamos cómo quedó el período. En Períodos Contables, con el buscador de arriba, busco diciembre de dos mil veinticinco. Ya filtrado, se ve que está abierto otra vez, y el reverso lo marcó como período actual, para que la corrección se haga ahí. Cuando termines de corregir, se cierra el año de nuevo desde Cierre Contable, y el período actual vuelve al mes de trabajo con Establecer como Actual.",
       "acciones": [
         {
           "escribir": {
