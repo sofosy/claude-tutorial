@@ -46,7 +46,7 @@ terminar; nunca aparece en un video.
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | En curso: bloque A subido (api#1569, web#1416); faltan multimoneda y retenciones |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos |
-| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | Por hacer |
+| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: 28–30 ensayados y grabándose |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | Por hacer |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Por hacer |
 | 9 | Validación final contra PROD si el cambio toca migraciones o contabilidad; `down.sh --all` y verificación vacía | Por hacer |
@@ -58,9 +58,9 @@ terminar; nunca aparece en un video.
 
 | # | Video | Qué enseña | Estado |
 |---|-------|-----------|--------|
-| 28 | La firma fija el catálogo de sus clientes | Mi Cartera › Mi firma › «Catálogo de cuentas de sus clientes» › «Plantilla por defecto» › «Guardar plantilla»; los clientes actuales no cambian; en cada alta se puede elegir otra | Por hacer |
-| 29 | La plantilla propia de la firma | Desde el catálogo de la firma (o de un cliente ya trabajado): «Crear plantilla desde mi catálogo» con alcance «Mi firma contable»; quién la ve; ponerla por defecto | Por hacer |
-| 30 | Dar de alta un cliente con su catálogo | Nuevo cliente › «Para un cliente» › «Dar de alta a un cliente nuevo» › «Catálogo de cuentas» (viene la de la firma, se puede elegir otra) › el cliente nace con catálogo propio y la marca «Origen» | Por hacer |
+| 28 | La firma fija el catálogo de sus clientes | Mi Cartera › Mi firma › «Catálogo de cuentas de sus clientes» › «Plantilla por defecto» › «Guardar plantilla»; los clientes actuales no cambian; en cada alta se puede elegir otra | Grabando |
+| 29 | La plantilla propia de la firma | Desde el catálogo de la firma (o de un cliente ya trabajado): «Crear plantilla desde mi catálogo» con alcance «Mi firma contable»; quién la ve; ponerla por defecto | Grabando |
+| 30 | Dar de alta un cliente con su catálogo | Nuevo cliente › «Para un cliente» › «Dar de alta a un cliente nuevo» › «Catálogo de cuentas» (viene la de la firma, se puede elegir otra) › el cliente nace con catálogo propio y la marca «Origen» | Grabando |
 | 31 | Cambiar el catálogo de un cliente | Cliente sin asientos (catálogo propio, tras el arreglo F1) y cliente invitado con catálogo compartido que adopta la plantilla de la firma; quién puede hacerlo | Por hacer |
 | 32 | Cambio de catálogo con asientos | El asistente de correspondencia: qué va a pasar, cuenta por cuenta, fecha de corte, asiento de reclasificación | Por hacer |
 | 33 | Mantener las plantillas | Plantillas incompletas, importar una plantilla desde archivo, eliminar una plantilla de la firma | Por hacer |
@@ -150,6 +150,7 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | F16 | Errata «o dela de alta» en el diálogo de Nuevo cliente | Arreglar | Hecho (web#1416) |
 | F17 | Tú y usted mezclados en Plantillas de Catálogo, el asistente y mensajes del API | Arreglar en las pantallas de la tanda | Hecho en Plantillas, asistente, catálogo y Nuevo cliente (web#1416) |
 | F18 | Manual desfasado: CAT-01 (nombres viejos de plantillas), CAT-13/OBJ-22 (ruta del alta), OBJ-22 (cambio para clientes con catálogo propio), CTD-06 (falta el campo «Catálogo de cuentas») | Arreglar | Por hacer |
+| F20 | Al dar de alta (o invitar) a un cliente, la Cartera lo listaba pero «Clientes activos» seguía en 0 hasta 5 minutos: el caché del resumen no se invalidaba nunca | Arreglar | Hecho (api#1569) |
 | F19 | El video 09 dice que una plantilla «Solo esta empresa» sirve «de base en otra empresa», y el diálogo promete lo mismo: solo es cierto para las de firma | Arreglar el texto y regrabar el 09 | Hecho el texto (web#1416); falta regrabar el 09 |
 
 - **Investigación multimoneda (tarea 2b).** Los arreglos van en `fix/contabilidad-multimoneda`.
