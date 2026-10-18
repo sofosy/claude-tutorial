@@ -200,7 +200,7 @@
    "rotulo": "Crear plantilla",
    "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
    "texto_pantalla": "Crear plantilla desde mi catálogo",
-   "narracion": "También puedes guardar tu catálogo como plantilla, como referencia o para volver a él más adelante. Si trabajas como firma contable, la plantilla también puede servir para tus clientes: eso lo vemos en los videos de la firma. Abro Crear plantilla desde mi catálogo, que explica qué se copia. Escribo el código, propio dos mil veintiséis, en mayúsculas y sin espacios. Y el nombre: Catálogo de la distribuidora, que es como la verán en la lista. Ahora pulso el botón de crear. Copiar el catálogo toma un momento. El aviso lo confirma y se abre su detalle con las cuentas copiadas. Lo cierro. La lista ya muestra la tarjeta nueva, que queda marcada como Propia.",
+   "narracion": "También puedes guardar tu catálogo como plantilla, como referencia o para volver a él más adelante. Si trabajas como firma contable, la plantilla también puede servir para tus clientes: eso lo vemos en los videos de la firma. Abro Crear plantilla desde mi catálogo, que explica qué se copia. Escribo el código, propio dos mil veintiséis, en mayúsculas y sin espacios. Y el nombre: Catálogo de la distribuidora, que es como la verán en la lista. Ahora pulso el botón de crear. Copiar el catálogo completo toma un momento. El aviso lo confirma y se abre su detalle con las cuentas copiadas. Lo cierro. La lista ya muestra la tarjeta nueva, que queda marcada como Propia.",
    "acciones": [
     {
      "resaltar": "button:has-text('Crear plantilla desde mi catálogo')",
@@ -298,7 +298,7 @@
      "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 2500,
      "cursor": false,
-     "al_decir": "El sistema copia las cuentas"
+     "al_decir": "tarda unos segundos"
     },
     {
      "resaltar": ".ownership",
