@@ -98,7 +98,7 @@
      "al_decir": "Una firma contable"
     },
     {
-     "resaltar": "table >> nth=0",
+     "resaltar": ".tree-container",
      "durante_ms": 4500,
      "cursor": false,
      "al_decir": "el mismo catálogo de cuentas"
@@ -247,7 +247,7 @@
      "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
      "durante_ms": 5000,
      "cursor": false,
-     "al_decir": "La tarjeta nueva dice De la firma"
+     "al_decir": "La ven la empresa de la firma"
     },
     {
      "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores') .badge--firm",

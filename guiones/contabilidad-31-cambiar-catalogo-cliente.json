@@ -233,15 +233,11 @@
    "rotulo": "Adoptar la plantilla de la firma",
    "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
    "texto_pantalla": "Usar este catálogo · Cambiar catálogo",
-   "narracion": "Para adoptarla, primero recojo el menú. Luego pulso Usar este catálogo en la plantilla de la firma, y confirmo con Cambiar catálogo. Como el catálogo es compartido, el cambio es inmediato.",
+   "narracion": "Para adoptarla, pulso Usar este catálogo en la plantilla de la firma, y confirmo con Cambiar catálogo. Como el catálogo es compartido, el cambio es inmediato: no hay copia que reemplazar.",
    "acciones": [
     {
-     "click": "button.panel-collapse",
-     "al_decir": "primero recojo el menú"
-    },
-    {
      "click": "article.template-card:has-text('Catálogo Germiva Contadores') button:has-text('Usar este catálogo')",
-     "al_decir": "Luego pulso Usar este catálogo"
+     "al_decir": "pulso Usar este catálogo"
     },
     {
      "click": "mat-dialog-container button.confirm-button",

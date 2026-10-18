@@ -175,7 +175,7 @@
      "resaltar": "mat-dialog-container mat-select[formcontrolname='chartTemplateId']",
      "durante_ms": 5500,
      "cursor": false,
-     "al_decir": "Más abajo está el catálogo"
+     "al_decir": "ya viene la plantilla por defecto"
     },
     {
      "click": "mat-dialog-container button:has-text('Crear empresa')",
