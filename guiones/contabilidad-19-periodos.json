@@ -111,6 +111,12 @@
           "durante_ms": 3000,
           "cursor": false,
           "al_decir": "la columna Asientos"
+        },
+        {
+          "resaltar": "th:has-text('Tipo')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Hay períodos mensuales"
         }
       ]
     },

@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Períodos contables: tipos, generar el año fiscal y período actual
+
+DESCRIPCIÓN
+============================================================
+Cómo manejar en Germiva el calendario contable: los tipos de período, generar de una vez los períodos de un año fiscal, crear un período a mano y establecer el período actual.
+
+⏱️ CAPÍTULOS
+00:00  Los períodos
+00:32  Generar el año fiscal
+00:58  Crear un período
+01:28  Período actual
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer la lista de períodos y sus estados
+• Generar todos los períodos de un año fiscal
+• Crear un período a mano
+• Establecer el período actual
+
+⚠️ ERRORES COMUNES
+• Crear un período que se cruza con otro: el sistema lo rechaza
+• Generar un año que ya tiene períodos: se editan los existentes
+• Olvidar cambiar el período actual al empezar el mes
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:55
+
+TRANSCRIPCIÓN
+============================================================
+Los períodos contables son el calendario en que se registra la contabilidad: solo se contabiliza en un período abierto. Recojo el menú. Cada fila trae el nombre, el tipo, el año fiscal, las fechas y el estado: abierto, cerrado o bloqueado. La insignia Actual marca el período de trabajo, y la columna Asientos cuenta los asientos contabilizados en él. Hay períodos mensuales, trimestrales, semestrales, anuales y personalizados.
+Para no crear los meses uno por uno está Generar Año Fiscal. Lo abro. En el campo del año, abro la lista y elijo dos mil veinticuatro. El sistema revisa el año y avisa si ya tiene períodos. Elijo el tipo: trimestral, que serán cuatro. Confirmo con Generar. El aviso dice cuántos períodos se crearon, todos abiertos y listos para recibir asientos.
+Un período suelto se crea con Crear Período. Elijo el tipo, mensual, y el año, dos mil veintisiete. Luego abro la lista de meses y elijo marzo. Con eso, el nombre y las fechas se completan solos, del primero al treinta y uno de marzo. Las casillas de abajo dicen si admite asientos y si es un período de ajuste. Guardo, y el aviso lo confirma. Si las fechas se cruzan con otro período del mismo tipo de calendario, el sistema no lo deja guardar.
+Para terminar, el período actual. Vuelvo a la lista. Estamos en octubre, pero el período actual sigue siendo septiembre. Busco octubre en el buscador de arriba. Ya filtrado, en su fila pulso Establecer como Actual. Confirmo con Sí, Establecer. El aviso lo confirma: octubre queda como período actual, y septiembre deja de serlo.
