@@ -540,6 +540,9 @@ def cliente_invitado(firma_):
                     {"rnc": COLMADO["rnc"], "accessLevel": "FULL_ADMIN"})
     entrar(colmado)
     llamar("PATCH", f"/v1/accountants/my-accountant/{enlace['link']['id']}/accept", {"confirmFullAccess": True})
+    # El aviso «Configuración incompleta» sale una sola vez por usuario y
+    # empresa: se gasta aquí para que no tape la pantalla al entrar en el video.
+    llamar("POST", "/v1/user-preferences/incomplete-config-notice/claim", {})
     return colmado
 
 

@@ -127,7 +127,7 @@
    "rotulo": "Usar el catálogo de la firma",
    "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
    "texto_pantalla": "El catálogo propio se reemplaza por una copia de la plantilla",
-   "narracion": "En la tarjeta del Catálogo Germiva Contadores, que aquí sale como De mi contador, pulso Usar este catálogo. El aviso explica qué va a pasar: las cuentas del catálogo propio se reemplazan por una copia de esta plantilla, que sigue siendo propia del cliente, y la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Reemplazar el catálogo toma unos segundos, y el aviso confirma el cambio.",
+   "narracion": "En la tarjeta del Catálogo Germiva Contadores, que aquí sale como De mi contador, pulso Usar este catálogo. El aviso explica qué va a pasar: las cuentas del catálogo propio se reemplazan por una copia de esta plantilla, que sigue siendo propia del cliente, y la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Reemplazar el catálogo completo toma unos segundos, porque se copia cuenta por cuenta. El aviso confirma el cambio.",
    "acciones": [
     {
      "click": "article.template-card:has-text('Catálogo Germiva Contadores') button:has-text('Usar este catálogo')",
@@ -147,7 +147,7 @@
      "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 2500,
      "cursor": false,
-     "al_decir": "Reemplazar el catálogo toma"
+     "al_decir": "El aviso confirma el cambio"
     }
    ]
   },

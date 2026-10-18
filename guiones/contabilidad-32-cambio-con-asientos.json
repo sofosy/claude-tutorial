@@ -246,6 +246,18 @@
    "acciones": [
     {
      "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El aviso confirmó"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El asistente se cierra"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
      "durante_ms": 5000,
      "cursor": false,
      "al_decir": "la marca En uso pasa"
