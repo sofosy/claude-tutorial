@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Renovar la plantilla de catálogo de tu firma
+
+DESCRIPCIÓN
+============================================================
+Cómo una firma contable renueva en Germiva la plantilla de catálogo de sus clientes: armar la versión nueva, ponerla por defecto y eliminar la anterior sin tocar a los clientes que ya nacieron de ella.
+
+⏱️ CAPÍTULOS
+00:00  La versión nueva
+00:24  La plantilla por defecto
+01:01  Eliminar la vieja
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Renovar la plantilla de la firma con una versión nueva
+• Por qué no se elimina la plantilla por defecto
+• Qué pasa con los clientes que nacieron de la plantilla vieja
+
+⚠️ ERRORES COMUNES
+• Querer editar las cuentas de una plantilla: se arma la versión nueva desde el catálogo de la firma
+• Eliminar la plantilla vieja antes de cambiar la por defecto
+• Creer que los clientes viejos reciben la versión nueva: conservan su copia
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:33
+
+TRANSCRIPCIÓN
+============================================================
+Las cuentas de una plantilla no se editan: cuando la firma mejora su catálogo, arma la versión nueva desde el catálogo de su empresa, como vimos antes. Recojo el menú. Aquí ya están las dos: la plantilla de siempre, y la versión dos mil veintisiete, que suma la cuenta del Banco Santa Cruz. Las dos son De la firma.
+Si intento eliminar la plantilla vieja con el ícono rojo de su tarjeta, y confirmo, el sistema no me deja: es la plantilla por defecto de la firma para sus clientes nuevos, y la próxima alta fallaría. Primero hay que elegir otra en Mi firma.
+Voy a Mi Cartera, pestaña Mi firma. En el catálogo de cuentas de sus clientes, la plantilla por defecto es la vieja.
+Para cambiarla, abro la lista y elijo la versión dos mil veintisiete. Pulso Guardar plantilla, y el aviso verde lo confirma. Acepto. Desde ahora, los clientes nuevos nacen con la versión nueva.
+De vuelta en Plantillas de Catálogo, la plantilla vieja ya no es la por defecto de nadie.
+Ahora sí: pulso su ícono rojo y confirmo la eliminación. El aviso lo confirma. La Ferretería del Cibao, que nació de esa plantilla, no se entera: tiene su propia copia del catálogo. Lo único que impide eliminar una plantilla es que una empresa comparta sus cuentas sin copia propia, o que sea la por defecto de una firma.
