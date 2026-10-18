@@ -88,7 +88,7 @@
       "rotulo": "Dar de baja",
       "ruta": "Contabilidad › Activos Fijos",
       "texto_pantalla": "Depreciación al día + pérdida por el valor en libros",
-      "narracion": "Cuando un activo se daña o se retira sin venderse, se da de baja. Recojo el menú. En el escritorio de recepción abro Más acciones y elijo Dar de baja. El aviso explica el orden: primero se contabiliza la depreciación pendiente hasta este mes, y luego la pérdida por el valor en libros que queda. Escribo el motivo: se dañó en la mudanza. El motivo queda guardado en las notas del activo. Con el motivo escrito, confirmo. El asiento de baja queda registrado; acepto.",
+      "narracion": "Cuando un activo se daña o se retira sin venderse, se da de baja. Recojo el menú. En el escritorio de recepción abro Más acciones y elijo Dar de baja. El aviso explica el orden: primero se contabiliza la depreciación pendiente hasta este mes, y luego la pérdida por el valor en libros que queda. Escribo el motivo: se dañó en la mudanza. El motivo queda guardado en las notas del activo. Con el motivo escrito, confirmo. El sistema contabiliza la depreciación y después la baja. El asiento de baja queda registrado; acepto.",
       "acciones": [
         {
           "click": "button.panel-collapse",
@@ -185,6 +185,12 @@
           "durante_ms": 3500,
           "cursor": false,
           "al_decir": "El activo vuelve a estar activo"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-002') td >> nth=5",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "con el valor en libros que tenía"
         }
       ]
     },
@@ -194,8 +200,14 @@
       "rotulo": "Vender",
       "ruta": "Contabilidad › Activos Fijos",
       "texto_pantalla": "Factura de cliente + ganancia o pérdida",
-      "narracion": "Vender un activo es otra cosa: se emite una factura. En el archivo metálico, en Más acciones elijo Vender. Arriba se ve su valor en libros. En Cliente escribo las primeras letras del nombre. Aparece la lista de clientes, y en la lista elijo Consumidor Final. El tipo de comprobante y el impuesto vienen propuestos. Escribo el precio sin ITBIS: cincuenta mil pesos. Con los datos completos, pulso Vender. El sistema emitió la factura a crédito y registró la baja, con la diferencia entre el precio y el valor en libros como pérdida o ganancia. Acepto.",
+      "narracion": "Vender un activo es otra cosa: se emite una factura. En el archivo metálico, en Más acciones elijo Vender. Arriba se ve su valor en libros. En Cliente escribo las primeras letras del nombre. Aparece la lista de clientes, y en la lista elijo Consumidor Final. El tipo de comprobante y el impuesto vienen propuestos. Escribo el precio sin ITBIS: cincuenta mil pesos. Con los datos completos, pulso Vender. En un solo paso, el sistema contabiliza la depreciación pendiente, emite la factura a crédito al cliente y registra la baja del activo. Cuando termina, lo confirma con el número de la factura y del asiento. La diferencia entre el precio y el valor en libros queda como pérdida o ganancia. Acepto.",
       "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-003') td >> nth=1",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "En el archivo metálico"
+        },
         {
           "click": "tr.mat-mdc-row:has-text('ACT-OF-003') button[aria-label='Más acciones']",
           "al_decir": "en Más acciones"
@@ -234,9 +246,9 @@
         },
         {
           "resaltar": "mat-dialog-container >> nth=0",
-          "durante_ms": 4000,
+          "durante_ms": 4500,
           "cursor": false,
-          "al_decir": "El sistema emitió la factura"
+          "al_decir": "Cuando termina, lo confirma"
         },
         {
           "click": "mat-dialog-container button:has-text('Aceptar')",
