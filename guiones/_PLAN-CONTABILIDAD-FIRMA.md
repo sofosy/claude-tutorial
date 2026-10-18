@@ -48,7 +48,7 @@ terminar; nunca aparece en un video.
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | Hecho: firma (api#1569, web#1416), multimoneda (api#1575, web#1419), retenciones (api#1574, web#1418) |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos |
-| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: bloque A grabándose sobre master (29 hecho; 28 y 30 corregidos, a regrabar); bloques B y C: investigando las llamadas al API para las semillas |
+| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: bloque A grabándose sobre master (29 y 33 hechos; 28, 30, 31, 32 y 09 corregidos, a regrabar); bloques B y C: investigando las llamadas al API para las semillas |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | En curso: manual y definición de la experta hechos (api#1569); faltan catálogo de videos y textos de YouTube |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Hecho: DP-124 a DP-138 (DP-135 a DP-138 renumeradas por choque con comisiones), DP-016, DP-005 y DP-002 al día |
 | 9 | Validación final contra PROD si el cambio toca migraciones o contabilidad; `down.sh --all` y verificación vacía | Por hacer |
@@ -63,10 +63,10 @@ terminar; nunca aparece en un video.
 | 28 | La plantilla de catálogo de la firma | En la empresa de la firma, «Crear plantilla desde mi catálogo» con alcance «Mi firma contable»; quién la ve («De la firma» / «De mi contador») | Regrabando: el plan de cuentas es un árbol (selector `.tree-container`) y un ancla al empezar el paso 04 |
 | 29 | El catálogo por defecto de los clientes | Mi Cartera › Mi firma › «Plantilla por defecto»; los clientes actuales no cambian; en cada alta se puede elegir otra | Hecho (PUBLICABLE, 6dcef46) |
 | 30 | Dar de alta a un cliente con su catálogo | Nuevo cliente › «Para un cliente» › «Dar de alta a un cliente nuevo» › «Catálogo de cuentas» (viene la de la firma, se puede elegir otra) › el cliente nace con catálogo propio y la marca «Origen» | Regrabando: un ancla caía antes de terminar de teclear el correo (R2 con el audio real) |
-| 31 | Cambiar el catálogo de un cliente | Cliente sin asientos (catálogo propio, tras el arreglo F1) y cliente invitado con catálogo compartido que adopta la plantilla de la firma; quién puede hacerlo | Grabando (ensayado sobre master: el cambio de empresa ya se mantiene) |
-| 32 | Cambio de catálogo con asientos | El asistente de correspondencia: qué va a pasar, cuenta por cuenta, fecha de corte, asiento de reclasificación; el asiento en Diario y Mayor | En cola de grabación |
-| 33 | Mantener las plantillas | Plantillas incompletas, importar una plantilla desde archivo, eliminar una plantilla de la firma (y el bloqueo si es la de por defecto) | En cola de grabación |
-| 09 | (existente) Plantillas de catálogo y catálogo propio | Se regraba por F19: la narración ya no promete que una plantilla «Solo esta empresa» sirva en otra empresa | En cola de grabación |
+| 31 | Cambiar el catálogo de un cliente | Cliente sin asientos (catálogo propio, tras el arreglo F1) y cliente invitado con catálogo compartido que adopta la plantilla de la firma; quién puede hacerlo | Regrabando: el aviso de éxito (3,5 s) se iba antes de la marca; ahora se marca justo después del clic que lo dispara |
+| 32 | Cambio de catálogo con asientos | El asistente de correspondencia: qué va a pasar, cuenta por cuenta, fecha de corte, asiento de reclasificación; el asiento en Diario y Mayor | Regrabando: misma causa (la marca del aviso estaba en el paso siguiente) |
+| 33 | Mantener las plantillas | Plantillas incompletas, importar una plantilla desde archivo, eliminar una plantilla de la firma (y el bloqueo si es la de por defecto) | Hecho (PUBLICABLE, f7b8f2c) |
+| 09 | (existente) Plantillas de catálogo y catálogo propio | Se regraba por F19: la narración ya no promete que una plantilla «Solo esta empresa» sirva en otra empresa | Regrabando: misma causa del aviso de éxito |
 
 ### Bloque B · Empresas con más de una moneda (borrador)
 

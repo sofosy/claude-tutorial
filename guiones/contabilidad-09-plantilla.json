@@ -298,7 +298,7 @@
      "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 2500,
      "cursor": false,
-     "al_decir": "Listo"
+     "al_decir": "El sistema copia las cuentas"
     },
     {
      "resaltar": ".ownership",
