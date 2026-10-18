@@ -1,4 +1,4 @@
-# Plan · Tanda «Catálogo de la firma» y «Multimoneda» (serie Contabilidad)
+# Plan · Tanda «Catálogo de la firma», «Multimoneda» y «Retenciones» (serie Contabilidad)
 
 Pedido del usuario (2026-10-18): los videos de Contabilidad no explican cómo una firma
 contable establece el catálogo de cuentas por defecto de los clientes que crea, ni las
@@ -15,6 +15,9 @@ y cómo se ven los estados de una operación multimoneda en USD y en DOP. Antes 
 guionar se valida lo que ya cubren los videos 01–27 y se agrega solo el complemento, en
 orden lógico.
 
+Tercer pedido (2026-10-18): videos sobre las retenciones de ISR e ITBIS y la carta de
+retención, investigando bien el tema en el repo.
+
 Además, con `DUMP_URL_PROD` ya configurada, se valida contra la copia de PROD lo que se
 unió en el lote 2 (api#1563, web#1409).
 
@@ -29,6 +32,7 @@ este plan se actualiza en el mismo commit.
 | 1 | Validar contra la copia de PROD lo unido en el lote 2 (migraciones, historial de transferencias, sugerencias de conciliación, centros de costo, búsqueda de períodos) y borrar la copia (`down.sh --all`) | Hecho |
 | 2 | Investigar en el código y el manual cómo funciona el catálogo de la firma para sus clientes (dónde se fija el predeterminado, qué pasa al crear un cliente, cambiar el catálogo de un cliente, plantilla propia visible solo a sus clientes) | Hecho |
 | 2b | Investigar multimoneda: monedas y tasa del día, diferencia cambiaria realizada y no realizada (configuración y cuentas), revaluación, estados en USD y en DOP; qué cubren ya los videos 01–27 | En curso |
+| 2c | Investigar retenciones de ISR e ITBIS y la carta de retención: configuración, compras, ventas (las que nos hacen), asientos, 606/IR-17/IT-1, emisión de cartas; qué cubren ya los videos | En curso |
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas, en las ramas `feature/contabilidad-catalogo-firma-clientes` | Por hacer |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` para la firma y sus clientes | Por hacer |
@@ -55,6 +59,10 @@ este plan se actualiza en el mismo commit.
 
 Se define al terminar la tarea 2b (qué ya cubren 03 Bancos, 06 Revaluación, 10 Mapeo,
 22 Transferencias y los informes).
+
+### Bloque C · Retenciones de ISR e ITBIS y la carta de retención
+
+Se define al terminar la tarea 2c.
 
 ## Validación contra PROD (lote 2) — 2026-10-18
 
@@ -85,7 +93,7 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 
 | # | Hallazgo | Decisión | Estado |
 |---|----------|----------|--------|
-| F1 | Los clientes que crea la firma nacen con catálogo propio y después NO se les puede cambiar de plantilla, ni siquiera sin asientos (`assertSharedCatalog`) | Arreglar: permitir el cambio libre en catálogo propio mientras no haya asientos | Por hacer |
+| F1 | Los clientes que crea la firma nacen con catálogo propio y después NO se les puede cambiar de plantilla, ni siquiera sin asientos (`assertSharedCatalog`) | Arreglar: permitir el cambio libre en catálogo propio mientras no haya asientos | En curso (API escrito, falta probar) |
 | F2 | Una plantilla de la firma ya usada no se puede eliminar: cuenta también a los clientes con catálogo propio, que ya no dependen de ella, y el mensaje pide «cámbielas de catálogo», imposible para ellos | Arreglar | Por hacer |
 | F3 | Eliminar una plantilla deja colgado el catálogo por defecto de la firma (borrado suave: el `ON DELETE SET NULL` no corre) y la próxima alta falla | Arreglar | Por hacer |
 | F4 | Crear empresa por `CreateCompanyDto.chartTemplate` acepta plantillas de OTRA firma y plantillas incompletas | Arreglar | Por hacer |
