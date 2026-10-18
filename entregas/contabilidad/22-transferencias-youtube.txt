@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Contabilidad · Bancos: saldo, transferencias entre cuentas propias y anulación
+
+DESCRIPCIÓN
+============================================================
+Cómo ver en Germiva el saldo de cada cuenta bancaria, transferir fondos entre dos cuentas propias con su asiento automático, y anular una transferencia equivocada desde el historial.
+
+⏱️ CAPÍTULOS
+00:00  Saldo de las cuentas
+00:24  Transferir fondos
+01:16  Anular una transferencia
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el saldo de cada cuenta bancaria
+• Transferir fondos entre dos cuentas propias
+• Qué asiento registra la transferencia
+• Anular una transferencia equivocada
+
+⚠️ ERRORES COMUNES
+• Transferir entre cuentas de distinta moneda: eso es una operación cambiaria
+• Una cuenta bancaria sin cuenta contable no puede transferir
+• Corregir con otra transferencia en vez de anular la equivocada
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:47
+
+TRANSCRIPCIÓN
+============================================================
+En Banca están las cuentas bancarias de la empresa. Recojo el menú. Cada cuenta trae su banco, el número, el tipo y la moneda. El saldo sale del Mayor de su cuenta contable: lo contabilizado, no lo que se escribió al crearla. Por eso cada cuenta bancaria necesita su cuenta contable, la que aparece en esta columna.
+Para pasar dinero del BHD al Popular, en la fila del BHD pulso Transferir fondos. Arriba se ve la cuenta de origen y su saldo disponible. Abro la lista de destino: solo ofrece cuentas activas, en la misma moneda y con cuenta contable. Elijo el Popular. Escribo el monto: quince mil pesos, que no puede pasar del saldo disponible. La referencia es el número de confirmación del banco. Y pulso Transferir. El aviso confirma que los saldos se movieron y que el asiento quedó registrado: débito al banco de destino y crédito al de origen.
+Los saldos ya cambiaron: el BHD baja a ochenta y cinco mil y el Popular sube a sesenta y cinco mil. La transferencia queda numerada y con su asiento automático en el Diario.
+Si una transferencia se hizo por error, no se compensa con otra: se anula. Arriba, Transferencias abre el historial, con el número, la fecha, las cuentas, el monto y el estado. En la fila pulso Anular. El sistema pide el motivo: se transfirió a la cuenta equivocada. Confirmo con Anular transferencia. El aviso lo confirma, y el estado pasa a Anulada. Cierro, y los dos saldos vuelven a como estaban.

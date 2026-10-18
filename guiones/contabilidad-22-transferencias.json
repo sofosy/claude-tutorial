@@ -185,6 +185,12 @@
           "durante_ms": 3500,
           "cursor": false,
           "al_decir": "el Popular sube"
+        },
+        {
+          "resaltar": "button:has-text('Transferencias')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "La transferencia queda numerada"
         }
       ]
     },
