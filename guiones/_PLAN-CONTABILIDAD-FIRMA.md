@@ -79,13 +79,13 @@ Orden lógico (el 06 queda como pieza de cierre entre el 37 y el 38):
 
 | # | Video | Qué enseña | Estado |
 |---|-------|-----------|--------|
-| 34 | Monedas y tasa del día | «Monedas disponibles»: moneda local (DOP, fija) y moneda por defecto; registrar la tasa del día; el aviso «Falta la tasa del día»; «Histórico de Tasas»; qué tasa toma cada documento | Por hacer |
-| 35 | Las cuentas de diferencia cambiaria | Orden en que se buscan: por moneda (NET/GROSS) › cuentas generales › roles «Multimoneda» del mapeo; las cuentas que trae cada plantilla; qué pasa si faltan | Por hacer |
-| 36 | Vender y cobrar en dólares | Cuenta bancaria en USD, factura en USD a 58.75, cobro a 59.50: el asiento con la ganancia cambiaria realizada (DR Banco 59,500 / CR CxC 58,750 / CR Ganancia 750) | Por hacer |
-| 37 | Comprar y pagar en dólares | Factura de proveedor en USD y pago a otra tasa: la pérdida cambiaria; anticipo a proveedor en USD | Por hacer |
+| 34 | Monedas y tasa del día | «Monedas disponibles»: moneda local (DOP, fija) y moneda por defecto; registrar la tasa del día (59.50); los estados «Pendiente» / «Registrada hoy»; «Histórico de Tasas»; qué tasa toma cada documento | Semilla `monedas` escrita (tasas de septiembre y octubre, sin la de hoy) |
+| 35 | Las cuentas de diferencia cambiaria | Orden en que se buscan: por moneda (Neta / Separada) › cuentas generales › roles «Multimoneda» del mapeo (4.02.01.03 y 6.05.02 en GERMIVA_BASE); qué pasa si faltan | Semilla `diferencia-cambiaria` escrita |
+| 36 | Vender y cobrar en dólares | Factura en USD con la tasa del día (chip de moneda y equivalencia en pesos) y cobro de la venta del 24/09 (USD 1,000 a 58.75) a 59.50 en la cuenta del Popular en dólares: DR Banco 59,500 / CR CxC 58,750 / CR Ganancia 750 | Semilla `venta-usd` escrita (Hotel Germiva Caribe, Popular Corriente USD con 2,000 a 58.40) |
+| 37 | Comprar y pagar en dólares | Pago de la compra al exterior del 26/09 (B17, USD 500 a 59.00) a 59.50: la pérdida de 250; el anticipo a proveedor en USD | Semilla `compra-usd` escrita (Germiva Cloud Tools Inc.) |
 | 06 | (existente) Revaluación de cierre | Se mantiene; el 38 lo complementa | Hecho |
-| 38 | La revaluación por dentro | Abrir el asiento de revaluación (CxC, CxP y bancos), el asiento «-POST» de lo cobrado después del corte y anular una revaluación | Por hacer |
-| 39 | Ver la operación en USD y en DOP | Qué muestra cada pantalla: la factura (USD y su equivalente), cartera y antigüedad por moneda, estado de cuenta del cliente y del proveedor por moneda, saldo del banco en USD, y los estados financieros siempre en DOP (tasa histórica + revaluación) | Por hacer |
+| 38 | La revaluación por dentro | Revaluación al 30/09 a 59.20 con lo cobrado y pagado en octubre: el asiento principal (CxC, CxP y el banco) y el «-POST» que retira lo liquidado después del corte; anular la corrida | Semilla `revaluacion-usd` escrita |
+| 39 | Ver la operación en USD y en DOP | La factura (USD y su equivalente), antigüedad y estado de cuenta por moneda (cliente y proveedor), el saldo del banco en USD, el Mayor con el importe en dólares y los estados financieros siempre en pesos | Semilla `usd-y-dop` escrita (con la revaluación contabilizada) |
 
 ### Bloque C · Retenciones de ISR e ITBIS y la carta de retención (borrador)
 
@@ -95,16 +95,16 @@ solo nombra el IR-17 de pasada) y ninguna semilla las crea. Los arreglos van en
 
 | # | Video | Qué enseña | Estado |
 |---|-------|-----------|--------|
-| 40 | Las retenciones en Germiva | Las que practicas a tus proveedores y las que te hacen tus clientes; la consola «Retenciones e Impuestos»; «Tipos de Retención» y su historial de tasas (Ley 30-26: manda la fecha del comprobante) | Por hacer |
-| 41 | Las cuentas de las retenciones | Mapeo «Retención ITBIS/ISR por pagar» y «… a favor», cuentas por tipo, qué pasa si falta una | Por hacer |
-| 42 | Comprar a una persona física | Servicio de una PF (E31/B01): ITBIS 100 % e ISR 15 % sugeridos, el modal por línea, el neto a pagar y el asiento | Por hacer |
-| 43 | Comprar a una empresa y el Comprobante de Compras | ITBIS 30 % de servicios a una sociedad, los avisos de la matriz por comprobante, E41 a un informal con «Proponer retenciones» | Por hacer |
-| 44 | Corregir una retención | «Corregir retenciones» en una compra ya registrada, y las retenciones del Buzón | Por hacer |
-| 45 | Pagar y declarar | Pagar al neto; el 606 (fecha de pago, ITBIS retenido, tipo y monto de ISR); el IR-17 y la sección A del IT-1 | Por hacer |
-| 46 | Las retenciones que te hacen tus clientes | En la factura, al cobrar («Retenciones del cliente») o en «Retenciones recibidas»; el asiento «a favor»; el 607 y el IT-1; nunca registrar la misma dos veces | Por hacer |
-| 47 | Preparar la carta de retención | Firma, sello y membrete en Mi Empresa; «Firma y destinatario» | Por hacer |
-| 48 | Emitir las cartas de retención | Mes o año completo, estados de cada proveedor, vista previa, emitir y «Emitir pendientes»; recorrido del PDF | Por hacer |
-| 49 | Enviar, anular y reemitir | Envío por correo, anular con motivo, «desactualizada» → reemitir; el bloqueo al reversar un pago certificado | Por hacer |
+| 40 | Las retenciones en Germiva | Las que practicas a tus proveedores y las que te hacen tus clientes; la consola «Retenciones e Impuestos»; «Tipos de Retención» y su historial de tasas (Ley 30-26: manda la fecha del comprobante) | Por guionar (usa `ret-carta-lista`) |
+| 41 | Las cuentas de las retenciones | Mapeo «Retención ITBIS/ISR por Pagar» y «… a Favor», los roles por tipo, qué pasa si falta una | Por guionar (usa `ret-proveedores`) |
+| 42 | Comprar a una persona física informal | Comprobante de Compras (B11) a Pedro Germiva Ramírez: «Proponer retenciones» (ITBIS 100 % e ISR 15 %), el modal por línea, «TOTAL A PAGAR» 17,000 y el asiento | Semilla `ret-proveedores` escrita |
+| 43 | La factura de un profesional o una empresa | El B01 de la abogada Carolina Germiva Méndez en Facturas Recibidas › «Registrar manual»: ITBIS 100 % + ISR 15 %; la sociedad (ITBIS 30 %) y los avisos de la matriz | Semilla `ret-proveedores` escrita |
+| 44 | Corregir una retención | «Corregir retenciones» en la compra de Consultores Germiva del Caribe, que entró sin el 30 %; cuándo se puede y cuándo no (pagada, en una carta) | Semilla `ret-corregir` escrita |
+| 45 | Pagar y declarar | Pagar al neto (42,500); el 606 (fecha de pago, ITBIS retenido, tipo y monto de ISR); el IR-17 y la sección A del IT-1 | Semilla `ret-por-pagar` escrita |
+| 46 | Las retenciones que te hacen tus clientes | Cobro de la venta al Grupo Industrial Germiva Ozama con «Retenciones del cliente» (5,400): el asiento «a favor», el 607 y el IT-1; no registrar la misma dos veces (G19) | Semilla `ret-clientes` escrita |
+| 47 | Preparar la carta de retención | Firma y sello en Mi Empresa › «Logo y Archivos»; «Firma y destinatario» | Semilla `ret-pagadas` escrita; firma y sello inventados en `seeds/contabilidad/marca/` |
+| 48 | Emitir las cartas de retención | Octubre: estados por proveedor, vista previa, emitir una y «Emitir pendientes»; recorrido del PDF | Semilla `ret-carta-lista` escrita |
+| 49 | Enviar, anular y reemitir | «desactualizada» → reemitir; anular con motivo; el envío por correo (G20); el bloqueo al reversar un pago certificado | Semilla `ret-cartas-emitidas` escrita |
 
 ## Validación contra PROD (lote 2) — 2026-10-18
 

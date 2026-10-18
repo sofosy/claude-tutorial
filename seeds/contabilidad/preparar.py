@@ -590,6 +590,297 @@ def firma_mantener():
         "description": "Versión 2027: suma la cuenta del Banco Santa Cruz", "scope": "firm"})
 
 
+# ── bloque B: empresas que operan en dólares ─────────────────────────────────
+# Tasas USD→DOP de septiembre y octubre (la de hoy la registra el video 34 o
+# la siembra `tasa_de_hoy`). Venta del 24/09 a 58.75, compra del 26/09 a 59.00,
+# corte de la revaluación el 30/09 a 59.20.
+TASAS_USD = (("2026-09-01", 58.40), ("2026-09-10", 58.50), ("2026-09-24", 58.75), ("2026-09-26", 59.00),
+             ("2026-09-30", 59.20), ("2026-10-05", 59.30), ("2026-10-15", 59.40), ("2026-10-16", 59.45))
+TASA_HOY = 59.50
+EXENTO = 4                 # «Exento de ITBIS»: cifras redondas en los asientos
+
+
+def tasa(fecha, valor):
+    cuerpo = {"fromCurrencyCode": "USD", "toCurrencyCode": "DOP", "rate": valor, "source": "manual"}
+    if fecha:
+        cuerpo["effectiveDate"] = fecha
+    llamar("POST", "/v1/exchange-rates/quick", cuerpo)
+
+
+def ncf_tipo(nombre):
+    return int(sql(f"SELECT id FROM ncf_type WHERE name='{nombre}' LIMIT 1"))
+
+
+def monedas():
+    # V34: historial de tasas sin la de hoy: el video la registra.
+    for fecha, valor in TASAS_USD:
+        tasa(fecha, valor)
+
+
+def tasa_de_hoy():
+    monedas()
+    tasa(None, TASA_HOY)
+
+
+def diferencia_cambiaria():
+    # V35: el video revisa las cuentas generales y el mapeo y agrega la
+    # configuración por moneda.
+    tasa_de_hoy()
+
+
+def banco_usd():
+    gl = llamar("POST", "/v1/accounting-chart", {
+        "code": "1.01.01.02.02", "name": "Banco Popular - Cuenta en dólares", "type": "asset",
+        "nature": "debit", "level": 5, "parent": CUENTA_BANCOS, "allowsMovement": True,
+        "reportSection": "CASH_AND_EQUIVALENTS", "isMonetary": True})["id"]
+    llamar("POST", "/v1/bank-accounts", {
+        "accountName": "Popular Corriente USD", "accountNumber": "0007654321", "accountType": "checking",
+        "accountHolder": TITULAR, "bank": POPULAR, "currency": USD, "glAccount": gl,
+        "initialBalance": 2000, "openingDate": "2026-09-01", "initialBalanceExchangeRate": 58.40})
+    return gl
+
+
+def servicio(nombre, codigo):
+    return llamar("POST", "/v1/product", {
+        "category": "SERVICE", "name": nombre, "code": codigo, "tax": EXENTO,
+        "managesInventory": False, "active": True})["id"]
+
+
+def factura_usd(partner, ncf, producto, fecha, tasa_doc, monto, vence, notas):
+    """Factura de venta (B01) o de compra (B17) en dólares, emitida a crédito."""
+    f = llamar("POST", "/v1/invoices", {
+        "issuedDate": fecha, "paymentDueDate": vence, "partner": partner, "ncfType": ncf_tipo(ncf),
+        "incomeType": 1, "paymentType": 2, "currency": USD, "exchangeRate": tasa_doc, "notes": notas,
+        **({"goods606Category": "02"} if ncf == "B17" else {}),
+        "details": [{"product": producto, "quantity": 1, "unitPriceOverride": monto, "tax": EXENTO}]})
+    llamar("PATCH", f"/v1/invoices/change-status/{f['invoiceNumber']}", {"invoiceStatusCode": "EMITTED"})
+    return f["invoiceNumber"]
+
+
+def cliente_usd():
+    return socio("Hotel Germiva Caribe", "130555031", "CUSTOMER")
+
+
+def proveedor_exterior():
+    return llamar("POST", "/v1/partner", {
+        "name": "Germiva Cloud Tools Inc.", "documentType": "DOCUMENTO_EXTRANJERO",
+        "foreignDocumentNumber": "US-EIN-55-0130555", "partnerType": ["SUPPLIER"],
+        "partnerCategory": "BUSINESS", "paymentTermDays": 30})["id"]
+
+
+def venta_usd():
+    # V36: una venta de septiembre a 58.75 pendiente de cobro, la cuenta del
+    # banco en dólares y la tasa de hoy (59.50): el video factura en USD y
+    # cobra la de septiembre con ganancia cambiaria.
+    diferencia_cambiaria()
+    gl = banco_usd()
+    hotel = cliente_usd()
+    consultoria = servicio("Consultoría de implementación", "SRV-USD-01")
+    factura_usd(hotel, "B01", consultoria, "2026-09-24", 58.75, 1000, "2026-10-24",
+                "Implementación del sistema de reservas")
+    return gl, hotel, consultoria
+
+
+def compra_usd():
+    # V37: además, una compra al exterior del 26/09 a 59.00 pendiente de pago.
+    gl, hotel, consultoria = venta_usd()
+    cloud = proveedor_exterior()
+    licencias = servicio("Licencias de software (suscripción anual)", "SRV-USD-02")
+    compra = factura_usd(cloud, "B17", licencias, "2026-09-26", 59.00, 500, "2026-10-26",
+                         "Suscripción anual de licencias")
+    return gl, hotel, consultoria, cloud, compra
+
+
+def pago_usd(numero, monto, fecha, tasa_pago, banco):
+    llamar("POST", "/v1/payment", {
+        "invoiceNumber": numero, "amount": f"{monto:.2f}", "currency": USD, "exchangeRate": tasa_pago,
+        "transactionDate": fecha, "paymentMethodCode": "TRANSFER", "chartOfAccount": banco})
+
+
+def revaluacion_usd():
+    # V38: la venta de septiembre cobrada el 15/10 a 59.40, la compra pagada el
+    # 16/10 a 59.45 y otra venta del 26/09 a 59.00 abierta. La revaluación al
+    # 30/09 (59.20) revalúa las tres y el banco; el asiento «-POST» retira lo
+    # cobrado y pagado después del corte.
+    gl, hotel, consultoria, cloud, compra = compra_usd()
+    venta = sql("SELECT invoice_number FROM invoices WHERE company_id=1 AND partner_id="
+                f"{hotel} AND deleted_at IS NULL ORDER BY id LIMIT 1")
+    pago_usd(venta, 1000, "2026-10-15", 59.40, gl)
+    pago_usd(compra, 500, "2026-10-16", 59.45, gl)
+    factura_usd(hotel, "B01", consultoria, "2026-09-26", 59.00, 2000, "2026-10-26",
+                "Capacitación del personal de recepción")
+
+
+def usd_y_dop():
+    # V39: con la revaluación de septiembre ya contabilizada.
+    revaluacion_usd()
+    llamar("POST", "/v1/accounting/exchange-revaluation/run", {"asOfDate": "2026-09-30", "currencyId": USD})
+
+
+# ── bloque C: retenciones de ISR e ITBIS y la carta de retención ─────────────
+# Octubre 2026 (Ley 30-26: ISR honorarios de persona física 15 %). Cédulas y
+# RNC inventados; la privacidad del guion exime «402-2555» y «130555».
+ITBIS_18 = 1
+PEDRO = {"name": "Pedro Germiva Ramírez", "tin": "40225550017"}       # informal: B11
+CAROLINA = {"name": "Carolina Germiva Méndez", "tin": "40225550025"}  # abogada: B01
+CONSULTORES = {"name": "Consultores Germiva del Caribe S.R.L.", "tin": "130555109"}
+OZAMA = {"name": "Grupo Industrial Germiva Ozama S.R.L.", "tin": "130555206"}
+
+
+def tipo_retencion(slug):
+    return llamar("GET", f"/v1/tax-retention-types/by-dgii-code/{slug}?asOf=2026-10-05")["id"]
+
+
+def proveedor(datos, persona, informal=False, correo=None):
+    cuerpo = {**datos, "documentType": "CEDULA" if persona else "RNC", "isInformalTaxpayer": informal,
+              "partnerType": ["SUPPLIER"], "partnerCategory": "PERSON" if persona else "BUSINESS"}
+    if correo:
+        cuerpo["contacts"] = [{"name": datos["name"], "email": correo, "contactType": "BILLING"}]
+    return llamar("POST", "/v1/partner", cuerpo)["id"]
+
+
+def ret_proveedores():
+    # V41–V43: los tres proveedores y el cliente agente de retención.
+    ids = {"pedro": proveedor(PEDRO, True, informal=True),
+           "carolina": proveedor(CAROLINA, True, correo="carolina.mendez@example.com"),
+           "consultores": proveedor(CONSULTORES, False, correo="cxc@consultores.example.com")}
+    ids["ozama"] = llamar("POST", "/v1/partner", {
+        **OZAMA, "documentType": "RNC", "isInformalTaxpayer": False, "partnerType": ["CUSTOMER"],
+        "customerType": "REGULAR", "partnerCategory": "BUSINESS", "isRetentionAgent": True})["id"]
+    return ids
+
+
+def compra_informal(pedro):
+    """B11 a Pedro: 20,000 + ITBIS 3,600; retiene 3,600 + 3,000 → neto 17,000."""
+    f = llamar("POST", "/v1/invoices/inline", {
+        "issuedDate": "2026-10-05", "ncfType": ncf_tipo("B11"), "partner": pedro, "paymentType": 2,
+        "paymentDueDate": "2026-11-04", "currency": DOP, "goods606Category": "02",
+        "itbisTaxRetentionType": tipo_retencion("itbis-comprobante-compras-100"),
+        "isrTaxRetentionType": tipo_retencion("isr-honorarios-pf-10"),
+        "notes": "Sesión fotográfica del catálogo de octubre",
+        "details": [{"productName": "Sesión fotográfica de 120 productos para el catálogo",
+                     "goodOrServiceIndicator": 2, "quantity": 1, "unitPrice": 20000, "tax": ITBIS_18,
+                     "retentionAgentIndicator": 1, "itbisWithholdingRate": 100, "isrWithholdingRate": 15}]})
+    llamar("PATCH", f"/v1/invoices/change-status/{f['invoiceNumber']}", {"invoiceStatusCode": "EMITTED"})
+    return f["invoiceNumber"]
+
+
+def compra_b01(datos, ncf, fecha, vence, concepto, base, itbis_ret, isr_ret, tipo_itbis, tipo_isr=None):
+    """Factura B01 de un proveedor registrada a mano en Facturas Recibidas."""
+    itbis = round(base * 0.18, 2)
+    totales = {"subtotal": base, "totalTaxableAmount": base, "totalTaxAmount": itbis, "total": base + itbis,
+               "taxBreakdown": [{"taxRateCode": "18", "taxRatePercentage": 18, "taxableAmount": base,
+                                 "taxAmount": itbis, "itemCount": 1}]}
+    cuerpo = {"ncf": ncf, "ncfTypeCode": "01", "paymentTypeCode": "2", "paymentDueDate": vence,
+              "buyerRnc": datos["tin"], "buyerLegalName": datos["name"], "buyerName": datos["name"],
+              "issueDate": fecha, "recordAsPurchase": True, "goods606Category": "02",
+              "details": [{"productName": concepto, "goodOrServiceIndicator": 2, "quantity": 1,
+                           "unitPrice": base, "taxRateCode": "18", "taxableAmount": base, "taxAmount": itbis,
+                           "subtotal": base, "netAmount": base, "total": base + itbis}],
+              "totals": totales}
+    if itbis_ret or isr_ret:
+        totales.update({"totalItbisWithheld": itbis_ret, "totalIsrWithheld": isr_ret})
+        cuerpo["itbisTaxRetentionType"] = tipo_retencion(tipo_itbis)
+        if tipo_isr:
+            cuerpo["isrTaxRetentionType"] = tipo_retencion(tipo_isr)
+    return llamar("POST", "/v1/supplier-document-inbox/manual", {"invoice": cuerpo})["invoiceNumber"]
+
+
+def compra_carolina():
+    # 50,000 + 9,000; retiene ITBIS 100 % (9,000) + ISR 15 % (7,500) → neto 42,500.
+    return compra_b01(CAROLINA, "B0100000457", "2026-10-06", "2026-11-05",
+                      "Honorarios por asesoría legal laboral de octubre", 50000, 9000, 7500,
+                      "itbis-pf-to-pj-100", "isr-honorarios-pf-10")
+
+
+def compra_consultores(con_retencion=True):
+    # 100,000 + 18,000; retiene el 30 % del ITBIS (5,400) → neto 112,600.
+    return compra_b01(CONSULTORES, "B0100000892", "2026-10-07", "2026-11-06",
+                      "Auditoría de procesos de almacén", 100000, 5400 if con_retencion else 0, 0,
+                      "itbis-sociedades-servicios-30")
+
+
+def pagar(numero, monto, fecha):
+    llamar("POST", "/v1/payment", {"invoiceNumber": numero, "amount": f"{monto:.2f}",
+                                   "paymentMethodCode": "TRANSFER", "transactionDate": fecha,
+                                   "chartOfAccount": BANCO_1, "notes": "Pago neto de retenciones"})
+
+
+def ret_corregir():
+    # V44: la compra de Consultores entró sin la retención del 30 %.
+    ids = ret_proveedores()
+    compra_informal(ids["pedro"])
+    compra_carolina()
+    compra_consultores(con_retencion=False)
+
+
+def ret_por_pagar():
+    # V45: las tres compras con su retención, sin pagar.
+    ids = ret_proveedores()
+    compras = {"pedro": compra_informal(ids["pedro"]), "carolina": compra_carolina(),
+               "consultores": compra_consultores()}
+    return ids, compras
+
+
+def ret_clientes():
+    # V46: venta a crédito al Grupo Ozama, agente de retención, sin cobrar.
+    ids, _ = ret_por_pagar()
+    f = llamar("POST", "/v1/invoices/inline", {
+        "issuedDate": "2026-10-08", "ncfType": ncf_tipo("B01"), "partner": ids["ozama"], "paymentType": 2,
+        "paymentDueDate": "2026-11-07", "currency": DOP, "incomeType": 1,
+        "details": [{"productName": "Servicio de distribución y logística de octubre", "goodOrServiceIndicator": 2,
+                     "quantity": 1, "unitPrice": 100000, "tax": ITBIS_18}]})
+    llamar("PATCH", f"/v1/invoices/change-status/{f['invoiceNumber']}", {"invoiceStatusCode": "EMITTED"})
+
+
+def ret_pagadas():
+    # V47: las tres compras pagadas en octubre por el neto.
+    ids, compras = ret_por_pagar()
+    pagar(compras["pedro"], 17000, "2026-10-14")
+    pagar(compras["carolina"], 42500, "2026-10-15")
+    pagar(compras["consultores"], 112600, "2026-10-16")
+    return ids
+
+
+def ret_carta_lista():
+    # V48: además la firma, el sello y «Firma y destinatario» ya configurados.
+    ids = ret_pagadas()
+    for tipo, archivo in (("signature", "firma.png"), ("seal", "sello.png")):
+        subir_imagen_empresa(tipo, archivo)
+    llamar("PUT", "/v1/withholding-certificates/settings", {
+        "signerName": "Lic. Ana Germiva Guzmán", "signerTitle": "Gerente Administrativa y Financiera",
+        "city": "Santo Domingo", "addressee": "dgii", "includeSeal": True, "includeSignature": True})
+    return ids
+
+
+def ret_cartas_emitidas():
+    # V49: las cartas de octubre emitidas y, después, otra compra de Carolina
+    # pagada en octubre: su carta queda desactualizada.
+    ret_carta_lista()
+    llamar("POST", "/v1/withholding-certificates/bulk", {"startDate": "2026-10-01", "endDate": "2026-10-31"})
+    otra = compra_b01(CAROLINA, "B0100000463", "2026-10-12", "2026-11-11",
+                      "Honorarios por revisión de contratos de proveedores", 20000, 3600, 3000,
+                      "itbis-pf-to-pj-100", "isr-honorarios-pf-10")
+    pagar(otra, 17000, "2026-10-17")
+
+
+def subir_imagen_empresa(tipo, archivo):
+    """Sube una imagen inventada de `seeds/contabilidad/marca/` como firma o sello de la empresa."""
+    import os
+    import uuid
+    ruta = os.path.join(os.path.dirname(os.path.abspath(__file__)), "marca", archivo)
+    limite = uuid.uuid4().hex
+    datos = open(ruta, "rb").read()
+    cuerpo = (f"--{limite}\r\nContent-Disposition: form-data; name=\"customName\"\r\n\r\n{tipo}_1\r\n"
+              f"--{limite}\r\nContent-Disposition: form-data; name=\"file\"; filename=\"{archivo}\"\r\n"
+              "Content-Type: image/png\r\n\r\n").encode() + datos + f"\r\n--{limite}--\r\n".encode()
+    req = urllib.request.Request(API + "/v1/media/upload", data=cuerpo, method="POST", headers={
+        "Authorization": f"Bearer {TOKEN}", "Content-Type": f"multipart/form-data; boundary={limite}"})
+    with urllib.request.urlopen(req, timeout=120) as r:
+        media = json.loads(r.read().decode())["id"]
+    llamar("POST", "/v1/company-media", {"company": 1, "media": media, "type": tipo, "isPublic": False})
+
+
 ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": autoposteo,
            "asientos": asientos, "reversar": reversar, "recurrentes": recurrentes, "mayor": mayor, "automaticos": automaticos, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
            "cierre-mensual": cierre_mensual, "cierre-anual": cierre_anual,
@@ -599,7 +890,12 @@ ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": aut
            "activos-baja": activos_baja, "centros-costo": centros_costo, "presupuestos": presupuestos,
            "firma": firma, "firma-plantilla": firma_plantilla, "firma-alta": firma_alta,
            "firma-cambio": firma_cambio, "firma-asistente": firma_asistente,
-           "firma-mantener": firma_mantener}
+           "firma-mantener": firma_mantener,
+           "monedas": monedas, "diferencia-cambiaria": diferencia_cambiaria, "venta-usd": venta_usd,
+           "compra-usd": compra_usd, "revaluacion-usd": revaluacion_usd, "usd-y-dop": usd_y_dop,
+           "ret-proveedores": ret_proveedores, "ret-corregir": ret_corregir, "ret-por-pagar": ret_por_pagar,
+           "ret-clientes": ret_clientes, "ret-pagadas": ret_pagadas, "ret-carta-lista": ret_carta_lista,
+           "ret-cartas-emitidas": ret_cartas_emitidas}
 
 if __name__ == "__main__":
     TOKEN = token()
