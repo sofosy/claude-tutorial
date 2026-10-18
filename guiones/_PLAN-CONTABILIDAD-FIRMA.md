@@ -62,7 +62,7 @@ terminar; nunca aparece en un video.
 |---|-------|-----------|--------|
 | 28 | La plantilla de catálogo de la firma | En la empresa de la firma, «Crear plantilla desde mi catálogo» con alcance «Mi firma contable»; quién la ve («De la firma» / «De mi contador») | Hecho (PUBLICABLE, 97970d9) |
 | 29 | El catálogo por defecto de los clientes | Mi Cartera › Mi firma › «Plantilla por defecto»; los clientes actuales no cambian; en cada alta se puede elegir otra | Hecho (PUBLICABLE, 6dcef46) |
-| 30 | Dar de alta a un cliente con su catálogo | Nuevo cliente › «Para un cliente» › «Dar de alta a un cliente nuevo» › «Catálogo de cuentas» (viene la de la firma, se puede elegir otra) › el cliente nace con catálogo propio y la marca «Origen» | Regrabando: un ancla caía antes de terminar de teclear el correo (R2 con el audio real) |
+| 30 | Dar de alta a un cliente con su catálogo | Nuevo cliente › «Para un cliente» › «Dar de alta a un cliente nuevo» › «Catálogo de cuentas» (viene la de la firma, se puede elegir otra) › el cliente nace con catálogo propio y la marca «Origen» | Hecho (PUBLICABLE, fb9dd12) |
 | 31 | Cambiar el catálogo de un cliente | Cliente sin asientos (catálogo propio, tras el arreglo F1) y cliente invitado con catálogo compartido que adopta la plantilla de la firma; quién puede hacerlo | Regrabando: el aviso de éxito (3,5 s) se iba antes de la marca; ahora se marca justo después del clic que lo dispara |
 | 32 | Cambio de catálogo con asientos | El asistente de correspondencia: qué va a pasar, cuenta por cuenta, fecha de corte, asiento de reclasificación; el asiento en Diario y Mayor | Regrabando: misma causa (la marca del aviso estaba en el paso siguiente) |
 | 33 | Mantener las plantillas | Plantillas incompletas, importar una plantilla desde archivo, eliminar una plantilla de la firma (y el bloqueo si es la de por defecto) | Hecho (PUBLICABLE, f7b8f2c) |
@@ -79,8 +79,8 @@ Orden lógico (el 06 queda como pieza de cierre entre el 37 y el 38):
 
 | # | Video | Qué enseña | Estado |
 |---|-------|-----------|--------|
-| 34 | Monedas y tasa del día | «Monedas disponibles»: moneda local (DOP, fija) y moneda por defecto; registrar la tasa del día (59.50); los estados «Pendiente» / «Registrada hoy»; «Histórico de Tasas»; qué tasa toma cada documento | Semilla `monedas` escrita (tasas de septiembre y octubre, sin la de hoy) |
-| 35 | Las cuentas de diferencia cambiaria | Orden en que se buscan: por moneda (Neta / Separada) › cuentas generales › roles «Multimoneda» del mapeo (4.02.01.03 y 6.05.02 en GERMIVA_BASE); qué pasa si faltan | Semilla `diferencia-cambiaria` escrita |
+| 34 | Monedas y tasa del día | «Monedas disponibles»: moneda local (DOP, fija) y moneda por defecto; registrar la tasa del día (59.50); los estados «Pendiente» / «Registrada hoy»; «Histórico de Tasas»; qué tasa toma cada documento | Guionado (pasa la revisión); por ensayar. Semilla `monedas` (tasas de septiembre y octubre, sin la de hoy) |
+| 35 | Las cuentas de diferencia cambiaria | Orden en que se buscan: por moneda (Neta / Separada) › cuentas generales › roles «Multimoneda» del mapeo (4.02.01.03 y 6.05.02 en GERMIVA_BASE); qué pasa si faltan | Guionado (pasa la revisión); por ensayar. Semilla `diferencia-cambiaria` |
 | 36 | Vender y cobrar en dólares | Factura en USD con la tasa del día (chip de moneda y equivalencia en pesos) y cobro de la venta del 24/09 (USD 1,000 a 58.75) a 59.50 en la cuenta del Popular en dólares: DR Banco 59,500 / CR CxC 58,750 / CR Ganancia 750 | Semilla `venta-usd` escrita (Hotel Germiva Caribe, Popular Corriente USD con 2,000 a 58.40) |
 | 37 | Comprar y pagar en dólares | Pago de la compra al exterior del 26/09 (B17, USD 500 a 59.00) a 59.50: la pérdida de 250; el anticipo a proveedor en USD | Semilla `compra-usd` escrita (Germiva Cloud Tools Inc.) |
 | 06 | (existente) Revaluación de cierre | Se mantiene; el 38 lo complementa | Hecho |

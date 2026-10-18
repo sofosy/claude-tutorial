@@ -1,0 +1,267 @@
+{
+ "titulo": "Contabilidad · Monedas y tasa del día",
+ "descripcion": "Cómo una empresa que opera en dólares prepara Germiva: la moneda local y la moneda por defecto en Monedas disponibles, registrar la tasa del día, el Histórico de tasas y qué tasa toma cada factura, cobro o pago.",
+ "_comentario": "Video 34 de la serie Contabilidad (bloque B: empresas con más de una moneda). setup: preparar.sh monedas (tasas USD de septiembre y octubre hasta el 16/10; la de hoy la registra el video: 59.50). La sección «Catálogo global» y el subtítulo de la empresa principal se ocultan: una empresa cliente no los ve.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}",
+  ".admin-section{display:none!important}",
+  ".page-subtitle{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "NIC 21": "nic veintiuno",
+  "NIC 16": "nic dieciséis"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/company/currencies",
+  "esperar": ".currency-card"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh monedas"
+ },
+ "aprenderas": [
+  "Dónde se ven las monedas de la empresa y cuál es la local",
+  "Registrar la tasa del día del dólar",
+  "Consultar el histórico de tasas",
+  "Qué tasa toma cada documento"
+ ],
+ "errores_comunes": [
+  "Facturar en dólares sin registrar la tasa del día",
+  "Buscar cómo cambiar la moneda local: los libros siempre van en pesos",
+  "Registrar la tasa en el Histórico: esa pantalla es solo de consulta"
+ ],
+ "portada_s": 8,
+ "pasos": [
+  {
+   "id": "01-monedas",
+   "capitulo": "Las monedas de la empresa",
+   "rotulo": "Monedas disponibles",
+   "ruta": "Configuración Contable › Ajustes › Monedas",
+   "texto_pantalla": "Peso dominicano: moneda local · dólar: disponible",
+   "narracion": "Cuando una empresa vende o compra en dólares, lo primero es tener la moneda disponible y su tasa del día. Eso está en Monedas disponibles, dentro de Configuración Contable. Recojo el menú. Aquí ves las monedas que esta empresa puede usar. El peso dominicano es la moneda local: los libros, los asientos y los estados financieros se llevan siempre en pesos, y eso no cambia. El dólar está disponible para facturar, cobrar y pagar. La marca Por defecto indica la moneda que propone una factura nueva; si casi todo lo vendes en dólares, puedes cambiarla con Hacer por defecto.",
+   "acciones": [
+    {
+     "resaltar": ".page-title",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "lo primero es tener"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": ".enabled-section .section-title",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Aquí ves las monedas"
+    },
+    {
+     "resaltar": ".currency-card.is-local",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "El peso dominicano es la moneda local"
+    },
+    {
+     "resaltar": ".currency-card:not(.is-local)",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "El dólar está disponible"
+    },
+    {
+     "resaltar": ".badge-default",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "La marca Por defecto"
+    },
+    {
+     "resaltar": ".set-default-btn",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "puedes cambiarla"
+    }
+   ]
+  },
+  {
+   "id": "02-tasa",
+   "capitulo": "La tasa del día",
+   "rotulo": "Registrar la tasa del día",
+   "ruta": "Configuración Contable › Ajustes › Monedas",
+   "texto_pantalla": "1 USD → DOP · 59.50 · Registrada hoy",
+   "narracion": "En la tarjeta del dólar está la tasa del día: cuántos pesos vale un dólar. Dice Última, dieciséis de octubre: la de hoy todavía no está. Escribo la tasa de hoy, cincuenta y nueve con cincuenta, y pulso Guardar. El aviso lo confirma, y el estado cambia a Registrada hoy. Registra la tasa cada día que operes en dólares: la factura y el cobro de ese día la toman de aquí.",
+   "acciones": [
+    {
+     "resaltar": ".currency-card:not(.is-local) .currency-card-rate",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "En la tarjeta del dólar"
+    },
+    {
+     "resaltar": ".currency-card:not(.is-local) .rate-status",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Dice Última"
+    },
+    {
+     "escribir": {
+      "sel": ".currency-card:not(.is-local) .rate-input input",
+      "texto": "59.50"
+     },
+     "al_decir": "Escribo la tasa de hoy"
+    },
+    {
+     "click": ".currency-card:not(.is-local) .save-rate-btn",
+     "al_decir": "pulso Guardar"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2000,
+     "cursor": false,
+     "al_decir": "El aviso lo confirma"
+    },
+    {
+     "resaltar": ".currency-card:not(.is-local) .rate-status.ok",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "el estado cambia"
+    }
+   ]
+  },
+  {
+   "id": "03-historico",
+   "capitulo": "El histórico",
+   "rotulo": "Histórico de tasas",
+   "ruta": "Monedas › Ver histórico",
+   "texto_pantalla": "Por día · por cambios · última, mínima y máxima",
+   "narracion": "Las tasas que ya registraste quedan en el historial. Pulso Ver histórico, y se abre el del dólar. Cada fila es un día con tasa registrada, del más reciente al más antiguo. Arriba están la última, la mínima y la máxima del rango. Con Por cambios, la lista muestra solo los días en que la tasa cambió. Esta pantalla es de consulta: las tasas se registran en Monedas.",
+   "acciones": [
+    {
+     "click": "a:has-text('Ver histórico'), button:has-text('Ver histórico')",
+     "al_decir": "Pulso Ver histórico"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Cada fila es un día"
+    },
+    {
+     "resaltar": ".summary-stats",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Arriba están la última"
+    },
+    {
+     "click": "mat-button-toggle[value='changes'] button",
+     "al_decir": "Con Por cambios"
+    },
+    {
+     "resaltar": "mat-button-toggle-group",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Esta pantalla es de consulta"
+    }
+   ]
+  },
+  {
+   "id": "04-que-tasa",
+   "capitulo": "Qué tasa usa cada documento",
+   "rotulo": "Qué tasa usa cada documento",
+   "ruta": "Monedas › Histórico de tasas",
+   "texto_pantalla": "Factura: la de su fecha · cobro: la del día del cobro",
+   "narracion": "¿Qué tasa usa cada documento? La factura en dólares toma la tasa registrada para su fecha, o la última anterior. El cobro o el pago toman la del día en que se hacen, y la puedes ajustar en el mismo cobro si el banco te aplicó otra. Si la factura se registró a cincuenta y ocho con setenta y cinco y se cobra a cincuenta y nueve con cincuenta, la diferencia es una ganancia cambiaria, que el sistema registra solo. Dónde se registra esa ganancia, lo vemos en el próximo video.",
+   "acciones": [
+    {
+     "resaltar": "td:has-text('58.75'), td:has-text('58,75')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "La factura en dólares toma"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "El cobro o el pago toman"
+    },
+    {
+     "resaltar": ".summary-stats",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "la puedes ajustar"
+    },
+    {
+     "resaltar": "td:has-text('58.75'), td:has-text('58,75')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Si la factura se registró"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la diferencia es una ganancia cambiaria"
+    },
+    {
+     "resaltar": ".page-title",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Dónde se registra esa ganancia"
+    }
+   ]
+  }
+ ]
+}
