@@ -59,117 +59,117 @@ escribo sept en el buscador.
 Aparece en la lista, y elijo septiembre.
 
 16
-00:00:48,598 --> 00:00:52,165
+00:00:48,591 --> 00:00:52,158
 Ahora las líneas, una por cuenta y período.
 
 17
-00:00:51,988 --> 00:00:53,837
+00:00:51,981 --> 00:00:53,831
 Pulso Agregar Línea.
 
 18
-00:00:53,695 --> 00:00:56,588
+00:00:53,689 --> 00:00:56,582
 En la cuenta escribo diversos para buscarla.
 
 19
-00:00:56,481 --> 00:01:00,536
+00:00:56,475 --> 00:01:00,530
 Aparece en la lista, y elijo Otros ingresos diversos.
 
 20
-00:01:00,382 --> 00:01:04,322
+00:01:00,375 --> 00:01:04,314
 En el período abro la lista, y elijo el mes de septiembre.
 
 21
-00:01:04,144 --> 00:01:08,060
+00:01:04,138 --> 00:01:08,052
 En el monto escribo veinte mil pesos, lo que se espera cobrar.
 
 22
-00:01:07,929 --> 00:01:10,161
+00:01:07,923 --> 00:01:10,153
 Agrego otra línea, para el alquiler.
 
 23
-00:01:09,995 --> 00:01:12,889
+00:01:09,989 --> 00:01:12,882
 En su cuenta escribo arrend para buscarla.
 
 24
-00:01:12,735 --> 00:01:15,722
+00:01:12,728 --> 00:01:15,715
 Aparece en la lista, y elijo Arrendamientos.
 
 25
-00:01:15,580 --> 00:01:18,810
+00:01:15,573 --> 00:01:18,804
 Ahora abro su período, y elijo también septiembre.
 
 26
-00:01:18,656 --> 00:01:20,157
+00:01:18,650 --> 00:01:20,150
 Y el monto del alquiler:
 
 27
-00:01:20,039 --> 00:01:21,352
+00:01:20,031 --> 00:01:21,346
 diez mil pesos.
 
 28
-00:01:21,187 --> 00:01:22,920
+00:01:21,180 --> 00:01:22,914
 Abajo se ven los totales:
 
 29
-00:01:22,778 --> 00:01:27,193
+00:01:22,771 --> 00:01:27,186
 ingresos y gastos presupuestados, y el resultado neto esperado.
 
 30
-00:01:27,108 --> 00:01:27,774
+00:01:27,102 --> 00:01:27,766
 Guardo.
 
 31
-00:01:27,620 --> 00:01:30,919
+00:01:27,612 --> 00:01:30,912
 Con el presupuesto guardado, el aviso lo confirma.
 
 32
-00:01:31,364 --> 00:01:34,792
+00:01:31,358 --> 00:01:34,786
 El presupuesto queda en borrador hasta que se aprueba.
 
 33
-00:01:34,638 --> 00:01:39,854
+00:01:34,632 --> 00:01:39,847
 Pulso Aprobar, en la cabecera, y confirmo con Sí, Aprobar.
 
 34
-00:01:39,688 --> 00:01:43,604
+00:01:39,682 --> 00:01:43,597
 El aviso lo confirma, y las líneas quedan en solo lectura.
 
 35
-00:01:43,438 --> 00:01:47,539
+00:01:43,432 --> 00:01:47,533
 Para cambiarlas habría que reabrirlo y aprobarlo de nuevo.
 
 36
-00:01:47,982 --> 00:01:51,340
+00:01:47,975 --> 00:01:51,334
 Para comparar con lo real voy a Variaciones.
 
 37
-00:01:51,233 --> 00:01:57,319
+00:01:51,227 --> 00:01:57,313
 En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo
 
 38
-00:01:57,154 --> 00:01:59,095
+00:01:57,147 --> 00:01:59,088
 ejecutado de cada línea.
 
 39
-00:01:59,070 --> 00:02:01,580
+00:01:59,063 --> 00:02:01,573
 Lo pulso, y espero a que termine.
 
 40
-00:02:01,473 --> 00:02:04,703
+00:02:01,466 --> 00:02:04,697
 Luego abro el análisis del presupuesto de septiembre,
 
 41
-00:02:04,573 --> 00:02:07,141
+00:02:04,567 --> 00:02:07,134
 que compara cada línea con lo real.
 
 42
-00:02:07,057 --> 00:02:12,830
+00:02:07,051 --> 00:02:12,824
 Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto;
 
 43
-00:02:12,677 --> 00:02:16,036
+00:02:12,670 --> 00:02:16,028
 el alquiler, ocho mil, dos mil por debajo.
 
 44
-00:02:15,951 --> 00:02:19,250
+00:02:15,944 --> 00:02:19,243
 Cada variación trae su porcentaje y su categoría.
