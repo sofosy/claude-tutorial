@@ -573,6 +573,23 @@ def firma_asistente():
     entrar(colmado)
 
 
+def firma_mantener():
+    """V33: la plantilla vieja de la firma es la por defecto y ya tiene un cliente
+    que nació de ella (con su copia); la firma armó la versión 2027."""
+    firma_ = firma_alta()
+    llamar("POST", "/v1/accountants/clients/create-company", {
+        "rnc": "130555201", "legalName": "Ferretería Germiva del Cibao S.R.L.",
+        "tradeName": "Ferretería del Cibao", "ownerEmail": "admin@ferreteria.germiva.com",
+        "ownerName": "Rosa Germiva", "accessLevel": "FULL_ADMIN"})
+    entrar(firma_)
+    llamar("POST", "/v1/accounting-chart", {
+        "name": "Banco Santa Cruz - Cuenta corriente", "code": "1.01.01.02.03", "type": "asset",
+        "nature": "debit", "level": 5, "parent": CUENTA_BANCOS, "allowsMovement": True})
+    llamar("POST", "/v1/accounting-chart/templates/from-current-catalog", {
+        "code": "GERMIVA_CONTADORES_2027", "name": "Catálogo Germiva Contadores 2027",
+        "description": "Versión 2027: suma la cuenta del Banco Santa Cruz", "scope": "firm"})
+
+
 ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": autoposteo,
            "asientos": asientos, "reversar": reversar, "recurrentes": recurrentes, "mayor": mayor, "automaticos": automaticos, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
            "cierre-mensual": cierre_mensual, "cierre-anual": cierre_anual,
@@ -581,7 +598,8 @@ ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": aut
            "transferencias": transferencias, "conciliar": conciliar, "activos": activos,
            "activos-baja": activos_baja, "centros-costo": centros_costo, "presupuestos": presupuestos,
            "firma": firma, "firma-plantilla": firma_plantilla, "firma-alta": firma_alta,
-           "firma-cambio": firma_cambio, "firma-asistente": firma_asistente}
+           "firma-cambio": firma_cambio, "firma-asistente": firma_asistente,
+           "firma-mantener": firma_mantener}
 
 if __name__ == "__main__":
     TOKEN = token()

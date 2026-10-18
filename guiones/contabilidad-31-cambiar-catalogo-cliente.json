@@ -1,0 +1,281 @@
+{
+ "titulo": "Contabilidad · Cambiar el catálogo de un cliente de tu firma",
+ "descripcion": "Cómo una firma contable cambia en Germiva el catálogo de cuentas de un cliente: el que la firma dio de alta (catálogo propio, antes del primer asiento) y el cliente invitado que comparte una plantilla y adopta la de la firma.",
+ "_comentario": "Video 31 de la serie Contabilidad (bloque A). setup: preparar.sh firma-cambio (Ferretería del Cibao, dada de alta con el catálogo base del sistema y sin asientos; Colmado Germiva, invitado, con catálogo compartido). La sesión arranca en la Ferretería.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "RNC": "erre-ene-ce",
+  "GERMIVA_CONTADORES": "germiva contadores"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 8,
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/plantillas",
+  "esperar": "article.template-card"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh firma-cambio"
+ },
+ "aprenderas": [
+  "Cambiar el catálogo de un cliente que la firma dio de alta, antes de su primer asiento",
+  "Adoptar la plantilla de la firma en un cliente invitado",
+  "Quién puede hacerlo y hasta cuándo"
+ ],
+ "errores_comunes": [
+  "Esperar al primer asiento para corregir el catálogo: desde ahí ya no se reemplaza entero",
+  "Buscar el botón con el acceso «Contabilidad e Impuestos»: el cambio pide «Administración completa»",
+  "Confundir el cambio de catálogo con editar una cuenta"
+ ],
+ "pasos": [
+  {
+   "id": "01-propio",
+   "capitulo": "Un cliente con catálogo propio",
+   "rotulo": "Catálogo propio sin asientos",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Ferretería del Cibao · catálogo propio · todavía sin asientos",
+   "narracion": "Estamos dentro de la Ferretería del Cibao, un cliente que la firma dio de alta con el catálogo base del sistema, por error: debía llevar el de la firma. Recojo el menú. La franja dice Catálogo propio, porque los clientes que crea la firma nacen con su copia, y el aviso de arriba dice que todavía no tiene asientos: mientras sea así, el catálogo completo se puede reemplazar. La tarjeta Origen marca de qué plantilla salió.",
+   "acciones": [
+    {
+     "resaltar": "app-company-selector",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Estamos dentro de la Ferretería"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "La franja dice Catálogo propio"
+    },
+    {
+     "resaltar": "p.gm-hint >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "el aviso de arriba"
+    },
+    {
+     "resaltar": "article.template-card--current",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "La tarjeta Origen"
+    }
+   ]
+  },
+  {
+   "id": "02-reemplazar",
+   "capitulo": "Un cliente con catálogo propio",
+   "rotulo": "Usar el catálogo de la firma",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "El catálogo propio se reemplaza por una copia de la plantilla",
+   "narracion": "En la tarjeta del Catálogo Germiva Contadores, que aquí sale como De mi contador, pulso Usar este catálogo. El aviso explica qué va a pasar: las cuentas del catálogo propio se reemplazan por una copia de esta plantilla, que sigue siendo propia del cliente, y la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Reemplazar el catálogo toma unos segundos.",
+   "acciones": [
+    {
+     "click": "article.template-card:has-text('Catálogo Germiva Contadores') button:has-text('Usar este catálogo')",
+     "al_decir": "pulso Usar este catálogo"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "El aviso explica"
+    },
+    {
+     "click": "mat-dialog-container button.confirm-button",
+     "al_decir": "Confirmo con Cambiar catálogo"
+    }
+   ]
+  },
+  {
+   "id": "03-cambiado",
+   "capitulo": "Un cliente con catálogo propio",
+   "rotulo": "Catálogo cambiado",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Origen: Catálogo Germiva Contadores",
+   "narracion": "El aviso confirma el cambio, y la marca Origen pasa a la plantilla de la firma. Para hacerlo, el contador necesita el acceso Administración completa, o el dueño del cliente lo hace desde su empresa, porque el cambio vuelve a sembrar la configuración contable. Y solo antes del primer asiento, aunque sea un borrador; después, las cuentas se ajustan desde el catálogo.",
+   "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso confirma"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "la marca Origen pasa"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Y solo antes del primer asiento"
+    }
+   ]
+  },
+  {
+   "id": "04-invitado",
+   "capitulo": "Un cliente invitado",
+   "rotulo": "Cambiar de empresa",
+   "ruta": "Selector de empresa › Colmado Germiva",
+   "texto_pantalla": "Colmado Germiva · cliente invitado",
+   "narracion": "Ahora un cliente que ya trabajaba en Germiva y que invitó a la firma: el Colmado Germiva. Abro el selector de empresa y elijo el Colmado.",
+   "acciones": [
+    {
+     "click": ".gm-company-chip",
+     "al_decir": "Abro el selector de empresa"
+    },
+    {
+     "click": ".company-item:has-text('Colmado Germiva')",
+     "al_decir": "elijo el Colmado"
+    }
+   ]
+  },
+  {
+   "id": "05-compartido",
+   "capitulo": "Un cliente invitado",
+   "rotulo": "Catálogo compartido",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Catálogo compartido · sin asientos: cambio libre",
+   "navegar": "/accounting/configuracion/plantillas",
+   "esperar": "article.template-card",
+   "narracion": "Ya estamos en la otra empresa: entramos al Colmado. En sus plantillas, la franja dice Catálogo compartido: el Colmado usa las cuentas de la plantilla del sistema tal como vienen. Y como todavía no tiene asientos, puede cambiar de catálogo libremente. La plantilla de la firma también le aparece, aquí como De mi contador.",
+   "acciones": [
+    {
+     "resaltar": "app-company-selector",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Entramos al Colmado"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "la franja dice Catálogo compartido"
+    },
+    {
+     "resaltar": "p.gm-hint >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "todavía no tiene asientos"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "La plantilla de la firma también"
+    }
+   ]
+  },
+  {
+   "id": "05b-adoptar",
+   "capitulo": "Un cliente invitado",
+   "rotulo": "Adoptar la plantilla de la firma",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "Usar este catálogo · Cambiar catálogo",
+   "narracion": "Para adoptarla, primero recojo el menú. Luego pulso Usar este catálogo en la plantilla de la firma, y confirmo con Cambiar catálogo. Como el catálogo es compartido, el cambio es inmediato.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "primero recojo el menú"
+    },
+    {
+     "click": "article.template-card:has-text('Catálogo Germiva Contadores') button:has-text('Usar este catálogo')",
+     "al_decir": "Luego pulso Usar este catálogo"
+    },
+    {
+     "click": "mat-dialog-container button.confirm-button",
+     "al_decir": "confirmo con Cambiar catálogo"
+    }
+   ]
+  },
+  {
+   "id": "06-adoptado",
+   "capitulo": "Un cliente invitado",
+   "rotulo": "En uso: la plantilla de la firma",
+   "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
+   "texto_pantalla": "En uso: Catálogo Germiva Contadores",
+   "narracion": "Listo: la marca En uso pasa al Catálogo Germiva Contadores. El Colmado sigue con catálogo compartido: usa las cuentas de la plantilla tal como vienen. Si ya tuviera asientos, el mismo botón abriría el asistente de correspondencia, que vemos en el próximo video.",
+   "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Listo"
+    },
+    {
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "la marca En uso pasa"
+    },
+    {
+     "resaltar": ".ownership",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "El Colmado sigue con catálogo compartido"
+    }
+   ]
+  }
+ ]
+}
