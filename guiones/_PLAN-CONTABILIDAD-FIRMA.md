@@ -47,7 +47,7 @@ terminar; nunca aparece en un video.
 | 2c | Investigar retenciones de ISR e ITBIS y la carta de retención: configuración, compras, ventas (las que nos hacen), asientos, 606/IR-17/IT-1, emisión de cartas; qué cubren ya los videos | Hecho |
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | Hecho: firma (api#1569, web#1416), multimoneda (api#1575, web#1419), retenciones (api#1574, web#1418) |
-| 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos |
+| 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos; investigadas las llamadas al API de multimoneda y de retenciones (`_INVESTIGACION-MULTIMONEDA-API.md`, `_INVESTIGACION-RETENCIONES-API.md`) |
 | 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: bloque A grabándose sobre master (29 y 33 hechos; 28, 30, 31, 32 y 09 corregidos, a regrabar); bloques B y C: investigando las llamadas al API para las semillas |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | En curso: manual y definición de la experta hechos (api#1569); faltan catálogo de videos y textos de YouTube |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Hecho: DP-124 a DP-138 (DP-135 a DP-138 renumeradas por choque con comisiones), DP-016, DP-005 y DP-002 al día |
@@ -173,6 +173,8 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | M11 | Una revaluación sin saldos queda «Posteada» y bloquea esa fecha; sin cuentas configuradas, falla aunque no haya saldos | Arreglar | Hecho (api#1575, web#1419) |
 | M12 | Diario y Mayor: las filas muestran el importe en USD y los totales en DOP, sin columna de moneda | Arreglar | Hecho (api#1575, web#1419) |
 | M13 | Sin asiento manual en USD en pantalla, sin anticipos de cliente en USD, sin compra de dólares (transferencia entre monedas) | REU (funcionalidad nueva) | Por hacer |
+| M14 | «Ver asiento» rotula RD$ fijo: un asiento en USD (la apertura de un banco en USD) se ve en dólares con el rótulo RD$, y sus totales igual | Arreglar | En curso (`fix/contabilidad-asiento-en-dolares`) |
+| M15 | «Revaluaciones previas» muestra el número del asiento sin enlace y no hay pantalla de detalle: para ver la revaluación hay que buscarla a mano en Asientos | Arreglar | En curso (`fix/contabilidad-asiento-en-dolares`) |
 
 - **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
 
@@ -196,6 +198,8 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | G16 | Textos erróneos («no puede ser negativa», «Retención sobre el ISR del documento», ejemplo 18 en Swagger) | Arreglar | Hecho (api#1574, web#1418) |
 | G17 | Nombres desfasados («Contabilidad › Fiscal», «Archivos de marca», «certificado» vs «carta», cita a DP-096) | Arreglar | Hecho (api#1574, web#1418) |
 | G18 | El manual fiscal no tiene la carta de retención; compras manda a buscarla allí | Arreglar | Hecho (api#1574, web#1418) |
+| G19 | La retención que el cliente hace al cobrar (en el cobro) no crea fila en «Retenciones recibidas», y la manual de esa pantalla no genera asiento: hay que comprobar que el 607 y el IR-2 no la cuenten dos veces si alguien la registra en los dos lados | Verificar | Por hacer |
+| G20 | «Enviar por correo» la carta usa Novu: en el entorno local responde 503, así que el video 49 no puede mostrar un envío real | Entorno: el video muestra el diálogo y lo explica, o se configura un Novu de prueba | Por decidir al guionar el 49 |
 
 - **PROD, contexto:** 20 firmas aprobadas, ninguna con catálogo por defecto
   (`default_chart_template_id`); solo existen las 3 plantillas del sistema (ninguna
