@@ -174,9 +174,9 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | M11 | Una revaluación sin saldos queda «Posteada» y bloquea esa fecha; sin cuentas configuradas, falla aunque no haya saldos | Arreglar | Hecho (api#1575, web#1419) |
 | M12 | Diario y Mayor: las filas muestran el importe en USD y los totales en DOP, sin columna de moneda | Arreglar | Hecho (api#1575, web#1419) |
 | M13 | Sin asiento manual en USD en pantalla, sin anticipos de cliente en USD, sin compra de dólares (transferencia entre monedas) | REU (funcionalidad nueva) | Por hacer |
-| M14 | «Ver asiento» rotula RD$ fijo: un asiento en USD (la apertura de un banco en USD) se ve en dólares con el rótulo RD$, y sus totales igual | Arreglar | En curso (`fix/contabilidad-asiento-en-dolares`) |
-| M15 | «Revaluaciones previas» muestra el número del asiento sin enlace y no hay pantalla de detalle: para ver la revaluación hay que buscarla a mano en Asientos | Arreglar | En curso (`fix/contabilidad-asiento-en-dolares`) |
-| M16 | Los ejemplos de «Configuración multi-moneda» (ej. 4.02.05, 6.04.03) no existen en ninguna plantilla del sistema | Arreglar el texto | En curso (`fix/contabilidad-asiento-en-dolares`) |
+| M14 | «Ver asiento» rotula RD$ fijo: un asiento en USD (la apertura de un banco en USD) se ve en dólares con el rótulo RD$, y sus totales igual | Arreglar | Hecho en [api#1576](https://github.com/sofosy/Germiva-api/pull/1576) y [web#1420](https://github.com/sofosy/germiva-website/pull/1420) (borrador; pruebas unitarias en verde, falta la prueba en la app) |
+| M15 | «Revaluaciones previas» muestra el número del asiento sin enlace y no hay pantalla de detalle: para ver la revaluación hay que buscarla a mano en Asientos | Arreglar | Hecho en [api#1576](https://github.com/sofosy/Germiva-api/pull/1576) y [web#1420](https://github.com/sofosy/germiva-website/pull/1420) (borrador; pruebas unitarias en verde, falta la prueba en la app) |
+| M16 | Los ejemplos de «Configuración multi-moneda» (ej. 4.02.05, 6.04.03) no existen en ninguna plantilla del sistema | Arreglar el texto | Hecho en [api#1576](https://github.com/sofosy/Germiva-api/pull/1576) y [web#1420](https://github.com/sofosy/germiva-website/pull/1420) (borrador; pruebas unitarias en verde, falta la prueba en la app) |
 
 - **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
 
