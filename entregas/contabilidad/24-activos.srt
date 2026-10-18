@@ -1,0 +1,127 @@
+1
+00:00:03,000 --> 00:00:07,333
+En Activos Fijos se registran los bienes de la empresa que se deprecian.
+
+2
+00:00:07,248 --> 00:00:10,246
+Recojo el menú y pulso Crear Activo.
+
+3
+00:00:10,140 --> 00:00:16,341
+Le pongo un código, ACT-OF-001, que el sistema guarda en mayúsculas.
+
+4
+00:00:16,259 --> 00:00:18,234
+Después escribo el nombre:
+
+5
+00:00:18,115 --> 00:00:19,894
+escritorio ejecutivo.
+
+6
+00:00:19,765 --> 00:00:22,263
+La categoría es lo más importante:
+
+7
+00:00:22,179 --> 00:00:26,652
+define la vida útil, el método y las cuentas de la depreciación.
+
+8
+00:00:26,486 --> 00:00:30,529
+Abro la lista y elijo Equipos de Oficina, a cinco años.
+
+9
+00:00:30,353 --> 00:00:32,167
+El costo de adquisición:
+
+10
+00:00:32,048 --> 00:00:34,686
+sesenta mil pesos, sin el ITBIS.
+
+11
+00:00:34,555 --> 00:00:38,774
+La fecha de adquisición, primero de abril de dos mil veintiséis.
+
+12
+00:00:38,631 --> 00:00:41,524
+Y la misma fecha para la puesta en servicio.
+
+13
+00:00:41,383 --> 00:00:42,210
+Guardo.
+
+14
+00:00:42,665 --> 00:00:48,625
+El aviso confirma el alta, y el activo aparece en la lista con su costo y su valor
+
+15
+00:00:48,493 --> 00:00:49,425
+en libros.
+
+16
+00:00:49,259 --> 00:00:52,861
+Al guardarlo, el sistema registró el asiento de alta:
+
+17
+00:00:52,812 --> 00:00:58,155
+débito a la cuenta del activo y crédito a cuentas por pagar por compra de activos.
+
+18
+00:00:58,037 --> 00:01:01,813
+Si el escritorio vino en una factura de compra ya registrada,
+
+19
+00:01:01,694 --> 00:01:07,153
+se indica su número y el sistema reclasifica ese gasto en vez de duplicarlo.
+
+20
+00:01:07,590 --> 00:01:10,739
+La depreciación se contabiliza cada mes.
+
+21
+00:01:10,573 --> 00:01:15,046
+Para ponerla al día, en Más acciones elijo Depreciar.
+
+22
+00:01:14,962 --> 00:01:19,203
+Se pide confirmación, y confirmo con Sí, Depreciar.
+
+23
+00:01:19,094 --> 00:01:24,472
+El sistema registra una cuota por cada mes cumplido desde la puesta en servicio,
+
+24
+00:01:24,365 --> 00:01:25,843
+de abril a septiembre:
+
+25
+00:01:25,736 --> 00:01:30,683
+seis cuotas de mil pesos, cada una fechada el último día de su mes.
+
+26
+00:01:30,566 --> 00:01:34,121
+El valor en libros baja a cincuenta y cuatro mil.
+
+27
+00:01:34,552 --> 00:01:37,771
+Una cosa más sobre la cuota del mes en curso.
+
+28
+00:01:37,652 --> 00:01:42,647
+Si vuelvo a abrir Más acciones y elijo Depreciar, y confirmo otra vez,
+
+29
+00:01:42,516 --> 00:01:45,665
+el sistema avisa que el activo ya está al día:
+
+30
+00:01:45,581 --> 00:01:49,578
+la cuota de octubre se registra a partir del treinta y uno.
+
+31
+00:01:49,436 --> 00:01:53,596
+Además, la depreciación corre sola el primer día de cada mes,
+
+32
+00:01:53,477 --> 00:01:56,673
+así que normalmente no hace falta pulsar nada.

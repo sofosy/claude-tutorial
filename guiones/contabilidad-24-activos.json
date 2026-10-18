@@ -190,6 +190,12 @@
       "narracion": "La depreciación se contabiliza cada mes. Para ponerla al día, en Más acciones elijo Depreciar. Se pide confirmación, y confirmo con Sí, Depreciar. El sistema registra una cuota por cada mes cumplido desde la puesta en servicio, de abril a septiembre: seis cuotas de mil pesos, cada una fechada el último día de su mes. El valor en libros baja a cincuenta y cuatro mil.",
       "acciones": [
         {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001') td >> nth=1",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "La depreciación se contabiliza"
+        },
+        {
           "click": "tr.mat-mdc-row:has-text('ACT-OF-001') button[aria-label='Más acciones']",
           "al_decir": "en Más acciones"
         },
@@ -206,6 +212,18 @@
           "durante_ms": 3000,
           "cursor": false,
           "al_decir": "El sistema registra una cuota"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001') td >> nth=6",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "de abril a septiembre"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001') td >> nth=4",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "seis cuotas de mil pesos"
         },
         {
           "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-001') td >> nth=5",
