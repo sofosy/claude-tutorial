@@ -137,7 +137,7 @@
       "rotulo": "Deshacer baja o venta",
       "ruta": "Contabilidad › Activos Fijos",
       "texto_pantalla": "Revierte el asiento de la baja",
-      "narracion": "El estado ahora dice Dado de baja, y el valor en libros es cero. Si la baja fue un error, en Más acciones elijo Deshacer baja o venta. Escribo el motivo: se reparó. Ese motivo también queda registrado. Con el motivo escrito, confirmo. El sistema avisa que revirtió el asiento de la baja con su misma fecha, y acepto. El activo vuelve a estar activo con el valor en libros que tenía. Las cuotas de depreciación ya registradas se quedan.",
+      "narracion": "El estado ahora dice Dado de baja, y el valor en libros es cero. Si la baja fue un error, en Más acciones elijo Deshacer baja o venta. El diálogo explica que se revierte el asiento de la baja y pide el motivo: se reparó. Ese motivo queda registrado. Con el motivo escrito, confirmo. El sistema avisa que revirtió el asiento de la baja con su misma fecha, y acepto. El activo vuelve a estar activo con el valor en libros que tenía. Las cuotas de depreciación ya registradas se quedan.",
       "acciones": [
         {
           "resaltar": "tr.mat-mdc-row:has-text('ACT-OF-002') .gm-chip",
@@ -154,15 +154,27 @@
           "al_decir": "elijo Deshacer"
         },
         {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El diálogo explica"
+        },
+        {
           "escribir": {
             "sel": "mat-dialog-container textarea",
             "texto": "Se reparó"
           },
-          "al_decir": "Escribo el motivo"
+          "al_decir": "pide el motivo"
         },
         {
           "click": "mat-dialog-container button:has-text('Confirmar')",
           "al_decir": "Con el motivo escrito, confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "El sistema avisa que revirtió"
         },
         {
           "click": "mat-dialog-container button:has-text('Aceptar')",

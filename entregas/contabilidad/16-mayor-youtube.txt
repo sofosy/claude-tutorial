@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Libro Mayor: movimientos, saldos y estado de cuenta
+
+DESCRIPCIÓN
+============================================================
+Cómo consultar el Libro Mayor en Germiva: los movimientos del mes, filtrar una cuenta y abrir el asiento de cada movimiento, ver el saldo y el estado de cuenta, exportar y regenerar el Mayor de un período.
+
+⏱️ CAPÍTULOS
+00:00  Movimientos del mes
+00:30  Una cuenta
+00:53  Saldo y estado de cuenta
+01:17  Exportar y regenerar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer los movimientos del Libro Mayor
+• Filtrar una cuenta y abrir el asiento de un movimiento
+• Ver el saldo y el estado de cuenta
+• Exportar y regenerar el Mayor de un período
+
+⚠️ ERRORES COMUNES
+• Buscar un borrador en el Mayor: solo entran los asientos contabilizados
+• Olvidar las fechas: la consulta las necesita
+• Regenerar un período cerrado: solo se regeneran los abiertos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:44
+
+TRANSCRIPCIÓN
+============================================================
+El Libro Mayor muestra los movimientos de las cuentas, asiento por asiento. Al abrirlo ya consulta el mes en curso. Recojo el menú. Cada movimiento trae su fecha, el asiento que lo originó, la descripción y la cuenta, el débito, el crédito y el saldo. Al pie están los totales del período completo, no solo de esta página. Solo entran los asientos contabilizados: los borradores no aparecen.
+Para ver una sola cuenta, la busco en Cuenta Contable. Escribo caja general, el sistema busca mientras escribo, y cuando aparece en la lista, la elijo. Pulso Consultar. Ahora la tabla muestra solo sus movimientos, con el saldo acumulado línea a línea. El número de cada asiento es un enlace que lo abre en modo ver, para revisar de dónde salió el movimiento.
+Con una cuenta elegida aparecen dos botones más. Saldo da el saldo de la cuenta a una fecha: pulso Consultar, y ahí está el resultado. Cierro esa ventana. El otro botón, Estado de Cuenta, da los movimientos de un rango, con el saldo inicial y el final. Consulto, y se puede exportar en PDF para enviarlo o archivarlo. Lo cierro.
+Exportar, al pie, descarga los movimientos en una hoja de cálculo. Y Generar Libro Mayor reprocesa los asientos contabilizados de un período abierto: es mantenimiento, y no duplica nada. En el período escribo octubre, espero la lista, y lo elijo. Ahora pulso el botón Generar. El aviso confirma que el Mayor de octubre quedó al día.

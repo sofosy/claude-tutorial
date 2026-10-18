@@ -102,6 +102,12 @@
           "al_decir": "Busco marzo"
         },
         {
+          "presionar": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "tecla": "Enter"
+          }
+        },
+        {
           "click": "tr.mat-mdc-row:has-text('Marzo 2026') button[aria-label='Reabrir Período']",
           "al_decir": "en su fila pulso Reabrir"
         },
@@ -142,11 +148,17 @@
       "rotulo": "Cerrar Período",
       "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
       "texto_pantalla": "Notas del cierre (opcional)",
-      "narracion": "Registrado el ajuste, el período se vuelve a cerrar. En la misma fila pulso Cerrar Período. Aquí las notas son opcionales; dejo una para quien revise después. Con la nota escrita, confirmo con Cerrar período. El sistema no cierra un período con asientos en borrador ni descuadrado. El aviso confirma el cierre, y el estado vuelve a Cerrado.",
+      "narracion": "Registrado el ajuste, el período se vuelve a cerrar. En la misma fila pulso Cerrar Período. Aquí las notas son opcionales; dejo una para quien revise después. Con la nota escrita, confirmo con Cerrar período. El aviso confirma el cierre, y el estado vuelve a Cerrado. El sistema no cierra un período con asientos en borrador ni descuadrado.",
       "acciones": [
         {
           "click": "tr.mat-mdc-row:has-text('Marzo 2026') button[aria-label='Cerrar Período']",
           "al_decir": "En la misma fila pulso"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Aquí las notas son opcionales"
         },
         {
           "escribir": {
@@ -183,6 +195,12 @@
           "al_decir": "Busco enero"
         },
         {
+          "presionar": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "tecla": "Enter"
+          }
+        },
+        {
           "click": "tr.mat-mdc-row:has-text('Enero 2025') button[aria-label='Bloquear (Permanente)']",
           "al_decir": "en su fila pulso Bloquear"
         },
@@ -197,10 +215,16 @@
           "al_decir": "Confirmo con Sí"
         },
         {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "El estado pasa a Bloqueado"
+        },
+        {
           "resaltar": "tr.mat-mdc-row:has-text('Enero 2025') .gm-badge >> nth=-1",
           "durante_ms": 3500,
           "cursor": false,
-          "al_decir": "El estado pasa a Bloqueado"
+          "al_decir": "la fila ya no ofrece reabrir"
         }
       ]
     },

@@ -1,0 +1,115 @@
+1
+00:00:03,000 --> 00:00:08,053
+El Libro Mayor muestra los movimientos de las cuentas, asiento por asiento.
+
+2
+00:00:07,887 --> 00:00:10,745
+Al abrirlo ya consulta el mes en curso.
+
+3
+00:00:10,721 --> 00:00:11,872
+Recojo el menú.
+
+4
+00:00:11,718 --> 00:00:15,727
+Cada movimiento trae su fecha, el asiento que lo originó,
+
+5
+00:00:15,619 --> 00:00:20,196
+la descripción y la cuenta, el débito, el crédito y el saldo.
+
+6
+00:00:20,077 --> 00:00:24,979
+Al pie están los totales del período completo, no solo de esta página.
+
+7
+00:00:24,850 --> 00:00:27,603
+Solo entran los asientos contabilizados:
+
+8
+00:00:27,484 --> 00:00:29,763
+los borradores no aparecen.
+
+9
+00:00:30,198 --> 00:00:33,602
+Para ver una sola cuenta, la busco en Cuenta Contable.
+
+10
+00:00:33,448 --> 00:00:37,329
+Escribo caja general, el sistema busca mientras escribo,
+
+11
+00:00:37,152 --> 00:00:39,778
+y cuando aparece en la lista, la elijo.
+
+12
+00:00:39,649 --> 00:00:41,055
+Pulso Consultar.
+
+13
+00:00:40,926 --> 00:00:46,362
+Ahora la tabla muestra solo sus movimientos, con el saldo acumulado línea a línea.
+
+14
+00:00:46,243 --> 00:00:50,436
+El número de cada asiento es un enlace que lo abre en modo ver,
+
+15
+00:00:50,283 --> 00:00:53,200
+para revisar de dónde salió el movimiento.
+
+16
+00:00:53,632 --> 00:00:57,327
+Con una cuenta elegida aparecen dos botones más.
+
+17
+00:00:57,243 --> 00:01:00,485
+Saldo da el saldo de la cuenta a una fecha:
+
+18
+00:01:00,308 --> 00:01:03,329
+pulso Consultar, y ahí está el resultado.
+
+19
+00:01:03,280 --> 00:01:04,804
+Cierro esa ventana.
+
+20
+00:01:04,685 --> 00:01:09,320
+El otro botón, Estado de Cuenta, da los movimientos de un rango,
+
+21
+00:01:09,179 --> 00:01:11,479
+con el saldo inicial y el final.
+
+22
+00:01:11,407 --> 00:01:16,379
+Consulto, y se puede exportar en PDF para enviarlo o archivarlo.
+
+23
+00:01:16,248 --> 00:01:17,238
+Lo cierro.
+
+24
+00:01:17,683 --> 00:01:22,447
+Exportar, al pie, descarga los movimientos en una hoja de cálculo.
+
+25
+00:01:22,269 --> 00:01:28,355
+Y Generar Libro Mayor reprocesa los asientos contabilizados de un período abierto:
+
+26
+00:01:28,225 --> 00:01:30,887
+es mantenimiento, y no duplica nada.
+
+27
+00:01:30,745 --> 00:01:35,275
+En el período escribo octubre, espero la lista, y lo elijo.
+
+28
+00:01:35,203 --> 00:01:37,447
+Ahora pulso el botón Generar.
+
+29
+00:01:37,340 --> 00:01:41,057
+El aviso confirma que el Mayor de octubre quedó al día.

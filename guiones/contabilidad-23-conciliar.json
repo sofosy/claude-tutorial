@@ -162,11 +162,17 @@
       "rotulo": "Importar estado de cuenta",
       "ruta": "Contabilidad › Banca › Conciliación",
       "texto_pantalla": "Archivo → columnas → revisar e importar",
-      "narracion": "Con la conciliación creada, pulso Importar estado de cuenta. Subo el archivo que exporté del banco, en CSV. El sistema detectó sus columnas, así que paso al siguiente paso. Ahora le digo qué trae cada columna. La fecha está en la primera columna del archivo. La descripción del movimiento está en la segunda columna. La referencia del banco viene en la tercera. Y el monto, que viene con signo, está en la cuarta. Con eso, pulso Previsualizar y reviso las líneas antes de importarlas. Si le pongo nombre, el mapeo se guarda como plantilla para el próximo mes. Importo las cinco líneas, y pulso Listo.",
+      "narracion": "Con la conciliación creada, pulso Importar estado de cuenta. El asistente tiene tres pasos: archivo, columnas y revisión. Subo el archivo que exporté del banco, en CSV. El sistema detectó sus columnas, así que paso al siguiente paso. Ahora le digo qué trae cada columna. La fecha está en la primera columna del archivo. La descripción del movimiento está en la segunda columna. La referencia del banco viene en la tercera. Y el monto, que viene con signo, está en la cuarta. Con eso, pulso Previsualizar y reviso las líneas antes de importarlas. Si le pongo nombre, el mapeo se guarda como plantilla para el próximo mes. Importo: el asistente confirma las cinco líneas importadas, y pulso Listo.",
       "acciones": [
         {
           "click": "button:has-text('Importar estado de cuenta')",
           "al_decir": "pulso Importar estado de cuenta"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El asistente tiene tres pasos"
         },
         {
           "subir": {
@@ -225,7 +231,13 @@
         },
         {
           "click": "mat-dialog-container button:has-text('Importar')",
-          "al_decir": "Importo las cinco líneas"
+          "al_decir": "Importo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "el asistente confirma"
         },
         {
           "click": "mat-dialog-container button:has-text('Listo')",

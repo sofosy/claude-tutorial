@@ -145,13 +145,13 @@
           "al_decir": "La insignia dice Cuadrada"
         },
         {
-          "resaltar": "table.trial-balance-table thead",
+          "resaltar": "table.trial-balance-table thead tr",
           "durante_ms": 4500,
           "cursor": false,
           "al_decir": "Por cada cuenta se ve"
         },
         {
-          "resaltar": "table.trial-balance-table tfoot",
+          "resaltar": "table.trial-balance-table tfoot tr",
           "durante_ms": 3500,
           "cursor": false,
           "al_decir": "al pie están los totales"
@@ -274,7 +274,7 @@
       "rotulo": "Razones Financieras",
       "ruta": "Contabilidad › Informes Financieros › Razones Financieras",
       "texto_pantalla": "Liquidez · rentabilidad · solvencia · eficiencia",
-      "narracion": "El último estado de este grupo son las Razones Financieras. Las elijo en el selector, busco la opción en la lista y, con el mismo rango de fechas, genero. Las razones se agrupan en liquidez, rentabilidad, solvencia y eficiencia, cada una con su explicación. Si alguna sale del rango recomendado, el sistema lo advierte arriba. Cualquier informe se descarga a Excel o se imprime con el membrete de la empresa.",
+      "narracion": "El último estado de este grupo son las Razones Financieras. Las elijo en el selector, busco la opción en la lista y, con el mismo rango de fechas, genero. Las razones se agrupan en liquidez, rentabilidad, solvencia y eficiencia, cada una con su explicación. Cada tarjeta trae su fórmula y su lectura: aquí la liquidez sale excelente. Si alguna razón saliera del rango recomendado, el sistema lo advertiría con una alerta. Cualquier informe se descarga a Excel o se imprime con el membrete de la empresa.",
       "acciones": [
         {
           "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
@@ -295,10 +295,10 @@
           "al_decir": "Las razones se agrupan"
         },
         {
-          "resaltar": ".alerts-card",
+          "resaltar": ".ratio-card >> nth=0",
           "durante_ms": 3500,
           "cursor": false,
-          "al_decir": "el sistema lo advierte"
+          "al_decir": "Cada tarjeta trae su fórmula"
         },
         {
           "resaltar": "button:has-text('Excel')",

@@ -188,6 +188,12 @@
           "al_decir": "busco diciembre"
         },
         {
+          "presionar": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "tecla": "Enter"
+          }
+        },
+        {
           "resaltar": "tr.mat-mdc-row:has-text('Diciembre 2025') td >> nth=0",
           "durante_ms": 4000,
           "cursor": false,

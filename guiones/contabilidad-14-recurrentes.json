@@ -226,7 +226,7 @@
       "rotulo": "Generar el asiento",
       "ruta": "Contabilidad › Diario y Mayor › Recurrentes",
       "texto_pantalla": "Generar Ahora · Procesar Pendientes",
-      "narracion": "La plantilla del internet venció el primero de octubre. Generar Ahora adelanta su asiento, después de confirmarlo con Generar. El aviso da el número del asiento, que queda contabilizado como automático, y la plantilla salta a su próximo vencimiento. Procesar Pendientes hace lo mismo con todas las vencidas: pide confirmación y, si alguna falla, dice cuál y por qué. Ahora no queda ninguna.",
+      "narracion": "La plantilla del internet venció el primero de octubre. Generar Ahora adelanta su asiento, después de confirmarlo con Generar. El aviso da el número del asiento, que queda contabilizado como automático, y la plantilla salta a su próximo vencimiento. Procesar Pendientes hace lo mismo con todas las vencidas, y antes pide confirmación. Confirmo, y el aviso dice que ya no queda ninguna. Si alguna fallara, diría cuál y por qué.",
       "acciones": [
         {
           "resaltar": "tr.mat-mdc-row:has-text('Servicio de internet') td >> nth=0",
@@ -259,14 +259,20 @@
           "al_decir": "Procesar Pendientes hace"
         },
         {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "y antes pide confirmación"
+        },
+        {
           "click": "mat-dialog-container button.confirm-button",
-          "al_decir": "pide confirmación"
+          "al_decir": "Confirmo"
         },
         {
           "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 3500,
+          "durante_ms": 2500,
           "cursor": false,
-          "al_decir": "Ahora no queda ninguna"
+          "al_decir": "el aviso dice que ya no queda"
         }
       ]
     },
@@ -276,21 +282,33 @@
       "rotulo": "Pausar",
       "ruta": "Contabilidad › Diario y Mayor › Recurrentes",
       "texto_pantalla": "Pausar no borra · Reactivar la enciende",
-      "narracion": "Si un gasto se suspende, no borres la plantilla: Pausar la detiene, y la insignia pasa a Pausada. Reactivar la vuelve a encender cuando haga falta. Eliminar la quita, pero los asientos que ya generó no se tocan.",
+      "narracion": "Si un gasto se suspende, no borres la plantilla. Pausar la detiene: el aviso lo confirma, y la insignia pasa a Pausada. Reactivar la vuelve a encender, y otro aviso lo confirma. Eliminar la quita, pero los asientos que ya generó no se tocan.",
       "acciones": [
         {
           "click": "tr.mat-mdc-row:has-text('Seguro del local') button[aria-label='Pausar']",
           "al_decir": "Pausar la detiene"
         },
         {
-          "resaltar": "tr.mat-mdc-row:has-text('Seguro del local') .gm-badge",
-          "durante_ms": 3000,
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 1500,
           "cursor": false,
-          "al_decir": "pasa a Pausada"
+          "al_decir": "el aviso lo confirma"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Seguro del local') .gm-badge",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "la insignia pasa a Pausada"
         },
         {
           "click": "tr.mat-mdc-row:has-text('Seguro del local') button[aria-label='Reactivar']",
           "al_decir": "Reactivar la vuelve"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "otro aviso lo confirma"
         },
         {
           "resaltar": "tr.mat-mdc-row:has-text('Seguro del local') button[aria-label='Eliminar']",

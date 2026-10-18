@@ -107,7 +107,7 @@
           "al_decir": "Cada movimiento trae"
         },
         {
-          "resaltar": "table.movements-table tfoot",
+          "resaltar": ".totals-row",
           "durante_ms": 4000,
           "cursor": false,
           "al_decir": "Al pie están los totales"

@@ -230,6 +230,12 @@
           "al_decir": "Busco octubre"
         },
         {
+          "presionar": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "tecla": "Enter"
+          }
+        },
+        {
           "click": "tr.mat-mdc-row:has-text('Octubre 2026') button[aria-label='Establecer como Actual']",
           "al_decir": "en su fila pulso"
         },

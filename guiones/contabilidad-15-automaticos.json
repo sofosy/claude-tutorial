@@ -148,11 +148,17 @@
       "rotulo": "Contabilizar",
       "ruta": "Contabilidad › Configuración Contable › Registro de Integración",
       "texto_pantalla": "Corregida la causa → Contabilizar",
-      "narracion": "La causa ya se corrigió: se volvió a activar ese rol en el Mapeo de Cuentas. Ahora Contabilizar genera el asiento que faltaba; si el asiento ya existiera, no lo duplica. Confirmo. El aviso dice que quedó contabilizado, y la fila pasa a Éxito con su número de asiento. Si la causa no estuviera corregida, el aviso diría el motivo del nuevo intento.",
+      "narracion": "La causa ya se corrigió: se volvió a activar ese rol en el Mapeo de Cuentas. Ahora Contabilizar genera el asiento que faltaba; si el asiento ya existiera, no lo duplica. Confirmo. El aviso dice que quedó contabilizado, y la fila sale de la lista: como el registro está filtrado en lo que queda por resolver, ya no queda nada pendiente. Si la causa no estuviera corregida, el aviso diría el motivo del nuevo intento.",
       "acciones": [
         {
           "click": "tr.mat-mdc-row:has-text('INV-ADJ') button[aria-label='Contabilizar']",
           "al_decir": "Ahora Contabilizar"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "si el asiento ya existiera"
         },
         {
           "click": "mat-dialog-container button.confirm-button",
@@ -165,10 +171,10 @@
           "al_decir": "quedó contabilizado"
         },
         {
-          "resaltar": "tr.mat-mdc-row:has-text('INV-ADJ') td >> nth=0",
+          "resaltar": "text=No se encontraron registros",
           "durante_ms": 5000,
           "cursor": false,
-          "al_decir": "la fila pasa a Éxito"
+          "al_decir": "y la fila sale de la lista"
         }
       ]
     },
