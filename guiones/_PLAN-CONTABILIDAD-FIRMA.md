@@ -60,7 +60,7 @@ terminar; nunca aparece en un video.
 
 | # | Video | Qué enseña | Estado |
 |---|-------|-----------|--------|
-| 28 | La plantilla de catálogo de la firma | En la empresa de la firma, «Crear plantilla desde mi catálogo» con alcance «Mi firma contable»; quién la ve («De la firma» / «De mi contador») | Regrabando: el plan de cuentas es un árbol (selector `.tree-container`) y un ancla al empezar el paso 04 |
+| 28 | La plantilla de catálogo de la firma | En la empresa de la firma, «Crear plantilla desde mi catálogo» con alcance «Mi firma contable»; quién la ve («De la firma» / «De mi contador») | Hecho (PUBLICABLE, 97970d9) |
 | 29 | El catálogo por defecto de los clientes | Mi Cartera › Mi firma › «Plantilla por defecto»; los clientes actuales no cambian; en cada alta se puede elegir otra | Hecho (PUBLICABLE, 6dcef46) |
 | 30 | Dar de alta a un cliente con su catálogo | Nuevo cliente › «Para un cliente» › «Dar de alta a un cliente nuevo» › «Catálogo de cuentas» (viene la de la firma, se puede elegir otra) › el cliente nace con catálogo propio y la marca «Origen» | Regrabando: un ancla caía antes de terminar de teclear el correo (R2 con el audio real) |
 | 31 | Cambiar el catálogo de un cliente | Cliente sin asientos (catálogo propio, tras el arreglo F1) y cliente invitado con catálogo compartido que adopta la plantilla de la firma; quién puede hacerlo | Regrabando: el aviso de éxito (3,5 s) se iba antes de la marca; ahora se marca justo después del clic que lo dispara |
@@ -175,6 +175,7 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | M13 | Sin asiento manual en USD en pantalla, sin anticipos de cliente en USD, sin compra de dólares (transferencia entre monedas) | REU (funcionalidad nueva) | Por hacer |
 | M14 | «Ver asiento» rotula RD$ fijo: un asiento en USD (la apertura de un banco en USD) se ve en dólares con el rótulo RD$, y sus totales igual | Arreglar | En curso (`fix/contabilidad-asiento-en-dolares`) |
 | M15 | «Revaluaciones previas» muestra el número del asiento sin enlace y no hay pantalla de detalle: para ver la revaluación hay que buscarla a mano en Asientos | Arreglar | En curso (`fix/contabilidad-asiento-en-dolares`) |
+| M16 | Los ejemplos de «Configuración multi-moneda» (ej. 4.02.05, 6.04.03) no existen en ninguna plantilla del sistema | Arreglar el texto | En curso (`fix/contabilidad-asiento-en-dolares`) |
 
 - **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
 
@@ -198,7 +199,7 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | G16 | Textos erróneos («no puede ser negativa», «Retención sobre el ISR del documento», ejemplo 18 en Swagger) | Arreglar | Hecho (api#1574, web#1418) |
 | G17 | Nombres desfasados («Contabilidad › Fiscal», «Archivos de marca», «certificado» vs «carta», cita a DP-096) | Arreglar | Hecho (api#1574, web#1418) |
 | G18 | El manual fiscal no tiene la carta de retención; compras manda a buscarla allí | Arreglar | Hecho (api#1574, web#1418) |
-| G19 | La retención que el cliente hace al cobrar (en el cobro) no crea fila en «Retenciones recibidas», y la manual de esa pantalla no genera asiento: hay que comprobar que el 607 y el IR-2 no la cuenten dos veces si alguien la registra en los dos lados | Verificar | Por hacer |
+| G19 | Retención que te hace el cliente registrada por dos vías: el 607 (y el IT-1, casillas 29 y 31) SUMA lo retenido en el cobro y lo de «Retenciones recibidas» con la misma factura; el ISR retenido en el cobro nunca llega al IR-2; la guarda del cobro no corre en facturas de contado (asiento doble) y «Retenciones recibidas» no filtra la factura por empresa | Arreglar (verificado en el código) | En curso (`fix/fiscal-retenciones-doble-registro`); DP-002 se actualiza en el mismo PR |
 | G20 | «Enviar por correo» la carta usa Novu: en el entorno local responde 503, así que el video 49 no puede mostrar un envío real | Entorno: el video muestra el diálogo y lo explica, o se configura un Novu de prueba | Por decidir al guionar el 49 |
 
 - **PROD, contexto:** 20 firmas aprobadas, ninguna con catálogo por defecto
