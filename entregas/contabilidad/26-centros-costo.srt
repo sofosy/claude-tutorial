@@ -1,0 +1,99 @@
+1
+00:00:03,000 --> 00:00:08,157
+Los centros de costo son las áreas de la empresa a las que se imputan ingresos y
+
+2
+00:00:08,050 --> 00:00:10,955
+gastos, como administración o ventas.
+
+3
+00:00:10,998 --> 00:00:12,174
+Recojo el menú.
+
+4
+00:00:12,009 --> 00:00:16,748
+Cada uno trae su código, su nombre, el tipo, de qué centro depende,
+
+5
+00:00:16,594 --> 00:00:18,804
+el presupuesto y el estado.
+
+6
+00:00:19,251 --> 00:00:23,817
+Para agregar el área de logística, pulso Crear Centro de Costo.
+
+7
+00:00:23,652 --> 00:00:28,762
+Escribo el código, CC-LOG, que identifica al centro y no se repite.
+
+8
+00:00:28,771 --> 00:00:30,515
+Luego escribo el nombre:
+
+9
+00:00:30,489 --> 00:00:31,653
+Logística.
+
+10
+00:00:31,488 --> 00:00:34,963
+Con el código y el nombre listos, paso al tipo:
+
+11
+00:00:34,832 --> 00:00:39,641
+dice si es un centro de costo, de ingresos, de utilidad o de inversión;
+
+12
+00:00:39,522 --> 00:00:40,837
+lo dejo en Costo.
+
+13
+00:00:40,683 --> 00:00:43,287
+El presupuesto es el monto asignado al área:
+
+14
+00:00:43,121 --> 00:00:45,272
+ciento veinte mil pesos.
+
+15
+00:00:45,153 --> 00:00:47,676
+La casilla de abajo lo crea activo.
+
+16
+00:00:47,591 --> 00:00:49,963
+Guardo, y el aviso lo confirma.
+
+17
+00:00:50,405 --> 00:00:55,563
+Un centro puede tener subcentros, como Operaciones dentro de Administración.
+
+18
+00:00:55,445 --> 00:01:00,579
+Ver Jerarquía muestra el árbol completo, con cada centro bajo su padre.
+
+19
+00:01:00,448 --> 00:01:01,518
+Lo cierro.
+
+20
+00:01:01,972 --> 00:01:07,444
+El centro predeterminado es el que reciben las líneas que se registran sin centro.
+
+21
+00:01:07,325 --> 00:01:11,576
+En la fila de Administración pulso Marcar como predeterminado.
+
+22
+00:01:11,469 --> 00:01:13,085
+El aviso lo confirma.
+
+23
+00:01:12,978 --> 00:01:17,602
+Desde ahí, los centros aparecen en cada línea de los asientos,
+
+24
+00:01:17,450 --> 00:01:22,468
+en las líneas de los presupuestos y como filtro del Estado de Resultados y las
+
+25
+00:01:22,313 --> 00:01:24,046
+Razones Financieras.

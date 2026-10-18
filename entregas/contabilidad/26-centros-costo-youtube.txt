@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Centros de costo: crear, jerarquía y centro predeterminado
+
+DESCRIPCIÓN
+============================================================
+Cómo crear en Germiva centros de costo con su presupuesto, ver su jerarquía, elegir el centro predeterminado de la empresa y dónde se usan: asientos, presupuestos e informes.
+
+⏱️ CAPÍTULOS
+00:00  Los centros de costo
+00:19  Crear
+00:50  Jerarquía
+01:01  Centro predeterminado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear un centro de costo con su presupuesto
+• Ver la jerarquía de centros
+• Elegir el centro predeterminado
+• Dónde se usan los centros de costo
+
+⚠️ ERRORES COMUNES
+• Repetir un código: cada centro tiene el suyo
+• Eliminar un centro con subcentros
+• Olvidar el centro predeterminado: las líneas sin centro quedan sin imputar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:27
+
+TRANSCRIPCIÓN
+============================================================
+Los centros de costo son las áreas de la empresa a las que se imputan ingresos y gastos, como administración o ventas. Recojo el menú. Cada uno trae su código, su nombre, el tipo, de qué centro depende, el presupuesto y el estado.
+Para agregar el área de logística, pulso Crear Centro de Costo. Escribo el código, CC-LOG, que identifica al centro y no se repite. Luego escribo el nombre: Logística. Con el código y el nombre listos, paso al tipo: dice si es un centro de costo, de ingresos, de utilidad o de inversión; lo dejo en Costo. El presupuesto es el monto asignado al área: ciento veinte mil pesos. La casilla de abajo lo crea activo. Guardo, y el aviso lo confirma.
+Un centro puede tener subcentros, como Operaciones dentro de Administración. Ver Jerarquía muestra el árbol completo, con cada centro bajo su padre. Lo cierro.
+El centro predeterminado es el que reciben las líneas que se registran sin centro. En la fila de Administración pulso Marcar como predeterminado. El aviso lo confirma. Desde ahí, los centros aparecen en cada línea de los asientos, en las líneas de los presupuestos y como filtro del Estado de Resultados y las Razones Financieras.

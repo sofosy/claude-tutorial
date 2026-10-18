@@ -88,7 +88,7 @@
       "rotulo": "Centros de Costo",
       "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
       "texto_pantalla": "Unidades a las que se imputa el gasto",
-      "narracion": "Los centros de costo son las áreas de la empresa a las que se imputan ingresos y gastos, como administración o ventas. Recojo el menú. Cada uno trae su código, su nombre, el tipo, el nivel en la jerarquía, el presupuesto y el estado.",
+      "narracion": "Los centros de costo son las áreas de la empresa a las que se imputan ingresos y gastos, como administración o ventas. Recojo el menú. Cada uno trae su código, su nombre, el tipo, de qué centro depende, el presupuesto y el estado.",
       "acciones": [
         {
           "click": "button.panel-collapse",
@@ -99,6 +99,12 @@
           "durante_ms": 5000,
           "cursor": false,
           "al_decir": "Cada uno trae su código"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') td >> nth=3",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "de qué centro depende"
         }
       ]
     },
