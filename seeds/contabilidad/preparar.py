@@ -465,13 +465,123 @@ def presupuestos():
         linea(cuenta("6.05.01"), "Comisiones y servicios", 400), linea(gl, "Cargo del banco", credito=400)])
 
 
+# ── La firma contable y sus clientes (videos 28–33) ─────────────────────────
+# Todo ficticio: la firma «Germiva Contadores» y sus clientes con RNC 130555xxx.
+# El admin es el contador de la firma; cada estado deja su sesión en la
+# empresa donde arranca el video.
+
+FIRMA = {"legalName": "Germiva Contadores & Asociados S.R.L.", "tradeName": "Germiva Contadores",
+         "rnc": "130555090", "phones": ["809-555-0190"], "email": "firma@contadores.germiva.com"}
+COLMADO = {"legalName": "Colmado Germiva del Ensanche S.R.L.", "tradeName": "Colmado Germiva",
+           "rnc": "130555210", "phones": ["809-555-0210"], "email": "colmado@germiva.com"}
+PLANTILLA_FIRMA = "GERMIVA_CONTADORES"
+
+
+def entrar(empresa_id):
+    """La sesión del admin pasa a esa empresa: la API la toma al iniciar sesión."""
+    global TOKEN
+    sql(f"UPDATE users SET current_company_id={empresa_id} WHERE id=1")
+    TOKEN = token()
+
+
+def empresa_id(rnc):
+    return int(sql(f"SELECT id FROM companies WHERE rnc='{rnc}' AND deleted_at IS NULL"))
+
+
+def plantilla_id(codigo):
+    return int(sql(f"SELECT id FROM accounting_chart_templates WHERE code='{codigo}' AND deleted_at IS NULL"))
+
+
+def cuenta_de(empresa, codigo):
+    """Cuenta del catálogo que ve la empresa: la suya con ese código o la de la plantilla."""
+    return int(sql(f"SELECT id FROM accounting_chart WHERE code='{codigo}' AND deleted_at IS NULL "
+                   f"AND (company_id={empresa} OR company_id IS NULL) "
+                   "ORDER BY company_id IS NULL, template_id <=> 1 DESC, id LIMIT 1"))
+
+
+def firma():
+    """V28: la firma verificada con su catálogo ya ajustado para sus clientes."""
+    firma_ = llamar("POST", "/v1/company", FIRMA)["id"]
+    llamar("POST", "/v1/accountants/admin/designate", {"company": firma_, "licenseNumber": "12345"})
+    entrar(firma_)
+    llamar("PATCH", f"/v1/accounting-chart/{cuenta_de(firma_, '1.01.01.02.01')}/company-settings",
+           {"customName": "Banco Popular - Cuenta corriente"})
+    llamar("POST", "/v1/accounting-chart", {
+        "name": "Banco BHD - Cuenta corriente", "code": "1.01.01.02.02", "type": "asset",
+        "nature": "debit", "level": 5, "parent": CUENTA_BANCOS, "allowsMovement": True})
+    llamar("POST", "/v1/accounting-chart", {
+        "name": "Caja chica", "code": "1.01.01.01.03", "type": "asset", "nature": "debit",
+        "level": 5, "parent": cuenta_de(firma_, "1.01.01.01"), "allowsMovement": True})
+    return firma_
+
+
+def firma_plantilla():
+    """V29: la plantilla de la firma ya guardada con el alcance «Mi firma contable»."""
+    firma_ = firma()
+    llamar("POST", "/v1/accounting-chart/templates/from-current-catalog", {
+        "code": PLANTILLA_FIRMA, "name": "Catálogo Germiva Contadores",
+        "description": "Catálogo base de la firma para comercios y servicios", "scope": "firm"})
+    return firma_
+
+
+def firma_alta():
+    """V30: la plantilla de la firma es la por defecto de los clientes nuevos."""
+    firma_ = firma_plantilla()
+    llamar("PATCH", "/v1/accountants/firm/default-chart-template",
+           {"templateId": plantilla_id(PLANTILLA_FIRMA)})
+    return firma_
+
+
+def cliente_invitado(firma_):
+    """El Colmado: empresa propia del admin (catálogo compartido) que acepta a la firma."""
+    colmado = llamar("POST", "/v1/company", COLMADO)["id"]
+    entrar(firma_)
+    enlace = llamar("POST", "/v1/accountants/clients/invite",
+                    {"rnc": COLMADO["rnc"], "accessLevel": "FULL_ADMIN"})
+    entrar(colmado)
+    llamar("PATCH", f"/v1/accountants/my-accountant/{enlace['link']['id']}/accept", {"confirmFullAccess": True})
+    return colmado
+
+
+def firma_cambio():
+    """V31: un cliente dado de alta con el catálogo del sistema (sin asientos) y el
+    Colmado, invitado, que comparte la plantilla del sistema."""
+    firma_ = firma_alta()
+    llamar("POST", "/v1/accountants/clients/create-company", {
+        "rnc": "130555201", "legalName": "Ferretería Germiva del Cibao S.R.L.",
+        "tradeName": "Ferretería del Cibao", "ownerEmail": "admin@ferreteria.germiva.com",
+        "ownerName": "Rosa Germiva", "accessLevel": "FULL_ADMIN", "chartTemplateId": plantilla_id("GERMIVA_BASE")})
+    cliente_invitado(firma_)
+    entrar(empresa_id("130555201"))
+
+
+def firma_asistente():
+    """V32: el Colmado ya tiene su balance inicial contabilizado, con un banco que
+    él mismo creó con un código que la plantilla de la firma no trae."""
+    firma_ = firma_alta()
+    colmado = cliente_invitado(firma_)
+    banco = llamar("POST", "/v1/accounting-chart", {
+        "name": "Banco Popular", "code": "1.01.01.02.05", "type": "asset", "nature": "debit",
+        "level": 5, "parent": CUENTA_BANCOS, "allowsMovement": True})["id"]
+    llamar("POST", "/v1/journal-entry/opening-balance", {
+        "date": "2026-10-01", "description": "Balance inicial",
+        "details": [
+            {"accountId": banco, "description": "Saldo en Banco Popular", "debitAmount": 120000},
+            {"accountId": CAJA, "description": "Efectivo en caja", "debitAmount": 15000},
+            {"accountId": CAPITAL, "description": "Capital aportado", "creditAmount": 135000},
+        ]})
+    entrar(colmado)
+
+
 ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": autoposteo,
            "asientos": asientos, "reversar": reversar, "recurrentes": recurrentes, "mayor": mayor, "automaticos": automaticos, "catalogo": catalogo, "balance-inicial": balance_inicial, "bancos": bancos,
            "cierre-mensual": cierre_mensual, "cierre-anual": cierre_anual,
            "revaluacion": revaluacion, "informes": informes,
            "cierre-reversar": cierre_reversar, "periodos": periodos,
            "transferencias": transferencias, "conciliar": conciliar, "activos": activos,
-           "activos-baja": activos_baja, "centros-costo": centros_costo, "presupuestos": presupuestos}
+           "activos-baja": activos_baja, "centros-costo": centros_costo, "presupuestos": presupuestos,
+           "firma": firma, "firma-plantilla": firma_plantilla, "firma-alta": firma_alta,
+           "firma-cambio": firma_cambio, "firma-asistente": firma_asistente}
 
 if __name__ == "__main__":
     TOKEN = token()

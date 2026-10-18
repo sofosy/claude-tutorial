@@ -42,10 +42,10 @@ terminar; nunca aparece en un video.
 | 1 | Validar contra la copia de PROD lo unido en el lote 2 (migraciones, historial de transferencias, sugerencias de conciliación, centros de costo, búsqueda de períodos) y borrar la copia (`down.sh --all`) | Hecho |
 | 2 | Investigar en el código y el manual cómo funciona el catálogo de la firma para sus clientes (dónde se fija el predeterminado, qué pasa al crear un cliente, cambiar el catálogo de un cliente, plantilla propia visible solo a sus clientes) | Hecho |
 | 2b | Investigar multimoneda: monedas y tasa del día, diferencia cambiaria realizada y no realizada (configuración y cuentas), revaluación, estados en USD y en DOP; qué cubren ya los videos 01–27 | Hecho |
-| 2c | Investigar retenciones de ISR e ITBIS y la carta de retención: configuración, compras, ventas (las que nos hacen), asientos, 606/IR-17/IT-1, emisión de cartas; qué cubren ya los videos | En curso |
+| 2c | Investigar retenciones de ISR e ITBIS y la carta de retención: configuración, compras, ventas (las que nos hacen), asientos, 606/IR-17/IT-1, emisión de cartas; qué cubren ya los videos | Hecho |
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | En curso: bloque A subido (api#1569, web#1416); faltan multimoneda y retenciones |
-| 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` para la firma y sus clientes | Por hacer |
+| 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos |
 | 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | Por hacer |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | Por hacer |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Por hacer |
@@ -84,9 +84,24 @@ Orden lógico (el 06 queda como pieza de cierre entre el 37 y el 38):
 | 38 | La revaluación por dentro | Abrir el asiento de revaluación (CxC, CxP y bancos), el asiento «-POST» de lo cobrado después del corte y anular una revaluación | Por hacer |
 | 39 | Ver la operación en USD y en DOP | Qué muestra cada pantalla: la factura (USD y su equivalente), cartera y antigüedad por moneda, estado de cuenta del cliente y del proveedor por moneda, saldo del banco en USD, y los estados financieros siempre en DOP (tasa histórica + revaluación) | Por hacer |
 
-### Bloque C · Retenciones de ISR e ITBIS y la carta de retención
+### Bloque C · Retenciones de ISR e ITBIS y la carta de retención (borrador)
 
-Se define al terminar la tarea 2c.
+Qué ya existe: nada. Ningún video toca las retenciones ni la carta (el «demo-contadores»
+solo nombra el IR-17 de pasada) y ninguna semilla las crea. Los arreglos van en
+`fix/fiscal-retenciones`.
+
+| # | Video | Qué enseña | Estado |
+|---|-------|-----------|--------|
+| 40 | Las retenciones en Germiva | Las que practicas a tus proveedores y las que te hacen tus clientes; la consola «Retenciones e Impuestos»; «Tipos de Retención» y su historial de tasas (Ley 30-26: manda la fecha del comprobante) | Por hacer |
+| 41 | Las cuentas de las retenciones | Mapeo «Retención ITBIS/ISR por pagar» y «… a favor», cuentas por tipo, qué pasa si falta una | Por hacer |
+| 42 | Comprar a una persona física | Servicio de una PF (E31/B01): ITBIS 100 % e ISR 15 % sugeridos, el modal por línea, el neto a pagar y el asiento | Por hacer |
+| 43 | Comprar a una empresa y el Comprobante de Compras | ITBIS 30 % de servicios a una sociedad, los avisos de la matriz por comprobante, E41 a un informal con «Proponer retenciones» | Por hacer |
+| 44 | Corregir una retención | «Corregir retenciones» en una compra ya registrada, y las retenciones del Buzón | Por hacer |
+| 45 | Pagar y declarar | Pagar al neto; el 606 (fecha de pago, ITBIS retenido, tipo y monto de ISR); el IR-17 y la sección A del IT-1 | Por hacer |
+| 46 | Las retenciones que te hacen tus clientes | En la factura, al cobrar («Retenciones del cliente») o en «Retenciones recibidas»; el asiento «a favor»; el 607 y el IT-1; nunca registrar la misma dos veces | Por hacer |
+| 47 | Preparar la carta de retención | Firma, sello y membrete en Mi Empresa; «Firma y destinatario» | Por hacer |
+| 48 | Emitir las cartas de retención | Mes o año completo, estados de cada proveedor, vista previa, emitir y «Emitir pendientes»; recorrido del PDF | Por hacer |
+| 49 | Enviar, anular y reemitir | Envío por correo, anular con motivo, «desactualizada» → reemitir; el bloqueo al reversar un pago certificado | Por hacer |
 
 ## Validación contra PROD (lote 2) — 2026-10-18
 
@@ -154,6 +169,29 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | M11 | Una revaluación sin saldos queda «Posteada» y bloquea esa fecha; sin cuentas configuradas, falla aunque no haya saldos | Arreglar | Por hacer |
 | M12 | Diario y Mayor: las filas muestran el importe en USD y los totales en DOP, sin columna de moneda | Arreglar | Por hacer |
 | M13 | Sin asiento manual en USD en pantalla, sin anticipos de cliente en USD, sin compra de dólares (transferencia entre monedas) | REU (funcionalidad nueva) | Por hacer |
+
+- **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
+
+| # | Hallazgo | Decisión | Estado |
+|---|----------|----------|--------|
+| G1 | La carta dice que lo retenido se declaró en el IR-17/IT-1 del mes del PAGO, pero el IR-17 y el IT-1 de Germiva lo ponen en el mes de la FACTURA | REU (decide el contador) | Por hacer |
+| G2 | «Monto pagado» de la carta ignora ISC, otros impuestos y propina | Arreglar | Por hacer |
+| G3 | Reimprimir una carta no da el mismo documento: logo, membrete, firma y sello se leen al descargar | Arreglar | Por hacer |
+| G4 | El código de verificación no se puede consultar en ninguna parte | REU (funcionalidad nueva) | Por hacer |
+| G5 | Cambios que no marcan la carta (solo el tipo en «Corregir retenciones», cambiar la fecha del pago); la reemisión no es atómica | Arreglar | Por hacer |
+| G6 | Probable: las retenciones de una compra estándar caen también en «Retenciones recibidas» | Verificar y arreglar | Por hacer |
+| G7 | Sin período abierto, la retención de la compra se omite en silencio | Arreglar | Por hacer |
+| G8 | 606, casilla 17: el código 4 (rentas presuntas) nunca se usa | REU (decide el contador) | Por hacer |
+| G9 | Cualquier empresa puede editar o eliminar un tipo de retención del catálogo global | Arreglar | Por hacer |
+| G10 | «Firma y destinatario» visible con solo ver (guardar da 403); «Retenciones practicadas» pide un permiso distinto al del API | Arreglar | Por hacer |
+| G11 | La retención al cobrar acepta montos negativos | Arreglar | Por hacer |
+| G12 | Código sin uso: `retention-operations`, «Agente Fiscal», el formulario de retención por proveedor (sin pantalla), el viejo «generar certificado» | REU (limpieza) | Por hacer |
+| G13 | NG 02-2026 (sin ITBIS 30 % a quien factura con e-CF) no está aplicada; la matriz corre en modo aviso | REU (ya pendiente) | Por hacer |
+| G14 | Tú y usted en un mismo mensaje («Indique … Selecciona …») | Arreglar | Por hacer |
+| G15 | Inglés que llega al usuario («Invoice … not found», estado «applied») | Arreglar | Por hacer |
+| G16 | Textos erróneos («no puede ser negativa», «Retención sobre el ISR del documento», ejemplo 18 en Swagger) | Arreglar | Por hacer |
+| G17 | Nombres desfasados («Contabilidad › Fiscal», «Archivos de marca», «certificado» vs «carta», cita a DP-096) | Arreglar | Por hacer |
+| G18 | El manual fiscal no tiene la carta de retención; compras manda a buscarla allí | Arreglar | Por hacer |
 
 - **PROD, contexto:** 20 firmas aprobadas, ninguna con catálogo por defecto
   (`default_chart_template_id`); solo existen las 3 plantillas del sistema (ninguna
