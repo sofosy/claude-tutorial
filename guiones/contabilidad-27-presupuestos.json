@@ -153,7 +153,7 @@
       "rotulo": "Líneas del presupuesto",
       "ruta": "Contabilidad › Presupuestos › Nuevo",
       "texto_pantalla": "Cuenta · período · monto",
-      "narracion": "Ahora las líneas, una por cuenta y período. Pulso Agregar Línea. En la cuenta escribo diversos para buscarla. Aparece en la lista, y elijo Otros ingresos diversos. En el período abro la lista, y elijo el mes de septiembre. En el monto escribo veinte mil pesos, lo que se espera cobrar. Agrego otra línea, para el alquiler. En su cuenta escribo arrend para buscarla. Aparece en la lista, y elijo Arrendamientos. Ahora abro su período, y elijo también septiembre. Y el monto del alquiler: diez mil pesos. Abajo se ven los totales: ingresos y gastos presupuestados, y el resultado neto esperado. Guardo, y el aviso lo confirma.",
+      "narracion": "Ahora las líneas, una por cuenta y período. Pulso Agregar Línea. En la cuenta escribo diversos para buscarla. Aparece en la lista, y elijo Otros ingresos diversos. En el período abro la lista, y elijo el mes de septiembre. En el monto escribo veinte mil pesos, lo que se espera cobrar. Agrego otra línea, para el alquiler. En su cuenta escribo arrend para buscarla. Aparece en la lista, y elijo Arrendamientos. Ahora abro su período, y elijo también septiembre. Y el monto del alquiler: diez mil pesos. Abajo se ven los totales: ingresos y gastos presupuestados, y el resultado neto esperado. Guardo. Con el presupuesto guardado, el aviso lo confirma.",
       "acciones": [
         {
           "click": "button:has-text('Agregar Línea')",
@@ -216,10 +216,16 @@
           "al_decir": "Y el monto del alquiler"
         },
         {
-          "resaltar": ".budget-totals, .totals-section",
-          "durante_ms": 3500,
+          "resaltar": ".totals-row:has-text('Ingresos presupuestados')",
+          "durante_ms": 2500,
           "cursor": false,
           "al_decir": "Abajo se ven los totales"
+        },
+        {
+          "resaltar": ".totals-row:has-text('Resultado neto')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el resultado neto esperado"
         },
         {
           "click": "button:has-text('Guardar')",
@@ -265,7 +271,7 @@
       "texto_pantalla": "Ejecutado contra presupuestado",
       "navegar": "/accounting/budget-variance/resumen",
       "al_decir_navegar": "En Variaciones",
-      "narracion": "Para comparar con lo real voy a Variaciones. En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo ejecutado de cada línea. Lo pulso, y espero a que termine. Luego abro el análisis del presupuesto de septiembre. Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto; el alquiler, ocho mil, dos mil por debajo. Cada variación trae su porcentaje y su categoría.",
+      "narracion": "Para comparar con lo real voy a Variaciones. En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo ejecutado de cada línea. Lo pulso, y espero a que termine. Luego abro el análisis del presupuesto de septiembre, que compara cada línea con lo real. Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto; el alquiler, ocho mil, dos mil por debajo. Cada variación trae su porcentaje y su categoría.",
       "acciones": [
         {
           "click": "button:has-text('Recalcular')",

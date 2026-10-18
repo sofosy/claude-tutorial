@@ -1,0 +1,175 @@
+1
+00:00:03,000 --> 00:00:07,763
+Un presupuesto fija cuánto se espera ganar y gastar en cada cuenta,
+
+2
+00:00:07,597 --> 00:00:10,153
+para compararlo después con lo real.
+
+3
+00:00:10,070 --> 00:00:13,311
+Recojo el menú y pulso Nuevo Presupuesto.
+
+4
+00:00:13,147 --> 00:00:14,937
+El código lo identifica:
+
+5
+00:00:14,795 --> 00:00:18,908
+PRES-2026-09, que no se puede repetir.
+
+6
+00:00:18,835 --> 00:00:21,937
+Luego el nombre, para reconocerlo en la lista:
+
+7
+00:00:21,795 --> 00:00:23,621
+operativo de septiembre.
+
+8
+00:00:23,480 --> 00:00:27,487
+Con eso escrito, en Tipo de Presupuesto abro la lista,
+
+9
+00:00:27,323 --> 00:00:30,030
+y de las opciones elijo Mensual.
+
+10
+00:00:29,981 --> 00:00:31,830
+Las fechas del presupuesto:
+
+11
+00:00:31,722 --> 00:00:35,266
+desde el primero de septiembre de dos mil veintiséis.
+
+12
+00:00:35,146 --> 00:00:39,840
+Hasta el treinta de septiembre del mismo año, un solo mes.
+
+13
+00:00:39,722 --> 00:00:42,650
+Y el período contable al que pertenece:
+
+14
+00:00:42,496 --> 00:00:44,833
+escribo sept en el buscador.
+
+15
+00:00:44,725 --> 00:00:48,153
+Aparece en la lista, y elijo septiembre.
+
+16
+00:00:48,598 --> 00:00:52,165
+Ahora las líneas, una por cuenta y período.
+
+17
+00:00:51,988 --> 00:00:53,837
+Pulso Agregar Línea.
+
+18
+00:00:53,695 --> 00:00:56,588
+En la cuenta escribo diversos para buscarla.
+
+19
+00:00:56,481 --> 00:01:00,536
+Aparece en la lista, y elijo Otros ingresos diversos.
+
+20
+00:01:00,382 --> 00:01:04,322
+En el período abro la lista, y elijo el mes de septiembre.
+
+21
+00:01:04,144 --> 00:01:08,060
+En el monto escribo veinte mil pesos, lo que se espera cobrar.
+
+22
+00:01:07,929 --> 00:01:10,161
+Agrego otra línea, para el alquiler.
+
+23
+00:01:09,995 --> 00:01:12,889
+En su cuenta escribo arrend para buscarla.
+
+24
+00:01:12,735 --> 00:01:15,722
+Aparece en la lista, y elijo Arrendamientos.
+
+25
+00:01:15,580 --> 00:01:18,810
+Ahora abro su período, y elijo también septiembre.
+
+26
+00:01:18,656 --> 00:01:20,157
+Y el monto del alquiler:
+
+27
+00:01:20,039 --> 00:01:21,352
+diez mil pesos.
+
+28
+00:01:21,187 --> 00:01:22,920
+Abajo se ven los totales:
+
+29
+00:01:22,778 --> 00:01:27,193
+ingresos y gastos presupuestados, y el resultado neto esperado.
+
+30
+00:01:27,108 --> 00:01:27,774
+Guardo.
+
+31
+00:01:27,620 --> 00:01:30,919
+Con el presupuesto guardado, el aviso lo confirma.
+
+32
+00:01:31,364 --> 00:01:34,792
+El presupuesto queda en borrador hasta que se aprueba.
+
+33
+00:01:34,638 --> 00:01:39,854
+Pulso Aprobar, en la cabecera, y confirmo con Sí, Aprobar.
+
+34
+00:01:39,688 --> 00:01:43,604
+El aviso lo confirma, y las líneas quedan en solo lectura.
+
+35
+00:01:43,438 --> 00:01:47,539
+Para cambiarlas habría que reabrirlo y aprobarlo de nuevo.
+
+36
+00:01:47,982 --> 00:01:51,340
+Para comparar con lo real voy a Variaciones.
+
+37
+00:01:51,233 --> 00:01:57,319
+En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo
+
+38
+00:01:57,154 --> 00:01:59,095
+ejecutado de cada línea.
+
+39
+00:01:59,070 --> 00:02:01,580
+Lo pulso, y espero a que termine.
+
+40
+00:02:01,473 --> 00:02:04,703
+Luego abro el análisis del presupuesto de septiembre,
+
+41
+00:02:04,573 --> 00:02:07,141
+que compara cada línea con lo real.
+
+42
+00:02:07,057 --> 00:02:12,830
+Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto;
+
+43
+00:02:12,677 --> 00:02:16,036
+el alquiler, ocho mil, dos mil por debajo.
+
+44
+00:02:15,951 --> 00:02:19,250
+Cada variación trae su porcentaje y su categoría.
