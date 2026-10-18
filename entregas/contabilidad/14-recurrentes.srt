@@ -1,0 +1,147 @@
+1
+00:00:03,000 --> 00:00:06,764
+Recurrentes guarda plantillas de los asientos que se repiten:
+
+2
+00:00:06,611 --> 00:00:10,166
+el alquiler, el internet, una póliza de seguro.
+
+3
+00:00:10,035 --> 00:00:11,211
+Recojo el menú.
+
+4
+00:00:11,045 --> 00:00:14,658
+Cada plantilla dice su frecuencia, el día del mes,
+
+5
+00:00:14,574 --> 00:00:18,106
+la próxima generación y cuántos asientos lleva.
+
+6
+00:00:17,987 --> 00:00:22,193
+Cada madrugada el sistema genera el asiento de las que vencen,
+
+7
+00:00:22,028 --> 00:00:24,098
+y lo deja contabilizado.
+
+8
+00:00:24,528 --> 00:00:26,099
+Creo la del alquiler.
+
+9
+00:00:25,969 --> 00:00:27,829
+Pulso Nueva Plantilla.
+
+10
+00:00:27,687 --> 00:00:31,312
+Primero, el nombre con el que la vas a reconocer en la lista:
+
+11
+00:00:31,262 --> 00:00:33,204
+renta del local, por ejemplo.
+
+12
+00:00:33,073 --> 00:00:37,314
+Después, la descripción que llevará cada asiento que se genere;
+
+13
+00:00:37,161 --> 00:00:38,731
+escribo alquiler.
+
+14
+00:00:38,624 --> 00:00:44,222
+La frecuencia queda mensual, el día uno de cada mes, y la plantilla empieza hoy.
+
+15
+00:00:44,081 --> 00:00:48,298
+Mientras falte algo, el recuadro Falta para guardar dice qué es.
+
+16
+00:00:48,213 --> 00:00:49,899
+Ahora las dos líneas.
+
+17
+00:00:49,780 --> 00:00:53,034
+En la primera busco la cuenta de arrendamientos.
+
+18
+00:00:52,951 --> 00:00:56,238
+La elijo, y en su descripción escribo renta.
+
+19
+00:00:56,132 --> 00:01:00,731
+En el débito, que es el lado del gasto, anoto veinticinco mil pesos,
+
+20
+00:01:00,612 --> 00:01:02,276
+lo que se paga cada mes.
+
+21
+00:01:02,099 --> 00:01:06,630
+En la segunda línea busco la caja general, de donde sale el dinero.
+
+22
+00:01:06,546 --> 00:01:10,090
+La elijo también, y en su descripción escribo pago.
+
+23
+00:01:09,924 --> 00:01:14,560
+En el crédito, el lado del pago, anoto los mismos veinticinco mil.
+
+24
+00:01:14,475 --> 00:01:17,753
+Ya no falta nada, y la plantilla está balanceada.
+
+25
+00:01:17,680 --> 00:01:20,040
+Guardo, y el aviso lo confirma.
+
+26
+00:01:20,495 --> 00:01:24,178
+La plantilla del internet venció el primero de octubre.
+
+27
+00:01:24,024 --> 00:01:28,984
+Generar Ahora adelanta su asiento, después de confirmarlo con Generar.
+
+28
+00:01:28,819 --> 00:01:33,987
+El aviso da el número del asiento, que queda contabilizado como automático,
+
+29
+00:01:33,835 --> 00:01:37,042
+y la plantilla salta a su próximo vencimiento.
+
+30
+00:01:36,876 --> 00:01:42,614
+Procesar Pendientes hace lo mismo con todas las vencidas, y antes pide confirmación.
+
+31
+00:01:42,507 --> 00:01:46,121
+Confirmo, y el aviso dice que ya no queda ninguna.
+
+32
+00:01:45,979 --> 00:01:49,070
+Si alguna fallara, diría cuál y por qué.
+
+33
+00:01:49,520 --> 00:01:52,936
+Si un gasto se suspende, no borres la plantilla.
+
+34
+00:01:52,806 --> 00:01:54,376
+Pausar la detiene:
+
+35
+00:01:54,222 --> 00:01:57,917
+el aviso lo confirma, y la insignia pasa a Pausada.
+
+36
+00:01:57,833 --> 00:02:02,096
+Reactivar la vuelve a encender, y otro aviso lo confirma.
+
+37
+00:02:01,966 --> 00:02:06,299
+Eliminar la quita, pero los asientos que ya generó no se tocan.
