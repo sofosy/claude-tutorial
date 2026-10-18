@@ -1,0 +1,284 @@
+{
+  "titulo": "Contabilidad · Reabrir, cerrar y bloquear un período, y corregir lo que ya se cerró",
+  "descripcion": "Cómo reabrir en Germiva un período cerrado dejando el motivo, volver a cerrarlo con sus notas, bloquearlo para siempre y qué caminos hay para corregir algo de un período cerrado.",
+  "_comentario": "Video 20 de la serie Contabilidad. setup: preparar.sh periodos (Marzo 2026 y Enero 2025 cerrados en la instantánea).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/configuracion/periodos",
+    "esperar": "button:has-text('Generar Año Fiscal')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh periodos"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Reabrir un período cerrado con su motivo",
+    "Volver a cerrarlo con notas del cierre",
+    "Bloquear un período para siempre",
+    "Elegir cómo corregir algo de un período cerrado"
+  ],
+  "errores_comunes": [
+    "Bloquear un período que todavía puede necesitar ajustes: no se puede deshacer",
+    "Reabrir sin motivo: queda en la auditoría y lo exige la pantalla",
+    "Reabrir un mes de un año ya cerrado: primero se reversa el cierre del ejercicio"
+  ],
+  "pasos": [
+    {
+      "id": "01-reabrir",
+      "capitulo": "Reabrir",
+      "rotulo": "Reabrir Período",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "Cerrado → Abierto, con motivo",
+      "narracion": "Un período cerrado no admite asientos. Si hay que registrar algo que faltó, se reabre. Recojo el menú. Busco marzo de dos mil veintiséis, que está cerrado. Ya filtrado, en su fila pulso Reabrir Período. El sistema pide el motivo, porque la reapertura queda en la auditoría y en las notas del período. Escribo el motivo: falta un ajuste de depreciación. Revisado el texto, confirmo con Reabrir período. El aviso lo confirma, y el estado vuelve a Abierto.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "escribir": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "texto": "Marzo 2026"
+          },
+          "al_decir": "Busco marzo"
+        },
+        {
+          "presionar": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "tecla": "Enter"
+          }
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Marzo 2026') button[aria-label='Reabrir Período']",
+          "al_decir": "en su fila pulso Reabrir"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El sistema pide el motivo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "Falta ajuste de depreciación"
+          },
+          "al_decir": "Escribo el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Reabrir período')",
+          "al_decir": "confirmo con Reabrir período"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Marzo 2026') .gm-badge >> nth=-1",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el estado vuelve a Abierto"
+        }
+      ]
+    },
+    {
+      "id": "02-cerrar",
+      "capitulo": "Volver a cerrar",
+      "rotulo": "Cerrar Período",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "Notas del cierre (opcional)",
+      "narracion": "Registrado el ajuste, el período se vuelve a cerrar. En la misma fila pulso Cerrar Período. Aquí las notas son opcionales; dejo una para quien revise después. Con la nota escrita, confirmo con Cerrar período. El aviso confirma el cierre, y el estado vuelve a Cerrado. El sistema no cierra un período con asientos en borrador ni descuadrado.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('Marzo 2026') button[aria-label='Cerrar Período']",
+          "al_decir": "En la misma fila pulso"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Aquí las notas son opcionales"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "Ajuste registrado"
+          },
+          "al_decir": "dejo una para quien revise"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar período')",
+          "al_decir": "confirmo con Cerrar período"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El aviso confirma el cierre"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Marzo 2026') .gm-badge >> nth=-1",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el estado vuelve a Cerrado"
+        },
+        {
+          "resaltar": "th:has-text('Asientos')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El sistema no cierra un período"
+        }
+      ]
+    },
+    {
+      "id": "03-bloquear",
+      "capitulo": "Bloquear",
+      "rotulo": "Bloquear (Permanente)",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "Bloqueado: no se reabre nunca",
+      "narracion": "Cuando un período ya se declaró y no debe tocarse más, se bloquea. Busco enero de dos mil veinticinco en el buscador. Ya filtrado, en su fila pulso Bloquear, Permanente. La advertencia es clara: no se puede deshacer. Confirmo con Sí, Bloquear Permanentemente. El aviso lo confirma. Ya en la lista, el estado pasa a Bloqueado, y en sus acciones ya no se ofrece reabrir.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "no debe tocarse más"
+        },
+        {
+          "escribir": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "texto": "Enero 2025"
+          },
+          "al_decir": "Busco enero"
+        },
+        {
+          "presionar": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "tecla": "Enter"
+          }
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Enero 2025') button[aria-label='Bloquear (Permanente)']",
+          "al_decir": "en su fila pulso Bloquear"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "La advertencia es clara"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, Bloquear Permanentemente')",
+          "al_decir": "Confirmo con Sí"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Enero 2025') .gm-badge >> nth=-1",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el estado pasa a Bloqueado"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Enero 2025') td:last-child",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "ya no se ofrece reabrir"
+        }
+      ]
+    },
+    {
+      "id": "04-corregir",
+      "capitulo": "Corregir lo cerrado",
+      "rotulo": "Corregir un período cerrado",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "Reabrir · ajustar en el actual · reversar el cierre",
+      "narracion": "Para corregir algo de un período cerrado hay tres caminos. Si el período se puede reabrir, se reabre, se corrige y se vuelve a cerrar, como acabamos de hacer. Si ya se declaró, lo usual es un asiento de ajuste en el período abierto. Y si el año ya pasó por el cierre del ejercicio, primero se reversa ese cierre desde Cierre Contable: mientras esté completado, sus meses no se reabren.",
+      "acciones": [
+        {
+          "resaltar": "app-console-filter-bar",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "hay tres caminos"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Si ya se declaró"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Enero 2025') .gm-badge >> nth=-1",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Y si el año ya pasó"
+        }
+      ]
+    }
+  ]
+}

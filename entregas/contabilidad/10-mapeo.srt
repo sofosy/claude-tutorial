@@ -1,0 +1,159 @@
+1
+00:00:03,000 --> 00:00:06,370
+Cada operación del sistema se contabiliza sola:
+
+2
+00:00:06,297 --> 00:00:09,097
+una factura, un cobro, una nómina.
+
+3
+00:00:08,978 --> 00:00:15,134
+El Mapeo de Cuentas dice a qué cuenta del catálogo va cada parte de ese asiento,
+
+4
+00:00:15,028 --> 00:00:17,631
+y a cada parte la llamamos rol.
+
+5
+00:00:17,605 --> 00:00:18,954
+Recojo el menú.
+
+6
+00:00:18,823 --> 00:00:24,190
+Arriba, el contador avisa que hay un rol pendiente, y que bloquea su operación.
+
+7
+00:00:24,060 --> 00:00:27,278
+Debajo, la leyenda explica los estados.
+
+8
+00:00:27,137 --> 00:00:30,495
+De la plantilla, cuando la cuenta viene del catálogo.
+
+9
+00:00:30,353 --> 00:00:33,513
+Sobreescrito, cuando tu empresa eligió otra.
+
+10
+00:00:33,384 --> 00:00:38,425
+Propio, cuando la plantilla no trae ese rol y la cuenta la puso la empresa.
+
+11
+00:00:38,341 --> 00:00:43,928
+Y Pendiente, cuando falta la cuenta y esa operación no se puede contabilizar.
+
+12
+00:00:44,384 --> 00:00:48,938
+Con el botón Solo pendientes, la lista se queda con lo que falta.
+
+13
+00:00:48,773 --> 00:00:51,399
+Es el gasto por comisiones bancarias:
+
+14
+00:00:51,244 --> 00:00:56,066
+sin esa cuenta, el sistema no puede registrar los cargos que cobra el banco.
+
+15
+00:00:55,981 --> 00:01:00,036
+Abro su selector, que solo ofrece cuentas que admiten movimiento,
+
+16
+00:00:59,883 --> 00:01:01,941
+y elijo Comisiones bancarias.
+
+17
+00:01:01,798 --> 00:01:06,515
+Se guarda al instante, sin botón Guardar, y el aviso lo confirma.
+
+18
+00:01:06,373 --> 00:01:10,253
+Ahora el contador dice que todos los roles tienen cuenta.
+
+19
+00:01:10,123 --> 00:01:13,283
+Quito el filtro para volver a la lista completa.
+
+20
+00:01:13,724 --> 00:01:15,759
+Ahora, un cambio de verdad.
+
+21
+00:01:15,628 --> 00:01:21,354
+Esta empresa recibe las transferencias de sus clientes en el Banco BHD,
+
+22
+00:01:21,271 --> 00:01:23,643
+no en el primer banco de la plantilla.
+
+23
+00:01:23,616 --> 00:01:25,859
+Busco cobros por transferencia.
+
+24
+00:01:25,753 --> 00:01:30,503
+El rol Banco para Cobros por Transferencia apunta a Banco 1.
+
+25
+00:01:30,477 --> 00:01:35,368
+Abro el selector y elijo Banco BHD, cuenta corriente.
+
+26
+00:01:35,226 --> 00:01:39,003
+El aviso lo confirma, y el rol pasa a Sobreescrito,
+
+27
+00:01:38,883 --> 00:01:41,475
+ahora agrupado bajo su nueva cuenta.
+
+28
+00:01:41,368 --> 00:01:44,969
+El cambio vale para los asientos que se generen desde ahora;
+
+29
+00:01:44,851 --> 00:01:47,407
+los que ya existen no se tocan.
+
+30
+00:01:47,844 --> 00:01:51,203
+Al final están las cuentas por impuesto adicional,
+
+31
+00:01:51,072 --> 00:01:55,010
+como la contribución a las telecomunicaciones, el CDT,
+
+32
+00:01:54,868 --> 00:01:58,899
+o el impuesto selectivo al consumo, el ISC.
+
+33
+00:01:58,781 --> 00:02:01,906
+Busco impuestos adicionales para llegar rápido.
+
+34
+00:02:01,822 --> 00:02:06,980
+Arriba quedan los dos roles generales, el de compras y el de ventas.
+
+35
+00:02:06,954 --> 00:02:12,669
+Debajo, la tabla permite darle a cada impuesto su propia cuenta de compras y de
+
+36
+00:02:12,515 --> 00:02:13,413
+ventas.
+
+37
+00:02:13,421 --> 00:02:17,430
+En compras, la casilla dice Usa la cuenta general:
+
+38
+00:02:17,299 --> 00:02:20,727
+ese impuesto se asienta en el rol general de arriba.
+
+39
+00:02:20,643 --> 00:02:25,312
+Los selectivos de alcohol y tabaco están plegados en el botón de abajo.
+
+40
+00:02:25,182 --> 00:02:29,423
+Es opcional, y se guarda al elegir, igual que los roles.

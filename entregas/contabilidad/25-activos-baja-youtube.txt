@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Contabilidad · Activos fijos: dar de baja, vender y deshacer
+
+DESCRIPCIÓN
+============================================================
+Cómo dar de baja en Germiva un activo fijo con su pérdida, deshacer una baja, y vender un activo con su factura y la ganancia o pérdida de la venta.
+
+⏱️ CAPÍTULOS
+00:00  Dar de baja
+00:39  Deshacer la baja
+01:13  Vender
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dar de baja un activo con su pérdida
+• Deshacer una baja
+• Vender un activo con factura
+• Por qué una venta no se deshace sin anular la factura
+
+⚠️ ERRORES COMUNES
+• Eliminar un activo en uso pensando que se borra: se registra su baja
+• Deshacer una venta sin anular antes la factura
+• Vender con fecha anterior a la última depreciación
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:34
+
+TRANSCRIPCIÓN
+============================================================
+Cuando un activo se daña o se retira sin venderse, se da de baja. Recojo el menú. En el escritorio de recepción abro Más acciones y elijo Dar de baja. El aviso explica el orden: primero se contabiliza la depreciación pendiente hasta este mes, y luego la pérdida por el valor en libros que queda. Escribo el motivo: se dañó en la mudanza. El motivo queda guardado en las notas del activo. Con el motivo escrito, confirmo. El sistema contabiliza la depreciación y después la baja. El asiento de baja queda registrado; acepto.
+El estado ahora dice Dado de baja, y el valor en libros es cero. Si la baja fue un error, en Más acciones elijo Deshacer baja o venta. El diálogo explica que se revierte el asiento de la baja y pide el motivo: se reparó. Ese motivo queda registrado. Con el motivo escrito, confirmo. El sistema avisa que revirtió el asiento de la baja con su misma fecha, y acepto. El activo vuelve a estar activo con el valor en libros que tenía. Las cuotas de depreciación ya registradas se quedan.
+Vender un activo es otra cosa: se emite una factura. En el archivo metálico, en Más acciones elijo Vender. Arriba se ve su valor en libros. En Cliente escribo las primeras letras del nombre. Aparece la lista de clientes, y en la lista elijo Consumidor Final. El tipo de comprobante y el impuesto vienen propuestos. Escribo el precio sin ITBIS: cincuenta mil pesos. Con los datos completos, pulso Vender. En un solo paso, el sistema contabiliza la depreciación pendiente, emite la factura a crédito al cliente y registra la baja del activo. Cuando termina, lo confirma con el número de la factura y del asiento. La diferencia entre el precio y el valor en libros queda como pérdida o ganancia. Acepto.
+Una venta no se deshace igual que una baja. Si abro Más acciones y elijo Deshacer baja o venta, escribo un motivo, que el diálogo exige antes de continuar, y confirmo, entonces el sistema no lo permite mientras la factura siga viva: primero hay que anularla o emitir una nota de crédito desde Ventas, y después se deshace la venta. Así no queda una factura emitida por un activo que sigue en los libros.

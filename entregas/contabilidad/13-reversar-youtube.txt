@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Contabilidad · Reversar y corregir un asiento
+
+DESCRIPCIÓN
+============================================================
+Cómo corregir en Germiva un asiento ya contabilizado: reversarlo con su fecha original, qué queda en la lista, por qué la fecha del reverso debe caer en el período del original y qué hacer con un asiento que generó un documento.
+
+⏱️ CAPÍTULOS
+00:00  Reversar un asiento
+00:39  El original y el reverso
+01:01  Fechas y asientos automáticos
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Reversar un asiento contabilizado
+• Cómo quedan el original y el reverso
+• La regla de la fecha del reverso
+• Qué hacer con un asiento que generó un documento
+
+⚠️ ERRORES COMUNES
+• Querer editar un asiento contabilizado: se reversa
+• Reversar con la fecha de hoy un asiento de otro mes: afecta el mes equivocado
+• Reversar desde el diario un asiento de una factura: la cartera deja de cuadrar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:46
+
+TRANSCRIPCIÓN
+============================================================
+Un asiento contabilizado ya no se edita: se corrige con un reverso. El alquiler de octubre se registró por cincuenta y dos mil, y eran veinticinco mil. Recojo el menú y abro el asiento con Ver Detalles. Pulso Reversar. La fecha del reverso se propone igual a la del asiento original, para no tocar el mes corriente. Escribo el motivo: el monto correcto era veinticinco mil. Queda guardado en el asiento de reverso. Confirmo con Reversar Asiento. El aviso da el número del reverso, que empieza por REV, y el original queda marcado como reversado.
+En la lista quedan los dos. El original sigue contabilizado, con la insignia Reversado. Y el reverso, de tipo Reversión, invierte cada línea, así que el efecto neto es cero. Ahora se registra el asiento correcto, por veinticinco mil, como vimos en el video anterior. Ninguno de los dos se borra: el historial queda completo.
+Dos cuidados más. Abro el asiento automático del internet, que generó una plantilla recurrente. Al pulsar Reversar, el sistema avisa que este asiento salió de un documento: reversarlo aquí no anula el documento ni su cuenta por cobrar o por pagar, y lo correcto es corregirlo en su origen. Y la fecha: si pongo una de septiembre, fuera del período del original, el sistema no lo reversa y explica por qué. Lo pruebo. Escribo un motivo cualquiera, porque es obligatorio, y luego confirmo. Ahí está la explicación: el reverso hereda el período del asiento original, así que su fecha tiene que caer en él.

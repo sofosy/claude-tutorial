@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Asientos recurrentes
+
+DESCRIPCIÓN
+============================================================
+Cómo automatizar en Germiva los asientos que se repiten cada mes: crear una plantilla recurrente, generar el asiento de un vencimiento, procesar las pendientes y pausar o reactivar una plantilla.
+
+⏱️ CAPÍTULOS
+00:00  Plantillas recurrentes
+00:24  Crear una plantilla
+01:20  Generar y procesar
+01:49  Pausar y reactivar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es una plantilla recurrente
+• Crear una plantilla con sus líneas
+• Generar el asiento de un vencimiento y procesar las pendientes
+• Pausar y reactivar una plantilla
+
+⚠️ ERRORES COMUNES
+• Dejar la descripción de una línea vacía: la plantilla no se guarda
+• Esperar que se pongan al día varios meses atrasados: se genera un vencimiento por corrida
+• Borrar una plantilla para detenerla: se pausa
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:09
+
+TRANSCRIPCIÓN
+============================================================
+Recurrentes guarda plantillas de los asientos que se repiten: el alquiler, el internet, una póliza de seguro. Recojo el menú. Cada plantilla dice su frecuencia, el día del mes, la próxima generación y cuántos asientos lleva. Cada madrugada el sistema genera el asiento de las que vencen, y lo deja contabilizado.
+Creo la del alquiler. Pulso Nueva Plantilla. Primero, el nombre con el que la vas a reconocer en la lista: renta del local, por ejemplo. Después, la descripción que llevará cada asiento que se genere; escribo alquiler. La frecuencia queda mensual, el día uno de cada mes, y la plantilla empieza hoy. Mientras falte algo, el recuadro Falta para guardar dice qué es. Ahora las dos líneas. En la primera busco la cuenta de arrendamientos. La elijo, y en su descripción escribo renta. En el débito, que es el lado del gasto, anoto veinticinco mil pesos, lo que se paga cada mes. En la segunda línea busco la caja general, de donde sale el dinero. La elijo también, y en su descripción escribo pago. En el crédito, el lado del pago, anoto los mismos veinticinco mil. Ya no falta nada, y la plantilla está balanceada. Guardo, y el aviso lo confirma.
+La plantilla del internet venció el primero de octubre. Generar Ahora adelanta su asiento, después de confirmarlo con Generar. El aviso da el número del asiento, que queda contabilizado como automático, y la plantilla salta a su próximo vencimiento. Procesar Pendientes hace lo mismo con todas las vencidas, y antes pide confirmación. Confirmo, y el aviso dice que ya no queda ninguna. Si alguna fallara, diría cuál y por qué.
+Si un gasto se suspende, no borres la plantilla. Pausar la detiene: el aviso lo confirma, y la insignia pasa a Pausada. Reactivar la vuelve a encender, y otro aviso lo confirma. Eliminar la quita, pero los asientos que ya generó no se tocan.

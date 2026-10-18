@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Contabilidad · Presupuestos: crear, aprobar y comparar contra lo real
+
+DESCRIPCIÓN
+============================================================
+Cómo crear en Germiva un presupuesto por cuenta y mes, aprobarlo, y ver sus variaciones contra lo contabilizado: qué se pasó, qué quedó por debajo y por cuánto.
+
+⏱️ CAPÍTULOS
+00:00  Crear el presupuesto
+01:31  Aprobar
+01:47  Variaciones
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear un presupuesto por cuenta y período
+• Aprobarlo
+• Recalcular lo ejecutado
+• Leer las variaciones por cuenta
+
+⚠️ ERRORES COMUNES
+• Presupuestar una cuenta de grupo: solo se presupuestan cuentas de movimiento
+• Repetir la misma cuenta y período en dos líneas
+• Esperar lo ejecutado sin recalcular: el resumen no recalcula solo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:22
+
+TRANSCRIPCIÓN
+============================================================
+Un presupuesto fija cuánto se espera ganar y gastar en cada cuenta, para compararlo después con lo real. Recojo el menú y pulso Nuevo Presupuesto. El código lo identifica: PRES-2026-09, que no se puede repetir. Luego el nombre, para reconocerlo en la lista: operativo de septiembre. Con eso escrito, en Tipo de Presupuesto abro la lista, y de las opciones elijo Mensual. Las fechas del presupuesto: desde el primero de septiembre de dos mil veintiséis. Hasta el treinta de septiembre del mismo año, un solo mes. Y el período contable al que pertenece: escribo sept en el buscador. Aparece en la lista, y elijo septiembre.
+Ahora las líneas, una por cuenta y período. Pulso Agregar Línea. En la cuenta escribo diversos para buscarla. Aparece en la lista, y elijo Otros ingresos diversos. En el período abro la lista, y elijo el mes de septiembre. En el monto escribo veinte mil pesos, lo que se espera cobrar. Agrego otra línea, para el alquiler. En su cuenta escribo arrend para buscarla. Aparece en la lista, y elijo Arrendamientos. Ahora abro su período, y elijo también septiembre. Y el monto del alquiler: diez mil pesos. Abajo se ven los totales: ingresos y gastos presupuestados, y el resultado neto esperado. Guardo. Con el presupuesto guardado, el aviso lo confirma.
+El presupuesto queda en borrador hasta que se aprueba. Pulso Aprobar, en la cabecera, y confirmo con Sí, Aprobar. El aviso lo confirma, y las líneas quedan en solo lectura. Para cambiarlas habría que reabrirlo y aprobarlo de nuevo.
+Para comparar con lo real voy a Variaciones. En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo ejecutado de cada línea. Lo pulso, y espero a que termine. Luego abro el análisis del presupuesto de septiembre, que compara cada línea con lo real. Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto; el alquiler, ocho mil, dos mil por debajo. Cada variación trae su porcentaje y su categoría.

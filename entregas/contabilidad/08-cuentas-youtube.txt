@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Mantén tu catálogo: renombrar, ocultar, desactivar y clasificar
+
+DESCRIPCIÓN
+============================================================
+Cómo mantener el catálogo de cuentas en Germiva: darle a una cuenta de la plantilla un nombre propio para tu empresa, ocultar las que no usas, desactivar o eliminar una cuenta propia, y clasificar las cuentas para que los estados financieros salgan completos.
+
+⏱️ CAPÍTULOS
+00:00  Un nombre para tu empresa
+00:44  Ocultar las que no usas
+01:15  Desactivar y eliminar
+01:54  Clasificar para los estados financieros
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Ponerle a una cuenta de la plantilla el nombre que usa tu empresa
+• Ocultar de los selectores las cuentas que tu empresa no usa
+• Desactivar o eliminar una cuenta propia y saber cuándo el sistema no lo permite
+• Clasificar las cuentas para los estados financieros
+
+⚠️ ERRORES COMUNES
+• Querer editar una cuenta de la plantilla: se le cambia el nombre solo para tu empresa
+• Desactivar una cuenta con saldo: primero hay que reclasificar el saldo
+• Dejar cuentas sin clasificar: los estados financieros salen incompletos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:46
+
+TRANSCRIPCIÓN
+============================================================
+Las cuentas de la plantilla son de solo lectura, porque las comparten otras empresas. Pero puedes ponerles el nombre que usa la tuya. Recojo el menú. Busco banco uno en el buscador del catálogo. Aparece la cuenta del primer banco que trae la plantilla, debajo de Bancos. Al final de su fila, el botón Nombre para esta empresa abre un cuadro. Escribo Banco Popular, cuenta de nómina, que es como la llama la empresa. Ahora pulso Guardar, y el aviso lo confirma. Ese nombre lo ve solo tu empresa, en los selectores y en los reportes; el código y los saldos no cambian. Si borras el nombre, vuelve el de la plantilla.
+Si una cuenta de la plantilla no aplica a tu negocio, la puedes ocultar para que no aparezca al registrar. Busco arrendamientos, una cuenta que esta empresa no usa porque el local es propio. Con el botón del ojo tachado, Ocultar en los selectores, la cuenta queda marcada como Oculta; ya no se ofrece al hacer asientos ni compras. El sistema no deja ocultar una cuenta que tiene saldo o que usa el mapeo contable: primero hay que moverla ahí. El mismo botón la vuelve a mostrar.
+Las cuentas propias de tu empresa sí se editan. Busco caja chica: es una caja de la sucursal de Santiago que ya no se usa. Abro su ficha con el lápiz. Arriba está su estado, activa, y a la derecha el botón Acciones. En Acciones elijo Desactivar Cuenta, y confirmo con Sí, Continuar. La cuenta queda inactiva: conserva su historia, pero ya no se usa. El sistema solo deja desactivar una cuenta con saldo cero; si tiene saldo, primero se reclasifica con un asiento. Y si una cuenta propia nunca tuvo movimientos, también se puede eliminar, desde el mismo menú o con el zafacón de su fila.
+Por último, la clasificación. Cada cuenta tiene que decir en qué parte de los estados financieros va. En Configuración Contable está la tarjeta Clasificación para Estados Financieros. Arriba dice cuántas cuentas faltan: hay una sin clasificar, porque se creó sin cuenta padre. Es la de gastos de representación. En la columna Sección del estado financiero abro la lista y elijo Gastos de administración. Se guarda al instante, y la lista queda vacía, porque solo mostraba las pendientes. Apago el filtro Solo sin clasificar para verlas todas. La casilla Monetaria es para cuentas de balance en moneda extranjera, que se revalúan al cierre. Y las cuentas con candado son de la plantilla: su clasificación ya viene hecha.

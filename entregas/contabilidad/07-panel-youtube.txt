@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Contabilidad · El Panel de Contabilidad y cómo viaja un hecho
+
+DESCRIPCIÓN
+============================================================
+Qué muestra el Panel de Contabilidad de Germiva y cómo leerlo cada día: el período abierto, los asientos en borrador, las cuentas por cobrar vencidas, las conciliaciones abiertas y la Situación financiera; y cómo una venta o un pago llega solo al asiento, al Mayor y a los reportes.
+
+⏱️ CAPÍTULOS
+00:00  Los indicadores
+00:54  Vencidas y borradores
+01:22  Cómo viaja un hecho
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer los cuatro indicadores del Panel y saber a dónde lleva cada uno
+• Encontrar los borradores y las facturas vencidas que piden atención
+• Entender cómo un documento llega al asiento, al Mayor y a los reportes
+• Usar la Situación financiera para ver ingresos, gastos y utilidad del período
+
+⚠️ ERRORES COMUNES
+• Dejar asientos en borrador: no cuentan en los reportes y bloquean el cierre del mes
+• Registrar a mano lo que ya contabiliza el sistema solo: queda duplicado
+• Mirar los reportes sin revisar antes el Panel: ahí aparecen los pendientes
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:10
+
+TRANSCRIPCIÓN
+============================================================
+El Panel de Contabilidad es la primera pantalla del menú Contabilidad: dice qué está pendiente hoy. Recojo el menú para verlo completo. Arriba están los accesos directos: crear un asiento, las cuentas por cobrar y por pagar, el Libro Mayor y los informes financieros. Debajo, cuatro indicadores. El primero es el período abierto, octubre, con los días que faltan para su cierre. El segundo cuenta los asientos en borrador: hay uno, y se marca en amarillo porque un borrador no cuenta en los reportes hasta que se contabiliza. El tercero son las cuentas por cobrar vencidas, en rojo: una factura que pasó su fecha y nadie ha gestionado. Y el cuarto, las conciliaciones bancarias que siguen abiertas. Cada indicador es un enlace: lleva directo a la pantalla donde se resuelve.
+Debajo de los indicadores hay dos bandejas con el detalle. Vencidas más atrasadas muestra las facturas que más tiempo llevan sin cobrarse: esta es de la Ferretería del Este, con los días de atraso y el monto. Borradores recientes muestra los últimos asientos que alguien dejó sin contabilizar: aquí está el pago del alquiler de octubre. Pulso sobre él y el sistema abre el asiento, para revisarlo y contabilizarlo. Con eso el Panel queda al día.
+Falta lo más importante. Ahora vuelvo a la portada del Panel para ver cómo se llena. En el sistema, casi nada se registra a mano. Cuando facturas, cobras, compras o pagas la nómina, ese documento genera su asiento contable solo, con las cuentas que configuraste en el mapeo. El asiento entra al Libro Mayor, y del Mayor salen los reportes. Por eso, abajo, la Situación financiera ya muestra los ingresos del mes, trescientos veinte mil; los gastos, ciento cuarenta y cinco mil; y la utilidad. El alquiler en borrador todavía no aparece: entrará cuando se contabilice. Tu trabajo como contador es revisar, completar lo que el sistema no puede saber, y cerrar los períodos.

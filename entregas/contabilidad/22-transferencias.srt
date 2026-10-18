@@ -1,0 +1,123 @@
+1
+00:00:03,000 --> 00:00:06,033
+En Banca están las cuentas bancarias de la empresa.
+
+2
+00:00:05,948 --> 00:00:07,205
+Recojo el menú.
+
+3
+00:00:07,075 --> 00:00:11,570
+Cada cuenta trae su banco, el número, el tipo y la moneda.
+
+4
+00:00:11,429 --> 00:00:14,670
+El saldo sale del Mayor de su cuenta contable:
+
+5
+00:00:14,528 --> 00:00:18,094
+lo contabilizado, no lo que se escribió al crearla.
+
+6
+00:00:17,942 --> 00:00:21,577
+Por eso cada cuenta bancaria necesita su cuenta contable,
+
+7
+00:00:21,506 --> 00:00:24,330
+la que aparece en esta columna.
+
+8
+00:00:24,763 --> 00:00:32,266
+Para pasar dinero del BHD al Popular, en la fila del BHD pulso Transferir fondos.
+
+9
+00:00:32,125 --> 00:00:35,795
+Arriba se ve la cuenta de origen y su saldo disponible.
+
+10
+00:00:35,643 --> 00:00:37,503
+Abro la lista de destino:
+
+11
+00:00:37,396 --> 00:00:42,564
+solo ofrece cuentas activas, en la misma moneda y con cuenta contable.
+
+12
+00:00:42,423 --> 00:00:43,957
+Elijo el Popular.
+
+13
+00:00:43,816 --> 00:00:45,259
+Escribo el monto:
+
+14
+00:00:45,152 --> 00:00:49,356
+quince mil pesos, que no puede pasar del saldo disponible.
+
+15
+00:00:49,215 --> 00:00:52,503
+La referencia es el número de confirmación del banco.
+
+16
+00:00:52,384 --> 00:00:54,221
+Y pulso Transferir.
+
+17
+00:00:54,114 --> 00:00:59,236
+El aviso confirma que los saldos se movieron y que el asiento quedó registrado:
+
+18
+00:00:59,153 --> 00:01:03,231
+débito al banco de destino y crédito al de origen.
+
+19
+00:01:03,664 --> 00:01:05,629
+Los saldos ya cambiaron:
+
+20
+00:01:05,498 --> 00:01:11,260
+el BHD baja a ochenta y cinco mil y el Popular sube a sesenta y cinco mil.
+
+21
+00:01:11,176 --> 00:01:16,123
+La transferencia queda numerada y con su asiento automático en el Diario.
+
+22
+00:01:16,573 --> 00:01:20,941
+Si una transferencia se hizo por error, no se compensa con otra:
+
+23
+00:01:20,834 --> 00:01:21,742
+se anula.
+
+24
+00:01:21,600 --> 00:01:26,944
+Arriba, Transferencias abre el historial, con el número, la fecha, las cuentas,
+
+25
+00:01:26,790 --> 00:01:28,593
+el monto y el estado.
+
+26
+00:01:28,427 --> 00:01:30,322
+En la fila pulso Anular.
+
+27
+00:01:30,203 --> 00:01:32,146
+El sistema pide el motivo:
+
+28
+00:01:32,073 --> 00:01:34,525
+se transfirió a la cuenta equivocada.
+
+29
+00:01:34,360 --> 00:01:36,859
+Confirmo con Anular transferencia.
+
+30
+00:01:36,694 --> 00:01:40,493
+El aviso lo confirma, y el estado pasa a Anulada.
+
+31
+00:01:40,352 --> 00:01:43,756
+Cierro, y los dos saldos vuelven a como estaban.

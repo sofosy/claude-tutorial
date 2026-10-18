@@ -1,0 +1,319 @@
+{
+ "titulo": "Contabilidad · Mantén tu catálogo: renombrar, ocultar, desactivar y clasificar",
+ "descripcion": "Cómo mantener el catálogo de cuentas en Germiva: darle a una cuenta de la plantilla un nombre propio para tu empresa, ocultar las que no usas, desactivar o eliminar una cuenta propia, y clasificar las cuentas para que los estados financieros salgan completos.",
+ "_comentario": "Video 8 de la serie Contabilidad. setup: preparar.sh cuentas (propias: 1.01.01.02.02 Banco BHD, 1.01.01.01.03 Caja chica sucursal Santiago, 9 Gastos de representación sin padre ni sección).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/configuracion/plan-cuentas",
+  "esperar": "button:has-text('Crear Cuenta')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh cuentas"
+ },
+ "portada_s": 8,
+ "aprenderas": [
+  "Ponerle a una cuenta de la plantilla el nombre que usa tu empresa",
+  "Ocultar de los selectores las cuentas que tu empresa no usa",
+  "Desactivar o eliminar una cuenta propia y saber cuándo el sistema no lo permite",
+  "Clasificar las cuentas para los estados financieros"
+ ],
+ "errores_comunes": [
+  "Querer editar una cuenta de la plantilla: se le cambia el nombre solo para tu empresa",
+  "Desactivar una cuenta con saldo: primero hay que reclasificar el saldo",
+  "Dejar cuentas sin clasificar: los estados financieros salen incompletos"
+ ],
+ "pasos": [
+  {
+   "id": "01-nombre",
+   "capitulo": "Un nombre para tu empresa",
+   "rotulo": "Nombre para tu empresa",
+   "ruta": "Contabilidad › Configuración Contable › Plan de Cuentas",
+   "texto_pantalla": "Nombre para esta empresa · sin tocar la plantilla",
+   "narracion": "Las cuentas de la plantilla son de solo lectura, porque las comparten otras empresas. Pero puedes ponerles el nombre que usa la tuya. Recojo el menú. Busco banco uno en el buscador del catálogo. Aparece la cuenta del primer banco que trae la plantilla, debajo de Bancos. Al final de su fila, el botón Nombre para esta empresa abre un cuadro. Escribo Banco Popular, cuenta de nómina, que es como la llama la empresa. Ahora pulso Guardar, y el aviso lo confirma. Ese nombre lo ve solo tu empresa, en los selectores y en los reportes; el código y los saldos no cambian. Si borras el nombre, vuelve el de la plantilla.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder='Código, nombre o descripción...']",
+      "texto": "Banco 1"
+     },
+     "al_decir": "Busco banco uno"
+    },
+    {
+     "resaltar": ".tree-node-content:has(.node-code:text-is('1.01.01.02.01'))",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "primer banco que trae"
+    },
+    {
+     "click": ".tree-node-content:has(.node-code:text-is('1.01.01.02.01')) button:has(mat-icon:text-is('drive_file_rename_outline'))",
+     "al_decir": "Nombre para esta empresa"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input",
+      "texto": "Banco Popular - Cuenta de nómina"
+     },
+     "al_decir": "escribo Banco Popular"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Guardar')",
+     "al_decir": "Ahora pulso Guardar"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "el aviso lo confirma"
+    },
+    {
+     "resaltar": ".tree-node-content:has(.node-code:text-is('1.01.01.02.01'))",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "lo ve solo tu empresa"
+    }
+   ]
+  },
+  {
+   "id": "02-ocultar",
+   "capitulo": "Ocultar las que no usas",
+   "rotulo": "Ocultar cuentas",
+   "ruta": "Contabilidad › Plan de Cuentas",
+   "texto_pantalla": "Ocultar en los selectores de esta empresa",
+   "narracion": "Si una cuenta de la plantilla no aplica a tu negocio, la puedes ocultar para que no aparezca al registrar. Busco arrendamientos, una cuenta que esta empresa no usa porque el local es propio. Con el botón del ojo tachado, Ocultar en los selectores, la cuenta queda marcada como Oculta; ya no se ofrece al hacer asientos ni compras. El sistema no deja ocultar una cuenta que tiene saldo o que usa el mapeo contable: primero hay que moverla ahí. El mismo botón la vuelve a mostrar.",
+   "acciones": [
+    {
+     "resaltar": "text=Banco Popular - Cuenta de nómina",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "no aplica"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder='Código, nombre o descripción...']",
+      "texto": "Arrendamientos"
+     },
+     "al_decir": "Busco arrendamientos"
+    },
+    {
+     "click": ".tree-node-content:has(.node-code:text-is('6.03.02')) button:has(mat-icon:text-is('visibility_off'))",
+     "al_decir": "ojo tachado"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "queda marcada"
+    },
+    {
+     "resaltar": ".tree-node-content:has(.node-code:text-is('6.03.02')) >> text=Oculta",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "ya no se ofrece"
+    },
+    {
+     "resaltar": ".tree-node-content:has(.node-code:text-is('6.03.02')) button:has(mat-icon:text-is('visibility'))",
+     "durante_ms": 4000,
+     "al_decir": "El mismo botón"
+    }
+   ]
+  },
+  {
+   "id": "03-desactivar",
+   "capitulo": "Desactivar y eliminar",
+   "rotulo": "Desactivar o eliminar",
+   "ruta": "Contabilidad › Plan de Cuentas › Cuenta",
+   "texto_pantalla": "Acciones · Desactivar Cuenta · Eliminar",
+   "narracion": "Las cuentas propias de tu empresa sí se editan. Busco caja chica: es una caja de la sucursal de Santiago que ya no se usa. Abro su ficha con el lápiz. Arriba está su estado, activa, y a la derecha el botón Acciones. En Acciones elijo Desactivar Cuenta, y confirmo con Sí, Continuar. La cuenta queda inactiva: conserva su historia, pero ya no se usa. El sistema solo deja desactivar una cuenta con saldo cero; si tiene saldo, primero se reclasifica con un asiento. Y si una cuenta propia nunca tuvo movimientos, también se puede eliminar, desde el mismo menú o con el zafacón de su fila.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[placeholder='Código, nombre o descripción...']",
+      "texto": "Caja chica"
+     },
+     "al_decir": "Busco caja chica"
+    },
+    {
+     "click": ".tree-node-content:has(.node-code:text-is('1.01.01.01.03')) button:has(mat-icon:text-is('edit'))",
+     "al_decir": "con el lápiz"
+    },
+    {
+     "resaltar": "text=ACTIVA >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Arriba está su estado"
+    },
+    {
+     "click": "button:has-text('Acciones')",
+     "al_decir": "En Acciones"
+    },
+    {
+     "click": "button[mat-menu-item]:has-text('Desactivar Cuenta')",
+     "al_decir": "Desactivar Cuenta"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, Continuar')",
+     "al_decir": "Sí, Continuar"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "queda inactiva"
+    },
+    {
+     "resaltar": "text=INACTIVA",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "conserva su historia"
+    },
+    {
+     "click": "button:has-text('Acciones')",
+     "al_decir": "nunca tuvo movimientos"
+    },
+    {
+     "resaltar": "button[mat-menu-item]:has-text('Eliminar Cuenta')",
+     "durante_ms": 3500,
+     "al_decir": "desde el mismo menú"
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     }
+    }
+   ]
+  },
+  {
+   "id": "04-clasificar",
+   "capitulo": "Clasificar para los estados financieros",
+   "rotulo": "Clasificar cuentas",
+   "ruta": "Contabilidad › Configuración Contable › Clasificación",
+   "texto_pantalla": "Clasificación para Estados Financieros",
+   "navegar": "/accounting/configuracion/clasificacion",
+   "al_decir_navegar": "tarjeta Clasificación",
+   "narracion": "Por último, la clasificación. Cada cuenta tiene que decir en qué parte de los estados financieros va. En Configuración Contable está la tarjeta Clasificación para Estados Financieros. Arriba dice cuántas cuentas faltan: hay una sin clasificar, porque se creó sin cuenta padre. Es la de gastos de representación. En la columna Sección del estado financiero abro la lista y elijo Gastos de administración. Se guarda al instante, y la lista queda vacía, porque solo mostraba las pendientes. Apago el filtro Solo sin clasificar para verlas todas. La casilla Monetaria es para cuentas de balance en moneda extranjera, que se revalúan al cierre. Y las cuentas con candado son de la plantilla: su clasificación ya viene hecha.",
+   "acciones": [
+    {
+     "resaltar": "text=Clasificación del catálogo",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Arriba dice"
+    },
+    {
+     "resaltar": "tr.mat-mdc-row:has-text('Gastos de representación')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "gastos de representación"
+    },
+    {
+     "click": "tr.mat-mdc-row:has-text('Gastos de representación') mat-select",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('Gastos de administración')",
+     "al_decir": "elijo Gastos"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Se guarda al instante"
+    },
+    {
+     "resaltar": "text=Clasificación del catálogo",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "queda vacía"
+    },
+    {
+     "click": "button.pending-toggle",
+     "al_decir": "Apago el filtro"
+    },
+    {
+     "resaltar": "th:has-text('Monetaria')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "La casilla Monetaria"
+    },
+    {
+     "resaltar": "tr.mat-mdc-row:has(mat-icon:text-is('lock')) >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "con candado"
+    }
+   ]
+  }
+ ]
+}

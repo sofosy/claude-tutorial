@@ -1,0 +1,401 @@
+{
+  "titulo": "Contabilidad · Conciliación bancaria: importar el estado de cuenta y conciliar",
+  "descripcion": "Cómo conciliar en Germiva una cuenta bancaria: crear la conciliación, importar el estado de cuenta en CSV con su mapeo de columnas, conciliar con las sugerencias las partidas que ya están en libros, reclasificar una comisión y completar para que comisiones e intereses se contabilicen solos.",
+  "_comentario": "Video 23 de la serie Contabilidad. setup: preparar.sh conciliar (Banco BHD: apertura 100,000 el 1/9, depósito 25,000 el 10/9 y alquiler 8,000 el 20/9 contabilizados; libros 117,000 al 30/9). Extracto: seeds/contabilidad/estado-bhd-septiembre.csv (cierra en 116,720).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/banca/conciliaciones",
+    "esperar": "button:has-text('Nueva Conciliación')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh conciliar"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Crear la conciliación con los saldos del extracto",
+    "Importar el estado de cuenta y mapear sus columnas",
+    "Conciliar partidas y reclasificar una comisión",
+    "Completar para contabilizar comisiones e intereses"
+  ],
+  "errores_comunes": [
+    "Marcar conciliada una comisión que solo está en el banco: se registra al completar",
+    "Mapear mal la columna del monto o el formato de fecha",
+    "Completar con diferencia: el sistema exige que sea cero"
+  ],
+  "pasos": [
+    {
+      "id": "01-nueva",
+      "capitulo": "Nueva conciliación",
+      "rotulo": "Nueva Conciliación",
+      "ruta": "Contabilidad › Banca › Conciliaciones",
+      "texto_pantalla": "Cuenta · período · saldos del extracto",
+      "narracion": "Conciliar es comparar el estado de cuenta del banco con lo registrado en libros. Recojo el menú y pulso Nueva Conciliación. Le pongo una referencia para encontrarla después: CONC-BHD-SEP. Luego, en Cuenta Bancaria, escribo BHD para buscarla. Aparece la cuenta del BHD, y la elijo. El período contable ya viene con el actual. Las fechas del extracto: del primero de septiembre de dos mil veintiséis. Hasta el treinta de septiembre del mismo año. Copio los saldos del extracto: el inicial, cien mil pesos, que debe coincidir con el cierre del mes anterior. Y el saldo final del extracto, ciento dieciséis mil setecientos veinte. El saldo en libros lo calcula el sistema desde el Mayor. Guardo.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button:has-text('Nueva Conciliación')",
+          "al_decir": "pulso Nueva Conciliación"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='referenceNumber']",
+            "texto": "CONC-BHD-SEP"
+          },
+          "al_decir": "Le pongo una referencia"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:text-is('Cuenta Bancaria')) input",
+            "texto": "BHD"
+          },
+          "al_decir": "escribo BHD para buscarla"
+        },
+        {
+          "click": "mat-option:has-text('9600123456')",
+          "al_decir": "y la elijo"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:text-is('Período Contable'))",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El período contable ya viene"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='statementStartDate']",
+            "texto": "01/09/2026"
+          },
+          "al_decir": "Las fechas del extracto"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='statementEndDate']",
+            "texto": "30/09/2026"
+          },
+          "al_decir": "Hasta el treinta"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='openingBalance']",
+            "texto": "100000"
+          },
+          "al_decir": "el inicial, cien mil"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='closingBalance']",
+            "texto": "116720"
+          },
+          "al_decir": "Y el saldo final del extracto"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        }
+      ]
+    },
+    {
+      "id": "02-importar",
+      "capitulo": "Importar el estado de cuenta",
+      "rotulo": "Importar estado de cuenta",
+      "ruta": "Contabilidad › Banca › Conciliación",
+      "texto_pantalla": "Archivo → columnas → revisar e importar",
+      "narracion": "Con la conciliación creada, pulso Importar estado de cuenta. El asistente tiene tres pasos: archivo, columnas y revisión. Subo el archivo que exporté del banco, en CSV. El sistema detectó sus columnas, así que paso al siguiente paso. Ahora le digo qué trae cada columna. La fecha está en la primera columna del archivo. La descripción del movimiento está en la segunda columna. La referencia del banco viene en la tercera. Y el monto, que viene con signo, está en la cuarta. Con eso, pulso Previsualizar y reviso las líneas antes de importarlas. Si le pongo nombre, el mapeo se guarda como plantilla para el próximo mes. Importo: el asistente confirma las cinco líneas importadas, y pulso Listo.",
+      "acciones": [
+        {
+          "click": "button:has-text('Importar estado de cuenta')",
+          "al_decir": "pulso Importar estado de cuenta"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El asistente tiene tres pasos"
+        },
+        {
+          "subir": {
+            "sel": "mat-dialog-container input[type=file]",
+            "ancla": "mat-dialog-container button:has-text('Seleccionar archivo')",
+            "archivo": "seeds/contabilidad/estado-bhd-septiembre.csv"
+          },
+          "al_decir": "Subo el archivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Siguiente')",
+          "al_decir": "así que paso al siguiente"
+        },
+        {
+          "click": "mat-select[formcontrolname='dateColumn']",
+          "al_decir": "La fecha está"
+        },
+        {
+          "click": "mat-option:has-text('0: Fecha')",
+          "al_decir": "en la primera columna del archivo"
+        },
+        {
+          "click": "mat-select[formcontrolname='descriptionColumn']",
+          "al_decir": "La descripción del movimiento"
+        },
+        {
+          "click": "mat-option:has-text('1: Descripcion')",
+          "al_decir": "está en la segunda columna"
+        },
+        {
+          "click": "mat-select[formcontrolname='referenceColumn']",
+          "al_decir": "La referencia del banco"
+        },
+        {
+          "click": "mat-option:has-text('2: Referencia')",
+          "al_decir": "viene en la tercera"
+        },
+        {
+          "click": "mat-select[formcontrolname='amountColumn']",
+          "al_decir": "Y el monto"
+        },
+        {
+          "click": "mat-option:has-text('3: Monto')",
+          "al_decir": "está en la cuarta"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Previsualizar')",
+          "al_decir": "pulso Previsualizar"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[placeholder*='Banco Popular']",
+            "texto": "BHD - CSV"
+          },
+          "al_decir": "Si le pongo nombre"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Importar')",
+          "al_decir": "Importo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "el asistente confirma"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Listo')",
+          "al_decir": "y pulso Listo"
+        }
+      ]
+    },
+    {
+      "id": "03-conciliar",
+      "capitulo": "Conciliar partidas",
+      "rotulo": "Conciliar con sugerencias",
+      "ruta": "Contabilidad › Banca › Conciliación",
+      "texto_pantalla": "Sugerencias → el asiento del banco → Usar",
+      "narracion": "Las cinco partidas llegan como Falta en libros, y la diferencia es de diecisiete mil. El depósito y el pago del alquiler ya están registrados en libros, cada uno con un asiento. En el depósito pulso la bombilla de sugerencias. El sistema encontró el asiento del depósito, con el mismo monto y la misma fecha. Pulso Usar, y la partida queda Conciliada. Con el pago del alquiler hago lo mismo: abro sus sugerencias, aparece el asiento del alquiler con su monto, y lo uso. La diferencia queda en cero. Las comisiones y los intereses solo están en el banco: no se concilian, porque se registran al completar.",
+      "acciones": [
+        {
+          "resaltar": ".total-item:has-text('Diferencia')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "la diferencia es de diecisiete mil"
+        },
+        {
+          "resaltar": "tr:has-text('DEPOSITO') td >> nth=1",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "ya están registrados en libros"
+        },
+        {
+          "click": "tr:has-text('DEPOSITO') button:has(mat-icon:text-is('lightbulb'))",
+          "al_decir": "pulso la bombilla"
+        },
+        {
+          "resaltar": "mat-dialog-container .candidate >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "encontró el asiento del depósito"
+        },
+        {
+          "click": "mat-dialog-container .candidate >> nth=0 >> button:has-text('Usar')",
+          "al_decir": "Pulso Usar"
+        },
+        {
+          "resaltar": "tr:has-text('DEPOSITO') mat-chip",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "queda Conciliada"
+        },
+        {
+          "click": "tr:has-text('PAGO ALQUILER') button:has(mat-icon:text-is('lightbulb'))",
+          "al_decir": "abro sus sugerencias"
+        },
+        {
+          "resaltar": "mat-dialog-container .candidate >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "aparece el asiento del alquiler"
+        },
+        {
+          "click": "mat-dialog-container .candidate >> nth=0 >> button:has-text('Usar')",
+          "al_decir": "y lo uso"
+        },
+        {
+          "resaltar": ".total-item:has-text('Diferencia')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "La diferencia queda en cero"
+        },
+        {
+          "resaltar": "tr:has-text('COMISION MANEJO') td >> nth=1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Las comisiones y los intereses"
+        }
+      ]
+    },
+    {
+      "id": "04-reclasificar",
+      "capitulo": "Conciliar partidas",
+      "rotulo": "Reclasificar",
+      "ruta": "Contabilidad › Banca › Conciliación",
+      "texto_pantalla": "Tipo: comisión, interés, depósito, retiro",
+      "narracion": "El sistema clasifica cada partida por su descripción. El servicio de banca en línea quedó como retiro, pero es una comisión del banco. Pulso su tipo y elijo Comisión bancaria. Así se contabilizará con las demás comisiones.",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('COMISION MANEJO') button.type-chip",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El sistema clasifica cada partida"
+        },
+        {
+          "resaltar": "tr:has-text('SERVICIO BANCA') button.type-chip",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "quedó como retiro"
+        },
+        {
+          "click": "tr:has-text('SERVICIO BANCA') button.type-chip",
+          "al_decir": "Pulso su tipo"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Comisión bancaria')",
+          "al_decir": "y elijo Comisión bancaria"
+        },
+        {
+          "resaltar": "tr:has-text('SERVICIO BANCA')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Así se contabilizará"
+        }
+      ]
+    },
+    {
+      "id": "05-completar",
+      "capitulo": "Completar",
+      "rotulo": "Completar",
+      "ruta": "Contabilidad › Banca › Conciliación",
+      "texto_pantalla": "Contabiliza comisiones e intereses",
+      "narracion": "Con la diferencia en cero, pulso Completar. La confirmación explica que se contabilizan las comisiones e intereses y la conciliación queda cerrada. Confirmo. El aviso confirma que los ajustes quedaron contabilizados: un asiento de comisiones por cuatrocientos pesos y uno de intereses por ciento veinte, con fecha del corte. La conciliación queda Completada, y el saldo del banco en libros es igual al del extracto.",
+      "acciones": [
+        {
+          "click": "button:has-text('Completar')",
+          "al_decir": "pulso Completar"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "La confirmación explica"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Completar')",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El aviso confirma"
+        },
+        {
+          "resaltar": "tr:has-text('COMISION MANEJO')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "un asiento de comisiones"
+        },
+        {
+          "resaltar": "tr:has-text('INTERESES GANADOS')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "uno de intereses"
+        },
+        {
+          "resaltar": ".total-item:has-text('Balance Conciliado')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el saldo del banco en libros"
+        }
+      ]
+    }
+  ]
+}

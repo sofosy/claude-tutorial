@@ -1,0 +1,248 @@
+{
+  "titulo": "Contabilidad · Libro Mayor: movimientos, saldos y estado de cuenta",
+  "descripcion": "Cómo consultar el Libro Mayor en Germiva: los movimientos del mes, filtrar una cuenta y abrir el asiento de cada movimiento, ver el saldo y el estado de cuenta, exportar y regenerar el Mayor de un período.",
+  "_comentario": "Video 16 de la serie Contabilidad. setup: preparar.sh mayor (balance inicial con banco y CxC, ventas, sueldos, alquiler y oficina en octubre 2026).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/registro/mayor",
+    "esperar": "button:has-text('Consultar')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh mayor"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer los movimientos del Libro Mayor",
+    "Filtrar una cuenta y abrir el asiento de un movimiento",
+    "Ver el saldo y el estado de cuenta",
+    "Exportar y regenerar el Mayor de un período"
+  ],
+  "errores_comunes": [
+    "Buscar un borrador en el Mayor: solo entran los asientos contabilizados",
+    "Olvidar las fechas: la consulta las necesita",
+    "Regenerar un período cerrado: solo se regeneran los abiertos"
+  ],
+  "pasos": [
+    {
+      "id": "01-consulta",
+      "capitulo": "Movimientos del mes",
+      "rotulo": "Libro Mayor",
+      "ruta": "Contabilidad › Diario y Mayor › Libro Mayor",
+      "texto_pantalla": "Fecha · asiento · débito · crédito · saldo",
+      "narracion": "El Libro Mayor muestra los movimientos de las cuentas, asiento por asiento. Al abrirlo ya consulta el mes en curso. Recojo el menú. Cada movimiento trae su fecha, el asiento que lo originó, la descripción y la cuenta, el débito, el crédito y el saldo. Al pie están los totales del período completo, no solo de esta página. Solo entran los asientos contabilizados: los borradores no aparecen.",
+      "acciones": [
+        {
+          "resaltar": "input[formcontrolname='startDate']",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "ya consulta el mes en curso"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "table.movements-table tbody tr >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Cada movimiento trae"
+        },
+        {
+          "resaltar": ".totals-row",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Al pie están los totales"
+        },
+        {
+          "resaltar": "table.movements-table tbody tr >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Solo entran los asientos contabilizados"
+        }
+      ]
+    },
+    {
+      "id": "02-cuenta",
+      "capitulo": "Una cuenta",
+      "rotulo": "Filtrar una cuenta",
+      "ruta": "Contabilidad › Diario y Mayor › Libro Mayor",
+      "texto_pantalla": "Cuenta Contable · Consultar · enlace al asiento",
+      "narracion": "Para ver una sola cuenta, la busco en Cuenta Contable. Escribo caja general, el sistema busca mientras escribo, y cuando aparece en la lista, la elijo. Pulso Consultar. Ahora la tabla muestra solo sus movimientos, con el saldo acumulado línea a línea. El número de cada asiento es un enlace que lo abre en modo ver, para revisar de dónde salió el movimiento.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "app-autocomplete:has(mat-label:has-text('Cuenta Contable')) input",
+            "texto": "Caja gen"
+          },
+          "al_decir": "Escribo caja general"
+        },
+        {
+          "click": "mat-option:has-text('1.01.01.01.02')",
+          "al_decir": "cuando aparece en la lista"
+        },
+        {
+          "click": "button:has-text('Consultar')",
+          "al_decir": "Pulso Consultar"
+        },
+        {
+          "resaltar": "table.movements-table tbody tr >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "solo sus movimientos"
+        },
+        {
+          "resaltar": "a.journal-entry-link >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El número de cada asiento"
+        }
+      ]
+    },
+    {
+      "id": "03-saldo",
+      "capitulo": "Saldo y estado de cuenta",
+      "rotulo": "Saldo y estado de cuenta",
+      "ruta": "Contabilidad › Diario y Mayor › Libro Mayor",
+      "texto_pantalla": "Saldo a una fecha · estado de cuenta en PDF",
+      "narracion": "Con una cuenta elegida aparecen dos botones más. Saldo da el saldo de la cuenta a una fecha: pulso Consultar, y ahí está el resultado. Cierro esa ventana. El otro botón, Estado de Cuenta, da los movimientos de un rango, con el saldo inicial y el final. Consulto, y se puede exportar en PDF para enviarlo o archivarlo. Lo cierro.",
+      "acciones": [
+        {
+          "click": "button:has-text('Saldo')",
+          "al_decir": "Saldo da el saldo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Consultar')",
+          "al_decir": "pulso Consultar"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "y ahí está el resultado"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "Cierro esa ventana"
+        },
+        {
+          "click": "button:has-text('Estado de Cuenta')",
+          "al_decir": "El otro botón"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Consultar')",
+          "al_decir": "Consulto"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Exportar PDF')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "se puede exportar en PDF"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "o archivarlo. Lo cierro"
+        }
+      ]
+    },
+    {
+      "id": "04-generar",
+      "capitulo": "Exportar y regenerar",
+      "rotulo": "Exportar y regenerar",
+      "ruta": "Contabilidad › Diario y Mayor › Libro Mayor",
+      "texto_pantalla": "Exportar CSV · Generar Libro Mayor (períodos abiertos)",
+      "narracion": "Exportar, al pie, descarga los movimientos en una hoja de cálculo. Y Generar Libro Mayor reprocesa los asientos contabilizados de un período abierto: es mantenimiento, y no duplica nada. En el período escribo octubre, espero la lista, y lo elijo. Ahora pulso el botón Generar. El aviso confirma que el Mayor de octubre quedó al día.",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Exportar')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Exportar, al pie"
+        },
+        {
+          "click": "button:has-text('Generar Libro Mayor')",
+          "al_decir": "Generar Libro Mayor reprocesa"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container app-autocomplete input",
+            "texto": "Oct"
+          },
+          "al_decir": "En el período escribo"
+        },
+        {
+          "click": "mat-option:has-text('Octubre 2026')",
+          "al_decir": "y lo elijo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar')",
+          "al_decir": "pulso el botón Generar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El aviso confirma"
+        }
+      ]
+    }
+  ]
+}

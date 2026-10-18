@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Contabilidad · Reversar el cierre del ejercicio
+
+DESCRIPCIÓN
+============================================================
+Cómo reversar en Germiva un cierre del ejercicio ya completado: el historial de cierres, qué hace el reverso con los asientos de cierre y el período, y cómo dejar el período actual donde corresponde.
+
+⏱️ CAPÍTULOS
+00:00  Historial de cierres
+00:28  Reversar
+00:59  El período
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el historial de cierres
+• Reversar un cierre completado
+• Qué pasa con los asientos de cierre y el período
+• Devolver el período actual al mes de trabajo
+
+⚠️ ERRORES COMUNES
+• Intentar reabrir un mes de un año cerrado sin reversar antes el cierre
+• Olvidar el período actual: el reverso lo deja en el período reabierto
+• Reversar para corregir algo menor que cabe en un ajuste del período abierto
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:26
+
+TRANSCRIPCIÓN
+============================================================
+Cierre Contable guarda el historial de los cierres del ejercicio. Recojo el menú. Este es el cierre de dos mil veinticinco: su número, el período que cerró, diciembre, el estado Completado y el resultado neto, una utilidad de noventa y seis mil pesos. Al cerrar, el sistema llevó los ingresos y gastos del año a la utilidad del ejercicio y la trasladó a ganancias acumuladas.
+Si después del cierre aparece algo que corregir en ese año, el cierre se reversa. En la fila del cierre, abro las acciones y elijo Reversar. La confirmación explica que el período se reabre y los saldos vuelven a como estaban antes del cierre. Confirmo. El sistema revierte los tres asientos de cierre con asientos de anulación y reabre diciembre. El aviso lo confirma; lo cierro. El cierre queda como Reversado, y ya no ofrece acciones.
+Veamos cómo quedó el período. En Períodos Contables, con el buscador de arriba, busco diciembre de dos mil veinticinco. Ya filtrado, se ve que está abierto otra vez, y el reverso lo marcó como período actual, para que la corrección se haga ahí. Cuando termines de corregir, se cierra el año de nuevo desde Cierre Contable, y el período actual vuelve al mes de trabajo con Establecer como Actual.

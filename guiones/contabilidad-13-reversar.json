@@ -1,0 +1,224 @@
+{
+  "titulo": "Contabilidad · Reversar y corregir un asiento",
+  "descripcion": "Cómo corregir en Germiva un asiento ya contabilizado: reversarlo con su fecha original, qué queda en la lista, por qué la fecha del reverso debe caer en el período del original y qué hacer con un asiento que generó un documento.",
+  "_comentario": "Video 13 de la serie Contabilidad. setup: preparar.sh reversar (alquiler de octubre contabilizado por 52,000 en vez de 25,000, y un asiento automático de la recurrente «Servicio de internet»).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/registro/asientos",
+    "esperar": "button:has-text('Crear Asiento')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh reversar"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Reversar un asiento contabilizado",
+    "Cómo quedan el original y el reverso",
+    "La regla de la fecha del reverso",
+    "Qué hacer con un asiento que generó un documento"
+  ],
+  "errores_comunes": [
+    "Querer editar un asiento contabilizado: se reversa",
+    "Reversar con la fecha de hoy un asiento de otro mes: afecta el mes equivocado",
+    "Reversar desde el diario un asiento de una factura: la cartera deja de cuadrar"
+  ],
+  "pasos": [
+    {
+      "id": "01-reversar",
+      "capitulo": "Reversar un asiento",
+      "rotulo": "Reversar",
+      "ruta": "Contabilidad › Diario y Mayor › Asiento",
+      "texto_pantalla": "Reverso con la fecha del original",
+      "narracion": "Un asiento contabilizado ya no se edita: se corrige con un reverso. El alquiler de octubre se registró por cincuenta y dos mil, y eran veinticinco mil. Recojo el menú y abro el asiento con Ver Detalles. Pulso Reversar. La fecha del reverso se propone igual a la del asiento original, para no tocar el mes corriente. Escribo el motivo: el monto correcto era veinticinco mil. Queda guardado en el asiento de reverso. Confirmo con Reversar Asiento. El aviso da el número del reverso, que empieza por REV, y el original queda marcado como reversado.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('alquiler de octubre') td >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El alquiler de octubre"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('alquiler de octubre') button[aria-label='Ver Detalles']",
+          "al_decir": "abro el asiento"
+        },
+        {
+          "click": "button:has-text('Reversar')",
+          "al_decir": "Pulso Reversar"
+        },
+        {
+          "resaltar": "mat-dialog-container input[formcontrolname='reversalDate']",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "La fecha del reverso"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='description']",
+            "texto": "El monto correcto era 25,000"
+          },
+          "al_decir": "Escribo el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Reversar Asiento')",
+          "al_decir": "Confirmo con Reversar Asiento"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El aviso da el número"
+        },
+        {
+          "resaltar": "text=REVERSADO >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "queda marcado como reversado"
+        }
+      ]
+    },
+    {
+      "id": "02-lista",
+      "capitulo": "El original y el reverso",
+      "rotulo": "Cómo queda",
+      "ruta": "Contabilidad › Diario y Mayor › Asientos Contables",
+      "navegar": "/accounting/registro/asientos",
+      "texto_pantalla": "Original Reversado · reverso tipo Reversión",
+      "narracion": "En la lista quedan los dos. El original sigue contabilizado, con la insignia Reversado. Y el reverso, de tipo Reversión, invierte cada línea, así que el efecto neto es cero. Ahora se registra el asiento correcto, por veinticinco mil, como vimos en el video anterior. Ninguno de los dos se borra: el historial queda completo.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Pago de alquiler'):not(:has-text('REV-ASI')) td >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El original sigue"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('REV-') td >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Y el reverso"
+        },
+        {
+          "resaltar": "button:has-text('Crear Asiento')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "se registra el asiento correcto"
+        }
+      ]
+    },
+    {
+      "id": "03-automatico",
+      "capitulo": "Fechas y asientos automáticos",
+      "rotulo": "Cuidado al reversar",
+      "ruta": "Contabilidad › Diario y Mayor › Asiento",
+      "texto_pantalla": "Mismo período del original · lo automático se corrige en su documento",
+      "narracion": "Dos cuidados más. Abro el asiento automático del internet, que generó una plantilla recurrente. Al pulsar Reversar, el sistema avisa que este asiento salió de un documento: reversarlo aquí no anula el documento ni su cuenta por cobrar o por pagar, y lo correcto es corregirlo en su origen. Y la fecha: si pongo una de septiembre, fuera del período del original, el sistema no lo reversa y explica por qué. Lo pruebo. Escribo un motivo cualquiera, porque es obligatorio, y luego confirmo. Ahí está la explicación: el reverso hereda el período del asiento original, así que su fecha tiene que caer en él.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('Internet de la oficina') button[aria-label='Ver Detalles']",
+          "al_decir": "Abro el asiento automático"
+        },
+        {
+          "click": "button:has-text('Reversar')",
+          "al_decir": "Al pulsar Reversar"
+        },
+        {
+          "resaltar": "mat-dialog-container .reverse-form__warn",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "el sistema avisa"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='reversalDate']",
+            "texto": "15/9/2026"
+          },
+          "al_decir": "si pongo una de septiembre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='description']",
+            "texto": "Prueba"
+          },
+          "al_decir": "Escribo un motivo cualquiera"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Reversar Asiento')",
+          "al_decir": "confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Ahí está la explicación"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Entendido')",
+          "al_decir": "hereda el período"
+        }
+      ]
+    }
+  ]
+}

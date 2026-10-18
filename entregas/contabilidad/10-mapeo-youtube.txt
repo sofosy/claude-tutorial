@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Mapeo de Cuentas: a qué cuenta va cada operación
+
+DESCRIPCIÓN
+============================================================
+Cómo funciona el Mapeo de Cuentas en Germiva: qué es un rol, cómo resolver un rol pendiente que bloquea la contabilización, cómo apuntar una operación a otra cuenta (por ejemplo, los cobros por transferencia a tu banco real) y cómo darle cuenta propia a cada impuesto adicional.
+
+⏱️ CAPÍTULOS
+00:00  Qué es el mapeo
+00:44  Resolver un pendiente
+01:13  Cambiar la cuenta
+01:47  Impuestos adicionales
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es un rol y qué dice cada estado del mapeo
+• Resolver un rol pendiente para que su operación se pueda contabilizar
+• Apuntar una operación a otra cuenta de tu catálogo
+• Darle a cada impuesto adicional su propia cuenta
+
+⚠️ ERRORES COMUNES
+• Dejar un rol pendiente: la operación que lo usa no se puede contabilizar
+• Esperar que el cambio corrija asientos viejos: solo aplica a los que se generen desde ahora
+• Buscar una cuenta agrupadora en el selector: solo se ofrecen cuentas que admiten movimiento
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:32
+
+TRANSCRIPCIÓN
+============================================================
+Cada operación del sistema se contabiliza sola: una factura, un cobro, una nómina. El Mapeo de Cuentas dice a qué cuenta del catálogo va cada parte de ese asiento, y a cada parte la llamamos rol. Recojo el menú. Arriba, el contador avisa que hay un rol pendiente, y que bloquea su operación. Debajo, la leyenda explica los estados. De la plantilla, cuando la cuenta viene del catálogo. Sobreescrito, cuando tu empresa eligió otra. Propio, cuando la plantilla no trae ese rol y la cuenta la puso la empresa. Y Pendiente, cuando falta la cuenta y esa operación no se puede contabilizar.
+Con el botón Solo pendientes, la lista se queda con lo que falta. Es el gasto por comisiones bancarias: sin esa cuenta, el sistema no puede registrar los cargos que cobra el banco. Abro su selector, que solo ofrece cuentas que admiten movimiento, y elijo Comisiones bancarias. Se guarda al instante, sin botón Guardar, y el aviso lo confirma. Ahora el contador dice que todos los roles tienen cuenta. Quito el filtro para volver a la lista completa.
+Ahora, un cambio de verdad. Esta empresa recibe las transferencias de sus clientes en el Banco BHD, no en el primer banco de la plantilla. Busco cobros por transferencia. El rol Banco para Cobros por Transferencia apunta a Banco 1. Abro el selector y elijo Banco BHD, cuenta corriente. El aviso lo confirma, y el rol pasa a Sobreescrito, ahora agrupado bajo su nueva cuenta. El cambio vale para los asientos que se generen desde ahora; los que ya existen no se tocan.
+Al final están las cuentas por impuesto adicional, como la contribución a las telecomunicaciones, el CDT, o el impuesto selectivo al consumo, el ISC. Busco impuestos adicionales para llegar rápido. Arriba quedan los dos roles generales, el de compras y el de ventas. Debajo, la tabla permite darle a cada impuesto su propia cuenta de compras y de ventas. En compras, la casilla dice Usa la cuenta general: ese impuesto se asienta en el rol general de arriba. Los selectivos de alcohol y tabaco están plegados en el botón de abajo. Es opcional, y se guarda al elegir, igual que los roles.

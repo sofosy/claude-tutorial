@@ -1,0 +1,95 @@
+1
+00:00:03,000 --> 00:00:07,240
+Cierre Contable guarda el historial de los cierres del ejercicio.
+
+2
+00:00:07,155 --> 00:00:08,458
+Recojo el menú.
+
+3
+00:00:08,341 --> 00:00:11,338
+Este es el cierre de dos mil veinticinco:
+
+4
+00:00:11,208 --> 00:00:14,379
+su número, el período que cerró, diciembre,
+
+5
+00:00:14,227 --> 00:00:20,359
+el estado Completado y el resultado neto, una utilidad de noventa y seis mil pesos.
+
+6
+00:00:20,228 --> 00:00:25,224
+Al cerrar, el sistema llevó los ingresos y gastos del año a la utilidad del
+
+7
+00:00:25,071 --> 00:00:28,556
+ejercicio y la trasladó a ganancias acumuladas.
+
+8
+00:00:28,996 --> 00:00:34,653
+Si después del cierre aparece algo que corregir en ese año, el cierre se reversa.
+
+9
+00:00:34,500 --> 00:00:38,612
+En la fila del cierre, abro las acciones y elijo Reversar.
+
+10
+00:00:38,506 --> 00:00:43,418
+La confirmación explica que el período se reabre y los saldos vuelven a como
+
+11
+00:00:43,265 --> 00:00:45,242
+estaban antes del cierre.
+
+12
+00:00:45,158 --> 00:00:46,275
+Confirmo.
+
+13
+00:00:46,167 --> 00:00:51,754
+El sistema revierte los tres asientos de cierre con asientos de anulación y reabre
+
+14
+00:00:51,612 --> 00:00:52,509
+diciembre.
+
+15
+00:00:52,356 --> 00:00:54,018
+El aviso lo confirma;
+
+16
+00:00:53,935 --> 00:00:54,843
+lo cierro.
+
+17
+00:00:54,713 --> 00:00:59,103
+El cierre queda como Reversado, y ya no ofrece acciones.
+
+18
+00:00:59,537 --> 00:01:01,699
+Veamos cómo quedó el período.
+
+19
+00:01:01,534 --> 00:01:04,625
+En Períodos Contables, con el buscador de arriba,
+
+20
+00:01:04,483 --> 00:01:07,134
+busco diciembre de dos mil veinticinco.
+
+21
+00:01:06,991 --> 00:01:09,745
+Ya filtrado, se ve que está abierto otra vez,
+
+22
+00:01:09,603 --> 00:01:14,215
+y el reverso lo marcó como período actual, para que la corrección se haga ahí.
+
+23
+00:01:14,061 --> 00:01:18,673
+Cuando termines de corregir, se cierra el año de nuevo desde Cierre Contable,
+
+24
+00:01:18,566 --> 00:01:23,189
+y el período actual vuelve al mes de trabajo con Establecer como Actual.

@@ -1,0 +1,187 @@
+1
+00:00:03,000 --> 00:00:08,667
+Informes Financieros reúne los estados de la empresa en una sola pantalla.
+
+2
+00:00:08,641 --> 00:00:09,806
+Recojo el menú.
+
+3
+00:00:09,652 --> 00:00:13,056
+Arriba, Tipo de informe elige el estado;
+
+4
+00:00:12,914 --> 00:00:15,298
+estoy en la Balanza de Comprobación.
+
+5
+00:00:15,214 --> 00:00:17,317
+Debajo van los parámetros:
+
+6
+00:00:17,198 --> 00:00:20,405
+un período contable o un rango de fechas.
+
+7
+00:00:20,240 --> 00:00:24,469
+Escribo la fecha inicial, primero de enero de dos mil veintiséis.
+
+8
+00:00:24,385 --> 00:00:28,230
+Luego la fecha final, treinta de septiembre del mismo año.
+
+9
+00:00:28,054 --> 00:00:31,157
+Con las dos fechas puestas, pulso Generar.
+
+10
+00:00:31,623 --> 00:00:33,878
+La insignia dice Cuadrada:
+
+11
+00:00:33,759 --> 00:00:37,291
+los débitos y los créditos del Mayor son iguales.
+
+12
+00:00:37,173 --> 00:00:42,760
+Por cada cuenta se ve el saldo inicial, los movimientos del rango y el saldo final,
+
+13
+00:00:42,618 --> 00:00:44,570
+en débito o en crédito.
+
+14
+00:00:44,439 --> 00:00:49,283
+Las cuentas de control suman a sus auxiliares, y al pie están los totales.
+
+15
+00:00:49,118 --> 00:00:51,141
+Si dejas solo la fecha final,
+
+16
+00:00:51,034 --> 00:00:54,763
+la balanza cuenta desde el primero de enero de ese año.
+
+17
+00:00:55,216 --> 00:00:58,365
+El siguiente estado es el Balance General.
+
+18
+00:00:58,258 --> 00:01:02,021
+Lo elijo en Tipo de informe, y las fechas se conservan:
+
+19
+00:01:01,938 --> 00:01:05,609
+aquí manda la fecha de corte, el treinta de septiembre.
+
+20
+00:01:05,444 --> 00:01:06,248
+Genero.
+
+21
+00:01:06,164 --> 00:01:10,265
+Activos, pasivos y patrimonio, cada uno con su total.
+
+22
+00:01:10,146 --> 00:01:14,329
+En patrimonio aparecen dos filas que el sistema calcula:
+
+23
+00:01:14,174 --> 00:01:18,311
+el resultado de ejercicios anteriores que todavía no se cerró,
+
+24
+00:01:18,180 --> 00:01:20,111
+y la utilidad del período.
+
+25
+00:01:19,968 --> 00:01:21,852
+Abajo, la ecuación:
+
+26
+00:01:21,745 --> 00:01:28,122
+el total de activos es igual a pasivos más patrimonio, y la insignia dice Cuadrado.
+
+27
+00:01:28,003 --> 00:01:32,939
+Con Incluir comparativo se agregan la columna anterior y la variación.
+
+28
+00:01:33,384 --> 00:01:38,507
+Para ver cómo se llegó a esa utilidad está el Estado de Resultados.
+
+29
+00:01:38,376 --> 00:01:40,550
+Lo elijo, con el mismo rango:
+
+30
+00:01:40,408 --> 00:01:43,360
+del primero de enero al treinta de septiembre.
+
+31
+00:01:43,229 --> 00:01:44,045
+Genero.
+
+32
+00:01:43,926 --> 00:01:49,582
+Arriba los ingresos, luego los gastos y costos, y la utilidad antes del impuesto.
+
+33
+00:01:49,429 --> 00:01:55,492
+Como todavía no se ha contabilizado el impuesto sobre la renta, el ISR,
+
+34
+00:01:55,362 --> 00:02:00,565
+el sistema muestra un estimado al veintisiete por ciento, solo como referencia:
+
+35
+00:02:00,447 --> 00:02:05,650
+la utilidad neta solo descuenta el ISR contabilizado.
+
+36
+00:02:05,520 --> 00:02:09,412
+Desde Provisionar ISR se registra en el cierre.
+
+37
+00:02:09,270 --> 00:02:14,219
+La utilidad neta del período es de doscientos treinta y ocho mil pesos.
+
+38
+00:02:14,662 --> 00:02:18,867
+El último estado de este grupo son las Razones Financieras.
+
+39
+00:02:18,737 --> 00:02:22,339
+Las elijo en el selector, busco la opción en la lista y,
+
+40
+00:02:22,174 --> 00:02:24,928
+con el mismo rango de fechas, genero.
+
+41
+00:02:24,774 --> 00:02:30,245
+Las razones se agrupan en liquidez, rentabilidad, solvencia y eficiencia,
+
+42
+00:02:30,114 --> 00:02:32,207
+cada una con su explicación.
+
+43
+00:02:32,053 --> 00:02:35,202
+Cada tarjeta trae su fórmula y su lectura:
+
+44
+00:02:35,095 --> 00:02:37,815
+aquí la liquidez sale excelente.
+
+45
+00:02:37,673 --> 00:02:40,729
+Si alguna razón saliera del rango recomendado,
+
+46
+00:02:40,610 --> 00:02:43,364
+el sistema lo advertiría con una alerta.
+
+47
+00:02:43,245 --> 00:02:48,670
+Cualquier informe se descarga a Excel o se imprime con el membrete de la empresa.

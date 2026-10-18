@@ -1,0 +1,217 @@
+{
+  "titulo": "Contabilidad · Reversar el cierre del ejercicio",
+  "descripcion": "Cómo reversar en Germiva un cierre del ejercicio ya completado: el historial de cierres, qué hace el reverso con los asientos de cierre y el período, y cómo dejar el período actual donde corresponde.",
+  "_comentario": "Video 21 de la serie Contabilidad. setup: preparar.sh cierre-reversar (operación 2025 y 2026, mayo-noviembre 2025 cerrados y el cierre CIE-2025-0001 completado sobre diciembre 2025).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/cierre/cierres",
+    "esperar": "tr.mat-mdc-row"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh cierre-reversar"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer el historial de cierres",
+    "Reversar un cierre completado",
+    "Qué pasa con los asientos de cierre y el período",
+    "Devolver el período actual al mes de trabajo"
+  ],
+  "errores_comunes": [
+    "Intentar reabrir un mes de un año cerrado sin reversar antes el cierre",
+    "Olvidar el período actual: el reverso lo deja en el período reabierto",
+    "Reversar para corregir algo menor que cabe en un ajuste del período abierto"
+  ],
+  "pasos": [
+    {
+      "id": "01-historial",
+      "capitulo": "Historial de cierres",
+      "rotulo": "Cierre Contable",
+      "ruta": "Contabilidad › Cierre Contable y Estados Financieros › Cierre Contable",
+      "texto_pantalla": "Número · período · estado · resultado",
+      "narracion": "Cierre Contable guarda el historial de los cierres del ejercicio. Recojo el menú. Este es el cierre de dos mil veinticinco: su número, el período que cerró, diciembre, el estado Completado y el resultado neto, una utilidad de noventa y seis mil pesos. Al cerrar, el sistema llevó los ingresos y gastos del año a la utilidad del ejercicio y la trasladó a ganancias acumuladas.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CIE-2025') td >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "su número"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CIE-2025') mat-chip",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el estado Completado"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CIE-2025') td.profit",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el resultado neto"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CIE-2025') td >> nth=1",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Al cerrar, el sistema llevó"
+        }
+      ]
+    },
+    {
+      "id": "02-reversar",
+      "capitulo": "Reversar",
+      "rotulo": "Reversar el cierre",
+      "ruta": "Contabilidad › Cierre Contable",
+      "texto_pantalla": "Reabre el período y revierte los asientos de cierre",
+      "narracion": "Si después del cierre aparece algo que corregir en ese año, el cierre se reversa. En la fila del cierre, abro las acciones y elijo Reversar. La confirmación explica que el período se reabre y los saldos vuelven a como estaban antes del cierre. Confirmo. El sistema revierte los tres asientos de cierre con asientos de anulación y reabre diciembre. El aviso lo confirma; lo cierro. El cierre queda como Reversado, y ya no ofrece acciones.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CIE-2025')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el cierre se reversa"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('CIE-2025') button[aria-label='Acciones']",
+          "al_decir": "abro las acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-item:has-text('Reversar')",
+          "al_decir": "y elijo Reversar"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "La confirmación explica"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Confirmar')",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El aviso lo confirma"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "lo cierro"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CIE-2025') mat-chip",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "queda como Reversado"
+        }
+      ]
+    },
+    {
+      "id": "03-periodo",
+      "capitulo": "El período",
+      "rotulo": "Diciembre reabierto",
+      "ruta": "Contabilidad › Configuración Contable › Períodos Contables",
+      "texto_pantalla": "Diciembre abierto y marcado como actual",
+      "navegar": "/accounting/configuracion/periodos",
+      "al_decir_navegar": "En Períodos Contables",
+      "narracion": "Veamos cómo quedó el período. En Períodos Contables, con el buscador de arriba, busco diciembre de dos mil veinticinco. Ya filtrado, se ve que está abierto otra vez, y el reverso lo marcó como período actual, para que la corrección se haga ahí. Cuando termines de corregir, se cierra el año de nuevo desde Cierre Contable, y el período actual vuelve al mes de trabajo con Establecer como Actual.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "texto": "Diciembre 2025"
+          },
+          "al_decir": "busco diciembre"
+        },
+        {
+          "presionar": {
+            "sel": "app-console-filter-bar input >> nth=0",
+            "tecla": "Enter"
+          }
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Diciembre 2025') td >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "está abierto otra vez"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Diciembre 2025') .gm-badge >> nth=-1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "lo marcó como período actual"
+        },
+        {
+          "resaltar": "app-console-filter-bar",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Cuando termines de corregir"
+        }
+      ]
+    }
+  ]
+}

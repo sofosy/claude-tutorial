@@ -1,0 +1,318 @@
+{
+  "titulo": "Contabilidad · Informes financieros: Balanza, Balance General, Resultados y Razones",
+  "descripcion": "Cómo generar en Germiva la Balanza de Comprobación, el Balance General, el Estado de Resultados y las Razones Financieras: elegir el informe, el período o las fechas, leer cada estado, comparar contra el período anterior, exportarlo e imprimirlo.",
+  "_comentario": "Video 17 de la serie Contabilidad. setup: preparar.sh informes (2025 de mayo a diciembre y 2026 hasta septiembre con operación: aporte, préstamo a largo plazo, compras, ventas, gastos, depreciación). Resultado 2025 = 96,000; 2026 a septiembre = 238,000.",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ROA": "erre-o-a",
+    "ROE": "erre-o-e",
+    "EBITDA": "ebitda",
+    "CSV": "ce-ese-uve"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/financial-statements/trial-balance",
+    "esperar": "mat-label:has-text('Tipo de informe')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh informes"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Elegir el informe y su período o rango de fechas",
+    "Comprobar en la Balanza que el Mayor cuadra",
+    "Leer el Balance General y el Estado de Resultados",
+    "Revisar las Razones Financieras y exportar o imprimir"
+  ],
+  "errores_comunes": [
+    "Dejar una sola fecha: sin período, los informes de rango piden las dos",
+    "Buscar los borradores en un informe: solo cuentan los asientos contabilizados",
+    "Esperar el ISR estimado en la utilidad neta: solo resta el ISR contabilizado"
+  ],
+  "pasos": [
+    {
+      "id": "01-balanza",
+      "capitulo": "Balanza de Comprobación",
+      "rotulo": "Informes Financieros",
+      "ruta": "Contabilidad › Cierre Contable y Estados Financieros › Informes Financieros",
+      "texto_pantalla": "Tipo de informe · período o fechas · Generar",
+      "narracion": "Informes Financieros reúne los estados de la empresa en una sola pantalla. Recojo el menú. Arriba, Tipo de informe elige el estado; estoy en la Balanza de Comprobación. Debajo van los parámetros: un período contable o un rango de fechas. Escribo la fecha inicial, primero de enero de dos mil veintiséis. Luego la fecha final, treinta de septiembre del mismo año. Con las dos fechas puestas, pulso Generar.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Tipo de informe'))",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Tipo de informe elige el estado"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Período contable'))",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "un período contable o un rango"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='startDate']",
+            "texto": "01/01/2026"
+          },
+          "al_decir": "Escribo la fecha inicial"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='endDate']",
+            "texto": "30/09/2026"
+          },
+          "al_decir": "Luego la fecha final"
+        },
+        {
+          "click": "button.rp-toolbar__generate",
+          "al_decir": "pulso Generar"
+        }
+      ]
+    },
+    {
+      "id": "02-cuadra",
+      "capitulo": "Balanza de Comprobación",
+      "rotulo": "La balanza cuadra",
+      "ruta": "Contabilidad › Informes Financieros › Balanza de Comprobación",
+      "texto_pantalla": "Saldo inicial · movimientos · saldo final",
+      "narracion": "La insignia dice Cuadrada: los débitos y los créditos del Mayor son iguales. Por cada cuenta se ve el saldo inicial, los movimientos del rango y el saldo final, en débito o en crédito. Las cuentas de control suman a sus auxiliares, y al pie están los totales. Si dejas solo la fecha final, la balanza cuenta desde el primero de enero de ese año.",
+      "acciones": [
+        {
+          "resaltar": ".balance-status",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "La insignia dice Cuadrada"
+        },
+        {
+          "resaltar": "table.trial-balance-table thead tr",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Por cada cuenta se ve"
+        },
+        {
+          "resaltar": "table.trial-balance-table tfoot tr",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "al pie están los totales"
+        }
+      ]
+    },
+    {
+      "id": "03-balance",
+      "capitulo": "Balance General",
+      "rotulo": "Balance General",
+      "ruta": "Contabilidad › Informes Financieros › Balance General",
+      "texto_pantalla": "Activos = Pasivos + Patrimonio",
+      "narracion": "El siguiente estado es el Balance General. Lo elijo en Tipo de informe, y las fechas se conservan: aquí manda la fecha de corte, el treinta de septiembre. Genero. Activos, pasivos y patrimonio, cada uno con su total. En patrimonio aparecen dos filas que el sistema calcula: el resultado de ejercicios anteriores que todavía no se cerró, y la utilidad del período. Abajo, la ecuación: el total de activos es igual a pasivos más patrimonio, y la insignia dice Cuadrado. Con Incluir comparativo se agregan la columna anterior y la variación.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
+          "al_decir": "Lo elijo en Tipo de informe"
+        },
+        {
+          "click": "mat-option:has-text('Balance General')",
+          "al_decir": "y las fechas se conservan"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-label:has-text('Fecha de Corte'))",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "aquí manda la fecha de corte"
+        },
+        {
+          "click": "button.rp-toolbar__generate",
+          "al_decir": "Genero"
+        },
+        {
+          "resaltar": ".section-title >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Activos, pasivos y patrimonio"
+        },
+        {
+          "resaltar": ".account-row:has-text('3.99.98')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el resultado de ejercicios anteriores"
+        },
+        {
+          "resaltar": ".account-row:has-text('3.99.99')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "y la utilidad del período"
+        },
+        {
+          "resaltar": ".balance-status",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "la insignia dice Cuadrado"
+        },
+        {
+          "resaltar": "mat-checkbox:has-text('Incluir comparativo')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Con Incluir comparativo"
+        }
+      ]
+    },
+    {
+      "id": "04-resultados",
+      "capitulo": "Estado de Resultados",
+      "rotulo": "Estado de Resultados",
+      "ruta": "Contabilidad › Informes Financieros › Estado de Resultados",
+      "texto_pantalla": "Ingresos − gastos y costos = utilidad",
+      "narracion": "Para ver cómo se llegó a esa utilidad está el Estado de Resultados. Lo elijo, con el mismo rango: del primero de enero al treinta de septiembre. Genero. Arriba los ingresos, luego los gastos y costos, y la utilidad antes del impuesto. Como todavía no se ha contabilizado el impuesto sobre la renta, el ISR, el sistema muestra un estimado al veintisiete por ciento, solo como referencia: la utilidad neta solo descuenta el ISR contabilizado. Desde Provisionar ISR se registra en el cierre. La utilidad neta del período es de doscientos treinta y ocho mil pesos.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
+          "al_decir": "Lo elijo, con el mismo rango"
+        },
+        {
+          "click": "mat-option:has-text('Estado de Resultados')",
+          "al_decir": "del primero de enero"
+        },
+        {
+          "click": "button.rp-toolbar__generate",
+          "al_decir": "Genero"
+        },
+        {
+          "resaltar": ".section.revenues",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Arriba los ingresos"
+        },
+        {
+          "resaltar": ".section.expenses",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "luego los gastos y costos"
+        },
+        {
+          "resaltar": ".tax-row--estimate",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "el sistema muestra un estimado"
+        },
+        {
+          "resaltar": ".tax-link",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Desde Provisionar ISR"
+        },
+        {
+          "resaltar": ".net-income-row",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "La utilidad neta del período"
+        }
+      ]
+    },
+    {
+      "id": "05-razones",
+      "capitulo": "Razones Financieras",
+      "rotulo": "Razones Financieras",
+      "ruta": "Contabilidad › Informes Financieros › Razones Financieras",
+      "texto_pantalla": "Liquidez · rentabilidad · solvencia · eficiencia",
+      "narracion": "El último estado de este grupo son las Razones Financieras. Las elijo en el selector, busco la opción en la lista y, con el mismo rango de fechas, genero. Las razones se agrupan en liquidez, rentabilidad, solvencia y eficiencia, cada una con su explicación. Cada tarjeta trae su fórmula y su lectura: aquí la liquidez sale excelente. Si alguna razón saliera del rango recomendado, el sistema lo advertiría con una alerta. Cualquier informe se descarga a Excel o se imprime con el membrete de la empresa.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
+          "al_decir": "Las elijo en el selector"
+        },
+        {
+          "click": "mat-option:has-text('Razones Financieras')",
+          "al_decir": "busco la opción en la lista"
+        },
+        {
+          "click": "button.rp-toolbar__generate",
+          "al_decir": "genero"
+        },
+        {
+          "resaltar": ".ratio-section >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Las razones se agrupan"
+        },
+        {
+          "resaltar": ".ratio-card >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Cada tarjeta trae su fórmula"
+        },
+        {
+          "resaltar": "button:has-text('Excel')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "se descarga a Excel"
+        },
+        {
+          "resaltar": "button:has-text('Imprimir')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "o se imprime"
+        }
+      ]
+    }
+  ]
+}

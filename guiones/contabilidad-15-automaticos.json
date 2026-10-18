@@ -1,0 +1,227 @@
+{
+  "titulo": "Contabilidad · Asientos automáticos y Registro de Integración",
+  "descripcion": "Qué pasa cuando un documento no se puede contabilizar en Germiva: el aviso en Diario y Mayor, el Registro de Integración con el motivo, cómo contabilizar el documento una vez corregida la causa y dónde ver su asiento.",
+  "_comentario": "Video 15 de la serie Contabilidad. setup: preparar.sh automaticos (ajuste de inventario por conteo físico que falló por el mapeo apagado; el mapeo ya está reactivado).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/registro/asientos",
+    "esperar": "button:has-text('Crear Asiento')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh automaticos"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Qué asientos genera el sistema solo",
+    "Leer el aviso de documentos sin asiento",
+    "Encontrar el motivo en el Registro de Integración",
+    "Contabilizar el documento cuando la causa está corregida"
+  ],
+  "errores_comunes": [
+    "Reintentar sin corregir la causa: vuelve a fallar con el mismo motivo",
+    "Apagar el auto-posteo para que el aviso desaparezca: el documento sigue sin asiento",
+    "Registrar a mano el asiento que faltaba: después se duplica"
+  ],
+  "pasos": [
+    {
+      "id": "01-aviso",
+      "capitulo": "El aviso",
+      "rotulo": "Documento sin asiento",
+      "ruta": "Contabilidad › Diario y Mayor",
+      "texto_pantalla": "1 documento no se pudo contabilizar",
+      "narracion": "Muchos asientos los genera el sistema solo: al emitir una factura, cobrar, pagar o mover inventario. Si uno falla, Diario y Mayor lo avisa arriba: un documento no se pudo contabilizar, y por eso no está en los libros. Recojo el menú. El botón Revisar lleva al Registro de Integración, filtrado en lo que queda por resolver.",
+      "acciones": [
+        {
+          "resaltar": "text=no se pudo contabilizar >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Si uno falla"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "a:has-text('Revisar'), button:has-text('Revisar')",
+          "al_decir": "El botón Revisar"
+        }
+      ]
+    },
+    {
+      "id": "02-registro",
+      "capitulo": "Registro de Integración",
+      "rotulo": "El motivo",
+      "ruta": "Contabilidad › Configuración Contable › Registro de Integración",
+      "texto_pantalla": "Fallido · Mensaje de Error · Ver Detalle",
+      "narracion": "El Registro de Integración es la bitácora de cada asiento automático. Esta fila es el ajuste de inventario por conteo físico: está Fallido, y la columna del error dice el motivo: faltaba la cuenta de otros ingresos por ajuste de inventario en el mapeo. Ver Detalle muestra el tipo de operación, el documento y el error completo. Lo cierro.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('INV-ADJ') td >> nth=1",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Esta fila es el ajuste"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('INV-ADJ') td:has-text('Faltan')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "la columna del error"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('INV-ADJ') button[aria-label='Ver Detalle']",
+          "al_decir": "Ver Detalle muestra"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "el documento y el error"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Lo cierro"
+        }
+      ]
+    },
+    {
+      "id": "03-contabilizar",
+      "capitulo": "Contabilizar el documento",
+      "rotulo": "Contabilizar",
+      "ruta": "Contabilidad › Configuración Contable › Registro de Integración",
+      "texto_pantalla": "Corregida la causa → Contabilizar",
+      "narracion": "La causa ya se corrigió: se volvió a activar ese rol en el Mapeo de Cuentas. Ahora Contabilizar genera el asiento que faltaba; si el asiento ya existiera, no lo duplica. Confirmo. El aviso dice que quedó contabilizado, y la fila sale de la lista: como el registro está filtrado en lo que queda por resolver, ya no queda nada pendiente. Si la causa no estuviera corregida, el aviso diría el motivo del nuevo intento.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('INV-ADJ') button[aria-label='Contabilizar']",
+          "al_decir": "Ahora Contabilizar"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "si el asiento ya existiera"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "quedó contabilizado"
+        },
+        {
+          "resaltar": "text=No se encontraron registros",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "y la fila sale de la lista"
+        },
+        {
+          "resaltar": "button:has-text('Más filtros')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "está filtrado en lo que queda"
+        },
+        {
+          "resaltar": "text=No se encontraron registros",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Si la causa no estuviera"
+        }
+      ]
+    },
+    {
+      "id": "04-asiento",
+      "capitulo": "El asiento del documento",
+      "rotulo": "Ver el asiento",
+      "ruta": "Contabilidad › Diario y Mayor › Asientos Contables",
+      "navegar": "/accounting/registro/asientos",
+      "texto_pantalla": "Tipo Automático · se corrige en su documento",
+      "narracion": "De vuelta en Diario y Mayor, el aviso ya no está, y el asiento aparece en la lista, de tipo Automático. Lo abro para ver sus líneas: el inventario al débito y los otros ingresos al crédito. En una factura, el mismo asiento se abre desde Más acciones, Ver asiento contable. Y recuerda: un asiento automático se corrige en su documento, no en el diario.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('ajuste de inventario') td >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "el asiento aparece en la lista"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('ajuste de inventario') button[aria-label='Ver Detalles']",
+          "al_decir": "Lo abro"
+        },
+        {
+          "resaltar": ".table-row >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "el inventario al débito"
+        },
+        {
+          "resaltar": ".table-row >> nth=1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "los otros ingresos"
+        }
+      ]
+    }
+  ]
+}

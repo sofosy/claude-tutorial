@@ -1,0 +1,322 @@
+{
+  "titulo": "Contabilidad · Asientos recurrentes",
+  "descripcion": "Cómo automatizar en Germiva los asientos que se repiten cada mes: crear una plantilla recurrente, generar el asiento de un vencimiento, procesar las pendientes y pausar o reactivar una plantilla.",
+  "_comentario": "Video 14 de la serie Contabilidad. setup: preparar.sh recurrentes («Servicio de internet» vencida desde el 1 de octubre y «Seguro del local» trimestral desde noviembre).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+    "velocidad": "+0%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/registro/recurrentes",
+    "esperar": "button:has-text('Nueva Plantilla')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh recurrentes"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Qué es una plantilla recurrente",
+    "Crear una plantilla con sus líneas",
+    "Generar el asiento de un vencimiento y procesar las pendientes",
+    "Pausar y reactivar una plantilla"
+  ],
+  "errores_comunes": [
+    "Dejar la descripción de una línea vacía: la plantilla no se guarda",
+    "Esperar que se pongan al día varios meses atrasados: se genera un vencimiento por corrida",
+    "Borrar una plantilla para detenerla: se pausa"
+  ],
+  "pasos": [
+    {
+      "id": "01-lista",
+      "capitulo": "Plantillas recurrentes",
+      "rotulo": "Recurrentes",
+      "ruta": "Contabilidad › Diario y Mayor › Recurrentes",
+      "texto_pantalla": "Frecuencia · día · próxima generación",
+      "narracion": "Recurrentes guarda plantillas de los asientos que se repiten: el alquiler, el internet, una póliza de seguro. Recojo el menú. Cada plantilla dice su frecuencia, el día del mes, la próxima generación y cuántos asientos lleva. Cada madrugada el sistema genera el asiento de las que vencen, y lo deja contabilizado.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Servicio de internet') td >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "guarda plantillas"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "th:has-text('Próxima')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "la próxima generación"
+        },
+        {
+          "resaltar": "th:has-text('Generados')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "cuántos asientos lleva"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Seguro del local') td >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Cada madrugada"
+        }
+      ]
+    },
+    {
+      "id": "02-crear",
+      "capitulo": "Crear una plantilla",
+      "rotulo": "Nueva plantilla",
+      "ruta": "Contabilidad › Diario y Mayor › Recurrentes › Nueva",
+      "texto_pantalla": "Nombre · descripción · día · líneas cuadradas",
+      "narracion": "Creo la del alquiler. Pulso Nueva Plantilla. Primero, el nombre con el que la vas a reconocer en la lista: renta del local, por ejemplo. Después, la descripción que llevará cada asiento que se genere; escribo alquiler. La frecuencia queda mensual, el día uno de cada mes, y la plantilla empieza hoy. Mientras falte algo, el recuadro Falta para guardar dice qué es. Ahora las dos líneas. En la primera busco la cuenta de arrendamientos. La elijo, y en su descripción escribo renta. En el débito, que es el lado del gasto, anoto veinticinco mil pesos, lo que se paga cada mes. En la segunda línea busco la caja general, de donde sale el dinero. La elijo también, y en su descripción escribo pago. En el crédito, el lado del pago, anoto los mismos veinticinco mil. Ya no falta nada, y la plantilla está balanceada. Guardo, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button:has-text('Nueva Plantilla')",
+          "al_decir": "Pulso Nueva Plantilla"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Renta del local"
+          },
+          "al_decir": "Primero, el nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Descripción para los asientos generados')) input",
+            "texto": "Alquiler"
+          },
+          "al_decir": "Después, la descripción"
+        },
+        {
+          "resaltar": "input[formcontrolname='dayOfMonth']",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el día uno de cada mes"
+        },
+        {
+          "resaltar": ".save-blockers",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Falta para guardar"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=0 >> input[placeholder='Buscar cuenta...']",
+            "texto": "Arrend"
+          },
+          "al_decir": "En la primera busco"
+        },
+        {
+          "click": "mat-option:has-text('6.03.02')",
+          "al_decir": "La elijo, y en su descripción"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=0 >> input[formcontrolname='description']",
+            "texto": "Renta"
+          },
+          "al_decir": "escribo renta"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=0 >> input[formcontrolname='debitAmount']",
+            "texto": "25000"
+          },
+          "al_decir": "anoto veinticinco mil pesos"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=1 >> input[placeholder='Buscar cuenta...']",
+            "texto": "Caja gen"
+          },
+          "al_decir": "En la segunda línea busco"
+        },
+        {
+          "click": "mat-option:has-text('1.01.01.01.02')",
+          "al_decir": "La elijo también"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=1 >> input[formcontrolname='description']",
+            "texto": "Pago"
+          },
+          "al_decir": "escribo pago"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=1 >> input[formcontrolname='creditAmount']",
+            "texto": "25000"
+          },
+          "al_decir": "anoto los mismos"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "03-generar",
+      "capitulo": "Generar y procesar",
+      "rotulo": "Generar el asiento",
+      "ruta": "Contabilidad › Diario y Mayor › Recurrentes",
+      "texto_pantalla": "Generar Ahora · Procesar Pendientes",
+      "narracion": "La plantilla del internet venció el primero de octubre. Generar Ahora adelanta su asiento, después de confirmarlo con Generar. El aviso da el número del asiento, que queda contabilizado como automático, y la plantilla salta a su próximo vencimiento. Procesar Pendientes hace lo mismo con todas las vencidas, y antes pide confirmación. Confirmo, y el aviso dice que ya no queda ninguna. Si alguna fallara, diría cuál y por qué.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Servicio de internet') td >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "venció el primero"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Servicio de internet') button[aria-label='Generar Ahora']",
+          "al_decir": "Generar Ahora adelanta"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "confirmarlo con Generar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El aviso da el número"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Servicio de internet') td >> nth=3",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "salta a su próximo vencimiento"
+        },
+        {
+          "click": "button:has-text('Procesar Pendientes')",
+          "al_decir": "Procesar Pendientes hace"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "y antes pide confirmación"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el aviso dice que ya no queda"
+        }
+      ]
+    },
+    {
+      "id": "04-pausar",
+      "capitulo": "Pausar y reactivar",
+      "rotulo": "Pausar",
+      "ruta": "Contabilidad › Diario y Mayor › Recurrentes",
+      "texto_pantalla": "Pausar no borra · Reactivar la enciende",
+      "narracion": "Si un gasto se suspende, no borres la plantilla. Pausar la detiene: el aviso lo confirma, y la insignia pasa a Pausada. Reactivar la vuelve a encender, y otro aviso lo confirma. Eliminar la quita, pero los asientos que ya generó no se tocan.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('Seguro del local') button[aria-label='Pausar']",
+          "al_decir": "Pausar la detiene"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Seguro del local') .gm-badge",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "la insignia pasa a Pausada"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Seguro del local') button[aria-label='Reactivar']",
+          "al_decir": "Reactivar la vuelve"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "otro aviso lo confirma"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Seguro del local') button[aria-label='Eliminar']",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Eliminar la quita"
+        }
+      ]
+    }
+  ]
+}

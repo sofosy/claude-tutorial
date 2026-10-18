@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Contabilidad · Activos fijos: alta y depreciación
+
+DESCRIPCIÓN
+============================================================
+Cómo registrar en Germiva un activo fijo con su categoría, qué asiento genera el alta y cómo se contabiliza la depreciación mensual hasta la fecha.
+
+⏱️ CAPÍTULOS
+00:00  Alta del activo
+01:07  Depreciación
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar un activo fijo con su categoría
+• Qué asiento genera el alta
+• Contabilizar la depreciación pendiente
+• Qué pasa con la cuota del mes en curso
+
+⚠️ ERRORES COMUNES
+• Elegir una categoría con cuentas que no existen en tu catálogo
+• Fechar la adquisición en un período cerrado
+• Esperar la cuota del mes en curso antes de su último día
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:00
+
+TRANSCRIPCIÓN
+============================================================
+En Activos Fijos se registran los bienes de la empresa que se deprecian. Recojo el menú y pulso Crear Activo. Le pongo un código, ACT-OF-001, que el sistema guarda en mayúsculas. Después escribo el nombre: escritorio ejecutivo. La categoría es lo más importante: define la vida útil, el método y las cuentas de la depreciación. Abro la lista y elijo Equipos de Oficina, a cinco años. El costo de adquisición: sesenta mil pesos, sin el ITBIS. La fecha de adquisición, primero de abril de dos mil veintiséis. Y la misma fecha para la puesta en servicio. Guardo.
+El aviso confirma el alta, y el activo aparece en la lista con su costo y su valor en libros. Al guardarlo, el sistema registró el asiento de alta: débito a la cuenta del activo y crédito a cuentas por pagar por compra de activos. Si el escritorio vino en una factura de compra ya registrada, se indica su número y el sistema reclasifica ese gasto en vez de duplicarlo.
+La depreciación se contabiliza cada mes. Para ponerla al día, en Más acciones elijo Depreciar. Se pide confirmación, y confirmo con Sí, Depreciar. El sistema registra una cuota por cada mes cumplido desde la puesta en servicio, de abril a septiembre: seis cuotas de mil pesos, cada una fechada el último día de su mes. El valor en libros baja a cincuenta y cuatro mil.
+Una cosa más sobre la cuota del mes en curso. Si vuelvo a abrir Más acciones y elijo Depreciar, y confirmo otra vez, el sistema avisa que el activo ya está al día: la cuota de octubre se registra a partir del treinta y uno. Además, la depreciación corre sola el primer día de cada mes, así que normalmente no hace falta pulsar nada.
