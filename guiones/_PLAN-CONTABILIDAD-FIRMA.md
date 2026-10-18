@@ -177,6 +177,10 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | M14 | «Ver asiento» rotula RD$ fijo: un asiento en USD (la apertura de un banco en USD) se ve en dólares con el rótulo RD$, y sus totales igual | Arreglar | Hecho en [api#1576](https://github.com/sofosy/Germiva-api/pull/1576) y [web#1420](https://github.com/sofosy/germiva-website/pull/1420) (borrador; pruebas unitarias en verde, falta la prueba en la app) |
 | M15 | «Revaluaciones previas» muestra el número del asiento sin enlace y no hay pantalla de detalle: para ver la revaluación hay que buscarla a mano en Asientos | Arreglar | Hecho en [api#1576](https://github.com/sofosy/Germiva-api/pull/1576) y [web#1420](https://github.com/sofosy/germiva-website/pull/1420) (borrador; pruebas unitarias en verde, falta la prueba en la app) |
 | M16 | Los ejemplos de «Configuración multi-moneda» (ej. 4.02.05, 6.04.03) no existen en ninguna plantilla del sistema | Arreglar el texto | Hecho en [api#1576](https://github.com/sofosy/Germiva-api/pull/1576) y [web#1420](https://github.com/sofosy/germiva-website/pull/1420) (borrador; pruebas unitarias en verde, falta la prueba en la app) |
+| M17 | «Monedas disponibles» marca la tasa del día como «Pendiente» y el campo en 0 aunque esté registrada: lee la moneda local antes de que llegue y nunca pide las tasas (carrera ya documentada en el servicio, H-03) | Arreglar | En curso (web#1420) |
+| M18 | Panel: la tarjeta «Por cobrar» suma el importe en USD como pesos (RD$2,000.00 por una CxC de USD 2,000 = RD$118,400 en libros) | Arreglar | En curso (`fix/contabilidad-panel-multimoneda`) |
+| M19 | Panel: «Ingresos» excluye los otros ingresos (ganancia cambiaria) y el «Estado de Resultados Resumido» no tiene filas de otros ingresos/gastos, así que la utilidad neta no cuadra con lo que muestra | Arreglar | En curso (`fix/contabilidad-panel-multimoneda`) |
+| T1 | Diálogos de cobro y pago: «Marca esta opción solo si está registrando…» (tú y usted en un mismo texto) y «marca el check» | Arreglar | En curso (web#1420) |
 
 - **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
 
