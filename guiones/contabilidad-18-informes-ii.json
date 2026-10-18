@@ -154,19 +154,19 @@
       "rotulo": "Método directo",
       "ruta": "Contabilidad › Informes Financieros › Flujo de Efectivo",
       "texto_pantalla": "Directo: cobros y pagos por su contrapartida",
-      "narracion": "El método directo muestra lo mismo desde los cobros y pagos. Lo elijo en Método y vuelvo a generar. Ahora cada movimiento de caja se clasifica por su contrapartida: cobros a clientes, pagos de gastos, compra de activos. El efectivo final es el mismo por los dos caminos. Si no coincidiera con el saldo de efectivo del Mayor, el estado lo avisa en rojo con la diferencia.",
+      "narracion": "El método directo muestra lo mismo desde los cobros y pagos. En Método abro la lista, y marco Directo. Con eso, genero otra vez. Ahora cada movimiento de caja se clasifica por su contrapartida: cobros a clientes, pagos de gastos, compra de activos. El efectivo final es el mismo por los dos caminos. Si no coincidiera con el saldo de efectivo del Mayor, el estado lo avisa en rojo con la diferencia.",
       "acciones": [
         {
           "click": "mat-form-field:has(mat-label:has-text('Método')) mat-select",
-          "al_decir": "Lo elijo en Método"
+          "al_decir": "En Método abro la lista"
         },
         {
           "click": "mat-option:has-text('Directo')",
-          "al_decir": "y vuelvo a generar"
+          "al_decir": "y marco Directo"
         },
         {
           "click": "button.rp-toolbar__generate",
-          "al_decir": "generar. Ahora"
+          "al_decir": "genero otra vez"
         },
         {
           "resaltar": "mat-expansion-panel.panel-operating",
@@ -179,6 +179,12 @@
           "durante_ms": 4000,
           "cursor": false,
           "al_decir": "El efectivo final es el mismo"
+        },
+        {
+          "resaltar": ".cash-balance-row:has-text('final')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Si no coincidiera"
         }
       ]
     },
@@ -266,7 +272,7 @@
       "rotulo": "Proyección",
       "ruta": "Contabilidad › Informes Financieros › Proyección de Flujo de Efectivo",
       "texto_pantalla": "Proyecta la utilidad neta, con banda de confianza",
-      "narracion": "El otro análisis que conviene conocer es la proyección. Abro el selector y elijo Proyección de Flujo de Efectivo. Estima el resultado de los próximos meses a partir de la tendencia de los anteriores: proyecta la utilidad neta, no los cobros y pagos pendientes. Eliges cuántos meses mirar atrás y cuántos proyectar. La banda alrededor de la línea es el margen de confianza; con pocos meses de historia el sistema advierte que la estimación es débil.",
+      "narracion": "El otro análisis que conviene conocer es la proyección. Abro el selector de informes, y en la lista elijo Proyección de Flujo de Efectivo. Estima el resultado de los próximos meses a partir de la tendencia de los anteriores: proyecta la utilidad neta, no los cobros y pagos pendientes. Eliges cuántos meses mirar atrás y cuántos proyectar. La banda alrededor de la línea es el margen de confianza; con pocos meses de historia el sistema advierte que la estimación es débil.",
       "acciones": [
         {
           "click": "mat-form-field:has(mat-label:has-text('Tipo de informe')) mat-select",
@@ -274,7 +280,19 @@
         },
         {
           "click": "mat-option:has-text('Proyección de Flujo de Efectivo')",
-          "al_decir": "y elijo Proyección"
+          "al_decir": "en la lista elijo Proyección"
+        },
+        {
+          "resaltar": ".chart-card",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Estima el resultado"
+        },
+        {
+          "resaltar": ".report-caption",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "proyecta la utilidad neta"
         },
         {
           "resaltar": ".filters-card",
@@ -298,7 +316,7 @@
       "texto_pantalla": "Borradores · cuentas sin clasificar · Libro Mayor",
       "navegar": "/accounting/configuracion/estado",
       "al_decir_navegar": "empieza por el Estado",
-      "narracion": "Si un informe no cuadra o no muestra lo que esperas, empieza por el Estado de la Configuración. Arriba están los cuatro controles: roles sin cuenta, cuentas sin clasificar, que quedan fuera de los estados, asientos que no llegaron al Mayor, y si el Mayor se genera solo. Aquí todo está en orden. Recuerda también que los informes leen solo lo contabilizado: un asiento en borrador no aparece hasta que lo contabilizas.",
+      "narracion": "Si un informe no cuadra o no muestra lo que esperas, empieza por el Estado de la Configuración, que está en Configuración Contable. Arriba están los cuatro controles: roles sin cuenta, cuentas sin clasificar, que quedan fuera de los estados, asientos que no llegaron al Mayor, y si el Mayor se genera solo. Aquí todo está en orden. Recuerda también que los informes leen solo lo contabilizado: un asiento en borrador no aparece hasta que lo contabilizas.",
       "acciones": [
         {
           "resaltar": "app-summary-strip",

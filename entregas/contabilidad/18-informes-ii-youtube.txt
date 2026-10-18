@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Contabilidad · Informes financieros: Flujo de Efectivo, Patrimonio y análisis
+
+DESCRIPCIÓN
+============================================================
+Cómo generar en Germiva el Estado de Flujo de Efectivo por método indirecto y directo, el Estado de Cambios en el Patrimonio, las Tendencias Financieras y la Proyección, y qué revisar cuando un informe no cuadra.
+
+⏱️ CAPÍTULOS
+00:00  Flujo de Efectivo
+01:17  Cambios en el Patrimonio
+01:45  Análisis
+02:45  Si un informe no cuadra
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Generar el Flujo de Efectivo por método indirecto y directo
+• Leer el Estado de Cambios en el Patrimonio
+• Revisar Tendencias y la Proyección de resultados
+• Qué revisar cuando un informe no cuadra
+
+⚠️ ERRORES COMUNES
+• Dejar cuentas sin clasificar: quedan fuera de los estados
+• Esperar los borradores en un informe: solo cuentan los contabilizados
+• Tomar la proyección como flujo de caja: proyecta la utilidad neta
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:17
+
+TRANSCRIPCIÓN
+============================================================
+El Estado de Flujo de Efectivo explica cómo cambió el efectivo de la empresa. Recojo el menú. Escribo el rango: desde el primero de enero de dos mil veintiséis. Hasta el treinta de septiembre del mismo año, ya con las dos fechas. En Método, el indirecto, que viene marcado, parte de la utilidad. Pulso Generar. Las actividades de operación arrancan con la utilidad neta, le suman la depreciación, que no mueve efectivo, y la ajustan por lo que cambió en clientes, inventario y proveedores. La compra del vehículo sale en inversión, y el abono al préstamo y el aporte de capital, en financiamiento. Abajo, el flujo neto y el efectivo al inicio y al final del período.
+El método directo muestra lo mismo desde los cobros y pagos. En Método abro la lista, y marco Directo. Con eso, genero otra vez. Ahora cada movimiento de caja se clasifica por su contrapartida: cobros a clientes, pagos de gastos, compra de activos. El efectivo final es el mismo por los dos caminos. Si no coincidiera con el saldo de efectivo del Mayor, el estado lo avisa en rojo con la diferencia.
+Cambios en Patrimonio explica cómo se movió el patrimonio en el rango. Lo elijo en el selector de informes; las fechas siguen siendo las mismas, así que solo genero. Por cada concepto, capital, utilidades retenidas y otras reservas, se ve el saldo inicial, los aumentos, las disminuciones y el saldo final. Aquí el aporte adicional de capital aumenta el capital. Al pie, el total del patrimonio.
+Además de los estados, el selector trae un grupo de análisis. Abro el selector y elijo Tendencias Financieras, que muestra mes a mes una métrica: ingresos, gastos, utilidad o liquidez. Se calcula sola al abrirla. Cambio la métrica a utilidad neta. El gráfico marca los meses que se desvían mucho de lo normal, y debajo están los indicadores del período.
+El otro análisis que conviene conocer es la proyección. Abro el selector de informes, y en la lista elijo Proyección de Flujo de Efectivo. Estima el resultado de los próximos meses a partir de la tendencia de los anteriores: proyecta la utilidad neta, no los cobros y pagos pendientes. Eliges cuántos meses mirar atrás y cuántos proyectar. La banda alrededor de la línea es el margen de confianza; con pocos meses de historia el sistema advierte que la estimación es débil.
+Si un informe no cuadra o no muestra lo que esperas, empieza por el Estado de la Configuración, que está en Configuración Contable. Arriba están los cuatro controles: roles sin cuenta, cuentas sin clasificar, que quedan fuera de los estados, asientos que no llegaron al Mayor, y si el Mayor se genera solo. Aquí todo está en orden. Recuerda también que los informes leen solo lo contabilizado: un asiento en borrador no aparece hasta que lo contabilizas.
