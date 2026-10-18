@@ -195,21 +195,33 @@
       "rotulo": "Marcar como predeterminado",
       "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
       "texto_pantalla": "Las líneas sin centro heredan el predeterminado",
-      "narracion": "El centro predeterminado es el que reciben las líneas que se registran sin centro. En la fila de Administración pulso Marcar como predeterminado. El aviso lo confirma. Desde ahí, los centros aparecen en cada línea de los asientos, en las líneas de los presupuestos y como filtro del Estado de Resultados y las Razones Financieras.",
+      "narracion": "El centro predeterminado es el que reciben las líneas que se registran sin centro. Hoy es Administración, el que se creó con la empresa. Para cambiarlo, en la fila de Operaciones pulso Marcar como predeterminado. El aviso lo confirma, y la marca pasa a Operaciones. Desde ahí, los centros aparecen en cada línea de los asientos, en las líneas de los presupuestos y como filtro del Estado de Resultados y las Razones Financieras.",
       "acciones": [
         {
-          "click": "tr.mat-mdc-row:has-text('CC-ADM') button[aria-label='Marcar como predeterminado']",
-          "al_decir": "pulso Marcar como predeterminado"
+          "resaltar": "tr.mat-mdc-row:has-text('CC-ADM') .gm-badge--success",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Hoy es Administración"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('CC-OPS') button[aria-label='Marcar como predeterminado']",
+          "al_decir": "en la fila de Operaciones pulso"
         },
         {
           "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 3000,
+          "durante_ms": 2500,
           "cursor": false,
           "al_decir": "El aviso lo confirma"
         },
         {
-          "resaltar": "tr.mat-mdc-row:has-text('CC-ADM')",
-          "durante_ms": 5000,
+          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') .gm-badge--success",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "la marca pasa a Operaciones"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') td >> nth=1",
+          "durante_ms": 3500,
           "cursor": false,
           "al_decir": "los centros aparecen en cada línea"
         }

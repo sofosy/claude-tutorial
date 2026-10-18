@@ -19,81 +19,85 @@ Cada uno trae su código, su nombre, el tipo, de qué centro depende,
 el presupuesto y el estado.
 
 6
-00:00:19,251 --> 00:00:23,817
+00:00:19,253 --> 00:00:23,818
 Para agregar el área de logística, pulso Crear Centro de Costo.
 
 7
-00:00:23,652 --> 00:00:28,762
+00:00:23,652 --> 00:00:28,763
 Escribo el código, CC-LOG, que identifica al centro y no se repite.
 
 8
-00:00:28,771 --> 00:00:30,515
+00:00:28,772 --> 00:00:30,516
 Luego escribo el nombre:
 
 9
-00:00:30,489 --> 00:00:31,653
+00:00:30,490 --> 00:00:31,655
 Logística.
 
 10
-00:00:31,488 --> 00:00:34,963
+00:00:31,490 --> 00:00:34,963
 Con el código y el nombre listos, paso al tipo:
 
 11
-00:00:34,832 --> 00:00:39,641
+00:00:34,834 --> 00:00:39,643
 dice si es un centro de costo, de ingresos, de utilidad o de inversión;
 
 12
-00:00:39,522 --> 00:00:40,837
+00:00:39,524 --> 00:00:40,838
 lo dejo en Costo.
 
 13
-00:00:40,683 --> 00:00:43,287
+00:00:40,685 --> 00:00:43,289
 El presupuesto es el monto asignado al área:
 
 14
-00:00:43,121 --> 00:00:45,272
+00:00:43,123 --> 00:00:45,274
 ciento veinte mil pesos.
 
 15
-00:00:45,153 --> 00:00:47,676
+00:00:45,155 --> 00:00:47,676
 La casilla de abajo lo crea activo.
 
 16
-00:00:47,591 --> 00:00:49,963
+00:00:47,593 --> 00:00:49,963
 Guardo, y el aviso lo confirma.
 
 17
-00:00:50,405 --> 00:00:55,563
+00:00:50,399 --> 00:00:55,557
 Un centro puede tener subcentros, como Operaciones dentro de Administración.
 
 18
-00:00:55,445 --> 00:01:00,579
+00:00:55,439 --> 00:01:00,573
 Ver Jerarquía muestra el árbol completo, con cada centro bajo su padre.
 
 19
-00:01:00,448 --> 00:01:01,518
+00:01:00,442 --> 00:01:01,512
 Lo cierro.
 
 20
-00:01:01,972 --> 00:01:07,444
+00:01:01,951 --> 00:01:07,435
 El centro predeterminado es el que reciben las líneas que se registran sin centro.
 
 21
-00:01:07,325 --> 00:01:11,576
-En la fila de Administración pulso Marcar como predeterminado.
+00:01:07,257 --> 00:01:10,789
+Hoy es Administración, el que se creó con la empresa.
 
 22
-00:01:11,469 --> 00:01:13,085
-El aviso lo confirma.
+00:01:10,625 --> 00:01:15,537
+Para cambiarlo, en la fila de Operaciones pulso Marcar como predeterminado.
 
 23
-00:01:12,978 --> 00:01:17,602
-Desde ahí, los centros aparecen en cada línea de los asientos,
+00:01:15,372 --> 00:01:19,102
+El aviso lo confirma, y la marca pasa a Operaciones.
 
 24
-00:01:17,450 --> 00:01:22,468
-en las líneas de los presupuestos y como filtro del Estado de Resultados y las
+00:01:18,971 --> 00:01:23,084
+Desde ahí, los centros aparecen en cada línea de los asientos,
 
 25
-00:01:22,313 --> 00:01:24,046
+00:01:22,930 --> 00:01:27,890
+en las líneas de los presupuestos y como filtro del Estado de Resultados y las
+
+26
+00:01:27,748 --> 00:01:29,459
 Razones Financieras.
