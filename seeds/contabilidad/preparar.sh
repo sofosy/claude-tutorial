@@ -35,7 +35,9 @@ if [[ ! -f "$BASE" || "$BASE" -ot "$SNAP" ]]; then
   restaurar "$SNAP"
   (cd "$API_DIR" && npx typeorm migration:run -d ./dist/config/typeorm.js --transaction all >/dev/null \
      && node dist/scripts/sync-permissions-additive.js >/dev/null)
-  docker exec germiva-dev-mysql mysqldump -uroot --single-transaction germiva | gzip > "$BASE"
+  # --routines: sin él la base de la serie perdía las funciones del esquema
+  # (FUZZY_WORD_DISTANCE) y el buscador de clientes fallaba en los videos.
+  docker exec germiva-dev-mysql mysqldump -uroot --single-transaction --routines germiva | gzip > "$BASE"
 else
   restaurar "$BASE"
 fi
