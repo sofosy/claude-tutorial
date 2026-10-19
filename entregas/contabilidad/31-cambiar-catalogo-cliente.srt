@@ -1,0 +1,199 @@
+1
+00:00:03,000 --> 00:00:05,963
+Estamos dentro de la Ferretería del Cibao,
+
+2
+00:00:05,855 --> 00:00:10,932
+un cliente que la firma dio de alta con el catálogo base del sistema, por error:
+
+3
+00:00:10,824 --> 00:00:12,859
+debía llevar el de la firma.
+
+4
+00:00:12,810 --> 00:00:14,044
+Recojo el menú.
+
+5
+00:00:13,925 --> 00:00:16,388
+La franja dice Catálogo propio,
+
+6
+00:00:16,234 --> 00:00:19,940
+porque los clientes que crea la firma nacen con su copia,
+
+7
+00:00:19,821 --> 00:00:23,365
+y el aviso de arriba dice que todavía no tiene asientos:
+
+8
+00:00:23,224 --> 00:00:27,314
+mientras sea así, el catálogo completo se puede reemplazar.
+
+9
+00:00:27,240 --> 00:00:30,552
+La tarjeta Origen marca de qué plantilla salió.
+
+10
+00:00:31,009 --> 00:00:36,596
+En la tarjeta del Catálogo Germiva Contadores, que aquí sale como De mi contador,
+
+11
+00:00:36,442 --> 00:00:38,814
+pulso Usar este catálogo.
+
+12
+00:00:38,648 --> 00:00:41,228
+El aviso explica qué va a pasar:
+
+13
+00:00:41,144 --> 00:00:46,336
+las cuentas del catálogo propio se reemplazan por una copia de esta plantilla,
+
+14
+00:00:46,171 --> 00:00:48,588
+que sigue siendo propia del cliente,
+
+15
+00:00:48,423 --> 00:00:52,094
+y la configuración contable se vuelve a sembrar.
+
+16
+00:00:51,941 --> 00:00:54,545
+Confirmo con Cambiar catálogo.
+
+17
+00:00:54,495 --> 00:00:58,189
+Reemplazar el catálogo completo toma unos segundos,
+
+18
+00:00:58,036 --> 00:01:00,524
+porque se copia cuenta por cuenta.
+
+19
+00:01:00,405 --> 00:01:02,834
+El aviso confirma el cambio.
+
+20
+00:01:03,274 --> 00:01:04,147
+Listo:
+
+21
+00:01:04,040 --> 00:01:07,246
+la marca Origen pasa a la plantilla de la firma.
+
+22
+00:01:07,070 --> 00:01:11,647
+Para hacerlo, el contador necesita el acceso Administración completa,
+
+23
+00:01:11,516 --> 00:01:14,608
+o el dueño del cliente lo hace desde su empresa,
+
+24
+00:01:14,442 --> 00:01:18,079
+porque el cambio vuelve a sembrar la configuración contable.
+
+25
+00:01:17,995 --> 00:01:21,644
+Y solo antes del primer asiento, aunque sea un borrador;
+
+26
+00:01:21,537 --> 00:01:24,882
+después, las cuentas se ajustan desde el catálogo.
+
+27
+00:01:25,326 --> 00:01:29,891
+Ahora un cliente que ya trabajaba en Germiva y que invitó a la firma:
+
+28
+00:01:29,762 --> 00:01:31,343
+el Colmado Germiva.
+
+29
+00:01:31,259 --> 00:01:34,814
+Abro el selector de empresa y elijo el Colmado.
+
+30
+00:01:35,287 --> 00:01:39,016
+Ya estamos en la otra empresa, la del cliente invitado.
+
+31
+00:01:38,875 --> 00:01:40,897
+Lo dice el selector de arriba:
+
+32
+00:01:40,756 --> 00:01:42,372
+entramos al Colmado.
+
+33
+00:01:42,218 --> 00:01:46,366
+En sus plantillas, la franja dice Catálogo compartido:
+
+34
+00:01:46,247 --> 00:01:51,185
+el Colmado usa las cuentas de la plantilla del sistema tal como vienen.
+
+35
+00:01:51,100 --> 00:01:56,084
+Y como todavía no tiene asientos, puede cambiar de catálogo libremente.
+
+36
+00:01:55,965 --> 00:02:01,122
+La plantilla de la firma también le aparece, aquí como De mi contador.
+
+37
+00:02:01,573 --> 00:02:06,823
+Para adoptarla, pulso Usar este catálogo en la plantilla de la firma.
+
+38
+00:02:06,682 --> 00:02:08,437
+El aviso pide confirmar:
+
+39
+00:02:08,330 --> 00:02:13,290
+dice cuántas cuentas trae la plantilla y que la configuración contable se vuelve a
+
+40
+00:02:13,138 --> 00:02:13,883
+sembrar.
+
+41
+00:02:13,729 --> 00:02:16,263
+Confirmo con Cambiar catálogo.
+
+42
+00:02:16,145 --> 00:02:19,850
+Como el catálogo es compartido, el cambio es inmediato:
+
+43
+00:02:19,743 --> 00:02:21,639
+no hay copia que reemplazar.
+
+44
+00:02:21,473 --> 00:02:23,740
+El aviso confirma el cambio.
+
+45
+00:02:24,175 --> 00:02:25,025
+Listo:
+
+46
+00:02:24,941 --> 00:02:30,586
+la marca En uso pasa al Catálogo Germiva Contadores.
+
+47
+00:02:30,468 --> 00:02:33,512
+El Colmado sigue con catálogo compartido:
+
+48
+00:02:33,370 --> 00:02:36,426
+usa las cuentas de la plantilla tal como vienen.
+
+49
+00:02:36,284 --> 00:02:41,523
+Si ya tuviera asientos, el mismo botón abriría el asistente de correspondencia,
+
+50
+00:02:41,381 --> 00:02:43,600
+que vemos en el próximo video.
