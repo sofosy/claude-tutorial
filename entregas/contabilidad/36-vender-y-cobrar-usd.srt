@@ -1,0 +1,171 @@
+1
+00:00:03,000 --> 00:00:05,313
+Esta es una factura en dólares:
+
+2
+00:00:05,205 --> 00:00:10,362
+la consultoría de implementación que se le vendió al Hotel Germiva Caribe el
+
+3
+00:00:10,221 --> 00:00:13,335
+veinticuatro de septiembre, por mil dólares.
+
+4
+00:00:13,227 --> 00:00:14,333
+Recojo el menú.
+
+5
+00:00:14,227 --> 00:00:18,791
+Los montos se ven en la moneda del documento, con el símbolo de dólar.
+
+6
+00:00:18,685 --> 00:00:21,788
+Debajo del resumen está la equivalencia:
+
+7
+00:00:21,669 --> 00:00:25,583
+la tasa de ese día, cincuenta y ocho con setenta y cinco,
+
+8
+00:00:25,419 --> 00:00:32,097
+y lo que se reporta a la DGII, cincuenta y ocho mil setecientos cincuenta pesos.
+
+9
+00:00:32,013 --> 00:00:37,194
+En la contabilidad la venta quedó registrada en pesos, a esa tasa.
+
+10
+00:00:37,646 --> 00:00:42,606
+Para facturar en dólares, en la factura nueva pulso el selector de moneda,
+
+11
+00:00:42,475 --> 00:00:44,207
+arriba a la derecha.
+
+12
+00:00:44,090 --> 00:00:46,228
+Se abre Moneda del documento.
+
+13
+00:00:46,085 --> 00:00:48,329
+En la lista elijo el dólar.
+
+14
+00:00:48,188 --> 00:00:52,834
+El sistema toma la tasa del día que registraste en Monedas:
+
+15
+00:00:52,716 --> 00:00:56,897
+cincuenta y nueve con cincuenta, y la muestra en el selector.
+
+16
+00:00:56,778 --> 00:00:59,927
+Si hoy no hubiera tasa, te la pide aquí mismo.
+
+17
+00:00:59,763 --> 00:01:05,013
+A partir de ahí, la factura se llena igual que en pesos, con los precios en dólares.
+
+18
+00:01:05,447 --> 00:01:09,536
+Hoy el hotel paga la factura de septiembre por transferencia.
+
+19
+00:01:09,371 --> 00:01:12,265
+En Cobros pulso Registrar cobro.
+
+20
+00:01:12,123 --> 00:01:16,189
+Busco la factura del hotel por su nombre, y la elijo de la lista.
+
+21
+00:01:16,034 --> 00:01:20,960
+El cuadro trae el cliente, el total y el saldo, en dólares.
+
+22
+00:01:20,877 --> 00:01:25,906
+En Tasa del pago viene la de hoy, cincuenta y nueve con cincuenta;
+
+23
+00:01:25,822 --> 00:01:28,518
+si el banco aplicó otra, la cambias aquí.
+
+24
+00:01:28,341 --> 00:01:31,444
+Debajo, el sistema calcula la diferencia:
+
+25
+00:01:31,302 --> 00:01:34,323
+factura a cincuenta y ocho con setenta y cinco,
+
+26
+00:01:34,192 --> 00:01:36,644
+pago a cincuenta y nueve con cincuenta,
+
+27
+00:01:36,526 --> 00:01:40,291
+ganancia cambiaria de setecientos cincuenta pesos.
+
+28
+00:01:40,743 --> 00:01:45,088
+Como pagó por transferencia, elijo Transferencia.
+
+29
+00:01:45,004 --> 00:01:50,823
+Ahora, en el campo Cuenta de destino, busco la cuenta del Banco Popular en dólares,
+
+30
+00:01:50,682 --> 00:01:52,855
+porque ahí entró el dinero.
+
+31
+00:01:52,736 --> 00:01:54,412
+El monto ya viene:
+
+32
+00:01:54,328 --> 00:01:57,069
+mil dólares, el saldo completo.
+
+33
+00:01:56,927 --> 00:01:58,870
+Pulso Registrar cobro.
+
+34
+00:01:58,728 --> 00:02:02,399
+El aviso lo confirma, y la factura queda saldada.
+
+35
+00:02:02,852 --> 00:02:05,142
+El cobro generó su asiento solo.
+
+36
+00:02:04,965 --> 00:02:08,520
+En Asientos Contables, el primero es Pago recibido.
+
+37
+00:02:08,413 --> 00:02:09,217
+Lo abro.
+
+38
+00:02:09,051 --> 00:02:13,431
+El banco en dólares recibe cincuenta y nueve mil quinientos pesos:
+
+39
+00:02:13,289 --> 00:02:15,427
+mil dólares a la tasa de hoy.
+
+40
+00:02:15,298 --> 00:02:19,688
+La cuenta por cobrar baja cincuenta y ocho mil setecientos cincuenta:
+
+41
+00:02:19,546 --> 00:02:21,789
+lo que valía la factura a su tasa.
+
+42
+00:02:21,614 --> 00:02:26,992
+Y la diferencia, setecientos cincuenta, va a Ganancia por diferencia en cambio.
+
+43
+00:02:26,826 --> 00:02:31,798
+Si la tasa hubiera bajado, sería una pérdida, en la cuenta de pérdida cambiaria.
