@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Las cuentas de diferencia cambiaria
+
+DESCRIPCIÓN
+============================================================
+Dónde registra Germiva la ganancia y la pérdida cambiaria de los cobros y pagos en moneda extranjera: el orden en que busca la cuenta (por moneda, cuentas generales y Mapeo de cuentas) y cómo configurar cuentas propias para el dólar.
+
+⏱️ CAPÍTULOS
+00:00  Qué es la diferencia cambiaria
+00:33  Dónde busca la cuenta
+01:09  Cuentas por moneda
+01:52  El respaldo del mapeo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es la diferencia cambiaria realizada y cuándo se registra
+• En qué orden busca el sistema la cuenta
+• Configurar cuentas de ganancia y pérdida para el dólar
+• El respaldo del Mapeo de cuentas
+
+⚠️ ERRORES COMUNES
+• Cambiar de catálogo y dejar sin cuenta los roles de diferencia cambiaria
+• Usar una cuenta que no admite movimiento
+• Creer que la diferencia se registra a mano: el cobro la calcula solo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:26
+
+TRANSCRIPCIÓN
+============================================================
+Si una factura en dólares se registró a una tasa y se cobra o se paga a otra, en pesos no cuadra: esa diferencia es una ganancia o una pérdida cambiaria, y el sistema la registra sola en el asiento del cobro o del pago. Para eso necesita saber en qué cuentas. Estamos en Configuración multi-moneda, en Configuración Contable. El recuadro lo explica con un ejemplo: factura a cincuenta y ocho con setenta y cinco, cobro a cincuenta y nueve con cincuenta.
+La cuenta se busca en este orden. Primero, la configurada para esa moneda, más abajo. Si no hay, las cuentas generales de esta pantalla. Y si tampoco, el rol Ganancia o Pérdida por diferencia cambiaria del Mapeo de cuentas. Si no encuentra ninguna, el cobro o el pago no se contabiliza y el sistema avisa qué falta. Las generales ya vienen puestas al crear la empresa: la ganancia en la cuatro cero dos cero uno cero tres, Ganancia por diferencia en cambio, y la pérdida en la seis cero cinco cero dos.
+Si quieres ver la diferencia del dólar aparte, la configuras por moneda. Pulso Agregar moneda. Elijo el dólar. Neta usa una sola cuenta para ganar y perder; Separada, una para cada cosa: elijo Separada. En la cuenta de ganancia busco cuatro cero dos cero uno cero tres. En la lista aparece Ganancia por diferencia en cambio, y la selecciono. En la de pérdida busco seis cero cinco cero dos: aparece Pérdida por diferencia en cambio, y la elijo también. Pulso Guardar cuentas por moneda, y el aviso lo confirma; pulso Aceptar. Desde ahora, los cobros y pagos en dólares usan estas cuentas.
+El último respaldo está en el Mapeo de cuentas, la pantalla que dice a qué cuenta va cada operación del sistema. Busco cambiaria, para filtrar la lista de roles contables. En el grupo Multimoneda hay dos: Ganancia y Pérdida por Diferencia Cambiaria. Los usa también la revaluación de fin de mes. Si cambias de catálogo, revisa que estos dos roles tengan cuenta: sin ellos, ni la configuración por moneda ni la general, el cobro en dólares no se puede contabilizar.
