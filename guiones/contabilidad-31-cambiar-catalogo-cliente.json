@@ -204,13 +204,13 @@
    "texto_pantalla": "Catálogo compartido · sin asientos: cambio libre",
    "navegar": "/accounting/configuracion/plantillas",
    "esperar": "article.template-card",
-   "narracion": "Ya estamos en la otra empresa: entramos al Colmado. En sus plantillas, la franja dice Catálogo compartido: el Colmado usa las cuentas de la plantilla del sistema tal como vienen. Y como todavía no tiene asientos, puede cambiar de catálogo libremente. La plantilla de la firma también le aparece, aquí como De mi contador.",
+   "narracion": "Ya estamos en la otra empresa, la del cliente invitado. Lo dice el selector de arriba: entramos al Colmado. En sus plantillas, la franja dice Catálogo compartido: el Colmado usa las cuentas de la plantilla del sistema tal como vienen. Y como todavía no tiene asientos, puede cambiar de catálogo libremente. La plantilla de la firma también le aparece, aquí como De mi contador.",
    "acciones": [
     {
      "resaltar": "app-company-selector",
      "durante_ms": 2500,
      "cursor": false,
-     "al_decir": "Entramos al Colmado"
+     "al_decir": "Lo dice el selector"
     },
     {
      "resaltar": ".ownership",
