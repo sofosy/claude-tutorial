@@ -127,7 +127,7 @@
    "rotulo": "Usar el catálogo de la firma",
    "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
    "texto_pantalla": "El catálogo propio se reemplaza por una copia de la plantilla",
-   "narracion": "En la tarjeta del Catálogo Germiva Contadores, que aquí sale como De mi contador, pulso Usar este catálogo. El aviso explica qué va a pasar: las cuentas del catálogo propio se reemplazan por una copia de esta plantilla, que sigue siendo propia del cliente, y la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Reemplazar el catálogo completo toma unos segundos, porque se copia cuenta por cuenta. El aviso confirma el cambio.",
+   "narracion": "En la tarjeta del Catálogo Germiva Contadores, que aquí sale como De mi contador, pulso Usar este catálogo. El aviso explica qué va a pasar: las cuentas del catálogo propio se reemplazan por una copia de esta plantilla, que sigue siendo propia del cliente, y la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Reemplazar el catálogo completo toma unos segundos, porque se copia cuenta por cuenta.",
    "acciones": [
     {
      "click": "article.template-card:has-text('Catálogo Germiva Contadores') button:has-text('Usar este catálogo')",
@@ -142,14 +142,10 @@
     {
      "click": "mat-dialog-container button.confirm-button",
      "al_decir": "Confirmo con Cambiar catálogo"
-    },
-    {
-     "resaltar": ".mat-mdc-snack-bar-container",
-     "durante_ms": 2500,
-     "cursor": false,
-     "al_decir": "El aviso confirma el cambio"
     }
-   ]
+   ],
+   "esperar": ".mat-mdc-snack-bar-container",
+   "esperar_timeout_ms": 60000
   },
   {
    "id": "03-cambiado",
@@ -157,8 +153,14 @@
    "rotulo": "Catálogo cambiado",
    "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
    "texto_pantalla": "Origen: Catálogo Germiva Contadores",
-   "narracion": "Listo: la marca Origen pasa a la plantilla de la firma. Para hacerlo, el contador necesita el acceso Administración completa, o el dueño del cliente lo hace desde su empresa, porque el cambio vuelve a sembrar la configuración contable. Y solo antes del primer asiento, aunque sea un borrador; después, las cuentas se ajustan desde el catálogo.",
+   "narracion": "El aviso confirma el cambio. Listo: la marca Origen pasa a la plantilla de la firma. Para hacerlo, el contador necesita el acceso Administración completa, o el dueño del cliente lo hace desde su empresa, porque el cambio vuelve a sembrar la configuración contable. Y solo antes del primer asiento, aunque sea un borrador; después, las cuentas se ajustan desde el catálogo.",
    "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso confirma el cambio"
+    },
     {
      "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
      "durante_ms": 5000,
@@ -239,23 +241,25 @@
    "rotulo": "Adoptar la plantilla de la firma",
    "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
    "texto_pantalla": "Usar este catálogo · Cambiar catálogo",
-   "narracion": "Para adoptarla, pulso Usar este catálogo en la plantilla de la firma, y confirmo con Cambiar catálogo. Como el catálogo es compartido, el cambio es inmediato: no hay copia que reemplazar.",
+   "narracion": "Para adoptarla, pulso Usar este catálogo en la plantilla de la firma. El aviso pide confirmar: dice cuántas cuentas trae la plantilla y que la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Como el catálogo es compartido, el cambio es inmediato: no hay copia que reemplazar.",
    "acciones": [
     {
      "click": "article.template-card:has-text('Catálogo Germiva Contadores') button:has-text('Usar este catálogo')",
      "al_decir": "pulso Usar este catálogo"
     },
     {
-     "click": "mat-dialog-container button.confirm-button",
-     "al_decir": "confirmo con Cambiar catálogo"
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El aviso pide confirmar"
     },
     {
-     "resaltar": ".mat-mdc-snack-bar-container",
-     "durante_ms": 2000,
-     "cursor": false,
-     "al_decir": "Como el catálogo es compartido"
+     "click": "mat-dialog-container button.confirm-button",
+     "al_decir": "confirmo con Cambiar catálogo"
     }
-   ]
+   ],
+   "esperar": ".mat-mdc-snack-bar-container",
+   "esperar_timeout_ms": 60000
   },
   {
    "id": "06-adoptado",
@@ -263,8 +267,14 @@
    "rotulo": "En uso: la plantilla de la firma",
    "ruta": "Contabilidad › Configuración Contable › Plantillas de Catálogo",
    "texto_pantalla": "En uso: Catálogo Germiva Contadores",
-   "narracion": "Listo: la marca En uso pasa al Catálogo Germiva Contadores. El Colmado sigue con catálogo compartido: usa las cuentas de la plantilla tal como vienen. Si ya tuviera asientos, el mismo botón abriría el asistente de correspondencia, que vemos en el próximo video.",
+   "narracion": "El aviso confirma el cambio. Listo: la marca En uso pasa al Catálogo Germiva Contadores. El Colmado sigue con catálogo compartido: usa las cuentas de la plantilla tal como vienen. Si ya tuviera asientos, el mismo botón abriría el asistente de correspondencia, que vemos en el próximo video.",
    "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso confirma el cambio"
+    },
     {
      "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
      "durante_ms": 5500,
