@@ -227,10 +227,13 @@
     {
      "click": "mat-dialog-container button:has-text('Ejecutar cambio de catálogo')",
      "al_decir": "Pulso Ejecutar"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false
     }
-   ],
-   "esperar": ".mat-mdc-snack-bar-container",
-   "esperar_timeout_ms": 60000
+   ]
   },
   {
    "id": "05-asiento",
@@ -238,13 +241,13 @@
    "rotulo": "El asiento del cambio",
    "ruta": "Contabilidad › Diario y Mayor",
    "texto_pantalla": "Cambio de catálogo · reclasificación de saldos al corte",
-   "narracion": "El aviso confirma que el catálogo cambió y que el asiento de reclasificación quedó contabilizado. El asistente se cierra, y la marca En uso pasa a la plantilla de la firma.",
+   "narracion": "El aviso confirmó que el catálogo cambió y que el asiento de reclasificación quedó contabilizado. El asistente se cierra, y la marca En uso pasa a la plantilla de la firma.",
    "acciones": [
     {
-     "resaltar": ".mat-mdc-snack-bar-container",
-     "durante_ms": 2500,
+     "resaltar": "article.template-card:has-text('Catálogo Germiva Contadores')",
+     "durante_ms": 3500,
      "cursor": false,
-     "al_decir": "El aviso confirma"
+     "al_decir": "El aviso confirmó"
     },
     {
      "resaltar": ".ownership",
