@@ -184,8 +184,8 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | M20 | Revaluación: el selector de moneda decía «USD — US Dollar» (inglés en pantalla) | Arreglar | Hecho (web#1420, 41812a9): usa `CurrencyNamePipe` («Dólar estadounidense») |
 | M21 | Revaluación: el diálogo de anulación titulaba la fecha en ISO («al 2026-09-30») | Arreglar | Hecho (web#1420, 7a4e748): dd/mm/aaaa, igual que el aviso de éxito |
 | M22 | Revaluación: el tooltip «Ver el asiento» tapaba el enlace «Ajuste» de debajo y el clic no llegaba | Arreglar | Hecho (web#1420, 0376d9a): tooltip arriba |
-| M23 | Los asientos automáticos de cobro y pago en un banco en dólares se guardan solo en pesos: el Mayor de esa cuenta no puede mostrar el movimiento en USD | REU (decisión de diseño de la contabilización automática) | Por proponer al usuario |
-| M24 | Balance General generado por período (p. ej. octubre): lo anterior al período, aunque sea del mismo año, sale como «Resultados de ejercicios anteriores no cerrados» | REU (presentación contable) | Por proponer al usuario; el video 39 usa fecha de corte |
+| M23 | Los asientos automáticos de cobro y pago en un banco en dólares se guardan solo en pesos: el Mayor de esa cuenta no puede mostrar el movimiento en USD | Arreglar (decidido con referencia a SAP/Odoo: la cuenta en divisa se ve en su moneda en el Mayor) | Hecho (api#1576, e42cbc3): el Mayor toma el USD de cada línea con la misma regla que el saldo del banco y la revaluación, sin cambiar los asientos guardados |
+| M24 | Balance General generado por período (p. ej. octubre): lo anterior al período, aunque sea del mismo año, sale como «Resultados de ejercicios anteriores no cerrados» | Arreglar (decidido con referencia a SAP/NetSuite/Odoo: utilidad del ejercicio a la fecha) | Hecho (api#1587): el corte es el inicio del ejercicio fiscal; rótulo «del ejercicio no cerrada» |
 
 - **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
 
