@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Contabilidad · Comprar y pagar en dólares
+
+DESCRIPCIÓN
+============================================================
+Cómo se paga en Germiva una compra en dólares a una tasa distinta a la de la factura, desde una cuenta bancaria en dólares, el asiento con la pérdida cambiaria realizada, y cómo funcionan los anticipos a proveedor en moneda extranjera.
+
+⏱️ CAPÍTULOS
+00:00  La compra en dólares
+00:30  Pagar a otra tasa
+01:19  El asiento
+01:41  Anticipos en dólares
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Pagar una compra en dólares a la tasa del día
+• Por qué el mismo monto en dólares da una pérdida en pesos
+• Leer el asiento del pago con la pérdida cambiaria
+• Cómo se manejan los anticipos a proveedor en dólares
+
+⚠️ ERRORES COMUNES
+• Pagar desde una cuenta en pesos sin revisar la tasa del pago
+• Aplicar un anticipo en dólares a una factura en pesos
+• Registrar la pérdida cambiaria con un asiento manual: el pago la calcula
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:18
+
+TRANSCRIPCIÓN
+============================================================
+Con las compras en dólares pasa lo mismo, al revés. Recojo el menú. Esta es la suscripción anual de licencias que la empresa le compró a Germiva Cloud Tools, un proveedor del exterior, el veintiséis de septiembre: quinientos dólares a cincuenta y nueve. Quedó registrada en pesos a esa tasa, veintinueve mil quinientos, como cuenta por pagar. Hoy se paga, y el dólar está a cincuenta y nueve con cincuenta.
+En Pagos a Proveedor, el registro empieza con el botón Registrar pago: lo pulso. En el cuadro busco la factura de Cloud Tools por el nombre del proveedor, y la elijo de la lista. En Tasa del pago viene la de hoy, cincuenta y nueve con cincuenta. Ahora la diferencia va en contra: factura a cincuenta y nueve, pago a cincuenta y nueve con cincuenta, pérdida cambiaria de doscientos cincuenta pesos. Pagar los mismos quinientos dólares cuesta hoy más pesos que cuando se registró la compra.
+Se paga por transferencia: elijo Transferencia. Ahora, en el campo Cuenta de origen, busco la cuenta del Banco Popular en dólares, de donde sale el dinero. El monto ya viene completo. Pulso Registrar pago. El aviso lo confirma.
+En Asientos Contables, el asiento más reciente es Pago realizado. Lo abro. La cuenta por pagar baja veintinueve mil quinientos, lo que valía la deuda a su tasa. Del banco en dólares salen veintinueve mil setecientos cincuenta: quinientos dólares a la tasa de hoy. Y la diferencia, doscientos cincuenta, va a Pérdida por diferencia en cambio.
+Si le adelantas dinero a un proveedor del exterior, regístralo en Anticipos a Proveedor con Registrar Anticipo, en dólares y a la tasa de ese día. Aquí hay uno de trescientos dólares a Cloud Tools: cuando llegue su factura, Aplicar a Factura descuenta el anticipo de la deuda, que tiene que estar en la misma moneda. Si la tasa del anticipo y la de la factura no coinciden, la diferencia también va a las cuentas de diferencia cambiaria. Los anticipos de clientes, en cambio, por ahora solo existen en pesos.
