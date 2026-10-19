@@ -703,6 +703,19 @@ def compra_usd():
     return gl, hotel, consultoria, cloud, compra
 
 
+def compra_usd_con_anticipo():
+    # V37 (solo este video): un anticipo abierto de USD 300 a Cloud Tools, para
+    # que el listado de Anticipos a Proveedor muestre «Aplicar a Factura» (la
+    # acción solo aparece en un anticipo abierto con saldo). Va aparte de
+    # compra_usd para no mover los saldos que revisan el 38 y el 39.
+    gl, hotel, consultoria, cloud, compra = compra_usd()
+    llamar("POST", "/v1/supplier-advances", {
+        "partner": cloud, "amount": 300, "sourceAccount": gl, "advanceDate": "2026-10-15",
+        "currency": USD, "exchangeRate": 59.40, "reference": "TRANSF-USD-0042",
+        "notes": "Anticipo de la renovación de licencias"})
+    return gl, hotel, consultoria, cloud, compra
+
+
 def pago_usd(numero, monto, fecha, tasa_pago, banco):
     llamar("POST", "/v1/payment", {
         "invoiceNumber": numero, "amount": f"{monto:.2f}", "currency": USD, "exchangeRate": tasa_pago,
@@ -904,7 +917,7 @@ ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": aut
            "firma-cambio": firma_cambio, "firma-asistente": firma_asistente,
            "firma-mantener": firma_mantener,
            "monedas": monedas, "diferencia-cambiaria": diferencia_cambiaria, "venta-usd": venta_usd,
-           "compra-usd": compra_usd, "revaluacion-usd": revaluacion_usd, "usd-y-dop": usd_y_dop,
+           "compra-usd": compra_usd_con_anticipo, "revaluacion-usd": revaluacion_usd, "usd-y-dop": usd_y_dop,
            "ret-proveedores": ret_proveedores, "ret-corregir": ret_corregir, "ret-por-pagar": ret_por_pagar,
            "ret-clientes": ret_clientes, "ret-pagadas": ret_pagadas, "ret-carta-lista": ret_carta_lista,
            "ret-cartas-emitidas": ret_cartas_emitidas}

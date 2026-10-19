@@ -246,7 +246,7 @@
    "ruta": "Compras › Anticipos a Proveedor",
    "texto_pantalla": "Anticipo en USD · se aplica a deudas en USD",
    "navegar": "/purchases/supplier-advances",
-   "narracion": "Si le adelantas dinero a un proveedor del exterior, regístralo en Anticipos a Proveedor con Registrar Anticipo, en dólares y a la tasa de ese día. Cuando llegue su factura, Aplicar a Factura descuenta el anticipo de la deuda, que tiene que estar en la misma moneda. Si la tasa del anticipo y la de la factura no coinciden, la diferencia también va a las cuentas de diferencia cambiaria. Los anticipos de clientes, en cambio, por ahora solo existen en pesos.",
+   "narracion": "Si le adelantas dinero a un proveedor del exterior, regístralo en Anticipos a Proveedor con Registrar Anticipo, en dólares y a la tasa de ese día. Aquí hay uno de trescientos dólares a Cloud Tools: cuando llegue su factura, Aplicar a Factura descuenta el anticipo de la deuda, que tiene que estar en la misma moneda. Si la tasa del anticipo y la de la factura no coinciden, la diferencia también va a las cuentas de diferencia cambiaria. Los anticipos de clientes, en cambio, por ahora solo existen en pesos.",
    "acciones": [
     {
      "resaltar": "button:has-text('Registrar Anticipo')",
@@ -255,13 +255,13 @@
      "al_decir": "regístralo en Anticipos a Proveedor"
     },
     {
-     "resaltar": "button:has-text('Aplicar a Factura')",
+     "resaltar": "button[aria-label='Aplicar a Factura']",
      "durante_ms": 5500,
      "cursor": false,
-     "al_decir": "Cuando llegue su factura"
+     "al_decir": "Aquí hay uno"
     },
     {
-     "resaltar": "button:has-text('Aplicar a Factura')",
+     "resaltar": "button[aria-label='Aplicar a Factura']",
      "durante_ms": 4500,
      "cursor": false,
      "al_decir": "Si la tasa del anticipo"
