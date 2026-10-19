@@ -1,0 +1,175 @@
+1
+00:00:03,000 --> 00:00:07,507
+Después de vender, cobrar, pagar y revaluar en dólares,
+
+2
+00:00:07,341 --> 00:00:11,512
+¿dónde se ve cada cosa en dólares y dónde en pesos?
+
+3
+00:00:11,429 --> 00:00:13,811
+Empiezo por Cuentas por Cobrar.
+
+4
+00:00:13,820 --> 00:00:15,018
+Recojo el menú.
+
+5
+00:00:14,853 --> 00:00:19,221
+Cada documento muestra sus importes en la moneda en que se emitió.
+
+6
+00:00:19,172 --> 00:00:24,933
+La venta de dos mil dólares sigue pendiente completa, y la del hotel, de mil,
+
+7
+00:00:24,815 --> 00:00:25,966
+quedó pagada.
+
+8
+00:00:25,814 --> 00:00:30,971
+Lo que el cliente te debe se sigue en dólares, porque es lo que te va a pagar.
+
+9
+00:00:31,426 --> 00:00:34,900
+El estado de cuenta del cliente también va por moneda.
+
+10
+00:00:34,735 --> 00:00:39,022
+En Estados de Cuenta busco al Hotel Germiva Caribe por su nombre;
+
+11
+00:00:38,868 --> 00:00:41,310
+aparece en la lista, y lo elijo.
+
+12
+00:00:41,167 --> 00:00:43,957
+El resumen dice Pendiente en USD:
+
+13
+00:00:43,814 --> 00:00:45,198
+dos mil dólares.
+
+14
+00:00:45,069 --> 00:00:49,042
+Abajo está cada documento abierto, con su monto en dólares.
+
+15
+00:00:48,957 --> 00:00:53,162
+Si el cliente tuviera facturas en pesos, saldrían en otro bloque,
+
+16
+00:00:52,998 --> 00:00:54,382
+con su propio total.
+
+17
+00:00:54,838 --> 00:00:57,649
+El banco también se sigue en su moneda.
+
+18
+00:00:57,508 --> 00:01:02,676
+En Banca, la cuenta del Popular en dólares tiene un saldo de dos mil quinientos
+
+19
+00:01:02,524 --> 00:01:03,454
+dólares:
+
+20
+00:01:03,325 --> 00:01:08,343
+los dos mil del inicio, más los mil del cobro, menos los quinientos del pago.
+
+21
+00:01:08,212 --> 00:01:11,710
+Es el número que tiene que cuadrar con el estado del banco.
+
+22
+00:01:12,162 --> 00:01:15,649
+La contabilidad, en cambio, se lleva en pesos.
+
+23
+00:01:15,482 --> 00:01:19,572
+Este es el asiento de apertura de esa cuenta, en Diario y Mayor.
+
+24
+00:01:19,430 --> 00:01:21,209
+La nota de arriba lo dice:
+
+25
+00:01:21,067 --> 00:01:25,087
+el asiento está en dólares, a cincuenta y ocho con cuarenta,
+
+26
+00:01:24,921 --> 00:01:28,884
+y cada importe se ve en pesos y, debajo, en dólares.
+
+27
+00:01:28,718 --> 00:01:33,911
+Ciento dieciséis mil ochocientos pesos, que son los dos mil dólares del inicio.
+
+28
+00:01:34,349 --> 00:01:38,903
+Ahora el Libro Mayor, que muestra cada movimiento de una cuenta.
+
+29
+00:01:38,772 --> 00:01:41,260
+Busco esa misma cuenta por su código;
+
+30
+00:01:41,106 --> 00:01:43,489
+aparece en la lista, y la elijo.
+
+31
+00:01:43,405 --> 00:01:46,972
+Las fechas ya vienen en octubre, así que pulso Consultar.
+
+32
+00:01:46,853 --> 00:01:48,911
+Aquí todo está en pesos.
+
+33
+00:01:48,745 --> 00:01:51,883
+El cobro entró a cincuenta y nueve con cuarenta:
+
+34
+00:01:51,741 --> 00:01:54,588
+cincuenta y nueve mil cuatrocientos pesos.
+
+35
+00:01:54,435 --> 00:01:57,839
+El pago salió a cincuenta y nueve con cuarenta y cinco.
+
+36
+00:01:57,697 --> 00:02:01,601
+El saldo en pesos, ciento cuarenta y ocho mil setenta y cinco,
+
+37
+00:02:01,447 --> 00:02:05,722
+todavía no es igual a dos mil quinientos dólares a la tasa de hoy:
+
+38
+00:02:05,638 --> 00:02:08,822
+esa diferencia la ajusta la próxima revaluación.
+
+39
+00:02:09,254 --> 00:02:12,716
+Y los estados financieros siempre van en pesos.
+
+40
+00:02:12,633 --> 00:02:17,430
+En Informes Financieros, con el Balance General, escribo la fecha de corte,
+
+41
+00:02:17,276 --> 00:02:20,158
+treinta y uno de octubre, y pulso Generar.
+
+42
+00:02:20,040 --> 00:02:24,326
+El banco en dólares y las cuentas por cobrar aparecen en pesos,
+
+43
+00:02:24,185 --> 00:02:26,277
+con lo que la revaluación les sumó.
+
+44
+00:02:26,193 --> 00:02:27,937
+Y el balance cuadra.

@@ -48,7 +48,7 @@ terminar; nunca aparece en un video.
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | Hecho: firma (api#1569, web#1416), multimoneda (api#1575, web#1419), retenciones (api#1574, web#1418) |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos; investigadas las llamadas al API de multimoneda y de retenciones (`_INVESTIGACION-MULTIMONEDA-API.md`, `_INVESTIGACION-RETENCIONES-API.md`) |
-| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: bloque A grabándose sobre master (28, 29, 30, 33 y 09 hechos; 06 y 08 regrabados; 31 y 32 hechos: bloque A completo); bloque B: 34–37 hechos sobre `fix/contabilidad-asiento-en-dolares`, faltan guiones de 38 y 39 y regrabar 06 y 08 si cambian; bloque C por guionar |
+| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: bloque A grabándose sobre master (28, 29, 30, 33 y 09 hechos; 06 y 08 regrabados; 31 y 32 hechos: bloque A completo); bloque B completo (34–39 sobre `fix/contabilidad-asiento-en-dolares`); bloque C por guionar |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | En curso: manual y definición de la experta hechos (api#1569); faltan catálogo de videos y textos de YouTube |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Hecho: DP-124 a DP-138 (DP-135 a DP-138 renumeradas por choque con comisiones), DP-016, DP-005 y DP-002 al día |
 | 9 | Validación final contra PROD si el cambio toca migraciones o contabilidad; `down.sh --all` y verificación vacía | Por hacer |
@@ -86,7 +86,7 @@ Orden lógico (el 06 queda como pieza de cierre entre el 37 y el 38):
 | 06 | (existente) Revaluación de cierre | Se mantiene; el 38 lo complementa. Se regraba: decía el estado «Posteada», que el arreglo M9 cambió a «Contabilizada» | Hecho (regrabado, 757f4e0) |
 | 08 | (existente) El plan de cuentas | Se regraba: prometía que la casilla «Monetaria» revalúa cualquier cuenta (M4); ahora dice lo que hace | Hecho (regrabado, 6aeac64) |
 | 38 | La revaluación por dentro | Revaluación al 30/09 a 59.20 con lo cobrado y pagado en octubre: el asiento principal (CxC, CxP y el banco) y el «-POST» que retira lo liquidado después del corte; anular la corrida | Hecho (PUBLICABLE, 2:37): asiento al 30/09 (CxC +450 y +400, CxP −100, banco +1,600) y el «-POST» que retira 450 y 100; anular con motivo. Arreglos de pantalla en web#1420: nombre de la moneda en español, fecha dd/mm/aaaa al anular, tooltip que tapaba «Ajuste» |
-| 39 | Ver la operación en USD y en DOP | La factura (USD y su equivalente), antigüedad y estado de cuenta por moneda (cliente y proveedor), el saldo del banco en USD, el Mayor con el importe en dólares y los estados financieros siempre en pesos | Semilla `usd-y-dop` probada (con la revaluación contabilizada) |
+| 39 | Ver la operación en USD y en DOP | La factura (USD y su equivalente), antigüedad y estado de cuenta por moneda (cliente y proveedor), el saldo del banco en USD, el Mayor con el importe en dólares y los estados financieros siempre en pesos | Hecho (PUBLICABLE, 2:25): CxC y estado de cuenta en USD, banco USD 2,500, asiento en USD con contravalor (M14 probado en la app), Mayor en pesos y Balance General por fecha de corte |
 
 ### Bloque C · Retenciones de ISR e ITBIS y la carta de retención (borrador)
 
@@ -181,6 +181,11 @@ Copia borrada con `down.sh --all`; `docker ps -a | grep germiva-dev` salió vac�
 | M18 | Panel: la tarjeta «Por cobrar» suma el importe en USD como pesos (RD$2,000.00 por una CxC de USD 2,000 = RD$118,400 en libros) | Arreglar | En curso (`fix/contabilidad-panel-multimoneda`) |
 | M19 | Panel: «Ingresos» excluye los otros ingresos (ganancia cambiaria) y el «Estado de Resultados Resumido» no tiene filas de otros ingresos/gastos, así que la utilidad neta no cuadra con lo que muestra | Arreglar | En curso (`fix/contabilidad-panel-multimoneda`) |
 | T1 | Diálogos de cobro y pago: «Marca esta opción solo si está registrando…» (tú y usted en un mismo texto) y «marca el check» | Arreglar | Hecho (web#1420, 30f90e2): «Marque esta opción…» y «marque la casilla», en usted como el resto del diálogo |
+| M20 | Revaluación: el selector de moneda decía «USD — US Dollar» (inglés en pantalla) | Arreglar | Hecho (web#1420, 41812a9): usa `CurrencyNamePipe` («Dólar estadounidense») |
+| M21 | Revaluación: el diálogo de anulación titulaba la fecha en ISO («al 2026-09-30») | Arreglar | Hecho (web#1420, 7a4e748): dd/mm/aaaa, igual que el aviso de éxito |
+| M22 | Revaluación: el tooltip «Ver el asiento» tapaba el enlace «Ajuste» de debajo y el clic no llegaba | Arreglar | Hecho (web#1420, 0376d9a): tooltip arriba |
+| M23 | Los asientos automáticos de cobro y pago en un banco en dólares se guardan solo en pesos: el Mayor de esa cuenta no puede mostrar el movimiento en USD | REU (decisión de diseño de la contabilización automática) | Por proponer al usuario |
+| M24 | Balance General generado por período (p. ej. octubre): lo anterior al período, aunque sea del mismo año, sale como «Resultados de ejercicios anteriores no cerrados» | REU (presentación contable) | Por proponer al usuario; el video 39 usa fecha de corte |
 
 - **Investigación de retenciones (tarea 2c).** Los arreglos van en `fix/fiscal-retenciones`.
 
