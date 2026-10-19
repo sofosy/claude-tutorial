@@ -48,7 +48,7 @@ terminar; nunca aparece en un video.
 | 3 | Definir la lista de videos de la tanda (numeración 28 en adelante) y los datos de partida (firma + clientes) | Por hacer |
 | 4 | Corregir los defectos que aparezcan (API y web), con pruebas | Hecho: firma (api#1569, web#1416), multimoneda (api#1575, web#1419), retenciones (api#1574, web#1418) |
 | 5 | Semilla: estados nuevos en `seeds/contabilidad/preparar.py` (firma, firma-plantilla, firma-alta, firma-cambio, firma-asistente; luego multimoneda y retenciones) | En curso: los de la firma, hechos; investigadas las llamadas al API de multimoneda y de retenciones (`_INVESTIGACION-MULTIMONEDA-API.md`, `_INVESTIGACION-RETENCIONES-API.md`) |
-| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: bloque A grabándose sobre master (29 y 33 hechos; 28, 30, 31, 32 y 09 corregidos, a regrabar); bloques B y C: investigando las llamadas al API para las semillas |
+| 6 | Guionar, revisar, ensayar y grabar cada video (un commit por video) | En curso: bloque A grabándose sobre master (28, 29, 30, 33 y 09 hechos; 06 y 08 regrabados; 31 y 32 grabándose con la voz de ElevenLabs); bloques B y C: investigando las llamadas al API para las semillas |
 | 7 | Manual de Contabilidad y de la Cuenta, catálogo de videos, textos para YouTube | En curso: manual y definición de la experta hechos (api#1569); faltan catálogo de videos y textos de YouTube |
 | 8 | REU: fichas que la tanda toque o deje abiertas | Hecho: DP-124 a DP-138 (DP-135 a DP-138 renumeradas por choque con comisiones), DP-016, DP-005 y DP-002 al día |
 | 9 | Validación final contra PROD si el cambio toca migraciones o contabilidad; `down.sh --all` y verificación vacía | Por hacer |
@@ -66,7 +66,7 @@ terminar; nunca aparece en un video.
 | 31 | Cambiar el catálogo de un cliente | Cliente sin asientos (catálogo propio, tras el arreglo F1) y cliente invitado con catálogo compartido que adopta la plantilla de la firma; quién puede hacerlo | Regrabando: el aviso de éxito (3,5 s) se iba antes de la marca; ahora se marca justo después del clic que lo dispara |
 | 32 | Cambio de catálogo con asientos | El asistente de correspondencia: qué va a pasar, cuenta por cuenta, fecha de corte, asiento de reclasificación; el asiento en Diario y Mayor | Regrabando: misma causa (la marca del aviso estaba en el paso siguiente) |
 | 33 | Mantener las plantillas | Plantillas incompletas, importar una plantilla desde archivo, eliminar una plantilla de la firma (y el bloqueo si es la de por defecto) | Hecho (PUBLICABLE, f7b8f2c) |
-| 09 | (existente) Plantillas de catálogo y catálogo propio | Se regraba por F19: la narración ya no promete que una plantilla «Solo esta empresa» sirva en otra empresa | Regrabando: misma causa del aviso de éxito |
+| 09 | (existente) Plantillas de catálogo y catálogo propio | Se regraba por F19: la narración ya no promete que una plantilla «Solo esta empresa» sirva en otra empresa | Hecho (PUBLICABLE, 302feff) |
 
 ### Bloque B · Empresas con más de una moneda (borrador)
 
@@ -83,8 +83,8 @@ Orden lógico (el 06 queda como pieza de cierre entre el 37 y el 38):
 | 35 | Las cuentas de diferencia cambiaria | Orden en que se buscan: por moneda (Neta / Separada) › cuentas generales › roles «Multimoneda» del mapeo (4.02.01.03 y 6.05.02 en GERMIVA_BASE); qué pasa si faltan | Guionado (pasa la revisión); por ensayar. Semilla `diferencia-cambiaria` |
 | 36 | Vender y cobrar en dólares | Factura en USD con la tasa del día (chip de moneda y equivalencia en pesos) y cobro de la venta del 24/09 (USD 1,000 a 58.75) a 59.50 en la cuenta del Popular en dólares: DR Banco 59,500 / CR CxC 58,750 / CR Ganancia 750 | Guionado (pasa la revisión); por ensayar. Semilla `venta-usd` probada (Hotel Germiva Caribe, Popular Corriente USD con 2,000 a 58.40) |
 | 37 | Comprar y pagar en dólares | Pago de la compra al exterior del 26/09 (B17, USD 500 a 59.00) a 59.50: la pérdida de 250; el anticipo a proveedor en USD | Guionado (pasa la revisión); por ensayar. Semilla `compra-usd` probada (Germiva Cloud Tools Inc.) |
-| 06 | (existente) Revaluación de cierre | Se mantiene; el 38 lo complementa. Se regraba: decía el estado «Posteada», que el arreglo M9 cambió a «Contabilizada» | Narración corregida; por regrabar |
-| 08 | (existente) El plan de cuentas | Se regraba: prometía que la casilla «Monetaria» revalúa cualquier cuenta (M4); ahora dice lo que hace | Narración corregida; por regrabar |
+| 06 | (existente) Revaluación de cierre | Se mantiene; el 38 lo complementa. Se regraba: decía el estado «Posteada», que el arreglo M9 cambió a «Contabilizada» | Hecho (regrabado, 757f4e0) |
+| 08 | (existente) El plan de cuentas | Se regraba: prometía que la casilla «Monetaria» revalúa cualquier cuenta (M4); ahora dice lo que hace | Hecho (regrabado, 6aeac64) |
 | 38 | La revaluación por dentro | Revaluación al 30/09 a 59.20 con lo cobrado y pagado en octubre: el asiento principal (CxC, CxP y el banco) y el «-POST» que retira lo liquidado después del corte; anular la corrida | Semilla `revaluacion-usd` probada (revaluación al 30/09: ganancia 2,450, pérdida 100, 4 documentos) |
 | 39 | Ver la operación en USD y en DOP | La factura (USD y su equivalente), antigüedad y estado de cuenta por moneda (cliente y proveedor), el saldo del banco en USD, el Mayor con el importe en dólares y los estados financieros siempre en pesos | Semilla `usd-y-dop` probada (con la revaluación contabilizada) |
 
