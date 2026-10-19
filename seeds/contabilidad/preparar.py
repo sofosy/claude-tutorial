@@ -627,8 +627,13 @@ def tasa_de_hoy():
 
 def diferencia_cambiaria():
     # V35: el video revisa las cuentas generales y el mapeo y agrega la
-    # configuración por moneda.
+    # configuración por moneda. Una empresa nueva nace con las cuentas
+    # generales puestas (el alta las busca por rol en su catálogo); la
+    # empresa sembrada es anterior a esa regla y las tiene vacías, así que se
+    # le ponen las mismas que tendría recién creada.
     tasa_de_hoy()
+    llamar("POST", "/v1/company/config/upsert", {
+        "exchangeGainAccount": cuenta("4.02.01.03"), "exchangeLossAccount": cuenta("6.05.02")})
 
 
 def banco_usd():
