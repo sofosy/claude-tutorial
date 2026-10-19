@@ -209,7 +209,7 @@
      "al_decir": "Con Por cambios"
     },
     {
-     "resaltar": "mat-button-toggle-group",
+     "resaltar": "mat-button-toggle-group:has(mat-button-toggle[value='changes'])",
      "durante_ms": 4000,
      "cursor": false,
      "al_decir": "Esta pantalla es de consulta"
