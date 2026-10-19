@@ -177,7 +177,7 @@
      "al_decir": "Pulso Agregar moneda"
     },
     {
-     "click": ".exchange-row >> nth=0 mat-select",
+     "click": ".exchange-row >> nth=0 >> mat-select",
      "al_decir": "Elijo el dólar"
     },
     {
@@ -185,12 +185,12 @@
      "al_decir": "Neta usa una sola cuenta"
     },
     {
-     "click": ".exchange-row >> nth=0 mat-radio-button[value='GROSS'] label",
+     "click": ".exchange-row >> nth=0 >> mat-radio-button[value='GROSS'] label",
      "al_decir": "elijo Separada"
     },
     {
      "escribir": {
-      "sel": ".exchange-row >> nth=0 app-autocomplete >> nth=0 >> input",
+      "sel": ".exchange-row >> nth=0 >> app-autocomplete >> nth=0 >> input",
       "texto": "4.02.01.03"
      },
      "al_decir": "busco cuatro cero dos"
@@ -201,7 +201,7 @@
     },
     {
      "escribir": {
-      "sel": ".exchange-row >> nth=0 app-autocomplete >> nth=1 >> input",
+      "sel": ".exchange-row >> nth=0 >> app-autocomplete >> nth=1 >> input",
       "texto": "6.05.02"
      },
      "al_decir": "En la de pérdida busco"
@@ -239,7 +239,7 @@
    "texto_pantalla": "Ganancia y Pérdida por Diferencia Cambiaria",
    "navegar": "/accounting/configuracion/mapeos",
    "esperar": "h6.module-group__title",
-   "narracion": "El último respaldo está en el Mapeo de cuentas. Busco cambiaria, para filtrar la lista de roles contables. En el grupo Multimoneda hay dos: Ganancia y Pérdida por Diferencia Cambiaria. Los usa también la revaluación de fin de mes. Si cambias de catálogo, revisa que estos dos roles tengan cuenta: sin ellos, ni la configuración por moneda ni la general, el cobro en dólares no se puede contabilizar.",
+   "narracion": "El último respaldo está en el Mapeo de cuentas, la pantalla que dice a qué cuenta va cada operación del sistema. Busco cambiaria, para filtrar la lista de roles contables. En el grupo Multimoneda hay dos: Ganancia y Pérdida por Diferencia Cambiaria. Los usa también la revaluación de fin de mes. Si cambias de catálogo, revisa que estos dos roles tengan cuenta: sin ellos, ni la configuración por moneda ni la general, el cobro en dólares no se puede contabilizar.",
    "acciones": [
     {
      "escribir": {
