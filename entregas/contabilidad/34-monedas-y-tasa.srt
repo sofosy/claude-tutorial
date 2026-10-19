@@ -1,0 +1,135 @@
+1
+00:00:03,000 --> 00:00:06,253
+Cuando una empresa vende o compra en dólares,
+
+2
+00:00:06,123 --> 00:00:10,096
+lo primero es tener la moneda disponible y su tasa del día.
+
+3
+00:00:10,012 --> 00:00:14,705
+Eso está en Monedas disponibles, dentro de Configuración Contable.
+
+4
+00:00:14,714 --> 00:00:17,711
+Aquí ves las monedas que esta empresa puede usar.
+
+5
+00:00:17,594 --> 00:00:20,335
+El peso dominicano es la moneda local:
+
+6
+00:00:20,217 --> 00:00:25,502
+los libros, los asientos y los estados financieros se llevan siempre en pesos,
+
+7
+00:00:25,338 --> 00:00:26,582
+y eso no cambia.
+
+8
+00:00:26,440 --> 00:00:30,529
+El dólar está disponible para facturar, cobrar y pagar.
+
+9
+00:00:30,399 --> 00:00:35,057
+La marca Por defecto indica la moneda que propone una factura nueva;
+
+10
+00:00:35,008 --> 00:00:39,934
+si casi todo lo vendes en dólares, puedes cambiarla con Hacer por defecto.
+
+11
+00:00:40,386 --> 00:00:43,615
+En la tarjeta del dólar está la tasa del día:
+
+12
+00:00:43,532 --> 00:00:45,554
+cuántos pesos vale un dólar.
+
+13
+00:00:45,402 --> 00:00:47,935
+Dice Última, dieciséis de octubre:
+
+14
+00:00:47,850 --> 00:00:49,537
+la de hoy todavía no está.
+
+15
+00:00:49,361 --> 00:00:53,972
+Escribo la tasa de hoy, cincuenta y nueve con cincuenta, y pulso Guardar.
+
+16
+00:00:53,807 --> 00:00:55,505
+El aviso lo confirma;
+
+17
+00:00:55,328 --> 00:00:59,069
+pulso Aceptar, y el estado cambia a Registrada hoy.
+
+18
+00:00:58,950 --> 00:01:02,204
+Registra la tasa cada día que operes en dólares:
+
+19
+00:01:02,061 --> 00:01:05,292
+la factura y el cobro de ese día la toman de aquí.
+
+20
+00:01:05,730 --> 00:01:08,995
+Las tasas que ya registraste quedan en el historial.
+
+21
+00:01:08,818 --> 00:01:12,443
+Pulso Ver histórico, y se abre el del dólar.
+
+22
+00:01:12,290 --> 00:01:17,424
+Cada fila es un día con tasa registrada, del más reciente al más antiguo.
+
+23
+00:01:17,305 --> 00:01:21,592
+Arriba están la última, la mínima y la máxima del rango.
+
+24
+00:01:21,415 --> 00:01:26,004
+Con Por cambios, la lista muestra solo los días en que la tasa cambió.
+
+25
+00:01:25,862 --> 00:01:28,036
+Esta pantalla es de consulta:
+
+26
+00:01:27,951 --> 00:01:30,357
+las tasas se registran en Monedas.
+
+27
+00:01:30,813 --> 00:01:33,138
+¿Qué tasa usa cada documento?
+
+28
+00:01:32,996 --> 00:01:38,501
+La factura en dólares toma la tasa registrada para su fecha, o la última anterior.
+
+29
+00:01:38,418 --> 00:01:41,950
+El cobro o el pago toman la del día en que se hacen,
+
+30
+00:01:41,796 --> 00:01:46,176
+y la puedes ajustar en el mismo cobro si el banco te aplicó otra.
+
+31
+00:01:46,069 --> 00:01:51,042
+Si la factura se registró a cincuenta y ocho con setenta y cinco y se cobra a
+
+32
+00:01:50,876 --> 00:01:55,522
+cincuenta y nueve con cincuenta, la diferencia es una ganancia cambiaria,
+
+33
+00:01:55,357 --> 00:01:57,426
+que el sistema registra solo.
+
+34
+00:01:57,262 --> 00:02:01,385
+Dónde se registra esa ganancia, lo vemos en el próximo video.

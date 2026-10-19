@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Monedas y tasa del día
+
+DESCRIPCIÓN
+============================================================
+Cómo una empresa que opera en dólares prepara Germiva: la moneda local y la moneda por defecto en Monedas disponibles, registrar la tasa del día, el Histórico de tasas y qué tasa toma cada factura, cobro o pago.
+
+⏱️ CAPÍTULOS
+00:00  Las monedas de la empresa
+00:40  La tasa del día
+01:05  El histórico
+01:30  Qué tasa usa cada documento
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dónde se ven las monedas de la empresa y cuál es la local
+• Registrar la tasa del día del dólar
+• Consultar el histórico de tasas
+• Qué tasa toma cada documento
+
+⚠️ ERRORES COMUNES
+• Facturar en dólares sin registrar la tasa del día
+• Buscar cómo cambiar la moneda local: los libros siempre van en pesos
+• Registrar la tasa en el Histórico: esa pantalla es solo de consulta
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:04
+
+TRANSCRIPCIÓN
+============================================================
+Cuando una empresa vende o compra en dólares, lo primero es tener la moneda disponible y su tasa del día. Eso está en Monedas disponibles, dentro de Configuración Contable. Aquí ves las monedas que esta empresa puede usar. El peso dominicano es la moneda local: los libros, los asientos y los estados financieros se llevan siempre en pesos, y eso no cambia. El dólar está disponible para facturar, cobrar y pagar. La marca Por defecto indica la moneda que propone una factura nueva; si casi todo lo vendes en dólares, puedes cambiarla con Hacer por defecto.
+En la tarjeta del dólar está la tasa del día: cuántos pesos vale un dólar. Dice Última, dieciséis de octubre: la de hoy todavía no está. Escribo la tasa de hoy, cincuenta y nueve con cincuenta, y pulso Guardar. El aviso lo confirma; pulso Aceptar, y el estado cambia a Registrada hoy. Registra la tasa cada día que operes en dólares: la factura y el cobro de ese día la toman de aquí.
+Las tasas que ya registraste quedan en el historial. Pulso Ver histórico, y se abre el del dólar. Cada fila es un día con tasa registrada, del más reciente al más antiguo. Arriba están la última, la mínima y la máxima del rango. Con Por cambios, la lista muestra solo los días en que la tasa cambió. Esta pantalla es de consulta: las tasas se registran en Monedas.
+¿Qué tasa usa cada documento? La factura en dólares toma la tasa registrada para su fecha, o la última anterior. El cobro o el pago toman la del día en que se hacen, y la puedes ajustar en el mismo cobro si el banco te aplicó otra. Si la factura se registró a cincuenta y ocho con setenta y cinco y se cobra a cincuenta y nueve con cincuenta, la diferencia es una ganancia cambiaria, que el sistema registra solo. Dónde se registra esa ganancia, lo vemos en el próximo video.
