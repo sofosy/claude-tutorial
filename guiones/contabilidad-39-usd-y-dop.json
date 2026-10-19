@@ -222,11 +222,11 @@
   {
    "id": "05-mayor",
    "capitulo": "El Libro Mayor",
-   "rotulo": "El Mayor, en pesos",
+   "rotulo": "El Mayor del banco en dólares",
    "ruta": "Contabilidad › Diario y Mayor › Libro Mayor",
-   "texto_pantalla": "Cobro a 59.40 · pago a 59.45",
+   "texto_pantalla": "En pesos y, debajo, en dólares",
    "navegar": "/accounting/registro/mayor",
-   "narracion": "Ahora el Libro Mayor, que muestra cada movimiento de una cuenta. Busco esa misma cuenta por su código; aparece en la lista, y la elijo. Las fechas ya vienen en octubre, así que pulso Consultar. Aquí todo está en pesos. El cobro entró a cincuenta y nueve con cuarenta: cincuenta y nueve mil cuatrocientos pesos. El pago salió a cincuenta y nueve con cuarenta y cinco. El saldo en pesos, ciento cuarenta y ocho mil setenta y cinco, todavía no es igual a dos mil quinientos dólares a la tasa de hoy: esa diferencia la ajusta la próxima revaluación.",
+   "narracion": "Ahora el Libro Mayor, que muestra cada movimiento de una cuenta. Busco esa misma cuenta por su código; aparece en la lista, y la elijo. Las fechas ya vienen en octubre, así que pulso Consultar. Cada importe está en pesos y, como es un banco en dólares, debajo se ve también en dólares. El cobro entró como mil dólares, a cincuenta y nueve con cuarenta: cincuenta y nueve mil cuatrocientos pesos. El pago salió como quinientos dólares, a cincuenta y nueve con cuarenta y cinco. El saldo en pesos, ciento cuarenta y ocho mil setenta y cinco, todavía no es igual a dos mil quinientos dólares a la tasa de hoy: esa diferencia la ajusta la próxima revaluación.",
    "acciones": [
     {
      "escribir": {
@@ -242,6 +242,12 @@
     {
      "click": "button:has-text('Consultar')",
      "al_decir": "pulso Consultar"
+    },
+    {
+     "resaltar": "tr:has-text('Cobro') td >> nth=3",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Cada importe está en pesos"
     },
     {
      "resaltar": "tr:has-text('Cobro')",
