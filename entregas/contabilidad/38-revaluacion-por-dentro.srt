@@ -1,0 +1,199 @@
+1
+00:00:03,000 --> 00:00:07,379
+En el video de la revaluación de cierre vimos cómo se ejecuta.
+
+2
+00:00:07,238 --> 00:00:10,490
+Aquí la vemos por dentro, con un caso más real.
+
+3
+00:00:10,442 --> 00:00:11,710
+Recojo el menú.
+
+4
+00:00:11,590 --> 00:00:16,504
+Al treinta de septiembre la empresa tenía tres documentos en dólares y una cuenta
+
+5
+00:00:16,350 --> 00:00:17,155
+de banco.
+
+6
+00:00:17,070 --> 00:00:19,489
+La venta al Hotel Germiva Caribe,
+
+7
+00:00:19,405 --> 00:00:23,122
+de mil dólares a cincuenta y ocho con setenta y cinco,
+
+8
+00:00:22,981 --> 00:00:25,049
+se cobró el quince de octubre.
+
+9
+00:00:24,966 --> 00:00:29,112
+La compra a Cloud Tools, de quinientos dólares a cincuenta y nueve,
+
+10
+00:00:28,983 --> 00:00:30,738
+se pagó el dieciséis.
+
+11
+00:00:30,632 --> 00:00:35,430
+Otra venta, de dos mil dólares a cincuenta y nueve, sigue abierta.
+
+12
+00:00:35,345 --> 00:00:40,631
+Y el banco tiene dos mil dólares registrados a cincuenta y ocho con cuarenta.
+
+13
+00:00:40,524 --> 00:00:43,265
+La fecha de cierre ya viene propuesta:
+
+14
+00:00:43,148 --> 00:00:44,670
+treinta de septiembre.
+
+15
+00:00:45,121 --> 00:00:48,224
+En Moneda abro la lista y elijo el dólar.
+
+16
+00:00:48,106 --> 00:00:50,396
+La tasa de cierre la dejo vacía:
+
+17
+00:00:50,219 --> 00:00:54,713
+toma la registrada para el treinta de septiembre, cincuenta y nueve con veinte.
+
+18
+00:00:54,584 --> 00:00:56,804
+Pulso Ejecutar revaluación.
+
+19
+00:00:56,673 --> 00:00:59,265
+El aviso dice que ajustó cuatro saldos,
+
+20
+00:00:59,112 --> 00:01:04,477
+con una ganancia de dos mil cuatrocientos cincuenta pesos y una pérdida de cien.
+
+21
+00:01:04,313 --> 00:01:05,941
+Pulso Aceptar.
+
+22
+00:01:06,393 --> 00:01:11,156
+Abajo queda la corrida, y el número de su asiento es un enlace:
+
+23
+00:01:11,165 --> 00:01:12,015
+lo abro.
+
+24
+00:01:11,849 --> 00:01:16,009
+Es un asiento de ajuste fechado el treinta de septiembre.
+
+25
+00:01:15,924 --> 00:01:20,106
+La venta al hotel sube cuatrocientos cincuenta pesos:
+
+26
+00:01:20,000 --> 00:01:24,936
+mil dólares que pasan de cincuenta y ocho con setenta y cinco a cincuenta y nueve
+
+27
+00:01:24,805 --> 00:01:25,691
+con veinte.
+
+28
+00:01:25,537 --> 00:01:29,591
+La venta abierta, de dos mil dólares, sube cuatrocientos.
+
+29
+00:01:29,438 --> 00:01:31,135
+La compra pierde cien:
+
+30
+00:01:31,087 --> 00:01:34,700
+la deuda de quinientos dólares ahora vale más pesos.
+
+31
+00:01:34,569 --> 00:01:37,034
+Y el banco sube mil seiscientos.
+
+32
+00:01:36,950 --> 00:01:41,562
+Cada ajuste va contra la ganancia o la pérdida por diferencia en cambio,
+
+33
+00:01:41,420 --> 00:01:43,420
+todavía no realizada.
+
+34
+00:01:43,856 --> 00:01:45,706
+Volvemos a la revaluación.
+
+35
+00:01:45,575 --> 00:01:49,501
+Debajo del asiento hay un segundo enlace, el Ajuste.
+
+36
+00:01:49,325 --> 00:01:50,871
+¿Por qué otro asiento?
+
+37
+00:01:50,787 --> 00:01:55,795
+La venta al hotel y la compra se liquidaron en octubre, después del corte,
+
+38
+00:01:55,629 --> 00:02:01,158
+y su cobro y su pago ya registraron la diferencia real, desde la tasa de la factura.
+
+39
+00:02:01,016 --> 00:02:05,721
+Si la revaluación las dejara, esa diferencia se contaría dos veces.
+
+40
+00:02:05,637 --> 00:02:06,441
+Lo abro.
+
+41
+00:02:06,287 --> 00:02:10,097
+El ajuste retira lo que la revaluación les había puesto:
+
+42
+00:02:09,967 --> 00:02:14,463
+los cuatrocientos cincuenta de la venta al hotel y los cien de la compra.
+
+43
+00:02:14,437 --> 00:02:18,050
+La venta abierta y el banco conservan su ajuste.
+
+44
+00:02:18,501 --> 00:02:22,625
+Si la corrida tuvo un error, por ejemplo una tasa equivocada,
+
+45
+00:02:22,495 --> 00:02:25,039
+se anula con la flecha roja de su fila.
+
+46
+00:02:24,885 --> 00:02:25,689
+Lo abro.
+
+47
+00:02:25,537 --> 00:02:30,414
+El aviso explica que se registra el reverso y que los saldos vuelven a su valor
+
+48
+00:02:30,262 --> 00:02:32,343
+anterior, y pide el motivo.
+
+49
+00:02:32,188 --> 00:02:36,662
+Las revaluaciones se anulan de la más reciente a la más antigua.
+
+50
+00:02:36,531 --> 00:02:39,087
+Esta está bien, así que cancelo.
