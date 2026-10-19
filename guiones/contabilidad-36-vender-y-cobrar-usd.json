@@ -248,10 +248,9 @@
      "al_decir": "Pulso Registrar cobro"
     },
     {
-     "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container:has-text('Aceptar')",
+     "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 2500,
-     "cursor": false,
-     "al_decir": "El aviso lo confirma"
+     "cursor": false
     }
    ]
   },

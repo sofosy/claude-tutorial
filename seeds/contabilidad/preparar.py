@@ -686,6 +686,10 @@ def venta_usd():
     consultoria = servicio("Consultoría de implementación", "SRV-USD-01")
     factura_usd(hotel, "B01", consultoria, "2026-09-24", 58.75, 1000, "2026-10-24",
                 "Implementación del sistema de reservas")
+    # El aviso «Configuración incompleta» sale una sola vez por usuario y
+    # empresa al abrir una factura: se gasta aquí para que no tape la pantalla
+    # en el video (mismo criterio que en cliente_invitado).
+    llamar("POST", "/v1/user-preferences/incomplete-config-notice/claim", {})
     return gl, hotel, consultoria
 
 
