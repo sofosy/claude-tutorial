@@ -1,0 +1,291 @@
+{
+ "titulo": "Vendedores · Los reportes por vendedor",
+ "descripcion": "Cómo leer las ventas por vendedor: el resumen de Análisis de Ventas, el reporte Ventas por Vendedor, el Embudo por Vendedor con lo ganado, lo perdido y lo abierto, y la cartera por cobrar agrupada por vendedor del documento o por ejecutivo de cuenta.",
+ "_comentario": "Video 13 de la serie Vendedores. setup: preparar.sh reportes (tres facturas sin cobrar: Luis 2, Carmen 1; cotizaciones: Luis una ganada con orden confirmada y una abierta, Carmen una cancelada y una abierta; el Colmado del Este pasó de Carmen a Pedro después de facturar).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce",
+  "AFP": "a-efe-pe",
+  "SFS": "ese-efe-ese",
+  "ISR": "i-ese-erre",
+  "LC-000002": "ele ce dos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/dashboard",
+  "esperar": "button:has-text('Actualizar')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh reportes"
+ },
+ "aprenderas": [
+  "Filtrar el análisis de ventas por fecha",
+  "El reporte Ventas por Vendedor",
+  "El embudo: ganado, perdido, abierto, conversión y cierre",
+  "La cartera por vendedor del documento o por ejecutivo de cuenta"
+ ],
+ "errores_comunes": [
+  "Mirar el período completo con ventas sin vendedor que tapan a los vendedores",
+  "Confundir conversión con cierre",
+  "Cobrarle la cartera al vendedor del documento cuando el cliente ya tiene otro ejecutivo"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-resumen",
+   "capitulo": "Análisis de Ventas",
+   "rotulo": "Las ventas del día por vendedor",
+   "ruta": "Ventas › Reportes",
+   "texto_pantalla": "Desde y hasta: 21/10/2026",
+   "navegar": "/sales/dashboard",
+   "narracion": "Los reportes de vendedores están en Ventas, Reportes, en el Análisis de Ventas. Recojo el menú. Arriba se elige el rango de fechas. Quiero ver solo las ventas de hoy, así que escribo el veintiuno de octubre en Desde, y pulso Actualizar. Ventas por Vendedor reparte lo facturado entre los vendedores del documento: Luis vendió más que Carmen. Y Conversión Cotización dice qué parte de las cotizaciones del rango se ganó, es decir, pasó a orden de venta o a factura: una de cuatro, el veinticinco por ciento.",
+   "acciones": [
+    {
+     "resaltar": "h1:has-text('Análisis de Ventas'), :text('Análisis de Ventas') >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "en el Análisis de Ventas"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has-text('Desde') input",
+      "texto": "21/10/2026"
+     },
+     "al_decir": "solo las ventas de hoy"
+    },
+    {
+     "click": "button:has-text('Actualizar')",
+     "al_decir": "pulso Actualizar"
+    },
+    {
+     "resaltar": "mat-card:has(mat-card-title:text-is('Ventas por Vendedor'))",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Ventas por Vendedor"
+    },
+    {
+     "resaltar": "mat-card:has-text('Conversión Cotización')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Y Conversión Cotización"
+    }
+   ]
+  },
+  {
+   "id": "02-ventas-por-vendedor",
+   "capitulo": "Reportes",
+   "rotulo": "Ventas por Vendedor",
+   "ruta": "Ventas › Reportes › Reportes",
+   "texto_pantalla": "Facturado, notas de crédito y venta neta",
+   "narracion": "El detalle está en la pestaña Reportes. En Tipo de reporte elijo Ventas por Vendedor. Una fila por vendedor del documento: Luis con dos facturas y veintiún mil doscientos cuarenta pesos, y Carmen con una. Las notas de crédito se restan para dar la venta neta, y Sin ITBIS es la base sobre la que se suelen calcular las comisiones. Se puede exportar o imprimir.",
+   "acciones": [
+    {
+     "click": "[role=tab]:has-text('Reportes'), a:has-text('Reportes') >> nth=-1",
+     "al_decir": "la pestaña Reportes"
+    },
+    {
+     "click": "mat-form-field:has-text('Tipo de reporte') mat-select",
+     "al_decir": "En Tipo de reporte"
+    },
+    {
+     "click": "mat-option:has-text('Ventas por Vendedor')",
+     "al_decir": "elijo Ventas por Vendedor"
+    },
+    {
+     "resaltar": "tr:has-text('Luis Gómez')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Luis con dos facturas"
+    },
+    {
+     "resaltar": "tr:has-text('Carmen Rosario')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "y Carmen con una"
+    },
+    {
+     "resaltar": "th:has-text('Venta neta')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "para dar la venta neta"
+    },
+    {
+     "resaltar": "th:has-text('Sin ITBIS')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "y Sin ITBIS"
+    },
+    {
+     "resaltar": "button:has-text('Exportar')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Se puede exportar"
+    }
+   ]
+  },
+  {
+   "id": "03-embudo",
+   "capitulo": "Reportes",
+   "rotulo": "Embudo por Vendedor",
+   "ruta": "Ventas › Reportes › Reportes",
+   "texto_pantalla": "Ganada: pasó a orden o factura",
+   "narracion": "Paso al siguiente reporte. Abro de nuevo Tipo de reporte, bajo por la lista y elijo el Embudo por Vendedor. Mide las cotizaciones y las órdenes de cada vendedor. Luis hizo dos cotizaciones: una ganada, que pasó a orden de venta, y una todavía abierta, que es lo que puede cerrar. Carmen perdió una, que se canceló, y tiene otra abierta. Conversión es ganadas sobre todas: Luis, el cincuenta por ciento. Cierre es ganadas sobre las ya decididas: Luis no ha perdido ninguna, así que su cierre es del cien por ciento. A la derecha, las órdenes confirmadas y lo que falta por facturar de ellas.",
+   "acciones": [
+    {
+     "click": "mat-form-field:has-text('Tipo de reporte') mat-select",
+     "al_decir": "Abro de nuevo"
+    },
+    {
+     "click": "mat-option:has-text('Embudo por Vendedor')",
+     "al_decir": "el Embudo por Vendedor"
+    },
+    {
+     "resaltar": "[data-testid=pipeline-by-seller] tr:has-text('Luis Gómez') td >> nth=1",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Luis hizo dos cotizaciones"
+    },
+    {
+     "resaltar": "[data-testid=pipeline-by-seller] tr:has-text('Luis Gómez') td >> nth=3",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "una ganada"
+    },
+    {
+     "resaltar": "[data-testid=pipeline-by-seller] tr:has-text('Luis Gómez') td >> nth=6",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "una todavía abierta"
+    },
+    {
+     "resaltar": "[data-testid=pipeline-by-seller] tr:has-text('Carmen Rosario') td >> nth=5",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Carmen perdió una"
+    },
+    {
+     "resaltar": "[data-testid=pipeline-by-seller] tr:has-text('Luis Gómez') td >> nth=7",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Conversión es ganadas"
+    },
+    {
+     "resaltar": "[data-testid=pipeline-by-seller] tr:has-text('Luis Gómez') td >> nth=8",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Cierre es ganadas"
+    },
+    {
+     "resaltar": "[data-testid=pipeline-by-seller] tr:has-text('Luis Gómez') td >> nth=10",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "A la derecha, las órdenes"
+    }
+   ]
+  },
+  {
+   "id": "04-cartera",
+   "capitulo": "Cartera por vendedor",
+   "rotulo": "Vendedor del documento o ejecutivo",
+   "ruta": "Contabilidad › Cuentas por Cobrar › Análisis",
+   "texto_pantalla": "Colmado Germiva Este: vendió Carmen, cobra Pedro",
+   "navegar": "/accounting/cobros/analisis",
+   "narracion": "La cartera por cobrar también se lee por vendedor, en Cuentas por Cobrar, Análisis. En Antigüedad de la cartera, Agrupar por tiene dos opciones de vendedor. Elijo Vendedor del documento: quién hizo cada venta. Carmen tiene cinco mil novecientos pesos pendientes, la factura del Colmado Germiva Este. Pero ese cliente pasó después a Pedro. Elijo Ejecutivo de cuenta: el que lleva al cliente hoy. Ahora esa misma deuda sale a nombre de Pedro, que es quien la va a cobrar. La venta y su comisión siguen siendo de Carmen.",
+   "acciones": [
+    {
+     "resaltar": ":text('Análisis') >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Cuentas por Cobrar, Análisis"
+    },
+    {
+     "resaltar": "[data-testid=aging-grouping]",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Agrupar por"
+    },
+    {
+     "click": "[data-testid=aging-grouping] mat-button-toggle:has-text('Vendedor del documento')",
+     "al_decir": "Elijo Vendedor del documento"
+    },
+    {
+     "resaltar": "tr:has-text('Carmen Rosario')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Carmen tiene cinco mil novecientos"
+    },
+    {
+     "click": "[data-testid=aging-grouping] mat-button-toggle:has-text('Ejecutivo de cuenta')",
+     "al_decir": "Elijo Ejecutivo de cuenta"
+    },
+    {
+     "resaltar": "tr:has-text('Pedro Almonte')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "sale a nombre de Pedro"
+    }
+   ]
+  }
+ ]
+}

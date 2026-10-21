@@ -330,7 +330,10 @@ def reportes():
     del documento) pero el ejecutivo de cuenta ya es Pedro."""
     ventas()
     ganada = cotizacion(CLIENTES[0][0], [(PRODUCTOS[0][0], 12)])        # Luis
-    llamar("POST", f"/v1/quotes/convert-to-order/{ganada}", {})
+    orden = llamar("POST", f"/v1/quotes/convert-to-order/{ganada}", {})
+    # La orden nace en borrador y un borrador no es pedido en firme: se
+    # confirma para que el embudo la cuente como orden por facturar.
+    llamar("PATCH", f"/v1/orders/{orden['orderId']}/status/CONFIRMED", {})
     cotizacion(CLIENTES[2][0], [(PRODUCTOS[1][0], 40)])                # Luis, abierta
     perdida = cotizacion(CLIENTES[1][0], [(PRODUCTOS[0][0], 5)])        # Carmen
     llamar("PATCH", f"/v1/quotes/cancel/{perdida}", {})
