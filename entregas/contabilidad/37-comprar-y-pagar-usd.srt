@@ -1,0 +1,163 @@
+1
+00:00:03,000 --> 00:00:06,416
+Con las compras en dólares pasa lo mismo, al revés.
+
+2
+00:00:06,309 --> 00:00:07,472
+Recojo el menú.
+
+3
+00:00:07,341 --> 00:00:12,893
+Esta es la suscripción anual de licencias que la empresa le compró a Germiva Cloud
+
+4
+00:00:12,752 --> 00:00:17,073
+Tools, un proveedor del exterior, el veintiséis de septiembre:
+
+5
+00:00:16,944 --> 00:00:19,698
+quinientos dólares a cincuenta y nueve.
+
+6
+00:00:19,568 --> 00:00:24,028
+Quedó registrada en pesos a esa tasa, veintinueve mil quinientos,
+
+7
+00:00:23,864 --> 00:00:25,398
+como cuenta por pagar.
+
+8
+00:00:25,234 --> 00:00:30,321
+Hoy se paga, y el dólar está a cincuenta y nueve con cincuenta.
+
+9
+00:00:30,774 --> 00:00:36,094
+En Pagos a Proveedor, el registro empieza con el botón Registrar pago:
+
+10
+00:00:36,010 --> 00:00:36,908
+lo pulso.
+
+11
+00:00:36,742 --> 00:00:41,411
+En el cuadro busco la factura de Cloud Tools por el nombre del proveedor,
+
+12
+00:00:41,246 --> 00:00:42,979
+y la elijo de la lista.
+
+13
+00:00:42,814 --> 00:00:47,170
+En Tasa del pago viene la de hoy, cincuenta y nueve con cincuenta.
+
+14
+00:00:47,040 --> 00:00:49,353
+Ahora la diferencia va en contra:
+
+15
+00:00:49,212 --> 00:00:53,533
+factura a cincuenta y nueve, pago a cincuenta y nueve con cincuenta,
+
+16
+00:00:53,367 --> 00:00:56,772
+pérdida cambiaria de doscientos cincuenta pesos.
+
+17
+00:00:56,631 --> 00:01:01,543
+Pagar los mismos quinientos dólares cuesta hoy más pesos que cuando se registró la
+
+18
+00:01:01,402 --> 00:01:02,135
+compra.
+
+19
+00:01:02,575 --> 00:01:04,575
+Se paga por transferencia:
+
+20
+00:01:04,467 --> 00:01:06,479
+elijo Transferencia.
+
+21
+00:01:06,337 --> 00:01:11,796
+Ahora, en el campo Cuenta de origen, busco la cuenta del Banco Popular en dólares,
+
+22
+00:01:11,677 --> 00:01:13,294
+de donde sale el dinero.
+
+23
+00:01:13,140 --> 00:01:15,337
+El monto ya viene completo.
+
+24
+00:01:15,183 --> 00:01:16,881
+Pulso Registrar pago.
+
+25
+00:01:16,762 --> 00:01:18,565
+El aviso lo confirma.
+
+26
+00:01:19,015 --> 00:01:23,662
+En Asientos Contables, el asiento más reciente es Pago realizado.
+
+27
+00:01:23,531 --> 00:01:24,358
+Lo abro.
+
+28
+00:01:24,239 --> 00:01:27,644
+La cuenta por pagar baja veintinueve mil quinientos,
+
+29
+00:01:27,514 --> 00:01:29,629
+lo que valía la deuda a su tasa.
+
+30
+00:01:29,464 --> 00:01:33,692
+Del banco en dólares salen veintinueve mil setecientos cincuenta:
+
+31
+00:01:33,609 --> 00:01:35,759
+quinientos dólares a la tasa de hoy.
+
+32
+00:01:35,675 --> 00:01:41,088
+Y la diferencia, doscientos cincuenta, va a Pérdida por diferencia en cambio.
+
+33
+00:01:41,541 --> 00:01:44,771
+Si le adelantas dinero a un proveedor del exterior,
+
+34
+00:01:44,722 --> 00:01:49,195
+regístralo en Anticipos a Proveedor con Registrar Anticipo,
+
+35
+00:01:49,064 --> 00:01:51,807
+en dólares y a la tasa de ese día.
+
+36
+00:01:51,700 --> 00:01:55,185
+Aquí hay uno de trescientos dólares a Cloud Tools:
+
+37
+00:01:55,043 --> 00:02:00,154
+cuando llegue su factura, Aplicar a Factura descuenta el anticipo de la deuda,
+
+38
+00:02:00,070 --> 00:02:02,558
+que tiene que estar en la misma moneda.
+
+39
+00:02:02,392 --> 00:02:06,238
+Si la tasa del anticipo y la de la factura no coinciden,
+
+40
+00:02:06,131 --> 00:02:10,104
+la diferencia también va a las cuentas de diferencia cambiaria.
+
+41
+00:02:09,951 --> 00:02:14,760
+Los anticipos de clientes, en cambio, por ahora solo existen en pesos.

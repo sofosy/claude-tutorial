@@ -1,0 +1,40 @@
+TÍTULO
+============================================================
+Contabilidad · Ver la operación en dólares y en pesos
+
+DESCRIPCIÓN
+============================================================
+Dónde ve Germiva cada cosa en dólares y dónde en pesos: cuentas por cobrar y estado de cuenta del cliente en la moneda de la factura, el saldo del banco en dólares, el asiento en USD con su contravalor, el Libro Mayor en pesos y los estados financieros siempre en pesos.
+
+⏱️ CAPÍTULOS
+00:00  Lo que te deben, en dólares
+00:31  El estado de cuenta
+00:54  El banco en dólares
+01:12  Un asiento en dólares
+01:34  El Libro Mayor
+02:17  Los estados financieros
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Seguir lo que te deben y lo que tienes en el banco en la moneda del documento
+• Leer un asiento en dólares con su contravalor en pesos
+• Por qué el Mayor y los estados financieros están en pesos y qué ajusta la revaluación
+
+⚠️ ERRORES COMUNES
+• Comparar el saldo en pesos del banco en dólares con su saldo en USD por la tasa de hoy sin haber revaluado
+• Buscar los estados financieros en dólares: se presentan en la moneda local
+• Generar el Balance General por período en vez de por fecha de corte
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:39
+
+TRANSCRIPCIÓN
+============================================================
+Después de vender, cobrar, pagar y revaluar en dólares, ¿dónde se ve cada cosa en dólares y dónde en pesos? Empiezo por Cuentas por Cobrar. Recojo el menú. Cada documento muestra sus importes en la moneda en que se emitió. La venta de dos mil dólares sigue pendiente completa, y la del hotel, de mil, quedó pagada. Lo que el cliente te debe se sigue en dólares, porque es lo que te va a pagar.
+El estado de cuenta del cliente también va por moneda. En Estados de Cuenta busco al Hotel Germiva Caribe por su nombre; aparece en la lista, y lo elijo. El resumen dice Pendiente en USD: dos mil dólares. Abajo está cada documento abierto, con su monto en dólares. Si el cliente tuviera facturas en pesos, saldrían en otro bloque, con su propio total.
+El banco también se sigue en su moneda. En Banca, la cuenta del Popular en dólares tiene un saldo de dos mil quinientos dólares: los dos mil del inicio, más los mil del cobro, menos los quinientos del pago. Es el número que tiene que cuadrar con el estado del banco.
+La contabilidad, en cambio, se lleva en pesos. Este es el asiento de apertura de esa cuenta, en Diario y Mayor. La nota de arriba lo dice: el asiento está en dólares, a cincuenta y ocho con cuarenta, y cada importe se ve en pesos y, debajo, en dólares. Ciento dieciséis mil ochocientos pesos, que son los dos mil dólares del inicio.
+Ahora el Libro Mayor, que muestra cada movimiento de una cuenta. Busco esa misma cuenta por su código; aparece en la lista, y la elijo. Las fechas ya vienen en octubre, así que pulso Consultar. Cada importe está en pesos y, como es un banco en dólares, debajo se ve también en dólares. El cobro entró como mil dólares, a cincuenta y nueve con cuarenta: cincuenta y nueve mil cuatrocientos pesos. El pago salió como quinientos dólares, a cincuenta y nueve con cuarenta y cinco. El saldo en pesos, ciento cuarenta y ocho mil setenta y cinco, todavía no es igual a dos mil quinientos dólares a la tasa de hoy: esa diferencia la ajusta la próxima revaluación.
+Y los estados financieros siempre van en pesos. En Informes Financieros, con el Balance General, escribo la fecha de corte, treinta y uno de octubre, y pulso Generar. El banco en dólares y las cuentas por cobrar aparecen en pesos, con lo que la revaluación les sumó. Y el balance cuadra.

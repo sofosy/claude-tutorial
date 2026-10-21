@@ -627,8 +627,13 @@ def tasa_de_hoy():
 
 def diferencia_cambiaria():
     # V35: el video revisa las cuentas generales y el mapeo y agrega la
-    # configuración por moneda.
+    # configuración por moneda. Una empresa nueva nace con las cuentas
+    # generales puestas (el alta las busca por rol en su catálogo); la
+    # empresa sembrada es anterior a esa regla y las tiene vacías, así que se
+    # le ponen las mismas que tendría recién creada.
     tasa_de_hoy()
+    llamar("POST", "/v1/company/config/upsert", {
+        "exchangeGainAccount": cuenta("4.02.01.03"), "exchangeLossAccount": cuenta("6.05.02")})
 
 
 def banco_usd():
@@ -681,6 +686,10 @@ def venta_usd():
     consultoria = servicio("Consultoría de implementación", "SRV-USD-01")
     factura_usd(hotel, "B01", consultoria, "2026-09-24", 58.75, 1000, "2026-10-24",
                 "Implementación del sistema de reservas")
+    # El aviso «Configuración incompleta» sale una sola vez por usuario y
+    # empresa al abrir una factura: se gasta aquí para que no tape la pantalla
+    # en el video (mismo criterio que en cliente_invitado).
+    llamar("POST", "/v1/user-preferences/incomplete-config-notice/claim", {})
     return gl, hotel, consultoria
 
 
@@ -691,6 +700,19 @@ def compra_usd():
     licencias = servicio("Licencias de software (suscripción anual)", "SRV-USD-02")
     compra = factura_usd(cloud, "B17", licencias, "2026-09-26", 59.00, 500, "2026-10-26",
                          "Suscripción anual de licencias")
+    return gl, hotel, consultoria, cloud, compra
+
+
+def compra_usd_con_anticipo():
+    # V37 (solo este video): un anticipo abierto de USD 300 a Cloud Tools, para
+    # que el listado de Anticipos a Proveedor muestre «Aplicar a Factura» (la
+    # acción solo aparece en un anticipo abierto con saldo). Va aparte de
+    # compra_usd para no mover los saldos que revisan el 38 y el 39.
+    gl, hotel, consultoria, cloud, compra = compra_usd()
+    llamar("POST", "/v1/supplier-advances", {
+        "partner": cloud, "amount": 300, "sourceAccount": gl, "advanceDate": "2026-10-15",
+        "currency": USD, "exchangeRate": 59.40, "reference": "TRANSF-USD-0042",
+        "notes": "Anticipo de la renovación de licencias"})
     return gl, hotel, consultoria, cloud, compra
 
 
@@ -895,7 +917,7 @@ ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": aut
            "firma-cambio": firma_cambio, "firma-asistente": firma_asistente,
            "firma-mantener": firma_mantener,
            "monedas": monedas, "diferencia-cambiaria": diferencia_cambiaria, "venta-usd": venta_usd,
-           "compra-usd": compra_usd, "revaluacion-usd": revaluacion_usd, "usd-y-dop": usd_y_dop,
+           "compra-usd": compra_usd_con_anticipo, "revaluacion-usd": revaluacion_usd, "usd-y-dop": usd_y_dop,
            "ret-proveedores": ret_proveedores, "ret-corregir": ret_corregir, "ret-por-pagar": ret_por_pagar,
            "ret-clientes": ret_clientes, "ret-pagadas": ret_pagadas, "ret-carta-lista": ret_carta_lista,
            "ret-cartas-emitidas": ret_cartas_emitidas}

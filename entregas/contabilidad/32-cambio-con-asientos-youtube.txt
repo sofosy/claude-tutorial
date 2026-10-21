@@ -1,0 +1,40 @@
+TÍTULO
+============================================================
+Contabilidad · Cambiar de catálogo con asientos: el asistente de correspondencia
+
+DESCRIPCIÓN
+============================================================
+Cómo se cambia en Germiva el catálogo de cuentas de una empresa que ya tiene asientos contabilizados: el asistente de correspondencia cuenta por cuenta, la fecha de corte y el asiento de reclasificación que traslada los saldos.
+
+⏱️ CAPÍTULOS
+00:00  Con asientos
+00:27  Qué va a pasar
+00:53  Correspondencia
+01:23  Ejecutar
+01:49  El asiento de reclasificación
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Por qué con asientos el cambio de catálogo pide correspondencia
+• Asignar a cada cuenta con movimiento su cuenta nueva
+• Elegir la fecha de corte y leer el asiento de reclasificación
+
+⚠️ ERRORES COMUNES
+• Hacer el cambio a mitad de año: conviene en el corte del ejercicio fiscal
+• Elegir una fecha de corte anterior al último asiento: el sistema la rechaza
+• Esperar que los asientos viejos cambien de cuenta: no se tocan; el saldo se traslada con un asiento
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:34
+
+TRANSCRIPCIÓN
+============================================================
+El Colmado Germiva ya contabilizó su balance inicial, así que su catálogo tiene historia. Recojo el menú. El aviso de arriba lo dice: con asientos contabilizados, el cambio se hace con el asistente de correspondencia, idealmente en el corte del ejercicio fiscal. Igual que antes, en la plantilla de la firma pulso Usar este catálogo, y esta vez se abre el asistente.
+El primer paso explica lo que va a pasar. Cada cuenta con movimiento tiene que apuntar a una cuenta del catálogo nuevo. Se registra un asiento de reclasificación en la fecha de corte, que traslada el saldo de cada cuenta vieja a la nueva. Los asientos históricos no se tocan, y las cuentas propias con movimiento se archivan, nunca se borran. Los mapeos contables se reapuntan al catálogo nuevo. Pulso Continuar.
+El segundo paso es la correspondencia. Cada fila es una cuenta con movimiento, con su saldo. Cuando el catálogo nuevo tiene una cuenta con el mismo código, el sistema ya la propone, como la Caja general y el capital. El Banco Popular que creó el Colmado tiene un código que la plantilla no trae, así que lo asigno yo: abro su selector, y elijo el Banco Popular, cuenta corriente, de la firma. Con las tres cuentas asignadas, pulso Continuar.
+El último paso pide la fecha de corte: el asiento de reclasificación se registra en esa fecha, y no puede haber asientos posteriores. Escribo el treinta y uno de octubre de dos mil veintiséis, el cierre del mes. El aviso recuerda que el cambio no se puede deshacer y queda auditado. Pulso Ejecutar cambio de catálogo. El sistema registra el asiento y reapunta la configuración.
+El aviso confirmó que el catálogo cambió y que el asiento de reclasificación quedó contabilizado. El asistente se cierra, y la marca En uso pasa a la plantilla de la firma.
+Vamos a buscar ese asiento. El asiento está en Diario y Mayor, con la fecha del corte y el número que le dio el sistema.
+Es el primero de la lista. Ahora lo abro para ver sus líneas. Cada cuenta vieja se salda contra su cuenta nueva: el Banco Popular del Colmado pasa al Banco Popular de la firma, y lo mismo la caja y el capital. Los asientos anteriores siguen en sus cuentas de siempre: el cambio queda como una sola huella, auditada.

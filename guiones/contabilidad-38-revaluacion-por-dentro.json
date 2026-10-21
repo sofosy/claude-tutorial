@@ -1,0 +1,301 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "NIC 21": "nic veintiuno",
+  "NIC 16": "nic dieciséis"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 10,
+ "titulo": "Contabilidad · La revaluación por dentro: asiento y ajuste por liquidación",
+ "descripcion": "Qué registra la revaluación NIC 21 de Germiva cuando parte de los saldos en dólares se cobró o se pagó después del cierre: el asiento de ajuste al cierre (cuentas por cobrar, por pagar y el banco), el asiento «-POST» que retira lo liquidado después del corte para no contar dos veces la diferencia, y cómo anular la corrida.",
+ "_comentario": "Video 38 de la serie Contabilidad (bloque B). setup: preparar.sh revaluacion-usd (venta al Hotel Germiva Caribe USD 1,000 a 58.75 cobrada el 15/10 a 59.40; compra a Germiva Cloud Tools USD 500 a 59.00 pagada el 16/10 a 59.45; venta USD 2,000 del 26/09 a 59.00 abierta; banco USD 2,000 a 58.40; tasa del 30/09: 59.20). Grabado sobre fix/contabilidad-asiento-en-dolares (enlaces a los asientos, M15).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh revaluacion-usd"
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/banca/revaluacion",
+  "esperar": "mat-form-field:has-text('Moneda')"
+ },
+ "aprenderas": [
+  "Leer el asiento de la revaluación cuenta por cuenta",
+  "Por qué aparece el ajuste «-POST» cuando un saldo se liquidó después del cierre",
+  "Abrir los asientos desde la corrida y anularla si hace falta"
+ ],
+ "errores_comunes": [
+  "Correr la revaluación con una fecha de cierre posterior a los cobros y pagos: se revalúa lo que ya no está abierto",
+  "Borrar a mano el asiento «-POST» pensando que sobra: sin él la diferencia cambiaria de lo liquidado se cuenta dos veces",
+  "Anular una revaluación que no es la más reciente"
+ ],
+ "pasos": [
+  {
+   "id": "01-escenario",
+   "capitulo": "El caso",
+   "rotulo": "Revaluación con saldos liquidados",
+   "ruta": "Contabilidad › Banca › Revaluación NIC 21",
+   "texto_pantalla": "Al 30/09: dos ventas, una compra y el banco en dólares",
+   "narracion": "En el video de la revaluación de cierre vimos cómo se ejecuta. Aquí la vemos por dentro, con un caso más real. Recojo el menú. Al treinta de septiembre la empresa tenía tres documentos en dólares y una cuenta de banco. La venta al Hotel Germiva Caribe, de mil dólares a cincuenta y ocho con setenta y cinco, se cobró el quince de octubre. La compra a Cloud Tools, de quinientos dólares a cincuenta y nueve, se pagó el dieciséis. Otra venta, de dos mil dólares a cincuenta y nueve, sigue abierta. Y el banco tiene dos mil dólares registrados a cincuenta y ocho con cuarenta. La fecha de cierre ya viene propuesta: treinta de septiembre.",
+   "acciones": [
+    {
+     "resaltar": "text=Ejecutar revaluación al cierre",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Aquí la vemos por dentro"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Liquidadas en octubre",
+      "texto": "Venta al Hotel Germiva Caribe: USD 1,000 a 58.75, cobrada el 15/10.\nCompra a Cloud Tools: USD 500 a 59.00, pagada el 16/10."
+     },
+     "durante_ms": 12000,
+     "al_decir": "La venta al Hotel"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Abiertas al cierre",
+      "texto": "Venta: USD 2,000 a 59.00, sin cobrar.\nBanco Popular en dólares: USD 2,000 a 58.40."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Otra venta"
+    },
+    {
+     "resaltar": "mat-form-field:has-text('Fecha de cierre')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "La fecha de cierre"
+    }
+   ]
+  },
+  {
+   "id": "02-ejecutar",
+   "capitulo": "Ejecutar",
+   "rotulo": "Ejecutar la revaluación",
+   "ruta": "Contabilidad › Banca › Revaluación NIC 21",
+   "texto_pantalla": "USD · tasa del 30/09: 59.20",
+   "narracion": "En Moneda abro la lista y elijo el dólar. La tasa de cierre la dejo vacía: toma la registrada para el treinta de septiembre, cincuenta y nueve con veinte. Pulso Ejecutar revaluación. El aviso dice que ajustó cuatro saldos, con una ganancia de dos mil cuatrocientos cincuenta pesos y una pérdida de cien. Pulso Aceptar.",
+   "acciones": [
+    {
+     "click": "mat-form-field:has-text('Moneda') mat-select",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('USD')",
+     "al_decir": "elijo el dólar"
+    },
+    {
+     "resaltar": "mat-form-field:has-text('Tasa de cierre')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "La tasa de cierre"
+    },
+    {
+     "click": "button:has-text('Ejecutar revaluación')",
+     "al_decir": "Pulso Ejecutar"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El aviso dice"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
+    }
+   ]
+  },
+  {
+   "id": "03-asiento",
+   "capitulo": "El asiento de la revaluación",
+   "rotulo": "El asiento al cierre",
+   "ruta": "Contabilidad › Diario y Mayor › Ver asiento",
+   "texto_pantalla": "Ajuste al 30/09: CxC, CxP y banco contra diferencia cambiaria",
+   "narracion": "Abajo queda la corrida, y el número de su asiento es un enlace: lo abro. Es un asiento de ajuste fechado el treinta de septiembre. La venta al hotel sube cuatrocientos cincuenta pesos: mil dólares que pasan de cincuenta y ocho con setenta y cinco a cincuenta y nueve con veinte. La venta abierta, de dos mil dólares, sube cuatrocientos. La compra pierde cien: la deuda de quinientos dólares ahora vale más pesos. Y el banco sube mil seiscientos. Cada ajuste va contra la ganancia o la pérdida por diferencia en cambio, todavía no realizada.",
+   "acciones": [
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Abajo queda la corrida"
+    },
+    {
+     "click": "table tbody tr >> nth=0 >> a >> nth=0",
+     "al_decir": "lo abro"
+    },
+    {
+     "resaltar": ".table-row >> nth=0",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "La venta al hotel"
+    },
+    {
+     "resaltar": ".table-row >> nth=2",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "La venta abierta"
+    },
+    {
+     "resaltar": ".table-row >> nth=5",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "La compra pierde"
+    },
+    {
+     "resaltar": ".table-row >> nth=6",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Y el banco"
+    },
+    {
+     "resaltar": ".table-row >> nth=1",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Cada ajuste va contra"
+    }
+   ]
+  },
+  {
+   "id": "04-ajuste",
+   "capitulo": "El ajuste por liquidación",
+   "rotulo": "El asiento «-POST»",
+   "ruta": "Contabilidad › Banca › Revaluación NIC 21",
+   "texto_pantalla": "Lo cobrado y pagado después del corte se retira",
+   "navegar": "/accounting/banca/revaluacion",
+   "narracion": "Volvemos a la revaluación. Debajo del asiento hay un segundo enlace, el Ajuste. ¿Por qué otro asiento? La venta al hotel y la compra se liquidaron en octubre, después del corte, y su cobro y su pago ya registraron la diferencia real, desde la tasa de la factura. Si la revaluación las dejara, esa diferencia se contaría dos veces. Lo abro. El ajuste retira lo que la revaluación les había puesto: los cuatrocientos cincuenta de la venta al hotel y los cien de la compra. La venta abierta y el banco conservan su ajuste.",
+   "acciones": [
+    {
+     "resaltar": "a:has-text('Ajuste:')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Debajo del asiento"
+    },
+    {
+     "resaltar": "table tbody tr >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "se liquidaron en octubre"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Sin el ajuste",
+      "texto": "La diferencia de lo cobrado y pagado después del corte se contaría dos veces: en la revaluación y en el cobro o el pago."
+     },
+     "durante_ms": 6000,
+     "al_decir": "se contaría dos veces"
+    },
+    {
+     "click": "a:has-text('Ajuste:')",
+     "al_decir": "Lo abro"
+    },
+    {
+     "resaltar": ".table-row >> nth=1",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "los cuatrocientos cincuenta"
+    },
+    {
+     "resaltar": ".table-row >> nth=2",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "los cien de la compra"
+    },
+    {
+     "plano_general": true,
+     "al_decir": "La venta abierta"
+    }
+   ]
+  },
+  {
+   "id": "05-anular",
+   "capitulo": "Anular la corrida",
+   "rotulo": "Anular la revaluación",
+   "ruta": "Contabilidad › Banca › Revaluación NIC 21",
+   "texto_pantalla": "Anular: motivo y reverso · de la más reciente a la más antigua",
+   "navegar": "/accounting/banca/revaluacion",
+   "narracion": "Si la corrida tuvo un error, por ejemplo una tasa equivocada, se anula con la flecha roja de su fila. Lo abro. El aviso explica que se registra el reverso y que los saldos vuelven a su valor anterior, y pide el motivo. Las revaluaciones se anulan de la más reciente a la más antigua. Esta está bien, así que cancelo.",
+   "acciones": [
+    {
+     "resaltar": "button:has(mat-icon:text-is('undo'))",
+     "durante_ms": 3500,
+     "al_decir": "se anula con la flecha roja"
+    },
+    {
+     "click": "button:has(mat-icon:text-is('undo'))",
+     "al_decir": "Lo abro"
+    },
+    {
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "El aviso explica"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cancelar')",
+     "al_decir": "así que cancelo"
+    }
+   ]
+  }
+ ]
+}

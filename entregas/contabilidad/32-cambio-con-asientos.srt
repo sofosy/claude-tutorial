@@ -1,0 +1,175 @@
+1
+00:00:03,000 --> 00:00:07,008
+El Colmado Germiva ya contabilizó su balance inicial,
+
+2
+00:00:06,923 --> 00:00:09,237
+así que su catálogo tiene historia.
+
+3
+00:00:09,187 --> 00:00:10,259
+Recojo el menú.
+
+4
+00:00:10,094 --> 00:00:11,837
+El aviso de arriba lo dice:
+
+5
+00:00:11,683 --> 00:00:16,771
+con asientos contabilizados, el cambio se hace con el asistente de correspondencia,
+
+6
+00:00:16,664 --> 00:00:19,594
+idealmente en el corte del ejercicio fiscal.
+
+7
+00:00:19,475 --> 00:00:24,086
+Igual que antes, en la plantilla de la firma pulso Usar este catálogo,
+
+8
+00:00:23,955 --> 00:00:26,559
+y esta vez se abre el asistente.
+
+9
+00:00:27,013 --> 00:00:29,908
+El primer paso explica lo que va a pasar.
+
+10
+00:00:29,742 --> 00:00:34,609
+Cada cuenta con movimiento tiene que apuntar a una cuenta del catálogo nuevo.
+
+11
+00:00:34,478 --> 00:00:38,545
+Se registra un asiento de reclasificación en la fecha de corte,
+
+12
+00:00:38,426 --> 00:00:42,004
+que traslada el saldo de cada cuenta vieja a la nueva.
+
+13
+00:00:41,885 --> 00:00:44,326
+Los asientos históricos no se tocan,
+
+14
+00:00:44,173 --> 00:00:48,402
+y las cuentas propias con movimiento se archivan, nunca se borran.
+
+15
+00:00:48,259 --> 00:00:51,745
+Los mapeos contables se reapuntan al catálogo nuevo.
+
+16
+00:00:51,626 --> 00:00:53,498
+Pulso Continuar.
+
+17
+00:00:53,956 --> 00:00:57,140
+El segundo paso es la correspondencia.
+
+18
+00:00:57,009 --> 00:01:00,901
+Cada fila es una cuenta con movimiento, con su saldo.
+
+19
+00:01:00,748 --> 00:01:04,663
+Cuando el catálogo nuevo tiene una cuenta con el mismo código,
+
+20
+00:01:04,533 --> 00:01:08,969
+el sistema ya la propone, como la Caja general y el capital.
+
+21
+00:01:08,885 --> 00:01:14,334
+El Banco Popular que creó el Colmado tiene un código que la plantilla no trae,
+
+22
+00:01:14,181 --> 00:01:15,796
+así que lo asigno yo:
+
+23
+00:01:15,643 --> 00:01:20,335
+abro su selector, y elijo el Banco Popular, cuenta corriente, de la firma.
+
+24
+00:01:20,206 --> 00:01:23,506
+Con las tres cuentas asignadas, pulso Continuar.
+
+25
+00:01:23,960 --> 00:01:26,750
+El último paso pide la fecha de corte:
+
+26
+00:01:26,584 --> 00:01:30,245
+el asiento de reclasificación se registra en esa fecha,
+
+27
+00:01:30,078 --> 00:01:32,612
+y no puede haber asientos posteriores.
+
+28
+00:01:32,471 --> 00:01:37,546
+Escribo el treinta y uno de octubre de dos mil veintiséis, el cierre del mes.
+
+29
+00:01:37,394 --> 00:01:42,191
+El aviso recuerda que el cambio no se puede deshacer y queda auditado.
+
+30
+00:01:42,061 --> 00:01:44,918
+Pulso Ejecutar cambio de catálogo.
+
+31
+00:01:44,789 --> 00:01:49,378
+El sistema registra el asiento y reapunta la configuración.
+
+32
+00:01:49,825 --> 00:01:55,331
+El aviso confirmó que el catálogo cambió y que el asiento de reclasificación quedó
+
+33
+00:01:55,189 --> 00:01:56,329
+contabilizado.
+
+34
+00:01:56,187 --> 00:02:01,125
+El asistente se cierra, y la marca En uso pasa a la plantilla de la firma.
+
+35
+00:02:01,560 --> 00:02:03,409
+Vamos a buscar ese asiento.
+
+36
+00:02:03,243 --> 00:02:05,568
+El asiento está en Diario y Mayor,
+
+37
+00:02:05,415 --> 00:02:09,376
+con la fecha del corte y el número que le dio el sistema.
+
+38
+00:02:09,819 --> 00:02:11,727
+Es el primero de la lista.
+
+39
+00:02:11,608 --> 00:02:13,955
+Ahora lo abro para ver sus líneas.
+
+40
+00:02:13,790 --> 00:02:17,240
+Cada cuenta vieja se salda contra su cuenta nueva:
+
+41
+00:02:17,110 --> 00:02:21,478
+el Banco Popular del Colmado pasa al Banco Popular de la firma,
+
+42
+00:02:21,324 --> 00:02:23,917
+y lo mismo la caja y el capital.
+
+43
+00:02:23,798 --> 00:02:27,353
+Los asientos anteriores siguen en sus cuentas de siempre:
+
+44
+00:02:27,234 --> 00:02:30,824
+el cambio queda como una sola huella, auditada.

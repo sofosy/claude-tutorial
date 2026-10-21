@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Contabilidad · Vender y cobrar en dólares
+
+DESCRIPCIÓN
+============================================================
+Cómo se ve una factura en dólares en Germiva (montos en USD y su equivalencia en pesos), cómo se elige la moneda de una factura nueva y cómo se cobra a otra tasa en una cuenta bancaria en dólares, con la ganancia cambiaria realizada que el sistema registra solo.
+
+⏱️ CAPÍTULOS
+00:00  Una factura en dólares
+00:37  Facturar en dólares
+01:05  Cobrar a otra tasa
+02:02  El asiento
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cómo se ve una factura en dólares y su equivalencia en pesos
+• Elegir la moneda de una factura nueva
+• Cobrar a la tasa del día en una cuenta en dólares
+• Leer el asiento con la ganancia cambiaria
+
+⚠️ ERRORES COMUNES
+• Cobrar una factura en dólares en una cuenta en pesos sin revisar la tasa
+• Corregir a mano la ganancia cambiaria: el cobro la calcula
+• Facturar en dólares sin la tasa del día registrada
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:35
+
+TRANSCRIPCIÓN
+============================================================
+Esta es una factura en dólares: la consultoría de implementación que se le vendió al Hotel Germiva Caribe el veinticuatro de septiembre, por mil dólares. Recojo el menú. Los montos se ven en la moneda del documento, con el símbolo de dólar. Debajo del resumen está la equivalencia: la tasa de ese día, cincuenta y ocho con setenta y cinco, y lo que se reporta a la DGII, cincuenta y ocho mil setecientos cincuenta pesos. En la contabilidad la venta quedó registrada en pesos, a esa tasa.
+Para facturar en dólares, en la factura nueva pulso el selector de moneda, arriba a la derecha. Se abre Moneda del documento. En la lista elijo el dólar. El sistema toma la tasa del día que registraste en Monedas: cincuenta y nueve con cincuenta, y la muestra en el selector. Si hoy no hubiera tasa, te la pide aquí mismo. A partir de ahí, la factura se llena igual que en pesos, con los precios en dólares.
+Hoy el hotel paga la factura de septiembre por transferencia. En Cobros pulso Registrar cobro. Busco la factura del hotel por su nombre, y la elijo de la lista. El cuadro trae el cliente, el total y el saldo, en dólares. En Tasa del pago viene la de hoy, cincuenta y nueve con cincuenta; si el banco aplicó otra, la cambias aquí. Debajo, el sistema calcula la diferencia: factura a cincuenta y ocho con setenta y cinco, pago a cincuenta y nueve con cincuenta, ganancia cambiaria de setecientos cincuenta pesos.
+Como pagó por transferencia, elijo Transferencia. Ahora, en el campo Cuenta de destino, busco la cuenta del Banco Popular en dólares, porque ahí entró el dinero. El monto ya viene: mil dólares, el saldo completo. Pulso Registrar cobro. El aviso lo confirma, y la factura queda saldada.
+El cobro generó su asiento solo. En Asientos Contables, el primero es Pago recibido. Lo abro. El banco en dólares recibe cincuenta y nueve mil quinientos pesos: mil dólares a la tasa de hoy. La cuenta por cobrar baja cincuenta y ocho mil setecientos cincuenta: lo que valía la factura a su tasa. Y la diferencia, setecientos cincuenta, va a Ganancia por diferencia en cambio. Si la tasa hubiera bajado, sería una pérdida, en la cuenta de pérdida cambiaria.

@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Contabilidad · La revaluación por dentro: asiento y ajuste por liquidación
+
+DESCRIPCIÓN
+============================================================
+Qué registra la revaluación NIC 21 de Germiva cuando parte de los saldos en dólares se cobró o se pagó después del cierre: el asiento de ajuste al cierre (cuentas por cobrar, por pagar y el banco), el asiento «-POST» que retira lo liquidado después del corte para no contar dos veces la diferencia, y cómo anular la corrida.
+
+⏱️ CAPÍTULOS
+00:00  El caso
+00:45  Ejecutar
+01:06  El asiento de la revaluación
+01:43  El ajuste por liquidación
+02:18  Anular la corrida
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el asiento de la revaluación cuenta por cuenta
+• Por qué aparece el ajuste «-POST» cuando un saldo se liquidó después del cierre
+• Abrir los asientos desde la corrida y anularla si hace falta
+
+⚠️ ERRORES COMUNES
+• Correr la revaluación con una fecha de cierre posterior a los cobros y pagos: se revalúa lo que ya no está abierto
+• Borrar a mano el asiento «-POST» pensando que sobra: sin él la diferencia cambiaria de lo liquidado se cuenta dos veces
+• Anular una revaluación que no es la más reciente
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:42
+
+TRANSCRIPCIÓN
+============================================================
+En el video de la revaluación de cierre vimos cómo se ejecuta. Aquí la vemos por dentro, con un caso más real. Recojo el menú. Al treinta de septiembre la empresa tenía tres documentos en dólares y una cuenta de banco. La venta al Hotel Germiva Caribe, de mil dólares a cincuenta y ocho con setenta y cinco, se cobró el quince de octubre. La compra a Cloud Tools, de quinientos dólares a cincuenta y nueve, se pagó el dieciséis. Otra venta, de dos mil dólares a cincuenta y nueve, sigue abierta. Y el banco tiene dos mil dólares registrados a cincuenta y ocho con cuarenta. La fecha de cierre ya viene propuesta: treinta de septiembre.
+En Moneda abro la lista y elijo el dólar. La tasa de cierre la dejo vacía: toma la registrada para el treinta de septiembre, cincuenta y nueve con veinte. Pulso Ejecutar revaluación. El aviso dice que ajustó cuatro saldos, con una ganancia de dos mil cuatrocientos cincuenta pesos y una pérdida de cien. Pulso Aceptar.
+Abajo queda la corrida, y el número de su asiento es un enlace: lo abro. Es un asiento de ajuste fechado el treinta de septiembre. La venta al hotel sube cuatrocientos cincuenta pesos: mil dólares que pasan de cincuenta y ocho con setenta y cinco a cincuenta y nueve con veinte. La venta abierta, de dos mil dólares, sube cuatrocientos. La compra pierde cien: la deuda de quinientos dólares ahora vale más pesos. Y el banco sube mil seiscientos. Cada ajuste va contra la ganancia o la pérdida por diferencia en cambio, todavía no realizada.
+Volvemos a la revaluación. Debajo del asiento hay un segundo enlace, el Ajuste. ¿Por qué otro asiento? La venta al hotel y la compra se liquidaron en octubre, después del corte, y su cobro y su pago ya registraron la diferencia real, desde la tasa de la factura. Si la revaluación las dejara, esa diferencia se contaría dos veces. Lo abro. El ajuste retira lo que la revaluación les había puesto: los cuatrocientos cincuenta de la venta al hotel y los cien de la compra. La venta abierta y el banco conservan su ajuste.
+Si la corrida tuvo un error, por ejemplo una tasa equivocada, se anula con la flecha roja de su fila. Lo abro. El aviso explica que se registra el reverso y que los saldos vuelven a su valor anterior, y pide el motivo. Las revaluaciones se anulan de la más reciente a la más antigua. Esta está bien, así que cancelo.

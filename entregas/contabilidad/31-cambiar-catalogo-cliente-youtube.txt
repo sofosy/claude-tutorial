@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Cambiar el catálogo de un cliente de tu firma
+
+DESCRIPCIÓN
+============================================================
+Cómo una firma contable cambia en Germiva el catálogo de cuentas de un cliente: el que la firma dio de alta (catálogo propio, antes del primer asiento) y el cliente invitado que comparte una plantilla y adopta la de la firma.
+
+⏱️ CAPÍTULOS
+00:00  Un cliente con catálogo propio
+01:25  Un cliente invitado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cambiar el catálogo de un cliente que la firma dio de alta, antes de su primer asiento
+• Adoptar la plantilla de la firma en un cliente invitado
+• Quién puede hacerlo y hasta cuándo
+
+⚠️ ERRORES COMUNES
+• Esperar al primer asiento para corregir el catálogo: desde ahí ya no se reemplaza entero
+• Buscar el botón con el acceso «Contabilidad e Impuestos»: el cambio pide «Administración completa»
+• Confundir el cambio de catálogo con editar una cuenta
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:47
+
+TRANSCRIPCIÓN
+============================================================
+Estamos dentro de la Ferretería del Cibao, un cliente que la firma dio de alta con el catálogo base del sistema, por error: debía llevar el de la firma. Recojo el menú. La franja dice Catálogo propio, porque los clientes que crea la firma nacen con su copia, y el aviso de arriba dice que todavía no tiene asientos: mientras sea así, el catálogo completo se puede reemplazar. La tarjeta Origen marca de qué plantilla salió.
+En la tarjeta del Catálogo Germiva Contadores, que aquí sale como De mi contador, pulso Usar este catálogo. El aviso explica qué va a pasar: las cuentas del catálogo propio se reemplazan por una copia de esta plantilla, que sigue siendo propia del cliente, y la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Reemplazar el catálogo completo toma unos segundos, porque se copia cuenta por cuenta. El aviso confirma el cambio.
+Listo: la marca Origen pasa a la plantilla de la firma. Para hacerlo, el contador necesita el acceso Administración completa, o el dueño del cliente lo hace desde su empresa, porque el cambio vuelve a sembrar la configuración contable. Y solo antes del primer asiento, aunque sea un borrador; después, las cuentas se ajustan desde el catálogo.
+Ahora un cliente que ya trabajaba en Germiva y que invitó a la firma: el Colmado Germiva. Abro el selector de empresa y elijo el Colmado.
+Ya estamos en la otra empresa, la del cliente invitado. Lo dice el selector de arriba: entramos al Colmado. En sus plantillas, la franja dice Catálogo compartido: el Colmado usa las cuentas de la plantilla del sistema tal como vienen. Y como todavía no tiene asientos, puede cambiar de catálogo libremente. La plantilla de la firma también le aparece, aquí como De mi contador.
+Para adoptarla, pulso Usar este catálogo en la plantilla de la firma. El aviso pide confirmar: dice cuántas cuentas trae la plantilla y que la configuración contable se vuelve a sembrar. Confirmo con Cambiar catálogo. Como el catálogo es compartido, el cambio es inmediato: no hay copia que reemplazar. El aviso confirma el cambio.
+Listo: la marca En uso pasa al Catálogo Germiva Contadores. El Colmado sigue con catálogo compartido: usa las cuentas de la plantilla tal como vienen. Si ya tuviera asientos, el mismo botón abriría el asistente de correspondencia, que vemos en el próximo video.

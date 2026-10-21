@@ -17,8 +17,14 @@ M="docker exec -i germiva-dev-mysql mysql -uroot"
 # falta de memoria a mitad de un video. Por encima de 2.5 GB se reinicia
 # antes de restaurar; la API vuelve a conectar sola.
 memoria_mysql_mb() {
-  docker stats --no-stream --format '{{.MemUsage}}' germiva-dev-mysql 2>/dev/null | cut -d/ -f1 \
-    | awk '/GiB/{sub("GiB","");print int($1*1024)} /MiB/{sub("MiB","");print int($1)}'
+  local mb
+  mb=$(docker stats --no-stream --format '{{.MemUsage}}' germiva-dev-mysql 2>/dev/null | cut -d/ -f1 \
+    | awk '/GiB/{sub("GiB","");print int($1*1024)} /MiB/{sub("MiB","");print int($1)}')
+  # En el contenedor de la nube `docker stats` no devuelve nada (sin cgroups de
+  # memoria) y el reinicio nunca se disparaba: tras unas tomas el kernel mató a
+  # mysqld con ~9 GB. El proceso se ve desde el host: se suma su RSS.
+  [[ -n "$mb" ]] || mb=$(ps -C mysqld -o rss= 2>/dev/null | awk '{s+=$1} END {print int(s/1024)}')
+  echo "${mb:-0}"
 }
 # El apagado espera hasta 90 s: con el plazo de 10 s de `docker restart`, una
 # consulta colgada hacía que lo mataran (137) y el contenedor quedaba detenido.

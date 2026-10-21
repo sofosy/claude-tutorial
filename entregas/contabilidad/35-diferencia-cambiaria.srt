@@ -1,0 +1,163 @@
+1
+00:00:03,000 --> 00:00:08,714
+Si una factura en dólares se registró a una tasa y se cobra o se paga a otra,
+
+2
+00:00:08,550 --> 00:00:10,189
+en pesos no cuadra:
+
+3
+00:00:10,082 --> 00:00:14,182
+esa diferencia es una ganancia o una pérdida cambiaria,
+
+4
+00:00:14,041 --> 00:00:18,350
+y el sistema la registra sola en el asiento del cobro o del pago.
+
+5
+00:00:18,196 --> 00:00:20,962
+Para eso necesita saber en qué cuentas.
+
+6
+00:00:20,797 --> 00:00:25,653
+Estamos en Configuración multi-moneda, en Configuración Contable.
+
+7
+00:00:25,487 --> 00:00:27,974
+El recuadro lo explica con un ejemplo:
+
+8
+00:00:27,844 --> 00:00:30,820
+factura a cincuenta y ocho con setenta y cinco,
+
+9
+00:00:30,653 --> 00:00:33,200
+cobro a cincuenta y nueve con cincuenta.
+
+10
+00:00:33,646 --> 00:00:36,039
+La cuenta se busca en este orden.
+
+11
+00:00:35,875 --> 00:00:39,743
+Primero, la configurada para esa moneda, más abajo.
+
+12
+00:00:39,602 --> 00:00:42,936
+Si no hay, las cuentas generales de esta pantalla.
+
+13
+00:00:42,817 --> 00:00:48,485
+Y si tampoco, el rol Ganancia o Pérdida por diferencia cambiaria del Mapeo de
+
+14
+00:00:48,332 --> 00:00:49,159
+cuentas.
+
+15
+00:00:49,076 --> 00:00:55,185
+Si no encuentra ninguna, el cobro o el pago no se contabiliza y el sistema avisa
+
+16
+00:00:55,067 --> 00:00:56,009
+qué falta.
+
+17
+00:00:55,856 --> 00:00:59,132
+Las generales ya vienen puestas al crear la empresa:
+
+18
+00:00:59,013 --> 00:01:03,311
+la ganancia en la cuatro cero dos cero uno cero tres,
+
+19
+00:01:03,204 --> 00:01:08,629
+Ganancia por diferencia en cambio, y la pérdida en la seis cero cinco cero dos.
+
+20
+00:01:09,073 --> 00:01:13,650
+Si quieres ver la diferencia del dólar aparte, la configuras por moneda.
+
+21
+00:01:13,520 --> 00:01:15,519
+Pulso Agregar moneda.
+
+22
+00:01:15,389 --> 00:01:16,634
+Elijo el dólar.
+
+23
+00:01:16,515 --> 00:01:20,140
+Neta usa una sola cuenta para ganar y perder;
+
+24
+00:01:20,010 --> 00:01:22,368
+Separada, una para cada cosa:
+
+25
+00:01:22,239 --> 00:01:23,600
+elijo Separada.
+
+26
+00:01:23,446 --> 00:01:29,242
+En la cuenta de ganancia busco cuatro cero dos cero uno cero tres.
+
+27
+00:01:29,100 --> 00:01:33,933
+En la lista aparece Ganancia por diferencia en cambio, y la selecciono.
+
+28
+00:01:33,756 --> 00:01:37,764
+En la de pérdida busco seis cero cinco cero dos:
+
+29
+00:01:37,611 --> 00:01:41,746
+aparece Pérdida por diferencia en cambio, y la elijo también.
+
+30
+00:01:41,662 --> 00:01:45,820
+Pulso Guardar cuentas por moneda, y el aviso lo confirma;
+
+31
+00:01:45,701 --> 00:01:47,330
+pulso Aceptar.
+
+32
+00:01:47,258 --> 00:01:51,998
+Desde ahora, los cobros y pagos en dólares usan estas cuentas.
+
+33
+00:01:52,439 --> 00:01:55,774
+El último respaldo está en el Mapeo de cuentas,
+
+34
+00:01:55,632 --> 00:02:00,140
+la pantalla que dice a qué cuenta va cada operación del sistema.
+
+35
+00:01:59,997 --> 00:02:03,947
+Busco cambiaria, para filtrar la lista de roles contables.
+
+36
+00:02:03,828 --> 00:02:06,234
+En el grupo Multimoneda hay dos:
+
+37
+00:02:06,116 --> 00:02:09,183
+Ganancia y Pérdida por Diferencia Cambiaria.
+
+38
+00:02:09,042 --> 00:02:11,981
+Los usa también la revaluación de fin de mes.
+
+39
+00:02:11,840 --> 00:02:16,462
+Si cambias de catálogo, revisa que estos dos roles tengan cuenta:
+
+40
+00:02:16,332 --> 00:02:20,015
+sin ellos, ni la configuración por moneda ni la general,
+
+41
+00:02:19,885 --> 00:02:23,103
+el cobro en dólares no se puede contabilizar.

@@ -92,17 +92,13 @@
    "rotulo": "Monedas disponibles",
    "ruta": "Configuración Contable › Ajustes › Monedas",
    "texto_pantalla": "Peso dominicano: moneda local · dólar: disponible",
-   "narracion": "Cuando una empresa vende o compra en dólares, lo primero es tener la moneda disponible y su tasa del día. Eso está en Monedas disponibles, dentro de Configuración Contable. Recojo el menú. Aquí ves las monedas que esta empresa puede usar. El peso dominicano es la moneda local: los libros, los asientos y los estados financieros se llevan siempre en pesos, y eso no cambia. El dólar está disponible para facturar, cobrar y pagar. La marca Por defecto indica la moneda que propone una factura nueva; si casi todo lo vendes en dólares, puedes cambiarla con Hacer por defecto.",
+   "narracion": "Cuando una empresa vende o compra en dólares, lo primero es tener la moneda disponible y su tasa del día. Eso está en Monedas disponibles, dentro de Configuración Contable. Aquí ves las monedas que esta empresa puede usar. El peso dominicano es la moneda local: los libros, los asientos y los estados financieros se llevan siempre en pesos, y eso no cambia. El dólar está disponible para facturar, cobrar y pagar. La marca Por defecto indica la moneda que propone una factura nueva; si casi todo lo vendes en dólares, puedes cambiarla con Hacer por defecto.",
    "acciones": [
     {
      "resaltar": ".page-title",
      "durante_ms": 3500,
      "cursor": false,
      "al_decir": "lo primero es tener"
-    },
-    {
-     "click": "button.panel-collapse",
-     "al_decir": "Recojo el menú"
     },
     {
      "resaltar": ".enabled-section .section-title",
@@ -142,7 +138,7 @@
    "rotulo": "Registrar la tasa del día",
    "ruta": "Configuración Contable › Ajustes › Monedas",
    "texto_pantalla": "1 USD → DOP · 59.50 · Registrada hoy",
-   "narracion": "En la tarjeta del dólar está la tasa del día: cuántos pesos vale un dólar. Dice Última, dieciséis de octubre: la de hoy todavía no está. Escribo la tasa de hoy, cincuenta y nueve con cincuenta, y pulso Guardar. El aviso lo confirma, y el estado cambia a Registrada hoy. Registra la tasa cada día que operes en dólares: la factura y el cobro de ese día la toman de aquí.",
+   "narracion": "En la tarjeta del dólar está la tasa del día: cuántos pesos vale un dólar. Dice Última, dieciséis de octubre: la de hoy todavía no está. Escribo la tasa de hoy, cincuenta y nueve con cincuenta, y pulso Guardar. El aviso lo confirma; pulso Aceptar, y el estado cambia a Registrada hoy. Registra la tasa cada día que operes en dólares: la factura y el cobro de ese día la toman de aquí.",
    "acciones": [
     {
      "resaltar": ".currency-card:not(.is-local) .currency-card-rate",
@@ -168,10 +164,13 @@
      "al_decir": "pulso Guardar"
     },
     {
-     "resaltar": ".mat-mdc-snack-bar-container",
-     "durante_ms": 2000,
-     "cursor": false,
-     "al_decir": "El aviso lo confirma"
+     "resaltar": "mat-dialog-container >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "pulso Aceptar"
     },
     {
      "resaltar": ".currency-card:not(.is-local) .rate-status.ok",
@@ -210,7 +209,7 @@
      "al_decir": "Con Por cambios"
     },
     {
-     "resaltar": "mat-button-toggle-group",
+     "resaltar": "mat-button-toggle-group:has(mat-button-toggle[value='changes'])",
      "durante_ms": 4000,
      "cursor": false,
      "al_decir": "Esta pantalla es de consulta"

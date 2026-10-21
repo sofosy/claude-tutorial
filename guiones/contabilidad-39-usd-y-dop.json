@@ -1,0 +1,313 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "NIC": "nic",
+  "CxC": "ce-por-ce",
+  "CxP": "ce-por-pe",
+  "ISR": "i-ese-erre",
+  "BHD": "be-hache-de",
+  "USD": "dólares",
+  "DOP": "pesos",
+  "NIC 21": "nic veintiuno",
+  "NIC 16": "nic dieciséis"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 10,
+ "titulo": "Contabilidad · Ver la operación en dólares y en pesos",
+ "descripcion": "Dónde ve Germiva cada cosa en dólares y dónde en pesos: cuentas por cobrar y estado de cuenta del cliente en la moneda de la factura, el saldo del banco en dólares, el asiento en USD con su contravalor, el Libro Mayor en pesos y los estados financieros siempre en pesos.",
+ "_comentario": "Video 39 de la serie Contabilidad (bloque B). setup: preparar.sh usd-y-dop (lo del 38 más la revaluación al 30/09 contabilizada). Grabado sobre fix/contabilidad-asiento-en-dolares (asiento en USD con contravalor, M14).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/contabilidad/preparar.sh usd-y-dop"
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/accounting/cobros",
+  "esperar": "tr:has-text('1000000052')"
+ },
+ "aprenderas": [
+  "Seguir lo que te deben y lo que tienes en el banco en la moneda del documento",
+  "Leer un asiento en dólares con su contravalor en pesos",
+  "Por qué el Mayor y los estados financieros están en pesos y qué ajusta la revaluación"
+ ],
+ "errores_comunes": [
+  "Comparar el saldo en pesos del banco en dólares con su saldo en USD por la tasa de hoy sin haber revaluado",
+  "Buscar los estados financieros en dólares: se presentan en la moneda local",
+  "Generar el Balance General por período en vez de por fecha de corte"
+ ],
+ "pasos": [
+  {
+   "id": "01-cxc",
+   "capitulo": "Lo que te deben, en dólares",
+   "rotulo": "Cuentas por Cobrar",
+   "ruta": "Contabilidad › Cuentas por Cobrar",
+   "texto_pantalla": "Cada documento en su moneda",
+   "narracion": "Después de vender, cobrar, pagar y revaluar en dólares, ¿dónde se ve cada cosa en dólares y dónde en pesos? Empiezo por Cuentas por Cobrar. Recojo el menú. Cada documento muestra sus importes en la moneda en que se emitió. La venta de dos mil dólares sigue pendiente completa, y la del hotel, de mil, quedó pagada. Lo que el cliente te debe se sigue en dólares, porque es lo que te va a pagar.",
+   "acciones": [
+    {
+     "resaltar": "text=Documentos >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Empiezo por Cuentas por Cobrar"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "tr:has-text('1000000052')",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Cada documento muestra"
+    },
+    {
+     "resaltar": "tr:has-text('1000000052') td >> nth=6",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "La venta de dos mil"
+    },
+    {
+     "resaltar": "tr:has-text('1000000050')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "y la del hotel"
+    },
+    {
+     "resaltar": "tr:has-text('1000000052') td >> nth=6",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Lo que el cliente te debe"
+    }
+   ]
+  },
+  {
+   "id": "02-estado",
+   "capitulo": "El estado de cuenta",
+   "rotulo": "Estado de cuenta por moneda",
+   "ruta": "Ventas › Estados de Cuenta",
+   "texto_pantalla": "Pendiente en USD",
+   "navegar": "/sales/account-statements",
+   "narracion": "El estado de cuenta del cliente también va por moneda. En Estados de Cuenta busco al Hotel Germiva Caribe por su nombre; aparece en la lista, y lo elijo. El resumen dice Pendiente en USD: dos mil dólares. Abajo está cada documento abierto, con su monto en dólares. Si el cliente tuviera facturas en pesos, saldrían en otro bloque, con su propio total.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has-text('Buscar cliente') input",
+      "texto": "Hotel"
+     },
+     "al_decir": "busco al Hotel"
+    },
+    {
+     "click": "mat-option:has-text('Hotel Germiva Caribe')",
+     "al_decir": "y lo elijo"
+    },
+    {
+     "resaltar": "text=Pendiente en USD",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "El resumen dice"
+    },
+    {
+     "resaltar": "tr:has-text('1000000052')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Abajo está cada documento"
+    },
+    {
+     "resaltar": "text=Moneda: USD",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Si el cliente tuviera"
+    }
+   ]
+  },
+  {
+   "id": "03-banco",
+   "capitulo": "El banco en dólares",
+   "rotulo": "Saldo del banco en USD",
+   "ruta": "Contabilidad › Banca › Cuentas Bancarias",
+   "texto_pantalla": "Popular en dólares · USD 2,500",
+   "navegar": "/accounting/banca/cuentas",
+   "narracion": "El banco también se sigue en su moneda. En Banca, la cuenta del Popular en dólares tiene un saldo de dos mil quinientos dólares: los dos mil del inicio, más los mil del cobro, menos los quinientos del pago. Es el número que tiene que cuadrar con el estado del banco.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('0007654321') td >> nth=4",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "la cuenta del Popular en dólares"
+    },
+    {
+     "resaltar": "tr:has-text('0007654321') td >> nth=5",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "tiene un saldo"
+    },
+    {
+     "resaltar": "tr:has-text('0007654321')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Es el número"
+    }
+   ]
+  },
+  {
+   "id": "04-asiento-usd",
+   "capitulo": "Un asiento en dólares",
+   "rotulo": "Asiento en USD",
+   "ruta": "Contabilidad › Diario y Mayor › Ver asiento",
+   "texto_pantalla": "Cada importe en pesos y, debajo, en dólares",
+   "navegar": "/accounting/journal-entries/1/view",
+   "narracion": "La contabilidad, en cambio, se lleva en pesos. Este es el asiento de apertura de esa cuenta, en Diario y Mayor. La nota de arriba lo dice: el asiento está en dólares, a cincuenta y ocho con cuarenta, y cada importe se ve en pesos y, debajo, en dólares. Ciento dieciséis mil ochocientos pesos, que son los dos mil dólares del inicio.",
+   "acciones": [
+    {
+     "resaltar": "text=Asiento en USD",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "La nota de arriba"
+    },
+    {
+     "resaltar": ".table-row >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Ciento dieciséis mil"
+    }
+   ]
+  },
+  {
+   "id": "05-mayor",
+   "capitulo": "El Libro Mayor",
+   "rotulo": "El Mayor del banco en dólares",
+   "ruta": "Contabilidad › Diario y Mayor › Libro Mayor",
+   "texto_pantalla": "En pesos y, debajo, en dólares",
+   "navegar": "/accounting/registro/mayor",
+   "narracion": "Ahora el Libro Mayor, que muestra cada movimiento de una cuenta. Busco esa misma cuenta por su código; aparece en la lista, y la elijo. Las fechas ya vienen en octubre, así que pulso Consultar. Cada importe está en pesos y, como es un banco en dólares, debajo se ve también en dólares. El cobro entró como mil dólares, a cincuenta y nueve con cuarenta: cincuenta y nueve mil cuatrocientos pesos. El pago salió como quinientos dólares, a cincuenta y nueve con cuarenta y cinco. El saldo en pesos, ciento cuarenta y ocho mil setenta y cinco, todavía no es igual a dos mil quinientos dólares a la tasa de hoy: esa diferencia la ajusta la próxima revaluación.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has-text('Cuenta Contable') input",
+      "texto": "1.01.01.02.02"
+     },
+     "al_decir": "Busco esa misma cuenta"
+    },
+    {
+     "click": "mat-option:has-text('1.01.01.02.02')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "click": "button:has-text('Consultar')",
+     "al_decir": "pulso Consultar"
+    },
+    {
+     "resaltar": "tr:has-text('Cobro') td >> nth=3",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Cada importe está en pesos"
+    },
+    {
+     "resaltar": "tr:has-text('Cobro')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "El cobro entró"
+    },
+    {
+     "resaltar": "tr:has-text('Pago · Transferencia')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El pago salió"
+    },
+    {
+     "resaltar": "tr:has-text('Pago · Transferencia') td >> nth=5",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "El saldo en pesos"
+    }
+   ]
+  },
+  {
+   "id": "06-balance",
+   "capitulo": "Los estados financieros",
+   "rotulo": "Balance General en pesos",
+   "ruta": "Contabilidad › Informes Financieros",
+   "texto_pantalla": "Siempre en la moneda local",
+   "navegar": "/accounting/financial-statements",
+   "narracion": "Y los estados financieros siempre van en pesos. En Informes Financieros, con el Balance General, escribo la fecha de corte, treinta y uno de octubre, y pulso Generar. El banco en dólares y las cuentas por cobrar aparecen en pesos, con lo que la revaluación les sumó. Y el balance cuadra.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has-text('Fecha de Corte') input",
+      "texto": "31/10/2026"
+     },
+     "al_decir": "escribo la fecha de corte"
+    },
+    {
+     "click": "button:has-text('Generar')",
+     "al_decir": "pulso Generar"
+    },
+    {
+     "resaltar": ":text('Banco Popular - Cuenta en dólares') >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El banco en dólares"
+    },
+    {
+     "resaltar": ":text('Cuentas por cobrar clientes') >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "y las cuentas por cobrar"
+    },
+    {
+     "resaltar": "text=CUADRADO",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Y el balance cuadra"
+    }
+   ]
+  }
+ ]
+}

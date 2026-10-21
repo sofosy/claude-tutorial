@@ -231,8 +231,7 @@
     {
      "resaltar": ".mat-mdc-snack-bar-container",
      "durante_ms": 2500,
-     "cursor": false,
-     "al_decir": "El sistema registra el asiento"
+     "cursor": false
     }
    ]
   },
