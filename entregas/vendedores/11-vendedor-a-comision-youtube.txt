@@ -1,0 +1,34 @@
+TÍTULO
+============================================================
+Vendedores · El vendedor a comisión en Nómina
+
+DESCRIPCIÓN
+============================================================
+Tres protecciones del vendedor a comisión en Nómina: la garantía del salario mínimo (art. 310), el anticipo contra comisiones pactado por escrito (art. 201.3) y el pago de las comisiones que se ganan después de que el vendedor sale (art. 312).
+
+⏱️ CAPÍTULOS
+00:00  Garantía del salario mínimo
+00:49  Anticipo contra comisiones
+01:52  El vendedor que ya salió
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Garantía del salario mínimo para el vendedor a comisión
+• Pactar un anticipo contra comisiones
+• Pagar las comisiones de un vendedor que ya salió
+
+⚠️ ERRORES COMUNES
+• Descontar del salario fijo un anticipo de comisiones
+• Olvidar las comisiones que se ganan después de la salida
+• Pactar un anticipo con alguien que no tiene ficha de vendedor
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:56
+
+TRANSCRIPCIÓN
+============================================================
+Este es el salario de Luis, en Nómina, Empleados, Salarios. Recojo el menú. Al vendedor a comisión la ley le garantiza el salario mínimo: si en el mes su salario y sus comisiones no llegan al mínimo de su sector, la empresa le completa la diferencia. Eso es la casilla Garantía del salario mínimo, en Vendedor a comisión. La marco. Con ella, el volante que cierra el mes agrega la línea Complemento al salario mínimo cuando haga falta; el mínimo del sector se configura en Nómina, Configuración. Pulso Guardar. El sistema pide confirmar el cambio, y confirmo con Sí, actualizar. Luego avisa que el salario se actualizó, y acepto el aviso.
+Otro caso: el vendedor que pacta por escrito recibir un adelanto fijo cada quincena, a cuenta de sus comisiones. Está en la pestaña Anticipos contra comisiones. Para crearlo pulso Registrar pacto. El diálogo lo deja claro: el anticipo se recupera solo de las comisiones, nunca del salario fijo ni de las prestaciones. En Vendedor busco a Luis; solo aparecen quienes tienen ficha de vendedor activa. Lo elijo. Ahora el monto: en Anticipo por período pongo tres mil pesos, por cada quincena. Rige desde el dieciséis de octubre de dos mil veintiséis, sin fecha de fin. Y en Documento del pacto anoto el escrito que lo respalda, porque la ley exige que esté por escrito. Con el botón Registrar pacto lo guardo. El aviso recuerda cómo se generan los anticipos de cada período; acepto. El pacto queda activo. Cada período, Generar anticipos del período crea el anticipo, y la nómina lo recupera de las comisiones de Luis.
+Por último, las comisiones de quien ya salió de la empresa. Carmen renunció ayer, pero tenía una comisión aprobada que ninguna nómina puede pagarle, porque ya no está en ninguna. La ley dice que se le paga igual. Aparece en Pagos especiales, en la bandeja Comisiones de vendedores que ya salieron. La abro: una comisión, por la venta al colmado, ciento cincuenta pesos. Pulso Generar pago especial. El diálogo explica que se crea un pago Comisiones posteriores a la salida, con su TSS y su ISR. Lo confirmo. El aviso dice el código del pago especial creado, y que al pagarlo sus comisiones quedan pagadas; acepto el aviso. El pago especial queda en el listado, calculado; se aprueba y se paga como los demás, y al pagarlo sus comisiones quedan pagadas. Si los descuentos pesaran más que las comisiones, el saldo quedaría como cuenta por cobrar, nunca contra sus prestaciones.
