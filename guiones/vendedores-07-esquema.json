@@ -1,0 +1,294 @@
+{
+ "titulo": "Vendedores · El esquema de comisión",
+ "descripcion": "Cómo se crea el plan de comisión de los vendedores: sobre qué se calcula, cuándo se gana (al cobrar, en cada cobro o al emitir), qué pasa con lo que se cobra tarde, el porcentaje general y por producto, la vigencia y a qué vendedores aplica.",
+ "_comentario": "Video 07 de la serie Vendedores. setup: preparar.sh cartera (sin esquemas). El video crea «Vendedores de ruta»: venta sin ITBIS, en cada cobro, corte a 1.5 % después de 60 días de vencida, 3 % general y 5 % la pintura, desde el 01/08/2026, para Luis y Carmen.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/commissions/schemes",
+  "esperar": "button:has-text('Nuevo esquema')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh cartera"
+ },
+ "aprenderas": [
+  "Sobre qué se calcula la comisión y cuándo se gana",
+  "Pagar menos por lo que se cobra muy vencido",
+  "Porcentaje general y porcentaje por producto",
+  "Vigencia y vendedores del esquema"
+ ],
+ "errores_comunes": [
+  "Comisionar sobre el total con ITBIS: el ITBIS nunca se comisiona",
+  "Poner a un vendedor en dos esquemas vigentes a la vez",
+  "Cambiar cuándo se gana en un esquema que ya generó comisiones"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-base",
+   "capitulo": "Qué es un esquema",
+   "rotulo": "Sobre qué y cuándo",
+   "ruta": "Ventas › Comisiones › Esquemas",
+   "texto_pantalla": "Venta sin ITBIS · se gana en cada cobro",
+   "navegar": "/sales/commissions/schemes",
+   "narracion": "Un vendedor con ficha puede figurar en las ventas, pero solo cobra comisión si está en un esquema. Los esquemas están en Ventas, Comisiones, pestaña Esquemas. Recojo el menú. Pulso Nuevo esquema. Se abre el formulario del esquema, con sus secciones. Le pongo nombre: Vendedores de ruta, para los que visitan a los clientes. Ahora, el campo Se calcula sobre ofrece tres bases: el total de la venta sin ITBIS, el costo de lo vendido o la utilidad. El ITBIS nunca se comisiona. Dejo el total de la venta. Debajo, Se gana dice cuándo nace la comisión. Al cobrar la factura completa, en cada cobro en proporción a lo cobrado, o al emitir la factura, antes de cobrar. Los esquemas nuevos proponen En cada cobro: cada abono del cliente comisiona la parte de la venta que paga. Lo dejo así.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "click": "button:has-text('Nuevo esquema')",
+     "al_decir": "Pulso Nuevo esquema"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Se abre el formulario"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname=name]",
+      "texto": "Vendedores de ruta"
+     },
+     "al_decir": "Le pongo nombre"
+    },
+    {
+     "click": "[data-testid=scheme-calculation-base]",
+     "al_decir": "el campo Se calcula sobre"
+    },
+    {
+     "resaltar": ".cdk-overlay-pane mat-option >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el total de la venta sin ITBIS"
+    },
+    {
+     "click": "mat-option:has-text('Total de la venta')",
+     "al_decir": "Dejo el total de la venta"
+    },
+    {
+     "click": "[data-testid=scheme-accrual-trigger]",
+     "al_decir": "Debajo, Se gana"
+    },
+    {
+     "resaltar": ".cdk-overlay-pane mat-option >> nth=0",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Al cobrar la factura completa"
+    },
+    {
+     "resaltar": ".cdk-overlay-pane mat-option >> nth=2",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "o al emitir la factura"
+    },
+    {
+     "click": "mat-option:has-text('En cada cobro')",
+     "al_decir": "Lo dejo así"
+    }
+   ]
+  },
+  {
+   "id": "02-cuanto",
+   "capitulo": "Cuánto se paga",
+   "rotulo": "Corte por antigüedad y porcentajes",
+   "ruta": "Ventas › Comisiones › Nuevo esquema",
+   "texto_pantalla": "3 % general · 5 % la pintura · 1.5 % si se cobra 60 días vencida",
+   "narracion": "Sigue la sección Lo que se cobra tarde, donde se decide qué pasa con lo cobrado muy vencido. Elijo Con tasa reducida. En Días después del vencimiento pongo sesenta, que son dos meses. Y en el campo de la tasa reducida pongo uno punto cinco, menos de la mitad. Así, lo cobrado hasta sesenta días después del vencimiento comisiona completo, y lo que llegue más tarde, al uno punto cinco por ciento. En Cuánto, el Tipo es Porcentaje, y el porcentaje general, tres. Ahora una tasa especial para un producto: pulso Agregar producto. Busco la pintura en el catálogo; aparece la de galón, y la elijo. En su comisión le pongo cinco por ciento, porque es el producto que más interesa vender. Los demás productos usan el tres por ciento general.",
+   "acciones": [
+    {
+     "click": "[data-testid=scheme-late-mode]",
+     "al_decir": "donde se decide"
+    },
+    {
+     "click": "mat-option:has-text('Con tasa reducida')",
+     "al_decir": "Elijo Con tasa reducida"
+    },
+    {
+     "escribir": {
+      "sel": "input[data-testid=scheme-late-days], [data-testid=scheme-late-days] input",
+      "texto": "60"
+     },
+     "al_decir": "pongo sesenta"
+    },
+    {
+     "escribir": {
+      "sel": "input[data-testid=scheme-late-rate], [data-testid=scheme-late-rate] input",
+      "texto": "1.5"
+     },
+     "al_decir": "el campo de la tasa reducida"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=scheme-late-collection]",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "Así, lo cobrado hasta"
+    },
+    {
+     "escribir": {
+      "sel": "input[data-testid=scheme-rate], [data-testid=scheme-rate] input",
+      "texto": "3"
+     },
+     "al_decir": "el porcentaje general"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Agregar producto')",
+     "al_decir": "pulso Agregar producto"
+    },
+    {
+     "escribir": {
+      "sel": "[data-testid=scheme-product-rates] input >> nth=0",
+      "texto": "Pintura"
+     },
+     "al_decir": "Busco la pintura"
+    },
+    {
+     "click": "mat-option:has-text('Pintura acrílica')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "escribir": {
+      "sel": "[data-testid=scheme-product-rates] input >> nth=1",
+      "texto": "5"
+     },
+     "al_decir": "le pongo cinco"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=scheme-product-rates]",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Los demás productos"
+    }
+   ]
+  },
+  {
+   "id": "03-a-quien",
+   "capitulo": "A quién y desde cuándo",
+   "rotulo": "Vigencia y vendedores",
+   "ruta": "Ventas › Comisiones › Nuevo esquema",
+   "texto_pantalla": "Desde el 01/08/2026 · Luis y Carmen",
+   "narracion": "Por último, A quién y desde cuándo. En Vigente desde escribo el primero de agosto de dos mil veintiséis. Vigente hasta queda vacío. En Agregar vendedor busco a Luis. Aparece su ficha con el código, y lo agrego. Después busco a Carmen en el mismo campo; aparece, y también se agrega a la lista. Cada vendedor puede tener un solo esquema vigente: si ya estuviera en otro, el sistema no deja guardar. Pulso Guardar. El esquema aparece en la lista con su base, su porcentaje, la forma de ganarse y sus vendedores. Un esquema que ya generó comisiones no cambia cuándo se gana: se le pone fecha de fin y se crea otro.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname=effectiveDate]",
+      "texto": "01/08/2026"
+     },
+     "al_decir": "En Vigente desde escribo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input",
+      "texto": "Luis"
+     },
+     "al_decir": "busco a Luis"
+    },
+    {
+     "click": "mat-option:has-text('V-0003')",
+     "al_decir": "y lo agrego"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input",
+      "texto": "Carmen"
+     },
+     "al_decir": "busco a Carmen"
+    },
+    {
+     "click": "mat-option:has-text('V-0001')",
+     "al_decir": "también se agrega"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=scheme-employees]",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Cada vendedor puede tener"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    },
+    {
+     "resaltar": "tr:has-text('Vendedores de ruta') td >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El esquema aparece"
+    },
+    {
+     "resaltar": "tr:has-text('Vendedores de ruta') td >> nth=3",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "la forma de ganarse"
+    },
+    {
+     "resaltar": "tr:has-text('Vendedores de ruta') td >> nth=3",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Un esquema que ya generó"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Vendedores · El vendedor en el punto de venta
+
+DESCRIPCIÓN
+============================================================
+Cómo la cajera elige en el punto de venta al vendedor que atendió al cliente (F9), por qué el vendedor no es la cajera, cómo se conserva entre ventas del turno y cómo queda la factura con su vendedor, su cajero y quien la registró.
+
+⏱️ CAPÍTULOS
+00:00  Elegir el vendedor en la caja
+00:45  Cobrar la venta
+01:26  La factura de la caja
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Elegir el vendedor de la venta en la caja con F9
+• Por qué la cajera no es el vendedor
+• El vendedor se conserva entre ventas del turno
+• Cómo queda la factura: vendedor, cajero y quien registró
+
+⚠️ ERRORES COMUNES
+• Cobrar sin elegir al vendedor que atendió: la venta queda sin comisión
+• Olvidar cambiar el vendedor cuando atiende otra persona en el mismo turno
+• Esperar que la cajera aparezca como vendedora
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:06
+
+TRANSCRIPCIÓN
+============================================================
+Este es el punto de venta, abierto por Ana Pérez, la cajera, con su turno abierto en la Caja Principal. Carmen, la vendedora, atendió a un cliente que lleva una brocha. Ana la busca, escribiendo Brocha. Aparece la brocha de tres pulgadas, con su precio y su existencia, y Ana la agrega al ticket. Debajo del cliente, el ticket muestra el vendedor: ahora dice Sin vendedor. Ana no es la vendedora: solo cobra. Para indicar quién atendió, pulsa F9. Se abre Vendedor de la venta. Escribe Carmen, y elige V-0001, Carmen Rosario Peña. Ya está en el ticket, y dice que se conserva para las ventas siguientes del turno.
+Con el ticket listo, Ana pulsa F12 para cobrar. El cliente paga en efectivo los doscientos noventa y cinco pesos exactos, que ya vienen en Monto recibido. Confirma el cobro. El sistema guarda la factura, le asigna su comprobante y descuenta el inventario; tarda un momento. La venta queda registrada, con su factura y su comprobante. Ana pulsa Nueva venta. Fíjate en el ticket nuevo: Carmen sigue como vendedora, porque la empresa conserva el vendedor entre ventas. Si el próximo cliente lo atiende otra persona, Ana pulsa F9 y lo cambia. Y si la empresa lo exige, no se puede cobrar sin elegirlo.
+Ahora abrimos, desde Ventas, la factura de esa venta, para ver cómo quedó. Vendedor: V-0001, Carmen Rosario Peña. Ella es quien cobra la comisión. Debajo, Cajero: Ana Pérez, en la Caja Principal, porque se cobró en su turno. Y Registrada por: también Ana, porque fue ella quien la grabó. Cada dato tiene su lugar: el vendedor nunca se rellena con la cajera, y la cajera aparece como cajero, no como vendedora. En el recibo de ochenta milímetros, la caja y el cajero se imprimen, y el vendedor también, si la venta lo tiene.

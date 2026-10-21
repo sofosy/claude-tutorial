@@ -1,0 +1,231 @@
+1
+00:00:03,000 --> 00:00:07,786
+Esta factura del Colmado Germiva Este ya está emitida y cobrada,
+
+2
+00:00:07,621 --> 00:00:09,365
+con Carmen como vendedora.
+
+3
+00:00:09,199 --> 00:00:13,394
+Pero la venta la cerró Luis, en su visita al colmado.
+
+4
+00:00:13,227 --> 00:00:14,160
+Recojo el menú.
+
+5
+00:00:14,018 --> 00:00:16,353
+El vendedor no es un dato fiscal:
+
+6
+00:00:16,211 --> 00:00:18,791
+se corrige sin nota de crédito.
+
+7
+00:00:18,638 --> 00:00:20,765
+Pulso el lápiz junto al Vendedor.
+
+8
+00:00:20,623 --> 00:00:23,528
+El diálogo explica lo que pasará:
+
+9
+00:00:23,364 --> 00:00:26,918
+las notas de crédito y débito de la factura cambian con ella,
+
+10
+00:00:26,777 --> 00:00:30,274
+y la comisión pendiente pasa al nuevo vendedor.
+
+11
+00:00:30,120 --> 00:00:32,724
+En Nuevo vendedor escribo Luis.
+
+12
+00:00:32,594 --> 00:00:37,229
+En la lista aparece su ficha, y elijo V-0003.
+
+13
+00:00:37,097 --> 00:00:39,365
+Ahora el motivo, que es obligatorio.
+
+14
+00:00:39,234 --> 00:00:43,231
+En Motivo del cambio escribo por qué, en una frase:
+
+15
+00:00:43,088 --> 00:00:45,797
+queda guardado en la bitácora de la factura,
+
+16
+00:00:45,655 --> 00:00:48,653
+con la fecha y el usuario que hizo el cambio.
+
+17
+00:00:48,521 --> 00:00:52,356
+Con todo listo, pulso Cambiar vendedor.
+
+18
+00:00:52,273 --> 00:00:56,791
+El sistema confirma el cambio, y la factura ya muestra a Luis.
+
+19
+00:00:57,235 --> 00:00:59,339
+Con la comisión pasa esto:
+
+20
+00:00:59,174 --> 00:01:04,900
+como la de Carmen estaba pendiente, se anuló y nació la misma comisión para Luis.
+
+21
+00:01:04,771 --> 00:01:09,905
+Si ya se le hubiera pagado a Carmen, se le descontaría en su próxima liquidación.
+
+22
+00:01:09,786 --> 00:01:13,585
+Y si la empresa enviara el código del vendedor en el e-CF,
+
+23
+00:01:13,478 --> 00:01:17,149
+el comprobante firmado conserva el código original;
+
+24
+00:01:17,007 --> 00:01:20,691
+solo cambian la comisión y el nombre en el PDF.
+
+25
+00:01:20,513 --> 00:01:25,265
+Para cambiar el vendedor hace falta el permiso Cambiar vendedor de documentos,
+
+26
+00:01:25,111 --> 00:01:26,971
+que no tiene la cajera.
+
+27
+00:01:27,411 --> 00:01:30,641
+Ahora, el caso de muchos documentos a la vez:
+
+28
+00:01:30,534 --> 00:01:33,822
+un vendedor que deja la empresa o cambia de zona.
+
+29
+00:01:33,680 --> 00:01:38,675
+Supongamos que Luis pasa a otra región y Pedro toma lo suyo.
+
+30
+00:01:38,510 --> 00:01:41,845
+En Vendedores pulso Reasignar vendedor.
+
+31
+00:01:41,691 --> 00:01:44,771
+En Vendedor actual escribo Luis.
+
+32
+00:01:44,687 --> 00:01:47,348
+Aparece su ficha y elijo a Luis.
+
+33
+00:01:47,206 --> 00:01:51,899
+Luego, en el campo de al lado, Nuevo vendedor, escribo Pedro.
+
+34
+00:01:51,746 --> 00:01:54,895
+También aparece su ficha, y la elijo:
+
+35
+00:01:54,788 --> 00:01:55,580
+Pedro.
+
+36
+00:01:55,461 --> 00:01:59,933
+Abajo, las fechas marcan el rango de los documentos que se mueven;
+
+37
+00:01:59,804 --> 00:02:02,743
+por omisión, desde enero hasta hoy.
+
+38
+00:02:02,637 --> 00:02:05,972
+Mover las comisiones las pasa al nuevo vendedor;
+
+39
+00:02:05,840 --> 00:02:09,640
+apágalo solo para corregir un histórico sin comisiones.
+
+40
+00:02:09,486 --> 00:02:14,342
+Y Pasarle también la cartera cambia el ejecutivo de cuenta de sus clientes.
+
+41
+00:02:14,165 --> 00:02:18,882
+En Motivo explico el cambio, en pocas palabras, como en la factura.
+
+42
+00:02:18,728 --> 00:02:22,679
+Con eso, el sistema ya puede calcular qué se movería.
+
+43
+00:02:22,536 --> 00:02:24,640
+Pulso Ver el efecto.
+
+44
+00:02:25,105 --> 00:02:28,673
+Antes de tocar nada, el sistema cuenta lo que se moverá:
+
+45
+00:02:28,554 --> 00:02:31,609
+las tres facturas de Luis, con su comisión viva,
+
+46
+00:02:31,444 --> 00:02:34,721
+y los dos clientes de los que era ejecutivo de cuenta.
+
+47
+00:02:34,556 --> 00:02:36,382
+Pero hay un aviso importante:
+
+48
+00:02:36,275 --> 00:02:39,306
+Pedro no tiene un esquema de comisión vigente,
+
+49
+00:02:39,153 --> 00:02:43,335
+así que esas tres comisiones se anularían en vez de pasarle.
+
+50
+00:02:43,158 --> 00:02:45,204
+Por eso se revisa el efecto.
+
+51
+00:02:45,051 --> 00:02:46,806
+Cambio el Nuevo vendedor:
+
+52
+00:02:46,676 --> 00:02:50,465
+escribo Carmen, que sí está en un esquema, y la elijo.
+
+53
+00:02:50,322 --> 00:02:53,912
+Como cambió un dato, pulso otra vez Ver el efecto.
+
+54
+00:02:53,829 --> 00:02:59,206
+Ahora las tres facturas tienen comisión viva y se moverán a Carmen, sin aviso.
+
+55
+00:02:59,064 --> 00:03:01,110
+Pulso Reasignar ahora.
+
+56
+00:03:00,945 --> 00:03:04,954
+Cada documento pasa por el mismo cambio que vimos en la factura,
+
+57
+00:03:04,788 --> 00:03:07,623
+con su motivo en la bitácora y su comisión.
+
+58
+00:03:07,516 --> 00:03:11,049
+Para más de dos mil documentos, se divide el rango.

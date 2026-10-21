@@ -1,0 +1,308 @@
+{
+ "titulo": "Vendedores · El vendedor en la factura",
+ "descripcion": "Cómo propone el sistema el vendedor de una factura nueva a partir del ejecutivo de cuenta del cliente, en qué orden lo decide, y cómo se distinguen en la factura y en el listado el vendedor, el cajero y quien la registró.",
+ "_comentario": "Video 04 de la serie Vendedores. setup: preparar.sh cartera (la Ferretería Germiva del Norte con ejecutivo Luis V-0003 y plazo 30 días). El video crea y emite la factura 1000000050 por un galón de pintura (RD$1,180).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/invoices/create",
+  "esperar": "app-sales-rep-select"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh cartera"
+ },
+ "aprenderas": [
+  "De dónde sale el vendedor de un documento nuevo",
+  "Facturar con el vendedor que propone el cliente",
+  "Vendedor, cajero y quien registró: tres datos distintos",
+  "Columnas y filtros del vendedor en el listado de facturas"
+ ],
+ "errores_comunes": [
+  "Pensar que quien registra la factura es el vendedor",
+  "Dejar facturas sin vendedor: no generan comisión",
+  "Buscar al cajero en una factura que no se cobró en caja"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-propuesta",
+   "capitulo": "El vendedor se propone solo",
+   "rotulo": "Factura nueva",
+   "ruta": "Ventas › Facturas › Nueva",
+   "texto_pantalla": "Cliente con ejecutivo → vendedor propuesto",
+   "navegar": "/sales/invoices/create",
+   "narracion": "Hacemos una factura nueva, en Ventas, Facturas. Recojo el menú. Primero, el cliente: en Cliente busco la Ferretería Germiva del Norte; aparece en la lista, y la elijo. Fíjate en el campo Vendedor: se llenó solo con V-0003, Luis Gómez Díaz, porque Luis es el ejecutivo de cuenta de este cliente. El sistema decide el vendedor en este orden: primero, el que elijas aquí; si no, el del documento de origen, como la cotización, la orden o el conduce; si no, el ejecutivo de cuenta del cliente. Y si no hay ninguno, la factura queda sin vendedor: nunca se rellena con la cajera ni con quien registra. También se cargó el plazo del cliente: crédito a treinta días, con su vencimiento.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "app-partner-select input, [formcontrolname=partner] input",
+      "texto": "Ferretería Germiva"
+     },
+     "al_decir": "En Cliente busco"
+    },
+    {
+     "click": "mat-option:has-text('Ferretería Germiva del Norte')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "resaltar": "app-sales-rep-select",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Fíjate en el campo Vendedor"
+    },
+    {
+     "resaltar": "app-sales-rep-select",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "primero, el que elijas aquí"
+    },
+    {
+     "resaltar": ".page-title, h1 >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "el del documento de origen"
+    },
+    {
+     "resaltar": "app-partner-select, [formcontrolname=partner] >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el ejecutivo de cuenta del cliente"
+    },
+    {
+     "resaltar": "app-sales-rep-select",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "queda sin vendedor"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Condición de pago'))",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "También se cargó el plazo"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Vencimiento'))",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "con su vencimiento"
+    }
+   ]
+  },
+  {
+   "id": "02-emitir",
+   "capitulo": "El vendedor se propone solo",
+   "rotulo": "Emitir la factura",
+   "ruta": "Ventas › Facturas › Nueva",
+   "texto_pantalla": "1 galón de pintura · RD$1,180",
+   "narracion": "Ahora la línea: escribo Pintura. En la lista aparece el producto con su existencia, y elijo la pintura acrílica Germiva de galón. El total es mil ciento ochenta pesos con el ITBIS. El vendedor se puede cambiar mientras la factura está en borrador, pero aquí lo dejamos así. Pulso Guardar y Emitir. El sistema guarda la factura, le asigna su comprobante y la emite; tarda unos segundos. Cuando termina, confirma la operación con un aviso. Pulso Aceptar.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[placeholder*='Escriba el código']",
+      "texto": "Pintura"
+     },
+     "al_decir": "escribo Pintura"
+    },
+    {
+     "click": "mat-option:has-text('Pintura acrílica')",
+     "al_decir": "pintura acrílica Germiva de galón"
+    },
+    {
+     "resaltar": ".summary-panel, app-document-cost-summary, :text('TOTAL A PAGAR') >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El total es mil"
+    },
+    {
+     "resaltar": "app-sales-rep-select",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "El vendedor se puede cambiar"
+    },
+    {
+     "click": "button:has-text('Guardar y Emitir')",
+     "al_decir": "Pulso Guardar y Emitir"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('Operación completada')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "confirma la operación"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
+    }
+   ]
+  },
+  {
+   "id": "03-tres-personas",
+   "capitulo": "Vendedor, cajero y quien registra",
+   "rotulo": "Tres papeles distintos",
+   "ruta": "Ventas › Facturas › 1000000050",
+   "texto_pantalla": "Vendedor: Luis · Registrada por: Administrador",
+   "narracion": "Esta es la factura emitida. En una venta pueden intervenir tres personas, y el sistema las guarda por separado. El vendedor es Luis: quien hizo la venta y cobra la comisión. Debajo, Registrada por: el usuario que grabó el documento, en este caso el administrador. Es un dato de auditoría y nunca comisiona. La tercera es el cajero: el usuario del turno de caja con que se cobró. Esta factura es a crédito y no pasó por caja, así que no tiene cajero. El lápiz junto al vendedor sirve para corregirlo después de emitida; lo vemos en otro video.",
+   "acciones": [
+    {
+     "resaltar": "[data-testid=invoice-seller-readonly], mat-form-field:has(mat-label:text-is('Vendedor')) >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "El vendedor es Luis"
+    },
+    {
+     "resaltar": "mat-hint:has-text('Registrada por')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Debajo, Registrada por"
+    },
+    {
+     "resaltar": ".ipp-session-chip",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "La tercera es el cajero"
+    },
+    {
+     "resaltar": "[data-testid=invoice-change-seller]",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "El lápiz junto al vendedor"
+    }
+   ]
+  },
+  {
+   "id": "04-listado",
+   "capitulo": "El vendedor en el listado",
+   "rotulo": "Columnas y filtro Sin vendedor",
+   "ruta": "Ventas › Facturas",
+   "texto_pantalla": "Columnas Vendedor · Cajero · Registrada por",
+   "navegar": "/sales/invoices",
+   "narracion": "Volvemos al listado de Facturas. Aquí, la columna Vendedor muestra el de cada factura. La nuestra, arriba, es de Luis. Las columnas Cajero y Registrada por existen, pero vienen apagadas. Abro la configuración de columnas. Marco Cajero, que dice quién cobró en caja. Después marco Registrada por. Y pulso Guardar cambios. El aviso confirma que se aplicó; cierro el panel. Ahora se ven las tres personas en cada fila. Por último, el filtro Vendedor asignado tiene la opción Sin vendedor: elijo Sin vendedor, y quedan las facturas que no tienen vendedor. Esas no generan comisión, y conviene revisarlas.",
+   "acciones": [
+    {
+     "resaltar": "th:has-text('Vendedor')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Aquí, la columna Vendedor"
+    },
+    {
+     "resaltar": "tr:has-text('1000000050') td:has-text('Luis')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "La nuestra, arriba"
+    },
+    {
+     "click": "button:has(mat-icon:text-is('view_column'))",
+     "al_decir": "Abro la configuración de columnas"
+    },
+    {
+     "click": ".cdk-overlay-pane mat-checkbox:has-text('Cajero')",
+     "al_decir": "marco Cajero"
+    },
+    {
+     "click": ".cdk-overlay-pane mat-checkbox:has-text('Registrada por')",
+     "al_decir": "Después marco Registrada por"
+    },
+    {
+     "click": ".cdk-overlay-pane button:has-text('Guardar cambios')",
+     "al_decir": "Y pulso Guardar cambios"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2000,
+     "cursor": false,
+     "al_decir": "El aviso confirma"
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     },
+     "al_decir": "cierro el panel"
+    },
+    {
+     "resaltar": "tr:has-text('1000000050') td >> nth=4",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "se ven las tres personas"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Vendedor asignado')) mat-select",
+     "al_decir": "el filtro Vendedor asignado"
+    },
+    {
+     "click": "mat-option:has-text('Sin vendedor')",
+     "al_decir": "elijo Sin vendedor"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=2",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "quedan las facturas"
+    }
+   ]
+  }
+ ]
+}

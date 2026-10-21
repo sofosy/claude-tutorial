@@ -1,0 +1,318 @@
+{
+ "titulo": "Vendedores · La ficha de vendedor",
+ "descripcion": "Qué es una ficha de vendedor en Germiva, en qué se diferencia del rol de usuario y cómo se le crea a un empleado: código, zona y ruta, canales donde puede figurar, supervisor, vigencia y descuento máximo.",
+ "_comentario": "Video 01 de la serie Vendedores. setup: preparar.sh base (Carmen V-0001 y Pedro V-0002 con ficha; Luis Gómez Díaz, empleado desde el 01/08/2026, sin ficha). El video le crea la ficha V-0003, zona Norte, supervisor Pedro, descuento máximo 5 %.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/sales-reps",
+  "esperar": "tr:has-text('V-0002')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh base"
+ },
+ "aprenderas": [
+  "Qué es una ficha de vendedor y por qué no basta el usuario",
+  "Crear la ficha de un empleado con su código, zona y ruta",
+  "Supervisor, canales, vigencia y descuento máximo",
+  "Qué pasa con la ficha de un vendedor que se va"
+ ],
+ "errores_comunes": [
+  "Pensar que el cajero o quien registra la factura es el vendedor",
+  "Eliminar la ficha de un vendedor que ya tiene ventas: se desactiva",
+  "Buscar en el selector de vendedor a un empleado sin ficha"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-lista",
+   "capitulo": "Qué es una ficha de vendedor",
+   "rotulo": "La pantalla de Vendedores",
+   "ruta": "Ventas › Vendedores",
+   "texto_pantalla": "Una ficha por cada persona que vende y comisiona",
+   "navegar": "/sales/sales-reps",
+   "narracion": "Empezamos en Ventas, en la pantalla de Vendedores. Cada fila es una ficha de vendedor: la persona que puede figurar como vendedor en cotizaciones, órdenes, conduces y facturas, y a la que se le calculan comisiones. Recojo el menú. Es importante distinguirla del usuario: el rol de usuario solo dice qué puede hacer alguien en el sistema; quien no tiene ficha no aparece como vendedor, aunque sea quien registra la factura o cobra en caja. Aquí están Carmen y Pedro, con su código, el tipo, su usuario, la zona y la ruta, y desde cuándo venden. Hoy empieza a vender Luis Gómez, en la zona Norte, y le vamos a crear su ficha.",
+   "acciones": [
+    {
+     "resaltar": "h2:has-text('Vendedores'), .breadcrumb, app-breadcrumb >> nth=0",
+     "durante_ms": 2000,
+     "cursor": false,
+     "al_decir": "la pantalla de Vendedores"
+    },
+    {
+     "resaltar": "tr:has-text('V-0001') td >> nth=1",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Cada fila es una ficha"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "th:has-text('Usuario')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "el rol de usuario solo dice"
+    },
+    {
+     "resaltar": "tr:has-text('V-0001') td >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Aquí están Carmen y Pedro"
+    },
+    {
+     "resaltar": "tr:has-text('V-0001') td >> nth=5",
+     "durante_ms": 2200,
+     "cursor": false,
+     "al_decir": "la zona y la ruta"
+    },
+    {
+     "resaltar": "tr:has-text('V-0001') td >> nth=6",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "desde cuándo venden"
+    }
+   ]
+  },
+  {
+   "id": "02-quien",
+   "capitulo": "Crear la ficha",
+   "rotulo": "Quién vende",
+   "ruta": "Ventas › Vendedores › Nuevo vendedor",
+   "texto_pantalla": "Empleado → comisión por nómina · Código V-0003",
+   "narracion": "Para crear la ficha de Luis, pulso Nuevo vendedor. En Empleado o proveedor busco a Luis por su apellido, Gómez Díaz. La lista solo trae a quienes todavía no tienen ficha; ahí está, y lo elijo. Debajo, el sistema dice qué tipo de vendedor es: Luis es empleado, así que su comisión se le paga por nómina. Su usuario del sistema no se pide aquí: se toma de su ficha de empleado, y con él Luis podrá ver sus propias ventas y comisiones. En Código escribo V-0003; es lo que se teclea en la caja o se manda por el API para elegirlo rápido. Si lo dejas vacío, el sistema propone uno.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nuevo vendedor')",
+     "al_decir": "pulso Nuevo vendedor"
+    },
+    {
+     "escribir": {
+      "sel": "[data-testid=sales-rep-partner] input",
+      "texto": "Gómez Díaz"
+     },
+     "al_decir": "busco a Luis"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=sales-rep-partner]",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "todavía no tienen ficha"
+    },
+    {
+     "click": "mat-option:has-text('Luis Gómez Díaz')",
+     "al_decir": "y lo elijo",
+     "durante_ms": 3000
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=sales-rep-kind]",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "el sistema dice qué tipo"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=sales-rep-kind]",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Su usuario del sistema"
+    },
+    {
+     "escribir": {
+      "sel": "[data-testid=sales-rep-code]",
+      "texto": "V-0003"
+     },
+     "al_decir": "En Código escribo"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-hint:has-text('Lo teclea')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "o se manda por el API"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-hint:has-text('Lo teclea')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Si lo dejas vacío"
+    }
+   ]
+  },
+  {
+   "id": "03-donde",
+   "capitulo": "Crear la ficha",
+   "rotulo": "Dónde vende y con qué límites",
+   "ruta": "Ventas › Vendedores › Nuevo vendedor",
+   "texto_pantalla": "Zona Norte · supervisor Pedro · descuento máximo 5 %",
+   "narracion": "Ahora, Dónde vende. La Zona de venta de Luis es Norte. Y como ruta, la Ruta uno Santiago. Zona y ruta sirven para filtrar la cartera y los reportes. Luego, Puede figurar en: dice en qué documentos se le ofrece: cotizaciones, órdenes, conduces, facturas, punto de venta o facturas por API. Vacío es en todos; a un vendedor de calle, por ejemplo, se le quita el punto de venta. Lo dejo vacío. Como Supervisor busco a Pedro, que verá los documentos de su equipo, y lo elijo. Vende desde queda vacío y toma su fecha de ingreso; Hasta se llena cuando deja de vender. Y en Descuento máximo sin aprobación pongo cinco: por encima de eso, el descuento pide aprobación. Pulso Guardar.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[formcontrolname=salesZone]",
+      "texto": "NORTE"
+     },
+     "al_decir": "Zona de venta de Luis"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname=salesRoute]",
+      "texto": "Ruta 1 Santiago"
+     },
+     "al_decir": "la Ruta uno Santiago"
+    },
+    {
+     "click": "[data-testid=sales-rep-channels]",
+     "al_decir": "Luego, Puede figurar en"
+    },
+    {
+     "resaltar": ".cdk-overlay-pane mat-option >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "en qué documentos se le ofrece"
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     },
+     "al_decir": "Lo dejo vacío"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input",
+      "texto": "Pedro"
+     },
+     "al_decir": "Como Supervisor busco"
+    },
+    {
+     "click": "mat-option:has-text('Pedro Almonte')",
+     "al_decir": "y lo elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container input[formcontrolname=startDate]",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Vende desde queda vacío"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname=maxDiscountPercent]",
+      "texto": "5"
+     },
+     "al_decir": "Descuento máximo sin aprobación"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    }
+   ]
+  },
+  {
+   "id": "04-ficha",
+   "capitulo": "La ficha creada",
+   "rotulo": "Activa, desactivar, no eliminar",
+   "ruta": "Ventas › Vendedores",
+   "texto_pantalla": "Con ventas, la ficha se desactiva: no se elimina",
+   "narracion": "El aviso confirma que el vendedor se creó, y Luis aparece en la lista: código V-0003, empleado, con su usuario y la zona Norte. Desde hoy se le puede elegir como vendedor y ponerlo como ejecutivo de cuenta de sus clientes. Abro su ficha con el lápiz. Al editarla aparece Ficha activa. Cuando un vendedor se va, no se elimina su ficha si ya tiene ventas: se apaga Ficha activa o se le pone fecha en Hasta. Sus documentos viejos conservan su nombre, y deja de ofrecerse en los nuevos. Cierro sin cambios.",
+   "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso confirma"
+    },
+    {
+     "resaltar": "tr:has-text('V-0003') td >> nth=1",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Luis aparece en la lista"
+    },
+    {
+     "click": "tr:has-text('V-0003') mat-icon:text-is('edit')",
+     "al_decir": "Abro su ficha"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-slide-toggle",
+     "durante_ms": 1000,
+     "cursor": false,
+     "al_decir": "aparece Ficha activa"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-slide-toggle",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Cuando un vendedor se va"
+    },
+    {
+     "resaltar": "input[formcontrolname=endDate]",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "fecha en Hasta"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cancelar')",
+     "al_decir": "Cierro sin cambios"
+    }
+   ]
+  }
+ ]
+}

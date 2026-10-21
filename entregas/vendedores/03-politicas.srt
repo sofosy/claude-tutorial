@@ -1,0 +1,127 @@
+1
+00:00:03,000 --> 00:00:07,461
+Las reglas del vendedor se configuran en Configuración, Preferencias.
+
+2
+00:00:07,354 --> 00:00:09,411
+Abro la pestaña Vendedores.
+
+3
+00:00:09,326 --> 00:00:10,513
+Recojo el menú.
+
+4
+00:00:10,384 --> 00:00:12,836
+Arriba se recuerda la idea central:
+
+5
+00:00:12,728 --> 00:00:16,667
+el vendedor es quien hizo la venta y cobra la comisión;
+
+6
+00:00:16,560 --> 00:00:19,024
+no es quien registra ni la cajera.
+
+7
+00:00:18,939 --> 00:00:23,795
+Si no se elige, el documento lo toma de su origen o del ejecutivo de cuenta del
+
+8
+00:00:23,653 --> 00:00:24,387
+cliente.
+
+9
+00:00:24,303 --> 00:00:28,787
+En Exigir vendedor en, la empresa decide dónde es obligatorio.
+
+10
+00:00:28,658 --> 00:00:31,620
+Elijo Cotizaciones, y también Facturas:
+
+11
+00:00:31,455 --> 00:00:34,557
+en esos documentos no se podrá guardar sin vendedor.
+
+12
+00:00:34,474 --> 00:00:37,635
+Al lado, Tomar al usuario que registra como vendedor:
+
+13
+00:00:37,551 --> 00:00:41,083
+sirve cuando cada vendedor captura sus propios pedidos.
+
+14
+00:00:40,941 --> 00:00:44,868
+Lo dejo vacío, porque aquí las facturas las registra la cajera,
+
+15
+00:00:44,703 --> 00:00:46,249
+y la cajera no vende.
+
+16
+00:00:46,683 --> 00:00:50,981
+En el punto de venta, Pedir el vendedor puede ser No pedirlo,
+
+17
+00:00:50,863 --> 00:00:53,628
+Opcional u Obligatorio para cobrar.
+
+18
+00:00:53,544 --> 00:00:55,010
+Lo dejo en Opcional.
+
+19
+00:00:54,881 --> 00:00:59,782
+Conservar el vendedor entre ventas hace que la caja mantenga el último vendedor
+
+20
+00:00:59,628 --> 00:01:01,117
+elegido en el turno.
+
+21
+00:01:01,068 --> 00:01:03,927
+Más abajo, el Período de comisiones:
+
+22
+00:01:03,762 --> 00:01:08,989
+cada cuánto se liquidan las comisiones de cada vendedor, mensual o quincenal.
+
+23
+00:01:08,906 --> 00:01:12,646
+Nunca más de un mes, como manda el Código de Trabajo.
+
+24
+00:01:12,516 --> 00:01:13,959
+Lo dejo en Mensual.
+
+25
+00:01:13,793 --> 00:01:18,346
+Y por último, Enviar el código de vendedor en el e-CF.
+
+26
+00:01:18,204 --> 00:01:21,307
+Es opcional y no tiene efecto fiscal:
+
+27
+00:01:21,223 --> 00:01:24,348
+la DGII no lo exige.
+
+28
+00:01:24,207 --> 00:01:27,820
+Si se enciende, el código queda congelado al firmar;
+
+29
+00:01:27,656 --> 00:01:32,233
+por eso, si reasignas vendedores a menudo, conviene dejarlo apagado.
+
+30
+00:01:32,079 --> 00:01:33,335
+Pulso Guardar.
+
+31
+00:01:33,193 --> 00:01:36,992
+El aviso confirma que la configuración quedó guardada;
+
+32
+00:01:36,850 --> 00:01:38,710
+pulso Aceptar.

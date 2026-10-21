@@ -1,0 +1,199 @@
+1
+00:00:03,000 --> 00:00:06,520
+Empezamos en Ventas, en la pantalla de Vendedores.
+
+2
+00:00:06,355 --> 00:00:09,051
+Cada fila es una ficha de vendedor:
+
+3
+00:00:08,932 --> 00:00:13,439
+la persona que puede figurar como vendedor en cotizaciones, órdenes,
+
+4
+00:00:13,285 --> 00:00:17,537
+conduces y facturas, y a la que se le calculan comisiones.
+
+5
+00:00:17,454 --> 00:00:18,652
+Recojo el menú.
+
+6
+00:00:18,627 --> 00:00:21,148
+Es importante distinguirla del usuario:
+
+7
+00:00:21,007 --> 00:00:25,142
+el rol de usuario solo dice qué puede hacer alguien en el sistema;
+
+8
+00:00:25,036 --> 00:00:28,010
+quien no tiene ficha no aparece como vendedor,
+
+9
+00:00:27,937 --> 00:00:31,527
+aunque sea quien registra la factura o cobra en caja.
+
+10
+00:00:31,455 --> 00:00:37,252
+Aquí están Carmen y Pedro, con su código, el tipo, su usuario, la zona y la ruta,
+
+11
+00:00:37,098 --> 00:00:38,679
+y desde cuándo venden.
+
+12
+00:00:38,597 --> 00:00:44,300
+Hoy empieza a vender Luis Gómez, en la zona Norte, y le vamos a crear su ficha.
+
+13
+00:00:44,750 --> 00:00:48,352
+Para crear la ficha de Luis, pulso Nuevo vendedor.
+
+14
+00:00:48,174 --> 00:00:53,180
+En Empleado o proveedor busco a Luis por su apellido, Gómez Díaz.
+
+15
+00:00:53,027 --> 00:00:56,617
+La lista solo trae a quienes todavía no tienen ficha;
+
+16
+00:00:56,510 --> 00:00:58,673
+ahí está, y lo elijo.
+
+17
+00:00:58,518 --> 00:01:02,051
+Debajo, el sistema dice qué tipo de vendedor es:
+
+18
+00:01:01,920 --> 00:01:06,150
+Luis es empleado, así que su comisión se le paga por nómina.
+
+19
+00:01:05,972 --> 00:01:08,436
+Su usuario del sistema no se pide aquí:
+
+20
+00:01:08,283 --> 00:01:10,549
+se toma de su ficha de empleado,
+
+21
+00:01:10,466 --> 00:01:15,194
+y con él Luis podrá ver sus propias ventas y comisiones.
+
+22
+00:01:15,039 --> 00:01:16,853
+En Código escribo V-0003;
+
+23
+00:01:16,746 --> 00:01:23,088
+es lo que se teclea en la caja o se manda por el API para elegirlo rápido.
+
+24
+00:01:22,947 --> 00:01:26,282
+Si lo dejas vacío, el sistema propone uno.
+
+25
+00:01:26,740 --> 00:01:28,647
+Ahora, Dónde vende.
+
+26
+00:01:28,540 --> 00:01:31,120
+La Zona de venta de Luis es Norte.
+
+27
+00:01:30,954 --> 00:01:33,964
+Y como ruta, la Ruta uno Santiago.
+
+28
+00:01:33,834 --> 00:01:37,668
+Zona y ruta sirven para filtrar la cartera y los reportes.
+
+29
+00:01:37,560 --> 00:01:39,781
+Luego, Puede figurar en:
+
+30
+00:01:39,697 --> 00:01:42,486
+dice en qué documentos se le ofrece:
+
+31
+00:01:42,355 --> 00:01:49,103
+cotizaciones, órdenes, conduces, facturas, punto de venta o facturas por API.
+
+32
+00:01:48,961 --> 00:01:50,996
+Vacío es en todos;
+
+33
+00:01:50,854 --> 00:01:54,885
+a un vendedor de calle, por ejemplo, se le quita el punto de venta.
+
+34
+00:01:54,755 --> 00:01:56,116
+Lo dejo vacío.
+
+35
+00:01:56,032 --> 00:02:00,957
+Como Supervisor busco a Pedro, que verá los documentos de su equipo, y lo elijo.
+
+36
+00:02:00,873 --> 00:02:04,475
+Vende desde queda vacío y toma su fecha de ingreso;
+
+37
+00:02:04,333 --> 00:02:06,727
+Hasta se llena cuando deja de vender.
+
+38
+00:02:06,597 --> 00:02:09,967
+Y en Descuento máximo sin aprobación pongo cinco:
+
+39
+00:02:09,813 --> 00:02:13,194
+por encima de eso, el descuento pide aprobación.
+
+40
+00:02:13,075 --> 00:02:14,309
+Pulso Guardar.
+
+41
+00:02:14,765 --> 00:02:20,340
+El aviso confirma que el vendedor se creó, y Luis aparece en la lista:
+
+42
+00:02:20,233 --> 00:02:24,439
+código V-0003, empleado, con su usuario y la zona Norte.
+
+43
+00:02:24,320 --> 00:02:29,942
+Desde hoy se le puede elegir como vendedor y ponerlo como ejecutivo de cuenta de
+
+44
+00:02:29,800 --> 00:02:30,522
+sus clientes.
+
+45
+00:02:30,369 --> 00:02:32,473
+Abro su ficha con el lápiz.
+
+46
+00:02:32,331 --> 00:02:34,760
+Al editarla aparece Ficha activa.
+
+47
+00:02:34,653 --> 00:02:39,439
+Cuando un vendedor se va, no se elimina su ficha si ya tiene ventas:
+
+48
+00:02:39,286 --> 00:02:43,271
+se apaga Ficha activa o se le pone fecha en Hasta.
+
+49
+00:02:43,140 --> 00:02:48,809
+Sus documentos viejos conservan su nombre, y deja de ofrecerse en los nuevos.
+
+50
+00:02:48,725 --> 00:02:50,538
+Cierro sin cambios.

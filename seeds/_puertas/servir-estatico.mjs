@@ -23,4 +23,4 @@ http.createServer((req, res) => {
   }
   res.writeHead(200, { 'Content-Type': tipos[path.extname(archivo).toLowerCase()] ?? 'application/octet-stream' });
   fs.createReadStream(archivo).pipe(res);
-}).listen(puerto, '::', () => console.log(`estático ${raiz} en :${puerto}`));
+}).listen(puerto, process.env.HOST ?? '::', () => console.log(`estático ${raiz} en :${puerto}`));  // HOST=0.0.0.0 donde no hay IPv6

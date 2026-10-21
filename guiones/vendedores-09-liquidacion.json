@@ -1,0 +1,298 @@
+{
+ "titulo": "Vendedores · La liquidación de comisiones",
+ "descripcion": "Cómo se liquidan las comisiones del período: preparar una liquidación por vendedor, revisar sus líneas y totales, agregar un ajuste con su motivo, enviarla a aprobación y aprobarla, con la provisión contable que se registra sola.",
+ "_comentario": "Video 09 de la serie Vendedores. setup: preparar.sh cobradas (comisiones devengadas de octubre: Luis 560 + 150, Carmen 150). El video prepara Octubre 2026, agrega a Luis un bono de RD$500 y aprueba su liquidación LC-000002 (neto RD$1,210, provisionado).",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce",
+  "LC-000002": "ele ce dos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/commissions/settlements",
+  "esperar": "button:has-text('Preparar liquidaciones')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh cobradas"
+ },
+ "aprenderas": [
+  "Preparar las liquidaciones del período",
+  "Revisar las líneas y los totales de un vendedor",
+  "Agregar un ajuste con su motivo",
+  "Enviar a aprobación, aprobar y la provisión contable"
+ ],
+ "errores_comunes": [
+  "Aprobar comisiones de factura sueltas: se aprueban con la liquidación",
+  "Aprobar la liquidación propia: la aprueba otra persona",
+  "Esperar que un neto negativo se descuente del salario: se arrastra"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-preparar",
+   "capitulo": "Preparar el período",
+   "rotulo": "Una liquidación por vendedor",
+   "ruta": "Ventas › Comisiones › Liquidaciones",
+   "texto_pantalla": "Octubre 2026 · Luis RD$710 · Carmen RD$150",
+   "navegar": "/sales/commissions/settlements",
+   "narracion": "Las comisiones no se pagan una por una: al cierre del período se juntan en una liquidación por vendedor. Estamos en Comisiones, pestaña Liquidaciones. Recojo el menú. Pulso Preparar liquidaciones. El diálogo explica qué junta: comisiones devengadas, notas de crédito, reversos y saldos hasta el último día del período. En el campo Período, de la lista elijo Octubre dos mil veintiséis. El período es mensual, como lo configuró la empresa. Confirmo con el botón Preparar. Salen dos liquidaciones nuevas; acepto. Una de Luis, por setecientos diez pesos, y otra de Carmen, por ciento cincuenta. Las dos están en Borrador.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "click": "button:has-text('Preparar liquidaciones')",
+     "al_decir": "Pulso Preparar liquidaciones"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 6500,
+     "cursor": false,
+     "al_decir": "El diálogo explica qué junta"
+    },
+    {
+     "click": "[data-testid=prepare-period]",
+     "al_decir": "En el campo Período"
+    },
+    {
+     "click": "mat-option:has-text('Octubre')",
+     "al_decir": "de la lista elijo Octubre"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=prepare-period]",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El período es mensual"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Preparar') >> nth=-1",
+     "al_decir": "Confirmo con el botón Preparar"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('nuevas')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Salen dos liquidaciones"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto"
+    },
+    {
+     "resaltar": "tr:has-text('Luis') td >> nth=2",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Una de Luis"
+    },
+    {
+     "resaltar": "tr:has-text('Carmen') td >> nth=2",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "otra de Carmen"
+    },
+    {
+     "resaltar": "tr:has-text('Luis') td:has-text('Borrador')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Las dos están en Borrador"
+    }
+   ]
+  },
+  {
+   "id": "02-revisar",
+   "capitulo": "Revisar y ajustar",
+   "rotulo": "Líneas, totales y un ajuste",
+   "ruta": "Ventas › Comisiones › Liquidaciones › LC-000002",
+   "texto_pantalla": "Comisiones 710 + ajuste 500 = neto 1,210",
+   "narracion": "Para revisarla, abro la de Luis. Arriba están el período, la moneda y las fechas de cada paso. Debajo, los totales: comisiones, notas de crédito y reversos, saldos y ajustes, el neto y lo que pagará la nómina. Abajo, las líneas: cada comisión con su documento, su cliente y su cobro. Si hace falta, se agrega un ajuste. A Luis se le reconoce un bono por abrir la ruta Norte: pulso Agregar ajuste. Se abre el ajuste para Luis. En Monto escribo quinientos. Un monto negativo serviría para descontar, pero un descuento solo se compensa con comisiones, nunca con el salario. En Motivo explico el bono, en pocas palabras, para que quede claro en el estado de cuenta, y con el botón lo agrego a la liquidación. El ajuste aparece como una línea más, y el neto sube a mil doscientos diez pesos.",
+   "acciones": [
+    {
+     "click": "tr:has-text('Luis') mat-icon:text-is('visibility')",
+     "al_decir": "abro la de Luis"
+    },
+    {
+     "resaltar": ".page-title, .settlement-header, [data-testid=settlement-status] >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Arriba están el período"
+    },
+    {
+     "resaltar": "[data-testid=settlement-totals]",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "Debajo, los totales"
+    },
+    {
+     "resaltar": "[data-testid=settlement-lines] tbody tr >> nth=0",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Abajo, las líneas"
+    },
+    {
+     "click": "[data-testid=btn-adjust]",
+     "al_decir": "pulso Agregar ajuste"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Se abre el ajuste"
+    },
+    {
+     "escribir": {
+      "sel": "input[data-testid=adjustment-amount], [data-testid=adjustment-amount] input",
+      "texto": "500"
+     },
+     "al_decir": "En Monto escribo"
+    },
+    {
+     "escribir": {
+      "sel": "textarea[data-testid=adjustment-reason], [data-testid=adjustment-reason] textarea, input[data-testid=adjustment-reason], [data-testid=adjustment-reason] input",
+      "texto": "Bono por abrir la ruta Norte"
+     },
+     "al_decir": "En Motivo explico"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Agregar ajuste')",
+     "al_decir": "con el botón lo agrego"
+    },
+    {
+     "resaltar": "[data-testid=settlement-lines] tbody tr >> nth=-1",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El ajuste aparece"
+    },
+    {
+     "resaltar": "[data-testid=settlement-totals]",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el neto sube"
+    }
+   ]
+  },
+  {
+   "id": "03-aprobar",
+   "capitulo": "Aprobar",
+   "rotulo": "Enviar a aprobación y aprobar",
+   "ruta": "Ventas › Comisiones › Liquidaciones › LC-000002",
+   "texto_pantalla": "Aprobada · provisión contable RD$1,210",
+   "narracion": "Con la liquidación revisada, pulso Enviar a aprobación. Quien aprueba comisiones recibe un aviso en el sistema; acepto. Ahora, quien tiene el permiso pulsa Aprobar. El diálogo resume lo que pagará la nómina: mil doscientos diez pesos. Sus comisiones quedan aprobadas y se registra la provisión contable. Confirmo con Aprobar. En un momento el sistema confirma la aprobación, y cierro el aviso. La liquidación queda Aprobada, y en Provisión contable dice Provisionada: un débito a gasto de comisiones y un crédito a comisiones por pagar, en el mes en que se ganaron. Dos reglas importantes: nadie aprueba su propia liquidación, y si el neto sale negativo no se descuenta del salario: se arrastra a la siguiente.",
+   "acciones": [
+    {
+     "click": "[data-testid=btn-submit]",
+     "al_decir": "pulso Enviar a aprobación"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Quien aprueba comisiones"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto"
+    },
+    {
+     "click": "[data-testid=btn-approve]",
+     "al_decir": "pulsa Aprobar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 6500,
+     "cursor": false,
+     "al_decir": "El diálogo resume"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aprobar') >> nth=-1",
+     "al_decir": "Confirmo con Aprobar"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('aprobada')",
+     "durante_ms": 2000,
+     "cursor": false,
+     "al_decir": "el sistema confirma la aprobación"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "y cierro el aviso"
+    },
+    {
+     "resaltar": "[data-testid=settlement-status]",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "La liquidación queda Aprobada"
+    },
+    {
+     "resaltar": ":text('Provisión contable') >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "en Provisión contable"
+    },
+    {
+     "resaltar": "[data-testid=settlement-totals]",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "Dos reglas importantes"
+    }
+   ]
+  }
+ ]
+}

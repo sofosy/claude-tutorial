@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Vendedores · La ficha de vendedor
+
+DESCRIPCIÓN
+============================================================
+Qué es una ficha de vendedor en Germiva, en qué se diferencia del rol de usuario y cómo se le crea a un empleado: código, zona y ruta, canales donde puede figurar, supervisor, vigencia y descuento máximo.
+
+⏱️ CAPÍTULOS
+00:00  Qué es una ficha de vendedor
+00:44  Crear la ficha
+02:14  La ficha creada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es una ficha de vendedor y por qué no basta el usuario
+• Crear la ficha de un empleado con su código, zona y ruta
+• Supervisor, canales, vigencia y descuento máximo
+• Qué pasa con la ficha de un vendedor que se va
+
+⚠️ ERRORES COMUNES
+• Pensar que el cajero o quien registra la factura es el vendedor
+• Eliminar la ficha de un vendedor que ya tiene ventas: se desactiva
+• Buscar en el selector de vendedor a un empleado sin ficha
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:53
+
+TRANSCRIPCIÓN
+============================================================
+Empezamos en Ventas, en la pantalla de Vendedores. Cada fila es una ficha de vendedor: la persona que puede figurar como vendedor en cotizaciones, órdenes, conduces y facturas, y a la que se le calculan comisiones. Recojo el menú. Es importante distinguirla del usuario: el rol de usuario solo dice qué puede hacer alguien en el sistema; quien no tiene ficha no aparece como vendedor, aunque sea quien registra la factura o cobra en caja. Aquí están Carmen y Pedro, con su código, el tipo, su usuario, la zona y la ruta, y desde cuándo venden. Hoy empieza a vender Luis Gómez, en la zona Norte, y le vamos a crear su ficha.
+Para crear la ficha de Luis, pulso Nuevo vendedor. En Empleado o proveedor busco a Luis por su apellido, Gómez Díaz. La lista solo trae a quienes todavía no tienen ficha; ahí está, y lo elijo. Debajo, el sistema dice qué tipo de vendedor es: Luis es empleado, así que su comisión se le paga por nómina. Su usuario del sistema no se pide aquí: se toma de su ficha de empleado, y con él Luis podrá ver sus propias ventas y comisiones. En Código escribo V-0003; es lo que se teclea en la caja o se manda por el API para elegirlo rápido. Si lo dejas vacío, el sistema propone uno.
+Ahora, Dónde vende. La Zona de venta de Luis es Norte. Y como ruta, la Ruta uno Santiago. Zona y ruta sirven para filtrar la cartera y los reportes. Luego, Puede figurar en: dice en qué documentos se le ofrece: cotizaciones, órdenes, conduces, facturas, punto de venta o facturas por API. Vacío es en todos; a un vendedor de calle, por ejemplo, se le quita el punto de venta. Lo dejo vacío. Como Supervisor busco a Pedro, que verá los documentos de su equipo, y lo elijo. Vende desde queda vacío y toma su fecha de ingreso; Hasta se llena cuando deja de vender. Y en Descuento máximo sin aprobación pongo cinco: por encima de eso, el descuento pide aprobación. Pulso Guardar.
+El aviso confirma que el vendedor se creó, y Luis aparece en la lista: código V-0003, empleado, con su usuario y la zona Norte. Desde hoy se le puede elegir como vendedor y ponerlo como ejecutivo de cuenta de sus clientes. Abro su ficha con el lápiz. Al editarla aparece Ficha activa. Cuando un vendedor se va, no se elimina su ficha si ya tiene ventas: se apaga Ficha activa o se le pone fecha en Hasta. Sus documentos viejos conservan su nombre, y deja de ofrecerse en los nuevos. Cierro sin cambios.

@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Vendedores · De la factura a la comisión
+
+DESCRIPCIÓN
+============================================================
+Cómo nace la comisión de cada venta: el listado de comisiones con su documento, el cobro que la causó, la base y la tasa; cómo un abono genera su parte proporcional y el resto llega al saldar; y para qué sirve «Calcular comisiones».
+
+⏱️ CAPÍTULOS
+00:00  Las comisiones
+00:48  Cobrar el saldo
+01:20  La comisión nueva
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el listado de comisiones: documento, cobro, base y tasa
+• Cómo un abono comisiona su parte de la venta
+• Cobrar el saldo y ver nacer la comisión
+• Para qué sirve «Calcular comisiones»
+
+⚠️ ERRORES COMUNES
+• Esperar la comisión de una factura sin cobrar en un esquema «en cada cobro»
+• Aprobar comisiones de factura sueltas: van con la liquidación
+• Pensar que el ITBIS cobrado comisiona
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:01
+
+TRANSCRIPCIÓN
+============================================================
+Estamos en Ventas, Comisiones. Cada fila es una comisión que ya nació. Recojo el menú. La primera es de Luis, por la factura de la Ferretería. La columna Cobro dice qué la causó: el cobro uno, por el cien por ciento de la venta, porque el esquema se gana en cada cobro. La base es la venta sin ITBIS, doce mil pesos, y la tasa, cuatro punto seis siete: es la mezcla de la pintura al cinco por ciento y las brochas al tres. La de la Constructora es distinta: el cliente abonó la mitad, así que su cobro comisiona el cincuenta por ciento de la venta. Todas están Devengadas. Las columnas Liquidación y Nómina están vacías: se llenan cuando la comisión se liquida y cuando la nómina la paga.
+Hoy la Constructora paga el resto. En Cobros pulso Registrar cobro. En el campo Factura busco la Constructora; en la lista aparece su factura pendiente, y la elijo. El cuadro muestra el total facturado, siete mil ochenta pesos, y el saldo pendiente: tres mil quinientos cuarenta. El monto ya viene con el saldo completo. Elijo Transferencia, y confirmo con el botón Registrar cobro. El sistema confirma el cobro, y la factura queda saldada.
+De vuelta en Comisiones, la nueva ya está: el cobro cuatro, por el otro cincuenta por ciento de la venta de la Constructora, ciento cincuenta pesos para Luis. Sumadas, las dos son la comisión completa de esa factura. Nadie tuvo que calcularla: nace sola con cada cobro. Y si se anula un cobro, su comisión se retira sola. Arriba está Calcular comisiones. Lo abro: pide un rango de fechas y, si quieres, un vendedor. Sirve para recuperar una comisión que no nació, por ejemplo si un aviso no llegó; no repite las que ya existen. Aquí no hace falta, así que cancelo.

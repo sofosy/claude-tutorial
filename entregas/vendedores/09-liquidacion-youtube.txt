@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Vendedores · La liquidación de comisiones
+
+DESCRIPCIÓN
+============================================================
+Cómo se liquidan las comisiones del período: preparar una liquidación por vendedor, revisar sus líneas y totales, agregar un ajuste con su motivo, enviarla a aprobación y aprobarla, con la provisión contable que se registra sola.
+
+⏱️ CAPÍTULOS
+00:00  Preparar el período
+00:46  Revisar y ajustar
+01:42  Aprobar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Preparar las liquidaciones del período
+• Revisar las líneas y los totales de un vendedor
+• Agregar un ajuste con su motivo
+• Enviar a aprobación, aprobar y la provisión contable
+
+⚠️ ERRORES COMUNES
+• Aprobar comisiones de factura sueltas: se aprueban con la liquidación
+• Aprobar la liquidación propia: la aprueba otra persona
+• Esperar que un neto negativo se descuente del salario: se arrastra
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:33
+
+TRANSCRIPCIÓN
+============================================================
+Las comisiones no se pagan una por una: al cierre del período se juntan en una liquidación por vendedor. Estamos en Comisiones, pestaña Liquidaciones. Recojo el menú. Pulso Preparar liquidaciones. El diálogo explica qué junta: comisiones devengadas, notas de crédito, reversos y saldos hasta el último día del período. En el campo Período, de la lista elijo Octubre dos mil veintiséis. El período es mensual, como lo configuró la empresa. Confirmo con el botón Preparar. Salen dos liquidaciones nuevas; acepto. Una de Luis, por setecientos diez pesos, y otra de Carmen, por ciento cincuenta. Las dos están en Borrador.
+Para revisarla, abro la de Luis. Arriba están el período, la moneda y las fechas de cada paso. Debajo, los totales: comisiones, notas de crédito y reversos, saldos y ajustes, el neto y lo que pagará la nómina. Abajo, las líneas: cada comisión con su documento, su cliente y su cobro. Si hace falta, se agrega un ajuste. A Luis se le reconoce un bono por abrir la ruta Norte: pulso Agregar ajuste. Se abre el ajuste para Luis. En Monto escribo quinientos. Un monto negativo serviría para descontar, pero un descuento solo se compensa con comisiones, nunca con el salario. En Motivo explico el bono, en pocas palabras, para que quede claro en el estado de cuenta, y con el botón lo agrego a la liquidación. El ajuste aparece como una línea más, y el neto sube a mil doscientos diez pesos.
+Con la liquidación revisada, pulso Enviar a aprobación. Quien aprueba comisiones recibe un aviso en el sistema; acepto. Ahora, quien tiene el permiso pulsa Aprobar. El diálogo resume lo que pagará la nómina: mil doscientos diez pesos. Sus comisiones quedan aprobadas y se registra la provisión contable. Confirmo con Aprobar. En un momento el sistema confirma la aprobación, y cierro el aviso. La liquidación queda Aprobada, y en Provisión contable dice Provisionada: un débito a gasto de comisiones y un crédito a comisiones por pagar, en el mes en que se ganaron. Dos reglas importantes: nadie aprueba su propia liquidación, y si el neto sale negativo no se descuenta del salario: se arrastra a la siguiente.

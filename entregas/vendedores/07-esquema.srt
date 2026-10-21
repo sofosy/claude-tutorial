@@ -1,0 +1,187 @@
+1
+00:00:03,000 --> 00:00:06,265
+Un vendedor con ficha puede figurar en las ventas,
+
+2
+00:00:06,099 --> 00:00:09,457
+pero solo cobra comisión si está en un esquema.
+
+3
+00:00:09,339 --> 00:00:13,892
+Los esquemas están en Ventas, Comisiones, pestaña Esquemas.
+
+4
+00:00:13,808 --> 00:00:14,983
+Recojo el menú.
+
+5
+00:00:14,807 --> 00:00:16,388
+Pulso Nuevo esquema.
+
+6
+00:00:16,282 --> 00:00:19,663
+Se abre el formulario del esquema, con sus secciones.
+
+7
+00:00:19,533 --> 00:00:20,916
+Le pongo nombre:
+
+8
+00:00:20,774 --> 00:00:24,550
+Vendedores de ruta, para los que visitan a los clientes.
+
+9
+00:00:24,466 --> 00:00:28,578
+Ahora, el campo Se calcula sobre ofrece tres bases:
+
+10
+00:00:28,437 --> 00:00:33,350
+el total de la venta sin ITBIS, el costo de lo vendido o la utilidad.
+
+11
+00:00:33,221 --> 00:00:35,511
+El ITBIS nunca se comisiona.
+
+12
+00:00:35,392 --> 00:00:37,148
+Dejo el total de la venta.
+
+13
+00:00:37,017 --> 00:00:40,515
+Debajo, Se gana dice cuándo nace la comisión.
+
+14
+00:00:40,396 --> 00:00:44,914
+Al cobrar la factura completa, en cada cobro en proporción a lo cobrado,
+
+15
+00:00:44,795 --> 00:00:47,562
+o al emitir la factura, antes de cobrar.
+
+16
+00:00:47,432 --> 00:00:50,430
+Los esquemas nuevos proponen En cada cobro:
+
+17
+00:00:50,287 --> 00:00:54,226
+cada abono del cliente comisiona la parte de la venta que paga.
+
+18
+00:00:54,142 --> 00:00:55,352
+Lo dejo así.
+
+19
+00:00:55,802 --> 00:00:58,893
+Sigue la sección Lo que se cobra tarde,
+
+20
+00:00:58,763 --> 00:01:02,689
+donde se decide qué pasa con lo cobrado muy vencido.
+
+21
+00:01:02,513 --> 00:01:04,826
+Elijo Con tasa reducida.
+
+22
+00:01:04,673 --> 00:01:09,563
+En Días después del vencimiento pongo sesenta, que son dos meses.
+
+23
+00:01:09,397 --> 00:01:15,578
+Y en el campo de la tasa reducida pongo uno punto cinco, menos de la mitad.
+
+24
+00:01:15,412 --> 00:01:20,977
+Así, lo cobrado hasta sesenta días después del vencimiento comisiona completo,
+
+25
+00:01:20,822 --> 00:01:24,911
+y lo que llegue más tarde, al uno punto cinco por ciento.
+
+26
+00:01:24,746 --> 00:01:30,182
+En Cuánto, el Tipo es Porcentaje, y el porcentaje general, tres.
+
+27
+00:01:30,098 --> 00:01:33,294
+Ahora una tasa especial para un producto:
+
+28
+00:01:33,186 --> 00:01:35,396
+pulso Agregar producto.
+
+29
+00:01:35,288 --> 00:01:37,415
+Busco la pintura en el catálogo;
+
+30
+00:01:37,262 --> 00:01:39,563
+aparece la de galón, y la elijo.
+
+31
+00:01:39,399 --> 00:01:42,396
+En su comisión le pongo cinco por ciento,
+
+32
+00:01:42,230 --> 00:01:45,379
+porque es el producto que más interesa vender.
+
+33
+00:01:45,272 --> 00:01:48,665
+Los demás productos usan el tres por ciento general.
+
+34
+00:01:49,098 --> 00:01:52,166
+Por último, A quién y desde cuándo.
+
+35
+00:01:52,035 --> 00:01:56,682
+En Vigente desde escribo el primero de agosto de dos mil veintiséis.
+
+36
+00:01:56,540 --> 00:01:58,609
+Vigente hasta queda vacío.
+
+37
+00:01:58,734 --> 00:02:01,210
+En Agregar vendedor busco a Luis.
+
+38
+00:02:01,126 --> 00:02:04,159
+Aparece su ficha con el código, y lo agrego.
+
+39
+00:02:04,075 --> 00:02:06,980
+Después busco a Carmen en el mismo campo;
+
+40
+00:02:06,850 --> 00:02:09,790
+aparece, y también se agrega a la lista.
+
+41
+00:02:09,613 --> 00:02:13,018
+Cada vendedor puede tener un solo esquema vigente:
+
+42
+00:02:12,911 --> 00:02:16,536
+si ya estuviera en otro, el sistema no deja guardar.
+
+43
+00:02:16,417 --> 00:02:17,673
+Pulso Guardar.
+
+44
+00:02:17,543 --> 00:02:21,750
+El esquema aparece en la lista con su base, su porcentaje,
+
+45
+00:02:21,630 --> 00:02:24,419
+la forma de ganarse y sus vendedores.
+
+46
+00:02:24,265 --> 00:02:28,459
+Un esquema que ya generó comisiones no cambia cuándo se gana:
+
+47
+00:02:28,341 --> 00:02:31,188
+se le pone fecha de fin y se crea otro.
