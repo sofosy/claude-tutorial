@@ -1,0 +1,179 @@
+1
+00:00:03,000 --> 00:00:08,783
+Luis Gómez es vendedor y entra a Germiva con su propio usuario, con el rol Vendedor.
+
+2
+00:00:08,699 --> 00:00:11,048
+Recojo el menú para ganar espacio.
+
+3
+00:00:10,917 --> 00:00:15,900
+En Ventas, Comisiones, la pestaña Mis comisiones es su página.
+
+4
+00:00:15,817 --> 00:00:17,375
+Arriba, su ficha:
+
+5
+00:00:17,256 --> 00:00:20,857
+ve cero cero cero tres, Luis Gómez Díaz.
+
+6
+00:00:20,751 --> 00:00:24,213
+Debajo, sus liquidaciones, una por período.
+
+7
+00:00:24,094 --> 00:00:28,822
+La de octubre tiene un neto de setecientos diez pesos y está aprobada.
+
+8
+00:00:28,681 --> 00:00:32,653
+La columna A pagar es lo que la nómina le va a pagar.
+
+9
+00:00:32,570 --> 00:00:35,429
+Abro la liquidación para ver de dónde sale.
+
+10
+00:00:35,872 --> 00:00:39,753
+Es la misma liquidación que revisó y aprobó el supervisor,
+
+11
+00:00:39,587 --> 00:00:41,936
+pero Luis solo puede leerla:
+
+12
+00:00:41,851 --> 00:00:44,071
+no tiene botones para cambiarla.
+
+13
+00:00:43,906 --> 00:00:47,496
+Arriba, el período, octubre, y quién la aprobó.
+
+14
+00:00:47,390 --> 00:00:48,866
+A pagar por nómina:
+
+15
+00:00:48,736 --> 00:00:50,956
+setecientos diez pesos.
+
+16
+00:00:50,814 --> 00:00:55,113
+Y en las líneas, cada comisión con su documento, su cliente,
+
+17
+00:00:54,994 --> 00:00:57,156
+la base cobrada y la tasa:
+
+18
+00:00:57,015 --> 00:01:02,439
+quinientos sesenta pesos por el cobro de la Ferretería del Norte y ciento cincuenta
+
+19
+00:01:02,298 --> 00:01:04,807
+por el abono de la Constructora Ciudad.
+
+20
+00:01:04,700 --> 00:01:06,908
+Vuelvo a Mis comisiones.
+
+21
+00:01:07,364 --> 00:01:09,700
+Debajo está su estado de cuenta.
+
+22
+00:01:09,593 --> 00:01:13,637
+Comisiones del rango suma lo que generó entre las dos fechas,
+
+23
+00:01:13,506 --> 00:01:15,819
+sin lo rechazado ni lo anulado.
+
+24
+00:01:15,643 --> 00:01:19,012
+Pagado en el rango es lo que la nómina ya le pagó.
+
+25
+00:01:18,893 --> 00:01:23,365
+Pendiente hoy es lo que todavía no cobra, sin importar el rango:
+
+26
+00:01:23,281 --> 00:01:26,384
+devengado, en liquidación o aprobado.
+
+27
+00:01:26,218 --> 00:01:31,434
+Y Saldo por compensar aparece cuando una nota de crédito deja un negativo:
+
+28
+00:01:31,350 --> 00:01:35,474
+se compensa con comisiones futuras, nunca con el salario.
+
+29
+00:01:35,332 --> 00:01:37,355
+Cambio el rango a septiembre:
+
+30
+00:01:37,236 --> 00:01:41,198
+escribo el uno de septiembre, y hasta el treinta de septiembre,
+
+31
+00:01:41,045 --> 00:01:43,056
+para mirar solo ese mes.
+
+32
+00:01:42,891 --> 00:01:46,040
+Con las dos fechas puestas, pulso Consultar.
+
+33
+00:01:45,933 --> 00:01:50,138
+El rango queda en cero, porque Luis no tuvo comisiones en septiembre,
+
+34
+00:01:49,973 --> 00:01:52,739
+pero lo pendiente sigue en setecientos diez.
+
+35
+00:01:52,655 --> 00:01:56,698
+El estado de cuenta se descarga en PDF o en Excel.
+
+36
+00:01:57,132 --> 00:02:00,037
+Ahora miro el listado general de comisiones.
+
+37
+00:01:59,884 --> 00:02:02,197
+Paso a la pestaña Comisiones.
+
+38
+00:02:02,089 --> 00:02:05,030
+Es el mismo listado que usa el administrador,
+
+39
+00:02:04,853 --> 00:02:09,615
+pero Luis solo ve sus dos comisiones aprobadas, por setecientos diez pesos.
+
+40
+00:02:09,543 --> 00:02:11,531
+Las de Carmen no aparecen.
+
+41
+00:02:11,412 --> 00:02:14,967
+Lo decide el rol Vendedor, que tiene el alcance Propios:
+
+42
+00:02:14,802 --> 00:02:19,728
+cada vendedor ve sus comisiones, sus liquidaciones y su estado de cuenta,
+
+43
+00:02:19,609 --> 00:02:20,947
+nunca los de otro.
+
+44
+00:02:20,770 --> 00:02:25,741
+Para que esto funcione, el empleado necesita su usuario y su ficha de vendedor,
+
+45
+00:02:25,599 --> 00:02:27,889
+como vimos al principio de la serie.
