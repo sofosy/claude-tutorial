@@ -342,8 +342,19 @@ def reportes():
            {"seller": empleado("Pedro"), "reason": "Pedro toma la zona Este"})
 
 
+def plantillas():
+    """fichas + la Distribuidora como una empresa cliente más. En la base
+    sembrada es la empresa principal de la plataforma y dueña de las plantillas
+    del sistema: guardar una plantilla suya pediría «publicar a todas las
+    empresas», un aviso que ningún cliente ve. La empresa 2 pasa a ser la
+    principal y la dueña de esas plantillas."""
+    fichas()
+    sql("UPDATE companies SET isCompanyMain=(id=2) WHERE id IN (1, 2)")
+    sql("UPDATE document_templates SET company_id=2 WHERE company_id=1")
+
+
 ESTADOS = {"base": base, "fichas": fichas, "cartera": cartera, "caja": caja, "ventas": ventas,
-           "cobradas": cobradas, "reportes": reportes, "salida": salida, "liquidada": liquidada, "nomina": nomina}
+           "cobradas": cobradas, "reportes": reportes, "plantillas": plantillas, "salida": salida, "liquidada": liquidada, "nomina": nomina}
 
 if __name__ == "__main__":
     TOKEN = entrar("admin", "admin")

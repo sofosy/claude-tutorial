@@ -1,7 +1,7 @@
 {
  "titulo": "Vendedores · El vendedor en el PDF",
  "descripcion": "Cómo decidir qué personas imprime la factura: copiar la plantilla del sistema en Diseño de documentos y usar los interruptores de Personas en el documento (vendedor, cajero y registrado por).",
- "_comentario": "Video 14 de la serie Vendedores. setup: preparar.sh fichas. En la base sembrada la Distribuidora es la empresa principal de la plataforma (dueña de las plantillas del sistema) y guardar pediría «publicar a todas las empresas», un aviso que ningún cliente ve: el paso 02 la marca como empresa cliente ANTES de abrir la copia (id 18 tras restaurar). El PDF real no se abre: el navegador sin pantalla no pinta el visor de PDF; cada interruptor dice la línea exacta que imprime. «spa»: false para que el paso 02 recargue la app y lea la empresa ya como cliente.",
+ "_comentario": "Video 14 de la serie Vendedores. setup: preparar.sh plantillas (fichas + la Distribuidora como empresa cliente: la empresa 2 pasa a ser la principal y la dueña de las plantillas del sistema, para que guardar no pida «publicar a todas las empresas»). El PDF real no se abre: el navegador sin pantalla no pinta el visor de PDF; cada interruptor dice la línea exacta que imprime.",
  "base_url": "http://localhost:4200",
  "zona_horaria": "America/Santo_Domingo",
  "musica": {
@@ -73,7 +73,7 @@
  },
  "setup": {
   "tipo": "shell",
-  "cmd": "seeds/vendedores/preparar.sh fichas"
+  "cmd": "seeds/vendedores/preparar.sh plantillas"
  },
  "aprenderas": [
   "Dónde se diseña la factura",
@@ -103,7 +103,7 @@
     },
     {
      "resaltar": ":text-is('Factura Estándar') >> xpath=ancestor::*[.//button][1]",
-     "durante_ms": 5000,
+     "durante_ms": 2500,
      "cursor": false,
      "al_decir": "la factura usa Factura Estándar"
     },
@@ -209,13 +209,7 @@
      "cursor": false,
      "al_decir": "el botón PDF real"
     }
-   ],
-   "navegar": "/document-templates/18",
-   "setup": {
-    "tipo": "shell",
-    "cmd": "docker exec -i germiva-dev-mysql mysql -uroot germiva -e 'UPDATE companies SET isCompanyMain=0 WHERE id=1'"
-   }
+   ]
   }
- ],
- "spa": false
+ ]
 }
