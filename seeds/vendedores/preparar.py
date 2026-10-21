@@ -280,6 +280,13 @@ def quincena():
 
 
 def periodo_nomina():
+    # Los empleados de salario mensual de la base sembrada (suspendidos o con
+    # contrato vencido) salían como «no se pudieron calcular» en la quincena:
+    # no son parte de la serie y se dejan fuera para que el video muestre solo
+    # a los vendedores.
+    sql("UPDATE partners SET deleted_at=NOW() WHERE company_id=1 AND id IN ("
+        "SELECT employee_id FROM employee_salaries WHERE isActive=1 AND deleted_at IS NULL "
+        "AND payroll_frequency='monthly')")
     ini, fin = quincena()
     return llamar("POST", "/v1/payroll-periods", {
         "code": f"Q{ini:%Y%m%d}", "name": f"Segunda quincena de octubre {ini.year}",
