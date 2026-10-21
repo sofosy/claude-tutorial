@@ -1,0 +1,285 @@
+{
+ "titulo": "Vendedores · El vendedor a comisión en Nómina",
+ "descripcion": "Tres protecciones del vendedor a comisión en Nómina: la garantía del salario mínimo (art. 310), el anticipo contra comisiones pactado por escrito (art. 201.3) y el pago de las comisiones que se ganan después de que el vendedor sale (art. 312).",
+ "_comentario": "Video 11 de la serie Vendedores. setup: preparar.sh salida (comisiones liquidadas; Carmen renunció ayer con RD$150 de comisión aprobada fuera de nómina). El video marca la garantía en el salario de Luis (id 123), registra un pacto de anticipo de RD$3,000 por período y genera el pago especial de Carmen.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce",
+  "ISR": "i-ese-erre"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/payroll/employee-salaries/edit/123",
+  "esperar": "mat-checkbox:has-text('Garantía del salario mínimo')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh salida"
+ },
+ "aprenderas": [
+  "Garantía del salario mínimo para el vendedor a comisión",
+  "Pactar un anticipo contra comisiones",
+  "Pagar las comisiones de un vendedor que ya salió"
+ ],
+ "errores_comunes": [
+  "Descontar del salario fijo un anticipo de comisiones",
+  "Olvidar las comisiones que se ganan después de la salida",
+  "Pactar un anticipo con alguien que no tiene ficha de vendedor"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-garantia",
+   "capitulo": "Garantía del salario mínimo",
+   "rotulo": "Art. 310 del Código de Trabajo",
+   "ruta": "Nómina › Empleados › Salarios › Luis Gómez Díaz",
+   "texto_pantalla": "Si salario + comisiones no llegan al mínimo, la nómina completa",
+   "navegar": "/payroll/employee-salaries/edit/123",
+   "narracion": "Este es el salario de Luis, en Nómina, Empleados, Salarios. Recojo el menú. Al vendedor a comisión la ley le garantiza el salario mínimo: si en el mes su salario y sus comisiones no llegan al mínimo de su sector, la empresa le completa la diferencia. Eso es la casilla Garantía del salario mínimo, en Vendedor a comisión. La marco. Con ella, el volante que cierra el mes agrega la línea Complemento al salario mínimo cuando haga falta; el mínimo del sector se configura en Nómina, Configuración. Pulso Guardar. El sistema pide confirmar el cambio, y confirmo con Sí, actualizar. Luego avisa que el salario se actualizó, y acepto el aviso.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "mat-checkbox:has-text('Garantía del salario mínimo')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "la ley le garantiza"
+    },
+    {
+     "click": "mat-checkbox:has-text('Garantía del salario mínimo')",
+     "al_decir": "La marco"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-checkbox:has-text('Garantía')) mat-hint, :text('Complemento al salario mínimo') >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "el volante que cierra el mes"
+    },
+    {
+     "click": "button:has-text('Guardar') >> nth=-1",
+     "al_decir": "Pulso Guardar"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, actualizar')",
+     "al_decir": "confirmo con Sí, actualizar"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('actualizado')",
+     "durante_ms": 2000,
+     "cursor": false,
+     "al_decir": "avisa que el salario se actualizó"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto el aviso"
+    }
+   ]
+  },
+  {
+   "id": "02-anticipo",
+   "capitulo": "Anticipo contra comisiones",
+   "rotulo": "Art. 201.3 del Código de Trabajo",
+   "ruta": "Nómina › Empleados › Anticipos contra comisiones",
+   "texto_pantalla": "RD$3,000 por período · se recupera solo de las comisiones",
+   "navegar": "/payroll/employees/anticipos-comisiones",
+   "narracion": "Otro caso: el vendedor que pacta por escrito recibir un adelanto fijo cada quincena, a cuenta de sus comisiones. Está en la pestaña Anticipos contra comisiones. Para crearlo pulso Registrar pacto. El diálogo lo deja claro: el anticipo se recupera solo de las comisiones, nunca del salario fijo ni de las prestaciones. En Vendedor busco a Luis; solo aparecen quienes tienen ficha de vendedor activa. Lo elijo. Ahora el monto: en Anticipo por período pongo tres mil pesos, por cada quincena. Rige desde el dieciséis de octubre de dos mil veintiséis, sin fecha de fin. Y en Documento del pacto anoto el escrito que lo respalda, porque la ley exige que esté por escrito. Con el botón Registrar pacto lo guardo. El aviso recuerda cómo se generan los anticipos de cada período; acepto. El pacto queda activo. Cada período, Generar anticipos del período crea el anticipo, y la nómina lo recupera de las comisiones de Luis.",
+   "acciones": [
+    {
+     "resaltar": "[role=tab]:has-text('Anticipos contra comisiones'), a:has-text('Anticipos contra comisiones') >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Está en la pestaña"
+    },
+    {
+     "click": "button:has-text('Registrar pacto')",
+     "al_decir": "pulso Registrar pacto"
+    },
+    {
+     "resaltar": "mat-dialog-container p >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El diálogo lo deja claro"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input",
+      "texto": "Luis"
+     },
+     "al_decir": "En Vendedor busco a Luis"
+    },
+    {
+     "click": "mat-option:has-text('V-0003')",
+     "al_decir": "Lo elijo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname=amountPerPeriod]",
+      "texto": "3000"
+     },
+     "al_decir": "en Anticipo por período"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname=validFrom]",
+      "texto": "16/10/2026"
+     },
+     "al_decir": "Rige desde"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname=agreementReference]",
+      "texto": "Pacto firmado el 15/10/2026"
+     },
+     "al_decir": "en Documento del pacto"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar pacto')",
+     "al_decir": "Con el botón Registrar pacto"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('Pacto registrado')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El aviso recuerda"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto"
+    },
+    {
+     "resaltar": "tr:has-text('Luis') td >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Generar anticipos del período"
+    }
+   ]
+  },
+  {
+   "id": "03-salida",
+   "capitulo": "El vendedor que ya salió",
+   "rotulo": "Art. 312 del Código de Trabajo",
+   "ruta": "Nómina › Empleados › Pagos especiales",
+   "texto_pantalla": "Carmen salió el 20/10 · RD$150 en un pago especial",
+   "navegar": "/payroll/employees/especiales",
+   "narracion": "Por último, las comisiones de quien ya salió de la empresa. Carmen renunció ayer, pero tenía una comisión aprobada que ninguna nómina puede pagarle, porque ya no está en ninguna. La ley dice que se le paga igual. Aparece en Pagos especiales, en la bandeja Comisiones de vendedores que ya salieron. La abro: una comisión, por la venta al colmado, ciento cincuenta pesos. Pulso Generar pago especial. El diálogo explica que se crea un pago Comisiones posteriores a la salida, con su TSS y su ISR. Lo confirmo. El aviso dice el código del pago especial creado, y que al pagarlo sus comisiones quedan pagadas; acepto el aviso. El pago especial queda en el listado, calculado; se aprueba y se paga como los demás, y al pagarlo sus comisiones quedan pagadas. Si los descuentos pesaran más que las comisiones, el saldo quedaría como cuenta por cobrar, nunca contra sus prestaciones.",
+   "acciones": [
+    {
+     "resaltar": "h1, .page-title, app-breadcrumb >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Carmen renunció ayer"
+    },
+    {
+     "resaltar": "app-ex-employee-commission-tray",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Aparece en Pagos especiales"
+    },
+    {
+     "click": "app-ex-employee-commission-tray :text('Carmen Rosario Peña')",
+     "al_decir": "La abro"
+    },
+    {
+     "resaltar": "app-ex-employee-commission-tray tbody tr >> nth=0 >> td >> nth=-1",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "una comisión, por la venta"
+    },
+    {
+     "click": "app-ex-employee-commission-tray button:has-text('Generar pago especial')",
+     "al_decir": "Pulso Generar pago especial"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "El diálogo explica"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Generar pago especial')",
+     "al_decir": "Lo confirmo"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('liquidadas')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "El aviso dice el código"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto el aviso"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El pago especial queda en el listado"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Si los descuentos pesaran más"
+    }
+   ]
+  }
+ ]
+}

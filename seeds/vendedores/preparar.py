@@ -104,7 +104,9 @@ def crear_empleados():
         sql(f"UPDATE partners SET tin='{cedula}' WHERE id={e['id']}")
         llamar("POST", "/v1/payroll/employee-salaries", {
             "employee": e["id"], "baseSalary": salario, "payrollFrequency": "biweekly",
-            "paymentType": "fixed", "effectiveDate": "2026-08-01"})
+            "paymentType": "fixed", "effectiveDate": "2026-08-01",
+            # Banco y cuenta: sin ellos el formulario del salario no deja guardar.
+            "paymentMethod": "bank_transfer", "bank": 1, "accountNumber": f"7955{cedula[-6:]}"})
 
 
 def ubicacion():
@@ -272,6 +274,19 @@ def liquidada():
     periodo_nomina()
 
 
+def salida():
+    """cobradas + Carmen renuncia ayer y su liquidación se aprueba después: su
+    comisión cae en la bandeja «Comisiones de vendedores que ya salieron»."""
+    cobradas()
+    ayer = HOY - dt.timedelta(days=1)
+    llamar("PATCH", f"/v1/employees/{empleado('Carmen')}", {
+        "terminationDate": str(ayer), "terminationReason": "resignation"})
+    r = llamar("POST", "/v1/commission-settlements/prepare", {"periodDate": str(HOY)})
+    for sid in r["settlementIds"]:
+        llamar("POST", f"/v1/commission-settlements/{sid}/submit", {})
+        llamar("POST", f"/v1/commission-settlements/{sid}/approve", {"comments": "Revisada con el supervisor"})
+
+
 def quincena():
     if HOY.day <= 15:
         return HOY.replace(day=1), HOY.replace(day=15)
@@ -301,7 +316,7 @@ def nomina():
 
 
 ESTADOS = {"base": base, "fichas": fichas, "cartera": cartera, "caja": caja, "ventas": ventas,
-           "cobradas": cobradas, "liquidada": liquidada, "nomina": nomina}
+           "cobradas": cobradas, "salida": salida, "liquidada": liquidada, "nomina": nomina}
 
 if __name__ == "__main__":
     TOKEN = entrar("admin", "admin")
