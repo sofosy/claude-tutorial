@@ -1,0 +1,242 @@
+{
+ "titulo": "Vendedores · De la factura a la comisión",
+ "descripcion": "Cómo nace la comisión de cada venta: el listado de comisiones con su documento, el cobro que la causó, la base y la tasa; cómo un abono genera su parte proporcional y el resto llega al saldar; y para qué sirve «Calcular comisiones».",
+ "_comentario": "Video 08 de la serie Vendedores. setup: preparar.sh cobradas (Ferretería y Colmado cobradas completas, Constructora con un abono del 50 %; tres comisiones devengadas). El video registra el resto de la Constructora (RD$3,540) y muestra la comisión nueva.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce",
+  "RCP-2026-000003": "erre ce pe tres",
+  "RCP-2026-000004": "erre ce pe cuatro"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/commissions",
+  "esperar": "tr:has-text('Constructora')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh cobradas"
+ },
+ "aprenderas": [
+  "Leer el listado de comisiones: documento, cobro, base y tasa",
+  "Cómo un abono comisiona su parte de la venta",
+  "Cobrar el saldo y ver nacer la comisión",
+  "Para qué sirve «Calcular comisiones»"
+ ],
+ "errores_comunes": [
+  "Esperar la comisión de una factura sin cobrar en un esquema «en cada cobro»",
+  "Aprobar comisiones de factura sueltas: van con la liquidación",
+  "Pensar que el ITBIS cobrado comisiona"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-lista",
+   "capitulo": "Las comisiones",
+   "rotulo": "Cada cobro, su comisión",
+   "ruta": "Ventas › Comisiones",
+   "texto_pantalla": "Documento · cobro que la causó · base · tasa · comisión",
+   "navegar": "/sales/commissions",
+   "narracion": "Estamos en Ventas, Comisiones. Cada fila es una comisión que ya nació. Recojo el menú. La primera es de Luis, por la factura de la Ferretería. La columna Cobro dice qué la causó: el cobro uno, por el cien por ciento de la venta, porque el esquema se gana en cada cobro. La base es la venta sin ITBIS, doce mil pesos, y la tasa, cuatro punto seis siete: es la mezcla de la pintura al cinco por ciento y las brochas al tres. La de la Constructora es distinta: el cliente abonó la mitad, así que su cobro comisiona el cincuenta por ciento de la venta. Todas están Devengadas. Las columnas Liquidación y Nómina están vacías: se llenan cuando la comisión se liquida y cuando la nómina la paga.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería') td >> nth=1",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "La primera es de Luis"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería') td >> nth=3",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "La columna Cobro"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería') td >> nth=6",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "La base es la venta"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería') td >> nth=7",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "y la tasa"
+    },
+    {
+     "resaltar": "tr:has-text('Constructora') td >> nth=3",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "La de la Constructora"
+    },
+    {
+     "resaltar": "tr:has-text('Constructora') td >> nth=9",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Todas están Devengadas"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería') td >> nth=9",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Las columnas Liquidación"
+    },
+    {
+     "resaltar": "tr:has-text('Colmado') td >> nth=9",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "se llenan cuando"
+    }
+   ]
+  },
+  {
+   "id": "02-cobro",
+   "capitulo": "Cobrar el saldo",
+   "rotulo": "El segundo abono",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Saldo de la Constructora: RD$3,540",
+   "navegar": "/sales/payments",
+   "narracion": "Hoy la Constructora paga el resto. En Cobros pulso Registrar cobro. En el campo Factura busco la Constructora; en la lista aparece su factura pendiente, y la elijo. El cuadro muestra el total facturado, siete mil ochenta pesos, y el saldo pendiente: tres mil quinientos cuarenta. El monto ya viene con el saldo completo. Elijo Transferencia, y confirmo con el botón Registrar cobro. El sistema confirma el cobro, y la factura queda saldada.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "pulso Registrar cobro"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-autocomplete input",
+      "texto": "Constructora"
+     },
+     "al_decir": "busco la Constructora"
+    },
+    {
+     "click": "mat-option:has-text('Constructora')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-facts",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "El cuadro muestra"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Se cobran')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "El monto ya viene"
+    },
+    {
+     "click": "mat-dialog-container .gm-doc-seg__opt:has-text('Transferencia')",
+     "al_decir": "Elijo Transferencia"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "confirmo con el botón"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El sistema confirma el cobro"
+    }
+   ]
+  },
+  {
+   "id": "03-nueva",
+   "capitulo": "La comisión nueva",
+   "rotulo": "Nace sola · Calcular comisiones",
+   "ruta": "Ventas › Comisiones",
+   "texto_pantalla": "Cobro 4 · 50 % de la venta · RD$150",
+   "navegar": "/sales/commissions",
+   "narracion": "De vuelta en Comisiones, la nueva ya está: el cobro cuatro, por el otro cincuenta por ciento de la venta de la Constructora, ciento cincuenta pesos para Luis. Sumadas, las dos son la comisión completa de esa factura. Nadie tuvo que calcularla: nace sola con cada cobro. Y si se anula un cobro, su comisión se retira sola. Arriba está Calcular comisiones. Lo abro: pide un rango de fechas y, si quieres, un vendedor. Sirve para recuperar una comisión que no nació, por ejemplo si un aviso no llegó; no repite las que ya existen. Aquí no hace falta, así que cancelo.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('RCP-2026-000004') td >> nth=3",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "la nueva ya está"
+    },
+    {
+     "resaltar": "tr:has-text('RCP-2026-000004') td >> nth=8",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Sumadas, las dos"
+    },
+    {
+     "click": "button:has-text('Calcular comisiones')",
+     "al_decir": "Lo abro"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 9000,
+     "cursor": false,
+     "al_decir": "pide un rango de fechas"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cancelar')",
+     "al_decir": "así que cancelo"
+    }
+   ]
+  }
+ ]
+}

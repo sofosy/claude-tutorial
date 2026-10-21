@@ -1,0 +1,147 @@
+1
+00:00:03,000 --> 00:00:05,592
+Estamos en Ventas, Comisiones.
+
+2
+00:00:05,438 --> 00:00:08,307
+Cada fila es una comisión que ya nació.
+
+3
+00:00:08,224 --> 00:00:09,458
+Recojo el menú.
+
+4
+00:00:09,315 --> 00:00:12,638
+La primera es de Luis, por la factura de la Ferretería.
+
+5
+00:00:12,589 --> 00:00:15,297
+La columna Cobro dice qué la causó:
+
+6
+00:00:15,156 --> 00:00:18,628
+el cobro uno, por el cien por ciento de la venta,
+
+7
+00:00:18,451 --> 00:00:21,194
+porque el esquema se gana en cada cobro.
+
+8
+00:00:21,088 --> 00:00:27,266
+La base es la venta sin ITBIS, doce mil pesos, y la tasa, cuatro punto seis siete:
+
+9
+00:00:27,112 --> 00:00:31,666
+es la mezcla de la pintura al cinco por ciento y las brochas al tres.
+
+10
+00:00:31,547 --> 00:00:33,826
+La de la Constructora es distinta:
+
+11
+00:00:33,707 --> 00:00:38,610
+el cliente abonó la mitad, así que su cobro comisiona el cincuenta por ciento de la
+
+12
+00:00:38,468 --> 00:00:39,121
+venta.
+
+13
+00:00:38,968 --> 00:00:40,908
+Todas están Devengadas.
+
+14
+00:00:40,756 --> 00:00:44,369
+Las columnas Liquidación y Nómina están vacías:
+
+15
+00:00:44,238 --> 00:00:48,339
+se llenan cuando la comisión se liquida y cuando la nómina la paga.
+
+16
+00:00:48,771 --> 00:00:51,317
+Hoy la Constructora paga el resto.
+
+17
+00:00:51,164 --> 00:00:53,987
+En Cobros pulso Registrar cobro.
+
+18
+00:00:53,821 --> 00:00:56,750
+En el campo Factura busco la Constructora;
+
+19
+00:00:56,585 --> 00:01:00,372
+en la lista aparece su factura pendiente, y la elijo.
+
+20
+00:01:00,253 --> 00:01:06,120
+El cuadro muestra el total facturado, siete mil ochenta pesos, y el saldo pendiente:
+
+21
+00:01:05,977 --> 00:01:08,233
+tres mil quinientos cuarenta.
+
+22
+00:01:08,149 --> 00:01:11,135
+El monto ya viene con el saldo completo.
+
+23
+00:01:11,004 --> 00:01:15,790
+Elijo Transferencia, y confirmo con el botón Registrar cobro.
+
+24
+00:01:15,661 --> 00:01:19,854
+El sistema confirma el cobro, y la factura queda saldada.
+
+25
+00:01:20,307 --> 00:01:23,026
+De vuelta en Comisiones, la nueva ya está:
+
+26
+00:01:22,896 --> 00:01:27,798
+el cobro cuatro, por el otro cincuenta por ciento de la venta de la Constructora,
+
+27
+00:01:27,621 --> 00:01:30,387
+ciento cincuenta pesos para Luis.
+
+28
+00:01:30,268 --> 00:01:34,509
+Sumadas, las dos son la comisión completa de esa factura.
+
+29
+00:01:34,390 --> 00:01:36,332
+Nadie tuvo que calcularla:
+
+30
+00:01:36,259 --> 00:01:38,561
+nace sola con cada cobro.
+
+31
+00:01:38,396 --> 00:01:42,055
+Y si se anula un cobro, su comisión se retira sola.
+
+32
+00:01:41,890 --> 00:01:44,435
+Arriba está Calcular comisiones.
+
+33
+00:01:44,305 --> 00:01:45,167
+Lo abro:
+
+34
+00:01:45,025 --> 00:01:48,511
+pide un rango de fechas y, si quieres, un vendedor.
+
+35
+00:01:48,393 --> 00:01:53,724
+Sirve para recuperar una comisión que no nació, por ejemplo si un aviso no llegó;
+
+36
+00:01:53,582 --> 00:01:55,674
+no repite las que ya existen.
+
+37
+00:01:55,509 --> 00:01:58,170
+Aquí no hace falta, así que cancelo.
