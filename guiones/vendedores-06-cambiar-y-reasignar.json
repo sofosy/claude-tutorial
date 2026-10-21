@@ -1,0 +1,306 @@
+{
+ "titulo": "Vendedores · Cambiar y reasignar el vendedor",
+ "descripcion": "Cómo se corrige el vendedor de una factura ya emitida (sin nota de crédito, con motivo y bitácora, y la comisión se mueve sola) y cómo se reasignan en lote los documentos y la cartera de un vendedor a otro.",
+ "_comentario": "Video 06 de la serie Vendedores. setup: preparar.sh cobradas (tres facturas cobradas con comisión pendiente: Ferretería 1000000050 y Constructora 1000000052 de Luis; Colmado 1000000051 de Carmen). El video pasa la del Colmado a Luis; luego prueba reasignar lo de Luis a Pedro (sin esquema de comisión: el efecto avisa que se anularían) y lo reasigna a Carmen.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/invoices/1000000051/view",
+  "esperar": "[data-testid=invoice-change-seller]"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh cobradas"
+ },
+ "aprenderas": [
+  "Corregir el vendedor de una factura ya emitida",
+  "Qué pasa con la comisión al cambiar el vendedor",
+  "Reasignar en lote documentos y cartera de un vendedor",
+  "Revisar el efecto antes de reasignar"
+ ],
+ "errores_comunes": [
+  "Hacer una nota de crédito para cambiar el vendedor: no hace falta",
+  "Cambiar el vendedor sin explicar el motivo",
+  "Reasignar sin revisar antes el efecto"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-cambiar",
+   "capitulo": "Corregir el vendedor de una factura",
+   "rotulo": "Cambiar vendedor",
+   "ruta": "Ventas › Facturas › 1000000051",
+   "texto_pantalla": "Carmen → Luis · con motivo · la comisión se mueve",
+   "navegar": "/sales/invoices/1000000051/view",
+   "narracion": "Esta factura del Colmado Germiva Este ya está emitida y cobrada, con Carmen como vendedora. Pero la venta la cerró Luis, en su visita al colmado. Recojo el menú. El vendedor no es un dato fiscal: se corrige sin nota de crédito. Pulso el lápiz junto al Vendedor. El diálogo explica lo que pasará: las notas de crédito y débito de la factura cambian con ella, y la comisión pendiente pasa al nuevo vendedor. En Nuevo vendedor escribo Luis. En la lista aparece su ficha, y elijo V-0003. Ahora el motivo, que es obligatorio. En Motivo del cambio escribo por qué, en una frase: queda guardado en la bitácora de la factura, con la fecha y el usuario que hizo el cambio. Con todo listo, pulso Cambiar vendedor. El sistema confirma el cambio, y la factura ya muestra a Luis.",
+   "acciones": [
+    {
+     "resaltar": "[data-testid=invoice-seller-readonly], mat-form-field:has(mat-label:text-is('Vendedor')) >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "con Carmen como vendedora"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "click": "[data-testid=invoice-change-seller]",
+     "al_decir": "Pulso el lápiz"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert, mat-dialog-container p >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "El diálogo explica"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input",
+      "texto": "Luis"
+     },
+     "al_decir": "En Nuevo vendedor escribo"
+    },
+    {
+     "click": "mat-option:has-text('V-0003')",
+     "al_decir": "y elijo V-0003"
+    },
+    {
+     "escribir": {
+      "sel": "[data-testid=seller-change-reason]",
+      "texto": "La venta la cerró Luis en su visita al colmado"
+     },
+     "al_decir": "En Motivo del cambio"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cambiar vendedor')",
+     "al_decir": "Pulso Cambiar vendedor"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El sistema confirma el cambio"
+    },
+    {
+     "resaltar": "[data-testid=invoice-seller-readonly], mat-form-field:has(mat-label:text-is('Vendedor')) >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "ya muestra a Luis"
+    }
+   ]
+  },
+  {
+   "id": "02-comision",
+   "capitulo": "Corregir el vendedor de una factura",
+   "rotulo": "Qué pasa con la comisión",
+   "ruta": "Ventas › Facturas › 1000000051",
+   "texto_pantalla": "Pendiente → pasa al nuevo · Pagada → se descuenta",
+   "narracion": "Con la comisión pasa esto: como la de Carmen estaba pendiente, se anuló y nació la misma comisión para Luis. Si ya se le hubiera pagado a Carmen, se le descontaría en su próxima liquidación. Y si la empresa enviara el código del vendedor en el e-CF, el comprobante firmado conserva el código original; solo cambian la comisión y el nombre en el PDF. Para cambiar el vendedor hace falta el permiso Cambiar vendedor de documentos, que no tiene la cajera.",
+   "acciones": [
+    {
+     "resaltar": "[data-testid=invoice-seller-readonly], mat-form-field:has(mat-label:text-is('Vendedor')) >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "se anuló y nació"
+    },
+    {
+     "resaltar": ".page-title, h1 >> nth=0",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Si ya se le hubiera pagado"
+    },
+    {
+     "resaltar": ".page-title, h1 >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "el comprobante firmado conserva"
+    },
+    {
+     "resaltar": "[data-testid=invoice-change-seller]",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "hace falta el permiso"
+    }
+   ]
+  },
+  {
+   "id": "03-reasignar",
+   "capitulo": "Reasignar en lote",
+   "rotulo": "De un vendedor a otro",
+   "ruta": "Ventas › Vendedores › Reasignar vendedor",
+   "texto_pantalla": "Luis → Pedro · documentos, comisiones y cartera",
+   "navegar": "/sales/sales-reps",
+   "narracion": "Ahora, el caso de muchos documentos a la vez: un vendedor que deja la empresa o cambia de zona. Supongamos que Luis pasa a otra región y Pedro toma lo suyo. En Vendedores pulso Reasignar vendedor. En Vendedor actual escribo Luis. Aparece su ficha y elijo a Luis. Luego, en el campo de al lado, Nuevo vendedor, escribo Pedro. También aparece su ficha, y la elijo: Pedro. Abajo, las fechas marcan el rango de los documentos que se mueven; por omisión, desde enero hasta hoy. Mover las comisiones las pasa al nuevo vendedor; apágalo solo para corregir un histórico sin comisiones. Y Pasarle también la cartera cambia el ejecutivo de cuenta de sus clientes. En Motivo explico el cambio, en pocas palabras, como en la factura. Con eso, el sistema ya puede calcular qué se movería. Pulso Ver el efecto.",
+   "acciones": [
+    {
+     "click": "button:has-text('Reasignar vendedor')",
+     "al_decir": "pulso Reasignar vendedor"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input >> nth=0",
+      "texto": "Luis"
+     },
+     "al_decir": "En Vendedor actual escribo"
+    },
+    {
+     "click": "mat-option:has-text('V-0003')",
+     "al_decir": "y elijo a Luis"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input >> nth=1",
+      "texto": "Pedro"
+     },
+     "al_decir": "Nuevo vendedor, escribo"
+    },
+    {
+     "click": "mat-option:has-text('V-0002')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container input[formcontrolname=dateFrom]",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "las fechas marcan"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-slide-toggle >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Mover las comisiones"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-slide-toggle >> nth=1",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Pasarle también la cartera"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container textarea",
+      "texto": "Luis pasa a otra región; Pedro toma su cartera"
+     },
+     "al_decir": "En Motivo explico"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Ver el efecto')",
+     "al_decir": "Pulso Ver el efecto"
+    }
+   ]
+  },
+  {
+   "id": "04-efecto",
+   "capitulo": "Reasignar en lote",
+   "rotulo": "Revisar el efecto y reasignar",
+   "ruta": "Ventas › Vendedores › Reasignar vendedor",
+   "texto_pantalla": "Sin esquema, la comisión se anula · con Carmen, se mueve",
+   "narracion": "Antes de tocar nada, el sistema cuenta lo que se moverá: las tres facturas de Luis, con su comisión viva, y los dos clientes de los que era ejecutivo de cuenta. Pero hay un aviso importante: Pedro no tiene un esquema de comisión vigente, así que esas tres comisiones se anularían en vez de pasarle. Por eso se revisa el efecto. Cambio el Nuevo vendedor: escribo Carmen, que sí está en un esquema, y la elijo. Como cambió un dato, pulso otra vez Ver el efecto. Ahora las tres facturas tienen comisión viva y se moverán a Carmen, sin aviso. Pulso Reasignar ahora. Cada documento pasa por el mismo cambio que vimos en la factura, con su motivo en la bitácora y su comisión. Para más de dos mil documentos, se divide el rango.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container [data-testid=reassign-preview]",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "el sistema cuenta"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=reassign-preview] strong >> nth=1",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "hay un aviso importante"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input >> nth=1",
+      "texto": "Carmen"
+     },
+     "al_decir": "escribo Carmen"
+    },
+    {
+     "click": "mat-option:has-text('V-0001')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Ver el efecto')",
+     "al_decir": "pulso otra vez Ver el efecto"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=reassign-preview]",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Ahora las tres facturas"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Reasignar ahora')",
+     "al_decir": "Pulso Reasignar ahora"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Cada documento pasa"
+    }
+   ]
+  }
+ ]
+}
