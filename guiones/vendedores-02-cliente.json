@@ -1,0 +1,296 @@
+{
+ "titulo": "Vendedores · El ejecutivo de cuenta del cliente",
+ "descripcion": "Cómo se le asigna a un cliente su ejecutivo de cuenta (el vendedor que se propone en sus documentos), su plazo de pago, zona y ruta; el historial de quién llevó la cuenta y cómo filtrar la cartera de una zona o de un vendedor.",
+ "_comentario": "Video 02 de la serie Vendedores. setup: preparar.sh fichas (Luis V-0003 con ficha; la Ferretería Germiva del Norte la lleva Carmen desde el 01/08/2026). El video pasa la Ferretería a Luis, con plazo 30 días, zona Norte y Ruta 1 Santiago.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/partners",
+  "esperar": "tr:has-text('Ferretería Germiva del Norte')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh fichas"
+ },
+ "aprenderas": [
+  "Qué es el ejecutivo de cuenta y para qué sirve",
+  "Asignar ejecutivo, plazo de pago, zona y ruta a un cliente",
+  "Ver el historial de quién llevó la cuenta",
+  "Filtrar la cartera por zona y por vendedor"
+ ],
+ "errores_comunes": [
+  "Creer que cambiar el ejecutivo cambia el vendedor de las facturas ya hechas",
+  "Dejar al cliente sin ejecutivo y esperar que el sistema proponga vendedor",
+  "Escribir la zona de forma distinta en cada cliente"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-cartera",
+   "capitulo": "La cartera de clientes",
+   "rotulo": "Clientes y su vendedor",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Zona y Vendedor asignado de cada cliente",
+   "navegar": "/sales/partners",
+   "narracion": "Ahora estamos en Ventas, en la pantalla de Clientes. Cada fila es un cliente al que le vendemos. Recojo el menú. Dos columnas son las del vendedor: Zona, y Vendedor asignado, que es su ejecutivo de cuenta. El ejecutivo de cuenta es el vendedor que lleva al cliente: cuando se le hace una cotización, una orden o una factura nueva, el sistema propone a ese vendedor. La Ferretería Germiva del Norte la llevaba Carmen, pero ahora está en la zona de Luis, así que se la pasamos. Abro la ficha del cliente con el lápiz.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('Constructora Germiva Ciudad') td >> nth=1",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Cada fila es un cliente"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "th:has-text('Zona')",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Dos columnas son las del vendedor"
+    },
+    {
+     "resaltar": "th:has-text('Vendedor asignado')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Vendedor asignado"
+    },
+    {
+     "resaltar": "tr:has-text('Constructora Germiva Ciudad') td:has-text('Sin asignar')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "cuando se le hace una cotización"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') td >> nth=1",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "La Ferretería Germiva del Norte"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') td:has-text('Carmen')",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "la llevaba Carmen"
+    },
+    {
+     "click": "tr:has-text('Ferretería Germiva del Norte') mat-icon:text-is('edit')",
+     "al_decir": "con el lápiz"
+    }
+   ]
+  },
+  {
+   "id": "02-asignar",
+   "capitulo": "Asignar el ejecutivo de cuenta",
+   "rotulo": "Ejecutivo, plazo, zona y ruta",
+   "ruta": "Ventas › Clientes › Editar Cliente",
+   "texto_pantalla": "Ejecutivo V-0003 · 30 días · Norte · Ruta 1 Santiago",
+   "narracion": "Bajo hasta la sección Clasificación. En Ejecutivo de cuenta está Carmen. Escribo Luis, y elijo V-0003, Luis Gómez Díaz. Desde ahora, sus documentos nuevos proponen a Luis como vendedor; las facturas que ya existen conservan el vendedor que tenían. Al lado, el Plazo de pago: la Ferretería compra a crédito a treinta días. Lo elijo; en cada factura nueva se carga solo: crédito, con el vencimiento calculado. En Zona de venta escribo Norte. La zona y la ruta agrupan la cartera para los reportes y para la ruta del vendedor. Como ruta, la Ruta uno Santiago. Con todo listo, pulso Guardar. El sistema confirma que el cliente se actualizó; pulso Aceptar.",
+   "acciones": [
+    {
+     "resaltar": "app-sales-rep-select",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "En Ejecutivo de cuenta está Carmen"
+    },
+    {
+     "escribir": {
+      "sel": "app-sales-rep-select input",
+      "texto": "Luis"
+     },
+     "al_decir": "Escribo Luis"
+    },
+    {
+     "click": "mat-option:has-text('V-0003')",
+     "al_decir": "Luis Gómez Díaz"
+    },
+    {
+     "resaltar": "app-sales-rep-select",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "sus documentos nuevos proponen"
+    },
+    {
+     "click": "mat-select[formcontrolname=paymentTermDays]",
+     "al_decir": "Al lado, el Plazo de pago"
+    },
+    {
+     "click": "mat-option:has-text('30 días')",
+     "al_decir": "Lo elijo"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-select[formcontrolname=paymentTermDays]) mat-hint",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "se carga solo"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname=salesZone]",
+      "texto": "NORTE"
+     },
+     "al_decir": "En Zona de venta escribo"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname=salesRoute]",
+      "texto": "Ruta 1 Santiago"
+     },
+     "al_decir": "Como ruta"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "pulso Guardar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El sistema confirma"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "pulso Aceptar"
+    }
+   ]
+  },
+  {
+   "id": "03-historial",
+   "capitulo": "El historial",
+   "rotulo": "Quién llevó la cuenta",
+   "ruta": "Ventas › Clientes › Editar Cliente",
+   "texto_pantalla": "Carmen del 01/08 al 21/10 · Luis desde hoy",
+   "narracion": "Junto al ejecutivo hay un reloj: es el historial. Lo abro. Aquí se ve quién llevó la cuenta y desde cuándo. Carmen, desde el primero de agosto hasta hoy, con su motivo. Y Luis, desde hoy. Sirve para saber, en cualquier momento, quién era el responsable de un cliente. Cierro el historial.",
+   "acciones": [
+    {
+     "click": "[data-testid=partner-seller-history]",
+     "al_decir": "Lo abro"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid=customer-seller-history]",
+     "durante_ms": 2800,
+     "cursor": false,
+     "al_decir": "quién llevó la cuenta"
+    },
+    {
+     "resaltar": "mat-dialog-container tr:has-text('Carmen') td >> nth=0",
+     "durante_ms": 3200,
+     "cursor": false,
+     "al_decir": "Carmen, desde el primero"
+    },
+    {
+     "resaltar": "mat-dialog-container tr:has-text('Luis') td >> nth=0",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Y Luis, desde hoy"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar')",
+     "al_decir": "Cierro el historial"
+    }
+   ]
+  },
+  {
+   "id": "04-filtrar",
+   "capitulo": "Filtrar la cartera",
+   "rotulo": "La cartera de una zona o de un vendedor",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Zona Norte + Vendedor asignado Luis",
+   "navegar": "/sales/partners",
+   "narracion": "De vuelta en Clientes, la Ferretería ya muestra la zona Norte y a Luis como vendedor asignado. Para ver la cartera de una región, en el filtro Zona elijo Norte. Y para la de un vendedor, en Vendedor asignado escribo Luis; aparece su ficha, V-0003, y la elijo. Los dos filtros se combinan: quedan solo los clientes de la zona Norte que lleva Luis. Así se revisa la cartera de cada vendedor antes de salir a ruta.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') td:has-text('Luis')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "la Ferretería ya muestra"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Zona')) mat-select",
+     "al_decir": "en el filtro Zona"
+    },
+    {
+     "click": "mat-option:has-text('Norte')",
+     "al_decir": "elijo Norte"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Vendedor asignado')) input",
+      "texto": "Luis"
+     },
+     "al_decir": "escribo Luis"
+    },
+    {
+     "click": "mat-option:has-text('V-0003')",
+     "al_decir": "y la elijo"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') td >> nth=1",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "quedan solo los clientes"
+    }
+   ]
+  }
+ ]
+}

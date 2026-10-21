@@ -1,0 +1,171 @@
+1
+00:00:03,000 --> 00:00:06,439
+Ahora estamos en Ventas, en la pantalla de Clientes.
+
+2
+00:00:06,262 --> 00:00:09,330
+Cada fila es un cliente al que le vendemos.
+
+3
+00:00:09,246 --> 00:00:10,445
+Recojo el menú.
+
+4
+00:00:10,314 --> 00:00:12,533
+Dos columnas son las del vendedor:
+
+5
+00:00:12,451 --> 00:00:16,365
+Zona, y Vendedor asignado, que es su ejecutivo de cuenta.
+
+6
+00:00:16,246 --> 00:00:20,103
+El ejecutivo de cuenta es el vendedor que lleva al cliente:
+
+7
+00:00:19,974 --> 00:00:24,376
+cuando se le hace una cotización, una orden o una factura nueva,
+
+8
+00:00:24,234 --> 00:00:26,953
+el sistema propone a ese vendedor.
+
+9
+00:00:26,882 --> 00:00:30,274
+La Ferretería Germiva del Norte la llevaba Carmen,
+
+10
+00:00:30,109 --> 00:00:33,710
+pero ahora está en la zona de Luis, así que se la pasamos.
+
+11
+00:00:33,581 --> 00:00:36,080
+Abro la ficha del cliente con el lápiz.
+
+12
+00:00:36,518 --> 00:00:39,342
+Bajo hasta la sección Clasificación.
+
+13
+00:00:39,165 --> 00:00:41,920
+En Ejecutivo de cuenta está Carmen.
+
+14
+00:00:41,766 --> 00:00:45,484
+Escribo Luis, y elijo V-0003, Luis Gómez Díaz.
+
+15
+00:00:45,411 --> 00:00:50,384
+Desde ahora, sus documentos nuevos proponen a Luis como vendedor;
+
+16
+00:00:50,253 --> 00:00:54,353
+las facturas que ya existen conservan el vendedor que tenían.
+
+17
+00:00:54,200 --> 00:00:57,164
+Al lado, el Plazo de pago:
+
+18
+00:00:57,021 --> 00:00:59,822
+la Ferretería compra a crédito a treinta días.
+
+19
+00:00:59,691 --> 00:01:00,855
+Lo elijo;
+
+20
+00:01:00,748 --> 00:01:03,456
+en cada factura nueva se carga solo:
+
+21
+00:01:03,314 --> 00:01:05,371
+crédito, con el vencimiento calculado.
+
+22
+00:01:05,229 --> 00:01:08,727
+En Zona de venta escribo Norte.
+
+23
+00:01:08,643 --> 00:01:14,114
+La zona y la ruta agrupan la cartera para los reportes y para la ruta del vendedor.
+
+24
+00:01:13,960 --> 00:01:16,610
+Como ruta, la Ruta uno Santiago.
+
+25
+00:01:16,456 --> 00:01:19,361
+Con todo listo, pulso Guardar.
+
+26
+00:01:19,207 --> 00:01:22,415
+El sistema confirma que el cliente se actualizó;
+
+27
+00:01:22,272 --> 00:01:23,716
+pulso Aceptar.
+
+28
+00:01:24,199 --> 00:01:26,477
+Junto al ejecutivo hay un reloj:
+
+29
+00:01:26,451 --> 00:01:27,650
+es el historial.
+
+30
+00:01:27,566 --> 00:01:28,486
+Lo abro.
+
+31
+00:01:28,355 --> 00:01:31,574
+Aquí se ve quién llevó la cuenta y desde cuándo.
+
+32
+00:01:31,420 --> 00:01:35,394
+Carmen, desde el primero de agosto hasta hoy, con su motivo.
+
+33
+00:01:35,275 --> 00:01:37,065
+Y Luis, desde hoy.
+
+34
+00:01:36,935 --> 00:01:42,069
+Sirve para saber, en cualquier momento, quién era el responsable de un cliente.
+
+35
+00:01:41,927 --> 00:01:43,439
+Cierro el historial.
+
+36
+00:01:43,888 --> 00:01:49,487
+De vuelta en Clientes, la Ferretería ya muestra la zona Norte y a Luis como
+
+37
+00:01:49,345 --> 00:01:50,439
+vendedor asignado.
+
+38
+00:01:50,308 --> 00:01:55,048
+Para ver la cartera de una región, en el filtro Zona elijo Norte.
+
+39
+00:01:54,906 --> 00:01:59,541
+Y para la de un vendedor, en Vendedor asignado escribo Luis;
+
+40
+00:01:59,399 --> 00:02:01,689
+aparece su ficha, V-0003, y la elijo.
+
+41
+00:02:01,605 --> 00:02:03,593
+Los dos filtros se combinan:
+
+42
+00:02:03,451 --> 00:02:07,087
+quedan solo los clientes de la zona Norte que lleva Luis.
+
+43
+00:02:06,945 --> 00:02:11,673
+Así se revisa la cartera de cada vendedor antes de salir a ruta.

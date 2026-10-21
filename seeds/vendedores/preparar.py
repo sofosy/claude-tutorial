@@ -160,6 +160,11 @@ def fichas():
     supervisor = int(sql(f"SELECT id FROM sales_reps WHERE company_id=1 AND partner_id={empleado('Pedro')}"))
     ficha("Luis", code="V-0003", salesZone="NORTE", salesRoute="Ruta 1 Santiago",
           supervisor=supervisor, maxDiscountPercent=5)
+    # La Ferretería la llevaba Carmen: el video 02 se la pasa a Luis y el
+    # historial del ejecutivo de cuenta muestra los dos tramos.
+    llamar("PATCH", f"/v1/sales-reps/customers/{cliente(CLIENTES[0][0])}/seller",
+           {"seller": empleado("Carmen"), "reason": "Cartera inicial de la empresa"})
+    sql(f"UPDATE customer_seller_assignments SET from_date='2026-08-01' WHERE customer_id={cliente(CLIENTES[0][0])}")
 
 
 def usuario_de_luis():

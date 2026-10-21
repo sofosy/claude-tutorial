@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Vendedores · El ejecutivo de cuenta del cliente
+
+DESCRIPCIÓN
+============================================================
+Cómo se le asigna a un cliente su ejecutivo de cuenta (el vendedor que se propone en sus documentos), su plazo de pago, zona y ruta; el historial de quién llevó la cuenta y cómo filtrar la cartera de una zona o de un vendedor.
+
+⏱️ CAPÍTULOS
+00:00  La cartera de clientes
+00:36  Asignar el ejecutivo de cuenta
+01:24  El historial
+01:43  Filtrar la cartera
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es el ejecutivo de cuenta y para qué sirve
+• Asignar ejecutivo, plazo de pago, zona y ruta a un cliente
+• Ver el historial de quién llevó la cuenta
+• Filtrar la cartera por zona y por vendedor
+
+⚠️ ERRORES COMUNES
+• Creer que cambiar el ejecutivo cambia el vendedor de las facturas ya hechas
+• Dejar al cliente sin ejecutivo y esperar que el sistema proponga vendedor
+• Escribir la zona de forma distinta en cada cliente
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:15
+
+TRANSCRIPCIÓN
+============================================================
+Ahora estamos en Ventas, en la pantalla de Clientes. Cada fila es un cliente al que le vendemos. Recojo el menú. Dos columnas son las del vendedor: Zona, y Vendedor asignado, que es su ejecutivo de cuenta. El ejecutivo de cuenta es el vendedor que lleva al cliente: cuando se le hace una cotización, una orden o una factura nueva, el sistema propone a ese vendedor. La Ferretería Germiva del Norte la llevaba Carmen, pero ahora está en la zona de Luis, así que se la pasamos. Abro la ficha del cliente con el lápiz.
+Bajo hasta la sección Clasificación. En Ejecutivo de cuenta está Carmen. Escribo Luis, y elijo V-0003, Luis Gómez Díaz. Desde ahora, sus documentos nuevos proponen a Luis como vendedor; las facturas que ya existen conservan el vendedor que tenían. Al lado, el Plazo de pago: la Ferretería compra a crédito a treinta días. Lo elijo; en cada factura nueva se carga solo: crédito, con el vencimiento calculado. En Zona de venta escribo Norte. La zona y la ruta agrupan la cartera para los reportes y para la ruta del vendedor. Como ruta, la Ruta uno Santiago. Con todo listo, pulso Guardar. El sistema confirma que el cliente se actualizó; pulso Aceptar.
+Junto al ejecutivo hay un reloj: es el historial. Lo abro. Aquí se ve quién llevó la cuenta y desde cuándo. Carmen, desde el primero de agosto hasta hoy, con su motivo. Y Luis, desde hoy. Sirve para saber, en cualquier momento, quién era el responsable de un cliente. Cierro el historial.
+De vuelta en Clientes, la Ferretería ya muestra la zona Norte y a Luis como vendedor asignado. Para ver la cartera de una región, en el filtro Zona elijo Norte. Y para la de un vendedor, en Vendedor asignado escribo Luis; aparece su ficha, V-0003, y la elijo. Los dos filtros se combinan: quedan solo los clientes de la zona Norte que lleva Luis. Así se revisa la cartera de cada vendedor antes de salir a ruta.
