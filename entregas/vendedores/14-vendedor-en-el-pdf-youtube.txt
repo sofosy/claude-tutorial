@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Vendedores · El vendedor en el PDF
+
+DESCRIPCIÓN
+============================================================
+Cómo decidir qué personas imprime la factura: copiar la plantilla del sistema en Diseño de documentos y usar los interruptores de Personas en el documento (vendedor, cajero y registrado por).
+
+⏱️ CAPÍTULOS
+00:00  La plantilla de la factura
+00:48  Personas en el documento
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dónde se diseña la factura
+• Por qué se copia la plantilla del sistema
+• Los interruptores de Personas en el documento
+• Que apagar el vendedor en el PDF no lo quita de la factura
+
+⚠️ ERRORES COMUNES
+• Buscar el interruptor en la plantilla del sistema: primero se hace la copia
+• Pensar que apagar el vendedor en el PDF le quita la comisión
+• Encender el cajero en una factura que no pasa por caja: sin ese dato no se imprime
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:43
+
+TRANSCRIPCIÓN
+============================================================
+Lo que imprime la factura se decide en Configuración, Diseño de documentos. Recojo el menú. Cada documento tiene su plantilla. Busco la de la factura: escribo factura estándar en el buscador, y la lista se reduce a esa plantilla. La factura usa Factura Estándar, que viene con el sistema y está en uso. Abro su diseño. Arriba avisa que es una plantilla del sistema: se puede mirar y usar, pero no cambiar. Para decidir qué personas salen en la factura, pulso Hacer una copia para editarla. La ventana explica que la copia es de tu empresa y que la original no cambia. Pulso Crear y abrir el diseño. El sistema confirma que la copia quedó creada y en uso.
+Ya estoy en la copia que acabo de crear, con el mismo diseño que la del sistema. Es de tu empresa y, como dice la etiqueta de arriba, queda en uso para las facturas. A la derecha está Personas en el documento. Vendedor está encendido: la factura imprime Vendedor, y el nombre del vendedor del documento. Cajero está apagado; lo enciendo, y ahora la factura del punto de venta dirá la caja y el cajero que cobró. Registrado por imprime quién hizo la factura en el sistema. Cada persona sale solo si está encendida y la factura tiene ese dato. Guardo. Tras un momento, el sistema confirma que la plantilla quedó guardada. Si apagas el vendedor, solo deja de imprimirse: la factura lo sigue teniendo para las comisiones y los reportes. El resultado se ve con el botón PDF real.
