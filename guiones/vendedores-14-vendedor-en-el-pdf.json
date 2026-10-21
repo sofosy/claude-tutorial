@@ -95,17 +95,24 @@
    "ruta": "Configuración › Diseño de documentos",
    "texto_pantalla": "Las del sistema se miran; las copias se editan",
    "navegar": "/document-templates",
-   "narracion": "Lo que imprime la factura se decide en Configuración, Diseño de documentos. Recojo el menú. Cada documento tiene su plantilla, y la factura usa Factura Estándar, que viene con el sistema y está en uso. Abro su diseño. Arriba avisa que es una plantilla del sistema: se puede mirar y usar, pero no cambiar. Para decidir qué personas salen en la factura, pulso Hacer una copia para editarla. La ventana explica que la copia es de tu empresa y que la original no cambia. Pulso Crear y abrir el diseño. El sistema confirma que la copia quedó creada y en uso.",
+   "narracion": "Lo que imprime la factura se decide en Configuración, Diseño de documentos. Recojo el menú. Cada documento tiene su plantilla. Busco la de la factura: escribo factura estándar en el buscador, y la lista se reduce a esa plantilla. La factura usa Factura Estándar, que viene con el sistema y está en uso. Abro su diseño. Arriba avisa que es una plantilla del sistema: se puede mirar y usar, pero no cambiar. Para decidir qué personas salen en la factura, pulso Hacer una copia para editarla. La ventana explica que la copia es de tu empresa y que la original no cambia. Pulso Crear y abrir el diseño. El sistema confirma que la copia quedó creada y en uso.",
    "acciones": [
     {
      "click": "button.panel-collapse",
      "al_decir": "Recojo el menú"
     },
     {
+     "escribir": {
+      "sel": "mat-form-field:has-text('Buscar documento') input",
+      "texto": "Factura Estándar"
+     },
+     "al_decir": "escribo factura estándar"
+    },
+    {
      "resaltar": ":text-is('Factura Estándar') >> xpath=ancestor::*[.//button][1]",
      "durante_ms": 3000,
      "cursor": false,
-     "al_decir": "y la factura usa"
+     "al_decir": "La factura usa"
     },
     {
      "click": ":text-is('Factura Estándar') >> xpath=ancestor::*[.//button][1]//button[@mattooltip='Ver el diseño (solo lectura)']",
