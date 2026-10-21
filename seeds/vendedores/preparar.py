@@ -145,6 +145,9 @@ def ficha(nombre, **extra):
 
 
 def base():
+    # El aviso «Configuración incompleta» sale una sola vez por usuario y
+    # empresa: se gasta aquí para que no tape la pantalla al entrar en el video.
+    llamar("POST", "/v1/user-preferences/incomplete-config-notice/claim", {})
     crear_empleados()
     crear_productos()
     crear_clientes()

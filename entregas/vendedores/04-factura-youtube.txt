@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Vendedores · El vendedor en la factura
+
+DESCRIPCIÓN
+============================================================
+Cómo propone el sistema el vendedor de una factura nueva a partir del ejecutivo de cuenta del cliente, en qué orden lo decide, y cómo se distinguen en la factura y en el listado el vendedor, el cajero y quien la registró.
+
+⏱️ CAPÍTULOS
+00:00  El vendedor se propone solo
+01:18  Vendedor, cajero y quien registra
+01:54  El vendedor en el listado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• De dónde sale el vendedor de un documento nuevo
+• Facturar con el vendedor que propone el cliente
+• Vendedor, cajero y quien registró: tres datos distintos
+• Columnas y filtros del vendedor en el listado de facturas
+
+⚠️ ERRORES COMUNES
+• Pensar que quien registra la factura es el vendedor
+• Dejar facturas sin vendedor: no generan comisión
+• Buscar al cajero en una factura que no se cobró en caja
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:39
+
+TRANSCRIPCIÓN
+============================================================
+Hacemos una factura nueva, en Ventas, Facturas. Recojo el menú. Primero, el cliente: en Cliente busco la Ferretería Germiva del Norte; aparece en la lista, y la elijo. Fíjate en el campo Vendedor: se llenó solo con V-0003, Luis Gómez Díaz, porque Luis es el ejecutivo de cuenta de este cliente. El sistema decide el vendedor en este orden: primero, el que elijas aquí; si no, el del documento de origen, como la cotización, la orden o el conduce; si no, el ejecutivo de cuenta del cliente. Y si no hay ninguno, la factura queda sin vendedor: nunca se rellena con la cajera ni con quien registra. También se cargó el plazo del cliente: crédito a treinta días, con su vencimiento.
+Ahora la línea: escribo Pintura. En la lista aparece el producto con su existencia, y elijo la pintura acrílica Germiva de galón. El total es mil ciento ochenta pesos con el ITBIS. El vendedor se puede cambiar mientras la factura está en borrador, pero aquí lo dejamos así. Pulso Guardar y Emitir. El sistema guarda la factura, le asigna su comprobante y la emite; tarda unos segundos. Cuando termina, confirma la operación con un aviso. Pulso Aceptar.
+Esta es la factura emitida. En una venta pueden intervenir tres personas, y el sistema las guarda por separado. El vendedor es Luis: quien hizo la venta y cobra la comisión. Debajo, Registrada por: el usuario que grabó el documento, en este caso el administrador. Es un dato de auditoría y nunca comisiona. La tercera es el cajero: el usuario del turno de caja con que se cobró. Esta factura es a crédito y no pasó por caja, así que no tiene cajero. El lápiz junto al vendedor sirve para corregirlo después de emitida; lo vemos en otro video.
+Volvemos al listado de Facturas. Aquí, la columna Vendedor muestra el de cada factura. La nuestra, arriba, es de Luis. Las columnas Cajero y Registrada por existen, pero vienen apagadas. Abro la configuración de columnas. Marco Cajero, que dice quién cobró en caja. Después marco Registrada por. Y pulso Guardar cambios. El aviso confirma que se aplicó; cierro el panel. Ahora se ven las tres personas en cada fila. Por último, el filtro Vendedor asignado tiene la opción Sin vendedor: elijo Sin vendedor, y quedan las facturas que no tienen vendedor. Esas no generan comisión, y conviene revisarlas.
