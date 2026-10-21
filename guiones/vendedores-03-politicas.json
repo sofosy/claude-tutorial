@@ -1,0 +1,217 @@
+{
+ "titulo": "Vendedores · Las políticas de la empresa",
+ "descripcion": "Dónde se configura cómo trata la empresa al vendedor: en qué documentos es obligatorio, cuándo se toma al usuario que registra, cómo se pide en el punto de venta, cada cuánto se liquidan las comisiones y si el código del vendedor viaja en el e-CF.",
+ "_comentario": "Video 03 de la serie Vendedores. setup: preparar.sh cartera. El video exige vendedor en Cotizaciones y Facturas y guarda; lo demás se explica sin cambiarlo.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/company/preferences",
+  "esperar": "[role=tab]:has-text('Vendedores')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh cartera"
+ },
+ "aprenderas": [
+  "Exigir el vendedor en los documentos que lo necesitan",
+  "Cuándo conviene tomar al usuario que registra como vendedor",
+  "Cómo se pide el vendedor en el punto de venta",
+  "Período de comisiones y código de vendedor en el e-CF"
+ ],
+ "errores_comunes": [
+  "Activar «tomar al usuario que registra» en la caja cuando la cajera no vende",
+  "Elegir un período de comisiones mayor de un mes",
+  "Enviar el código en el e-CF si se reasignan vendedores a menudo"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-documentos",
+   "capitulo": "El vendedor en los documentos",
+   "rotulo": "Exigir y proponer el vendedor",
+   "ruta": "Configuración › Preferencias › Vendedores",
+   "texto_pantalla": "Vendedor obligatorio en cotizaciones y facturas",
+   "navegar": "/company/preferences",
+   "narracion": "Las reglas del vendedor se configuran en Configuración, Preferencias. Abro la pestaña Vendedores. Recojo el menú. Arriba se recuerda la idea central: el vendedor es quien hizo la venta y cobra la comisión; no es quien registra ni la cajera. Si no se elige, el documento lo toma de su origen o del ejecutivo de cuenta del cliente. En Exigir vendedor en, la empresa decide dónde es obligatorio. Elijo Cotizaciones, y también Facturas: en esos documentos no se podrá guardar sin vendedor. Al lado, Tomar al usuario que registra como vendedor: sirve cuando cada vendedor captura sus propios pedidos. Lo dejo vacío, porque aquí las facturas las registra la cajera, y la cajera no vende.",
+   "acciones": [
+    {
+     "click": "[role=tab]:has-text('Vendedores')",
+     "al_decir": "Abro la pestaña Vendedores"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": ".mat-mdc-tab-body-active p.module-hint >> nth=0",
+     "durante_ms": 7000,
+     "cursor": false,
+     "al_decir": "Arriba se recuerda la idea central"
+    },
+    {
+     "resaltar": ".mat-mdc-tab-body-active p.module-hint >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "Si no se elige"
+    },
+    {
+     "click": "[data-testid=seller-required-channels]",
+     "al_decir": "En Exigir vendedor en"
+    },
+    {
+     "click": "mat-option:has-text('Cotizaciones')",
+     "al_decir": "Elijo Cotizaciones"
+    },
+    {
+     "click": "mat-option:has-text('Facturas'):not(:has-text('API'))",
+     "al_decir": "también Facturas"
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     },
+     "al_decir": "no se podrá guardar"
+    },
+    {
+     "resaltar": "[data-testid=seller-from-user-channels]",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Tomar al usuario que registra"
+    },
+    {
+     "resaltar": "mat-form-field:has([data-testid=seller-from-user-channels]) mat-hint",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Lo dejo vacío"
+    }
+   ]
+  },
+  {
+   "id": "02-caja-y-periodo",
+   "capitulo": "Caja, comisiones y e-CF",
+   "rotulo": "Punto de venta, período y e-CF",
+   "ruta": "Configuración › Preferencias › Vendedores",
+   "texto_pantalla": "Caja: opcional · comisiones mensuales · e-CF sin código",
+   "narracion": "En el punto de venta, Pedir el vendedor puede ser No pedirlo, Opcional u Obligatorio para cobrar. Lo dejo en Opcional. Conservar el vendedor entre ventas hace que la caja mantenga el último vendedor elegido en el turno. Más abajo, el Período de comisiones: cada cuánto se liquidan las comisiones de cada vendedor, mensual o quincenal. Nunca más de un mes, como manda el Código de Trabajo. Lo dejo en Mensual. Y por último, Enviar el código de vendedor en el e-CF. Es opcional y no tiene efecto fiscal: la DGII no lo exige. Si se enciende, el código queda congelado al firmar; por eso, si reasignas vendedores a menudo, conviene dejarlo apagado. Pulso Guardar. El aviso confirma que la configuración quedó guardada; pulso Aceptar.",
+   "acciones": [
+    {
+     "click": "[data-testid=pos-seller-mode]",
+     "al_decir": "Pedir el vendedor"
+    },
+    {
+     "resaltar": ".cdk-overlay-pane mat-option >> nth=2",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Obligatorio para cobrar"
+    },
+    {
+     "click": "mat-option:has-text('Opcional')",
+     "al_decir": "Lo dejo en Opcional"
+    },
+    {
+     "resaltar": "mat-slide-toggle:has-text('Conservar el vendedor')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Conservar el vendedor entre ventas"
+    },
+    {
+     "resaltar": "[data-testid=commission-period-frequency]",
+     "durante_ms": 6500,
+     "cursor": false,
+     "al_decir": "el Período de comisiones"
+    },
+    {
+     "resaltar": "[data-testid=commission-period-frequency]",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Nunca más de un mes"
+    },
+    {
+     "resaltar": "[data-testid=send-seller-code-in-ecf]",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Enviar el código de vendedor en el e-CF"
+    },
+    {
+     "resaltar": ".mat-mdc-tab-body-active p.module-hint:has-text('congelado')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "queda congelado al firmar"
+    },
+    {
+     "click": ".mat-mdc-tab-body-active button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "El aviso confirma"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "pulso Aceptar"
+    }
+   ]
+  }
+ ]
+}

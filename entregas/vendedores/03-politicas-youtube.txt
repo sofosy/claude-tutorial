@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Vendedores · Las políticas de la empresa
+
+DESCRIPCIÓN
+============================================================
+Dónde se configura cómo trata la empresa al vendedor: en qué documentos es obligatorio, cuándo se toma al usuario que registra, cómo se pide en el punto de venta, cada cuánto se liquidan las comisiones y si el código del vendedor viaja en el e-CF.
+
+⏱️ CAPÍTULOS
+00:00  El vendedor en los documentos
+00:46  Caja, comisiones y e-CF
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Exigir el vendedor en los documentos que lo necesitan
+• Cuándo conviene tomar al usuario que registra como vendedor
+• Cómo se pide el vendedor en el punto de venta
+• Período de comisiones y código de vendedor en el e-CF
+
+⚠️ ERRORES COMUNES
+• Activar «tomar al usuario que registra» en la caja cuando la cajera no vende
+• Elegir un período de comisiones mayor de un mes
+• Enviar el código en el e-CF si se reasignan vendedores a menudo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:42
+
+TRANSCRIPCIÓN
+============================================================
+Las reglas del vendedor se configuran en Configuración, Preferencias. Abro la pestaña Vendedores. Recojo el menú. Arriba se recuerda la idea central: el vendedor es quien hizo la venta y cobra la comisión; no es quien registra ni la cajera. Si no se elige, el documento lo toma de su origen o del ejecutivo de cuenta del cliente. En Exigir vendedor en, la empresa decide dónde es obligatorio. Elijo Cotizaciones, y también Facturas: en esos documentos no se podrá guardar sin vendedor. Al lado, Tomar al usuario que registra como vendedor: sirve cuando cada vendedor captura sus propios pedidos. Lo dejo vacío, porque aquí las facturas las registra la cajera, y la cajera no vende.
+En el punto de venta, Pedir el vendedor puede ser No pedirlo, Opcional u Obligatorio para cobrar. Lo dejo en Opcional. Conservar el vendedor entre ventas hace que la caja mantenga el último vendedor elegido en el turno. Más abajo, el Período de comisiones: cada cuánto se liquidan las comisiones de cada vendedor, mensual o quincenal. Nunca más de un mes, como manda el Código de Trabajo. Lo dejo en Mensual. Y por último, Enviar el código de vendedor en el e-CF. Es opcional y no tiene efecto fiscal: la DGII no lo exige. Si se enciende, el código queda congelado al firmar; por eso, si reasignas vendedores a menudo, conviene dejarlo apagado. Pulso Guardar. El aviso confirma que la configuración quedó guardada; pulso Aceptar.
