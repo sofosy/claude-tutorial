@@ -1,0 +1,251 @@
+{
+ "titulo": "Vendedores · El vendedor en el punto de venta",
+ "descripcion": "Cómo la cajera elige en el punto de venta al vendedor que atendió al cliente (F9), por qué el vendedor no es la cajera, cómo se conserva entre ventas del turno y cómo queda la factura con su vendedor, su cajero y quien la registró.",
+ "_comentario": "Video 05 de la serie Vendedores. setup: preparar.sh caja (la cajera Ana Pérez con turno abierto en la Caja Principal; la empresa factura B02 durante el cobro porque el entorno local no tiene certificado e-CF). El video vende una brocha (RD$295) con Carmen V-0001 como vendedora: factura 1000000050. El paso 03 vuelve a encender la facturación electrónica antes de abrir la factura.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce",
+  "F9": "efe nueve",
+  "F12": "efe doce"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "ana.perez",
+   "password": "Germiva.2026"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/pos",
+  "esperar": "[data-testid=pos-seller]"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh caja"
+ },
+ "aprenderas": [
+  "Elegir el vendedor de la venta en la caja con F9",
+  "Por qué la cajera no es el vendedor",
+  "El vendedor se conserva entre ventas del turno",
+  "Cómo queda la factura: vendedor, cajero y quien registró"
+ ],
+ "errores_comunes": [
+  "Cobrar sin elegir al vendedor que atendió: la venta queda sin comisión",
+  "Olvidar cambiar el vendedor cuando atiende otra persona en el mismo turno",
+  "Esperar que la cajera aparezca como vendedora"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-elegir",
+   "capitulo": "Elegir el vendedor en la caja",
+   "rotulo": "F9 · Vendedor de la venta",
+   "ruta": "Punto de venta",
+   "texto_pantalla": "Cajera: Ana · Vendedora: Carmen V-0001",
+   "narracion": "Este es el punto de venta, abierto por Ana Pérez, la cajera, con su turno abierto en la Caja Principal. Carmen, la vendedora, atendió a un cliente que lleva una brocha. Ana la busca, escribiendo Brocha. Aparece la brocha de tres pulgadas, con su precio y su existencia, y Ana la agrega al ticket. Debajo del cliente, el ticket muestra el vendedor: ahora dice Sin vendedor. Ana no es la vendedora: solo cobra. Para indicar quién atendió, pulsa F9. Se abre Vendedor de la venta. Escribe Carmen, y elige V-0001, Carmen Rosario Peña. Ya está en el ticket, y dice que se conserva para las ventas siguientes del turno.",
+   "acciones": [
+    {
+     "resaltar": ":text('Turno abierto') >> nth=0",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "con su turno abierto"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder*='Busca por']",
+      "texto": "Brocha"
+     },
+     "al_decir": "escribiendo Brocha"
+    },
+    {
+     "click": ":text('Brocha Germiva 3 pulgadas') >> nth=0",
+     "al_decir": "la agrega al ticket"
+    },
+    {
+     "resaltar": "[data-testid=pos-seller]",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "el ticket muestra el vendedor"
+    },
+    {
+     "resaltar": "[data-testid=pos-seller]",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Ana no es la vendedora"
+    },
+    {
+     "presionar": {
+      "tecla": "F9"
+     },
+     "al_decir": "pulsa F9"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "Se abre Vendedor de la venta"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-sales-rep-select input",
+      "texto": "Carmen"
+     },
+     "al_decir": "Escribe Carmen"
+    },
+    {
+     "click": "mat-option:has-text('V-0001')",
+     "al_decir": "Carmen Rosario Peña"
+    },
+    {
+     "resaltar": "[data-testid=pos-seller]",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Ya está en el ticket"
+    }
+   ]
+  },
+  {
+   "id": "02-cobrar",
+   "capitulo": "Cobrar la venta",
+   "rotulo": "Cobrar y seguir vendiendo",
+   "ruta": "Punto de venta › Cobrar venta",
+   "texto_pantalla": "RD$295 en efectivo · el vendedor se conserva",
+   "narracion": "Con el ticket listo, Ana pulsa F12 para cobrar. El cliente paga en efectivo los doscientos noventa y cinco pesos exactos, que ya vienen en Monto recibido. Confirma el cobro. El sistema guarda la factura, le asigna su comprobante y descuenta el inventario; tarda un momento. La venta queda registrada, con su factura y su comprobante. Ana pulsa Nueva venta. Fíjate en el ticket nuevo: Carmen sigue como vendedora, porque la empresa conserva el vendedor entre ventas. Si el próximo cliente lo atiende otra persona, Ana pulsa F9 y lo cambia. Y si la empresa lo exige, no se puede cobrar sin elegirlo.",
+   "acciones": [
+    {
+     "presionar": {
+      "tecla": "F12"
+     },
+     "al_decir": "Ana pulsa F12"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "El cliente paga en efectivo"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Confirmar cobro')",
+     "al_decir": "Confirma el cobro"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('Venta registrada')",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "La venta queda registrada"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Nueva venta')",
+     "al_decir": "Ana pulsa Nueva venta"
+    },
+    {
+     "resaltar": "[data-testid=pos-seller]",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Carmen sigue como vendedora"
+    },
+    {
+     "resaltar": "[data-testid=pos-seller]",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "lo atiende otra persona"
+    }
+   ]
+  },
+  {
+   "id": "03-factura",
+   "capitulo": "La factura de la caja",
+   "rotulo": "Vendedor, cajero y quien registró",
+   "ruta": "Ventas › Facturas › 1000000050",
+   "texto_pantalla": "Vendedora: Carmen · Cajero: Ana (Caja Principal)",
+   "setup": {
+    "tipo": "shell",
+    "cmd": "docker exec -i germiva-dev-mysql mysql -uroot germiva -e \"UPDATE companies SET managesElectronicBilling=1 WHERE id=1\""
+   },
+   "navegar": "/sales/invoices/1000000050/view",
+   "narracion": "Ahora abrimos, desde Ventas, la factura de esa venta, para ver cómo quedó. Vendedor: V-0001, Carmen Rosario Peña. Ella es quien cobra la comisión. Debajo, Cajero: Ana Pérez, en la Caja Principal, porque se cobró en su turno. Y Registrada por: también Ana, porque fue ella quien la grabó. Cada dato tiene su lugar: el vendedor nunca se rellena con la cajera, y la cajera aparece como cajero, no como vendedora. En el recibo de ochenta milímetros, la caja y el cajero se imprimen, y el vendedor también, si la venta lo tiene.",
+   "acciones": [
+    {
+     "resaltar": "[data-testid=invoice-seller-readonly], mat-form-field:has(mat-label:text-is('Vendedor')) >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Vendedor: V-0001"
+    },
+    {
+     "resaltar": "mat-hint:has-text('Cajero')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Debajo, Cajero"
+    },
+    {
+     "resaltar": "mat-hint:has-text('Cajero')",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Y Registrada por"
+    },
+    {
+     "resaltar": "[data-testid=invoice-seller-readonly], mat-form-field:has(mat-label:text-is('Vendedor')) >> nth=0",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Cada dato tiene su lugar"
+    },
+    {
+     "resaltar": "button:has-text('Imprimir recibo')",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "En el recibo de ochenta"
+    }
+   ]
+  }
+ ]
+}

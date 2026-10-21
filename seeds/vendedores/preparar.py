@@ -186,6 +186,26 @@ def cartera():
             "paymentTermDays": plazo})
 
 
+CAJERA = ("ana.perez", "Germiva.2026")
+
+
+def caja():
+    """cartera + la cajera Ana con su turno abierto en la Caja Principal: la
+    venta del POS sale con la vendedora que se elige y con Ana como cajera."""
+    cartera()
+    rol = int(sql("SELECT id FROM roles WHERE code='CASHIER' AND company_id IS NULL"))
+    llamar("POST", "/user", {"username": CAJERA[0], "email": "ana.perez@distribuidora.germiva.com",
+                            "password": CAJERA[1], "name": "Ana", "lastName": "Pérez",
+                            "active": True, "roles": [rol]})
+    ana = int(sql(f"SELECT id FROM users WHERE username='{CAJERA[0]}'"))
+    # Sin certificado digital en el entorno local el POS no puede emitir el
+    # E32: durante el cobro la empresa factura con comprobantes tradicionales
+    # (B02). El paso del video que abre la factura vuelve a encenderlo.
+    sql("UPDATE companies SET managesElectronicBilling=0 WHERE id=1")
+    llamar("POST", "/v1/cashiers/sessions/open", {"cashier": 1, "user": ana, "initialCash": 5000,
+                                                 "notes": "Turno de la mañana"})
+
+
 def esquema():
     llamar("POST", "/v1/commission-schemes", {
         "name": "Vendedores de ruta", "type": "percentage", "calculationBase": "sale_amount",
@@ -273,7 +293,7 @@ def nomina():
     llamar("POST", f"/v1/payroll-periods/{pid}/calculate")
 
 
-ESTADOS = {"base": base, "fichas": fichas, "cartera": cartera, "ventas": ventas,
+ESTADOS = {"base": base, "fichas": fichas, "cartera": cartera, "caja": caja, "ventas": ventas,
            "cobradas": cobradas, "liquidada": liquidada, "nomina": nomina}
 
 if __name__ == "__main__":
