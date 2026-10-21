@@ -95,17 +95,17 @@
    "ruta": "Ventas › Reportes",
    "texto_pantalla": "Desde y hasta: 21/10/2026",
    "navegar": "/sales/dashboard",
-   "narracion": "Los reportes de vendedores están en Ventas, Reportes, en el Análisis de Ventas. Recojo el menú. Arriba se elige el rango de fechas. Quiero ver solo las ventas de hoy, así que escribo el veintiuno de octubre en Desde, y pulso Actualizar. Las tarjetas ya cuentan nada más lo de hoy: tres facturas, por veintisiete mil ciento cuarenta pesos. Más abajo, el gráfico Ventas por Vendedor reparte lo facturado entre los vendedores del documento: Luis vendió más que Carmen. Y Conversión Cotización dice qué parte de las cotizaciones del rango se ganó, es decir, pasó a orden de venta o a factura: una de cuatro, el veinticinco por ciento.",
+   "narracion": "Empezamos en el panel de ventas. Recojo el menú para ganar espacio. Los reportes de vendedores están en Ventas, Reportes, en el Análisis de Ventas. Arriba se elige el rango de fechas. Quiero ver solo las ventas de hoy, así que escribo el veintiuno de octubre en Desde, y pulso Actualizar. Las tarjetas ya cuentan nada más lo de hoy: tres facturas, por veintisiete mil ciento cuarenta pesos. Conversión Cotización dice qué parte de las cotizaciones del rango se ganó, es decir, pasó a orden de venta o a factura: una de cuatro, el veinticinco por ciento. Más abajo, el gráfico Ventas por Vendedor reparte lo facturado entre los vendedores del documento: Luis vendió más que Carmen.",
    "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
     {
      "resaltar": ".analytics-header__text h2",
      "durante_ms": 3500,
      "cursor": false,
      "al_decir": "en el Análisis de Ventas"
-    },
-    {
-     "click": "button.panel-collapse",
-     "al_decir": "Recojo el menú"
     },
     {
      "escribir": {
@@ -119,16 +119,16 @@
      "al_decir": "pulso Actualizar"
     },
     {
+     "resaltar": "mat-card:has-text('Conversión Cotización')",
+     "durante_ms": 6000,
+     "cursor": false,
+     "al_decir": "Conversión Cotización dice"
+    },
+    {
      "resaltar": "mat-card:has(mat-card-title:text-is('Ventas por Vendedor'))",
      "durante_ms": 6000,
      "cursor": false,
      "al_decir": "Más abajo, el gráfico"
-    },
-    {
-     "resaltar": "mat-card:has-text('Conversión Cotización')",
-     "durante_ms": 6000,
-     "cursor": false,
-     "al_decir": "Y Conversión Cotización"
     }
    ]
   },
