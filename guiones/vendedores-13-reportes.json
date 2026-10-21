@@ -98,7 +98,7 @@
    "narracion": "Los reportes de vendedores están en Ventas, Reportes, en el Análisis de Ventas. Recojo el menú. Arriba se elige el rango de fechas. Quiero ver solo las ventas de hoy, así que escribo el veintiuno de octubre en Desde, y pulso Actualizar. Ventas por Vendedor reparte lo facturado entre los vendedores del documento: Luis vendió más que Carmen. Y Conversión Cotización dice qué parte de las cotizaciones del rango se ganó, es decir, pasó a orden de venta o a factura: una de cuatro, el veinticinco por ciento.",
    "acciones": [
     {
-     "resaltar": "h1:has-text('Análisis de Ventas'), :text('Análisis de Ventas') >> nth=0",
+     "resaltar": ".analytics-header__text h2",
      "durante_ms": 3500,
      "cursor": false,
      "al_decir": "en el Análisis de Ventas"
