@@ -95,7 +95,7 @@
    "ruta": "Configuración › Diseño de documentos",
    "texto_pantalla": "Las del sistema se miran; las copias se editan",
    "navegar": "/document-templates",
-   "narracion": "Lo que imprime la factura se decide en Configuración, Diseño de documentos. Recojo el menú. Cada documento tiene su plantilla, y la factura usa Factura Estándar, que viene con el sistema y está en uso. Abro su diseño. Arriba avisa que es una plantilla del sistema: se puede mirar y usar, pero no cambiar. Para decidir qué personas salen en la factura, pulso Hacer una copia para editarla. La ventana explica que la copia es de tu empresa y que la original no cambia. Pulso Crear y abrir el diseño.",
+   "narracion": "Lo que imprime la factura se decide en Configuración, Diseño de documentos. Recojo el menú. Cada documento tiene su plantilla, y la factura usa Factura Estándar, que viene con el sistema y está en uso. Abro su diseño. Arriba avisa que es una plantilla del sistema: se puede mirar y usar, pero no cambiar. Para decidir qué personas salen en la factura, pulso Hacer una copia para editarla. La ventana explica que la copia es de tu empresa y que la original no cambia. Pulso Crear y abrir el diseño. El sistema confirma que la copia quedó creada y en uso.",
    "acciones": [
     {
      "click": "button.panel-collapse",
@@ -130,6 +130,12 @@
     {
      "click": "mat-dialog-container button:has-text('Crear y abrir el diseño')",
      "al_decir": "Pulso Crear y abrir"
+    },
+    {
+     "resaltar": "mat-snack-bar-container, .mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El sistema confirma que la copia"
     }
    ]
   },
