@@ -145,13 +145,13 @@
    "rotulo": "Vendedor, cajero y registrado por",
    "ruta": "Configuración › Diseño de documentos › Factura Estándar (copia)",
    "texto_pantalla": "Cada interruptor dice la línea que imprime",
-   "narracion": "Ya estoy en la copia, que es de tu empresa y queda en uso para las facturas. A la derecha está Personas en el documento. Vendedor está encendido: la factura imprime Vendedor, y el nombre del vendedor del documento. Cajero está apagado; lo enciendo, y ahora la factura del punto de venta dirá la caja y el cajero que cobró. Registrado por imprime quién hizo la factura en el sistema. Cada persona sale solo si está encendida y la factura tiene ese dato. Guardo, y el sistema confirma que la plantilla quedó guardada. Si apagas el vendedor, solo deja de imprimirse: la factura lo sigue teniendo para las comisiones y los reportes. El resultado se ve con el botón PDF real.",
+   "narracion": "Ya estoy en la copia. Es de tu empresa y, como dice la etiqueta de arriba, queda en uso para las facturas. A la derecha está Personas en el documento. Vendedor está encendido: la factura imprime Vendedor, y el nombre del vendedor del documento. Cajero está apagado; lo enciendo, y ahora la factura del punto de venta dirá la caja y el cajero que cobró. Registrado por imprime quién hizo la factura en el sistema. Cada persona sale solo si está encendida y la factura tiene ese dato. Guardo, y el sistema confirma que la plantilla quedó guardada. Si apagas el vendedor, solo deja de imprimirse: la factura lo sigue teniendo para las comisiones y los reportes. El resultado se ve con el botón PDF real.",
    "acciones": [
     {
      "resaltar": ":text('En uso') >> nth=0",
      "durante_ms": 4000,
      "cursor": false,
-     "al_decir": "queda en uso"
+     "al_decir": "como dice la etiqueta"
     },
     {
      "resaltar": "[data-testid=person-toggles]",
