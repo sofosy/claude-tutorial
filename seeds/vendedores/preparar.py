@@ -315,8 +315,32 @@ def nomina():
     llamar("POST", f"/v1/payroll-periods/{pid}/calculate")
 
 
+def cotizacion(nombre_cliente, lineas):
+    """Cotización en DOP; el vendedor sale del ejecutivo del cliente."""
+    q = llamar("POST", "/v1/quotes", {
+        "partner": cliente(nombre_cliente), "currency": DOP, "ncfType": B01, "incomeType": 1,
+        "expiryDate": str(HOY + dt.timedelta(days=15)),
+        "details": [{"product": producto(n), "quantity": c} for n, c in lineas]})
+    return q["quoteNumber"]
+
+
+def reportes():
+    """ventas (sin cobrar) + cotizaciones y una orden para el embudo, y el
+    Colmado del Este pasa a Pedro: su factura sigue siendo de Carmen (vendedor
+    del documento) pero el ejecutivo de cuenta ya es Pedro."""
+    ventas()
+    ganada = cotizacion(CLIENTES[0][0], [(PRODUCTOS[0][0], 12)])        # Luis
+    llamar("POST", f"/v1/quotes/convert-to-order/{ganada}", {})
+    cotizacion(CLIENTES[2][0], [(PRODUCTOS[1][0], 40)])                # Luis, abierta
+    perdida = cotizacion(CLIENTES[1][0], [(PRODUCTOS[0][0], 5)])        # Carmen
+    llamar("PATCH", f"/v1/quotes/cancel/{perdida}", {})
+    cotizacion(CLIENTES[1][0], [(PRODUCTOS[1][0], 10)])                # Carmen, abierta
+    llamar("PATCH", f"/v1/sales-reps/customers/{cliente(CLIENTES[1][0])}/seller",
+           {"seller": empleado("Pedro"), "reason": "Pedro toma la zona Este"})
+
+
 ESTADOS = {"base": base, "fichas": fichas, "cartera": cartera, "caja": caja, "ventas": ventas,
-           "cobradas": cobradas, "salida": salida, "liquidada": liquidada, "nomina": nomina}
+           "cobradas": cobradas, "reportes": reportes, "salida": salida, "liquidada": liquidada, "nomina": nomina}
 
 if __name__ == "__main__":
     TOKEN = entrar("admin", "admin")
