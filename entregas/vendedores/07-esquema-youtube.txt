@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Vendedores · El esquema de comisión
+
+DESCRIPCIÓN
+============================================================
+Cómo se crea el plan de comisión de los vendedores: sobre qué se calcula, cuándo se gana (al cobrar, en cada cobro o al emitir), qué pasa con lo que se cobra tarde, el porcentaje general y por producto, la vigencia y a qué vendedores aplica.
+
+⏱️ CAPÍTULOS
+00:00  Qué es un esquema
+00:55  Cuánto se paga
+01:49  A quién y desde cuándo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Sobre qué se calcula la comisión y cuándo se gana
+• Pagar menos por lo que se cobra muy vencido
+• Porcentaje general y porcentaje por producto
+• Vigencia y vendedores del esquema
+
+⚠️ ERRORES COMUNES
+• Comisionar sobre el total con ITBIS: el ITBIS nunca se comisiona
+• Poner a un vendedor en dos esquemas vigentes a la vez
+• Cambiar cuándo se gana en un esquema que ya generó comisiones
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:34
+
+TRANSCRIPCIÓN
+============================================================
+Un vendedor con ficha puede figurar en las ventas, pero solo cobra comisión si está en un esquema. Los esquemas están en Ventas, Comisiones, pestaña Esquemas. Recojo el menú. Pulso Nuevo esquema. Se abre el formulario del esquema, con sus secciones. Le pongo nombre: Vendedores de ruta, para los que visitan a los clientes. Ahora, el campo Se calcula sobre ofrece tres bases: el total de la venta sin ITBIS, el costo de lo vendido o la utilidad. El ITBIS nunca se comisiona. Dejo el total de la venta. Debajo, Se gana dice cuándo nace la comisión. Al cobrar la factura completa, en cada cobro en proporción a lo cobrado, o al emitir la factura, antes de cobrar. Los esquemas nuevos proponen En cada cobro: cada abono del cliente comisiona la parte de la venta que paga. Lo dejo así.
+Sigue la sección Lo que se cobra tarde, donde se decide qué pasa con lo cobrado muy vencido. Elijo Con tasa reducida. En Días después del vencimiento pongo sesenta, que son dos meses. Y en el campo de la tasa reducida pongo uno punto cinco, menos de la mitad. Así, lo cobrado hasta sesenta días después del vencimiento comisiona completo, y lo que llegue más tarde, al uno punto cinco por ciento. En Cuánto, el Tipo es Porcentaje, y el porcentaje general, tres. Ahora una tasa especial para un producto: pulso Agregar producto. Busco la pintura en el catálogo; aparece la de galón, y la elijo. En su comisión le pongo cinco por ciento, porque es el producto que más interesa vender. Los demás productos usan el tres por ciento general.
+Por último, A quién y desde cuándo. En Vigente desde escribo el primero de agosto de dos mil veintiséis. Vigente hasta queda vacío. En Agregar vendedor busco a Luis. Aparece su ficha con el código, y lo agrego. Después busco a Carmen en el mismo campo; aparece, y también se agrega a la lista. Cada vendedor puede tener un solo esquema vigente: si ya estuviera en otro, el sistema no deja guardar. Pulso Guardar. El esquema aparece en la lista con su base, su porcentaje, la forma de ganarse y sus vendedores. Un esquema que ya generó comisiones no cambia cuándo se gana: se le pone fecha de fin y se crea otro.
