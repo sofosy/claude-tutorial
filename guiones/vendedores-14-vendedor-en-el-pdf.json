@@ -103,9 +103,9 @@
     },
     {
      "resaltar": ":text-is('Factura Estándar') >> xpath=ancestor::*[.//button][1]",
-     "durante_ms": 2500,
+     "durante_ms": 3000,
      "cursor": false,
-     "al_decir": "la factura usa Factura Estándar"
+     "al_decir": "y la factura usa"
     },
     {
      "click": ":text-is('Factura Estándar') >> xpath=ancestor::*[.//button][1]//button[@mattooltip='Ver el diseño (solo lectura)']",
