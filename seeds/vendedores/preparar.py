@@ -342,8 +342,17 @@ def reportes():
            {"seller": empleado("Pedro"), "reason": "Pedro toma la zona Este"})
 
 
+def plantillas():
+    """fichas + la empresa como una empresa cliente más. En la base sembrada la
+    Distribuidora es la empresa principal de la plataforma, y guardar una
+    plantilla suya pide «publicar a todas las empresas»: un aviso que ningún
+    cliente ve."""
+    fichas()
+    sql("UPDATE companies SET isCompanyMain=0 WHERE id=1")
+
+
 ESTADOS = {"base": base, "fichas": fichas, "cartera": cartera, "caja": caja, "ventas": ventas,
-           "cobradas": cobradas, "reportes": reportes, "salida": salida, "liquidada": liquidada, "nomina": nomina}
+           "cobradas": cobradas, "reportes": reportes, "plantillas": plantillas, "salida": salida, "liquidada": liquidada, "nomina": nomina}
 
 if __name__ == "__main__":
     TOKEN = entrar("admin", "admin")
