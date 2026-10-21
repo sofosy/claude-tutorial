@@ -1,0 +1,195 @@
+1
+00:00:03,000 --> 00:00:05,963
+Las comisiones no se pagan una por una:
+
+2
+00:00:05,820 --> 00:00:10,003
+al cierre del período se juntan en una liquidación por vendedor.
+
+3
+00:00:09,849 --> 00:00:12,975
+Estamos en Comisiones, pestaña Liquidaciones.
+
+4
+00:00:12,926 --> 00:00:14,054
+Recojo el menú.
+
+5
+00:00:13,890 --> 00:00:16,307
+Pulso Preparar liquidaciones.
+
+6
+00:00:16,153 --> 00:00:18,571
+El diálogo explica qué junta:
+
+7
+00:00:18,417 --> 00:00:21,021
+comisiones devengadas, notas de crédito,
+
+8
+00:00:20,879 --> 00:00:24,620
+reversos y saldos hasta el último día del período.
+
+9
+00:00:24,478 --> 00:00:29,496
+En el campo Período, de la lista elijo Octubre dos mil veintiséis.
+
+10
+00:00:29,448 --> 00:00:33,037
+El período es mensual, como lo configuró la empresa.
+
+11
+00:00:32,896 --> 00:00:35,314
+Confirmo con el botón Preparar.
+
+12
+00:00:35,207 --> 00:00:37,472
+Salen dos liquidaciones nuevas;
+
+13
+00:00:37,401 --> 00:00:38,251
+acepto.
+
+14
+00:00:38,131 --> 00:00:43,882
+Una de Luis, por setecientos diez pesos, y otra de Carmen, por ciento cincuenta.
+
+15
+00:00:43,774 --> 00:00:45,693
+Las dos están en Borrador.
+
+16
+00:00:46,131 --> 00:00:48,525
+Para revisarla, abro la de Luis.
+
+17
+00:00:48,442 --> 00:00:52,926
+Arriba están el período, la moneda y las fechas de cada paso.
+
+18
+00:00:52,807 --> 00:00:54,795
+Debajo, los totales:
+
+19
+00:00:54,689 --> 00:00:59,056
+comisiones, notas de crédito y reversos, saldos y ajustes,
+
+20
+00:00:58,902 --> 00:01:01,308
+el neto y lo que pagará la nómina.
+
+21
+00:01:01,236 --> 00:01:03,131
+Abajo, las líneas:
+
+22
+00:01:03,082 --> 00:01:07,161
+cada comisión con su documento, su cliente y su cobro.
+
+23
+00:01:07,007 --> 00:01:09,725
+Si hace falta, se agrega un ajuste.
+
+24
+00:01:09,572 --> 00:01:13,174
+A Luis se le reconoce un bono por abrir la ruta Norte:
+
+25
+00:01:13,021 --> 00:01:14,718
+pulso Agregar ajuste.
+
+26
+00:01:14,564 --> 00:01:16,575
+Se abre el ajuste para Luis.
+
+27
+00:01:16,457 --> 00:01:18,782
+En Monto escribo quinientos.
+
+28
+00:01:18,674 --> 00:01:21,986
+Un monto negativo serviría para descontar,
+
+29
+00:01:21,832 --> 00:01:26,826
+pero un descuento solo se compensa con comisiones, nunca con el salario.
+
+30
+00:01:26,662 --> 00:01:29,996
+En Motivo explico el bono, en pocas palabras,
+
+31
+00:01:29,819 --> 00:01:32,469
+para que quede claro en el estado de cuenta,
+
+32
+00:01:32,316 --> 00:01:35,233
+y con el botón lo agrego a la liquidación.
+
+33
+00:01:35,159 --> 00:01:41,781
+El ajuste aparece como una línea más, y el neto sube a mil doscientos diez pesos.
+
+34
+00:01:42,222 --> 00:01:46,417
+Con la liquidación revisada, pulso Enviar a aprobación.
+
+35
+00:01:46,275 --> 00:01:50,132
+Quien aprueba comisiones recibe un aviso en el sistema;
+
+36
+00:01:50,013 --> 00:01:50,897
+acepto.
+
+37
+00:01:50,780 --> 00:01:54,415
+Ahora, quien tiene el permiso pulsa Aprobar.
+
+38
+00:01:54,274 --> 00:01:57,144
+El diálogo resume lo que pagará la nómina:
+
+39
+00:01:57,013 --> 00:01:59,432
+mil doscientos diez pesos.
+
+40
+00:01:59,277 --> 00:02:03,576
+Sus comisiones quedan aprobadas y se registra la provisión contable.
+
+41
+00:02:03,400 --> 00:02:05,132
+Confirmo con Aprobar.
+
+42
+00:02:04,989 --> 00:02:09,497
+En un momento el sistema confirma la aprobación, y cierro el aviso.
+
+43
+00:02:09,355 --> 00:02:14,350
+La liquidación queda Aprobada, y en Provisión contable dice Provisionada:
+
+44
+00:02:14,266 --> 00:02:18,716
+un débito a gasto de comisiones y un crédito a comisiones por pagar,
+
+45
+00:02:18,574 --> 00:02:20,492
+en el mes en que se ganaron.
+
+46
+00:02:20,408 --> 00:02:22,269
+Dos reglas importantes:
+
+47
+00:02:22,185 --> 00:02:24,858
+nadie aprueba su propia liquidación,
+
+48
+00:02:24,716 --> 00:02:28,387
+y si el neto sale negativo no se descuenta del salario:
+
+49
+00:02:28,257 --> 00:02:30,070
+se arrastra a la siguiente.
