@@ -1,0 +1,159 @@
+1
+00:00:03,000 --> 00:00:08,053
+Las comisiones aprobadas en la liquidación no se cargan a mano en Nómina:
+
+2
+00:00:07,923 --> 00:00:09,992
+la nómina las recoge sola.
+
+3
+00:00:09,827 --> 00:00:14,670
+Este es el período de la segunda quincena de octubre, en Nómina, Períodos,
+
+4
+00:00:14,493 --> 00:00:15,971
+todavía en borrador.
+
+5
+00:00:15,945 --> 00:00:16,992
+Recojo el menú.
+
+6
+00:00:16,826 --> 00:00:19,071
+Arriba, los pasos del período:
+
+7
+00:00:18,951 --> 00:00:23,052
+borrador, calculado, aprobado, pagado y cerrado.
+
+8
+00:00:22,969 --> 00:00:24,724
+Abajo, el resumen:
+
+9
+00:00:24,571 --> 00:00:28,463
+tres empleados a pagar, con su salario base de la quincena.
+
+10
+00:00:28,332 --> 00:00:30,250
+Pulso Generar nómina.
+
+11
+00:00:30,120 --> 00:00:34,489
+Ahí está el cálculo de cada empleado, y la columna Comisiones:
+
+12
+00:00:34,370 --> 00:00:39,006
+setecientos diez pesos para Luis y ciento cincuenta para Carmen,
+
+13
+00:00:38,863 --> 00:00:41,130
+lo que se aprobó en sus liquidaciones.
+
+14
+00:00:40,965 --> 00:00:44,393
+Pedro no vendió, así que no tiene comisión.
+
+15
+00:00:44,826 --> 00:00:49,704
+Abro el detalle de Luis desde el menú de su fila, con Ver Detalle.
+
+16
+00:00:49,539 --> 00:00:51,667
+En Ingresos hay dos líneas:
+
+17
+00:00:51,548 --> 00:00:56,740
+el salario base de la quincena, diez mil pesos, y Comisiones por Ventas:
+
+18
+00:00:56,656 --> 00:00:59,932
+dos comisiones por setecientos diez pesos.
+
+19
+00:00:59,861 --> 00:01:04,448
+Una sola línea junta todas las comisiones aprobadas del vendedor.
+
+20
+00:01:04,295 --> 00:01:06,236
+Paso a Deducciones.
+
+21
+00:01:06,060 --> 00:01:09,742
+Para la ley, la comisión es salario ordinario:
+
+22
+00:01:09,612 --> 00:01:16,105
+el AFP y el seguro de salud se calculan sobre el total, salario más comisión,
+
+23
+00:01:15,941 --> 00:01:22,828
+y también cuenta para el ISR, la regalía, las vacaciones y las prestaciones.
+
+24
+00:01:23,282 --> 00:01:26,210
+Volvemos al período, ya calculado.
+
+25
+00:01:26,045 --> 00:01:30,193
+Cuando la nómina está revisada, pulso Aprobar nómina.
+
+26
+00:01:30,039 --> 00:01:35,289
+El sistema pide confirmar, porque después no se pueden modificar los cálculos;
+
+27
+00:01:35,182 --> 00:01:36,079
+confirmo.
+
+28
+00:01:35,914 --> 00:01:41,118
+Tras un momento, el sistema avisa que el período quedó aprobado, y acepto.
+
+29
+00:01:40,987 --> 00:01:45,007
+Desde aquí se crea la orden de pago, y cuando la nómina se paga,
+
+30
+00:01:44,888 --> 00:01:48,652
+las comisiones quedan pagadas, y la liquidación también.
+
+31
+00:01:49,099 --> 00:01:51,667
+Ahora miro el otro lado, en Ventas:
+
+32
+00:01:51,560 --> 00:01:53,037
+la liquidación de Luis.
+
+33
+00:01:52,907 --> 00:01:54,941
+Arriba sigue Aprobada;
+
+34
+00:01:54,788 --> 00:01:58,215
+el campo Pagada se llena cuando la nómina se paga.
+
+35
+00:01:58,039 --> 00:02:03,092
+En las líneas, la columna Nómina dice en qué período va cada comisión:
+
+36
+00:02:02,985 --> 00:02:05,344
+la quincena del dieciséis de octubre.
+
+37
+00:02:05,190 --> 00:02:08,165
+En el listado de Comisiones se lee igual,
+
+38
+00:02:08,011 --> 00:02:11,241
+como en el volante de la segunda quincena de octubre.
+
+39
+00:02:11,088 --> 00:02:14,341
+Así se sigue cada comisión de punta a punta:
+
+40
+00:02:14,188 --> 00:02:19,438
+de la factura al cobro, del cobro a la liquidación, y de la liquidación a la nómina.

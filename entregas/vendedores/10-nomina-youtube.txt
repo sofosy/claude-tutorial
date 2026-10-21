@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Vendedores · La comisión en la nómina
+
+DESCRIPCIÓN
+============================================================
+Cómo llega a la nómina la comisión aprobada en la liquidación: generar la nómina del período, la columna Comisiones, el volante del vendedor con su línea «Comisiones por Ventas», los descuentos de ley sobre la comisión y cómo queda la comisión en Ventas.
+
+⏱️ CAPÍTULOS
+00:00  Generar la nómina
+00:44  El volante del vendedor
+01:23  Aprobar y pagar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cómo recoge la nómina las comisiones aprobadas
+• La línea «Comisiones por Ventas» del volante
+• La comisión es salario ordinario: TSS, ISR y regalía
+• Cómo se ve en Ventas la comisión ya en nómina
+
+⚠️ ERRORES COMUNES
+• Cargar la comisión a mano en Nómina: llega sola desde la liquidación
+• Calcular la nómina antes de aprobar la liquidación
+• Pensar que la comisión no cotiza a la TSS
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:22
+
+TRANSCRIPCIÓN
+============================================================
+Las comisiones aprobadas en la liquidación no se cargan a mano en Nómina: la nómina las recoge sola. Este es el período de la segunda quincena de octubre, en Nómina, Períodos, todavía en borrador. Recojo el menú. Arriba, los pasos del período: borrador, calculado, aprobado, pagado y cerrado. Abajo, el resumen: tres empleados a pagar, con su salario base de la quincena. Pulso Generar nómina. Ahí está el cálculo de cada empleado, y la columna Comisiones: setecientos diez pesos para Luis y ciento cincuenta para Carmen, lo que se aprobó en sus liquidaciones. Pedro no vendió, así que no tiene comisión.
+Abro el detalle de Luis desde el menú de su fila, con Ver Detalle. En Ingresos hay dos líneas: el salario base de la quincena, diez mil pesos, y Comisiones por Ventas: dos comisiones por setecientos diez pesos. Una sola línea junta todas las comisiones aprobadas del vendedor. Paso a Deducciones. Para la ley, la comisión es salario ordinario: el AFP y el seguro de salud se calculan sobre el total, salario más comisión, y también cuenta para el ISR, la regalía, las vacaciones y las prestaciones.
+Volvemos al período, ya calculado. Cuando la nómina está revisada, pulso Aprobar nómina. El sistema pide confirmar, porque después no se pueden modificar los cálculos; confirmo. Tras un momento, el sistema avisa que el período quedó aprobado, y acepto. Desde aquí se crea la orden de pago, y cuando la nómina se paga, las comisiones quedan pagadas, y la liquidación también.
+Ahora miro el otro lado, en Ventas: la liquidación de Luis. Arriba sigue Aprobada; el campo Pagada se llena cuando la nómina se paga. En las líneas, la columna Nómina dice en qué período va cada comisión: la quincena del dieciséis de octubre. En el listado de Comisiones se lee igual, como en el volante de la segunda quincena de octubre. Así se sigue cada comisión de punta a punta: de la factura al cobro, del cobro a la liquidación, y de la liquidación a la nómina.

@@ -1,0 +1,175 @@
+1
+00:00:03,000 --> 00:00:05,278
+Empezamos en el panel de ventas.
+
+2
+00:00:05,193 --> 00:00:07,519
+Recojo el menú para ganar espacio.
+
+3
+00:00:07,400 --> 00:00:13,092
+Los reportes de vendedores están en Ventas, Reportes, en el Análisis de Ventas.
+
+4
+00:00:13,007 --> 00:00:15,739
+Arriba se elige el rango de fechas.
+
+5
+00:00:15,654 --> 00:00:20,974
+Quiero ver solo las ventas de hoy, así que escribo el veintiuno de octubre en Desde,
+
+6
+00:00:20,821 --> 00:00:22,681
+y pulso Actualizar.
+
+7
+00:00:22,574 --> 00:00:25,664
+Las tarjetas ya cuentan nada más lo de hoy:
+
+8
+00:00:25,512 --> 00:00:29,647
+tres facturas, por veintisiete mil ciento cuarenta pesos.
+
+9
+00:00:29,516 --> 00:00:34,953
+Conversión Cotización dice qué parte de las cotizaciones del rango se ganó,
+
+10
+00:00:34,847 --> 00:00:38,553
+es decir, pasó a orden de venta o a factura:
+
+11
+00:00:38,445 --> 00:00:41,397
+una de cuatro, el veinticinco por ciento.
+
+12
+00:00:41,267 --> 00:00:46,889
+Más abajo, el gráfico Ventas por Vendedor reparte lo facturado entre los vendedores
+
+13
+00:00:46,723 --> 00:00:47,864
+del documento:
+
+14
+00:00:47,734 --> 00:00:50,244
+Luis vendió más que Carmen.
+
+15
+00:00:50,677 --> 00:00:54,116
+El detalle está en la pestaña Reportes.
+
+16
+00:00:54,032 --> 00:00:57,495
+En Tipo de reporte elijo Ventas por Vendedor.
+
+17
+00:00:57,376 --> 00:00:59,759
+Una fila por vendedor del documento:
+
+18
+00:00:59,675 --> 00:01:05,715
+Luis con dos facturas y veintiún mil doscientos cuarenta pesos, y Carmen con una.
+
+19
+00:01:05,643 --> 00:01:09,151
+Las notas de crédito se restan para dar la venta neta,
+
+20
+00:01:09,033 --> 00:01:13,656
+y Sin ITBIS es la base sobre la que se suelen calcular las comisiones.
+
+21
+00:01:13,572 --> 00:01:16,048
+Se puede exportar o imprimir.
+
+22
+00:01:16,490 --> 00:01:18,606
+Paso al siguiente reporte.
+
+23
+00:01:18,522 --> 00:01:24,004
+Abro de nuevo Tipo de reporte, bajo por la lista y elijo el Embudo por Vendedor.
+
+24
+00:01:23,956 --> 00:01:27,442
+Mide las cotizaciones y las órdenes de cada vendedor.
+
+25
+00:01:27,450 --> 00:01:29,590
+Luis hizo dos cotizaciones:
+
+26
+00:01:29,506 --> 00:01:33,733
+una ganada, que pasó a orden de venta, y una todavía abierta,
+
+27
+00:01:33,626 --> 00:01:35,254
+que es lo que puede cerrar.
+
+28
+00:01:35,102 --> 00:01:39,191
+Carmen perdió una, que se canceló, y tiene otra abierta.
+
+29
+00:01:39,084 --> 00:01:41,477
+Conversión es ganadas sobre todas:
+
+30
+00:01:41,370 --> 00:01:44,031
+Luis, el cincuenta por ciento.
+
+31
+00:01:43,879 --> 00:01:46,771
+Cierre es ganadas sobre las ya decididas:
+
+32
+00:01:46,629 --> 00:01:51,102
+Luis no ha perdido ninguna, así que su cierre es del cien por ciento.
+
+33
+00:01:50,984 --> 00:01:55,606
+A la derecha, las órdenes confirmadas y lo que falta por facturar de ellas.
+
+34
+00:01:56,043 --> 00:02:02,152
+La cartera por cobrar también se lee por vendedor, en Cuentas por Cobrar, Análisis.
+
+35
+00:02:01,987 --> 00:02:06,680
+En Antigüedad de la cartera, Agrupar por tiene dos opciones de vendedor.
+
+36
+00:02:06,551 --> 00:02:08,632
+Elijo Vendedor del documento:
+
+37
+00:02:08,548 --> 00:02:10,222
+quién hizo cada venta.
+
+38
+00:02:10,115 --> 00:02:13,775
+Carmen tiene cinco mil novecientos pesos pendientes,
+
+39
+00:02:13,668 --> 00:02:16,584
+la factura del Colmado Germiva Este.
+
+40
+00:02:16,407 --> 00:02:18,894
+Pero ese cliente pasó después a Pedro.
+
+41
+00:02:18,752 --> 00:02:20,822
+Elijo Ejecutivo de cuenta:
+
+42
+00:02:20,680 --> 00:02:22,540
+el que lleva al cliente hoy.
+
+43
+00:02:22,409 --> 00:02:26,789
+Ahora esa misma deuda sale a nombre de Pedro, que es quien la va a cobrar.
+
+44
+00:02:26,705 --> 00:02:30,051
+La venta y su comisión siguen siendo de Carmen.

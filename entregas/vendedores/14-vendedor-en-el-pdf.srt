@@ -1,0 +1,111 @@
+1
+00:00:03,000 --> 00:00:08,134
+Lo que imprime la factura se decide en Configuración, Diseño de documentos.
+
+2
+00:00:08,108 --> 00:00:09,307
+Recojo el menú.
+
+3
+00:00:09,141 --> 00:00:11,639
+Cada documento tiene su plantilla.
+
+4
+00:00:11,509 --> 00:00:13,091
+Busco la de la factura:
+
+5
+00:00:12,961 --> 00:00:18,490
+escribo factura estándar en el buscador, y la lista se reduce a esa plantilla.
+
+6
+00:00:18,359 --> 00:00:23,343
+La factura usa Factura Estándar, que viene con el sistema y está en uso.
+
+7
+00:00:23,259 --> 00:00:24,550
+Abro su diseño.
+
+8
+00:00:24,420 --> 00:00:27,696
+Arriba avisa que es una plantilla del sistema:
+
+9
+00:00:27,612 --> 00:00:30,564
+se puede mirar y usar, pero no cambiar.
+
+10
+00:00:30,446 --> 00:00:36,079
+Para decidir qué personas salen en la factura, pulso Hacer una copia para editarla.
+
+11
+00:00:35,926 --> 00:00:41,339
+La ventana explica que la copia es de tu empresa y que la original no cambia.
+
+12
+00:00:41,313 --> 00:00:44,241
+Pulso Crear y abrir el diseño.
+
+13
+00:00:44,110 --> 00:00:48,386
+El sistema confirma que la copia quedó creada y en uso.
+
+14
+00:00:48,825 --> 00:00:53,901
+Ya estoy en la copia que acabo de crear, con el mismo diseño que la del sistema.
+
+15
+00:00:53,736 --> 00:00:59,102
+Es de tu empresa y, como dice la etiqueta de arriba, queda en uso para las facturas.
+
+16
+00:00:58,937 --> 00:01:02,085
+A la derecha está Personas en el documento.
+
+17
+00:01:01,944 --> 00:01:03,758
+Vendedor está encendido:
+
+18
+00:01:03,639 --> 00:01:08,320
+la factura imprime Vendedor, y el nombre del vendedor del documento.
+
+19
+00:01:08,167 --> 00:01:09,853
+Cajero está apagado;
+
+20
+00:01:09,722 --> 00:01:15,054
+lo enciendo, y ahora la factura del punto de venta dirá la caja y el cajero que
+
+21
+00:01:14,912 --> 00:01:15,576
+cobró.
+
+22
+00:01:15,457 --> 00:01:19,186
+Registrado por imprime quién hizo la factura en el sistema.
+
+23
+00:01:19,057 --> 00:01:24,040
+Cada persona sale solo si está encendida y la factura tiene ese dato.
+
+24
+00:01:23,932 --> 00:01:24,679
+Guardo.
+
+25
+00:01:24,537 --> 00:01:29,218
+Tras un momento, el sistema confirma que la plantilla quedó guardada.
+
+26
+00:01:29,087 --> 00:01:32,364
+Si apagas el vendedor, solo deja de imprimirse:
+
+27
+00:01:32,257 --> 00:01:36,544
+la factura lo sigue teniendo para las comisiones y los reportes.
+
+28
+00:01:36,426 --> 00:01:40,294
+El resultado se ve con el botón PDF real.

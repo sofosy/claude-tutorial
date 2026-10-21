@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Vendedores · Los reportes por vendedor
+
+DESCRIPCIÓN
+============================================================
+Cómo leer las ventas por vendedor: el resumen de Análisis de Ventas, el reporte Ventas por Vendedor, el Embudo por Vendedor con lo ganado, lo perdido y lo abierto, y la cartera por cobrar agrupada por vendedor del documento o por ejecutivo de cuenta.
+
+⏱️ CAPÍTULOS
+00:00  Análisis de Ventas
+00:50  Reportes
+01:56  Cartera por vendedor
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Filtrar el análisis de ventas por fecha
+• El reporte Ventas por Vendedor
+• El embudo: ganado, perdido, abierto, conversión y cierre
+• La cartera por vendedor del documento o por ejecutivo de cuenta
+
+⚠️ ERRORES COMUNES
+• Mirar el período completo con ventas sin vendedor que tapan a los vendedores
+• Confundir conversión con cierre
+• Cobrarle la cartera al vendedor del documento cuando el cliente ya tiene otro ejecutivo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:33
+
+TRANSCRIPCIÓN
+============================================================
+Empezamos en el panel de ventas. Recojo el menú para ganar espacio. Los reportes de vendedores están en Ventas, Reportes, en el Análisis de Ventas. Arriba se elige el rango de fechas. Quiero ver solo las ventas de hoy, así que escribo el veintiuno de octubre en Desde, y pulso Actualizar. Las tarjetas ya cuentan nada más lo de hoy: tres facturas, por veintisiete mil ciento cuarenta pesos. Conversión Cotización dice qué parte de las cotizaciones del rango se ganó, es decir, pasó a orden de venta o a factura: una de cuatro, el veinticinco por ciento. Más abajo, el gráfico Ventas por Vendedor reparte lo facturado entre los vendedores del documento: Luis vendió más que Carmen.
+El detalle está en la pestaña Reportes. En Tipo de reporte elijo Ventas por Vendedor. Una fila por vendedor del documento: Luis con dos facturas y veintiún mil doscientos cuarenta pesos, y Carmen con una. Las notas de crédito se restan para dar la venta neta, y Sin ITBIS es la base sobre la que se suelen calcular las comisiones. Se puede exportar o imprimir.
+Paso al siguiente reporte. Abro de nuevo Tipo de reporte, bajo por la lista y elijo el Embudo por Vendedor. Mide las cotizaciones y las órdenes de cada vendedor. Luis hizo dos cotizaciones: una ganada, que pasó a orden de venta, y una todavía abierta, que es lo que puede cerrar. Carmen perdió una, que se canceló, y tiene otra abierta. Conversión es ganadas sobre todas: Luis, el cincuenta por ciento. Cierre es ganadas sobre las ya decididas: Luis no ha perdido ninguna, así que su cierre es del cien por ciento. A la derecha, las órdenes confirmadas y lo que falta por facturar de ellas.
+La cartera por cobrar también se lee por vendedor, en Cuentas por Cobrar, Análisis. En Antigüedad de la cartera, Agrupar por tiene dos opciones de vendedor. Elijo Vendedor del documento: quién hizo cada venta. Carmen tiene cinco mil novecientos pesos pendientes, la factura del Colmado Germiva Este. Pero ese cliente pasó después a Pedro. Elijo Ejecutivo de cuenta: el que lleva al cliente hoy. Ahora esa misma deuda sale a nombre de Pedro, que es quien la va a cobrar. La venta y su comisión siguen siendo de Carmen.

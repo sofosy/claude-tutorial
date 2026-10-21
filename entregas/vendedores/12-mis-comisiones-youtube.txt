@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Vendedores · Mis comisiones
+
+DESCRIPCIÓN
+============================================================
+Lo que ve el vendedor con su propio usuario: la pestaña Mis comisiones con su ficha y sus liquidaciones, el detalle de la liquidación, el estado de cuenta con lo pendiente y el saldo por compensar, y por qué en Comisiones solo aparece lo suyo.
+
+⏱️ CAPÍTULOS
+00:00  Mis comisiones
+01:07  Estado de cuenta
+01:57  Solo lo suyo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dónde ve el vendedor sus comisiones
+• Qué dice cada liquidación y cuánto paga la nómina
+• El estado de cuenta: el rango, lo pendiente y el saldo por compensar
+• Por qué el vendedor solo ve lo suyo
+
+⚠️ ERRORES COMUNES
+• Darle al vendedor un rol que ve las comisiones de todos
+• Crear el usuario del vendedor sin enlazarlo a su empleado y su ficha
+• Leer «Comisiones del rango» como lo que falta por cobrar: eso es «Pendiente hoy»
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:31
+
+TRANSCRIPCIÓN
+============================================================
+Luis Gómez es vendedor y entra a Germiva con su propio usuario, con el rol Vendedor. Recojo el menú para ganar espacio. En Ventas, Comisiones, la pestaña Mis comisiones es su página. Arriba, su ficha: ve cero cero cero tres, Luis Gómez Díaz. Debajo, sus liquidaciones, una por período. La de octubre tiene un neto de setecientos diez pesos y está aprobada. La columna A pagar es lo que la nómina le va a pagar. Abro la liquidación para ver de dónde sale.
+Es la misma liquidación que revisó y aprobó el supervisor, pero Luis solo puede leerla: no tiene botones para cambiarla. Arriba, el período, octubre, y quién la aprobó. A pagar por nómina: setecientos diez pesos. Y en las líneas, cada comisión con su documento, su cliente, la base cobrada y la tasa: quinientos sesenta pesos por el cobro de la Ferretería del Norte y ciento cincuenta por el abono de la Constructora Ciudad. Vuelvo a Mis comisiones.
+Debajo está su estado de cuenta. Comisiones del rango suma lo que generó entre las dos fechas, sin lo rechazado ni lo anulado. Pagado en el rango es lo que la nómina ya le pagó. Pendiente hoy es lo que todavía no cobra, sin importar el rango: devengado, en liquidación o aprobado. Y Saldo por compensar aparece cuando una nota de crédito deja un negativo: se compensa con comisiones futuras, nunca con el salario. Cambio el rango a septiembre: escribo el uno de septiembre, y hasta el treinta de septiembre, para mirar solo ese mes. Con las dos fechas puestas, pulso Consultar. El rango queda en cero, porque Luis no tuvo comisiones en septiembre, pero lo pendiente sigue en setecientos diez. El estado de cuenta se descarga en PDF o en Excel.
+Ahora miro el listado general de comisiones. Paso a la pestaña Comisiones. Es el mismo listado que usa el administrador, pero Luis solo ve sus dos comisiones aprobadas, por setecientos diez pesos. Las de Carmen no aparecen. Lo decide el rol Vendedor, que tiene el alcance Propios: cada vendedor ve sus comisiones, sus liquidaciones y su estado de cuenta, nunca los de otro. Para que esto funcione, el empleado necesita su usuario y su ficha de vendedor, como vimos al principio de la serie.

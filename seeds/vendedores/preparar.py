@@ -104,7 +104,9 @@ def crear_empleados():
         sql(f"UPDATE partners SET tin='{cedula}' WHERE id={e['id']}")
         llamar("POST", "/v1/payroll/employee-salaries", {
             "employee": e["id"], "baseSalary": salario, "payrollFrequency": "biweekly",
-            "paymentType": "fixed", "effectiveDate": "2026-08-01"})
+            "paymentType": "fixed", "effectiveDate": "2026-08-01",
+            # Banco y cuenta: sin ellos el formulario del salario no deja guardar.
+            "paymentMethod": "bank_transfer", "bank": 1, "accountNumber": f"7955{cedula[-6:]}"})
 
 
 def ubicacion():
@@ -272,6 +274,19 @@ def liquidada():
     periodo_nomina()
 
 
+def salida():
+    """cobradas + Carmen renuncia ayer y su liquidación se aprueba después: su
+    comisión cae en la bandeja «Comisiones de vendedores que ya salieron»."""
+    cobradas()
+    ayer = HOY - dt.timedelta(days=1)
+    llamar("PATCH", f"/v1/employees/{empleado('Carmen')}", {
+        "terminationDate": str(ayer), "terminationReason": "resignation"})
+    r = llamar("POST", "/v1/commission-settlements/prepare", {"periodDate": str(HOY)})
+    for sid in r["settlementIds"]:
+        llamar("POST", f"/v1/commission-settlements/{sid}/submit", {})
+        llamar("POST", f"/v1/commission-settlements/{sid}/approve", {"comments": "Revisada con el supervisor"})
+
+
 def quincena():
     if HOY.day <= 15:
         return HOY.replace(day=1), HOY.replace(day=15)
@@ -280,6 +295,13 @@ def quincena():
 
 
 def periodo_nomina():
+    # Los empleados de salario mensual de la base sembrada (suspendidos o con
+    # contrato vencido) salían como «no se pudieron calcular» en la quincena:
+    # no son parte de la serie y se dejan fuera para que el video muestre solo
+    # a los vendedores.
+    sql("UPDATE partners SET deleted_at=NOW() WHERE company_id=1 AND id IN ("
+        "SELECT employee_id FROM employee_salaries WHERE isActive=1 AND deleted_at IS NULL "
+        "AND payroll_frequency='monthly')")
     ini, fin = quincena()
     return llamar("POST", "/v1/payroll-periods", {
         "code": f"Q{ini:%Y%m%d}", "name": f"Segunda quincena de octubre {ini.year}",
@@ -293,8 +315,46 @@ def nomina():
     llamar("POST", f"/v1/payroll-periods/{pid}/calculate")
 
 
+def cotizacion(nombre_cliente, lineas):
+    """Cotización en DOP; el vendedor sale del ejecutivo del cliente."""
+    q = llamar("POST", "/v1/quotes", {
+        "partner": cliente(nombre_cliente), "currency": DOP, "ncfType": B01, "incomeType": 1,
+        "expiryDate": str(HOY + dt.timedelta(days=15)),
+        "details": [{"product": producto(n), "quantity": c} for n, c in lineas]})
+    return q["quoteNumber"]
+
+
+def reportes():
+    """ventas (sin cobrar) + cotizaciones y una orden para el embudo, y el
+    Colmado del Este pasa a Pedro: su factura sigue siendo de Carmen (vendedor
+    del documento) pero el ejecutivo de cuenta ya es Pedro."""
+    ventas()
+    ganada = cotizacion(CLIENTES[0][0], [(PRODUCTOS[0][0], 12)])        # Luis
+    orden = llamar("POST", f"/v1/quotes/convert-to-order/{ganada}", {})
+    # La orden nace en borrador y un borrador no es pedido en firme: se
+    # confirma para que el embudo la cuente como orden por facturar.
+    llamar("PATCH", f"/v1/orders/{orden['orderId']}/status/CONFIRMED", {})
+    cotizacion(CLIENTES[2][0], [(PRODUCTOS[1][0], 40)])                # Luis, abierta
+    perdida = cotizacion(CLIENTES[1][0], [(PRODUCTOS[0][0], 5)])        # Carmen
+    llamar("PATCH", f"/v1/quotes/cancel/{perdida}", {})
+    cotizacion(CLIENTES[1][0], [(PRODUCTOS[1][0], 10)])                # Carmen, abierta
+    llamar("PATCH", f"/v1/sales-reps/customers/{cliente(CLIENTES[1][0])}/seller",
+           {"seller": empleado("Pedro"), "reason": "Pedro toma la zona Este"})
+
+
+def plantillas():
+    """fichas + la Distribuidora como una empresa cliente más. En la base
+    sembrada es la empresa principal de la plataforma y dueña de las plantillas
+    del sistema: guardar una plantilla suya pediría «publicar a todas las
+    empresas», un aviso que ningún cliente ve. La empresa 2 pasa a ser la
+    principal y la dueña de esas plantillas."""
+    fichas()
+    sql("UPDATE companies SET isCompanyMain=(id=2) WHERE id IN (1, 2)")
+    sql("UPDATE document_templates SET company_id=2 WHERE company_id=1")
+
+
 ESTADOS = {"base": base, "fichas": fichas, "cartera": cartera, "caja": caja, "ventas": ventas,
-           "cobradas": cobradas, "liquidada": liquidada, "nomina": nomina}
+           "cobradas": cobradas, "reportes": reportes, "plantillas": plantillas, "salida": salida, "liquidada": liquidada, "nomina": nomina}
 
 if __name__ == "__main__":
     TOKEN = entrar("admin", "admin")

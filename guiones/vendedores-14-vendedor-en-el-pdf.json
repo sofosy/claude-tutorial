@@ -1,0 +1,222 @@
+{
+ "titulo": "Vendedores · El vendedor en el PDF",
+ "descripcion": "Cómo decidir qué personas imprime la factura: copiar la plantilla del sistema en Diseño de documentos y usar los interruptores de Personas en el documento (vendedor, cajero y registrado por).",
+ "_comentario": "Video 14 de la serie Vendedores. setup: preparar.sh plantillas (fichas + la Distribuidora como empresa cliente: la empresa 2 pasa a ser la principal y la dueña de las plantillas del sistema, para que guardar no pida «publicar a todas las empresas»). El PDF real no se abre: el navegador sin pantalla no pinta el visor de PDF; cada interruptor dice la línea exacta que imprime.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
+  "velocidad": "+0%"
+ },
+ "pronunciacion": {
+  "V-0001": "ve cero cero cero uno",
+  "V-0002": "ve cero cero cero dos",
+  "V-0003": "ve cero cero cero tres",
+  "API": "a-pe-i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "TSS": "te-ese-ese",
+  "CxC": "ce-por-ce",
+  "AFP": "a-efe-pe",
+  "SFS": "ese-efe-ese",
+  "ISR": "i-ese-erre",
+  "LC-000002": "ele ce dos"
+ },
+ "privacidad": {
+  "_perfil": "Datos ficticios sembrados por seeds/vendedores (RNC y cédulas 130555/402555, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/document-templates",
+  "esperar": ":text('Factura Estándar')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/vendedores/preparar.sh plantillas"
+ },
+ "aprenderas": [
+  "Dónde se diseña la factura",
+  "Por qué se copia la plantilla del sistema",
+  "Los interruptores de Personas en el documento",
+  "Que apagar el vendedor en el PDF no lo quita de la factura"
+ ],
+ "errores_comunes": [
+  "Buscar el interruptor en la plantilla del sistema: primero se hace la copia",
+  "Pensar que apagar el vendedor en el PDF le quita la comisión",
+  "Encender el cajero en una factura que no pasa por caja: sin ese dato no se imprime"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-copia",
+   "capitulo": "La plantilla de la factura",
+   "rotulo": "Copiar la plantilla del sistema",
+   "ruta": "Configuración › Diseño de documentos",
+   "texto_pantalla": "Las del sistema se miran; las copias se editan",
+   "navegar": "/document-templates",
+   "narracion": "Lo que imprime la factura se decide en Configuración, Diseño de documentos. Recojo el menú. Cada documento tiene su plantilla. Busco la de la factura: escribo factura estándar en el buscador, y la lista se reduce a esa plantilla. La factura usa Factura Estándar, que viene con el sistema y está en uso. Abro su diseño. Arriba avisa que es una plantilla del sistema: se puede mirar y usar, pero no cambiar. Para decidir qué personas salen en la factura, pulso Hacer una copia para editarla. La ventana explica que la copia es de tu empresa y que la original no cambia. Pulso Crear y abrir el diseño. El sistema confirma que la copia quedó creada y en uso.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has-text('Buscar documento') input",
+      "texto": "Factura Estándar"
+     },
+     "al_decir": "escribo factura estándar"
+    },
+    {
+     "resaltar": ":text-is('Factura Estándar') >> xpath=ancestor::*[.//button][1]",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "La factura usa"
+    },
+    {
+     "click": ":text-is('Factura Estándar') >> xpath=ancestor::*[.//button][1]//button[@mattooltip='Ver el diseño (solo lectura)']",
+     "al_decir": "Abro su diseño"
+    },
+    {
+     "resaltar": ".notice:has-text('del sistema')",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Arriba avisa"
+    },
+    {
+     "click": "button:has-text('Hacer una copia para editarla')",
+     "al_decir": "pulso Hacer una copia"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "La ventana explica"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Crear y abrir el diseño')",
+     "al_decir": "Pulso Crear y abrir"
+    },
+    {
+     "resaltar": "mat-snack-bar-container, .mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "cursor": false,
+     "al_decir": "El sistema confirma que la copia"
+    }
+   ]
+  },
+  {
+   "id": "02-personas",
+   "capitulo": "Personas en el documento",
+   "rotulo": "Vendedor, cajero y registrado por",
+   "ruta": "Configuración › Diseño de documentos › Factura Estándar (copia)",
+   "texto_pantalla": "Cada interruptor dice la línea que imprime",
+   "narracion": "Ya estoy en la copia que acabo de crear, con el mismo diseño que la del sistema. Es de tu empresa y, como dice la etiqueta de arriba, queda en uso para las facturas. A la derecha está Personas en el documento. Vendedor está encendido: la factura imprime Vendedor, y el nombre del vendedor del documento. Cajero está apagado; lo enciendo, y ahora la factura del punto de venta dirá la caja y el cajero que cobró. Registrado por imprime quién hizo la factura en el sistema. Cada persona sale solo si está encendida y la factura tiene ese dato. Guardo. Tras un momento, el sistema confirma que la plantilla quedó guardada. Si apagas el vendedor, solo deja de imprimirse: la factura lo sigue teniendo para las comisiones y los reportes. El resultado se ve con el botón PDF real.",
+   "acciones": [
+    {
+     "resaltar": ":text('En uso') >> nth=0",
+     "durante_ms": 4000,
+     "cursor": false,
+     "al_decir": "como dice la etiqueta"
+    },
+    {
+     "resaltar": "[data-testid=person-toggles]",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "Personas en el documento"
+    },
+    {
+     "resaltar": ".asset-row:has([data-testid=person-toggle-printSeller])",
+     "durante_ms": 5500,
+     "cursor": false,
+     "al_decir": "Vendedor está encendido"
+    },
+    {
+     "resaltar": ".asset-row:has([data-testid=person-toggle-printCashier])",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "Cajero está apagado"
+    },
+    {
+     "click": "[data-testid=person-toggle-printCashier]",
+     "al_decir": "lo enciendo"
+    },
+    {
+     "resaltar": ".asset-row:has([data-testid=person-toggle-printCashier])",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "la caja y el cajero"
+    },
+    {
+     "resaltar": ".asset-row:has([data-testid=person-toggle-printRegisteredBy])",
+     "durante_ms": 4500,
+     "cursor": false,
+     "al_decir": "Registrado por imprime"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "Guardo"
+    },
+    {
+     "resaltar": "mat-snack-bar-container, .mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "cursor": false,
+     "al_decir": "el sistema confirma"
+    },
+    {
+     "resaltar": ".asset-row:has([data-testid=person-toggle-printSeller])",
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "Si apagas el vendedor"
+    },
+    {
+     "resaltar": "mat-button-toggle:has-text('PDF real')",
+     "durante_ms": 3500,
+     "cursor": false,
+     "al_decir": "el botón PDF real"
+    }
+   ]
+  }
+ ]
+}
