@@ -1,0 +1,208 @@
+{
+ "titulo": "Cobros · Cuando el cliente retiene impuestos",
+ "descripcion": "Cómo se registra un cobro cuando el cliente retiene ITBIS o ISR: el efectivo que entra, la retención que salda el resto de la factura y las reglas que evitan repetirla.",
+ "_comentario": "Video 04 de la serie Cobros. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/payments",
+  "esperar": "button:has-text('Registrar cobro')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/cobros/preparar.sh base"
+ },
+ "aprenderas": [
+  "Qué es una retención del cliente y en qué se diferencia de un descuento",
+  "Registrar ITBIS retenido en un cobro",
+  "Cómo se calcula el efectivo a cobrar",
+  "Cuándo no se debe registrar la retención"
+ ],
+ "errores_comunes": [
+  "Tratar una retención como si fuera un descuento comercial",
+  "Registrar la retención dos veces",
+  "Inventar la tasa sin consultar al contador"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-concepto",
+   "capitulo": "Qué es una retención",
+   "rotulo": "La retención del cliente",
+   "ruta": "Ventas › Cobros",
+   "texto_pantalla": "Una retención no es un descuento",
+   "navegar": "/sales/payments",
+   "narracion": "Estamos en Ventas, en la pantalla de Cobros. Recojo el menú. A veces el cliente retiene una parte del impuesto cuando te paga. Por ejemplo, la Constructora Germiva Ciudad debe once mil ochocientos pesos, y al pagar retiene quinientos cuarenta pesos de ITBIS, el impuesto sobre las ventas. Esa retención no es un descuento. Es impuesto que el cliente entrega directamente a la Dirección General de Impuestos Internos. Por eso no te llega a ti en dinero, pero cuenta como pago de la factura. Cuánto retiene cada cliente lo define tu contador, y el sistema solo registra lo que te informaron. Veamos cómo se registra.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "button:has-text('Registrar cobro')",
+     "durante_ms": 3000,
+     "al_decir": "debe once mil ochocientos",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Retención del cliente",
+      "texto": "El cliente retiene parte del impuesto y lo paga por ti a la DGII. No entra a tu caja, pero salda la factura."
+     },
+     "durante_ms": 7000,
+     "al_decir": "Esa retención no es"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Consulta a tu contador",
+      "texto": "El porcentaje que retiene cada cliente lo define la norma fiscal y tu contador, no el sistema."
+     },
+     "durante_ms": 6500,
+     "al_decir": "lo define tu contador"
+    }
+   ]
+  },
+  {
+   "id": "02-registro",
+   "capitulo": "Registrar el cobro",
+   "rotulo": "Cobro con retención",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Efectivo más retención salda la factura",
+   "navegar": "/sales/payments",
+   "narracion": "Veamos el registro, paso a paso. Pulso Registrar cobro. Primero busco la factura. Escribo Constructora, que es el nombre del cliente. En la lista aparece su factura, y la elijo. Fíjate en la sección Retenciones del cliente. Aquí escribo el ITBIS retenido: quinientos cuarenta pesos, la parte que el cliente retiene. Mira la nota que aparece debajo: la cuenta se salda por el efectivo más la retención. Y el monto a cobrar en efectivo baja a once mil doscientos sesenta. Elijo Transferencia, y anoto la referencia del depósito, para poder encontrarlo en el banco. Para terminar, presiono Registrar cobro. Si la factura ya declara la retención en sus líneas, el sistema no te deja repetirla: registra solo el dinero que entró.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "Pulso Registrar cobro"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[placeholder*='filtrar']",
+      "texto": "Constructora"
+     },
+     "al_decir": "Escribo Constructora"
+    },
+    {
+     "click": "mat-option >> nth=0",
+     "al_decir": "y la elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Retenciones del cliente') >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "Retenciones del cliente",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has(mat-label:text-is('ITBIS retenido')) input",
+      "texto": "540"
+     },
+     "al_decir": "ITBIS retenido"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Retenido') >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "Mira la nota",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container input[formcontrolname='amount']",
+     "durante_ms": 4000,
+     "al_decir": "baja a once mil",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Transferencia')",
+     "al_decir": "Elijo Transferencia"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='authorizationCode']",
+      "texto": "TRF-440013"
+     },
+     "al_decir": "anoto la referencia"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "presiono Registrar cobro"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "no te deja repetirla",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

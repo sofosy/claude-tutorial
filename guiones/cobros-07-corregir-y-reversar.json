@@ -1,0 +1,253 @@
+{
+ "titulo": "Cobros · Corregir un reparto y reversar un cobro",
+ "descripcion": "Cómo se corrige el reparto de un pago de varias facturas, cómo se reversa un cobro registrado por error y qué le pasa a la factura cuando se hace.",
+ "_comentario": "Video 07 de la serie Cobros. setup: preparar.sh cobrado.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/payments",
+  "esperar": "button:has-text('Registrar cobro')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/cobros/preparar.sh cobrado"
+ },
+ "aprenderas": [
+  "Por qué un recibo no se edita",
+  "Corregir el reparto de un pago de varias facturas",
+  "Reversar un cobro con su motivo",
+  "Qué pasa con el saldo de la factura al reversar"
+ ],
+ "errores_comunes": [
+  "Intentar editar un recibo en vez de corregirlo",
+  "Reversar sin escribir el motivo",
+  "Anular una factura que está dentro de un cobro vigente"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-corregir",
+   "capitulo": "Corregir el reparto",
+   "rotulo": "Corregir reparto",
+   "ruta": "Ventas › Cobros › Corregir reparto",
+   "texto_pantalla": "Mismo dinero, otro reparto",
+   "navegar": "/sales/payments",
+   "narracion": "Un cliente nos avisa que el reparto de su pago estaba mal. Estamos en Cobros. Recojo el menú. Un recibo no se edita: queda como constancia. Pero cuando el error es solo cómo se repartió el dinero entre las facturas, hay una vía directa. En el recibo de varias facturas pulso Corregir reparto, el icono de las flechas. La pantalla avisa que el dinero, el cliente, el método y la fecha no cambian: solo cuánto va a cada factura. Ahora cambio el reparto. En la segunda factura escribo mil ciento ochenta. Y en la tercera escribo dos mil seiscientos cuarenta. El total sigue siendo cinco mil, así que Por ubicar queda en cero. Pulso Corregir reparto y el sistema pide el motivo del cambio.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "tbody tr:has-text('Varias facturas')",
+     "durante_ms": 3500,
+     "al_decir": "Un recibo no se edita",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "tbody tr:has-text('Varias facturas') button:has(mat-icon:text-is('swap_horiz'))",
+      "tecla": "Enter"
+     },
+     "al_decir": "varias facturas pulso"
+    },
+    {
+     "resaltar": ":text('Estás corrigiendo') >> nth=0",
+     "durante_ms": 5500,
+     "al_decir": "La pantalla avisa",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "tbody tr >> nth=1 input",
+      "texto": "1180"
+     },
+     "al_decir": "En la segunda factura escribo"
+    },
+    {
+     "escribir": {
+      "sel": "tbody tr >> nth=2 input",
+      "texto": "2640"
+     },
+     "al_decir": "en la tercera escribo"
+    },
+    {
+     "resaltar": ":text('Por ubicar') >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "Por ubicar queda en cero",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Corregir reparto')",
+     "al_decir": "Corregir reparto y el sistema"
+    }
+   ]
+  },
+  {
+   "id": "02-motivo",
+   "capitulo": "El motivo y el resultado",
+   "rotulo": "Motivo de la corrección",
+   "ruta": "Ventas › Cobros",
+   "texto_pantalla": "El recibo viejo queda anulado",
+   "narracion": "El sistema pide el motivo, porque queda registrado en el historial del recibo. Escribo: el cliente aclaró el reparto, que es el motivo real del cambio. Con eso listo, pulso Corregir. Al confirmar, el recibo original queda anulado y se registra uno nuevo con el mismo dinero, repartido como indiqué. Todo ocurre en una sola operación: si algo falla, el recibo original no se toca. Volvemos al listado. El recibo anterior aparece como Anulado, y el nuevo aparece como Vigente. En sus notas dice a qué recibo corrige.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-dialog-container textarea, mat-dialog-container input",
+      "texto": "El cliente aclaró el reparto"
+     },
+     "al_decir": "Escribo"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Corregir')",
+     "al_decir": "pulso Corregir"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Una sola operación",
+      "texto": "Se anula el recibo viejo y se crea el nuevo juntos. Si algo falla, el recibo original no se toca."
+     },
+     "durante_ms": 6000,
+     "al_decir": "una sola operación"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "Volvemos al listado",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr:has-text('Anulado')",
+     "durante_ms": 4000,
+     "al_decir": "aparece como Anulado",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr:has-text('Corrige el recibo')",
+     "durante_ms": 4500,
+     "al_decir": "dice a qué recibo",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-reversar",
+   "capitulo": "Reversar un cobro",
+   "rotulo": "Reversar cobro",
+   "ruta": "Ventas › Cobros › Reversar cobro",
+   "texto_pantalla": "Anular un cobro registrado por error",
+   "navegar": "/sales/payments",
+   "narracion": "Ahora un cobro que se registró por error: el pago del Colmado Germiva Este se aplicó a la factura equivocada. Busco su recibo, y pulso Reversar cobro, el icono de la flecha hacia atrás. El sistema aclara que el recibo quedará anulado y que el saldo volverá a la cartera. Escribo el motivo: cobro aplicado a la factura equivocada. Es un texto libre, y queda guardado junto al recibo anulado. Para confirmar, pulso Reversar. El recibo pasa a Anulado, la factura vuelve a quedar pendiente, y se reversa también su asiento contable. Después se registra el cobro de nuevo, ahora a la factura correcta. Mientras una factura esté dentro de una liquidación vigente, tampoco se puede anular: primero se reversa el cobro.",
+   "acciones": [
+    {
+     "presionar": {
+      "sel": "tbody tr:has-text('Colmado') button:has(mat-icon:text-is('undo'))",
+      "tecla": "Enter"
+     },
+     "al_decir": "Reversar cobro, el icono"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('quedará ANULADO') >> nth=0",
+     "durante_ms": 5500,
+     "al_decir": "El sistema aclara",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container textarea, mat-dialog-container input",
+      "texto": "Cobro aplicado a la factura equivocada"
+     },
+     "al_decir": "Escribo el motivo"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Reversar')",
+     "al_decir": "confirmar pulso Reversar"
+    },
+    {
+     "resaltar": "tbody tr:has-text('Colmado')",
+     "durante_ms": 4500,
+     "al_decir": "El recibo pasa a Anulado",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Facturas dentro de un cobro",
+      "texto": "Mientras una factura esté en un cobro de varias facturas vigente, no se puede anular: reversa primero el cobro."
+     },
+     "durante_ms": 6500,
+     "al_decir": "tampoco se puede anular"
+    }
+   ]
+  }
+ ]
+}
