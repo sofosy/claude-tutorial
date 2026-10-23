@@ -229,7 +229,7 @@
      "cursor": false
     },
     {
-     "click": "tr:has-text('Consumidor Final') button >> nth=2",
+     "click": "tr:has-text('Consumidor Final') mat-icon:text-is('edit')",
      "al_decir": "con el lápiz"
     },
     {
@@ -269,7 +269,7 @@
      "al_decir": "Busco el Colmado"
     },
     {
-     "click": "tr:has-text('Colmado Germiva Este') button >> nth=2",
+     "click": "tr:has-text('Colmado Germiva Este') mat-icon:text-is('edit')",
      "al_decir": "Pulso el lápiz"
     },
     {
