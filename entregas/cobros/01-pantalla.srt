@@ -1,0 +1,143 @@
+1
+00:00:03,100 --> 00:00:05,891
+Esta es la pantalla de Cobros, en Ventas.
+
+2
+00:00:06,560 --> 00:00:10,849
+Un cobro es el dinero que un cliente nos paga, y cada fila es un recibo.
+
+3
+00:00:11,516 --> 00:00:12,647
+Recojo el menú.
+
+4
+00:00:13,329 --> 00:00:16,082
+En la primera columna está el número de Recibo.
+
+5
+00:00:16,750 --> 00:00:18,698
+Luego, la Fecha del pago.
+
+6
+00:00:19,367 --> 00:00:22,800
+La columna N° Factura dice a qué factura se aplicó el cobro.
+
+7
+00:00:22,612 --> 00:00:26,536
+Y cuando un solo pago saldó varias facturas,
+
+8
+00:00:26,588 --> 00:00:30,638
+aquí aparece la etiqueta Varias facturas, como en el primer recibo.
+
+9
+00:00:31,306 --> 00:00:33,292
+Después viene el Cliente que pagó.
+
+10
+00:00:33,960 --> 00:00:35,884
+Luego, el Monto que entró.
+
+11
+00:00:36,564 --> 00:00:39,633
+El Estado Vigente quiere decir que el cobro está en pie;
+
+12
+00:00:39,747 --> 00:00:42,187
+un cobro reversado aparece como Anulado.
+
+13
+00:00:42,854 --> 00:00:45,156
+Y por último, el Método de pago:
+
+14
+00:00:45,232 --> 00:00:49,320
+transferencia, efectivo, tarjeta, cheque o depósito.
+
+15
+00:00:50,695 --> 00:00:52,379
+Arriba están los filtros.
+
+16
+00:00:53,048 --> 00:00:57,137
+Búsqueda encuentra un recibo por su número, su factura o su cliente.
+
+17
+00:00:57,804 --> 00:00:59,526
+Tipo empieza en Solo cobros;
+
+18
+00:00:59,603 --> 00:01:04,244
+también puedes ver Solo anticipos, que son pagos recibidos antes de facturar,
+
+19
+00:01:04,257 --> 00:01:05,061
+o Todos.
+
+20
+00:01:05,729 --> 00:01:08,673
+Y Cliente muestra solo los recibos de un cliente.
+
+21
+00:01:09,340 --> 00:01:12,069
+A la derecha están los dos botones para cobrar.
+
+22
+00:01:12,737 --> 00:01:15,378
+Registrar cobro cobra una sola factura.
+
+23
+00:01:16,045 --> 00:01:20,837
+Cobrar varias facturas reparte un solo pago entre varias facturas del mismo cliente.
+
+24
+00:01:21,506 --> 00:01:24,146
+Los dos se explican en los videos siguientes.
+
+25
+00:01:25,524 --> 00:01:28,480
+Cada recibo tiene sus acciones al final de la fila.
+
+26
+00:01:29,149 --> 00:01:32,317
+Imprimir recibo genera el comprobante para el cliente.
+
+27
+00:01:32,985 --> 00:01:35,149
+Ver detalle abre el cobro completo.
+
+28
+00:01:35,816 --> 00:01:39,387
+Corregir reparto solo aparece en los cobros de varias facturas.
+
+29
+00:01:40,055 --> 00:01:42,847
+Y Reversar cobro lo anula, con un motivo.
+
+30
+00:01:43,515 --> 00:01:45,539
+Abro el detalle del primer recibo.
+
+31
+00:01:46,207 --> 00:01:50,961
+Arriba están el recibo, el estado, el tipo, el cliente y la fecha.
+
+32
+00:01:51,629 --> 00:01:54,207
+En Formas de pago se ve cómo entró el dinero:
+
+33
+00:01:54,271 --> 00:01:56,836
+el método, la referencia y el monto.
+
+34
+00:01:57,504 --> 00:02:00,962
+Y en Documentos pagados, cuánto se aplicó a cada factura,
+
+35
+00:02:01,003 --> 00:02:03,631
+cuánto le queda y si quedó Saldada o Parcial.
+
+36
+00:02:04,311 --> 00:02:05,543
+Cierro el detalle.
