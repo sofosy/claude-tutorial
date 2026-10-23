@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Clientes · Contactos y direcciones
+
+DESCRIPCIÓN
+============================================================
+Cómo se agregan las personas de contacto y las direcciones de un cliente, y por qué la dirección de facturación importa para el país del cliente y los comprobantes de exportación.
+
+⏱️ CAPÍTULOS
+00:00  El contacto
+01:04  La dirección
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Abrir la ficha de un cliente y llegar a Contactos y direcciones
+• Agregar una persona de contacto con su correo y teléfono
+• Agregar la dirección de facturación y marcarla por defecto
+• Por qué el país del cliente sale de esa dirección
+
+⚠️ ERRORES COMUNES
+• Dejar al cliente sin dirección de facturación
+• Marcar como dirección por defecto una de envío
+• Guardar el cliente creyendo que ya guardó el contacto
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:07
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a completar la ficha de un cliente. Estamos en Ventas, en Clientes. Recojo el menú y busco la Ferretería. La lista se filtra sola mientras escribo, y queda la ficha que necesito. Pulso el lápiz para abrir su ficha. Abajo está Contactos y direcciones; lo abro. Esta sección se activa cuando el cliente ya está guardado, y cada cambio que haces aquí se guarda por su cuenta. Un contacto es una persona de la empresa, y para crearlo pulso Agregar contacto. Escribo el nombre: Rosa Peña, la encargada de las compras. El Tipo de contacto ya viene en Facturación, que es la persona a la que se le envían las facturas. Ahora escribo su correo electrónico, que es donde le llegarán las facturas. Y también su teléfono, que es el que se usa para llamarla. Con eso listo, pulso Guardar. El sistema confirma que el contacto quedó registrado, y acepto el aviso.
+Ahora la dirección. Fíjate en el aviso naranja: dice que no hay dirección de facturación y que eso afecta al E cuarenta y seis y al IR-2. Abro la pestaña Direcciones, y pulso Agregar dirección. El Tipo de dirección es Facturación. Ahora el País: lo busco escribiendo Dominicana, y en la lista aparecen varias coincidencias. Elijo República Dominicana. De la dirección de facturación sale el país del cliente, y sin país no se puede emitir un comprobante de exportación. Abro la Provincia, y elijo el Distrito Nacional. Escribo la calle y el número de la dirección, tal como va en sus documentos. Marco Dirección por defecto, para que los documentos usen esta. Pulso Guardar. El sistema confirma que la dirección se creó, y acepto el aviso. Cuando el cliente tiene una dirección de facturación, el aviso naranja desaparece.
