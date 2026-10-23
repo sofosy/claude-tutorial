@@ -129,6 +129,12 @@
      "al_decir": "lo abro"
     },
     {
+     "resaltar": "[role=tab]:has-text('Contactos')",
+     "durante_ms": 3000,
+     "al_decir": "Esta sección se activa",
+     "cursor": false
+    },
+    {
      "click": "button:has-text('Agregar contacto')",
      "al_decir": "pulso Agregar contacto"
     },
