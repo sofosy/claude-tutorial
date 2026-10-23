@@ -164,7 +164,7 @@
    "rotulo": "Clasificación",
    "ruta": "Ventas › Clientes › Nuevo Cliente",
    "texto_pantalla": "Categoría, tipo de cliente, plazo y comprobante",
-   "narracion": "Ahora la clasificación. Categoría es Empresa, porque tiene RNC. En Actúa como queda Cliente; si a esa misma empresa además le compras, se agrega Proveedor en la misma ficha. Tipo de cliente: abro la lista y elijo Mayorista. Sirve para retenciones y reportes, pero por sí solo no le da un precio ni un crédito. Lista de precios la dejo vacía, y entonces usa la lista por defecto. En Plazo de pago abro la lista y elijo treinta días: se cargará solo en las facturas nuevas de este cliente. Y Tipo de NCF por defecto es el comprobante que se propone al facturarle. Elijo el de crédito fiscal.",
+   "narracion": "Ahora la clasificación. Categoría es Empresa, porque tiene RNC. En Actúa como queda Cliente; si a esa misma empresa además le compras, se agrega Proveedor en la misma ficha. Tipo de cliente: abro la lista y elijo Mayorista. Sirve para retenciones y reportes, pero por sí solo no le da un precio ni un crédito. Lista de precios la dejo vacía, y entonces usa la lista por defecto. En Plazo de pago abro la lista y elijo treinta días: se cargará solo en las facturas nuevas de este cliente. Y Tipo de NCF por defecto es el comprobante que se propone al facturarle. Lo dejo vacío: se elige al hacer cada factura.",
    "acciones": [
     {
      "resaltar": "mat-form-field:has(mat-label:text-is('Categoría'))",

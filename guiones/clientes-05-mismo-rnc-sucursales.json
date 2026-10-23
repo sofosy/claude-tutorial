@@ -134,8 +134,20 @@
     },
     {
      "resaltar": "th:has-text('Cuenta')",
-     "durante_ms": 3500,
+     "durante_ms": 2500,
      "al_decir": "varias cuentas de cliente",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Razón social')",
+     "durante_ms": 2500,
+     "al_decir": "cada una con su propio saldo",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Zona')",
+     "durante_ms": 2500,
+     "al_decir": "y sus documentos",
      "cursor": false
     },
     {
@@ -152,7 +164,7 @@
    "rotulo": "Segunda sucursal",
    "ruta": "Ventas › Clientes › Nuevo Cliente",
    "texto_pantalla": "Mismo RNC, otro nombre comercial",
-   "narracion": "Creamos la segunda tienda. Pulso Nuevo Cliente. Escribo el mismo RNC, el de la empresa, que ya existe en el sistema. Mira el aviso debajo de la Razón social fiscal: este RNC ya tiene una cuenta, y esta será otra sucursal. El sistema trae la razón social de la empresa y la bloquea, porque es la misma para todas las sucursales. Lo que sí escribimos es el nombre de la tienda, que la distingue de las otras: Supermercado Germiva Oriental. El código de la cuenta lo genera el sistema al guardar. Pulso Guardar, y luego Aceptar el aviso.",
+   "narracion": "Creamos la segunda tienda. Pulso Nuevo Cliente. Escribo el mismo RNC, el de la empresa, que ya existe en el sistema. Mira el aviso debajo de la Razón social fiscal: este RNC ya tiene una cuenta, y esta será otra sucursal. El sistema trae la razón social de la empresa y la bloquea, porque es la misma para todas las sucursales. Lo que sí escribimos es el nombre de la tienda, que la distingue de las otras: Supermercado Germiva Oriental. El código de la cuenta lo genera el sistema al guardar. Pulso Guardar. El sistema avisa que a la cuenta le falta su dirección de facturación, algo que vemos en otro video. Acepto el aviso.",
    "acciones": [
     {
      "click": "button:has-text('Nuevo Cliente')",
@@ -192,11 +204,17 @@
     },
     {
      "click": "button:has-text('Guardar')",
-     "al_decir": "Pulso Guardar, y"
+     "al_decir": "Pulso Guardar. El"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 5500,
+     "al_decir": "avisa que a la cuenta",
+     "cursor": false
     },
     {
      "click": "mat-dialog-container button:has-text('Aceptar')",
-     "al_decir": "luego Aceptar"
+     "al_decir": "Acepto el aviso"
     }
    ]
   },
@@ -206,7 +224,7 @@
    "rotulo": "La cuenta guardada",
    "ruta": "Ventas › Clientes › Editar",
    "texto_pantalla": "RNC y razón social bloqueados",
-   "narracion": "La cuenta quedó creada, con su propio código. Mira que el RNC y la razón social aparecen bloqueados: pertenecen a toda la empresa, no a una sola sucursal. El código tampoco se puede cambiar. Lo propio de esta sucursal, que sí se edita, es su nombre, su zona, su plazo, su lista de precios y su vendedor. Una advertencia: el nombre no se puede repetir dentro del mismo RNC. Voy a intentar crear otra sucursal con el mismo nombre. Pulso Nuevo, que abre una ficha en blanco. Escribo el RNC de la empresa, el mismo de siempre. Ahora escribo el nombre de la tienda: Supermercado Germiva Oriental, igual que la que ya existe. Con eso listo, pulso Guardar, y el sistema la rechaza.",
+   "narracion": "La cuenta quedó creada, con su propio código. Mira que el RNC y la razón social aparecen bloqueados: pertenecen a toda la empresa, no a una sola sucursal. El código tampoco se puede cambiar. Lo propio de esta sucursal, que sí se edita, es su nombre, su zona, su plazo, su lista de precios y su vendedor. Una advertencia: el nombre no se puede repetir dentro del mismo RNC. Voy a intentar crear otra sucursal con el mismo nombre. Pulso Nuevo, que abre una ficha en blanco. Escribo el RNC de la empresa, el mismo de siempre. Ahora escribo el nombre de la tienda: Supermercado Germiva Oriental, igual que la que ya existe. Con eso listo, pulso Guardar, y el sistema la rechaza. El mensaje es claro: ya existe una cuenta de este RNC con ese nombre comercial, y pide indicar un nombre de sucursal diferente. Acepto el mensaje.",
    "acciones": [
     {
      "resaltar": "input[formcontrolname='documentNumber']",
@@ -253,6 +271,16 @@
     {
      "click": "button:has-text('Guardar')",
      "al_decir": "pulso Guardar, y el"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 5000,
+     "al_decir": "El mensaje es claro",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Acepto el mensaje"
     }
    ]
   }
