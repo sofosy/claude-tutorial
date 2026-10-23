@@ -1,0 +1,374 @@
+{
+ "titulo": "Clientes · Personas, extranjeros y casos especiales",
+ "descripcion": "Cómo se crea un cliente persona con cédula, un cliente del exterior con documento extranjero, qué es el Consumidor Final, cómo un mismo cliente puede ser también proveedor y qué pasa si intentas repetir una cédula.",
+ "_comentario": "Video 04 de la serie Clientes. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/partners",
+  "esperar": "th"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/clientes/preparar.sh base"
+ },
+ "aprenderas": [
+  "Crear una persona con cédula y qué es un contribuyente informal",
+  "Crear un cliente con documento extranjero",
+  "Qué es el Consumidor Final y por qué no se toca",
+  "Marcar a un cliente también como proveedor",
+  "Qué hace el sistema si repites una cédula"
+ ],
+ "errores_comunes": [
+  "Crear un segundo cliente con la misma cédula",
+  "Intentar cambiar el nombre del Consumidor Final",
+  "Usar crédito fiscal con un cliente informal"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-persona",
+   "capitulo": "Una persona con cédula",
+   "rotulo": "Cliente persona",
+   "ruta": "Ventas › Clientes › Nuevo Cliente",
+   "texto_pantalla": "Cédula y contribuyente informal",
+   "navegar": "/sales/partners",
+   "narracion": "Empecemos con una persona. Estamos en Ventas, en Clientes. Recojo el menú, y pulso Nuevo Cliente. En Categoría abro la lista y elijo Persona. Con eso, el tipo de documento cambia solo a Cédula. Ahora escribo la cédula, que lleva once dígitos, sin contar los guiones. El sistema la busca en el padrón. Esta es de demostración y no aparece, así que propone marcar Contribuyente informal: una persona que no está inscrita como contribuyente. A un cliente informal se le factura con comprobante de consumo, no con crédito fiscal. Después escribo el nombre del cliente: Ana Germiva Rosario. Ese es el nombre con el que aparecerá en sus facturas y en el listado. Cuando todo está listo, pulso Guardar. Y acepto el aviso de la dirección de facturación.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "click": "button:has-text('Nuevo Cliente')",
+     "al_decir": "pulso Nuevo Cliente"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Categoría')) mat-select",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('Persona')",
+     "al_decir": "elijo Persona"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Tipo de documento'))",
+     "durante_ms": 3500,
+     "al_decir": "cambia solo a Cédula",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='documentNumber']",
+      "texto": "40255500777"
+     },
+     "al_decir": "escribo la cédula"
+    },
+    {
+     "resaltar": "mat-checkbox:has-text('Contribuyente informal')",
+     "durante_ms": 5000,
+     "al_decir": "propone marcar",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='name']",
+      "texto": "Ana Germiva Rosario"
+     },
+     "al_decir": "escribo el nombre"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "pulso Guardar"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto el aviso"
+    }
+   ]
+  },
+  {
+   "id": "02-extranjero",
+   "capitulo": "Un cliente del exterior",
+   "rotulo": "Documento extranjero",
+   "ruta": "Ventas › Clientes › Nuevo Cliente",
+   "texto_pantalla": "Documento extranjero, sin padrón",
+   "navegar": "/sales/partners",
+   "narracion": "Ahora un cliente del exterior. Vuelvo a Clientes y pulso Nuevo Cliente. En Tipo de documento elijo Documento extranjero. Este tipo acepta un pasaporte o un identificador fiscal de su país, hasta cincuenta caracteres, y no se consulta en el padrón dominicano. Escribo el documento del cliente. Es un código de su país, y se guarda tal como lo escribes. Ahora el nombre del cliente: Hotel Germiva Internacional. Es el nombre con el que lo conocemos. Cuando está listo, pulso Guardar. Y acepto el aviso. Para este cliente la dirección de facturación es todavía más importante, porque del país depende el comprobante de exportación.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nuevo Cliente')",
+     "al_decir": "pulso Nuevo Cliente"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Tipo de documento')) mat-select",
+     "al_decir": "Tipo de documento elijo"
+    },
+    {
+     "click": "mat-option:has-text('Documento extranjero')",
+     "al_decir": "elijo Documento extranjero"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='documentNumber']",
+      "texto": "PA-9087123"
+     },
+     "al_decir": "Escribo el documento"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='name']",
+      "texto": "Hotel Germiva Internacional"
+     },
+     "al_decir": "Ahora el nombre"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "pulso Guardar. Y"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto el aviso"
+    }
+   ]
+  },
+  {
+   "id": "03-consumidor",
+   "capitulo": "El Consumidor Final",
+   "rotulo": "Consumidor Final",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Cliente de sistema: no se archiva ni se renombra",
+   "navegar": "/sales/partners",
+   "narracion": "En el listado hay un cliente que no creaste: el Consumidor Final. Lo busco. La lista se filtra mientras escribo. Es el cliente de las facturas sin cliente identificado, por ejemplo una venta rápida en mostrador. Fíjate que no tiene el botón de archivar. Abro su ficha con el lápiz. El sistema avisa que su nombre no se puede modificar, y el campo del nombre aparece bloqueado. Por eso no hace falta crear otro cliente para las ventas sin identificar: en la factura se deja el cliente vacío, y el sistema usa este.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "Consumidor"
+     },
+     "al_decir": "Lo busco"
+    },
+    {
+     "resaltar": "tr:has-text('Consumidor Final') td >> nth=1",
+     "durante_ms": 3500,
+     "al_decir": "cliente de las facturas",
+     "cursor": false
+    },
+    {
+     "resaltar": "tr:has-text('Consumidor Final') button >> nth=3",
+     "durante_ms": 4000,
+     "al_decir": "no tiene el botón",
+     "cursor": false
+    },
+    {
+     "click": "tr:has-text('Consumidor Final') button >> nth=2",
+     "al_decir": "con el lápiz"
+    },
+    {
+     "resaltar": ":text('Consumidor Final') >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "El sistema avisa",
+     "cursor": false
+    },
+    {
+     "resaltar": "input[formcontrolname='name']",
+     "durante_ms": 4500,
+     "al_decir": "aparece bloqueado",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Cancelar')",
+     "durante_ms": 3500,
+     "al_decir": "se deja el cliente vacío",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-proveedor",
+   "capitulo": "Cliente y proveedor",
+   "rotulo": "Cliente y proveedor",
+   "ruta": "Ventas › Clientes › Editar",
+   "texto_pantalla": "Actúa como: Cliente y Proveedor",
+   "navegar": "/sales/partners",
+   "narracion": "A veces un cliente también es proveedor: le vendes y le compras. No se crea otra ficha: se marca en la misma. Busco el Colmado Germiva Este. La lista se filtra mientras escribo. Pulso el lápiz para abrir su ficha. En Actúa como, además de Cliente, agrego Proveedor. Al marcarlo, aparece una sección nueva: Condiciones del proveedor, con el plazo de pago y el límite de crédito. Esas condiciones describen lo que tú le puedes deber a ese proveedor; no son el crédito que le das como cliente. Guardo la ficha. El sistema confirma que el cliente se actualizó, y acepto. Ahora aparece en las dos listas: en Clientes, de Ventas, y en Proveedores, de Compras.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "Colmado"
+     },
+     "al_decir": "Busco el Colmado"
+    },
+    {
+     "click": "tr:has-text('Colmado Germiva Este') button >> nth=2",
+     "al_decir": "Pulso el lápiz"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Actúa como')) mat-select",
+     "al_decir": "En Actúa como"
+    },
+    {
+     "click": "mat-option:has-text('Proveedor')",
+     "al_decir": "agrego Proveedor"
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     }
+    },
+    {
+     "resaltar": ":text('Condiciones del proveedor') >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "sección nueva",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "Guardo la ficha"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3500,
+     "al_decir": "confirma que el cliente",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "y acepto"
+    },
+    {
+     "resaltar": ":text('Condiciones del proveedor') >> nth=0",
+     "durante_ms": 3000,
+     "al_decir": "las dos listas",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "05-duplicado",
+   "capitulo": "Repetir una cédula",
+   "rotulo": "Cédula repetida",
+   "ruta": "Ventas › Clientes › Nuevo Cliente",
+   "texto_pantalla": "Un cliente por documento",
+   "navegar": "/sales/partners",
+   "narracion": "Una última regla. Una persona con cédula tiene una sola ficha. Pulso Nuevo Cliente. Abro la Categoría, y elijo Persona, como en el primer caso. Escribo una cédula que ya existe en el sistema, la de María Germiva. Ahora escribo un nombre cualquiera, porque el nombre es obligatorio. Con eso listo, pulso Guardar. El sistema lo rechaza: dice que ya existe un cliente con esa cédula, y que uses esa ficha en lugar de crear una segunda. Es lo que evita duplicados. Acepto el mensaje. Con las empresas es distinto: un mismo RNC puede tener varias sucursales, y eso lo explicamos en el siguiente video.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nuevo Cliente')",
+     "al_decir": "Pulso Nuevo Cliente"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Categoría')) mat-select",
+     "al_decir": "Abro la Categoría"
+    },
+    {
+     "click": "mat-option:has-text('Persona')",
+     "al_decir": "elijo Persona"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='documentNumber']",
+      "texto": "40255500099"
+     },
+     "al_decir": "Escribo una cédula"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='name']",
+      "texto": "María Germiva"
+     },
+     "al_decir": "escribo un nombre"
+    },
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "pulso Guardar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 6000,
+     "al_decir": "lo rechaza",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Acepto el mensaje"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Tipo de documento'))",
+     "durante_ms": 3500,
+     "al_decir": "un mismo RNC puede",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

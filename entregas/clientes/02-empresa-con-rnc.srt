@@ -75,11 +75,11 @@ Ahora la clasificación.
 Categoría es Empresa, porque tiene RNC.
 
 20
-00:01:14,460 --> 00:01:17,227
+00:01:14,460 --> 00:01:16,975
 En Actúa como queda Cliente;
 
 21
-00:01:17,040 --> 00:01:22,109
+00:01:16,788 --> 00:01:22,109
 si a esa misma empresa además le compras, se agrega Proveedor en la misma ficha.
 
 22
@@ -99,11 +99,11 @@ Sirve para retenciones y reportes,
 pero por sí solo no le da un precio ni un crédito.
 
 26
-00:01:33,118 --> 00:01:38,588
+00:01:33,118 --> 00:01:37,507
 Lista de precios la dejo vacía, y entonces usa la lista por defecto.
 
 27
-00:01:38,402 --> 00:01:41,784
+00:01:38,175 --> 00:01:41,784
 En Plazo de pago abro la lista y elijo treinta días:
 
 28
@@ -115,57 +115,61 @@ se cargará solo en las facturas nuevas de este cliente.
 Y Tipo de NCF por defecto es el comprobante que se propone al facturarle.
 
 30
-00:01:50,629 --> 00:01:52,439
-Elijo el de crédito fiscal.
+00:01:50,629 --> 00:01:51,698
+Lo dejo vacío:
 
 31
-00:01:53,823 --> 00:01:56,451
-Con los datos completos, pulso Guardar.
+00:01:51,787 --> 00:01:53,723
+se elige al hacer cada factura.
 
 32
-00:01:57,120 --> 00:02:03,132
-El sistema avisa que el cliente se creó, pero que falta su dirección de facturación.
+00:01:55,093 --> 00:01:57,721
+Con los datos completos, pulso Guardar.
 
 33
-00:02:02,945 --> 00:02:05,824
-De esa dirección sale el país del cliente:
+00:01:58,391 --> 00:02:04,402
+El sistema avisa que el cliente se creó, pero que falta su dirección de facturación.
 
 34
-00:02:05,637 --> 00:02:10,441
-sin ella no se puede emitir un comprobante de exportación, el E cuarenta y seis,
+00:02:04,215 --> 00:02:07,094
+De esa dirección sale el país del cliente:
 
 35
-00:02:10,254 --> 00:02:15,008
-y si el cliente fuera del exterior, la venta se contaría como local en el IR-2,
+00:02:06,908 --> 00:02:11,711
+sin ella no se puede emitir un comprobante de exportación, el E cuarenta y seis,
 
 36
-00:02:15,072 --> 00:02:17,813
-la declaración anual de renta de las empresas.
+00:02:11,525 --> 00:02:16,278
+y si el cliente fuera del exterior, la venta se contaría como local en el IR-2,
 
 37
-00:02:18,481 --> 00:02:19,612
-Pulso Aceptar.
+00:02:16,342 --> 00:02:19,084
+la declaración anual de renta de las empresas.
 
 38
-00:02:20,280 --> 00:02:22,908
-La ficha quedó guardada.
+00:02:19,752 --> 00:02:20,884
+Pulso Aceptar.
 
 39
-00:02:22,721 --> 00:02:25,311
-El sistema le generó su Código de cuenta,
+00:02:21,550 --> 00:02:24,179
+La ficha quedó guardada.
 
 40
-00:02:25,124 --> 00:02:27,814
-y el RNC y la razón social quedaron bloqueados:
+00:02:23,991 --> 00:02:26,581
+El sistema le generó su Código de cuenta,
 
 41
-00:02:27,627 --> 00:02:29,814
-ya no se cambian desde aquí.
+00:02:26,395 --> 00:02:29,086
+y el RNC y la razón social quedaron bloqueados:
 
 42
-00:02:29,628 --> 00:02:33,224
-El nombre comercial sí se puede editar.
+00:02:28,897 --> 00:02:31,086
+ya no se cambian desde aquí.
 
 43
-00:02:33,893 --> 00:02:38,307
+00:02:30,899 --> 00:02:34,495
+El nombre comercial sí se puede editar.
+
+44
+00:02:35,163 --> 00:02:39,578
 Abajo se activó Contactos y direcciones, que vemos en el siguiente video.
