@@ -120,7 +120,7 @@
     },
     {
      "presionar": {
-      "sel": "tr:has-text('Ferretería Germiva del Norte') button[mattooltip='Editar']",
+      "sel": "tr:has-text('Ferretería Germiva del Norte') button:has(mat-icon:text-is('edit'))",
       "tecla": "Enter"
      }
     },
