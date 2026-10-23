@@ -1,0 +1,278 @@
+{
+ "titulo": "Clientes · Crear una empresa con RNC",
+ "descripcion": "Cómo se da de alta una empresa cliente: documento y consulta del padrón, razón social y nombre comercial, clasificación, plazo de pago y comprobante por defecto.",
+ "_comentario": "Video 02 de la serie Clientes. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/partners",
+  "esperar": "th"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/clientes/preparar.sh base"
+ },
+ "aprenderas": [
+  "Qué documento pide el sistema según el tipo de cliente",
+  "Qué hace la consulta al padrón de la DGII",
+  "Diferencia entre razón social y nombre comercial",
+  "Qué es el tipo de cliente, la lista de precios y el plazo",
+  "Qué avisa el sistema al guardar y por qué"
+ ],
+ "errores_comunes": [
+  "Escribir la razón social distinta a la inscrita ante la DGII",
+  "Creer que el tipo Mayorista da precio o crédito por sí solo",
+  "Dejar al cliente sin dirección de facturación"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-identificacion",
+   "capitulo": "Datos de identificación",
+   "rotulo": "Nuevo cliente",
+   "ruta": "Ventas › Clientes › Nuevo Cliente",
+   "texto_pantalla": "RNC, razón social y nombre comercial",
+   "navegar": "/sales/partners",
+   "narracion": "Vamos a dar de alta una panadería. Estamos en Ventas, en Clientes. Recojo el menú, y pulso Nuevo Cliente. Empiezo por la identificación. El Tipo de documento ya viene en RNC, que es lo que usan las empresas; una persona usa Cédula, y un cliente del exterior, Documento extranjero. Escribo el RNC: uno tres cero cinco cinco cinco cuatro cero cero. El RNC lleva nueve dígitos y la cédula once, y los guiones no cuentan. Cuando el número tiene la longitud correcta, el sistema consulta el padrón de la Dirección General de Impuestos Internos, la DGII, y, si encuentra al contribuyente, completa el nombre. Este RNC es de demostración y no aparece en el padrón, así que el sistema pide la razón social fiscal: el nombre legal con el que la empresa está inscrita. En Nombre comercial escribo Panadería Germiva, como la conocen sus clientes. Y en Razón social fiscal, Panadería Germiva S.R.L.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "click": "button:has-text('Nuevo Cliente')",
+     "al_decir": "pulso Nuevo Cliente"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Tipo de documento'))",
+     "durante_ms": 3500,
+     "al_decir": "Tipo de documento ya viene",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='documentNumber']",
+      "texto": "130555400"
+     },
+     "al_decir": "Escribo el RNC"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('RNC'))",
+     "durante_ms": 3000,
+     "al_decir": "nueve dígitos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-hint:has-text('padrón')",
+     "durante_ms": 4500,
+     "al_decir": "consulta el padrón",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Razón social fiscal'))",
+     "durante_ms": 4500,
+     "al_decir": "pide la razón social fiscal",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='name']",
+      "texto": "Panadería Germiva"
+     },
+     "al_decir": "escribo Panadería Germiva"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='legalName']",
+      "texto": "Panadería Germiva S.R.L."
+     },
+     "al_decir": "Razón social fiscal, Panadería"
+    }
+   ]
+  },
+  {
+   "id": "02-clasificacion",
+   "capitulo": "Clasificación del cliente",
+   "rotulo": "Clasificación",
+   "ruta": "Ventas › Clientes › Nuevo Cliente",
+   "texto_pantalla": "Categoría, tipo de cliente, plazo y comprobante",
+   "narracion": "Ahora la clasificación. Categoría es Empresa, porque tiene RNC. En Actúa como queda Cliente; si a esa misma empresa además le compras, se agrega Proveedor en la misma ficha. Tipo de cliente: abro la lista y elijo Mayorista. Sirve para retenciones y reportes, pero por sí solo no le da un precio ni un crédito. Lista de precios la dejo vacía, y entonces usa la lista por defecto. En Plazo de pago abro la lista y elijo treinta días: se cargará solo en las facturas nuevas de este cliente. Y Tipo de NCF por defecto es el comprobante que se propone al facturarle. Elijo el de crédito fiscal.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Categoría'))",
+     "durante_ms": 3000,
+     "al_decir": "Categoría es Empresa",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Actúa como'))",
+     "durante_ms": 4000,
+     "al_decir": "Actúa como queda Cliente",
+     "cursor": false
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Tipo de cliente')) mat-select",
+     "al_decir": "Tipo de cliente"
+    },
+    {
+     "click": "mat-option:has-text('Mayorista')",
+     "al_decir": "elijo Mayorista"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Lista de precios'))",
+     "durante_ms": 3500,
+     "al_decir": "Lista de precios la dejo vacía",
+     "cursor": false
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Plazo de pago (días)')) mat-select",
+     "al_decir": "En Plazo de pago"
+    },
+    {
+     "click": "mat-option:has-text('30 días')",
+     "al_decir": "elijo treinta días"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Tipo de NCF por defecto'))",
+     "durante_ms": 4000,
+     "al_decir": "Tipo de NCF por defecto es",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-guardar",
+   "capitulo": "Guardar el cliente",
+   "rotulo": "Guardar",
+   "ruta": "Ventas › Clientes › Nuevo Cliente",
+   "texto_pantalla": "Aviso de dirección de facturación",
+   "narracion": "Con los datos completos, pulso Guardar. El sistema avisa que el cliente se creó, pero que falta su dirección de facturación. De esa dirección sale el país del cliente: sin ella no se puede emitir un comprobante de exportación, el E cuarenta y seis, y si el cliente fuera del exterior, la venta se contaría como local en el IR-2, la declaración anual de renta de las empresas. Pulso Aceptar. La ficha quedó guardada. El sistema le generó su Código de cuenta, y el RNC y la razón social quedaron bloqueados: ya no se cambian desde aquí. El nombre comercial sí se puede editar. Abajo se activó Contactos y direcciones, que vemos en el siguiente video.",
+   "acciones": [
+    {
+     "click": "button:has-text('Guardar')",
+     "al_decir": "pulso Guardar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4500,
+     "al_decir": "falta su dirección",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4000,
+     "al_decir": "De esa dirección sale el país",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4500,
+     "al_decir": "comprobante de exportación",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4000,
+     "al_decir": "la venta se contaría",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Pulso Aceptar"
+    },
+    {
+     "resaltar": ":text('Editar Cliente') >> nth=0",
+     "durante_ms": 3000,
+     "al_decir": "La ficha quedó guardada",
+     "cursor": false
+    },
+    {
+     "resaltar": "input[formcontrolname='accountCode']",
+     "durante_ms": 2800,
+     "al_decir": "Código de cuenta",
+     "cursor": false
+    },
+    {
+     "resaltar": "input[formcontrolname='legalName']",
+     "durante_ms": 3500,
+     "al_decir": "RNC y la razón social quedaron",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-expansion-panel-header:has-text('Contactos y direcciones'), :text('Contactos y direcciones') >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "Contactos y direcciones",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}
