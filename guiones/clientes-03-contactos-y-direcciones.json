@@ -114,8 +114,15 @@
      "al_decir": "busco la Ferretería"
     },
     {
-     "click": "tr:has-text('Ferretería Germiva del Norte') mat-icon:text-is('edit')",
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') mat-icon:text-is('edit')",
+     "durante_ms": 1800,
      "al_decir": "Pulso el lápiz"
+    },
+    {
+     "presionar": {
+      "sel": "tr:has-text('Ferretería Germiva del Norte') button[mattooltip='Editar']",
+      "tecla": "Enter"
+     }
     },
     {
      "click": ":text('Contactos y direcciones') >> nth=0",

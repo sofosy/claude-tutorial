@@ -223,14 +223,21 @@
      "cursor": false
     },
     {
-     "resaltar": "tr:has-text('Consumidor Final') button >> nth=3",
+     "resaltar": "tr:has-text('Consumidor Final') td >> nth=-1",
      "durante_ms": 4000,
      "al_decir": "no tiene el botón",
      "cursor": false
     },
     {
-     "click": "tr:has-text('Consumidor Final') mat-icon:text-is('edit')",
+     "resaltar": "tr:has-text('Consumidor Final') mat-icon:text-is('edit')",
+     "durante_ms": 1800,
      "al_decir": "con el lápiz"
+    },
+    {
+     "presionar": {
+      "sel": "tr:has-text('Consumidor Final') button[mattooltip='Editar']",
+      "tecla": "Enter"
+     }
     },
     {
      "resaltar": ":text('Consumidor Final') >> nth=0",
@@ -269,8 +276,15 @@
      "al_decir": "Busco el Colmado"
     },
     {
-     "click": "tr:has-text('Colmado Germiva Este') mat-icon:text-is('edit')",
+     "resaltar": "tr:has-text('Colmado Germiva Este') mat-icon:text-is('edit')",
+     "durante_ms": 1800,
      "al_decir": "Pulso el lápiz"
+    },
+    {
+     "presionar": {
+      "sel": "tr:has-text('Colmado Germiva Este') button[mattooltip='Editar']",
+      "tecla": "Enter"
+     }
     },
     {
      "click": "mat-form-field:has(mat-label:text-is('Actúa como')) mat-select",
