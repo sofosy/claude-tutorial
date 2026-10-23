@@ -147,6 +147,16 @@
     {
      "click": "mat-dialog-container button:has-text('Registrar cobro')",
      "al_decir": "Registrar cobro. La"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
     }
    ]
   },
@@ -157,7 +167,7 @@
    "ruta": "Ventas › Cobros › Registrar cobro",
    "texto_pantalla": "Abono de 1,000 sobre 2,360",
    "navegar": "/sales/payments",
-   "narracion": "Ahora un abono. La Farmacia Germiva Sur debe dos mil trescientos sesenta pesos y hoy solo paga mil. Pulso Registrar cobro. Escribo Farmacia, y en la lista aparece su única factura pendiente. La elijo. El saldo es de dos mil trescientos sesenta. Elijo Transferencia, y en Monto a cobrar escribo mil, que es lo que el cliente paga hoy. Fíjate en el resumen de abajo: dice que se cobran mil pesos, y que la factura queda con mil trescientos sesenta pendientes. Anoto la referencia de la transferencia, para poder encontrarla después. Pulso Registrar cobro. La factura no queda pagada: queda parcialmente pagada, y el saldo sigue en la cuenta del cliente hasta que pague el resto.",
+   "narracion": "Ahora un abono. La Farmacia Germiva Sur debe dos mil trescientos sesenta pesos y hoy solo paga mil. Pulso Registrar cobro. Escribo Farmacia, y en la lista aparece su única factura pendiente. La elijo. El saldo es de dos mil trescientos sesenta. Elijo Transferencia, y en Monto a cobrar escribo mil, que es lo que el cliente paga hoy. Fíjate en el resumen de abajo: dice que se cobran mil pesos, y que la factura queda con mil trescientos sesenta pendientes. Anoto la referencia de la transferencia, para poder encontrarla después. Pulso Registrar cobro. La factura no queda pagada: queda parcialmente pagada, y el saldo sigue en la cuenta del cliente, hasta que pague el resto.",
    "acciones": [
     {
      "click": "button:has-text('Registrar cobro')",
@@ -201,6 +211,22 @@
     {
      "click": "mat-dialog-container button:has-text('Registrar cobro')",
      "al_decir": "Registrar cobro. La factura no"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "saldo sigue en la cuenta",
+     "cursor": false
     }
    ]
   },
@@ -256,6 +282,16 @@
     {
      "click": "mat-dialog-container button:has-text('Registrar cobro')",
      "al_decir": "Registrar cobro. En el recibo"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
     }
    ]
   }

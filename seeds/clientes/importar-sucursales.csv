@@ -1,0 +1,3 @@
+nombre,tipo_documento,documento,categoria,tipos,nivel_precio,lista_precios,tipo_ncf,etiquetas,activo,contacto_facturacion,telefono,correo,pais,provincia,direccion_facturacion,direccion_envio,categoria_606,cuenta_contable,codigo_cuenta,razon_social
+Panadería Germiva Centro,RNC,130555500,EMPRESA,CLIENTE,REGULAR,,,,1,,,,DO,,Av. Duarte 45,,,,PAN-01,Panaderías Germiva S.R.L.
+Panadería Germiva Oriental,RNC,130555500,EMPRESA,CLIENTE,REGULAR,,,,1,,,,DO,,Calle El Sol 12,,,,PAN-02,Panaderías Germiva S.R.L.

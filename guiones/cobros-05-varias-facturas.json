@@ -269,6 +269,11 @@
      "al_decir": "Confirmo"
     },
     {
+     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
+    },
+    {
      "resaltar": "tbody tr >> nth=0 >> td >> nth=2",
      "durante_ms": 4000,
      "al_decir": "Varias facturas",

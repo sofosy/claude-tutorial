@@ -211,6 +211,16 @@
      "al_decir": "pulso Registrar cobro"
     },
     {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
+    },
+    {
      "resaltar": "tbody tr >> nth=0",
      "durante_ms": 4000,
      "al_decir": "Un solo recibo",
