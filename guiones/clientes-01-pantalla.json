@@ -1,0 +1,284 @@
+{
+ "titulo": "Clientes · La pantalla de clientes",
+ "descripcion": "Qué es una cuenta de cliente, qué dice cada columna del listado, cómo buscar por nombre o por RNC, cómo filtrar por zona y qué se puede hacer desde cada fila.",
+ "_comentario": "Video 01 de la serie Clientes. setup: preparar.sh sucursales.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/partners",
+  "esperar": "th"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/clientes/preparar.sh sucursales"
+ },
+ "aprenderas": [
+  "Qué es un cliente y qué representa cada fila",
+  "Qué dice cada columna, incluida «Cuenta / sucursal» y «Razón social»",
+  "Buscar por nombre o por número de documento",
+  "Filtrar por zona",
+  "Las acciones de cada fila"
+ ],
+ "errores_comunes": [
+  "Buscar con un nombre parecido y abrir la ficha equivocada",
+  "Creer que un mismo RNC solo puede salir una vez en el listado",
+  "Confundir la razón social con el nombre comercial"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-listado",
+   "capitulo": "El listado de clientes",
+   "rotulo": "Clientes",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Cada fila es una cuenta de cliente",
+   "narracion": "Estamos en Ventas, en la pantalla de Clientes. Un cliente es cualquier persona o empresa a la que le vendemos, y cada fila es una cuenta de cliente. Recojo el menú para ver más columnas. Nombre es el nombre comercial con el que lo conocemos. Documento es su RNC o su cédula. Categoría dice si es una Empresa o una Persona. Y fíjate en estas tres filas del Supermercado Germiva: tienen el mismo RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos, porque son tres sucursales de una misma empresa, cada una con su propia cuenta. Esto lo vemos completo en el video cinco.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "th:has-text('Nombre')",
+     "durante_ms": 3000,
+     "al_decir": "Nombre es el nombre comercial",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Documento')",
+     "durante_ms": 3000,
+     "al_decir": "Documento es su RNC",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Categoría')",
+     "durante_ms": 3000,
+     "al_decir": "Categoría dice",
+     "cursor": false
+    },
+    {
+     "resaltar": "tr:has-text('Supermercado Germiva Central') td >> nth=2",
+     "durante_ms": 3500,
+     "al_decir": "tienen el mismo RNC",
+     "cursor": false
+    },
+    {
+     "resaltar": "tr:has-text('Supermercado Germiva Oriental') td >> nth=2",
+     "durante_ms": 3000,
+     "al_decir": "tres sucursales",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-columnas",
+   "capitulo": "El listado de clientes",
+   "rotulo": "Cuenta y razón social",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Cuenta / sucursal y Razón social",
+   "narracion": "Más a la derecha hay dos columnas que importan. Cuenta o sucursal es el código de la cuenta: lo genera el sistema al guardar y no se cambia después. Razón social es el nombre legal con el que la empresa está inscrita ante la DGII, y es el mismo para las tres sucursales. El nombre comercial distingue una sucursal de otra; la razón social es la misma. Zona dice dónde está el cliente, y Vendedor asignado, quién lo atiende. Eso se explica en la serie de Vendedores.",
+   "acciones": [
+    {
+     "resaltar": "th:has-text('Cuenta')",
+     "durante_ms": 4500,
+     "al_decir": "Cuenta o sucursal",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Razón social')",
+     "durante_ms": 5500,
+     "al_decir": "Razón social es el nombre legal",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Zona')",
+     "durante_ms": 2000,
+     "al_decir": "Zona dice dónde",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Vendedor asignado')",
+     "durante_ms": 3000,
+     "al_decir": "Vendedor asignado, quién",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-buscar",
+   "capitulo": "Buscar y filtrar",
+   "rotulo": "Buscar clientes",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Buscar por nombre o RNC",
+   "narracion": "Para encontrar un cliente uso Buscar. Escribo el RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos, y quedan solo las tres sucursales del Supermercado. Buscar por documento es lo más seguro, porque dos nombres pueden parecerse. Borro la búsqueda. Ahora filtro por Zona: elijo Norte, y queda la Ferretería Germiva del Norte, que es la única de esa zona. Categoría separa las empresas de las personas, y Etiqueta filtra por las etiquetas que le hayas puesto al cliente.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "130555300"
+     },
+     "al_decir": "Escribo el RNC"
+    },
+    {
+     "resaltar": "tr:has-text('Supermercado Germiva Oriental') td >> nth=2",
+     "durante_ms": 4000,
+     "al_decir": "quedan solo las tres",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "tecla": "Control+a"
+     },
+     "al_decir": "Borro la búsqueda"
+    },
+    {
+     "presionar": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "tecla": "Backspace"
+     }
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Zona')) mat-select",
+     "al_decir": "filtro por Zona"
+    },
+    {
+     "click": "mat-option:has-text('Norte')",
+     "al_decir": "elijo Norte"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Categoría'))",
+     "durante_ms": 2000,
+     "al_decir": "Categoría separa",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Etiqueta'))",
+     "durante_ms": 3000,
+     "al_decir": "Etiqueta filtra",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-acciones",
+   "capitulo": "Las acciones de cada fila",
+   "rotulo": "Acciones por cliente",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Estado de cuenta · Éxito del cliente · Editar · Archivar",
+   "narracion": "Al final de cada fila hay cuatro acciones. El primer icono abre el Estado de Cuenta de esa cuenta: lo que debe y lo que ha pagado. El segundo lo incorpora a Éxito del Cliente, el seguimiento de la cartera. El lápiz abre la ficha para editarlo, y el último archiva al cliente. Archivar no borra nada: sus facturas se conservan y se puede restaurar. Arriba está Nuevo Cliente, para crear uno. Importar o Exportar sirve para cargar o descargar muchos clientes de una vez. Y Ver archivados muestra los clientes que se retiraron del listado. Todo eso lo vemos en los videos siguientes.",
+   "acciones": [
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') button >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "primer icono",
+     "cursor": false
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') button >> nth=1",
+     "durante_ms": 3000,
+     "al_decir": "segundo lo incorpora",
+     "cursor": false
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') button >> nth=2",
+     "durante_ms": 2300,
+     "al_decir": "lápiz abre la ficha",
+     "cursor": false
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') button >> nth=3",
+     "durante_ms": 3500,
+     "al_decir": "último archiva",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Nuevo Cliente')",
+     "durante_ms": 2800,
+     "al_decir": "Arriba está Nuevo Cliente",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Importar / Exportar')",
+     "durante_ms": 2000,
+     "al_decir": "Importar o Exportar sirve",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Ver archivados')",
+     "durante_ms": 2500,
+     "al_decir": "Y Ver archivados",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}
