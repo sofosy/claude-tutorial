@@ -101,7 +101,7 @@
    "ruta": "Ventas › Clientes › Nuevo Cliente",
    "texto_pantalla": "Cédula y contribuyente informal",
    "navegar": "/sales/partners",
-   "narracion": "Empecemos con una persona. Estamos en Ventas, en Clientes. Recojo el menú, y pulso Nuevo Cliente. En Categoría abro la lista y elijo Persona. Con eso, el tipo de documento cambia solo a Cédula. Ahora escribo la cédula, que lleva once dígitos, sin contar los guiones. El sistema la busca en el padrón. Esta es de demostración y no aparece, así que propone marcar Contribuyente informal: una persona que no está inscrita como contribuyente. A un cliente informal se le factura con comprobante de consumo, no con crédito fiscal. Después escribo el nombre del cliente: Ana Germiva Rosario. Ese es el nombre con el que aparecerá en sus facturas y en el listado. Cuando todo está listo, pulso Guardar. Y acepto el aviso de la dirección de facturación.",
+   "narracion": "Empecemos con una persona. Estamos en Ventas, en Clientes. Recojo el menú, y pulso Nuevo Cliente. En Categoría abro la lista y elijo Persona. Con eso, el tipo de documento cambia solo a Cédula. Ahora escribo la cédula, que lleva once dígitos, sin contar los guiones. El sistema la busca en el padrón. Esta es de demostración y no aparece, así que propone marcar Contribuyente informal: una persona que no está inscrita como contribuyente. A un cliente informal se le factura con comprobante de consumo, no con crédito fiscal. Después escribo el nombre del cliente: Ana Germiva Rosario. Ese es el nombre con el que aparecerá en sus facturas y en el listado. Cuando todo está listo, pulso Guardar. El sistema avisa que falta la dirección de facturación, y acepto el aviso.",
    "acciones": [
     {
      "click": "button.panel-collapse",
@@ -150,6 +150,12 @@
      "al_decir": "pulso Guardar"
     },
     {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4000,
+     "al_decir": "El sistema avisa",
+     "cursor": false
+    },
+    {
      "click": "mat-dialog-container button:has-text('Aceptar')",
      "al_decir": "acepto el aviso"
     }
@@ -162,7 +168,7 @@
    "ruta": "Ventas › Clientes › Nuevo Cliente",
    "texto_pantalla": "Documento extranjero, sin padrón",
    "navegar": "/sales/partners",
-   "narracion": "Ahora un cliente del exterior. Vuelvo a Clientes y pulso Nuevo Cliente. En Tipo de documento elijo Documento extranjero. Este tipo acepta un pasaporte o un identificador fiscal de su país, hasta cincuenta caracteres, y no se consulta en el padrón dominicano. Escribo el documento del cliente. Es un código de su país, y se guarda tal como lo escribes. Ahora el nombre del cliente: Hotel Germiva Internacional. Es el nombre con el que lo conocemos. Cuando está listo, pulso Guardar. Y acepto el aviso. Para este cliente la dirección de facturación es todavía más importante, porque del país depende el comprobante de exportación.",
+   "narracion": "Ahora un cliente del exterior. Vuelvo a Clientes y pulso Nuevo Cliente. En Tipo de documento elijo Documento extranjero. Este tipo acepta un pasaporte o un identificador fiscal de su país, hasta cincuenta caracteres, y no se consulta en el padrón dominicano. Escribo el documento del cliente. Es un código de su país, y se guarda tal como lo escribes. Ahora el nombre del cliente: Hotel Germiva Internacional. Es el nombre con el que lo conocemos. Cuando está listo, pulso Guardar. El sistema avisa que falta la dirección, y acepto el aviso. Para este cliente la dirección de facturación es todavía más importante, porque del país depende el comprobante de exportación.",
    "acciones": [
     {
      "click": "button:has-text('Nuevo Cliente')",
@@ -192,7 +198,13 @@
     },
     {
      "click": "button:has-text('Guardar')",
-     "al_decir": "pulso Guardar. Y"
+     "al_decir": "pulso Guardar. El"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3500,
+     "al_decir": "avisa que falta la dirección,",
+     "cursor": false
     },
     {
      "click": "mat-dialog-container button:has-text('Aceptar')",

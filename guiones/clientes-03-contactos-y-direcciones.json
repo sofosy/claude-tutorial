@@ -164,6 +164,12 @@
      "al_decir": "pulso Guardar"
     },
     {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "confirma que el contacto",
+     "cursor": false
+    },
+    {
      "click": "mat-dialog-container button:has-text('Aceptar')",
      "al_decir": "acepto el aviso"
     }
@@ -175,7 +181,7 @@
    "rotulo": "Agregar una dirección",
    "ruta": "Ventas › Clientes › Editar › Direcciones",
    "texto_pantalla": "Dirección de facturación por defecto",
-   "narracion": "Ahora la dirección. Fíjate en el aviso naranja: dice que no hay dirección de facturación y que eso afecta al E cuarenta y seis y al IR-2. Abro la pestaña Direcciones, y pulso Agregar dirección. El Tipo de dirección es Facturación. Ahora el País: lo busco escribiendo Dominicana, y en la lista aparecen varias coincidencias. Elijo República Dominicana. De la dirección de facturación sale el país del cliente, y sin país no se puede emitir un comprobante de exportación. Abro la Provincia, y elijo el Distrito Nacional. Escribo la calle y el número de la dirección, tal como va en sus documentos. Marco Dirección por defecto, para que los documentos usen esta. Pulso Guardar, y acepto el aviso. Cuando el cliente tiene una dirección de facturación, el aviso naranja desaparece.",
+   "narracion": "Ahora la dirección. Fíjate en el aviso naranja: dice que no hay dirección de facturación y que eso afecta al E cuarenta y seis y al IR-2. Abro la pestaña Direcciones, y pulso Agregar dirección. El Tipo de dirección es Facturación. Ahora el País: lo busco escribiendo Dominicana, y en la lista aparecen varias coincidencias. Elijo República Dominicana. De la dirección de facturación sale el país del cliente, y sin país no se puede emitir un comprobante de exportación. Abro la Provincia, y elijo el Distrito Nacional. Escribo la calle y el número de la dirección, tal como va en sus documentos. Marco Dirección por defecto, para que los documentos usen esta. Pulso Guardar. El sistema confirma que la dirección se creó, y acepto el aviso. Cuando el cliente tiene una dirección de facturación, el aviso naranja desaparece.",
    "acciones": [
     {
      "resaltar": ":text('Sin dirección de facturación') >> nth=0",
@@ -233,7 +239,13 @@
     },
     {
      "click": "mat-dialog-container button:has-text('Guardar')",
-     "al_decir": "Pulso Guardar, y"
+     "al_decir": "Pulso Guardar. El"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "confirma que la dirección",
+     "cursor": false
     },
     {
      "click": "mat-dialog-container button:has-text('Aceptar')",
