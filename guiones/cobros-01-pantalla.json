@@ -1,0 +1,263 @@
+{
+ "titulo": "Cobros · La pantalla de cobros",
+ "descripcion": "Qué es un cobro y qué dice cada columna del listado, cómo se filtra, qué se puede hacer desde cada recibo y cómo se ve el detalle de un cobro.",
+ "_comentario": "Video 01 de la serie Cobros. setup: preparar.sh cobrado.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/payments",
+  "esperar": "button:has-text('Registrar cobro')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/cobros/preparar.sh cobrado"
+ },
+ "aprenderas": [
+  "Qué representa cada fila del listado de cobros",
+  "Qué dice cada columna y qué significa Vigente y Anulado",
+  "Para qué sirven los filtros y los dos botones de cobro",
+  "Qué acciones tiene cada recibo",
+  "Leer el detalle de un cobro"
+ ],
+ "errores_comunes": [
+  "Confundir una factura vendida con un cobro recibido",
+  "Buscar un cobro en Solo anticipos",
+  "Creer que Anulado borra el recibo"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-listado",
+   "capitulo": "El listado de cobros",
+   "rotulo": "Cobros",
+   "ruta": "Ventas › Cobros",
+   "texto_pantalla": "Cada fila es un recibo",
+   "navegar": "/sales/payments",
+   "narracion": "Esta es la pantalla de Cobros, en Ventas. Un cobro es el dinero que un cliente nos paga, y cada fila es un recibo. Recojo el menú. En la primera columna está el número de Recibo. Luego, la Fecha del pago. La columna N° Factura dice a qué factura se aplicó el cobro. Y cuando un solo pago saldó varias facturas, aquí aparece la etiqueta Varias facturas, como en el primer recibo. Después viene el Cliente que pagó. Luego, el Monto que entró. El Estado Vigente quiere decir que el cobro está en pie; un cobro reversado aparece como Anulado. Y por último, el Método de pago: transferencia, efectivo, tarjeta, cheque o depósito.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "th:has-text('Recibo')",
+     "durante_ms": 2200,
+     "al_decir": "número de Recibo",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Fecha')",
+     "durante_ms": 2200,
+     "al_decir": "la Fecha del pago",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Factura')",
+     "durante_ms": 2500,
+     "al_decir": "N° Factura dice",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr:has-text('Varias facturas') td >> nth=2",
+     "durante_ms": 3000,
+     "al_decir": "etiqueta Varias facturas",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Cliente')",
+     "durante_ms": 2200,
+     "al_decir": "Cliente que pagó",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Monto')",
+     "durante_ms": 2200,
+     "al_decir": "Monto que entró",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr:has-text('Varias facturas') td >> nth=5",
+     "durante_ms": 3000,
+     "al_decir": "Vigente quiere decir",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Método')",
+     "durante_ms": 2500,
+     "al_decir": "Método de pago",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-filtros",
+   "capitulo": "Filtros y botones",
+   "rotulo": "Filtros y botones",
+   "ruta": "Ventas › Cobros",
+   "texto_pantalla": "Búsqueda · Tipo · Cliente",
+   "narracion": "Arriba están los filtros. Búsqueda encuentra un recibo por su número, su factura o su cliente. Tipo empieza en Solo cobros; también puedes ver Solo anticipos, que son pagos recibidos antes de facturar, o Todos. Y Cliente muestra solo los recibos de un cliente. A la derecha están los dos botones para cobrar. Registrar cobro cobra una sola factura. Cobrar varias facturas reparte un solo pago entre varias facturas del mismo cliente. Los dos se explican en los videos siguientes.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Búsqueda'))",
+     "durante_ms": 3000,
+     "al_decir": "Búsqueda encuentra",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Tipo'))",
+     "durante_ms": 3500,
+     "al_decir": "Tipo empieza en Solo cobros",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cliente'))",
+     "durante_ms": 3000,
+     "al_decir": "Cliente muestra solo",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Registrar cobro')",
+     "durante_ms": 3000,
+     "al_decir": "Registrar cobro cobra una sola",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Cobrar varias facturas')",
+     "durante_ms": 3500,
+     "al_decir": "Cobrar varias facturas reparte",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-detalle",
+   "capitulo": "Acciones y detalle",
+   "rotulo": "Detalle de un cobro",
+   "ruta": "Ventas › Cobros › Ver detalle",
+   "texto_pantalla": "Formas de pago y documentos pagados",
+   "narracion": "Cada recibo tiene sus acciones al final de la fila. Imprimir recibo genera el comprobante para el cliente. Ver detalle abre el cobro completo. Corregir reparto solo aparece en los cobros de varias facturas. Y Reversar cobro lo anula, con un motivo. Abro el detalle del primer recibo. Arriba están el recibo, el estado, el tipo, el cliente y la fecha. En Formas de pago se ve cómo entró el dinero: el método, la referencia y el monto. Y en Documentos pagados, cuánto se aplicó a cada factura, cuánto le queda y si quedó Saldada o Parcial. Cierro el detalle.",
+   "acciones": [
+    {
+     "resaltar": "tbody tr:has-text('Varias facturas') button:has(mat-icon:text-is('print'))",
+     "durante_ms": 2500,
+     "al_decir": "Imprimir recibo genera",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr:has-text('Varias facturas') button:has(mat-icon:text-is('visibility'))",
+     "durante_ms": 2500,
+     "al_decir": "Ver detalle abre",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr:has-text('Varias facturas') button:has(mat-icon:text-is('swap_horiz'))",
+     "durante_ms": 3000,
+     "al_decir": "Corregir reparto solo",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr:has-text('Varias facturas') button:has(mat-icon:text-is('undo'))",
+     "durante_ms": 3000,
+     "al_decir": "Reversar cobro lo anula",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "tbody tr:has-text('Varias facturas') button:has(mat-icon:text-is('visibility'))",
+      "tecla": "Enter"
+     }
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Estado') >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "Arriba están el recibo",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Formas de pago') >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "En Formas de pago",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Documentos pagados') >> nth=0",
+     "durante_ms": 6000,
+     "al_decir": "en Documentos pagados",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar')",
+     "al_decir": "Cierro el detalle"
+    }
+   ]
+  }
+ ]
+}

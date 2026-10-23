@@ -83,11 +83,11 @@ def documentos_abiertos(nombre):
 
 def cobrado():
     base()
-    docs = sorted(documentos_abiertos(FERRETERIA), key=lambda d: d.get("issueDate") or d.get("dueDate") or "")
+    docs = sorted(documentos_abiertos(FERRETERIA), key=lambda d: d["documentNumber"])
     # Facturas 1 y 2 completas y la 3 con 1,460 (QA-COBRO-VARIAS-FACTURAS-DEV).
     reparto = [1180, 2360, 1460]
-    allocations = [{"accountReceivable": d["accountReceivable"] if "accountReceivable" in d else d["id"],
-                    "expectedOutstanding": f"{float(d['outstandingAmount']):.2f}", "amount": f"{a:.2f}"}
+    allocations = [{"accountReceivable": d["accountReceivable"],
+                    "expectedOutstanding": f"{float(d['outstanding']):.2f}", "amount": f"{a:.2f}"}
                    for d, a in zip(docs, reparto)]
     v.llamar("POST", "/v1/payment/settlement", {
         "partner": v.cliente(FERRETERIA), "settlementKey": uuid.uuid4().hex, "paymentMethodCode": "TRANSFER",
@@ -95,7 +95,12 @@ def cobrado():
         "allocations": allocations})
 
 
-ESTADOS = {"base": base, "cobrado": cobrado}
+def cobro_colmado():
+    numero = v.sql(f"SELECT invoice_number FROM invoices WHERE company_id=1 AND partner_id={v.cliente(COLMADO)} LIMIT 1")
+    v.cobrar(numero, 1180, "Transferencia Banco Popular")
+
+
+ESTADOS = {"base": base, "cobrado": lambda: (cobrado(), cobro_colmado())}
 
 if __name__ == "__main__":
     v.TOKEN = v.entrar("admin", "admin")

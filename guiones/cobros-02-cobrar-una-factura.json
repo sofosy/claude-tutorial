@@ -1,0 +1,263 @@
+{
+ "titulo": "Cobros · Cobrar una factura",
+ "descripcion": "Cómo se registra el cobro de una sola factura: cobro completo por transferencia, abono parcial que deja saldo pendiente y cobro en efectivo con vuelto.",
+ "_comentario": "Video 02 de la serie Cobros. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/payments",
+  "esperar": "button:has-text('Registrar cobro')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/cobros/preparar.sh base"
+ },
+ "aprenderas": [
+  "Registrar el cobro de una factura emitida",
+  "Cobrar completo y cobrar un abono parcial",
+  "Qué pasa con el saldo después de un abono",
+  "Cobrar en efectivo y calcular el vuelto"
+ ],
+ "errores_comunes": [
+  "Cobrar más de lo que debe la factura",
+  "Olvidar la referencia de una transferencia",
+  "Registrar un abono creyendo que salda la factura"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-completo",
+   "capitulo": "Cobro completo",
+   "rotulo": "Cobrar una factura",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Transferencia por el total",
+   "navegar": "/sales/payments",
+   "narracion": "Vamos a cobrar una factura. Estamos en Ventas, en Cobros. Recojo el menú, y pulso Registrar cobro, que abre el formulario. Lo primero es la factura. Escribo Colmado, para buscarla por el nombre del cliente. En la lista aparece la factura del Colmado Germiva Este, y la elijo. Aparece el cliente, el Total facturado y el Saldo pendiente: mil ciento ochenta pesos. El cobro es por transferencia, así que elijo Transferencia. El Monto a cobrar ya viene con el saldo completo, así que este cobro va a saldar la factura. Escribo el número de la transferencia en Referencia, para poder encontrarla después en el banco. Ahora sí, pulso Registrar cobro. La factura queda pagada.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "cobro que abre"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[placeholder*='filtrar']",
+      "texto": "Colmado"
+     },
+     "al_decir": "Escribo Colmado"
+    },
+    {
+     "click": "mat-option >> nth=0",
+     "al_decir": "y la elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Saldo pendiente') >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "Saldo pendiente",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Transferencia')",
+     "al_decir": "elijo Transferencia"
+    },
+    {
+     "resaltar": "mat-dialog-container input[formcontrolname='amount']",
+     "durante_ms": 3500,
+     "al_decir": "Monto a cobrar ya viene",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='authorizationCode']",
+      "texto": "TRF-440011"
+     },
+     "al_decir": "en Referencia"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "Registrar cobro. La"
+    }
+   ]
+  },
+  {
+   "id": "02-parcial",
+   "capitulo": "Un abono parcial",
+   "rotulo": "Abono parcial",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Abono de 1,000 sobre 2,360",
+   "navegar": "/sales/payments",
+   "narracion": "Ahora un abono. La Farmacia Germiva Sur debe dos mil trescientos sesenta pesos y hoy solo paga mil. Pulso Registrar cobro. Escribo Farmacia, y en la lista aparece su única factura pendiente. La elijo. El saldo es de dos mil trescientos sesenta. Elijo Transferencia, y en Monto a cobrar escribo mil, que es lo que el cliente paga hoy. Fíjate en el resumen de abajo: dice que se cobran mil pesos, y que la factura queda con mil trescientos sesenta pendientes. Anoto la referencia de la transferencia, para poder encontrarla después. Pulso Registrar cobro. La factura no queda pagada: queda parcialmente pagada, y el saldo sigue en la cuenta del cliente hasta que pague el resto.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "Pulso Registrar cobro. Escribo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[placeholder*='filtrar']",
+      "texto": "Farmacia"
+     },
+     "al_decir": "Escribo Farmacia"
+    },
+    {
+     "click": "mat-option >> nth=0",
+     "al_decir": "La elijo"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Transferencia')",
+     "al_decir": "Elijo Transferencia"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='amount']",
+      "texto": "1000"
+     },
+     "al_decir": "escribo mil"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('queda con') >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "Fíjate en el resumen",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='authorizationCode']",
+      "texto": "TRF-440012"
+     },
+     "al_decir": "Anoto la referencia"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "Registrar cobro. La factura no"
+    }
+   ]
+  },
+  {
+   "id": "03-efectivo",
+   "capitulo": "Efectivo y vuelto",
+   "rotulo": "Cobro en efectivo",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Efectivo recibido y vuelto",
+   "navegar": "/sales/payments",
+   "narracion": "Por último, un cobro en efectivo. La Librería Germiva Centro debe mil ciento ochenta pesos y paga con un billete de mil quinientos. Pulso Registrar cobro. Escribo Librería, y en la lista aparece su factura pendiente. La elijo. El método Efectivo ya viene marcado. El Monto a cobrar es el saldo: mil ciento ochenta. En Monto recibido escribo mil quinientos, que es lo que el cliente entregó. Debajo, el sistema calcula el Vuelto: trescientos veinte pesos. Pulso Registrar cobro. En el recibo queda registrado lo que se cobró, no lo que se entregó.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "Pulso Registrar cobro. Escribo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[placeholder*='filtrar']",
+      "texto": "Libr"
+     },
+     "al_decir": "Escribo Librería"
+    },
+    {
+     "click": "mat-option >> nth=0",
+     "al_decir": "La elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Efectivo')",
+     "durante_ms": 3500,
+     "al_decir": "Efectivo ya viene",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container input[formcontrolname='amount']",
+     "durante_ms": 3500,
+     "al_decir": "Monto a cobrar es",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='amountReceived']",
+      "texto": "1500"
+     },
+     "al_decir": "Monto recibido escribo"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Vuelto') >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "calcula el Vuelto",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "Registrar cobro. En el recibo"
+    }
+   ]
+  }
+ ]
+}

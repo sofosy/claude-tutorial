@@ -74,7 +74,7 @@
    "__v": 2
   },
   "navegar": "/sales/payments",
-  "esperar": "th"
+  "esperar": "button:has-text('Registrar cobro')"
  },
  "setup": {
   "tipo": "shell",
@@ -101,51 +101,45 @@
    "ruta": "Ventas › Cobros",
    "texto_pantalla": "Cobros · un pago, varias facturas",
    "navegar": "/sales/payments",
-   "narracion": "Esta es la pantalla de Cobros. Recojo el menú. Aquí aparece cada recibo que se ha registrado, con su cliente y su monto. Hay un caso muy común, que ocurre casi todas las semanas: la Ferretería Germiva del Norte tiene cuatro facturas pendientes, y un día nos envía una sola transferencia que cubre unas completas y otra a medias. Si registráramos ese pago factura por factura, tendríamos cuatro cobros y un solo depósito en el banco, y el cuadre sería un lío. Para eso existe el botón Cobrar varias facturas: un solo pago, un solo recibo, y tú indicas cuánto va a cada factura. Lo pulso.",
+   "narracion": "Esta es la pantalla de Cobros. Recojo el menú. Aquí aparecerá cada recibo que se registre, con su cliente y su monto. Todavía no hay ninguno. Hay un caso muy común, que ocurre casi todas las semanas: la Ferretería Germiva del Norte tiene cuatro facturas pendientes, y un día nos envía una sola transferencia que cubre unas completas y otra a medias. Si registráramos ese pago factura por factura, tendríamos cuatro cobros y un solo depósito en el banco, y el cuadre sería un lío. Para eso existe el botón Cobrar varias facturas: un solo pago, un solo recibo, y tú indicas cuánto va a cada factura. Registrar cobro, el otro botón, sirve para una sola factura. Pulso Cobrar varias facturas.",
    "acciones": [
     {
      "click": "button.panel-collapse",
      "al_decir": "Recojo el menú"
     },
     {
-     "resaltar": "th:has-text('Recibo')",
+     "resaltar": "app-dynamic-view .unified-view-container, app-dynamic-view",
+     "durante_ms": 3500,
+     "al_decir": "Aquí aparecerá cada recibo",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cliente'))",
      "durante_ms": 3000,
-     "al_decir": "cada recibo",
+     "al_decir": "tiene cuatro facturas pendientes",
      "cursor": false
     },
     {
-     "resaltar": "th:has-text('Factura')",
-     "durante_ms": 2500,
-     "al_decir": "tiene cuatro facturas",
-     "cursor": false
-    },
-    {
-     "resaltar": "th:has-text('Método')",
-     "durante_ms": 2500,
-     "al_decir": "una sola transferencia",
-     "cursor": false
-    },
-    {
-     "resaltar": "button:has-text('Registrar cobro')",
-     "durante_ms": 2500,
-     "al_decir": "factura por factura",
-     "cursor": false
-    },
-    {
-     "resaltar": "th:has-text('Monto')",
-     "durante_ms": 2500,
-     "al_decir": "un solo depósito",
+     "resaltar": "mat-form-field:has(mat-label:text-is('Búsqueda'))",
+     "durante_ms": 3000,
+     "al_decir": "cuatro cobros y un solo",
      "cursor": false
     },
     {
      "resaltar": "button:has-text('Cobrar varias facturas')",
-     "durante_ms": 4000,
-     "al_decir": "Cobrar varias facturas: un solo",
+     "durante_ms": 3500,
+     "al_decir": "Para eso existe",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Registrar cobro')",
+     "durante_ms": 3000,
+     "al_decir": "Registrar cobro, el otro",
      "cursor": false
     },
     {
      "click": "button:has-text('Cobrar varias facturas')",
-     "al_decir": "Lo pulso"
+     "al_decir": "Pulso Cobrar varias"
     }
    ]
   },
@@ -159,7 +153,7 @@
    "acciones": [
     {
      "escribir": {
-      "sel": "input[placeholder*='Buscar cliente']",
+      "sel": "input[placeholder*='filtrar']",
       "texto": "Ferretería"
      },
      "al_decir": "escribo Ferretería"
@@ -275,13 +269,16 @@
      "al_decir": "Confirmo"
     },
     {
-     "resaltar": "tbody tr >> nth=0 >> td >> nth=3",
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=2",
      "durante_ms": 4000,
      "al_decir": "Varias facturas",
      "cursor": false
     },
     {
-     "click": "tbody tr >> nth=0 >> button[mattooltip='Ver detalle'], tbody tr >> nth=0 >> button >> nth=1",
+     "presionar": {
+      "sel": "tbody tr >> nth=0 >> button:has(mat-icon:text-is('visibility'))",
+      "tecla": "Enter"
+     },
      "al_decir": "Abro el detalle"
     },
     {
