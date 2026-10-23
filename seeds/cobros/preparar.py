@@ -2,7 +2,8 @@
 
   base     clientes de la Distribuidora Germiva con facturas B01 a crédito, emitidas y sin cobrar:
              Ferretería Germiva del Norte  4 facturas: 1,180 · 2,360 · 3,540 · 5,900
-             Colmado Germiva Este          4 facturas: 1,180 · 2,360 · 1,180 · 2,360
+             Colmado Germiva Este          1 factura de 1,180 (cobro total)
+             Farmacia Germiva Sur 2,360 (abono) · Librería Germiva Centro 1,180 (efectivo) · Taller Germiva Oeste 2,360 (combinado)
              Constructora Germiva Ciudad   1 factura de 11,800 (para la retención del cliente)
              Supermercado Germiva (RNC compartido): Central 2 facturas de 1,180; Oriental 1 de 1,180
   cobrado  base + un cobro de 5,000 de la Ferretería que salda las dos primeras facturas y deja la
@@ -32,10 +33,21 @@ c.v = v
 GALON, BROCHA = v.PRODUCTOS[0][0], v.PRODUCTOS[1][0]
 FERRETERIA, COLMADO, CONSTRUCTORA = (n for n, _r, _z in c.FERRETERIAS)
 
+# Un cliente por escenario del video 02 y 03: así el selector de factura (que se busca por cliente)
+# siempre encuentra UNA sola factura y los montos que dice la voz no dependen del orden.
+OTROS = [
+    ("Farmacia Germiva Sur", "130555201"),
+    ("Librería Germiva Centro", "130555202"),
+    ("Taller Germiva Oeste", "130555203"),
+]
+
 FACTURAS = {
     FERRETERIA: [[(GALON, 1)], [(GALON, 2)], [(GALON, 3)], [(BROCHA, 20)]],
-    COLMADO: [[(GALON, 1)], [(GALON, 2)], [(GALON, 1)], [(GALON, 2)]],
+    COLMADO: [[(GALON, 1)]],
     CONSTRUCTORA: [[(GALON, 10)]],
+    "Farmacia Germiva Sur": [[(GALON, 2)]],
+    "Librería Germiva Centro": [[(GALON, 1)]],
+    "Taller Germiva Oeste": [[(GALON, 2)]],
     "Supermercado Germiva Central": [[(GALON, 1)], [(GALON, 1)]],
     "Supermercado Germiva Oriental": [[(GALON, 1)]],
 }
@@ -52,7 +64,12 @@ def emitir(nombre, lineas):
 def base():
     c.base()
     c.cuenta("Supermercado Germiva Oriental")
-    for nombre in (FERRETERIA, COLMADO, CONSTRUCTORA, "Supermercado Germiva Central", "Supermercado Germiva Oriental"):
+    for nombre, rnc in OTROS:
+        v.llamar("POST", "/v1/partner", {
+            "name": nombre, "tin": rnc, "legalName": nombre + " S.R.L.", "partnerType": ["CUSTOMER"],
+            "partnerCategory": "BUSINESS", "customerType": "REGULAR", "documentType": "RNC"})
+    for nombre in (FERRETERIA, COLMADO, CONSTRUCTORA, "Supermercado Germiva Central", "Supermercado Germiva Oriental",
+                   *(n for n, _ in OTROS)):
         v.llamar("PATCH", f"/v1/partner/{v.cliente(nombre)}", {"paymentTermDays": 30})
     for nombre, lotes in FACTURAS.items():
         for lineas in lotes:
