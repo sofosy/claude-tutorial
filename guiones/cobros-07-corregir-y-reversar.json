@@ -100,7 +100,7 @@
    "ruta": "Ventas › Cobros › Corregir reparto",
    "texto_pantalla": "Mismo dinero, otro reparto",
    "navegar": "/sales/payments",
-   "narracion": "Un cliente nos avisa que el reparto de su pago estaba mal. Estamos en Cobros. Recojo el menú. Un recibo no se edita: queda como constancia. Pero cuando el error es solo cómo se repartió el dinero entre las facturas, hay una vía directa. En el recibo de varias facturas pulso Corregir reparto, el icono de las flechas. La pantalla avisa que el dinero, el cliente, el método y la fecha no cambian: solo cuánto va a cada factura. Ahora cambio el reparto. En la segunda factura escribo mil ciento ochenta. Y en la tercera escribo dos mil seiscientos cuarenta. El total sigue siendo cinco mil, así que Por ubicar queda en cero. Pulso Corregir reparto y el sistema pide el motivo del cambio.",
+   "narracion": "Un cliente nos avisa que el reparto de su pago estaba mal. Estamos en Cobros. Recojo el menú. Un recibo no se edita: queda como constancia. Pero cuando el error es solo cómo se repartió el dinero entre las facturas, hay una vía directa. En el recibo de varias facturas pulso Corregir reparto, el icono de las flechas. La pantalla avisa que el dinero, el cliente, el método y la fecha no cambian: solo cuánto va a cada factura. Ahora cambio el reparto. En la segunda factura escribo mil ciento ochenta. Mira: el sistema avisa que faltan mil ciento ochenta por ubicar, porque todavía no cuadra. Y en la tercera escribo dos mil seiscientos cuarenta. Ahora el total vuelve a ser cinco mil, y Por ubicar queda en cero. Pulso Corregir reparto y el sistema pide el motivo del cambio.",
    "acciones": [
     {
      "click": "button.panel-collapse",
@@ -133,6 +133,12 @@
      "al_decir": "En la segunda factura escribo"
     },
     {
+     "resaltar": ":text('Faltan RD$') >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "avisa que faltan",
+     "cursor": false
+    },
+    {
      "escribir": {
       "sel": "tbody tr >> nth=2 >> input",
       "texto": "2640"
@@ -157,8 +163,14 @@
    "rotulo": "Motivo de la corrección",
    "ruta": "Ventas › Cobros",
    "texto_pantalla": "El recibo viejo queda anulado",
-   "narracion": "El sistema pide el motivo, porque queda registrado en el historial del recibo. Escribo: el cliente aclaró el reparto, que es el motivo real del cambio. Con eso listo, pulso Corregir. Al confirmar, el recibo original queda anulado y se registra uno nuevo con el mismo dinero, repartido como indiqué. Todo ocurre en una sola operación: si algo falla, el recibo original no se toca. Volvemos al listado. El recibo anterior aparece como Anulado, y el nuevo aparece como Vigente. En sus notas dice a qué recibo corrige.",
+   "narracion": "Ahí está el cuadro de confirmación. El sistema pide el motivo, porque queda registrado en el historial del recibo. Escribo: el cliente aclaró el reparto, que es el motivo real del cambio. Con eso listo, pulso Corregir. Al confirmar, el recibo original queda anulado y se registra uno nuevo con el mismo dinero, repartido como indiqué. Todo ocurre en una sola operación: si algo falla, el recibo original no se toca. Volvemos al listado. El recibo anterior aparece como Anulado, y el nuevo aparece como Vigente. En sus notas dice a qué recibo corrige.",
    "acciones": [
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 4000,
+     "al_decir": "cuadro de confirmación",
+     "cursor": false
+    },
     {
      "escribir": {
       "sel": "mat-dialog-container textarea, mat-dialog-container input",
@@ -169,6 +181,11 @@
     {
      "click": "mat-dialog-container button:has-text('Corregir')",
      "al_decir": "pulso Corregir"
+    },
+    {
+     "resaltar": "[class*='snack'], simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
     },
     {
      "cartel": {
@@ -233,9 +250,20 @@
      "al_decir": "confirmar pulso Reversar"
     },
     {
+     "resaltar": "[class*='snack'], simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
+    },
+    {
      "resaltar": "tbody tr:has-text('Colmado')",
-     "durante_ms": 4500,
+     "durante_ms": 3000,
      "al_decir": "El recibo pasa a Anulado",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "Después se registra",
      "cursor": false
     },
     {

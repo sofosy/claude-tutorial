@@ -173,7 +173,7 @@
    "ruta": "Ventas › Clientes › Estado de Cuenta",
    "texto_pantalla": "Lo cobrado y lo pendiente de cada cuenta",
    "navegar": "/sales/partners",
-   "narracion": "Cada cuenta lleva su propio estado de cuenta. Voy a Clientes y busco el RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos. Aparecen las sucursales. En la fila de Oriental pulso el primer icono, Estado de Cuenta. Aquí se ve solo lo de esta sucursal: un documento de mil ciento ochenta pesos, cobrado cero, y pendiente mil ciento ochenta. Ahora vuelvo, y abro el estado de cuenta de Central. Su factura ya fue cobrada, así que no aparece como pendiente. Desactivo Solo pendiente de pago, y se ve el historial completo, con lo cobrado. Un cobro hecho a Central no rebaja la deuda de Oriental: los cobros, los anticipos y las notas de crédito no se cruzan entre cuentas.",
+   "narracion": "Cada cuenta lleva su propio estado de cuenta. Voy a Clientes y busco el RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos. Aparecen las sucursales. En la fila de Oriental pulso el primer icono, Estado de Cuenta. Aquí se ve solo lo de esta sucursal: un documento de dos mil trescientos sesenta pesos, cobrado cero, y pendiente dos mil trescientos sesenta. Ahora vuelvo, y abro el estado de cuenta de Central. Su factura ya fue cobrada, así que no aparece como pendiente, y su saldo es cero. Desactivo Solo pendiente de pago, y se ve el historial completo, con lo cobrado. Un cobro hecho a Central no rebaja la deuda de Oriental: los cobros, los anticipos y las notas de crédito no se cruzan entre cuentas.",
    "acciones": [
     {
      "escribir": {
@@ -223,7 +223,7 @@
      "al_decir": "Desactivo Solo pendiente"
     },
     {
-     "resaltar": ":text('Cobrado') >> nth=0",
+     "resaltar": ":text('Pagado') >> nth=0",
      "durante_ms": 5000,
      "al_decir": "historial completo",
      "cursor": false
