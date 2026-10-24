@@ -153,14 +153,14 @@
     },
     {
      "presionar": {
-      "sel": "tbody tr >> nth=3 button:has(mat-icon:text-is('done_all'))",
+      "sel": "tbody tr >> nth=3 >> button:has(mat-icon:text-is('done_all'))",
       "tecla": "Enter"
      },
      "al_decir": "pulso Pagar completo"
     },
     {
      "escribir": {
-      "sel": "tbody tr >> nth=0 input",
+      "sel": "tbody tr >> nth=0 >> input",
       "texto": "100"
      },
      "al_decir": "escribo cien pesos"
@@ -218,20 +218,20 @@
     },
     {
      "escribir": {
-      "sel": "tbody tr >> nth=0 input >> nth=0",
+      "sel": "tbody tr >> nth=0 >> input >> nth=0",
       "texto": "1000"
      },
      "al_decir": "aplico mil pesos"
     },
     {
      "escribir": {
-      "sel": "tbody tr >> nth=0 input >> nth=3",
+      "sel": "tbody tr >> nth=0 >> input >> nth=3",
       "texto": "180"
      },
      "al_decir": "escribo ciento ochenta"
     },
     {
-     "resaltar": "tbody tr >> nth=0 td >> nth=-2",
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=-2",
      "durante_ms": 4000,
      "al_decir": "Mira el resultado",
      "cursor": false
@@ -350,7 +350,7 @@
     },
     {
      "escribir": {
-      "sel": "tbody tr >> nth=0 input",
+      "sel": "tbody tr >> nth=0 >> input",
       "texto": "1500"
      },
      "al_decir": "por ejemplo mil quinientos"

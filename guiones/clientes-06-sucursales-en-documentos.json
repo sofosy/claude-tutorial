@@ -216,7 +216,7 @@
      }
     },
     {
-     "click": "mat-slide-toggle:has-text('Solo pendiente')",
+     "click": "mat-checkbox:has-text('Solo pendiente')",
      "al_decir": "Desactivo Solo pendiente"
     },
     {

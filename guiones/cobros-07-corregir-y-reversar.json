@@ -127,14 +127,14 @@
     },
     {
      "escribir": {
-      "sel": "tbody tr >> nth=1 input",
+      "sel": "tbody tr >> nth=1 >> input",
       "texto": "1180"
      },
      "al_decir": "En la segunda factura escribo"
     },
     {
      "escribir": {
-      "sel": "tbody tr >> nth=2 input",
+      "sel": "tbody tr >> nth=2 >> input",
       "texto": "2640"
      },
      "al_decir": "en la tercera escribo"

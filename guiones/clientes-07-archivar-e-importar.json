@@ -136,7 +136,10 @@
      "cursor": false
     },
     {
-     "click": "button:has-text('Ver archivados')",
+     "presionar": {
+      "sel": "button:has-text('Ver archivados')",
+      "tecla": "Enter"
+     },
      "al_decir": "Pulso Ver archivados"
     },
     {
@@ -147,7 +150,7 @@
     },
     {
      "presionar": {
-      "sel": "tbody tr >> nth=0 >> button:has(mat-icon:text-is('restore_from_trash'))",
+      "sel": "tbody tr >> nth=0 >> button >> nth=-1",
       "tecla": "Enter"
      },
      "al_decir": "pulso Restaurar"
