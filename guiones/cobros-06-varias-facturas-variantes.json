@@ -120,7 +120,7 @@
      "al_decir": "escribo Ferretería"
     },
     {
-     "click": "mat-option >> nth=0",
+     "click": "mat-option:has-text('Ferretería')",
      "al_decir": "Lo elijo con un clic"
     },
     {
@@ -196,7 +196,7 @@
      "al_decir": "escribo Central"
     },
     {
-     "click": "mat-option >> nth=0",
+     "click": "mat-option:has-text('Central')",
      "al_decir": "La elijo"
     },
     {
@@ -261,7 +261,7 @@
      "al_decir": "escribo Central"
     },
     {
-     "click": "mat-option >> nth=0",
+     "click": "mat-option:has-text('Central')",
      "al_decir": "La elijo"
     },
     {
@@ -282,7 +282,7 @@
      "al_decir": "escribo Oriental"
     },
     {
-     "click": "mat-option >> nth=0",
+     "click": "mat-option:has-text('Oriental')",
      "al_decir": "Elijo esa cuenta"
     },
     {
@@ -316,7 +316,7 @@
      "al_decir": "escribo Colmado"
     },
     {
-     "click": "mat-option >> nth=0",
+     "click": "mat-option:has-text('Colmado')",
      "al_decir": "La elijo"
     },
     {

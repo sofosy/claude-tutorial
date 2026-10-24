@@ -146,7 +146,7 @@
      "al_decir": "en la tercera escribo"
     },
     {
-     "resaltar": ":text('Por ubicar') >> nth=0",
+     "resaltar": ":text-is('Por ubicar')",
      "durante_ms": 4000,
      "al_decir": "Por ubicar queda en cero",
      "cursor": false

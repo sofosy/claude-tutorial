@@ -114,7 +114,7 @@
      "al_decir": "escribo Supermercado"
     },
     {
-     "resaltar": "mat-option >> nth=0",
+     "resaltar": "mat-option:has-text('Oriental')",
      "durante_ms": 4000,
      "al_decir": "aparecen las sucursales",
      "cursor": false

@@ -100,7 +100,7 @@
    "ruta": "Ventas › Clientes",
    "texto_pantalla": "Archivar no borra: se puede restaurar",
    "navegar": "/sales/partners",
-   "narracion": "Cuando un cliente ya no se usa, no se borra: se archiva. Estamos en Clientes. Recojo el menú. Busco la Ferretería. La lista se filtra mientras escribo. En su fila pulso Archivar, el último icono. El sistema pide confirmar y aclara que el cliente dejará de aparecer en el listado, pero que sus facturas y movimientos se conservan. Confirmo con Sí, Archivar. Ahora el cliente ya no está en la lista. Pulso Ver archivados, y ahí aparece. Para recuperarlo pulso Restaurar. Confirmo, y el cliente vuelve a la lista de clientes activos. Archivar tampoco cancela lo que el cliente deba: la deuda sigue en su cuenta.",
+   "narracion": "Cuando un cliente ya no se usa, no se borra: se archiva. Estamos en Clientes. Recojo el menú. Busco la Ferretería. La lista se filtra mientras escribo. En su fila pulso Archivar, el último icono. El sistema pide confirmar y aclara que el cliente dejará de aparecer en el listado, pero que sus facturas y movimientos se conservan. Confirmo con Sí, Archivar. El sistema avisa que el cliente fue archivado, y pulso Entendido. Ahora el cliente ya no está en la lista. Pulso Ver archivados, y ahí aparece. Para recuperarlo pulso Restaurar. Confirmo, y el cliente vuelve a la lista de clientes activos. El sistema lo confirma, y pulso Entendido otra vez. Archivar tampoco cancela lo que el cliente deba: la deuda sigue en su cuenta.",
    "acciones": [
     {
      "click": "button.panel-collapse",
@@ -132,8 +132,13 @@
     },
     {
      "resaltar": "mat-dialog-container ",
-     "durante_ms": 2500,
+     "durante_ms": 3000,
+     "al_decir": "avisa que el cliente fue archivado",
      "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Entendido')",
+     "al_decir": "Entendido. Ahora el cliente"
     },
     {
      "presionar": {
@@ -168,7 +173,12 @@
     {
      "resaltar": "mat-dialog-container ",
      "durante_ms": 2500,
+     "al_decir": "lo confirma",
      "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Entendido')",
+     "al_decir": "Entendido otra vez"
     },
     {
      "presionar": {
