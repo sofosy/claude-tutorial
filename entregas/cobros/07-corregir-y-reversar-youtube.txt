@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Cobros · Corregir un reparto y reversar un cobro
+
+DESCRIPCIÓN
+============================================================
+Cómo se corrige el reparto de un pago de varias facturas, cómo se reversa un cobro registrado por error y qué le pasa a la factura cuando se hace.
+
+⏱️ CAPÍTULOS
+00:00  Corregir el reparto
+00:58  El motivo y el resultado
+01:39  Reversar un cobro
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Por qué un recibo no se edita
+• Corregir el reparto de un pago de varias facturas
+• Reversar un cobro con su motivo
+• Qué pasa con el saldo de la factura al reversar
+
+⚠️ ERRORES COMUNES
+• Intentar editar un recibo en vez de corregirlo
+• Reversar sin escribir el motivo
+• Anular una factura que está dentro de un cobro vigente
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:32
+
+TRANSCRIPCIÓN
+============================================================
+Un cliente nos avisa que el reparto de su pago estaba mal. Estamos en Cobros. Recojo el menú. Un recibo no se edita: queda como constancia. Pero cuando el error es solo cómo se repartió el dinero entre las facturas, hay una vía directa. En el recibo de varias facturas pulso Corregir reparto, el icono de las flechas. La pantalla avisa que el dinero, el cliente, el método y la fecha no cambian: solo cuánto va a cada factura. Ahora cambio el reparto. En la segunda factura escribo mil ciento ochenta. Mira: el sistema avisa que faltan mil ciento ochenta por ubicar, porque todavía no cuadra. Y en la tercera escribo dos mil seiscientos cuarenta. Ahora el total vuelve a ser cinco mil, y Por ubicar queda en cero. Pulso Corregir reparto y el sistema pide el motivo del cambio.
+Ahí está el cuadro de confirmación. El sistema pide el motivo, porque queda registrado en el historial del recibo. Escribo: el cliente aclaró el reparto, que es el motivo real del cambio. Con eso listo, pulso Corregir. Al confirmar, el recibo original queda anulado y se registra uno nuevo con el mismo dinero, repartido como indiqué. Todo ocurre en una sola operación: si algo falla, el recibo original no se toca. Volvemos al listado. El recibo anterior aparece como Anulado, y el nuevo aparece como Vigente. En sus notas dice a qué recibo corrige.
+Ahora un cobro que se registró por error: el pago del Colmado Germiva Este se aplicó a la factura equivocada. Busco su recibo, y pulso Reversar cobro, el icono de la flecha hacia atrás. El sistema aclara que el recibo quedará anulado y que el saldo volverá a la cartera. Escribo el motivo: cobro aplicado a la factura equivocada. Es un texto libre, y queda guardado junto al recibo anulado. Para confirmar, pulso Reversar. El recibo pasa a Anulado, la factura vuelve a quedar pendiente, y se reversa también su asiento contable. Después se registra el cobro de nuevo, ahora a la factura correcta. Mientras una factura esté dentro de una liquidación vigente, tampoco se puede anular: primero se reversa el cobro.
