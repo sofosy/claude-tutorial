@@ -223,7 +223,7 @@
     {
      "resaltar": "tbody tr >> nth=0",
      "durante_ms": 4000,
-     "al_decir": "Un solo recibo",
+     "al_decir": "hasta siete pagos",
      "cursor": false
     }
    ]

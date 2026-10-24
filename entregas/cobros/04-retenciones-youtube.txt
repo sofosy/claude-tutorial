@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Cobros · Cuando el cliente retiene impuestos
+
+DESCRIPCIÓN
+============================================================
+Cómo se registra un cobro cuando el cliente retiene ITBIS o ISR: el efectivo que entra, la retención que salda el resto de la factura y las reglas que evitan repetirla.
+
+⏱️ CAPÍTULOS
+00:00  Qué es una retención
+00:46  Registrar el cobro
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es una retención del cliente y en qué se diferencia de un descuento
+• Registrar ITBIS retenido en un cobro
+• Cómo se calcula el efectivo a cobrar
+• Cuándo no se debe registrar la retención
+
+⚠️ ERRORES COMUNES
+• Tratar una retención como si fuera un descuento comercial
+• Registrar la retención dos veces
+• Inventar la tasa sin consultar al contador
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:43
+
+TRANSCRIPCIÓN
+============================================================
+Estamos en Ventas, en la pantalla de Cobros. Recojo el menú. A veces el cliente retiene una parte del impuesto cuando te paga. Por ejemplo, la Constructora Germiva Ciudad debe once mil ochocientos pesos, y al pagar retiene quinientos cuarenta pesos de ITBIS, el impuesto sobre las ventas. Esa retención no es un descuento. Es impuesto que el cliente entrega directamente a la Dirección General de Impuestos Internos. Por eso no te llega a ti en dinero, pero cuenta como pago de la factura. Cuánto retiene cada cliente lo define tu contador, y el sistema solo registra lo que te informaron. Veamos cómo se registra.
+Veamos el registro, paso a paso. Pulso Registrar cobro. Primero busco la factura. Escribo Constructora, que es el nombre del cliente. En la lista aparece su factura, y la elijo. Fíjate en la sección Retenciones del cliente. Aquí escribo el ITBIS retenido: quinientos cuarenta pesos, la parte que el cliente retiene. Mira la nota que aparece debajo: la cuenta se salda por el efectivo más la retención. Y el monto a cobrar en efectivo baja a once mil doscientos sesenta. Elijo Transferencia, y anoto la referencia del depósito, para poder encontrarlo en el banco. Para terminar, presiono Registrar cobro. Si la factura ya declara la retención en sus líneas, el sistema no te deja repetirla: registra solo el dinero que entró.
