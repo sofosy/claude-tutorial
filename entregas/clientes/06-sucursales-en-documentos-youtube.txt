@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Clientes · Las sucursales al facturar
+
+DESCRIPCIÓN
+============================================================
+Cómo se elige la sucursal correcta en una factura, cómo se crea una sucursal nueva sin salir de ella y por qué cada cuenta tiene su propio estado de cuenta.
+
+⏱️ CAPÍTULOS
+00:00  La sucursal en la factura
+01:03  Un estado de cuenta por sucursal
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Elegir la sucursal correcta al facturar
+• Crear otra sucursal con el mismo RNC desde la factura
+• Ver el estado de cuenta de cada sucursal
+• Por qué un cobro no se cruza entre sucursales
+
+⚠️ ERRORES COMUNES
+• Facturar a la sucursal equivocada
+• Esperar que el saldo se comparta entre sucursales
+• Cambiar la razón social de una sola sucursal
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:57
+
+TRANSCRIPCIÓN
+============================================================
+Veamos cómo se ven las sucursales al facturar. Estamos en una factura nueva, en Ventas, Facturas. Recojo el menú. En Cliente escribo Supermercado, para buscar por nombre. En la lista aparecen las sucursales del supermercado, cada una con su código de cuenta y el mismo RNC. Elijo la cuenta Oriental. Fíjate que el campo muestra el nombre comercial de la sucursal y, junto a él, la razón social de la empresa. Si necesito una sucursal que todavía no existe, no tengo que salir de la factura: pulso el icono Crear otra sucursal con este RNC. Se abre un formulario con el RNC y la razón social ya puestos y bloqueados. Solo escribo el nombre de la sucursal: Supermercado Germiva Sur. Es lo único que necesita una cuenta nueva. Pulso Crear sucursal. Y la nueva cuenta queda elegida en la factura.
+Cada cuenta lleva su propio estado de cuenta. Voy a Clientes y busco el RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos. Aparecen las sucursales. En la fila de Oriental pulso el primer icono, Estado de Cuenta. Aquí se ve solo lo de esta sucursal: un documento de dos mil trescientos sesenta pesos, cobrado cero, y pendiente dos mil trescientos sesenta. Ahora vuelvo, y abro el estado de cuenta de Central. Su factura ya fue cobrada, así que no aparece como pendiente, y su saldo es cero. Desactivo Solo pendiente de pago, y se ve el historial completo, con lo cobrado. Un cobro hecho a Central no rebaja la deuda de Oriental: los cobros, los anticipos y las notas de crédito no se cruzan entre cuentas.

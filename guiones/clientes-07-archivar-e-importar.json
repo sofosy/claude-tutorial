@@ -1,0 +1,301 @@
+{
+ "titulo": "Clientes · Archivar, restaurar e importar",
+ "descripcion": "Cómo se archiva y se restaura un cliente sin perder su historial, y cómo se cargan muchos clientes de una vez, incluidas varias sucursales de un mismo RNC.",
+ "_comentario": "Video 07 de la serie Clientes. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/partners",
+  "esperar": "th"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/clientes/preparar.sh base"
+ },
+ "aprenderas": [
+  "Archivar un cliente y por qué no borra su historial",
+  "Restaurar un cliente archivado",
+  "Descargar la plantilla y cargar varios clientes con un archivo",
+  "Cargar sucursales de un mismo RNC con el código de cuenta"
+ ],
+ "errores_comunes": [
+  "Creer que archivar borra las facturas o la deuda",
+  "Subir un archivo con la razón social distinta para el mismo RNC",
+  "Olvidar el código de cuenta en las sucursales"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-archivar",
+   "capitulo": "Archivar y restaurar",
+   "rotulo": "Archivar un cliente",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Archivar no borra: se puede restaurar",
+   "navegar": "/sales/partners",
+   "narracion": "Cuando un cliente ya no se usa, no se borra: se archiva. Estamos en Clientes. Recojo el menú. Busco la Ferretería. La lista se filtra mientras escribo. En su fila pulso Archivar, el último icono. El sistema pide confirmar y aclara que el cliente dejará de aparecer en el listado, pero que sus facturas y movimientos se conservan. Confirmo con Sí, Archivar. El sistema avisa que el cliente fue archivado, y pulso Entendido. Ahora el cliente ya no está en la lista. Pulso Ver archivados, y ahí aparece. Para recuperarlo pulso Restaurar. Confirmo, y el cliente vuelve a la lista de clientes activos. El sistema lo confirma, y pulso Entendido otra vez. Archivar tampoco cancela lo que el cliente deba: la deuda sigue en su cuenta.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "Ferretería"
+     },
+     "al_decir": "Busco la Ferretería"
+    },
+    {
+     "presionar": {
+      "sel": "tr:has-text('Ferretería Germiva del Norte') button:has(mat-icon:text-is('archive'))",
+      "tecla": "Enter"
+     },
+     "al_decir": "pulso Archivar"
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 5000,
+     "al_decir": "El sistema pide confirmar",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, Archivar')",
+     "al_decir": "Sí, Archivar"
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 3000,
+     "al_decir": "avisa que el cliente fue archivado",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Entendido')",
+     "al_decir": "Entendido. Ahora el cliente"
+    },
+    {
+     "presionar": {
+      "sel": "button:has-text('Ver archivados')",
+      "tecla": "Enter"
+     },
+     "al_decir": "Pulso Ver archivados"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
+     "durante_ms": 3500,
+     "al_decir": "ahí aparece",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "tbody tr >> nth=0 >> button >> nth=-1",
+      "tecla": "Enter"
+     },
+     "al_decir": "pulso Restaurar"
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 4500,
+     "al_decir": "Confirmo, y el cliente",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, Restaurar')",
+     "al_decir": "vuelve a la lista"
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 2500,
+     "al_decir": "lo confirma",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Entendido')",
+     "al_decir": "Entendido otra vez"
+    },
+    {
+     "presionar": {
+      "sel": "button:has-text('Ver activos')",
+      "tecla": "Enter"
+     }
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
+     "durante_ms": 3500,
+     "al_decir": "la deuda sigue",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-importar",
+   "capitulo": "Importar clientes",
+   "rotulo": "Importar y exportar",
+   "ruta": "Ventas › Clientes › Importar / Exportar",
+   "texto_pantalla": "Plantilla, exportación y archivo",
+   "narracion": "Para cargar muchos clientes de una vez se usa Importar o Exportar. Abro el diálogo. Tiene tres partes. Primero, descargar la plantilla, en Excel o en CSV, con las columnas, un ejemplo y las instrucciones. Segundo, exportar lo que ya existe, útil para hacer cambios en bloque y volver a subir el mismo archivo. Y tercero, importar el archivo. Cada fila se empareja por documento: si el RNC o la cédula ya existe, se actualiza, y si no, se crea. Si alguna fila tiene errores, no se registra nada: se rechaza el archivo completo. Voy a subir un archivo con dos sucursales de una panadería: el mismo RNC, con códigos de cuenta distintos, PAN guion uno y PAN guion dos, y la misma razón social. Subo el archivo. El sistema lo procesa en cuatro etapas: subir el archivo, validar cada fila, registrar los clientes y finalizar con el resultado. Esto tarda unos segundos.",
+   "acciones": [
+    {
+     "click": "button:has-text('Importar / Exportar')",
+     "al_decir": "Abro el diálogo"
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Plantilla Excel')",
+     "durante_ms": 4500,
+     "al_decir": "descargar la plantilla",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Exportar a Excel')",
+     "durante_ms": 5000,
+     "al_decir": "exportar lo que ya existe",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Arrastra aquí')",
+     "durante_ms": 4500,
+     "al_decir": "importar el archivo",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container mat-icon:text-is('info')",
+     "durante_ms": 4500,
+     "al_decir": "se rechaza el archivo",
+     "cursor": false
+    },
+    {
+     "subir": {
+      "sel": "input[type=file]",
+      "archivo": "seeds/clientes/importar-sucursales.csv",
+      "ancla": "mat-dialog-container :text('Arrastra aquí')"
+     },
+     "al_decir": "Subo el archivo"
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 2500,
+     "al_decir": "validar cada fila",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 2500,
+     "al_decir": "registrar los clientes",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-resultado",
+   "capitulo": "El resultado",
+   "rotulo": "Resultado de la importación",
+   "ruta": "Ventas › Clientes",
+   "texto_pantalla": "Dos sucursales con el mismo RNC",
+   "narracion": "Terminó la importación. El sistema informa cuántos clientes creó, cuántos actualizó y si hubo errores. Cierro el diálogo y busco el RNC de la panadería. La lista se actualiza sola mientras escribo. Aparecen las dos sucursales de la panadería: cada una con su código de cuenta, PAN guion uno y PAN guion dos, y la misma razón social. Si un RNC ya tiene varias cuentas y el archivo no trae el código de cuenta, el sistema no adivina cuál actualizar: rechaza el archivo y pide el código.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 6000,
+     "al_decir": "informa cuántos",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar')",
+     "al_decir": "Cierro el diálogo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "130555500"
+     },
+     "al_decir": "busco el RNC"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
+     "durante_ms": 4500,
+     "al_decir": "Aparecen las dos sucursales",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=1 >> td >> nth=1",
+     "durante_ms": 4000,
+     "al_decir": "cada una con su código",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Razón social')",
+     "durante_ms": 4000,
+     "al_decir": "la misma razón social",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

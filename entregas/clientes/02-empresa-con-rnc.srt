@@ -1,0 +1,175 @@
+1
+00:00:03,100 --> 00:00:06,685
+Vamos a dar de alta una panadería.
+
+2
+00:00:06,496 --> 00:00:09,641
+Estamos en Ventas, en Clientes.
+
+3
+00:00:09,454 --> 00:00:13,289
+Recojo el menú, y pulso Nuevo Cliente.
+
+4
+00:00:13,102 --> 00:00:15,755
+Empiezo por la identificación.
+
+5
+00:00:15,567 --> 00:00:20,411
+El Tipo de documento ya viene en RNC, que es lo que usan las empresas;
+
+6
+00:00:20,222 --> 00:00:26,222
+una persona usa Cédula, y un cliente del exterior, Documento extranjero.
+
+7
+00:00:26,035 --> 00:00:27,064
+Escribo el RNC:
+
+8
+00:00:27,179 --> 00:00:31,379
+uno tres cero cinco cinco cinco cuatro cero cero.
+
+9
+00:00:31,193 --> 00:00:36,010
+El RNC lleva nueve dígitos y la cédula once, y los guiones no cuentan.
+
+10
+00:00:36,677 --> 00:00:39,508
+Cuando el número tiene la longitud correcta,
+
+11
+00:00:39,320 --> 00:00:43,746
+el sistema consulta el padrón de la Dirección General de Impuestos Internos,
+
+12
+00:00:43,560 --> 00:00:47,849
+la DGII, y, si encuentra al contribuyente, completa el nombre.
+
+13
+00:00:48,515 --> 00:00:51,861
+Este RNC es de demostración y no aparece en el padrón,
+
+14
+00:00:51,673 --> 00:00:55,233
+así que el sistema pide la razón social fiscal:
+
+15
+00:00:55,347 --> 00:00:58,215
+el nombre legal con el que la empresa está inscrita.
+
+16
+00:00:58,883 --> 00:01:04,581
+En Nombre comercial escribo Panadería Germiva, como la conocen sus clientes.
+
+17
+00:01:04,393 --> 00:01:08,329
+Y en Razón social fiscal, Panadería Germiva S.R.L.
+
+18
+00:01:09,704 --> 00:01:11,326
+Ahora la clasificación.
+
+19
+00:01:11,995 --> 00:01:14,649
+Categoría es Empresa, porque tiene RNC.
+
+20
+00:01:14,460 --> 00:01:16,975
+En Actúa como queda Cliente;
+
+21
+00:01:16,788 --> 00:01:22,109
+si a esa misma empresa además le compras, se agrega Proveedor en la misma ficha.
+
+22
+00:01:21,921 --> 00:01:23,807
+Tipo de cliente:
+
+23
+00:01:23,620 --> 00:01:25,856
+abro la lista y elijo Mayorista.
+
+24
+00:01:25,670 --> 00:01:29,456
+Sirve para retenciones y reportes,
+
+25
+00:01:29,520 --> 00:01:32,450
+pero por sí solo no le da un precio ni un crédito.
+
+26
+00:01:33,118 --> 00:01:37,507
+Lista de precios la dejo vacía, y entonces usa la lista por defecto.
+
+27
+00:01:38,175 --> 00:01:41,784
+En Plazo de pago abro la lista y elijo treinta días:
+
+28
+00:01:41,597 --> 00:01:45,622
+se cargará solo en las facturas nuevas de este cliente.
+
+29
+00:01:45,433 --> 00:01:49,963
+Y Tipo de NCF por defecto es el comprobante que se propone al facturarle.
+
+30
+00:01:50,629 --> 00:01:51,698
+Lo dejo vacío:
+
+31
+00:01:51,787 --> 00:01:53,723
+se elige al hacer cada factura.
+
+32
+00:01:55,093 --> 00:01:57,721
+Con los datos completos, pulso Guardar.
+
+33
+00:01:58,391 --> 00:02:04,402
+El sistema avisa que el cliente se creó, pero que falta su dirección de facturación.
+
+34
+00:02:04,215 --> 00:02:07,094
+De esa dirección sale el país del cliente:
+
+35
+00:02:06,908 --> 00:02:11,711
+sin ella no se puede emitir un comprobante de exportación, el E cuarenta y seis,
+
+36
+00:02:11,525 --> 00:02:16,278
+y si el cliente fuera del exterior, la venta se contaría como local en el IR-2,
+
+37
+00:02:16,342 --> 00:02:19,084
+la declaración anual de renta de las empresas.
+
+38
+00:02:19,752 --> 00:02:20,884
+Pulso Aceptar.
+
+39
+00:02:21,550 --> 00:02:24,179
+La ficha quedó guardada.
+
+40
+00:02:23,991 --> 00:02:26,581
+El sistema le generó su Código de cuenta,
+
+41
+00:02:26,395 --> 00:02:29,086
+y el RNC y la razón social quedaron bloqueados:
+
+42
+00:02:28,897 --> 00:02:31,086
+ya no se cambian desde aquí.
+
+43
+00:02:30,899 --> 00:02:34,495
+El nombre comercial sí se puede editar.
+
+44
+00:02:35,163 --> 00:02:39,578
+Abajo se activó Contactos y direcciones, que vemos en el siguiente video.

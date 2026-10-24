@@ -1,0 +1,115 @@
+1
+00:00:03,100 --> 00:00:05,943
+Estamos en Ventas, en la pantalla de Cobros.
+
+2
+00:00:06,611 --> 00:00:07,742
+Recojo el menú.
+
+3
+00:00:08,422 --> 00:00:12,182
+A veces el cliente retiene una parte del impuesto cuando te paga.
+
+4
+00:00:12,851 --> 00:00:17,429
+Por ejemplo, la Constructora Germiva Ciudad debe once mil ochocientos pesos,
+
+5
+00:00:17,480 --> 00:00:22,711
+y al pagar retiene quinientos cuarenta pesos de ITBIS, el impuesto sobre las ventas.
+
+6
+00:00:23,379 --> 00:00:25,530
+Esa retención no es un descuento.
+
+7
+00:00:26,198 --> 00:00:30,650
+Es impuesto que el cliente entrega directamente a la Dirección General de Impuestos
+
+8
+00:00:30,463 --> 00:00:31,355
+Internos.
+
+9
+00:00:32,022 --> 00:00:36,249
+Por eso no te llega a ti en dinero, pero cuenta como pago de la factura.
+
+10
+00:00:36,917 --> 00:00:39,696
+Cuánto retiene cada cliente lo define tu contador,
+
+11
+00:00:39,811 --> 00:00:42,589
+y el sistema solo registra lo que te informaron.
+
+12
+00:00:43,258 --> 00:00:44,955
+Veamos cómo se registra.
+
+13
+00:00:46,329 --> 00:00:48,655
+Veamos el registro, paso a paso.
+
+14
+00:00:49,323 --> 00:00:50,869
+Pulso Registrar cobro.
+
+15
+00:00:51,537 --> 00:00:53,146
+Primero busco la factura.
+
+16
+00:00:53,814 --> 00:00:57,096
+Escribo Constructora, que es el nombre del cliente.
+
+17
+00:00:57,765 --> 00:01:00,707
+En la lista aparece su factura, y la elijo.
+
+18
+00:01:01,375 --> 00:01:04,003
+Fíjate en la sección Retenciones del cliente.
+
+19
+00:01:04,671 --> 00:01:06,733
+Aquí escribo el ITBIS retenido:
+
+20
+00:01:06,823 --> 00:01:10,432
+quinientos cuarenta pesos, la parte que el cliente retiene.
+
+21
+00:01:11,100 --> 00:01:13,099
+Mira la nota que aparece debajo:
+
+22
+00:01:13,213 --> 00:01:16,269
+la cuenta se salda por el efectivo más la retención.
+
+23
+00:01:16,938 --> 00:01:20,913
+Y el monto a cobrar en efectivo baja a once mil doscientos sesenta.
+
+24
+00:01:21,579 --> 00:01:25,213
+Elijo Transferencia, y anoto la referencia del depósito,
+
+25
+00:01:25,278 --> 00:01:27,314
+para poder encontrarlo en el banco.
+
+26
+00:01:27,984 --> 00:01:30,712
+Para terminar, presiono Registrar cobro.
+
+27
+00:01:31,379 --> 00:01:34,473
+Si la factura ya declara la retención en sus líneas,
+
+28
+00:01:34,551 --> 00:01:36,625
+el sistema no te deja repetirla:
+
+29
+00:01:36,715 --> 00:01:38,826
+registra solo el dinero que entró.

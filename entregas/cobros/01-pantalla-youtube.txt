@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Cobros · La pantalla de cobros
+
+DESCRIPCIÓN
+============================================================
+Qué es un cobro y qué dice cada columna del listado, cómo se filtra, qué se puede hacer desde cada recibo y cómo se ve el detalle de un cobro.
+
+⏱️ CAPÍTULOS
+00:00  El listado de cobros
+00:50  Filtros y botones
+01:25  Acciones y detalle
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué representa cada fila del listado de cobros
+• Qué dice cada columna y qué significa Vigente y Anulado
+• Para qué sirven los filtros y los dos botones de cobro
+• Qué acciones tiene cada recibo
+• Leer el detalle de un cobro
+
+⚠️ ERRORES COMUNES
+• Confundir una factura vendida con un cobro recibido
+• Buscar un cobro en Solo anticipos
+• Creer que Anulado borra el recibo
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:09
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la pantalla de Cobros, en Ventas. Un cobro es el dinero que un cliente nos paga, y cada fila es un recibo. Recojo el menú. En la primera columna está el número de Recibo. Luego, la Fecha del pago. La columna N° Factura dice a qué factura se aplicó el cobro. Y cuando un solo pago saldó varias facturas, aquí aparece la etiqueta Varias facturas, como en el primer recibo. Después viene el Cliente que pagó. Luego, el Monto que entró. El Estado Vigente quiere decir que el cobro está en pie; un cobro reversado aparece como Anulado. Y por último, el Método de pago: transferencia, efectivo, tarjeta, cheque o depósito.
+Arriba están los filtros. Búsqueda encuentra un recibo por su número, su factura o su cliente. Tipo empieza en Solo cobros; también puedes ver Solo anticipos, que son pagos recibidos antes de facturar, o Todos. Y Cliente muestra solo los recibos de un cliente. A la derecha están los dos botones para cobrar. Registrar cobro cobra una sola factura. Cobrar varias facturas reparte un solo pago entre varias facturas del mismo cliente. Los dos se explican en los videos siguientes.
+Cada recibo tiene sus acciones al final de la fila. Imprimir recibo genera el comprobante para el cliente. Ver detalle abre el cobro completo. Corregir reparto solo aparece en los cobros de varias facturas. Y Reversar cobro lo anula, con un motivo. Abro el detalle del primer recibo. Arriba están el recibo, el estado, el tipo, el cliente y la fecha. En Formas de pago se ve cómo entró el dinero: el método, la referencia y el monto. Y en Documentos pagados, cuánto se aplicó a cada factura, cuánto le queda y si quedó Saldada o Parcial. Cierro el detalle.

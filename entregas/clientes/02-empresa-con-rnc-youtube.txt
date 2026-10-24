@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Clientes · Crear una empresa con RNC
+
+DESCRIPCIÓN
+============================================================
+Cómo se da de alta una empresa cliente: documento y consulta del padrón, razón social y nombre comercial, clasificación, plazo de pago y comprobante por defecto.
+
+⏱️ CAPÍTULOS
+00:00  Datos de identificación
+01:09  Clasificación del cliente
+01:54  Guardar el cliente
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué documento pide el sistema según el tipo de cliente
+• Qué hace la consulta al padrón de la DGII
+• Diferencia entre razón social y nombre comercial
+• Qué es el tipo de cliente, la lista de precios y el plazo
+• Qué avisa el sistema al guardar y por qué
+
+⚠️ ERRORES COMUNES
+• Escribir la razón social distinta a la inscrita ante la DGII
+• Creer que el tipo Mayorista da precio o crédito por sí solo
+• Dejar al cliente sin dirección de facturación
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:43
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a dar de alta una panadería. Estamos en Ventas, en Clientes. Recojo el menú, y pulso Nuevo Cliente. Empiezo por la identificación. El Tipo de documento ya viene en RNC, que es lo que usan las empresas; una persona usa Cédula, y un cliente del exterior, Documento extranjero. Escribo el RNC: uno tres cero cinco cinco cinco cuatro cero cero. El RNC lleva nueve dígitos y la cédula once, y los guiones no cuentan. Cuando el número tiene la longitud correcta, el sistema consulta el padrón de la Dirección General de Impuestos Internos, la DGII, y, si encuentra al contribuyente, completa el nombre. Este RNC es de demostración y no aparece en el padrón, así que el sistema pide la razón social fiscal: el nombre legal con el que la empresa está inscrita. En Nombre comercial escribo Panadería Germiva, como la conocen sus clientes. Y en Razón social fiscal, Panadería Germiva S.R.L.
+Ahora la clasificación. Categoría es Empresa, porque tiene RNC. En Actúa como queda Cliente; si a esa misma empresa además le compras, se agrega Proveedor en la misma ficha. Tipo de cliente: abro la lista y elijo Mayorista. Sirve para retenciones y reportes, pero por sí solo no le da un precio ni un crédito. Lista de precios la dejo vacía, y entonces usa la lista por defecto. En Plazo de pago abro la lista y elijo treinta días: se cargará solo en las facturas nuevas de este cliente. Y Tipo de NCF por defecto es el comprobante que se propone al facturarle. Lo dejo vacío: se elige al hacer cada factura.
+Con los datos completos, pulso Guardar. El sistema avisa que el cliente se creó, pero que falta su dirección de facturación. De esa dirección sale el país del cliente: sin ella no se puede emitir un comprobante de exportación, el E cuarenta y seis, y si el cliente fuera del exterior, la venta se contaría como local en el IR-2, la declaración anual de renta de las empresas. Pulso Aceptar. La ficha quedó guardada. El sistema le generó su Código de cuenta, y el RNC y la razón social quedaron bloqueados: ya no se cambian desde aquí. El nombre comercial sí se puede editar. Abajo se activó Contactos y direcciones, que vemos en el siguiente video.

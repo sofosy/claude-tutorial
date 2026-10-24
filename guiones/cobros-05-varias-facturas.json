@@ -1,0 +1,298 @@
+{
+ "titulo": "Cobros · Un solo pago para varias facturas",
+ "descripcion": "Cuándo un cliente paga varias facturas con un solo pago y cómo se registra: elegir al cliente, repartir el dinero entre sus facturas, comprobar que no sobra ni falta nada y confirmar un solo recibo.",
+ "_comentario": "Video 05 de la serie Cobros. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/payments",
+  "esperar": "button:has-text('Registrar cobro')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/cobros/preparar.sh base"
+ },
+ "aprenderas": [
+  "Cuándo ocurre un pago que cubre varias facturas",
+  "Registrar un solo pago y repartirlo entre las facturas del cliente",
+  "Pagar facturas completas y una parcial en el mismo cobro",
+  "Qué significan Recibido, Aplicado y Por ubicar",
+  "Dónde queda el recibo y su detalle"
+ ],
+ "errores_comunes": [
+  "Repartir mal el dinero y descubrirlo al cerrar el mes",
+  "Mezclar facturas de clientes distintos en un mismo pago",
+  "Registrar el cobro dos veces por un doble clic"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-cuando",
+   "capitulo": "Cuándo ocurre",
+   "rotulo": "Cobrar varias facturas",
+   "ruta": "Ventas › Cobros",
+   "texto_pantalla": "Cobros · un pago, varias facturas",
+   "navegar": "/sales/payments",
+   "narracion": "Esta es la pantalla de Cobros. Recojo el menú. Aquí aparecerá cada recibo que se registre, con su cliente y su monto. Todavía no hay ninguno. Hay un caso muy común, que ocurre casi todas las semanas: la Ferretería Germiva del Norte tiene cuatro facturas pendientes, y un día nos envía una sola transferencia que cubre unas completas y otra a medias. Si registráramos ese pago factura por factura, tendríamos cuatro cobros y un solo depósito en el banco, y el cuadre sería un lío. Para eso existe el botón Cobrar varias facturas: un solo pago, un solo recibo, y tú indicas cuánto va a cada factura. Registrar cobro, el otro botón, sirve para una sola factura. Pulso Cobrar varias facturas.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "app-dynamic-view .unified-view-container, app-dynamic-view",
+     "durante_ms": 3500,
+     "al_decir": "Aquí aparecerá cada recibo",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cliente'))",
+     "durante_ms": 3000,
+     "al_decir": "tiene cuatro facturas pendientes",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Búsqueda'))",
+     "durante_ms": 3000,
+     "al_decir": "cuatro cobros y un solo",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Cobrar varias facturas')",
+     "durante_ms": 3500,
+     "al_decir": "Para eso existe",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Registrar cobro')",
+     "durante_ms": 3000,
+     "al_decir": "Registrar cobro, el otro",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Cobrar varias facturas')",
+     "al_decir": "Pulso Cobrar varias"
+    }
+   ]
+  },
+  {
+   "id": "02-datos",
+   "capitulo": "Los datos del pago",
+   "rotulo": "Datos del pago",
+   "ruta": "Ventas › Cobros › Cobrar varias facturas",
+   "texto_pantalla": "Cliente, método, monto y referencia",
+   "narracion": "Primero, los datos del pago, tal como los dice el recibo del cliente. Busco al cliente: escribo Ferretería. En la lista aparece la Ferretería Germiva del Norte, y la elijo. Al elegirla aparecen sus documentos pendientes, del más antiguo al más reciente, con su saldo y su vencimiento. El método de pago es Transferencia. El monto recibido es lo que realmente entró al banco: cinco mil pesos, ni un peso más ni uno menos, porque debe coincidir con el depósito. Ahora, en Referencia, anoto el número de la transferencia, para poder encontrarla después en el banco. Y por último, la Cuenta de destino: la dejo vacía, y entonces usa la cuenta del método de pago.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[placeholder*='filtrar']",
+      "texto": "Ferretería"
+     },
+     "al_decir": "escribo Ferretería"
+    },
+    {
+     "click": "mat-option:has-text('Ferretería Germiva del Norte')",
+     "al_decir": "la elijo"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "documentos pendientes",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Método de pago'))",
+     "durante_ms": 3500,
+     "al_decir": "El método de pago es",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='amount']",
+      "texto": "5000"
+     },
+     "al_decir": "cinco mil pesos"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='reference']",
+      "texto": "TRF-998877"
+     },
+     "al_decir": "anoto el número"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cuenta de destino'))",
+     "durante_ms": 3500,
+     "al_decir": "la Cuenta de destino",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-reparto",
+   "capitulo": "Repartir el dinero",
+   "rotulo": "Reparto",
+   "ruta": "Ventas › Cobros › Cobrar varias facturas",
+   "texto_pantalla": "Recibido · Aplicado · Por ubicar",
+   "narracion": "Ahora repartimos los cinco mil pesos. Pulso Sugerir reparto, que empieza por la factura más antigua. La primera queda Saldada, la segunda también, y la tercera queda Parcial: recibe lo que sobra y conserva el resto como deuda. La cuarta no cambia. Puedes ajustar cada monto según el recibo que te mandó el cliente. Abajo está el control: Recibido son los cinco mil pesos, Aplicado es lo repartido, y Por ubicar tiene que quedar en cero. Mientras sobre o falte dinero, el botón Registrar cobro se mantiene apagado.",
+   "acciones": [
+    {
+     "click": "button:has-text('Sugerir reparto')",
+     "al_decir": "Pulso Sugerir reparto"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "La primera queda Saldada",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=2",
+     "durante_ms": 4500,
+     "al_decir": "queda Parcial",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=3",
+     "durante_ms": 3000,
+     "al_decir": "no cambia",
+     "cursor": false
+    },
+    {
+     "resaltar": "th:has-text('Monto a aplicar')",
+     "durante_ms": 3500,
+     "al_decir": "ajustar cada monto",
+     "cursor": false
+    },
+    {
+     "resaltar": ":text('Por ubicar') >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "Por ubicar tiene que quedar",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Registrar cobro')",
+     "durante_ms": 3500,
+     "al_decir": "Registrar cobro se mantiene",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-confirmar",
+   "capitulo": "Registrar y revisar",
+   "rotulo": "Confirmar el cobro",
+   "ruta": "Ventas › Cobros",
+   "texto_pantalla": "Un solo recibo con varias facturas",
+   "narracion": "Ya está todo en orden, así que pulso Registrar cobro. El sistema pide confirmar: dice cuántos documentos quedan saldados y cuántos con saldo pendiente. Confirmo. Aparece el aviso con el número del recibo, y volvemos al listado. Fíjate que el recibo dice Varias facturas en la columna del número de factura. Abro el detalle: arriba están los datos del pago, y abajo, Documentos pagados, con lo que se aplicó a cada uno y lo que le queda. Es un solo recibo y un solo movimiento de banco.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "pulso Registrar cobro"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4500,
+     "al_decir": "El sistema pide confirmar",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "Confirmo"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=2",
+     "durante_ms": 4000,
+     "al_decir": "Varias facturas",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "tbody tr >> nth=0 >> button:has(mat-icon:text-is('visibility'))",
+      "tecla": "Enter"
+     },
+     "al_decir": "Abro el detalle"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Documentos pagados')",
+     "durante_ms": 5000,
+     "al_decir": "Documentos pagados",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

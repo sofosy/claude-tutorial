@@ -1,0 +1,40 @@
+TÍTULO
+============================================================
+Clientes · Personas, extranjeros y casos especiales
+
+DESCRIPCIÓN
+============================================================
+Cómo se crea un cliente persona con cédula, un cliente del exterior con documento extranjero, qué es el Consumidor Final, cómo un mismo cliente puede ser también proveedor y qué pasa si intentas repetir una cédula.
+
+⏱️ CAPÍTULOS
+00:00  Una persona con cédula
+01:00  Un cliente del exterior
+01:48  El Consumidor Final
+02:24  Cliente y proveedor
+03:13  Repetir una cédula
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear una persona con cédula y qué es un contribuyente informal
+• Crear un cliente con documento extranjero
+• Qué es el Consumidor Final y por qué no se toca
+• Marcar a un cliente también como proveedor
+• Qué hace el sistema si repites una cédula
+
+⚠️ ERRORES COMUNES
+• Crear un segundo cliente con la misma cédula
+• Intentar cambiar el nombre del Consumidor Final
+• Usar crédito fiscal con un cliente informal
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:02
+
+TRANSCRIPCIÓN
+============================================================
+Empecemos con una persona. Estamos en Ventas, en Clientes. Recojo el menú, y pulso Nuevo Cliente. En Categoría abro la lista y elijo Persona. Con eso, el tipo de documento cambia solo a Cédula. Ahora escribo la cédula, que lleva once dígitos, sin contar los guiones. El sistema la busca en el padrón. Esta es de demostración y no aparece, así que propone marcar Contribuyente informal: una persona que no está inscrita como contribuyente. A un cliente informal se le factura con comprobante de consumo, no con crédito fiscal. Después escribo el nombre del cliente: Ana Germiva Rosario. Ese es el nombre con el que aparecerá en sus facturas y en el listado. Cuando todo está listo, pulso Guardar. El sistema avisa que falta la dirección de facturación, y acepto el aviso.
+Ahora un cliente del exterior. Vuelvo a Clientes y pulso Nuevo Cliente. En Tipo de documento elijo Documento extranjero. Este tipo acepta un pasaporte o un identificador fiscal de su país, hasta cincuenta caracteres, y no se consulta en el padrón dominicano. Escribo el documento del cliente. Es un código de su país, y se guarda tal como lo escribes. Ahora el nombre del cliente: Hotel Germiva Internacional. Es el nombre con el que lo conocemos. Cuando está listo, pulso Guardar. El sistema avisa que falta la dirección, y acepto el aviso. Para este cliente la dirección de facturación es todavía más importante, porque del país depende el comprobante de exportación.
+En el listado hay un cliente que no creaste: el Consumidor Final. Lo busco. La lista se filtra mientras escribo. Es el cliente de las facturas sin cliente identificado, por ejemplo una venta rápida en mostrador. Fíjate que no tiene el botón de archivar. Abro su ficha con el lápiz. El sistema avisa que su nombre no se puede modificar, y el campo del nombre aparece bloqueado. Por eso no hace falta crear otro cliente para las ventas sin identificar: en la factura se deja el cliente vacío, y el sistema usa este.
+A veces un cliente también es proveedor: le vendes y le compras. No se crea otra ficha: se marca en la misma. Busco el Colmado Germiva Este. La lista se filtra mientras escribo. Pulso el lápiz para abrir su ficha. En Actúa como, además de Cliente, agrego Proveedor. Al marcarlo, aparece una sección nueva: Condiciones del proveedor, con el plazo de pago y el límite de crédito. Esas condiciones describen lo que tú le puedes deber a ese proveedor; no son el crédito que le das como cliente. Guardo la ficha. El sistema confirma que el cliente se actualizó, y acepto. Ahora aparece en las dos listas: en Clientes, de Ventas, y en Proveedores, de Compras.
+Una última regla. Una persona con cédula tiene una sola ficha. Pulso Nuevo Cliente. Abro la Categoría, y elijo Persona, como en el primer caso. Escribo una cédula que ya existe en el sistema, la de María Germiva. Ahora escribo un nombre cualquiera, porque el nombre es obligatorio. Con eso listo, pulso Guardar. El sistema lo rechaza: dice que ya existe un cliente con esa cédula, y que uses esa ficha en lugar de crear una segunda. Es lo que evita duplicados. Acepto el mensaje. Con las empresas es distinto: un mismo RNC puede tener varias sucursales, y eso lo explicamos en el siguiente video.

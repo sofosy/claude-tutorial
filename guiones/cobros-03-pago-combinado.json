@@ -1,0 +1,232 @@
+{
+ "titulo": "Cobros · Un cobro con varios métodos de pago",
+ "descripcion": "Cómo se registra el pago combinado de una factura, por ejemplo una parte en efectivo y otra con tarjeta, en un solo recibo; cuándo ocurre y qué límites tiene.",
+ "_comentario": "Video 03 de la serie Cobros. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/payments",
+  "esperar": "button:has-text('Registrar cobro')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/cobros/preparar.sh base"
+ },
+ "aprenderas": [
+  "Cuándo un cliente paga una factura con más de un método",
+  "Activar el pago combinado y agregar cada método al recibo",
+  "Qué piden la tarjeta y el efectivo",
+  "Qué significan Asignado y Falta"
+ ],
+ "errores_comunes": [
+  "Registrar dos cobros separados para una misma factura",
+  "Olvidar agregar un método al recibo",
+  "Pasar de siete pagos por factura"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-combinado",
+   "capitulo": "Pago combinado",
+   "rotulo": "Varios métodos en un recibo",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Efectivo y tarjeta en el mismo recibo",
+   "navegar": "/sales/payments",
+   "narracion": "Estamos en Ventas, en la pantalla de Cobros. Recojo el menú. A veces un cliente paga una sola factura con más de un método: una parte en efectivo y otra con tarjeta. Para eso existe el pago combinado, y todo queda en un solo recibo. El Taller Germiva Oeste debe dos mil trescientos sesenta pesos. Pulso Registrar cobro. Escribo Taller, para buscar su factura por el nombre del cliente. En la lista aparece, y la elijo. Ahora marco la casilla Pago combinado, varios métodos. Fíjate que aparecen dos cifras. Asignado es lo que ya repartí entre métodos, y Falta es lo que todavía no tiene método. Primero el efectivo: en Monto a cobrar escribo mil pesos, que es lo que el cliente entrega en billetes. Ahora pulso Agregar al recibo, y la ficha de efectivo queda anotada. Mira cómo Falta baja a mil trescientos sesenta.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "resaltar": "button:has-text('Registrar cobro')",
+     "durante_ms": 3500,
+     "al_decir": "Para eso existe el pago",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Registrar cobro')",
+     "al_decir": "Pulso Registrar cobro"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[placeholder*='filtrar']",
+      "texto": "Taller"
+     },
+     "al_decir": "Escribo Taller"
+    },
+    {
+     "click": "mat-option >> nth=0",
+     "al_decir": "y la elijo"
+    },
+    {
+     "click": "mat-dialog-container mat-checkbox:has-text('Pago combinado')",
+     "al_decir": "marco la casilla"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Falta') >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "Falta es lo que",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='amount']",
+      "texto": "1000"
+     },
+     "al_decir": "escribo mil pesos"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Agregar al recibo')",
+     "al_decir": "pulso Agregar al recibo"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Falta') >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "Falta baja",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-tarjeta",
+   "capitulo": "El segundo método",
+   "rotulo": "Tarjeta y registro",
+   "ruta": "Ventas › Cobros › Registrar cobro",
+   "texto_pantalla": "Tarjeta con sus datos",
+   "narracion": "Ahora el segundo método. Elijo Tarjeta. El monto ya viene con lo que falta: mil trescientos sesenta. Con tarjeta el sistema pide tres datos: los últimos cuatro dígitos, el tipo de tarjeta y el código de autorización del voucher. Escribo los cuatro dígitos de la tarjeta. Esos dígitos permiten identificar el pago más tarde. Ahora abro el tipo de tarjeta, y elijo Visa. Por último, escribo el código de autorización que imprime el terminal. Con eso, pulso Agregar al recibo. Ahora Falta es cero: el recibo tiene efectivo y tarjeta, y suma el total de la factura. Entonces pulso Registrar cobro. Un solo recibo, con dos formas de pago. Una factura admite hasta siete pagos activos, y cada método de un pago combinado cuenta como uno.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container button:has-text('Tarjeta')",
+     "al_decir": "Elijo Tarjeta"
+    },
+    {
+     "resaltar": "mat-dialog-container input[formcontrolname='amount']",
+     "durante_ms": 3500,
+     "al_decir": "El monto ya viene",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='cardNumber']",
+      "texto": "4242"
+     },
+     "al_decir": "Escribo los cuatro dígitos"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Tipo de tarjeta')) mat-select",
+     "al_decir": "abro el tipo de tarjeta"
+    },
+    {
+     "click": "mat-option:has-text('Visa')",
+     "al_decir": "elijo Visa"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='authorizationCode']",
+      "texto": "AUT-558120"
+     },
+     "al_decir": "escribo el código"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Agregar al recibo')",
+     "al_decir": "pulso Agregar al recibo"
+    },
+    {
+     "resaltar": "mat-dialog-container :text('Asignado') >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "Falta es cero",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar cobro')",
+     "al_decir": "pulso Registrar cobro"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "cursor": false
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
+     "durante_ms": 3000,
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "hasta siete pagos",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

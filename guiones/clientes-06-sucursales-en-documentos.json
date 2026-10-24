@@ -1,0 +1,234 @@
+{
+ "titulo": "Clientes · Las sucursales al facturar",
+ "descripcion": "Cómo se elige la sucursal correcta en una factura, cómo se crea una sucursal nueva sin salir de ella y por qué cada cuenta tiene su propio estado de cuenta.",
+ "_comentario": "Video 06 de la serie Clientes. setup: preparar.sh sucursales.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/invoices/create",
+  "esperar": "app-partner-document-select"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/clientes/preparar.sh sucursales"
+ },
+ "aprenderas": [
+  "Elegir la sucursal correcta al facturar",
+  "Crear otra sucursal con el mismo RNC desde la factura",
+  "Ver el estado de cuenta de cada sucursal",
+  "Por qué un cobro no se cruza entre sucursales"
+ ],
+ "errores_comunes": [
+  "Facturar a la sucursal equivocada",
+  "Esperar que el saldo se comparta entre sucursales",
+  "Cambiar la razón social de una sola sucursal"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-factura",
+   "capitulo": "La sucursal en la factura",
+   "rotulo": "Elegir la sucursal",
+   "ruta": "Ventas › Facturas › Nueva",
+   "texto_pantalla": "Cada sucursal con su código y su nombre",
+   "navegar": "/sales/invoices/create",
+   "narracion": "Veamos cómo se ven las sucursales al facturar. Estamos en una factura nueva, en Ventas, Facturas. Recojo el menú. En Cliente escribo Supermercado, para buscar por nombre. En la lista aparecen las sucursales del supermercado, cada una con su código de cuenta y el mismo RNC. Elijo la cuenta Oriental. Fíjate que el campo muestra el nombre comercial de la sucursal y, junto a él, la razón social de la empresa. Si necesito una sucursal que todavía no existe, no tengo que salir de la factura: pulso el icono Crear otra sucursal con este RNC. Se abre un formulario con el RNC y la razón social ya puestos y bloqueados. Solo escribo el nombre de la sucursal: Supermercado Germiva Sur. Es lo único que necesita una cuenta nueva. Pulso Crear sucursal. Y la nueva cuenta queda elegida en la factura.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "app-partner-document-select input",
+      "texto": "Supermercado"
+     },
+     "al_decir": "escribo Supermercado"
+    },
+    {
+     "resaltar": "mat-option:has-text('Oriental')",
+     "durante_ms": 4000,
+     "al_decir": "aparecen las sucursales",
+     "cursor": false
+    },
+    {
+     "click": "mat-option:has-text('Oriental')",
+     "al_decir": "Elijo la cuenta Oriental"
+    },
+    {
+     "resaltar": "app-partner-document-select",
+     "durante_ms": 4500,
+     "al_decir": "Fíjate que el campo",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "button:has(mat-icon:text-is('add_business'))",
+      "tecla": "Enter"
+     },
+     "al_decir": "pulso el icono"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4000,
+     "al_decir": "Se abre un formulario",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='name']",
+      "texto": "Supermercado Germiva Sur"
+     },
+     "al_decir": "escribo el nombre"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Crear sucursal')",
+     "al_decir": "Pulso Crear sucursal"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2000,
+     "cursor": false
+    },
+    {
+     "resaltar": "app-partner-document-select",
+     "durante_ms": 4000,
+     "al_decir": "queda elegida",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-estado-cuenta",
+   "capitulo": "Un estado de cuenta por sucursal",
+   "rotulo": "Estado de cuenta",
+   "ruta": "Ventas › Clientes › Estado de Cuenta",
+   "texto_pantalla": "Lo cobrado y lo pendiente de cada cuenta",
+   "navegar": "/sales/partners",
+   "narracion": "Cada cuenta lleva su propio estado de cuenta. Voy a Clientes y busco el RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos. Aparecen las sucursales. En la fila de Oriental pulso el primer icono, Estado de Cuenta. Aquí se ve solo lo de esta sucursal: un documento de dos mil trescientos sesenta pesos, cobrado cero, y pendiente dos mil trescientos sesenta. Ahora vuelvo, y abro el estado de cuenta de Central. Su factura ya fue cobrada, así que no aparece como pendiente, y su saldo es cero. Desactivo Solo pendiente de pago, y se ve el historial completo, con lo cobrado. Un cobro hecho a Central no rebaja la deuda de Oriental: los cobros, los anticipos y las notas de crédito no se cruzan entre cuentas.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "130555300"
+     },
+     "al_decir": "busco el RNC"
+    },
+    {
+     "presionar": {
+      "sel": "tr:has-text('Oriental') button:has(mat-icon:text-is('account_balance_wallet'))",
+      "tecla": "Enter"
+     },
+     "al_decir": "pulso el primer icono"
+    },
+    {
+     "resaltar": ":text('Pendiente') >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "cobrado cero",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "button:has-text('Listado de Clientes')",
+      "tecla": "Enter"
+     },
+     "al_decir": "Ahora vuelvo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "130555300"
+     },
+     "al_decir": "abro el estado"
+    },
+    {
+     "presionar": {
+      "sel": "tr:has-text('Central') button:has(mat-icon:text-is('account_balance_wallet'))",
+      "tecla": "Enter"
+     }
+    },
+    {
+     "presionar": {
+      "sel": "mat-checkbox:has-text('Solo pendiente') input",
+      "tecla": "Space"
+     },
+     "al_decir": "Desactivo Solo pendiente"
+    },
+    {
+     "resaltar": ":text('Pagado') >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "historial completo",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

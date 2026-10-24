@@ -1,0 +1,391 @@
+{
+ "titulo": "Cobros · Varias facturas: otras configuraciones",
+ "descripcion": "Variantes del cobro de varias facturas: repartir a mano con un cheque, aplicar un descuento por pronto pago, qué pasa con las sucursales de un mismo RNC y cómo reacciona el sistema cuando sobra o falta dinero.",
+ "_comentario": "Video 06 de la serie Cobros. setup: preparar.sh base.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/payments/settlement",
+  "esperar": "button:has-text('Registrar cobro')"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/cobros/preparar.sh base"
+ },
+ "aprenderas": [
+  "Repartir el dinero a mano, factura por factura",
+  "Registrar una retención o un descuento por pronto pago en una factura",
+  "Por qué una liquidación no mezcla cuentas de sucursales distintas",
+  "Qué hace el sistema cuando sobra dinero o se aplica de más"
+ ],
+ "errores_comunes": [
+  "Mezclar las facturas de dos sucursales en un solo pago",
+  "Aplicar a una factura más de lo que debe",
+  "Dejar dinero sin ubicar"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-a-mano",
+   "capitulo": "Repartir a mano",
+   "rotulo": "Reparto a mano con cheque",
+   "ruta": "Ventas › Cobros › Cobrar varias facturas",
+   "texto_pantalla": "Cheque de 6,000: una factura completa y un abono",
+   "navegar": "/sales/payments/settlement",
+   "narracion": "El cliente no siempre paga en orden. Aquí la Ferretería Germiva del Norte nos manda un cheque de seis mil pesos, y dice qué quiere pagar: la factura de cinco mil novecientos completa, y cien pesos a la más antigua. Recojo el menú. Primero elijo al cliente: escribo Ferretería, y en la lista, que se va filtrando mientras escribo, aparece su nombre. Lo elijo con un clic. Con el cliente elegido, aparecen sus cuatro facturas pendientes. Ahora el método de pago. Abro la lista, y elijo Cheque, porque así nos pagaron. En Monto recibido escribo seis mil, que es lo que dice el cheque, ni más ni menos. En Referencia anoto el número del cheque, para identificarlo en el banco. Ahora el reparto, a mano, sin usar la sugerencia. En la última factura pulso Pagar completo, que es el doble check de la derecha, y queda por cinco mil novecientos. Fíjate que el sistema avisa que faltan cien pesos por ubicar. Entonces, en la primera factura escribo cien pesos, y el sistema recalcula. Mira el resumen de abajo: Aplicado suma seis mil, y Por ubicar queda en cero.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cliente'))",
+     "durante_ms": 3500,
+     "al_decir": "dice qué quiere pagar",
+     "cursor": false
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder*='filtrar']",
+      "texto": "Ferreter"
+     },
+     "al_decir": "escribo Ferretería"
+    },
+    {
+     "click": "mat-option:has-text('Ferretería')",
+     "al_decir": "Lo elijo con un clic"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 3000,
+     "al_decir": "aparecen sus cuatro facturas",
+     "cursor": false
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Método de pago')) mat-select",
+     "al_decir": "Abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('Cheque')",
+     "al_decir": "elijo Cheque"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='amount']",
+      "texto": "6000"
+     },
+     "al_decir": "escribo seis mil"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='reference']",
+      "texto": "CHQ-004518"
+     },
+     "al_decir": "anoto el número"
+    },
+    {
+     "presionar": {
+      "sel": "tbody tr >> nth=3 >> button:has(mat-icon:text-is('done_all'))",
+      "tecla": "Enter"
+     },
+     "al_decir": "pulso Pagar completo"
+    },
+    {
+     "resaltar": ":text('Faltan RD$'):not([data-tipo='error']) >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "avisa que faltan cien",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "tbody tr >> nth=0 >> input",
+      "texto": "100"
+     },
+     "al_decir": "escribo cien pesos"
+    },
+    {
+     "resaltar": ":text('Por ubicar') >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "Por ubicar queda",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-descuento",
+   "capitulo": "Descuento por pronto pago",
+   "rotulo": "Retenciones y descuento",
+   "ruta": "Ventas › Cobros › Cobrar varias facturas",
+   "texto_pantalla": "Una factura saldada con dinero más descuento",
+   "navegar": "/sales/payments/settlement",
+   "narracion": "Ahora una variante con descuento. El Supermercado Germiva Central tiene dos facturas de mil ciento ochenta pesos. A la primera le concedimos un descuento por pronto pago de ciento ochenta pesos, así que el cliente paga solo mil. Elijo al cliente: escribo Central, y en la lista del buscador aparece la cuenta Central del supermercado, con su código. La elijo. En Monto recibido escribo mil, que es lo que realmente entró al banco, sin contar ningún descuento. Ahora pulso Con retenciones y descuento. La tabla muestra tres columnas nuevas: ITBIS retenido, ISR retenido y Descuento. En la primera factura aplico mil pesos. Eso es lo que entra en dinero para esa factura. Y en Descuento escribo ciento ochenta, que es el descuento acordado con el cliente. Mira el resultado: la factura se salda por dinero más descuento, y el descuento no entra a caja. La segunda factura no se toca, y queda sin cambio.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cliente'))",
+     "durante_ms": 3000,
+     "al_decir": "dos facturas de mil ciento",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder*='filtrar']",
+      "texto": "Supermercado Germiva Central"
+     },
+     "al_decir": "escribo Central"
+    },
+    {
+     "click": "mat-option:has-text('Central')",
+     "al_decir": "La elijo"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='amount']",
+      "texto": "1000"
+     },
+     "al_decir": "escribo mil"
+    },
+    {
+     "click": "button:has-text('Con retenciones y descuento')",
+     "al_decir": "pulso Con retenciones"
+    },
+    {
+     "resaltar": "th:has-text('Descuento')",
+     "durante_ms": 4000,
+     "al_decir": "tres columnas nuevas",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "tbody tr >> nth=0 >> input >> nth=0",
+      "texto": "1000"
+     },
+     "al_decir": "aplico mil pesos"
+    },
+    {
+     "escribir": {
+      "sel": "tbody tr >> nth=0 >> input >> nth=3",
+      "texto": "180"
+     },
+     "al_decir": "escribo ciento ochenta"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=-2",
+     "durante_ms": 4000,
+     "al_decir": "Mira el resultado",
+     "cursor": false
+    },
+    {
+     "resaltar": "tbody tr >> nth=1",
+     "durante_ms": 3500,
+     "al_decir": "no se toca",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-sucursales",
+   "capitulo": "Casa matriz y sucursales",
+   "rotulo": "Una liquidación por cuenta",
+   "ruta": "Ventas › Cobros › Cobrar varias facturas",
+   "texto_pantalla": "Cada sucursal tiene su propia cartera",
+   "navegar": "/sales/payments/settlement",
+   "narracion": "Un caso frecuente: una casa matriz paga con un solo depósito las facturas de sus sucursales. Aquí el Supermercado Germiva tiene dos cuentas con el mismo RNC. Primero elijo la cuenta Central: escribo Central, y en la lista del buscador aparece el supermercado, con el código de cada cuenta. La elijo, y aparecen sus dos facturas pendientes. Ahora cambio de cliente. Lo borro con la equis, y escribo Oriental, y en la lista aparece la cuenta Oriental del supermercado. Elijo esa cuenta y fíjate: solo muestra su única factura. Las facturas de una sucursal nunca aparecen mezcladas con las de la otra. Es a propósito: cada cuenta tiene su propio saldo y su propio estado de cuenta, y una liquidación solo puede saldar facturas de un mismo cliente. Si el depósito cubre las dos sucursales, se registra una liquidación por cada cuenta, con la misma referencia del depósito.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cliente'))",
+     "durante_ms": 3000,
+     "al_decir": "paga con un solo depósito",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder*='filtrar']",
+      "texto": "Supermercado Germiva Central"
+     },
+     "al_decir": "escribo Central"
+    },
+    {
+     "click": "mat-option:has-text('Central')",
+     "al_decir": "La elijo"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "aparecen sus dos facturas",
+     "cursor": false
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Cliente')) mat-icon:text-is('close')",
+     "al_decir": "con la equis"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder*='filtrar']",
+      "texto": "Supermercado Germiva Oriental"
+     },
+     "al_decir": "escribo Oriental"
+    },
+    {
+     "click": "mat-option:has-text('Oriental')",
+     "al_decir": "Elijo esa cuenta"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "solo muestra su única",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Cliente'))",
+     "durante_ms": 4500,
+     "al_decir": "una liquidación solo puede",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-errores",
+   "capitulo": "Cuando sobra o falta dinero",
+   "rotulo": "Reparto incorrecto",
+   "ruta": "Ventas › Cobros › Cobrar varias facturas",
+   "texto_pantalla": "Por ubicar distinto de cero",
+   "navegar": "/sales/payments/settlement",
+   "narracion": "Veamos qué pasa cuando el reparto no cuadra. El Colmado Germiva Este debe mil ciento ochenta pesos, pero nos transfiere dos mil. Elijo al cliente: escribo Colmado, y en la lista, que se va filtrando mientras escribo, aparece su cuenta. La elijo. En Monto recibido escribo dos mil. Todavía no repartí nada, así que Por ubicar muestra dos mil, y el botón Registrar cobro está apagado, igual que el cobro. Pulso Sugerir reparto. Se aplican los mil ciento ochenta de la factura, pero sobran ochocientos veinte pesos. Mira el aviso: el sistema no te deja registrar el cobro hasta que todo el dinero esté ubicado. Si el cliente pagó de más, el excedente se registra como un anticipo aparte. Y si intento aplicar a la factura más de lo que debe, por ejemplo mil quinientos, el sistema responde de inmediato: la fila muestra un aviso, y el botón vuelve a apagarse. Eso evita cobrar de más.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[placeholder*='filtrar']",
+      "texto": "Colmado Germiva Este"
+     },
+     "al_decir": "escribo Colmado"
+    },
+    {
+     "click": "mat-option:has-text('Colmado')",
+     "al_decir": "La elijo"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='amount']",
+      "texto": "2000"
+     },
+     "al_decir": "escribo dos mil"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:text-is('Monto recibido'))",
+     "durante_ms": 3500,
+     "al_decir": "Por ubicar muestra",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Sugerir reparto')",
+     "durante_ms": 3500,
+     "al_decir": "está apagado",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Sugerir reparto')",
+     "al_decir": "Pulso Sugerir reparto"
+    },
+    {
+     "resaltar": "tbody tr >> nth=0",
+     "durante_ms": 3000,
+     "al_decir": "sobran ochocientos",
+     "cursor": false
+    },
+    {
+     "resaltar": ":text('Faltan RD$'):not([data-tipo='error']) >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "Mira el aviso",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Registrar cobro')",
+     "durante_ms": 3500,
+     "al_decir": "hasta que todo el dinero",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "tbody tr >> nth=0 >> input",
+      "texto": "1500"
+     },
+     "al_decir": "por ejemplo mil quinientos"
+    },
+    {
+     "resaltar": ":text('Faltan RD$'):not([data-tipo='error']) >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "la fila muestra un aviso",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

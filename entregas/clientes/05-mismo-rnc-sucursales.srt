@@ -1,0 +1,183 @@
+1
+00:00:03,100 --> 00:00:05,173
+Este es el listado de Clientes.
+
+2
+00:00:05,843 --> 00:00:09,653
+Recojo el menú, y busco el RNC, el número de contribuyente,
+
+3
+00:00:09,466 --> 00:00:13,590
+ciento treinta millones quinientos cincuenta y cinco mil trescientos.
+
+4
+00:00:13,403 --> 00:00:16,283
+Aparece una sola cuenta:
+
+5
+00:00:16,096 --> 00:00:18,951
+el Supermercado Germiva Central.
+
+6
+00:00:19,618 --> 00:00:22,788
+Imagina que el supermercado abre una segunda tienda.
+
+7
+00:00:23,455 --> 00:00:28,864
+Legalmente sigue siendo la misma empresa, con el mismo RNC y la misma razón social.
+
+8
+00:00:28,676 --> 00:00:32,614
+Pero cada tienda compra, debe y paga por separado,
+
+9
+00:00:32,426 --> 00:00:36,941
+y quizá la atiende otro vendedor o tiene otra lista de precios.
+
+10
+00:00:37,609 --> 00:00:40,073
+Para eso existen las cuentas por sucursal:
+
+11
+00:00:40,201 --> 00:00:44,804
+varias cuentas de cliente con el mismo RNC, cada una con su propio saldo,
+
+12
+00:00:44,615 --> 00:00:46,439
+sus cobros y sus documentos.
+
+13
+00:00:46,252 --> 00:00:52,767
+No se usan para corregir un nombre mal escrito, ni porque no encontraste al cliente.
+
+14
+00:00:53,435 --> 00:00:56,213
+En esos casos se edita la ficha que ya existe.
+
+15
+00:00:57,584 --> 00:00:59,294
+Creamos la segunda tienda.
+
+16
+00:00:59,962 --> 00:01:01,395
+Pulso Nuevo Cliente.
+
+17
+00:01:02,063 --> 00:01:06,653
+Escribo el mismo RNC, el de la empresa, que ya existe en el sistema.
+
+18
+00:01:06,466 --> 00:01:10,252
+Mira el aviso debajo de la Razón social fiscal:
+
+19
+00:01:10,064 --> 00:01:14,076
+este RNC ya tiene una cuenta, y esta será otra sucursal.
+
+20
+00:01:13,889 --> 00:01:18,781
+El sistema trae la razón social de la empresa y la bloquea,
+
+21
+00:01:18,593 --> 00:01:21,296
+porque es la misma para todas las sucursales.
+
+22
+00:01:21,109 --> 00:01:26,731
+Lo que sí escribimos es el nombre de la tienda, que la distingue de las otras:
+
+23
+00:01:26,545 --> 00:01:28,632
+Supermercado Germiva Oriental.
+
+24
+00:01:28,444 --> 00:01:32,419
+El código de la cuenta lo genera el sistema al guardar.
+
+25
+00:01:32,230 --> 00:01:34,155
+Pulso Guardar.
+
+26
+00:01:33,966 --> 00:01:39,099
+El sistema avisa que a la cuenta le falta su dirección de facturación,
+
+27
+00:01:39,163 --> 00:01:40,974
+algo que vemos en otro video.
+
+28
+00:01:41,641 --> 00:01:42,847
+Acepto el aviso.
+
+29
+00:01:44,224 --> 00:01:47,204
+La cuenta quedó creada, con su propio código.
+
+30
+00:01:47,873 --> 00:01:51,180
+Mira que el RNC y la razón social aparecen bloqueados:
+
+31
+00:01:50,993 --> 00:01:55,459
+pertenecen a toda la empresa, no a una sola sucursal.
+
+32
+00:01:56,126 --> 00:01:58,441
+El código tampoco se puede cambiar.
+
+33
+00:01:59,108 --> 00:02:04,932
+Lo propio de esta sucursal, que sí se edita, es su nombre, su zona, su plazo,
+
+34
+00:02:04,743 --> 00:02:07,775
+su lista de precios y su vendedor.
+
+35
+00:02:07,587 --> 00:02:08,995
+Una advertencia:
+
+36
+00:02:08,807 --> 00:02:12,353
+el nombre no se puede repetir dentro del mismo RNC.
+
+37
+00:02:13,021 --> 00:02:16,292
+Voy a intentar crear otra sucursal con el mismo nombre.
+
+38
+00:02:16,960 --> 00:02:21,009
+Pulso Nuevo, que abre una ficha en blanco.
+
+39
+00:02:20,822 --> 00:02:23,651
+Escribo el RNC de la empresa, el mismo de siempre.
+
+40
+00:02:23,463 --> 00:02:26,835
+Ahora escribo el nombre de la tienda:
+
+41
+00:02:26,899 --> 00:02:30,596
+Supermercado Germiva Oriental, igual que la que ya existe.
+
+42
+00:02:31,264 --> 00:02:35,968
+Con eso listo, pulso Guardar, y el sistema la rechaza.
+
+43
+00:02:35,781 --> 00:02:37,451
+El mensaje es claro:
+
+44
+00:02:37,264 --> 00:02:40,534
+ya existe una cuenta de este RNC con ese nombre comercial,
+
+45
+00:02:40,347 --> 00:02:43,993
+y pide indicar un nombre de sucursal diferente.
+
+46
+00:02:44,662 --> 00:02:46,020
+Acepto el mensaje.

@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Cobros · Un solo pago para varias facturas
+
+DESCRIPCIÓN
+============================================================
+Cuándo un cliente paga varias facturas con un solo pago y cómo se registra: elegir al cliente, repartir el dinero entre sus facturas, comprobar que no sobra ni falta nada y confirmar un solo recibo.
+
+⏱️ CAPÍTULOS
+00:00  Cuándo ocurre
+00:53  Los datos del pago
+01:40  Repartir el dinero
+02:17  Registrar y revisar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo ocurre un pago que cubre varias facturas
+• Registrar un solo pago y repartirlo entre las facturas del cliente
+• Pagar facturas completas y una parcial en el mismo cobro
+• Qué significan Recibido, Aplicado y Por ubicar
+• Dónde queda el recibo y su detalle
+
+⚠️ ERRORES COMUNES
+• Repartir mal el dinero y descubrirlo al cerrar el mes
+• Mezclar facturas de clientes distintos en un mismo pago
+• Registrar el cobro dos veces por un doble clic
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:55
+
+TRANSCRIPCIÓN
+============================================================
+Esta es la pantalla de Cobros. Recojo el menú. Aquí aparecerá cada recibo que se registre, con su cliente y su monto. Todavía no hay ninguno. Hay un caso muy común, que ocurre casi todas las semanas: la Ferretería Germiva del Norte tiene cuatro facturas pendientes, y un día nos envía una sola transferencia que cubre unas completas y otra a medias. Si registráramos ese pago factura por factura, tendríamos cuatro cobros y un solo depósito en el banco, y el cuadre sería un lío. Para eso existe el botón Cobrar varias facturas: un solo pago, un solo recibo, y tú indicas cuánto va a cada factura. Registrar cobro, el otro botón, sirve para una sola factura. Pulso Cobrar varias facturas.
+Primero, los datos del pago, tal como los dice el recibo del cliente. Busco al cliente: escribo Ferretería. En la lista aparece la Ferretería Germiva del Norte, y la elijo. Al elegirla aparecen sus documentos pendientes, del más antiguo al más reciente, con su saldo y su vencimiento. El método de pago es Transferencia. El monto recibido es lo que realmente entró al banco: cinco mil pesos, ni un peso más ni uno menos, porque debe coincidir con el depósito. Ahora, en Referencia, anoto el número de la transferencia, para poder encontrarla después en el banco. Y por último, la Cuenta de destino: la dejo vacía, y entonces usa la cuenta del método de pago.
+Ahora repartimos los cinco mil pesos. Pulso Sugerir reparto, que empieza por la factura más antigua. La primera queda Saldada, la segunda también, y la tercera queda Parcial: recibe lo que sobra y conserva el resto como deuda. La cuarta no cambia. Puedes ajustar cada monto según el recibo que te mandó el cliente. Abajo está el control: Recibido son los cinco mil pesos, Aplicado es lo repartido, y Por ubicar tiene que quedar en cero. Mientras sobre o falte dinero, el botón Registrar cobro se mantiene apagado.
+Ya está todo en orden, así que pulso Registrar cobro. El sistema pide confirmar: dice cuántos documentos quedan saldados y cuántos con saldo pendiente. Confirmo. Aparece el aviso con el número del recibo, y volvemos al listado. Fíjate que el recibo dice Varias facturas en la columna del número de factura. Abro el detalle: arriba están los datos del pago, y abajo, Documentos pagados, con lo que se aplicó a cada uno y lo que le queda. Es un solo recibo y un solo movimiento de banco.

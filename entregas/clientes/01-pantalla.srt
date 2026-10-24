@@ -1,0 +1,163 @@
+1
+00:00:03,100 --> 00:00:06,092
+Estamos en Ventas, en la pantalla de Clientes.
+
+2
+00:00:06,762 --> 00:00:10,609
+Un cliente es cualquier persona o empresa a la que le vendemos,
+
+3
+00:00:10,423 --> 00:00:13,880
+y cada fila es una cuenta de cliente.
+
+4
+00:00:13,692 --> 00:00:16,926
+Recojo el menú para ver más columnas.
+
+5
+00:00:16,737 --> 00:00:20,976
+Nombre es el nombre comercial con el que lo conocemos.
+
+6
+00:00:20,789 --> 00:00:22,788
+Documento es su RNC o su cédula.
+
+7
+00:00:23,455 --> 00:00:26,473
+Categoría dice si es una Empresa o una Persona.
+
+8
+00:00:27,141 --> 00:00:31,053
+Y fíjate en estas tres filas del Supermercado Germiva:
+
+9
+00:00:30,865 --> 00:00:35,444
+tienen el mismo RNC, ciento treinta millones quinientos cincuenta y cinco mil
+
+10
+00:00:35,256 --> 00:00:38,703
+trescientos, porque son tres sucursales de una misma empresa,
+
+11
+00:00:38,515 --> 00:00:41,130
+cada una con su propia cuenta.
+
+12
+00:00:41,798 --> 00:00:44,263
+Esto lo vemos completo en el video cinco.
+
+13
+00:00:45,634 --> 00:00:48,488
+Más a la derecha hay dos columnas que importan.
+
+14
+00:00:49,156 --> 00:00:52,010
+Cuenta o sucursal es el código de la cuenta:
+
+15
+00:00:51,823 --> 00:00:56,049
+lo genera el sistema al guardar y no se cambia después.
+
+16
+00:00:55,862 --> 00:01:00,138
+Razón social es el nombre legal con el que la empresa está inscrita ante la DGII,
+
+17
+00:00:59,951 --> 00:01:02,152
+y es el mismo para las tres sucursales.
+
+18
+00:01:01,963 --> 00:01:06,227
+El nombre comercial distingue una sucursal de otra;
+
+19
+00:01:06,039 --> 00:01:08,051
+la razón social es la misma.
+
+20
+00:01:07,864 --> 00:01:13,612
+Zona dice dónde está el cliente, y Vendedor asignado, quién lo atiende.
+
+21
+00:01:14,293 --> 00:01:16,807
+Eso se explica en la serie de Vendedores.
+
+22
+00:01:18,182 --> 00:01:20,534
+Para encontrar un cliente uso Buscar.
+
+23
+00:01:21,203 --> 00:01:25,441
+Escribo el RNC, ciento treinta millones quinientos cincuenta y cinco mil
+
+24
+00:01:25,254 --> 00:01:29,001
+trescientos, y quedan solo las tres sucursales del Supermercado.
+
+25
+00:01:28,813 --> 00:01:34,272
+Buscar por documento es lo más seguro, porque dos nombres pueden parecerse.
+
+26
+00:01:34,084 --> 00:01:36,272
+Borro la búsqueda.
+
+27
+00:01:36,085 --> 00:01:38,637
+Ahora filtro por Zona:
+
+28
+00:01:38,450 --> 00:01:44,487
+elijo Norte, y queda la Ferretería Germiva del Norte, que es la única de esa zona.
+
+29
+00:01:45,156 --> 00:01:47,871
+Categoría separa las empresas de las personas,
+
+30
+00:01:47,948 --> 00:01:51,609
+y Etiqueta filtra por las etiquetas que le hayas puesto al cliente.
+
+31
+00:01:52,988 --> 00:01:55,554
+Al final de cada fila hay cuatro acciones.
+
+32
+00:01:56,222 --> 00:01:59,265
+El primer icono abre el Estado de Cuenta de esa cuenta:
+
+33
+00:01:59,405 --> 00:02:01,191
+lo que debe y lo que ha pagado.
+
+34
+00:02:01,858 --> 00:02:06,411
+El segundo lo incorpora a Éxito del Cliente, el seguimiento de la cartera.
+
+35
+00:02:07,079 --> 00:02:11,317
+El lápiz abre la ficha para editarlo, y el último archiva al cliente.
+
+36
+00:02:11,985 --> 00:02:13,544
+Archivar no borra nada:
+
+37
+00:02:13,633 --> 00:02:16,401
+sus facturas se conservan y se puede restaurar.
+
+38
+00:02:17,068 --> 00:02:19,823
+Arriba está Nuevo Cliente, para crear uno.
+
+39
+00:02:20,490 --> 00:02:25,170
+Importar o Exportar sirve para cargar o descargar muchos clientes de una vez.
+
+40
+00:02:25,836 --> 00:02:29,647
+Y Ver archivados muestra los clientes que se retiraron del listado.
+
+41
+00:02:30,316 --> 00:02:32,867
+Todo eso lo vemos en los videos siguientes.

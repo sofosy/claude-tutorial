@@ -1,0 +1,179 @@
+1
+00:00:03,100 --> 00:00:04,835
+Vamos a cobrar una factura.
+
+2
+00:00:05,503 --> 00:00:07,704
+Estamos en Ventas, en Cobros.
+
+3
+00:00:08,371 --> 00:00:12,571
+Recojo el menú, y pulso Registrar cobro, que abre el formulario.
+
+4
+00:00:13,240 --> 00:00:14,862
+Lo primero es la factura.
+
+5
+00:00:15,529 --> 00:00:19,190
+Escribo Colmado, para buscarla por el nombre del cliente.
+
+6
+00:00:19,858 --> 00:00:24,246
+En la lista aparece la factura del Colmado Germiva Este, y la elijo.
+
+7
+00:00:24,914 --> 00:00:28,838
+Aparece el cliente, el Total facturado y el Saldo pendiente:
+
+8
+00:00:28,928 --> 00:00:30,637
+mil ciento ochenta pesos.
+
+9
+00:00:31,306 --> 00:00:35,067
+El cobro es por transferencia, así que elijo Transferencia.
+
+10
+00:00:35,734 --> 00:00:38,464
+El Monto a cobrar ya viene con el saldo completo,
+
+11
+00:00:38,552 --> 00:00:41,118
+así que este cobro va a saldar la factura.
+
+12
+00:00:41,786 --> 00:00:44,565
+Escribo el número de la transferencia en Referencia,
+
+13
+00:00:44,642 --> 00:00:47,169
+para poder encontrarla después en el banco.
+
+14
+00:00:47,837 --> 00:00:50,237
+Ahora sí, pulso Registrar cobro.
+
+15
+00:00:50,918 --> 00:00:52,566
+La factura queda pagada.
+
+16
+00:00:53,938 --> 00:00:55,131
+Ahora un abono.
+
+17
+00:00:55,801 --> 00:01:00,831
+La Farmacia Germiva Sur debe dos mil trescientos sesenta pesos y hoy solo paga mil.
+
+18
+00:01:01,500 --> 00:01:03,045
+Pulso Registrar cobro.
+
+19
+00:01:03,713 --> 00:01:08,153
+Escribo Farmacia, y en la lista aparece su única factura pendiente.
+
+20
+00:01:08,820 --> 00:01:09,838
+La elijo.
+
+21
+00:01:10,507 --> 00:01:13,134
+El saldo es de dos mil trescientos sesenta.
+
+22
+00:01:13,802 --> 00:01:17,149
+Elijo Transferencia, y en Monto a cobrar escribo mil,
+
+23
+00:01:17,224 --> 00:01:19,198
+que es lo que el cliente paga hoy.
+
+24
+00:01:19,879 --> 00:01:21,689
+Fíjate en el resumen de abajo:
+
+25
+00:01:21,841 --> 00:01:23,677
+dice que se cobran mil pesos,
+
+26
+00:01:23,704 --> 00:01:27,263
+y que la factura queda con mil trescientos sesenta pendientes.
+
+27
+00:01:27,931 --> 00:01:32,308
+Anoto la referencia de la transferencia, para poder encontrarla después.
+
+28
+00:01:32,975 --> 00:01:34,522
+Pulso Registrar cobro.
+
+29
+00:01:35,189 --> 00:01:36,925
+La factura no queda pagada:
+
+30
+00:01:37,027 --> 00:01:41,102
+queda parcialmente pagada, y el saldo sigue en la cuenta del cliente,
+
+31
+00:01:41,103 --> 00:01:42,585
+hasta que pague el resto.
+
+32
+00:01:43,957 --> 00:01:46,246
+Por último, un cobro en efectivo.
+
+33
+00:01:46,915 --> 00:01:51,618
+La Librería Germiva Centro debe mil ciento ochenta pesos y paga con un billete de
+
+34
+00:01:51,431 --> 00:01:52,600
+mil quinientos.
+
+35
+00:01:53,268 --> 00:01:54,814
+Pulso Registrar cobro.
+
+36
+00:01:55,481 --> 00:01:59,519
+Escribo Librería, y en la lista aparece su factura pendiente.
+
+37
+00:02:00,187 --> 00:02:01,205
+La elijo.
+
+38
+00:02:01,873 --> 00:02:04,137
+El método Efectivo ya viene marcado.
+
+39
+00:02:04,805 --> 00:02:06,615
+El Monto a cobrar es el saldo:
+
+40
+00:02:06,692 --> 00:02:07,960
+mil ciento ochenta.
+
+41
+00:02:08,629 --> 00:02:13,004
+En Monto recibido escribo mil quinientos, que es lo que el cliente entregó.
+
+42
+00:02:13,674 --> 00:02:16,213
+Debajo, el sistema calcula el Vuelto:
+
+43
+00:02:16,278 --> 00:02:17,962
+trescientos veinte pesos.
+
+44
+00:02:18,631 --> 00:02:20,177
+Pulso Registrar cobro.
+
+45
+00:02:20,844 --> 00:02:24,819
+En el recibo queda registrado lo que se cobró, no lo que se entregó.

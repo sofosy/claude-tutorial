@@ -1,0 +1,171 @@
+1
+00:00:03,100 --> 00:00:06,320
+Un cliente nos avisa que el reparto de su pago estaba mal.
+
+2
+00:00:06,987 --> 00:00:08,358
+Estamos en Cobros.
+
+3
+00:00:09,025 --> 00:00:10,157
+Recojo el menú.
+
+4
+00:00:10,838 --> 00:00:12,320
+Un recibo no se edita:
+
+5
+00:00:12,423 --> 00:00:13,830
+queda como constancia.
+
+6
+00:00:14,499 --> 00:00:18,296
+Pero cuando el error es solo cómo se repartió el dinero entre las facturas,
+
+7
+00:00:18,310 --> 00:00:19,629
+hay una vía directa.
+
+8
+00:00:20,297 --> 00:00:25,253
+En el recibo de varias facturas pulso Corregir reparto, el icono de las flechas.
+
+9
+00:00:25,922 --> 00:00:30,701
+La pantalla avisa que el dinero, el cliente, el método y la fecha no cambian:
+
+10
+00:00:30,777 --> 00:00:32,700
+solo cuánto va a cada factura.
+
+11
+00:00:33,368 --> 00:00:34,878
+Ahora cambio el reparto.
+
+12
+00:00:35,545 --> 00:00:38,387
+En la segunda factura escribo mil ciento ochenta.
+
+13
+00:00:39,055 --> 00:00:39,670
+Mira:
+
+14
+00:00:39,747 --> 00:00:44,677
+el sistema avisa que faltan mil ciento ochenta por ubicar, porque todavía no cuadra.
+
+15
+00:00:45,345 --> 00:00:48,503
+Y en la tercera escribo dos mil seiscientos cuarenta.
+
+16
+00:00:49,170 --> 00:00:53,070
+Ahora el total vuelve a ser cinco mil, y Por ubicar queda en cero.
+
+17
+00:00:53,737 --> 00:00:57,283
+Pulso Corregir reparto y el sistema pide el motivo del cambio.
+
+18
+00:00:58,664 --> 00:01:00,852
+Ahí está el cuadro de confirmación.
+
+19
+00:01:01,521 --> 00:01:06,099
+El sistema pide el motivo, porque queda registrado en el historial del recibo.
+
+20
+00:01:06,768 --> 00:01:07,558
+Escribo:
+
+21
+00:01:07,622 --> 00:01:11,445
+el cliente aclaró el reparto, que es el motivo real del cambio.
+
+22
+00:01:12,114 --> 00:01:14,338
+Con eso listo, pulso Corregir.
+
+23
+00:01:15,007 --> 00:01:20,215
+Al confirmar, el recibo original queda anulado y se registra uno nuevo con el mismo
+
+24
+00:01:20,027 --> 00:01:22,240
+dinero, repartido como indiqué.
+
+25
+00:01:22,920 --> 00:01:24,983
+Todo ocurre en una sola operación:
+
+26
+00:01:25,046 --> 00:01:28,266
+si algo falla, el recibo original no se toca.
+
+27
+00:01:28,933 --> 00:01:30,316
+Volvemos al listado.
+
+28
+00:01:30,984 --> 00:01:35,425
+El recibo anterior aparece como Anulado, y el nuevo aparece como Vigente.
+
+29
+00:01:36,092 --> 00:01:38,531
+En sus notas dice a qué recibo corrige.
+
+30
+00:01:39,902 --> 00:01:42,191
+Ahora un cobro que se registró por error:
+
+31
+00:01:42,331 --> 00:01:46,204
+el pago del Colmado Germiva Este se aplicó a la factura equivocada.
+
+32
+00:01:46,872 --> 00:01:51,917
+Busco su recibo, y pulso Reversar cobro, el icono de la flecha hacia atrás.
+
+33
+00:01:52,584 --> 00:01:57,389
+El sistema aclara que el recibo quedará anulado y que el saldo volverá a la cartera.
+
+34
+00:01:58,057 --> 00:01:59,313
+Escribo el motivo:
+
+35
+00:01:59,390 --> 00:02:01,616
+cobro aplicado a la factura equivocada.
+
+36
+00:02:02,283 --> 00:02:06,056
+Es un texto libre, y queda guardado junto al recibo anulado.
+
+37
+00:02:06,724 --> 00:02:08,975
+Para confirmar, pulso Reversar.
+
+38
+00:02:09,644 --> 00:02:13,629
+El recibo pasa a Anulado, la factura vuelve a quedar pendiente,
+
+39
+00:02:13,719 --> 00:02:16,171
+y se reversa también su asiento contable.
+
+40
+00:02:16,840 --> 00:02:20,814
+Después se registra el cobro de nuevo, ahora a la factura correcta.
+
+41
+00:02:21,481 --> 00:02:24,826
+Mientras una factura esté dentro de una liquidación vigente,
+
+42
+00:02:24,891 --> 00:02:26,387
+tampoco se puede anular:
+
+43
+00:02:26,463 --> 00:02:28,135
+primero se reversa el cobro.

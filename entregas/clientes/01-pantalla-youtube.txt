@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Clientes · La pantalla de clientes
+
+DESCRIPCIÓN
+============================================================
+Qué es una cuenta de cliente, qué dice cada columna del listado, cómo buscar por nombre o por RNC, cómo filtrar por zona y qué se puede hacer desde cada fila.
+
+⏱️ CAPÍTULOS
+00:00  El listado de clientes
+01:18  Buscar y filtrar
+01:52  Las acciones de cada fila
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es un cliente y qué representa cada fila
+• Qué dice cada columna, incluida «Cuenta / sucursal» y «Razón social»
+• Buscar por nombre o por número de documento
+• Filtrar por zona
+• Las acciones de cada fila
+
+⚠️ ERRORES COMUNES
+• Buscar con un nombre parecido y abrir la ficha equivocada
+• Creer que un mismo RNC solo puede salir una vez en el listado
+• Confundir la razón social con el nombre comercial
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:37
+
+TRANSCRIPCIÓN
+============================================================
+Estamos en Ventas, en la pantalla de Clientes. Un cliente es cualquier persona o empresa a la que le vendemos, y cada fila es una cuenta de cliente. Recojo el menú para ver más columnas. Nombre es el nombre comercial con el que lo conocemos. Documento es su RNC o su cédula. Categoría dice si es una Empresa o una Persona. Y fíjate en estas tres filas del Supermercado Germiva: tienen el mismo RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos, porque son tres sucursales de una misma empresa, cada una con su propia cuenta. Esto lo vemos completo en el video cinco.
+Más a la derecha hay dos columnas que importan. Cuenta o sucursal es el código de la cuenta: lo genera el sistema al guardar y no se cambia después. Razón social es el nombre legal con el que la empresa está inscrita ante la DGII, y es el mismo para las tres sucursales. El nombre comercial distingue una sucursal de otra; la razón social es la misma. Zona dice dónde está el cliente, y Vendedor asignado, quién lo atiende. Eso se explica en la serie de Vendedores.
+Para encontrar un cliente uso Buscar. Escribo el RNC, ciento treinta millones quinientos cincuenta y cinco mil trescientos, y quedan solo las tres sucursales del Supermercado. Buscar por documento es lo más seguro, porque dos nombres pueden parecerse. Borro la búsqueda. Ahora filtro por Zona: elijo Norte, y queda la Ferretería Germiva del Norte, que es la única de esa zona. Categoría separa las empresas de las personas, y Etiqueta filtra por las etiquetas que le hayas puesto al cliente.
+Al final de cada fila hay cuatro acciones. El primer icono abre el Estado de Cuenta de esa cuenta: lo que debe y lo que ha pagado. El segundo lo incorpora a Éxito del Cliente, el seguimiento de la cartera. El lápiz abre la ficha para editarlo, y el último archiva al cliente. Archivar no borra nada: sus facturas se conservan y se puede restaurar. Arriba está Nuevo Cliente, para crear uno. Importar o Exportar sirve para cargar o descargar muchos clientes de una vez. Y Ver archivados muestra los clientes que se retiraron del listado. Todo eso lo vemos en los videos siguientes.

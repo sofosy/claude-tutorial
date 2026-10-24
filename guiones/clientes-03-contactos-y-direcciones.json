@@ -1,0 +1,269 @@
+{
+ "titulo": "Clientes · Contactos y direcciones",
+ "descripcion": "Cómo se agregan las personas de contacto y las direcciones de un cliente, y por qué la dirección de facturación importa para el país del cliente y los comprobantes de exportación.",
+ "_comentario": "Video 03 de la serie Clientes. setup: preparar.sh sucursales.",
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "voz": {
+  "id": "es-DO-EmilioNeural",
+  "velocidad": "+8%"
+ },
+ "pronunciacion": {
+  "RNC": "erre ene ce",
+  "DGII": "de ge i i",
+  "e-CF": "e-ce-efe",
+  "ITBIS": "itebís",
+  "ISR": "i ese erre",
+  "NCF": "ene ce efe",
+  "B01": "be cero uno",
+  "E31": "e treinta y uno",
+  "E46": "e cuarenta y seis",
+  "IR-2": "i erre dos",
+  "CxC": "ce-por-ce",
+  "607": "seiscientos siete",
+  "S.R.L.": "ese erre ele",
+  "C-000020": "ce cero cero cero cero veinte",
+  "API": "a-pe-i",
+  "PDF": "pe de efe",
+  "CSV": "ce ese ve"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130558",
+   "402555",
+   "example.com"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/partners",
+  "esperar": "th"
+ },
+ "setup": {
+  "tipo": "shell",
+  "cmd": "seeds/clientes/preparar.sh sucursales"
+ },
+ "aprenderas": [
+  "Abrir la ficha de un cliente y llegar a Contactos y direcciones",
+  "Agregar una persona de contacto con su correo y teléfono",
+  "Agregar la dirección de facturación y marcarla por defecto",
+  "Por qué el país del cliente sale de esa dirección"
+ ],
+ "errores_comunes": [
+  "Dejar al cliente sin dirección de facturación",
+  "Marcar como dirección por defecto una de envío",
+  "Guardar el cliente creyendo que ya guardó el contacto"
+ ],
+ "portada_s": 6,
+ "pasos": [
+  {
+   "id": "01-contacto",
+   "capitulo": "El contacto",
+   "rotulo": "Agregar un contacto",
+   "ruta": "Ventas › Clientes › Editar › Contactos",
+   "texto_pantalla": "Persona de contacto con correo y teléfono",
+   "navegar": "/sales/partners",
+   "narracion": "Vamos a completar la ficha de un cliente. Estamos en Ventas, en Clientes. Recojo el menú y busco la Ferretería. La lista se filtra sola mientras escribo, y queda la ficha que necesito. Pulso el lápiz para abrir su ficha. Abajo está Contactos y direcciones; lo abro. Esta sección se activa cuando el cliente ya está guardado, y cada cambio que haces aquí se guarda por su cuenta. Un contacto es una persona de la empresa, y para crearlo pulso Agregar contacto. Escribo el nombre: Rosa Peña, la encargada de las compras. El Tipo de contacto ya viene en Facturación, que es la persona a la que se le envían las facturas. Ahora escribo su correo electrónico, que es donde le llegarán las facturas. Y también su teléfono, que es el que se usa para llamarla. Con eso listo, pulso Guardar. El sistema confirma que el contacto quedó registrado, y acepto el aviso.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el menú"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "Ferretería"
+     },
+     "al_decir": "busco la Ferretería"
+    },
+    {
+     "resaltar": "tr:has-text('Ferretería Germiva del Norte') mat-icon:text-is('edit')",
+     "durante_ms": 1800,
+     "al_decir": "Pulso el lápiz"
+    },
+    {
+     "presionar": {
+      "sel": "tr:has-text('Ferretería Germiva del Norte') button:has(mat-icon:text-is('edit'))",
+      "tecla": "Enter"
+     }
+    },
+    {
+     "click": ":text('Contactos y direcciones') >> nth=0",
+     "al_decir": "lo abro"
+    },
+    {
+     "resaltar": "[role=tab]:has-text('Contactos')",
+     "durante_ms": 3000,
+     "al_decir": "Esta sección se activa",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Agregar contacto')",
+     "al_decir": "pulso Agregar contacto"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='name']",
+      "texto": "Rosa Peña"
+     },
+     "al_decir": "Escribo el nombre"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Tipo de Contacto'))",
+     "durante_ms": 3500,
+     "al_decir": "Tipo de contacto ya viene",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='email']",
+      "texto": "rosa.pena@example.com"
+     },
+     "al_decir": "Ahora escribo su correo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='phone']",
+      "texto": "809-555-0142"
+     },
+     "al_decir": "Y también su teléfono"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Guardar')",
+     "al_decir": "pulso Guardar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "confirma que el contacto",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto el aviso"
+    }
+   ]
+  },
+  {
+   "id": "02-direccion",
+   "capitulo": "La dirección",
+   "rotulo": "Agregar una dirección",
+   "ruta": "Ventas › Clientes › Editar › Direcciones",
+   "texto_pantalla": "Dirección de facturación por defecto",
+   "narracion": "Ahora la dirección. Fíjate en el aviso naranja: dice que no hay dirección de facturación y que eso afecta al E cuarenta y seis y al IR-2. Abro la pestaña Direcciones, y pulso Agregar dirección. El Tipo de dirección es Facturación. Ahora el País: lo busco escribiendo Dominicana, y en la lista aparecen varias coincidencias. Elijo República Dominicana. De la dirección de facturación sale el país del cliente, y sin país no se puede emitir un comprobante de exportación. Abro la Provincia, y elijo el Distrito Nacional. Escribo la calle y el número de la dirección, tal como va en sus documentos. Marco Dirección por defecto, para que los documentos usen esta. Pulso Guardar. El sistema confirma que la dirección se creó, y acepto el aviso. Cuando el cliente tiene una dirección de facturación, el aviso naranja desaparece.",
+   "acciones": [
+    {
+     "resaltar": ":text('Sin dirección de facturación') >> nth=0",
+     "durante_ms": 4500,
+     "al_decir": "Fíjate en el aviso",
+     "cursor": false
+    },
+    {
+     "click": "[role=tab]:has-text('Direcciones')",
+     "al_decir": "Abro la pestaña Direcciones"
+    },
+    {
+     "click": "button:has-text('Agregar dirección')",
+     "al_decir": "pulso Agregar dirección"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-form-field:has(mat-label:text-is('Tipo de dirección'))",
+     "durante_ms": 3500,
+     "al_decir": "Tipo de dirección es",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has(mat-label:text-is('País')) input",
+     "al_decir": "Ahora el País"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has(mat-label:text-is('País')) input",
+      "texto": "Dominicana"
+     },
+     "al_decir": "escribiendo Dominicana"
+    },
+    {
+     "click": "mat-option:has-text('República Dominicana')",
+     "al_decir": "Elijo República Dominicana"
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has(mat-label:text-is('Provincia')) input",
+     "al_decir": "Abro la Provincia"
+    },
+    {
+     "click": "mat-option:has-text('Distrito Nacional')",
+     "al_decir": "elijo el Distrito Nacional"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='street'], mat-dialog-container textarea[formcontrolname='street']",
+      "texto": "Av. Juan Pablo Duarte 120"
+     },
+     "al_decir": "Escribo la calle"
+    },
+    {
+     "click": "mat-dialog-container mat-checkbox",
+     "al_decir": "Marco Dirección por defecto"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar. El"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "confirma que la dirección",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto el aviso. Cuando"
+    },
+    {
+     "resaltar": ":text('Contactos y direcciones') >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "naranja desaparece",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

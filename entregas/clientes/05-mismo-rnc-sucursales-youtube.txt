@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Clientes · Varias cuentas con el mismo RNC
+
+DESCRIPCIÓN
+============================================================
+Cuándo una empresa necesita más de una cuenta de cliente con el mismo RNC (sucursales), cómo se crean, qué comparten y qué no, y cómo se corrige la razón social de todas a la vez.
+
+⏱️ CAPÍTULOS
+00:00  Cuándo se usa
+00:57  Crear la segunda sucursal
+01:44  Qué queda bloqueado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo conviene crear varias cuentas con el mismo RNC y cuándo no
+• Qué comparten las cuentas: RNC y razón social
+• Qué tiene cada una: código, nombre comercial, saldo, cobros y documentos
+• Crear la segunda y la tercera sucursal
+• Corregir la razón social de todas las sucursales a la vez
+
+⚠️ ERRORES COMUNES
+• Crear una segunda cuenta para corregir un nombre equivocado
+• Repetir el nombre comercial de otra sucursal
+• Esperar que el crédito o el saldo se compartan entre sucursales
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:50
+
+TRANSCRIPCIÓN
+============================================================
+Este es el listado de Clientes. Recojo el menú, y busco el RNC, el número de contribuyente, ciento treinta millones quinientos cincuenta y cinco mil trescientos. Aparece una sola cuenta: el Supermercado Germiva Central. Imagina que el supermercado abre una segunda tienda. Legalmente sigue siendo la misma empresa, con el mismo RNC y la misma razón social. Pero cada tienda compra, debe y paga por separado, y quizá la atiende otro vendedor o tiene otra lista de precios. Para eso existen las cuentas por sucursal: varias cuentas de cliente con el mismo RNC, cada una con su propio saldo, sus cobros y sus documentos. No se usan para corregir un nombre mal escrito, ni porque no encontraste al cliente. En esos casos se edita la ficha que ya existe.
+Creamos la segunda tienda. Pulso Nuevo Cliente. Escribo el mismo RNC, el de la empresa, que ya existe en el sistema. Mira el aviso debajo de la Razón social fiscal: este RNC ya tiene una cuenta, y esta será otra sucursal. El sistema trae la razón social de la empresa y la bloquea, porque es la misma para todas las sucursales. Lo que sí escribimos es el nombre de la tienda, que la distingue de las otras: Supermercado Germiva Oriental. El código de la cuenta lo genera el sistema al guardar. Pulso Guardar. El sistema avisa que a la cuenta le falta su dirección de facturación, algo que vemos en otro video. Acepto el aviso.
+La cuenta quedó creada, con su propio código. Mira que el RNC y la razón social aparecen bloqueados: pertenecen a toda la empresa, no a una sola sucursal. El código tampoco se puede cambiar. Lo propio de esta sucursal, que sí se edita, es su nombre, su zona, su plazo, su lista de precios y su vendedor. Una advertencia: el nombre no se puede repetir dentro del mismo RNC. Voy a intentar crear otra sucursal con el mismo nombre. Pulso Nuevo, que abre una ficha en blanco. Escribo el RNC de la empresa, el mismo de siempre. Ahora escribo el nombre de la tienda: Supermercado Germiva Oriental, igual que la que ya existe. Con eso listo, pulso Guardar, y el sistema la rechaza. El mensaje es claro: ya existe una cuenta de este RNC con ese nombre comercial, y pide indicar un nombre de sucursal diferente. Acepto el mensaje.

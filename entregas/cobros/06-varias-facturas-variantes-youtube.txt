@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Cobros · Varias facturas: otras configuraciones
+
+DESCRIPCIÓN
+============================================================
+Variantes del cobro de varias facturas: repartir a mano con un cheque, aplicar un descuento por pronto pago, qué pasa con las sucursales de un mismo RNC y cómo reacciona el sistema cuando sobra o falta dinero.
+
+⏱️ CAPÍTULOS
+00:00  Repartir a mano
+01:19  Descuento por pronto pago
+02:24  Casa matriz y sucursales
+03:25  Cuando sobra o falta dinero
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Repartir el dinero a mano, factura por factura
+• Registrar una retención o un descuento por pronto pago en una factura
+• Por qué una liquidación no mezcla cuentas de sucursales distintas
+• Qué hace el sistema cuando sobra dinero o se aplica de más
+
+⚠️ ERRORES COMUNES
+• Mezclar las facturas de dos sucursales en un solo pago
+• Aplicar a una factura más de lo que debe
+• Dejar dinero sin ubicar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 04:31
+
+TRANSCRIPCIÓN
+============================================================
+El cliente no siempre paga en orden. Aquí la Ferretería Germiva del Norte nos manda un cheque de seis mil pesos, y dice qué quiere pagar: la factura de cinco mil novecientos completa, y cien pesos a la más antigua. Recojo el menú. Primero elijo al cliente: escribo Ferretería, y en la lista, que se va filtrando mientras escribo, aparece su nombre. Lo elijo con un clic. Con el cliente elegido, aparecen sus cuatro facturas pendientes. Ahora el método de pago. Abro la lista, y elijo Cheque, porque así nos pagaron. En Monto recibido escribo seis mil, que es lo que dice el cheque, ni más ni menos. En Referencia anoto el número del cheque, para identificarlo en el banco. Ahora el reparto, a mano, sin usar la sugerencia. En la última factura pulso Pagar completo, que es el doble check de la derecha, y queda por cinco mil novecientos. Fíjate que el sistema avisa que faltan cien pesos por ubicar. Entonces, en la primera factura escribo cien pesos, y el sistema recalcula. Mira el resumen de abajo: Aplicado suma seis mil, y Por ubicar queda en cero.
+Ahora una variante con descuento. El Supermercado Germiva Central tiene dos facturas de mil ciento ochenta pesos. A la primera le concedimos un descuento por pronto pago de ciento ochenta pesos, así que el cliente paga solo mil. Elijo al cliente: escribo Central, y en la lista del buscador aparece la cuenta Central del supermercado, con su código. La elijo. En Monto recibido escribo mil, que es lo que realmente entró al banco, sin contar ningún descuento. Ahora pulso Con retenciones y descuento. La tabla muestra tres columnas nuevas: ITBIS retenido, ISR retenido y Descuento. En la primera factura aplico mil pesos. Eso es lo que entra en dinero para esa factura. Y en Descuento escribo ciento ochenta, que es el descuento acordado con el cliente. Mira el resultado: la factura se salda por dinero más descuento, y el descuento no entra a caja. La segunda factura no se toca, y queda sin cambio.
+Un caso frecuente: una casa matriz paga con un solo depósito las facturas de sus sucursales. Aquí el Supermercado Germiva tiene dos cuentas con el mismo RNC. Primero elijo la cuenta Central: escribo Central, y en la lista del buscador aparece el supermercado, con el código de cada cuenta. La elijo, y aparecen sus dos facturas pendientes. Ahora cambio de cliente. Lo borro con la equis, y escribo Oriental, y en la lista aparece la cuenta Oriental del supermercado. Elijo esa cuenta y fíjate: solo muestra su única factura. Las facturas de una sucursal nunca aparecen mezcladas con las de la otra. Es a propósito: cada cuenta tiene su propio saldo y su propio estado de cuenta, y una liquidación solo puede saldar facturas de un mismo cliente. Si el depósito cubre las dos sucursales, se registra una liquidación por cada cuenta, con la misma referencia del depósito.
+Veamos qué pasa cuando el reparto no cuadra. El Colmado Germiva Este debe mil ciento ochenta pesos, pero nos transfiere dos mil. Elijo al cliente: escribo Colmado, y en la lista, que se va filtrando mientras escribo, aparece su cuenta. La elijo. En Monto recibido escribo dos mil. Todavía no repartí nada, así que Por ubicar muestra dos mil, y el botón Registrar cobro está apagado, igual que el cobro. Pulso Sugerir reparto. Se aplican los mil ciento ochenta de la factura, pero sobran ochocientos veinte pesos. Mira el aviso: el sistema no te deja registrar el cobro hasta que todo el dinero esté ubicado. Si el cliente pagó de más, el excedente se registra como un anticipo aparte. Y si intento aplicar a la factura más de lo que debe, por ejemplo mil quinientos, el sistema responde de inmediato: la fila muestra un aviso, y el botón vuelve a apagarse. Eso evita cobrar de más.
