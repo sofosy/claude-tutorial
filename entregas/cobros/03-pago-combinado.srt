@@ -1,0 +1,139 @@
+1
+00:00:03,100 --> 00:00:05,943
+Estamos en Ventas, en la pantalla de Cobros.
+
+2
+00:00:06,611 --> 00:00:07,742
+Recojo el menú.
+
+3
+00:00:08,422 --> 00:00:12,144
+A veces un cliente paga una sola factura con más de un método:
+
+4
+00:00:12,234 --> 00:00:14,862
+una parte en efectivo y otra con tarjeta.
+
+5
+00:00:15,529 --> 00:00:19,756
+Para eso existe el pago combinado, y todo queda en un solo recibo.
+
+6
+00:00:20,423 --> 00:00:24,411
+El Taller Germiva Oeste debe dos mil trescientos sesenta pesos.
+
+7
+00:00:25,079 --> 00:00:26,624
+Pulso Registrar cobro.
+
+8
+00:00:27,292 --> 00:00:31,279
+Escribo Taller, para buscar su factura por el nombre del cliente.
+
+9
+00:00:31,948 --> 00:00:34,362
+En la lista aparece, y la elijo.
+
+10
+00:00:35,030 --> 00:00:38,588
+Ahora marco la casilla Pago combinado, varios métodos.
+
+11
+00:00:39,256 --> 00:00:41,382
+Fíjate que aparecen dos cifras.
+
+12
+00:00:42,049 --> 00:00:44,704
+Asignado es lo que ya repartí entre métodos,
+
+13
+00:00:44,755 --> 00:00:47,320
+y Falta es lo que todavía no tiene método.
+
+14
+00:00:47,987 --> 00:00:49,219
+Primero el efectivo:
+
+15
+00:00:49,271 --> 00:00:54,000
+en Monto a cobrar escribo mil pesos, que es lo que el cliente entrega en billetes.
+
+16
+00:00:54,667 --> 00:00:58,932
+Ahora pulso Agregar al recibo, y la ficha de efectivo queda anotada.
+
+17
+00:00:59,600 --> 00:01:02,505
+Mira cómo Falta baja a mil trescientos sesenta.
+
+18
+00:01:03,877 --> 00:01:05,486
+Ahora el segundo método.
+
+19
+00:01:06,155 --> 00:01:07,424
+Elijo Tarjeta.
+
+20
+00:01:08,105 --> 00:01:10,091
+El monto ya viene con lo que falta:
+
+21
+00:01:10,192 --> 00:01:11,777
+mil trescientos sesenta.
+
+22
+00:01:12,444 --> 00:01:14,897
+Con tarjeta el sistema pide tres datos:
+
+23
+00:01:14,986 --> 00:01:19,715
+los últimos cuatro dígitos, el tipo de tarjeta y el código de autorización del
+
+24
+00:01:19,528 --> 00:01:20,230
+voucher.
+
+25
+00:01:20,899 --> 00:01:23,414
+Escribo los cuatro dígitos de la tarjeta.
+
+26
+00:01:24,081 --> 00:01:27,402
+Esos dígitos permiten identificar el pago más tarde.
+
+27
+00:01:28,069 --> 00:01:31,188
+Ahora abro el tipo de tarjeta, y elijo Visa.
+
+28
+00:01:31,856 --> 00:01:36,106
+Por último, escribo el código de autorización que imprime el terminal.
+
+29
+00:01:36,776 --> 00:01:39,075
+Con eso, pulso Agregar al recibo.
+
+30
+00:01:39,745 --> 00:01:41,090
+Ahora Falta es cero:
+
+31
+00:01:41,179 --> 00:01:45,266
+el recibo tiene efectivo y tarjeta, y suma el total de la factura.
+
+32
+00:01:45,933 --> 00:01:48,109
+Entonces pulso Registrar cobro.
+
+33
+00:01:48,777 --> 00:01:51,506
+Un solo recibo, con dos formas de pago.
+
+34
+00:01:52,174 --> 00:01:54,865
+Una factura admite hasta siete pagos activos,
+
+35
+00:01:54,929 --> 00:01:58,048
+y cada método de un pago combinado cuenta como uno.

@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Cobros · Un cobro con varios métodos de pago
+
+DESCRIPCIÓN
+============================================================
+Cómo se registra el pago combinado de una factura, por ejemplo una parte en efectivo y otra con tarjeta, en un solo recibo; cuándo ocurre y qué límites tiene.
+
+⏱️ CAPÍTULOS
+00:00  Pago combinado
+01:03  El segundo método
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo un cliente paga una factura con más de un método
+• Activar el pago combinado y agregar cada método al recibo
+• Qué piden la tarjeta y el efectivo
+• Qué significan Asignado y Falta
+
+⚠️ ERRORES COMUNES
+• Registrar dos cobros separados para una misma factura
+• Olvidar agregar un método al recibo
+• Pasar de siete pagos por factura
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:02
+
+TRANSCRIPCIÓN
+============================================================
+Estamos en Ventas, en la pantalla de Cobros. Recojo el menú. A veces un cliente paga una sola factura con más de un método: una parte en efectivo y otra con tarjeta. Para eso existe el pago combinado, y todo queda en un solo recibo. El Taller Germiva Oeste debe dos mil trescientos sesenta pesos. Pulso Registrar cobro. Escribo Taller, para buscar su factura por el nombre del cliente. En la lista aparece, y la elijo. Ahora marco la casilla Pago combinado, varios métodos. Fíjate que aparecen dos cifras. Asignado es lo que ya repartí entre métodos, y Falta es lo que todavía no tiene método. Primero el efectivo: en Monto a cobrar escribo mil pesos, que es lo que el cliente entrega en billetes. Ahora pulso Agregar al recibo, y la ficha de efectivo queda anotada. Mira cómo Falta baja a mil trescientos sesenta.
+Ahora el segundo método. Elijo Tarjeta. El monto ya viene con lo que falta: mil trescientos sesenta. Con tarjeta el sistema pide tres datos: los últimos cuatro dígitos, el tipo de tarjeta y el código de autorización del voucher. Escribo los cuatro dígitos de la tarjeta. Esos dígitos permiten identificar el pago más tarde. Ahora abro el tipo de tarjeta, y elijo Visa. Por último, escribo el código de autorización que imprime el terminal. Con eso, pulso Agregar al recibo. Ahora Falta es cero: el recibo tiene efectivo y tarjeta, y suma el total de la factura. Entonces pulso Registrar cobro. Un solo recibo, con dos formas de pago. Una factura admite hasta siete pagos activos, y cada método de un pago combinado cuenta como uno.
