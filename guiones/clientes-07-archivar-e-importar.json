@@ -148,7 +148,7 @@
      "al_decir": "Pulso Ver archivados"
     },
     {
-     "resaltar": "tbody tr >> nth=0",
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
      "durante_ms": 3500,
      "al_decir": "ahí aparece",
      "cursor": false
@@ -185,6 +185,12 @@
       "sel": "button:has-text('Ver activos')",
       "tecla": "Enter"
      }
+    },
+    {
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
+     "durante_ms": 3500,
+     "al_decir": "la deuda sigue",
+     "cursor": false
     }
    ]
   },
@@ -231,6 +237,18 @@
       "ancla": "mat-dialog-container :text('Arrastra aquí')"
      },
      "al_decir": "Subo el archivo"
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 2500,
+     "al_decir": "validar cada fila",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container ",
+     "durante_ms": 2500,
+     "al_decir": "registrar los clientes",
+     "cursor": false
     }
    ]
   },
@@ -260,13 +278,13 @@
      "al_decir": "busco el RNC"
     },
     {
-     "resaltar": "tbody tr >> nth=0",
+     "resaltar": "tbody tr >> nth=0 >> td >> nth=1",
      "durante_ms": 4500,
      "al_decir": "Aparecen las dos sucursales",
      "cursor": false
     },
     {
-     "resaltar": "tbody tr >> nth=1",
+     "resaltar": "tbody tr >> nth=1 >> td >> nth=1",
      "durante_ms": 4000,
      "al_decir": "cada una con su código",
      "cursor": false
