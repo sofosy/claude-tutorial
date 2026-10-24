@@ -1,0 +1,307 @@
+1
+00:00:03,100 --> 00:00:05,301
+El cliente no siempre paga en orden.
+
+2
+00:00:05,968 --> 00:00:10,245
+Aquí la Ferretería Germiva del Norte nos manda un cheque de seis mil pesos,
+
+3
+00:00:10,309 --> 00:00:11,741
+y dice qué quiere pagar:
+
+4
+00:00:11,881 --> 00:00:16,635
+la factura de cinco mil novecientos completa, y cien pesos a la más antigua.
+
+5
+00:00:17,304 --> 00:00:18,434
+Recojo el menú.
+
+6
+00:00:19,115 --> 00:00:20,585
+Primero elijo al cliente:
+
+7
+00:00:20,663 --> 00:00:25,153
+escribo Ferretería, y en la lista, que se va filtrando mientras escribo,
+
+8
+00:00:25,167 --> 00:00:26,474
+aparece su nombre.
+
+9
+00:00:27,141 --> 00:00:28,712
+Lo elijo con un clic.
+
+10
+00:00:29,381 --> 00:00:33,531
+Con el cliente elegido, aparecen sus cuatro facturas pendientes.
+
+11
+00:00:34,200 --> 00:00:35,783
+Ahora el método de pago.
+
+12
+00:00:36,451 --> 00:00:40,085
+Abro la lista, y elijo Cheque, porque así nos pagaron.
+
+13
+00:00:40,753 --> 00:00:45,911
+En Monto recibido escribo seis mil, que es lo que dice el cheque, ni más ni menos.
+
+14
+00:00:46,579 --> 00:00:50,942
+En Referencia anoto el número del cheque, para identificarlo en el banco.
+
+15
+00:00:51,610 --> 00:00:55,094
+Ahora el reparto, a mano, sin usar la sugerencia.
+
+16
+00:00:55,762 --> 00:01:00,379
+En la última factura pulso Pagar completo, que es el doble check de la derecha,
+
+17
+00:01:00,454 --> 00:01:02,643
+y queda por cinco mil novecientos.
+
+18
+00:01:03,310 --> 00:01:07,046
+Fíjate que el sistema avisa que faltan cien pesos por ubicar.
+
+19
+00:01:07,713 --> 00:01:12,731
+Entonces, en la primera factura escribo cien pesos, y el sistema recalcula.
+
+20
+00:01:13,400 --> 00:01:14,947
+Mira el resumen de abajo:
+
+21
+00:01:15,010 --> 00:01:18,344
+Aplicado suma seis mil, y Por ubicar queda en cero.
+
+22
+00:01:19,711 --> 00:01:21,685
+Ahora una variante con descuento.
+
+23
+00:01:22,354 --> 00:01:27,120
+El Supermercado Germiva Central tiene dos facturas de mil ciento ochenta pesos.
+
+24
+00:01:27,788 --> 00:01:32,190
+A la primera le concedimos un descuento por pronto pago de ciento ochenta pesos,
+
+25
+00:01:32,242 --> 00:01:34,367
+así que el cliente paga solo mil.
+
+26
+00:01:35,048 --> 00:01:36,996
+Elijo al cliente:
+
+27
+00:01:36,810 --> 00:01:41,487
+escribo Central, y en la lista del buscador aparece la cuenta Central del
+
+28
+00:01:41,501 --> 00:01:43,701
+supermercado, con su código.
+
+29
+00:01:43,514 --> 00:01:45,299
+La elijo.
+
+30
+00:01:45,112 --> 00:01:49,526
+En Monto recibido escribo mil, que es lo que realmente entró al banco,
+
+31
+00:01:49,340 --> 00:01:52,156
+sin contar ningún descuento.
+
+32
+00:01:51,968 --> 00:01:55,087
+Ahora pulso Con retenciones y descuento.
+
+33
+00:01:54,899 --> 00:01:57,780
+La tabla muestra tres columnas nuevas:
+
+34
+00:01:57,592 --> 00:01:59,956
+ITBIS retenido, ISR retenido y Descuento.
+
+35
+00:01:59,768 --> 00:02:03,213
+En la primera factura aplico mil pesos.
+
+36
+00:02:03,026 --> 00:02:06,635
+Eso es lo que entra en dinero para esa factura.
+
+37
+00:02:06,448 --> 00:02:12,537
+Y en Descuento escribo ciento ochenta, que es el descuento acordado con el cliente.
+
+38
+00:02:13,204 --> 00:02:14,437
+Mira el resultado:
+
+39
+00:02:14,550 --> 00:02:19,216
+la factura se salda por dinero más descuento, y el descuento no entra a caja.
+
+40
+00:02:19,884 --> 00:02:23,128
+La segunda factura no se toca, y queda sin cambio.
+
+41
+00:02:24,492 --> 00:02:25,736
+Un caso frecuente:
+
+42
+00:02:25,865 --> 00:02:30,216
+una casa matriz paga con un solo depósito las facturas de sus sucursales.
+
+43
+00:02:30,884 --> 00:02:34,719
+Aquí el Supermercado Germiva tiene dos cuentas con el mismo RNC.
+
+44
+00:02:34,533 --> 00:02:37,073
+Primero elijo la cuenta Central:
+
+45
+00:02:36,884 --> 00:02:41,336
+escribo Central, y en la lista del buscador aparece el supermercado,
+
+46
+00:02:41,150 --> 00:02:43,550
+con el código de cada cuenta.
+
+47
+00:02:43,364 --> 00:02:47,451
+La elijo, y aparecen sus dos facturas pendientes.
+
+48
+00:02:47,264 --> 00:02:49,917
+Ahora cambio de cliente.
+
+49
+00:02:49,729 --> 00:02:53,365
+Lo borro con la equis, y escribo Oriental,
+
+50
+00:02:53,176 --> 00:02:56,472
+y en la lista aparece la cuenta Oriental del supermercado.
+
+51
+00:02:56,284 --> 00:02:59,176
+Elijo esa cuenta y fíjate:
+
+52
+00:02:58,989 --> 00:03:01,152
+solo muestra su única factura.
+
+53
+00:03:00,965 --> 00:03:06,134
+Las facturas de una sucursal nunca aparecen mezcladas con las de la otra.
+
+54
+00:03:05,945 --> 00:03:07,669
+Es a propósito:
+
+55
+00:03:07,480 --> 00:03:11,819
+cada cuenta tiene su propio saldo y su propio estado de cuenta,
+
+56
+00:03:11,896 --> 00:03:15,820
+y una liquidación solo puede saldar facturas de un mismo cliente.
+
+57
+00:03:16,489 --> 00:03:18,991
+Si el depósito cubre las dos sucursales,
+
+58
+00:03:19,030 --> 00:03:24,048
+se registra una liquidación por cada cuenta, con la misma referencia del depósito.
+
+59
+00:03:25,409 --> 00:03:28,000
+Veamos qué pasa cuando el reparto no cuadra.
+
+60
+00:03:28,669 --> 00:03:33,536
+El Colmado Germiva Este debe mil ciento ochenta pesos, pero nos transfiere dos mil.
+
+61
+00:03:34,217 --> 00:03:35,436
+Elijo al cliente:
+
+62
+00:03:35,500 --> 00:03:39,901
+escribo Colmado, y en la lista, que se va filtrando mientras escribo,
+
+63
+00:03:39,929 --> 00:03:41,260
+aparece su cuenta.
+
+64
+00:03:41,941 --> 00:03:42,959
+La elijo.
+
+65
+00:03:43,627 --> 00:03:45,765
+En Monto recibido escribo dos mil.
+
+66
+00:03:46,444 --> 00:03:50,168
+Todavía no repartí nada, así que Por ubicar muestra dos mil,
+
+67
+00:03:50,282 --> 00:03:53,891
+y el botón Registrar cobro está apagado, igual que el cobro.
+
+68
+00:03:54,560 --> 00:03:56,157
+Pulso Sugerir reparto.
+
+69
+00:03:56,824 --> 00:03:59,414
+Se aplican los mil ciento ochenta de la factura,
+
+70
+00:03:59,516 --> 00:04:01,830
+pero sobran ochocientos veinte pesos.
+
+71
+00:04:02,497 --> 00:04:03,528
+Mira el aviso:
+
+72
+00:04:03,617 --> 00:04:08,069
+el sistema no te deja registrar el cobro hasta que todo el dinero esté ubicado.
+
+73
+00:04:08,737 --> 00:04:13,655
+Si el cliente pagó de más, el excedente se registra como un anticipo aparte.
+
+74
+00:04:14,324 --> 00:04:18,927
+Y si intento aplicar a la factura más de lo que debe, por ejemplo mil quinientos,
+
+75
+00:04:18,990 --> 00:04:21,028
+el sistema responde de inmediato:
+
+76
+00:04:21,141 --> 00:04:24,612
+la fila muestra un aviso, y el botón vuelve a apagarse.
+
+77
+00:04:25,281 --> 00:04:27,004
+Eso evita cobrar de más.
