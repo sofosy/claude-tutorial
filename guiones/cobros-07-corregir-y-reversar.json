@@ -171,16 +171,6 @@
      "al_decir": "pulso Corregir"
     },
     {
-     "resaltar": "mat-dialog-container",
-     "durante_ms": 1500,
-     "cursor": false
-    },
-    {
-     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
-     "durante_ms": 3000,
-     "cursor": false
-    },
-    {
      "cartel": {
       "tipo": "consejo",
       "titulo": "Una sola operación",
@@ -241,16 +231,6 @@
     {
      "click": "mat-dialog-container button:has-text('Reversar')",
      "al_decir": "confirmar pulso Reversar"
-    },
-    {
-     "resaltar": "mat-dialog-container",
-     "durante_ms": 1500,
-     "cursor": false
-    },
-    {
-     "resaltar": ".mat-mdc-snack-bar-container, simple-snack-bar",
-     "durante_ms": 3000,
-     "cursor": false
     },
     {
      "resaltar": "tbody tr:has-text('Colmado')",

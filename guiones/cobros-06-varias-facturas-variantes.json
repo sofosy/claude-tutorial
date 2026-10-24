@@ -191,7 +191,7 @@
     {
      "escribir": {
       "sel": "input[placeholder*='filtrar']",
-      "texto": "Central"
+      "texto": "Supermercado Germiva Central"
      },
      "al_decir": "escribo Central"
     },
@@ -256,7 +256,7 @@
     {
      "escribir": {
       "sel": "input[placeholder*='filtrar']",
-      "texto": "Central"
+      "texto": "Supermercado Germiva Central"
      },
      "al_decir": "escribo Central"
     },
@@ -277,7 +277,7 @@
     {
      "escribir": {
       "sel": "input[placeholder*='filtrar']",
-      "texto": "Oriental"
+      "texto": "Supermercado Germiva Oriental"
      },
      "al_decir": "escribo Oriental"
     },
@@ -311,7 +311,7 @@
     {
      "escribir": {
       "sel": "input[placeholder*='filtrar']",
-      "texto": "Colmado"
+      "texto": "Colmado Germiva Este"
      },
      "al_decir": "escribo Colmado"
     },

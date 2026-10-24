@@ -169,6 +169,12 @@
      "resaltar": "mat-dialog-container ",
      "durante_ms": 2500,
      "cursor": false
+    },
+    {
+     "presionar": {
+      "sel": "button:has-text('Ver activos')",
+      "tecla": "Enter"
+     }
     }
    ]
   },

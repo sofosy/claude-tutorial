@@ -216,7 +216,10 @@
      }
     },
     {
-     "click": "mat-checkbox:has-text('Solo pendiente')",
+     "presionar": {
+      "sel": "mat-checkbox:has-text('Solo pendiente') input",
+      "tecla": "Space"
+     },
      "al_decir": "Desactivo Solo pendiente"
     },
     {
