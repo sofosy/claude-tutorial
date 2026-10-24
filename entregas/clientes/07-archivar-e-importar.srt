@@ -1,0 +1,191 @@
+1
+00:00:03,100 --> 00:00:05,892
+Cuando un cliente ya no se usa, no se borra:
+
+2
+00:00:05,968 --> 00:00:06,823
+se archiva.
+
+3
+00:00:07,490 --> 00:00:08,987
+Estamos en Clientes.
+
+4
+00:00:09,655 --> 00:00:10,786
+Recojo el menú.
+
+5
+00:00:11,467 --> 00:00:12,873
+Busco la Ferretería.
+
+6
+00:00:13,541 --> 00:00:15,804
+La lista se filtra mientras escribo.
+
+7
+00:00:16,474 --> 00:00:19,327
+En su fila pulso Archivar, el último icono.
+
+8
+00:00:19,995 --> 00:00:24,536
+El sistema pide confirmar y aclara que el cliente dejará de aparecer en el listado,
+
+9
+00:00:24,638 --> 00:00:27,367
+pero que sus facturas y movimientos se conservan.
+
+10
+00:00:28,035 --> 00:00:30,147
+Confirmo con Sí, Archivar.
+
+11
+00:00:30,815 --> 00:00:34,802
+El sistema avisa que el cliente fue archivado, y pulso Entendido.
+
+12
+00:00:35,469 --> 00:00:37,721
+Ahora el cliente ya no está en la lista.
+
+13
+00:00:38,389 --> 00:00:41,030
+Pulso Ver archivados, y ahí aparece.
+
+14
+00:00:41,698 --> 00:00:43,860
+Para recuperarlo pulso Restaurar.
+
+15
+00:00:44,527 --> 00:00:48,402
+Confirmo, y el cliente vuelve a la lista de clientes activos.
+
+16
+00:00:49,070 --> 00:00:52,515
+El sistema lo confirma, y pulso Entendido otra vez.
+
+17
+00:00:53,183 --> 00:00:56,064
+Archivar tampoco cancela lo que el cliente deba:
+
+18
+00:00:56,177 --> 00:00:57,837
+la deuda sigue en su cuenta.
+
+19
+00:00:59,218 --> 00:01:03,080
+Para cargar muchos clientes de una vez se usa Importar o Exportar.
+
+20
+00:01:03,748 --> 00:01:06,073
+Abro el diálogo.
+
+21
+00:01:05,885 --> 00:01:08,299
+Tiene tres partes.
+
+22
+00:01:08,402 --> 00:01:12,263
+Primero, descargar la plantilla, en Excel o en CSV, con las columnas,
+
+23
+00:01:12,076 --> 00:01:13,936
+un ejemplo y las instrucciones.
+
+24
+00:01:13,748 --> 00:01:18,100
+Segundo, exportar lo que ya existe,
+
+25
+00:01:18,228 --> 00:01:22,075
+útil para hacer cambios en bloque y volver a subir el mismo archivo.
+
+26
+00:01:22,743 --> 00:01:25,132
+Y tercero, importar el archivo.
+
+27
+00:01:25,801 --> 00:01:28,454
+Cada fila se empareja por documento:
+
+28
+00:01:28,266 --> 00:01:32,921
+si el RNC o la cédula ya existe, se actualiza, y si no, se crea.
+
+29
+00:01:32,733 --> 00:01:36,996
+Si alguna fila tiene errores, no se registra nada:
+
+30
+00:01:36,808 --> 00:01:39,387
+se rechaza el archivo completo.
+
+31
+00:01:40,055 --> 00:01:43,614
+Voy a subir un archivo con dos sucursales de una panadería:
+
+32
+00:01:43,703 --> 00:01:49,099
+el mismo RNC, con códigos de cuenta distintos, PAN guion uno y PAN guion dos,
+
+33
+00:01:48,912 --> 00:01:50,646
+y la misma razón social.
+
+34
+00:01:50,459 --> 00:01:52,521
+Subo el archivo.
+
+35
+00:01:52,334 --> 00:01:55,540
+El sistema lo procesa en cuatro etapas:
+
+36
+00:01:55,353 --> 00:01:58,585
+subir el archivo, validar cada fila,
+
+37
+00:01:58,662 --> 00:02:01,818
+registrar los clientes y finalizar con el resultado.
+
+38
+00:02:02,486 --> 00:02:04,322
+Esto tarda unos segundos.
+
+39
+00:02:05,703 --> 00:02:07,236
+Terminó la importación.
+
+40
+00:02:07,905 --> 00:02:14,118
+El sistema informa cuántos clientes creó, cuántos actualizó y si hubo errores.
+
+41
+00:02:13,931 --> 00:02:16,384
+Cierro el diálogo y busco el RNC de la panadería.
+
+42
+00:02:16,195 --> 00:02:19,855
+La lista se actualiza sola mientras escribo.
+
+43
+00:02:19,668 --> 00:02:23,705
+Aparecen las dos sucursales de la panadería:
+
+44
+00:02:23,819 --> 00:02:27,769
+cada una con su código de cuenta, PAN guion uno y PAN guion dos,
+
+45
+00:02:27,782 --> 00:02:30,600
+y la misma razón social.
+
+46
+00:02:30,412 --> 00:02:34,763
+Si un RNC ya tiene varias cuentas y el archivo no trae el código de cuenta,
+
+47
+00:02:34,576 --> 00:02:37,543
+el sistema no adivina cuál actualizar:
+
+48
+00:02:37,620 --> 00:02:39,959
+rechaza el archivo y pide el código.
