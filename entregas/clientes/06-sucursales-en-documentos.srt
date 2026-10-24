@@ -1,0 +1,119 @@
+1
+00:00:03,100 --> 00:00:05,879
+Veamos cómo se ven las sucursales al facturar.
+
+2
+00:00:06,548 --> 00:00:11,539
+Estamos en una factura nueva, en Ventas, Facturas.
+
+3
+00:00:11,352 --> 00:00:13,075
+Recojo el menú.
+
+4
+00:00:12,887 --> 00:00:17,353
+En Cliente escribo Supermercado, para buscar por nombre.
+
+5
+00:00:17,166 --> 00:00:20,586
+En la lista aparecen las sucursales del supermercado,
+
+6
+00:00:20,399 --> 00:00:23,705
+cada una con su código de cuenta y el mismo RNC.
+
+7
+00:00:24,373 --> 00:00:26,058
+Elijo la cuenta Oriental.
+
+8
+00:00:26,739 --> 00:00:31,644
+Fíjate que el campo muestra el nombre comercial de la sucursal y, junto a él,
+
+9
+00:00:31,457 --> 00:00:34,260
+la razón social de la empresa.
+
+10
+00:00:34,073 --> 00:00:39,595
+Si necesito una sucursal que todavía no existe, no tengo que salir de la factura:
+
+11
+00:00:39,408 --> 00:00:42,576
+pulso el icono Crear otra sucursal con este RNC.
+
+12
+00:00:43,244 --> 00:00:47,771
+Se abre un formulario con el RNC y la razón social ya puestos y bloqueados.
+
+13
+00:00:47,585 --> 00:00:50,704
+Solo escribo el nombre de la sucursal:
+
+14
+00:00:50,517 --> 00:00:52,843
+Supermercado Germiva Sur.
+
+15
+00:00:52,655 --> 00:00:56,114
+Es lo único que necesita una cuenta nueva.
+
+16
+00:00:55,926 --> 00:00:58,704
+Pulso Crear sucursal.
+
+17
+00:00:59,372 --> 00:01:01,887
+Y la nueva cuenta queda elegida en la factura.
+
+18
+00:01:03,273 --> 00:01:05,750
+Cada cuenta lleva su propio estado de cuenta.
+
+19
+00:01:06,418 --> 00:01:08,317
+Voy a Clientes y busco el RNC,
+
+20
+00:01:08,129 --> 00:01:11,802
+ciento treinta millones quinientos cincuenta y cinco mil trescientos.
+
+21
+00:01:11,615 --> 00:01:14,268
+Aparecen las sucursales.
+
+22
+00:01:14,079 --> 00:01:19,162
+En la fila de Oriental pulso el primer icono, Estado de Cuenta.
+
+23
+00:01:18,974 --> 00:01:21,954
+Aquí se ve solo lo de esta sucursal:
+
+24
+00:01:21,766 --> 00:01:26,118
+un documento de dos mil trescientos sesenta pesos, cobrado cero,
+
+25
+00:01:25,930 --> 00:01:28,471
+y pendiente dos mil trescientos sesenta.
+
+26
+00:01:28,284 --> 00:01:32,382
+Ahora vuelvo, y abro el estado de cuenta de Central.
+
+27
+00:01:32,195 --> 00:01:38,498
+Su factura ya fue cobrada, así que no aparece como pendiente, y su saldo es cero.
+
+28
+00:01:38,310 --> 00:01:44,549
+Desactivo Solo pendiente de pago, y se ve el historial completo, con lo cobrado.
+
+29
+00:01:45,216 --> 00:01:48,336
+Un cobro hecho a Central no rebaja la deuda de Oriental:
+
+30
+00:01:48,462 --> 00:01:53,204
+los cobros, los anticipos y las notas de crédito no se cruzan entre cuentas.
