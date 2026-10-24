@@ -194,7 +194,7 @@
    "rotulo": "Importar y exportar",
    "ruta": "Ventas › Clientes › Importar / Exportar",
    "texto_pantalla": "Plantilla, exportación y archivo",
-   "narracion": "Para cargar muchos clientes de una vez se usa Importar o Exportar. Abro el diálogo. Tiene tres partes. Primero, descargar la plantilla, en Excel o en CSV, con las columnas, un ejemplo y las instrucciones. Segundo, exportar lo que ya existe, útil para hacer cambios en bloque y volver a subir el mismo archivo. Y tercero, importar el archivo. Cada fila se empareja por documento: si el RNC o la cédula ya existe, se actualiza, y si no, se crea. Si alguna fila tiene errores, no se registra nada: se rechaza el archivo completo. Voy a subir un archivo con dos sucursales de una panadería: el mismo RNC, con códigos de cuenta distintos, PAN guion uno y PAN guion dos, y la misma razón social. Subo el archivo.",
+   "narracion": "Para cargar muchos clientes de una vez se usa Importar o Exportar. Abro el diálogo. Tiene tres partes. Primero, descargar la plantilla, en Excel o en CSV, con las columnas, un ejemplo y las instrucciones. Segundo, exportar lo que ya existe, útil para hacer cambios en bloque y volver a subir el mismo archivo. Y tercero, importar el archivo. Cada fila se empareja por documento: si el RNC o la cédula ya existe, se actualiza, y si no, se crea. Si alguna fila tiene errores, no se registra nada: se rechaza el archivo completo. Voy a subir un archivo con dos sucursales de una panadería: el mismo RNC, con códigos de cuenta distintos, PAN guion uno y PAN guion dos, y la misma razón social. Subo el archivo. Mira el avance, en cuatro etapas. Subir, que envía el archivo. Validar, donde el sistema revisa cada fila. Registrar, donde crea los clientes. Y Finalizar, donde informa el resultado. Esto puede tardar unos segundos.",
    "acciones": [
     {
      "click": "button:has-text('Importar / Exportar')",
@@ -231,6 +231,30 @@
       "ancla": "mat-dialog-container :text('Arrastra aquí')"
      },
      "al_decir": "Subo el archivo"
+    },
+    {
+     "resaltar": "mat-dialog-container :text-is('Subir')",
+     "durante_ms": 2500,
+     "al_decir": "Subir, que envía",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container :text-is('Validar')",
+     "durante_ms": 3000,
+     "al_decir": "Validar, donde",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container :text-is('Registrar')",
+     "durante_ms": 2500,
+     "al_decir": "Registrar, donde",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container :text-is('Finalizar')",
+     "durante_ms": 3000,
+     "al_decir": "Finalizar, donde",
+     "cursor": false
     }
    ]
   },
@@ -240,7 +264,7 @@
    "rotulo": "Resultado de la importación",
    "ruta": "Ventas › Clientes",
    "texto_pantalla": "Dos sucursales con el mismo RNC",
-   "narracion": "El sistema valida el archivo y lo registra. Cuando termina, informa cuántos clientes creó, cuántos actualizó y si hubo errores. Cierro el diálogo y busco el RNC de la panadería. La lista se actualiza sola mientras escribo. Aparecen las dos sucursales de la panadería: cada una con su código de cuenta, PAN guion uno y PAN guion dos, y la misma razón social. Si un RNC ya tiene varias cuentas y el archivo no trae el código de cuenta, el sistema no adivina cuál actualizar: rechaza el archivo y pide el código.",
+   "narracion": "Terminó la importación. El sistema informa cuántos clientes creó, cuántos actualizó y si hubo errores. Cierro el diálogo y busco el RNC de la panadería. La lista se actualiza sola mientras escribo. Aparecen las dos sucursales de la panadería: cada una con su código de cuenta, PAN guion uno y PAN guion dos, y la misma razón social. Si un RNC ya tiene varias cuentas y el archivo no trae el código de cuenta, el sistema no adivina cuál actualizar: rechaza el archivo y pide el código.",
    "acciones": [
     {
      "resaltar": "mat-dialog-container ",

@@ -133,7 +133,7 @@
      "al_decir": "En la segunda factura escribo"
     },
     {
-     "resaltar": ":text('Faltan RD$') >> nth=0",
+     "resaltar": ":text('Faltan RD$'):not([data-tipo='error']) >> nth=0",
      "durante_ms": 3500,
      "al_decir": "avisa que faltan",
      "cursor": false
