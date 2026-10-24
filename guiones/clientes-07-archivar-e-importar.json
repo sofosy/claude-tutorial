@@ -194,7 +194,7 @@
    "rotulo": "Importar y exportar",
    "ruta": "Ventas › Clientes › Importar / Exportar",
    "texto_pantalla": "Plantilla, exportación y archivo",
-   "narracion": "Para cargar muchos clientes de una vez se usa Importar o Exportar. Abro el diálogo. Tiene tres partes. Primero, descargar la plantilla, en Excel o en CSV, con las columnas, un ejemplo y las instrucciones. Segundo, exportar lo que ya existe, útil para hacer cambios en bloque y volver a subir el mismo archivo. Y tercero, importar el archivo. Cada fila se empareja por documento: si el RNC o la cédula ya existe, se actualiza, y si no, se crea. Si alguna fila tiene errores, no se registra nada: se rechaza el archivo completo. Voy a subir un archivo con dos sucursales de una panadería: el mismo RNC, con códigos de cuenta distintos, PAN guion uno y PAN guion dos, y la misma razón social. Subo el archivo. Mira el avance, en cuatro etapas. Subir, que envía el archivo. Validar, donde el sistema revisa cada fila. Registrar, donde crea los clientes. Y Finalizar, donde informa el resultado. Esto puede tardar unos segundos.",
+   "narracion": "Para cargar muchos clientes de una vez se usa Importar o Exportar. Abro el diálogo. Tiene tres partes. Primero, descargar la plantilla, en Excel o en CSV, con las columnas, un ejemplo y las instrucciones. Segundo, exportar lo que ya existe, útil para hacer cambios en bloque y volver a subir el mismo archivo. Y tercero, importar el archivo. Cada fila se empareja por documento: si el RNC o la cédula ya existe, se actualiza, y si no, se crea. Si alguna fila tiene errores, no se registra nada: se rechaza el archivo completo. Voy a subir un archivo con dos sucursales de una panadería: el mismo RNC, con códigos de cuenta distintos, PAN guion uno y PAN guion dos, y la misma razón social. Subo el archivo. El sistema lo procesa en cuatro etapas: subir el archivo, validar cada fila, registrar los clientes y finalizar con el resultado. Esto tarda unos segundos.",
    "acciones": [
     {
      "click": "button:has-text('Importar / Exportar')",
@@ -231,30 +231,6 @@
       "ancla": "mat-dialog-container :text('Arrastra aquí')"
      },
      "al_decir": "Subo el archivo"
-    },
-    {
-     "resaltar": "mat-dialog-container :text-is('Subir')",
-     "durante_ms": 2500,
-     "al_decir": "Subir, que envía",
-     "cursor": false
-    },
-    {
-     "resaltar": "mat-dialog-container :text-is('Validar')",
-     "durante_ms": 3000,
-     "al_decir": "Validar, donde",
-     "cursor": false
-    },
-    {
-     "resaltar": "mat-dialog-container :text-is('Registrar')",
-     "durante_ms": 2500,
-     "al_decir": "Registrar, donde",
-     "cursor": false
-    },
-    {
-     "resaltar": "mat-dialog-container :text-is('Finalizar')",
-     "durante_ms": 3000,
-     "al_decir": "Finalizar, donde",
-     "cursor": false
     }
    ]
   },
