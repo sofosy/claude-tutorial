@@ -1,52 +1,162 @@
 {
   "titulo": "Recursos Humanos · Importar y exportar empleados por Excel",
+  "descripcion": "Cómo dar de alta o actualizar muchos empleados de una vez en Recursos Humanos: dónde está Importar / exportar en la pestaña Personas, la plantilla con los catálogos de tu empresa, la exportación para corregir en bloque y la importación de un archivo.",
   "sesion": {
-    "usuario": "admin",
-    "clave": "admin",
-    "sel_entrar": "button.auth-primary-btn",
-    "acciones": [
-      { "click_opcional": "button.close-btn" },
-      { "click_opcional": "button:has-text('Recordar más tarde')" }
-    ]
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/employee/personas/plantilla",
+    "esperar": "button[aria-label='Más acciones de la plantilla']"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/rrhh/preparar.sh"
   },
   "pasos": [
     {
       "id": "01-plantilla",
-      "ruta": "Recursos Humanos › Personas › Importar y Exportar",
+      "ruta": "Recursos Humanos › Personas › Empleados › Importar / exportar",
       "texto_pantalla": "Importar / Exportar empleados · plantilla con catálogos y columnas",
-      "navegar": "/employee/personas",
-      "narracion": "Esta es la pantalla de Personas, dentro de Recursos Humanos: aquí ves cada empleado de tu empresa, con su cargo, su departamento y su estado. Primero contraigo el panel del menú para ver la tabla completa. Arriba, junto al buscador, está el botón Importar y Exportar: sirve para dar de alta o actualizar muchos empleados de una vez, en lugar de uno por uno. Lo abro. Aparece un diálogo con tres pasos. El primero es descargar la plantilla: trae los catálogos de tu empresa ya cargados, cada uno con su identificador, para que elijas de una lista en vez de escribir a mano — el departamento, el cargo, el tipo de contrato, la jornada, el banco, la profesión. También trae una fila de ejemplo, y si le pones salario base y frecuencia de nómina, ese empleado queda listo para la próxima corrida; la columna Acceso al sistema decide si además se le crea usuario para entrar al ERP, que por defecto es que no. La descargo en Excel.",
+      "navegar": "/employee/personas/plantilla",
+      "narracion": "Esta es la pestaña Personas, dentro de Recursos Humanos. Todo el módulo vive en una sola pantalla, con sus pestañas arriba: Inicio, Personas, Ausencias y tiempo, y Mi espacio. Aquí, a la izquierda, la lista de empleados de tu empresa, cada uno con su cargo; al elegir uno, su expediente se abre a la derecha, sin salir del listado. Para dar de alta o actualizar muchos empleados de una vez, en lugar de uno por uno, está el botón de Más acciones, los tres puntos junto a Empleados. Lo abro y elijo Importar y exportar. Aparece un diálogo con tres pasos. El primero es descargar la plantilla: trae los catálogos de tu empresa ya cargados, cada uno con su identificador, para que elijas de una lista en vez de escribir a mano — el departamento, el cargo, el tipo de contrato, la jornada, el banco, la profesión. También trae una fila de ejemplo, y si le pones salario base y frecuencia de nómina, ese empleado queda listo para la próxima corrida; la columna Acceso al sistema decide si además se le crea usuario para entrar al ERP, que por defecto es que no. La descargo en Excel.",
       "acciones": [
-        { "click": "button.panel-collapse", "al_decir": "contraigo" },
-        { "resaltar": "button:has-text('Importar / Exportar')", "durante_ms": 8000, "al_decir": "Importar" },
-        { "click": "button:has-text('Importar / Exportar')", "al_decir": "abro" },
-        { "resaltar": "p.gm-dialog-note:has-text('Llega con los catálogos')", "durante_ms": 24500, "al_decir": "catálogos" },
-        { "click": "button:has-text('Plantilla Excel')", "al_decir": "descargo" }
-      ]
+        {
+          "resaltar": "nav[role=tablist], .mat-mdc-tab-nav-bar, :text('Ausencias y tiempo') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "con sus pestañas arriba"
+        },
+        {
+          "resaltar": "ul.rr__list > li >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "la lista de empleados"
+        },
+        {
+          "resaltar": ":text('Selecciona un empleado de la lista') >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "su expediente se abre"
+        },
+        {
+          "resaltar": "button[aria-label='Más acciones de la plantilla']",
+          "durante_ms": 5000,
+          "al_decir": "Más acciones"
+        },
+        {
+          "click": "button[aria-label='Más acciones de la plantilla']",
+          "al_decir": "Lo abro"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Importar / exportar')",
+          "al_decir": "elijo Importar"
+        },
+        {
+          "resaltar": "p.gm-dialog-note:has-text('Llega con los catálogos')",
+          "durante_ms": 24500,
+          "al_decir": "catálogos"
+        },
+        {
+          "click": "button:has-text('Plantilla Excel')",
+          "al_decir": "descargo"
+        }
+      ],
+      "capitulo": "Descargar la plantilla"
     },
     {
       "id": "02-exportar-importar",
-      "ruta": "Recursos Humanos › Personas › Importar y Exportar",
+      "ruta": "Recursos Humanos › Personas › Empleados › Importar / exportar",
       "texto_pantalla": "Exportar lo existente e importar un archivo",
-      "narracion": "El segundo paso exporta lo que ya existe: baja a todos los empleados actuales con las mismas columnas de la plantilla y su salario vigente, para corregir varios a la vez y volver a subir el mismo archivo. La descargo en Excel también. El tercer paso es importar: aquí sueltas el archivo, y cada fila se empareja por el número de empleado o, si no lo pusiste, por el documento — si ya existe se actualiza, si no, se crea. Ojo con esta regla: si una sola fila tiene un error, no se registra nada; se rechaza el archivo completo entero, y aquí mismo te dice qué corregir, para que no queden datos a medias. El salario de alguien que ya existe no se cambia por aquí, sino por una Solicitud de Cambio Salarial.",
+      "narracion": "El segundo paso exporta lo que ya existe: baja a todos los empleados actuales con las mismas columnas de la plantilla y su salario vigente, para corregir varios a la vez y volver a subir el mismo archivo. La descargo en Excel también. El tercer paso es importar: aquí sueltas el archivo, y cada fila se empareja por el número de empleado o, si no lo pusiste, por el documento — si ya existe se actualiza, si no, se crea. Ojo con esta regla: si una sola fila tiene un error, no se registra nada; se rechaza el archivo completo, y aquí mismo te dice qué corregir, para que no queden datos a medias. El salario de alguien que ya existe no se cambia por aquí, sino por una Solicitud de Cambio Salarial.",
       "acciones": [
-        { "resaltar": "p.gm-dialog-note:has-text('Descarga todos los empleados')", "durante_ms": 7000, "al_decir": "exporta" },
-        { "click": "button:has-text('Exportar a Excel')", "al_decir": "descargo" },
-        { "resaltar": ".bulk__drop", "durante_ms": 6000, "al_decir": "sueltas" },
-        { "resaltar": ".gm-dialog-alert--warning", "durante_ms": 6000, "al_decir": "rechaza" }
-      ]
+        {
+          "resaltar": "p.gm-dialog-note:has-text('Descarga todos los empleados')",
+          "durante_ms": 7000,
+          "al_decir": "exporta"
+        },
+        {
+          "click": "button:has-text('Exportar a Excel')",
+          "al_decir": "descargo"
+        },
+        {
+          "resaltar": ".bulk__drop",
+          "durante_ms": 6000,
+          "al_decir": "sueltas"
+        },
+        {
+          "resaltar": ".gm-dialog-alert--warning",
+          "durante_ms": 6000,
+          "al_decir": "rechaza"
+        },
+        {
+          "resaltar": "p.gm-dialog-note:has-text('solicitud de cambio salarial')",
+          "durante_ms": 6000,
+          "al_decir": "Solicitud de Cambio Salarial"
+        }
+      ],
+      "capitulo": "Exportar e importar"
     },
     {
       "id": "03-importar",
-      "ruta": "Recursos Humanos › Personas › Importar y Exportar",
+      "ruta": "Recursos Humanos › Personas › Empleados › Importar / exportar",
       "texto_pantalla": "Importar un archivo real",
       "narracion": "Ahora sí, importo un archivo de verdad. Este trae dos empleados nuevos, cada uno con su nombre, su cédula, su cargo y su fecha de ingreso, que es lo mínimo que pide el sistema. Lo suelto aquí. El sistema lo sube, valida cada fila contra tus catálogos, y si todo está bien, los registra. Listo: dice que la importación se completó sin errores, y aquí abajo ves cuántos empleados se crearon, cuántos se actualizaron y el total procesado. Con esto cierro el diálogo.",
       "acciones": [
-        { "subir": { "sel": ".bulk__drop input[type=file]", "archivo": "seeds/rrhh/importar-demo.xlsx", "ancla": ".bulk__drop" }, "al_decir": "suelto" },
-        { "resaltar": ".gm-dialog-alert--success", "durante_ms": 5000, "al_decir": "completó" },
-        { "resaltar": ".gm-dialog-facts--result", "durante_ms": 5000, "al_decir": "abajo" },
-        { "click": "button:has-text('Cerrar')", "al_decir": "cierro" }
-      ]
+        {
+          "resaltar": ".bulk__drop",
+          "durante_ms": 5000,
+          "al_decir": "Este trae dos empleados"
+        },
+        {
+          "subir": {
+            "sel": ".bulk__drop input[type=file]",
+            "archivo": "seeds/rrhh/importar-demo.xlsx",
+            "ancla": ".bulk__drop"
+          },
+          "al_decir": "suelto"
+        },
+        {
+          "resaltar": ".gm-dialog-alert--success",
+          "durante_ms": 1500,
+          "al_decir": "completó"
+        },
+        {
+          "resaltar": ".gm-dialog-facts--result",
+          "durante_ms": 5000,
+          "al_decir": "abajo"
+        },
+        {
+          "click": "button:has-text('Cerrar')",
+          "al_decir": "cierro"
+        }
+      ],
+      "capitulo": "Importar un archivo"
     }
-  ]
+  ],
+  "base_url": "http://localhost:4200",
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "privacidad": {
+    "_perfil": "Datos ficticios: seeds/rrhh/preparar.sh deja la empresa de demo y los empleados de la serie Vendedores (cédulas 402555), y el archivo importa dos con cédulas 130555. No se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "402555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  }
 }

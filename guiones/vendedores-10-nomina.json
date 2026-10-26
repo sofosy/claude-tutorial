@@ -95,7 +95,7 @@
    "ruta": "Nómina › Períodos › Segunda quincena de octubre 2026",
    "texto_pantalla": "Luis RD$710 · Carmen RD$150 en comisiones",
    "navegar": "/payroll/periods/13",
-   "narracion": "Las comisiones aprobadas en la liquidación no se cargan a mano en Nómina: la nómina las recoge sola. Este es el período de la segunda quincena de octubre, en Nómina, Períodos, todavía en borrador. Recojo el menú. Arriba, los pasos del período: borrador, calculado, aprobado, pagado y cerrado. Abajo, el resumen: tres empleados a pagar, con su salario base de la quincena. Pulso Generar nómina. Ahí está el cálculo de cada empleado, y la columna Comisiones: setecientos diez pesos para Luis y ciento cincuenta para Carmen, lo que se aprobó en sus liquidaciones. Pedro no vendió, así que no tiene comisión.",
+   "narracion": "Las comisiones aprobadas en la liquidación no se cargan a mano en Nómina: la nómina las recoge sola. Este es el período de la segunda quincena de octubre, en Nómina, Períodos, todavía en borrador. Recojo el menú. Arriba, los pasos del período: borrador, calculado, aprobado, pagado y cerrado. Abajo, el resumen: tres empleados a pagar, con su salario base de la quincena. Pulso Generar nómina. Ahí está el cálculo de cada empleado: su salario base mensual, lo que le toca en la quincena, y la columna Comisiones: setecientos diez pesos para Luis y ciento cincuenta para Carmen, lo que se aprobó en sus liquidaciones. Pedro no vendió, así que no tiene comisión.",
    "acciones": [
     {
      "resaltar": "h1, .page-title, :text('Segunda quincena de octubre 2026') >> nth=0",
@@ -122,6 +122,12 @@
     {
      "click": "button:has-text('Generar nómina')",
      "al_decir": "Pulso Generar nómina"
+    },
+    {
+     "resaltar": "th:has-text('Salario quincenal')",
+     "durante_ms": 1500,
+     "cursor": false,
+     "al_decir": "lo que le toca en la quincena"
     },
     {
      "resaltar": "th:has-text('Comisiones')",
@@ -155,7 +161,7 @@
    "rotulo": "Comisiones por Ventas",
    "ruta": "Nómina › Cálculos › Luis Gómez Díaz",
    "texto_pantalla": "Salario quincenal + comisiones · AFP y SFS sobre el total",
-   "narracion": "Abro el detalle de Luis desde el menú de su fila, con Ver Detalle. En Ingresos hay dos líneas: el salario base de la quincena, diez mil pesos, y Comisiones por Ventas: dos comisiones por setecientos diez pesos. Una sola línea junta todas las comisiones aprobadas del vendedor. Paso a Deducciones. Para la ley, la comisión es salario ordinario: el AFP y el seguro de salud se calculan sobre el total, salario más comisión, y también cuenta para el ISR, la regalía, las vacaciones y las prestaciones.",
+   "narracion": "Abro el detalle de Luis desde el menú de su fila, con Ver Detalle. En Ingresos hay dos líneas: el salario base de la quincena, diez mil pesos, y Comisiones por Ventas: dos comisiones por setecientos diez pesos. Una sola línea junta todas las comisiones aprobadas del vendedor. Paso a Deducciones. Para la ley, la comisión es salario ordinario: el AFP y el seguro de salud se calculan sobre el total, salario más comisión, y en la segunda quincena se liquidan con todo el mes; y también cuenta para el ISR, la regalía, las vacaciones y las prestaciones.",
    "acciones": [
     {
      "click": "tr:has-text('Luis Gómez') button:has(mat-icon:text-is('more_vert'))",
@@ -241,9 +247,9 @@
    "capitulo": "Aprobar y pagar",
    "rotulo": "La comisión, vista desde Ventas",
    "ruta": "Ventas › Comisiones › Liquidaciones › LC-000002",
-   "texto_pantalla": "Cada línea dice en qué nómina va",
+   "texto_pantalla": "Cada línea dice en qué nómina va · A pagar por nómina RD$710",
    "navegar": "/sales/commissions/settlements/2",
-   "narracion": "Ahora miro el otro lado, en Ventas: la liquidación de Luis. Arriba sigue Aprobada; el campo Pagada se llena cuando la nómina se paga. En las líneas, la columna Nómina dice en qué período va cada comisión: la quincena del dieciséis de octubre. En el listado de Comisiones se lee igual, como en el volante de la segunda quincena de octubre. Así se sigue cada comisión de punta a punta: de la factura al cobro, del cobro a la liquidación, y de la liquidación a la nómina.",
+   "narracion": "Ahora miro el otro lado, en Ventas: la liquidación de Luis. Arriba sigue Aprobada; el campo Pagada se llena cuando la nómina se paga. En las líneas, la columna Nómina dice en qué período va cada comisión: la quincena del dieciséis de octubre. Y la tarjeta A pagar por nómina resume lo que el vendedor cobra en su volante: setecientos diez pesos. Así se sigue cada comisión de punta a punta: de la factura al cobro, del cobro a la liquidación, y de la liquidación a la nómina.",
    "acciones": [
     {
      "resaltar": "[data-testid=settlement-status]",
@@ -265,13 +271,19 @@
     },
     {
      "resaltar": "[data-testid=settlement-lines] tbody tr >> nth=1 >> td >> nth=8",
-     "durante_ms": 5000,
+     "durante_ms": 2500,
      "cursor": false,
-     "al_decir": "En el listado de Comisiones"
+     "al_decir": "la quincena del dieciséis"
     },
     {
      "resaltar": "[data-testid=settlement-totals]",
-     "durante_ms": 6000,
+     "durante_ms": 5000,
+     "cursor": false,
+     "al_decir": "A pagar por nómina"
+    },
+    {
+     "resaltar": "p.payable-note",
+     "durante_ms": 5000,
      "cursor": false,
      "al_decir": "de punta a punta"
     }
