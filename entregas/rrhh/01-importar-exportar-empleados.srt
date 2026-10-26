@@ -1,0 +1,167 @@
+1
+00:00:00,095 --> 00:00:03,330
+Esta es la pestaña Personas, dentro de Recursos Humanos.
+
+2
+00:00:03,906 --> 00:00:07,455
+Todo el módulo vive en una sola pantalla, con sus pestañas arriba:
+
+3
+00:00:07,511 --> 00:00:11,070
+Inicio, Personas, Ausencias y tiempo, y Mi espacio.
+
+4
+00:00:11,641 --> 00:00:16,048
+Aquí, a la izquierda, la lista de empleados de tu empresa, cada uno con su cargo;
+
+5
+00:00:16,115 --> 00:00:20,256
+al elegir uno, su expediente se abre a la derecha, sin salir del listado.
+
+6
+00:00:20,836 --> 00:00:24,987
+Para dar de alta o actualizar muchos empleados de una vez, en lugar de uno por uno,
+
+7
+00:00:25,077 --> 00:00:28,593
+está el botón de Más acciones, los tres puntos junto a Empleados.
+
+8
+00:00:29,173 --> 00:00:31,428
+Lo abro y elijo Importar y exportar.
+
+9
+00:00:31,998 --> 00:00:33,559
+Aparece un diálogo con tres pasos.
+
+10
+00:00:33,371 --> 00:00:35,881
+El primero es descargar la plantilla:
+
+11
+00:00:35,692 --> 00:00:39,832
+trae los catálogos de tu empresa ya cargados, cada uno con su identificador,
+
+12
+00:00:39,643 --> 00:00:44,798
+para que elijas de una lista en vez de escribir a mano — el departamento, el cargo,
+
+13
+00:00:44,865 --> 00:00:48,593
+el tipo de contrato, la jornada, el banco, la profesión.
+
+14
+00:00:49,162 --> 00:00:53,314
+También trae una fila de ejemplo, y si le pones salario base y frecuencia de nómina,
+
+15
+00:00:53,371 --> 00:00:55,714
+ese empleado queda listo para la próxima corrida;
+
+16
+00:00:55,792 --> 00:00:59,687
+la columna Acceso al sistema decide si además se le crea usuario para entrar al ERP,
+
+17
+00:00:59,765 --> 00:01:01,160
+que por defecto es que no.
+
+18
+00:01:01,729 --> 00:01:03,069
+La descargo en Excel.
+
+19
+00:01:04,355 --> 00:01:06,508
+El segundo paso exporta lo que ya existe:
+
+20
+00:01:06,587 --> 00:01:10,269
+baja a todos los empleados actuales con las mismas columnas de la plantilla y su
+
+21
+00:01:10,080 --> 00:01:14,164
+salario vigente, para corregir varios a la vez y volver a subir el mismo archivo.
+
+22
+00:01:14,728 --> 00:01:16,424
+La descargo en Excel también.
+
+23
+00:01:17,006 --> 00:01:18,511
+El tercer paso es importar:
+
+24
+00:01:18,557 --> 00:01:22,462
+aquí sueltas el archivo, y cada fila se empareja por el número de empleado o,
+
+25
+00:01:22,519 --> 00:01:27,417
+si no lo pusiste, por el documento — si ya existe se actualiza, si no, se crea.
+
+26
+00:01:27,999 --> 00:01:29,103
+Ojo con esta regla:
+
+27
+00:01:29,237 --> 00:01:32,171
+si una sola fila tiene un error, no se registra nada;
+
+28
+00:01:32,307 --> 00:01:35,832
+se rechaza el archivo completo, y aquí mismo te dice qué corregir,
+
+29
+00:01:35,901 --> 00:01:37,786
+para que no queden datos a medias.
+
+30
+00:01:38,367 --> 00:01:41,112
+El salario de alguien que ya existe no se cambia por aquí,
+
+31
+00:01:41,157 --> 00:01:43,399
+sino por una Solicitud de Cambio Salarial.
+
+32
+00:01:44,682 --> 00:01:47,259
+Ahora sí, importo un archivo de verdad.
+
+33
+00:01:47,835 --> 00:01:51,718
+Este trae dos empleados nuevos, cada uno con su nombre, su cédula,
+
+34
+00:01:51,864 --> 00:01:55,478
+su cargo y su fecha de ingreso, que es lo mínimo que pide el sistema.
+
+35
+00:01:56,049 --> 00:01:57,109
+Lo suelto aquí.
+
+36
+00:01:57,689 --> 00:02:02,219
+El sistema lo sube, valida cada fila contra tus catálogos, y si todo está bien,
+
+37
+00:02:02,277 --> 00:02:03,135
+los registra.
+
+38
+00:02:03,704 --> 00:02:04,240
+Listo:
+
+39
+00:02:04,329 --> 00:02:06,573
+dice que la importación se completó sin errores,
+
+40
+00:02:06,629 --> 00:02:08,915
+y aquí abajo ves cuántos empleados se crearon,
+
+41
+00:02:08,950 --> 00:02:11,147
+cuántos se actualizaron y el total procesado.
+
+42
+00:02:11,718 --> 00:02:13,270
+Con esto cierro el diálogo.

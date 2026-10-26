@@ -42,6 +42,6 @@ else
   restaurar "$BASE"
 fi
 $M germiva -e "UPDATE companies SET legalName='Distribuidora Germiva Demo S.R.L.', tradeName='Distribuidora Germiva', rnc='130555001', email='ventas@distribuidora.germiva.com', website='https://germiva.com' WHERE id=1; UPDATE users SET email='admin@germiva.com' WHERE id=1;"
-docker exec germiva-dev-redis redis-cli FLUSHALL >/dev/null 2>&1 || true
+docker exec germiva-dev-redis redis-cli FLUSHALL >/dev/null 2>&1 || redis-cli FLUSHALL >/dev/null 2>&1 || true
 python3 "$(dirname "$0")/preparar.py" "$ESTADO"
 echo "datos de partida listos: $ESTADO"
