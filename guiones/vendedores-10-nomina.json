@@ -115,7 +115,7 @@
     },
     {
      "resaltar": ":text('Empleados a pagar') >> nth=0",
-     "durante_ms": 5000,
+     "durante_ms": 3500,
      "cursor": false,
      "al_decir": "Abajo, el resumen"
     },
