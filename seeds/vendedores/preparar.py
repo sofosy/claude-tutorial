@@ -136,9 +136,11 @@ def crear_productos():
 
 
 def crear_clientes():
+    # La razón social fiscal es obligatoria cuando el RNC no está en el padrón
+    # de la DGII (los 130555 de la serie son inventados).
     for nombre, rnc, *_ in CLIENTES:
         llamar("POST", "/v1/partner", {
-            "name": nombre, "tin": rnc, "partnerType": ["CUSTOMER"], "partnerCategory": "BUSINESS",
+            "name": nombre, "legalName": f"{nombre} S.R.L.", "tin": rnc, "partnerType": ["CUSTOMER"], "partnerCategory": "BUSINESS",
             "customerType": "REGULAR", "isInformalTaxpayer": True})
 
 
