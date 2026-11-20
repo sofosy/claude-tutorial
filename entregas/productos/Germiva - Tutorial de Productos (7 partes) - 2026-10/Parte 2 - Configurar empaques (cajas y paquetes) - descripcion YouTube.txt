@@ -14,7 +14,7 @@ Segunda parte de la serie de Productos de Germiva ERP: cómo configurar un produ
 03:18  El paquete que solo se vende
 04:15  Mínimo y máximo en cajas
 05:00  Mínimo y máximo por almacén
-06:01  Quitar un empaque y resumen
+06:02  Quitar un empaque y resumen
 
 📋 EN ESTE VIDEO APRENDERÁS
 • Entender la unidad base y por qué la existencia y el costo siempre se llevan en ella
