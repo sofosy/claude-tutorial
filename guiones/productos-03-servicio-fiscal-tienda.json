@@ -1,0 +1,245 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/inventory/product/list",
+  "esperar": "button:has-text('Nuevo Producto')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de ge i i",
+  "RNC": "erre ene ce",
+  "POS": "pos"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Embotelladora",
+   "Agroindustrial",
+   "Cibao",
+   "Galletera",
+   "Colmado",
+   "Esquina"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Productos · Parte 3: servicios, fiscal y tienda en línea",
+ "descripcion": "Tercer video de Productos en Germiva ERP: dar de alta un servicio, que se vende pero no se almacena; la pestaña Fiscal, con la cuenta de ingreso y los impuestos adicionales de la DGII; y cómo publicar un producto o servicio en tu tienda en línea.",
+ "_comentario": "Serie Productos corta (nov. 2026), video 3. Estado A. Crea el servicio «Fumigación doméstica» (Servicios de Limpieza, Unidad, RD$2,500 sin ITBIS incluido; al pasar a Servicio el ITBIS queda en Exento y en cámara se elige el 18 % → total 2,950) y lo publica en la tienda. En Fiscal solo se señalan la cuenta de ingreso y los impuestos adicionales (no se agrega ninguno).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/productos/restaurar.mjs A"
+ },
+ "aprenderas": [
+  "Crear un servicio y en qué se diferencia de un producto",
+  "Para qué sirve la cuenta contable de ingreso",
+  "Dónde van la propina legal y otros impuestos adicionales",
+  "Publicar un producto o servicio en la tienda en línea"
+ ],
+ "errores_comunes": [
+  "Dejar el ITBIS en exento en un servicio que sí lo lleva: al cambiar a Servicio viene en exento",
+  "Agregar un impuesto adicional que el producto no lleva",
+  "Dejar «Visible en la tienda» encendido en algo que no quieres mostrar al público"
+ ],
+ "pasos": [
+  {
+   "id": "01-servicio",
+   "capitulo": "Crear un servicio",
+   "rotulo": "Un servicio",
+   "ruta": "Inventario › Productos › Nuevo",
+   "narracion": "No todo lo que vendes se guarda en un almacén. Hoy creamos un servicio. Pulso Nuevo Producto. Se abre la ficha en blanco y, arriba a la derecha, cambio el tipo a servicio. Fíjate en lo que desaparece: la cantidad inicial, las características y el código de barras, porque un servicio no se almacena ni se cuenta. Lo llamo Fumigación doméstica, que es el nombre que verá el cliente en la factura. En categoría escribo servicios de limp, y de la lista que aparece tomo servicios de limpieza. En unidad de medida escribo unidad, porque se cobra por cada visita, y la selecciono cuando aparece. El precio, en monto: dos mil quinientos pesos por cada visita. Ojo con el ITBIS, el impuesto sobre la venta: en un servicio viene en exento. Este sí lo lleva, así que abro la lista y elijo la tasa del dieciocho por ciento. Dejo apagado ITBIS incluido, y mira el total: dos mil novecientos cincuenta, porque la factura le suma el impuesto encima. Pulso Guardar. Aparece un aviso que confirma que el servicio se creó, y lo cierro con aceptar.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nuevo Producto')",
+     "al_decir": "Pulso Nuevo Producto"
+    },
+    {
+     "click": "mat-button-toggle:has-text('Servicio') button",
+     "al_decir": "cambio el tipo"
+    },
+    {
+     "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-labels",
+     "durante_ms": 5000,
+     "al_decir": "lo que desaparece"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='name']",
+      "texto": "Fumigación doméstica"
+     },
+     "al_decir": "Lo llamo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Categoría')) input",
+      "texto": "Servicios de limp"
+     },
+     "al_decir": "En categoría escribo"
+    },
+    {
+     "click": "mat-option:has-text('Servicios de Limpieza')",
+     "al_decir": "tomo servicios de limpieza"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Unidad de medida')) input",
+      "texto": "Unidad"
+     },
+     "al_decir": "escribo unidad"
+    },
+    {
+     "click": "mat-option:has-text('Unidad (UND)')",
+     "al_decir": "la selecciono"
+    },
+    {
+     "escribir": {
+      "sel": "app-inline-product-prices input[type='number']",
+      "texto": "2500"
+     },
+     "al_decir": "dos mil quinientos"
+    },
+    {
+     "resaltar": "app-inline-product-prices mat-select[aria-label='ITBIS del precio'] >> nth=0",
+     "durante_ms": 2500,
+     "al_decir": "viene en exento"
+    },
+    {
+     "click": "app-inline-product-prices mat-select[aria-label='ITBIS del precio'] >> nth=0",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('18.00')",
+     "al_decir": "elijo la tasa"
+    },
+    {
+     "resaltar": "app-inline-product-prices button[aria-label='ITBIS incluido']",
+     "durante_ms": 2500,
+     "al_decir": "Dejo apagado"
+    },
+    {
+     "resaltar": "app-inline-product-prices table tbody tr:first-child td:nth-child(7)",
+     "durante_ms": 5500,
+     "al_decir": "mira el total"
+    },
+    {
+     "click": ".form-layout-footer button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "Aparece un aviso",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "con aceptar"
+    }
+   ]
+  },
+  {
+   "id": "02-fiscal",
+   "capitulo": "La pestaña Fiscal",
+   "rotulo": "Fiscal",
+   "ruta": "Inventario › Productos › Fumigación doméstica",
+   "narracion": "Con la ficha guardada, abro la pestaña Fiscal, que sirve igual para productos y servicios. La cuenta contable de ingreso dice a dónde van las ventas de este servicio; si la dejas vacía, se usa la de la empresa. Así puedes separar en tu contabilidad los servicios de la mercancía. Debajo están los impuestos adicionales de la DGII, la Dirección General de Impuestos Internos: aquí se agregan la propina legal o los impuestos selectivos, solo si el producto los lleva. Este servicio no lleva ninguno.",
+   "acciones": [
+    {
+     "click": "mat-tab-group.product-tabs [role=tab]:has-text('Fiscal')",
+     "al_decir": "abro la pestaña Fiscal"
+    },
+    {
+     "resaltar": "app-account-picker[formcontrolname='incomeAccount']",
+     "durante_ms": 8000,
+     "al_decir": "La cuenta contable de ingreso"
+    },
+    {
+     "resaltar": "app-product-tax-mappings",
+     "durante_ms": 9000,
+     "al_decir": "los impuestos adicionales"
+    }
+   ]
+  },
+  {
+   "id": "03-tienda",
+   "capitulo": "Publicar en la tienda en línea",
+   "rotulo": "Tienda en línea",
+   "ruta": "Inventario › Productos › Fumigación doméstica",
+   "narracion": "La última pestaña es descripción y tienda. La descripción es lo que lee el cliente en tu catálogo en línea, y admite negritas y listas. Abajo, enciendo visible en la tienda, y el servicio queda publicado. Indexable en buscadores deja que Google lo muestre; apágalo si solo vas a compartir el enlace. Guardo los cambios. El aviso dice que el producto se actualizó, y lo cierro con aceptar. En el próximo video: comprar en cajas y vender por unidad.",
+   "acciones": [
+    {
+     "click": "mat-tab-group.product-tabs [role=tab]:has-text('Descripción y tienda')",
+     "al_decir": "descripción y tienda"
+    },
+    {
+     "resaltar": ".description-editor",
+     "durante_ms": 5000,
+     "al_decir": "La descripción es"
+    },
+    {
+     "click": "button[aria-label='Visible en la tienda en línea']",
+     "al_decir": "enciendo visible"
+    },
+    {
+     "resaltar": ".gm-setting:has(button[aria-label='Indexable en buscadores'])",
+     "durante_ms": 5000,
+     "al_decir": "Indexable en buscadores"
+    },
+    {
+     "click": ".form-layout-footer button:has-text('Guardar')",
+     "al_decir": "Guardo los cambios"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "El aviso dice",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "con aceptar"
+    }
+   ]
+  }
+ ]
+}

@@ -171,6 +171,67 @@ VIDEOS["productos-02-crear-producto"] = {
     ],
 }
 
+# ───────────────────────── 03 · Servicios, fiscal y tienda ─────────────────────────
+def pestana(nombre): return f"mat-tab-group.product-tabs [role=tab]:has-text('{nombre}')"
+VIDEOS["productos-03-servicio-fiscal-tienda"] = {
+    "titulo": "Productos · Parte 3: servicios, fiscal y tienda en línea",
+    "descripcion": "Tercer video de Productos en Germiva ERP: dar de alta un servicio, que se vende pero no se almacena; la pestaña Fiscal, con la cuenta de ingreso y los impuestos adicionales de la DGII; y cómo publicar un producto o servicio en tu tienda en línea.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 3. Estado A. Crea el servicio «Fumigación doméstica» (Servicios de Limpieza, Unidad, RD$2,500 sin ITBIS incluido; al pasar a Servicio el ITBIS queda en Exento y en cámara se elige el 18 % → total 2,950) y lo publica en la tienda. En Fiscal solo se señalan la cuenta de ingreso y los impuestos adicionales (no se agrega ninguno).",
+    "sesion": LISTA, "setup": RESTAURAR("A"),
+    "aprenderas": ["Crear un servicio y en qué se diferencia de un producto", "Para qué sirve la cuenta contable de ingreso", "Dónde van la propina legal y otros impuestos adicionales", "Publicar un producto o servicio en la tienda en línea"],
+    "errores_comunes": ["Dejar el ITBIS en exento en un servicio que sí lo lleva: al cambiar a Servicio viene en exento", "Agregar un impuesto adicional que el producto no lleva", "Dejar «Visible en la tienda» encendido en algo que no quieres mostrar al público"],
+    "pasos": [
+        {
+            "id": "01-servicio", "capitulo": "Crear un servicio", "rotulo": "Un servicio",
+            "ruta": "Inventario › Productos › Nuevo",
+            "narracion": "No todo lo que vendes se guarda en un almacén. Hoy creamos un servicio. Pulso Nuevo Producto. Se abre la ficha en blanco y, arriba a la derecha, cambio el tipo a servicio. Fíjate en lo que desaparece: la cantidad inicial, las características y el código de barras, porque un servicio no se almacena ni se cuenta. Lo llamo Fumigación doméstica, que es el nombre que verá el cliente en la factura. En categoría escribo servicios de limp, y de la lista que aparece tomo servicios de limpieza. En unidad de medida escribo unidad, porque se cobra por cada visita, y la selecciono cuando aparece. El precio, en monto: dos mil quinientos pesos por cada visita. Ojo con el ITBIS, el impuesto sobre la venta: en un servicio viene en exento. Este sí lo lleva, así que abro la lista y elijo la tasa del dieciocho por ciento. Dejo apagado ITBIS incluido, y mira el total: dos mil novecientos cincuenta, porque la factura le suma el impuesto encima. Pulso Guardar. Aparece un aviso que confirma que el servicio se creó, y lo cierro con aceptar.",
+            "acciones": [
+                clic("button:has-text('Nuevo Producto')", "Pulso Nuevo Producto"),
+                clic("mat-button-toggle:has-text('Servicio') button", "cambio el tipo"),
+                marca("mat-tab-group.product-tabs .mat-mdc-tab-labels", "lo que desaparece", 5000),
+                teclea(ctl("name"), "Fumigación doméstica", "Lo llamo"),
+                teclea(campo("Categoría"), "Servicios de limp", "En categoría escribo"),
+                clic("mat-option:has-text('Servicios de Limpieza')", "tomo servicios de limpieza"),
+                teclea(campo("Unidad de medida"), "Unidad", "escribo unidad"),
+                clic("mat-option:has-text('Unidad (UND)')", "la selecciono"),
+                teclea(f"{PRECIOS} input[type='number']", "2500", "dos mil quinientos"),
+                marca(f"{PRECIOS} mat-select[aria-label='ITBIS del precio'] >> nth=0", "viene en exento", 2500),
+                clic(f"{PRECIOS} mat-select[aria-label='ITBIS del precio'] >> nth=0", "abro la lista"),
+                clic("mat-option:has-text('18.00')", "elijo la tasa"),
+                marca(f"{PRECIOS} button[aria-label='ITBIS incluido']", "Dejo apagado", 2500),
+                marca(f"{PRECIOS} table tbody tr:first-child td:nth-child(7)", "mira el total", 5500),
+                clic(GUARDAR, "Pulso Guardar"),
+                marca(ALERTA, "Aparece un aviso", 3000, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "con aceptar"),
+            ],
+        },
+        {
+            "id": "02-fiscal", "capitulo": "La pestaña Fiscal", "rotulo": "Fiscal",
+            "ruta": "Inventario › Productos › Fumigación doméstica",
+            "narracion": "Con la ficha guardada, abro la pestaña Fiscal, que sirve igual para productos y servicios. La cuenta contable de ingreso dice a dónde van las ventas de este servicio; si la dejas vacía, se usa la de la empresa. Así puedes separar en tu contabilidad los servicios de la mercancía. Debajo están los impuestos adicionales de la DGII, la Dirección General de Impuestos Internos: aquí se agregan la propina legal o los impuestos selectivos, solo si el producto los lleva. Este servicio no lleva ninguno.",
+            "acciones": [
+                clic(pestana("Fiscal"), "abro la pestaña Fiscal"),
+                marca("app-account-picker[formcontrolname='incomeAccount']", "La cuenta contable de ingreso", 8000),
+                marca("app-product-tax-mappings", "los impuestos adicionales", 9000),
+            ],
+        },
+        {
+            "id": "03-tienda", "capitulo": "Publicar en la tienda en línea", "rotulo": "Tienda en línea",
+            "ruta": "Inventario › Productos › Fumigación doméstica",
+            "narracion": "La última pestaña es descripción y tienda. La descripción es lo que lee el cliente en tu catálogo en línea, y admite negritas y listas. Abajo, enciendo visible en la tienda, y el servicio queda publicado. Indexable en buscadores deja que Google lo muestre; apágalo si solo vas a compartir el enlace. Guardo los cambios. El aviso dice que el producto se actualizó, y lo cierro con aceptar. En el próximo video: comprar en cajas y vender por unidad.",
+            "acciones": [
+                clic(pestana("Descripción y tienda"), "descripción y tienda"),
+                marca(".description-editor", "La descripción es", 5000),
+                clic("button[aria-label='Visible en la tienda en línea']", "enciendo visible"),
+                marca(".gm-setting:has(button[aria-label='Indexable en buscadores'])", "Indexable en buscadores", 5000),
+                clic(GUARDAR, "Guardo los cambios"),
+                marca(ALERTA, "El aviso dice", 3000, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "con aceptar"),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
