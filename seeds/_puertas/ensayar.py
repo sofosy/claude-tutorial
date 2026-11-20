@@ -15,6 +15,7 @@ Código de salida: 0 todo OK · 1 hubo fallos · 2 no se ejecutó ningún paso
 """
 import argparse
 import json
+import os
 import sys
 import time
 from pathlib import Path
@@ -183,6 +184,12 @@ def main():
     a = ap.parse_args()
 
     nombre, guion = cargar(a.modulo)
+    # Pila de ensayo (TUT_API=http://localhost:3002/api): el front sigue en
+    # :4200, pero sus llamadas a la API de grabación se desvían a la de ensayo,
+    # para ensayar un guion mientras otro se graba sin cerrarle la sesión.
+    api_ensayo = os.environ.get("TUT_API")
+    if api_ensayo and guion.get("sesion", {}).get("url"):
+        guion["sesion"]["url"] = guion["sesion"]["url"].replace("http://localhost:3001/api", api_ensayo)
     pasos = rutas.pasos_filtrados(guion, a.paso)
     base = guion["base_url"].rstrip("/")
     variables = dict(guion.get("variables", {}))
@@ -200,6 +207,10 @@ def main():
                                       device_scale_factor=g.ESCALA,
                                       **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
             ctx_nav.add_init_script(g.JS_CAPA)  # cursor, marca y sonda de alertas del motor
+            if api_ensayo:
+                host_ensayo = api_ensayo.rsplit("/api", 1)[0]
+                ctx_nav.route("http://localhost:3001/**", lambda r: r.continue_(
+                    url=r.request.url.replace("http://localhost:3001", host_ensayo, 1)))
             pag = ctx_nav.new_page()
             try:
                 _setup({"id": "guion", "setup": guion.get("setup")}, variables, db)

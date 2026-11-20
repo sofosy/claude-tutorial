@@ -8,9 +8,11 @@ import json
 import subprocess
 import sys
 import urllib.error
+import os
 import urllib.request
 
-API = "http://localhost:3001/api"
+API = os.environ.get("TUT_API", "http://localhost:3001/api")
+BASE_DATOS = os.environ.get("GERMIVA_DB", "germiva")
 USD, DOP = 1, 32
 CUENTA_BANCOS = 6          # 1.01.01.02 Bancos (agrupadora)
 CAPITAL = 99               # 3.01.01.01.01 Capital social autorizado
@@ -45,7 +47,7 @@ def llamar(metodo, ruta, cuerpo=None, sin_token=False):
 
 
 def sql(consulta):
-    r = subprocess.run(["docker", "exec", "-i", "germiva-dev-mysql", "mysql", "-uroot", "germiva",
+    r = subprocess.run(["docker", "exec", "-i", "germiva-dev-mysql", "mysql", "-uroot", BASE_DATOS,
                         "-N", "-e", consulta], capture_output=True, text=True, check=True)
     return r.stdout.strip()
 
@@ -447,14 +449,48 @@ def activos_baja():
     activo("ACT-OF-003", "Archivo metálico")
 
 
+def centro(codigo, nombre, tipo="cost", **extra):
+    return llamar("POST", "/v1/cost-centers", {"code": codigo, "name": nombre, "type": tipo, **extra})["id"]
+
+
+def centro_id(codigo):
+    return int(sql(f"SELECT id FROM cost_centers WHERE company_id=1 AND code='{codigo}' AND deleted_at IS NULL"))
+
+
+def linea_cc(cuenta_id, descripcion, centro_, debito=0, credito=0):
+    return {**linea(cuenta_id, descripcion, debito, credito), "costCenterId": centro_}
+
+
+def arbol_centros():
+    """Administración (de la instantánea, predeterminado), Ventas como agrupador
+    de sus dos sucursales y Operaciones. Devuelve los ids por código."""
+    ven = centro("CC-VEN", "Ventas", "revenue", allowsDirectPosting=False)
+    ids = {"CC-ADM": centro_id("CC-ADM"), "CC-VEN": ven,
+           "CC-VEN-SD": centro("CC-VEN-SD", "Ventas Santo Domingo", "revenue", parent=ven),
+           "CC-VEN-STI": centro("CC-VEN-STI", "Ventas Santiago", "revenue", parent=ven),
+           "CC-OPS": centro("CC-OPS", "Operaciones", "cost", budgetAmount="300000",
+                            budgetStartDate="2026-01-01", budgetEndDate="2026-12-31")}
+    return ids
+
+
 def centros_costo():
-    # V26: Ventas al primer nivel y Operaciones bajo Administración, para que
-    # la jerarquía tenga dos niveles.
-    adm = int(sql("SELECT id FROM cost_centers WHERE company_id=1 AND code='CC-ADM' AND deleted_at IS NULL"))
-    llamar("POST", "/v1/cost-centers", {"code": "CC-VEN", "name": "Ventas", "type": "revenue",
-                                         "budgetAmount": "150000"})
-    llamar("POST", "/v1/cost-centers", {"code": "CC-OPS", "name": "Operaciones", "type": "cost",
-                                         "budgetAmount": "300000", "parent": adm})
+    # V26: el árbol de centros y gasto de Operaciones ya contabilizado en
+    # noviembre, para que su ficha muestre la ejecución presupuestaria.
+    ids = arbol_centros()
+    asiento_contabilizado("2026-11-05", periodo("Noviembre 2026"), "Mantenimiento de montacargas", [
+        linea_cc(cuenta("6.03.19"), "Mantenimiento de montacargas", ids["CC-OPS"], 180000),
+        linea(CAJA, "Pago en efectivo", credito=180000)])
+
+
+def arbol_con_logistica():
+    ids = arbol_centros()
+    ids["CC-LOG"] = centro("CC-LOG", "Logística", "cost", parent=ids["CC-OPS"], budgetAmount="120000")
+    return ids
+
+
+def centros_documentos():
+    # V40: el árbol completo, sin movimientos: el video registra el asiento.
+    arbol_con_logistica()
 
 
 def presupuestos():
@@ -912,7 +948,8 @@ ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": aut
            "revaluacion": revaluacion, "informes": informes,
            "cierre-reversar": cierre_reversar, "periodos": periodos,
            "transferencias": transferencias, "conciliar": conciliar, "activos": activos,
-           "activos-baja": activos_baja, "centros-costo": centros_costo, "presupuestos": presupuestos,
+           "activos-baja": activos_baja, "centros-costo": centros_costo, "centros-documentos": centros_documentos,
+           "presupuestos": presupuestos,
            "firma": firma, "firma-plantilla": firma_plantilla, "firma-alta": firma_alta,
            "firma-cambio": firma_cambio, "firma-asistente": firma_asistente,
            "firma-mantener": firma_mantener,

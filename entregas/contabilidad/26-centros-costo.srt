@@ -1,103 +1,199 @@
 1
-00:00:03,000 --> 00:00:08,157
-Los centros de costo son las áreas de la empresa a las que se imputan ingresos y
+00:00:03,000 --> 00:00:08,053
+Un centro de costo es un área de la empresa a la que se imputan ingresos y gastos:
 
 2
-00:00:08,050 --> 00:00:10,955
-gastos, como administración o ventas.
+00:00:07,969 --> 00:00:10,259
+una sucursal, un departamento.
 
 3
-00:00:10,998 --> 00:00:12,174
-Recojo el menú.
+00:00:10,384 --> 00:00:13,996
+Sirve para saber cuánto gana y cuánto gasta cada área.
 
 4
-00:00:12,009 --> 00:00:16,748
-Cada uno trae su código, su nombre, el tipo, de qué centro depende,
+00:00:13,971 --> 00:00:14,937
+Recojo el menú.
 
 5
-00:00:16,594 --> 00:00:18,804
-el presupuesto y el estado.
+00:00:14,980 --> 00:00:19,963
+Cada fila es un centro, con su código, su nombre, el tipo, de qué centro depende,
 
 6
-00:00:19,251 --> 00:00:23,817
-Para agregar el área de logística, pulso Crear Centro de Costo.
+00:00:19,788 --> 00:00:22,738
+su presupuesto, el responsable y el estado.
 
 7
-00:00:23,652 --> 00:00:28,762
-Escribo el código, CC-LOG, que identifica al centro y no se repite.
+00:00:22,818 --> 00:00:25,409
+Administración lleva la marca Predeterminado:
 
 8
-00:00:28,771 --> 00:00:30,515
-Luego escribo el nombre:
+00:00:25,452 --> 00:00:30,041
+es el centro que reciben los ingresos y gastos que se registran sin centro.
 
 9
-00:00:30,489 --> 00:00:31,653
-Logística.
+00:00:30,483 --> 00:00:32,517
+Voy a agregar el área de logística.
 
 10
-00:00:31,488 --> 00:00:34,963
-Con el código y el nombre listos, paso al tipo:
+00:00:32,701 --> 00:00:34,548
+Pulso Crear Centro de Costo.
 
 11
-00:00:34,832 --> 00:00:39,641
-dice si es un centro de costo, de ingresos, de utilidad o de inversión;
+00:00:34,593 --> 00:00:39,750
+Escribo el código, CC-LOG, que no se puede repetir en la empresa.
 
 12
-00:00:39,522 --> 00:00:40,837
-lo dejo en Costo.
+00:00:39,933 --> 00:00:41,387
+Luego escribo el nombre:
 
 13
-00:00:40,683 --> 00:00:43,287
-El presupuesto es el monto asignado al área:
+00:00:41,512 --> 00:00:42,618
+Logística.
 
 14
-00:00:43,121 --> 00:00:45,272
-ciento veinte mil pesos.
+00:00:42,743 --> 00:00:45,659
+Con el código y el nombre escritos, miro el tipo:
 
 15
-00:00:45,153 --> 00:00:47,676
-La casilla de abajo lo crea activo.
+00:00:45,784 --> 00:00:50,001
+costo, ingresos, utilidad o inversión;
 
 16
-00:00:47,591 --> 00:00:49,963
-Guardo, y el aviso lo confirma.
+00:00:50,243 --> 00:00:51,498
+lo dejo en Costo.
 
 17
-00:00:50,405 --> 00:00:55,563
-Un centro puede tener subcentros, como Operaciones dentro de Administración.
+00:00:51,623 --> 00:00:54,947
+En Depende de abro la lista, y elijo Operaciones:
 
 18
-00:00:55,445 --> 00:01:00,579
-Ver Jerarquía muestra el árbol completo, con cada centro bajo su padre.
+00:00:55,072 --> 00:00:57,664
+así Logística queda como subcentro suyo.
 
 19
-00:01:00,448 --> 00:01:01,518
-Lo cierro.
+00:00:57,789 --> 00:01:01,670
+En Responsable escribo Gabriela, para buscar a la empleada a cargo.
 
 20
-00:01:01,969 --> 00:01:07,453
-El centro predeterminado es el que reciben las líneas que se registran sin centro.
+00:01:01,748 --> 00:01:04,061
+Aparece en la lista, y la elijo.
 
 21
-00:01:07,275 --> 00:01:10,807
-Hoy es Administración, el que se creó con la empresa.
+00:01:04,140 --> 00:01:06,475
+Por último el presupuesto del área:
 
 22
-00:01:10,643 --> 00:01:15,555
-Para cambiarlo, en la fila de Operaciones pulso Marcar como predeterminado.
+00:01:06,519 --> 00:01:08,009
+ciento veinte mil pesos.
 
 23
-00:01:15,390 --> 00:01:19,120
-El aviso lo confirma, y la marca pasa a Operaciones.
+00:01:07,924 --> 00:01:10,249
+Guardo, y el aviso lo confirma.
 
 24
-00:01:18,989 --> 00:01:23,102
-Desde ahí, los centros aparecen en cada línea de los asientos,
+00:01:10,688 --> 00:01:13,593
+Para ver cómo quedó, pulso Ver Jerarquía.
 
 25
-00:01:22,948 --> 00:01:27,908
-en las líneas de los presupuestos y como filtro del Estado de Resultados y las
+00:01:13,903 --> 00:01:15,381
+Es el árbol completo:
 
 26
-00:01:27,766 --> 00:01:29,477
-Razones Financieras.
+00:01:15,564 --> 00:01:20,304
+Logística aparece dentro de Operaciones, y las dos sucursales dentro de Ventas.
+
+27
+00:01:20,615 --> 00:01:23,020
+Ventas lleva la marca Agrupador:
+
+28
+00:01:23,145 --> 00:01:27,316
+no recibe movimientos propios, solo suma los de sus subcentros.
+
+29
+00:01:27,394 --> 00:01:31,379
+En los informes, un centro padre siempre acumula lo de sus hijos.
+
+30
+00:01:31,353 --> 00:01:32,388
+Cierro.
+
+31
+00:01:32,847 --> 00:01:35,881
+Ahora abro Operaciones con el lápiz de su fila.
+
+32
+00:01:36,284 --> 00:01:38,388
+Arriba, el botón Inactivar:
+
+33
+00:01:38,572 --> 00:01:43,055
+un centro inactivo deja de ofrecerse en los documentos, sin perder su historial.
+
+34
+00:01:43,180 --> 00:01:47,444
+El interruptor Permite registro directo es el que se apaga en los centros
+
+35
+00:01:47,302 --> 00:01:48,349
+agrupadores.
+
+36
+00:01:48,429 --> 00:01:50,950
+Y abajo, la ejecución presupuestaria:
+
+37
+00:01:51,075 --> 00:01:53,307
+de trescientos mil pesos de presupuesto,
+
+38
+00:01:53,224 --> 00:01:57,823
+Operaciones lleva ejecutados ciento ochenta mil, el sesenta por ciento,
+
+39
+00:01:57,739 --> 00:02:02,120
+contando el gasto contabilizado del centro y de sus subcentros.
+
+40
+00:02:02,551 --> 00:02:04,307
+Vuelvo a la lista de centros.
+
+41
+00:02:04,258 --> 00:02:06,466
+¿Y si quiero borrar Operaciones?
+
+42
+00:02:06,347 --> 00:02:08,266
+En su fila pulso Eliminar.
+
+43
+00:02:08,310 --> 00:02:11,412
+El sistema pide confirmar, porque no se puede deshacer;
+
+44
+00:02:11,340 --> 00:02:12,306
+confirmo.
+
+45
+00:02:12,316 --> 00:02:14,883
+Y no lo permite, y explica por qué:
+
+46
+00:02:14,927 --> 00:02:16,985
+Operaciones tiene subcentros.
+
+47
+00:02:17,030 --> 00:02:21,734
+Tampoco se elimina un centro que ya tiene movimientos, o que es el predeterminado:
+
+48
+00:02:21,709 --> 00:02:23,347
+lo correcto es inactivarlo.
+
+49
+00:02:23,356 --> 00:02:25,693
+Solo se borra un centro que nunca se usó.
+
+50
+00:02:25,585 --> 00:02:30,290
+Con los centros creados, el siguiente paso es usarlos en los documentos.

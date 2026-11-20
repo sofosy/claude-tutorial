@@ -11,6 +11,10 @@ SNAP=$API_DIR/.dev-env/seeded.sql.gz
 # rama: la primera vez se le aplican y el resultado se guarda como base de la
 # serie, para que cada toma restaure en segundos el mismo estado.
 BASE=$API_DIR/.dev-env/contabilidad-base.sql.gz
+# Segunda pila para ENSAYAR mientras otra toma se graba: GERMIVA_DB=germiva_ensayo
+# y TUT_API=http://localhost:3002/api (una API aparte sobre esa base). Nunca
+# reinicia MySQL ni vacía Redis: eso tumbaría la grabación en curso.
+DB=${GERMIVA_DB:-germiva}
 M="docker exec -i germiva-dev-mysql mysql -uroot"
 # MySQL 8 no devuelve la memoria de cada DROP/CREATE + restauración (unos
 # 400 MB por toma): tras una tanda de grabaciones el kernel lo mataba por
@@ -28,16 +32,16 @@ memoria_mysql_mb() {
 }
 # El apagado espera hasta 90 s: con el plazo de 10 s de `docker restart`, una
 # consulta colgada hacía que lo mataran (137) y el contenedor quedaba detenido.
-if [[ "$(memoria_mysql_mb || echo 0)" -gt 2560 ]]; then
+if [[ "$DB" == germiva && "$(memoria_mysql_mb || echo 0)" -gt 2560 ]]; then
   docker stop -t 90 germiva-dev-mysql >/dev/null || true
 fi
 docker start germiva-dev-mysql >/dev/null
 for _ in $(seq 1 60); do $M -e 'SELECT 1' >/dev/null 2>&1 && break; sleep 2; done
 restaurar() {
-  $M -e "DROP DATABASE IF EXISTS germiva; CREATE DATABASE germiva CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
-  gunzip -c "$1" | $M germiva
+  $M -e "DROP DATABASE IF EXISTS $DB; CREATE DATABASE $DB CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;"
+  gunzip -c "$1" | $M "$DB"
 }
-if [[ ! -f "$BASE" || "$BASE" -ot "$SNAP" ]]; then
+if [[ "$DB" == germiva && ( ! -f "$BASE" || "$BASE" -ot "$SNAP" ) ]]; then
   restaurar "$SNAP"
   (cd "$API_DIR" && npx typeorm migration:run -d ./dist/config/typeorm.js --transaction all >/dev/null \
      && node dist/scripts/sync-permissions-additive.js >/dev/null)
@@ -47,7 +51,9 @@ if [[ ! -f "$BASE" || "$BASE" -ot "$SNAP" ]]; then
 else
   restaurar "$BASE"
 fi
-$M germiva -e "UPDATE companies SET legalName='Distribuidora Germiva Demo S.R.L.', tradeName='Distribuidora Germiva', rnc='130555001', email='contabilidad@distribuidora.germiva.com', website='https://germiva.com' WHERE id=1; UPDATE users SET email='admin@germiva.com' WHERE id=1;"
-docker exec germiva-dev-redis redis-cli FLUSHALL >/dev/null 2>&1 || true
+$M "$DB" -e "UPDATE companies SET legalName='Distribuidora Germiva Demo S.R.L.', tradeName='Distribuidora Germiva', rnc='130555001', email='contabilidad@distribuidora.germiva.com', website='https://germiva.com' WHERE id=1; UPDATE users SET email='admin@germiva.com' WHERE id=1;"
+if [[ "$DB" == germiva ]]; then
+  docker exec germiva-dev-redis redis-cli FLUSHALL >/dev/null 2>&1 || true
+fi
 python3 "$(dirname "$0")/preparar.py" "$ESTADO"
 echo "datos de partida listos: $ESTADO"
