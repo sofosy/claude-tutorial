@@ -136,7 +136,7 @@
           "al_decir": "Los empaques son"
         },
         {
-          "resaltar": "app-inline-product-prices mat-form-field:has(mat-label:has-text('Precio de venta'))",
+          "resaltar": "app-inline-product-prices",
           "durante_ms": 4500,
           "al_decir": "el mismo inventario"
         }

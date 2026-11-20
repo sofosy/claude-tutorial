@@ -23,6 +23,11 @@ log('ajustes SQL listos');
 // La ubicación de la serie: existe en el canon original; en una base nueva se crea.
 if (!ubicacion()) await api('POST', 'v1/inventory/location', { position: 'Pasillo A - Estante 1', warehouse: 1 });
 
+// El traslado del video 3 llega a la ubicación principal del Almacén en Consignación (almacén 3).
+if (!+uno(`SELECT COUNT(*) FROM inventory_location WHERE company_id=${EMPRESA} AND warehouse_id=3 AND deleted_at IS NULL`)) {
+  await api('POST', 'v1/inventory/location', { position: 'Principal', warehouse: 3 });
+}
+
 // ── 2. Socios ───────────────────────────────────────────────────────────────────────────────────────
 async function socio(cuerpo) {
   const id = idSocio(cuerpo.tin);
