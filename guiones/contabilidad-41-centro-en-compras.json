@@ -1,0 +1,309 @@
+{
+  "titulo": "Contabilidad · El centro de costo en compras, nómina, activos y almacenes",
+  "descripcion": "Cómo asignar en Germiva un centro de costo a cada línea de una factura de compra, repartir una línea entre centros, y dónde se define el centro que usan la nómina, los activos fijos y los almacenes.",
+  "_comentario": "Video 41 de la serie Contabilidad. setup: preparar.sh centros-compras (árbol de centros y compra B01 en borrador de Servicios Germiva del Cibao con dos servicios).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/purchases/invoices/list",
+    "esperar": "tr.mat-mdc-row:has-text('Cibao')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh centros-compras"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Asignar un centro de costo a cada línea de una compra",
+    "Repartir una línea de compra entre centros",
+    "De dónde sale el centro de la nómina",
+    "El centro de un activo fijo y de un almacén"
+  ],
+  "errores_comunes": [
+    "Esperar centro en el ITBIS o en la cuenta por pagar: solo el gasto lo lleva",
+    "Dejar al departamento sin centro: su nómina cae en el predeterminado",
+    "Repartir con porcentajes que no suman 100 %"
+  ],
+  "pasos": [
+    {
+      "id": "01-linea",
+      "capitulo": "Centro por línea de compra",
+      "rotulo": "Centro de costo de la línea",
+      "ruta": "Compras › Facturas › Editar compra",
+      "texto_pantalla": "Cada línea de la compra lleva su centro",
+      "narracion": "En las compras, el centro de costo va en cada línea de la factura. Recojo el menú. Este borrador es de un proveedor de servicios, con dos gastos distintos. Lo abro con el lápiz de su fila. La primera línea es el mantenimiento de los montacargas, un gasto de Operaciones. Despliego la línea con la flecha de la derecha. Entre sus datos está Centro de costo: abro la lista, y elijo Operaciones. Si lo dejara vacío, el gasto iría al centro predeterminado de la empresa.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Cibao') td >> nth=2",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Este borrador es de un proveedor"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Cibao') button[aria-label='Editar']",
+          "al_decir": "con el lápiz de su fila"
+        },
+        {
+          "click": "button:has(mat-icon:text-is('expand_more')) >> nth=0",
+          "al_decir": "Despliego la línea"
+        },
+        {
+          "click": "app-line-cost-center-select mat-select >> nth=0",
+          "al_decir": "abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('CC-OPS')",
+          "al_decir": "elijo Operaciones"
+        },
+        {
+          "resaltar": "span.line-cost-center-hint >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Si lo dejara vacío"
+        }
+      ]
+    },
+    {
+      "id": "02-reparto",
+      "capitulo": "Repartir una línea",
+      "rotulo": "Repartir entre centros",
+      "ruta": "Compras › Facturas › Editar compra",
+      "texto_pantalla": "Una línea de compra repartida por porcentaje",
+      "narracion": "La segunda línea es la publicidad en radio, que sirve a las dos sucursales de ventas. La despliego también, y esta vez pulso Repartir entre centros. En el primer centro abro la lista, y elijo Ventas Santo Domingo. En su porcentaje anoto cincuenta. La campaña es la misma para las dos sucursales, así que va a partes iguales. Pulso Agregar centro. En la fila nueva abro la lista, y elijo Ventas Santiago. En su porcentaje anoto el otro cincuenta. Con el total en cien por ciento, aplico. En la tabla, cada línea muestra ya su centro o su reparto. Guardo el borrador. El sistema confirma que la compra quedó actualizada, y acepto. Cuando la factura se emita, cada gasto irá a su centro; el ITBIS y la cuenta por pagar al proveedor van sin centro.",
+      "acciones": [
+        {
+          "click": "button:has(mat-icon:text-is('expand_more')) >> nth=0",
+          "al_decir": "La despliego también"
+        },
+        {
+          "click": "button:has-text('Repartir entre centros') >> nth=-1",
+          "al_decir": "pulso Repartir entre centros"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='costCenter'] >> nth=0",
+          "al_decir": "En el primer centro abro"
+        },
+        {
+          "click": "mat-option:has-text('CC-VEN-SD')",
+          "al_decir": "elijo Ventas Santo Domingo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='percentage'] >> nth=0",
+            "texto": "50"
+          },
+          "al_decir": "anoto cincuenta"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Agregar centro')",
+          "al_decir": "Pulso Agregar centro"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='costCenter'] >> nth=1",
+          "al_decir": "En la fila nueva abro"
+        },
+        {
+          "click": "mat-option:has-text('CC-VEN-STI')",
+          "al_decir": "elijo Ventas Santiago"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='percentage'] >> nth=1",
+            "texto": "50"
+          },
+          "al_decir": "anoto el otro cincuenta"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aplicar')",
+          "al_decir": "aplico"
+        },
+        {
+          "resaltar": "span.line-cost-center-hint >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "cada línea muestra ya"
+        },
+        {
+          "click": "button:has-text('Guardar borrador')",
+          "al_decir": "Guardo el borrador"
+        },
+        {
+          "resaltar": "mat-dialog-container:has-text('Operación completada')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El sistema confirma"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "y acepto"
+        },
+        {
+          "resaltar": "span.line-cost-center-hint >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "cada gasto irá a su centro"
+        },
+        {
+          "resaltar": ":text('Impuestos') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "el ITBIS y la cuenta por pagar"
+        }
+      ]
+    },
+    {
+      "id": "03-nomina",
+      "capitulo": "Nómina",
+      "rotulo": "El centro del departamento",
+      "ruta": "Recursos Humanos › Configuración › Departamentos",
+      "texto_pantalla": "La nómina usa el centro del departamento",
+      "navegar": "/employee/inicio?config=departamentos",
+      "narracion": "El gasto de nómina no se digita línea a línea: toma el centro del departamento de cada empleado. En la configuración de Recursos Humanos, en Departamentos, abro Despacho y Transporte con un clic en su fila. Aquí está su Centro de costo, Logística: el sueldo, los aportes y las provisiones de su gente se imputan a ese centro. Y si un empleado debe ir a otro centro, se le pone uno propio en su ficha. Cierro.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "En la configuración"
+        },
+        {
+          "resaltar": "tr:has-text('DESP') td >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "en Departamentos"
+        },
+        {
+          "click": "tr:has-text('DESP') td >> nth=0",
+          "al_decir": "abro Despacho y Transporte"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=-1",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=-1 >> mat-form-field:has-text('Centro de costo')",
+          "durante_ms": 8000,
+          "cursor": false,
+          "al_decir": "Aquí está su Centro de costo"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=-1 >> :text('El gasto de nómina del departamento')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Y si un empleado"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Cierro"
+        }
+      ]
+    },
+    {
+      "id": "04-almacen",
+      "capitulo": "Almacenes y activos fijos",
+      "rotulo": "Centro por omisión del almacén",
+      "ruta": "Inventario › Almacenes › Almacén Sur",
+      "texto_pantalla": "El almacén tiene su centro por omisión",
+      "navegar": "/inventory/warehouse/1",
+      "narracion": "Lo mismo pasa en Inventario. En la ficha de cada almacén está el Centro de costo por omisión: lo usan sus ajustes, sus salidas y sus consumos cuando el movimiento no trae otro centro.",
+      "acciones": [
+        {
+          "resaltar": "app-cost-center-field",
+          "durante_ms": 8000,
+          "cursor": false,
+          "al_decir": "Centro de costo por omisión"
+        }
+      ]
+    },
+    {
+      "id": "05-activo",
+      "capitulo": "Almacenes y activos fijos",
+      "rotulo": "Centro del activo fijo",
+      "ruta": "Contabilidad › Activos Fijos › Nuevo",
+      "texto_pantalla": "La depreciación va al centro del activo",
+      "navegar": "/accounting/fixed-assets/create",
+      "narracion": "Y en Activos Fijos, al registrar un activo, el campo Centro de Costo decide a dónde van su depreciación de cada mes, su baja y su venta. Así, cada gasto llega a su centro sin tener que acordarse de digitarlo.",
+      "acciones": [
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='costCenter'])",
+          "durante_ms": 8000,
+          "cursor": false,
+          "al_decir": "el campo Centro de Costo"
+        }
+      ]
+    }
+  ]
+}

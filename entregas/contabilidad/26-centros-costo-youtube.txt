@@ -8,10 +8,10 @@ Cómo crear en Germiva un centro de costo con su centro padre, su responsable y 
 
 ⏱️ CAPÍTULOS
 00:00  Los centros de costo
-00:30  Crear un centro
-01:10  La jerarquía
-01:32  La ficha del centro
-02:02  Inactivar, no eliminar
+00:33  Crear un centro
+01:16  La jerarquía
+01:40  La ficha del centro
+02:09  Inactivar, no eliminar
 
 📋 EN ESTE VIDEO APRENDERÁS
 • Crear un centro de costo con padre, responsable y presupuesto
@@ -28,7 +28,7 @@ Cómo crear en Germiva un centro de costo con su centro padre, su responsable y 
 Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
 
 —
-Duración: 02:33
+Duración: 02:45
 
 TRANSCRIPCIÓN
 ============================================================

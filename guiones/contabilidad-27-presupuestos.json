@@ -1,7 +1,7 @@
 {
-  "titulo": "Contabilidad · Presupuestos: crear, aprobar y comparar contra lo real",
-  "descripcion": "Cómo crear en Germiva un presupuesto por cuenta y mes, aprobarlo, y ver sus variaciones contra lo contabilizado: qué se pasó, qué quedó por debajo y por cuánto.",
-  "_comentario": "Video 27 de la serie Contabilidad. setup: preparar.sh presupuestos (septiembre 2026: otros ingresos 25,000, alquiler 8,000 y comisiones bancarias 400 contabilizados).",
+  "titulo": "Contabilidad · Presupuestos: crear por cuenta y centro, aprobar y cerrar",
+  "descripcion": "Cómo crear en Germiva un presupuesto por cuenta contable, centro de costo y mes, aprobarlo para compararlo contra lo real, y qué significan reabrir, cerrar, cancelar y eliminar.",
+  "_comentario": "Video 27 de la serie Contabilidad (regrabado 2026-11 con centro de costo por línea, real en vivo y ciclo de vida). setup: preparar.sh presupuestos (árbol de centros y noviembre contabilizado: ventas 650,000, mantenimiento de Operaciones 35,000).",
   "base_url": "http://localhost:4200",
   "zona_horaria": "America/Santo_Domingo",
   "musica": {
@@ -26,8 +26,8 @@
     ".chatbot-fab{display:none!important}"
   ],
   "voz": {
-    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
-    "velocidad": "+0%"
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
   },
   "pronunciacion": {
     "NIC": "nic",
@@ -36,10 +36,14 @@
     "ISR": "i-ese-erre",
     "BHD": "be-hache-de",
     "USD": "dólares",
-    "DOP": "pesos"
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
   },
   "privacidad": {
-    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
     "perfil": "ninguno",
     "permitidos": [
       "germiva",
@@ -71,24 +75,24 @@
   },
   "portada_s": 8,
   "aprenderas": [
-    "Crear un presupuesto por cuenta y período",
-    "Aprobarlo",
-    "Recalcular lo ejecutado",
-    "Leer las variaciones por cuenta"
+    "Crear un presupuesto por cuenta, centro de costo y mes",
+    "Aprobarlo y ver lo real junto a lo presupuestado",
+    "Reabrir, cerrar, cancelar y eliminar un presupuesto",
+    "Leer los estados en el listado"
   ],
   "errores_comunes": [
     "Presupuestar una cuenta de grupo: solo se presupuestan cuentas de movimiento",
-    "Repetir la misma cuenta y período en dos líneas",
-    "Esperar lo ejecutado sin recalcular: el resumen no recalcula solo"
+    "Repetir la misma cuenta, centro y período en dos líneas",
+    "Querer editar un presupuesto aprobado: primero se reabre"
   ],
   "pasos": [
     {
       "id": "01-crear",
       "capitulo": "Crear el presupuesto",
       "rotulo": "Nuevo Presupuesto",
-      "ruta": "Contabilidad › Presupuestos › Presupuestos",
-      "texto_pantalla": "Código · tipo · fechas · período",
-      "narracion": "Un presupuesto fija cuánto se espera ganar y gastar en cada cuenta, para compararlo después con lo real. Recojo el menú y pulso Nuevo Presupuesto. El código lo identifica: PRES-2026-09, que no se puede repetir. Luego el nombre, para reconocerlo en la lista: operativo de septiembre. Con eso escrito, en Tipo de Presupuesto abro la lista, y de las opciones elijo Mensual. Las fechas del presupuesto: desde el primero de septiembre de dos mil veintiséis. Hasta el treinta de septiembre del mismo año, un solo mes. Y el período contable al que pertenece: escribo sept en el buscador. Aparece en la lista, y elijo septiembre.",
+      "ruta": "Contabilidad › Presupuestos › Nuevo",
+      "texto_pantalla": "Código · nombre · tipo · fechas",
+      "narracion": "Un presupuesto fija cuánto se espera vender y gastar en cada cuenta, para compararlo después con lo real. Recojo el menú, y pulso Nuevo Presupuesto. Escribo el código, PRES-2026-11, que no se puede repetir en la empresa. Después va el nombre, para reconocerlo en la lista: Operativo de noviembre. Con el código y el nombre escritos, en Tipo de Presupuesto abro la lista, y de las opciones elijo Mensual. Siguen las fechas: en Fecha de Inicio escribo el primero de noviembre de dos mil veintiséis. Y en Fecha de Fin, el treinta de noviembre del mismo año: un solo mes. El período contable es opcional; si se deja vacío, se usa el ejercicio de la fecha de inicio.",
       "acciones": [
         {
           "click": "button.panel-collapse",
@@ -101,16 +105,16 @@
         {
           "escribir": {
             "sel": "input[formcontrolname='code']",
-            "texto": "PRES-2026-09"
+            "texto": "PRES-2026-11"
           },
-          "al_decir": "El código lo identifica"
+          "al_decir": "Escribo el código"
         },
         {
           "escribir": {
             "sel": "input[formcontrolname='name']",
-            "texto": "Operativo de septiembre"
+            "texto": "Operativo de noviembre"
           },
-          "al_decir": "Luego el nombre"
+          "al_decir": "Después va el nombre"
         },
         {
           "click": "mat-select[formcontrolname='type']",
@@ -118,114 +122,125 @@
         },
         {
           "click": "mat-option:has-text('Mensual')",
-          "al_decir": "de las opciones elijo Mensual"
+          "al_decir": "elijo Mensual"
         },
         {
           "escribir": {
             "sel": "input[formcontrolname='startDate']",
-            "texto": "01/09/2026"
+            "texto": "01/11/2026"
           },
-          "al_decir": "Las fechas del presupuesto"
+          "al_decir": "en Fecha de Inicio escribo"
         },
         {
           "escribir": {
             "sel": "input[formcontrolname='endDate']",
-            "texto": "30/09/2026"
+            "texto": "30/11/2026"
           },
-          "al_decir": "Hasta el treinta"
+          "al_decir": "Y en Fecha de Fin"
         },
         {
-          "escribir": {
-            "sel": "mat-form-field:has(mat-label:text-is('Período Contable')) input",
-            "texto": "Sept"
-          },
-          "al_decir": "escribo sept"
-        },
-        {
-          "click": "mat-option:has-text('Septiembre 2026')",
-          "al_decir": "y elijo septiembre"
+          "resaltar": "app-autocomplete:has-text('Período contable'), mat-form-field:has-text('Período contable')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "El período contable es opcional"
         }
       ]
     },
     {
       "id": "02-lineas",
-      "capitulo": "Crear el presupuesto",
-      "rotulo": "Líneas del presupuesto",
+      "capitulo": "Las líneas",
+      "rotulo": "Líneas del Presupuesto",
       "ruta": "Contabilidad › Presupuestos › Nuevo",
-      "texto_pantalla": "Cuenta · período · monto",
-      "narracion": "Ahora las líneas, una por cuenta y período. Pulso Agregar Línea. En la cuenta escribo diversos para buscarla. Aparece en la lista, y elijo Otros ingresos diversos. En el período abro la lista, y elijo el mes de septiembre. En el monto escribo veinte mil pesos, lo que se espera cobrar. Agrego otra línea, para el alquiler. En su cuenta escribo arrend para buscarla. Aparece en la lista, y elijo Arrendamientos. Ahora abro su período, y elijo también septiembre. Y el monto del alquiler: diez mil pesos. Abajo se ven los totales: ingresos y gastos presupuestados, y el resultado neto esperado. Guardo. Con el presupuesto guardado, el aviso lo confirma.",
+      "texto_pantalla": "Una línea por cuenta, centro de costo y período",
+      "narracion": "Ahora las líneas: una por cuenta, centro de costo y período. Pulso Agregar línea. En la cuenta escribo Ventas, para buscar la cuenta de ingresos. Aparece en la lista, y elijo la cuatro cero uno cero uno. En Centro de Costo escribo Ventas otra vez, ahora para buscar el centro. De la lista elijo el centro Ventas, el que agrupa a las dos sucursales: una línea en un centro padre cubre también a sus subcentros. En el período abro la lista, y elijo Noviembre. Y en el monto anoto seiscientos mil pesos, lo que se espera vender. Agrego otra línea, para un gasto. En su cuenta escribo Manten, de mantenimiento. Aparece en la lista, y la elijo. En su centro escribo Opera, de Operaciones. Aparece, y lo elijo. Abro su período, y elijo también Noviembre. Y en su monto anoto treinta mil pesos. Abajo, los totales separan ingresos, costos y gastos, y el resultado neto esperado. Guardo, y el aviso lo confirma.",
       "acciones": [
         {
-          "click": "button:has-text('Agregar Línea')",
-          "al_decir": "Pulso Agregar Línea"
+          "click": "button.add-btn",
+          "al_decir": "Pulso Agregar línea"
         },
         {
           "escribir": {
-            "sel": "input[placeholder='Buscar cuenta...'] >> nth=0",
-            "texto": "diversos"
+            "sel": ".table-row >> nth=0 >> input[placeholder='Buscar cuenta...']",
+            "texto": "Ventas"
           },
-          "al_decir": "En la cuenta escribo diversos"
+          "al_decir": "En la cuenta escribo Ventas"
         },
         {
-          "click": "mat-option:has-text('4.02.01.02.01')",
-          "al_decir": "y elijo Otros ingresos"
-        },
-        {
-          "click": "mat-select[formcontrolname='period'] >> nth=0",
-          "al_decir": "En el período abro la lista"
-        },
-        {
-          "click": "mat-option:has-text('Septiembre')",
-          "al_decir": "y elijo el mes de septiembre"
+          "click": "mat-option:has-text('4.01.01')",
+          "al_decir": "elijo la cuatro cero uno"
         },
         {
           "escribir": {
-            "sel": "input[formcontrolname='budgetAmount'] >> nth=0",
-            "texto": "20000"
+            "sel": ".table-row >> nth=0 >> input[placeholder='Centro de costo...']",
+            "texto": "Ventas"
           },
-          "al_decir": "En el monto escribo"
+          "al_decir": "escribo Ventas otra vez"
         },
         {
-          "click": "button:has-text('Agregar Línea')",
+          "click": "mat-option:has-text('CC-VEN - Ventas')",
+          "al_decir": "De la lista elijo el centro"
+        },
+        {
+          "click": ".table-row >> nth=0 >> mat-select[formcontrolname='period']",
+          "al_decir": "En el período abro"
+        },
+        {
+          "click": "mat-option:has-text('Noviembre')",
+          "al_decir": "y elijo Noviembre"
+        },
+        {
+          "escribir": {
+            "sel": "app-money-input[formcontrolname='budgetAmount'] >> nth=0 >> input",
+            "texto": "600000"
+          },
+          "al_decir": "anoto seiscientos mil"
+        },
+        {
+          "click": "button.add-btn",
           "al_decir": "Agrego otra línea"
         },
         {
           "escribir": {
-            "sel": "input[placeholder='Buscar cuenta...'] >> nth=1",
-            "texto": "Arrend"
+            "sel": ".table-row >> nth=1 >> input[placeholder='Buscar cuenta...']",
+            "texto": "Manten"
           },
-          "al_decir": "En su cuenta escribo arrend"
+          "al_decir": "En su cuenta escribo Manten"
         },
         {
-          "click": "mat-option:has-text('6.03.02')",
-          "al_decir": "y elijo Arrendamientos"
-        },
-        {
-          "click": "mat-select[formcontrolname='period'] >> nth=1",
-          "al_decir": "Ahora abro su período"
-        },
-        {
-          "click": "mat-option:has-text('Septiembre')",
-          "al_decir": "y elijo también septiembre"
+          "click": "mat-option:has-text('6.03.19')",
+          "al_decir": "y la elijo"
         },
         {
           "escribir": {
-            "sel": "input[formcontrolname='budgetAmount'] >> nth=1",
-            "texto": "10000"
+            "sel": ".table-row >> nth=1 >> input[placeholder='Centro de costo...']",
+            "texto": "Opera"
           },
-          "al_decir": "Y el monto del alquiler"
+          "al_decir": "escribo Opera"
         },
         {
-          "resaltar": ".totals-row:has-text('Ingresos presupuestados')",
-          "durante_ms": 2500,
-          "cursor": false,
-          "al_decir": "Abajo se ven los totales"
+          "click": "mat-option:has-text('CC-OPS')",
+          "al_decir": "y lo elijo"
         },
         {
-          "resaltar": ".totals-row:has-text('Resultado neto')",
-          "durante_ms": 2500,
+          "click": ".table-row >> nth=1 >> mat-select[formcontrolname='period']",
+          "al_decir": "Abro su período"
+        },
+        {
+          "click": "mat-option:has-text('Noviembre')",
+          "al_decir": "elijo también Noviembre"
+        },
+        {
+          "escribir": {
+            "sel": "app-money-input[formcontrolname='budgetAmount'] >> nth=1 >> input",
+            "texto": "30000"
+          },
+          "al_decir": "anoto treinta mil"
+        },
+        {
+          "resaltar": "div.totals-table",
+          "durante_ms": 5500,
           "cursor": false,
-          "al_decir": "el resultado neto esperado"
+          "al_decir": "Abajo, los totales"
         },
         {
           "click": "button:has-text('Guardar')",
@@ -234,64 +249,7 @@
         {
           "resaltar": ".mat-mdc-snack-bar-container",
           "durante_ms": 2500,
-          "cursor": false,
-          "al_decir": "el aviso lo confirma"
-        }
-      ]
-    },
-    {
-      "id": "03-aprobar",
-      "capitulo": "Aprobar",
-      "rotulo": "Aprobar",
-      "ruta": "Contabilidad › Presupuestos › Presupuesto",
-      "texto_pantalla": "Aprobado: las líneas quedan fijas",
-      "narracion": "El presupuesto queda en borrador hasta que se aprueba. Pulso Aprobar, en la cabecera, y confirmo con Sí, Aprobar. El aviso lo confirma, y las líneas quedan en solo lectura. Para cambiarlas habría que reabrirlo y aprobarlo de nuevo.",
-      "acciones": [
-        {
-          "click": "button:has-text('Aprobar')",
-          "al_decir": "Pulso Aprobar"
-        },
-        {
-          "click": "mat-dialog-container button:has-text('Sí, Aprobar')",
-          "al_decir": "y confirmo con Sí"
-        },
-        {
-          "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 3000,
-          "cursor": false,
-          "al_decir": "El aviso lo confirma"
-        }
-      ]
-    },
-    {
-      "id": "04-variaciones",
-      "capitulo": "Variaciones",
-      "rotulo": "Variaciones Presupuestarias",
-      "ruta": "Contabilidad › Presupuestos › Variaciones",
-      "texto_pantalla": "Ejecutado contra presupuestado",
-      "navegar": "/accounting/budget-variance/resumen",
-      "al_decir_navegar": "En Variaciones",
-      "narracion": "Para comparar con lo real voy a Variaciones. En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo ejecutado de cada línea. Lo pulso, y espero a que termine. Luego abro el análisis del presupuesto de septiembre, que compara cada línea con lo real. Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto; el alquiler, ocho mil, dos mil por debajo. Cada variación trae su porcentaje y su categoría.",
-      "acciones": [
-        {
-          "click": "button:has-text('Recalcular')",
-          "al_decir": "Lo pulso"
-        },
-        {
-          "click": "button[mattooltip='Ver Análisis'] >> nth=0",
-          "al_decir": "Luego abro el análisis"
-        },
-        {
-          "resaltar": "tr:has-text('4.02.01.02.01')",
-          "durante_ms": 4000,
-          "cursor": false,
-          "al_decir": "Los otros ingresos se ejecutaron"
-        },
-        {
-          "resaltar": "tr:has-text('6.03.02')",
-          "durante_ms": 3500,
-          "cursor": false,
-          "al_decir": "el alquiler, ocho mil"
+          "cursor": false
         }
       ]
     }

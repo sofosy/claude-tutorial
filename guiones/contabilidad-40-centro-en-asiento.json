@@ -26,8 +26,8 @@
     ".chatbot-fab{display:none!important}"
   ],
   "voz": {
-    "id": "eleven:dfbit8KZwSN0OJGuj7pq",
-    "velocidad": "+0%"
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
   },
   "pronunciacion": {
     "NIC": "nic",
@@ -92,7 +92,7 @@
       "rotulo": "Centro de costo en la línea",
       "ruta": "Contabilidad › Diario y Mayor › Nuevo asiento",
       "texto_pantalla": "Cada línea de gasto lleva su centro",
-      "narracion": "Los centros de costo se usan al registrar. En Diario y Mayor recojo el menú, y pulso Crear Asiento. Voy a registrar los gastos de noviembre. Escribo la descripción, y agrego la primera línea. En la cuenta busco Fletes. La elijo, y en el débito anoto veinte mil pesos. Este flete es de Logística: en la columna Centro de Costo escribo Log. Aparece en la lista, y lo elijo. Así este gasto queda imputado a Logística.",
+      "narracion": "Los centros de costo se asignan al registrar cada operación. En Diario y Mayor recojo el menú, y pulso Crear Asiento. Voy a registrar dos gastos de noviembre. Escribo la descripción del asiento. Con la descripción lista, bajo a las líneas y agrego la primera línea. En la cuenta busco Fletes, la cuenta de gastos de envío. Aparece en la lista; la elijo, y en el débito anoto veinte mil pesos. Al elegir una cuenta de gasto, el centro se llena solo con el predeterminado de la empresa, Administración. Pero este flete es de Logística: en Centro de Costo escribo Log, para buscarlo por su código o su nombre. Aparece en la lista, y elijo Logística. Así el gasto queda imputado a ese centro.",
       "acciones": [
         {
           "click": "button.panel-collapse",
@@ -122,7 +122,7 @@
         },
         {
           "click": "mat-option:has-text('6.03.10')",
-          "al_decir": "La elijo, y en el débito"
+          "al_decir": "la elijo, y en el"
         },
         {
           "escribir": {
@@ -130,6 +130,12 @@
             "texto": "20000"
           },
           "al_decir": "anoto veinte mil pesos"
+        },
+        {
+          "resaltar": ".table-row >> nth=0 >> input[placeholder='Centro de costo...']",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "el centro se llena solo"
         },
         {
           "escribir": {
@@ -140,7 +146,13 @@
         },
         {
           "click": "mat-option:has-text('CC-LOG')",
-          "al_decir": "y lo elijo"
+          "al_decir": "y elijo Logística"
+        },
+        {
+          "resaltar": ".table-row >> nth=0 >> .line-number",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Así el gasto queda"
         }
       ]
     },
@@ -150,8 +162,14 @@
       "rotulo": "Repartir entre centros",
       "ruta": "Contabilidad › Diario y Mayor › Nuevo asiento",
       "texto_pantalla": "Un gasto compartido se reparte por porcentaje",
-      "narracion": "Agrego la segunda línea: el alquiler del local de ventas, que comparten las dos sucursales. En su cuenta busco Arrend. La elijo, y en el débito anoto treinta mil pesos. En lugar de un solo centro, pulso el botón de repartir. En el primer centro abro la lista, y elijo Ventas Santo Domingo. En su porcentaje anoto sesenta. Abajo abro el segundo centro, y elijo Ventas Santiago. Y en su porcentaje, el cuarenta restante. El total dice cien por ciento, y aplico. La línea queda repartida en dos centros.",
+      "narracion": "El segundo gasto es el alquiler del local de ventas, que comparten las dos sucursales. Agrego la segunda línea, y en su cuenta busco Arrend, de arrendamientos. Aparece en la lista; la elijo, y en el débito anoto treinta mil pesos. Como el gasto es de dos centros, en lugar de elegir uno solo pulso el botón de repartir, al lado del centro. En el primer centro abro la lista, y elijo Ventas Santo Domingo. En su porcentaje anoto sesenta. A Santo Domingo le toca más porque ocupa más espacio. Pulso Agregar centro. En la fila nueva abro la lista, y elijo Ventas Santiago. Y en su porcentaje anoto el cuarenta restante. El reparto tiene que sumar cien por ciento, y el total lo confirma. Aplico. La línea dice Repartido en dos centros: al guardar se divide en una línea por centro.",
       "acciones": [
+        {
+          "resaltar": ".table-row >> nth=0 >> input[formcontrolname='debitAmount']",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El segundo gasto"
+        },
         {
           "click": "button.add-line-button",
           "al_decir": "Agrego la segunda línea"
@@ -161,11 +179,11 @@
             "sel": ".table-row >> nth=1 >> input[placeholder='Buscar cuenta...']",
             "texto": "Arrend"
           },
-          "al_decir": "En su cuenta busco"
+          "al_decir": "cuenta busco Arrend"
         },
         {
           "click": "mat-option:has-text('6.03.02')",
-          "al_decir": "La elijo, y en el débito"
+          "al_decir": "la elijo, y en el"
         },
         {
           "escribir": {
@@ -179,8 +197,13 @@
           "al_decir": "pulso el botón de repartir"
         },
         {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
           "click": "mat-dialog-container mat-select[formcontrolname='costCenter'] >> nth=0",
-          "al_decir": "abro la lista"
+          "al_decir": "En el primer centro abro"
         },
         {
           "click": "mat-option:has-text('CC-VEN-SD')",
@@ -194,8 +217,12 @@
           "al_decir": "anoto sesenta"
         },
         {
+          "click": "mat-dialog-container button:has-text('Agregar centro')",
+          "al_decir": "Pulso Agregar centro"
+        },
+        {
           "click": "mat-dialog-container mat-select[formcontrolname='costCenter'] >> nth=1",
-          "al_decir": "abro el segundo centro"
+          "al_decir": "En la fila nueva abro"
         },
         {
           "click": "mat-option:has-text('CC-VEN-STI')",
@@ -206,23 +233,120 @@
             "sel": "mat-dialog-container input[formcontrolname='percentage'] >> nth=1",
             "texto": "40"
           },
-          "al_decir": "el cuarenta restante"
+          "al_decir": "anoto el cuarenta"
         },
         {
           "resaltar": "mat-dialog-container :text('Total:') >> nth=0",
-          "durante_ms": 2500,
+          "durante_ms": 2000,
           "cursor": false,
-          "al_decir": "El total dice"
+          "al_decir": "el total lo confirma"
         },
         {
           "click": "mat-dialog-container button:has-text('Aplicar')",
-          "al_decir": "y aplico"
+          "al_decir": "Aplico"
         },
         {
-          "resaltar": ".table-row >> nth=1 >> button[aria-label*='Repartid'], .table-row >> nth=1 >> button:has-text('Repartid')",
-          "durante_ms": 3500,
+          "resaltar": ".table-row >> nth=1 >> button:has-text('Repartido en 2 centros')",
+          "durante_ms": 5000,
           "cursor": false,
-          "al_decir": "La línea queda repartida"
+          "al_decir": "La línea dice Repartido"
+        }
+      ]
+    },
+    {
+      "id": "03-guardar",
+      "capitulo": "Guardar el asiento",
+      "rotulo": "Líneas sin centro",
+      "ruta": "Contabilidad › Diario y Mayor › Nuevo asiento",
+      "texto_pantalla": "La caja y el banco no llevan centro",
+      "narracion": "Falta la contrapartida. Agrego la tercera línea, y en su cuenta busco la caja general, de donde salió el dinero. Aparece en la lista; la elijo, y en el crédito anoto los cincuenta mil pesos del total. Fíjate en que esta línea queda sin centro, y es lo correcto: la caja, los bancos y las cuentas por cobrar o por pagar son cuentas de balance, y el centro de costo solo aplica a ingresos y gastos. Guardo el asiento, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button.add-line-button",
+          "al_decir": "Agrego la tercera línea"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=2 >> input[placeholder='Buscar cuenta...']",
+            "texto": "Caja gen"
+          },
+          "al_decir": "busco la caja general"
+        },
+        {
+          "click": "mat-option:has-text('1.01.01.01.02')",
+          "al_decir": "la elijo, y en el"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=2 >> input[formcontrolname='creditAmount']",
+            "texto": "50000"
+          },
+          "al_decir": "anoto los cincuenta mil"
+        },
+        {
+          "resaltar": ".table-row >> nth=2 >> input[placeholder='Centro de costo...']",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "queda sin centro"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo el asiento"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el aviso lo confirma"
+        }
+      ]
+    },
+    {
+      "id": "04-exige",
+      "capitulo": "Cuentas que exigen centro",
+      "rotulo": "Exige centro de costo",
+      "ruta": "Contabilidad › Configuración Contable › Plan de Cuentas",
+      "texto_pantalla": "Una cuenta puede exigir centro de costo",
+      "navegar": "/accounting/configuracion/plan-cuentas",
+      "narracion": "Hay cuentas que nunca deberían quedar sin centro, como los fletes. Eso se configura en el Plan de Cuentas. En el buscador escribo Fletes, y el catálogo se filtra mientras escribo. Ahí está la cuenta; la abro con el ojo, Ver detalles. Abajo, entre las opciones de la cuenta, marco la casilla Exige centro de costo, y el aviso confirma que quedó guardada. Desde ahora, toda línea a esta cuenta, venga de una factura, de la nómina o de un asiento, debe quedar con un centro: el elegido, el de su proyecto o el predeterminado de la empresa. Si no queda ninguno, el sistema rechaza el documento y dice qué línea hay que corregir.",
+      "acciones": [
+        {
+          "resaltar": "h4.page-title, :text('Plan de Cuentas') >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Eso se configura"
+        },
+        {
+          "escribir": {
+            "sel": "input[placeholder='Código, nombre o descripción']",
+            "texto": "Fletes"
+          },
+          "al_decir": "escribo Fletes"
+        },
+        {
+          "click": ".tree-node-content:has(.node-code:text-is('6.03.10')) button[aria-label='Ver detalles']",
+          "al_decir": "la abro con el ojo"
+        },
+        {
+          "click": "mat-checkbox:has-text('Exige centro de costo') label",
+          "al_decir": "marco la casilla"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        },
+        {
+          "resaltar": "p.field-note:has-text('Toda línea a esta cuenta')",
+          "durante_ms": 9000,
+          "cursor": false,
+          "al_decir": "toda línea a esta cuenta"
+        },
+        {
+          "resaltar": "p.field-note:has-text('Toda línea a esta cuenta')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Si no queda ninguno"
         }
       ]
     }
