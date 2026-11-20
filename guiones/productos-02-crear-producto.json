@@ -1,0 +1,271 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/inventory/product/list",
+  "esperar": "button:has-text('Nuevo Producto')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de ge i i",
+  "RNC": "erre ene ce",
+  "POS": "pos"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Embotelladora",
+   "Agroindustrial",
+   "Cibao",
+   "Galletera",
+   "Colmado",
+   "Esquina"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Productos · Parte 2: crear un producto",
+ "descripcion": "Segundo video de Productos en Germiva ERP: dar de alta un producto en una sola hoja. Nombre, categoría y unidad; el precio con ITBIS incluido; la cantidad inicial con su costo y su lote; el mínimo y el máximo; y lo que aparece al guardar: el código de barras y la etiqueta.",
+ "_comentario": "Serie Productos corta (nov. 2026), video 2. Estado A. Crea «Chocolate tradicional Cacao Real»: Alimentos, marca Cacao Real, Unidad; RD$165 con ITBIS incluido (neto 139.83); cantidad inicial 24 a costo 95, lote LOT-1101; mínimo 24, máximo 120. La cantidad inicial sustituye a la «primera entrada» del video anterior a nov. 2026: pide costo, y lote si el producto controla lote (viene encendido).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/productos/restaurar.mjs A"
+ },
+ "aprenderas": [
+  "Llenar la ficha de un producto de arriba abajo",
+  "Poner el precio con el ITBIS incluido",
+  "Cargar la cantidad inicial con su costo y su lote",
+  "Definir el stock mínimo y máximo",
+  "Qué gana la ficha al guardar: código de barras y etiqueta"
+ ],
+ "errores_comunes": [
+  "Escribir el precio con ITBIS sin encender «ITBIS incluido»: la factura lo cobra dos veces",
+  "Poner la cantidad inicial sin su costo: el inventario quedaría sin valor",
+  "Cambiar después la unidad de medida a mano: para eso existe «Convertir unidad base»"
+ ],
+ "pasos": [
+  {
+   "id": "01-identificacion",
+   "capitulo": "Nombre, categoría y unidad",
+   "rotulo": "Nuevo producto",
+   "ruta": "Inventario › Productos › Nuevo",
+   "narracion": "Vamos a crear un producto desde cero. Pulso Nuevo Producto. La ficha es una sola hoja que se llena de arriba abajo, y al pie una barra dice qué falta para guardar. Empiezo por el nombre: Chocolate tradicional Cacao Real. Mientras escribo, el sistema revisa que no exista otro igual, y aquí confirma que está disponible. Sigue la categoría, que agrupa productos parecidos. En categoría escribo las primeras letras de alimentos; aparece debajo, entre las que ya existen, y la tomo de la lista. Sigue la unidad de medida, que es la unidad en que se lleva la existencia y el costo: escribo unidad en el campo, espero a que aparezcan las opciones, y de ellas elijo la primera.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nuevo Producto')",
+     "al_decir": "Pulso Nuevo Producto"
+    },
+    {
+     "resaltar": ".gm-doc-blocking",
+     "durante_ms": 3000,
+     "al_decir": "una barra dice"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='name']",
+      "texto": "Chocolate tradicional Cacao Real"
+     },
+     "al_decir": "Empiezo por el nombre"
+    },
+    {
+     "resaltar": ".name-notice--ok",
+     "durante_ms": 2500,
+     "al_decir": "está disponible"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Categoría')) input",
+      "texto": "Alimen"
+     },
+     "al_decir": "En categoría escribo"
+    },
+    {
+     "click": "mat-option:has-text('Alimentos') >> nth=0",
+     "al_decir": "la tomo de la lista"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Unidad de medida')) input",
+      "texto": "Unidad"
+     },
+     "al_decir": "escribo unidad"
+    },
+    {
+     "click": "mat-option:has-text('Unidad (UND)')",
+     "al_decir": "elijo la primera"
+    }
+   ]
+  },
+  {
+   "id": "02-precio-existencia",
+   "capitulo": "Precio y cantidad inicial",
+   "rotulo": "Precio y existencia",
+   "ruta": "Inventario › Productos › Nuevo",
+   "narracion": "Ahora, el precio de venta. En la fila de la lista Precio regular, en monto, escribo ciento sesenta y cinco pesos. Ese precio ya trae adentro el ITBIS, el impuesto sobre la venta, así que enciendo ITBIS incluido, y el total queda en ciento sesenta y cinco: si no lo enciendes, la factura le suma el impuesto encima. Debajo está la cantidad inicial, por si ya tienes mercancía: escribo veinticuatro. Al poner una cantidad, el sistema pide con qué costo entra: noventa y cinco pesos cada uno. Y como el producto controla lote, pide el lote inicial; lo escribo tal como viene en la caja.",
+   "acciones": [
+    {
+     "resaltar": "app-inline-product-prices table tbody tr:first-child td:nth-child(2)",
+     "durante_ms": 2500,
+     "al_decir": "la lista Precio regular"
+    },
+    {
+     "escribir": {
+      "sel": "app-inline-product-prices input[type='number']",
+      "texto": "165"
+     },
+     "al_decir": "escribo ciento sesenta y cinco"
+    },
+    {
+     "click": "app-inline-product-prices button[aria-label='ITBIS incluido']",
+     "al_decir": "enciendo ITBIS incluido"
+    },
+    {
+     "resaltar": "app-inline-product-prices table tbody tr:first-child td.col-total, app-inline-product-prices table tbody tr:first-child td:nth-child(7)",
+     "durante_ms": 6000,
+     "al_decir": "el total queda"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='initialQuantity']",
+      "texto": "24"
+     },
+     "al_decir": "escribo veinticuatro"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='purchasePrice']",
+      "texto": "95"
+     },
+     "al_decir": "con qué costo entra"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='initialBatchNumber']",
+      "texto": "LOT-1101"
+     },
+     "al_decir": "pide el lote inicial"
+    }
+   ]
+  },
+  {
+   "id": "03-minimo-guardar",
+   "capitulo": "Mínimo, máximo y guardar",
+   "rotulo": "Guardar",
+   "ruta": "Inventario › Productos › Nuevo",
+   "narracion": "Más abajo, en características, maneja inventario viene encendido: el sistema lleva sus existencias y su costo. En la pestaña Inventario pongo el stock mínimo, veinticuatro: cuando la existencia baje de ahí, el sistema avisa y lo propone en Por reponer. Y el stock máximo, que es hasta dónde reponer: ciento veinte. Con eso es suficiente, así que pulso Guardar. El aviso confirma que el producto se creó, y acepto.",
+   "acciones": [
+    {
+     "resaltar": ".gm-setting:has(button[aria-label='Maneja inventario'])",
+     "durante_ms": 4500,
+     "al_decir": "maneja inventario viene"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='minStock']",
+      "texto": "24"
+     },
+     "al_decir": "pongo el stock mínimo"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='maxStock']",
+      "texto": "120"
+     },
+     "al_decir": "el stock máximo"
+    },
+    {
+     "click": ".form-layout-footer button:has-text('Guardar')",
+     "al_decir": "pulso Guardar"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "y acepto"
+    }
+   ]
+  },
+  {
+   "id": "04-ficha-guardada",
+   "capitulo": "La ficha guardada",
+   "rotulo": "Al guardar",
+   "ruta": "Inventario › Productos › Chocolate tradicional Cacao Real",
+   "narracion": "La ficha queda abierta y gana partes nuevas. Arriba, junto al nombre, su código y el estado activo. A la derecha, el código de barras que el sistema generó solo, con su candado para que nadie lo cambie por error, y el botón para imprimir la etiqueta. Y abajo aparecen pestañas nuevas, como variantes, insumos e historial. El chocolate ya se puede vender, con veinticuatro unidades en existencia. En el próximo video: los servicios, la parte fiscal y la tienda.",
+   "acciones": [
+    {
+     "resaltar": ".page-hero",
+     "durante_ms": 2800,
+     "al_decir": "su código y el estado"
+    },
+    {
+     "resaltar": ".barcode-section",
+     "durante_ms": 2800,
+     "al_decir": "el código de barras"
+    },
+    {
+     "resaltar": "button[aria-label='Desbloquear código']",
+     "durante_ms": 3000,
+     "al_decir": "con su candado"
+    },
+    {
+     "resaltar": "button:has-text('Imprimir etiqueta')",
+     "durante_ms": 1800,
+     "al_decir": "imprimir la etiqueta"
+    },
+    {
+     "resaltar": "mat-tab-group.product-tabs .mat-mdc-tab-labels",
+     "durante_ms": 2700,
+     "al_decir": "pestañas nuevas"
+    },
+    {
+     "resaltar": ".page-hero",
+     "durante_ms": 4000,
+     "al_decir": "ya se puede vender"
+    }
+   ]
+  }
+ ]
+}

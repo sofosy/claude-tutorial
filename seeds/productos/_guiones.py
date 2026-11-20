@@ -100,6 +100,77 @@ VIDEOS["productos-01-catalogo"] = {
     ],
 }
 
+# ───────────────────────── 02 · Crear un producto ─────────────────────────
+PRECIOS = "app-inline-product-prices"
+def ctl(nombre): return f"input[formcontrolname='{nombre}']"
+def ajuste(etiqueta): return f".gm-setting:has(button[aria-label='{etiqueta}'])"
+GUARDAR = ".form-layout-footer button:has-text('Guardar')"
+VIDEOS["productos-02-crear-producto"] = {
+    "titulo": "Productos · Parte 2: crear un producto",
+    "descripcion": "Segundo video de Productos en Germiva ERP: dar de alta un producto en una sola hoja. Nombre, categoría y unidad; el precio con ITBIS incluido; la cantidad inicial con su costo y su lote; el mínimo y el máximo; y lo que aparece al guardar: el código de barras y la etiqueta.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 2. Estado A. Crea «Chocolate tradicional Cacao Real»: Alimentos, marca Cacao Real, Unidad; RD$165 con ITBIS incluido (neto 139.83); cantidad inicial 24 a costo 95, lote LOT-1101; mínimo 24, máximo 120. La cantidad inicial sustituye a la «primera entrada» del video anterior a nov. 2026: pide costo, y lote si el producto controla lote (viene encendido).",
+    "sesion": LISTA, "setup": RESTAURAR("A"),
+    "aprenderas": ["Llenar la ficha de un producto de arriba abajo", "Poner el precio con el ITBIS incluido", "Cargar la cantidad inicial con su costo y su lote", "Definir el stock mínimo y máximo", "Qué gana la ficha al guardar: código de barras y etiqueta"],
+    "errores_comunes": ["Escribir el precio con ITBIS sin encender «ITBIS incluido»: la factura lo cobra dos veces", "Poner la cantidad inicial sin su costo: el inventario quedaría sin valor", "Cambiar después la unidad de medida a mano: para eso existe «Convertir unidad base»"],
+    "pasos": [
+        {
+            "id": "01-identificacion", "capitulo": "Nombre, categoría y unidad", "rotulo": "Nuevo producto",
+            "ruta": "Inventario › Productos › Nuevo",
+            "narracion": "Vamos a crear un producto desde cero. Pulso Nuevo Producto. La ficha es una sola hoja que se llena de arriba abajo, y al pie una barra dice qué falta para guardar. Empiezo por el nombre: Chocolate tradicional Cacao Real. Mientras escribo, el sistema revisa que no exista otro igual, y aquí confirma que está disponible. Sigue la categoría, que agrupa productos parecidos. En categoría escribo las primeras letras de alimentos; aparece debajo, entre las que ya existen, y la tomo de la lista. Sigue la unidad de medida, que es la unidad en que se lleva la existencia y el costo: escribo unidad en el campo, espero a que aparezcan las opciones, y de ellas elijo la primera.",
+            "acciones": [
+                clic("button:has-text('Nuevo Producto')", "Pulso Nuevo Producto"),
+                marca(".gm-doc-blocking", "una barra dice", 3000),
+                teclea(ctl("name"), "Chocolate tradicional Cacao Real", "Empiezo por el nombre"),
+                marca(".name-notice--ok", "está disponible", 2500),
+                teclea(campo("Categoría"), "Alimen", "En categoría escribo"),
+                clic("mat-option:has-text('Alimentos') >> nth=0", "la tomo de la lista"),
+                teclea(campo("Unidad de medida"), "Unidad", "escribo unidad"),
+                clic("mat-option:has-text('Unidad (UND)')", "elijo la primera"),
+            ],
+        },
+        {
+            "id": "02-precio-existencia", "capitulo": "Precio y cantidad inicial", "rotulo": "Precio y existencia",
+            "ruta": "Inventario › Productos › Nuevo",
+            "narracion": "Ahora, el precio de venta. En la fila de la lista Precio regular, en monto, escribo ciento sesenta y cinco pesos. Ese precio ya trae adentro el ITBIS, el impuesto sobre la venta, así que enciendo ITBIS incluido, y el total queda en ciento sesenta y cinco: si no lo enciendes, la factura le suma el impuesto encima. Debajo está la cantidad inicial, por si ya tienes mercancía: escribo veinticuatro. Al poner una cantidad, el sistema pide con qué costo entra: noventa y cinco pesos cada uno. Y como el producto controla lote, pide el lote inicial; lo escribo tal como viene en la caja.",
+            "acciones": [
+                marca(f"{PRECIOS} table tbody tr:first-child td:nth-child(2)", "la lista Precio regular", 2500),
+                teclea(f"{PRECIOS} input[type='number']", "165", "escribo ciento sesenta y cinco"),
+                clic(f"{PRECIOS} button[aria-label='ITBIS incluido']", "enciendo ITBIS incluido"),
+                marca(f"{PRECIOS} table tbody tr:first-child td.col-total, {PRECIOS} table tbody tr:first-child td:nth-child(7)", "el total queda", 6000),
+                teclea(ctl("initialQuantity"), "24", "escribo veinticuatro"),
+                teclea(ctl("purchasePrice"), "95", "con qué costo entra"),
+                teclea(ctl("initialBatchNumber"), "LOT-1101", "pide el lote inicial"),
+            ],
+        },
+        {
+            "id": "03-minimo-guardar", "capitulo": "Mínimo, máximo y guardar", "rotulo": "Guardar",
+            "ruta": "Inventario › Productos › Nuevo",
+            "narracion": "Más abajo, en características, maneja inventario viene encendido: el sistema lleva sus existencias y su costo. En la pestaña Inventario pongo el stock mínimo, veinticuatro: cuando la existencia baje de ahí, el sistema avisa y lo propone en Por reponer. Y el stock máximo, que es hasta dónde reponer: ciento veinte. Con eso es suficiente, así que pulso Guardar. El aviso confirma que el producto se creó, y acepto.",
+            "acciones": [
+                marca(ajuste("Maneja inventario"), "maneja inventario viene", 4500),
+                teclea(ctl("minStock"), "24", "pongo el stock mínimo"),
+                teclea(ctl("maxStock"), "120", "el stock máximo"),
+                clic(GUARDAR, "pulso Guardar"),
+                marca(ALERTA, "El aviso confirma", 2500, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "y acepto"),
+            ],
+        },
+        {
+            "id": "04-ficha-guardada", "capitulo": "La ficha guardada", "rotulo": "Al guardar",
+            "ruta": "Inventario › Productos › Chocolate tradicional Cacao Real",
+            "narracion": "La ficha queda abierta y gana partes nuevas. Arriba, junto al nombre, su código y el estado activo. A la derecha, el código de barras que el sistema generó solo, con su candado para que nadie lo cambie por error, y el botón para imprimir la etiqueta. Y abajo aparecen pestañas nuevas, como variantes, insumos e historial. El chocolate ya se puede vender, con veinticuatro unidades en existencia. En el próximo video: los servicios, la parte fiscal y la tienda.",
+            "acciones": [
+                marca(".page-hero", "su código y el estado", 2800),
+                marca(".barcode-section", "el código de barras", 2800),
+                marca("button[aria-label='Desbloquear código']", "con su candado", 3000),
+                marca("button:has-text('Imprimir etiqueta')", "imprimir la etiqueta", 1800),
+                marca("mat-tab-group.product-tabs .mat-mdc-tab-labels", "pestañas nuevas", 2700),
+                marca(".page-hero", "ya se puede vender", 4000),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
