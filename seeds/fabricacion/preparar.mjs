@@ -3,6 +3,8 @@
 //   A  panadería con materia prima en la Despensa y el bizcocho SIN lista de materiales (video 1).
 //   B  A + la lista de materiales del bizcocho publicada (video 2).
 //   C  B + una orden cerrada (24 bizcochos) y otra con el material reservado (video 3).
+//   D  B + «Bizcocho de cumpleaños» (lleva un bizcocho de vainilla: sub-ensamble) con su lista, y un pedido
+//        de venta confirmado de 6 para el Colmado Germiva La Esquina (video 4).
 // Parte SIEMPRE de la instantánea sembrada del dev-env (Germiva-api/.dev-env/seeded.sql.gz), salvo --sin-reset.
 import { execSync, execFileSync } from 'node:child_process';
 import crypto from 'node:crypto';
@@ -93,7 +95,7 @@ const LISTA = {
     { productId: huevos, quantity: 30 }, { productId: mantequilla, quantity: 3 },
   ],
 };
-if (estado === 'B' || estado === 'C') {
+if (['B', 'C', 'D'].includes(estado)) {
   const receta = await api('POST', `${BASE}/recipes`, LISTA);
   const recetaId = receta.id ?? receta.recipe?.id ?? +uno(`SELECT MAX(id) FROM manufacturing_recipes WHERE company_id=${EMPRESA}`);
   log('lista de materiales publicada', recetaId);
@@ -115,6 +117,25 @@ if (estado === 'B' || estado === 'C') {
     // OF-2: 12 bizcochos con el material reservado; el video 3 registra 11 buenos y 1 descartado.
     const segunda = await orden(12);
     log('órdenes', primera, '(cerrada)', segunda, '(reservada)');
+  }
+  if (estado === 'D') {
+    const cumple = await producto('Bizcocho de cumpleaños', UNIDAD, 0, ITBIS, 0);
+    if (!+uno(`SELECT COUNT(*) FROM prices WHERE product_id=${cumple} AND deleted_at IS NULL`)) {
+      await api('POST', 'v1/price', { product: cumple, priceListId: 1, price: (650 / 1.18).toFixed(2), taxIncluded: true,
+        priority: 1, description: '', active: true, currency: 32, originalGrossAmount: '650' });
+    }
+    await api('POST', `${BASE}/recipes`, {
+      productId: cumple, yieldQty: 1, laborMinutes: 20, laborRate: 400, overheadCost: 25,
+      ingredients: [{ productId: bizcocho, quantity: 1 }, { productId: azucar, quantity: 0.5 }, { productId: huevos, quantity: 2 }],
+    });
+    let cliente = +uno(`SELECT id FROM partners WHERE company_id=${EMPRESA} AND tin='130555202' AND deleted_at IS NULL LIMIT 1`);
+    if (!cliente) cliente = (await api('POST', 'v1/partner', { name: 'Colmado Germiva La Esquina', legalName: 'Colmado Germiva La Esquina S.R.L.',
+      tin: '130555202', partnerType: ['CUSTOMER'], partnerCategory: 'BUSINESS', customerType: 'REGULAR' })).id;
+    const entrega = new Date(Date.now() + 3 * 864e5).toISOString().slice(0, 10);
+    const pedido = await api('POST', 'v1/orders', { orderType: 'SALE', partnerId: cliente, requestedDeliveryDate: entrega,
+      warehouseId: ALMACEN, orderLines: [{ productId: cumple, quantity: 6 }] });
+    await api('PATCH', `v1/orders/${pedido.id}/status/CONFIRMED`, {});
+    log('pedido de venta confirmado', pedido.id, pedido.orderNumber ?? '');
   }
 }
 log(`estado ${estado} listo en ${((Date.now() - t0) / 1000).toFixed(0)} s (Despensa ${DESPENSA}, Vitrina ${VITRINA})`);

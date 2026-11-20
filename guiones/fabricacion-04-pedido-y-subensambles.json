@@ -1,0 +1,244 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/sales/sales-orders/1",
+  "esperar": "button:has-text('Planificar fabricación')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "OF-1": "o efe uno",
+  "OF-2": "o efe dos",
+  "OF-3": "o efe tres",
+  "ITBIS": "itebís"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Fabricación · Parte 4: fabricar para un pedido y sub-ensambles",
+ "descripcion": "Cuarto video de Fabricación en Germiva ERP. Un cliente pide un producto que todavía no está hecho: desde el pedido de venta se planifica la fabricación con un clic. Y cuando el producto lleva adentro otro que también fabricas (un sub-ensamble), el sistema crea su orden sola y arrastra el costo completo.",
+ "_comentario": "Serie Fabricación (nov. 2026), video 4. Estado D (preparar.mjs D): lista del bizcocho de vainilla (v1) y «Bizcocho de cumpleaños» (1 bizcocho de vainilla + 0.5 lb azúcar + 2 huevos; 20 min × 400/h + 25 indirectos, produce 1) con un pedido de venta confirmado VEN-…-000001 de 6 UND para el Colmado Germiva La Esquina. En cámara: OF-1 (cumpleaños, 6) en borrador → «Planificar sub-ensambles» crea OF-2 (vainilla, 6) → se reserva y se registra OF-2 (927.50 → 154.5833 c/u) → vuelta a OF-1, reservar y registrar: 927.50 + 114 + 114 + 950 = 2,105.50 → 350.9167 por unidad. «Planificar fabricación» solo sale con el pedido Confirmado o Parcialmente despachado y con permiso de editar inventario.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/fabricacion/preparar.mjs D"
+ },
+ "aprenderas": [
+  "Planificar la fabricación desde un pedido de venta confirmado",
+  "Qué es un sub-ensamble y cómo lo reconoce el sistema",
+  "Crear las órdenes de los sub-ensambles con un clic",
+  "En qué orden se fabrica: primero lo de adentro",
+  "Cómo el costo del sub-ensamble llega al producto final"
+ ],
+ "errores_comunes": [
+  "Buscar «Planificar fabricación» en un pedido en borrador: solo aparece cuando está confirmado",
+  "Intentar reservar la orden principal antes de fabricar el sub-ensamble",
+  "Comprar un componente que tú mismo fabricas: si tiene lista de materiales, se planifica como sub-ensamble"
+ ],
+ "pasos": [
+  {
+   "id": "01-pedido",
+   "capitulo": "Del pedido de venta a la orden",
+   "rotulo": "Desde el pedido",
+   "ruta": "Ventas › Órdenes de Venta",
+   "narracion": "Un colmado pidió seis bizcochos de cumpleaños, y no hay ninguno hecho. Este es su pedido de venta, ya confirmado. Para verlo mejor, recojo el panel de la izquierda. En la línea del producto hay un botón nuevo: Planificar fabricación. Lo pulso, y Germiva me lleva a una orden de fabricación con el producto y la cantidad del pedido ya puestos. Mira el plan: el bizcocho de cumpleaños lleva adentro un bizcocho de vainilla, que también se fabrica aquí. Por eso tiene la etiqueta sub-ensamble, y dice que faltan seis. No hay que comprarlos, hay que hacerlos. Pulso Guardar borrador.",
+   "acciones": [
+    {
+     "resaltar": ":text-is('Confirmada') >> nth=0",
+     "durante_ms": 1500,
+     "al_decir": "ya confirmado"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "resaltar": "button:has-text('Planificar fabricación')",
+     "durante_ms": 3000,
+     "al_decir": "hay un botón nuevo"
+    },
+    {
+     "click": "button:has-text('Planificar fabricación')",
+     "al_decir": "Lo pulso"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Cantidad a fabricar')) input",
+     "durante_ms": 3500,
+     "al_decir": "la cantidad del pedido"
+    },
+    {
+     "resaltar": "table.gm-table tbody tr:has-text('Bizcocho de vainilla') td:nth-child(1)",
+     "durante_ms": 4500,
+     "al_decir": "lleva adentro"
+    },
+    {
+     "resaltar": "table.gm-table tbody tr:has-text('Bizcocho de vainilla') .gm-badge",
+     "durante_ms": 1800,
+     "al_decir": "la etiqueta sub-ensamble"
+    },
+    {
+     "resaltar": "td.mfg-short",
+     "durante_ms": 4500,
+     "al_decir": "faltan seis"
+    },
+    {
+     "click": "button:has-text('Guardar borrador')",
+     "al_decir": "Pulso Guardar borrador"
+    }
+   ]
+  },
+  {
+   "id": "02-subensamble",
+   "capitulo": "Planificar y fabricar el sub-ensamble",
+   "rotulo": "Sub-ensamble",
+   "ruta": "Fabricación › Órdenes",
+   "narracion": "La orden quedó en borrador, como confirma el aviso, y arriba aparece otro botón: Planificar sub-ensambles. Lo pulso, y el aviso dice que las órdenes de los sub-ensambles se crearon en borrador. Aquí está: el sistema crea sola la orden del bizcocho de vainilla, por los seis que faltan, enlazada a esta. La regla es sencilla: primero se fabrica lo de adentro. Entro a la orden hija. Arriba, pulso Reservar material; el aviso confirma la reserva. Y como ya vimos en el segundo video, registro la producción: las seis unidades buenas vienen propuestas, así que pulso Registrar y cerrar la orden.",
+   "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 1800,
+     "al_decir": "como confirma el aviso",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Planificar sub-ensambles')",
+     "durante_ms": 2500,
+     "al_decir": "aparece otro botón"
+    },
+    {
+     "click": "button:has-text('Planificar sub-ensambles')",
+     "al_decir": "Lo pulso"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3500,
+     "al_decir": "el aviso dice",
+     "cursor": false
+    },
+    {
+     "resaltar": "section.mfg-panel:has(h3:has-text('Órdenes de los sub-ensambles'))",
+     "durante_ms": 6000,
+     "al_decir": "crea sola la orden"
+    },
+    {
+     "click": "tr.mfg-row--link:has-text('Bizcocho de vainilla') td:nth-child(1) .gm-cell-title",
+     "al_decir": "Entro a la orden hija"
+    },
+    {
+     "click": "button:has-text('Reservar material')",
+     "al_decir": "pulso Reservar material"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "al_decir": "el aviso confirma",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Unidades buenas')) input",
+     "durante_ms": 3000,
+     "al_decir": "las seis unidades buenas"
+    },
+    {
+     "click": "button:has-text('Registrar y cerrar la orden')",
+     "al_decir": "pulso Registrar"
+    }
+   ]
+  },
+  {
+   "id": "03-principal",
+   "capitulo": "Terminar la orden principal",
+   "rotulo": "Orden principal",
+   "ruta": "Fabricación › Órdenes",
+   "narracion": "Listo el sub-ensamble. En sus datos, el enlace sub-ensamble de me devuelve a la orden principal. Ahora sí hay bizcochos de vainilla en el almacén, así que pulso Reservar material, y el aviso confirma que quedó reservado. Ahora registro la producción de los seis bizcochos de cumpleaños, y la orden se cierra con su aviso. Fíjate en el costo por unidad: unos trescientos cincuenta y un pesos. Ahí va todo: el bizcocho de vainilla con su propia mano de obra, el azúcar, los huevos y el trabajo de decorarlo. Los seis ya están en el almacén, listos para despachar el pedido del colmado. Del pedido a la fábrica, sin salir de Germiva.",
+   "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2000,
+     "al_decir": "Listo el sub-ensamble",
+     "cursor": false
+    },
+    {
+     "click": "dl.mfg-facts button.mfg-link",
+     "al_decir": "me devuelve"
+    },
+    {
+     "click": "button:has-text('Reservar material')",
+     "al_decir": "pulso Reservar material"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2200,
+     "al_decir": "el aviso confirma",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Registrar y cerrar la orden')",
+     "al_decir": "registro la producción"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 1000,
+     "al_decir": "con su aviso",
+     "cursor": false
+    },
+    {
+     "resaltar": "app-summary-strip, .mfg-title",
+     "durante_ms": 5000,
+     "al_decir": "Fíjate en el costo"
+    },
+    {
+     "resaltar": "article.mfg-run table.gm-table >> nth=0 >> tbody tr:has-text('Bizcocho de vainilla') td:nth-child(1)",
+     "durante_ms": 6000,
+     "al_decir": "el bizcocho de vainilla"
+    },
+    {
+     "resaltar": "article.mfg-run table.gm-table >> nth=0 >> tbody tr:last-child td:nth-child(1)",
+     "durante_ms": 6000,
+     "al_decir": "Los seis ya están"
+    }
+   ]
+  }
+ ]
+}
