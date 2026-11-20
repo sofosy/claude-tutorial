@@ -1,7 +1,7 @@
 // node seeds/productos/preparar.mjs — deja la empresa 1 «Tienda Germiva» en el estado de partida de la
 // serie Productos v3 (unidades y empaques, DP-033). Se corre UNA vez sobre base-limpia.sql y luego
 // fijar.mjs vuelca el canon. Entre tomas: restaurar.mjs [estado].
-import { sql, uno, api, idProducto, idSocio, log, EMPRESA, UBICACION, MOTIVO_COMPRA } from './_lib.mjs';
+import { sql, uno, api, idProducto, idSocio, log, EMPRESA, ubicacion, MOTIVO_COMPRA } from './_lib.mjs';
 
 // ── 1. Ajustes de la base que la cámara vería ──────────────────────────────────────────────────────
 sql(`
@@ -20,6 +20,9 @@ UPDATE user_company_preferences SET incomplete_config_notice_seen_at=COALESCE(in
 `);
 log('ajustes SQL listos');
 
+// La ubicación de la serie: existe en el canon original; en una base nueva se crea.
+if (!ubicacion()) await api('POST', 'v1/inventory/location', { position: 'Pasillo A - Estante 1', warehouse: 1 });
+
 // ── 2. Socios ───────────────────────────────────────────────────────────────────────────────────────
 async function socio(cuerpo) {
   const id = idSocio(cuerpo.tin);
@@ -29,7 +32,7 @@ async function socio(cuerpo) {
   return r.id;
 }
 const proveedor = await socio({ name: 'Embotelladora del Caribe S.R.L.', tin: '130555101', partnerType: ['SUPPLIER'], partnerCategory: 'BUSINESS' });
-await socio({ name: 'Colmado La Esquina', tin: '130555102', partnerType: ['CUSTOMER'], partnerCategory: 'BUSINESS', customerType: 'REGULAR' });
+await socio({ name: 'Colmado La Esquina', legalName: 'Colmado La Esquina S.R.L.', tin: '130555102', partnerType: ['CUSTOMER'], partnerCategory: 'BUSINESS', customerType: 'REGULAR' });
 await socio({ name: 'Agroindustrial del Cibao S.R.L.', tin: '130555103', partnerType: ['SUPPLIER'], partnerCategory: 'BUSINESS' });
 await socio({ name: 'Galletera Nacional S.A.', tin: '130555104', partnerType: ['SUPPLIER'], partnerCategory: 'BUSINESS' });
 
@@ -60,7 +63,7 @@ async function producto(datos, precio) {
 async function entrada(producto, cantidad, costo, partner, productUnit) {
   await api('POST', 'v1/inventory/movement/entry', {
     product: producto, batchNumber: `LOT-SEM-${producto}-${Date.now() % 100000}`, quantity: cantidad,
-    inventoryLocation: UBICACION, order: 1, inventoryMovementType: MOTIVO_COMPRA, notes: '', partner,
+    inventoryLocation: ubicacion(), order: 1, inventoryMovementType: MOTIVO_COMPRA, notes: '', partner,
     unitPrice: costo, ...(productUnit ? { productUnit } : {}),
   });
 }
