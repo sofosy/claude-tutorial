@@ -1,0 +1,167 @@
+1
+00:00:03,100 --> 00:00:07,652
+El presupuesto del proyecto dice cuánto va a costar la obra, partida por partida,
+
+2
+00:00:07,737 --> 00:00:09,772
+y a qué precio se le vende al cliente.
+
+3
+00:00:10,440 --> 00:00:13,641
+Recojo el menú, y abro el proyecto desde la cartera.
+
+4
+00:00:14,310 --> 00:00:16,233
+Voy a su pestaña Presupuesto.
+
+5
+00:00:16,888 --> 00:00:18,601
+Todavía no tiene ninguno:
+
+6
+00:00:18,675 --> 00:00:20,326
+pulso Nuevo presupuesto.
+
+7
+00:00:20,981 --> 00:00:23,350
+En el nombre escribo Presupuesto de obra.
+
+8
+00:00:24,007 --> 00:00:26,762
+La moneda es el peso, con tasa uno.
+
+9
+00:00:27,417 --> 00:00:29,228
+Y en el tipo hay dos opciones:
+
+10
+00:00:29,376 --> 00:00:33,570
+Solo costos, para controlar el gasto, o Costos y precio al cliente,
+
+11
+00:00:33,605 --> 00:00:36,235
+que además calcula el precio de venta y el ITBIS.
+
+12
+00:00:36,904 --> 00:00:39,969
+Dejo esta última, y pulso Crear presupuesto.
+
+13
+00:00:40,636 --> 00:00:42,125
+El aviso lo confirma.
+
+14
+00:00:43,496 --> 00:00:45,643
+El presupuesto se arma como un árbol:
+
+15
+00:00:45,703 --> 00:00:48,085
+fases, capítulos y partidas.
+
+16
+00:00:48,753 --> 00:00:52,610
+Abajo, en Estructura y partidas, pulso Agregar fase.
+
+17
+00:00:53,278 --> 00:00:54,421
+Le pongo nombre:
+
+18
+00:00:54,445 --> 00:00:55,451
+Cimentación.
+
+19
+00:00:56,106 --> 00:00:57,496
+La fase solo agrupa;
+
+20
+00:00:57,632 --> 00:00:59,655
+los costos van en sus partidas.
+
+21
+00:01:00,323 --> 00:01:05,000
+Con la fase creada, abro su menú de tres puntos, y elijo Agregar partida,
+
+22
+00:01:05,097 --> 00:01:06,935
+para que quede dentro de la fase.
+
+23
+00:01:07,602 --> 00:01:10,629
+En el nombre de la partida escribo Excavación y relleno.
+
+24
+00:01:11,284 --> 00:01:14,956
+Cada partida recibe su código, cero uno punto cero uno,
+
+25
+00:01:15,055 --> 00:01:18,082
+que la identifica en compras, horas y facturas.
+
+26
+00:01:19,450 --> 00:01:21,399
+Ahora los datos de la partida.
+
+27
+00:01:22,054 --> 00:01:25,763
+En Categoría de costo abro la lista, y elijo Subcontratos,
+
+28
+00:01:25,861 --> 00:01:28,441
+porque la excavación la hará un subcontratista.
+
+29
+00:01:29,109 --> 00:01:31,417
+En Cuenta de costo escribo Costos de obra,
+
+30
+00:01:31,566 --> 00:01:34,022
+la cuenta donde se contabilizará su gasto.
+
+31
+00:01:34,677 --> 00:01:37,123
+Aparece en la lista, y la elijo.
+
+32
+00:01:37,778 --> 00:01:41,313
+En Unidad escribo Metro, para buscar la unidad de medida.
+
+33
+00:01:41,969 --> 00:01:44,054
+De la lista elijo Metro Cúbico.
+
+34
+00:01:44,710 --> 00:01:46,646
+En Cantidad anoto quinientos.
+
+35
+00:01:47,314 --> 00:01:49,585
+Son los metros cúbicos que hay que mover.
+
+36
+00:01:50,253 --> 00:01:53,381
+Y en Costo unitario anoto ochocientos pesos por metro,
+
+37
+00:01:53,515 --> 00:01:55,811
+el precio que cotizó el subcontratista.
+
+38
+00:01:56,478 --> 00:01:59,370
+Arriba, el costo directo se calcula solo:
+
+39
+00:01:59,516 --> 00:02:01,254
+cuatrocientos mil pesos.
+
+40
+00:02:01,923 --> 00:02:05,161
+Pulso Guardar presupuesto, y el aviso lo confirma.
+
+41
+00:02:05,817 --> 00:02:07,790
+Las demás partidas se agregan igual;
+
+42
+00:02:07,924 --> 00:02:12,105
+y si el presupuesto es grande, se llena la plantilla de Excel y se importa.

@@ -1,0 +1,267 @@
+{
+  "titulo": "Proyectos · Crear el presupuesto del proyecto: fases y partidas",
+  "descripcion": "Cómo crear en Germiva el presupuesto de un proyecto, organizarlo en fases y partidas, y dar a cada partida su categoría de costo, su cuenta, su unidad, su cantidad y su costo unitario.",
+  "_comentario": "Video 02 de la serie Proyectos. setup: seeds/proyectos/preparar.sh con-proyecto (proyecto Nave industrial Haina creado, sin presupuesto).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects",
+    "esperar": "button[aria-label='Abrir proyecto']"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh con-proyecto"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Crear el presupuesto de un proyecto",
+    "Organizarlo en fases y partidas",
+    "Completar categoría, cuenta, unidad, cantidad y costo de una partida",
+    "Guardar el borrador"
+  ],
+  "errores_comunes": [
+    "Crear las partidas sueltas, fuera de su fase",
+    "Dejar una partida sin categoría o sin cuenta: no se puede enviar a aprobación",
+    "Elegir «Solo costos» cuando también se quiere el precio al cliente"
+  ],
+  "pasos": [
+    {
+      "id": "01-nuevo",
+      "capitulo": "Nuevo presupuesto",
+      "rotulo": "Presupuestos de proyecto",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Nombre · moneda · tipo de presupuesto",
+      "narracion": "El presupuesto del proyecto dice cuánto va a costar la obra, partida por partida, y a qué precio se le vende al cliente. Recojo el menú, y abro el proyecto desde la cartera. Voy a su pestaña Presupuesto. Todavía no tiene ninguno: pulso Nuevo presupuesto. En el nombre escribo Presupuesto de obra. La moneda es el peso, con tasa uno. Y en el tipo hay dos opciones: Solo costos, para controlar el gasto, o Costos y precio al cliente, que además calcula el precio de venta y el ITBIS. Dejo esta última, y pulso Crear presupuesto. El aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button[aria-label='Abrir proyecto']",
+          "al_decir": "abro el proyecto"
+        },
+        {
+          "click": "a.ws-tab:has-text('Presupuesto')",
+          "al_decir": "pestaña Presupuesto"
+        },
+        {
+          "click": "button:has-text('Nuevo presupuesto')",
+          "al_decir": "pulso Nuevo presupuesto"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Presupuesto de obra"
+          },
+          "al_decir": "En el nombre escribo"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='budgetType'])",
+          "durante_ms": 9000,
+          "cursor": false,
+          "al_decir": "en el tipo hay"
+        },
+        {
+          "click": "button:has-text('Crear presupuesto')",
+          "al_decir": "pulso Crear presupuesto"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "02-fase",
+      "capitulo": "Fases y partidas",
+      "rotulo": "Estructura y partidas",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Una fase agrupa partidas",
+      "narracion": "El presupuesto se arma como un árbol: fases, capítulos y partidas. Abajo, en Estructura y partidas, pulso Agregar fase. Le pongo nombre: Cimentación. La fase solo agrupa; los costos van en sus partidas. Con la fase creada, abro su menú de tres puntos, y elijo Agregar partida, para que quede dentro de la fase. En el nombre de la partida escribo Excavación y relleno. Cada partida recibe su código, cero uno punto cero uno, que la identifica en compras, horas y facturas.",
+      "acciones": [
+        {
+          "resaltar": "#structure-title",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "en Estructura y partidas"
+        },
+        {
+          "click": "button:has-text('Agregar fase')",
+          "al_decir": "pulso Agregar fase"
+        },
+        {
+          "escribir": {
+            "sel": "table.tree input[aria-label='Fase 01']",
+            "texto": "Cimentación"
+          },
+          "al_decir": "Le pongo nombre"
+        },
+        {
+          "click": "button[aria-label^='Más acciones de Cimentación']",
+          "al_decir": "abro su menú"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Agregar partida')",
+          "al_decir": "elijo Agregar partida"
+        },
+        {
+          "escribir": {
+            "sel": "table.tree input[aria-label='Partida 01.01']",
+            "texto": "Excavación y relleno"
+          },
+          "al_decir": "En el nombre de la partida escribo"
+        },
+        {
+          "resaltar": "table.tree tr:has(input[aria-label='Partida 01.01']) td >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Cada partida recibe su código"
+        }
+      ]
+    },
+    {
+      "id": "03-partida",
+      "capitulo": "Los datos de la partida",
+      "rotulo": "Categoría, cuenta, unidad, cantidad y costo",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Cantidad × costo unitario = costo directo",
+      "narracion": "Ahora los datos de la partida. En Categoría de costo abro la lista, y elijo Subcontratos, porque la excavación la hará un subcontratista. En Cuenta de costo escribo Costos de obra, la cuenta donde se contabilizará su gasto. Aparece en la lista, y la elijo. En Unidad escribo Metro, para buscar la unidad de medida. De la lista elijo Metro Cúbico. En Cantidad anoto quinientos. Son los metros cúbicos que hay que mover. Y en Costo unitario anoto ochocientos pesos por metro, el precio que cotizó el subcontratista. Arriba, el costo directo se calcula solo: cuatrocientos mil pesos. Pulso Guardar presupuesto, y el aviso lo confirma. Las demás partidas se agregan igual; y si el presupuesto es grande, se llena la plantilla de Excel y se importa.",
+      "acciones": [
+        {
+          "click": "table.tree mat-select[aria-label='Categoría de costo']",
+          "al_decir": "En Categoría de costo abro"
+        },
+        {
+          "click": "mat-option:has-text('Subcontratos')",
+          "al_decir": "elijo Subcontratos"
+        },
+        {
+          "escribir": {
+            "sel": "table.tree input[placeholder='Buscar cuenta']",
+            "texto": "Costos de obra"
+          },
+          "al_decir": "En Cuenta de costo escribo"
+        },
+        {
+          "click": "mat-option:has-text('Costos de obra')",
+          "al_decir": "y la elijo"
+        },
+        {
+          "escribir": {
+            "sel": "table.tree input[placeholder='m², m³, horas…']",
+            "texto": "Metro"
+          },
+          "al_decir": "En Unidad escribo Metro"
+        },
+        {
+          "click": "mat-option:has-text('Metro Cúbico')",
+          "al_decir": "De la lista elijo"
+        },
+        {
+          "escribir": {
+            "sel": "table.tree input[aria-label='Cantidad']",
+            "texto": "500"
+          },
+          "al_decir": "Cantidad anoto quinientos"
+        },
+        {
+          "escribir": {
+            "sel": "table.tree input[aria-label='Costo unitario']",
+            "texto": "800"
+          },
+          "al_decir": "anoto ochocientos"
+        },
+        {
+          "resaltar": ".budget-figs .gm-fig >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "el costo directo se calcula"
+        },
+        {
+          "click": "button:has-text('Guardar presupuesto')",
+          "al_decir": "Pulso Guardar presupuesto"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "button:has-text('Excel / plantilla')",
+          "durante_ms": 3000,
+          "cursor": true,
+          "al_decir": "la plantilla de Excel"
+        },
+        {
+          "resaltar": "button:has-text('Importar Excel')",
+          "durante_ms": 2500,
+          "cursor": true,
+          "al_decir": "y se importa"
+        }
+      ]
+    }
+  ]
+}

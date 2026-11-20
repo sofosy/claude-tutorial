@@ -26,6 +26,7 @@ pasos = [
    res("mat-option:has-text('Avisar')", "Avisar deja pasar", 5500),
    clic("mat-option:has-text('Bloquear')", "elijo Bloquear"),
    esc("input[formcontrolname='controlTolerancePercentage']", "5", "en Tolerancia anoto cinco"),
+   res("mat-form-field:has(input[formcontrolname='controlTolerancePercentage']) mat-hint", "solo avisa, aunque", 4000),
    clic("button:has-text('Guardar control')", "pulso Guardar\n  control".replace("\n  ", " ")),
    {"resaltar": ".mat-mdc-snack-bar-container", "durante_ms": 2500, "cursor": False}]),
  paso("02-disponible", "Comprometido y disponible", "Comprometido y Disponible", "Contabilidad › Presupuestos › PRES-2026-11",
@@ -77,7 +78,7 @@ pasos = [
   [res(":text('COM-2026-000001') >> nth=0", "Esta es la orden de fletes", 6000),
    res("app-cost-center-field, :text('Centro de costo') >> nth=0", "sigue consumiendo", 4000),
    res(":text('Aprobad') >> nth=0", "hay dos salidas", 7000),
-   res("header button:has-text('notifications') >> nth=0", "un aviso en la campanita", 5000, True)],
+   res("button.mat-mdc-menu-trigger:not(.topbar-user) >> nth=0", "un aviso en la campanita", 5000, True)],
   navegar="/purchases/purchase-orders/view/1"),
 ]
 guardar("contabilidad-45-control-presupuestario", g, pasos)

@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Proyectos · Crear el presupuesto del proyecto: fases y partidas
+
+DESCRIPCIÓN
+============================================================
+Cómo crear en Germiva el presupuesto de un proyecto, organizarlo en fases y partidas, y dar a cada partida su categoría de costo, su cuenta, su unidad, su cantidad y su costo unitario.
+
+⏱️ CAPÍTULOS
+00:00  Nuevo presupuesto
+00:43  Fases y partidas
+01:19  Los datos de la partida
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear el presupuesto de un proyecto
+• Organizarlo en fases y partidas
+• Completar categoría, cuenta, unidad, cantidad y costo de una partida
+• Guardar el borrador
+
+⚠️ ERRORES COMUNES
+• Crear las partidas sueltas, fuera de su fase
+• Dejar una partida sin categoría o sin cuenta: no se puede enviar a aprobación
+• Elegir «Solo costos» cuando también se quiere el precio al cliente
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:16
+
+TRANSCRIPCIÓN
+============================================================
+El presupuesto del proyecto dice cuánto va a costar la obra, partida por partida, y a qué precio se le vende al cliente. Recojo el menú, y abro el proyecto desde la cartera. Voy a su pestaña Presupuesto. Todavía no tiene ninguno: pulso Nuevo presupuesto. En el nombre escribo Presupuesto de obra. La moneda es el peso, con tasa uno. Y en el tipo hay dos opciones: Solo costos, para controlar el gasto, o Costos y precio al cliente, que además calcula el precio de venta y el ITBIS. Dejo esta última, y pulso Crear presupuesto. El aviso lo confirma.
+El presupuesto se arma como un árbol: fases, capítulos y partidas. Abajo, en Estructura y partidas, pulso Agregar fase. Le pongo nombre: Cimentación. La fase solo agrupa; los costos van en sus partidas. Con la fase creada, abro su menú de tres puntos, y elijo Agregar partida, para que quede dentro de la fase. En el nombre de la partida escribo Excavación y relleno. Cada partida recibe su código, cero uno punto cero uno, que la identifica en compras, horas y facturas.
+Ahora los datos de la partida. En Categoría de costo abro la lista, y elijo Subcontratos, porque la excavación la hará un subcontratista. En Cuenta de costo escribo Costos de obra, la cuenta donde se contabilizará su gasto. Aparece en la lista, y la elijo. En Unidad escribo Metro, para buscar la unidad de medida. De la lista elijo Metro Cúbico. En Cantidad anoto quinientos. Son los metros cúbicos que hay que mover. Y en Costo unitario anoto ochocientos pesos por metro, el precio que cotizó el subcontratista. Arriba, el costo directo se calcula solo: cuatrocientos mil pesos. Pulso Guardar presupuesto, y el aviso lo confirma. Las demás partidas se agregan igual; y si el presupuesto es grande, se llena la plantilla de Excel y se importa.

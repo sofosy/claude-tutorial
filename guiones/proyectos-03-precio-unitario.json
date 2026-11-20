@@ -1,0 +1,338 @@
+{
+  "titulo": "Proyectos · Análisis de precio unitario, indirectos, utilidad e ITBIS del presupuesto",
+  "descripcion": "Cómo desglosar en Germiva el costo de una partida con el análisis de precio unitario, aplicar indirectos y utilidad para llegar al precio del cliente, completar el detalle de la partida y exportar el presupuesto a PDF y Excel.",
+  "_comentario": "Video 03 de la serie Proyectos. setup: seeds/proyectos/preparar.sh borrador (presupuesto en borrador con seis partidas; «Zapatas y pedestales» sin costo; indirectos y utilidad en cero).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects",
+    "esperar": "button[aria-label='Abrir proyecto']"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh borrador"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Desglosar una partida en materiales y mano de obra",
+    "Aplicar indirectos y utilidad para obtener el precio",
+    "Completar fechas, tarea e ITBIS de una partida",
+    "Exportar el presupuesto a PDF y Excel"
+  ],
+  "errores_comunes": [
+    "Escribir las cantidades del análisis por el total de la partida: van por unidad",
+    "Confundir costo con precio: la utilidad se aplica sobre el costo",
+    "Enviar al cliente el PDF interno, que muestra los costos"
+  ],
+  "pasos": [
+    {
+      "id": "01-apu",
+      "capitulo": "Análisis de precio unitario",
+      "rotulo": "Análisis de precio unitario",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "El costo de una partida, desglosado en recursos",
+      "narracion": "Este presupuesto ya tiene sus seis partidas, pero a Zapatas y pedestales le falta el costo. En lugar de escribirlo, lo voy a calcular. Recojo el menú, abro el proyecto, voy a su pestaña Presupuesto, y abro el presupuesto con Ver presupuesto. En la fila de Zapatas pulso el botón de Análisis de precio unitario. Se abre un panel a la derecha: aquí se desglosa lo que cuesta una sola unidad de la partida, en este caso un metro cúbico. Pulso Agregar recurso. En Descripción escribo el primero: Hormigón. El tipo ya dice Material. En Cantidad por unidad anoto uno. Es un metro cúbico de hormigón por cada metro cúbico de zapata. Y en Costo unitario anoto seis mil trescientos pesos.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button[aria-label='Abrir proyecto']",
+          "al_decir": "abro el proyecto"
+        },
+        {
+          "click": "a.ws-tab:has-text('Presupuesto')",
+          "al_decir": "pestaña Presupuesto"
+        },
+        {
+          "click": "button[aria-label='Ver presupuesto']",
+          "al_decir": "abro el presupuesto con Ver"
+        },
+        {
+          "click": "button[aria-label='Análisis de precio unitario de la partida 01.02']",
+          "al_decir": "pulso el botón de Análisis"
+        },
+        {
+          "resaltar": "aside.apu-panel >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Se abre un panel"
+        },
+        {
+          "click": "aside.apu-panel button:has-text('Agregar recurso')",
+          "al_decir": "Pulso Agregar recurso"
+        },
+        {
+          "escribir": {
+            "sel": "aside.apu-panel mat-form-field:has-text('Descripción') input >> nth=0",
+            "texto": "Hormigón"
+          },
+          "al_decir": "Descripción escribo"
+        },
+        {
+          "escribir": {
+            "sel": "aside.apu-panel mat-form-field:has-text('Cantidad por unidad') input >> nth=0",
+            "texto": "1"
+          },
+          "al_decir": "Cantidad por unidad anoto uno"
+        },
+        {
+          "escribir": {
+            "sel": "aside.apu-panel mat-form-field:has-text('Costo unitario') input >> nth=0",
+            "texto": "6300"
+          },
+          "al_decir": "anoto seis mil trescientos"
+        }
+      ]
+    },
+    {
+      "id": "02-apu-mo",
+      "capitulo": "Análisis de precio unitario",
+      "rotulo": "Aplicar al borrador",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Materiales + mano de obra = costo por unidad",
+      "narracion": "Falta la mano de obra. Agrego otro recurso. En su tipo abro la lista, y elijo Mano de obra. En su descripción escribo Cuadrilla de vaciado. Con la descripción lista, en su cantidad por unidad anoto uno también. Y en su costo unitario anoto dos mil setecientos pesos, lo que cobra la cuadrilla por metro cúbico. Arriba, el panel suma: el costo por unidad es nueve mil pesos, y el de la partida, con sus ochenta metros cúbicos, setecientos veinte mil. Si un material se desperdicia, se indica en su porcentaje de desperdicio. Pulso Aplicar al borrador, y el costo pasa a la partida. Cierro el panel.",
+      "acciones": [
+        {
+          "click": "aside.apu-panel button:has-text('Agregar recurso')",
+          "al_decir": "Agrego otro recurso"
+        },
+        {
+          "click": "aside.apu-panel mat-form-field:has-text('Tipo') mat-select >> nth=1",
+          "al_decir": "En su tipo abro"
+        },
+        {
+          "click": "mat-option:has-text('Mano de obra')",
+          "al_decir": "elijo Mano de obra"
+        },
+        {
+          "escribir": {
+            "sel": "aside.apu-panel mat-form-field:has-text('Descripción') input >> nth=1",
+            "texto": "Cuadrilla de vaciado"
+          },
+          "al_decir": "escribo Cuadrilla"
+        },
+        {
+          "escribir": {
+            "sel": "aside.apu-panel mat-form-field:has-text('Cantidad por unidad') input >> nth=1",
+            "texto": "1"
+          },
+          "al_decir": "anoto uno también"
+        },
+        {
+          "escribir": {
+            "sel": "aside.apu-panel mat-form-field:has-text('Costo unitario') input >> nth=1",
+            "texto": "2700"
+          },
+          "al_decir": "anoto dos mil setecientos"
+        },
+        {
+          "resaltar": "aside.apu-panel :text('Costo por unidad') >> nth=0",
+          "durante_ms": 9000,
+          "cursor": false,
+          "al_decir": "el panel suma"
+        },
+        {
+          "resaltar": "aside.apu-panel mat-form-field:has-text('Desperdicio') >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Si un material"
+        },
+        {
+          "click": "aside.apu-panel button:has-text('Aplicar al borrador')",
+          "al_decir": "Pulso Aplicar al borrador"
+        },
+        {
+          "click_opcional": "button[aria-label='Cerrar el análisis de precio unitario']",
+          "al_decir": "Cierro el panel"
+        }
+      ]
+    },
+    {
+      "id": "03-porcentajes",
+      "capitulo": "Del costo al precio",
+      "rotulo": "Indirectos y utilidad",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Costo directo + indirectos + utilidad = precio",
+      "narracion": "Con todas las partidas costeadas, el costo directo de la obra es cinco millones de pesos. Para llegar al precio del cliente faltan los porcentajes. En Indirectos anoto diez: son los gastos de la obra que no pertenecen a una partida, como la supervisión. Imprevistos lo dejo en cero. Y en Utilidad anoto veinte, la ganancia sobre el costo. Las cifras se recalculan al momento: el precio antes de impuestos queda en seis millones seiscientos mil pesos. Abajo, cada partida muestra ya su precio, y la última fila da el total. Pulso Guardar presupuesto, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "resaltar": ".budget-figs .gm-fig >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "el costo directo de la obra"
+        },
+        {
+          "escribir": {
+            "sel": "label.rate:has-text('Indirectos') input",
+            "texto": "10"
+          },
+          "al_decir": "En Indirectos anoto diez"
+        },
+        {
+          "resaltar": "label.rate:has-text('Imprevistos')",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "Imprevistos lo dejo"
+        },
+        {
+          "escribir": {
+            "sel": "label.rate:has-text('Utilidad') input",
+            "texto": "20"
+          },
+          "al_decir": "en Utilidad anoto veinte"
+        },
+        {
+          "resaltar": ".budget-figs .gm-fig:has-text('Precio antes de impuestos')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el precio antes de impuestos"
+        },
+        {
+          "resaltar": "table.tree tr:has-text('Total del presupuesto') td >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "la última fila"
+        },
+        {
+          "click": "button:has-text('Guardar presupuesto')",
+          "al_decir": "Pulso Guardar presupuesto"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "04-detalle",
+      "capitulo": "El detalle y la exportación",
+      "rotulo": "Fechas, tarea y detalle",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Fechas, tarea, ITBIS · PDF y Excel",
+      "narracion": "Cada partida tiene además su detalle. Abro el menú de la primera, y elijo Fechas, tarea y detalle. Aquí van el inicio y el fin previstos de la partida, que arman el cronograma; la tarea del proyecto a la que se vincula; y el ITBIS estimado, con base presunta si el contrato la admite. También sus propios porcentajes de indirectos y utilidad, si difieren de los generales. Cancelo, y subo a la barra de versión. Con el presupuesto guardado, Excel descarga la estructura completa, que también sirve de plantilla para importar. Y PDF genera dos documentos: uno para el cliente, solo con precios, y uno interno, con los costos.",
+      "acciones": [
+        {
+          "click": "button[aria-label^='Más acciones de Excavación']",
+          "al_decir": "Abro el menú de la primera"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Fechas, tarea y detalle')",
+          "al_decir": "elijo Fechas, tarea"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container [formcontrolname='plannedStartDate']",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "el inicio y el fin"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has-text('Tarea vinculada')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "la tarea del proyecto"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has-text('ITBIS estimado')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "y el ITBIS estimado"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has-text('Indirectos de esta partida')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "sus propios porcentajes"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "Cancelo"
+        },
+        {
+          "resaltar": "button:has-text('Excel / plantilla')",
+          "durante_ms": 6000,
+          "cursor": true,
+          "al_decir": "Excel descarga"
+        },
+        {
+          "click": "button:has-text('PDF')",
+          "al_decir": "Y PDF genera"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "uno para el cliente"
+        }
+      ]
+    }
+  ]
+}

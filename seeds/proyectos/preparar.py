@@ -115,7 +115,14 @@ def presupuesto(b, proyecto_id, partidas=PARTIDAS, sin_costo=(), indirectos="10"
         envio = llamar("POST", f"{ruta}/submit", {})
         como("laura.mendez", "POST", f"{ruta}/approve", {"level": 1, "submissionNumber": envio["submissionNumber"],
                                                          "notes": "Revisado contra la cotización"})
-    return {"id": p["id"], "version": version, "ruta": ruta}
+    detalle = llamar("GET", ruta)
+    por_nodo = {l["wbsNodeId"]: l for l in detalle.get("lines", [])}
+    lineas = {}
+    for clave, _fase, nombre, *_ in partidas:
+        nodo = next(n for n in detalle["nodes"] if n["name"] == nombre)
+        lineas[clave] = {"id": por_nodo[nodo["id"]]["id"], "lineKey": por_nodo[nodo["id"]]["lineKey"],
+                         "codigo": nodo["code"]}
+    return {"id": p["id"], "version": version, "ruta": ruta, "lineas": lineas}
 
 
 # ── estados ──────────────────────────────────────────────────────────────────
@@ -154,8 +161,51 @@ def aprobado():
     return b
 
 
+def proveedor(nombre, rnc):
+    return c.proveedor({"name": nombre, "tin": rnc}, False)
+
+
+def compra_de_obra(b, proveedor_id, ncf, concepto, monto, clave, fecha="2026-11-10", emitir=True):
+    """Factura de compra B01 de un servicio para una partida del proyecto."""
+    f = llamar("POST", "/v1/invoices/inline", {
+        "issuedDate": fecha, "ncfType": c.ncf_tipo("B01"), "partner": proveedor_id, "paymentType": 2,
+        "paymentDueDate": "2026-12-10", "currency": c.DOP, "goods606Category": "02", "ncf": ncf,
+        "recordAsPurchase": True, "project": b["proyecto"]["id"], "notes": concepto,
+        "details": [{"productName": concepto, "goodOrServiceIndicator": 2, "quantity": 1, "unitPrice": monto,
+                     "tax": c.ITBIS_18, "projectBudgetLine": b["presupuesto"]["lineas"][clave]["id"]}]})
+    if emitir:
+        llamar("PATCH", f"/v1/invoices/change-status/{f['invoiceNumber']}", {"invoiceStatusCode": "EMITTED"})
+    return f["invoiceNumber"]
+
+
+def orden_de_obra(b, proveedor_id, producto, cantidad, precio, clave):
+    """Orden de compra del proyecto, aprobada por Laura: queda como compromiso."""
+    o = llamar("POST", "/v1/orders", {
+        "orderType": "PURCHASE", "partnerId": proveedor_id, "requestedDeliveryDate": "2026-12-01",
+        "warehouseId": b["almacen"], "project": b["proyecto"]["id"],
+        "orderLines": [{"productId": producto, "quantity": cantidad, "unitPrice": precio,
+                        "projectBudgetLine": b["presupuesto"]["lineas"][clave]["id"]}]})
+    llamar("POST", f"/v1/orders/{o['id']}/submit-approval", {})
+    como("laura.mendez", "POST", f"/v1/orders/{o['id']}/approve", {})
+    return o
+
+
+def control():
+    # P05: presupuesto aprobado, una compra ya contabilizada en Excavación
+    # (250,000 de real) y una orden aprobada de acero (450,000 comprometidos).
+    b = aprobado()
+    b["movitierra"] = proveedor("Movimientos de Tierra Germiva S.R.L.", "130555041")
+    b["aceros"] = proveedor("Aceros Germiva del Caribe S.R.L.", "130555051")
+    compra_de_obra(b, b["movitierra"], "B0100000321", "Excavación de zapatas, primera etapa", 250000, "exc")
+    acero = llamar("POST", "/v1/product", {
+        "category": "PRODUCT", "name": "Acero estructural A36", "code": "MAT-ACERO", "tax": c.ITBIS_18,
+        "unitMeasure": TON, "unitMeasureValue": "1", "managesInventory": True, "active": True})["id"]
+    orden_de_obra(b, b["aceros"], acero, 10, 45000, "est")
+    return b
+
+
 ESTADOS = {"inicio": inicio, "con-proyecto": con_proyecto, "borrador": borrador,
-           "por-aprobar": por_aprobar, "aprobado": aprobado}
+           "por-aprobar": por_aprobar, "aprobado": aprobado, "control": control}
 
 if __name__ == "__main__":
     c.TOKEN = c.token()

@@ -95,18 +95,24 @@
       "narracion": "Un proyecto reúne todo lo de una obra o un contrato: su presupuesto, sus compras, sus horas y su facturación. Esta es la Cartera de proyectos, en el menú Proyectos. Recojo el menú. Arriba resume los proyectos activos, lo comprometido y los que están en riesgo; y abajo lista cada proyecto con su estado, su avance y sus indicadores. Todavía no hay ninguno: voy a crear el primero con el botón Nuevo proyecto.",
       "acciones": [
         {
-          "resaltar": "section.pf-figures",
-          "durante_ms": 5500,
+          "resaltar": "app-breadcrumb, .breadcrumb >> nth=0",
+          "durante_ms": 3000,
           "cursor": false,
-          "al_decir": "Arriba resume"
+          "al_decir": "todo lo de una obra"
         },
         {
           "click": "button.panel-collapse",
           "al_decir": "Recojo el menú"
         },
         {
-          "resaltar": "thead >> nth=0",
-          "durante_ms": 5000,
+          "resaltar": "section.pf-figures",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Arriba resume"
+        },
+        {
+          "resaltar": ":text('Cartera de proyectos') >> nth=-1",
+          "durante_ms": 4000,
           "cursor": false,
           "al_decir": "abajo lista cada proyecto"
         },
@@ -122,14 +128,14 @@
       "rotulo": "Crear Proyecto",
       "ruta": "Proyectos › Proyectos › Nuevo",
       "texto_pantalla": "Nombre · fechas · cliente · gerente · equipo",
-      "narracion": "Empiezo por el nombre: Nave industrial Haina. El código lo asigna el sistema, y el estado empieza en Planificación. Después van las fechas. En Fecha de inicio escribo el dos de noviembre de dos mil veintiséis. Y en Fecha de fin, el treinta de abril del año siguiente. El presupuesto, el costo real y el avance no se escriben aquí: se calculan solos desde el presupuesto del proyecto. Sigo con las relaciones. En Cliente escribo Industrias, para buscar al dueño de la obra. Aparece en la lista, y lo elijo. En Gerente de proyecto escribo Admin, para buscar al responsable. Aparece, y lo elijo: el gerente ve todo el proyecto. En Miembros del equipo abro la lista, marco a Laura Méndez, y cierro la lista. Solo el gerente, el equipo y quien tenga permiso para ver todos pueden abrir el proyecto.",
+      "narracion": "El formulario empieza por la información básica. En Nombre escribo el de la obra: Nave industrial Haina. El código lo asigna el sistema, y el estado empieza en Planificación. Después van las fechas. En Fecha de inicio escribo el dos de noviembre de dos mil veintiséis. Y en Fecha de fin, el treinta de abril del año siguiente. El presupuesto, el costo real y el avance no se escriben aquí: se calculan solos desde el presupuesto del proyecto. Sigo con las relaciones. En Cliente escribo Industrias, para buscar al dueño de la obra. Aparece en la lista, y lo selecciono. En Gerente de proyecto escribo Admin, para buscar al responsable de la obra. Aparece también, y lo elijo: el gerente ve todo el proyecto. En Miembros del equipo abro la lista, marco a Laura Méndez, y cierro la lista. Solo el gerente, el equipo y quien tenga permiso para ver todos pueden abrir el proyecto.",
       "acciones": [
         {
           "escribir": {
             "sel": "input[formcontrolname='name']",
             "texto": "Nave industrial Haina"
           },
-          "al_decir": "Empiezo por el nombre"
+          "al_decir": "En Nombre escribo"
         },
         {
           "resaltar": "mat-form-field:has(mat-select[formcontrolname='status'])",
@@ -166,7 +172,7 @@
         },
         {
           "click": "mat-option:has-text('Industrias Germiva')",
-          "al_decir": "y lo elijo"
+          "al_decir": "y lo selecciono"
         },
         {
           "escribir": {
@@ -177,7 +183,7 @@
         },
         {
           "click": "mat-option:has-text('Administrador')",
-          "al_decir": "Aparece, y lo elijo"
+          "al_decir": "también, y lo elijo"
         },
         {
           "click": "mat-select[formcontrolname='teamMembers']",
@@ -192,6 +198,12 @@
             "tecla": "Escape"
           },
           "al_decir": "cierro la lista"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='teamMembers'])",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Solo el gerente"
         }
       ]
     },
@@ -201,8 +213,14 @@
       "rotulo": "Contabilidad y almacén",
       "ruta": "Proyectos › Proyectos › Nuevo",
       "texto_pantalla": "El proyecto conectado a la contabilidad y al inventario",
-      "narracion": "La última sección conecta el proyecto con la contabilidad y con el inventario. En Centro de costo abro la lista, y elijo Obra Nave Haina: los ingresos y gastos del proyecto que no traigan un centro propio irán a ese. En Almacén de obra escribo Sur, para buscar el almacén. Aparece, y lo elijo: lo que se compre para el proyecto entrará por omisión a ese almacén. Pulso Guardar. El sistema confirma que el proyecto quedó creado, y acepto.",
+      "narracion": "La última sección conecta el proyecto con la contabilidad y con el inventario. En Centro de costo abro la lista, y elijo Obra Nave Haina: los ingresos y gastos del proyecto que no traigan un centro propio irán a ese. En Almacén de obra escribo Sur, para buscar el almacén donde se recibirá el material. Aparece en la lista, y lo elijo: lo que se compre para el proyecto entrará por omisión a ese almacén. Pulso Guardar. El sistema confirma que el proyecto quedó creado, y acepto.",
       "acciones": [
+        {
+          "resaltar": "#project-dimensions-title",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "La última sección"
+        },
         {
           "click": "app-cost-center-field mat-select",
           "al_decir": "En Centro de costo abro"
@@ -220,7 +238,7 @@
         },
         {
           "click": "mat-option:has-text('Almacén Sur')",
-          "al_decir": "Aparece, y lo elijo"
+          "al_decir": "en la lista, y lo elijo"
         },
         {
           "click": ".project-actions button:has-text('Guardar')",
@@ -302,7 +320,7 @@
       "rotulo": "Tareas del proyecto",
       "ruta": "Proyectos › Cartera › PRJ › Tareas",
       "texto_pantalla": "Responsable, fecha límite y dependencias",
-      "narracion": "Abro la pestaña Tareas, y pulso Nueva tarea. En Nombre escribo la primera: Permiso de construcción. Con el nombre escrito, en Responsable abro la lista, y elijo a Laura Méndez. La tarea también lleva estado, prioridad, fecha límite, horas estimadas, y las tareas de las que depende. Guardo, y el aviso lo confirma. La tarea queda en la lista del proyecto, y más adelante se puede vincular a una partida del presupuesto. Con el proyecto creado, el siguiente paso es su presupuesto.",
+      "narracion": "Termino con el trabajo por hacer. Abro la pestaña Tareas, y con la lista todavía vacía pulso Nueva tarea. Se abre su formulario. En Nombre escribo la primera: Permiso de construcción. Con el nombre de la tarea ya escrito, en Responsable abro la lista, y elijo a Laura Méndez. La tarea también lleva estado, prioridad, fecha límite, horas estimadas, y las tareas de las que depende. Guardo, y el aviso lo confirma. La tarea queda en la lista del proyecto, y más adelante se puede vincular a una partida del presupuesto. Con el proyecto creado, el siguiente paso es su presupuesto.",
       "acciones": [
         {
           "click": "a.ws-tab:has-text('Tareas')",
@@ -348,7 +366,7 @@
           "cursor": false
         },
         {
-          "resaltar": "tr:has-text('Permiso de construcción')",
+          "resaltar": ":text('Permiso de construcción') >> nth=0",
           "durante_ms": 4500,
           "cursor": false,
           "al_decir": "La tarea queda en la lista"

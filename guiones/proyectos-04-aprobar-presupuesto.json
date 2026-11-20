@@ -1,0 +1,354 @@
+{
+  "titulo": "Proyectos · Aprobar el presupuesto, línea base y revisiones",
+  "descripcion": "Cómo se envía a aprobación el presupuesto de un proyecto en Germiva, quién puede aprobarlo, qué es la línea base, cómo crear una revisión, comparar versiones y definir los niveles de aprobación por monto.",
+  "_comentario": "Video 04 de la serie Proyectos. setup: seeds/proyectos/preparar.sh por-aprobar (presupuesto completo en borrador, preparado por el administrador; Laura Méndez es la otra supervisora). El video cambia de usuario en cámara.",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects",
+    "esperar": "button[aria-label='Abrir proyecto']"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh por-aprobar"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Enviar el presupuesto a aprobación",
+    "Por qué lo aprueba otra persona",
+    "Qué son la línea base y el presupuesto vigente",
+    "Crear una revisión y comparar versiones"
+  ],
+  "errores_comunes": [
+    "Querer aprobar el presupuesto que uno mismo preparó",
+    "Editar una versión aprobada: se crea una revisión",
+    "Enviar a aprobación con cambios sin guardar"
+  ],
+  "pasos": [
+    {
+      "id": "01-enviar",
+      "capitulo": "Enviar a aprobación",
+      "rotulo": "Enviar a aprobación",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Borrador → En aprobación",
+      "narracion": "Un presupuesto en borrador todavía no controla nada: primero hay que aprobarlo. Recojo el menú, abro el proyecto, voy a su pestaña Presupuesto, y lo abro con Ver presupuesto. Arriba se ven los pasos de la versión: borrador, en aprobación, aprobada y vigente. El presupuesto ya está completo: cinco millones de costo, y seis millones seiscientos mil de precio. Bajo hasta el final de las partidas, y pulso Enviar a aprobación. El sistema pide confirmar; confirmo. La versión pasa a En aprobación y ya no se puede editar. Pero yo no puedo aprobarla: quien prepara o envía un presupuesto no lo aprueba. Lo tiene que hacer otra persona con ese permiso.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button[aria-label='Abrir proyecto']",
+          "al_decir": "abro el proyecto"
+        },
+        {
+          "click": "a.ws-tab:has-text('Presupuesto')",
+          "al_decir": "pestaña Presupuesto"
+        },
+        {
+          "click": "button[aria-label='Ver presupuesto']",
+          "al_decir": "Ver presupuesto"
+        },
+        {
+          "resaltar": "ol.version-bar__steps",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "los pasos de la versión"
+        },
+        {
+          "resaltar": ".budget-figs .gm-fig >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "cinco millones de costo"
+        },
+        {
+          "resaltar": ".budget-figs .gm-fig:has-text('Precio antes de impuestos')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "seis millones seiscientos"
+        },
+        {
+          "resaltar": "table.tree tr:has-text('Total del presupuesto') td >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "Bajo hasta el final"
+        },
+        {
+          "click": "button:has-text('Enviar a aprobación')",
+          "al_decir": "pulso Enviar a aprobación"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "El sistema pide confirmar"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "ol.version-bar__steps",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "ya no se puede editar"
+        },
+        {
+          "resaltar": "button.topbar-user",
+          "durante_ms": 3500,
+          "cursor": true,
+          "al_decir": "Lo tiene que hacer otra persona"
+        }
+      ]
+    },
+    {
+      "id": "02-aprobar",
+      "capitulo": "Aprobar",
+      "rotulo": "Aprueba otra persona",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Quien prepara no aprueba",
+      "narracion": "Salgo, para que entre Laura Méndez, la otra supervisora de la empresa. Abro el menú del usuario, y cierro sesión. En el acceso entro como Laura: escribo su usuario. Después, en el campo de la contraseña, escribo su clave. Con el usuario y la clave ya escritos, pulso el botón Iniciar sesión.",
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "Abro el menú del usuario"
+        },
+        {
+          "click": ".mat-mdc-menu-panel :text('Cerrar sesión')",
+          "al_decir": "cierro sesión"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "laura.mendez"
+          },
+          "al_decir": "escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "escribo su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso el botón Iniciar"
+        }
+      ]
+    },
+    {
+      "id": "03-aprobar",
+      "capitulo": "Aprobar",
+      "rotulo": "Decisión de aprobación",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Aprobado: línea base y presupuesto vigente",
+      "navegar": "/projects",
+      "narracion": "Ya con la sesión de Laura, en la cartera de Proyectos abro el proyecto, voy a su pestaña Presupuesto, y entro con Ver presupuesto. Al final de la versión está la Decisión de aprobación, con el nivel que le toca. En Observaciones escribo una nota: Revisado contra la cotización. La nota es opcional al aprobar, y obligatoria si se rechaza. Pulso Aprobar nivel uno. El sistema pide confirmar; confirmo, y el aviso lo confirma. La versión queda aprobada y congelada: es la línea base del proyecto, y también el presupuesto vigente, contra el que se controlarán las compras, las horas y las facturas.",
+      "acciones": [
+        {
+          "click": "button[aria-label='Abrir proyecto']",
+          "al_decir": "abro el proyecto"
+        },
+        {
+          "click": "a.ws-tab:has-text('Presupuesto')",
+          "al_decir": "pestaña Presupuesto"
+        },
+        {
+          "click": "button[aria-label='Ver presupuesto']",
+          "al_decir": "Ver presupuesto"
+        },
+        {
+          "resaltar": "app-budget-approval",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "la Decisión de aprobación"
+        },
+        {
+          "escribir": {
+            "sel": "app-budget-approval textarea",
+            "texto": "Revisado contra la cotización."
+          },
+          "al_decir": "En Observaciones escribo"
+        },
+        {
+          "click": "app-budget-approval button:has-text('Aprobar nivel 1')",
+          "al_decir": "Pulso Aprobar nivel uno"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "El sistema pide confirmar"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "confirmo, y el aviso"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "ol.version-bar__steps",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "queda aprobada y congelada"
+        },
+        {
+          "resaltar": "nav.ws-tabs",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "contra el que se controlarán"
+        }
+      ]
+    },
+    {
+      "id": "04-revision",
+      "capitulo": "Revisiones y versiones",
+      "rotulo": "Crear revisión",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Una versión aprobada no se edita: se revisa",
+      "narracion": "Una versión aprobada no se edita. Si los costos cambian, se crea una revisión. Abajo, en Nueva revisión, escribo el motivo: Ajuste del precio del acero. Con el motivo escrito, pulso Crear revisión. Nace la versión dos, en borrador, con todas las partidas copiadas. Ahí se corrigen costos y cantidades; el precio pactado con el cliente no cambia en una revisión interna: para eso están las órdenes de cambio. Mientras la versión dos no se apruebe, la uno sigue vigente. Y el selector Comparar con muestra, partida por partida, la diferencia entre dos versiones.",
+      "acciones": [
+        {
+          "resaltar": "table.tree tr:has-text('Total del presupuesto') td >> nth=0",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "se crea una revisión"
+        },
+        {
+          "escribir": {
+            "sel": "app-budget-approval input, input[placeholder*='revisión'], mat-form-field:has-text('Motivo de la revisión') input",
+            "texto": "Ajuste del precio del acero"
+          },
+          "al_decir": "escribo el motivo"
+        },
+        {
+          "click": "button:has-text('Crear revisión')",
+          "al_decir": "pulso Crear revisión"
+        },
+        {
+          "resaltar": "section.version-bar mat-form-field:has-text('Versión') >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Nace la versión dos"
+        },
+        {
+          "resaltar": ".budget-figs .gm-fig:has-text('Precio antes de impuestos')",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "el precio pactado"
+        },
+        {
+          "resaltar": "section.version-bar mat-form-field:has-text('Comparar con')",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "selector Comparar con"
+        }
+      ]
+    },
+    {
+      "id": "05-niveles",
+      "capitulo": "Niveles de aprobación",
+      "rotulo": "Configuración de presupuestos",
+      "ruta": "Proyectos › Configuración de presupuestos",
+      "texto_pantalla": "Hasta tres niveles, según el monto",
+      "navegar": "/projects/settings",
+      "narracion": "Quién aprueba se define en Proyectos, Configuración de presupuestos. Abajo están los niveles de aprobación por monto: de uno a tres, cada uno con su límite y con el permiso que lo aprueba. Un presupuesto pequeño lo firma el primer nivel; uno grande necesita, en orden, la firma de cada nivel. Con el presupuesto aprobado, el proyecto ya puede controlar lo que se compra.",
+      "acciones": [
+        {
+          "resaltar": "h1, .page-title, app-breadcrumb >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Configuración de presupuestos"
+        },
+        {
+          "resaltar": ":text('Niveles de aprobación por monto') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "los niveles de aprobación"
+        },
+        {
+          "resaltar": "button:has-text('Agregar nivel')",
+          "durante_ms": 5000,
+          "cursor": true,
+          "al_decir": "de uno a tres"
+        },
+        {
+          "resaltar": ":text('Niveles de aprobación por monto') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Un presupuesto pequeño"
+        }
+      ]
+    }
+  ]
+}

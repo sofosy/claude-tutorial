@@ -124,6 +124,12 @@
           "al_decir": "en Tolerancia anoto cinco"
         },
         {
+          "resaltar": "mat-form-field:has(input[formcontrolname='controlTolerancePercentage']) mat-hint",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "solo avisa, aunque"
+        },
+        {
           "click": "button:has-text('Guardar control')",
           "al_decir": "pulso Guardar control"
         },
@@ -306,7 +312,7 @@
           "al_decir": "hay dos salidas"
         },
         {
-          "resaltar": "header button:has-text('notifications') >> nth=0",
+          "resaltar": "button.mat-mdc-menu-trigger:not(.topbar-user) >> nth=0",
           "durante_ms": 5000,
           "cursor": true,
           "al_decir": "un aviso en la campanita"

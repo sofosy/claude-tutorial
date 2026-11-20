@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Proyectos · Crear un proyecto y conocer su espacio de trabajo
+
+DESCRIPCIÓN
+============================================================
+Cómo crear un proyecto en Germiva con su cliente, su gerente, su equipo, su centro de costo y su almacén de obra, recorrer las pestañas de su espacio de trabajo y registrar sus tareas.
+
+⏱️ CAPÍTULOS
+00:00  La cartera
+00:31  Los datos del proyecto
+01:33  Centro de costo y almacén
+02:05  El espacio de trabajo
+02:48  Las tareas
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear un proyecto con cliente, gerente y equipo
+• Conectarlo a un centro de costo y a un almacén de obra
+• Recorrer las pestañas del proyecto
+• Registrar las tareas del proyecto
+
+⚠️ ERRORES COMUNES
+• Dejar el proyecto sin centro de costo: sus gastos caen en el predeterminado
+• Buscar Control o Avance antes de aprobar el presupuesto: aparecen después
+• Escribir el presupuesto a mano en la ficha: se calcula desde el presupuesto del proyecto
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:33
+
+TRANSCRIPCIÓN
+============================================================
+Un proyecto reúne todo lo de una obra o un contrato: su presupuesto, sus compras, sus horas y su facturación. Esta es la Cartera de proyectos, en el menú Proyectos. Recojo el menú. Arriba resume los proyectos activos, lo comprometido y los que están en riesgo; y abajo lista cada proyecto con su estado, su avance y sus indicadores. Todavía no hay ninguno: voy a crear el primero con el botón Nuevo proyecto.
+El formulario empieza por la información básica. En Nombre escribo el de la obra: Nave industrial Haina. El código lo asigna el sistema, y el estado empieza en Planificación. Después van las fechas. En Fecha de inicio escribo el dos de noviembre de dos mil veintiséis. Y en Fecha de fin, el treinta de abril del año siguiente. El presupuesto, el costo real y el avance no se escriben aquí: se calculan solos desde el presupuesto del proyecto. Sigo con las relaciones. En Cliente escribo Industrias, para buscar al dueño de la obra. Aparece en la lista, y lo selecciono. En Gerente de proyecto escribo Admin, para buscar al responsable de la obra. Aparece también, y lo elijo: el gerente ve todo el proyecto. En Miembros del equipo abro la lista, marco a Laura Méndez, y cierro la lista. Solo el gerente, el equipo y quien tenga permiso para ver todos pueden abrir el proyecto.
+La última sección conecta el proyecto con la contabilidad y con el inventario. En Centro de costo abro la lista, y elijo Obra Nave Haina: los ingresos y gastos del proyecto que no traigan un centro propio irán a ese. En Almacén de obra escribo Sur, para buscar el almacén donde se recibirá el material. Aparece en la lista, y lo elijo: lo que se compre para el proyecto entrará por omisión a ese almacén. Pulso Guardar. El sistema confirma que el proyecto quedó creado, y acepto.
+Este es el espacio de trabajo del proyecto. Arriba, su nombre, el estado, el cliente, el gerente y las fechas. Y debajo, las pestañas, una por cada parte de la obra. Resumen muestra el tablero y la ficha que acabo de llenar. Presupuesto, el desglose de costos y precios. Facturación, el contrato con el cliente y sus facturas. Subcontratos, lo pactado con cada subcontratista. Horas, la mano de obra de la semana. Y Tareas, el trabajo por hacer. Cuando el presupuesto esté aprobado aparecerán tres pestañas más: Control, Avance y Cambios.
+Termino con el trabajo por hacer. Abro la pestaña Tareas, y con la lista todavía vacía pulso Nueva tarea. Se abre su formulario. En Nombre escribo la primera: Permiso de construcción. Con el nombre de la tarea ya escrito, en Responsable abro la lista, y elijo a Laura Méndez. La tarea también lleva estado, prioridad, fecha límite, horas estimadas, y las tareas de las que depende. Guardo, y el aviso lo confirma. La tarea queda en la lista del proyecto, y más adelante se puede vincular a una partida del presupuesto. Con el proyecto creado, el siguiente paso es su presupuesto.
