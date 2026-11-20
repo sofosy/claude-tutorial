@@ -15,6 +15,7 @@ Además del MP3, guarda por paso un sidecar `<paso>.json` con:
 import asyncio
 import hashlib
 import json
+import os
 import re
 import shutil
 import subprocess
@@ -198,6 +199,14 @@ async def _sintetizar(texto, voz, velocidad, destino):
     if voz.startswith("eleven:"):
         return _sintetizar_eleven_con_cache(texto, voz, destino)
     import edge_tts  # sólo si se usa: el motor offline no lo necesita
+    # Detrás de un proxy que inspecciona TLS (sesiones en la nube), edge-tts solo
+    # confía en certifi y la conexión falla. Si el entorno declara su propio
+    # paquete de autoridades, se usa ese.
+    ca = os.environ.get("SSL_CERT_FILE")
+    if ca and os.path.exists(ca):
+        import ssl
+        from edge_tts import communicate as _com
+        _com._SSL_CTX = ssl.create_default_context(cafile=ca)
     # edge-tts ≥ 7 manda límites de FRASE por defecto; los de palabra hay que pedirlos
     com = edge_tts.Communicate(texto, voz, rate=velocidad, boundary="WordBoundary")
     palabras = []
