@@ -232,6 +232,67 @@ VIDEOS["productos-03-servicio-fiscal-tienda"] = {
     ],
 }
 
+# ───────────────────────── 08 · Convertir la unidad base ─────────────────────────
+VIDEOS["productos-08-convertir-unidad-base"] = {
+    "titulo": "Productos · Parte 8: convertir la unidad base",
+    "descripcion": "Octavo video de Productos en Germiva ERP: qué hacer cuando un producto que llevabas por caja ahora quieres venderlo suelto. «Convertir unidad base» pasa la existencia, el costo, los precios y el kardex a la unidad nueva en un solo paso, y deja la caja como empaque.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 8. Estado A: «Galletas soda Crocante» con unidad base Caja/Cajón, 20 cajas a costo 180, RD$300 con ITBIS, mínimo 5 / máximo 40. Conversión a Unidad con factor 12: existencia 20 → 240, costo 180 → 15, precio 300 → 25 (exacto: ya no hay aviso de redondeo), mínimo 60 / máximo 480, y la caja queda como empaque ×12 a 300.",
+    "sesion": LISTA, "setup": RESTAURAR("A"),
+    "aprenderas": ["Cuándo hace falta convertir la unidad base", "Usar «Ver impacto» antes de convertir", "Qué cambia: existencia, costo, precio, mínimo y máximo", "Cómo queda la caja como empaque después de convertir"],
+    "errores_comunes": ["Cambiar la unidad de medida a mano: la existencia y el costo quedan en la unidad equivocada", "Convertir sin revisar el impacto", "Olvidar que se puede revertir solo mientras no haya movimientos nuevos"],
+    "pasos": [
+        {
+            "id": "01-abrir", "capitulo": "El caso: de cajas a unidades", "rotulo": "El caso",
+            "ruta": "Inventario › Productos",
+            "narracion": "Estas galletas se llevan por caja: veinte cajas en existencia, a trescientos pesos cada una. Ahora la tienda quiere venderlas sueltas. Eso no se resuelve cambiando la unidad de medida a mano: hay que convertir la unidad base. Abro la ficha con el lápiz. En características enciendo se compra o se vende en empaques, que se guarda al momento. Y abajo, en la sección unidad base, pulso Convertir unidad base.",
+            "acciones": [
+                marca(fila("Galletas soda Crocante", 5), "veinte cajas", 1500),
+                marca(fila("Galletas soda Crocante", 4), "a trescientos pesos", 2500),
+                cartel("Cuidado", "No cambies la unidad de medida a mano: usa «Convertir unidad base».", "Eso no se resuelve", 6000),
+                clic("table tbody tr:has-text('Galletas soda Crocante') button[aria-label='Abrir']", "Abro la ficha"),
+                clic("button[aria-label='Se compra o se vende en empaques']", "enciendo se compra"),
+                clic("button:has-text('Convertir unidad base')", "pulso Convertir"),
+            ],
+        },
+        {
+            "id": "02-impacto", "capitulo": "Ver el impacto y convertir", "rotulo": "Ver impacto",
+            "ruta": "Inventario › Productos › Galletas soda Crocante",
+            "narracion": "El asistente pide dos datos. La unidad nueva: abro la lista y elijo unidad. Y cuántas unidades trae cada caja; aquí son doce. Antes de tocar nada, conviene revisar qué va a pasar: pulso Ver impacto. Arriba, el resumen: la existencia pasa de veinte cajas a doscientas cuarenta unidades, y el valor del inventario no cambia. En la tabla, el costo baja de ciento ochenta por caja a quince por unidad, y el mínimo y el máximo se multiplican por doce. Además, la caja no se pierde: queda como empaque, a sus trescientos pesos, para seguir comprándola igual. Todo cuadra, así que pulso Convertir. El sistema pide una confirmación, porque el cambio toca todo el producto; la doy. El aviso final dice que la caja quedó como empaque; lo cierro.",
+            "acciones": [
+                marca(DIALOGO, "El asistente pide", 2000, cursor=False),
+                clic(f"{DIALOGO} mat-select[formcontrolname='unitMeasureId']", "abro la lista"),
+                clic("mat-option:has-text('Unidad') >> nth=0", "elijo unidad"),
+                teclea(f"{DIALOGO} input[formcontrolname='factor']", "12", "aquí son doce"),
+                clic(f"{DIALOGO} button:has-text('Ver impacto')", "pulso Ver impacto"),
+                marca(f"{DIALOGO} .gm-dialog-facts", "Arriba, el resumen", 7000),
+                marca(f":nth-match({DIALOGO} .conversion-table, 2) tbody tr:has-text('Costo promedio')", "el costo baja", 4000),
+                marca(f":nth-match({DIALOGO} .conversion-table, 2) tbody tr:has-text('Mínimo')", "el mínimo y el máximo", 3000),
+                marca(f"{DIALOGO} p.gm-dialog-note:has-text('Se crea el empaque')", "queda como empaque", 5000),
+                clic(f"{DIALOGO} button:has-text('Convertir'):not(:has-text('Sí'))", "pulso Convertir"),
+                marca(f"{DIALOGO}:has-text('¿Convertir la unidad base?')", "pide una confirmación", 3000, cursor=False),
+                clic("button:has-text('Sí, convertir')", "la doy"),
+                marca(ALERTA, "El aviso final", 3000, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Entendido')", "lo cierro"),
+            ],
+        },
+        {
+            "id": "03-resultado", "capitulo": "La ficha después de convertir", "rotulo": "El resultado",
+            "ruta": "Inventario › Productos",
+            "navegar": "/inventory/product/list",
+            "narracion": "Para ver el resultado, vuelvo al catálogo y busco las galletas por su nombre. Ahí está la fila. El stock ya dice doscientas cuarenta, y el precio de venta, veinticinco pesos: trescientos entre doce. Abro la ficha. La unidad de medida ahora es unidad. Y en unidades y empaques está la caja por doce, con su precio de trescientos y la estrella de compra: se sigue comprando por caja, y ahora también se vende suelta. Si te equivocaste, la conversión se puede revertir mientras no haya movimientos nuevos.",
+            "acciones": [
+                teclea(filtro("Buscar") + " input", "Galletas", "busco las galletas"),
+                marca(fila("Galletas soda Crocante", 5), "El stock ya dice", 2000),
+                marca(fila("Galletas soda Crocante", 4), "el precio de venta", 3500),
+                clic("table tbody tr:has-text('Galletas soda Crocante') button[aria-label='Abrir']", "Abro la ficha"),
+                marca("mat-form-field:has(mat-label:has-text('Unidad de medida'))", "La unidad de medida ahora", 2500),
+                marca("app-product-units-panel tbody tr:nth-child(1)", "la caja por doce", 7000),
+                marca("button:has-text('Convertir unidad base'), button:has-text('Revertir')", "se puede revertir", 4500),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
