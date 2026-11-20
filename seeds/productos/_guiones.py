@@ -293,6 +293,71 @@ VIDEOS["productos-08-convertir-unidad-base"] = {
     ],
 }
 
+# ───────────────────────── 07 · Productos por peso y balanza ─────────────────────────
+UNIDADES = "app-product-units-panel"
+VIDEOS["productos-07-peso-y-balanza"] = {
+    "titulo": "Productos · Parte 7: productos por peso y balanza",
+    "descripcion": "Séptimo video de Productos en Germiva ERP: vender por peso sin teclear nada. Activar la balanza etiquetadora de la tienda, preparar un producto que se lleva por libra (con su kilo como empaque y su código de balanza) y cobrarlo en el punto de venta escaneando la etiqueta.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 7. Estado A: balanza apagada; «Habichuelas rojas» por Libra, RD$85 exento, 250 lb. Formato de balanza por defecto: prefijo 21 + 5 dígitos de producto + 5 de peso con 3 decimales. Etiqueta 21 + 00123 + 02350 + 9 = 2100123023509 → 2.35 lb × 85 = RD$199.75. Tras guardar la configuración la página queda «sucia»: se sale por el panel (navegación interna), no con goto.",
+    "setup": RESTAURAR("A"),
+    "aprenderas": ["Activar la balanza etiquetadora y entender su formato", "Agregar el kilo como empaque de un producto que se lleva por libra", "Asignar el código de balanza del producto", "Cobrar en el punto de venta escaneando la etiqueta de peso"],
+    "errores_comunes": ["Poner en el producto un código de balanza distinto al que tiene programado la balanza", "Cambiar la unidad base a kilo: el kilo se agrega como empaque", "Teclear el peso a mano en el punto de venta teniendo la etiqueta"],
+    "pasos": [
+        {
+            "id": "01-balanza", "capitulo": "Activar la balanza", "rotulo": "La balanza",
+            "ruta": "Inventario › Configuración",
+            "narracion": "¿Vendes por libra? Con una balanza etiquetadora no hay que teclear el peso. Primero se activa. Entro a Inventario y abro Configuración. Más abajo está la sección balanza etiquetadora. La balanza es de la tienda, no de un producto: imprime una etiqueta con el código del producto y el peso dentro del código de barras. Enciendo uso balanza etiquetadora, y aparece el formato: el prefijo veintiuno, cinco dígitos para el producto y cinco para el peso. Son los valores de las balanzas más comunes; si la tuya usa otros, se ajustan aquí. Pulso Guardar, y cierro el aviso que confirma el cambio.",
+            "acciones": [
+                clic("nav.module-rail [aria-label='Inventario']", "Entro a Inventario"),
+                clic(".panel-item:has-text('Configuración')", "abro Configuración"),
+                marca("h3.section-title:has-text('Balanza etiquetadora')", "está la sección", 2500),
+                marca(".switch-row:has-text('Uso balanza etiquetadora')", "La balanza es de la tienda", 7000, cursor=False),
+                clic(".switch-row:has-text('Uso balanza etiquetadora') mat-slide-toggle button", "Enciendo uso balanza"),
+                marca("[formgroupname='scaleLabelFormat']", "aparece el formato", 8000),
+                clic(".footer-right button:has-text('Guardar')", "Pulso Guardar"),
+                marca(ALERTA, "cierro el aviso", 1500, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Entendido')", "confirma el cambio"),
+            ],
+        },
+        {
+            "id": "02-producto", "capitulo": "Preparar el producto", "rotulo": "El producto",
+            "ruta": "Inventario › Productos › Habichuelas rojas",
+            "narracion": "Ahora el producto. Abro Productos, y en el buscador escribo habichuelas. La tabla se filtra y, cuando queda solo esa fila, abro su ficha con el lápiz. Se abre con todos sus datos, y arriba, en la información general, está lo primero que hay que mirar. Su unidad base es la libra: la existencia y el precio, ochenta y cinco pesos, van por libra. Enciendo se compra o se vende en empaques, y agrego un empaque. El aviso rojo de abajo pide su unidad, así que abro la lista de unidades y elijo kilogramo. Fíjate en el contenido: dos punto dos libras, sin escribirlo, porque el sistema conoce la equivalencia entre libra y kilo. Por último, a la derecha, el código de balanza: es el número con que la balanza conoce este producto, y escribo ciento veintitrés, el mismo que tiene programado la balanza. Con eso está listo. Guardo la ficha y, cuando el aviso lo confirma, lo acepto.",
+            "acciones": [
+                clic(".panel-item:has-text('Productos')", "Abro Productos"),
+                teclea(filtro("Buscar") + " input", "Habichuelas", "escribo habichuelas"),
+                clic("table tbody tr:has-text('Habichuelas rojas') button[aria-label='Abrir']", "abro su ficha"),
+                marca("mat-form-field:has(mat-label:has-text('Unidad de medida'))", "Su unidad base", 3000),
+                marca(PRECIOS, "ochenta y cinco pesos", 2500),
+                clic("button[aria-label='Se compra o se vende en empaques']", "Enciendo se compra"),
+                clic(f"{UNIDADES} button:has-text('Agregar empaque')", "agrego un empaque"),
+                marca(f"{UNIDADES} .units-error", "El aviso rojo", 2500, cursor=False),
+                clic(f"{UNIDADES} tbody tr:nth-child(1) mat-select[aria-label='Unidad del empaque']", "abro la lista de unidades"),
+                clic("mat-option:has-text('Kilogramo')", "elijo kilogramo"),
+                marca(f"{UNIDADES} tbody tr:nth-child(1) td[data-label='Contenido']", "en el contenido", 6500),
+                marca(ctl("scalePlu"), "el código de balanza", 5000),
+                teclea(ctl("scalePlu"), "123", "escribo ciento veintitrés"),
+                clic(GUARDAR, "Guardo la ficha"),
+                marca(ALERTA, "el aviso lo confirma", 1500, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "lo acepto"),
+            ],
+        },
+        {
+            "id": "03-pos", "capitulo": "Cobrar con la etiqueta de peso", "rotulo": "Punto de venta",
+            "ruta": "Punto de venta",
+            "navegar": "/pos",
+            "narracion": "Vamos al punto de venta. El cliente pide habichuelas; se pesan, y la balanza imprime su etiqueta. En el buscador escaneo esa etiqueta. Aquí, como no tengo lector, escribo el código completo, los trece dígitos de la etiqueta, y al terminar pulso Enter. El ticket recibe las habichuelas con dos punto treinta y cinco libras: el peso venía dentro del código. El precio es por libra, ochenta y cinco pesos, y la línea suma ciento noventa y nueve con setenta y cinco. Así se vende cualquier producto pesado: sin teclear el peso y sin errores al cobrar.",
+            "acciones": [
+                teclea("input[aria-label='Buscar producto']", "2100123023509", "escribo el código completo"),
+                tecla("Enter", "pulso Enter"),
+                marca(".ps-line:has-text('Habichuelas')", "El ticket recibe", 5500),
+                marca(".ps-line:has-text('Habichuelas') .ps-line__unit", "El precio es por libra", 3500),
+                marca(".ps-line:has-text('Habichuelas') .ps-line__total", "la línea suma", 4000),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}

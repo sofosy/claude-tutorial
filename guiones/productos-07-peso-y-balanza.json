@@ -1,0 +1,261 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de ge i i",
+  "RNC": "erre ene ce",
+  "POS": "pos"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Embotelladora",
+   "Agroindustrial",
+   "Cibao",
+   "Galletera",
+   "Colmado",
+   "Esquina"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Productos · Parte 7: productos por peso y balanza",
+ "descripcion": "Séptimo video de Productos en Germiva ERP: vender por peso sin teclear nada. Activar la balanza etiquetadora de la tienda, preparar un producto que se lleva por libra (con su kilo como empaque y su código de balanza) y cobrarlo en el punto de venta escaneando la etiqueta.",
+ "_comentario": "Serie Productos corta (nov. 2026), video 7. Estado A: balanza apagada; «Habichuelas rojas» por Libra, RD$85 exento, 250 lb. Formato de balanza por defecto: prefijo 21 + 5 dígitos de producto + 5 de peso con 3 decimales. Etiqueta 21 + 00123 + 02350 + 9 = 2100123023509 → 2.35 lb × 85 = RD$199.75. Tras guardar la configuración la página queda «sucia»: se sale por el panel (navegación interna), no con goto.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/productos/restaurar.mjs A"
+ },
+ "aprenderas": [
+  "Activar la balanza etiquetadora y entender su formato",
+  "Agregar el kilo como empaque de un producto que se lleva por libra",
+  "Asignar el código de balanza del producto",
+  "Cobrar en el punto de venta escaneando la etiqueta de peso"
+ ],
+ "errores_comunes": [
+  "Poner en el producto un código de balanza distinto al que tiene programado la balanza",
+  "Cambiar la unidad base a kilo: el kilo se agrega como empaque",
+  "Teclear el peso a mano en el punto de venta teniendo la etiqueta"
+ ],
+ "pasos": [
+  {
+   "id": "01-balanza",
+   "capitulo": "Activar la balanza",
+   "rotulo": "La balanza",
+   "ruta": "Inventario › Configuración",
+   "narracion": "¿Vendes por libra? Con una balanza etiquetadora no hay que teclear el peso. Primero se activa. Entro a Inventario y abro Configuración. Más abajo está la sección balanza etiquetadora. La balanza es de la tienda, no de un producto: imprime una etiqueta con el código del producto y el peso dentro del código de barras. Enciendo uso balanza etiquetadora, y aparece el formato: el prefijo veintiuno, cinco dígitos para el producto y cinco para el peso. Son los valores de las balanzas más comunes; si la tuya usa otros, se ajustan aquí. Pulso Guardar, y cierro el aviso que confirma el cambio.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Configuración')",
+     "al_decir": "abro Configuración"
+    },
+    {
+     "resaltar": "h3.section-title:has-text('Balanza etiquetadora')",
+     "durante_ms": 2500,
+     "al_decir": "está la sección"
+    },
+    {
+     "resaltar": ".switch-row:has-text('Uso balanza etiquetadora')",
+     "durante_ms": 7000,
+     "al_decir": "La balanza es de la tienda",
+     "cursor": false
+    },
+    {
+     "click": ".switch-row:has-text('Uso balanza etiquetadora') mat-slide-toggle button",
+     "al_decir": "Enciendo uso balanza"
+    },
+    {
+     "resaltar": "[formgroupname='scaleLabelFormat']",
+     "durante_ms": 8000,
+     "al_decir": "aparece el formato"
+    },
+    {
+     "click": ".footer-right button:has-text('Guardar')",
+     "al_decir": "Pulso Guardar"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 1500,
+     "al_decir": "cierro el aviso",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Entendido')",
+     "al_decir": "confirma el cambio"
+    }
+   ]
+  },
+  {
+   "id": "02-producto",
+   "capitulo": "Preparar el producto",
+   "rotulo": "El producto",
+   "ruta": "Inventario › Productos › Habichuelas rojas",
+   "narracion": "Ahora el producto. Abro Productos, y en el buscador escribo habichuelas. La tabla se filtra y, cuando queda solo esa fila, abro su ficha con el lápiz. Se abre con todos sus datos, y arriba, en la información general, está lo primero que hay que mirar. Su unidad base es la libra: la existencia y el precio, ochenta y cinco pesos, van por libra. Enciendo se compra o se vende en empaques, y agrego un empaque. El aviso rojo de abajo pide su unidad, así que abro la lista de unidades y elijo kilogramo. Fíjate en el contenido: dos punto dos libras, sin escribirlo, porque el sistema conoce la equivalencia entre libra y kilo. Por último, a la derecha, el código de balanza: es el número con que la balanza conoce este producto, y escribo ciento veintitrés, el mismo que tiene programado la balanza. Con eso está listo. Guardo la ficha y, cuando el aviso lo confirma, lo acepto.",
+   "acciones": [
+    {
+     "click": ".panel-item:has-text('Productos')",
+     "al_decir": "Abro Productos"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "Habichuelas"
+     },
+     "al_decir": "escribo habichuelas"
+    },
+    {
+     "click": "table tbody tr:has-text('Habichuelas rojas') button[aria-label='Abrir']",
+     "al_decir": "abro su ficha"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Unidad de medida'))",
+     "durante_ms": 3000,
+     "al_decir": "Su unidad base"
+    },
+    {
+     "resaltar": "app-inline-product-prices",
+     "durante_ms": 2500,
+     "al_decir": "ochenta y cinco pesos"
+    },
+    {
+     "click": "button[aria-label='Se compra o se vende en empaques']",
+     "al_decir": "Enciendo se compra"
+    },
+    {
+     "click": "app-product-units-panel button:has-text('Agregar empaque')",
+     "al_decir": "agrego un empaque"
+    },
+    {
+     "resaltar": "app-product-units-panel .units-error",
+     "durante_ms": 2500,
+     "al_decir": "El aviso rojo",
+     "cursor": false
+    },
+    {
+     "click": "app-product-units-panel tbody tr:nth-child(1) mat-select[aria-label='Unidad del empaque']",
+     "al_decir": "abro la lista de unidades"
+    },
+    {
+     "click": "mat-option:has-text('Kilogramo')",
+     "al_decir": "elijo kilogramo"
+    },
+    {
+     "resaltar": "app-product-units-panel tbody tr:nth-child(1) td[data-label='Contenido']",
+     "durante_ms": 6500,
+     "al_decir": "en el contenido"
+    },
+    {
+     "resaltar": "input[formcontrolname='scalePlu']",
+     "durante_ms": 5000,
+     "al_decir": "el código de balanza"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='scalePlu']",
+      "texto": "123"
+     },
+     "al_decir": "escribo ciento veintitrés"
+    },
+    {
+     "click": ".form-layout-footer button:has-text('Guardar')",
+     "al_decir": "Guardo la ficha"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 1500,
+     "al_decir": "el aviso lo confirma",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "lo acepto"
+    }
+   ]
+  },
+  {
+   "id": "03-pos",
+   "capitulo": "Cobrar con la etiqueta de peso",
+   "rotulo": "Punto de venta",
+   "ruta": "Punto de venta",
+   "navegar": "/pos",
+   "narracion": "Vamos al punto de venta. El cliente pide habichuelas; se pesan, y la balanza imprime su etiqueta. En el buscador escaneo esa etiqueta. Aquí, como no tengo lector, escribo el código completo, los trece dígitos de la etiqueta, y al terminar pulso Enter. El ticket recibe las habichuelas con dos punto treinta y cinco libras: el peso venía dentro del código. El precio es por libra, ochenta y cinco pesos, y la línea suma ciento noventa y nueve con setenta y cinco. Así se vende cualquier producto pesado: sin teclear el peso y sin errores al cobrar.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[aria-label='Buscar producto']",
+      "texto": "2100123023509"
+     },
+     "al_decir": "escribo el código completo"
+    },
+    {
+     "presionar": {
+      "tecla": "Enter"
+     },
+     "al_decir": "pulso Enter"
+    },
+    {
+     "resaltar": ".ps-line:has-text('Habichuelas')",
+     "durante_ms": 5500,
+     "al_decir": "El ticket recibe"
+    },
+    {
+     "resaltar": ".ps-line:has-text('Habichuelas') .ps-line__unit",
+     "durante_ms": 3500,
+     "al_decir": "El precio es por libra"
+    },
+    {
+     "resaltar": ".ps-line:has-text('Habichuelas') .ps-line__total",
+     "durante_ms": 4000,
+     "al_decir": "la línea suma"
+    }
+   ]
+  }
+ ]
+}
