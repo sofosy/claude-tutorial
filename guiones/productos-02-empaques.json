@@ -328,7 +328,7 @@
         },
         {
           "click": "mat-option:has-text('Paquete'):not(:has-text('promocional'))",
-          "al_decir": "hasta paquete"
+          "al_decir": 7.6
         },
         {
           "resaltar": "app-product-units-panel .units-error",
