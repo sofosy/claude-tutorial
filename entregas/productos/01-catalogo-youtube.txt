@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Productos · Parte 1: el catálogo
+
+DESCRIPCIÓN
+============================================================
+Primer video de Productos en Germiva ERP: la pantalla donde vive todo lo que tu empresa compra o vende. Cómo leer cada columna, encontrar un producto en segundos, y qué hacen duplicar, desactivar y eliminar.
+
+⏱️ CAPÍTULOS
+00:00  Leer el catálogo
+00:36  Buscar y filtrar
+01:07  Columnas, importar y alta por foto
+01:34  Duplicar, desactivar y eliminar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el catálogo: producto, código, precio, stock y estado
+• Buscar por nombre o código y filtrar por tipo
+• Elegir las columnas, importar desde Excel y el alta por foto
+• Cuándo duplicar, desactivar o eliminar un producto
+
+⚠️ ERRORES COMUNES
+• Eliminar un producto que ya tuvo movimientos: lo correcto es desactivarlo
+• Crear dos veces el mismo producto por no buscarlo antes
+• Buscar la existencia de un servicio: un servicio no se almacena
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:14
+
+TRANSCRIPCIÓN
+============================================================
+Este es el catálogo de Productos: todo lo que tu empresa compra o vende, mercancía y servicios, y cada fila es uno. Para ganar espacio, recojo el panel. En la primera columna va el nombre. Después el código, que puede ser el de barras. El precio de venta es el de tu lista principal. El stock dice cuánto hay: este refresco está agotado, y un servicio dice no aplica, porque no se almacena. Y al final de la fila están las acciones, que vemos en un momento.
+Para encontrar algo rápido, en el campo Buscar escribo parte del nombre o del código. La tabla se filtra sola mientras escribo, sin pulsar nada. Con la equis limpio la búsqueda. El filtro Tipo separa los productos de los servicios: lo abro y elijo Servicio, y quedan solo los servicios, como esta barbería. Para ver todo de nuevo, vuelvo a limpiar. Un consejo: busca siempre antes de crear, para no tener el mismo producto dos veces.
+Arriba de la tabla hay tres herramientas. El botón de columnas decide qué columnas ves: puedes sumar la marca, la unidad o la categoría. Lo cierro. Importar y exportar carga muchos productos de una vez desde un archivo, y te deja bajar el catálogo completo. Cierro el diálogo. Y alta por foto: subes fotos de tus productos y el sistema prepara las fichas para que tú las revises.
+Ahora las acciones de cada fila, con las galletas. El lápiz abre la ficha. Duplicar crea una copia con toda su configuración, útil para productos casi iguales. Cancelo. La segunda acción es desactivar: el producto se oculta al vender y al comprar, pero conserva su historial: es lo correcto para un producto que ya tuvo movimientos. Cancelo otra vez. Y eliminar lo borra sin vuelta atrás: úsalo solo con algo creado por error. También lo cancelo. En el siguiente video creamos un producto desde cero.

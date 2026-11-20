@@ -1,0 +1,179 @@
+1
+00:00:03,100 --> 00:00:06,585
+En el video anterior creamos la gaseosa con sus variantes.
+
+2
+00:00:07,253 --> 00:00:11,731
+En el catálogo la busco por su nombre, y cuando aparece abro la ficha del padre.
+
+3
+00:00:12,400 --> 00:00:13,938
+El padre es la plantilla:
+
+4
+00:00:14,012 --> 00:00:17,497
+define lo común, pero no se vende ni guarda existencia.
+
+5
+00:00:18,166 --> 00:00:20,089
+Abro la pestaña variantes.
+
+6
+00:00:20,757 --> 00:00:24,516
+Cada fila es una variante, con su propio código de barras.
+
+7
+00:00:25,184 --> 00:00:26,811
+Las latas dicen del padre:
+
+8
+00:00:26,871 --> 00:00:28,806
+usan su precio y cambian con él.
+
+9
+00:00:29,475 --> 00:00:31,138
+Paso a la vista matriz.
+
+10
+00:00:31,806 --> 00:00:35,156
+La jumbo de fresa, que dejamos fuera, dice crear:
+
+11
+00:00:35,204 --> 00:00:40,527
+la pulso, se abre una ventanita, y en ella escribo su precio, ochenta y cinco pesos,
+
+12
+00:00:40,598 --> 00:00:42,856
+y luego confirmo con el botón crear.
+
+13
+00:00:43,512 --> 00:00:47,112
+El aviso lo confirma, y ya está la combinación que faltaba.
+
+14
+00:00:48,462 --> 00:00:51,712
+La mercancía entra a cada variante, no al padre.
+
+15
+00:00:52,380 --> 00:00:54,974
+Vuelvo a la lista y abro la lata de naranja.
+
+16
+00:00:55,641 --> 00:00:59,920
+La barra de arriba dice que es un producto hijo, con el enlace a su padre.
+
+17
+00:01:00,576 --> 00:01:03,789
+Arriba pulso el botón de entrada, y se abre su ventana.
+
+18
+00:01:04,445 --> 00:01:06,891
+En el motivo elijo compras de mercancía.
+
+19
+00:01:07,558 --> 00:01:11,590
+En proveedor escribo las primeras letras, espero a que la lista lo encuentre,
+
+20
+00:01:11,676 --> 00:01:13,871
+y elijo la Embotelladora del Caribe.
+
+21
+00:01:14,540 --> 00:01:15,509
+La ubicación:
+
+22
+00:01:15,593 --> 00:01:18,719
+abro la lista y elijo el pasillo A del almacén Sur.
+
+23
+00:01:19,389 --> 00:01:21,523
+El lote lo genera el botón de al lado.
+
+24
+00:01:22,179 --> 00:01:26,087
+En cantidad, veinticuatro latas, que es lo que trae la caja.
+
+25
+00:01:26,754 --> 00:01:28,406
+Y el costo de cada una:
+
+26
+00:01:28,490 --> 00:01:30,625
+veinte pesos, sin el impuesto.
+
+27
+00:01:31,281 --> 00:01:33,230
+Abajo confirmo el registro.
+
+28
+00:01:33,885 --> 00:01:37,371
+El sistema avisa que la compra quedó registrada con su recepción,
+
+29
+00:01:37,432 --> 00:01:39,418
+a la espera de la factura del proveedor;
+
+30
+00:01:39,503 --> 00:01:40,298
+lo acepto.
+
+31
+00:01:40,954 --> 00:01:44,477
+Arriba, la variante ya tiene veinticuatro en existencia.
+
+32
+00:01:45,862 --> 00:01:47,463
+Y ahora, la venta.
+
+33
+00:01:48,118 --> 00:01:51,630
+En el punto de venta busco gaseosa, escribiendo su nombre.
+
+34
+00:01:52,298 --> 00:01:56,615
+El catálogo se filtra, y aparece una sola tarjeta, la del padre,
+
+35
+00:01:56,688 --> 00:01:58,326
+con todas sus variantes.
+
+36
+00:01:58,995 --> 00:02:00,882
+Al tocarla se abre el selector:
+
+37
+00:02:00,978 --> 00:02:03,832
+presentaciones en filas y sabores en columnas.
+
+38
+00:02:04,501 --> 00:02:06,933
+Solo la lata de naranja tiene existencia;
+
+39
+00:02:07,068 --> 00:02:08,681
+las demás dicen agotado.
+
+40
+00:02:09,337 --> 00:02:12,637
+Le sumo una lata con el botón más, y enseguida otra:
+
+41
+00:02:12,822 --> 00:02:14,150
+son dos latas.
+
+42
+00:02:14,818 --> 00:02:19,222
+Abajo pulso Agregar, y el ticket recibe la línea con el nombre completo de la
+
+43
+00:02:19,033 --> 00:02:19,792
+variante.
+
+44
+00:02:20,448 --> 00:02:24,083
+Y con lector de código de barras ni siquiera hace falta el selector:
+
+45
+00:02:24,205 --> 00:02:26,302
+escaneas la lata y entra directo.

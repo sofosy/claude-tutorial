@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Productos · Parte 2: crear un producto
+
+DESCRIPCIÓN
+============================================================
+Segundo video de Productos en Germiva ERP: dar de alta un producto en una sola hoja. Nombre, categoría y unidad; el precio con ITBIS incluido; la cantidad inicial con su costo y su lote; el mínimo y el máximo; y lo que aparece al guardar: el código de barras y la etiqueta.
+
+⏱️ CAPÍTULOS
+00:00  Nombre, categoría y unidad
+00:49  Precio y cantidad inicial
+01:29  Mínimo, máximo y guardar
+01:58  La ficha guardada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Llenar la ficha de un producto de arriba abajo
+• Poner el precio con el ITBIS incluido
+• Cargar la cantidad inicial con su costo y su lote
+• Definir el stock mínimo y máximo
+• Qué gana la ficha al guardar: código de barras y etiqueta
+
+⚠️ ERRORES COMUNES
+• Escribir el precio con ITBIS sin encender «ITBIS incluido»: la factura lo cobra dos veces
+• Poner la cantidad inicial sin su costo: el inventario quedaría sin valor
+• Cambiar después la unidad de medida a mano: para eso existe «Convertir unidad base»
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:35
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a crear un producto desde cero. Pulso Nuevo Producto. La ficha es una sola hoja que se llena de arriba abajo, y al pie una barra dice qué falta para guardar. Empiezo por el nombre: Chocolate tradicional Cacao Real. Mientras escribo, el sistema revisa que no exista otro igual, y aquí confirma que está disponible. Sigue la categoría, que agrupa productos parecidos. En categoría escribo las primeras letras de alimentos; aparece debajo, entre las que ya existen, y la tomo de la lista. Sigue la unidad de medida, que es la unidad en que se lleva la existencia y el costo: escribo unidad en el campo, espero a que aparezcan las opciones, y de ellas elijo la primera.
+Ahora, el precio de venta. En la fila de la lista Precio regular, en monto, escribo ciento sesenta y cinco pesos. Ese precio ya trae adentro el ITBIS, el impuesto sobre la venta, así que enciendo ITBIS incluido, y el total queda en ciento sesenta y cinco: si no lo enciendes, la factura le suma el impuesto encima. Debajo está la cantidad inicial, por si ya tienes mercancía: escribo veinticuatro. Al poner una cantidad, el sistema pide con qué costo entra: noventa y cinco pesos cada uno. Y como el producto controla lote, pide el lote inicial; lo escribo tal como viene en la caja.
+Más abajo, en características, maneja inventario viene encendido: el sistema lleva sus existencias y su costo. En la pestaña Inventario pongo el stock mínimo, veinticuatro: cuando la existencia baje de ahí, el sistema avisa y lo propone en Por reponer. Y el stock máximo, que es hasta dónde reponer: ciento veinte. Con eso es suficiente, así que pulso Guardar. El aviso confirma que el producto se creó, y acepto.
+La ficha queda abierta y gana partes nuevas. Arriba, junto al nombre, su código y el estado activo. A la derecha, el código de barras que el sistema generó solo, con su candado para que nadie lo cambie por error, y el botón para imprimir la etiqueta. Y abajo aparecen pestañas nuevas, como variantes, insumos e historial. El chocolate ya se puede vender, con veinticuatro unidades en existencia. En el próximo video: los servicios, la parte fiscal y la tienda.

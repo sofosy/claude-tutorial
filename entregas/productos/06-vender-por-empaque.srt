@@ -1,0 +1,191 @@
+1
+00:00:03,100 --> 00:00:07,653
+Este refresco se compra en cajas de veinticuatro y hay doscientas cuarenta unidades.
+
+2
+00:00:08,320 --> 00:00:11,408
+Hoy lo vendemos por paquete, por caja y por unidad.
+
+3
+00:00:12,076 --> 00:00:14,422
+Desde el inicio pulso Nueva factura.
+
+4
+00:00:15,077 --> 00:00:18,464
+Se abre el formulario, con el cliente en consumidor final,
+
+5
+00:00:18,574 --> 00:00:20,585
+que para este ejemplo es suficiente.
+
+6
+00:00:21,254 --> 00:00:23,971
+Para ver la línea completa, recojo el panel.
+
+7
+00:00:24,638 --> 00:00:26,922
+En las líneas busco el refresco por su nombre;
+
+8
+00:00:27,045 --> 00:00:30,681
+la lista muestra cuánto hay disponible, y cuando aparece lo agrego.
+
+9
+00:00:31,335 --> 00:00:32,552
+Fíjate en la unidad:
+
+10
+00:00:32,600 --> 00:00:36,868
+vino sola en paquete por seis, porque el paquete tiene la estrella de venta.
+
+11
+00:00:37,524 --> 00:00:41,419
+En cantidad escribo dos, y salgo del campo con la tecla Tab.
+
+12
+00:00:42,087 --> 00:00:45,895
+Son dos paquetes, y cada uno vale seis veces la unidad.
+
+13
+00:00:46,551 --> 00:00:48,996
+El mismo cliente lleva también una caja.
+
+14
+00:00:49,664 --> 00:00:52,691
+Agrego otra línea escribiendo refresco otra vez;
+
+15
+00:00:52,801 --> 00:00:55,195
+espero la lista, y lo tomo de ella.
+
+16
+00:00:55,851 --> 00:00:59,400
+Abro su selector de unidad, y elijo caja por veinticuatro.
+
+17
+00:01:00,067 --> 00:01:02,178
+Esa línea vale setecientos ochenta:
+
+18
+00:01:02,313 --> 00:01:06,692
+la caja tiene precio propio, más barato que veinticuatro unidades sueltas.
+
+19
+00:01:07,359 --> 00:01:09,656
+El total es mil doscientos pesos.
+
+20
+00:01:10,323 --> 00:01:11,864
+Pulso Guardar y Cobrar.
+
+21
+00:01:12,531 --> 00:01:14,740
+Como la venta es de contado y en efectivo,
+
+22
+00:01:14,862 --> 00:01:18,496
+el sistema emite la factura y registra el cobro en el mismo paso,
+
+23
+00:01:18,558 --> 00:01:20,271
+sin preguntar nada más.
+
+24
+00:01:20,938 --> 00:01:24,772
+Al terminar, el aviso confirma que la factura se guardó y se cobró;
+
+25
+00:01:24,858 --> 00:01:26,346
+lo cierro con aceptar.
+
+26
+00:01:27,837 --> 00:01:30,530
+En el punto de venta es todavía más rápido.
+
+27
+00:01:31,185 --> 00:01:33,382
+Escaneo el código de barras de la caja;
+
+28
+00:01:33,480 --> 00:01:38,144
+aquí lo escribo completo, con sus trece dígitos, tal como lo leería el lector,
+
+29
+00:01:38,266 --> 00:01:39,817
+y al final pulso Enter.
+
+30
+00:01:40,474 --> 00:01:43,885
+El ticket recibe una caja por veinticuatro a setecientos ochenta:
+
+31
+00:01:43,983 --> 00:01:46,688
+el código le dice al sistema qué empaque es.
+
+32
+00:01:47,355 --> 00:01:50,692
+Para vender una lata suelta, busco el refresco por su nombre,
+
+33
+00:01:50,802 --> 00:01:53,075
+y el catálogo se filtra mientras escribo;
+
+34
+00:01:53,171 --> 00:01:57,527
+la tarjeta muestra lo que queda en existencia, y al tocarla entra una unidad,
+
+35
+00:01:57,611 --> 00:01:59,212
+a treinta y cinco pesos.
+
+36
+00:01:59,881 --> 00:02:03,986
+El paquete, como no tiene código de barras, no entra al mostrador:
+
+37
+00:02:04,121 --> 00:02:07,881
+si lo quieres vender aquí, dale un código en la ficha del producto.
+
+38
+00:02:09,241 --> 00:02:10,347
+¿Y el inventario?
+
+39
+00:02:11,014 --> 00:02:14,637
+Después de vender, lo comprobamos en la pantalla de Existencias.
+
+40
+00:02:15,305 --> 00:02:18,221
+Arriba, en el buscador, escribo refresco,
+
+41
+00:02:18,305 --> 00:02:21,308
+y cuando termino de escribirlo pulso el botón filtrar.
+
+42
+00:02:21,977 --> 00:02:24,891
+Después de la factura quedan doscientas cuatro unidades,
+
+43
+00:02:24,990 --> 00:02:27,323
+que el sistema también lee en cajas.
+
+44
+00:02:27,990 --> 00:02:32,394
+Abro el detalle con el ojo de la fila, y en el panel pulso ver su kardex.
+
+45
+00:02:33,062 --> 00:02:37,082
+La factura dejó dos salidas, cada una en el empaque en que se vendió:
+
+46
+00:02:37,204 --> 00:02:41,336
+los dos paquetes, doce unidades, y la caja, veinticuatro.
+
+47
+00:02:42,003 --> 00:02:45,688
+Y todas descuentan del mismo inventario y al mismo costo por unidad.
+
+48
+00:02:46,356 --> 00:02:49,520
+Vendas como vendas, la existencia siempre cuadra.

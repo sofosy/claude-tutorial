@@ -1,0 +1,175 @@
+1
+00:00:03,100 --> 00:00:05,346
+Vamos a crear un producto desde cero.
+
+2
+00:00:06,000 --> 00:00:07,516
+Pulso Nuevo Producto.
+
+3
+00:00:08,170 --> 00:00:11,211
+La ficha es una sola hoja que se llena de arriba abajo,
+
+4
+00:00:11,320 --> 00:00:13,963
+y al pie una barra dice qué falta para guardar.
+
+5
+00:00:14,631 --> 00:00:15,898
+Empiezo por el nombre:
+
+6
+00:00:16,007 --> 00:00:18,315
+Chocolate tradicional Cacao Real.
+
+7
+00:00:18,972 --> 00:00:22,557
+Mientras escribo, el sistema revisa que no exista otro igual,
+
+8
+00:00:22,704 --> 00:00:24,875
+y aquí confirma que está disponible.
+
+9
+00:00:25,545 --> 00:00:29,018
+Sigue la categoría, que agrupa productos parecidos.
+
+10
+00:00:29,686 --> 00:00:32,602
+En categoría escribo las primeras letras de alimentos;
+
+11
+00:00:32,736 --> 00:00:36,893
+aparece debajo, entre las que ya existen, y la tomo de la lista.
+
+12
+00:00:37,548 --> 00:00:41,766
+Sigue la unidad de medida, que es la unidad en que se lleva la existencia y el
+
+13
+00:00:41,579 --> 00:00:42,126
+costo:
+
+14
+00:00:42,247 --> 00:00:45,983
+escribo unidad en el campo, espero a que aparezcan las opciones,
+
+15
+00:00:45,993 --> 00:00:47,829
+y de ellas elijo la primera.
+
+16
+00:00:49,184 --> 00:00:51,206
+Ahora, el precio de venta.
+
+17
+00:00:51,874 --> 00:00:54,629
+En la fila de la lista Precio regular, en monto,
+
+18
+00:00:54,751 --> 00:00:57,196
+escribo ciento sesenta y cinco pesos.
+
+19
+00:00:57,864 --> 00:01:01,586
+Ese precio ya trae adentro el ITBIS, el impuesto sobre la venta,
+
+20
+00:01:01,696 --> 00:01:06,049
+así que enciendo ITBIS incluido, y el total queda en ciento sesenta y cinco:
+
+21
+00:01:06,197 --> 00:01:09,683
+si no lo enciendes, la factura le suma el impuesto encima.
+
+22
+00:01:10,338 --> 00:01:13,936
+Debajo está la cantidad inicial, por si ya tienes mercancía:
+
+23
+00:01:13,996 --> 00:01:15,413
+escribo veinticuatro.
+
+24
+00:01:16,081 --> 00:01:19,528
+Al poner una cantidad, el sistema pide con qué costo entra:
+
+25
+00:01:19,664 --> 00:01:21,836
+noventa y cinco pesos cada uno.
+
+26
+00:01:22,492 --> 00:01:25,804
+Y como el producto controla lote, pide el lote inicial;
+
+27
+00:01:25,914 --> 00:01:28,135
+lo escribo tal como viene en la caja.
+
+28
+00:01:29,507 --> 00:01:33,811
+Más abajo, en características, maneja inventario viene encendido:
+
+29
+00:01:33,921 --> 00:01:36,677
+el sistema lleva sus existencias y su costo.
+
+30
+00:01:37,332 --> 00:01:40,730
+En la pestaña Inventario pongo el stock mínimo, veinticuatro:
+
+31
+00:01:40,865 --> 00:01:45,271
+cuando la existencia baje de ahí, el sistema avisa y lo propone en Por reponer.
+
+32
+00:01:45,926 --> 00:01:48,929
+Y el stock máximo, que es hasta dónde reponer:
+
+33
+00:01:49,112 --> 00:01:50,180
+ciento veinte.
+
+34
+00:01:50,837 --> 00:01:53,739
+Con eso es suficiente, así que pulso Guardar.
+
+35
+00:01:54,396 --> 00:01:57,695
+El aviso confirma que el producto se creó, y acepto.
+
+36
+00:01:59,088 --> 00:02:01,942
+La ficha queda abierta y gana partes nuevas.
+
+37
+00:02:02,609 --> 00:02:06,382
+Arriba, junto al nombre, su código y el estado activo.
+
+38
+00:02:07,037 --> 00:02:10,721
+A la derecha, el código de barras que el sistema generó solo,
+
+39
+00:02:10,819 --> 00:02:13,362
+con su candado para que nadie lo cambie por error,
+
+40
+00:02:13,473 --> 00:02:15,471
+y el botón para imprimir la etiqueta.
+
+41
+00:02:16,127 --> 00:02:20,804
+Y abajo aparecen pestañas nuevas, como variantes, insumos e historial.
+
+42
+00:02:21,472 --> 00:02:25,837
+El chocolate ya se puede vender, con veinticuatro unidades en existencia.
+
+43
+00:02:26,506 --> 00:02:27,835
+En el próximo video:
+
+44
+00:02:27,969 --> 00:02:30,811
+los servicios, la parte fiscal y la tienda.

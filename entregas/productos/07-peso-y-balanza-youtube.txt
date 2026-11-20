@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Productos · Parte 7: productos por peso y balanza
+
+DESCRIPCIÓN
+============================================================
+Séptimo video de Productos en Germiva ERP: vender por peso sin teclear nada. Activar la balanza etiquetadora de la tienda, preparar un producto que se lleva por libra (con su kilo como empaque y su código de balanza) y cobrarlo en el punto de venta escaneando la etiqueta.
+
+⏱️ CAPÍTULOS
+00:00  Activar la balanza
+00:44  Preparar el producto
+01:45  Cobrar con la etiqueta de peso
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Activar la balanza etiquetadora y entender su formato
+• Agregar el kilo como empaque de un producto que se lleva por libra
+• Asignar el código de balanza del producto
+• Cobrar en el punto de venta escaneando la etiqueta de peso
+
+⚠️ ERRORES COMUNES
+• Poner en el producto un código de balanza distinto al que tiene programado la balanza
+• Cambiar la unidad base a kilo: el kilo se agrega como empaque
+• Teclear el peso a mano en el punto de venta teniendo la etiqueta
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:26
+
+TRANSCRIPCIÓN
+============================================================
+¿Vendes por libra? Con una balanza etiquetadora no hay que teclear el peso. Primero se activa. Entro a Inventario y abro Configuración. Más abajo está la sección balanza etiquetadora. La balanza es de la tienda, no de un producto: imprime una etiqueta con el código del producto y el peso dentro del código de barras. Enciendo uso balanza etiquetadora, y aparece el formato: el prefijo veintiuno, cinco dígitos para el producto y cinco para el peso. Son los valores de las balanzas más comunes; si la tuya usa otros, se ajustan aquí. Pulso Guardar, y cierro el aviso que confirma el cambio.
+Ahora el producto. Abro Productos, y en el buscador escribo habichuelas. La tabla se filtra y, cuando queda solo esa fila, abro su ficha con el lápiz. Se abre con todos sus datos, y arriba, en la información general, está lo primero que hay que mirar. Su unidad base es la libra: la existencia y el precio, ochenta y cinco pesos, van por libra. Enciendo se compra o se vende en empaques, y agrego un empaque. El aviso rojo de abajo pide su unidad, así que abro la lista de unidades y elijo kilogramo. Fíjate en el contenido: dos punto dos libras, sin escribirlo, porque el sistema conoce la equivalencia entre libra y kilo. Por último, a la derecha, el código de balanza: es el número con que la balanza conoce este producto, y escribo ciento veintitrés, el mismo que tiene programado la balanza. Con eso está listo. Guardo la ficha y, cuando el aviso lo confirma, lo acepto.
+Vamos al punto de venta. El cliente pide habichuelas; se pesan, y la balanza imprime su etiqueta. En el buscador escaneo esa etiqueta. Aquí, como no tengo lector, escribo el código completo, los trece dígitos de la etiqueta, y al terminar pulso Enter. El ticket recibe las habichuelas con dos punto treinta y cinco libras: el peso venía dentro del código. El precio es por libra, ochenta y cinco pesos, y la línea suma ciento noventa y nueve con setenta y cinco. Así se vende cualquier producto pesado: sin teclear el peso y sin errores al cobrar.

@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Productos · Parte 11: comercio exterior e insumos
+
+DESCRIPCIÓN
+============================================================
+Undécimo video de Productos en Germiva ERP: los datos de aduana de un producto que se importa (partida arancelaria, país de origen y pesos) y los insumos de un producto que preparas, para conocer su costo real y su margen antes de ponerle precio.
+
+⏱️ CAPÍTULOS
+00:00  Comercio exterior
+00:53  Un producto que se prepara
+01:46  Cantidades, merma y margen
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar la partida arancelaria, el origen y los pesos de un producto importado
+• Agregar los insumos que consume un producto preparado
+• Poner la cantidad real y la merma de cada insumo
+• Leer el costo de insumos y el margen teórico
+
+⚠️ ERRORES COMUNES
+• Dejar los insumos con cantidad uno: el costo sale inflado y el margen en rojo
+• Olvidar la merma de lo que se pierde al preparar
+• Poner el precio de un producto preparado sin mirar su margen
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:07
+
+TRANSCRIPCIÓN
+============================================================
+Si importas o exportas, la aduana pide datos de cada producto. Este refresco lo traemos de fuera. En el catálogo escribo refresco; la tabla se filtra, y cuando queda solo su fila abro la ficha con el lápiz. En características enciendo se importa o se exporta, y abajo aparece la sección comercio exterior. Primero la partida arancelaria, el código con que la aduana clasifica la mercancía; la escribo completa, con sus puntos. Después el país de origen: escribo estados, espero a que la lista lo encuentre entre todos los países, y elijo Estados Unidos. Luego el peso bruto de una lata, con su envase, en kilos. Y por último el peso neto, que es solo el contenido, sin el envase. Guardo la ficha, y acepto el aviso que lo confirma.
+Ahora los insumos, que sirven para conocer el costo real de lo que preparas: un plato, un combo o un dulce. Vamos a costear un vaso de habichuelas con dulce. Pulso Nuevo Producto. Lo llamo dulce criollo casero, tal como saldrá en la factura. Sigue la categoría, como en cualquier producto. En categoría escribo las primeras letras de alimentos, espero la lista, y la tomo de ahí. En unidad de medida escribo unidad, porque se vende por vaso; la lista muestra las opciones, y de ellas también la elijo. El precio del vaso va en monto: ciento cincuenta pesos. Ese precio ya trae el impuesto sobre la venta, así que enciendo ITBIS incluido. Pulso Guardar, y acepto el aviso. Con el producto creado se habilita la pestaña insumos, y la abro.
+Aquí va lo que consume cada vaso. En agregar insumo escribo habichuela; la lista busca entre los insumos de la empresa, y elijo la habichuela roja para cocinar. Hago lo mismo con la leche: la escribo en el mismo campo, espero un momento, y de la lista tomo la leche evaporada. Y falta el azúcar: lo busco por su nombre, la lista lo encuentra, y entonces elijo el azúcar crema. Antes de seguir, hay que revisar los números de arriba. Mira el margen teórico: sale en rojo, porque cada insumo entró con cantidad uno, como si un vaso llevara una libra entera. Pongo las cantidades reales. De habichuela, un cuarto de libra, que es lo que lleva un vaso. Y su merma, lo que se pierde al cocinar: diez por ciento. De leche, un cuarto de lata por cada vaso que se sirve. Y de azúcar, quince centésimas de libra, un poco más de dos onzas. Salgo del campo, y cada cambio se guarda solo. Ahora sí: el vaso cuesta treinta y seis pesos con veinticinco, y el margen es de noventa pesos, el setenta y uno por ciento del precio. Y si esto lo fabricas por tandas, el botón Abrir fabricación lleva estos insumos a una lista de materiales.

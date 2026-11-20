@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Productos · Parte 3: servicios, fiscal y tienda en línea
+
+DESCRIPCIÓN
+============================================================
+Tercer video de Productos en Germiva ERP: dar de alta un servicio, que se vende pero no se almacena; la pestaña Fiscal, con la cuenta de ingreso y los impuestos adicionales de la DGII; y cómo publicar un producto o servicio en tu tienda en línea.
+
+⏱️ CAPÍTULOS
+00:00  Crear un servicio
+01:14  La pestaña Fiscal
+01:46  Publicar en la tienda en línea
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear un servicio y en qué se diferencia de un producto
+• Para qué sirve la cuenta contable de ingreso
+• Dónde van la propina legal y otros impuestos adicionales
+• Publicar un producto o servicio en la tienda en línea
+
+⚠️ ERRORES COMUNES
+• Dejar el ITBIS en exento en un servicio que sí lo lleva: al cambiar a Servicio viene en exento
+• Agregar un impuesto adicional que el producto no lleva
+• Dejar «Visible en la tienda» encendido en algo que no quieres mostrar al público
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:21
+
+TRANSCRIPCIÓN
+============================================================
+No todo lo que vendes se guarda en un almacén. Hoy creamos un servicio. Pulso Nuevo Producto. Se abre la ficha en blanco y, arriba a la derecha, cambio el tipo a servicio. Fíjate en lo que desaparece: la cantidad inicial, las características y el código de barras, porque un servicio no se almacena ni se cuenta. Lo llamo Fumigación doméstica, que es el nombre que verá el cliente en la factura. En categoría escribo servicios de limp, y de la lista que aparece tomo servicios de limpieza. En unidad de medida escribo unidad, porque se cobra por cada visita, y la selecciono cuando aparece. El precio, en monto: dos mil quinientos pesos por cada visita. Ojo con el ITBIS, el impuesto sobre la venta: en un servicio viene en exento. Este sí lo lleva, así que abro la lista y elijo la tasa del dieciocho por ciento. Dejo apagado ITBIS incluido, y mira el total: dos mil novecientos cincuenta, porque la factura le suma el impuesto encima. Pulso Guardar. Aparece un aviso que confirma que el servicio se creó, y lo cierro con aceptar.
+Con la ficha guardada, abro la pestaña Fiscal, que sirve igual para productos y servicios. La cuenta contable de ingreso dice a dónde van las ventas de este servicio; si la dejas vacía, se usa la de la empresa. Así puedes separar en tu contabilidad los servicios de la mercancía. Debajo están los impuestos adicionales de la DGII, la Dirección General de Impuestos Internos: aquí se agregan la propina legal o los impuestos selectivos, solo si el producto los lleva. Este servicio no lleva ninguno.
+La última pestaña es descripción y tienda. La descripción es lo que lee el cliente en tu catálogo en línea, y admite negritas y listas. Abajo, enciendo visible en la tienda, y el servicio queda publicado. Indexable en buscadores deja que Google lo muestre; apágalo si solo vas a compartir el enlace. Guardo los cambios. El aviso dice que el producto se actualizó, y lo cierro con aceptar. En el próximo video: comprar en cajas y vender por unidad.

@@ -1,0 +1,183 @@
+1
+00:00:03,100 --> 00:00:07,565
+Una gaseosa en lata, grande y jumbo, de naranja, piña y fresa:
+
+2
+00:00:07,750 --> 00:00:12,116
+son nueve productos, pero se crean como uno solo, con variantes.
+
+3
+00:00:12,784 --> 00:00:14,298
+Pulso Nuevo Producto.
+
+4
+00:00:14,954 --> 00:00:15,637
+El nombre:
+
+5
+00:00:15,698 --> 00:00:18,503
+Gaseosa Brisa, que es lo común a todas.
+
+6
+00:00:19,170 --> 00:00:22,271
+Sigue la categoría, igual que en cualquier producto.
+
+7
+00:00:22,928 --> 00:00:25,781
+En categoría escribo las primeras letras de alimentos,
+
+8
+00:00:25,903 --> 00:00:29,056
+espero a que la lista las encuentre, y la tomo de ahí.
+
+9
+00:00:29,710 --> 00:00:32,390
+Luego, en unidad de medida escribo unidad;
+
+10
+00:00:32,501 --> 00:00:36,286
+la lista muestra las que coinciden, y de ellas también la tomo.
+
+11
+00:00:36,953 --> 00:00:38,654
+El precio base va en monto:
+
+12
+00:00:38,764 --> 00:00:41,754
+treinta y cinco pesos, que es lo que cuesta la lata.
+
+13
+00:00:42,421 --> 00:00:47,123
+Ese precio ya trae el impuesto sobre la venta, así que enciendo ITBIS incluido.
+
+14
+00:00:47,779 --> 00:00:50,001
+Estos datos son comunes a todas.
+
+15
+00:00:50,668 --> 00:00:54,490
+Ahora, en características, enciendo tiene variantes.
+
+16
+00:00:55,856 --> 00:00:58,362
+Aparece la sección opciones y variantes.
+
+17
+00:00:59,030 --> 00:01:03,619
+Una opción es lo que distingue a las variantes, y sus valores son las alternativas.
+
+18
+00:01:04,287 --> 00:01:07,240
+Hay atajos ya escritos para los casos más comunes.
+
+19
+00:01:07,909 --> 00:01:12,634
+Aquí pulso el de presentación, que trae lata, botella, grande y jumbo.
+
+20
+00:01:13,290 --> 00:01:16,641
+La botella no la vendo, así que la quito con su equis.
+
+21
+00:01:17,308 --> 00:01:18,947
+El sabor no tiene atajo:
+
+22
+00:01:18,983 --> 00:01:22,319
+pulso otra, y en el nombre de la opción escribo sabor.
+
+23
+00:01:22,975 --> 00:01:25,233
+Ahora sus valores, uno por uno.
+
+24
+00:01:25,890 --> 00:01:28,198
+Escribo naranja en el campo de valores,
+
+25
+00:01:28,283 --> 00:01:31,211
+y para que quede como etiqueta pulso la tecla Enter.
+
+26
+00:01:31,866 --> 00:01:36,668
+Después escribo piña, de la misma manera, y al terminar vuelvo a pulsar Enter.
+
+27
+00:01:37,323 --> 00:01:38,949
+Y el último valor es fresa:
+
+28
+00:01:39,084 --> 00:01:42,137
+lo escribo completo, y también lo confirmo igual.
+
+29
+00:01:42,792 --> 00:01:44,331
+Fíjate en las etiquetas:
+
+30
+00:01:44,454 --> 00:01:47,778
+el orden en que las escribes es el orden en que se verán al vender.
+
+31
+00:01:49,138 --> 00:01:52,079
+El sistema pregunta si alguna opción cambia el precio.
+
+32
+00:01:52,746 --> 00:01:57,484
+La presentación sí, así que la elijo, y aparece un campo por cada tamaño.
+
+33
+00:01:58,153 --> 00:02:01,454
+A la grande le sumo veinticinco pesos sobre el precio base.
+
+34
+00:02:02,121 --> 00:02:03,897
+Y a la jumbo le sumo el doble:
+
+35
+00:02:03,993 --> 00:02:05,335
+cincuenta pesos.
+
+36
+00:02:06,003 --> 00:02:07,442
+Debajo está la matriz:
+
+37
+00:02:07,578 --> 00:02:12,229
+presentaciones en filas, sabores en columnas, y en cada cruce su precio,
+
+38
+00:02:12,277 --> 00:02:14,932
+treinta y cinco, sesenta u ochenta y cinco.
+
+39
+00:02:15,600 --> 00:02:19,286
+La jumbo de fresa todavía no la vendo, así que la desmarco.
+
+40
+00:02:19,954 --> 00:02:22,163
+El botón dice cuántas se van a crear:
+
+41
+00:02:22,223 --> 00:02:22,807
+ocho.
+
+42
+00:02:23,463 --> 00:02:24,358
+Lo pulso.
+
+43
+00:02:25,026 --> 00:02:28,610
+El sistema crea el producto padre y cada combinación como su hija,
+
+44
+00:02:28,671 --> 00:02:30,088
+y el aviso lo confirma;
+
+45
+00:02:30,185 --> 00:02:30,868
+acepto.
+
+46
+00:02:31,524 --> 00:02:36,175
+En el siguiente video las vemos por dentro, les damos existencia y las vendemos.

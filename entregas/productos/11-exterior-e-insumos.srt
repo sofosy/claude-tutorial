@@ -1,0 +1,215 @@
+1
+00:00:03,100 --> 00:00:07,081
+Si importas o exportas, la aduana pide datos de cada producto.
+
+2
+00:00:07,750 --> 00:00:09,847
+Este refresco lo traemos de fuera.
+
+3
+00:00:10,503 --> 00:00:12,338
+En el catálogo escribo refresco;
+
+4
+00:00:12,436 --> 00:00:16,902
+la tabla se filtra, y cuando queda solo su fila abro la ficha con el lápiz.
+
+5
+00:00:17,570 --> 00:00:20,448
+En características enciendo se importa o se exporta,
+
+6
+00:00:20,559 --> 00:00:23,264
+y abajo aparece la sección comercio exterior.
+
+7
+00:00:23,932 --> 00:00:28,721
+Primero la partida arancelaria, el código con que la aduana clasifica la mercancía;
+
+8
+00:00:28,818 --> 00:00:31,237
+la escribo completa, con sus puntos.
+
+9
+00:00:31,905 --> 00:00:33,494
+Después el país de origen:
+
+10
+00:00:33,605 --> 00:00:37,761
+escribo estados, espero a que la lista lo encuentre entre todos los países,
+
+11
+00:00:37,796 --> 00:00:39,559
+y elijo Estados Unidos.
+
+12
+00:00:40,226 --> 00:00:44,035
+Luego el peso bruto de una lata, con su envase, en kilos.
+
+13
+00:00:44,704 --> 00:00:48,810
+Y por último el peso neto, que es solo el contenido, sin el envase.
+
+14
+00:00:49,478 --> 00:00:52,630
+Guardo la ficha, y acepto el aviso que lo confirma.
+
+15
+00:00:54,006 --> 00:00:58,422
+Ahora los insumos, que sirven para conocer el costo real de lo que preparas:
+
+16
+00:00:58,470 --> 00:01:00,853
+un plato, un combo o un dulce.
+
+17
+00:01:01,509 --> 00:01:04,176
+Vamos a costear un vaso de habichuelas con dulce.
+
+18
+00:01:04,831 --> 00:01:06,346
+Pulso Nuevo Producto.
+
+19
+00:01:07,001 --> 00:01:10,774
+Lo llamo dulce criollo casero, tal como saldrá en la factura.
+
+20
+00:01:11,429 --> 00:01:14,294
+Sigue la categoría, como en cualquier producto.
+
+21
+00:01:14,950 --> 00:01:19,081
+En categoría escribo las primeras letras de alimentos, espero la lista,
+
+22
+00:01:19,092 --> 00:01:20,346
+y la tomo de ahí.
+
+23
+00:01:21,015 --> 00:01:24,501
+En unidad de medida escribo unidad, porque se vende por vaso;
+
+24
+00:01:24,573 --> 00:01:28,346
+la lista muestra las opciones, y de ellas también la elijo.
+
+25
+00:01:29,001 --> 00:01:30,888
+El precio del vaso va en monto:
+
+26
+00:01:31,022 --> 00:01:32,710
+ciento cincuenta pesos.
+
+27
+00:01:33,378 --> 00:01:38,079
+Ese precio ya trae el impuesto sobre la venta, así que enciendo ITBIS incluido.
+
+28
+00:01:38,735 --> 00:01:41,093
+Pulso Guardar, y acepto el aviso.
+
+29
+00:01:41,748 --> 00:01:45,644
+Con el producto creado se habilita la pestaña insumos, y la abro.
+
+30
+00:01:47,004 --> 00:01:49,052
+Aquí va lo que consume cada vaso.
+
+31
+00:01:49,707 --> 00:01:51,656
+En agregar insumo escribo habichuela;
+
+32
+00:01:51,790 --> 00:01:54,099
+la lista busca entre los insumos de la empresa,
+
+33
+00:01:54,121 --> 00:01:56,579
+y elijo la habichuela roja para cocinar.
+
+34
+00:01:57,234 --> 00:01:58,736
+Hago lo mismo con la leche:
+
+35
+00:01:58,871 --> 00:02:01,849
+la escribo en el mismo campo, espero un momento,
+
+36
+00:02:01,909 --> 00:02:04,268
+y de la lista tomo la leche evaporada.
+
+37
+00:02:04,923 --> 00:02:06,177
+Y falta el azúcar:
+
+38
+00:02:06,299 --> 00:02:11,112
+lo busco por su nombre, la lista lo encuentra, y entonces elijo el azúcar crema.
+
+39
+00:02:11,781 --> 00:02:14,846
+Antes de seguir, hay que revisar los números de arriba.
+
+40
+00:02:15,501 --> 00:02:16,954
+Mira el margen teórico:
+
+41
+00:02:17,075 --> 00:02:20,401
+sale en rojo, porque cada insumo entró con cantidad uno,
+
+42
+00:02:20,498 --> 00:02:22,919
+como si un vaso llevara una libra entera.
+
+43
+00:02:23,574 --> 00:02:25,497
+Pongo las cantidades reales.
+
+44
+00:02:26,165 --> 00:02:29,925
+De habichuela, un cuarto de libra, que es lo que lleva un vaso.
+
+45
+00:02:30,581 --> 00:02:32,987
+Y su merma, lo que se pierde al cocinar:
+
+46
+00:02:33,048 --> 00:02:34,165
+diez por ciento.
+
+47
+00:02:34,834 --> 00:02:38,319
+De leche, un cuarto de lata por cada vaso que se sirve.
+
+48
+00:02:38,987 --> 00:02:43,491
+Y de azúcar, quince centésimas de libra, un poco más de dos onzas.
+
+49
+00:02:44,158 --> 00:02:47,235
+Salgo del campo, y cada cambio se guarda solo.
+
+50
+00:02:47,903 --> 00:02:48,787
+Ahora sí:
+
+51
+00:02:48,872 --> 00:02:51,639
+el vaso cuesta treinta y seis pesos con veinticinco,
+
+52
+00:02:51,687 --> 00:02:55,867
+y el margen es de noventa pesos, el setenta y uno por ciento del precio.
+
+53
+00:02:56,522 --> 00:02:58,384
+Y si esto lo fabricas por tandas,
+
+54
+00:02:58,495 --> 00:03:02,824
+el botón Abrir fabricación lleva estos insumos a una lista de materiales.
