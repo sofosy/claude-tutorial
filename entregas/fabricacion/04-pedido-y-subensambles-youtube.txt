@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Fabricación · Parte 4: fabricar para un pedido y sub-ensambles
+
+DESCRIPCIÓN
+============================================================
+Cuarto video de Fabricación en Germiva ERP. Un cliente pide un producto que todavía no está hecho: desde el pedido de venta se planifica la fabricación con un clic. Y cuando el producto lleva adentro otro que también fabricas (un sub-ensamble), el sistema crea su orden sola y arrastra el costo completo.
+
+⏱️ CAPÍTULOS
+00:00  Del pedido de venta a la orden
+00:43  Planificar y fabricar el sub-ensamble
+01:25  Terminar la orden principal
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Planificar la fabricación desde un pedido de venta confirmado
+• Qué es un sub-ensamble y cómo lo reconoce el sistema
+• Crear las órdenes de los sub-ensambles con un clic
+• En qué orden se fabrica: primero lo de adentro
+• Cómo el costo del sub-ensamble llega al producto final
+
+⚠️ ERRORES COMUNES
+• Buscar «Planificar fabricación» en un pedido en borrador: solo aparece cuando está confirmado
+• Intentar reservar la orden principal antes de fabricar el sub-ensamble
+• Comprar un componente que tú mismo fabricas: si tiene lista de materiales, se planifica como sub-ensamble
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:11
+
+TRANSCRIPCIÓN
+============================================================
+Un colmado pidió seis bizcochos de cumpleaños, y no hay ninguno hecho. Este es su pedido de venta, ya confirmado. Para verlo mejor, recojo el panel de la izquierda. En la línea del producto hay un botón nuevo: Planificar fabricación. Lo pulso, y Germiva me lleva a una orden de fabricación con el producto y la cantidad del pedido ya puestos. Mira el plan: el bizcocho de cumpleaños lleva adentro un bizcocho de vainilla, que también se fabrica aquí. Por eso tiene la etiqueta sub-ensamble, y dice que faltan seis. No hay que comprarlos, hay que hacerlos. Pulso Guardar borrador.
+La orden quedó en borrador, como confirma el aviso, y arriba aparece otro botón: Planificar sub-ensambles. Lo pulso, y el aviso dice que las órdenes de los sub-ensambles se crearon en borrador. Aquí está: el sistema crea sola la orden del bizcocho de vainilla, por los seis que faltan, enlazada a esta. La regla es sencilla: primero se fabrica lo de adentro. Entro a la orden hija. Arriba, pulso Reservar material; el aviso confirma la reserva. Y como ya vimos en el segundo video, registro la producción: las seis unidades buenas vienen propuestas, así que pulso Registrar y cerrar la orden.
+Listo el sub-ensamble. En sus datos, el enlace sub-ensamble de me devuelve a la orden principal. Ahora sí hay bizcochos de vainilla en el almacén, así que pulso Reservar material, y el aviso confirma que quedó reservado. Ahora registro la producción de los seis bizcochos de cumpleaños, y la orden se cierra con su aviso. Fíjate en el costo por unidad: unos trescientos cincuenta y un pesos. Ahí va todo: el bizcocho de vainilla con su propia mano de obra, el azúcar, los huevos y el trabajo de decorarlo. Los seis ya están en el almacén, listos para despachar el pedido del colmado. Del pedido a la fábrica, sin salir de Germiva.

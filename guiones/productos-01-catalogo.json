@@ -1,0 +1,290 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/inventory/product/list",
+  "esperar": "button:has-text('Nuevo Producto')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de ge i i",
+  "RNC": "erre ene ce",
+  "POS": "pos"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Embotelladora",
+   "Agroindustrial",
+   "Cibao",
+   "Galletera",
+   "Colmado",
+   "Esquina"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Productos · Parte 1: el catálogo",
+ "descripcion": "Primer video de Productos en Germiva ERP: la pantalla donde vive todo lo que tu empresa compra o vende. Cómo leer cada columna, encontrar un producto en segundos, y qué hacen duplicar, desactivar y eliminar.",
+ "_comentario": "Serie Productos corta (nov. 2026), video 1. Estado A (restaurar.mjs A): Tienda Germiva con Refresco Caribe Cola lata (agotado), Galletas soda Crocante (20 cajas), Habichuelas rojas (250 lb) y los productos y servicios sembrados (p. ej. «Barbería y Peluquería»). No crea ni cambia nada: los tres diálogos se cancelan.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/productos/restaurar.mjs A"
+ },
+ "aprenderas": [
+  "Leer el catálogo: producto, código, precio, stock y estado",
+  "Buscar por nombre o código y filtrar por tipo",
+  "Elegir las columnas, importar desde Excel y el alta por foto",
+  "Cuándo duplicar, desactivar o eliminar un producto"
+ ],
+ "errores_comunes": [
+  "Eliminar un producto que ya tuvo movimientos: lo correcto es desactivarlo",
+  "Crear dos veces el mismo producto por no buscarlo antes",
+  "Buscar la existencia de un servicio: un servicio no se almacena"
+ ],
+ "pasos": [
+  {
+   "id": "01-columnas",
+   "capitulo": "Leer el catálogo",
+   "rotulo": "El catálogo",
+   "ruta": "Inventario › Productos",
+   "narracion": "Este es el catálogo de Productos: todo lo que tu empresa compra o vende, mercancía y servicios, y cada fila es uno. Para ganar espacio, recojo el panel. En la primera columna va el nombre. Después el código, que puede ser el de barras. El precio de venta es el de tu lista principal. El stock dice cuánto hay: este refresco está agotado, y un servicio dice no aplica, porque no se almacena. Y al final de la fila están las acciones, que vemos en un momento.",
+   "acciones": [
+    {
+     "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(2)",
+     "durante_ms": 2500,
+     "al_decir": "cada fila es uno"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "resaltar": "table thead th:nth-child(2)",
+     "durante_ms": 1200,
+     "al_decir": "va el nombre"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(3)",
+     "durante_ms": 3000,
+     "al_decir": "Después el código"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(4)",
+     "durante_ms": 3000,
+     "al_decir": "El precio de venta"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(5)",
+     "durante_ms": 2000,
+     "al_decir": "El stock dice"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(5)",
+     "durante_ms": 1700,
+     "al_decir": "está agotado"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Barbería y Peluquería') td:nth-child(5)",
+     "durante_ms": 3500,
+     "al_decir": "dice no aplica"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Habichuelas rojas') td:nth-child(7)",
+     "durante_ms": 3500,
+     "al_decir": "están las acciones"
+    }
+   ]
+  },
+  {
+   "id": "02-buscar",
+   "capitulo": "Buscar y filtrar",
+   "rotulo": "Buscar y filtrar",
+   "ruta": "Inventario › Productos",
+   "narracion": "Para encontrar algo rápido, en el campo Buscar escribo parte del nombre o del código. La tabla se filtra sola mientras escribo, sin pulsar nada. Con la equis limpio la búsqueda. El filtro Tipo separa los productos de los servicios: lo abro y elijo Servicio, y quedan solo los servicios, como esta barbería. Para ver todo de nuevo, vuelvo a limpiar. Un consejo: busca siempre antes de crear, para no tener el mismo producto dos veces.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "Refresco"
+     },
+     "al_decir": "escribo parte del nombre"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Refresco Caribe Cola lata') td:nth-child(2)",
+     "durante_ms": 3000,
+     "al_decir": "se filtra sola"
+    },
+    {
+     "click": "app-dynamic-filters button:has(mat-icon:text-is('clear'))",
+     "al_decir": "Con la equis"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:text-is('Tipo')) mat-select",
+     "al_decir": "lo abro"
+    },
+    {
+     "click": "mat-option:has-text('Servicio'):not(:has-text('Productos'))",
+     "al_decir": "elijo Servicio"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Barbería y Peluquería') td:nth-child(2)",
+     "durante_ms": 2500,
+     "al_decir": "solo los servicios"
+    },
+    {
+     "click": "app-dynamic-filters button:has(mat-icon:text-is('clear'))",
+     "al_decir": "vuelvo a limpiar"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Consejo",
+      "texto": "Busca antes de crear: evita tener el mismo producto dos veces."
+     },
+     "durante_ms": 6000,
+     "al_decir": "Un consejo"
+    }
+   ]
+  },
+  {
+   "id": "03-herramientas",
+   "capitulo": "Columnas, importar y alta por foto",
+   "rotulo": "Herramientas",
+   "ruta": "Inventario › Productos",
+   "narracion": "Arriba de la tabla hay tres herramientas. El botón de columnas decide qué columnas ves: puedes sumar la marca, la unidad o la categoría. Lo cierro. Importar y exportar carga muchos productos de una vez desde un archivo, y te deja bajar el catálogo completo. Cierro el diálogo. Y alta por foto: subes fotos de tus productos y el sistema prepara las fichas para que tú las revises.",
+   "acciones": [
+    {
+     "click": "button:has(mat-icon:text-is('view_column'))",
+     "al_decir": "El botón de columnas"
+    },
+    {
+     "resaltar": ".column-config-menu",
+     "durante_ms": 3500,
+     "al_decir": "puedes sumar la marca",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     },
+     "al_decir": "Lo cierro"
+    },
+    {
+     "click": "button:has-text('Importar / Exportar')",
+     "al_decir": "Importar y exportar"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4500,
+     "al_decir": "desde un archivo",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar'), mat-dialog-container button[aria-label='Cerrar'], mat-dialog-container button:has(mat-icon:text-is('close'))",
+     "al_decir": "Cierro el diálogo"
+    },
+    {
+     "resaltar": "button:has-text('Alta por foto')",
+     "durante_ms": 6000,
+     "al_decir": "alta por foto"
+    }
+   ]
+  },
+  {
+   "id": "04-acciones",
+   "capitulo": "Duplicar, desactivar y eliminar",
+   "rotulo": "Acciones de la fila",
+   "ruta": "Inventario › Productos",
+   "narracion": "Ahora las acciones de cada fila, con las galletas. El lápiz abre la ficha. Duplicar crea una copia con toda su configuración, útil para productos casi iguales. Cancelo. La segunda acción es desactivar: el producto se oculta al vender y al comprar, pero conserva su historial: es lo correcto para un producto que ya tuvo movimientos. Cancelo otra vez. Y eliminar lo borra sin vuelta atrás: úsalo solo con algo creado por error. También lo cancelo. En el siguiente video creamos un producto desde cero.",
+   "acciones": [
+    {
+     "resaltar": "table tbody tr:has-text('Galletas soda Crocante') button[aria-label='Abrir']",
+     "durante_ms": 2000,
+     "al_decir": "El lápiz abre"
+    },
+    {
+     "click": "table tbody tr:has-text('Galletas soda Crocante') button[aria-label='Duplicar']",
+     "al_decir": "Duplicar crea"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3500,
+     "al_decir": "toda su configuración",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cancelar')",
+     "al_decir": "Cancelo. La segunda"
+    },
+    {
+     "click": "table tbody tr:has-text('Galletas soda Crocante') button[aria-label='Desactivar']",
+     "al_decir": "se oculta"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 5500,
+     "al_decir": "conserva su historial",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cancelar')",
+     "al_decir": "Cancelo otra vez"
+    },
+    {
+     "click": "table tbody tr:has-text('Galletas soda Crocante') button[aria-label='Eliminar']",
+     "al_decir": "eliminar lo borra"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 4500,
+     "al_decir": "sin vuelta atrás",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cancelar')",
+     "al_decir": "También lo cancelo"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Fabricación · Parte 1: la lista de materiales
+
+DESCRIPCIÓN
+============================================================
+Primer video de Fabricación en Germiva ERP. La lista de materiales es la receta del producto que fabricas: qué componentes lleva, cuánto trabajo y cuánto cuesta cada unidad. La armamos con una panadería y su bizcocho de vainilla, en menos de tres minutos.
+
+⏱️ CAPÍTULOS
+00:00  Dónde está Fabricación
+00:39  El producto y sus componentes
+02:09  Mano de obra, costo y publicar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dónde está Fabricación y qué trae cada pestaña
+• Crear la lista de materiales de un producto
+• Agregar la mano de obra y los gastos indirectos
+• Leer el costo por unidad antes de fabricar
+• Publicar la lista y entender sus versiones
+
+⚠️ ERRORES COMUNES
+• Poner las cantidades de una sola unidad cuando la corrida produce varias
+• Dejar fuera la mano de obra: el costo sale más bajo que el real
+• Creer que editar la lista cambia las órdenes ya creadas: cada orden conserva su versión
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:07
+
+TRANSCRIPCIÓN
+============================================================
+¿Fabricas lo que vendes? Germiva ya lleva la fabricación completa: qué lleva cada producto, cuánto cuesta hacerlo y qué sale del almacén. Lo vemos con una panadería y su bizcocho de vainilla. Entro a Inventario y abro Fabricación, la primera opción. Para ver mejor, recojo el panel. Arriba hay cuatro pestañas: el tablero, las órdenes, las listas de materiales y la trazabilidad. Todo empieza por la lista de materiales, que es la receta: qué componentes lleva el producto y en qué cantidad. Pulso Nueva lista.
+Primero, el producto terminado: escribo bizcocho en el buscador y, cuando aparece debajo, lo elijo. En cantidad que produce pongo doce, porque una corrida de esta receta saca doce bizcochos. En tolerancia de consumo, cinco por ciento: si un día se gasta más material que eso, el sistema pide una explicación antes de registrar. Ahora, los componentes de una corrida. Busco harina, y fíjate que el buscador dice cuánta hay libre y a qué costo; la elijo. En cantidad van ocho libras, que es lo que llevan los doce bizcochos, no uno solo. Agrego otro componente y busco el azúcar. Aparece el azúcar crema, con sus cuarenta libras de existencia, y la selecciono. De azúcar, esta receta lleva por corrida cinco libras, ni más ni menos. Seguimos. Agrego uno más, y ahora busco los huevos. Hay ciento cincuenta en la despensa; con el nombre completo los marco en el buscador. La receta lleva en total treinta unidades, un cartón completo. Ya casi. Para terminar, agrego el último componente y escribo las primeras letras de la mantequilla. Con eso basta para encontrarla, así que la tomo del buscador. Y de mantequilla van tres libras. Listo. Ahora mira a la derecha: cada línea ya muestra su costo, calculado con lo que te costó la compra.
+Falta el trabajo. En mano de obra pongo noventa minutos, que es lo que tarda una corrida. La tarifa por hora del panadero: cuatrocientos pesos. Y en gastos indirectos, lo que no es material ni trabajo, como la luz del horno y el empaque: ciento veinte pesos. Ahora mira abajo. Los materiales de la corrida cuestan mil ciento treinta y cinco pesos; la mano de obra y los indirectos, setecientos veinte; y cada bizcocho sale en ciento cincuenta y cuatro con cincuenta y ocho. Ese es tu costo real para poner el precio. Pulso Publicar lista, y el aviso confirma que se publicó. Queda como versión uno: si mañana cambias la receta se publica la versión dos, y las órdenes ya creadas conservan la suya. Con la lista publicada ya podemos fabricar. Eso, en el siguiente video.

@@ -1,0 +1,318 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "OF-1": "o efe uno",
+  "OF-2": "o efe dos",
+  "OF-3": "o efe tres",
+  "ITBIS": "itebís"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Fabricación · Parte 1: la lista de materiales",
+ "descripcion": "Primer video de Fabricación en Germiva ERP. La lista de materiales es la receta del producto que fabricas: qué componentes lleva, cuánto trabajo y cuánto cuesta cada unidad. La armamos con una panadería y su bizcocho de vainilla, en menos de tres minutos.",
+ "_comentario": "Serie Fabricación (nov. 2026), video 1. Estado A (seeds/fabricacion/preparar.mjs A): Panadería Germiva con Harina de trigo 60 lb a 30, Azúcar crema 40 lb a 38, Huevos 150 a 9.50, Mantequilla 10 lb a 140, y «Bizcocho de vainilla» sin lista. Lista: produce 12, tolerancia 5 %, 8 lb harina + 5 lb azúcar + 30 huevos + 3 lb mantequilla = 1,135.00; 90 min × 400/h + 120 = 720.00; costo por unidad 154.5833.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/fabricacion/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Dónde está Fabricación y qué trae cada pestaña",
+  "Crear la lista de materiales de un producto",
+  "Agregar la mano de obra y los gastos indirectos",
+  "Leer el costo por unidad antes de fabricar",
+  "Publicar la lista y entender sus versiones"
+ ],
+ "errores_comunes": [
+  "Poner las cantidades de una sola unidad cuando la corrida produce varias",
+  "Dejar fuera la mano de obra: el costo sale más bajo que el real",
+  "Creer que editar la lista cambia las órdenes ya creadas: cada orden conserva su versión"
+ ],
+ "pasos": [
+  {
+   "id": "01-consola",
+   "capitulo": "Dónde está Fabricación",
+   "rotulo": "Fabricación",
+   "ruta": "Inventario › Fabricación",
+   "narracion": "¿Fabricas lo que vendes? Germiva ya lleva la fabricación completa: qué lleva cada producto, cuánto cuesta hacerlo y qué sale del almacén. Lo vemos con una panadería y su bizcocho de vainilla. Entro a Inventario y abro Fabricación, la primera opción. Para ver mejor, recojo el panel. Arriba hay cuatro pestañas: el tablero, las órdenes, las listas de materiales y la trazabilidad. Todo empieza por la lista de materiales, que es la receta: qué componentes lleva el producto y en qué cantidad. Pulso Nueva lista.",
+   "acciones": [
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "En este video",
+      "texto": "La lista de materiales: la receta y el costo de lo que fabricas."
+     },
+     "durante_ms": 7000,
+     "al_decir": "Germiva ya lleva"
+    },
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Fabricación')",
+     "al_decir": "abro Fabricación"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "resaltar": "nav.mat-mdc-tab-nav-bar, .mat-mdc-tab-links",
+     "durante_ms": 4000,
+     "al_decir": "cuatro pestañas"
+    },
+    {
+     "resaltar": "a.mat-mdc-tab-link:has-text('Listas de materiales')",
+     "durante_ms": 5500,
+     "al_decir": "Todo empieza"
+    },
+    {
+     "click": "button:has-text('Nueva lista')",
+     "al_decir": "Pulso Nueva lista"
+    }
+   ]
+  },
+  {
+   "id": "02-componentes",
+   "capitulo": "El producto y sus componentes",
+   "rotulo": "Lista de materiales",
+   "ruta": "Fabricación › Listas de materiales › Nueva",
+   "narracion": "Primero, el producto terminado: escribo bizcocho en el buscador y, cuando aparece debajo, lo elijo. En cantidad que produce pongo doce, porque una corrida de esta receta saca doce bizcochos. En tolerancia de consumo, cinco por ciento: si un día se gasta más material que eso, el sistema pide una explicación antes de registrar. Ahora, los componentes de una corrida. Busco harina, y fíjate que el buscador dice cuánta hay libre y a qué costo; la elijo. En cantidad van ocho libras, que es lo que llevan los doce bizcochos, no uno solo. Agrego otro componente y busco el azúcar. Aparece el azúcar crema, con sus cuarenta libras de existencia, y la selecciono. De azúcar, esta receta lleva por corrida cinco libras, ni más ni menos. Seguimos. Agrego uno más, y ahora busco los huevos. Hay ciento cincuenta en la despensa; con el nombre completo los marco en el buscador. La receta lleva en total treinta unidades, un cartón completo. Ya casi. Para terminar, agrego el último componente y escribo las primeras letras de la mantequilla. Con eso basta para encontrarla, así que la tomo del buscador. Y de mantequilla van tres libras. Listo. Ahora mira a la derecha: cada línea ya muestra su costo, calculado con lo que te costó la compra.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Producto terminado')) input",
+      "texto": "bizcocho"
+     },
+     "al_decir": "escribo bizcocho"
+    },
+    {
+     "click": "mat-option:has-text('Bizcocho de vainilla')",
+     "al_decir": "lo elijo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Cantidad que produce')) input",
+      "texto": "12"
+     },
+     "al_decir": "pongo doce"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Tolerancia de consumo')) input",
+      "texto": "5"
+     },
+     "al_decir": "cinco por ciento"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Componente 1')) input",
+      "texto": "harina"
+     },
+     "al_decir": "Busco harina"
+    },
+    {
+     "resaltar": "mat-option:has-text('Harina de trigo')",
+     "durante_ms": 2500,
+     "al_decir": "cuánta hay libre",
+     "cursor": false
+    },
+    {
+     "click": "mat-option:has-text('Harina de trigo')",
+     "al_decir": "la elijo"
+    },
+    {
+     "escribir": {
+      "sel": "input[aria-label='Cantidad del componente 1']",
+      "texto": "8"
+     },
+     "al_decir": "ocho libras"
+    },
+    {
+     "click": "button:has-text('Agregar componente')",
+     "al_decir": "Agrego otro componente"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Componente 2')) input",
+      "texto": "azúcar"
+     },
+     "al_decir": "busco el azúcar"
+    },
+    {
+     "click": "mat-option:has-text('Azúcar crema')",
+     "al_decir": "la selecciono"
+    },
+    {
+     "escribir": {
+      "sel": "input[aria-label='Cantidad del componente 2']",
+      "texto": "5"
+     },
+     "al_decir": "cinco libras"
+    },
+    {
+     "click": "button:has-text('Agregar componente')",
+     "al_decir": "Agrego uno más"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Componente 3')) input",
+      "texto": "huevos"
+     },
+     "al_decir": "busco los huevos"
+    },
+    {
+     "click": "mat-option:has-text('Huevos')",
+     "al_decir": "los marco"
+    },
+    {
+     "escribir": {
+      "sel": "input[aria-label='Cantidad del componente 3']",
+      "texto": "30"
+     },
+     "al_decir": "treinta unidades"
+    },
+    {
+     "click": "button:has-text('Agregar componente')",
+     "al_decir": "agrego el último componente"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Componente 4')) input",
+      "texto": "mante"
+     },
+     "al_decir": "la mantequilla"
+    },
+    {
+     "click": "mat-option:has-text('Mantequilla')",
+     "al_decir": "la tomo"
+    },
+    {
+     "escribir": {
+      "sel": "input[aria-label='Cantidad del componente 4']",
+      "texto": "3"
+     },
+     "al_decir": "tres libras"
+    },
+    {
+     "resaltar": "table.mfg-recipe-table tbody tr:nth-child(1) td:nth-child(5)",
+     "durante_ms": 2500,
+     "al_decir": "cada línea ya muestra"
+    }
+   ]
+  },
+  {
+   "id": "03-costo-publicar",
+   "capitulo": "Mano de obra, costo y publicar",
+   "rotulo": "Costo y publicar",
+   "ruta": "Fabricación › Listas de materiales › Nueva",
+   "narracion": "Falta el trabajo. En mano de obra pongo noventa minutos, que es lo que tarda una corrida. La tarifa por hora del panadero: cuatrocientos pesos. Y en gastos indirectos, lo que no es material ni trabajo, como la luz del horno y el empaque: ciento veinte pesos. Ahora mira abajo. Los materiales de la corrida cuestan mil ciento treinta y cinco pesos; la mano de obra y los indirectos, setecientos veinte; y cada bizcocho sale en ciento cincuenta y cuatro con cincuenta y ocho. Ese es tu costo real para poner el precio. Pulso Publicar lista, y el aviso confirma que se publicó. Queda como versión uno: si mañana cambias la receta se publica la versión dos, y las órdenes ya creadas conservan la suya. Con la lista publicada ya podemos fabricar. Eso, en el siguiente video.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Mano de obra por corrida')) input",
+      "texto": "90"
+     },
+     "al_decir": "noventa minutos"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Tarifa por hora')) input",
+      "texto": "400"
+     },
+     "al_decir": "La tarifa por hora"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Gastos indirectos por corrida')) input",
+      "texto": "120"
+     },
+     "al_decir": "en gastos indirectos"
+    },
+    {
+     "resaltar": "table.mfg-recipe-table tfoot tr:nth-child(1) td:nth-child(2)",
+     "durante_ms": 4000,
+     "al_decir": "Los materiales de la corrida"
+    },
+    {
+     "resaltar": "table.mfg-recipe-table tfoot tr:nth-child(2) td:nth-child(2)",
+     "durante_ms": 3000,
+     "al_decir": "la mano de obra y los indirectos"
+    },
+    {
+     "resaltar": "table.mfg-recipe-table tfoot tr:nth-child(3) td:nth-child(2)",
+     "durante_ms": 7000,
+     "al_decir": "cada bizcocho sale"
+    },
+    {
+     "click": "button:has-text('Publicar lista')",
+     "al_decir": "Pulso Publicar lista"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "al_decir": "el aviso confirma",
+     "cursor": false
+    },
+    {
+     "resaltar": "ul.mfg-recipe-list li.is-active, ul.mfg-recipe-list li",
+     "durante_ms": 8000,
+     "al_decir": "Queda como versión uno"
+    },
+    {
+     "resaltar": "button:has-text('Fabricar')",
+     "durante_ms": 4000,
+     "al_decir": "ya podemos fabricar"
+    }
+   ]
+  }
+ ]
+}

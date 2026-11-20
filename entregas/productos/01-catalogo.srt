@@ -1,0 +1,159 @@
+1
+00:00:03,100 --> 00:00:05,208
+Este es el catálogo de Productos:
+
+2
+00:00:05,294 --> 00:00:10,405
+todo lo que tu empresa compra o vende, mercancía y servicios, y cada fila es uno.
+
+3
+00:00:11,073 --> 00:00:13,493
+Para ganar espacio, recojo el panel.
+
+4
+00:00:14,160 --> 00:00:16,207
+En la primera columna va el nombre.
+
+5
+00:00:16,877 --> 00:00:19,829
+Después el código, que puede ser el de barras.
+
+6
+00:00:20,496 --> 00:00:23,226
+El precio de venta es el de tu lista principal.
+
+7
+00:00:23,882 --> 00:00:25,272
+El stock dice cuánto hay:
+
+8
+00:00:25,432 --> 00:00:30,480
+este refresco está agotado, y un servicio dice no aplica, porque no se almacena.
+
+9
+00:00:31,149 --> 00:00:34,896
+Y al final de la fila están las acciones, que vemos en un momento.
+
+10
+00:00:36,288 --> 00:00:40,827
+Para encontrar algo rápido, en el campo Buscar escribo parte del nombre o del
+
+11
+00:00:40,640 --> 00:00:41,310
+código.
+
+12
+00:00:41,978 --> 00:00:45,688
+La tabla se filtra sola mientras escribo, sin pulsar nada.
+
+13
+00:00:46,344 --> 00:00:48,280
+Con la equis limpio la búsqueda.
+
+14
+00:00:48,936 --> 00:00:51,740
+El filtro Tipo separa los productos de los servicios:
+
+15
+00:00:51,825 --> 00:00:56,588
+lo abro y elijo Servicio, y quedan solo los servicios, como esta barbería.
+
+16
+00:00:57,257 --> 00:00:59,950
+Para ver todo de nuevo, vuelvo a limpiar.
+
+17
+00:01:00,605 --> 00:01:01,475
+Un consejo:
+
+18
+00:01:01,609 --> 00:01:05,951
+busca siempre antes de crear, para no tener el mismo producto dos veces.
+
+19
+00:01:07,324 --> 00:01:09,905
+Arriba de la tabla hay tres herramientas.
+
+20
+00:01:10,572 --> 00:01:13,227
+El botón de columnas decide qué columnas ves:
+
+21
+00:01:13,300 --> 00:01:16,328
+puedes sumar la marca, la unidad o la categoría.
+
+22
+00:01:16,996 --> 00:01:17,865
+Lo cierro.
+
+23
+00:01:18,534 --> 00:01:22,442
+Importar y exportar carga muchos productos de una vez desde un archivo,
+
+24
+00:01:22,503 --> 00:01:24,735
+y te deja bajar el catálogo completo.
+
+25
+00:01:25,391 --> 00:01:26,757
+Cierro el diálogo.
+
+26
+00:01:27,425 --> 00:01:28,592
+Y alta por foto:
+
+27
+00:01:28,703 --> 00:01:32,623
+subes fotos de tus productos y el sistema prepara las fichas para que tú las
+
+28
+00:01:32,435 --> 00:01:33,243
+revises.
+
+29
+00:01:34,620 --> 00:01:37,882
+Ahora las acciones de cada fila, con las galletas.
+
+30
+00:01:38,550 --> 00:01:40,176
+El lápiz abre la ficha.
+
+31
+00:01:40,832 --> 00:01:46,116
+Duplicar crea una copia con toda su configuración, útil para productos casi iguales.
+
+32
+00:01:46,784 --> 00:01:47,691
+Cancelo.
+
+33
+00:01:48,347 --> 00:01:50,109
+La segunda acción es desactivar:
+
+34
+00:01:50,232 --> 00:01:53,904
+el producto se oculta al vender y al comprar, pero conserva su historial:
+
+35
+00:01:54,051 --> 00:01:57,103
+es lo correcto para un producto que ya tuvo movimientos.
+
+36
+00:01:57,772 --> 00:01:59,299
+Cancelo otra vez.
+
+37
+00:01:59,966 --> 00:02:02,249
+Y eliminar lo borra sin vuelta atrás:
+
+38
+00:02:02,323 --> 00:02:04,643
+úsalo solo con algo creado por error.
+
+39
+00:02:05,311 --> 00:02:06,665
+También lo cancelo.
+
+40
+00:02:07,320 --> 00:02:10,347
+En el siguiente video creamos un producto desde cero.

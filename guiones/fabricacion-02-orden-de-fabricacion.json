@@ -1,0 +1,285 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/inventory/fabricacion",
+  "esperar": "button:has-text('Nueva orden')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "OF-1": "o efe uno",
+  "OF-2": "o efe dos",
+  "OF-3": "o efe tres",
+  "ITBIS": "itebís"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Fabricación · Parte 2: la orden de fabricación",
+ "descripcion": "Segundo video de Fabricación en Germiva ERP. Con la lista de materiales publicada, fabricar son tres pasos: crear la orden, reservar el material y registrar lo que salió. Vemos cómo el sistema descuenta la materia prima, da entrada al producto terminado con su costo real y hace el asiento contable solo.",
+ "_comentario": "Serie Fabricación (nov. 2026), video 2. Estado B (preparar.mjs B): la lista del bizcocho publicada (v1). Orden OF-1 por 24 UND: requiere 16 lb harina, 10 lb azúcar, 60 huevos, 6 lb mantequilla; materiales 2,270.00 + conversión 1,440.00 = 3,710.00 → 154.5833 por unidad. Origen Almacén Sur · Despensa, destino Almacén Sur · Vitrina. La contabilización automática de producción viene activa en la empresa sembrada (asiento ASI-…).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/fabricacion/preparar.mjs B"
+ },
+ "aprenderas": [
+  "Crear una orden de fabricación y leer su plan de materiales",
+  "Qué significa reservar el material",
+  "Registrar la producción y cerrar la orden",
+  "Ver la salida de materia prima y la entrada del producto terminado",
+  "Dónde queda el costo real y el asiento contable"
+ ],
+ "errores_comunes": [
+  "Dejar el producto terminado en el mismo almacén de la materia prima sin querer",
+  "Creer que reservar descuenta la existencia: solo la aparta; se descuenta al registrar la producción",
+  "Registrar sin revisar la columna «Usado» cuando se gastó más material del previsto"
+ ],
+ "pasos": [
+  {
+   "id": "01-nueva-orden",
+   "capitulo": "Crear la orden y leer el plan",
+   "rotulo": "Nueva orden",
+   "ruta": "Fabricación › Órdenes › Nueva",
+   "narracion": "En el video anterior publicamos la receta del bizcocho. Hoy lo fabricamos, y son tres pasos: crear la orden, reservar el material y registrar lo que salió. Pulso Nueva orden. La lista de materiales ya viene elegida. En cantidad a fabricar escribo veinticuatro, que son dos corridas. El almacén de los componentes es la despensa, de donde sale la materia prima. El del producto terminado lo abro y lo cambio a la vitrina, que es donde entran los bizcochos. Abajo, el sistema ya hizo la cuenta: lo requerido de cada componente, lo disponible, y la columna por comprar vacía, porque hay de todo. Costo estimado de la orden: tres mil setecientos diez pesos. Si faltara material, aquí mismo dice cuánto hay que comprar, y la orden se guarda en borrador hasta que llegue. Pulso Guardar y reservar.",
+   "acciones": [
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Tres pasos",
+      "texto": "Crear la orden · reservar el material · registrar lo que salió."
+     },
+     "durante_ms": 6000,
+     "al_decir": "son tres pasos"
+    },
+    {
+     "click": "button:has-text('Nueva orden')",
+     "al_decir": "Pulso Nueva orden"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Lista de materiales')) mat-select",
+     "durante_ms": 2500,
+     "al_decir": "ya viene elegida"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Cantidad a fabricar')) input",
+      "texto": "24"
+     },
+     "al_decir": "escribo veinticuatro"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Almacén de los componentes')) mat-select",
+     "durante_ms": 3500,
+     "al_decir": "es la despensa"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:has-text('Almacén del producto terminado')) mat-select",
+     "al_decir": "lo abro"
+    },
+    {
+     "click": "mat-option:has-text('Vitrina')",
+     "al_decir": "a la vitrina"
+    },
+    {
+     "resaltar": "table.gm-table thead th:nth-child(2)",
+     "durante_ms": 1500,
+     "al_decir": "lo requerido"
+    },
+    {
+     "resaltar": "table.gm-table thead th:nth-child(3)",
+     "durante_ms": 800,
+     "al_decir": "lo disponible"
+    },
+    {
+     "resaltar": "table.gm-table thead th:nth-child(4)",
+     "durante_ms": 2800,
+     "al_decir": "la columna por comprar"
+    },
+    {
+     "resaltar": "table.gm-table tfoot tr:last-child td:last-child",
+     "durante_ms": 3000,
+     "al_decir": "Costo estimado de la orden"
+    },
+    {
+     "resaltar": ".mfg-note",
+     "durante_ms": 6000,
+     "al_decir": "Si faltara material"
+    },
+    {
+     "click": "button:has-text('Guardar y reservar')",
+     "al_decir": "Pulso Guardar y reservar"
+    }
+   ]
+  },
+  {
+   "id": "02-reservada",
+   "capitulo": "Material reservado",
+   "rotulo": "Material reservado",
+   "ruta": "Fabricación › Órdenes › OF-1",
+   "narracion": "El aviso confirma que la orden se creó y el material quedó reservado. Arriba está su número, y la línea de avance marca material reservado. Reservar no descuenta nada todavía: la harina y los huevos siguen en la despensa, pero apartados, y nadie más puede venderlos ni usarlos en otra orden. A la izquierda está el consumo previsto, con el lote de donde va a salir cada componente. Y en la columna usado puedes corregir la cantidad si al final se gastó más o menos.",
+   "acciones": [
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "resaltar": ".mfg-title",
+     "durante_ms": 1200,
+     "al_decir": "su número"
+    },
+    {
+     "resaltar": "ol.mfg-steps",
+     "durante_ms": 4000,
+     "al_decir": "la línea de avance"
+    },
+    {
+     "resaltar": "tr.mfg-row--sub:has-text('HAR-1101') td:nth-child(2)",
+     "durante_ms": 4000,
+     "al_decir": "pero apartados"
+    },
+    {
+     "resaltar": "tr.mfg-row--sub:has-text('HAR-1101') td:nth-child(1)",
+     "durante_ms": 3500,
+     "al_decir": "con el lote"
+    },
+    {
+     "resaltar": "input[aria-label^='Usado de Harina']",
+     "durante_ms": 5000,
+     "al_decir": "en la columna usado"
+    }
+   ]
+  },
+  {
+   "id": "03-registrar",
+   "capitulo": "Registrar la producción",
+   "rotulo": "Registrar producción",
+   "ruta": "Fabricación › Órdenes › OF-1",
+   "narracion": "Los bizcochos ya salieron del horno. A la derecha registro la producción. Unidades buenas: veinticuatro, que ya viene propuesto. Si alguno se hubiera dañado, iría en unidades descartadas; eso lo vemos en el próximo video. El lote del producto terminado lo propone el sistema, y el costo de conversión, mil cuatrocientos cuarenta, sale de la mano de obra de la lista. Debajo está el costo de este registro: cada bizcocho entra al almacén en ciento cincuenta y cuatro con cincuenta y ocho. Dejo marcado cerrar la orden, y pulso Registrar y cerrar la orden. El aviso lo confirma: producción registrada y orden cerrada.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Unidades buenas')) input",
+     "durante_ms": 3000,
+     "al_decir": "Unidades buenas"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Unidades descartadas')) input",
+     "durante_ms": 3000,
+     "al_decir": "unidades descartadas"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Lote del producto terminado')) input",
+     "durante_ms": 3000,
+     "al_decir": "El lote del producto terminado"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Costo de conversión')) input",
+     "durante_ms": 4500,
+     "al_decir": "el costo de conversión"
+    },
+    {
+     "resaltar": "dl.mfg-cost .mfg-cost__total",
+     "durante_ms": 4500,
+     "al_decir": "cada bizcocho entra"
+    },
+    {
+     "resaltar": "mat-checkbox:has-text('Cerrar la orden')",
+     "durante_ms": 2500,
+     "al_decir": "Dejo marcado"
+    },
+    {
+     "click": "button:has-text('Registrar y cerrar la orden')",
+     "al_decir": "pulso Registrar"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3500,
+     "al_decir": "El aviso lo confirma",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-resultado",
+   "capitulo": "Kardex, costo y asiento",
+   "rotulo": "El resultado",
+   "ruta": "Fabricación › Órdenes › OF-1",
+   "narracion": "¿Y qué hizo el sistema con un solo clic? Está todo abajo, en producción registrada. Primero, los movimientos de inventario: cuatro salidas de materia prima, cada una de su lote y a su costo, y una entrada de veinticuatro bizcochos a la vitrina, a ciento cincuenta y cuatro con cincuenta y ocho cada uno. Segundo, el asiento contable, hecho solo: sale el material del inventario, entra el producto terminado. Y tercero, el resultado: materiales, conversión y costo total. Arriba, la orden quedó cerrada. Ya tienes bizcochos para vender, y sabes exactamente cuánto te costó cada uno.",
+   "acciones": [
+    {
+     "resaltar": "article.mfg-run .mfg-run__head",
+     "durante_ms": 2500,
+     "al_decir": "en producción registrada"
+    },
+    {
+     "resaltar": "article.mfg-run table.gm-table >> nth=0 >> tbody tr:nth-child(1) td:nth-child(1)",
+     "durante_ms": 4500,
+     "al_decir": "cuatro salidas"
+    },
+    {
+     "resaltar": "article.mfg-run table.gm-table >> nth=0 >> tbody tr:nth-child(5) td:nth-child(1)",
+     "durante_ms": 6500,
+     "al_decir": "una entrada"
+    },
+    {
+     "resaltar": "article.mfg-run .gm-badge--success >> nth=0",
+     "durante_ms": 5000,
+     "al_decir": "el asiento contable"
+    },
+    {
+     "resaltar": "article.mfg-run dl.mfg-cost >> nth=-1",
+     "durante_ms": 3000,
+     "al_decir": "el resultado"
+    },
+    {
+     "resaltar": ".mfg-title .gm-badge",
+     "durante_ms": 6000,
+     "al_decir": "quedó cerrada"
+    }
+   ]
+  }
+ ]
+}

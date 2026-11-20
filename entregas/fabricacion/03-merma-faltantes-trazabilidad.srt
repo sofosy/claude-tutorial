@@ -1,0 +1,215 @@
+1
+00:00:03,100 --> 00:00:05,432
+En fabricación no todo sale perfecto.
+
+2
+00:00:06,099 --> 00:00:09,239
+Hoy vemos qué hacer con la merma, con el material que falta,
+
+3
+00:00:09,300 --> 00:00:10,839
+y cómo rastrear un lote.
+
+4
+00:00:11,494 --> 00:00:13,182
+Abro la pestaña Órdenes:
+
+5
+00:00:13,292 --> 00:00:16,555
+cada fila es una orden, con su avance y su estado.
+
+6
+00:00:17,210 --> 00:00:21,838
+Entro a la segunda, de doce bizcochos, que ya tiene el material reservado.
+
+7
+00:00:22,493 --> 00:00:24,231
+Resulta que uno se quemó.
+
+8
+00:00:24,887 --> 00:00:29,105
+En unidades buenas escribo once, que son los que sí sirven para vender.
+
+9
+00:00:29,772 --> 00:00:33,171
+Y el que se perdió va al lado, en unidades descartadas:
+
+10
+00:00:33,170 --> 00:00:33,606
+uno.
+
+11
+00:00:34,274 --> 00:00:37,625
+Aparece una decisión nueva, el tratamiento de la merma.
+
+12
+00:00:38,292 --> 00:00:39,199
+La abro.
+
+13
+00:00:39,854 --> 00:00:43,577
+Merma normal es la de todos los días, y la absorbe el producto:
+
+14
+00:00:43,712 --> 00:00:46,478
+los once buenos cargan con el costo del que se perdió.
+
+15
+00:00:47,134 --> 00:00:51,873
+Pérdida anormal es un accidente, y va directo al gasto sin encarecer el producto.
+
+16
+00:00:52,540 --> 00:00:53,894
+Elijo la normal.
+
+17
+00:00:54,561 --> 00:00:56,127
+El motivo es obligatorio;
+
+18
+00:00:56,261 --> 00:00:58,148
+escribo que se quemó en el horno.
+
+19
+00:00:58,816 --> 00:00:59,847
+Y mira el costo:
+
+20
+00:00:59,981 --> 00:01:03,542
+cada bizcocho sube a ciento sesenta y ocho con sesenta y cuatro.
+
+21
+00:01:04,198 --> 00:01:06,394
+Pulso Registrar y cerrar la orden.
+
+22
+00:01:07,783 --> 00:01:12,583
+El aviso confirma el registro, y la orden quedó cerrada con su merma anotada.
+
+23
+00:01:13,251 --> 00:01:15,261
+¿Y si te equivocaste al registrar?
+
+24
+00:01:15,917 --> 00:01:17,431
+Aquí no se borra nada.
+
+25
+00:01:18,087 --> 00:01:21,647
+Abajo, en el registro, está Corregir este registro:
+
+26
+00:01:21,770 --> 00:01:24,289
+pides la corrección, escribes el motivo,
+
+27
+00:01:24,325 --> 00:01:27,104
+y el sistema solo devuelve el material al almacén,
+
+28
+00:01:27,213 --> 00:01:30,204
+retira los bizcochos y reversa el asiento contable.
+
+29
+00:01:31,570 --> 00:01:34,139
+Ahora, cuando el material no alcanza.
+
+30
+00:01:34,807 --> 00:01:37,760
+Pulso Nueva orden y pido doce bizcochos más.
+
+31
+00:01:38,427 --> 00:01:41,530
+Enseguida se recalcula, y el plan lo marca en rojo:
+
+32
+00:01:41,664 --> 00:01:44,134
+de mantequilla hay que comprar dos libras.
+
+33
+00:01:44,802 --> 00:01:48,933
+El aviso de abajo lo explica, y el botón de reservar queda apagado.
+
+34
+00:01:49,588 --> 00:01:51,189
+Pero la orden no se pierde:
+
+35
+00:01:51,237 --> 00:01:52,764
+pulso Guardar borrador.
+
+36
+00:01:53,433 --> 00:01:57,612
+El sistema confirma que se creó, y la orden queda esperando la compra.
+
+37
+00:01:58,282 --> 00:01:59,783
+Ahora voy al Tablero.
+
+38
+00:02:00,439 --> 00:02:04,992
+Abajo, material para las órdenes en borrador es tu lista de compras de fabricación:
+
+39
+00:02:05,090 --> 00:02:08,018
+lo necesario, lo libre y lo que falta comprar.
+
+40
+00:02:08,686 --> 00:02:10,832
+Y arriba, el resumen del período:
+
+41
+00:02:10,943 --> 00:02:13,574
+la producción buena, el porcentaje de merma,
+
+42
+00:02:13,682 --> 00:02:16,203
+el costo de producción y el costo por unidad.
+
+43
+00:02:17,558 --> 00:02:19,593
+Por último, la trazabilidad.
+
+44
+00:02:20,262 --> 00:02:23,723
+Imagina que el proveedor avisa que un lote de harina salió malo.
+
+45
+00:02:24,378 --> 00:02:28,150
+Abro Trazabilidad y, en el buscador, escribo el número del lote,
+
+46
+00:02:28,247 --> 00:02:30,246
+que viene en la etiqueta del saco.
+
+47
+00:02:30,914 --> 00:02:33,259
+Con el lote escrito, pulso Buscar.
+
+48
+00:02:33,914 --> 00:02:35,591
+Ahí está su historia completa:
+
+49
+00:02:35,712 --> 00:02:39,396
+la entrada por la compra, y cada orden de fabricación que lo usó,
+
+50
+00:02:39,483 --> 00:02:41,207
+con el saldo que fue quedando.
+
+51
+00:02:41,876 --> 00:02:44,295
+Con un clic en el documento llegas a la orden,
+
+52
+00:02:44,381 --> 00:02:46,849
+y de ahí a los bizcochos que salieron de ella.
+
+53
+00:02:47,506 --> 00:02:49,987
+Lista de materiales, orden y control:
+
+54
+00:02:50,110 --> 00:02:51,972
+eso es fabricar con Germiva.

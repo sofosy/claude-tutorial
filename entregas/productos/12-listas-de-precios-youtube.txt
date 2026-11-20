@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Productos · Parte 12: listas de precios
+
+DESCRIPCIÓN
+============================================================
+Duodécimo video de Productos en Germiva ERP: precios distintos para distintos clientes sin escribir un precio por producto. Creamos una lista calculada (diez por ciento menos que el precio regular), se la asignamos a un cliente y vemos cómo la factura propone sola su precio.
+
+⏱️ CAPÍTULOS
+00:00  Crear una lista calculada
+00:55  Asignarla a un cliente
+01:22  El precio en la factura
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Dónde se definen las listas de precios
+• Crear una lista calculada sobre otra, con redondeo
+• Asignar la lista a un cliente
+• Ver el precio de la lista en la factura
+
+⚠️ ERRORES COMUNES
+• Crear una lista de precio fijo y escribir cada precio a mano cuando basta un porcentaje
+• Olvidar asignar la lista al cliente: seguiría con el precio regular
+• Esperar que cambie una factura ya hecha: la lista aplica a los documentos nuevos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:06
+
+TRANSCRIPCIÓN
+============================================================
+A los colmados que te compran para revender les das mejor precio. Eso no se hace producto por producto: se hace con una lista de precios. Están en Inventario, Configuración, al final de la página. La tabla muestra las que ya existen, y la primera es la lista por defecto. Pulso Nueva lista, y se abre su ventana. En tipo elijo porcentaje sobre otra lista. La lista base será el precio regular. En porcentaje escribo menos diez, es decir, diez por ciento menos que la base. En redondeo pongo cinco, para que los precios queden en múltiplos de cinco pesos. Y el nombre de la lista: colmados, que es a quienes se la voy a dar. Con todo lleno, pulso Guardar, y el aviso confirma que se creó. Ahí está, con su cálculo.
+La lista se asigna en la ficha de cada cliente. Este es el Colmado La Esquina. En el campo lista de precios escribo las primeras letras, espero a que aparezca, y elijo colmados. Desde ahora, sus documentos usan esos precios; si el campo queda vacío, el cliente usa la lista por defecto. Guardo el cliente. Sale la confirmación de que se actualizó, y la cierro con aceptar.
+Veámoslo en una factura nueva. Viene con consumidor final, así que primero lo quito con su equis. En cliente escribo esquina; la lista lo busca, y cuando aparece el colmado, lo elijo. Ahora agrego un producto: escribo habichuelas en el buscador de líneas, espero las opciones, y las tomo de la lista. Su precio regular es ochenta y cinco pesos, pero para este cliente la factura propone setenta y cinco: ochenta y cinco menos el diez por ciento, redondeado a cinco. Y si mañana sube el precio regular, el de los colmados sube con él, sin tocar nada. Con esto termina la serie de Productos.

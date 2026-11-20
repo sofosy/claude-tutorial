@@ -1,0 +1,155 @@
+1
+00:00:03,100 --> 00:00:05,024
+Estas galletas se llevan por caja:
+
+2
+00:00:05,195 --> 00:00:08,916
+veinte cajas en existencia, a trescientos pesos cada una.
+
+3
+00:00:09,571 --> 00:00:12,053
+Ahora la tienda quiere venderlas sueltas.
+
+4
+00:00:12,710 --> 00:00:15,687
+Eso no se resuelve cambiando la unidad de medida a mano:
+
+5
+00:00:15,785 --> 00:00:17,707
+hay que convertir la unidad base.
+
+6
+00:00:18,377 --> 00:00:20,188
+Abro la ficha con el lápiz.
+
+7
+00:00:20,856 --> 00:00:24,144
+En características enciendo se compra o se vende en empaques,
+
+8
+00:00:24,230 --> 00:00:25,681
+que se guarda al momento.
+
+9
+00:00:26,350 --> 00:00:30,816
+Y abajo, en la sección unidad base, pulso Convertir unidad base.
+
+10
+00:00:32,202 --> 00:00:34,311
+El asistente pide dos datos.
+
+11
+00:00:34,979 --> 00:00:36,097
+La unidad nueva:
+
+12
+00:00:36,194 --> 00:00:38,218
+abro la lista y elijo unidad.
+
+13
+00:00:38,885 --> 00:00:41,082
+Y cuántas unidades trae cada caja;
+
+14
+00:00:41,179 --> 00:00:42,383
+aquí son doce.
+
+15
+00:00:43,052 --> 00:00:46,414
+Antes de tocar nada, conviene revisar qué va a pasar:
+
+16
+00:00:46,487 --> 00:00:47,753
+pulso Ver impacto.
+
+17
+00:00:48,421 --> 00:00:49,960
+Arriba, el resumen:
+
+18
+00:00:50,071 --> 00:00:53,731
+la existencia pasa de veinte cajas a doscientas cuarenta unidades,
+
+19
+00:00:53,791 --> 00:00:55,925
+y el valor del inventario no cambia.
+
+20
+00:00:56,594 --> 00:01:00,651
+En la tabla, el costo baja de ciento ochenta por caja a quince por unidad,
+
+21
+00:01:00,734 --> 00:01:03,588
+y el mínimo y el máximo se multiplican por doce.
+
+22
+00:01:04,257 --> 00:01:06,354
+Además, la caja no se pierde:
+
+23
+00:01:06,477 --> 00:01:10,980
+queda como empaque, a sus trescientos pesos, para seguir comprándola igual.
+
+24
+00:01:11,647 --> 00:01:14,266
+Todo cuadra, así que pulso Convertir.
+
+25
+00:01:14,933 --> 00:01:19,201
+El sistema pide una confirmación, porque el cambio toca todo el producto;
+
+26
+00:01:19,262 --> 00:01:19,822
+la doy.
+
+27
+00:01:20,478 --> 00:01:23,282
+El aviso final dice que la caja quedó como empaque;
+
+28
+00:01:23,379 --> 00:01:24,125
+lo cierro.
+
+29
+00:01:25,521 --> 00:01:29,887
+Para ver el resultado, vuelvo al catálogo y busco las galletas por su nombre.
+
+30
+00:01:30,555 --> 00:01:31,947
+Ahí está la fila.
+
+31
+00:01:32,602 --> 00:01:37,439
+El stock ya dice doscientas cuarenta, y el precio de venta, veinticinco pesos:
+
+32
+00:01:37,537 --> 00:01:39,039
+trescientos entre doce.
+
+33
+00:01:39,694 --> 00:01:40,875
+Abro la ficha.
+
+34
+00:01:41,531 --> 00:01:43,850
+La unidad de medida ahora es unidad.
+
+35
+00:01:44,507 --> 00:01:47,149
+Y en unidades y empaques está la caja por doce,
+
+36
+00:01:47,197 --> 00:01:49,790
+con su precio de trescientos y la estrella de compra:
+
+37
+00:01:49,950 --> 00:01:53,473
+se sigue comprando por caja, y ahora también se vende suelta.
+
+38
+00:01:54,141 --> 00:01:58,608
+Si te equivocaste, la conversión se puede revertir mientras no haya movimientos
+
+39
+00:01:58,419 --> 00:01:59,140
+nuevos.

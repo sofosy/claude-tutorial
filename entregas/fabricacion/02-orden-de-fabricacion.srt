@@ -1,0 +1,199 @@
+1
+00:00:03,100 --> 00:00:06,288
+En el video anterior publicamos la receta del bizcocho.
+
+2
+00:00:06,942 --> 00:00:09,413
+Hoy lo fabricamos, y son tres pasos:
+
+3
+00:00:09,472 --> 00:00:13,095
+crear la orden, reservar el material y registrar lo que salió.
+
+4
+00:00:13,752 --> 00:00:15,203
+Pulso Nueva orden.
+
+5
+00:00:15,871 --> 00:00:18,564
+La lista de materiales ya viene elegida.
+
+6
+00:00:19,219 --> 00:00:23,178
+En cantidad a fabricar escribo veinticuatro, que son dos corridas.
+
+7
+00:00:23,846 --> 00:00:28,150
+El almacén de los componentes es la despensa, de donde sale la materia prima.
+
+8
+00:00:28,818 --> 00:00:31,759
+El del producto terminado lo abro y lo cambio a la vitrina,
+
+9
+00:00:31,868 --> 00:00:33,915
+que es donde entran los bizcochos.
+
+10
+00:00:34,585 --> 00:00:36,980
+Abajo, el sistema ya hizo la cuenta:
+
+11
+00:00:37,101 --> 00:00:41,779
+lo requerido de cada componente, lo disponible, y la columna por comprar vacía,
+
+12
+00:00:41,838 --> 00:00:42,994
+porque hay de todo.
+
+13
+00:00:43,661 --> 00:00:45,338
+Costo estimado de la orden:
+
+14
+00:00:45,435 --> 00:00:47,769
+tres mil setecientos diez pesos.
+
+15
+00:00:48,436 --> 00:00:51,798
+Si faltara material, aquí mismo dice cuánto hay que comprar,
+
+16
+00:00:51,920 --> 00:00:54,440
+y la orden se guarda en borrador hasta que llegue.
+
+17
+00:00:55,107 --> 00:00:56,771
+Pulso Guardar y reservar.
+
+18
+00:00:58,134 --> 00:01:02,066
+El aviso confirma que la orden se creó y el material quedó reservado.
+
+19
+00:01:02,722 --> 00:01:07,013
+Arriba está su número, y la línea de avance marca material reservado.
+
+20
+00:01:07,668 --> 00:01:09,754
+Reservar no descuenta nada todavía:
+
+21
+00:01:09,876 --> 00:01:13,263
+la harina y los huevos siguen en la despensa, pero apartados,
+
+22
+00:01:13,337 --> 00:01:16,414
+y nadie más puede venderlos ni usarlos en otra orden.
+
+23
+00:01:17,081 --> 00:01:19,153
+A la izquierda está el consumo previsto,
+
+24
+00:01:19,239 --> 00:01:22,143
+con el lote de donde va a salir cada componente.
+
+25
+00:01:22,798 --> 00:01:27,301
+Y en la columna usado puedes corregir la cantidad si al final se gastó más o menos.
+
+26
+00:01:28,690 --> 00:01:30,774
+Los bizcochos ya salieron del horno.
+
+27
+00:01:31,442 --> 00:01:33,626
+A la derecha registro la producción.
+
+28
+00:01:34,282 --> 00:01:35,549
+Unidades buenas:
+
+29
+00:01:35,683 --> 00:01:38,115
+veinticuatro, que ya viene propuesto.
+
+30
+00:01:38,771 --> 00:01:42,394
+Si alguno se hubiera dañado, iría en unidades descartadas;
+
+31
+00:01:42,504 --> 00:01:44,589
+eso lo vemos en el próximo video.
+
+32
+00:01:45,257 --> 00:01:49,599
+El lote del producto terminado lo propone el sistema, y el costo de conversión,
+
+33
+00:01:49,697 --> 00:01:53,356
+mil cuatrocientos cuarenta, sale de la mano de obra de la lista.
+
+34
+00:01:54,024 --> 00:01:56,209
+Debajo está el costo de este registro:
+
+35
+00:01:56,293 --> 00:02:00,462
+cada bizcocho entra al almacén en ciento cincuenta y cuatro con cincuenta y ocho.
+
+36
+00:02:01,131 --> 00:02:05,360
+Dejo marcado cerrar la orden, y pulso Registrar y cerrar la orden.
+
+37
+00:02:06,028 --> 00:02:07,332
+El aviso lo confirma:
+
+38
+00:02:07,479 --> 00:02:09,912
+producción registrada y orden cerrada.
+
+39
+00:02:11,293 --> 00:02:13,688
+¿Y qué hizo el sistema con un solo clic?
+
+40
+00:02:14,355 --> 00:02:17,271
+Está todo abajo, en producción registrada.
+
+41
+00:02:17,939 --> 00:02:20,222
+Primero, los movimientos de inventario:
+
+42
+00:02:20,370 --> 00:02:24,377
+cuatro salidas de materia prima, cada una de su lote y a su costo,
+
+43
+00:02:24,412 --> 00:02:27,080
+y una entrada de veinticuatro bizcochos a la vitrina,
+
+44
+00:02:27,202 --> 00:02:30,316
+a ciento cincuenta y cuatro con cincuenta y ocho cada uno.
+
+45
+00:02:30,972 --> 00:02:33,963
+Segundo, el asiento contable, hecho solo:
+
+46
+00:02:34,085 --> 00:02:37,572
+sale el material del inventario, entra el producto terminado.
+
+47
+00:02:38,227 --> 00:02:40,089
+Y tercero, el resultado:
+
+48
+00:02:40,099 --> 00:02:42,841
+materiales, conversión y costo total.
+
+49
+00:02:43,509 --> 00:02:45,879
+Arriba, la orden quedó cerrada.
+
+50
+00:02:46,548 --> 00:02:51,299
+Ya tienes bizcochos para vender, y sabes exactamente cuánto te costó cada uno.

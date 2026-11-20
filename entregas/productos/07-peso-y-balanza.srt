@@ -1,0 +1,171 @@
+1
+00:00:03,100 --> 00:00:04,266
+¿Vendes por libra?
+
+2
+00:00:04,921 --> 00:00:07,986
+Con una balanza etiquetadora no hay que teclear el peso.
+
+3
+00:00:08,655 --> 00:00:09,920
+Primero se activa.
+
+4
+00:00:10,577 --> 00:00:12,934
+Entro a Inventario y abro Configuración.
+
+5
+00:00:13,589 --> 00:00:16,443
+Más abajo está la sección balanza etiquetadora.
+
+6
+00:00:17,100 --> 00:00:19,890
+La balanza es de la tienda, no de un producto:
+
+7
+00:00:19,952 --> 00:00:23,995
+imprime una etiqueta con el código del producto y el peso dentro del código de
+
+8
+00:00:23,809 --> 00:00:24,567
+barras.
+
+9
+00:00:25,234 --> 00:00:28,782
+Enciendo uso balanza etiquetadora, y aparece el formato:
+
+10
+00:00:28,830 --> 00:00:33,097
+el prefijo veintiuno, cinco dígitos para el producto y cinco para el peso.
+
+11
+00:00:33,754 --> 00:00:36,111
+Son los valores de las balanzas más comunes;
+
+12
+00:00:36,283 --> 00:00:39,038
+si la tuya usa otros, se ajustan aquí.
+
+13
+00:00:39,706 --> 00:00:43,068
+Pulso Guardar, y cierro el aviso que confirma el cambio.
+
+14
+00:00:44,431 --> 00:00:45,746
+Ahora el producto.
+
+15
+00:00:46,414 --> 00:00:49,777
+Abro Productos, y en el buscador escribo habichuelas.
+
+16
+00:00:50,445 --> 00:00:55,307
+La tabla se filtra y, cuando queda solo esa fila, abro su ficha con el lápiz.
+
+17
+00:00:55,975 --> 00:01:00,032
+Se abre con todos sus datos, y arriba, en la información general,
+
+18
+00:01:00,167 --> 00:01:01,903
+está lo primero que hay que mirar.
+
+19
+00:01:02,560 --> 00:01:04,198
+Su unidad base es la libra:
+
+20
+00:01:04,222 --> 00:01:08,253
+la existencia y el precio, ochenta y cinco pesos, van por libra.
+
+21
+00:01:08,921 --> 00:01:12,754
+Enciendo se compra o se vende en empaques, y agrego un empaque.
+
+22
+00:01:13,423 --> 00:01:15,657
+El aviso rojo de abajo pide su unidad,
+
+23
+00:01:15,766 --> 00:01:18,795
+así que abro la lista de unidades y elijo kilogramo.
+
+24
+00:01:19,462 --> 00:01:20,951
+Fíjate en el contenido:
+
+25
+00:01:21,075 --> 00:01:23,543
+dos punto dos libras, sin escribirlo,
+
+26
+00:01:23,604 --> 00:01:26,768
+porque el sistema conoce la equivalencia entre libra y kilo.
+
+27
+00:01:27,424 --> 00:01:30,538
+Por último, a la derecha, el código de balanza:
+
+28
+00:01:30,673 --> 00:01:35,424
+es el número con que la balanza conoce este producto, y escribo ciento veintitrés,
+
+29
+00:01:35,484 --> 00:01:37,805
+el mismo que tiene programado la balanza.
+
+30
+00:01:38,473 --> 00:01:39,813
+Con eso está listo.
+
+31
+00:01:40,468 --> 00:01:44,129
+Guardo la ficha y, cuando el aviso lo confirma, lo acepto.
+
+32
+00:01:45,493 --> 00:01:47,106
+Vamos al punto de venta.
+
+33
+00:01:47,775 --> 00:01:49,438
+El cliente pide habichuelas;
+
+34
+00:01:49,597 --> 00:01:52,475
+se pesan, y la balanza imprime su etiqueta.
+
+35
+00:01:53,132 --> 00:01:55,403
+En el buscador escaneo esa etiqueta.
+
+36
+00:01:56,058 --> 00:01:59,669
+Aquí, como no tengo lector, escribo el código completo,
+
+37
+00:01:59,791 --> 00:02:03,364
+los trece dígitos de la etiqueta, y al terminar pulso Enter.
+
+38
+00:02:04,020 --> 00:02:07,692
+El ticket recibe las habichuelas con dos punto treinta y cinco libras:
+
+39
+00:02:07,777 --> 00:02:09,924
+el peso venía dentro del código.
+
+40
+00:02:10,580 --> 00:02:13,360
+El precio es por libra, ochenta y cinco pesos,
+
+41
+00:02:13,407 --> 00:02:16,707
+y la línea suma ciento noventa y nueve con setenta y cinco.
+
+42
+00:02:17,376 --> 00:02:19,546
+Así se vende cualquier producto pesado:
+
+43
+00:02:19,633 --> 00:02:22,263
+sin teclear el peso y sin errores al cobrar.

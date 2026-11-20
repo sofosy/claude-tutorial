@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Productos · Parte 8: convertir la unidad base
+
+DESCRIPCIÓN
+============================================================
+Octavo video de Productos en Germiva ERP: qué hacer cuando un producto que llevabas por caja ahora quieres venderlo suelto. «Convertir unidad base» pasa la existencia, el costo, los precios y el kardex a la unidad nueva en un solo paso, y deja la caja como empaque.
+
+⏱️ CAPÍTULOS
+00:00  El caso: de cajas a unidades
+00:32  Ver el impacto y convertir
+01:25  La ficha después de convertir
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo hace falta convertir la unidad base
+• Usar «Ver impacto» antes de convertir
+• Qué cambia: existencia, costo, precio, mínimo y máximo
+• Cómo queda la caja como empaque después de convertir
+
+⚠️ ERRORES COMUNES
+• Cambiar la unidad de medida a mano: la existencia y el costo quedan en la unidad equivocada
+• Convertir sin revisar el impacto
+• Olvidar que se puede revertir solo mientras no haya movimientos nuevos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:03
+
+TRANSCRIPCIÓN
+============================================================
+Estas galletas se llevan por caja: veinte cajas en existencia, a trescientos pesos cada una. Ahora la tienda quiere venderlas sueltas. Eso no se resuelve cambiando la unidad de medida a mano: hay que convertir la unidad base. Abro la ficha con el lápiz. En características enciendo se compra o se vende en empaques, que se guarda al momento. Y abajo, en la sección unidad base, pulso Convertir unidad base.
+El asistente pide dos datos. La unidad nueva: abro la lista y elijo unidad. Y cuántas unidades trae cada caja; aquí son doce. Antes de tocar nada, conviene revisar qué va a pasar: pulso Ver impacto. Arriba, el resumen: la existencia pasa de veinte cajas a doscientas cuarenta unidades, y el valor del inventario no cambia. En la tabla, el costo baja de ciento ochenta por caja a quince por unidad, y el mínimo y el máximo se multiplican por doce. Además, la caja no se pierde: queda como empaque, a sus trescientos pesos, para seguir comprándola igual. Todo cuadra, así que pulso Convertir. El sistema pide una confirmación, porque el cambio toca todo el producto; la doy. El aviso final dice que la caja quedó como empaque; lo cierro.
+Para ver el resultado, vuelvo al catálogo y busco las galletas por su nombre. Ahí está la fila. El stock ya dice doscientas cuarenta, y el precio de venta, veinticinco pesos: trescientos entre doce. Abro la ficha. La unidad de medida ahora es unidad. Y en unidades y empaques está la caja por doce, con su precio de trescientos y la estrella de compra: se sigue comprando por caja, y ahora también se vende suelta. Si te equivocaste, la conversión se puede revertir mientras no haya movimientos nuevos.

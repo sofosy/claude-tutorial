@@ -1,0 +1,300 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/inventory/product/list",
+  "esperar": "button:has-text('Nuevo Producto')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de ge i i",
+  "RNC": "erre ene ce",
+  "POS": "pos"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Embotelladora",
+   "Agroindustrial",
+   "Cibao",
+   "Galletera",
+   "Colmado",
+   "Esquina"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Productos · Parte 10: variantes por dentro, su existencia y su venta",
+ "descripcion": "Décimo video de Productos en Germiva ERP: qué es el producto padre y qué es cada variante, cómo crear una combinación que faltaba, darle existencia a una variante y venderla en el punto de venta con el selector de presentación y sabor.",
+ "_comentario": "Serie Productos corta (nov. 2026), video 10. Parte del resultado del video 9 (el setup lo ensaya sin grabar): «Gaseosa Brisa» con 8 variantes a 35 / 60 / 85. En cámara: se crea Jumbo 1 L + Fresa desde la matriz (85), entrada de 24 latas de naranja a RD$20 a la variante «Lata 12 oz + Naranja», y en el POS se agregan 2 latas (RD$70) desde el selector del padre.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "./.venv/bin/python seeds/_puertas/ensayar.py guiones/productos-09-variantes-crear.json"
+ },
+ "aprenderas": [
+  "Diferenciar el producto padre de sus variantes",
+  "Crear una combinación nueva desde la matriz",
+  "Registrar la entrada de mercancía de una variante",
+  "Vender una variante desde el selector del punto de venta"
+ ],
+ "errores_comunes": [
+  "Buscar la existencia en el padre: el padre no guarda mercancía, la guardan sus variantes",
+  "Registrar la entrada en la variante equivocada",
+  "Cambiar el precio del padre sin saber que arrastra a las variantes que lo heredan"
+ ],
+ "pasos": [
+  {
+   "id": "01-padre",
+   "capitulo": "El padre y sus variantes",
+   "rotulo": "El padre",
+   "ruta": "Inventario › Productos › Gaseosa Brisa",
+   "narracion": "En el video anterior creamos la gaseosa con sus variantes. En el catálogo la busco por su nombre, y cuando aparece abro la ficha del padre. El padre es la plantilla: define lo común, pero no se vende ni guarda existencia. Abro la pestaña variantes. Cada fila es una variante, con su propio código de barras. Las latas dicen del padre: usan su precio y cambian con él. Paso a la vista matriz. La jumbo de fresa, que dejamos fuera, dice crear: la pulso, se abre una ventanita, y en ella escribo su precio, ochenta y cinco pesos, y luego confirmo con el botón crear. El aviso lo confirma, y ya está la combinación que faltaba.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:text-is('Buscar')) input",
+      "texto": "Gaseosa"
+     },
+     "al_decir": "la busco por su nombre"
+    },
+    {
+     "click": "table tbody tr:has-text('Gaseosa Brisa') button[aria-label='Abrir'] >> nth=0",
+     "al_decir": "abro la ficha"
+    },
+    {
+     "resaltar": ".gm-badge:text-is('Producto padre')",
+     "durante_ms": 4500,
+     "al_decir": "El padre es la plantilla"
+    },
+    {
+     "click": "mat-tab-group.product-tabs [role=tab]:has-text('Variantes')",
+     "al_decir": "Abro la pestaña"
+    },
+    {
+     "resaltar": ".vp-table tbody tr >> nth=0 >> td >> nth=2",
+     "durante_ms": 3000,
+     "al_decir": "con su propio código"
+    },
+    {
+     "resaltar": ".vp-inherited >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "Las latas dicen"
+    },
+    {
+     "click": ".gm-seg button:has-text('Matriz')",
+     "al_decir": "vista matriz"
+    },
+    {
+     "click": ".vp-cell--new",
+     "al_decir": "la pulso"
+    },
+    {
+     "escribir": {
+      "sel": ".vp-pop input.money-input__control",
+      "texto": "85"
+     },
+     "al_decir": "escribo su precio"
+    },
+    {
+     "click": ".vp-pop button:has-text('Crear')",
+     "al_decir": "el botón crear"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2000,
+     "al_decir": "El aviso lo confirma",
+     "cursor": false
+    },
+    {
+     "resaltar": ".vp-matrix tbody tr >> nth=2",
+     "durante_ms": 3000,
+     "al_decir": "la combinación que faltaba"
+    }
+   ]
+  },
+  {
+   "id": "02-entrada",
+   "capitulo": "Darle existencia a una variante",
+   "rotulo": "Entrada",
+   "ruta": "Inventario › Productos › Lata 12 oz + Naranja",
+   "narracion": "La mercancía entra a cada variante, no al padre. Vuelvo a la lista y abro la lata de naranja. La barra de arriba dice que es un producto hijo, con el enlace a su padre. Arriba pulso el botón de entrada, y se abre su ventana. En el motivo elijo compras de mercancía. En proveedor escribo las primeras letras, espero a que la lista lo encuentre, y elijo la Embotelladora del Caribe. La ubicación: abro la lista y elijo el pasillo A del almacén Sur. El lote lo genera el botón de al lado. En cantidad, veinticuatro latas, que es lo que trae la caja. Y el costo de cada una: veinte pesos, sin el impuesto. Abajo confirmo el registro. El sistema avisa que la compra quedó registrada con su recepción, a la espera de la factura del proveedor; lo acepto. Arriba, la variante ya tiene veinticuatro en existencia.",
+   "acciones": [
+    {
+     "click": ".gm-seg button:has-text('Lista')",
+     "al_decir": "Vuelvo a la lista"
+    },
+    {
+     "click": "button[aria-label='Abrir Lata 12 oz + Naranja']",
+     "al_decir": "abro la lata"
+    },
+    {
+     "resaltar": ".child-bar__parent",
+     "durante_ms": 3500,
+     "al_decir": "es un producto hijo"
+    },
+    {
+     "click": "button:has-text('Registrar Entrada')",
+     "al_decir": "el botón de entrada"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 1500,
+     "al_decir": "se abre su ventana",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container mat-select[formcontrolname='inventoryMovementTypeId']",
+     "al_decir": "En el motivo"
+    },
+    {
+     "click": "mat-option:has-text('Compras de mercancía')",
+     "al_decir": "compras de mercancía"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container [formcontrolname='partnerId'] input",
+      "texto": "Embotell"
+     },
+     "al_decir": "escribo las primeras letras"
+    },
+    {
+     "click": "mat-option:has-text('Embotelladora del Caribe')",
+     "al_decir": "elijo la Embotelladora"
+    },
+    {
+     "click": "mat-dialog-container [formcontrolname='locationId'] input",
+     "al_decir": "La ubicación"
+    },
+    {
+     "click": "mat-option:has-text('Pasillo A - Estante 1')",
+     "al_decir": "el pasillo A"
+    },
+    {
+     "click": "mat-dialog-container button:has(mat-icon:text('auto_awesome'))",
+     "al_decir": "lo genera el botón"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='quantity']",
+      "texto": "24"
+     },
+     "al_decir": "En cantidad"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='unitPrice']",
+      "texto": "20"
+     },
+     "al_decir": "el costo de cada una"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Registrar entrada')",
+     "al_decir": "confirmo el registro"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container, .custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 4500,
+     "al_decir": "El sistema avisa",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "lo acepto"
+    },
+    {
+     "resaltar": ".hero-stock >> nth=0",
+     "durante_ms": 3500,
+     "al_decir": "ya tiene veinticuatro"
+    }
+   ]
+  },
+  {
+   "id": "03-pos",
+   "capitulo": "Vender una variante",
+   "rotulo": "Punto de venta",
+   "ruta": "Punto de venta",
+   "navegar": "/pos",
+   "narracion": "Y ahora, la venta. En el punto de venta busco gaseosa, escribiendo su nombre. El catálogo se filtra, y aparece una sola tarjeta, la del padre, con todas sus variantes. Al tocarla se abre el selector: presentaciones en filas y sabores en columnas. Solo la lata de naranja tiene existencia; las demás dicen agotado. Le sumo una lata con el botón más, y enseguida otra: son dos latas. Abajo pulso Agregar, y el ticket recibe la línea con el nombre completo de la variante. Y con lector de código de barras ni siquiera hace falta el selector: escaneas la lata y entra directo.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "input[aria-label='Buscar producto']",
+      "texto": "Gaseosa"
+     },
+     "al_decir": "busco gaseosa"
+    },
+    {
+     "resaltar": "button.ps-card:has-text('Gaseosa Brisa')",
+     "durante_ms": 3000,
+     "al_decir": "una sola tarjeta"
+    },
+    {
+     "click": "button.ps-card:has-text('Gaseosa Brisa')",
+     "al_decir": "Al tocarla"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "se abre el selector",
+     "cursor": false
+    },
+    {
+     "click": "button[aria-label^='Sumar una unidad de Lata 12 oz'][aria-label*='Naranja']",
+     "al_decir": "Le sumo una lata"
+    },
+    {
+     "click": "button[aria-label^='Sumar una unidad de Lata 12 oz'][aria-label*='Naranja']",
+     "al_decir": "enseguida otra"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Agregar')",
+     "al_decir": "pulso Agregar"
+    },
+    {
+     "resaltar": ".ps-line:has-text('Naranja')",
+     "durante_ms": 5000,
+     "al_decir": "el ticket recibe"
+    }
+   ]
+  }
+ ]
+}

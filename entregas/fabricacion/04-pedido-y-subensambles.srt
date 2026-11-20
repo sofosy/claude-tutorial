@@ -1,0 +1,163 @@
+1
+00:00:03,100 --> 00:00:07,442
+Un colmado pidió seis bizcochos de cumpleaños, y no hay ninguno hecho.
+
+2
+00:00:08,108 --> 00:00:10,887
+Este es su pedido de venta, ya confirmado.
+
+3
+00:00:11,557 --> 00:00:14,670
+Para verlo mejor, recojo el panel de la izquierda.
+
+4
+00:00:15,326 --> 00:00:17,720
+En la línea del producto hay un botón nuevo:
+
+5
+00:00:17,719 --> 00:00:19,283
+Planificar fabricación.
+
+6
+00:00:19,939 --> 00:00:24,194
+Lo pulso, y Germiva me lleva a una orden de fabricación con el producto y la
+
+7
+00:00:24,007 --> 00:00:26,091
+cantidad del pedido ya puestos.
+
+8
+00:00:26,760 --> 00:00:27,654
+Mira el plan:
+
+9
+00:00:27,751 --> 00:00:31,026
+el bizcocho de cumpleaños lleva adentro un bizcocho de vainilla,
+
+10
+00:00:31,137 --> 00:00:32,750
+que también se fabrica aquí.
+
+11
+00:00:33,418 --> 00:00:37,191
+Por eso tiene la etiqueta sub-ensamble, y dice que faltan seis.
+
+12
+00:00:37,859 --> 00:00:40,377
+No hay que comprarlos, hay que hacerlos.
+
+13
+00:00:41,033 --> 00:00:42,585
+Pulso Guardar borrador.
+
+14
+00:00:43,960 --> 00:00:49,146
+La orden quedó en borrador, como confirma el aviso, y arriba aparece otro botón:
+
+15
+00:00:49,256 --> 00:00:50,980
+Planificar sub-ensambles.
+
+16
+00:00:51,649 --> 00:00:55,853
+Lo pulso, y el aviso dice que las órdenes de los sub-ensambles se crearon en
+
+17
+00:00:55,666 --> 00:00:56,412
+borrador.
+
+18
+00:00:57,079 --> 00:00:57,886
+Aquí está:
+
+19
+00:00:58,009 --> 00:01:02,525
+el sistema crea sola la orden del bizcocho de vainilla, por los seis que faltan,
+
+20
+00:01:02,610 --> 00:01:03,890
+enlazada a esta.
+
+21
+00:01:04,545 --> 00:01:05,923
+La regla es sencilla:
+
+22
+00:01:06,082 --> 00:01:07,908
+primero se fabrica lo de adentro.
+
+23
+00:01:08,575 --> 00:01:10,003
+Entro a la orden hija.
+
+24
+00:01:10,658 --> 00:01:12,917
+Arriba, pulso Reservar material;
+
+25
+00:01:13,003 --> 00:01:14,926
+el aviso confirma la reserva.
+
+26
+00:01:15,581 --> 00:01:19,143
+Y como ya vimos en el segundo video, registro la producción:
+
+27
+00:01:19,239 --> 00:01:21,697
+las seis unidades buenas vienen propuestas,
+
+28
+00:01:21,757 --> 00:01:24,289
+así que pulso Registrar y cerrar la orden.
+
+29
+00:01:25,650 --> 00:01:27,189
+Listo el sub-ensamble.
+
+30
+00:01:27,857 --> 00:01:32,124
+En sus datos, el enlace sub-ensamble de me devuelve a la orden principal.
+
+31
+00:01:32,792 --> 00:01:37,357
+Ahora sí hay bizcochos de vainilla en el almacén, así que pulso Reservar material,
+
+32
+00:01:37,480 --> 00:01:39,775
+y el aviso confirma que quedó reservado.
+
+33
+00:01:40,431 --> 00:01:43,892
+Ahora registro la producción de los seis bizcochos de cumpleaños,
+
+34
+00:01:43,940 --> 00:01:45,901
+y la orden se cierra con su aviso.
+
+35
+00:01:46,557 --> 00:01:48,419
+Fíjate en el costo por unidad:
+
+36
+00:01:48,467 --> 00:01:50,688
+unos trescientos cincuenta y un pesos.
+
+37
+00:01:51,356 --> 00:01:52,300
+Ahí va todo:
+
+38
+00:01:52,447 --> 00:01:56,094
+el bizcocho de vainilla con su propia mano de obra, el azúcar,
+
+39
+00:01:56,230 --> 00:01:58,327
+los huevos y el trabajo de decorarlo.
+
+40
+00:01:58,995 --> 00:02:03,337
+Los seis ya están en el almacén, listos para despachar el pedido del colmado.
+
+41
+00:02:03,992 --> 00:02:07,044
+Del pedido a la fábrica, sin salir de Germiva.

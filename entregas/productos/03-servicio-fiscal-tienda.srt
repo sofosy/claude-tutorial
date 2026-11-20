@@ -1,0 +1,163 @@
+1
+00:00:03,100 --> 00:00:05,668
+No todo lo que vendes se guarda en un almacén.
+
+2
+00:00:06,336 --> 00:00:07,999
+Hoy creamos un servicio.
+
+3
+00:00:08,655 --> 00:00:10,170
+Pulso Nuevo Producto.
+
+4
+00:00:10,824 --> 00:00:15,600
+Se abre la ficha en blanco y, arriba a la derecha, cambio el tipo a servicio.
+
+5
+00:00:16,256 --> 00:00:17,957
+Fíjate en lo que desaparece:
+
+6
+00:00:18,054 --> 00:00:21,750
+la cantidad inicial, las características y el código de barras,
+
+7
+00:00:21,786 --> 00:00:24,468
+porque un servicio no se almacena ni se cuenta.
+
+8
+00:00:25,135 --> 00:00:29,687
+Lo llamo Fumigación doméstica, que es el nombre que verá el cliente en la factura.
+
+9
+00:00:30,344 --> 00:00:32,539
+En categoría escribo servicios de limp,
+
+10
+00:00:32,649 --> 00:00:35,541
+y de la lista que aparece tomo servicios de limpieza.
+
+11
+00:00:36,209 --> 00:00:40,179
+En unidad de medida escribo unidad, porque se cobra por cada visita,
+
+12
+00:00:40,252 --> 00:00:42,089
+y la selecciono cuando aparece.
+
+13
+00:00:42,756 --> 00:00:44,296
+El precio, en monto:
+
+14
+00:00:44,405 --> 00:00:46,938
+dos mil quinientos pesos por cada visita.
+
+15
+00:00:47,593 --> 00:00:50,409
+Ojo con el ITBIS, el impuesto sobre la venta:
+
+16
+00:00:50,482 --> 00:00:52,592
+en un servicio viene en exento.
+
+17
+00:00:53,259 --> 00:00:57,924
+Este sí lo lleva, así que abro la lista y elijo la tasa del dieciocho por ciento.
+
+18
+00:00:58,593 --> 00:01:01,583
+Dejo apagado ITBIS incluido, y mira el total:
+
+19
+00:01:01,692 --> 00:01:05,972
+dos mil novecientos cincuenta, porque la factura le suma el impuesto encima.
+
+20
+00:01:06,628 --> 00:01:07,709
+Pulso Guardar.
+
+21
+00:01:08,376 --> 00:01:13,027
+Aparece un aviso que confirma que el servicio se creó, y lo cierro con aceptar.
+
+22
+00:01:14,385 --> 00:01:17,227
+Con la ficha guardada, abro la pestaña Fiscal,
+
+23
+00:01:17,337 --> 00:01:20,823
+que sirve igual para productos y servicios.
+
+24
+00:01:20,635 --> 00:01:24,865
+La cuenta contable de ingreso dice a dónde van las ventas de este servicio;
+
+25
+00:01:24,677 --> 00:01:28,462
+si la dejas vacía, se usa la de la empresa.
+
+26
+00:01:28,274 --> 00:01:33,037
+Así puedes separar en tu contabilidad los servicios de la mercancía.
+
+27
+00:01:32,849 --> 00:01:35,108
+Debajo están los impuestos adicionales de la DGII,
+
+28
+00:01:34,921 --> 00:01:36,992
+la Dirección General de Impuestos Internos:
+
+29
+00:01:36,805 --> 00:01:40,837
+aquí se agregan la propina legal o los impuestos selectivos,
+
+30
+00:01:40,935 --> 00:01:42,635
+solo si el producto los lleva.
+
+31
+00:01:43,290 --> 00:01:45,388
+Este servicio no lleva ninguno.
+
+32
+00:01:46,766 --> 00:01:49,311
+La última pestaña es descripción y tienda.
+
+33
+00:01:49,978 --> 00:01:53,153
+La descripción es lo que lee el cliente en tu catálogo en línea,
+
+34
+00:01:53,277 --> 00:01:55,299
+y admite negritas y listas.
+
+35
+00:01:55,968 --> 00:02:00,308
+Abajo, enciendo visible en la tienda, y el servicio queda publicado.
+
+36
+00:02:00,965 --> 00:02:03,658
+Indexable en buscadores deja que Google lo muestre;
+
+37
+00:02:03,730 --> 00:02:06,335
+apágalo si solo vas a compartir el enlace.
+
+38
+00:02:07,004 --> 00:02:08,456
+Guardo los cambios.
+
+39
+00:02:09,111 --> 00:02:13,144
+El aviso dice que el producto se actualizó, y lo cierro con aceptar.
+
+40
+00:02:13,800 --> 00:02:15,128
+En el próximo video:
+
+41
+00:02:15,225 --> 00:02:17,421
+comprar en cajas y vender por unidad.
