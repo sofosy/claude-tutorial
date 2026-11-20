@@ -1,0 +1,365 @@
+{
+  "titulo": "Proyectos · Crear un proyecto y conocer su espacio de trabajo",
+  "descripcion": "Cómo crear un proyecto en Germiva con su cliente, su gerente, su equipo, su centro de costo y su almacén de obra, recorrer las pestañas de su espacio de trabajo y registrar sus tareas.",
+  "_comentario": "Video 01 de la serie Proyectos. setup: seeds/proyectos/preparar.sh inicio (Constructora Germiva Demo; cliente Industrias Germiva del Caribe, centro CC-NAVE, Laura Méndez como segunda usuaria).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects",
+    "esperar": "button:has-text('Nuevo proyecto')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh inicio"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Crear un proyecto con cliente, gerente y equipo",
+    "Conectarlo a un centro de costo y a un almacén de obra",
+    "Recorrer las pestañas del proyecto",
+    "Registrar las tareas del proyecto"
+  ],
+  "errores_comunes": [
+    "Dejar el proyecto sin centro de costo: sus gastos caen en el predeterminado",
+    "Buscar Control o Avance antes de aprobar el presupuesto: aparecen después",
+    "Escribir el presupuesto a mano en la ficha: se calcula desde el presupuesto del proyecto"
+  ],
+  "pasos": [
+    {
+      "id": "01-cartera",
+      "capitulo": "La cartera",
+      "rotulo": "Cartera de proyectos",
+      "ruta": "Proyectos › Proyectos",
+      "texto_pantalla": "Todos los proyectos, con su avance y su salud",
+      "narracion": "Un proyecto reúne todo lo de una obra o un contrato: su presupuesto, sus compras, sus horas y su facturación. Esta es la Cartera de proyectos, en el menú Proyectos. Recojo el menú. Arriba resume los proyectos activos, lo comprometido y los que están en riesgo; y abajo lista cada proyecto con su estado, su avance y sus indicadores. Todavía no hay ninguno: voy a crear el primero con el botón Nuevo proyecto.",
+      "acciones": [
+        {
+          "resaltar": "section.pf-figures",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "Arriba resume"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "thead >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "abajo lista cada proyecto"
+        },
+        {
+          "click": "button:has-text('Nuevo proyecto')",
+          "al_decir": "con el botón Nuevo proyecto"
+        }
+      ]
+    },
+    {
+      "id": "02-datos",
+      "capitulo": "Los datos del proyecto",
+      "rotulo": "Crear Proyecto",
+      "ruta": "Proyectos › Proyectos › Nuevo",
+      "texto_pantalla": "Nombre · fechas · cliente · gerente · equipo",
+      "narracion": "Empiezo por el nombre: Nave industrial Haina. El código lo asigna el sistema, y el estado empieza en Planificación. Después van las fechas. En Fecha de inicio escribo el dos de noviembre de dos mil veintiséis. Y en Fecha de fin, el treinta de abril del año siguiente. El presupuesto, el costo real y el avance no se escriben aquí: se calculan solos desde el presupuesto del proyecto. Sigo con las relaciones. En Cliente escribo Industrias, para buscar al dueño de la obra. Aparece en la lista, y lo elijo. En Gerente de proyecto escribo Admin, para buscar al responsable. Aparece, y lo elijo: el gerente ve todo el proyecto. En Miembros del equipo abro la lista, marco a Laura Méndez, y cierro la lista. Solo el gerente, el equipo y quien tenga permiso para ver todos pueden abrir el proyecto.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='name']",
+            "texto": "Nave industrial Haina"
+          },
+          "al_decir": "Empiezo por el nombre"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='status'])",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "el estado empieza"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='startDate']",
+            "texto": "02/11/2026"
+          },
+          "al_decir": "En Fecha de inicio escribo"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='endDate']",
+            "texto": "30/04/2027"
+          },
+          "al_decir": "Y en Fecha de fin"
+        },
+        {
+          "resaltar": "app-project-derived-figures",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "no se escriben aquí"
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select[formcontrolname='partner'] input",
+            "texto": "Industrias"
+          },
+          "al_decir": "En Cliente escribo Industrias"
+        },
+        {
+          "click": "mat-option:has-text('Industrias Germiva')",
+          "al_decir": "y lo elijo"
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select[formcontrolname='projectManager'] input",
+            "texto": "Admin"
+          },
+          "al_decir": "escribo Admin"
+        },
+        {
+          "click": "mat-option:has-text('Administrador')",
+          "al_decir": "Aparece, y lo elijo"
+        },
+        {
+          "click": "mat-select[formcontrolname='teamMembers']",
+          "al_decir": "abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Laura')",
+          "al_decir": "marco a Laura"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "cierro la lista"
+        }
+      ]
+    },
+    {
+      "id": "03-contabilidad",
+      "capitulo": "Centro de costo y almacén",
+      "rotulo": "Contabilidad y almacén",
+      "ruta": "Proyectos › Proyectos › Nuevo",
+      "texto_pantalla": "El proyecto conectado a la contabilidad y al inventario",
+      "narracion": "La última sección conecta el proyecto con la contabilidad y con el inventario. En Centro de costo abro la lista, y elijo Obra Nave Haina: los ingresos y gastos del proyecto que no traigan un centro propio irán a ese. En Almacén de obra escribo Sur, para buscar el almacén. Aparece, y lo elijo: lo que se compre para el proyecto entrará por omisión a ese almacén. Pulso Guardar. El sistema confirma que el proyecto quedó creado, y acepto.",
+      "acciones": [
+        {
+          "click": "app-cost-center-field mat-select",
+          "al_decir": "En Centro de costo abro"
+        },
+        {
+          "click": "mat-option:has-text('CC-NAVE')",
+          "al_decir": "elijo Obra Nave Haina"
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select[formcontrolname='warehouse'] input",
+            "texto": "Sur"
+          },
+          "al_decir": "escribo Sur"
+        },
+        {
+          "click": "mat-option:has-text('Almacén Sur')",
+          "al_decir": "Aparece, y lo elijo"
+        },
+        {
+          "click": ".project-actions button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El sistema confirma"
+        },
+        {
+          "click": "mat-dialog-container button",
+          "al_decir": "y acepto"
+        }
+      ]
+    },
+    {
+      "id": "04-espacio",
+      "capitulo": "El espacio de trabajo",
+      "rotulo": "Las pestañas del proyecto",
+      "ruta": "Proyectos › Cartera › PRJ",
+      "texto_pantalla": "Cada pestaña es una parte del proyecto",
+      "narracion": "Este es el espacio de trabajo del proyecto. Arriba, su nombre, el estado, el cliente, el gerente y las fechas. Y debajo, las pestañas, una por cada parte de la obra. Resumen muestra el tablero y la ficha que acabo de llenar. Presupuesto, el desglose de costos y precios. Facturación, el contrato con el cliente y sus facturas. Subcontratos, lo pactado con cada subcontratista. Horas, la mano de obra de la semana. Y Tareas, el trabajo por hacer. Cuando el presupuesto esté aprobado aparecerán tres pestañas más: Control, Avance y Cambios.",
+      "acciones": [
+        {
+          "resaltar": "header.ws-header",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Arriba, su nombre"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Resumen')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Resumen muestra"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Presupuesto')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Presupuesto, el"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Facturación')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Facturación, el contrato"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Subcontratos')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Subcontratos, lo pactado"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Horas')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Horas, la mano"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Tareas')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Y Tareas"
+        },
+        {
+          "resaltar": "nav.ws-tabs",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "aparecerán tres pestañas"
+        }
+      ]
+    },
+    {
+      "id": "05-tareas",
+      "capitulo": "Las tareas",
+      "rotulo": "Tareas del proyecto",
+      "ruta": "Proyectos › Cartera › PRJ › Tareas",
+      "texto_pantalla": "Responsable, fecha límite y dependencias",
+      "narracion": "Abro la pestaña Tareas, y pulso Nueva tarea. En Nombre escribo la primera: Permiso de construcción. Con el nombre escrito, en Responsable abro la lista, y elijo a Laura Méndez. La tarea también lleva estado, prioridad, fecha límite, horas estimadas, y las tareas de las que depende. Guardo, y el aviso lo confirma. La tarea queda en la lista del proyecto, y más adelante se puede vincular a una partida del presupuesto. Con el proyecto creado, el siguiente paso es su presupuesto.",
+      "acciones": [
+        {
+          "click": "a.ws-tab:has-text('Tareas')",
+          "al_decir": "Abro la pestaña Tareas"
+        },
+        {
+          "click": "button:has-text('Nueva tarea')",
+          "al_decir": "pulso Nueva tarea"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='name']",
+            "texto": "Permiso de construcción"
+          },
+          "al_decir": "En Nombre escribo"
+        },
+        {
+          "click": "mat-dialog-container [formcontrolname='assignedUser']",
+          "al_decir": "en Responsable abro"
+        },
+        {
+          "click": "mat-option:has-text('Laura')",
+          "al_decir": "elijo a Laura"
+        },
+        {
+          "resaltar": "mat-dialog-container .task-grid",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "La tarea también lleva"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Guardo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "tr:has-text('Permiso de construcción')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "La tarea queda en la lista"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Presupuesto')",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el siguiente paso"
+        }
+      ]
+    }
+  ]
+}

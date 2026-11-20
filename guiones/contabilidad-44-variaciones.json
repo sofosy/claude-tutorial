@@ -1,0 +1,269 @@
+{
+  "titulo": "Contabilidad · Variaciones: presupuesto contra lo ejecutado",
+  "descripcion": "Cómo leer en Germiva las variaciones de un presupuesto contra lo real: el resumen, el análisis por cuenta y centro, cómo se clasifica cada variación, cómo explicar una desviación y el reporte en PDF y Excel.",
+  "_comentario": "Video 44 de la serie Contabilidad. setup: preparar.sh variaciones (PRES-2026-11 aprobado con siete renglones; noviembre contabilizado: ventas +8.33 %, mantenimiento +16.67 %, servicios +20 %, fletes −20 %).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/budget-variance/resumen",
+    "esperar": ".budget-item"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh variaciones"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer el resumen de variaciones de los presupuestos aprobados",
+    "Entender cuándo una variación es favorable o desfavorable",
+    "Explicar una variación fuera de tolerancia",
+    "Sacar el reporte en PDF o Excel"
+  ],
+  "errores_comunes": [
+    "Esperar variaciones de un borrador: el resumen solo considera presupuestos aprobados",
+    "Leer todo exceso como malo: vender más de lo presupuestado es favorable",
+    "Dejar sin explicar una variación desfavorable: sigue en las alertas"
+  ],
+  "pasos": [
+    {
+      "id": "01-resumen",
+      "capitulo": "El resumen",
+      "rotulo": "Variaciones Presupuestarias",
+      "ruta": "Contabilidad › Presupuestos › Variaciones",
+      "texto_pantalla": "Presupuestado contra ejecutado, de un vistazo",
+      "narracion": "Con un presupuesto aprobado, Variaciones lo compara con lo real. Recojo el menú. Arriba, el resumen de todos los presupuestos aprobados: los ingresos ejecutados contra los presupuestados, y lo mismo para costos y gastos. Lo real se lee del Mayor al abrir la pantalla; no hay que recalcular nada. Debajo, cada presupuesto con su resultado neto: el de noviembre va trescientos sesenta por ciento por encima, a favor. Aun así lleva una marca roja, porque tiene cuentas de gasto que se pasaron. Esas cuentas están en Alertas por explicar: el mantenimiento y los servicios públicos.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": ".summary-strip",
+          "durante_ms": 8000,
+          "cursor": false,
+          "al_decir": "Arriba, el resumen"
+        },
+        {
+          "resaltar": ".budget-item >> nth=0",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "cada presupuesto con su resultado"
+        },
+        {
+          "resaltar": ".budget-item >> nth=0 >> .health-indicator",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "lleva una marca roja"
+        },
+        {
+          "resaltar": "mat-card:has-text('Alertas por explicar'), .card:has-text('Alertas por explicar')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Alertas por explicar"
+        }
+      ]
+    },
+    {
+      "id": "02-analisis",
+      "capitulo": "El análisis",
+      "rotulo": "Análisis del presupuesto",
+      "ruta": "Contabilidad › Presupuestos › Variaciones › Análisis",
+      "texto_pantalla": "Cada cuenta y centro, con su variación y su estado",
+      "narracion": "Abro el presupuesto de noviembre con un clic. Este es su Análisis. Arriba, los totales por tipo de cuenta: ingresos, costos y gastos, y el resultado neto. Y abajo, el detalle de cada línea, con su centro de costo. La variación es lo ejecutado menos lo presupuestado, y el estado depende de su tamaño: hasta cinco por ciento está dentro de tolerancia; después viene menor, significativa, y crítica desde veinticinco. Pero el sentido importa. En Ventas se ejecutó más de lo presupuestado, y como es un ingreso, eso es favorable: sale en verde. En Mantenimiento también se ejecutó más, pero es un gasto: variación significativa, desfavorable. El filtro Por explicar deja solo las que piden una explicación.",
+      "acciones": [
+        {
+          "click": ".budget-item >> nth=0",
+          "al_decir": "con un clic"
+        },
+        {
+          "resaltar": "table.totals-by-type tr >> nth=-1",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "los totales por tipo"
+        },
+        {
+          "resaltar": "tr:has-text('6.01.01.01') td >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "con su centro de costo"
+        },
+        {
+          "resaltar": "tr:has-text('5.01.01.01') .status-pill",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "dentro de tolerancia"
+        },
+        {
+          "resaltar": "tr:has-text('4.01.01') .status-pill",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "eso es favorable"
+        },
+        {
+          "resaltar": "tr:has-text('6.03.19') .status-pill",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "variación significativa"
+        },
+        {
+          "click": "mat-button-toggle[value='pending'] button",
+          "al_decir": "El filtro Por explicar"
+        }
+      ]
+    },
+    {
+      "id": "03-explicar",
+      "capitulo": "Explicar una variación",
+      "rotulo": "Explicar variación",
+      "ruta": "Contabilidad › Presupuestos › Variaciones › Análisis",
+      "texto_pantalla": "Explicación y acción correctiva",
+      "narracion": "Una variación desfavorable fuera de tolerancia se explica. En la fila de Mantenimiento pulso el botón de explicar. El diálogo muestra las cifras. En Explicación escribo el motivo: hubo una reparación no prevista del montacargas. La explicación es obligatoria; la acción correctiva es opcional, pero conviene. Escribo qué se hará: contratar mantenimiento preventivo mensual. Con la explicación y la acción escritas, pulso Guardar, y el aviso lo confirma. La variación explicada sale de las alertas, y su explicación se conserva: solo vuelve a pedirse si la variación empeora de categoría.",
+      "acciones": [
+        {
+          "click": "tr:has-text('6.03.19') button",
+          "al_decir": "pulso el botón de explicar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "El diálogo muestra"
+        },
+        {
+          "escribir": {
+            "sel": "textarea[formcontrolname='reviewNotes']",
+            "texto": "Reparación no prevista del montacargas."
+          },
+          "al_decir": "En Explicación escribo"
+        },
+        {
+          "escribir": {
+            "sel": "textarea[formcontrolname='recommendedActions']",
+            "texto": "Contratar mantenimiento preventivo mensual."
+          },
+          "al_decir": "Escribo qué se hará"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-button-toggle[value='pending']",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "sale de las alertas"
+        }
+      ]
+    },
+    {
+      "id": "04-reporte",
+      "capitulo": "El reporte",
+      "rotulo": "Reporte de Variaciones",
+      "ruta": "Contabilidad › Presupuestos › Variaciones › Reporte",
+      "texto_pantalla": "Imprimir · PDF · Excel",
+      "narracion": "Para presentarlo, pulso Ver reporte. El Reporte de Variaciones agrupa las líneas en desfavorables, favorables y sin variación, con un resumen ejecutivo arriba, y al final lista las explicaciones registradas con su acción correctiva. Arriba a la derecha se imprime, o se exporta a PDF o a Excel, que trae tres hojas: resumen, variaciones y por período. Y cuando el período termine, cerrar el presupuesto deja estas cifras fijas, como historial.",
+      "acciones": [
+        {
+          "click": "button:has-text('Ver reporte')",
+          "al_decir": "pulso Ver reporte"
+        },
+        {
+          "resaltar": "h1.report-title",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El Reporte de Variaciones"
+        },
+        {
+          "resaltar": ":text('Variaciones Desfavorables') >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "desfavorables, favorables"
+        },
+        {
+          "resaltar": ":text('Explicaciones y acciones correctivas') >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "lista las explicaciones"
+        },
+        {
+          "resaltar": "button:has-text('PDF')",
+          "durante_ms": 2500,
+          "cursor": true,
+          "al_decir": "o se exporta a PDF"
+        },
+        {
+          "resaltar": "button:has-text('Excel')",
+          "durante_ms": 5000,
+          "cursor": true,
+          "al_decir": "o a Excel"
+        }
+      ]
+    }
+  ]
+}

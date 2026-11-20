@@ -1,36 +1,37 @@
 TÍTULO
 ============================================================
-Contabilidad · Presupuestos: crear, aprobar y comparar contra lo real
+Contabilidad · Presupuestos: crear por cuenta y centro, aprobar y cerrar
 
 DESCRIPCIÓN
 ============================================================
-Cómo crear en Germiva un presupuesto por cuenta y mes, aprobarlo, y ver sus variaciones contra lo contabilizado: qué se pasó, qué quedó por debajo y por cuánto.
+Cómo crear en Germiva un presupuesto por cuenta contable, centro de costo y mes, aprobarlo para compararlo contra lo real, y qué significan reabrir, cerrar, cancelar y eliminar.
 
 ⏱️ CAPÍTULOS
 00:00  Crear el presupuesto
-01:31  Aprobar
-01:47  Variaciones
+00:49  Las líneas
+02:02  Aprobar
+02:47  El ciclo de vida
 
 📋 EN ESTE VIDEO APRENDERÁS
-• Crear un presupuesto por cuenta y período
-• Aprobarlo
-• Recalcular lo ejecutado
-• Leer las variaciones por cuenta
+• Crear un presupuesto por cuenta, centro de costo y mes
+• Aprobarlo y ver lo real junto a lo presupuestado
+• Reabrir, cerrar, cancelar y eliminar un presupuesto
+• Leer los estados en el listado
 
 ⚠️ ERRORES COMUNES
 • Presupuestar una cuenta de grupo: solo se presupuestan cuentas de movimiento
-• Repetir la misma cuenta y período en dos líneas
-• Esperar lo ejecutado sin recalcular: el resumen no recalcula solo
+• Repetir la misma cuenta, centro y período en dos líneas
+• Querer editar un presupuesto aprobado: primero se reabre
 
 🏷️ ETIQUETAS
 Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
 
 —
-Duración: 02:22
+Duración: 03:20
 
 TRANSCRIPCIÓN
 ============================================================
-Un presupuesto fija cuánto se espera ganar y gastar en cada cuenta, para compararlo después con lo real. Recojo el menú y pulso Nuevo Presupuesto. El código lo identifica: PRES-2026-09, que no se puede repetir. Luego el nombre, para reconocerlo en la lista: operativo de septiembre. Con eso escrito, en Tipo de Presupuesto abro la lista, y de las opciones elijo Mensual. Las fechas del presupuesto: desde el primero de septiembre de dos mil veintiséis. Hasta el treinta de septiembre del mismo año, un solo mes. Y el período contable al que pertenece: escribo sept en el buscador. Aparece en la lista, y elijo septiembre.
-Ahora las líneas, una por cuenta y período. Pulso Agregar Línea. En la cuenta escribo diversos para buscarla. Aparece en la lista, y elijo Otros ingresos diversos. En el período abro la lista, y elijo el mes de septiembre. En el monto escribo veinte mil pesos, lo que se espera cobrar. Agrego otra línea, para el alquiler. En su cuenta escribo arrend para buscarla. Aparece en la lista, y elijo Arrendamientos. Ahora abro su período, y elijo también septiembre. Y el monto del alquiler: diez mil pesos. Abajo se ven los totales: ingresos y gastos presupuestados, y el resultado neto esperado. Guardo. Con el presupuesto guardado, el aviso lo confirma.
-El presupuesto queda en borrador hasta que se aprueba. Pulso Aprobar, en la cabecera, y confirmo con Sí, Aprobar. El aviso lo confirma, y las líneas quedan en solo lectura. Para cambiarlas habría que reabrirlo y aprobarlo de nuevo.
-Para comparar con lo real voy a Variaciones. En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo ejecutado de cada línea. Lo pulso, y espero a que termine. Luego abro el análisis del presupuesto de septiembre, que compara cada línea con lo real. Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto; el alquiler, ocho mil, dos mil por debajo. Cada variación trae su porcentaje y su categoría.
+Un presupuesto fija cuánto se espera vender y gastar en cada cuenta, para compararlo después con lo real. Recojo el menú, y pulso Nuevo Presupuesto. Escribo el código, PRES-2026-11, que no se puede repetir en la empresa. Después va el nombre, para reconocerlo en la lista: Operativo de noviembre. Con el código y el nombre escritos, en Tipo de Presupuesto abro la lista, y de las opciones elijo Mensual. Siguen las fechas: en Fecha de Inicio escribo el primero de noviembre de dos mil veintiséis. Y en Fecha de Fin, el treinta de noviembre del mismo año: un solo mes. El período contable es opcional; si se deja vacío, se usa el ejercicio de la fecha de inicio.
+Ahora las líneas: una por cuenta, centro de costo y período. Pulso Agregar línea. En la cuenta escribo Ventas, para buscar la cuenta de ingresos. Aparece en la lista, y elijo la cuatro cero uno cero uno. En Centro de Costo escribo Ventas otra vez, ahora para buscar el centro. De la lista elijo el centro Ventas, el que agrupa a las dos sucursales: una línea en un centro padre cubre también a sus subcentros. En el período abro la lista, y elijo Noviembre. Y en el monto anoto seiscientos mil pesos, lo que se espera vender. Agrego otra línea, para un gasto. En su cuenta escribo Manten, de mantenimiento. Aparece en la lista, y la elijo. En su centro escribo Opera, de Operaciones. Aparece en la lista con su código, y lo elijo. Abro su período, y elijo también Noviembre. Y en su monto anoto treinta mil pesos, el tope del mes para mantenimiento. Abajo, los totales separan ingresos, costos y gastos, y el resultado neto esperado. Guardo, y el aviso lo confirma.
+El presupuesto nace en borrador, y mientras tanto no se compara con nada. Para ponerlo en uso pulso Aprobar, en la cabecera. El sistema pide confirmar; elijo Sí, Aprobar, y el aviso lo confirma. Ahora las líneas quedan en solo lectura, y aparecen tres columnas nuevas. Real es lo contabilizado en esa cuenta y ese centro, leído del Mayor en el momento: seiscientos cincuenta mil en ventas. Comprometido es lo que ya está pedido pero todavía no es gasto. Y Disponible, en las líneas de gasto, es lo que queda: presupuesto menos comprometido, menos real. El mantenimiento ya va en negativo: se gastaron treinta y cinco mil contra treinta mil.
+Un presupuesto aprobado no se edita. Si hay que corregirlo, Reabrir lo devuelve a borrador, y después se aprueba de nuevo. Cuando el período termina, Cerrar toma la última lectura de lo ejecutado y lo deja como historial: ya no se edita, ni se reabre, ni se elimina. Un borrador que no se va a usar se cancela o se elimina; uno aprobado o cerrado, nunca. Y Ver variaciones abre el análisis de este presupuesto contra lo real, que es el tema del siguiente video.

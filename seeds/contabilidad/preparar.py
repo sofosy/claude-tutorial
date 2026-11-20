@@ -577,9 +577,20 @@ def resultados_centro():
     return ids
 
 
+def quitar_presupuestos_de_la_instantanea():
+    """Los presupuestos de 2024 que trae la semilla (con renglones en caja y
+    bancos) ensucian el resumen de Variaciones: se reabren y se eliminan."""
+    for fila in sql("SELECT id, status FROM budgets WHERE company_id=1 AND deleted_at IS NULL").splitlines():
+        pid, estado = fila.split("\t")
+        if estado == "approved":
+            llamar("POST", f"/v1/budgets/{pid}/reopen", {})
+        llamar("DELETE", f"/v1/budgets/{pid}")
+
+
 def presupuestos():
     # V27: el árbol de centros y noviembre ya contabilizado por centro; el
     # video crea y aprueba el presupuesto del mes.
+    quitar_presupuestos_de_la_instantanea()
     ids = arbol_con_logistica()
     gastos_administracion(ids)
     operacion_noviembre(ids)
@@ -601,6 +612,29 @@ def presupuesto_noviembre(ids, aprobar=True, **extra):
     if aprobar:
         llamar("POST", f"/v1/budgets/{p['id']}/approve", {})
     return p["id"]
+
+
+def variaciones():
+    # V44: el presupuesto de noviembre aprobado, con lo real ya contabilizado.
+    presupuesto_noviembre(presupuestos())
+
+
+def control():
+    # V45: el presupuesto aprobado y una orden de compra aprobada de fletes
+    # (3,000 en Logística), que deja 2,000 disponibles en ese renglón.
+    ids = presupuestos()
+    presupuesto_noviembre(ids)
+    flete = llamar("POST", "/v1/product", {
+        "category": "SERVICE", "name": "Flete de entrega a clientes", "code": "SRV-FLETE", "tax": ITBIS_18,
+        "managesInventory": False, "active": True, "purchaseExpenseAccount": cuenta("6.03.10")})["id"]
+    transporte = proveedor({"name": "Transporte Germiva del Norte S.R.L.", "tin": "130555031"}, False)
+    almacen = int(sql("SELECT id FROM warehouse WHERE company_id=1 ORDER BY id LIMIT 1"))
+    orden = llamar("POST", "/v1/orders", {
+        "orderType": "PURCHASE", "partnerId": transporte, "requestedDeliveryDate": "2026-11-25",
+        "warehouseId": almacen, "costCenter": ids["CC-LOG"],
+        "orderLines": [{"productId": flete, "quantity": 1, "unitPrice": 3000}]})["id"]
+    llamar("POST", f"/v1/orders/{orden}/submit-approval", {})
+    llamar("POST", f"/v1/orders/{orden}/approve", {})
 
 
 # ── La firma contable y sus clientes (videos 28–33) ─────────────────────────
@@ -1051,7 +1085,7 @@ ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": aut
            "cierre-reversar": cierre_reversar, "periodos": periodos,
            "transferencias": transferencias, "conciliar": conciliar, "activos": activos,
            "activos-baja": activos_baja, "centros-costo": centros_costo, "centros-documentos": centros_documentos, "centros-compras": centros_compras, "distribucion": distribucion, "resultados-centro": resultados_centro,
-           "presupuestos": presupuestos,
+           "presupuestos": presupuestos, "variaciones": variaciones, "control": control,
            "firma": firma, "firma-plantilla": firma_plantilla, "firma-alta": firma_alta,
            "firma-cambio": firma_cambio, "firma-asistente": firma_asistente,
            "firma-mantener": firma_mantener,

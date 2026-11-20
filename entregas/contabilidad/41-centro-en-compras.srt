@@ -1,0 +1,159 @@
+1
+00:00:03,100 --> 00:00:07,081
+En las compras, el centro de costo va en cada línea de la factura.
+
+2
+00:00:07,737 --> 00:00:08,879
+Recojo el menú.
+
+3
+00:00:09,548 --> 00:00:13,802
+Este borrador es de un proveedor de servicios, con dos gastos distintos.
+
+4
+00:00:14,471 --> 00:00:16,431
+Lo abro con el lápiz de su fila.
+
+5
+00:00:17,086 --> 00:00:21,900
+La primera línea es el mantenimiento de los montacargas, un gasto de Operaciones.
+
+6
+00:00:22,568 --> 00:00:25,248
+Despliego la línea con la flecha de la derecha.
+
+7
+00:00:25,903 --> 00:00:28,137
+Entre sus datos está Centro de costo:
+
+8
+00:00:28,248 --> 00:00:30,902
+abro la lista, y elijo Operaciones.
+
+9
+00:00:31,571 --> 00:00:36,012
+Si lo dejara vacío, el gasto iría al centro predeterminado de la empresa.
+
+10
+00:00:37,399 --> 00:00:39,756
+La segunda línea es la publicidad en radio,
+
+11
+00:00:39,878 --> 00:00:42,310
+que sirve a las dos sucursales de ventas.
+
+12
+00:00:42,978 --> 00:00:46,774
+La despliego también, y esta vez pulso Repartir entre centros.
+
+13
+00:00:47,442 --> 00:00:51,350
+En el primer centro abro la lista, y elijo Ventas Santo Domingo.
+
+14
+00:00:52,006 --> 00:00:54,227
+En su porcentaje anoto cincuenta.
+
+15
+00:00:54,882 --> 00:00:59,621
+La campaña es la misma para las dos sucursales, así que va a partes iguales.
+
+16
+00:01:00,289 --> 00:01:01,730
+Pulso Agregar centro.
+
+17
+00:01:02,385 --> 00:01:06,045
+En la fila nueva abro la lista, y elijo Ventas Santiago.
+
+18
+00:01:06,700 --> 00:01:09,269
+En su porcentaje anoto el otro cincuenta.
+
+19
+00:01:09,938 --> 00:01:12,568
+Con el total en cien por ciento, aplico.
+
+20
+00:01:13,223 --> 00:01:16,847
+En la tabla, cada línea muestra ya su centro o su reparto.
+
+21
+00:01:17,502 --> 00:01:18,757
+Guardo el borrador.
+
+22
+00:01:19,412 --> 00:01:23,097
+El sistema confirma que la compra quedó actualizada, y acepto.
+
+23
+00:01:23,752 --> 00:01:27,088
+Cuando la factura se emita, cada gasto irá a su centro;
+
+24
+00:01:27,174 --> 00:01:30,352
+el ITBIS y la cuenta por pagar al proveedor van sin centro.
+
+25
+00:01:31,713 --> 00:01:34,481
+El gasto de nómina no se digita línea a línea:
+
+26
+00:01:34,640 --> 00:01:37,344
+toma el centro del departamento de cada empleado.
+
+27
+00:01:38,000 --> 00:01:41,436
+En la configuración de Recursos Humanos, en Departamentos,
+
+28
+00:01:41,534 --> 00:01:44,438
+abro Despacho y Transporte con un clic en su fila.
+
+29
+00:01:45,094 --> 00:01:47,724
+Aquí está su Centro de costo, Logística:
+
+30
+00:01:47,808 --> 00:01:52,337
+el sueldo, los aportes y las provisiones de su gente se imputan a ese centro.
+
+31
+00:01:53,004 --> 00:01:57,359
+Y si un empleado debe ir a otro centro, se le pone uno propio en su ficha.
+
+32
+00:01:58,028 --> 00:01:58,811
+Cierro.
+
+33
+00:02:00,158 --> 00:02:02,006
+Lo mismo pasa en Inventario.
+
+34
+00:02:02,676 --> 00:02:06,001
+En la ficha de cada almacén está el Centro de costo por omisión:
+
+35
+00:02:06,110 --> 00:02:11,097
+lo usan sus ajustes, sus salidas y sus consumos cuando el movimiento no trae otro
+
+36
+00:02:10,909 --> 00:02:11,543
+centro.
+
+37
+00:02:12,929 --> 00:02:15,621
+Y en Activos Fijos, al registrar un activo,
+
+38
+00:02:15,756 --> 00:02:19,701
+el campo Centro de Costo decide a dónde van su depreciación de cada mes,
+
+39
+00:02:19,811 --> 00:02:21,152
+su baja y su venta.
+
+40
+00:02:21,819 --> 00:02:26,174
+Así, cada gasto llega a su centro sin tener que acordarse de digitarlo.

@@ -1,175 +1,219 @@
 1
-00:00:03,000 --> 00:00:07,763
-Un presupuesto fija cuánto se espera ganar y gastar en cada cuenta,
+00:00:03,100 --> 00:00:06,573
+Un presupuesto fija cuánto se espera vender y gastar en cada cuenta,
 
 2
-00:00:07,597 --> 00:00:10,153
+00:00:06,682 --> 00:00:08,756
 para compararlo después con lo real.
 
 3
-00:00:10,070 --> 00:00:13,311
-Recojo el menú y pulso Nuevo Presupuesto.
+00:00:09,410 --> 00:00:12,326
+Recojo el menú, y pulso Nuevo Presupuesto.
 
 4
-00:00:13,147 --> 00:00:14,937
-El código lo identifica:
+00:00:12,994 --> 00:00:18,466
+Escribo el código, PRES-2026-11, que no se puede repetir en la empresa.
 
 5
-00:00:14,795 --> 00:00:18,908
-PRES-2026-09, que no se puede repetir.
+00:00:19,132 --> 00:00:22,210
+Después va el nombre, para reconocerlo en la lista:
 
 6
-00:00:18,835 --> 00:00:21,937
-Luego el nombre, para reconocerlo en la lista:
+00:00:22,283 --> 00:00:23,711
+Operativo de noviembre.
 
 7
-00:00:21,795 --> 00:00:23,621
-operativo de septiembre.
+00:00:24,379 --> 00:00:28,584
+Con el código y el nombre escritos, en Tipo de Presupuesto abro la lista,
 
 8
-00:00:23,480 --> 00:00:27,487
-Con eso escrito, en Tipo de Presupuesto abro la lista,
-
-9
-00:00:27,323 --> 00:00:30,030
+00:00:28,670 --> 00:00:30,617
 y de las opciones elijo Mensual.
 
+9
+00:00:31,286 --> 00:00:32,551
+Siguen las fechas:
+
 10
-00:00:29,981 --> 00:00:31,830
-Las fechas del presupuesto:
+00:00:32,612 --> 00:00:36,632
+en Fecha de Inicio escribo el primero de noviembre de dos mil veintiséis.
 
 11
-00:00:31,722 --> 00:00:35,266
-desde el primero de septiembre de dos mil veintiséis.
+00:00:37,301 --> 00:00:40,675
+Y en Fecha de Fin, el treinta de noviembre del mismo año:
 
 12
-00:00:35,146 --> 00:00:39,840
-Hasta el treinta de septiembre del mismo año, un solo mes.
+00:00:40,698 --> 00:00:41,767
+un solo mes.
 
 13
-00:00:39,722 --> 00:00:42,650
-Y el período contable al que pertenece:
+00:00:42,435 --> 00:00:44,296
+El período contable es opcional;
 
 14
-00:00:42,496 --> 00:00:44,833
-escribo sept en el buscador.
+00:00:44,430 --> 00:00:48,301
+si se deja vacío, se usa el ejercicio de la fecha de inicio.
 
 15
-00:00:44,725 --> 00:00:48,153
-Aparece en la lista, y elijo septiembre.
+00:00:49,663 --> 00:00:50,880
+Ahora las líneas:
 
 16
-00:00:48,591 --> 00:00:52,158
-Ahora las líneas, una por cuenta y período.
+00:00:50,903 --> 00:00:53,670
+una por cuenta, centro de costo y período.
 
 17
-00:00:51,981 --> 00:00:53,831
-Pulso Agregar Línea.
+00:00:54,325 --> 00:00:55,790
+Pulso Agregar línea.
 
 18
-00:00:53,689 --> 00:00:56,582
-En la cuenta escribo diversos para buscarla.
+00:00:56,445 --> 00:01:00,167
+En la cuenta escribo Ventas, para buscar la cuenta de ingresos.
 
 19
-00:00:56,475 --> 00:01:00,530
-Aparece en la lista, y elijo Otros ingresos diversos.
+00:01:00,835 --> 00:01:04,730
+Aparece en la lista, y elijo la cuatro cero uno cero uno.
 
 20
-00:01:00,375 --> 00:01:04,314
-En el período abro la lista, y elijo el mes de septiembre.
+00:01:05,399 --> 00:01:09,653
+En Centro de Costo escribo Ventas otra vez, ahora para buscar el centro.
 
 21
-00:01:04,138 --> 00:01:08,052
-En el monto escribo veinte mil pesos, lo que se espera cobrar.
+00:01:10,322 --> 00:01:14,379
+De la lista elijo el centro Ventas, el que agrupa a las dos sucursales:
 
 22
-00:01:07,923 --> 00:01:10,153
-Agrego otra línea, para el alquiler.
+00:01:14,463 --> 00:01:17,665
+una línea en un centro padre cubre también a sus subcentros.
 
 23
-00:01:09,989 --> 00:01:12,882
-En su cuenta escribo arrend para buscarla.
+00:01:18,332 --> 00:01:21,409
+En el período abro la lista, y elijo Noviembre.
 
 24
-00:01:12,728 --> 00:01:15,715
-Aparece en la lista, y elijo Arrendamientos.
+00:01:22,078 --> 00:01:25,998
+Y en el monto anoto seiscientos mil pesos, lo que se espera vender.
 
 25
-00:01:15,573 --> 00:01:18,804
-Ahora abro su período, y elijo también septiembre.
+00:01:26,665 --> 00:01:29,246
+Agrego otra línea, para un gasto.
 
 26
-00:01:18,650 --> 00:01:20,150
-Y el monto del alquiler:
+00:01:29,903 --> 00:01:32,658
+En su cuenta escribo Manten, de mantenimiento.
 
 27
-00:01:20,031 --> 00:01:21,346
-diez mil pesos.
+00:01:33,313 --> 00:01:35,758
+Aparece en la lista, y la elijo.
 
 28
-00:01:21,180 --> 00:01:22,914
-Abajo se ven los totales:
+00:01:36,413 --> 00:01:39,328
+En su centro escribo Opera, de Operaciones.
 
 29
-00:01:22,771 --> 00:01:27,186
-ingresos y gastos presupuestados, y el resultado neto esperado.
+00:01:39,996 --> 00:01:42,974
+Aparece en la lista con su código, y lo elijo.
 
 30
-00:01:27,102 --> 00:01:27,766
-Guardo.
+00:01:43,629 --> 00:01:46,410
+Abro su período, y elijo también Noviembre.
 
 31
-00:01:27,612 --> 00:01:30,912
-Con el presupuesto guardado, el aviso lo confirma.
+00:01:47,078 --> 00:01:51,493
+Y en su monto anoto treinta mil pesos, el tope del mes para mantenimiento.
 
 32
-00:01:31,358 --> 00:01:34,786
-El presupuesto queda en borrador hasta que se aprueba.
+00:01:52,162 --> 00:01:57,980
+Abajo, los totales separan ingresos, costos y gastos, y el resultado neto esperado.
 
 33
-00:01:34,632 --> 00:01:39,847
-Pulso Aprobar, en la cabecera, y confirmo con Sí, Aprobar.
+00:01:58,635 --> 00:02:00,868
+Guardo, y el aviso lo confirma.
 
 34
-00:01:39,682 --> 00:01:43,597
-El aviso lo confirma, y las líneas quedan en solo lectura.
+00:02:02,232 --> 00:02:06,549
+El presupuesto nace en borrador, y mientras tanto no se compara con nada.
 
 35
-00:01:43,432 --> 00:01:47,533
-Para cambiarlas habría que reabrirlo y aprobarlo de nuevo.
+00:02:07,216 --> 00:02:10,269
+Para ponerlo en uso pulso Aprobar, en la cabecera.
 
 36
-00:01:47,975 --> 00:01:51,334
-Para comparar con lo real voy a Variaciones.
+00:02:10,924 --> 00:02:12,626
+El sistema pide confirmar;
 
 37
-00:01:51,227 --> 00:01:57,313
-En Variaciones, Recalcular vuelve a leer los asientos contabilizados y actualiza lo
+00:02:12,710 --> 00:02:15,899
+elijo Sí, Aprobar, y el aviso lo confirma.
 
 38
-00:01:57,147 --> 00:01:59,088
-ejecutado de cada línea.
+00:02:16,567 --> 00:02:21,082
+Ahora las líneas quedan en solo lectura, y aparecen tres columnas nuevas.
 
 39
-00:01:59,063 --> 00:02:01,573
-Lo pulso, y espero a que termine.
+00:02:21,751 --> 00:02:26,563
+Real es lo contabilizado en esa cuenta y ese centro, leído del Mayor en el momento:
 
 40
-00:02:01,466 --> 00:02:04,697
-Luego abro el análisis del presupuesto de septiembre,
+00:02:26,710 --> 00:02:28,846
+seiscientos cincuenta mil en ventas.
 
 41
-00:02:04,567 --> 00:02:07,134
-que compara cada línea con lo real.
+00:02:29,502 --> 00:02:33,259
+Comprometido es lo que ya está pedido pero todavía no es gasto.
 
 42
-00:02:07,051 --> 00:02:12,824
-Los otros ingresos se ejecutaron por veinticinco mil, cinco mil más de lo previsto;
+00:02:33,915 --> 00:02:37,240
+Y Disponible, en las líneas de gasto, es lo que queda:
 
 43
-00:02:12,670 --> 00:02:16,028
-el alquiler, ocho mil, dos mil por debajo.
+00:02:37,401 --> 00:02:40,204
+presupuesto menos comprometido, menos real.
 
 44
-00:02:15,944 --> 00:02:19,243
-Cada variación trae su porcentaje y su categoría.
+00:02:40,860 --> 00:02:42,957
+El mantenimiento ya va en negativo:
+
+45
+00:02:43,104 --> 00:02:45,823
+se gastaron treinta y cinco mil contra treinta mil.
+
+46
+00:02:47,194 --> 00:02:49,514
+Un presupuesto aprobado no se edita.
+
+47
+00:02:50,169 --> 00:02:53,271
+Si hay que corregirlo, Reabrir lo devuelve a borrador,
+
+48
+00:02:53,356 --> 00:02:54,945
+y después se aprueba de nuevo.
+
+49
+00:02:55,602 --> 00:03:00,179
+Cuando el período termina, Cerrar toma la última lectura de lo ejecutado y lo deja
+
+50
+00:02:59,991 --> 00:03:00,836
+como historial:
+
+51
+00:03:00,933 --> 00:03:03,925
+ya no se edita, ni se reabre, ni se elimina.
+
+52
+00:03:04,579 --> 00:03:07,657
+Un borrador que no se va a usar se cancela o se elimina;
+
+53
+00:03:07,754 --> 00:03:09,926
+uno aprobado o cerrado, nunca.
+
+54
+00:03:10,594 --> 00:03:14,414
+Y Ver variaciones abre el análisis de este presupuesto contra lo real,
+
+55
+00:03:14,538 --> 00:03:16,610
+que es el tema del siguiente video.

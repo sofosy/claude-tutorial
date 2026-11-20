@@ -1,0 +1,187 @@
+1
+00:00:03,100 --> 00:00:06,871
+Con un presupuesto aprobado, Variaciones lo compara con lo real.
+
+2
+00:00:07,538 --> 00:00:08,682
+Recojo el menú.
+
+3
+00:00:09,349 --> 00:00:12,811
+Arriba, el resumen de todos los presupuestos aprobados:
+
+4
+00:00:12,920 --> 00:00:17,869
+los ingresos ejecutados contra los presupuestados, y lo mismo para costos y gastos.
+
+5
+00:00:18,538 --> 00:00:21,032
+Lo real se lee del Mayor al abrir la pantalla;
+
+6
+00:00:21,167 --> 00:00:22,891
+no hay que recalcular nada.
+
+7
+00:00:23,561 --> 00:00:26,675
+Debajo, cada presupuesto con su resultado neto:
+
+8
+00:00:26,760 --> 00:00:30,704
+el de noviembre va trescientos sesenta por ciento por encima, a favor.
+
+9
+00:00:31,361 --> 00:00:35,839
+Aun así lleva una marca roja, porque tiene cuentas de gasto que se pasaron.
+
+10
+00:00:36,506 --> 00:00:38,939
+Esas cuentas están en Alertas por explicar:
+
+11
+00:00:39,061 --> 00:00:41,544
+el mantenimiento y los servicios públicos.
+
+12
+00:00:42,920 --> 00:00:45,401
+Abro el presupuesto de noviembre con un clic.
+
+13
+00:00:46,069 --> 00:00:47,707
+Este es su Análisis.
+
+14
+00:00:48,375 --> 00:00:50,820
+Arriba, los totales por tipo de cuenta:
+
+15
+00:00:50,917 --> 00:00:54,454
+ingresos, costos y gastos, y el resultado neto.
+
+16
+00:00:55,121 --> 00:00:59,179
+Y abajo, el detalle de cada línea, con su centro de costo.
+
+17
+00:00:59,834 --> 00:01:02,650
+La variación es lo ejecutado menos lo presupuestado,
+
+18
+00:01:02,722 --> 00:01:04,697
+y el estado depende de su tamaño:
+
+19
+00:01:04,745 --> 00:01:07,349
+hasta cinco por ciento está dentro de tolerancia;
+
+20
+00:01:07,472 --> 00:01:11,677
+después viene menor, significativa, y crítica desde veinticinco.
+
+21
+00:01:12,334 --> 00:01:13,823
+Pero el sentido importa.
+
+22
+00:01:14,478 --> 00:01:18,301
+En Ventas se ejecutó más de lo presupuestado, y como es un ingreso,
+
+23
+00:01:18,360 --> 00:01:19,528
+eso es favorable:
+
+24
+00:01:19,600 --> 00:01:20,644
+sale en verde.
+
+25
+00:01:21,299 --> 00:01:24,799
+En Mantenimiento también se ejecutó más, pero es un gasto:
+
+26
+00:01:24,908 --> 00:01:27,477
+variación significativa, desfavorable.
+
+27
+00:01:28,132 --> 00:01:31,742
+El filtro Por explicar deja solo las que piden una explicación.
+
+28
+00:01:33,108 --> 00:01:36,408
+Una variación desfavorable fuera de tolerancia se explica.
+
+29
+00:01:37,063 --> 00:01:40,177
+En la fila de Mantenimiento pulso el botón de explicar.
+
+30
+00:01:40,845 --> 00:01:42,868
+El diálogo muestra las cifras.
+
+31
+00:01:43,524 --> 00:01:45,460
+En Explicación escribo el motivo:
+
+32
+00:01:45,520 --> 00:01:48,312
+hubo una reparación no prevista del montacargas.
+
+33
+00:01:48,980 --> 00:01:50,718
+La explicación es obligatoria;
+
+34
+00:01:50,865 --> 00:01:53,719
+la acción correctiva es opcional, pero conviene.
+
+35
+00:01:54,387 --> 00:01:55,567
+Escribo qué se hará:
+
+36
+00:01:55,627 --> 00:01:58,220
+contratar mantenimiento preventivo mensual.
+
+37
+00:01:58,876 --> 00:02:03,565
+Con la explicación y la acción escritas, pulso Guardar, y el aviso lo confirma.
+
+38
+00:02:04,233 --> 00:02:08,587
+La variación explicada sale de las alertas, y su explicación se conserva:
+
+39
+00:02:08,747 --> 00:02:12,010
+solo vuelve a pedirse si la variación empeora de categoría.
+
+40
+00:02:13,384 --> 00:02:15,815
+Para presentarlo, pulso Ver reporte.
+
+41
+00:02:16,483 --> 00:02:19,846
+El Reporte de Variaciones agrupa las líneas en desfavorables,
+
+42
+00:02:19,906 --> 00:02:23,504
+favorables y sin variación, con un resumen ejecutivo arriba,
+
+43
+00:02:23,515 --> 00:02:27,410
+y al final lista las explicaciones registradas con su acción correctiva.
+
+44
+00:02:28,066 --> 00:02:33,623
+Arriba a la derecha se imprime, o se exporta a PDF o a Excel, que trae tres hojas:
+
+45
+00:02:33,720 --> 00:02:36,190
+resumen, variaciones y por período.
+
+46
+00:02:36,858 --> 00:02:41,126
+Y cuando el período termine, cerrar el presupuesto deja estas cifras fijas,
+
+47
+00:02:41,186 --> 00:02:42,142
+como historial.

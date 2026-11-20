@@ -152,7 +152,7 @@
       "rotulo": "Líneas del Presupuesto",
       "ruta": "Contabilidad › Presupuestos › Nuevo",
       "texto_pantalla": "Una línea por cuenta, centro de costo y período",
-      "narracion": "Ahora las líneas: una por cuenta, centro de costo y período. Pulso Agregar línea. En la cuenta escribo Ventas, para buscar la cuenta de ingresos. Aparece en la lista, y elijo la cuatro cero uno cero uno. En Centro de Costo escribo Ventas otra vez, ahora para buscar el centro. De la lista elijo el centro Ventas, el que agrupa a las dos sucursales: una línea en un centro padre cubre también a sus subcentros. En el período abro la lista, y elijo Noviembre. Y en el monto anoto seiscientos mil pesos, lo que se espera vender. Agrego otra línea, para un gasto. En su cuenta escribo Manten, de mantenimiento. Aparece en la lista, y la elijo. En su centro escribo Opera, de Operaciones. Aparece, y lo elijo. Abro su período, y elijo también Noviembre. Y en su monto anoto treinta mil pesos. Abajo, los totales separan ingresos, costos y gastos, y el resultado neto esperado. Guardo, y el aviso lo confirma.",
+      "narracion": "Ahora las líneas: una por cuenta, centro de costo y período. Pulso Agregar línea. En la cuenta escribo Ventas, para buscar la cuenta de ingresos. Aparece en la lista, y elijo la cuatro cero uno cero uno. En Centro de Costo escribo Ventas otra vez, ahora para buscar el centro. De la lista elijo el centro Ventas, el que agrupa a las dos sucursales: una línea en un centro padre cubre también a sus subcentros. En el período abro la lista, y elijo Noviembre. Y en el monto anoto seiscientos mil pesos, lo que se espera vender. Agrego otra línea, para un gasto. En su cuenta escribo Manten, de mantenimiento. Aparece en la lista, y la elijo. En su centro escribo Opera, de Operaciones. Aparece en la lista con su código, y lo elijo. Abro su período, y elijo también Noviembre. Y en su monto anoto treinta mil pesos, el tope del mes para mantenimiento. Abajo, los totales separan ingresos, costos y gastos, y el resultado neto esperado. Guardo, y el aviso lo confirma.",
       "acciones": [
         {
           "click": "button.add-btn",
@@ -250,6 +250,99 @@
           "resaltar": ".mat-mdc-snack-bar-container",
           "durante_ms": 2500,
           "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "03-aprobar",
+      "capitulo": "Aprobar",
+      "rotulo": "Aprobar el presupuesto",
+      "ruta": "Contabilidad › Presupuestos › PRES-2026-11",
+      "texto_pantalla": "Aprobado: se compara con lo real",
+      "narracion": "El presupuesto nace en borrador, y mientras tanto no se compara con nada. Para ponerlo en uso pulso Aprobar, en la cabecera. El sistema pide confirmar; elijo Sí, Aprobar, y el aviso lo confirma. Ahora las líneas quedan en solo lectura, y aparecen tres columnas nuevas. Real es lo contabilizado en esa cuenta y ese centro, leído del Mayor en el momento: seiscientos cincuenta mil en ventas. Comprometido es lo que ya está pedido pero todavía no es gasto. Y Disponible, en las líneas de gasto, es lo que queda: presupuesto menos comprometido, menos real. El mantenimiento ya va en negativo: se gastaron treinta y cinco mil contra treinta mil.",
+      "acciones": [
+        {
+          "resaltar": ".gm-badge:has-text('Borrador'), :text('Borrador') >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "nace en borrador"
+        },
+        {
+          "click": "button:has-text('Aprobar')",
+          "al_decir": "pulso Aprobar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1800,
+          "cursor": false,
+          "al_decir": "El sistema pide confirmar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí, Aprobar')",
+          "al_decir": "elijo Sí, Aprobar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": ".budget-details-section .table-header, .editable-table-container .table-header",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "tres columnas nuevas"
+        },
+        {
+          "resaltar": ".table-row >> nth=0",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "Real es lo contabilizado"
+        },
+        {
+          "resaltar": ".table-row >> nth=1",
+          "durante_ms": 9000,
+          "cursor": false,
+          "al_decir": "Comprometido es lo que"
+        },
+        {
+          "resaltar": ".table-row >> nth=1 >> .negative",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "ya va en negativo"
+        }
+      ]
+    },
+    {
+      "id": "04-ciclo",
+      "capitulo": "El ciclo de vida",
+      "rotulo": "Reabrir, cerrar y cancelar",
+      "ruta": "Contabilidad › Presupuestos › PRES-2026-11",
+      "texto_pantalla": "Borrador → Aprobado → Cerrado",
+      "narracion": "Un presupuesto aprobado no se edita. Si hay que corregirlo, Reabrir lo devuelve a borrador, y después se aprueba de nuevo. Cuando el período termina, Cerrar toma la última lectura de lo ejecutado y lo deja como historial: ya no se edita, ni se reabre, ni se elimina. Un borrador que no se va a usar se cancela o se elimina; uno aprobado o cerrado, nunca. Y Ver variaciones abre el análisis de este presupuesto contra lo real, que es el tema del siguiente video.",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Reabrir')",
+          "durante_ms": 5500,
+          "cursor": true,
+          "al_decir": "Reabrir lo devuelve"
+        },
+        {
+          "resaltar": "button:has-text('Cerrar')",
+          "durante_ms": 8000,
+          "cursor": true,
+          "al_decir": "Cerrar toma la última"
+        },
+        {
+          "resaltar": ".gm-badge:has-text('Aprobado'), :text('Aprobado') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Un borrador que no se va a usar"
+        },
+        {
+          "resaltar": "button:has-text('Ver variaciones')",
+          "durante_ms": 6000,
+          "cursor": true,
+          "al_decir": "Ver variaciones abre"
         }
       ]
     }

@@ -23,6 +23,10 @@ def base(titulo, descripcion, comentario, navegar, esperar, setup, aprenderas, e
         "portada_s": 8, "aprenderas": aprenderas, "errores_comunes": errores,
     }
 
+def base_p(titulo, descripcion, comentario, navegar, esperar, estado, aprenderas, errores):
+    """Serie Proyectos: misma cabecera, datos de seeds/proyectos."""
+    return base(titulo, descripcion, comentario, navegar, esperar, "seeds/proyectos/preparar.sh " + estado, aprenderas, errores)
+
 def paso(id, capitulo, rotulo, ruta, texto, narracion, acciones, **extra):
     return {"id": id, "capitulo": capitulo, "rotulo": rotulo, "ruta": ruta, "texto_pantalla": texto, **extra,
             "narracion": " ".join(narracion.split()), "acciones": acciones}
