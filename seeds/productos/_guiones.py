@@ -636,6 +636,74 @@ VIDEOS["productos-12-listas-de-precios"] = {
     ],
 }
 
+# ───────────────────────── 06 · Vender por empaque ─────────────────────────
+LINEA = lambda n: f":nth-match(.products-services-section .table-row, {n})"
+SALIDA = lambda n, col: f":nth-match(table tbody tr:has-text('Salida'), {n}) td:nth-child({col})"
+VIDEOS["productos-06-vender-por-empaque"] = {
+    "titulo": "Productos · Parte 6: vender por empaque",
+    "descripcion": "Sexto video de Productos en Germiva ERP: el mismo refresco vendido por paquete, por caja y por unidad. La factura propone el empaque de venta y su precio, el punto de venta reconoce la caja por su código de barras, y el kardex descuenta siempre en unidades.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 6. Estado C (restaurar.mjs C): Refresco con Caja ×24 (precio propio 780, código 7460001000243) y Paquete ×6 (venta ★, sin precio propio → 6 × 35 = 210), 240 unidades en el Almacén Sur. Factura B02 a consumidor final: 2 paquetes (420) + 1 caja (780) = 1,200, «Guardar y Cobrar» cobra de contado. POS: se escanea la caja (780) y se agrega una unidad (35); NO se cobra en cámara: en la empresa de demo de este entorno el POS emite e-CF E32 y no hay certificado digital. Kardex tras la factura: salidas de 12 y 24 unidades; saldo 204 = 8 cajas y 12 unidades.",
+    "setup": RESTAURAR("C"),
+    "aprenderas": ["Facturar por paquete y por caja el mismo producto", "Cuándo un empaque usa su precio propio y cuándo se deriva de la unidad", "Vender la caja en el punto de venta escaneando su código", "Leer en el kardex las salidas por empaque"],
+    "errores_comunes": ["Facturar 24 unidades sueltas cuando el cliente lleva la caja: se pierde el precio de la caja", "Esperar que un empaque sin código de barras entre al punto de venta", "Comparar el precio de la caja con el costo por unidad del kardex"],
+    "pasos": [
+        {
+            "id": "01-factura", "capitulo": "Facturar por paquete y por caja", "rotulo": "La factura",
+            "ruta": "Ventas › Facturas › Nueva",
+            "narracion": "Este refresco se compra en cajas de veinticuatro y hay doscientas cuarenta unidades. Hoy lo vendemos por paquete, por caja y por unidad. Desde el inicio pulso Nueva factura. Se abre el formulario, con el cliente en consumidor final, que para este ejemplo es suficiente. Para ver la línea completa, recojo el panel. En las líneas busco el refresco por su nombre; la lista muestra cuánto hay disponible, y cuando aparece lo agrego. Fíjate en la unidad: vino sola en paquete por seis, porque el paquete tiene la estrella de venta. En cantidad escribo dos, y salgo del campo con la tecla Tab. Son dos paquetes, y cada uno vale seis veces la unidad. El mismo cliente lleva también una caja. Agrego otra línea escribiendo refresco otra vez; espero la lista, y lo tomo de ella. Abro su selector de unidad, y elijo caja por veinticuatro. Esa línea vale setecientos ochenta: la caja tiene precio propio, más barato que veinticuatro unidades sueltas. El total es mil doscientos pesos. Pulso Guardar y Cobrar. Como la venta es de contado y en efectivo, el sistema emite la factura y registra el cobro en el mismo paso, sin preguntar nada más. Al terminar, el aviso confirma que la factura se guardó y se cobró; lo cierro con aceptar.",
+            "acciones": [
+                clic("button:has-text('Nueva factura')", "pulso Nueva factura"),
+                clic("button.panel-collapse", "recojo el panel"),
+                teclea("input[placeholder^='Escriba el código o el nombre']", "Refresco", "busco el refresco"),
+                clic("mat-option:has-text('Refresco Caribe Cola lata')", "lo agrego"),
+                marca(f"{LINEA(1)} app-line-unit-select", "Fíjate en la unidad", 5000),
+                teclea(f"{LINEA(1)} input[formcontrolname='quantity']", "2", "En cantidad escribo dos"),
+                tecla("Tab", "Son dos paquetes"),
+                teclea("input[placeholder^='Escriba el código o el nombre']", "Refresco", "Agrego otra línea"),
+                clic("mat-option:has-text('Refresco Caribe Cola lata')", "lo tomo de ella"),
+                clic(f"{LINEA(2)} app-line-unit-select mat-select", "Abro su selector"),
+                clic(".cdk-overlay-pane mat-option:has-text('Caja ×24')", "elijo caja por veinticuatro"),
+                marca(f"{LINEA(2)} app-line-unit-select", "Esa línea vale", 6000),
+                marca(".cost-row--total", "El total es", 3000),
+                clic("button:has-text('Guardar y Cobrar')", "Pulso Guardar y Cobrar"),
+                marca(ALERTA, "el aviso confirma", 3000, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "con aceptar"),
+            ],
+        },
+        {
+            "id": "02-pos", "capitulo": "La caja en el punto de venta", "rotulo": "Punto de venta",
+            "ruta": "Punto de venta", "navegar": "/pos",
+            "narracion": "En el punto de venta es todavía más rápido. Escaneo el código de barras de la caja; aquí lo escribo completo, con sus trece dígitos, tal como lo leería el lector, y al final pulso Enter. El ticket recibe una caja por veinticuatro a setecientos ochenta: el código le dice al sistema qué empaque es. Para vender una lata suelta, busco el refresco por su nombre, y el catálogo se filtra mientras escribo; la tarjeta muestra lo que queda en existencia, y al tocarla entra una unidad, a treinta y cinco pesos. El paquete, como no tiene código de barras, no entra al mostrador: si lo quieres vender aquí, dale un código en la ficha del producto.",
+            "acciones": [
+                teclea("input[aria-label='Buscar producto']", "7460001000243", "lo escribo completo"),
+                tecla("Enter", "pulso Enter"),
+                marca(".ps-line:has-text('Caja ×24')", "El ticket recibe", 5500),
+                teclea("input[aria-label='Buscar producto']", "Refresco", "busco el refresco"),
+                marca("button.ps-card:has-text('Refresco Caribe Cola lata')", "la tarjeta muestra", 3000),
+                clic("button.ps-card:has-text('Refresco Caribe Cola lata')", "al tocarla"),
+                marca(".ps-line:has-text('c/u')", "a treinta y cinco pesos", 3000),
+                cartel("Consejo", "Un empaque entra al punto de venta por su código de barras: dáselo en la ficha del producto.", "El paquete, como", 7000),
+            ],
+        },
+        {
+            "id": "03-kardex", "capitulo": "Las ventas en el kardex", "rotulo": "El kardex",
+            "ruta": "Inventario › Existencias", "navegar": "/inventory/existencias",
+            "narracion": "¿Y el inventario? Después de vender, lo comprobamos en la pantalla de Existencias. Arriba, en el buscador, escribo refresco, y cuando termino de escribirlo pulso el botón filtrar. Después de la factura quedan doscientas cuatro unidades, que el sistema también lee en cajas. Abro el detalle con el ojo de la fila, y en el panel pulso ver su kardex. La factura dejó dos salidas, cada una en el empaque en que se vendió: los dos paquetes, doce unidades, y la caja, veinticuatro. Y todas descuentan del mismo inventario y al mismo costo por unidad. Vendas como vendas, la existencia siempre cuadra.",
+            "acciones": [
+                marca("table tbody tr >> nth=0 >> td >> nth=0", "la pantalla de Existencias", 1500),
+                teclea(filtro("Buscar") + " input", "Refresco", "escribo refresco"),
+                clic("button:has(mat-icon:text-is('filter_list'))", "el botón filtrar"),
+                marca("table tbody tr:has-text('Refresco') td:nth-child(2)", "quedan doscientas cuatro", 5000),
+                clic("table tbody tr:has-text('Refresco') button:has(mat-icon:text-is('visibility'))", "con el ojo"),
+                clic(".gm-console-split__aside :text('Ver su kardex')", "pulso ver su kardex"),
+                marca(SALIDA(1, 6), "los dos paquetes", 2500),
+                marca(SALIDA(2, 6), "y la caja", 2500),
+                marca(SALIDA(1, 8), "al mismo costo", 4000),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
