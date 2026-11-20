@@ -1,0 +1,223 @@
+1
+00:00:03,100 --> 00:00:04,676
+¿Fabricas lo que vendes?
+
+2
+00:00:05,330 --> 00:00:07,639
+Germiva ya lleva la fabricación completa:
+
+3
+00:00:07,774 --> 00:00:11,979
+qué lleva cada producto, cuánto cuesta hacerlo y qué sale del almacén.
+
+4
+00:00:12,647 --> 00:00:15,761
+Lo vemos con una panadería y su bizcocho de vainilla.
+
+5
+00:00:16,417 --> 00:00:19,768
+Entro a Inventario y abro Fabricación, la primera opción.
+
+6
+00:00:20,422 --> 00:00:22,618
+Para ver mejor, recojo el panel.
+
+7
+00:00:23,288 --> 00:00:25,100
+Arriba hay cuatro pestañas:
+
+8
+00:00:25,172 --> 00:00:29,551
+el tablero, las órdenes, las listas de materiales y la trazabilidad.
+
+9
+00:00:30,219 --> 00:00:33,594
+Todo empieza por la lista de materiales, que es la receta:
+
+10
+00:00:33,742 --> 00:00:36,447
+qué componentes lleva el producto y en qué cantidad.
+
+11
+00:00:37,115 --> 00:00:38,480
+Pulso Nueva lista.
+
+12
+00:00:39,853 --> 00:00:41,876
+Primero, el producto terminado:
+
+13
+00:00:41,986 --> 00:00:46,155
+escribo bizcocho en el buscador y, cuando aparece debajo, lo elijo.
+
+14
+00:00:46,809 --> 00:00:48,819
+En cantidad que produce pongo doce,
+
+15
+00:00:48,942 --> 00:00:52,342
+porque una corrida de esta receta saca doce bizcochos.
+
+16
+00:00:53,009 --> 00:00:55,677
+En tolerancia de consumo, cinco por ciento:
+
+17
+00:00:55,813 --> 00:00:58,170
+si un día se gasta más material que eso,
+
+18
+00:00:58,218 --> 00:01:01,134
+el sistema pide una explicación antes de registrar.
+
+19
+00:01:01,802 --> 00:01:04,419
+Ahora, los componentes de una corrida.
+
+20
+00:01:05,088 --> 00:01:09,355
+Busco harina, y fíjate que el buscador dice cuánta hay libre y a qué costo;
+
+21
+00:01:09,417 --> 00:01:10,248
+la elijo.
+
+22
+00:01:10,905 --> 00:01:15,890
+En cantidad van ocho libras, que es lo que llevan los doce bizcochos, no uno solo.
+
+23
+00:01:16,560 --> 00:01:19,338
+Agrego otro componente y busco el azúcar.
+
+24
+00:01:19,995 --> 00:01:24,882
+Aparece el azúcar crema, con sus cuarenta libras de existencia, y la selecciono.
+
+25
+00:01:25,537 --> 00:01:30,313
+De azúcar, esta receta lleva por corrida cinco libras, ni más ni menos.
+
+26
+00:01:30,981 --> 00:01:32,000
+Seguimos.
+
+27
+00:01:32,656 --> 00:01:35,670
+Agrego uno más, y ahora busco los huevos.
+
+28
+00:01:36,338 --> 00:01:38,200
+Hay ciento cincuenta en la despensa;
+
+29
+00:01:38,272 --> 00:01:40,929
+con el nombre completo los marco en el buscador.
+
+30
+00:01:41,584 --> 00:01:45,530
+La receta lleva en total treinta unidades, un cartón completo.
+
+31
+00:01:46,197 --> 00:01:47,179
+Ya casi.
+
+32
+00:01:47,847 --> 00:01:52,288
+Para terminar, agrego el último componente y escribo las primeras letras de la
+
+33
+00:01:52,099 --> 00:01:53,007
+mantequilla.
+
+34
+00:01:53,663 --> 00:01:57,335
+Con eso basta para encontrarla, así que la tomo del buscador.
+
+35
+00:01:57,990 --> 00:02:00,087
+Y de mantequilla van tres libras.
+
+36
+00:02:00,756 --> 00:02:01,600
+Listo.
+
+37
+00:02:02,256 --> 00:02:03,721
+Ahora mira a la derecha:
+
+38
+00:02:03,881 --> 00:02:08,074
+cada línea ya muestra su costo, calculado con lo que te costó la compra.
+
+39
+00:02:09,425 --> 00:02:10,753
+Falta el trabajo.
+
+40
+00:02:11,408 --> 00:02:15,676
+En mano de obra pongo noventa minutos, que es lo que tarda una corrida.
+
+41
+00:02:16,331 --> 00:02:18,205
+La tarifa por hora del panadero:
+
+42
+00:02:18,329 --> 00:02:19,918
+cuatrocientos pesos.
+
+43
+00:02:20,585 --> 00:02:23,885
+Y en gastos indirectos, lo que no es material ni trabajo,
+
+44
+00:02:23,995 --> 00:02:25,931
+como la luz del horno y el empaque:
+
+45
+00:02:26,079 --> 00:02:27,617
+ciento veinte pesos.
+
+46
+00:02:28,286 --> 00:02:29,788
+Ahora mira abajo.
+
+47
+00:02:30,456 --> 00:02:34,227
+Los materiales de la corrida cuestan mil ciento treinta y cinco pesos;
+
+48
+00:02:34,350 --> 00:02:37,513
+la mano de obra y los indirectos, setecientos veinte;
+
+49
+00:02:37,586 --> 00:02:41,383
+y cada bizcocho sale en ciento cincuenta y cuatro con cincuenta y ocho.
+
+50
+00:02:42,038 --> 00:02:44,681
+Ese es tu costo real para poner el precio.
+
+51
+00:02:45,349 --> 00:02:49,009
+Pulso Publicar lista, y el aviso confirma que se publicó.
+
+52
+00:02:49,677 --> 00:02:51,019
+Queda como versión uno:
+
+53
+00:02:51,153 --> 00:02:54,268
+si mañana cambias la receta se publica la versión dos,
+
+54
+00:02:54,278 --> 00:02:56,884
+y las órdenes ya creadas conservan la suya.
+
+55
+00:02:57,539 --> 00:03:00,182
+Con la lista publicada ya podemos fabricar.
+
+56
+00:03:00,850 --> 00:03:02,947
+Eso, en el siguiente video.

@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Fabricación · Parte 2: la orden de fabricación
+
+DESCRIPCIÓN
+============================================================
+Segundo video de Fabricación en Germiva ERP. Con la lista de materiales publicada, fabricar son tres pasos: crear la orden, reservar el material y registrar lo que salió. Vemos cómo el sistema descuenta la materia prima, da entrada al producto terminado con su costo real y hace el asiento contable solo.
+
+⏱️ CAPÍTULOS
+00:00  Crear la orden y leer el plan
+00:58  Material reservado
+01:28  Registrar la producción
+02:11  Kardex, costo y asiento
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear una orden de fabricación y leer su plan de materiales
+• Qué significa reservar el material
+• Registrar la producción y cerrar la orden
+• Ver la salida de materia prima y la entrada del producto terminado
+• Dónde queda el costo real y el asiento contable
+
+⚠️ ERRORES COMUNES
+• Dejar el producto terminado en el mismo almacén de la materia prima sin querer
+• Creer que reservar descuenta la existencia: solo la aparta; se descuenta al registrar la producción
+• Registrar sin revisar la columna «Usado» cuando se gastó más material del previsto
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:55
+
+TRANSCRIPCIÓN
+============================================================
+En el video anterior publicamos la receta del bizcocho. Hoy lo fabricamos, y son tres pasos: crear la orden, reservar el material y registrar lo que salió. Pulso Nueva orden. La lista de materiales ya viene elegida. En cantidad a fabricar escribo veinticuatro, que son dos corridas. El almacén de los componentes es la despensa, de donde sale la materia prima. El del producto terminado lo abro y lo cambio a la vitrina, que es donde entran los bizcochos. Abajo, el sistema ya hizo la cuenta: lo requerido de cada componente, lo disponible, y la columna por comprar vacía, porque hay de todo. Costo estimado de la orden: tres mil setecientos diez pesos. Si faltara material, aquí mismo dice cuánto hay que comprar, y la orden se guarda en borrador hasta que llegue. Pulso Guardar y reservar.
+El aviso confirma que la orden se creó y el material quedó reservado. Arriba está su número, y la línea de avance marca material reservado. Reservar no descuenta nada todavía: la harina y los huevos siguen en la despensa, pero apartados, y nadie más puede venderlos ni usarlos en otra orden. A la izquierda está el consumo previsto, con el lote de donde va a salir cada componente. Y en la columna usado puedes corregir la cantidad si al final se gastó más o menos.
+Los bizcochos ya salieron del horno. A la derecha registro la producción. Unidades buenas: veinticuatro, que ya viene propuesto. Si alguno se hubiera dañado, iría en unidades descartadas; eso lo vemos en el próximo video. El lote del producto terminado lo propone el sistema, y el costo de conversión, mil cuatrocientos cuarenta, sale de la mano de obra de la lista. Debajo está el costo de este registro: cada bizcocho entra al almacén en ciento cincuenta y cuatro con cincuenta y ocho. Dejo marcado cerrar la orden, y pulso Registrar y cerrar la orden. El aviso lo confirma: producción registrada y orden cerrada.
+¿Y qué hizo el sistema con un solo clic? Está todo abajo, en producción registrada. Primero, los movimientos de inventario: cuatro salidas de materia prima, cada una de su lote y a su costo, y una entrada de veinticuatro bizcochos a la vitrina, a ciento cincuenta y cuatro con cincuenta y ocho cada uno. Segundo, el asiento contable, hecho solo: sale el material del inventario, entra el producto terminado. Y tercero, el resultado: materiales, conversión y costo total. Arriba, la orden quedó cerrada. Ya tienes bizcochos para vender, y sabes exactamente cuánto te costó cada uno.
