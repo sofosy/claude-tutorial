@@ -358,6 +358,73 @@ VIDEOS["productos-07-peso-y-balanza"] = {
     ],
 }
 
+# ───────────────────────── 09 · Variantes: crearlas ─────────────────────────
+VIDEOS["productos-09-variantes-crear"] = {
+    "titulo": "Productos · Parte 9: crear un producto con variantes",
+    "descripcion": "Noveno video de Productos en Germiva ERP: un mismo producto en varias presentaciones y sabores, cada uno con su código, su precio y su existencia. Creamos una gaseosa en lata, grande y jumbo, de naranja, piña y fresa, con el recargo de cada tamaño, en una sola pantalla.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 9. Estado A. Crea «Gaseosa Brisa» (RD$35 con ITBIS incluido): opción Presentación con el atajo de colmado sin «Botella 12 oz» (Lata 12 oz, Grande 22 oz, Jumbo 1 L) y opción Sabor (Naranja, Piña, Fresa). Recargo Grande +25 y Jumbo +50 → 35 / 60 / 85. Se desmarca Jumbo + Fresa: se crean 8 variantes. Es el estado de partida del video 10.",
+    "sesion": LISTA, "setup": RESTAURAR("A"),
+    "aprenderas": ["Cuándo conviene un producto con variantes", "Definir las opciones y sus valores", "Poner un recargo por tamaño", "Leer la matriz y elegir qué combinaciones crear"],
+    "errores_comunes": ["Crear un producto aparte por cada sabor: se pierde el resumen y el selector al vender", "Escribir los valores en desorden: ese es el orden en que se ven al vender", "Crear combinaciones que no vendes: se desmarcan en la matriz"],
+    "pasos": [
+        {
+            "id": "01-alta", "capitulo": "Un producto con variantes", "rotulo": "Variantes",
+            "ruta": "Inventario › Productos › Nuevo",
+            "narracion": "Una gaseosa en lata, grande y jumbo, de naranja, piña y fresa: son nueve productos, pero se crean como uno solo, con variantes. Pulso Nuevo Producto. El nombre: Gaseosa Brisa, que es lo común a todas. Sigue la categoría, igual que en cualquier producto. En categoría escribo las primeras letras de alimentos, espero a que la lista las encuentre, y la tomo de ahí. Luego, en unidad de medida escribo unidad; la lista muestra las que coinciden, y de ellas también la tomo. El precio base va en monto: treinta y cinco pesos, que es lo que cuesta la lata. Ese precio ya trae el impuesto sobre la venta, así que enciendo ITBIS incluido. Estos datos son comunes a todas. Ahora, en características, enciendo tiene variantes.",
+            "acciones": [
+                cartel("En este video", "Un producto, varias presentaciones y sabores: cada una con su código, precio y existencia.", "son nueve productos", 6000),
+                clic("button:has-text('Nuevo Producto')", "Pulso Nuevo Producto"),
+                teclea(ctl("name"), "Gaseosa Brisa", "El nombre"),
+                teclea(campo("Categoría"), "Alimen", "En categoría escribo"),
+                clic("mat-option:has-text('Alimentos') >> nth=0", "la tomo de ahí"),
+                teclea(campo("Unidad de medida"), "Unidad", "escribo unidad"),
+                clic("mat-option:has-text('Unidad (UND)')", "también la tomo"),
+                teclea(f"{PRECIOS} input[type='number']", "35", "treinta y cinco pesos"),
+                clic(f"{PRECIOS} button[aria-label='ITBIS incluido']", "enciendo ITBIS incluido"),
+                clic("button[aria-label='Tiene variantes']", "enciendo tiene variantes"),
+            ],
+        },
+        {
+            "id": "02-opciones", "capitulo": "Opciones y valores", "rotulo": "Opciones",
+            "ruta": "Inventario › Productos › Nuevo",
+            "narracion": "Aparece la sección opciones y variantes. Una opción es lo que distingue a las variantes, y sus valores son las alternativas. Hay atajos ya escritos para los casos más comunes. Aquí pulso el de presentación, que trae lata, botella, grande y jumbo. La botella no la vendo, así que la quito con su equis. El sabor no tiene atajo: pulso otra, y en el nombre de la opción escribo sabor. Ahora sus valores, uno por uno. Escribo naranja en el campo de valores, y para que quede como etiqueta pulso la tecla Enter. Después escribo piña, de la misma manera, y al terminar vuelvo a pulsar Enter. Y el último valor es fresa: lo escribo completo, y también lo confirmo igual. Fíjate en las etiquetas: el orden en que las escribes es el orden en que se verán al vender.",
+            "acciones": [
+                marca(".vb-section .section-title", "opciones y variantes", 2500),
+                marca(".vb-presets", "Hay atajos", 2500),
+                clic(".vb-presets button:has-text('Presentación (cerveza y refresco)')", "pulso el de presentación"),
+                clic("button[aria-label='Quitar Botella 12 oz']", "la quito"),
+                clic(".vb-presets button:has-text('Otra')", "pulso otra"),
+                teclea(".vb-option >> nth=1 >> input >> nth=0", "Sabor", "escribo sabor"),
+                teclea(".vb-option >> nth=1 >> .vb-values__input", "Naranja", "Escribo naranja"),
+                tecla("Enter", "la tecla Enter"),
+                teclea(".vb-option >> nth=1 >> .vb-values__input", "Piña", "escribo piña"),
+                tecla("Enter", "vuelvo a pulsar"),
+                teclea(".vb-option >> nth=1 >> .vb-values__input", "Fresa", "es fresa"),
+                tecla("Enter", "confirmo igual"),
+                marca(".vb-option >> nth=1 >> .vb-values", "Fíjate en las etiquetas", 4500),
+            ],
+        },
+        {
+            "id": "03-recargo-matriz", "capitulo": "Recargo, matriz y guardar", "rotulo": "La matriz",
+            "ruta": "Inventario › Productos › Nuevo",
+            "narracion": "El sistema pregunta si alguna opción cambia el precio. La presentación sí, así que la elijo, y aparece un campo por cada tamaño. A la grande le sumo veinticinco pesos sobre el precio base. Y a la jumbo le sumo el doble: cincuenta pesos. Debajo está la matriz: presentaciones en filas, sabores en columnas, y en cada cruce su precio, treinta y cinco, sesenta u ochenta y cinco. La jumbo de fresa todavía no la vendo, así que la desmarco. El botón dice cuántas se van a crear: ocho. Lo pulso. El sistema crea el producto padre y cada combinación como su hija, y el aviso lo confirma; acepto. En el siguiente video las vemos por dentro, les damos existencia y las vendemos.",
+            "acciones": [
+                marca(".vb-surcharge__q", "El sistema pregunta", 3000),
+                clic(".vb-surcharge button:has-text('Presentación')", "la elijo"),
+                teclea(".vb-surcharge__field:has(mat-label:text-is('Grande 22 oz')) input", "25", "A la grande"),
+                teclea(".vb-surcharge__field:has(mat-label:text-is('Jumbo 1 L')) input", "50", "a la jumbo"),
+                marca(".vb-children__title", "Debajo está la matriz", 2500),
+                marca(".vb-matrix tbody tr >> nth=1 >> td >> nth=1", "en cada cruce", 5000),
+                clic(".vb-matrix tbody tr >> nth=2 >> td >> nth=2 >> .mdc-checkbox", "la desmarco"),
+                marca("button:has-text('Guardar producto y')", "El botón dice", 2500),
+                clic("button:has-text('Guardar producto y')", "Lo pulso"),
+                marca(ALERTA, "el aviso lo confirma", 2000, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "acepto"),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
