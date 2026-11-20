@@ -328,7 +328,7 @@
         },
         {
           "click": "mat-option:has-text('Paquete'):not(:has-text('promocional'))",
-          "al_decir": "y lo elijo"
+          "al_decir": "hasta paquete"
         },
         {
           "resaltar": "app-product-units-panel .units-error",
