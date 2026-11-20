@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Fabricación · Parte 3: merma, faltantes y trazabilidad
+
+DESCRIPCIÓN
+============================================================
+Tercer video de Fabricación en Germiva ERP: lo que pasa cuando no todo sale perfecto. Registrar una merma y decidir si la absorbe el producto o va al gasto, corregir un registro, guardar una orden en borrador cuando falta material, leer el tablero y rastrear un lote de materia prima hasta las órdenes que lo usaron.
+
+⏱️ CAPÍTULOS
+00:00  Registrar una merma
+01:07  Corregir un registro
+01:31  Cuando falta material
+02:17  Rastrear un lote
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar unidades descartadas y elegir el tratamiento de la merma
+• Cómo se corrige un registro de producción
+• Guardar una orden en borrador cuando falta material y ver qué comprar
+• Leer el tablero de fabricación
+• Rastrear un lote hasta las órdenes que lo consumieron
+
+⚠️ ERRORES COMUNES
+• Marcar como pérdida anormal la merma de todos los días: el costo del producto queda más bajo que el real
+• Borrar o ajustar a mano la existencia en vez de usar «Corregir este registro»
+• Dejar órdenes en borrador sin revisar en el tablero qué material hay que comprar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:56
+
+TRANSCRIPCIÓN
+============================================================
+En fabricación no todo sale perfecto. Hoy vemos qué hacer con la merma, con el material que falta, y cómo rastrear un lote. Abro la pestaña Órdenes: cada fila es una orden, con su avance y su estado. Entro a la segunda, de doce bizcochos, que ya tiene el material reservado. Resulta que uno se quemó. En unidades buenas escribo once, que son los que sí sirven para vender. Y el que se perdió va al lado, en unidades descartadas: uno. Aparece una decisión nueva, el tratamiento de la merma. La abro. Merma normal es la de todos los días, y la absorbe el producto: los once buenos cargan con el costo del que se perdió. Pérdida anormal es un accidente, y va directo al gasto sin encarecer el producto. Elijo la normal. El motivo es obligatorio; escribo que se quemó en el horno. Y mira el costo: cada bizcocho sube a ciento sesenta y ocho con sesenta y cuatro. Pulso Registrar y cerrar la orden.
+El aviso confirma el registro, y la orden quedó cerrada con su merma anotada. ¿Y si te equivocaste al registrar? Aquí no se borra nada. Abajo, en el registro, está Corregir este registro: pides la corrección, escribes el motivo, y el sistema solo devuelve el material al almacén, retira los bizcochos y reversa el asiento contable.
+Ahora, cuando el material no alcanza. Pulso Nueva orden y pido doce bizcochos más. Enseguida se recalcula, y el plan lo marca en rojo: de mantequilla hay que comprar dos libras. El aviso de abajo lo explica, y el botón de reservar queda apagado. Pero la orden no se pierde: pulso Guardar borrador. El sistema confirma que se creó, y la orden queda esperando la compra. Ahora voy al Tablero. Abajo, material para las órdenes en borrador es tu lista de compras de fabricación: lo necesario, lo libre y lo que falta comprar. Y arriba, el resumen del período: la producción buena, el porcentaje de merma, el costo de producción y el costo por unidad.
+Por último, la trazabilidad. Imagina que el proveedor avisa que un lote de harina salió malo. Abro Trazabilidad y, en el buscador, escribo el número del lote, que viene en la etiqueta del saco. Con el lote escrito, pulso Buscar. Ahí está su historia completa: la entrada por la compra, y cada orden de fabricación que lo usó, con el saldo que fue quedando. Con un clic en el documento llegas a la orden, y de ahí a los bizcochos que salieron de ella. Lista de materiales, orden y control: eso es fabricar con Germiva.

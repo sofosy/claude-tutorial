@@ -177,6 +177,84 @@ VIDEOS["fabricacion-02-orden-de-fabricacion"] = {
     ],
 }
 
+# ───────────────────────── 03 · Merma, faltantes y trazabilidad ─────────────────────────
+def tab(nombre): return f"a.mat-mdc-tab-link:has-text('{nombre}')"
+def tablero(titulo): return f"section.mfg-panel:has(h3:has-text('{titulo}'))"
+VIDEOS["fabricacion-03-merma-faltantes-trazabilidad"] = {
+    "titulo": "Fabricación · Parte 3: merma, faltantes y trazabilidad",
+    "descripcion": "Tercer video de Fabricación en Germiva ERP: lo que pasa cuando no todo sale perfecto. Registrar una merma y decidir si la absorbe el producto o va al gasto, corregir un registro, guardar una orden en borrador cuando falta material, leer el tablero y rastrear un lote de materia prima hasta las órdenes que lo usaron.",
+    "_comentario": "Serie Fabricación (nov. 2026), video 3. Estado C (preparar.mjs C): OF-1 cerrada (24 UND, lote OF-1-1) y OF-2 reservada (12 UND). En cámara: OF-2 con 11 buenas + 1 descartada, merma normal → 1,855.00 / 11 = 168.64 por unidad (anormal sería 154.58 y 154.58 al gasto). Queda 1 lb de mantequilla: una orden nueva de 12 pide 3 lb → «Por comprar 2 LB», se guarda en borrador (OF-3). Trazabilidad del lote HAR-1101: entrada de 60 lb y salidas a OF-1 (16) y OF-2 (8). «Corregir este registro» solo se señala (no se pulsa).",
+    "sesion": {**COMUN["sesion"], "navegar": "/inventory/fabricacion", "esperar": "button:has-text('Nueva orden')"},
+    "setup": {"tipo": "shell", "cmd": "node seeds/fabricacion/preparar.mjs C"},
+    "aprenderas": ["Registrar unidades descartadas y elegir el tratamiento de la merma", "Cómo se corrige un registro de producción", "Guardar una orden en borrador cuando falta material y ver qué comprar", "Leer el tablero de fabricación", "Rastrear un lote hasta las órdenes que lo consumieron"],
+    "errores_comunes": ["Marcar como pérdida anormal la merma de todos los días: el costo del producto queda más bajo que el real", "Borrar o ajustar a mano la existencia en vez de usar «Corregir este registro»", "Dejar órdenes en borrador sin revisar en el tablero qué material hay que comprar"],
+    "pasos": [
+        {
+            "id": "01-merma", "capitulo": "Registrar una merma", "rotulo": "Merma",
+            "ruta": "Fabricación › Órdenes › OF-2",
+            "narracion": "En fabricación no todo sale perfecto. Hoy vemos qué hacer con la merma, con el material que falta, y cómo rastrear un lote. Abro la pestaña Órdenes: cada fila es una orden, con su avance y su estado. Entro a la segunda, de doce bizcochos, que ya tiene el material reservado. Resulta que uno se quemó. En unidades buenas escribo once, que son los que sí sirven para vender. Y el que se perdió va al lado, en unidades descartadas: uno. Aparece una decisión nueva, el tratamiento de la merma. La abro. Merma normal es la de todos los días, y la absorbe el producto: los once buenos cargan con el costo del que se perdió. Pérdida anormal es un accidente, y va directo al gasto sin encarecer el producto. Elijo la normal. El motivo es obligatorio; escribo que se quemó en el horno. Y mira el costo: cada bizcocho sube a ciento sesenta y ocho con sesenta y cuatro. Pulso Registrar y cerrar la orden.",
+            "acciones": [
+                {"cartel": {"tipo": "consejo", "titulo": "En este video", "texto": "Merma · material que falta · trazabilidad de un lote."}, "durante_ms": 5500, "al_decir": "qué hacer con la merma"},
+                clic(tab("Órdenes"), "Abro la pestaña"),
+                marca("table.gm-table tbody tr:has-text('OF-1') td:nth-child(3)", "con su avance", 2500),
+                clic("table.gm-table tbody tr:has-text('OF-2') td:nth-child(1)", "Entro a la segunda"),
+                marca(".mfg-title", "ya tiene el material reservado", 2500),
+                teclea(campo("Unidades buenas"), "11", "escribo once"),
+                teclea(campo("Unidades descartadas"), "1", "en unidades descartadas"),
+                clic(sel("Tratamiento de la merma"), "La abro"),
+                marca("mat-option:has-text('Merma normal')", "Merma normal es", 7000, cursor=False),
+                marca("mat-option:has-text('Pérdida anormal')", "Pérdida anormal es", 6000, cursor=False),
+                clic("mat-option:has-text('Merma normal')", "Elijo la normal"),
+                teclea(campo("Motivo de la merma"), "Se quemó en el horno", "escribo que se quemó"),
+                marca("dl.mfg-cost .mfg-cost__total", "cada bizcocho sube", 4500),
+                clic("button:has-text('Registrar y cerrar la orden')", "Pulso Registrar"),
+            ],
+        },
+        {
+            "id": "02-corregir", "capitulo": "Corregir un registro", "rotulo": "Corregir",
+            "ruta": "Fabricación › Órdenes › OF-2",
+            "narracion": "El aviso confirma el registro, y la orden quedó cerrada con su merma anotada. ¿Y si te equivocaste al registrar? Aquí no se borra nada. Abajo, en el registro, está Corregir este registro: pides la corrección, escribes el motivo, y el sistema solo devuelve el material al almacén, retira los bizcochos y reversa el asiento contable.",
+            "acciones": [
+                marca(".mat-mdc-snack-bar-container", "El aviso confirma", 2500, cursor=False),
+                marca("app-summary-strip, .mfg-title .gm-badge", "con su merma anotada", 4000),
+                marca("button:has-text('Corregir este registro')", "está Corregir este registro", 9000),
+            ],
+        },
+        {
+            "id": "03-falta-material", "capitulo": "Cuando falta material", "rotulo": "Falta material",
+            "ruta": "Fabricación › Órdenes › Nueva",
+            "narracion": "Ahora, cuando el material no alcanza. Pulso Nueva orden y pido doce bizcochos más. Enseguida se recalcula, y el plan lo marca en rojo: de mantequilla hay que comprar dos libras. El aviso de abajo lo explica, y el botón de reservar queda apagado. Pero la orden no se pierde: pulso Guardar borrador. El sistema confirma que se creó, y la orden queda esperando la compra. Ahora voy al Tablero. Abajo, material para las órdenes en borrador es tu lista de compras de fabricación: lo necesario, lo libre y lo que falta comprar. Y arriba, el resumen del período: la producción buena, el porcentaje de merma, el costo de producción y el costo por unidad.",
+            "acciones": [
+                clic("button:has-text('Nueva orden')", "Pulso Nueva orden"),
+                teclea(campo("Cantidad a fabricar"), "12", "pido doce"),
+                marca("td.mfg-short", "lo marca en rojo", 3500),
+                marca(".mfg-note--warn", "El aviso de abajo", 2000),
+                marca("button:has-text('Guardar y reservar')", "el botón de reservar", 2500),
+                clic("button:has-text('Guardar borrador')", "pulso Guardar borrador"),
+                marca(".mat-mdc-snack-bar-container", "El sistema confirma", 2500, cursor=False),
+                clic(tab("Tablero"), "voy al Tablero"),
+                marca(tablero("Material para las órdenes en borrador"), "material para las órdenes", 8000),
+                marca("app-summary-strip", "el resumen del período", 8000),
+            ],
+        },
+        {
+            "id": "04-trazabilidad", "capitulo": "Rastrear un lote", "rotulo": "Trazabilidad",
+            "ruta": "Fabricación › Trazabilidad",
+            "narracion": "Por último, la trazabilidad. Imagina que el proveedor avisa que un lote de harina salió malo. Abro Trazabilidad y, en el buscador, escribo el número del lote, que viene en la etiqueta del saco. Con el lote escrito, pulso Buscar. Ahí está su historia completa: la entrada por la compra, y cada orden de fabricación que lo usó, con el saldo que fue quedando. Con un clic en el documento llegas a la orden, y de ahí a los bizcochos que salieron de ella. Lista de materiales, orden y control: eso es fabricar con Germiva.",
+            "acciones": [
+                clic(tab("Trazabilidad"), "Abro Trazabilidad"),
+                teclea("input[placeholder^='Lote de un componente']", "HAR-1101", "escribo el número"),
+                clic("app-mfg-trace button:has-text('Buscar')", "pulso Buscar"),
+                marca("app-mfg-trace table tbody tr:last-child td:nth-child(5)", "la entrada por la compra", 2000),
+                marca("app-mfg-trace table tbody tr:nth-child(1) td:nth-child(5)", "cada orden de fabricación", 2000),
+                marca("app-mfg-trace table thead th:nth-child(4)", "con el saldo", 2500),
+                clic("app-mfg-trace button.mfg-link:has-text('OF-1')", "Con un clic"),
+                marca(".mfg-title", "llegas a la orden", 6000),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}

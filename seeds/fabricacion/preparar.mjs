@@ -104,9 +104,17 @@ if (estado === 'B' || estado === 'C') {
       await api('POST', `${BASE}/orders/${id}/reserve`, {});
       return id;
     };
+    // OF-1: 24 bizcochos fabricados y cerrados (el video 2), para que el tablero y la trazabilidad tengan historia.
     const primera = await orden(24);
     const det = await api('GET', `${BASE}/orders/${primera}`);
-    console.log(JSON.stringify(det).slice(0, 3000));
+    const lotes = (det.plan?.ingredients ?? det.ingredients ?? []).flatMap(i => i.lots);
+    await api('POST', `${BASE}/orders/${primera}/runs`, {
+      requestKey: crypto.randomUUID(), usage: lotes.map(l => ({ inventoryId: l.id, quantity: l.own })),
+      good: 24, rejected: 0, batchNumber: 'OF-1-1', abnormal: false, conversionCost: 1440, final: true,
+    });
+    // OF-2: 12 bizcochos con el material reservado; el video 3 registra 11 buenos y 1 descartado.
+    const segunda = await orden(12);
+    log('órdenes', primera, '(cerrada)', segunda, '(reservada)');
   }
 }
 log(`estado ${estado} listo en ${((Date.now() - t0) / 1000).toFixed(0)} s (Despensa ${DESPENSA}, Vitrina ${VITRINA})`);
