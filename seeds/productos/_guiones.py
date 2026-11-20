@@ -572,6 +572,70 @@ VIDEOS["productos-11-exterior-e-insumos"] = {
     ],
 }
 
+# ───────────────────────── 12 · Listas de precios ─────────────────────────
+CATALOGO = "app-price-list-catalog"
+VIDEOS["productos-12-listas-de-precios"] = {
+    "titulo": "Productos · Parte 12: listas de precios",
+    "descripcion": "Duodécimo video de Productos en Germiva ERP: precios distintos para distintos clientes sin escribir un precio por producto. Creamos una lista calculada (diez por ciento menos que el precio regular), se la asignamos a un cliente y vemos cómo la factura propone sola su precio.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 12. Estado A. Lista «Colmados» = Precio regular −10 %, redondeo a 5. Cliente «Colmado La Esquina» (RNC 130555102; id 240 en el canon armado sobre la instantánea del dev-env: si el canon se rearma y el id cambia, ajustar la ruta del paso 2). Habichuelas rojas: 85 → 76.50 → redondeado 75.",
+    "sesion": {**COMUN["sesion"], "navegar": "/inventory/config", "esperar": CATALOGO},
+    "setup": RESTAURAR("A"),
+    "aprenderas": ["Dónde se definen las listas de precios", "Crear una lista calculada sobre otra, con redondeo", "Asignar la lista a un cliente", "Ver el precio de la lista en la factura"],
+    "errores_comunes": ["Crear una lista de precio fijo y escribir cada precio a mano cuando basta un porcentaje", "Olvidar asignar la lista al cliente: seguiría con el precio regular", "Esperar que cambie una factura ya hecha: la lista aplica a los documentos nuevos"],
+    "pasos": [
+        {
+            "id": "01-lista", "capitulo": "Crear una lista calculada", "rotulo": "Nueva lista",
+            "ruta": "Inventario › Configuración › Listas de precios",
+            "narracion": "A los colmados que te compran para revender les das mejor precio. Eso no se hace producto por producto: se hace con una lista de precios. Están en Inventario, Configuración, al final de la página. La tabla muestra las que ya existen, y la primera es la lista por defecto. Pulso Nueva lista, y se abre su ventana. En tipo elijo porcentaje sobre otra lista. La lista base será el precio regular. En porcentaje escribo menos diez, es decir, diez por ciento menos que la base. En redondeo pongo cinco, para que los precios queden en múltiplos de cinco pesos. Y el nombre de la lista: colmados, que es a quienes se la voy a dar. Con todo lleno, pulso Guardar, y el aviso confirma que se creó. Ahí está, con su cálculo.",
+            "acciones": [
+                cartel("En este video", "Precios distintos por cliente, sin escribir un precio por producto.", "les das mejor precio", 6000),
+                marca(f"{CATALOGO} h3, {CATALOGO}", "al final de la página", 3000),
+                marca(f"{CATALOGO} table tbody tr:has-text('Precio regular') td:nth-child(1)", "la primera es", 3000),
+                clic(f"{CATALOGO} button:has-text('Nueva lista')", "Pulso Nueva lista"),
+                marca(f"{DIALOGO} h2, {DIALOGO} .mat-mdc-dialog-title, {DIALOGO}", "se abre su ventana", 1500, cursor=False),
+                clic(f"{DIALOGO} mat-select[formcontrolname='type']", "En tipo"),
+                clic("mat-option:has-text('% sobre otra lista')", "porcentaje sobre otra lista"),
+                clic(f"{DIALOGO} mat-select[formcontrolname='basePriceListId']", "La lista base"),
+                clic("mat-option:has-text('Precio regular')", "será el precio regular"),
+                teclea(f"{DIALOGO} app-money-input[formcontrolname='percent'] input", "-10", "escribo menos diez"),
+                teclea(f"{DIALOGO} app-money-input[formcontrolname='roundingStep'] input", "5", "En redondeo"),
+                teclea(f"{DIALOGO} input[formcontrolname='name']", "Colmados", "el nombre de la lista"),
+                clic(f"{DIALOGO} button:has-text('Guardar')", "pulso Guardar"),
+                marca(SNACK, "el aviso confirma", 2000, cursor=False),
+                marca(f"{CATALOGO} table tbody tr:has-text('Colmados') td:nth-child(1)", "Ahí está", 4000),
+            ],
+        },
+        {
+            "id": "02-cliente", "capitulo": "Asignarla a un cliente", "rotulo": "El cliente",
+            "ruta": "Ventas › Clientes › Colmado La Esquina", "navegar": "/sales/partners/edit/240",
+            "narracion": "La lista se asigna en la ficha de cada cliente. Este es el Colmado La Esquina. En el campo lista de precios escribo las primeras letras, espero a que aparezca, y elijo colmados. Desde ahora, sus documentos usan esos precios; si el campo queda vacío, el cliente usa la lista por defecto. Guardo el cliente. Sale la confirmación de que se actualizó, y la cierro con aceptar.",
+            "acciones": [
+                marca("app-autocomplete:has-text('Lista de precios')", "En el campo lista", 2500),
+                teclea("app-autocomplete:has-text('Lista de precios') input", "Colm", "escribo las primeras letras"),
+                clic("mat-option:has-text('Colmados')", "elijo colmados"),
+                marca("app-autocomplete:has-text('Lista de precios')", "sus documentos usan", 5500),
+                clic(".footer-right button:has-text('Guardar')", "Guardo el cliente"),
+                marca(ALERTA, "Sale la confirmación", 2500, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "con aceptar"),
+            ],
+        },
+        {
+            "id": "03-factura", "capitulo": "El precio en la factura", "rotulo": "La factura",
+            "ruta": "Ventas › Facturas › Nueva", "navegar": "/sales/invoices/create",
+            "narracion": "Veámoslo en una factura nueva. Viene con consumidor final, así que primero lo quito con su equis. En cliente escribo esquina; la lista lo busca, y cuando aparece el colmado, lo elijo. Ahora agrego un producto: escribo habichuelas en el buscador de líneas, espero las opciones, y las tomo de la lista. Su precio regular es ochenta y cinco pesos, pero para este cliente la factura propone setenta y cinco: ochenta y cinco menos el diez por ciento, redondeado a cinco. Y si mañana sube el precio regular, el de los colmados sube con él, sin tocar nada. Con esto termina la serie de Productos.",
+            "acciones": [
+                clic("mat-form-field:has(mat-label:text-is('Cliente')) button:has-text('close')", "lo quito con su equis"),
+                teclea("input[placeholder='Busque por nombre o RNC/Cédula']", "Esquina", "escribo esquina"),
+                clic("mat-option:has-text('Colmado La Esquina')", "lo elijo"),
+                teclea("input[placeholder^='Escriba el código o el nombre']", "Habichuelas", "escribo habichuelas"),
+                clic("mat-option:has-text('Habichuelas rojas')", "las tomo de la lista"),
+                marca(".products-services-section :text('RD$75.00')", "la factura propone", 7000),
+                marca("mat-form-field:has(mat-label:text-is('Cliente'))", "el de los colmados", 4000),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
