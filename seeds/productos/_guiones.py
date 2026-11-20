@@ -425,6 +425,78 @@ VIDEOS["productos-09-variantes-crear"] = {
     ],
 }
 
+# ───────────────────────── 10 · Variantes: ficha, existencia y venta ─────────────────────────
+VIDEOS["productos-10-variantes-vender"] = {
+    "titulo": "Productos · Parte 10: variantes por dentro, su existencia y su venta",
+    "descripcion": "Décimo video de Productos en Germiva ERP: qué es el producto padre y qué es cada variante, cómo crear una combinación que faltaba, darle existencia a una variante y venderla en el punto de venta con el selector de presentación y sabor.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 10. Parte del resultado del video 9 (el setup lo ensaya sin grabar): «Gaseosa Brisa» con 8 variantes a 35 / 60 / 85. En cámara: se crea Jumbo 1 L + Fresa desde la matriz (85), entrada de 24 latas de naranja a RD$20 a la variante «Lata 12 oz + Naranja», y en el POS se agregan 2 latas (RD$70) desde el selector del padre.",
+    "sesion": LISTA,
+    "setup": {"tipo": "shell", "cmd": "./.venv/bin/python seeds/_puertas/ensayar.py guiones/productos-09-variantes-crear.json"},
+    "aprenderas": ["Diferenciar el producto padre de sus variantes", "Crear una combinación nueva desde la matriz", "Registrar la entrada de mercancía de una variante", "Vender una variante desde el selector del punto de venta"],
+    "errores_comunes": ["Buscar la existencia en el padre: el padre no guarda mercancía, la guardan sus variantes", "Registrar la entrada en la variante equivocada", "Cambiar el precio del padre sin saber que arrastra a las variantes que lo heredan"],
+    "pasos": [
+        {
+            "id": "01-padre", "capitulo": "El padre y sus variantes", "rotulo": "El padre",
+            "ruta": "Inventario › Productos › Gaseosa Brisa",
+            "narracion": "En el video anterior creamos la gaseosa con sus variantes. En el catálogo la busco por su nombre, y cuando aparece abro la ficha del padre. El padre es la plantilla: define lo común, pero no se vende ni guarda existencia. Abro la pestaña variantes. Cada fila es una variante, con su propio código de barras. Las latas dicen del padre: usan su precio y cambian con él. Paso a la vista matriz. La jumbo de fresa, que dejamos fuera, dice crear: la pulso, se abre una ventanita, y en ella escribo su precio, ochenta y cinco pesos, y luego confirmo con el botón crear. El aviso lo confirma, y ya está la combinación que faltaba.",
+            "acciones": [
+                teclea(filtro("Buscar") + " input", "Gaseosa", "la busco por su nombre"),
+                clic("table tbody tr:has-text('Gaseosa Brisa') button[aria-label='Abrir'] >> nth=0", "abro la ficha"),
+                marca(".gm-badge:text-is('Producto padre')", "El padre es la plantilla", 4500),
+                clic(pestana("Variantes"), "Abro la pestaña"),
+                marca(".vp-table tbody tr >> nth=0 >> td >> nth=2", "con su propio código", 3000),
+                marca(".vp-inherited >> nth=0", "Las latas dicen", 4000),
+                clic(".gm-seg button:has-text('Matriz')", "vista matriz"),
+                clic(".vp-cell--new", "la pulso"),
+                teclea(".vp-pop input.money-input__control", "85", "escribo su precio"),
+                clic(".vp-pop button:has-text('Crear')", "el botón crear"),
+                marca(SNACK, "El aviso lo confirma", 2000, cursor=False),
+                marca(".vp-matrix tbody tr >> nth=2", "la combinación que faltaba", 3000),
+            ],
+        },
+        {
+            "id": "02-entrada", "capitulo": "Darle existencia a una variante", "rotulo": "Entrada",
+            "ruta": "Inventario › Productos › Lata 12 oz + Naranja",
+            "narracion": "La mercancía entra a cada variante, no al padre. Vuelvo a la lista y abro la lata de naranja. La barra de arriba dice que es un producto hijo, con el enlace a su padre. Arriba pulso el botón de entrada, y se abre su ventana. En el motivo elijo compras de mercancía. En proveedor escribo las primeras letras, espero a que la lista lo encuentre, y elijo la Embotelladora del Caribe. La ubicación: abro la lista y elijo el pasillo A del almacén Sur. El lote lo genera el botón de al lado. En cantidad, veinticuatro latas, que es lo que trae la caja. Y el costo de cada una: veinte pesos, sin el impuesto. Abajo confirmo el registro. El sistema avisa que la compra quedó registrada con su recepción, a la espera de la factura del proveedor; lo acepto. Arriba, la variante ya tiene veinticuatro en existencia.",
+            "acciones": [
+                clic(".gm-seg button:has-text('Lista')", "Vuelvo a la lista"),
+                clic("button[aria-label='Abrir Lata 12 oz + Naranja']", "abro la lata"),
+                marca(".child-bar__parent", "es un producto hijo", 3500),
+                clic("button:has-text('Registrar Entrada')", "el botón de entrada"),
+                marca(DIALOGO, "se abre su ventana", 1500, cursor=False),
+                clic(f"{DIALOGO} mat-select[formcontrolname='inventoryMovementTypeId']", "En el motivo"),
+                clic("mat-option:has-text('Compras de mercancía')", "compras de mercancía"),
+                teclea(f"{DIALOGO} [formcontrolname='partnerId'] input", "Embotell", "escribo las primeras letras"),
+                clic("mat-option:has-text('Embotelladora del Caribe')", "elijo la Embotelladora"),
+                clic(f"{DIALOGO} [formcontrolname='locationId'] input", "La ubicación"),
+                clic("mat-option:has-text('Pasillo A - Estante 1')", "el pasillo A"),
+                clic(f"{DIALOGO} button:has(mat-icon:text('auto_awesome'))", "lo genera el botón"),
+                teclea(f"{DIALOGO} input[formcontrolname='quantity']", "24", "En cantidad"),
+                teclea(f"{DIALOGO} input[formcontrolname='unitPrice']", "20", "el costo de cada una"),
+                clic(f"{DIALOGO} button:has-text('Registrar entrada')", "confirmo el registro"),
+                marca(f"{SNACK}, {ALERTA}", "El sistema avisa", 4500, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "lo acepto"),
+                marca(".hero-stock >> nth=0", "ya tiene veinticuatro", 3500),
+            ],
+        },
+        {
+            "id": "03-pos", "capitulo": "Vender una variante", "rotulo": "Punto de venta",
+            "ruta": "Punto de venta", "navegar": "/pos",
+            "narracion": "Y ahora, la venta. En el punto de venta busco gaseosa, escribiendo su nombre. El catálogo se filtra, y aparece una sola tarjeta, la del padre, con todas sus variantes. Al tocarla se abre el selector: presentaciones en filas y sabores en columnas. Solo la lata de naranja tiene existencia; las demás dicen agotado. Le sumo una lata con el botón más, y enseguida otra: son dos latas. Abajo pulso Agregar, y el ticket recibe la línea con el nombre completo de la variante. Y con lector de código de barras ni siquiera hace falta el selector: escaneas la lata y entra directo.",
+            "acciones": [
+                teclea("input[aria-label='Buscar producto']", "Gaseosa", "busco gaseosa"),
+                marca("button.ps-card:has-text('Gaseosa Brisa')", "una sola tarjeta", 3000),
+                clic("button.ps-card:has-text('Gaseosa Brisa')", "Al tocarla"),
+                marca(DIALOGO, "se abre el selector", 3000, cursor=False),
+                clic("button[aria-label^='Sumar una unidad de Lata 12 oz'][aria-label*='Naranja']", "Le sumo una lata"),
+                clic("button[aria-label^='Sumar una unidad de Lata 12 oz'][aria-label*='Naranja']", "enseguida otra"),
+                clic(f"{DIALOGO} button:has-text('Agregar')", "pulso Agregar"),
+                marca(".ps-line:has-text('Naranja')", "el ticket recibe", 5000),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
