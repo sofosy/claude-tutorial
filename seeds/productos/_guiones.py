@@ -497,6 +497,81 @@ VIDEOS["productos-10-variantes-vender"] = {
     ],
 }
 
+# ───────────────────────── 11 · Comercio exterior e insumos ─────────────────────────
+INSUMOS = "app-product-supplies"
+def insumo(nombre, campo_): return f"{INSUMOS} tbody tr:has-text('{nombre}') input[aria-label='{campo_}']"
+VIDEOS["productos-11-exterior-e-insumos"] = {
+    "titulo": "Productos · Parte 11: comercio exterior e insumos",
+    "descripcion": "Undécimo video de Productos en Germiva ERP: los datos de aduana de un producto que se importa (partida arancelaria, país de origen y pesos) y los insumos de un producto que preparas, para conocer su costo real y su margen antes de ponerle precio.",
+    "_comentario": "Serie Productos corta (nov. 2026), video 11. Estado A + insumos de cocina (insumos.mjs). Refresco: partida 2202.10.00, origen Estados Unidos, bruto 0.385 kg, neto 0.37 kg. Producto nuevo «Dulce criollo casero» a RD$150 con ITBIS incluido (neto 127.12); insumos: 0.25 lb de habichuela con 10 % de merma (52 × 0.25 × 1.1 = 14.30), 0.25 lata de leche (65 × 0.25 = 16.25) y 0.15 lb de azúcar (38 × 0.15 = 5.70) → costo 36.25, margen 90.87 (71.5 %). La pestaña Insumos enlaza con Fabricación («Abrir fabricación»), que tiene su propia serie.",
+    "sesion": LISTA,
+    "setup": {"tipo": "shell", "cmd": "node seeds/productos/restaurar.mjs A && node seeds/productos/insumos.mjs"},
+    "aprenderas": ["Registrar la partida arancelaria, el origen y los pesos de un producto importado", "Agregar los insumos que consume un producto preparado", "Poner la cantidad real y la merma de cada insumo", "Leer el costo de insumos y el margen teórico"],
+    "errores_comunes": ["Dejar los insumos con cantidad uno: el costo sale inflado y el margen en rojo", "Olvidar la merma de lo que se pierde al preparar", "Poner el precio de un producto preparado sin mirar su margen"],
+    "pasos": [
+        {
+            "id": "01-exterior", "capitulo": "Comercio exterior", "rotulo": "Comercio exterior",
+            "ruta": "Inventario › Productos › Refresco Caribe Cola lata",
+            "narracion": "Si importas o exportas, la aduana pide datos de cada producto. Este refresco lo traemos de fuera. En el catálogo escribo refresco; la tabla se filtra, y cuando queda solo su fila abro la ficha con el lápiz. En características enciendo se importa o se exporta, y abajo aparece la sección comercio exterior. Primero la partida arancelaria, el código con que la aduana clasifica la mercancía; la escribo completa, con sus puntos. Después el país de origen: escribo estados, espero a que la lista lo encuentre entre todos los países, y elijo Estados Unidos. Luego el peso bruto de una lata, con su envase, en kilos. Y por último el peso neto, que es solo el contenido, sin el envase. Guardo la ficha, y acepto el aviso que lo confirma.",
+            "acciones": [
+                teclea(filtro("Buscar") + " input", "Refresco", "escribo refresco"),
+                clic("table tbody tr:has-text('Refresco Caribe Cola lata') button[aria-label='Abrir']", "abro la ficha"),
+                clic("button[aria-label='Se importa o se exporta']", "enciendo se importa"),
+                marca("h3.section-title:has-text('Comercio exterior')", "abajo aparece", 2500),
+                teclea(ctl("tariffCode"), "2202.10.00", "Primero la partida"),
+                teclea("[formcontrolname='originCountry'] input", "Estados", "escribo estados"),
+                clic("mat-option:has-text('Estados Unidos (US)')", "elijo Estados Unidos"),
+                teclea(ctl("grossWeight"), "0.385", "el peso bruto"),
+                teclea(ctl("netWeight"), "0.37", "el peso neto"),
+                clic(GUARDAR, "Guardo la ficha"),
+                marca(ALERTA, "y acepto", 1200, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "que lo confirma"),
+            ],
+        },
+        {
+            "id": "02-producto-preparado", "capitulo": "Un producto que se prepara", "rotulo": "Insumos",
+            "ruta": "Inventario › Productos › Nuevo", "navegar": "/inventory/product/list",
+            "narracion": "Ahora los insumos, que sirven para conocer el costo real de lo que preparas: un plato, un combo o un dulce. Vamos a costear un vaso de habichuelas con dulce. Pulso Nuevo Producto. Lo llamo dulce criollo casero, tal como saldrá en la factura. Sigue la categoría, como en cualquier producto. En categoría escribo las primeras letras de alimentos, espero la lista, y la tomo de ahí. En unidad de medida escribo unidad, porque se vende por vaso; la lista muestra las opciones, y de ellas también la elijo. El precio del vaso va en monto: ciento cincuenta pesos. Ese precio ya trae el impuesto sobre la venta, así que enciendo ITBIS incluido. Pulso Guardar, y acepto el aviso. Con el producto creado se habilita la pestaña insumos, y la abro.",
+            "acciones": [
+                clic("button:has-text('Nuevo Producto')", "Pulso Nuevo Producto"),
+                teclea(ctl("name"), "Dulce criollo casero", "Lo llamo"),
+                teclea(campo("Categoría"), "Alimen", "En categoría escribo"),
+                clic("mat-option:has-text('Alimentos') >> nth=0", "la tomo de ahí"),
+                teclea(campo("Unidad de medida"), "Unidad", "escribo unidad"),
+                clic("mat-option:has-text('Unidad (UND)')", "también la elijo"),
+                teclea(f"{PRECIOS} input[type='number']", "150", "ciento cincuenta pesos"),
+                clic(f"{PRECIOS} button[aria-label='ITBIS incluido']", "enciendo ITBIS incluido"),
+                clic(GUARDAR, "Pulso Guardar"),
+                marca(ALERTA, "y acepto", 1200, cursor=False),
+                clic(f"{DIALOGO} button:has-text('Aceptar')", "el aviso. Con"),
+                clic("mat-tab-group.product-tabs .mdc-tab:has-text('Insumos')", "la abro"),
+            ],
+        },
+        {
+            "id": "03-receta", "capitulo": "Cantidades, merma y margen", "rotulo": "El margen",
+            "ruta": "Inventario › Productos › Dulce criollo casero › Insumos",
+            "narracion": "Aquí va lo que consume cada vaso. En agregar insumo escribo habichuela; la lista busca entre los insumos de la empresa, y elijo la habichuela roja para cocinar. Hago lo mismo con la leche: la escribo en el mismo campo, espero un momento, y de la lista tomo la leche evaporada. Y falta el azúcar: lo busco por su nombre, la lista lo encuentra, y entonces elijo el azúcar crema. Antes de seguir, hay que revisar los números de arriba. Mira el margen teórico: sale en rojo, porque cada insumo entró con cantidad uno, como si un vaso llevara una libra entera. Pongo las cantidades reales. De habichuela, un cuarto de libra, que es lo que lleva un vaso. Y su merma, lo que se pierde al cocinar: diez por ciento. De leche, un cuarto de lata por cada vaso que se sirve. Y de azúcar, quince centésimas de libra, un poco más de dos onzas. Salgo del campo, y cada cambio se guarda solo. Ahora sí: el vaso cuesta treinta y seis pesos con veinticinco, y el margen es de noventa pesos, el setenta y uno por ciento del precio. Y si esto lo fabricas por tandas, el botón Abrir fabricación lleva estos insumos a una lista de materiales.",
+            "acciones": [
+                teclea(f"{INSUMOS} input >> nth=0", "Habichuela", "escribo habichuela"),
+                clic("mat-option:has-text('Habichuela roja para cocinar')", "elijo la habichuela roja"),
+                teclea(f"{INSUMOS} input >> nth=0", "Leche", "la escribo"),
+                clic("mat-option:has-text('Leche evaporada lata')", "tomo la leche evaporada"),
+                teclea(f"{INSUMOS} input >> nth=0", "Azúcar", "lo busco"),
+                clic("mat-option:has-text('Azúcar crema')", "elijo el azúcar crema"),
+                marca(f"{INSUMOS} .gm-stat:has-text('Margen teórico')", "Mira el margen teórico", 6500),
+                teclea(insumo("Habichuela", "Cantidad por unidad producida"), "0.25", "un cuarto de libra"),
+                teclea(insumo("Habichuela", "Porcentaje de merma"), "10", "Y su merma"),
+                teclea(insumo("Leche", "Cantidad por unidad producida"), "0.25", "un cuarto de lata"),
+                teclea(insumo("Azúcar", "Cantidad por unidad producida"), "0.15", "quince centésimas"),
+                tecla("Tab", "Salgo del campo"),
+                marca(f"{INSUMOS} .gm-stat >> nth=0", "el vaso cuesta", 3500),
+                marca(f"{INSUMOS} .gm-stat:has-text('Margen teórico')", "el margen es de noventa", 4500),
+                marca(f"{INSUMOS} a:has-text('Abrir fabricación')", "el botón Abrir fabricación", 5000),
+            ],
+        },
+    ],
+}
+
 if __name__ == "__main__":
     for nombre, v in VIDEOS.items():
         guion = {**COMUN, **v}
