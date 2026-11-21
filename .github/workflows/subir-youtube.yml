@@ -1,0 +1,81 @@
+# Sube a YouTube los videos de entregas/ que faltan en el canal.
+# La cuota diaria de la API alcanza para pocos videos: esta tarea corre cada día
+# y sigue donde quedó la anterior, hasta que no quede ninguno pendiente.
+#
+# Secretos del repositorio (Settings › Secrets and variables › Actions):
+#   YT_CLIENT_ID · YT_CLIENT_SECRET · YT_REFRESH_TOKEN
+# Variable opcional: YT_PRIVACIDAD = private (por defecto) | unlisted | public
+name: Subir videos a YouTube
+
+on:
+  schedule:
+    # 09:17 UTC: la cuota de YouTube se renueva a medianoche del Pacífico (07–08 UTC)
+    - cron: "17 9 * * *"
+  workflow_dispatch:
+    inputs:
+      serie:
+        description: "Solo una carpeta de entregas/ (vacío = todas)"
+        required: false
+      max:
+        description: "Tope de videos en esta corrida (0 = hasta agotar la cuota)"
+        default: "0"
+      privacidad:
+        description: "private, unlisted o public (vacío = la variable YT_PRIVACIDAD o private)"
+        required: false
+
+permissions:
+  contents: write
+
+concurrency:
+  group: subir-youtube
+  cancel-in-progress: false
+
+jobs:
+  subir:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    env:
+      YT_CLIENT_ID: ${{ secrets.YT_CLIENT_ID }}
+      YT_CLIENT_SECRET: ${{ secrets.YT_CLIENT_SECRET }}
+      YT_REFRESH_TOKEN: ${{ secrets.YT_REFRESH_TOKEN }}
+      YT_PRIVACIDAD: ${{ inputs.privacidad || vars.YT_PRIVACIDAD }}
+      SERIE: ${{ inputs.serie }}
+      MAXIMO: ${{ inputs.max || '0' }}
+    steps:
+      - name: Comprobar que hay credenciales
+        id: cred
+        run: |
+          if [ -z "$YT_REFRESH_TOKEN" ]; then
+            echo "Faltan los secretos de YouTube: no se sube nada." >> "$GITHUB_STEP_SUMMARY"
+            echo "hay=no" >> "$GITHUB_OUTPUT"
+          else
+            echo "hay=si" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/checkout@v4
+        if: steps.cred.outputs.hay == 'si'
+
+      - uses: actions/setup-python@v5
+        if: steps.cred.outputs.hay == 'si'
+        with:
+          python-version: "3.12"
+
+      - name: Subir lo que falta
+        if: steps.cred.outputs.hay == 'si'
+        run: |
+          set -o pipefail
+          python -m tutorial.subir subir --max "$MAXIMO" ${SERIE:+--serie "$SERIE"} | tee salida-subir.txt
+          { echo '```'; tail -n 40 salida-subir.txt; echo '```'; } >> "$GITHUB_STEP_SUMMARY"
+
+      # Aunque la subida falle a medias, lo ya subido queda anotado: sin esto,
+      # la corrida siguiente dependería solo de comparar títulos con el canal.
+      - name: Guardar el registro de subidos
+        if: always() && steps.cred.outputs.hay == 'si'
+        run: |
+          git add entregas/subidos.json 2>/dev/null || exit 0
+          git diff --cached --quiet && exit 0
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore(youtube): registro de videos subidos"
+          git pull --rebase
+          git push

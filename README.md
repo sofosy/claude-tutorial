@@ -230,6 +230,34 @@ salida/<tutorial>/
 └── privacidad.json  mapa real → inventado, para mantener la coherencia
 ```
 
+## Subir a YouTube
+
+`tutorial/subir.py` sube los videos de `entregas/` que todavía no están en el
+canal, cada uno con su título, descripción, etiquetas, miniatura y subtítulos
+(los toma del `-youtube.txt` que acompaña al MP4). Solo usa la biblioteca estándar.
+
+```bash
+python -m tutorial.subir autorizar client_secret.json   # una vez: abre el navegador
+python -m tutorial.subir listar                         # qué falta, sin subir nada
+python -m tutorial.subir subir --serie clientes --max 3 # o sin opciones: todo lo que falte
+```
+
+- **El JSON de Google** (`client_secret….json`, cliente OAuth de tipo «App de
+  escritorio» con la YouTube Data API v3 activada) se queda en tu máquina.
+  `autorizar` produce `youtube-token.json`; ninguno de los dos se versiona.
+- **Qué cuenta como ya subido:** lo anotado en `entregas/subidos.json` y cualquier
+  video del canal con el mismo título (los que subiste a mano).
+- **La cuota manda.** La API deja subir pocos videos al día. Cuando YouTube corta,
+  el comando termina bien y deja el resto pendiente. La tarea
+  `.github/workflows/subir-youtube.yml` corre cada día y sigue donde quedó; necesita
+  los secretos `YT_CLIENT_ID`, `YT_CLIENT_SECRET` y `YT_REFRESH_TOKEN` (los tres
+  valores de `youtube-token.json`).
+- **Se suben en privado** salvo que pases `--privacidad unlisted|public` o definas
+  la variable `YT_PRIVACIDAD`. Un proyecto de API sin auditar por Google deja los
+  videos bloqueados en privado de todas formas.
+- **No se suben** las copias livianas (720p), los verticales de Instagram ni las
+  carpetas `anterior`/`v1-…`; `listar --todo` muestra qué quedó fuera.
+
 ## Documentación
 
 - [`PLAN.md`](PLAN.md) — el diseño completo y por qué cada decisión es como es.
