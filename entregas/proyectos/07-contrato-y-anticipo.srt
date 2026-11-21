@@ -1,0 +1,187 @@
+1
+00:00:03,100 --> 00:00:05,432
+El presupuesto dice cuánto cuesta la obra;
+
+2
+00:00:05,480 --> 00:00:08,483
+el contrato de venta dice cómo se le cobra al cliente.
+
+3
+00:00:09,150 --> 00:00:12,079
+Se registra en la pestaña Facturación del proyecto.
+
+4
+00:00:12,734 --> 00:00:16,059
+Recojo el menú, y pulso Registrar contrato de venta.
+
+5
+00:00:16,728 --> 00:00:18,849
+El cliente ya viene del proyecto.
+
+6
+00:00:19,504 --> 00:00:23,066
+En Monto del contrato anoto seis millones seiscientos mil pesos,
+
+7
+00:00:23,138 --> 00:00:25,571
+el precio del presupuesto, sin ITBIS.
+
+8
+00:00:26,227 --> 00:00:28,460
+Los días de crédito quedan en treinta.
+
+9
+00:00:29,128 --> 00:00:31,014
+Ahora el régimen de ITBIS.
+
+10
+00:00:31,682 --> 00:00:33,668
+Esta es una obra con materiales:
+
+11
+00:00:33,728 --> 00:00:34,971
+marco esa opción.
+
+12
+00:00:35,627 --> 00:00:39,634
+Con ella, el ITBIS se calcula sobre el diez por ciento de cada factura,
+
+13
+00:00:39,743 --> 00:00:43,502
+y el resto sale exento, como manda la norma para construcción.
+
+14
+00:00:44,158 --> 00:00:46,528
+En Servicio de la factura escribo Construcción,
+
+15
+00:00:46,588 --> 00:00:49,554
+para buscar el servicio con que se arma cada factura.
+
+16
+00:00:50,222 --> 00:00:52,518
+Aparece en la lista, y lo elijo.
+
+17
+00:00:53,173 --> 00:00:57,776
+En Tipo de comprobante abro la lista, y elijo la factura de crédito fiscal.
+
+18
+00:00:59,146 --> 00:01:00,920
+Sigue la forma de facturar.
+
+19
+00:01:01,576 --> 00:01:02,384
+Hay tres:
+
+20
+00:01:02,381 --> 00:01:05,421
+por avance, midiendo lo ejecutado en cada período;
+
+21
+00:01:05,531 --> 00:01:07,665
+por hitos, con un plan de cobros;
+
+22
+00:01:07,727 --> 00:01:09,489
+o por tiempo y materiales.
+
+23
+00:01:10,156 --> 00:01:11,448
+Dejo Por avance.
+
+24
+00:01:12,115 --> 00:01:16,432
+En Presupuesto que se cubica abro la lista, y elijo el presupuesto de la obra:
+
+25
+00:01:16,567 --> 00:01:18,590
+sus partidas son las que se medirán.
+
+26
+00:01:19,259 --> 00:01:20,525
+Bajo al anticipo.
+
+27
+00:01:21,180 --> 00:01:22,783
+En Anticipo anoto veinte:
+
+28
+00:01:22,879 --> 00:01:25,783
+el cliente adelanta el veinte por ciento del contrato.
+
+29
+00:01:26,451 --> 00:01:29,331
+Y en Amortización por factura anoto veinte también:
+
+30
+00:01:29,378 --> 00:01:32,231
+cada factura de avance descontará ese porcentaje,
+
+31
+00:01:32,254 --> 00:01:34,353
+hasta devolver el anticipo completo.
+
+32
+00:01:35,008 --> 00:01:37,180
+Por último, el fondo de reparo.
+
+33
+00:01:37,835 --> 00:01:38,792
+Anoto cinco:
+
+34
+00:01:38,902 --> 00:01:42,649
+el cliente retiene el cinco por ciento de cada factura como garantía,
+
+35
+00:01:42,734 --> 00:01:44,633
+y lo paga al recibir la obra.
+
+36
+00:01:45,301 --> 00:01:47,795
+Pulso Guardar, y el aviso lo confirma.
+
+37
+00:01:49,165 --> 00:01:53,085
+Con el contrato guardado, la pestaña muestra el estado de facturación:
+
+38
+00:01:53,134 --> 00:01:56,930
+contrato vigente, facturado, cobrado y por facturar.
+
+39
+00:01:57,585 --> 00:01:59,260
+Más abajo está el Anticipo:
+
+40
+00:01:59,371 --> 00:02:03,662
+un millón trescientos veinte mil pesos pactados, todavía sin facturar.
+
+41
+00:02:04,319 --> 00:02:06,007
+Pulso Facturar anticipo.
+
+42
+00:02:06,663 --> 00:02:08,673
+El sistema muestra la vista previa:
+
+43
+00:02:08,771 --> 00:02:13,001
+la base, el ITBIS sobre el diez por ciento, y el total de la factura.
+
+44
+00:02:13,657 --> 00:02:15,233
+Pulso Generar factura.
+
+45
+00:02:15,889 --> 00:02:18,693
+El aviso dice que la factura quedó creada en borrador:
+
+46
+00:02:18,816 --> 00:02:22,141
+se revisa y se emite en Ventas, como cualquier otra.
+
+47
+00:02:22,795 --> 00:02:26,890
+Desde ahí, cada factura de avance irá amortizando este anticipo.

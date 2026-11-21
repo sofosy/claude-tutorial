@@ -1,0 +1,296 @@
+{
+  "titulo": "Proyectos · Facturar por hitos: el plan de cobros y la factura de cada hito",
+  "descripcion": "Cómo cobrar un proyecto por hitos en Germiva: armar el plan de cobros con un porcentaje del contrato por hito, marcar un hito listo para facturar y generar su factura en Ventas. Y cuándo conviene tiempo y materiales.",
+  "_comentario": "Video 12 de la serie Proyectos. setup: seeds/proyectos/preparar.sh hitos (proyecto de supervisión con contrato por hitos de 600,000 y dos hitos: 30 % y 40 %).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/facturacion",
+    "esperar": "button:has-text('Nuevo hito')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh hitos"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Armar el plan de cobros de un contrato por hitos",
+    "Marcar un hito listo para facturar",
+    "Generar la factura del hito",
+    "Cuándo usar hitos, cubicaciones o tiempo y materiales"
+  ],
+  "errores_comunes": [
+    "Dejar el plan de cobros sin llegar al monto del contrato",
+    "Facturar el hito por fuera, con una factura suelta en Ventas",
+    "Creer que la factura ya quedó emitida: nace en borrador"
+  ],
+  "pasos": [
+    {
+      "id": "01-plan",
+      "capitulo": "El plan de cobros",
+      "rotulo": "Plan de cobros",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Cada hito, un porcentaje del contrato",
+      "narracion": "No todos los proyectos se cobran midiendo avance. Un servicio, como esta supervisión de obra, se cobra por hitos: se factura al cumplir cada entrega pactada. En la pestaña Facturación, recojo el menú lateral para ganar espacio, y bajo al plan de cobros por hitos. Ya hay dos hitos, del treinta y del cuarenta por ciento del contrato. El aviso lo dice: faltan ciento ochenta mil pesos por planificar. Pulso Nuevo hito. En el nombre escribo Entrega final, que es el cierre de este servicio de supervisión. El valor puede ser un porcentaje del contrato, o un monto fijo; lo dejo en porcentaje, y anoto treinta, que es justo lo que faltaba. En la condición escribo lo que debe cumplirse para cobrarlo: Acta de recepción firmada. Con esos datos completos, pulso Guardar. El plan llega a los seiscientos mil pesos del contrato, y el aviso desaparece.",
+      "acciones": [
+        {
+          "resaltar": "header.ws-header h1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Un servicio, como esta"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "recojo el menú"
+        },
+        {
+          "resaltar": "#billing-milestones-title",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "bajo al plan de cobros"
+        },
+        {
+          "resaltar": "section:has(#billing-milestones-title) tbody tr >> nth=0 >> td >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Ya hay dos hitos"
+        },
+        {
+          "resaltar": "section:has(#billing-milestones-title) :text('por planificar') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El aviso lo dice"
+        },
+        {
+          "click": "button:has-text('Nuevo hito')",
+          "al_decir": "Pulso Nuevo hito"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='name']",
+            "texto": "Entrega final"
+          },
+          "al_decir": "En el nombre escribo"
+        },
+        {
+          "resaltar": "mat-dialog-container app-segmented-control",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El valor puede ser"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='percentage']",
+            "texto": "30"
+          },
+          "al_decir": "y anoto treinta"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='condition']",
+            "texto": "Acta de recepción firmada"
+          },
+          "al_decir": "En la condición"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "section:has(#billing-milestones-title) tbody tr >> nth=2 >> td >> nth=1",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El plan llega"
+        }
+      ]
+    },
+    {
+      "id": "02-facturar",
+      "capitulo": "Del hito a la factura",
+      "rotulo": "Facturar un hito",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Listo para facturar → factura en borrador en Ventas",
+      "narracion": "El primer hito ya se cumplió: el cliente firmó los planos. En su fila abro el menú de acciones, y elijo Marcar listo para facturar. El sistema pide confirmar; pulso Marcar listo. El hito cambia de estado, y facturación recibe el aviso. Ahora la fila muestra el botón Facturar. Lo pulso. La vista previa trae el monto del hito, ciento ochenta mil pesos, el ITBIS, y el total de la factura. Si el contrato tuviera anticipo, aquí se descontaría su amortización. Pulso Generar factura. La factura nace en borrador en Ventas, con el proyecto en la cabecera; allí se revisa y se emite con su comprobante fiscal. El hito queda como Facturado, y abajo, en Facturas del proyecto, aparece la factura con su origen.",
+      "acciones": [
+        {
+          "click": "button[aria-label='Más acciones del hito 1']",
+          "al_decir": "abro el menú de acciones"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Marcar listo')",
+          "al_decir": "y elijo Marcar listo"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El sistema pide confirmar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Marcar listo')",
+          "al_decir": "pulso Marcar listo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "section:has(#billing-milestones-title) tbody tr >> nth=0 >> td >> nth=5",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Ahora la fila muestra"
+        },
+        {
+          "click": "section:has(#billing-milestones-title) button:has-text('Facturar')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Monto del hito') >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "La vista previa trae"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Total de la factura') >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "y el total de la factura"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar factura')",
+          "al_decir": "Pulso Generar factura"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "section:has(#billing-milestones-title) tbody tr >> nth=0 >> td >> nth=5",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El hito queda como Facturado"
+        },
+        {
+          "resaltar": "section:has(#billing-documents-title) tbody tr >> nth=0 >> td >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "aparece la factura"
+        }
+      ]
+    },
+    {
+      "id": "03-modos",
+      "capitulo": "Tres formas de facturar",
+      "rotulo": "¿Hitos, avance u horas?",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Hitos · Cubicaciones · Tiempo y materiales",
+      "narracion": "La forma de facturar se elige una sola vez, en el contrato de venta del proyecto. Por hitos, como aquí, para entregas pactadas. Por avance, con cubicaciones, para obras que se miden partida por partida. Y por tiempo y materiales, cuando se cobra lo trabajado: el sistema propone la factura del período con las horas aprobadas, a su tarifa de venta, y los gastos facturables del proyecto. En los tres casos la factura sale de aquí, del proyecto, y por eso el contrato siempre sabe cuánto se ha facturado y cuánto falta.",
+      "acciones": [
+        {
+          "resaltar": "#billing-contract-title",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "La forma de facturar"
+        },
+        {
+          "resaltar": "#billing-milestones-title",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Por hitos, como aquí"
+        },
+        {
+          "resaltar": "#billing-figures-title",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Por avance, con cubicaciones"
+        },
+        {
+          "resaltar": "#billing-contract-title",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "Y por tiempo y materiales"
+        },
+        {
+          "resaltar": "#billing-documents-title",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "En los tres casos"
+        },
+        {
+          "resaltar": "#billing-figures-title",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "el contrato siempre"
+        }
+      ]
+    }
+  ]
+}

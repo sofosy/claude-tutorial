@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Proyectos · El contrato de venta y la factura del anticipo
+
+DESCRIPCIÓN
+============================================================
+Cómo registrar en Germiva el contrato de venta de un proyecto: monto, régimen de ITBIS para obras, forma de facturar, anticipo con su amortización y fondo de reparo; y cómo facturar el anticipo.
+
+⏱️ CAPÍTULOS
+00:00  El contrato de venta
+00:59  Cómo se factura
+01:49  Facturar el anticipo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar el contrato de venta del proyecto
+• Elegir el régimen de ITBIS de una obra con materiales
+• Pactar anticipo, amortización y fondo de reparo
+• Facturar el anticipo
+
+⚠️ ERRORES COMUNES
+• Facturar una obra con materiales con ITBIS sobre el 100 %
+• Olvidar la amortización: el anticipo nunca se descontaría
+• Querer cambiar el régimen después de facturar: queda fijo con la primera factura
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:31
+
+TRANSCRIPCIÓN
+============================================================
+El presupuesto dice cuánto cuesta la obra; el contrato de venta dice cómo se le cobra al cliente. Se registra en la pestaña Facturación del proyecto. Recojo el menú, y pulso Registrar contrato de venta. El cliente ya viene del proyecto. En Monto del contrato anoto seis millones seiscientos mil pesos, el precio del presupuesto, sin ITBIS. Los días de crédito quedan en treinta. Ahora el régimen de ITBIS. Esta es una obra con materiales: marco esa opción. Con ella, el ITBIS se calcula sobre el diez por ciento de cada factura, y el resto sale exento, como manda la norma para construcción. En Servicio de la factura escribo Construcción, para buscar el servicio con que se arma cada factura. Aparece en la lista, y lo elijo. En Tipo de comprobante abro la lista, y elijo la factura de crédito fiscal.
+Sigue la forma de facturar. Hay tres: por avance, midiendo lo ejecutado en cada período; por hitos, con un plan de cobros; o por tiempo y materiales. Dejo Por avance. En Presupuesto que se cubica abro la lista, y elijo el presupuesto de la obra: sus partidas son las que se medirán. Bajo al anticipo. En Anticipo anoto veinte: el cliente adelanta el veinte por ciento del contrato. Y en Amortización por factura anoto veinte también: cada factura de avance descontará ese porcentaje, hasta devolver el anticipo completo. Por último, el fondo de reparo. Anoto cinco: el cliente retiene el cinco por ciento de cada factura como garantía, y lo paga al recibir la obra. Pulso Guardar, y el aviso lo confirma.
+Con el contrato guardado, la pestaña muestra el estado de facturación: contrato vigente, facturado, cobrado y por facturar. Más abajo está el Anticipo: un millón trescientos veinte mil pesos pactados, todavía sin facturar. Pulso Facturar anticipo. El sistema muestra la vista previa: la base, el ITBIS sobre el diez por ciento, y el total de la factura. Pulso Generar factura. El aviso dice que la factura quedó creada en borrador: se revisa y se emite en Ventas, como cualquier otra. Desde ahí, cada factura de avance irá amortizando este anticipo.

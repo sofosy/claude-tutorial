@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Proyectos · Avance físico, valor ganado, flujo de caja y rentabilidad
+
+DESCRIPCIÓN
+============================================================
+Cómo registrar en Germiva el avance físico de las partidas de un proyecto y leer con él el valor ganado (CPI, SPI y estimado al terminar), el flujo de caja, la rentabilidad y el informe de estado del proyecto.
+
+⏱️ CAPÍTULOS
+00:00  Avance físico
+00:50  Valor ganado
+01:42  Flujo de caja y rentabilidad
+02:17  El informe de estado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar el avance físico de una partida
+• Leer el valor ganado: CPI, SPI y estimado al terminar
+• Ver el flujo de caja y la rentabilidad del proyecto
+• Descargar o enviar el informe de estado
+
+⚠️ ERRORES COMUNES
+• Juzgar el proyecto solo por lo gastado: sin avance no hay valor ganado
+• Confundir CPI con SPI: uno mide el costo y el otro el plazo
+• Bajar un avance sin motivo: el sistema lo pide
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:48
+
+TRANSCRIPCIÓN
+============================================================
+Saber cuánto se ha gastado no basta: hay que saber cuánto se ha avanzado. Eso se registra en la pestaña Avance, en Avance físico. Recojo el menú. La tabla lista las partidas, todavía sin avance. Arriba de ella está el botón Registrar: lo pulso. La excavación va en sesenta por ciento. En su fila cambio la medición a porcentaje. Y en el acumulado anoto sesenta: siempre se escribe el total acumulado a la fecha de corte, no lo del período. Pulso Registrar avance, abajo, y el aviso lo confirma. La partida muestra su sesenta por ciento, con origen manual. El avance también puede venir de las cubicaciones o de las tareas, según la fuente que se configure.
+Con el avance, paso a Valor ganado. Compara tres cifras. El valor planificado: lo que debía estar hecho a la fecha, según el cronograma. El valor ganado: lo que realmente se hizo, a precio de presupuesto: doscientos sesenta y cuatro mil pesos. Y el costo real: lo que costó hacerlo, doscientos cincuenta mil. De ahí salen dos indicadores. El CPI mide el costo: uno punto cero seis significa que cada peso gastado rindió un peso con seis centavos; por encima de uno, se gasta menos de lo previsto. El SPI mide el plazo: cero punto cuarenta y cinco dice que la obra va atrasada respecto al plan. Y el estimado al terminar proyecta el costo final si se mantiene este rendimiento: cinco millones doscientos ocho mil pesos, dentro del presupuesto.
+La siguiente sección es el Flujo de caja, que pone esas cifras en el calendario: lo real hasta la fecha de corte, y después lo proyectado. Las entradas son los cobros al cliente; las salidas, los pagos, los compromisos y lo que falta por gastar. El saldo más bajo avisa cuánto dinero habrá que poner, y en qué mes. Y Rentabilidad resume el negocio: el contrato y lo facturado; el costo real, lo comprometido y el estimado al terminar; y el margen presupuestado frente al margen proyectado al terminar, que hoy es veintiuno por ciento.
+Todo esto se entrega con el botón Estado del proyecto: descarga el informe en PDF o en Excel, o lo envía ahora al gerente y a quienes se indiquen. En Configuración se programa para que salga solo, cada lunes o cada primero de mes, y se eligen el método del estimado y los umbrales de alerta del CPI y el SPI. Y en la Cartera, esos mismos indicadores aparecen como semáforos, para ver de un vistazo qué proyecto necesita atención.

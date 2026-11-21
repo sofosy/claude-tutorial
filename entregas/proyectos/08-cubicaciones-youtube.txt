@@ -1,0 +1,39 @@
+TÍTULO
+============================================================
+Proyectos · Cubicaciones: medir el avance, facturarlo y el fondo de reparo
+
+DESCRIPCIÓN
+============================================================
+Cómo facturar un proyecto por avance en Germiva: crear la cubicación del período midiendo cada partida, enviarla y aprobarla, generar su factura con la amortización del anticipo y el fondo de reparo retenido, y liberar el fondo al final.
+
+⏱️ CAPÍTULOS
+00:00  Nueva cubicación
+00:53  De la cubicación a la factura
+01:37  Aprobar
+02:04  Facturar la cubicación
+02:50  El fondo de reparo
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear la cubicación de un período
+• Medir cada partida por cantidad o por porcentaje
+• Aprobar la cubicación y generar su factura
+• Qué es el fondo de reparo y cómo se libera
+
+⚠️ ERRORES COMUNES
+• Abrir una cubicación nueva sin facturar la anterior: solo hay una abierta a la vez
+• Olvidar que la factura descuenta la amortización del anticipo
+• Querer liberar el fondo de reparo de una factura en borrador
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:27
+
+TRANSCRIPCIÓN
+============================================================
+Una cubicación es la medición de lo que se ejecutó en un período, y es lo que se le factura al cliente. En la pestaña Facturación, recojo el menú, y bajo a Cubicaciones. Pulso Nueva cubicación. La tabla trae las partidas del presupuesto, con lo contratado y lo medido antes. La excavación se terminó completa: en su fila pulso el botón Completar. Queda en cien por ciento, con su monto. De las zapatas va la mitad. En su fila cambio la medición a porcentaje, con el botón de porcentaje. Y en Este período anoto cincuenta, por la mitad de las zapatas ya vaciadas. El sistema calcula la cantidad y el monto con el precio de la partida. Abajo suma el avance del período. Pulso Guardar, y el aviso lo confirma.
+La cubicación queda en borrador. La abro con un clic en su número. A la derecha, el sistema explica cómo se convierte en factura. El avance medido del período es un millón tres mil doscientos pesos. De ahí se descuenta la amortización del anticipo, el veinte por ciento. Lo que queda es la base de la factura, y el ITBIS se calcula sobre el diez por ciento de esa base. Al final, el fondo de reparo: el cinco por ciento del avance, que el cliente retiene y no paga todavía. Con las cifras revisadas, pulso Enviar a aprobación, y confirmo. Como en el presupuesto, quien envía una cubicación no la aprueba: lo hace otro supervisor.
+Entra entonces Laura Méndez, la otra supervisora. Abro el menú del usuario, y cierro sesión. En el acceso escribo su usuario. Después, en el campo de la contraseña, escribo su clave. Con el usuario y la clave ya escritos, pulso el botón Iniciar sesión. El sistema le recuerda un dato pendiente de la empresa, que no afecta a los proyectos; pulso Más tarde.
+Ya como Laura, vuelvo a la pestaña Facturación del proyecto, y abro la cubicación con un clic en su número. Está en aprobación. Pulso Aprobar, y en el diálogo confirmo con Aprobar. Con la cubicación aprobada aparece el botón Facturar. Lo pulso. La vista previa repite las cifras: la base, el ITBIS, el total de la factura, y lo que queda por cobrar ahora, sin el fondo de reparo. Pulso Generar factura. La factura se crea en borrador en Ventas, con la amortización como descuento, y allí se emite con su comprobante. En la tabla Facturas del proyecto quedan las dos: la del anticipo y la de esta cubicación, con su bruto, su amortización y el fondo por liberar.
+Queda el fondo de reparo. Lo retenido en cada factura se acumula en una cuenta por cobrar propia, aparte de la del cliente. Cuando la obra se recibe sin defectos, se pulsa Liberar fondo: se elige la factura emitida, el monto y la fecha, y el sistema pasa ese valor a la cuenta por cobrar normal, para cobrarlo como cualquier factura. Mientras las facturas estén en borrador, el fondo no se puede liberar: primero se emiten en Ventas. Así se factura toda la obra: una cubicación por período, hasta completar el contrato.

@@ -82,9 +82,10 @@ def base():
     return b
 
 
-def proyecto(b, **extra):
+def proyecto(b, nombre="Nave industrial Haina", descripcion="Nave de 1,000 m² para almacén y despacho, en Haina.",
+             **extra):
     return llamar("POST", "/v1/projects", {
-        "name": "Nave industrial Haina", "description": "Nave de 1,000 m² para almacén y despacho, en Haina.",
+        "name": nombre, "description": descripcion,
         "startDate": INICIO, "endDate": FIN, "partner": b["cliente"], "projectManager": 1,
         "teamMembers": [b["laura"]], "budget": 0, "costCenter": b["centro"], "warehouse": b["almacen"], **extra})
 
@@ -279,10 +280,109 @@ def subcontrato():
     return b
 
 
+def empleado(nombre, numero, usuario_, puesto):
+    """Empleado con su usuario (rol sin administración) para registrar sus horas."""
+    rol = int(sql("SELECT id FROM roles WHERE is_admin_role=1 AND deleted_at IS NULL ORDER BY id LIMIT 1"))
+    e = llamar("POST", "/v1/employees", {
+        "name": nombre, "documentType": "DOCUMENTO_EXTRANJERO", "foreignDocumentNumber": f"GER-{numero}",
+        "employeeNumber": numero, "position": puesto, "hireDate": "2026-01-05",
+        "user": {"username": usuario_, "email": f"{usuario_}@constructora.germiva.com", "password": CLAVE,
+                 "roleIds": [rol]}})
+    sql(f"UPDATE users SET emailVerified=1 WHERE username='{usuario_}'")
+    return e["id"]
+
+
+def dias(lunes, horas):
+    import datetime
+    base = datetime.date.fromisoformat(lunes)
+    return [{"date": str(base + datetime.timedelta(days=i)), "hours": str(h)} for i, h in enumerate(horas) if h]
+
+
+def horas():
+    # P10: presupuesto aprobado; dos albañiles con tarifa por puesto; la hoja de
+    # Juan de la semana del 9 de noviembre enviada a aprobación (40 h en Zapatas).
+    b = aprobado()
+    llamar("PUT", "/v1/project-timesheets/settings", {"maxHoursPerDay": "12.00", "overtimeFactor": "1.3500",
+                                                      "allowFutureDays": True, "trueUpWithPayroll": True})
+    b["albanil"] = llamar("POST", "/v1/positions", {"code": "OBR-ALB", "name": "Albañil"})["id"]
+    b["ayudante"] = llamar("POST", "/v1/positions", {"code": "OBR-AYU", "name": "Ayudante de obra"})["id"]
+    b["juan"] = empleado("Juan Pérez Germiva", "OBR-001", "juan.perez", b["albanil"])
+    b["ramon"] = empleado("Ramón Díaz Germiva", "OBR-002", "ramon.diaz", b["ayudante"])
+    llamar("POST", "/v1/project-labor-rates", {"position": b["albanil"], "validFrom": "2026-01-01",
+                                                "baseHourlyCost": "250.0000", "burdenPercentage": "30",
+                                                "notes": "Tarifa de obra 2026"})
+    hoja = como("juan.perez", "POST", "/v1/project-timesheets", {
+        "weekStart": "2026-11-09",
+        "lines": [{"project": b["proyecto"]["id"], "budgetLine": b["presupuesto"]["lineas"]["zap"]["id"],
+                   "days": dias("2026-11-09", [8, 8, 8, 8, 8])}]})
+    como("juan.perez", "POST", f"/v1/project-timesheets/{hoja['id']}/submit", {})
+    return b
+
+
+def hitos():
+    # P12: un proyecto de servicios que se cobra por hitos: contrato de 600,000
+    # con dos hitos (30 % y 40 %); el video agrega el tercero y factura el primero.
+    b = base()
+    b["proyecto"] = proyecto(b, "Supervisión de la nave Haina",
+                             "Supervisión técnica de la construcción de la nave.", costCenter=None, warehouse=None)
+    servicio = llamar("POST", "/v1/product", {
+        "name": "Supervisión de obra", "code": "SRV-SUPERV", "category": "SERVICE",
+        "description": "Supervisión técnica de obra", "tax": c.ITBIS_18, "unitMeasure": UND,
+        "unitMeasureValue": "1", "managesInventory": False})["id"]
+    ruta = f"/v1/project-billing/projects/{b['proyecto']['id']}"
+    llamar("PUT", f"{ruta}/contract", {"currency": c.DOP, "originalAmount": "600000.00", "advancePercentage": "0",
+                                       "retentionPercentage": "0", "taxRegime": "STANDARD",
+                                       "billingMode": "MILESTONES", "product": servicio,
+                                       "ncfType": c.ncf_tipo("B01"), "paymentTermDays": 30})
+    llamar("POST", f"{ruta}/milestones", {"name": "Planos revisados y aprobados", "percentage": "30",
+                                          "plannedDate": "2026-11-20",
+                                          "condition": "Planos firmados por el cliente"})
+    llamar("POST", f"{ruta}/milestones", {"name": "Estructura terminada", "percentage": "40",
+                                          "plannedDate": "2027-02-15"})
+    return b
+
+
+def cierre():
+    # P13: la obra con una orden de acero sin facturar (compromiso abierto) y
+    # el contrato de venta registrado: el video intenta completar el proyecto.
+    b = control()
+    b["servicio"] = servicio_de_obra()
+    contrato(b)
+    llamar("PATCH", f"/v1/projects/{b['proyecto']['id']}", {"status": "IN_PROGRESS"})
+    return b
+
+
+def consolidar():
+    # C46: la obra con su presupuesto aprobado y el presupuesto contable anual
+    # de la empresa en borrador, con los gastos fijos: el video le incorpora la obra.
+    b = aprobado()
+    c.quitar_presupuestos_de_la_instantanea()
+    def renglon(codigo, mes, monto):
+        return {"accountChart": c.cuenta(codigo), "period": mes, "fiscalYear": 2026, "budgetAmount": monto}
+    llamar("POST", "/v1/budgets", {
+        "code": "PRES-2026", "name": "Presupuesto anual 2026", "type": "annual",
+        "startDate": "2026-01-01", "endDate": "2026-12-31",
+        "budgetDetails": [renglon("6.03.02", "november", 60000), renglon("6.03.02", "december", 60000),
+                          renglon("6.03.03", "november", 20000), renglon("6.03.03", "december", 20000)]})
+    return b
+
+
+def resolver_compromiso():
+    """Entre dos pasos del video de cierre: la orden de acero ya no va y se anula.
+    Entra como Laura: un inicio de sesión del administrador cerraría la del navegador."""
+    orden = sql("SELECT o.id FROM orders o JOIN projects p ON p.id=o.project_id "
+                "WHERE p.deleted_at IS NULL AND o.deleted_at IS NULL ORDER BY o.id DESC LIMIT 1")
+    c.TOKEN = token_de("laura.mendez")
+    llamar("PATCH", f"/v1/orders/{int(orden)}/status/CANCELED", {"reason": "El acero restante lo suple el cliente"})
+
+
 ESTADOS = {"inicio": inicio, "con-proyecto": con_proyecto, "borrador": borrador,
            "por-aprobar": por_aprobar, "aprobado": aprobado, "control": control, "cambios": cambios, "facturacion": facturacion,
-           "cubicacion": cubicacion, "subcontrato": subcontrato}
+           "cubicacion": cubicacion, "subcontrato": subcontrato, "horas": horas, "avance": control, "hitos": hitos, "cierre": cierre, "consolidar": consolidar}
 
 if __name__ == "__main__":
+    if sys.argv[1] == "resolver-compromiso":
+        resolver_compromiso()
+        sys.exit(0)
     c.TOKEN = c.token()
     ESTADOS[sys.argv[1]]()

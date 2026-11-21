@@ -1,0 +1,199 @@
+1
+00:00:03,100 --> 00:00:05,221
+Saber cuánto se ha gastado no basta:
+
+2
+00:00:05,394 --> 00:00:07,367
+hay que saber cuánto se ha avanzado.
+
+3
+00:00:08,035 --> 00:00:11,533
+Eso se registra en la pestaña Avance, en Avance físico.
+
+4
+00:00:12,189 --> 00:00:13,331
+Recojo el menú.
+
+5
+00:00:13,999 --> 00:00:17,350
+La tabla lista las partidas, todavía sin avance.
+
+6
+00:00:18,005 --> 00:00:20,300
+Arriba de ella está el botón Registrar:
+
+7
+00:00:20,411 --> 00:00:21,181
+lo pulso.
+
+8
+00:00:21,836 --> 00:00:24,157
+La excavación va en sesenta por ciento.
+
+9
+00:00:24,824 --> 00:00:27,356
+En su fila cambio la medición a porcentaje.
+
+10
+00:00:28,024 --> 00:00:30,022
+Y en el acumulado anoto sesenta:
+
+11
+00:00:30,182 --> 00:00:34,438
+siempre se escribe el total acumulado a la fecha de corte, no lo del período.
+
+12
+00:00:35,106 --> 00:00:38,976
+Pulso Registrar avance, abajo, y el aviso lo confirma.
+
+13
+00:00:39,631 --> 00:00:43,267
+La partida muestra su sesenta por ciento, con origen manual.
+
+14
+00:00:43,935 --> 00:00:47,298
+El avance también puede venir de las cubicaciones o de las tareas,
+
+15
+00:00:47,457 --> 00:00:49,331
+según la fuente que se configure.
+
+16
+00:00:50,695 --> 00:00:53,177
+Con el avance, paso a Valor ganado.
+
+17
+00:00:53,832 --> 00:00:55,396
+Compara tres cifras.
+
+18
+00:00:56,064 --> 00:00:57,405
+El valor planificado:
+
+19
+00:00:57,539 --> 00:01:00,616
+lo que debía estar hecho a la fecha, según el cronograma.
+
+20
+00:01:01,285 --> 00:01:02,340
+El valor ganado:
+
+21
+00:01:02,450 --> 00:01:05,477
+lo que realmente se hizo, a precio de presupuesto:
+
+22
+00:01:05,575 --> 00:01:07,871
+doscientos sesenta y cuatro mil pesos.
+
+23
+00:01:08,539 --> 00:01:09,706
+Y el costo real:
+
+24
+00:01:09,780 --> 00:01:12,584
+lo que costó hacerlo, doscientos cincuenta mil.
+
+25
+00:01:13,239 --> 00:01:15,349
+De ahí salen dos indicadores.
+
+26
+00:01:16,018 --> 00:01:17,865
+El CPI mide el costo:
+
+27
+00:01:17,926 --> 00:01:22,231
+uno punto cero seis significa que cada peso gastado rindió un peso con seis
+
+28
+00:01:22,043 --> 00:01:22,852
+centavos;
+
+29
+00:01:22,936 --> 00:01:25,927
+por encima de uno, se gasta menos de lo previsto.
+
+30
+00:01:26,582 --> 00:01:28,234
+El SPI mide el plazo:
+
+31
+00:01:28,355 --> 00:01:32,425
+cero punto cuarenta y cinco dice que la obra va atrasada respecto al plan.
+
+32
+00:01:33,093 --> 00:01:37,423
+Y el estimado al terminar proyecta el costo final si se mantiene este rendimiento:
+
+33
+00:01:37,569 --> 00:01:41,478
+cinco millones doscientos ocho mil pesos, dentro del presupuesto.
+
+34
+00:01:42,851 --> 00:01:47,217
+La siguiente sección es el Flujo de caja, que pone esas cifras en el calendario:
+
+35
+00:01:47,327 --> 00:01:50,751
+lo real hasta la fecha de corte, y después lo proyectado.
+
+36
+00:01:51,419 --> 00:01:53,430
+Las entradas son los cobros al cliente;
+
+37
+00:01:53,578 --> 00:01:57,944
+las salidas, los pagos, los compromisos y lo que falta por gastar.
+
+38
+00:01:58,612 --> 00:02:02,656
+El saldo más bajo avisa cuánto dinero habrá que poner, y en qué mes.
+
+39
+00:02:03,324 --> 00:02:05,508
+Y Rentabilidad resume el negocio:
+
+40
+00:02:05,581 --> 00:02:07,232
+el contrato y lo facturado;
+
+41
+00:02:07,280 --> 00:02:10,717
+el costo real, lo comprometido y el estimado al terminar;
+
+42
+00:02:10,826 --> 00:02:14,164
+y el margen presupuestado frente al margen proyectado al terminar,
+
+43
+00:02:14,262 --> 00:02:16,099
+que hoy es veintiuno por ciento.
+
+44
+00:02:17,486 --> 00:02:20,265
+Todo esto se entrega con el botón Estado del proyecto:
+
+45
+00:02:20,350 --> 00:02:22,759
+descarga el informe en PDF o en Excel,
+
+46
+00:02:22,868 --> 00:02:25,498
+o lo envía ahora al gerente y a quienes se indiquen.
+
+47
+00:02:26,153 --> 00:02:31,055
+En Configuración se programa para que salga solo, cada lunes o cada primero de mes,
+
+48
+00:02:31,090 --> 00:02:36,051
+y se eligen el método del estimado y los umbrales de alerta del CPI y el SPI.
+
+49
+00:02:36,719 --> 00:02:40,603
+Y en la Cartera, esos mismos indicadores aparecen como semáforos,
+
+50
+00:02:40,651 --> 00:02:43,740
+para ver de un vistazo qué proyecto necesita atención.

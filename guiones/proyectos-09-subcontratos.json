@@ -224,11 +224,11 @@
           "resaltar": "mat-dialog-container, .mat-mdc-snack-bar-container",
           "durante_ms": 3500,
           "cursor": false,
-          "al_decir": "La factura queda emitida"
+          "al_decir": "se parte en dos"
         },
         {
           "click_opcional": "mat-dialog-container button:has-text('Aceptar')",
-          "al_decir": "se parte en dos"
+          "al_decir": "hasta liberarla"
         }
       ]
     },

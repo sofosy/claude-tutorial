@@ -1,0 +1,203 @@
+{
+  "titulo": "Contabilidad · Las obras dentro del presupuesto contable: incorporar los presupuestos de proyecto",
+  "descripcion": "Cómo llevar el presupuesto de cada proyecto al presupuesto contable de la empresa en Germiva: el botón Presupuestos de proyecto, el cuadre proyecto contra contable y los renglones que se incorporan por cuenta, centro de costo y mes.",
+  "_comentario": "Video 46 de la serie Contabilidad. setup: seeds/proyectos/preparar.sh consolidar (la obra Nave industrial Haina con su presupuesto aprobado, de noviembre a abril, y el presupuesto contable anual 2026 en borrador con los gastos fijos).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/budgets/list",
+    "esperar": "tr.mat-mdc-row:has-text('PRES-2026')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh consolidar"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Incorporar los presupuestos de proyecto al presupuesto contable",
+    "Leer el cuadre proyecto contra contable",
+    "Reconocer los renglones incorporados",
+    "Qué hacer cuando el presupuesto de la obra cambia"
+  ],
+  "errores_comunes": [
+    "Copiar a mano el presupuesto de la obra en el presupuesto contable",
+    "Querer editar los renglones incorporados: se actualizan volviendo a incorporar",
+    "Esperar el total de la obra en un solo año: solo entra lo que cae en el ejercicio"
+  ],
+  "pasos": [
+    {
+      "id": "01-incorporar",
+      "capitulo": "Incorporar las obras",
+      "rotulo": "Presupuestos de proyecto",
+      "ruta": "Contabilidad › Presupuestos › PRES-2026",
+      "texto_pantalla": "El presupuesto de cada obra entra al presupuesto contable",
+      "narracion": "La empresa tiene su presupuesto anual, y cada obra tiene el suyo. Para que el presupuesto contable incluya las obras no se copian a mano: se incorporan. En Presupuestos, abro el anual con Ver detalles. Por ahora solo tiene los gastos fijos. Arriba, pulso Presupuestos de proyecto. El diálogo lista cada proyecto con presupuesto vigente: la nave de Haina, con cinco millones y medio de pesos. De ese total, en este ejercicio cae un millón ochocientos treinta y tres mil: noviembre y diciembre, según el cronograma de sus partidas. El resto es del año próximo. La diferencia sale en rojo, porque todavía no se ha incorporado. Pulso Incorporar presupuestos de proyecto. La diferencia queda en cero, y el estado pasa a Cuadrado. Cierro el diálogo.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('PRES-2026') td >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "La empresa tiene su presupuesto"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('PRES-2026') button[aria-label='Ver detalles']",
+          "al_decir": "con Ver detalles"
+        },
+        {
+          "click": "button:has-text('Presupuestos de proyecto')",
+          "al_decir": "pulso Presupuestos de proyecto"
+        },
+        {
+          "resaltar": "mat-dialog-container table.recon tbody td >> nth=1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "la nave de Haina"
+        },
+        {
+          "resaltar": "mat-dialog-container table.recon tbody td >> nth=2",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "en este ejercicio cae"
+        },
+        {
+          "resaltar": "mat-dialog-container table.recon tbody td >> nth=4",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "La diferencia sale en rojo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Incorporar')",
+          "al_decir": "Pulso Incorporar presupuestos"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2000,
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container table.recon tbody td >> nth=6",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "y el estado"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar')",
+          "al_decir": "Cierro el diálogo"
+        }
+      ]
+    },
+    {
+      "id": "02-renglones",
+      "capitulo": "Los renglones incorporados",
+      "rotulo": "Cuenta × centro × mes",
+      "ruta": "Contabilidad › Presupuestos › PRES-2026",
+      "texto_pantalla": "Un renglón por cuenta, centro de costo y mes",
+      "narracion": "En las líneas del presupuesto aparecen los renglones nuevos. Llevan la cuenta Costos de obra, el centro de costo del proyecto, y un renglón por cada mes. Tienen el ícono de proyecto, y su monto no se edita aquí. Si el presupuesto de la obra cambia, por ejemplo con una orden de cambio, se vuelve a incorporar con el mismo botón. Abajo, el total de costos y gastos ya incluye la obra. Así las variaciones de la empresa, y el control de cada obra, salen de las mismas cifras.",
+      "acciones": [
+        {
+          "resaltar": "div.table-row:has(mat-icon.project-origin) >> nth=0 >> div.table-cell >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Llevan la cuenta Costos de obra"
+        },
+        {
+          "resaltar": "div.table-row:has(mat-icon.project-origin) >> nth=0 >> div.table-cell >> nth=1",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el centro de costo del"
+        },
+        {
+          "resaltar": "div.table-row:has(mat-icon.project-origin) >> nth=1 >> div.table-cell >> nth=2",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "y un renglón por cada mes"
+        },
+        {
+          "resaltar": "div.table-row:has(mat-icon.project-origin) >> nth=0 >> div.table-cell >> nth=3",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "y su monto no se edita"
+        },
+        {
+          "resaltar": "button:has-text('Presupuestos de proyecto')",
+          "durante_ms": 4500,
+          "cursor": true,
+          "al_decir": "se vuelve a incorporar"
+        },
+        {
+          "resaltar": ":text('Costos y gastos') >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el total de costos y"
+        },
+        {
+          "resaltar": "button:has-text('Ver variaciones')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Así las variaciones"
+        }
+      ]
+    }
+  ]
+}
