@@ -1,0 +1,197 @@
+{
+  "titulo": "Proyectos · Importar el presupuesto desde Excel",
+  "descripcion": "Cómo cargar el presupuesto de un proyecto desde una hoja de Excel en Germiva: descargar la plantilla, importar el archivo, revisar la vista previa con sus errores y confirmar la importación.",
+  "_comentario": "Video 16 de la serie Proyectos. setup: seeds/proyectos/preparar.sh importar (el proyecto con su presupuesto en borrador y vacío). Sube seeds/proyectos/presupuesto-nave.xlsx (3 fases, 6 partidas, indirectos 10 % y utilidad 20 %).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/presupuesto/2",
+    "esperar": "button:has-text('Importar Excel')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh importar"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Descargar la plantilla de Excel del presupuesto",
+    "Importar el archivo y leer la vista previa",
+    "Confirmar la importación",
+    "Exportar el presupuesto para trabajarlo fuera"
+  ],
+  "errores_comunes": [
+    "Importar sobre un borrador ya armado sin saber que lo reemplaza",
+    "Confirmar con errores sin corregir el archivo",
+    "Querer importar sobre una versión aprobada: se hace en una revisión en borrador"
+  ],
+  "pasos": [
+    {
+      "id": "01-importar",
+      "capitulo": "Importar desde Excel",
+      "rotulo": "Importar Excel",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "La plantilla, el archivo y la vista previa",
+      "narracion": "Si el presupuesto ya existe en una hoja de cálculo, no hay que digitarlo partida por partida. En el presupuesto en borrador, recojo el menú. El botón Excel, plantilla, descarga el formato: una fila por fase o por partida, con su código, su unidad, su cantidad y su costo unitario. Con el archivo ya lleno, pulso Importar Excel, y elijo el archivo de la nave. El sistema todavía no lo aplica: primero muestra una vista previa. Nueve filas, y cero errores. Si una unidad o una cuenta no existiera, aquí saldría la fila exacta, con su mensaje. Y avisa que se reemplazará la estructura del borrador. Pulso Confirmar importación, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "resaltar": "header.ws-header h1",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "no hay que digitarlo"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "recojo el menú"
+        },
+        {
+          "resaltar": "button:has-text('Excel / plantilla')",
+          "durante_ms": 6500,
+          "cursor": true,
+          "al_decir": "El botón Excel"
+        },
+        {
+          "subir": {
+            "sel": "input[type=file]",
+            "archivo": "seeds/proyectos/presupuesto-nave.xlsx",
+            "ancla": "button:has-text('Importar Excel')"
+          },
+          "al_decir": "pulso Importar Excel"
+        },
+        {
+          "resaltar": "#import-title",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "primero muestra una vista previa"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#import-title) .ps-head span.ps-muted",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "Nueve filas"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#import-title) .import p >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Y avisa que se reemplazará"
+        },
+        {
+          "click": "section.ps-panel:has(#import-title) button:has-text('Confirmar importación')",
+          "al_decir": "Pulso Confirmar importación"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "02-resultado",
+      "capitulo": "El presupuesto importado",
+      "rotulo": "Presupuesto listo",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Fases, partidas y porcentajes, tal como venían en el archivo",
+      "narracion": "El presupuesto queda armado. Arriba, el costo directo de cinco millones de pesos, con los indirectos y la utilidad que traía el archivo en su hoja de configuración. Abajo, las tres fases con sus partidas, sus cantidades y sus costos. Desde aquí se sigue igual que siempre: se ajusta lo que haga falta, y se envía a aprobación. Y funciona en los dos sentidos: el mismo botón de Excel exporta el presupuesto, para trabajarlo fuera, y volver a importarlo mientras siga en borrador.",
+      "acciones": [
+        {
+          "resaltar": ".budget-figs .gm-fig >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el costo directo"
+        },
+        {
+          "resaltar": ".budget-figs .gm-fig >> nth=3",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "y la utilidad"
+        },
+        {
+          "resaltar": "table.tree tr.is-phase >> nth=0 >> td >> nth=1",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "las tres fases"
+        },
+        {
+          "resaltar": "table.tree tbody tr >> nth=1 >> td >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "sus cantidades y sus costos"
+        },
+        {
+          "resaltar": ":text('En aprobación') >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "y se envía a aprobación"
+        },
+        {
+          "resaltar": "button:has-text('Excel / plantilla')",
+          "durante_ms": 5000,
+          "cursor": true,
+          "al_decir": "el mismo botón de Excel"
+        }
+      ]
+    }
+  ]
+}

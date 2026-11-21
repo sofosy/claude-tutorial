@@ -60,7 +60,7 @@ else
 fi
 $M "$DB" -e "UPDATE companies SET legalName='Constructora Germiva Demo S.R.L.', tradeName='Constructora Germiva', rnc='130555001', email='proyectos@constructora.germiva.com', website='https://germiva.com' WHERE id=1; UPDATE users SET email='admin@germiva.com' WHERE id=1;"
 if [[ "$DB" == germiva ]]; then
-  docker exec germiva-dev-redis redis-cli FLUSHALL >/dev/null 2>&1 || true
+  docker exec germiva-dev-redis redis-cli FLUSHALL >/dev/null 2>&1 || redis-cli FLUSHALL >/dev/null 2>&1 || true
 fi
 python3 "$(dirname "$0")/preparar.py" "$ESTADO"
 echo "datos de partida listos: $ESTADO"

@@ -30,7 +30,7 @@ pasos = [
   pulso Repartir entre centros. En el primer centro abro la lista, y elijo Ventas Santo Domingo. En su porcentaje anoto
   cincuenta. La campaña es la misma para las dos sucursales, así que va a partes iguales. Pulso Agregar centro. En la fila
   nueva abro la lista, y elijo Ventas Santiago. En su porcentaje anoto el otro cincuenta. Con el total en cien por
-  ciento, aplico. En la tabla, cada línea muestra ya su centro o su reparto. Guardo el borrador. El sistema confirma
+  ciento, aplico. En la tabla, cada línea muestra ya su centro o su reparto. Guardo el borrador, y espero un momento mientras el sistema registra la factura. El sistema confirma
   que la compra quedó actualizada, y acepto. Cuando la factura se emita, cada gasto irá a su centro; el ITBIS y la cuenta
   por pagar al proveedor van sin centro.""",
   [clic("button:has(mat-icon:text-is('expand_more')) >> nth=0", "La despliego también"),
@@ -53,16 +53,21 @@ pasos = [
  paso("03-nomina", "Nómina", "El centro del departamento", "Recursos Humanos › Configuración › Departamentos",
   "La nómina usa el centro del departamento",
   """El gasto de nómina no se digita línea a línea: toma el centro del departamento de cada empleado. En la configuración de
-  Recursos Humanos, en Departamentos, abro Despacho y Transporte con un clic en su fila. Aquí está su Centro de costo, Logística: el
-  sueldo, los aportes y las provisiones de su gente se imputan a ese centro. Y si un empleado debe ir a otro centro, se le
-  pone uno propio en su ficha. Cierro.""",
+  Recursos Humanos, en Departamentos, abro Logística, uno de los departamentos que vienen con el sistema, con un clic en su
+  fila. Estos departamentos no se editan, pero sí aceptan un centro de costo propio de tu empresa. En Centro de costo
+  escribo Log, y espero a que el sistema busque entre los centros activos de la empresa. Aparece Logística, y lo elijo.
+  Pulso Guardar centro de costo, y el aviso lo confirma. Desde ahora el sueldo, los aportes y las provisiones de su gente
+  se imputan a ese centro. Y si un empleado debe ir a otro centro, se le pone uno propio en su ficha.""",
   [res("mat-dialog-container >> nth=0", "En la configuración", 2500),
-   res("tr:has-text('DESP') td >> nth=0", "en Departamentos", 2500),
-   clic("tr:has-text('DESP') td >> nth=0", "abro Despacho y Transporte"),
-   {"resaltar": "mat-dialog-container >> nth=-1", "durante_ms": 1500, "cursor": False},
-   res("mat-dialog-container >> nth=-1 >> mat-form-field:has-text('Centro de costo')", "Aquí está su Centro de costo", 8000),
-   res("mat-dialog-container >> nth=-1 >> :text('El gasto de nómina del departamento')", "Y si un empleado", 4000),
-   {"presionar": {"tecla": "Escape"}, "al_decir": "Cierro"}],
+   res("tr.mat-mdc-row:has-text('Logística') td >> nth=1", "en Departamentos", 1800),
+   clic("tr.mat-mdc-row:has-text('Logística') td >> nth=0", "con un clic en su"),
+   res("mat-dialog-container >> nth=-1 >> p.gm-dialog-note >> nth=0", "Estos departamentos no se editan", 5000),
+   esc("mat-dialog-container >> nth=-1 >> app-autocomplete >> nth=-1 >> input", "Log", "escribo Log"),
+   clic("mat-option:has-text('CC-LOG')", "y lo elijo"),
+   clic("mat-dialog-container >> nth=-1 >> button:has-text('Guardar centro de costo')", "Pulso Guardar centro de costo"),
+   {"resaltar": ".mat-mdc-snack-bar-container", "durante_ms": 2500, "cursor": False},
+   res("tr.mat-mdc-row:has-text('Logística') td >> nth=2", "Desde ahora el sueldo", 4500),
+   res("tr.mat-mdc-row:has-text('Despacho') td >> nth=0", "Y si un empleado", 3500)],
   navegar="/employee/inicio?config=departamentos"),
  paso("04-almacen", "Almacenes y activos fijos", "Centro por omisión del almacén", "Inventario › Almacenes › Almacén Sur",
   "El almacén tiene su centro por omisión",

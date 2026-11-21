@@ -1,0 +1,217 @@
+{
+  "titulo": "Proyectos · Facturar por tiempo y materiales: horas aprobadas y gastos refacturables",
+  "descripcion": "Cómo facturar un proyecto por tiempo y materiales en Germiva: las horas aprobadas a su tarifa de venta, los gastos del proyecto que marcas refacturables con su recargo, y la factura del período en un clic.",
+  "_comentario": "Video 17 de la serie Proyectos. setup: seeds/proyectos/preparar.sh tiempo-materiales (contrato por tiempo y materiales: 900 la hora y 10 % de recargo; 40 h de Juan aprobadas y un alquiler de andamios de 30,000 cargado al proyecto).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/facturacion",
+    "esperar": "#billing-tm-title"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh tiempo-materiales"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Cuándo conviene facturar por tiempo y materiales",
+    "Cómo se valoran las horas aprobadas",
+    "Marcar un gasto como refacturable, con su recargo",
+    "Generar la factura del período"
+  ],
+  "errores_comunes": [
+    "Facturar horas que nadie aprobó: solo entran las aprobadas",
+    "Olvidar marcar los gastos refacturables: no se cobran solos",
+    "Dejar un puesto sin tarifa de venta: sus horas no se pueden facturar"
+  ],
+  "pasos": [
+    {
+      "id": "01-propuesta",
+      "capitulo": "Tiempo y materiales",
+      "rotulo": "La propuesta del período",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Horas aprobadas × tarifa de venta + gastos refacturables",
+      "narracion": "Hay trabajos que no se cobran por un precio cerrado, sino por lo que se trabajó: horas y gastos. Eso es facturar por tiempo y materiales, y se elige en el contrato de venta del proyecto. En la pestaña Facturación, recojo el menú, y bajo al panel Tiempo y materiales. El sistema arma solo la propuesta del período. Primero las horas: solo las aprobadas, cada día con su empleado y su partida. Juan trabajó cuarenta horas, y cada una se cobra a novecientos pesos, la tarifa de venta del contrato. Son treinta y seis mil pesos. Esa tarifa es de venta: no es lo que cuesta Juan, sino lo que se le cobra al cliente.",
+      "acciones": [
+        {
+          "resaltar": "#billing-contract-title",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "y se elige en el contrato"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "recojo el menú"
+        },
+        {
+          "resaltar": "#billing-tm-title",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "al panel Tiempo y materiales"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Horas por facturar'] thead",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Primero las horas"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Horas por facturar'] tbody tr >> nth=0 >> td >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "con su empleado y su partida"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Horas por facturar'] tbody tr >> nth=0 >> td >> nth=3",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "a novecientos pesos"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) h3 >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Son treinta y seis mil"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Horas por facturar'] tbody tr >> nth=1 >> td >> nth=3",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Esa tarifa es de venta"
+        }
+      ]
+    },
+    {
+      "id": "02-facturar",
+      "capitulo": "Gastos y factura",
+      "rotulo": "Gastos refacturables",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "El gasto se cobra con su recargo",
+      "narracion": "Debajo están los gastos del proyecto: las compras que se le cargaron en el período. Aquí hay un alquiler de andamios de treinta mil pesos. Ningún gasto se cobra solo: hay que decidirlo. Marco su casilla Refacturable, y el aviso lo confirma. El sistema le suma el recargo del contrato, el diez por ciento, y quedan treinta y tres mil pesos a facturar. Arriba, el botón ya muestra el total del período: sesenta y nueve mil pesos. Lo pulso. El sistema crea la factura en borrador en Ventas, con una línea para la mano de obra y otra para los gastos, y el aviso trae su número. Allí se revisa y se emite con su comprobante. La propuesta queda vacía: lo facturado se marca, y no se vuelve a proponer. El próximo período se repite igual, con las horas y los gastos nuevos.",
+      "acciones": [
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) h3 >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Debajo están los gastos"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Gastos del proyecto'] tbody tr >> nth=0 >> td >> nth=1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "un alquiler de andamios"
+        },
+        {
+          "click": "section.ps-panel:has(#billing-tm-title) table[aria-label='Gastos del proyecto'] mat-checkbox input >> nth=0",
+          "al_decir": "Marco su casilla"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Gastos del proyecto'] tbody tr >> nth=0 >> td >> nth=4",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "y quedan treinta y tres mil"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) button:has-text('Facturar')",
+          "durante_ms": 3500,
+          "cursor": true,
+          "al_decir": "el botón ya muestra"
+        },
+        {
+          "click": "section.ps-panel:has(#billing-tm-title) button:has-text('Facturar')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": "#billing-tm-title",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El sistema crea la factura"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "y el aviso trae su número"
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Horas por facturar'] tbody tr >> nth=0 >> td >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "La propuesta queda vacía"
+        },
+        {
+          "resaltar": "#billing-documents-title",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El próximo período"
+        }
+      ]
+    }
+  ]
+}

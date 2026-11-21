@@ -140,6 +140,15 @@ def con_proyecto():
     return b
 
 
+def importar():
+    # P16: el proyecto con su presupuesto en borrador y VACÍO: el video lo
+    # llena importando seeds/proyectos/presupuesto-nave.xlsx.
+    b = con_proyecto()
+    llamar("POST", "/v1/project-budgets", {"project": b["proyecto"]["id"], "name": "Presupuesto de obra",
+                                            "currency": c.DOP, "budgetType": "COST_AND_REVENUE", "exchangeRate": "1"})
+    return b
+
+
 def borrador():
     # P03: el presupuesto en borrador con sus seis partidas; a «Zapatas» le
     # falta el costo (el video lo arma con el análisis de precio unitario).
@@ -379,6 +388,30 @@ def mis_horas():
     return b
 
 
+def tiempo_y_materiales():
+    # P17: trabajos por administración. La hoja de Juan (40 h en Zapatas) ya
+    # aprobada, un alquiler de andamios cargado al proyecto y el contrato por
+    # tiempo y materiales: 900 la hora y 10 % de recargo sobre los gastos.
+    b = horas()
+    hoja = int(sql("SELECT id FROM project_timesheets WHERE deleted_at IS NULL ORDER BY id DESC LIMIT 1"))
+    llamar("POST", f"/v1/project-timesheets/{hoja}/approve", {})
+    b["equipos"] = proveedor("Equipos y Andamios Germiva S.R.L.", "130555061")
+    compra_de_obra(b, b["equipos"], "B0100000410", "Alquiler de andamios, noviembre", 30000, "zap",
+                   fecha="2026-11-12")
+    def servicio(nombre, codigo):
+        return llamar("POST", "/v1/product", {
+            "name": nombre, "code": codigo, "category": "SERVICE", "description": nombre, "tax": c.ITBIS_18,
+            "unitMeasure": UND, "unitMeasureValue": "1", "managesInventory": False})["id"]
+    llamar("PUT", f"/v1/project-billing/projects/{b['proyecto']['id']}/contract", {
+        "budget": b["presupuesto"]["id"], "currency": c.DOP, "originalAmount": "800000.00",
+        "advancePercentage": "0", "retentionPercentage": "0", "taxRegime": "STANDARD",
+        "billingMode": "TIME_AND_MATERIALS", "product": servicio("Mano de obra por administración", "SRV-ADMON"),
+        "ncfType": c.ncf_tipo("B01"), "paymentTermDays": 30, "tmDefaultHourlyRate": "900.0000",
+        "tmExpenseMarkupPercentage": "10.00",
+        "tmExpenseProduct": servicio("Gastos reembolsables de obra", "SRV-REEMB")})
+    return b
+
+
 def resolver_compromiso():
     """Entre dos pasos del video de cierre: la orden de acero ya no va y se anula.
     Entra como Laura: un inicio de sesión del administrador cerraría la del navegador."""
@@ -390,7 +423,7 @@ def resolver_compromiso():
 
 ESTADOS = {"inicio": inicio, "con-proyecto": con_proyecto, "borrador": borrador,
            "por-aprobar": por_aprobar, "aprobado": aprobado, "control": control, "cambios": cambios, "facturacion": facturacion,
-           "cubicacion": cubicacion, "subcontrato": subcontrato, "horas": horas, "avance": control, "hitos": hitos, "cierre": cierre, "consolidar": consolidar, "mis-horas": mis_horas}
+           "cubicacion": cubicacion, "subcontrato": subcontrato, "horas": horas, "avance": control, "hitos": hitos, "cierre": cierre, "consolidar": consolidar, "mis-horas": mis_horas, "importar": importar, "tiempo-materiales": tiempo_y_materiales}
 
 if __name__ == "__main__":
     if sys.argv[1] == "resolver-compromiso":
