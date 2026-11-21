@@ -1,0 +1,159 @@
+1
+00:00:03,100 --> 00:00:05,556
+Parte de la obra la hacen subcontratistas,
+
+2
+00:00:05,628 --> 00:00:09,635
+y a cada uno se le suele retener una garantía hasta recibir su trabajo.
+
+3
+00:00:10,291 --> 00:00:13,220
+Eso se lleva en la pestaña Subcontratos del proyecto.
+
+4
+00:00:13,875 --> 00:00:16,926
+Recojo el menú, y pulso Registrar subcontrato.
+
+5
+00:00:17,596 --> 00:00:22,198
+En Proveedor escribo Movimientos, para buscar al subcontratista de la excavación.
+
+6
+00:00:22,853 --> 00:00:25,149
+Aparece en la lista, y lo elijo.
+
+7
+00:00:25,804 --> 00:00:28,522
+En Alcance del subcontrato escribo qué va a hacer:
+
+8
+00:00:28,657 --> 00:00:30,071
+Excavación y relleno.
+
+9
+00:00:30,728 --> 00:00:36,124
+Con el alcance escrito, en Monto pactado anoto cuatrocientos mil pesos, sin ITBIS.
+
+10
+00:00:36,792 --> 00:00:39,609
+La Retención de garantía viene en cinco por ciento:
+
+11
+00:00:39,743 --> 00:00:42,771
+de cada factura suya se retendrá ese porcentaje.
+
+12
+00:00:43,439 --> 00:00:45,932
+Pulso Guardar, y el aviso lo confirma.
+
+13
+00:00:46,588 --> 00:00:50,261
+El subcontrato recibe su número, y su ficha se abre abajo.
+
+14
+00:00:51,630 --> 00:00:55,625
+Ahora su primera factura, que ya está en Compras, en borrador.
+
+15
+00:00:56,292 --> 00:00:57,893
+La abro con el lápiz.
+
+16
+00:00:58,561 --> 00:01:00,584
+El formulario carga sus datos:
+
+17
+00:01:00,657 --> 00:01:03,164
+el proveedor, el proyecto y la partida.
+
+18
+00:01:03,819 --> 00:01:07,156
+Como el proveedor tiene un subcontrato vigente en este proyecto,
+
+19
+00:01:07,278 --> 00:01:09,215
+aparece el campo Subcontrato.
+
+20
+00:01:09,883 --> 00:01:13,097
+Abro la lista, y elijo el que acabo de registrar.
+
+21
+00:01:13,765 --> 00:01:16,978
+Debajo, el sistema estima la retención de garantía:
+
+22
+00:01:17,075 --> 00:01:21,603
+el cinco por ciento de los doscientos mil pesos de la factura, diez mil pesos.
+
+23
+00:01:22,272 --> 00:01:23,909
+Pulso Guardar y emitir.
+
+24
+00:01:24,578 --> 00:01:27,816
+El sistema pide confirmar la emisión, y confirmo.
+
+25
+00:01:28,484 --> 00:01:29,999
+La factura queda emitida:
+
+26
+00:01:30,109 --> 00:01:33,471
+la cuenta por pagar se parte en dos, lo que se le paga ahora,
+
+27
+00:01:33,556 --> 00:01:37,625
+y la retención de garantía, que no se propone para pago hasta liberarla.
+
+28
+00:01:39,016 --> 00:01:43,483
+De vuelta en la pestaña Subcontratos del proyecto, la fila ya muestra lo facturado,
+
+29
+00:01:43,617 --> 00:01:47,388
+lo que falta por facturar del subcontrato, y lo retenido por liberar:
+
+30
+00:01:47,486 --> 00:01:48,814
+diez mil pesos.
+
+31
+00:01:49,481 --> 00:01:54,097
+En su ficha, cada factura aparece con su neto, lo retenido y lo liberado.
+
+32
+00:01:54,753 --> 00:01:58,301
+Cuando el trabajo se recibe conforme, se libera la garantía.
+
+33
+00:01:58,968 --> 00:02:00,545
+Pulso Liberar retención.
+
+34
+00:02:01,200 --> 00:02:04,105
+El diálogo propone la factura y el monto retenido;
+
+35
+00:02:04,239 --> 00:02:06,585
+se puede liberar todo o una parte.
+
+36
+00:02:07,240 --> 00:02:09,710
+Lo dejo completo, y pulso Liberar.
+
+37
+00:02:10,365 --> 00:02:11,855
+El aviso lo confirma.
+
+38
+00:02:12,510 --> 00:02:16,853
+El sistema registra el asiento que pasa la garantía a la cuenta por pagar corriente,
+
+39
+00:02:16,862 --> 00:02:19,493
+y desde ese momento ya se propone para pago.
+
+40
+00:02:20,150 --> 00:02:23,920
+Si fue un error, la liberación se puede reversar desde su lista.

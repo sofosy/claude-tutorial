@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Proyectos · Análisis de precio unitario, indirectos, utilidad e ITBIS del presupuesto
+
+DESCRIPCIÓN
+============================================================
+Cómo desglosar en Germiva el costo de una partida con el análisis de precio unitario, aplicar indirectos y utilidad para llegar al precio del cliente, completar el detalle de la partida y exportar el presupuesto a PDF y Excel.
+
+⏱️ CAPÍTULOS
+00:00  Análisis de precio unitario
+01:35  Del costo al precio
+02:16  El detalle y la exportación
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Desglosar una partida en materiales y mano de obra
+• Aplicar indirectos y utilidad para obtener el precio
+• Completar fechas, tarea e ITBIS de una partida
+• Exportar el presupuesto a PDF y Excel
+
+⚠️ ERRORES COMUNES
+• Escribir las cantidades del análisis por el total de la partida: van por unidad
+• Confundir costo con precio: la utilidad se aplica sobre el costo
+• Enviar al cliente el PDF interno, que muestra los costos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:01
+
+TRANSCRIPCIÓN
+============================================================
+Este es el presupuesto de la obra, en la pestaña Presupuesto del proyecto. Recojo el menú. Ya tiene sus tres fases y sus seis partidas, pero a Zapatas y pedestales le falta el costo. En lugar de escribirlo, lo voy a calcular. En la fila de Zapatas pulso el botón de Análisis de precio unitario. Se abre un panel a la derecha: aquí se desglosa lo que cuesta una sola unidad de la partida, en este caso un metro cúbico. Pulso Agregar recurso. En Descripción escribo el primero: Hormigón. El tipo ya dice Material. En Cantidad por unidad anoto uno. Es un metro cúbico de hormigón por cada metro cúbico de zapata. Y en Costo unitario anoto seis mil trescientos pesos.
+Falta la mano de obra. Agrego otro recurso. En su tipo abro la lista, y elijo Mano de obra. En su descripción escribo Cuadrilla de vaciado. Con la descripción lista, en su cantidad por unidad anoto uno también. Y en su costo unitario anoto dos mil setecientos pesos, lo que cobra la cuadrilla por metro cúbico. Arriba, el panel suma: el costo por unidad es nueve mil pesos, y el de la partida, con sus ochenta metros cúbicos, setecientos veinte mil. Si un material se desperdicia, se indica en su porcentaje de desperdicio. Pulso Aplicar al borrador, y el costo pasa a la partida. Cierro el panel.
+Con todas las partidas costeadas, el costo directo de la obra es cinco millones de pesos. Para llegar al precio del cliente faltan los porcentajes. En Indirectos anoto diez: son los gastos de la obra que no pertenecen a una partida, como la supervisión. Imprevistos lo dejo en cero. Y en Utilidad anoto veinte, la ganancia sobre el costo. Las cifras se recalculan al momento: el precio antes de impuestos queda en seis millones seiscientos mil pesos. Abajo, cada partida muestra ya su precio, y la última fila da el total. Pulso Guardar presupuesto, y el aviso lo confirma.
+Cada partida tiene además su detalle. Abro el menú de la primera, y elijo Fechas, tarea y detalle. Aquí van el inicio y el fin previstos de la partida, que arman el cronograma; la tarea del proyecto a la que se vincula; y el ITBIS estimado, con base presunta si el contrato la admite. También sus propios porcentajes de indirectos y utilidad, si difieren de los generales. Cancelo, y subo a la barra de versión. Con el presupuesto guardado, Excel descarga la estructura completa, que también sirve de plantilla para importar. Y PDF genera dos documentos: uno para el cliente, solo con precios, y uno interno, con los costos.

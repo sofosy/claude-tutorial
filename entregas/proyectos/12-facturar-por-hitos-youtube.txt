@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Proyectos · Facturar por hitos: el plan de cobros y la factura de cada hito
+
+DESCRIPCIÓN
+============================================================
+Cómo cobrar un proyecto por hitos en Germiva: armar el plan de cobros con un porcentaje del contrato por hito, marcar un hito listo para facturar y generar su factura en Ventas. Y cuándo conviene tiempo y materiales.
+
+⏱️ CAPÍTULOS
+00:00  El plan de cobros
+01:00  Del hito a la factura
+01:51  Tres formas de facturar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Armar el plan de cobros de un contrato por hitos
+• Marcar un hito listo para facturar
+• Generar la factura del hito
+• Cuándo usar hitos, cubicaciones o tiempo y materiales
+
+⚠️ ERRORES COMUNES
+• Dejar el plan de cobros sin llegar al monto del contrato
+• Facturar el hito por fuera, con una factura suelta en Ventas
+• Creer que la factura ya quedó emitida: nace en borrador
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:28
+
+TRANSCRIPCIÓN
+============================================================
+No todos los proyectos se cobran midiendo avance. Un servicio, como esta supervisión de obra, se cobra por hitos: se factura al cumplir cada entrega pactada. En la pestaña Facturación, recojo el menú lateral para ganar espacio, y bajo al plan de cobros por hitos. Ya hay dos hitos, del treinta y del cuarenta por ciento del contrato. El aviso lo dice: faltan ciento ochenta mil pesos por planificar. Pulso Nuevo hito. En el nombre escribo Entrega final, que es el cierre de este servicio de supervisión. El valor puede ser un porcentaje del contrato, o un monto fijo; lo dejo en porcentaje, y anoto treinta, que es justo lo que faltaba. En la condición escribo lo que debe cumplirse para cobrarlo: Acta de recepción firmada. Con esos datos completos, pulso Guardar. El plan llega a los seiscientos mil pesos del contrato, y el aviso desaparece.
+El primer hito ya se cumplió: el cliente firmó los planos. En su fila abro el menú de acciones, y elijo Marcar listo para facturar. El sistema pide confirmar; pulso Marcar listo. El hito cambia de estado, y facturación recibe el aviso. Ahora la fila muestra el botón Facturar. Lo pulso. La vista previa trae el monto del hito, ciento ochenta mil pesos, el ITBIS, y el total de la factura. Si el contrato tuviera anticipo, aquí se descontaría su amortización. Pulso Generar factura. La factura nace en borrador en Ventas, con el proyecto en la cabecera; allí se revisa y se emite con su comprobante fiscal. El hito queda como Facturado, y abajo, en Facturas del proyecto, aparece la factura con su origen.
+La forma de facturar se elige una sola vez, en el contrato de venta del proyecto. Por hitos, como aquí, para entregas pactadas. Por avance, con cubicaciones, para obras que se miden partida por partida. Y por tiempo y materiales, cuando se cobra lo trabajado: el sistema propone la factura del período con las horas aprobadas, a su tarifa de venta, y los gastos facturables del proyecto. En los tres casos la factura sale de aquí, del proyecto, y por eso el contrato siempre sabe cuánto se ha facturado y cuánto falta.

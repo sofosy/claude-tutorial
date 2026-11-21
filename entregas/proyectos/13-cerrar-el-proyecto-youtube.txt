@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Proyectos · Cerrar el proyecto: compromisos abiertos, finiquito y cierre del presupuesto
+
+DESCRIPCIÓN
+============================================================
+Cómo cerrar un proyecto en Germiva: pasarlo a Completado resolviendo los compromisos abiertos, cerrar el contrato de venta con su finiquito y cerrar el presupuesto para que no reciba más costos.
+
+⏱️ CAPÍTULOS
+00:00  Completar el proyecto
+01:10  Cerrar el contrato
+01:46  Cerrar el presupuesto
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Pasar el proyecto a Completado
+• Qué son los compromisos abiertos y cómo resolverlos
+• Cerrar el contrato de venta con su finiquito
+• Cerrar el presupuesto del proyecto
+
+⚠️ ERRORES COMUNES
+• Forzar el cierre con órdenes de compra todavía abiertas
+• Dejar el presupuesto abierto: la obra sigue recibiendo costos
+• Cerrar el contrato antes de facturar la última cubicación
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:35
+
+TRANSCRIPCIÓN
+============================================================
+Una obra no termina con la última factura: hay que cerrarla en el sistema, para que nadie le siga cargando costos. El cierre tiene tres partes: el proyecto, el contrato y el presupuesto. Empiezo en el Resumen. Abro el campo Estado, y elijo Completado. Abajo, pulso Actualizar. El sistema se detiene: el proyecto tiene compromisos abiertos. Hay cuatrocientos cincuenta mil pesos en órdenes de compra sin facturar. Podría continuar de todos modos, pero lo abierto quedaría sin resolver. Pulso Cancelar. Lo correcto es resolver cada compromiso: recibir y facturar la orden, o anularla si ya no va.
+La orden de acero ya no iba, y se anuló en Compras. Ahora sí. De nuevo en el Resumen, abro el campo Estado, y elijo Completado. Pulso Actualizar. Esta vez el sistema lo acepta, y confirma que el proyecto se guardó. Pulso Aceptar. La cabecera ya muestra el proyecto como Completado.
+Segundo, el contrato de venta. En la pestaña Facturación, recojo el menú, y bajo a Cierre del contrato. El botón Finiquito genera el documento que liquida el contrato: lo facturado, el anticipo y el fondo de reparo. Pulso Cerrar contrato. En las notas escribo Obra recibida conforme. Con la nota ya escrita, confirmo con el botón Cerrar contrato. Desde ahora no se factura nada más de este contrato; solo el fondo de reparo se sigue liberando. Y si se cerró por error, el botón Reabrir lo devuelve.
+Y tercero, el presupuesto del proyecto, que es donde se cargan todos los costos de la obra. Arriba, pulso Cerrar presupuesto. El sistema recuerda la regla: solo se cierra con el proyecto completado y sin compromisos abiertos. En el motivo escribo Obra terminada y entregada. Con el motivo ya anotado, pulso el botón Cerrar presupuesto. El presupuesto queda cerrado, en solo lectura, y deja de aceptar imputaciones: ninguna compra, hora ni gasto se puede cargar ya a esta obra. Así el costo final queda fijo, listo para compararlo con lo presupuestado. Proyecto, contrato y presupuesto: con los tres cerrados, la obra está terminada también en los libros.

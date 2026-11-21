@@ -1,0 +1,199 @@
+1
+00:00:03,100 --> 00:00:06,796
+Con el presupuesto aprobado, el proyecto tiene una pestaña nueva:
+
+2
+00:00:06,881 --> 00:00:07,578
+Control.
+
+3
+00:00:08,246 --> 00:00:09,387
+Recojo el menú.
+
+4
+00:00:10,056 --> 00:00:12,388
+Cada partida muestra cuatro cifras.
+
+5
+00:00:13,057 --> 00:00:16,853
+Vigente es su presupuesto actual, con los indirectos incluidos.
+
+6
+00:00:17,521 --> 00:00:21,354
+Comprometido, lo que ya está pedido en órdenes de compra aprobadas:
+
+7
+00:00:21,378 --> 00:00:25,173
+aquí, cuatrocientos cincuenta mil pesos de acero para la estructura.
+
+8
+00:00:25,841 --> 00:00:28,460
+Real, lo que ya llegó a la contabilidad:
+
+9
+00:00:28,545 --> 00:00:30,692
+doscientos cincuenta mil de excavación.
+
+10
+00:00:31,347 --> 00:00:33,867
+Y Disponible, lo que queda por gastar.
+
+11
+00:00:34,522 --> 00:00:39,386
+Si pulso una partida, abajo salen sus compromisos abiertos y sus costos reales,
+
+12
+00:00:39,457 --> 00:00:41,891
+con la factura y el asiento de cada uno.
+
+13
+00:00:42,558 --> 00:00:46,740
+Y el interruptor Ver desglose agrega lo reservado por requisiciones y el material
+
+14
+00:00:46,551 --> 00:00:48,438
+que está en el almacén de la obra.
+
+15
+00:00:49,809 --> 00:00:51,844
+¿Cómo llega un gasto a su partida?
+
+16
+00:00:52,499 --> 00:00:54,980
+Cada documento lleva el proyecto y la partida:
+
+17
+00:00:55,079 --> 00:00:58,081
+la requisición, la orden de compra, la factura,
+
+18
+00:00:58,179 --> 00:01:00,326
+la salida de inventario y el asiento.
+
+19
+00:01:00,981 --> 00:01:05,323
+Esta es una factura de compra en borrador, del subcontratista de la excavación.
+
+20
+00:01:05,978 --> 00:01:07,579
+La abro con el lápiz.
+
+21
+00:01:08,248 --> 00:01:10,197
+El formulario carga sus datos:
+
+22
+00:01:10,282 --> 00:01:13,903
+el proveedor, el comprobante, las fechas y sus líneas.
+
+23
+00:01:14,573 --> 00:01:17,525
+En la cabecera está el Proyecto, la nave de Haina.
+
+24
+00:01:18,181 --> 00:01:22,597
+Y en la línea, la columna Partida dice a cuál de sus partidas va el gasto:
+
+25
+00:01:22,719 --> 00:01:24,160
+Excavación y relleno.
+
+26
+00:01:24,816 --> 00:01:27,768
+Debajo de las líneas aparece el aviso del control.
+
+27
+00:01:28,437 --> 00:01:31,477
+La partida tiene ciento noventa mil pesos disponibles,
+
+28
+00:01:31,512 --> 00:01:33,585
+y esta factura pide doscientos mil:
+
+29
+00:01:33,706 --> 00:01:35,085
+se excede en diez mil.
+
+30
+00:01:35,740 --> 00:01:38,941
+Lo que pasa después depende de la política del presupuesto.
+
+31
+00:01:39,610 --> 00:01:42,165
+Con Avisar, que es la de este proyecto,
+
+32
+00:01:42,288 --> 00:01:45,266
+se puede continuar y el excedente queda registrado.
+
+33
+00:01:45,921 --> 00:01:49,519
+Pedir aprobación exige que otra persona apruebe el sobregiro.
+
+34
+00:01:50,188 --> 00:01:52,421
+Y Bloquear no deja guardar el documento.
+
+35
+00:01:53,076 --> 00:01:55,954
+La política se elige en el presupuesto del proyecto,
+
+36
+00:01:56,052 --> 00:01:58,287
+y se puede cambiar con la obra en marcha.
+
+37
+00:01:59,652 --> 00:02:03,721
+Cuando a una partida le falta y a otra le sobra, se hace un traslado.
+
+38
+00:02:04,376 --> 00:02:08,842
+Vuelvo a la pestaña Control del proyecto, y pulso Trasladar entre partidas.
+
+39
+00:02:09,510 --> 00:02:14,472
+En Sale de abro la lista, y elijo Piso industrial, que todavía no ha gastado.
+
+40
+00:02:15,127 --> 00:02:18,788
+En Entra a abro la otra lista, y elijo Excavación y relleno.
+
+41
+00:02:19,443 --> 00:02:21,554
+En Monto anoto cincuenta mil pesos,
+
+42
+00:02:21,675 --> 00:02:24,355
+lo que le falta a la excavación con algo de holgura.
+
+43
+00:02:25,012 --> 00:02:26,675
+Y en Motivo escribo por qué:
+
+44
+00:02:26,723 --> 00:02:28,460
+Mayor volumen de excavación.
+
+45
+00:02:29,116 --> 00:02:32,378
+El motivo es obligatorio, porque queda en el historial.
+
+46
+00:02:33,034 --> 00:02:36,260
+Pulso Guardar, y el aviso confirma la solicitud.
+
+47
+00:02:36,917 --> 00:02:39,050
+El traslado no se aplica de inmediato:
+
+48
+00:02:39,186 --> 00:02:43,365
+queda Por aprobar en la vista Traslados, hasta que otra persona lo apruebe.
+
+49
+00:02:44,034 --> 00:02:45,908
+El total del proyecto no cambia;
+
+50
+00:02:46,080 --> 00:02:47,967
+solo se mueve entre partidas.

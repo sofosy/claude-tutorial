@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Variaciones: presupuesto contra lo ejecutado
+
+DESCRIPCIÓN
+============================================================
+Cómo leer en Germiva las variaciones de un presupuesto contra lo real: el resumen, el análisis por cuenta y centro, cómo se clasifica cada variación, cómo explicar una desviación y el reporte en PDF y Excel.
+
+⏱️ CAPÍTULOS
+00:00  El resumen
+00:42  El análisis
+01:33  Explicar una variación
+02:13  El reporte
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el resumen de variaciones de los presupuestos aprobados
+• Entender cuándo una variación es favorable o desfavorable
+• Explicar una variación fuera de tolerancia
+• Sacar el reporte en PDF o Excel
+
+⚠️ ERRORES COMUNES
+• Esperar variaciones de un borrador: el resumen solo considera presupuestos aprobados
+• Leer todo exceso como malo: vender más de lo presupuestado es favorable
+• Dejar sin explicar una variación desfavorable: sigue en las alertas
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:46
+
+TRANSCRIPCIÓN
+============================================================
+Con un presupuesto aprobado, Variaciones lo compara con lo real. Recojo el menú. Arriba, el resumen de todos los presupuestos aprobados: los ingresos ejecutados contra los presupuestados, y lo mismo para costos y gastos. Lo real se lee del Mayor al abrir la pantalla; no hay que recalcular nada. Debajo, cada presupuesto con su resultado neto: el de noviembre va trescientos sesenta por ciento por encima, a favor. Aun así lleva una marca roja, porque tiene cuentas de gasto que se pasaron. Esas cuentas están en Alertas por explicar: el mantenimiento y los servicios públicos.
+Abro el presupuesto de noviembre con un clic. Este es su Análisis. Arriba, los totales por tipo de cuenta: ingresos, costos y gastos, y el resultado neto. Y abajo, el detalle de cada línea, con su centro de costo. La variación es lo ejecutado menos lo presupuestado, y el estado depende de su tamaño: hasta cinco por ciento está dentro de tolerancia; después viene menor, significativa, y crítica desde veinticinco. Pero el sentido importa. En Ventas se ejecutó más de lo presupuestado, y como es un ingreso, eso es favorable: sale en verde. En Mantenimiento también se ejecutó más, pero es un gasto: variación significativa, desfavorable. El filtro Por explicar deja solo las que piden una explicación.
+Una variación desfavorable fuera de tolerancia se explica. En la fila de Mantenimiento pulso el botón de explicar. El diálogo muestra las cifras. En Explicación escribo el motivo: hubo una reparación no prevista del montacargas. La explicación es obligatoria; la acción correctiva es opcional, pero conviene. Escribo qué se hará: contratar mantenimiento preventivo mensual. Con la explicación y la acción escritas, pulso Guardar, y el aviso lo confirma. La variación explicada sale de las alertas, y su explicación se conserva: solo vuelve a pedirse si la variación empeora de categoría.
+Para presentarlo, pulso Ver reporte. El Reporte de Variaciones agrupa las líneas en desfavorables, favorables y sin variación, con un resumen ejecutivo arriba, y al final lista las explicaciones registradas con su acción correctiva. Arriba a la derecha se imprime, o se exporta a PDF o a Excel, que trae tres hojas: resumen, variaciones y por período. Y cuando el período termine, cerrar el presupuesto deja estas cifras fijas, como historial.

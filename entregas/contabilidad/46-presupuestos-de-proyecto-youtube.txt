@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Contabilidad · Las obras dentro del presupuesto contable: incorporar los presupuestos de proyecto
+
+DESCRIPCIÓN
+============================================================
+Cómo llevar el presupuesto de cada proyecto al presupuesto contable de la empresa en Germiva: el botón Presupuestos de proyecto, el cuadre proyecto contra contable y los renglones que se incorporan por cuenta, centro de costo y mes.
+
+⏱️ CAPÍTULOS
+00:00  Incorporar las obras
+00:56  Los renglones incorporados
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Incorporar los presupuestos de proyecto al presupuesto contable
+• Leer el cuadre proyecto contra contable
+• Reconocer los renglones incorporados
+• Qué hacer cuando el presupuesto de la obra cambia
+
+⚠️ ERRORES COMUNES
+• Copiar a mano el presupuesto de la obra en el presupuesto contable
+• Querer editar los renglones incorporados: se actualizan volviendo a incorporar
+• Esperar el total de la obra en un solo año: solo entra lo que cae en el ejercicio
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:32
+
+TRANSCRIPCIÓN
+============================================================
+La empresa tiene su presupuesto anual, y cada obra tiene el suyo. Para que el presupuesto contable incluya las obras no se copian a mano: se incorporan. En Presupuestos, abro el anual con Ver detalles. Por ahora solo tiene los gastos fijos. Arriba, pulso Presupuestos de proyecto. El diálogo lista cada proyecto con presupuesto vigente: la nave de Haina, con cinco millones y medio de pesos. De ese total, en este ejercicio cae un millón ochocientos treinta y tres mil: noviembre y diciembre, según el cronograma de sus partidas. El resto es del año próximo. La diferencia sale en rojo, porque todavía no se ha incorporado. Pulso Incorporar presupuestos de proyecto. La diferencia queda en cero, y el estado pasa a Cuadrado. Cierro el diálogo.
+En las líneas del presupuesto aparecen los renglones nuevos. Llevan la cuenta Costos de obra, el centro de costo del proyecto, y un renglón por cada mes. Tienen el ícono de proyecto, y su monto no se edita aquí. Si el presupuesto de la obra cambia, por ejemplo con una orden de cambio, se vuelve a incorporar con el mismo botón. Abajo, el total de costos y gastos ya incluye la obra. Así las variaciones de la empresa, y el control de cada obra, salen de las mismas cifras.

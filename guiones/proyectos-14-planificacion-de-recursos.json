@@ -1,0 +1,226 @@
+{
+  "titulo": "Proyectos · Planificación de recursos: quién está disponible y quién está sobreasignado",
+  "descripcion": "Cómo planificar a tu gente por semana en Germiva: la capacidad de cada empleado según su horario, vacaciones y feriados, las horas asignadas a cada proyecto y el aviso de semana sobreasignada.",
+  "_comentario": "Video 14 de la serie Proyectos. setup: seeds/proyectos/preparar.sh horas (la obra con su presupuesto aprobado y dos empleados de obra, Juan Pérez Germiva y Ramón Díaz Germiva).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/resource-plan",
+    "esperar": "app-custom-select input"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh horas"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer la capacidad semanal de cada empleado",
+    "Asignar horas de un proyecto por semana",
+    "Detectar y corregir una semana sobreasignada",
+    "Ver solo a la gente de un proyecto"
+  ],
+  "errores_comunes": [
+    "Planificar sin elegir el proyecto: las casillas no aparecen",
+    "Asignar más horas que la capacidad de la semana",
+    "Confundir lo planificado con el costo: el costo llega con las horas aprobadas"
+  ],
+  "pasos": [
+    {
+      "id": "01-capacidad",
+      "capitulo": "Capacidad y asignaciones",
+      "rotulo": "Planificación de recursos",
+      "ruta": "Proyectos › Planificación de recursos",
+      "texto_pantalla": "Asignado / capacidad, por empleado y semana",
+      "narracion": "Antes de que empiece la semana conviene saber quién está disponible. En Proyectos, Planificación de recursos, cada fila es un empleado, y cada columna una semana. Las dos cifras son horas asignadas sobre capacidad. La capacidad sale del horario laboral de la persona, menos sus vacaciones, permisos y días feriados. En Buscar empleado escribo Germiva, para quedarme solo con la cuadrilla de la obra, que lleva ese apellido en los datos de ejemplo. Quedan Juan y Ramón. Para asignar horas hay que elegir el proyecto. En Proyecto a planificar escribo Nave, y espero a que el sistema busque entre los proyectos activos. Aparece la nave de Haina, y la elijo. Ahora cada semana tiene su casilla.",
+      "acciones": [
+        {
+          "resaltar": "table thead th >> nth=1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "cada fila es un empleado"
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Las dos cifras son"
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=4",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "menos sus vacaciones"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has(mat-label:has-text('Buscar empleado')) input",
+            "texto": "Germiva"
+          },
+          "al_decir": "escribo Germiva"
+        },
+        {
+          "resaltar": "table tbody tr >> nth=1 >> td >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Quedan Juan y Ramón"
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select input",
+            "texto": "Nave"
+          },
+          "al_decir": "escribo Nave"
+        },
+        {
+          "click": "mat-option:has-text('Nave industrial')",
+          "al_decir": "y la elijo"
+        },
+        {
+          "resaltar": "input[aria-label^='Horas del proyecto para Juan'] >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Ahora cada semana"
+        }
+      ]
+    },
+    {
+      "id": "02-asignar",
+      "capitulo": "Asignar y equilibrar",
+      "rotulo": "Semana sobreasignada",
+      "ruta": "Proyectos › Planificación de recursos",
+      "texto_pantalla": "En rojo, la semana que supera la capacidad",
+      "narracion": "A Juan le planifico cuarenta horas esta semana, que es lo normal de un albañil en la obra. La barra azul muestra cuánto de su capacidad queda ocupado. Para la semana siguiente le anoto sesenta, porque toca vaciar las zapatas completas. La casilla se pone en rojo, y arriba sale el aviso: una semana sobreasignada. Sesenta horas superan las cincuenta de su capacidad. Lo corrijo: a Juan le dejo cincuenta, que es el máximo que su horario permite esa semana. Y las diez que faltan se las asigno a Ramón, el ayudante, que tenía la semana libre. El aviso desaparece. Con el botón Solo los de este proyecto, la lista se queda con la gente planificada en la obra. Esto es un plan: no genera costo. El costo llega después, cuando las horas se registran y se aprueban.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[aria-label^='Horas del proyecto para Juan'] >> nth=0",
+            "texto": "40"
+          },
+          "al_decir": "le planifico cuarenta"
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=1",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "La barra azul"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label^='Horas del proyecto para Juan'] >> nth=1",
+            "texto": "60"
+          },
+          "al_decir": "le anoto sesenta"
+        },
+        {
+          "presionar": {
+            "tecla": "Tab"
+          },
+          "al_decir": "La casilla se pone"
+        },
+        {
+          "resaltar": ":text('sobreasignada en esta página') >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "arriba sale el aviso"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label^='Horas del proyecto para Juan'] >> nth=1",
+            "texto": "50"
+          },
+          "al_decir": "le dejo cincuenta"
+        },
+        {
+          "escribir": {
+            "sel": "input[aria-label^='Horas del proyecto para Ramón'] >> nth=1",
+            "texto": "10"
+          },
+          "al_decir": "se las asigno a Ramón"
+        },
+        {
+          "presionar": {
+            "tecla": "Tab"
+          },
+          "al_decir": "El aviso desaparece"
+        },
+        {
+          "click": "button:has-text('Solo los de este proyecto')",
+          "al_decir": "Con el botón Solo"
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Esto es un plan"
+        },
+        {
+          "resaltar": "table tbody tr >> nth=1 >> td >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "cuando las horas se registran"
+        }
+      ]
+    }
+  ]
+}

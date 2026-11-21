@@ -1,37 +1,39 @@
 TÍTULO
 ============================================================
-Contabilidad · Centros de costo: crear, jerarquía y centro predeterminado
+Contabilidad · Centros de costo: crear, jerarquía y ejecución
 
 DESCRIPCIÓN
 ============================================================
-Cómo crear en Germiva centros de costo con su presupuesto, ver su jerarquía, elegir el centro predeterminado de la empresa y dónde se usan: asientos, presupuestos e informes.
+Cómo crear en Germiva un centro de costo con su centro padre, su responsable y su presupuesto, leer la jerarquía con los centros agrupadores, ver la ejecución presupuestaria de un centro y por qué un centro con movimientos se inactiva en lugar de eliminarse.
 
 ⏱️ CAPÍTULOS
 00:00  Los centros de costo
-00:19  Crear
-00:50  Jerarquía
-01:01  Centro predeterminado
+00:33  Crear un centro
+01:16  La jerarquía
+01:40  La ficha del centro
+02:09  Inactivar, no eliminar
 
 📋 EN ESTE VIDEO APRENDERÁS
-• Crear un centro de costo con su presupuesto
-• Ver la jerarquía de centros
-• Elegir el centro predeterminado
-• Dónde se usan los centros de costo
+• Crear un centro de costo con padre, responsable y presupuesto
+• Leer la jerarquía y los centros agrupadores
+• Ver la ejecución presupuestaria de un centro
+• Inactivar un centro en lugar de eliminarlo
 
 ⚠️ ERRORES COMUNES
+• Imputar gastos a un centro agrupador: solo suma los de sus subcentros
 • Repetir un código: cada centro tiene el suyo
-• Eliminar un centro con subcentros
-• Olvidar el centro predeterminado: las líneas sin centro quedan sin imputar
+• Intentar eliminar un centro con movimientos: se inactiva
 
 🏷️ ETIQUETAS
 Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
 
 —
-Duración: 01:32
+Duración: 02:45
 
 TRANSCRIPCIÓN
 ============================================================
-Los centros de costo son las áreas de la empresa a las que se imputan ingresos y gastos, como administración o ventas. Recojo el menú. Cada uno trae su código, su nombre, el tipo, de qué centro depende, el presupuesto y el estado.
-Para agregar el área de logística, pulso Crear Centro de Costo. Escribo el código, CC-LOG, que identifica al centro y no se repite. Luego escribo el nombre: Logística. Con el código y el nombre listos, paso al tipo: dice si es un centro de costo, de ingresos, de utilidad o de inversión; lo dejo en Costo. El presupuesto es el monto asignado al área: ciento veinte mil pesos. La casilla de abajo lo crea activo. Guardo, y el aviso lo confirma.
-Un centro puede tener subcentros, como Operaciones dentro de Administración. Ver Jerarquía muestra el árbol completo, con cada centro bajo su padre. Lo cierro.
-El centro predeterminado es el que reciben las líneas que se registran sin centro. Hoy es Administración, el que se creó con la empresa. Para cambiarlo, en la fila de Operaciones pulso Marcar como predeterminado. El aviso lo confirma, y la marca pasa a Operaciones. Desde ahí, los centros aparecen en cada línea de los asientos, en las líneas de los presupuestos y como filtro del Estado de Resultados y las Razones Financieras.
+Un centro de costo es un área de la empresa a la que se imputan ingresos y gastos: una sucursal, un departamento. Sirve para saber cuánto gana y cuánto gasta cada área. Recojo el menú. Cada fila es un centro, con su código, su nombre, el tipo, de qué centro depende, su presupuesto, el responsable y el estado. Administración lleva la marca Predeterminado: es el centro que reciben los ingresos y gastos que se registran sin centro.
+Voy a agregar el área de logística. Pulso Crear Centro de Costo. Escribo el código, CC-LOG, que no se puede repetir en la empresa. Luego escribo el nombre: Logística. Con el código y el nombre escritos, miro el tipo: costo, ingresos, utilidad o inversión; lo dejo en Costo. En Depende de abro la lista, y elijo Operaciones: así Logística queda como subcentro suyo. En Responsable escribo Gabriela, para buscar a la empleada a cargo. Aparece en la lista, y la elijo. Por último el presupuesto del área: ciento veinte mil pesos. Guardo, y el aviso lo confirma.
+Para ver cómo quedó, pulso Ver Jerarquía. Es el árbol completo: Logística aparece dentro de Operaciones, y las dos sucursales dentro de Ventas. Ventas lleva la marca Agrupador: no recibe movimientos propios, solo suma los de sus subcentros. En los informes, un centro padre siempre acumula lo de sus hijos. Cierro.
+Ahora abro Operaciones con el lápiz de su fila. Arriba, el botón Inactivar: un centro inactivo deja de ofrecerse en los documentos, sin perder su historial. El interruptor Permite registro directo es el que se apaga en los centros agrupadores. Y abajo, la ejecución presupuestaria: de trescientos mil pesos de presupuesto, Operaciones lleva ejecutados ciento ochenta mil, el sesenta por ciento, contando el gasto contabilizado del centro y de sus subcentros.
+Vuelvo a la lista de centros. ¿Y si quiero borrar Operaciones? En su fila pulso Eliminar. El sistema pide confirmar, porque no se puede deshacer; confirmo. Y no lo permite, y explica por qué: Operaciones tiene subcentros. Tampoco se elimina un centro que ya tiene movimientos, o que es el predeterminado: lo correcto es inactivarlo. Solo se borra un centro que nunca se usó. Con los centros creados, el siguiente paso es usarlos en los documentos.

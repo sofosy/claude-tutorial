@@ -1,0 +1,358 @@
+{
+  "titulo": "Proyectos · Cubicaciones: medir el avance, facturarlo y el fondo de reparo",
+  "descripcion": "Cómo facturar un proyecto por avance en Germiva: crear la cubicación del período midiendo cada partida, enviarla y aprobarla, generar su factura con la amortización del anticipo y el fondo de reparo retenido, y liberar el fondo al final.",
+  "_comentario": "Video 08 de la serie Proyectos. setup: seeds/proyectos/preparar.sh cubicacion (contrato por avance de 6,600,000 con anticipo 20 %, amortización 20 % y fondo de reparo 5 %; anticipo facturado y emitido; Laura Méndez aprueba y factura: el video cambia de usuario en cámara).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/facturacion",
+    "esperar": "button:has-text('Nueva cubicación')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh cubicacion"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Crear la cubicación de un período",
+    "Medir cada partida por cantidad o por porcentaje",
+    "Aprobar la cubicación y generar su factura",
+    "Qué es el fondo de reparo y cómo se libera"
+  ],
+  "errores_comunes": [
+    "Abrir una cubicación nueva sin facturar la anterior: solo hay una abierta a la vez",
+    "Olvidar que la factura descuenta la amortización del anticipo",
+    "Querer liberar el fondo de reparo de una factura en borrador"
+  ],
+  "pasos": [
+    {
+      "id": "01-medir",
+      "capitulo": "Nueva cubicación",
+      "rotulo": "Nueva cubicación",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Lo ejecutado en el período, partida por partida",
+      "narracion": "Una cubicación es la medición de lo que se ejecutó en un período, y es lo que se le factura al cliente. En la pestaña Facturación, recojo el menú, y bajo a Cubicaciones. Pulso Nueva cubicación. La tabla trae las partidas del presupuesto, con lo contratado y lo medido antes. La excavación se terminó completa: en su fila pulso el botón Completar. Queda en cien por ciento, con su monto. De las zapatas va la mitad. En su fila cambio la medición a porcentaje, con el botón de porcentaje. Y en Este período anoto cincuenta, por la mitad de las zapatas ya vaciadas. El sistema calcula la cantidad y el monto con el precio de la partida. Abajo suma el avance del período. Pulso Guardar, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "recojo el menú"
+        },
+        {
+          "resaltar": "#billing-progress-title",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "bajo a Cubicaciones"
+        },
+        {
+          "click": "button:has-text('Nueva cubicación')",
+          "al_decir": "Pulso Nueva cubicación"
+        },
+        {
+          "resaltar": "mat-dialog-container table thead",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "La tabla trae las partidas"
+        },
+        {
+          "click": "mat-dialog-container button[aria-label='Completar 01.01']",
+          "al_decir": "pulso el botón Completar"
+        },
+        {
+          "resaltar": "mat-dialog-container tr:has-text('01.01') td >> nth=-1",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "con su monto"
+        },
+        {
+          "click": "mat-dialog-container tr:has-text('01.02') button[aria-label='Porcentaje del período']",
+          "al_decir": "cambio la medición"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[aria-label^='Ejecutado este período en 01.02']",
+            "texto": "50"
+          },
+          "al_decir": "anoto cincuenta"
+        },
+        {
+          "resaltar": "mat-dialog-container tr:has-text('01.02') td >> nth=-1",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "calcula la cantidad y el monto"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "02-aprobar",
+      "capitulo": "De la cubicación a la factura",
+      "rotulo": "Enviar y aprobar",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación › CUB-000001",
+      "texto_pantalla": "Avance − amortización = base · fondo de reparo retenido",
+      "narracion": "La cubicación queda en borrador. La abro con un clic en su número. A la derecha, el sistema explica cómo se convierte en factura. El avance medido del período es un millón tres mil doscientos pesos. De ahí se descuenta la amortización del anticipo, el veinte por ciento. Lo que queda es la base de la factura, y el ITBIS se calcula sobre el diez por ciento de esa base. Al final, el fondo de reparo: el cinco por ciento del avance, que el cliente retiene y no paga todavía. Con las cifras revisadas, pulso Enviar a aprobación, y confirmo. Como en el presupuesto, quien envía una cubicación no la aprueba: lo hace otro supervisor.",
+      "acciones": [
+        {
+          "click": "table[aria-label='Cubicaciones del proyecto'] button.link",
+          "al_decir": "con un clic en su número"
+        },
+        {
+          "resaltar": "#progress-billing-detail :text('De la cubicación a la factura') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "el sistema explica"
+        },
+        {
+          "resaltar": "#progress-billing-detail :text('Avance medido del período') >> nth=-1",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El avance medido"
+        },
+        {
+          "resaltar": "#progress-billing-detail :text('Amortización del anticipo') >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "la amortización del"
+        },
+        {
+          "resaltar": "#progress-billing-detail :text('Base de la factura') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "la base de la factura"
+        },
+        {
+          "resaltar": "#progress-billing-detail :text('Fondo de reparo retenido') >> nth=0",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "el fondo de reparo"
+        },
+        {
+          "click": "#progress-billing-detail button:has-text('Enviar a aprobación')",
+          "al_decir": "pulso Enviar a aprobación"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button, mat-dialog-container button:has-text('Enviar')",
+          "al_decir": "y confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "table[aria-label='Cubicaciones del proyecto'] tbody tr >> nth=0 >> td >> nth=4",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "quien envía una cubicación"
+        }
+      ]
+    },
+    {
+      "id": "03-laura",
+      "capitulo": "Aprobar",
+      "rotulo": "Aprueba otra persona",
+      "ruta": "Acceso",
+      "texto_pantalla": "Entra la otra supervisora",
+      "narracion": "Entra entonces Laura Méndez, la otra supervisora. Abro el menú del usuario, y cierro sesión. En el acceso escribo su usuario. Después, en el campo de la contraseña, escribo su clave. Con el usuario y la clave ya escritos, pulso el botón Iniciar sesión. El sistema le recuerda un dato pendiente de la empresa, que no afecta a los proyectos; pulso Más tarde.",
+      "acciones": [
+        {
+          "click": "button.topbar-user",
+          "al_decir": "Abro el menú del usuario"
+        },
+        {
+          "click": ".mat-mdc-menu-panel :text('Cerrar sesión')",
+          "al_decir": "cierro sesión"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='username']",
+            "texto": "laura.mendez"
+          },
+          "al_decir": "escribo su usuario"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='password']",
+            "texto": "Demo2026!"
+          },
+          "al_decir": "escribo su clave"
+        },
+        {
+          "click": "button.auth-primary-btn",
+          "al_decir": "pulso el botón"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "El sistema le recuerda"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Más tarde')",
+          "al_decir": "pulso Más tarde"
+        }
+      ]
+    },
+    {
+      "id": "04-facturar",
+      "capitulo": "Facturar la cubicación",
+      "rotulo": "Facturar",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación › CUB-000001",
+      "texto_pantalla": "La factura sale en borrador en Ventas",
+      "navegar": "/projects/17/facturacion",
+      "narracion": "Ya como Laura, vuelvo a la pestaña Facturación del proyecto, y abro la cubicación con un clic en su número. Está en aprobación. Pulso Aprobar, y en el diálogo confirmo con Aprobar. Con la cubicación aprobada aparece el botón Facturar. Lo pulso. La vista previa repite las cifras: la base, el ITBIS, el total de la factura, y lo que queda por cobrar ahora, sin el fondo de reparo. Pulso Generar factura. La factura se crea en borrador en Ventas, con la amortización como descuento, y allí se emite con su comprobante. En la tabla Facturas del proyecto quedan las dos: la del anticipo y la de esta cubicación, con su bruto, su amortización y el fondo por liberar.",
+      "acciones": [
+        {
+          "click": "table[aria-label='Cubicaciones del proyecto'] button.link",
+          "al_decir": "con un clic en su número"
+        },
+        {
+          "click": "#progress-billing-detail button:has-text('Aprobar')",
+          "al_decir": "Pulso Aprobar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aprobar')",
+          "al_decir": "confirmo con Aprobar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2000,
+          "cursor": false
+        },
+        {
+          "click": "#progress-billing-detail button:has-text('Facturar')",
+          "al_decir": "Lo pulso"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 8000,
+          "cursor": false,
+          "al_decir": "La vista previa repite"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar factura')",
+          "al_decir": "Pulso Generar factura"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "#billing-documents-title",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "En la tabla Facturas del"
+        },
+        {
+          "resaltar": "section:has(#billing-documents-title) tbody tr >> nth=0 >> td >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "la de esta cubicación"
+        }
+      ]
+    },
+    {
+      "id": "05-fondo",
+      "capitulo": "El fondo de reparo",
+      "rotulo": "Fondo de reparo",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Lo retenido se libera al recibir la obra",
+      "narracion": "Queda el fondo de reparo. Lo retenido en cada factura se acumula en una cuenta por cobrar propia, aparte de la del cliente. Cuando la obra se recibe sin defectos, se pulsa Liberar fondo: se elige la factura emitida, el monto y la fecha, y el sistema pasa ese valor a la cuenta por cobrar normal, para cobrarlo como cualquier factura. Mientras las facturas estén en borrador, el fondo no se puede liberar: primero se emiten en Ventas. Así se factura toda la obra: una cubicación por período, hasta completar el contrato.",
+      "acciones": [
+        {
+          "resaltar": "#billing-retention-title",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Queda el fondo de reparo"
+        },
+        {
+          "resaltar": "button:has-text('Liberar fondo')",
+          "durante_ms": 7000,
+          "cursor": true,
+          "al_decir": "se pulsa Liberar fondo"
+        },
+        {
+          "resaltar": "#billing-retention-title",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Mientras las facturas"
+        },
+        {
+          "resaltar": "#billing-progress-title",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "una cubicación por período"
+        }
+      ]
+    }
+  ]
+}

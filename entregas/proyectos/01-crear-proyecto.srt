@@ -1,0 +1,235 @@
+1
+00:00:03,100 --> 00:00:06,275
+Un proyecto reúne todo lo de una obra o un contrato:
+
+2
+00:00:06,423 --> 00:00:10,094
+su presupuesto, sus compras, sus horas y su facturación.
+
+3
+00:00:10,750 --> 00:00:14,013
+Esta es la Cartera de proyectos, en el menú Proyectos.
+
+4
+00:00:14,682 --> 00:00:15,823
+Recojo el menú.
+
+5
+00:00:16,492 --> 00:00:20,981
+Arriba resume los proyectos activos, lo comprometido y los que están en riesgo;
+
+6
+00:00:21,042 --> 00:00:25,533
+y abajo lista cada proyecto con su estado, su avance y sus indicadores.
+
+7
+00:00:26,202 --> 00:00:27,728
+Todavía no hay ninguno:
+
+8
+00:00:27,864 --> 00:00:30,680
+voy a crear el primero con el botón Nuevo proyecto.
+
+9
+00:00:32,049 --> 00:00:34,865
+El formulario empieza por la información básica.
+
+10
+00:00:35,521 --> 00:00:37,220
+En Nombre escribo el de la obra:
+
+11
+00:00:37,281 --> 00:00:38,747
+Nave industrial Haina.
+
+12
+00:00:39,402 --> 00:00:43,496
+El código lo asigna el sistema, y el estado empieza en Planificación.
+
+13
+00:00:44,152 --> 00:00:45,802
+Después van las fechas.
+
+14
+00:00:46,471 --> 00:00:50,341
+En Fecha de inicio escribo el dos de noviembre de dos mil veintiséis.
+
+15
+00:00:51,009 --> 00:00:54,359
+Y en Fecha de fin, el treinta de abril del año siguiente.
+
+16
+00:00:55,027 --> 00:00:58,774
+El presupuesto, el costo real y el avance no se escriben aquí:
+
+17
+00:00:58,896 --> 00:01:01,725
+se calculan solos desde el presupuesto del proyecto.
+
+18
+00:01:02,393 --> 00:01:04,118
+Sigo con las relaciones.
+
+19
+00:01:04,787 --> 00:01:08,447
+En Cliente escribo Industrias, para buscar al dueño de la obra.
+
+20
+00:01:09,102 --> 00:01:11,559
+Aparece en la lista, y lo selecciono.
+
+21
+00:01:12,227 --> 00:01:16,520
+En Gerente de proyecto escribo Admin, para buscar al responsable de la obra.
+
+22
+00:01:17,188 --> 00:01:19,234
+Aparece también, y lo elijo:
+
+23
+00:01:19,308 --> 00:01:21,344
+el gerente ve todo el proyecto.
+
+24
+00:01:22,000 --> 00:01:26,725
+En Miembros del equipo abro la lista, marco a Laura Méndez, y cierro la lista.
+
+25
+00:01:27,382 --> 00:01:31,810
+Solo el gerente, el equipo y quien tenga permiso para ver todos pueden abrir el
+
+26
+00:01:31,623 --> 00:01:32,344
+proyecto.
+
+27
+00:01:33,708 --> 00:01:37,864
+La última sección conecta el proyecto con la contabilidad y con el inventario.
+
+28
+00:01:38,519 --> 00:01:42,042
+En Centro de costo abro la lista, y elijo Obra Nave Haina:
+
+29
+00:01:42,189 --> 00:01:46,419
+los ingresos y gastos del proyecto que no traigan un centro propio irán a ese.
+
+30
+00:01:47,075 --> 00:01:48,875
+En Almacén de obra escribo Sur,
+
+31
+00:01:48,997 --> 00:01:51,876
+para buscar el almacén donde se recibirá el material.
+
+32
+00:01:52,532 --> 00:01:54,643
+Aparece en la lista, y lo elijo:
+
+33
+00:01:54,776 --> 00:01:58,200
+lo que se compre para el proyecto entrará por omisión a ese almacén.
+
+34
+00:01:58,868 --> 00:01:59,948
+Pulso Guardar.
+
+35
+00:02:00,617 --> 00:02:04,252
+El sistema confirma que el proyecto quedó creado, y acepto.
+
+36
+00:02:05,629 --> 00:02:08,186
+Este es el espacio de trabajo del proyecto.
+
+37
+00:02:08,841 --> 00:02:13,889
+Arriba, su nombre, el estado, el cliente, el gerente y las fechas.
+
+38
+00:02:14,557 --> 00:02:18,415
+Y debajo, las pestañas, una por cada parte de la obra.
+
+39
+00:02:19,072 --> 00:02:22,271
+Resumen muestra el tablero y la ficha que acabo de llenar.
+
+40
+00:02:22,941 --> 00:02:26,140
+Presupuesto, el desglose de costos y precios.
+
+41
+00:02:26,810 --> 00:02:30,358
+Facturación, el contrato con el cliente y sus facturas.
+
+42
+00:02:31,026 --> 00:02:34,425
+Subcontratos, lo pactado con cada subcontratista.
+
+43
+00:02:35,093 --> 00:02:37,587
+Horas, la mano de obra de la semana.
+
+44
+00:02:38,256 --> 00:02:40,663
+Y Tareas, el trabajo por hacer.
+
+45
+00:02:41,319 --> 00:02:44,829
+Cuando el presupuesto esté aprobado aparecerán tres pestañas más:
+
+46
+00:02:44,840 --> 00:02:47,025
+Control, Avance y Cambios.
+
+47
+00:02:48,377 --> 00:02:50,288
+Termino con el trabajo por hacer.
+
+48
+00:02:50,943 --> 00:02:55,733
+Abro la pestaña Tareas, y con la lista todavía vacía pulso Nueva tarea.
+
+49
+00:02:56,400 --> 00:02:57,989
+Se abre su formulario.
+
+50
+00:02:58,656 --> 00:03:00,221
+En Nombre escribo la primera:
+
+51
+00:03:00,343 --> 00:03:01,944
+Permiso de construcción.
+
+52
+00:03:02,600 --> 00:03:06,447
+Con el nombre de la tarea ya escrito, en Responsable abro la lista,
+
+53
+00:03:06,519 --> 00:03:08,306
+y elijo a Laura Méndez.
+
+54
+00:03:08,974 --> 00:03:13,961
+La tarea también lleva estado, prioridad, fecha límite, horas estimadas,
+
+55
+00:03:14,009 --> 00:03:15,834
+y las tareas de las que depende.
+
+56
+00:03:16,501 --> 00:03:18,735
+Guardo, y el aviso lo confirma.
+
+57
+00:03:19,391 --> 00:03:21,674
+La tarea queda en la lista del proyecto,
+
+58
+00:03:21,747 --> 00:03:25,332
+y más adelante se puede vincular a una partida del presupuesto.
+
+59
+00:03:26,000 --> 00:03:29,635
+Con el proyecto creado, el siguiente paso es su presupuesto.

@@ -1,0 +1,231 @@
+1
+00:00:03,100 --> 00:00:06,362
+En una obra, el cliente casi siempre pide cambios:
+
+2
+00:00:06,397 --> 00:00:09,574
+más metros, otro acabado, un plazo distinto.
+
+3
+00:00:10,242 --> 00:00:13,157
+Cada cambio se registra como una orden de cambio.
+
+4
+00:00:13,813 --> 00:00:16,320
+Se llevan en la pestaña Cambios del proyecto.
+
+5
+00:00:16,975 --> 00:00:18,118
+Recojo el menú.
+
+6
+00:00:18,786 --> 00:00:20,846
+Arriba, el contrato original:
+
+7
+00:00:20,993 --> 00:00:23,152
+seis millones seiscientos mil pesos;
+
+8
+00:00:23,288 --> 00:00:24,691
+los cambios aprobados;
+
+9
+00:00:24,751 --> 00:00:27,864
+y el contrato vigente, que es la suma de los dos.
+
+10
+00:00:28,533 --> 00:00:33,334
+A la derecha, lo que está en aprobación, y cómo quedaría el contrato si se aprueba.
+
+11
+00:00:33,989 --> 00:00:36,273
+Y abajo, la lista de órdenes:
+
+12
+00:00:36,395 --> 00:00:38,987
+hay una en aprobación, que preparó Laura.
+
+13
+00:00:40,352 --> 00:00:41,965
+Registro un cambio nuevo:
+
+14
+00:00:42,013 --> 00:00:44,793
+el cliente quiere doscientos metros más de piso.
+
+15
+00:00:45,448 --> 00:00:47,322
+Pulso Nueva orden de cambio.
+
+16
+00:00:47,978 --> 00:00:51,117
+El tipo ya dice Adicional, porque aumenta el contrato;
+
+17
+00:00:51,201 --> 00:00:54,688
+Deductivo lo reduce, y Sin costo solo cambia el plazo.
+
+18
+00:00:55,356 --> 00:00:58,073
+En Título escribo Ampliación del piso industrial.
+
+19
+00:00:58,728 --> 00:01:02,314
+Con el título de la orden ya escrito, en Plazo anoto cinco:
+
+20
+00:01:02,424 --> 00:01:04,993
+son los días que el cambio agrega a la entrega.
+
+21
+00:01:05,649 --> 00:01:08,775
+En Referencia del cliente escribo el documento donde lo pidió:
+
+22
+00:01:08,774 --> 00:01:10,685
+Carta del 18 de noviembre.
+
+23
+00:01:11,353 --> 00:01:13,301
+Ahora las partidas que cambian.
+
+24
+00:01:13,969 --> 00:01:15,695
+Pulso Partida existente.
+
+25
+00:01:16,362 --> 00:01:19,700
+En el buscador escribo Piso, para buscar la partida.
+
+26
+00:01:20,355 --> 00:01:22,801
+Aparece en la lista, y la elijo.
+
+27
+00:01:23,456 --> 00:01:28,282
+En Cantidad anoto doscientos, los metros cuadrados adicionales que pidió el cliente.
+
+28
+00:01:28,950 --> 00:01:32,907
+En Costo anoto ciento cuarenta mil pesos, lo que cuesta hacerlos.
+
+29
+00:01:33,563 --> 00:01:36,603
+Y en Precio anoto ciento ochenta y cuatro mil ochocientos,
+
+30
+00:01:36,700 --> 00:01:38,240
+lo que se le cobra al cliente.
+
+31
+00:01:38,895 --> 00:01:41,389
+Pulso Guardar, y el aviso lo confirma.
+
+32
+00:01:42,756 --> 00:01:45,411
+La orden queda en borrador, con su número.
+
+33
+00:01:46,066 --> 00:01:48,064
+La abro con un clic en el número.
+
+34
+00:01:48,719 --> 00:01:52,219
+El detalle muestra la partida que cambia y el efecto de la orden:
+
+35
+00:01:52,316 --> 00:01:54,189
+ciento cuarenta mil más de costo,
+
+36
+00:01:54,152 --> 00:01:57,093
+y ciento ochenta y cuatro mil ochocientos más de precio.
+
+37
+00:01:57,748 --> 00:01:59,560
+En Recorrido se ve por dónde va;
+
+38
+00:01:59,620 --> 00:02:02,759
+y en Soporte se adjunta la carta firmada por el cliente.
+
+39
+00:02:03,427 --> 00:02:05,028
+Pulso Enviar a aprobación.
+
+40
+00:02:05,683 --> 00:02:07,496
+El sistema pide confirmar;
+
+41
+00:02:07,532 --> 00:02:08,340
+confirmo.
+
+42
+00:02:09,008 --> 00:02:12,965
+Igual que el presupuesto, una orden de cambio la aprueba otra persona,
+
+43
+00:02:13,050 --> 00:02:14,181
+no quien la preparó.
+
+44
+00:02:15,544 --> 00:02:17,504
+La que sí puedo aprobar es la de Laura:
+
+45
+00:02:17,565 --> 00:02:20,666
+el cliente decidió comprar él mismo las luminarias.
+
+46
+00:02:21,334 --> 00:02:22,241
+La abro.
+
+47
+00:02:22,897 --> 00:02:23,791
+Es deductiva:
+
+48
+00:02:23,939 --> 00:02:27,983
+baja treinta mil de costo, y treinta y nueve mil seiscientos de precio.
+
+49
+00:02:28,638 --> 00:02:29,756
+Pulso Aprobar.
+
+50
+00:02:30,412 --> 00:02:32,719
+El sistema avisa que, al aprobarla,
+
+51
+00:02:32,867 --> 00:02:35,981
+se suma al presupuesto vigente y al contrato del proyecto;
+
+52
+00:02:36,029 --> 00:02:38,424
+confirmo, y el aviso lo confirma.
+
+53
+00:02:39,080 --> 00:02:41,004
+Arriba, las cifras cambiaron:
+
+54
+00:02:41,163 --> 00:02:45,890
+el contrato vigente bajó a seis millones quinientos sesenta mil cuatrocientos pesos.
+
+55
+00:02:46,558 --> 00:02:48,605
+Una orden aprobada ya no se anula:
+
+56
+00:02:48,777 --> 00:02:52,574
+si hay que deshacerla, se registra otra en sentido contrario.
+
+57
+00:02:53,242 --> 00:02:56,765
+Y si el proyecto debe exigir la firma del cliente antes de aprobar,
+
+58
+00:02:56,900 --> 00:02:59,121
+se activa en el control de su presupuesto.

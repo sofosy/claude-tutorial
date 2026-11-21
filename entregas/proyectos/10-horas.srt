@@ -1,0 +1,235 @@
+1
+00:00:03,100 --> 00:00:05,631
+La mano de obra también es costo del proyecto,
+
+2
+00:00:05,729 --> 00:00:08,036
+y se mide con las horas de cada persona.
+
+3
+00:00:08,704 --> 00:00:09,847
+Recojo el menú.
+
+4
+00:00:10,515 --> 00:00:11,893
+Lo primero es la tarifa:
+
+5
+00:00:12,053 --> 00:00:14,335
+cuánto cuesta una hora de cada puesto.
+
+6
+00:00:15,003 --> 00:00:16,802
+El albañil ya tiene la suya:
+
+7
+00:00:16,938 --> 00:00:21,094
+doscientos cincuenta pesos la hora, más treinta por ciento de cargas.
+
+8
+00:00:21,762 --> 00:00:23,326
+Agrego la del ayudante:
+
+9
+00:00:23,411 --> 00:00:24,888
+pulso Nueva tarifa.
+
+10
+00:00:25,545 --> 00:00:29,638
+Se abre su formulario, que sirve para un puesto o para un empleado.
+
+11
+00:00:30,294 --> 00:00:34,364
+En Puesto escribo Ayudante, para buscarlo entre los puestos de la empresa.
+
+12
+00:00:35,030 --> 00:00:37,326
+Aparece en la lista, y lo elijo.
+
+13
+00:00:37,982 --> 00:00:40,935
+En Costo de la hora anoto ciento ochenta pesos.
+
+14
+00:00:41,603 --> 00:00:43,106
+Y en Cargas anoto treinta:
+
+15
+00:00:43,216 --> 00:00:47,384
+es el porcentaje de seguridad social y prestaciones que se suma a la hora.
+
+16
+00:00:48,039 --> 00:00:50,533
+Pulso Guardar, y el aviso lo confirma.
+
+17
+00:00:51,189 --> 00:00:55,432
+Si una persona gana distinto que su puesto, se le pone una tarifa propia,
+
+18
+00:00:55,454 --> 00:00:56,474
+y esa manda.
+
+19
+00:00:57,847 --> 00:00:59,919
+Las horas se registran por semana.
+
+20
+00:01:00,574 --> 00:01:03,317
+Cada empleado puede llenar las suyas en Mis horas;
+
+21
+00:01:03,390 --> 00:01:07,706
+y en la pestaña Horas del proyecto, el encargado las registra por su cuadrilla.
+
+22
+00:01:08,362 --> 00:01:09,951
+Pulso Agregar persona.
+
+23
+00:01:10,608 --> 00:01:12,667
+Se abre el diálogo del renglón.
+
+24
+00:01:13,322 --> 00:01:18,371
+En Empleado escribo Ramón Díaz, para buscar al ayudante entre los empleados activos.
+
+25
+00:01:19,039 --> 00:01:22,376
+Aparece en la lista con su nombre completo, y lo elijo.
+
+26
+00:01:23,033 --> 00:01:26,965
+En la partida escribo Excavación, que es donde trabajó esta semana.
+
+27
+00:01:27,634 --> 00:01:30,079
+Aparece en la lista, y la elijo.
+
+28
+00:01:30,733 --> 00:01:34,419
+Las horas son normales y facturables, como vienen marcadas;
+
+29
+00:01:34,491 --> 00:01:36,414
+confirmo con el botón Agregar.
+
+30
+00:01:37,070 --> 00:01:39,950
+En la fila de Ramón anoto las horas de cada día.
+
+31
+00:01:40,604 --> 00:01:44,042
+El lunes trabajó ocho, la jornada normal de la obra.
+
+32
+00:01:44,710 --> 00:01:48,134
+El martes, otra jornada completa de ocho horas.
+
+33
+00:01:48,801 --> 00:01:52,437
+Y el miércoles, ocho más, hasta terminar la excavación.
+
+34
+00:01:53,092 --> 00:01:57,447
+La fila calcula el total de horas, y el costo con la tarifa de su puesto.
+
+35
+00:01:58,114 --> 00:02:01,835
+Debajo del total de la semana aparece la barra de cambios sin guardar:
+
+36
+00:02:01,871 --> 00:02:04,751
+pulso Guardar borrador, y el aviso lo confirma.
+
+37
+00:02:05,407 --> 00:02:07,579
+La hoja de Ramón queda en borrador.
+
+38
+00:02:08,246 --> 00:02:12,439
+Para enviarla, abro el menú de su fila, y elijo Enviar a aprobación.
+
+39
+00:02:13,094 --> 00:02:17,251
+El sistema pide confirmar, porque mientras esté por aprobar no se edita;
+
+40
+00:02:17,335 --> 00:02:18,105
+confirmo.
+
+41
+00:02:19,483 --> 00:02:22,064
+Las hojas enviadas llegan a Horas por aprobar.
+
+42
+00:02:22,731 --> 00:02:26,627
+Aquí está la de Juan Pérez, el albañil, de la semana anterior:
+
+43
+00:02:26,724 --> 00:02:30,371
+cuarenta horas, que a su tarifa cuestan trece mil pesos.
+
+44
+00:02:31,040 --> 00:02:32,367
+La abro con Ver.
+
+45
+00:02:33,024 --> 00:02:37,614
+El detalle muestra cada día, la partida, y los avisos de Recursos Humanos,
+
+46
+00:02:37,724 --> 00:02:40,379
+si la persona tenía vacaciones o un permiso.
+
+47
+00:02:41,035 --> 00:02:45,724
+Todo está bien, así que pulso Aprobar, y en el diálogo confirmo con Aprobar.
+
+48
+00:02:46,391 --> 00:02:47,522
+El aviso lo dice:
+
+49
+00:02:47,606 --> 00:02:51,961
+la mano de obra entró al costo real de la partida, con su asiento contable.
+
+50
+00:02:52,629 --> 00:02:55,607
+Y como siempre, nadie aprueba su propia hoja.
+
+51
+00:02:56,974 --> 00:02:59,034
+El Reporte de horas reúne todo.
+
+52
+00:02:59,689 --> 00:03:00,955
+Pulso Consultar.
+
+53
+00:03:01,611 --> 00:03:06,474
+Sale cada empleado con su partida, sus horas y su costo, y arriba el resumen:
+
+54
+00:03:06,547 --> 00:03:11,236
+horas facturables, no facturables, y la utilización facturable del equipo.
+
+55
+00:03:11,891 --> 00:03:13,493
+Se exporta a Excel.
+
+56
+00:03:14,148 --> 00:03:16,977
+Y en Planificación de recursos, en el mismo menú,
+
+57
+00:03:17,100 --> 00:03:20,772
+se asignan por adelantado las horas de cada persona a cada proyecto,
+
+58
+00:03:20,857 --> 00:03:23,909
+semana por semana, para ver quién está sobrecargado.
+
+59
+00:03:24,565 --> 00:03:29,006
+Con las horas aprobadas, el control del proyecto ya incluye su mano de obra.

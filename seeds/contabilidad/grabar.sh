@@ -8,7 +8,7 @@ G=guiones/contabilidad-$N.json
 if ! node seeds/_puertas/revisar.mjs "$G" --audio 2>&1 | tee /dev/stderr | grep -q "LISTO PARA GRABAR"; then
   echo "REVISAR: hay errores, no se graba"; exit 1
 fi
-ELEVEN_KEY=$(python3 -c "import json;print(json.load(open('config.local.json'))['elevenlabs_api_key'])") \
+ELEVEN_KEY=${ELEVEN_KEY:-$(python3 -c "import json;print(json.load(open('config.local.json'))['elevenlabs_api_key'])")} \
   ./.venv/bin/python tut.py video "contabilidad-$N" > "salida/contabilidad-$N.log" 2>&1 || { tail -20 "salida/contabilidad-$N.log"; exit 1; }
 V=$(node seeds/_puertas/veredicto.mjs "contabilidad-$N" 2>&1)
 echo "$V" | grep -E "✗|→|video"

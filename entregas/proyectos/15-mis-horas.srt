@@ -1,0 +1,107 @@
+1
+00:00:03,100 --> 00:00:06,051
+Las horas de un proyecto las puede registrar el encargado,
+
+2
+00:00:06,051 --> 00:00:07,764
+o cada empleado por su cuenta.
+
+3
+00:00:08,432 --> 00:00:13,169
+Juan, albañil de la obra, entra con su usuario a Proyectos, Mis horas.
+
+4
+00:00:13,837 --> 00:00:15,885
+Arriba ve su nombre y su puesto.
+
+5
+00:00:16,542 --> 00:00:18,701
+Esta semana todavía está vacía.
+
+6
+00:00:19,356 --> 00:00:23,028
+En vez de armarla desde cero, pulso Copiar semana anterior.
+
+7
+00:00:23,696 --> 00:00:25,038
+El diálogo lo explica:
+
+8
+00:00:25,085 --> 00:00:29,303
+crea la hoja con los mismos renglones de la semana pasada, con su proyecto,
+
+9
+00:00:29,376 --> 00:00:31,336
+su partida y su tipo de hora.
+
+10
+00:00:31,992 --> 00:00:33,905
+Confirmo con el botón Copiar.
+
+11
+00:00:34,560 --> 00:00:37,315
+La hoja aparece con el renglón de Zapatas.
+
+12
+00:00:37,982 --> 00:00:41,890
+Y debajo de su nombre, el sistema le recuerda lo planificado para él:
+
+13
+00:00:42,024 --> 00:00:43,787
+cuarenta horas esta semana.
+
+14
+00:00:45,151 --> 00:00:47,036
+Ahora anota lo trabajado.
+
+15
+00:00:47,704 --> 00:00:51,687
+El lunes, ocho horas, la jornada completa en las zapatas.
+
+16
+00:00:52,355 --> 00:00:56,164
+El martes, otras ocho horas en la misma partida de la obra.
+
+17
+00:00:56,832 --> 00:01:00,578
+Y el miércoles, ocho más, con el vaciado ya terminado.
+
+18
+00:01:01,234 --> 00:01:03,480
+La fila suma las horas de la semana.
+
+19
+00:01:04,135 --> 00:01:06,344
+Aparece la barra de cambios sin guardar:
+
+20
+00:01:06,393 --> 00:01:09,308
+pulso Guardar borrador, y el aviso lo confirma.
+
+21
+00:01:09,977 --> 00:01:14,008
+Mientras esté en borrador, la hoja se puede seguir llenando día a día.
+
+22
+00:01:14,676 --> 00:01:19,403
+Al terminar la semana, abro el menú de la hoja, y elijo Enviar a aprobación.
+
+23
+00:01:20,057 --> 00:01:22,801
+El sistema pide confirmar, y confirmo.
+
+24
+00:01:23,468 --> 00:01:25,318
+Desde aquí la hoja no se edita;
+
+25
+00:01:25,478 --> 00:01:28,282
+si hay un error, se retira desde el mismo menú.
+
+26
+00:01:28,950 --> 00:01:32,486
+El supervisor la recibe en Horas por aprobar, y al aprobarla,
+
+27
+00:01:32,645 --> 00:01:34,296
+su costo entra al proyecto.

@@ -1,0 +1,235 @@
+1
+00:00:03,100 --> 00:00:06,437
+Hasta aquí, el presupuesto solo se compara con lo real.
+
+2
+00:00:07,091 --> 00:00:09,461
+Pero también puede controlar lo que se gasta.
+
+3
+00:00:10,118 --> 00:00:14,125
+Recojo el menú, y abro el presupuesto de noviembre con Ver detalles.
+
+4
+00:00:14,792 --> 00:00:17,236
+En Control presupuestario abro la lista.
+
+5
+00:00:17,893 --> 00:00:19,469
+Hay tres políticas.
+
+6
+00:00:20,125 --> 00:00:21,837
+Sin control solo compara.
+
+7
+00:00:22,506 --> 00:00:24,801
+Avisar deja pasar el documento que excede,
+
+8
+00:00:24,937 --> 00:00:28,360
+pero deja constancia y notifica al responsable del centro.
+
+9
+00:00:29,028 --> 00:00:30,332
+Y Bloquear lo rechaza:
+
+10
+00:00:30,431 --> 00:00:33,966
+elijo Bloquear, la política más estricta de las tres.
+
+11
+00:00:34,634 --> 00:00:37,079
+Al lado, en Tolerancia anoto cinco:
+
+12
+00:00:37,176 --> 00:00:40,427
+un exceso de hasta el cinco por ciento de la línea solo avisa,
+
+13
+00:00:40,512 --> 00:00:42,077
+aunque la política bloquee.
+
+14
+00:00:42,744 --> 00:00:46,392
+Como el presupuesto ya está aprobado, no hace falta reabrirlo:
+
+15
+00:00:46,465 --> 00:00:49,380
+pulso Guardar control, y el aviso lo confirma.
+
+16
+00:00:50,748 --> 00:00:53,328
+El control trabaja con tres cifras por línea.
+
+17
+00:00:53,996 --> 00:00:56,280
+Mira la de fletes, de Logística:
+
+18
+00:00:56,402 --> 00:00:58,685
+veinticinco mil pesos de presupuesto.
+
+19
+00:00:59,353 --> 00:00:59,999
+Real:
+
+20
+00:01:00,060 --> 00:01:02,368
+veinte mil, lo ya contabilizado.
+
+21
+00:01:03,024 --> 00:01:03,918
+Comprometido:
+
+22
+00:01:04,040 --> 00:01:08,468
+tres mil, de una orden de compra aprobada que todavía no se ha facturado.
+
+23
+00:01:09,125 --> 00:01:10,069
+Y Disponible:
+
+24
+00:01:10,129 --> 00:01:12,239
+lo que queda, dos mil pesos.
+
+25
+00:01:12,907 --> 00:01:16,927
+Lo comprometido cuenta las requisiciones y las órdenes de compra aprobadas,
+
+26
+00:01:16,938 --> 00:01:19,754
+y las facturas de compra que aún no se contabilizan.
+
+27
+00:01:20,421 --> 00:01:22,332
+Todo se calcula en el momento.
+
+28
+00:01:23,703 --> 00:01:25,477
+Veamos el control en acción.
+
+29
+00:01:26,133 --> 00:01:30,301
+En Diario y Mayor pulso Crear Asiento, para registrar otro flete.
+
+30
+00:01:30,969 --> 00:01:33,066
+Escribo la descripción del asiento.
+
+31
+00:01:33,734 --> 00:01:37,642
+Con la descripción lista, bajo a las líneas y agrego la primera línea.
+
+32
+00:01:38,310 --> 00:01:41,846
+En la cuenta busco Fletes, la misma cuenta del presupuesto.
+
+33
+00:01:42,514 --> 00:01:43,768
+Aparece en la lista;
+
+34
+00:01:43,829 --> 00:01:48,406
+la elijo, y en su débito anoto cuatro mil pesos, el valor del flete.
+
+35
+00:01:49,062 --> 00:01:52,981
+En Centro de Costo escribo Log, porque el gasto es de Logística.
+
+36
+00:01:53,638 --> 00:01:56,615
+Aparece en la lista con su código, y lo elijo.
+
+37
+00:01:57,271 --> 00:01:58,674
+Ahora la contrapartida:
+
+38
+00:01:58,772 --> 00:02:02,568
+agrego la segunda línea, y en su cuenta busco la caja general,
+
+39
+00:02:02,678 --> 00:02:04,106
+de donde sale el pago.
+
+40
+00:02:04,774 --> 00:02:06,040
+Aparece en la lista;
+
+41
+00:02:06,100 --> 00:02:09,761
+la selecciono, y en el crédito anoto los mismos cuatro mil.
+
+42
+00:02:10,415 --> 00:02:13,568
+Al pie aparece el aviso del presupuesto, en rojo:
+
+43
+00:02:13,689 --> 00:02:15,390
+no se podrá contabilizar.
+
+44
+00:02:16,045 --> 00:02:18,503
+Dice la cuenta, el centro y el período;
+
+45
+00:02:18,638 --> 00:02:20,301
+el disponible, dos mil;
+
+46
+00:02:20,411 --> 00:02:22,918
+lo que pide este documento, cuatro mil;
+
+47
+00:02:22,978 --> 00:02:24,677
+y el faltante, dos mil.
+
+48
+00:02:25,334 --> 00:02:26,588
+Guardo el borrador.
+
+49
+00:02:27,243 --> 00:02:31,474
+Arriba, Contabilizar queda deshabilitado, con el motivo al lado:
+
+50
+00:02:31,584 --> 00:02:33,185
+Bloqueado por presupuesto.
+
+51
+00:02:34,555 --> 00:02:36,576
+El mismo control actúa en Compras:
+
+52
+00:02:36,700 --> 00:02:41,054
+al aprobar una requisición o una orden de compra, y al emitir una factura.
+
+53
+00:02:41,722 --> 00:02:45,505
+Esta es la orden de fletes que tenía comprometidos los tres mil pesos:
+
+54
+00:02:45,578 --> 00:02:48,718
+mientras no se facture, sigue consumiendo disponible.
+
+55
+00:02:49,386 --> 00:02:52,177
+Cuando el presupuesto bloquea, hay dos salidas:
+
+56
+00:02:52,287 --> 00:02:55,922
+ajustar el documento, o pedir que se modifique el presupuesto.
+
+57
+00:02:56,590 --> 00:02:59,705
+Y con la política Avisar, el documento habría pasado,
+
+58
+00:02:59,852 --> 00:03:03,237
+dejando constancia y un aviso en la campanita del responsable.
+
+59
+00:03:03,907 --> 00:03:07,827
+Así el presupuesto deja de ser un informe, y pasa a ser un control.

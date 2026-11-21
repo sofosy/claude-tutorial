@@ -1,7 +1,7 @@
 {
-  "titulo": "Contabilidad · Centros de costo: crear, jerarquía y centro predeterminado",
-  "descripcion": "Cómo crear en Germiva centros de costo con su presupuesto, ver su jerarquía, elegir el centro predeterminado de la empresa y dónde se usan: asientos, presupuestos e informes.",
-  "_comentario": "Video 26 de la serie Contabilidad. setup: preparar.sh centros-costo (CC-ADM Administración de la instantánea, CC-VEN Ventas y CC-OPS Operaciones bajo Administración).",
+  "titulo": "Contabilidad · Centros de costo: crear, jerarquía y ejecución",
+  "descripcion": "Cómo crear en Germiva un centro de costo con su centro padre, su responsable y su presupuesto, leer la jerarquía con los centros agrupadores, ver la ejecución presupuestaria de un centro y por qué un centro con movimientos se inactiva en lugar de eliminarse.",
+  "_comentario": "Video 26 de la serie Contabilidad (regrabado 2026-11 con jerarquía, responsable y ejecución). setup: preparar.sh centros-costo (CC-ADM predeterminado, CC-VEN agrupador con Santo Domingo y Santiago, CC-OPS con 300,000 de presupuesto y 180,000 ejecutados).",
   "base_url": "http://localhost:4200",
   "zona_horaria": "America/Santo_Domingo",
   "musica": {
@@ -26,8 +26,8 @@
     ".chatbot-fab{display:none!important}"
   ],
   "voz": {
-    "id": "eleven:I5NYaSWx7PlnVVFV0t2B",
-    "velocidad": "+0%"
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
   },
   "pronunciacion": {
     "NIC": "nic",
@@ -36,10 +36,14 @@
     "ISR": "i-ese-erre",
     "BHD": "be-hache-de",
     "USD": "dólares",
-    "DOP": "pesos"
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
   },
   "privacidad": {
-    "_perfil": "Datos ficticios sembrados por seeds/contabilidad (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
     "perfil": "ninguno",
     "permitidos": [
       "germiva",
@@ -71,15 +75,15 @@
   },
   "portada_s": 8,
   "aprenderas": [
-    "Crear un centro de costo con su presupuesto",
-    "Ver la jerarquía de centros",
-    "Elegir el centro predeterminado",
-    "Dónde se usan los centros de costo"
+    "Crear un centro de costo con padre, responsable y presupuesto",
+    "Leer la jerarquía y los centros agrupadores",
+    "Ver la ejecución presupuestaria de un centro",
+    "Inactivar un centro en lugar de eliminarlo"
   ],
   "errores_comunes": [
+    "Imputar gastos a un centro agrupador: solo suma los de sus subcentros",
     "Repetir un código: cada centro tiene el suyo",
-    "Eliminar un centro con subcentros",
-    "Olvidar el centro predeterminado: las líneas sin centro quedan sin imputar"
+    "Intentar eliminar un centro con movimientos: se inactiva"
   ],
   "pasos": [
     {
@@ -87,38 +91,50 @@
       "capitulo": "Los centros de costo",
       "rotulo": "Centros de Costo",
       "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
-      "texto_pantalla": "Unidades a las que se imputa el gasto",
-      "narracion": "Los centros de costo son las áreas de la empresa a las que se imputan ingresos y gastos, como administración o ventas. Recojo el menú. Cada uno trae su código, su nombre, el tipo, de qué centro depende, el presupuesto y el estado.",
+      "texto_pantalla": "Áreas a las que se imputan ingresos y gastos",
+      "narracion": "Un centro de costo es un área de la empresa a la que se imputan ingresos y gastos: una sucursal, un departamento. Sirve para saber cuánto gana y cuánto gasta cada área. Recojo el menú. Cada fila es un centro, con su código, su nombre, el tipo, de qué centro depende, su presupuesto, el responsable y el estado. Administración lleva la marca Predeterminado: es el centro que reciben los ingresos y gastos que se registran sin centro.",
       "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CC-ADM') td >> nth=1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "un área de la empresa"
+        },
         {
           "click": "button.panel-collapse",
           "al_decir": "Recojo el menú"
         },
         {
-          "resaltar": "tr.mat-mdc-row >> nth=0",
-          "durante_ms": 5000,
+          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') td >> nth=1",
+          "durante_ms": 4500,
           "cursor": false,
-          "al_decir": "Cada uno trae su código"
+          "al_decir": "Cada fila es un centro"
         },
         {
-          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') td >> nth=3",
+          "resaltar": "tr.mat-mdc-row:has-text('CC-VEN-SD') td >> nth=3",
           "durante_ms": 2500,
           "cursor": false,
           "al_decir": "de qué centro depende"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CC-ADM') .gm-badge:has-text('Predeterminado')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "lleva la marca Predeterminado"
         }
       ]
     },
     {
       "id": "02-crear",
-      "capitulo": "Crear",
+      "capitulo": "Crear un centro",
       "rotulo": "Nuevo Centro de Costo",
       "ruta": "Contabilidad › Centros de Costo › Nuevo",
-      "texto_pantalla": "Código · nombre · tipo · presupuesto",
-      "narracion": "Para agregar el área de logística, pulso Crear Centro de Costo. Escribo el código, CC-LOG, que identifica al centro y no se repite. Luego escribo el nombre: Logística. Con el código y el nombre listos, paso al tipo: dice si es un centro de costo, de ingresos, de utilidad o de inversión; lo dejo en Costo. El presupuesto es el monto asignado al área: ciento veinte mil pesos. La casilla de abajo lo crea activo. Guardo, y el aviso lo confirma.",
+      "texto_pantalla": "Código · nombre · tipo · depende de · responsable · presupuesto",
+      "narracion": "Voy a agregar el área de logística. Pulso Crear Centro de Costo. Escribo el código, CC-LOG, que no se puede repetir en la empresa. Luego escribo el nombre: Logística. Con el código y el nombre escritos, miro el tipo: costo, ingresos, utilidad o inversión; lo dejo en Costo. En Depende de abro la lista, y elijo Operaciones: así Logística queda como subcentro suyo. En Responsable escribo Gabriela, para buscar a la empleada a cargo. Aparece en la lista, y la elijo. Por último el presupuesto del área: ciento veinte mil pesos. Guardo, y el aviso lo confirma.",
       "acciones": [
         {
           "click": "button:has-text('Crear Centro de Costo')",
-          "al_decir": "pulso Crear Centro de Costo"
+          "al_decir": "Pulso Crear Centro de Costo"
         },
         {
           "escribir": {
@@ -136,22 +152,35 @@
         },
         {
           "resaltar": "mat-form-field:has(mat-select[formcontrolname='type'])",
-          "durante_ms": 3500,
+          "durante_ms": 4000,
           "cursor": false,
-          "al_decir": "paso al tipo"
+          "al_decir": "miro el tipo"
+        },
+        {
+          "click": "mat-select[formcontrolname='parent']",
+          "al_decir": "abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('CC-OPS')",
+          "al_decir": "elijo Operaciones"
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select[formcontrolname='responsibleEmployee'] input",
+            "texto": "Gabriela"
+          },
+          "al_decir": "escribo Gabriela"
+        },
+        {
+          "click": "mat-option:has-text('Gabriela Torres')",
+          "al_decir": "y la elijo"
         },
         {
           "escribir": {
             "sel": "input[formcontrolname='budgetAmount']",
             "texto": "120000"
           },
-          "al_decir": "El presupuesto es"
-        },
-        {
-          "resaltar": "mat-checkbox[formcontrolname='active']",
-          "durante_ms": 2500,
-          "cursor": false,
-          "al_decir": "La casilla de abajo"
+          "al_decir": "Por último el presupuesto"
         },
         {
           "click": "button:has-text('Guardar')",
@@ -167,63 +196,100 @@
     },
     {
       "id": "03-jerarquia",
-      "capitulo": "Jerarquía",
+      "capitulo": "La jerarquía",
       "rotulo": "Ver Jerarquía",
       "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
-      "texto_pantalla": "Centros y subcentros",
-      "narracion": "Un centro puede tener subcentros, como Operaciones dentro de Administración. Ver Jerarquía muestra el árbol completo, con cada centro bajo su padre. Lo cierro.",
+      "texto_pantalla": "Centros, subcentros y agrupadores",
+      "narracion": "Para ver cómo quedó, pulso Ver Jerarquía. Es el árbol completo: Logística aparece dentro de Operaciones, y las dos sucursales dentro de Ventas. Ventas lleva la marca Agrupador: no recibe movimientos propios, solo suma los de sus subcentros. En los informes, un centro padre siempre acumula lo de sus hijos. Cierro.",
       "acciones": [
         {
           "click": "button:has-text('Ver Jerarquía')",
-          "al_decir": "Ver Jerarquía muestra"
+          "al_decir": "pulso Ver Jerarquía"
         },
         {
           "resaltar": "mat-dialog-container .cc-tree",
-          "durante_ms": 4500,
+          "durante_ms": 5000,
           "cursor": false,
-          "al_decir": "con cada centro bajo su padre"
+          "al_decir": "Es el árbol completo"
+        },
+        {
+          "resaltar": "mat-dialog-container .cc-node:has-text('CC-VEN') .gm-badge >> nth=0",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "lleva la marca Agrupador"
         },
         {
           "click": "mat-dialog-container button:has-text('Cerrar')",
-          "al_decir": "Lo cierro"
+          "al_decir": "Cierro"
         }
       ]
     },
     {
-      "id": "04-predeterminado",
-      "capitulo": "Centro predeterminado",
-      "rotulo": "Marcar como predeterminado",
-      "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
-      "texto_pantalla": "Las líneas sin centro heredan el predeterminado",
-      "narracion": "El centro predeterminado es el que reciben las líneas que se registran sin centro. Hoy es Administración, el que se creó con la empresa. Para cambiarlo, en la fila de Operaciones pulso Marcar como predeterminado. El aviso lo confirma, y la marca pasa a Operaciones. Desde ahí, los centros aparecen en cada línea de los asientos, en las líneas de los presupuestos y como filtro del Estado de Resultados y las Razones Financieras.",
+      "id": "04-ficha",
+      "capitulo": "La ficha del centro",
+      "rotulo": "Ejecución presupuestaria",
+      "ruta": "Contabilidad › Centros de Costo › CC-OPS",
+      "texto_pantalla": "Presupuesto, ejecutado, disponible y utilización",
+      "narracion": "Ahora abro Operaciones con el lápiz de su fila. Arriba, el botón Inactivar: un centro inactivo deja de ofrecerse en los documentos, sin perder su historial. El interruptor Permite registro directo es el que se apaga en los centros agrupadores. Y abajo, la ejecución presupuestaria: de trescientos mil pesos de presupuesto, Operaciones lleva ejecutados ciento ochenta mil, el sesenta por ciento, contando el gasto contabilizado del centro y de sus subcentros.",
       "acciones": [
         {
-          "resaltar": "tr.mat-mdc-row:has-text('CC-ADM') .gm-badge:has-text('Predeterminado')",
-          "durante_ms": 3000,
+          "click": "tr.mat-mdc-row:has-text('CC-OPS') button[aria-label='Editar']",
+          "al_decir": "con el lápiz de su fila"
+        },
+        {
+          "resaltar": "button:has-text('Inactivar')",
+          "durante_ms": 4500,
           "cursor": false,
-          "al_decir": "Hoy es Administración"
+          "al_decir": "el botón Inactivar"
         },
         {
-          "click": "tr.mat-mdc-row:has-text('CC-OPS') button[aria-label='Marcar como predeterminado']",
-          "al_decir": "en la fila de Operaciones pulso"
-        },
-        {
-          "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 2500,
+          "resaltar": "mat-slide-toggle[formcontrolname='allowsDirectPosting']",
+          "durante_ms": 4500,
           "cursor": false,
-          "al_decir": "El aviso lo confirma"
+          "al_decir": "El interruptor"
         },
         {
-          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') .gm-badge:has-text('Predeterminado')",
-          "durante_ms": 3000,
+          "resaltar": ".cc-usage",
+          "durante_ms": 9000,
           "cursor": false,
-          "al_decir": "la marca pasa a Operaciones"
+          "al_decir": "la ejecución presupuestaria"
+        }
+      ]
+    },
+    {
+      "id": "05-eliminar",
+      "capitulo": "Inactivar, no eliminar",
+      "rotulo": "Eliminar un centro con movimientos",
+      "ruta": "Contabilidad › Configuración Contable › Centros de Costo",
+      "texto_pantalla": "Un centro con movimientos no se elimina: se inactiva",
+      "navegar": "/accounting/configuracion/centros-costo",
+      "narracion": "Vuelvo a la lista de centros. ¿Y si quiero borrar Operaciones? En su fila pulso Eliminar. El sistema pide confirmar, porque no se puede deshacer; confirmo. Y no lo permite, y explica por qué: Operaciones tiene subcentros. Tampoco se elimina un centro que ya tiene movimientos, o que es el predeterminado: lo correcto es inactivarlo. Solo se borra un centro que nunca se usó. Con los centros creados, el siguiente paso es usarlos en los documentos.",
+      "acciones": [
+        {
+          "click": "tr.mat-mdc-row:has-text('CC-OPS') button[aria-label='Eliminar']",
+          "al_decir": "pulso Eliminar"
         },
         {
-          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') td >> nth=1",
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "porque no se puede deshacer; confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container, mat-dialog-container",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "y explica por qué"
+        },
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('CC-OPS') td >> nth=6",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "lo correcto es inactivarlo"
+        },
+        {
+          "resaltar": "button:has-text('Crear Centro de Costo')",
           "durante_ms": 3500,
           "cursor": false,
-          "al_decir": "los centros aparecen en cada línea"
+          "al_decir": "Con los centros creados"
         }
       ]
     }

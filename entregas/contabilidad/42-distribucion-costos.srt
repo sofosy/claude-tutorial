@@ -1,0 +1,243 @@
+1
+00:00:03,100 --> 00:00:05,854
+Hay gastos que paga un centro pero consumen varios:
+
+2
+00:00:05,926 --> 00:00:10,243
+el alquiler y la luz de la oficina, por ejemplo, se cargan a Administración,
+
+3
+00:00:10,304 --> 00:00:12,525
+aunque los usan Ventas y Operaciones.
+
+4
+00:00:13,180 --> 00:00:16,109
+La Distribución de Costos los reparte con una regla.
+
+5
+00:00:16,777 --> 00:00:19,370
+Recojo el menú, y pulso Crear Regla.
+
+6
+00:00:20,039 --> 00:00:25,335
+Escribo el código, DIST-ADM, que identifica la regla y no se repite en la empresa.
+
+7
+00:00:26,003 --> 00:00:28,719
+Después va el nombre, que dice qué reparte:
+
+8
+00:00:28,806 --> 00:00:30,320
+Gastos de administración.
+
+9
+00:00:30,975 --> 00:00:34,635
+Con el código y el nombre escritos, bajo a Qué se distribuye.
+
+10
+00:00:35,304 --> 00:00:38,591
+En Centros emisores abro la lista, marco Administración,
+
+11
+00:00:38,726 --> 00:00:42,945
+que es el centro que tiene el gasto, y con la tecla Escape cierro la lista.
+
+12
+00:00:43,600 --> 00:00:45,933
+El porcentaje a distribuir queda en cien:
+
+13
+00:00:46,018 --> 00:00:47,780
+se reparte todo el saldo.
+
+14
+00:00:49,158 --> 00:00:51,440
+Ahora, qué cuentas se reparten.
+
+15
+00:00:52,109 --> 00:00:54,789
+En Desde la cuenta escribo el código de arrendamientos,
+
+16
+00:00:54,936 --> 00:00:57,393
+seis punto cero tres punto cero dos.
+
+17
+00:00:58,049 --> 00:01:02,601
+Y en Hasta la cuenta, el de servicios públicos, que termina en cero tres.
+
+18
+00:01:03,269 --> 00:01:05,987
+Así la regla toma solo esas dos cuentas.
+
+19
+00:01:06,643 --> 00:01:09,534
+En Cómo se reparte dejo la base en porcentaje fijo;
+
+20
+00:01:09,644 --> 00:01:14,382
+las otras bases reparten según un indicador de cada mes, como los metros cuadrados,
+
+21
+00:01:14,406 --> 00:01:16,962
+o según los empleados activos de cada centro.
+
+22
+00:01:17,629 --> 00:01:19,269
+Faltan los receptores.
+
+23
+00:01:19,936 --> 00:01:23,560
+En el primero abro la lista, y elijo Ventas Santo Domingo.
+
+24
+00:01:24,215 --> 00:01:26,139
+En su porcentaje anoto cincuenta:
+
+25
+00:01:26,260 --> 00:01:30,230
+le toca la mitad, porque es la sucursal que más espacio ocupa.
+
+26
+00:01:30,887 --> 00:01:32,513
+Pulso Agregar receptor.
+
+27
+00:01:33,180 --> 00:01:36,840
+En la fila nueva abro la lista, y elijo Ventas Santiago.
+
+28
+00:01:37,496 --> 00:01:41,242
+En su porcentaje anoto treinta, que es su parte de la oficina.
+
+29
+00:01:41,899 --> 00:01:44,579
+Vuelvo a pulsar Agregar receptor para el último.
+
+30
+00:01:45,246 --> 00:01:48,001
+Abro su lista, y elijo Operaciones.
+
+31
+00:01:48,669 --> 00:01:51,400
+Y en su porcentaje anoto el veinte restante.
+
+32
+00:01:52,067 --> 00:01:55,914
+Los tres porcentajes tienen que sumar cien, y el total lo confirma.
+
+33
+00:01:56,569 --> 00:01:59,200
+Guardo la regla, y el aviso lo confirma.
+
+34
+00:02:00,561 --> 00:02:02,609
+La regla solo define el reparto;
+
+35
+00:02:02,743 --> 00:02:06,268
+el movimiento se hace al ejecutarla, una vez por período.
+
+36
+00:02:06,935 --> 00:02:08,822
+Paso a la pestaña Ejecutar.
+
+37
+00:02:09,477 --> 00:02:14,116
+En Período contable abro la lista, y elijo Noviembre de dos mil veintiséis.
+
+38
+00:02:14,784 --> 00:02:18,246
+Sin elegir reglas, se ejecutan todas las activas.
+
+39
+00:02:18,902 --> 00:02:22,227
+Pulso Vista previa, que calcula sin registrar nada.
+
+40
+00:02:22,895 --> 00:02:27,187
+La regla sale Lista para contabilizar, con ochenta y cuatro mil pesos:
+
+41
+00:02:27,247 --> 00:02:29,419
+el alquiler y los servicios de noviembre.
+
+42
+00:02:30,074 --> 00:02:31,664
+Debajo está el detalle.
+
+43
+00:02:32,331 --> 00:02:34,987
+En Receptores, cuánto recibe cada centro:
+
+44
+00:02:35,110 --> 00:02:36,860
+cuarenta y dos mil Santo Domingo,
+
+45
+00:02:36,908 --> 00:02:41,138
+veinticinco mil doscientos Santiago y dieciséis mil ochocientos Operaciones.
+
+46
+00:02:41,806 --> 00:02:44,536
+Y debajo, el asiento que se va a registrar:
+
+47
+00:02:44,670 --> 00:02:48,801
+sale de Administración y entra a cada receptor, en las mismas cuentas.
+
+48
+00:02:49,469 --> 00:02:52,299
+Todo cuadra, así que pulso Contabilizar.
+
+49
+00:02:52,955 --> 00:02:55,969
+El sistema avisa que registrará un asiento por regla;
+
+50
+00:02:56,030 --> 00:02:56,788
+confirmo.
+
+51
+00:02:57,456 --> 00:03:01,810
+Tras un momento, el sistema informa que la distribución quedó contabilizada,
+
+52
+00:03:01,858 --> 00:03:02,814
+con su asiento.
+
+53
+00:03:03,483 --> 00:03:04,798
+Acepto el aviso.
+
+54
+00:03:06,157 --> 00:03:08,241
+Cada ejecución queda en el Historial:
+
+55
+00:03:08,352 --> 00:03:13,288
+el período, la regla, lo distribuido, sus receptores y el asiento que generó,
+
+56
+00:03:13,386 --> 00:03:14,913
+que se abre desde su fila.
+
+57
+00:03:15,568 --> 00:03:20,109
+Desde ese momento, los informes por centro muestran a Ventas y a Operaciones con su
+
+58
+00:03:19,921 --> 00:03:23,159
+parte del alquiler, y a Administración sin ese gasto.
+
+59
+00:03:23,815 --> 00:03:28,355
+Si algo salió mal, Anular registra el asiento de reverso en el mismo período,
+
+60
+00:03:28,440 --> 00:03:33,242
+pide un motivo y deja la distribución como anulada, lista para ejecutarse de nuevo.
+
+61
+00:03:33,909 --> 00:03:37,941
+Con varias reglas encadenadas, se anulan de la última a la primera.

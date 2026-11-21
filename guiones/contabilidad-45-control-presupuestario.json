@@ -1,0 +1,323 @@
+{
+  "titulo": "Contabilidad · Control presupuestario: comprometido, disponible y bloqueo",
+  "descripcion": "Cómo hacer en Germiva que un presupuesto aprobado controle lo que se gasta: las políticas sin control, avisar y bloquear, la tolerancia, qué es lo comprometido y lo disponible, y cómo se ve el bloqueo al registrar un asiento.",
+  "_comentario": "Video 45 de la serie Contabilidad. setup: preparar.sh control (PRES-2026-11 aprobado; fletes de Logística: presupuesto 25,000, real 20,000, orden de compra aprobada por 3,000 → disponible 2,000).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/budgets/list",
+    "esperar": "tr.mat-mdc-row:has-text('PRES-2026-11')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh control"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Elegir la política de control de un presupuesto",
+    "Leer lo comprometido y lo disponible de cada línea",
+    "Ver el aviso de disponible al registrar un documento",
+    "Qué hacer cuando el presupuesto bloquea"
+  ],
+  "errores_comunes": [
+    "Creer que el control aplica en borrador: solo aplica con el presupuesto aprobado",
+    "Olvidar lo comprometido: una orden aprobada ya consume disponible",
+    "Poner tolerancia cero y bloquear por centavos"
+  ],
+  "pasos": [
+    {
+      "id": "01-politica",
+      "capitulo": "La política de control",
+      "rotulo": "Control presupuestario",
+      "ruta": "Contabilidad › Presupuestos › PRES-2026-11",
+      "texto_pantalla": "Sin control · Avisar · Bloquear · Tolerancia",
+      "narracion": "Hasta aquí, el presupuesto solo se compara con lo real. Pero también puede controlar lo que se gasta. Recojo el menú, y abro el presupuesto de noviembre con Ver detalles. En Control presupuestario abro la lista. Hay tres políticas. Sin control solo compara. Avisar deja pasar el documento que excede, pero deja constancia y notifica al responsable del centro. Y Bloquear lo rechaza: elijo Bloquear, la política más estricta de las tres. Al lado, en Tolerancia anoto cinco: un exceso de hasta el cinco por ciento de la línea solo avisa, aunque la política bloquee. Como el presupuesto ya está aprobado, no hace falta reabrirlo: pulso Guardar control, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('PRES-2026-11') button[aria-label='Ver detalles']",
+          "al_decir": "con Ver detalles"
+        },
+        {
+          "click": "mat-select[formcontrolname='controlPolicy']",
+          "al_decir": "abro la lista"
+        },
+        {
+          "resaltar": "mat-option:has-text('Avisar')",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "Avisar deja pasar"
+        },
+        {
+          "click": "mat-option:has-text('Bloquear')",
+          "al_decir": "elijo Bloquear"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='controlTolerancePercentage']",
+            "texto": "5"
+          },
+          "al_decir": "en Tolerancia anoto cinco"
+        },
+        {
+          "resaltar": "mat-form-field:has(input[formcontrolname='controlTolerancePercentage']) mat-hint",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "solo avisa, aunque"
+        },
+        {
+          "click": "button:has-text('Guardar control')",
+          "al_decir": "pulso Guardar control"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "02-disponible",
+      "capitulo": "Comprometido y disponible",
+      "rotulo": "Comprometido y Disponible",
+      "ruta": "Contabilidad › Presupuestos › PRES-2026-11",
+      "texto_pantalla": "Disponible = presupuesto − comprometido − real",
+      "narracion": "El control trabaja con tres cifras por línea. Mira la de fletes, de Logística: veinticinco mil pesos de presupuesto. Real: veinte mil, lo ya contabilizado. Comprometido: tres mil, de una orden de compra aprobada que todavía no se ha facturado. Y Disponible: lo que queda, dos mil pesos. Lo comprometido cuenta las requisiciones y las órdenes de compra aprobadas, y las facturas de compra que aún no se contabilizan. Todo se calcula en el momento.",
+      "acciones": [
+        {
+          "resaltar": ".table-row >> nth=4 >> .table-cell >> nth=3",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "veinticinco mil pesos de presupuesto"
+        },
+        {
+          "resaltar": ".table-row >> nth=4 >> .table-cell >> nth=4",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Real: veinte mil"
+        },
+        {
+          "resaltar": ".table-row >> nth=4 >> .table-cell >> nth=5",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Comprometido: tres mil"
+        },
+        {
+          "resaltar": ".table-row >> nth=4 >> .table-cell >> nth=6",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Y Disponible"
+        },
+        {
+          "resaltar": ".table-header",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "Lo comprometido cuenta"
+        }
+      ]
+    },
+    {
+      "id": "03-asiento",
+      "capitulo": "El control en un documento",
+      "rotulo": "Bloqueado por presupuesto",
+      "ruta": "Contabilidad › Diario y Mayor › Nuevo asiento",
+      "texto_pantalla": "El aviso dice disponible, documento y faltante",
+      "navegar": "/accounting/registro/diario",
+      "narracion": "Veamos el control en acción. En Diario y Mayor pulso Crear Asiento, para registrar otro flete. Escribo la descripción del asiento. Con la descripción lista, bajo a las líneas y agrego la primera línea. En la cuenta busco Fletes, la misma cuenta del presupuesto. Aparece en la lista; la elijo, y en su débito anoto cuatro mil pesos, el valor del flete. En Centro de Costo escribo Log, porque el gasto es de Logística. Aparece en la lista con su código, y lo elijo. Ahora la contrapartida: agrego la segunda línea, y en su cuenta busco la caja general, de donde sale el pago. Aparece en la lista; la selecciono, y en el crédito anoto los mismos cuatro mil. Al pie aparece el aviso del presupuesto, en rojo: no se podrá contabilizar. Dice la cuenta, el centro y el período; el disponible, dos mil; lo que pide este documento, cuatro mil; y el faltante, dos mil. Guardo el borrador. Arriba, Contabilizar queda deshabilitado, con el motivo al lado: Bloqueado por presupuesto.",
+      "acciones": [
+        {
+          "click": "button:has-text('Crear Asiento')",
+          "al_decir": "pulso Crear Asiento"
+        },
+        {
+          "escribir": {
+            "sel": "textarea[formcontrolname='description']",
+            "texto": "Flete adicional de noviembre"
+          },
+          "al_decir": "Escribo la descripción"
+        },
+        {
+          "click": "button.add-line-button",
+          "al_decir": "agrego la primera línea"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=0 >> input[placeholder='Buscar cuenta...']",
+            "texto": "Fletes"
+          },
+          "al_decir": "En la cuenta busco"
+        },
+        {
+          "click": "mat-option:has-text('6.03.10')",
+          "al_decir": "la elijo, y en su débito"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=0 >> input[formcontrolname='debitAmount']",
+            "texto": "4000"
+          },
+          "al_decir": "anoto cuatro mil pesos"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=0 >> input[placeholder='Centro de costo...']",
+            "texto": "Log"
+          },
+          "al_decir": "escribo Log"
+        },
+        {
+          "click": "mat-option:has-text('CC-LOG')",
+          "al_decir": "lo elijo"
+        },
+        {
+          "click": "button.add-line-button",
+          "al_decir": "agrego la segunda línea"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=1 >> input[placeholder='Buscar cuenta...']",
+            "texto": "Caja gen"
+          },
+          "al_decir": "busco la caja general"
+        },
+        {
+          "click": "mat-option:has-text('1.01.01.01.02')",
+          "al_decir": "la selecciono, y en el"
+        },
+        {
+          "escribir": {
+            "sel": ".table-row >> nth=1 >> input[formcontrolname='creditAmount']",
+            "texto": "4000"
+          },
+          "al_decir": "anoto los mismos"
+        },
+        {
+          "resaltar": "app-ledger-budget-notice .note",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el aviso del presupuesto"
+        },
+        {
+          "resaltar": "app-ledger-budget-notice li >> nth=0",
+          "durante_ms": 11000,
+          "cursor": false,
+          "al_decir": "Dice la cuenta"
+        },
+        {
+          "click": "button:has-text('Guardar')",
+          "al_decir": "Guardo el borrador"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2000,
+          "cursor": false
+        },
+        {
+          "resaltar": "span.post-blocked-reason",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "Bloqueado por presupuesto"
+        }
+      ]
+    },
+    {
+      "id": "04-compras",
+      "capitulo": "Compras y qué hacer",
+      "rotulo": "El control en Compras",
+      "ruta": "Compras › Órdenes › COM-2026-000001",
+      "texto_pantalla": "Requisición · orden · factura · asiento",
+      "navegar": "/purchases/purchase-orders/view/1",
+      "narracion": "El mismo control actúa en Compras: al aprobar una requisición o una orden de compra, y al emitir una factura. Esta es la orden de fletes que tenía comprometidos los tres mil pesos: mientras no se facture, sigue consumiendo disponible. Cuando el presupuesto bloquea, hay dos salidas: ajustar el documento, o pedir que se modifique el presupuesto. Y con la política Avisar, el documento habría pasado, dejando constancia y un aviso en la campanita del responsable. Así el presupuesto deja de ser un informe, y pasa a ser un control.",
+      "acciones": [
+        {
+          "resaltar": ":text('COM-2026-000001') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Esta es la orden de fletes"
+        },
+        {
+          "resaltar": "app-cost-center-field, :text('Centro de costo') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "sigue consumiendo"
+        },
+        {
+          "resaltar": ":text('Aprobad') >> nth=0",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "hay dos salidas"
+        },
+        {
+          "resaltar": "button.mat-mdc-menu-trigger:not(.topbar-user) >> nth=0",
+          "durante_ms": 5000,
+          "cursor": true,
+          "al_decir": "un aviso en la campanita"
+        }
+      ]
+    }
+  ]
+}

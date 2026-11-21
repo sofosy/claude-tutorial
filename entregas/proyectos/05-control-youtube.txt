@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Proyectos · Control del presupuesto: comprometido, real y disponible por partida
+
+DESCRIPCIÓN
+============================================================
+Cómo sigue Germiva el presupuesto de un proyecto en ejecución: lo comprometido en órdenes, lo real contabilizado y lo disponible de cada partida, cómo se imputa un documento a una partida, qué pasa cuando se excede y cómo trasladar presupuesto entre partidas.
+
+⏱️ CAPÍTULOS
+00:00  La pestaña Control
+00:49  Imputar un documento
+01:59  Trasladar entre partidas
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer vigente, comprometido, real y disponible por partida
+• Imputar un documento a un proyecto y a una partida
+• Qué pasa cuando un documento excede la partida
+• Trasladar presupuesto entre partidas
+
+⚠️ ERRORES COMUNES
+• Registrar gastos del proyecto sin partida: no aparecen en su control
+• Creer que una orden aprobada no cuenta: ya es compromiso
+• Trasladar más de lo disponible en la partida de origen
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:52
+
+TRANSCRIPCIÓN
+============================================================
+Con el presupuesto aprobado, el proyecto tiene una pestaña nueva: Control. Recojo el menú. Cada partida muestra cuatro cifras. Vigente es su presupuesto actual, con los indirectos incluidos. Comprometido, lo que ya está pedido en órdenes de compra aprobadas: aquí, cuatrocientos cincuenta mil pesos de acero para la estructura. Real, lo que ya llegó a la contabilidad: doscientos cincuenta mil de excavación. Y Disponible, lo que queda por gastar. Si pulso una partida, abajo salen sus compromisos abiertos y sus costos reales, con la factura y el asiento de cada uno. Y el interruptor Ver desglose agrega lo reservado por requisiciones y el material que está en el almacén de la obra.
+¿Cómo llega un gasto a su partida? Cada documento lleva el proyecto y la partida: la requisición, la orden de compra, la factura, la salida de inventario y el asiento. Esta es una factura de compra en borrador, del subcontratista de la excavación. La abro con el lápiz. El formulario carga sus datos: el proveedor, el comprobante, las fechas y sus líneas. En la cabecera está el Proyecto, la nave de Haina. Y en la línea, la columna Partida dice a cuál de sus partidas va el gasto: Excavación y relleno. Debajo de las líneas aparece el aviso del control. La partida tiene ciento noventa mil pesos disponibles, y esta factura pide doscientos mil: se excede en diez mil. Lo que pasa después depende de la política del presupuesto. Con Avisar, que es la de este proyecto, se puede continuar y el excedente queda registrado. Pedir aprobación exige que otra persona apruebe el sobregiro. Y Bloquear no deja guardar el documento. La política se elige en el presupuesto del proyecto, y se puede cambiar con la obra en marcha.
+Cuando a una partida le falta y a otra le sobra, se hace un traslado. Vuelvo a la pestaña Control del proyecto, y pulso Trasladar entre partidas. En Sale de abro la lista, y elijo Piso industrial, que todavía no ha gastado. En Entra a abro la otra lista, y elijo Excavación y relleno. En Monto anoto cincuenta mil pesos, lo que le falta a la excavación con algo de holgura. Y en Motivo escribo por qué: Mayor volumen de excavación. El motivo es obligatorio, porque queda en el historial. Pulso Guardar, y el aviso confirma la solicitud. El traslado no se aplica de inmediato: queda Por aprobar en la vista Traslados, hasta que otra persona lo apruebe. El total del proyecto no cambia; solo se mueve entre partidas.

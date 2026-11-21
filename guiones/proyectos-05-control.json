@@ -1,0 +1,276 @@
+{
+  "titulo": "Proyectos · Control del presupuesto: comprometido, real y disponible por partida",
+  "descripcion": "Cómo sigue Germiva el presupuesto de un proyecto en ejecución: lo comprometido en órdenes, lo real contabilizado y lo disponible de cada partida, cómo se imputa un documento a una partida, qué pasa cuando se excede y cómo trasladar presupuesto entre partidas.",
+  "_comentario": "Video 05 de la serie Proyectos. setup: seeds/proyectos/preparar.sh control (presupuesto aprobado; compra contabilizada de 250,000 en Excavación; orden de compra aprobada de acero por 450,000 en Estructura metálica).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/control",
+    "esperar": "table.control-table"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh control"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer vigente, comprometido, real y disponible por partida",
+    "Imputar un documento a un proyecto y a una partida",
+    "Qué pasa cuando un documento excede la partida",
+    "Trasladar presupuesto entre partidas"
+  ],
+  "errores_comunes": [
+    "Registrar gastos del proyecto sin partida: no aparecen en su control",
+    "Creer que una orden aprobada no cuenta: ya es compromiso",
+    "Trasladar más de lo disponible en la partida de origen"
+  ],
+  "pasos": [
+    {
+      "id": "01-control",
+      "capitulo": "La pestaña Control",
+      "rotulo": "Presupuesto contra real",
+      "ruta": "Proyectos › Cartera › PRJ › Control",
+      "texto_pantalla": "Vigente − comprometido − real = disponible",
+      "narracion": "Con el presupuesto aprobado, el proyecto tiene una pestaña nueva: Control. Recojo el menú. Cada partida muestra cuatro cifras. Vigente es su presupuesto actual, con los indirectos incluidos. Comprometido, lo que ya está pedido en órdenes de compra aprobadas: aquí, cuatrocientos cincuenta mil pesos de acero para la estructura. Real, lo que ya llegó a la contabilidad: doscientos cincuenta mil de excavación. Y Disponible, lo que queda por gastar. Si pulso una partida, abajo salen sus compromisos abiertos y sus costos reales, con la factura y el asiento de cada uno. Y el interruptor Ver desglose agrega lo reservado por requisiciones y el material que está en el almacén de la obra.",
+      "acciones": [
+        {
+          "resaltar": "a.ws-tab:has-text('Control')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "una pestaña nueva"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": "table.control-table thead",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "muestra cuatro cifras"
+        },
+        {
+          "resaltar": "table.control-table tr:has-text('02.01') td >> nth=2",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "cuatrocientos cincuenta mil"
+        },
+        {
+          "resaltar": "table.control-table tr:has-text('01.01') td >> nth=3",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "doscientos cincuenta mil de excavación"
+        },
+        {
+          "resaltar": "table.control-table tr:has-text('01.01') td >> nth=4",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Y Disponible"
+        },
+        {
+          "click": "table.control-table tr:has-text('01.01') button.line-link",
+          "al_decir": "Si pulso una partida"
+        },
+        {
+          "resaltar": ":text('Costos reales') >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "sus costos reales"
+        },
+        {
+          "resaltar": ":text('Ver desglose') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": true,
+          "al_decir": "el interruptor Ver desglose"
+        }
+      ]
+    },
+    {
+      "id": "02-imputar",
+      "capitulo": "Imputar un documento",
+      "rotulo": "Proyecto y partida en el documento",
+      "ruta": "Compras › Facturas › Editar compra",
+      "texto_pantalla": "El proyecto y la partida viajan con el documento",
+      "navegar": "/purchases/invoices/list",
+      "narracion": "¿Cómo llega un gasto a su partida? Cada documento lleva el proyecto y la partida: la requisición, la orden de compra, la factura, la salida de inventario y el asiento. Esta es una factura de compra en borrador, del subcontratista de la excavación. La abro con el lápiz. El formulario carga sus datos: el proveedor, el comprobante, las fechas y sus líneas. En la cabecera está el Proyecto, la nave de Haina. Y en la línea, la columna Partida dice a cuál de sus partidas va el gasto: Excavación y relleno. Debajo de las líneas aparece el aviso del control. La partida tiene ciento noventa mil pesos disponibles, y esta factura pide doscientos mil: se excede en diez mil. Lo que pasa después depende de la política del presupuesto. Con Avisar, que es la de este proyecto, se puede continuar y el excedente queda registrado. Pedir aprobación exige que otra persona apruebe el sobregiro. Y Bloquear no deja guardar el documento. La política se elige en el presupuesto del proyecto, y se puede cambiar con la obra en marcha.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Borrador') td >> nth=2",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Esta es una factura de compra"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Borrador') button[aria-label='Editar']",
+          "al_decir": "La abro con el lápiz"
+        },
+        {
+          "resaltar": "app-project-picker",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "En la cabecera está el Proyecto"
+        },
+        {
+          "resaltar": "[data-col='partida'] >> nth=1",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "la columna Partida"
+        },
+        {
+          "resaltar": "app-project-budget-control-notice",
+          "durante_ms": 12000,
+          "cursor": false,
+          "al_decir": "aparece el aviso del control"
+        },
+        {
+          "resaltar": "app-project-budget-control-notice",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Con Avisar"
+        },
+        {
+          "resaltar": "button:has-text('Guardar y emitir')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Pedir aprobación exige"
+        },
+        {
+          "resaltar": "app-project-picker",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "La política se elige"
+        }
+      ]
+    },
+    {
+      "id": "03-traslado",
+      "capitulo": "Trasladar entre partidas",
+      "rotulo": "Trasladar entre partidas",
+      "ruta": "Proyectos › Cartera › PRJ › Control",
+      "texto_pantalla": "Mover presupuesto sin cambiar el total del proyecto",
+      "navegar": "/projects/17/control",
+      "narracion": "Cuando a una partida le falta y a otra le sobra, se hace un traslado. Vuelvo a la pestaña Control del proyecto, y pulso Trasladar entre partidas. En Sale de abro la lista, y elijo Piso industrial, que todavía no ha gastado. En Entra a abro la otra lista, y elijo Excavación y relleno. En Monto anoto cincuenta mil pesos, lo que le falta a la excavación con algo de holgura. Y en Motivo escribo por qué: Mayor volumen de excavación. El motivo es obligatorio, porque queda en el historial. Pulso Guardar, y el aviso confirma la solicitud. El traslado no se aplica de inmediato: queda Por aprobar en la vista Traslados, hasta que otra persona lo apruebe. El total del proyecto no cambia; solo se mueve entre partidas.",
+      "acciones": [
+        {
+          "click": "button:has-text('Trasladar entre partidas')",
+          "al_decir": "pulso Trasladar entre partidas"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='fromLineKey']",
+          "al_decir": "En Sale de abro"
+        },
+        {
+          "click": "mat-option:has-text('03.01')",
+          "al_decir": "elijo Piso industrial"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='toLineKey']",
+          "al_decir": "abro la otra lista"
+        },
+        {
+          "click": "mat-option:has-text('01.01')",
+          "al_decir": "elijo Excavación y relleno"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='amount']",
+            "texto": "50000"
+          },
+          "al_decir": "En Monto anoto"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='reason']",
+            "texto": "Mayor volumen de excavación"
+          },
+          "al_decir": "en Motivo escribo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "click": "div.view-switch button:has-text('Traslados')",
+          "al_decir": "en la vista Traslados"
+        },
+        {
+          "resaltar": "tr:has-text('Por aprobar') >> nth=0 >> td >> nth=-2",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "hasta que otra persona"
+        }
+      ]
+    }
+  ]
+}

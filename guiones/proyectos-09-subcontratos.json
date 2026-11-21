@@ -1,0 +1,296 @@
+{
+  "titulo": "Proyectos · Subcontratos y retención de garantía",
+  "descripcion": "Cómo registrar en Germiva el subcontrato de un proyecto, imputarle las facturas del subcontratista, retenerle un porcentaje de garantía en cada una y liberar esa retención cuando el trabajo se recibe conforme.",
+  "_comentario": "Video 09 de la serie Proyectos. setup: seeds/proyectos/preparar.sh subcontrato (presupuesto aprobado; proveedor Movimientos de Tierra Germiva y su factura B0100000321 de 200,000 en borrador para la partida Excavación).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/subcontratos",
+    "esperar": "button:has-text('Registrar subcontrato')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh subcontrato"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Registrar un subcontrato con su retención de garantía",
+    "Imputar la factura del subcontratista al subcontrato",
+    "Ver lo facturado, lo retenido y lo que falta por facturar",
+    "Liberar la retención de garantía"
+  ],
+  "errores_comunes": [
+    "Pagarle al subcontratista el total de la factura: la garantía queda retenida",
+    "Registrar la factura sin elegir el subcontrato: no retiene nada",
+    "Querer liberar la retención de una factura sin emitir"
+  ],
+  "pasos": [
+    {
+      "id": "01-registrar",
+      "capitulo": "Registrar el subcontrato",
+      "rotulo": "Registrar subcontrato",
+      "ruta": "Proyectos › Cartera › PRJ › Subcontratos",
+      "texto_pantalla": "Proveedor · alcance · monto · retención de garantía",
+      "narracion": "Parte de la obra la hacen subcontratistas, y a cada uno se le suele retener una garantía hasta recibir su trabajo. Eso se lleva en la pestaña Subcontratos del proyecto. Recojo el menú, y pulso Registrar subcontrato. En Proveedor escribo Movimientos, para buscar al subcontratista de la excavación. Aparece en la lista, y lo elijo. En Alcance del subcontrato escribo qué va a hacer: Excavación y relleno. Con el alcance escrito, en Monto pactado anoto cuatrocientos mil pesos, sin ITBIS. La Retención de garantía viene en cinco por ciento: de cada factura suya se retendrá ese porcentaje. Pulso Guardar, y el aviso lo confirma. El subcontrato recibe su número, y su ficha se abre abajo.",
+      "acciones": [
+        {
+          "resaltar": "a.ws-tab:has-text('Subcontratos')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "en la pestaña Subcontratos"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button:has-text('Registrar subcontrato')",
+          "al_decir": "pulso Registrar subcontrato"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container app-custom-select[formcontrolname='supplier'] input",
+            "texto": "Movimientos"
+          },
+          "al_decir": "escribo Movimientos"
+        },
+        {
+          "click": "mat-option:has-text('Movimientos de Tierra')",
+          "al_decir": "y lo elijo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='description']",
+            "texto": "Excavación y relleno"
+          },
+          "al_decir": "escribo qué va a hacer"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='originalAmount']",
+            "texto": "400000"
+          },
+          "al_decir": "en Monto pactado anoto"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(input[formcontrolname='retentionPercentage'])",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "La Retención de garantía"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "table[aria-label='Subcontratos del proyecto'] tbody tr >> nth=0 >> td >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "recibe su número"
+        }
+      ]
+    },
+    {
+      "id": "02-factura",
+      "capitulo": "La factura del subcontratista",
+      "rotulo": "Subcontrato en la factura de compra",
+      "ruta": "Compras › Facturas › Editar compra",
+      "texto_pantalla": "La factura se imputa al subcontrato y retiene la garantía",
+      "navegar": "/purchases/invoices/list",
+      "narracion": "Ahora su primera factura, que ya está en Compras, en borrador. La abro con el lápiz. El formulario carga sus datos: el proveedor, el proyecto y la partida. Como el proveedor tiene un subcontrato vigente en este proyecto, aparece el campo Subcontrato. Abro la lista, y elijo el que acabo de registrar. Debajo, el sistema estima la retención de garantía: el cinco por ciento de los doscientos mil pesos de la factura, diez mil pesos. Pulso Guardar y emitir. El sistema pide confirmar la emisión, y confirmo. La factura queda emitida: la cuenta por pagar se parte en dos, lo que se le paga ahora, y la retención de garantía, que no se propone para pago hasta liberarla.",
+      "acciones": [
+        {
+          "resaltar": "tr.mat-mdc-row:has-text('Borrador') td >> nth=2",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "ya está en Compras"
+        },
+        {
+          "click": "tr.mat-mdc-row:has-text('Borrador') button[aria-label='Editar']",
+          "al_decir": "La abro con el lápiz"
+        },
+        {
+          "resaltar": "app-project-picker",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el proyecto y la partida"
+        },
+        {
+          "resaltar": "app-invoice-subcontract-field",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "aparece el campo"
+        },
+        {
+          "click": "app-invoice-subcontract-field mat-select",
+          "al_decir": "Abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Excavación')",
+          "al_decir": "elijo el que acabo"
+        },
+        {
+          "resaltar": "app-invoice-subcontract-field mat-hint, app-invoice-subcontract-field .mat-mdc-form-field-hint",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "estima la retención"
+        },
+        {
+          "click": "button:has-text('Guardar y emitir')",
+          "al_decir": "Pulso Guardar y emitir"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2000,
+          "cursor": false,
+          "al_decir": "El sistema pide"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button",
+          "al_decir": "y confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container, .mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "se parte en dos"
+        },
+        {
+          "click_opcional": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "hasta liberarla"
+        }
+      ]
+    },
+    {
+      "id": "03-liberar",
+      "capitulo": "Liberar la retención",
+      "rotulo": "Liberar retención de garantía",
+      "ruta": "Proyectos › Cartera › PRJ › Subcontratos",
+      "texto_pantalla": "Facturado, retenido y por liberar",
+      "navegar": "/projects/17/subcontratos",
+      "narracion": "De vuelta en la pestaña Subcontratos del proyecto, la fila ya muestra lo facturado, lo que falta por facturar del subcontrato, y lo retenido por liberar: diez mil pesos. En su ficha, cada factura aparece con su neto, lo retenido y lo liberado. Cuando el trabajo se recibe conforme, se libera la garantía. Pulso Liberar retención. El diálogo propone la factura y el monto retenido; se puede liberar todo o una parte. Lo dejo completo, y pulso Liberar. El aviso lo confirma. El sistema registra el asiento que pasa la garantía a la cuenta por pagar corriente, y desde ese momento ya se propone para pago. Si fue un error, la liberación se puede reversar desde su lista.",
+      "acciones": [
+        {
+          "resaltar": "table[aria-label='Subcontratos del proyecto'] tbody tr >> nth=0 >> td >> nth=4",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "lo facturado"
+        },
+        {
+          "resaltar": "table[aria-label='Subcontratos del proyecto'] tbody tr >> nth=0 >> td >> nth=7",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "lo retenido por liberar"
+        },
+        {
+          "resaltar": "#subcontract-detail-title",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "En su ficha"
+        },
+        {
+          "click": "button:has-text('Liberar retención')",
+          "al_decir": "Pulso Liberar retención"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "El diálogo propone"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Liberar')",
+          "al_decir": "completo, y pulso"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": ":text('Liberaciones') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "registra el asiento"
+        },
+        {
+          "resaltar": "button:has-text('Reversar')",
+          "durante_ms": 4000,
+          "cursor": true,
+          "al_decir": "se puede reversar"
+        }
+      ]
+    }
+  ]
+}

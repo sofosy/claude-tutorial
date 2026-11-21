@@ -8,9 +8,11 @@ import json
 import subprocess
 import sys
 import urllib.error
+import os
 import urllib.request
 
-API = "http://localhost:3001/api"
+API = os.environ.get("TUT_API", "http://localhost:3001/api")
+BASE_DATOS = os.environ.get("GERMIVA_DB", "germiva")
 USD, DOP = 1, 32
 CUENTA_BANCOS = 6          # 1.01.01.02 Bancos (agrupadora)
 CAPITAL = 99               # 3.01.01.01.01 Capital social autorizado
@@ -45,7 +47,7 @@ def llamar(metodo, ruta, cuerpo=None, sin_token=False):
 
 
 def sql(consulta):
-    r = subprocess.run(["docker", "exec", "-i", "germiva-dev-mysql", "mysql", "-uroot", "germiva",
+    r = subprocess.run(["docker", "exec", "-i", "germiva-dev-mysql", "mysql", "-uroot", BASE_DATOS,
                         "-N", "-e", consulta], capture_output=True, text=True, check=True)
     return r.stdout.strip()
 
@@ -447,22 +449,192 @@ def activos_baja():
     activo("ACT-OF-003", "Archivo metálico")
 
 
+def centro(codigo, nombre, tipo="cost", **extra):
+    return llamar("POST", "/v1/cost-centers", {"code": codigo, "name": nombre, "type": tipo, **extra})["id"]
+
+
+def centro_id(codigo):
+    return int(sql(f"SELECT id FROM cost_centers WHERE company_id=1 AND code='{codigo}' AND deleted_at IS NULL"))
+
+
+def linea_cc(cuenta_id, descripcion, centro_, debito=0, credito=0):
+    return {**linea(cuenta_id, descripcion, debito, credito), "costCenterId": centro_}
+
+
+def arbol_centros():
+    """Administración (de la instantánea, predeterminado), Ventas como agrupador
+    de sus dos sucursales y Operaciones. Devuelve los ids por código."""
+    ven = centro("CC-VEN", "Ventas", "revenue", allowsDirectPosting=False)
+    ids = {"CC-ADM": centro_id("CC-ADM"), "CC-VEN": ven,
+           "CC-VEN-SD": centro("CC-VEN-SD", "Ventas Santo Domingo", "revenue", parent=ven),
+           "CC-VEN-STI": centro("CC-VEN-STI", "Ventas Santiago", "revenue", parent=ven),
+           "CC-OPS": centro("CC-OPS", "Operaciones", "cost", budgetAmount="300000",
+                            budgetStartDate="2026-01-01", budgetEndDate="2026-12-31")}
+    return ids
+
+
 def centros_costo():
-    # V26: Ventas al primer nivel y Operaciones bajo Administración, para que
-    # la jerarquía tenga dos niveles.
-    adm = int(sql("SELECT id FROM cost_centers WHERE company_id=1 AND code='CC-ADM' AND deleted_at IS NULL"))
-    llamar("POST", "/v1/cost-centers", {"code": "CC-VEN", "name": "Ventas", "type": "revenue",
-                                         "budgetAmount": "150000"})
-    llamar("POST", "/v1/cost-centers", {"code": "CC-OPS", "name": "Operaciones", "type": "cost",
-                                         "budgetAmount": "300000", "parent": adm})
+    # V26: el árbol de centros y gasto de Operaciones ya contabilizado en
+    # noviembre, para que su ficha muestre la ejecución presupuestaria.
+    ids = arbol_centros()
+    asiento_contabilizado("2026-11-05", periodo("Noviembre 2026"), "Mantenimiento de montacargas", [
+        linea_cc(cuenta("6.03.19"), "Mantenimiento de montacargas", ids["CC-OPS"], 180000),
+        linea(CAJA, "Pago en efectivo", credito=180000)])
+
+
+def arbol_con_logistica():
+    ids = arbol_centros()
+    ids["CC-LOG"] = centro("CC-LOG", "Logística", "cost", parent=ids["CC-OPS"], budgetAmount="120000")
+    return ids
+
+
+def centros_documentos():
+    # V40: el árbol completo, sin movimientos: el video registra el asiento.
+    arbol_con_logistica()
+
+
+def compra_servicios(numero, lineas, fecha="2026-11-18", vence="2026-12-18"):
+    """Factura de compra B01 (formulario libre) en borrador, sin centros."""
+    prov = sql("SELECT id FROM partners WHERE tin='130555021' AND deleted_at IS NULL LIMIT 1")
+    prov = int(prov) if prov else proveedor({"name": "Servicios Germiva del Cibao S.R.L.", "tin": "130555021"}, False)
+    return llamar("POST", "/v1/invoices/inline", {
+        "issuedDate": fecha, "ncfType": ncf_tipo("B01"), "partner": prov, "paymentType": 2,
+        "paymentDueDate": vence, "currency": DOP, "goods606Category": "02", "ncf": numero,
+        "recordAsPurchase": True, "notes": "Servicios de noviembre",
+        "details": [{"productName": nombre, "goodOrServiceIndicator": 2, "quantity": 1, "unitPrice": monto,
+                     "tax": ITBIS_18, **extra} for nombre, monto, extra in lineas]})["invoiceNumber"]
+
+
+def centros_compras():
+    # V41: el árbol de centros, una compra en borrador con dos servicios y un
+    # departamento propio de la empresa con su centro (los de plantilla son de
+    # solo lectura).
+    ids = arbol_con_logistica()
+    llamar("POST", "/v1/departments", {"code": "DESP", "name": "Despacho y Transporte",
+                                        "location": "Almacén Sur", "costCenter": ids["CC-LOG"]})
+    compra_servicios("B0100000458", [("Mantenimiento de montacargas", 40000, {}),
+                                     ("Publicidad en radio, campaña de noviembre", 30000, {})])
+
+
+def gastos_administracion(ids):
+    """Indirectos de noviembre cargados a Administración: alquiler y servicios."""
+    nov = periodo("Noviembre 2026")
+    asiento_contabilizado("2026-11-03", nov, "Alquiler de la oficina principal, noviembre", [
+        linea_cc(cuenta("6.03.02"), "Alquiler de la oficina principal", ids["CC-ADM"], 60000),
+        linea(CAJA, "Pago del alquiler", credito=60000)])
+    asiento_contabilizado("2026-11-10", nov, "Electricidad y agua, noviembre", [
+        linea_cc(cuenta("6.03.03"), "Electricidad y agua", ids["CC-ADM"], 24000),
+        linea(CAJA, "Pago de servicios", credito=24000)])
+
+
+def distribucion():
+    # V42: 84,000 de indirectos en Administración, listos para repartir.
+    gastos_administracion(arbol_con_logistica())
+
+
+def regla_dist_adm(ids):
+    return llamar("POST", "/v1/cost-allocations/rules", {
+        "code": "DIST-ADM", "name": "Gastos de administración", "method": "distribution",
+        "basis": "fixed_percentage", "sequence": 10, "allocationPercentage": 100, "active": True,
+        "senders": [ids["CC-ADM"]],
+        "receivers": [{"costCenter": ids["CC-VEN-SD"], "percentage": 50},
+                      {"costCenter": ids["CC-VEN-STI"], "percentage": 30},
+                      {"costCenter": ids["CC-OPS"], "percentage": 20}],
+        "accountRanges": [{"fromCode": "6.03.02", "toCode": "6.03.03"}]})["id"]
+
+
+def operacion_noviembre(ids):
+    """Ventas, costos y gastos de noviembre por centro (para informes y presupuestos)."""
+    nov = periodo("Noviembre 2026")
+    ventas, costo = cuenta("4.01.01"), cuenta("5.01.01.01")
+    for centro_, venta, costo_, sueldos in (("CC-VEN-SD", 400000, 240000, 45000),
+                                             ("CC-VEN-STI", 250000, 150000, 30000)):
+        nombre = "Santo Domingo" if centro_.endswith("SD") else "Santiago"
+        asiento_contabilizado("2026-11-12", nov, f"Ventas de noviembre, {nombre}", [
+            linea(CXC, f"Ventas a crédito {nombre}", venta),
+            linea_cc(ventas, f"Ventas {nombre}", ids[centro_], credito=venta)])
+        asiento_contabilizado("2026-11-12", nov, f"Costo de lo vendido, {nombre}", [
+            linea_cc(costo, f"Costo de ventas {nombre}", ids[centro_], costo_),
+            linea(CAJA, "Salida de mercancía pagada", credito=costo_)])
+        asiento_contabilizado("2026-11-15", nov, f"Sueldos de ventas, {nombre}", [
+            linea_cc(cuenta("6.01.01.01"), f"Sueldos de ventas {nombre}", ids[centro_], sueldos),
+            linea(CAJA, "Pago de sueldos", credito=sueldos)])
+    asiento_contabilizado("2026-11-05", nov, "Mantenimiento de montacargas", [
+        linea_cc(cuenta("6.03.19"), "Mantenimiento de montacargas", ids["CC-OPS"], 35000),
+        linea(CAJA, "Pago en efectivo", credito=35000)])
+    asiento_contabilizado("2026-11-08", nov, "Fletes de entrega a clientes", [
+        linea_cc(cuenta("6.03.10"), "Fletes de entrega", ids["CC-LOG"], 20000),
+        linea(CAJA, "Pago en efectivo", credito=20000)])
+
+
+def resultados_centro():
+    # V43: noviembre completo por centro, con los indirectos ya distribuidos.
+    ids = arbol_con_logistica()
+    gastos_administracion(ids)
+    operacion_noviembre(ids)
+    llamar("POST", "/v1/cost-allocations/runs", {"accountingPeriod": periodo("Noviembre 2026"),
+                                                   "rules": [regla_dist_adm(ids)]})
+    return ids
+
+
+def quitar_presupuestos_de_la_instantanea():
+    """Los presupuestos de 2024 que trae la semilla (con renglones en caja y
+    bancos) ensucian el resumen de Variaciones: se reabren y se eliminan."""
+    for fila in sql("SELECT id, status FROM budgets WHERE company_id=1 AND deleted_at IS NULL").splitlines():
+        pid, estado = fila.split("\t")
+        if estado == "approved":
+            llamar("POST", f"/v1/budgets/{pid}/reopen", {})
+        llamar("DELETE", f"/v1/budgets/{pid}")
 
 
 def presupuestos():
-    # V27: septiembre con ingresos, alquiler y comisiones contabilizados, para
-    # comparar contra el presupuesto que el video crea.
-    gl = movimientos_bhd()
-    asiento_contabilizado("2026-09-30", periodo("Septiembre 2026"), "Comisiones bancarias de septiembre", [
-        linea(cuenta("6.05.01"), "Comisiones y servicios", 400), linea(gl, "Cargo del banco", credito=400)])
+    # V27: el árbol de centros y noviembre ya contabilizado por centro; el
+    # video crea y aprueba el presupuesto del mes.
+    quitar_presupuestos_de_la_instantanea()
+    ids = arbol_con_logistica()
+    gastos_administracion(ids)
+    operacion_noviembre(ids)
+    return ids
+
+
+def presupuesto_noviembre(ids, aprobar=True, **extra):
+    """Presupuesto operativo de noviembre por cuenta y centro (el del V27, con más renglones)."""
+    def renglon(codigo, monto, centro_=None):
+        r = {"accountChart": cuenta(codigo), "period": "november", "fiscalYear": 2026, "budgetAmount": monto}
+        return {**r, "costCenter": ids[centro_]} if centro_ else r
+    p = llamar("POST", "/v1/budgets", {
+        "code": "PRES-2026-11", "name": "Operativo de noviembre", "type": "monthly",
+        "startDate": "2026-11-01", "endDate": "2026-11-30", **extra,
+        "budgetDetails": [renglon("4.01.01", 600000, "CC-VEN"), renglon("5.01.01.01", 380000, "CC-VEN"),
+                          renglon("6.01.01.01", 75000, "CC-VEN"), renglon("6.03.19", 30000, "CC-OPS"),
+                          renglon("6.03.10", 25000, "CC-LOG"), renglon("6.03.02", 60000),
+                          renglon("6.03.03", 20000)]})
+    if aprobar:
+        llamar("POST", f"/v1/budgets/{p['id']}/approve", {})
+    return p["id"]
+
+
+def variaciones():
+    # V44: el presupuesto de noviembre aprobado, con lo real ya contabilizado.
+    presupuesto_noviembre(presupuestos())
+
+
+def control():
+    # V45: el presupuesto aprobado y una orden de compra aprobada de fletes
+    # (3,000 en Logística), que deja 2,000 disponibles en ese renglón.
+    ids = presupuestos()
+    presupuesto_noviembre(ids)
+    flete = llamar("POST", "/v1/product", {
+        "category": "SERVICE", "name": "Flete de entrega a clientes", "code": "SRV-FLETE", "tax": ITBIS_18,
+        "managesInventory": False, "active": True, "purchaseExpenseAccount": cuenta("6.03.10")})["id"]
+    transporte = proveedor({"name": "Transporte Germiva del Norte S.R.L.", "tin": "130555031"}, False)
+    almacen = int(sql("SELECT id FROM warehouse WHERE company_id=1 ORDER BY id LIMIT 1"))
+    orden = llamar("POST", "/v1/orders", {
+        "orderType": "PURCHASE", "partnerId": transporte, "requestedDeliveryDate": "2026-11-25",
+        "warehouseId": almacen, "costCenter": ids["CC-LOG"],
+        "orderLines": [{"productId": flete, "quantity": 1, "unitPrice": 3000}]})["id"]
+    llamar("POST", f"/v1/orders/{orden}/submit-approval", {})
+    llamar("POST", f"/v1/orders/{orden}/approve", {})
 
 
 # ── La firma contable y sus clientes (videos 28–33) ─────────────────────────
@@ -912,7 +1084,8 @@ ESTADOS = {"panel": panel, "cuentas": cuentas, "mapeo": mapeo, "autoposteo": aut
            "revaluacion": revaluacion, "informes": informes,
            "cierre-reversar": cierre_reversar, "periodos": periodos,
            "transferencias": transferencias, "conciliar": conciliar, "activos": activos,
-           "activos-baja": activos_baja, "centros-costo": centros_costo, "presupuestos": presupuestos,
+           "activos-baja": activos_baja, "centros-costo": centros_costo, "centros-documentos": centros_documentos, "centros-compras": centros_compras, "distribucion": distribucion, "resultados-centro": resultados_centro,
+           "presupuestos": presupuestos, "variaciones": variaciones, "control": control,
            "firma": firma, "firma-plantilla": firma_plantilla, "firma-alta": firma_alta,
            "firma-cambio": firma_cambio, "firma-asistente": firma_asistente,
            "firma-mantener": firma_mantener,

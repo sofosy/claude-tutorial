@@ -1,0 +1,291 @@
+{
+  "titulo": "Contabilidad · Informes por centro de costo: resultados, acumulado y Libro Mayor",
+  "descripcion": "Cómo leer en Germiva el informe Resultados por Centro de Costo, acumularlo en los centros principales, filtrar el Estado de Resultados por un centro y ver en el Libro Mayor los movimientos de un centro.",
+  "_comentario": "Video 43 de la serie Contabilidad. setup: preparar.sh resultados-centro (noviembre 2026: ventas 400,000 y 250,000 por sucursal, costos, sueldos, gastos de Operaciones y Logística, e indirectos de Administración ya distribuidos con DIST-ADM).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/accounting/financial-statements/income-statement-by-cost-center",
+    "esperar": "button:has-text('Generar')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/contabilidad/preparar.sh resultados-centro"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Leer los resultados de cada centro en columnas",
+    "Acumular los subcentros en su centro principal",
+    "Filtrar el Estado de Resultados por un centro",
+    "Ver en el Mayor los movimientos de un centro"
+  ],
+  "errores_comunes": [
+    "Buscar el filtro de centro en el Balance General: solo los informes de resultados se filtran por centro",
+    "Olvidar que un centro padre incluye a sus subcentros",
+    "Leer «Sin centro» como error: son movimientos sin imputar"
+  ],
+  "pasos": [
+    {
+      "id": "01-informe",
+      "capitulo": "Resultados por centro",
+      "rotulo": "Resultados por Centro de Costo",
+      "ruta": "Contabilidad › Informes Financieros › Resultados por Centro de Costo",
+      "texto_pantalla": "Un estado de resultados con una columna por centro",
+      "narracion": "Con los centros en los documentos, este informe responde cuánto ganó cada área. Está en Informes Financieros, y se llama Resultados por Centro de Costo. Recojo el menú. En Período contable abro la lista, y elijo Noviembre de dos mil veintiséis. Pulso Generar. Es un estado de resultados con una columna por centro. Arriba, los ingresos: cuatrocientos mil de Santo Domingo y doscientos cincuenta mil de Santiago. Luego los costos y los gastos de cada uno. En Arrendamientos se ve la distribución: el alquiler que pagó Administración ya está repartido entre Operaciones y las dos sucursales. Y al pie, la utilidad de cada centro: Santo Domingo ganó setenta y tres mil pesos, y Logística y Operaciones, que solo gastan, salen en negativo. La columna Total coincide con el Estado de Resultados de la empresa.",
+      "acciones": [
+        {
+          "resaltar": "mat-form-field:has-text('Tipo de informe')",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "se llama Resultados por Centro"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "mat-select[formcontrolname='accountingPeriodId']",
+          "al_decir": "abro la lista"
+        },
+        {
+          "click": "mat-option:has-text('Noviembre 2026')",
+          "al_decir": "elijo Noviembre"
+        },
+        {
+          "click": "button:has-text('Generar')",
+          "al_decir": "Pulso Generar"
+        },
+        {
+          "resaltar": "table.cc-matrix thead",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "una columna por centro"
+        },
+        {
+          "resaltar": "table.cc-matrix tr:has-text('4.01.01')",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Arriba, los ingresos"
+        },
+        {
+          "resaltar": "table.cc-matrix tr:has-text('6.03.02')",
+          "durante_ms": 9000,
+          "cursor": false,
+          "al_decir": "En Arrendamientos"
+        },
+        {
+          "resaltar": "table.cc-matrix tr.result-row >> nth=-1",
+          "durante_ms": 9500,
+          "cursor": false,
+          "al_decir": "la utilidad de cada centro"
+        },
+        {
+          "resaltar": "table.cc-matrix thead th >> nth=-1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "La columna Total"
+        }
+      ]
+    },
+    {
+      "id": "02-acumular",
+      "capitulo": "Acumular y filtrar",
+      "rotulo": "Acumular en los centros principales",
+      "ruta": "Contabilidad › Informes Financieros › Resultados por Centro de Costo",
+      "texto_pantalla": "Los subcentros se suman a su centro principal",
+      "narracion": "Para una vista más resumida, marco Acumular en los centros principales, y vuelvo a pulsar Generar. Ahora cada subcentro se suma a su padre: las dos sucursales quedan en Ventas, con ciento diecisiete mil ochocientos de utilidad, y Logística queda dentro de Operaciones. El filtro Centro de costo limita el informe a un centro y a los que dependen de él. Y el botón Excel exporta la tabla.",
+      "acciones": [
+        {
+          "click": "mat-checkbox[formcontrolname='rollUp'] label",
+          "al_decir": "marco Acumular"
+        },
+        {
+          "click": "button:has-text('Generar')",
+          "al_decir": "vuelvo a pulsar Generar"
+        },
+        {
+          "resaltar": "table.cc-matrix thead",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "cada subcentro se suma"
+        },
+        {
+          "resaltar": "table.cc-matrix tr.result-row >> nth=-1",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "las dos sucursales quedan"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='costCenterId'])",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "El filtro Centro de costo"
+        },
+        {
+          "resaltar": "button:has-text('Excel')",
+          "durante_ms": 2500,
+          "cursor": true,
+          "al_decir": "el botón Excel"
+        }
+      ]
+    },
+    {
+      "id": "03-estado",
+      "capitulo": "Estado de Resultados por centro",
+      "rotulo": "Estado de Resultados de un centro",
+      "ruta": "Contabilidad › Informes Financieros › Estado de Resultados",
+      "texto_pantalla": "El mismo informe de siempre, de un solo centro",
+      "narracion": "El Estado de Resultados normal también se puede pedir de un solo centro. En Tipo de informe abro la lista, y elijo Estado de Resultados. Elijo el período, Noviembre, igual que antes. Después, en Centro de costo abro la lista, y elijo Ventas Santo Domingo. Pulso Generar. Es el estado completo, pero solo de esa sucursal: sus ventas, su costo, sus gastos y su utilidad. Los informes de balance no tienen este filtro: la caja, los bancos y las cuentas por cobrar no llevan centro.",
+      "acciones": [
+        {
+          "click": "mat-form-field:has-text('Tipo de informe') mat-select",
+          "al_decir": "En Tipo de informe abro"
+        },
+        {
+          "click": "mat-option:has-text('Estado de Resultados')",
+          "al_decir": "elijo Estado de Resultados"
+        },
+        {
+          "click": "mat-select[formcontrolname='accountingPeriodId']",
+          "al_decir": "Elijo el período"
+        },
+        {
+          "click": "mat-option:has-text('Noviembre 2026')",
+          "al_decir": "Noviembre"
+        },
+        {
+          "click": "mat-select[formcontrolname='costCenterId']",
+          "al_decir": "En Centro de costo abro"
+        },
+        {
+          "click": "mat-option:has-text('Ventas Santo Domingo')",
+          "al_decir": "elijo Ventas Santo Domingo"
+        },
+        {
+          "click": "button:has-text('Generar')",
+          "al_decir": "Pulso Generar"
+        },
+        {
+          "resaltar": ".net-income-row",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "solo de esa sucursal"
+        },
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='costCenterId'])",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Los informes de balance"
+        }
+      ]
+    },
+    {
+      "id": "04-mayor",
+      "capitulo": "El centro en el Mayor",
+      "rotulo": "Libro Mayor por centro",
+      "ruta": "Contabilidad › Diario y Mayor › Libro Mayor",
+      "texto_pantalla": "Los movimientos de un centro, uno por uno",
+      "navegar": "/accounting/registro/mayor",
+      "narracion": "Y para ver el detalle, el Libro Mayor. Tiene el mismo filtro, junto a la cuenta y las fechas: en Centro de costo abro la lista, y elijo Logística, el centro que quiero revisar. Con el filtro puesto, pulso Consultar. Quedan solo las cuentas con movimientos de ese centro, y cada movimiento dice a qué centro pertenece. Con el módulo de Proyectos, a su lado está el filtro por proyecto, que funciona igual. Así se llega del resultado de un centro hasta el asiento que lo explica.",
+      "acciones": [
+        {
+          "resaltar": "mat-form-field:has(mat-select[formcontrolname='costCenterId'])",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Tiene el mismo filtro"
+        },
+        {
+          "click": "mat-select[formcontrolname='costCenterId']",
+          "al_decir": "en Centro de costo abro"
+        },
+        {
+          "click": "mat-option:has-text('Logística')",
+          "al_decir": "elijo Logística"
+        },
+        {
+          "click": "button:has-text('Consultar')",
+          "al_decir": "pulso Consultar"
+        },
+        {
+          "resaltar": "span.account-ref >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "cada movimiento dice"
+        },
+        {
+          "resaltar": "app-project-picker",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el filtro por proyecto"
+        },
+        {
+          "resaltar": "span.account-ref >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "hasta el asiento"
+        }
+      ]
+    }
+  ]
+}

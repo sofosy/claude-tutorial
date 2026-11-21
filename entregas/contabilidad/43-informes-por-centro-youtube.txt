@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Informes por centro de costo: resultados, acumulado y Libro Mayor
+
+DESCRIPCIÓN
+============================================================
+Cómo leer en Germiva el informe Resultados por Centro de Costo, acumularlo en los centros principales, filtrar el Estado de Resultados por un centro y ver en el Libro Mayor los movimientos de un centro.
+
+⏱️ CAPÍTULOS
+00:00  Resultados por centro
+00:59  Acumular y filtrar
+01:24  Estado de Resultados por centro
+02:00  El centro en el Mayor
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer los resultados de cada centro en columnas
+• Acumular los subcentros en su centro principal
+• Filtrar el Estado de Resultados por un centro
+• Ver en el Mayor los movimientos de un centro
+
+⚠️ ERRORES COMUNES
+• Buscar el filtro de centro en el Balance General: solo los informes de resultados se filtran por centro
+• Olvidar que un centro padre incluye a sus subcentros
+• Leer «Sin centro» como error: son movimientos sin imputar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:36
+
+TRANSCRIPCIÓN
+============================================================
+Con los centros en los documentos, este informe responde cuánto ganó cada área. Está en Informes Financieros, y se llama Resultados por Centro de Costo. Recojo el menú. En Período contable abro la lista, y elijo Noviembre de dos mil veintiséis. Pulso Generar. Es un estado de resultados con una columna por centro. Arriba, los ingresos: cuatrocientos mil de Santo Domingo y doscientos cincuenta mil de Santiago. Luego los costos y los gastos de cada uno. En Arrendamientos se ve la distribución: el alquiler que pagó Administración ya está repartido entre Operaciones y las dos sucursales. Y al pie, la utilidad de cada centro: Santo Domingo ganó setenta y tres mil pesos, y Logística y Operaciones, que solo gastan, salen en negativo. La columna Total coincide con el Estado de Resultados de la empresa.
+Para una vista más resumida, marco Acumular en los centros principales, y vuelvo a pulsar Generar. Ahora cada subcentro se suma a su padre: las dos sucursales quedan en Ventas, con ciento diecisiete mil ochocientos de utilidad, y Logística queda dentro de Operaciones. El filtro Centro de costo limita el informe a un centro y a los que dependen de él. Y el botón Excel exporta la tabla.
+El Estado de Resultados normal también se puede pedir de un solo centro. En Tipo de informe abro la lista, y elijo Estado de Resultados. Elijo el período, Noviembre, igual que antes. Después, en Centro de costo abro la lista, y elijo Ventas Santo Domingo. Pulso Generar. Es el estado completo, pero solo de esa sucursal: sus ventas, su costo, sus gastos y su utilidad. Los informes de balance no tienen este filtro: la caja, los bancos y las cuentas por cobrar no llevan centro.
+Y para ver el detalle, el Libro Mayor. Tiene el mismo filtro, junto a la cuenta y las fechas: en Centro de costo abro la lista, y elijo Logística, el centro que quiero revisar. Con el filtro puesto, pulso Consultar. Quedan solo las cuentas con movimientos de ese centro, y cada movimiento dice a qué centro pertenece. Con el módulo de Proyectos, a su lado está el filtro por proyecto, que funciona igual. Así se llega del resultado de un centro hasta el asiento que lo explica.

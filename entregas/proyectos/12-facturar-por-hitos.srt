@@ -1,0 +1,163 @@
+1
+00:00:03,100 --> 00:00:05,867
+No todos los proyectos se cobran midiendo avance.
+
+2
+00:00:06,533 --> 00:00:10,528
+Un servicio, como esta supervisión de obra, se cobra por hitos:
+
+3
+00:00:10,663 --> 00:00:13,194
+se factura al cumplir cada entrega pactada.
+
+4
+00:00:13,851 --> 00:00:17,832
+En la pestaña Facturación, recojo el menú lateral para ganar espacio,
+
+5
+00:00:17,881 --> 00:00:19,891
+y bajo al plan de cobros por hitos.
+
+6
+00:00:20,559 --> 00:00:24,492
+Ya hay dos hitos, del treinta y del cuarenta por ciento del contrato.
+
+7
+00:00:25,160 --> 00:00:26,314
+El aviso lo dice:
+
+8
+00:00:26,475 --> 00:00:29,315
+faltan ciento ochenta mil pesos por planificar.
+
+9
+00:00:29,972 --> 00:00:31,274
+Pulso Nuevo hito.
+
+10
+00:00:31,931 --> 00:00:33,768
+En el nombre escribo Entrega final,
+
+11
+00:00:33,890 --> 00:00:36,682
+que es el cierre de este servicio de supervisión.
+
+12
+00:00:37,338 --> 00:00:40,862
+El valor puede ser un porcentaje del contrato, o un monto fijo;
+
+13
+00:00:40,984 --> 00:00:45,239
+lo dejo en porcentaje, y anoto treinta, que es justo lo que faltaba.
+
+14
+00:00:45,906 --> 00:00:48,823
+En la condición escribo lo que debe cumplirse para cobrarlo:
+
+15
+00:00:48,895 --> 00:00:50,596
+Acta de recepción firmada.
+
+16
+00:00:51,264 --> 00:00:53,994
+Con esos datos completos, pulso Guardar.
+
+17
+00:00:54,661 --> 00:00:59,202
+El plan llega a los seiscientos mil pesos del contrato, y el aviso desaparece.
+
+18
+00:01:00,560 --> 00:01:02,234
+El primer hito ya se cumplió:
+
+19
+00:01:02,283 --> 00:01:04,195
+el cliente firmó los planos.
+
+20
+00:01:04,861 --> 00:01:09,254
+En su fila abro el menú de acciones, y elijo Marcar listo para facturar.
+
+21
+00:01:09,921 --> 00:01:11,683
+El sistema pide confirmar;
+
+22
+00:01:11,707 --> 00:01:13,073
+pulso Marcar listo.
+
+23
+00:01:13,728 --> 00:01:17,227
+El hito cambia de estado, y facturación recibe el aviso.
+
+24
+00:01:17,882 --> 00:01:20,414
+Ahora la fila muestra el botón Facturar.
+
+25
+00:01:21,081 --> 00:01:21,977
+Lo pulso.
+
+26
+00:01:22,644 --> 00:01:27,432
+La vista previa trae el monto del hito, ciento ochenta mil pesos, el ITBIS,
+
+27
+00:01:27,468 --> 00:01:28,983
+y el total de la factura.
+
+28
+00:01:29,638 --> 00:01:33,770
+Si el contrato tuviera anticipo, aquí se descontaría su amortización.
+
+29
+00:01:34,426 --> 00:01:36,002
+Pulso Generar factura.
+
+30
+00:01:36,658 --> 00:01:40,516
+La factura nace en borrador en Ventas, con el proyecto en la cabecera;
+
+31
+00:01:40,614 --> 00:01:43,679
+allí se revisa y se emite con su comprobante fiscal.
+
+32
+00:01:44,346 --> 00:01:48,378
+El hito queda como Facturado, y abajo, en Facturas del proyecto,
+
+33
+00:01:48,487 --> 00:01:50,536
+aparece la factura con su origen.
+
+34
+00:01:51,900 --> 00:01:56,712
+La forma de facturar se elige una sola vez, en el contrato de venta del proyecto.
+
+35
+00:01:57,368 --> 00:02:00,607
+Por hitos, como aquí, para entregas pactadas.
+
+36
+00:02:01,274 --> 00:02:06,025
+Por avance, con cubicaciones, para obras que se miden partida por partida.
+
+37
+00:02:06,693 --> 00:02:09,907
+Y por tiempo y materiales, cuando se cobra lo trabajado:
+
+38
+00:02:09,992 --> 00:02:13,578
+el sistema propone la factura del período con las horas aprobadas,
+
+39
+00:02:13,612 --> 00:02:17,012
+a su tarifa de venta, y los gastos facturables del proyecto.
+
+40
+00:02:17,668 --> 00:02:20,868
+En los tres casos la factura sale de aquí, del proyecto,
+
+41
+00:02:20,843 --> 00:02:24,614
+y por eso el contrato siempre sabe cuánto se ha facturado y cuánto falta.

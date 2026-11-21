@@ -1,0 +1,230 @@
+{
+  "titulo": "Proyectos · Mis horas: cómo registra el empleado su semana",
+  "descripcion": "Cómo llena un empleado su hoja de tiempo en Germiva: copiar la semana anterior, anotar las horas de cada día, ver lo planificado y enviar la semana a aprobación.",
+  "_comentario": "Video 15 de la serie Proyectos. setup: seeds/proyectos/preparar.sh mis-horas (Juan Pérez Germiva, albañil, con usuario propio, la hoja de la semana pasada y 40 h planificadas esta semana). La sesión del video es la de Juan.",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "juan.perez",
+      "password": "Demo2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/timesheets/mine",
+    "esperar": "button:has-text('Copiar semana anterior')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh mis-horas"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Entrar a Mis horas con tu propio usuario",
+    "Copiar los renglones de la semana anterior",
+    "Anotar las horas de cada día",
+    "Enviar la semana a aprobación"
+  ],
+  "errores_comunes": [
+    "Esperar a fin de mes para llenar las horas",
+    "Olvidar enviar la hoja: en borrador no llega al supervisor",
+    "Querer editar una hoja ya enviada sin retirarla primero"
+  ],
+  "pasos": [
+    {
+      "id": "01-copiar",
+      "capitulo": "Mi hoja de la semana",
+      "rotulo": "Mis horas",
+      "ruta": "Proyectos › Mis horas",
+      "texto_pantalla": "Cada empleado registra su propia semana",
+      "narracion": "Las horas de un proyecto las puede registrar el encargado, o cada empleado por su cuenta. Juan, albañil de la obra, entra con su usuario a Proyectos, Mis horas. Arriba ve su nombre y su puesto. Esta semana todavía está vacía. En vez de armarla desde cero, pulso Copiar semana anterior. El diálogo lo explica: crea la hoja con los mismos renglones de la semana pasada, con su proyecto, su partida y su tipo de hora. Confirmo con el botón Copiar. La hoja aparece con el renglón de Zapatas. Y debajo de su nombre, el sistema le recuerda lo planificado para él: cuarenta horas esta semana.",
+      "acciones": [
+        {
+          "resaltar": "button.topbar-user",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "o cada empleado por su cuenta"
+        },
+        {
+          "resaltar": "section.content h2 >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "Arriba ve su nombre"
+        },
+        {
+          "resaltar": "button:has-text('Copiar semana anterior')",
+          "durante_ms": 2500,
+          "cursor": true,
+          "al_decir": "En vez de"
+        },
+        {
+          "click": "button:has-text('Copiar semana anterior')",
+          "al_decir": "pulso Copiar semana anterior"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "El diálogo lo explica"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Copiar') >> nth=-1",
+          "al_decir": "Confirmo con el botón"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=2",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "con el renglón de Zapatas"
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=0",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "le recuerda lo planificado"
+        }
+      ]
+    },
+    {
+      "id": "02-enviar",
+      "capitulo": "Anotar y enviar",
+      "rotulo": "Enviar a aprobación",
+      "ruta": "Proyectos › Mis horas",
+      "texto_pantalla": "Las horas se envían por semana",
+      "narracion": "Ahora anota lo trabajado. El lunes, ocho horas, la jornada completa en las zapatas. El martes, otras ocho horas en la misma partida de la obra. Y el miércoles, ocho más, con el vaciado ya terminado. La fila suma las horas de la semana. Aparece la barra de cambios sin guardar: pulso Guardar borrador, y el aviso lo confirma. Mientras esté en borrador, la hoja se puede seguir llenando día a día. Al terminar la semana, abro el menú de la hoja, y elijo Enviar a aprobación. El sistema pide confirmar, y confirmo. Desde aquí la hoja no se edita; si hay un error, se retira desde el mismo menú. El supervisor la recibe en Horas por aprobar, y al aprobarla, su costo entra al proyecto.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input.cin.cell >> nth=0",
+            "texto": "8"
+          },
+          "al_decir": "El lunes, ocho horas"
+        },
+        {
+          "escribir": {
+            "sel": "input.cin.cell >> nth=1",
+            "texto": "8"
+          },
+          "al_decir": "El martes, otras ocho"
+        },
+        {
+          "escribir": {
+            "sel": "input.cin.cell >> nth=2",
+            "texto": "8"
+          },
+          "al_decir": "Y el miércoles"
+        },
+        {
+          "resaltar": "tr:has-text('Total de la semana') td >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "La fila suma"
+        },
+        {
+          "click": "button:has-text('Guardar borrador')",
+          "al_decir": "pulso Guardar borrador"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=-2",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Mientras esté en borrador"
+        },
+        {
+          "click": "button[aria-label^='Acciones de la hoja']",
+          "al_decir": "abro el menú de la hoja"
+        },
+        {
+          "click": ".mat-mdc-menu-panel button:has-text('Enviar a aprobación')",
+          "al_decir": "elijo Enviar a aprobación"
+        },
+        {
+          "resaltar": "mat-dialog-container >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "El sistema pide confirmar"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button, mat-dialog-container button:has-text('Enviar')",
+          "al_decir": "y confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "table tbody tr >> nth=0 >> td >> nth=-2",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "El supervisor la recibe"
+        }
+      ]
+    }
+  ]
+}

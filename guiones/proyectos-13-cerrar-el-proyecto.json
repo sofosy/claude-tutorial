@@ -1,0 +1,309 @@
+{
+  "titulo": "Proyectos · Cerrar el proyecto: compromisos abiertos, finiquito y cierre del presupuesto",
+  "descripcion": "Cómo cerrar un proyecto en Germiva: pasarlo a Completado resolviendo los compromisos abiertos, cerrar el contrato de venta con su finiquito y cerrar el presupuesto para que no reciba más costos.",
+  "_comentario": "Video 13 de la serie Proyectos. setup: seeds/proyectos/preparar.sh cierre (obra en ejecución con una orden de acero de 450,000 sin facturar y el contrato de venta registrado). Entre el paso 1 y el 2, preparar.py resolver-compromiso anula esa orden por el API.",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17",
+    "esperar": "mat-select[formcontrolname='status']"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh cierre"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Pasar el proyecto a Completado",
+    "Qué son los compromisos abiertos y cómo resolverlos",
+    "Cerrar el contrato de venta con su finiquito",
+    "Cerrar el presupuesto del proyecto"
+  ],
+  "errores_comunes": [
+    "Forzar el cierre con órdenes de compra todavía abiertas",
+    "Dejar el presupuesto abierto: la obra sigue recibiendo costos",
+    "Cerrar el contrato antes de facturar la última cubicación"
+  ],
+  "pasos": [
+    {
+      "id": "01-compromisos",
+      "capitulo": "Completar el proyecto",
+      "rotulo": "Completar el proyecto",
+      "ruta": "Proyectos › Cartera › PRJ › Resumen",
+      "texto_pantalla": "El sistema revisa lo que sigue abierto",
+      "narracion": "Una obra no termina con la última factura: hay que cerrarla en el sistema, para que nadie le siga cargando costos. El cierre tiene tres partes: el proyecto, el contrato y el presupuesto. Empiezo en el Resumen. Abro el campo Estado, y elijo Completado. Abajo, pulso Actualizar. El sistema se detiene: el proyecto tiene compromisos abiertos. Hay cuatrocientos cincuenta mil pesos en órdenes de compra sin facturar. Podría continuar de todos modos, pero lo abierto quedaría sin resolver. Pulso Cancelar. Lo correcto es resolver cada compromiso: recibir y facturar la orden, o anularla si ya no va.",
+      "acciones": [
+        {
+          "resaltar": "header.ws-header h1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El cierre tiene tres partes"
+        },
+        {
+          "click": "mat-select[formcontrolname='status']",
+          "al_decir": "Abro el campo Estado"
+        },
+        {
+          "click": "mat-option:has-text('Completado')",
+          "al_decir": "y elijo Completado"
+        },
+        {
+          "click": "button:has-text('Actualizar')",
+          "al_decir": "pulso Actualizar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "El sistema se detiene"
+        },
+        {
+          "resaltar": "mat-dialog-container app-project-closure-blockers",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Hay cuatrocientos"
+        },
+        {
+          "resaltar": "mat-dialog-container button:has-text('Continuar de todos modos')",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Podría continuar"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar')",
+          "al_decir": "Pulso Cancelar"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Control')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Lo correcto es resolver"
+        }
+      ]
+    },
+    {
+      "id": "02-completado",
+      "capitulo": "Completar el proyecto",
+      "rotulo": "Sin compromisos abiertos",
+      "ruta": "Proyectos › Cartera › PRJ › Resumen",
+      "texto_pantalla": "Con todo resuelto, el proyecto se completa",
+      "navegar": "/projects/17",
+      "setup": {
+        "tipo": "shell",
+        "cmd": "python3 seeds/proyectos/preparar.py resolver-compromiso"
+      },
+      "narracion": "La orden de acero ya no iba, y se anuló en Compras. Ahora sí. De nuevo en el Resumen, abro el campo Estado, y elijo Completado. Pulso Actualizar. Esta vez el sistema lo acepta, y confirma que el proyecto se guardó. Pulso Aceptar. La cabecera ya muestra el proyecto como Completado.",
+      "acciones": [
+        {
+          "click": "mat-select[formcontrolname='status']",
+          "al_decir": "abro el campo Estado"
+        },
+        {
+          "click": "mat-option:has-text('Completado')",
+          "al_decir": "y elijo Completado"
+        },
+        {
+          "click": "button:has-text('Actualizar')",
+          "al_decir": "Pulso Actualizar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Esta vez el sistema"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aceptar')",
+          "al_decir": "Pulso Aceptar"
+        },
+        {
+          "resaltar": "header.ws-header h1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "La cabecera ya muestra"
+        }
+      ]
+    },
+    {
+      "id": "03-contrato",
+      "capitulo": "Cerrar el contrato",
+      "rotulo": "Finiquito del contrato",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Después del cierre no se factura nada más",
+      "navegar": "/projects/17/facturacion",
+      "narracion": "Segundo, el contrato de venta. En la pestaña Facturación, recojo el menú, y bajo a Cierre del contrato. El botón Finiquito genera el documento que liquida el contrato: lo facturado, el anticipo y el fondo de reparo. Pulso Cerrar contrato. En las notas escribo Obra recibida conforme. Con la nota ya escrita, confirmo con el botón Cerrar contrato. Desde ahora no se factura nada más de este contrato; solo el fondo de reparo se sigue liberando. Y si se cerró por error, el botón Reabrir lo devuelve.",
+      "acciones": [
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "recojo el menú"
+        },
+        {
+          "resaltar": "#billing-closing-title",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "bajo a Cierre del contrato"
+        },
+        {
+          "resaltar": "button:has-text('Finiquito')",
+          "durante_ms": 6000,
+          "cursor": true,
+          "al_decir": "El botón Finiquito"
+        },
+        {
+          "click": "section.ps-panel:has(#billing-closing-title) button:has-text('Cerrar contrato')",
+          "al_decir": "Pulso Cerrar contrato"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea[formcontrolname='notes']",
+            "texto": "Obra recibida conforme"
+          },
+          "al_decir": "En las notas escribo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar contrato')",
+          "al_decir": "confirmo con el botón"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "section.ps-panel:has(#billing-closing-title) p >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Desde ahora no se factura"
+        },
+        {
+          "resaltar": "button:has-text('Reabrir')",
+          "durante_ms": 3500,
+          "cursor": true,
+          "al_decir": "el botón Reabrir"
+        }
+      ]
+    },
+    {
+      "id": "04-presupuesto",
+      "capitulo": "Cerrar el presupuesto",
+      "rotulo": "Cerrar el presupuesto",
+      "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
+      "texto_pantalla": "Solo lectura: la obra ya no recibe costos",
+      "navegar": "/projects/17/presupuesto/2",
+      "narracion": "Y tercero, el presupuesto del proyecto, que es donde se cargan todos los costos de la obra. Arriba, pulso Cerrar presupuesto. El sistema recuerda la regla: solo se cierra con el proyecto completado y sin compromisos abiertos. En el motivo escribo Obra terminada y entregada. Con el motivo ya anotado, pulso el botón Cerrar presupuesto. El presupuesto queda cerrado, en solo lectura, y deja de aceptar imputaciones: ninguna compra, hora ni gasto se puede cargar ya a esta obra. Así el costo final queda fijo, listo para compararlo con lo presupuestado. Proyecto, contrato y presupuesto: con los tres cerrados, la obra está terminada también en los libros.",
+      "acciones": [
+        {
+          "resaltar": "header.ws-header h1",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "que es donde se cargan"
+        },
+        {
+          "click": "button:has-text('Cerrar presupuesto')",
+          "al_decir": "pulso Cerrar presupuesto"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "El sistema recuerda la regla"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "Obra terminada y entregada"
+          },
+          "al_decir": "En el motivo escribo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cerrar presupuesto')",
+          "al_decir": "pulso el botón Cerrar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": ":text('Este presupuesto está cerrado') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "El presupuesto queda cerrado"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Control')",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Así el costo final"
+        },
+        {
+          "resaltar": ":text('Este presupuesto está cerrado') >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "Proyecto, contrato y presupuesto"
+        }
+      ]
+    }
+  ]
+}

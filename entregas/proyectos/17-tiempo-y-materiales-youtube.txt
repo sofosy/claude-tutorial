@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Proyectos · Facturar por tiempo y materiales: horas aprobadas y gastos refacturables
+
+DESCRIPCIÓN
+============================================================
+Cómo facturar un proyecto por tiempo y materiales en Germiva: las horas aprobadas a su tarifa de venta, los gastos del proyecto que marcas refacturables con su recargo, y la factura del período en un clic.
+
+⏱️ CAPÍTULOS
+00:00  Tiempo y materiales
+00:45  Gastos y factura
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo conviene facturar por tiempo y materiales
+• Cómo se valoran las horas aprobadas
+• Marcar un gasto como refacturable, con su recargo
+• Generar la factura del período
+
+⚠️ ERRORES COMUNES
+• Facturar horas que nadie aprobó: solo entran las aprobadas
+• Olvidar marcar los gastos refacturables: no se cobran solos
+• Dejar un puesto sin tarifa de venta: sus horas no se pueden facturar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:42
+
+TRANSCRIPCIÓN
+============================================================
+Hay trabajos que no se cobran por un precio cerrado, sino por lo que se trabajó: horas y gastos. Eso es facturar por tiempo y materiales, y se elige en el contrato de venta del proyecto. En la pestaña Facturación, recojo el menú, y bajo al panel Tiempo y materiales. El sistema arma solo la propuesta del período. Primero las horas: solo las aprobadas, cada día con su empleado y su partida. Juan trabajó cuarenta horas, y cada una se cobra a novecientos pesos, la tarifa de venta del contrato. Son treinta y seis mil pesos. Esa tarifa es de venta: no es lo que cuesta Juan, sino lo que se le cobra al cliente.
+Debajo están los gastos del proyecto: las compras que se le cargaron en el período. Aquí hay un alquiler de andamios de treinta mil pesos. Ningún gasto se cobra solo: hay que decidirlo. Marco su casilla Refacturable, y el aviso lo confirma. El sistema le suma el recargo del contrato, el diez por ciento, y quedan treinta y tres mil pesos a facturar. Arriba, el botón ya muestra el total del período: sesenta y nueve mil pesos. Lo pulso, y el aviso trae el número de la factura. El sistema la crea en borrador en Ventas, con una línea para la mano de obra y otra para los gastos. Allí se revisa y se emite con su comprobante. La propuesta queda vacía: lo facturado se marca, y no se vuelve a proponer. El próximo período se repite igual, con las horas y los gastos nuevos.

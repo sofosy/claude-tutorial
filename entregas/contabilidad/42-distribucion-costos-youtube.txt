@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Contabilidad · Distribución de costos indirectos entre centros
+
+DESCRIPCIÓN
+============================================================
+Cómo repartir en Germiva los gastos indirectos de un centro, como el alquiler y los servicios de la oficina, entre los centros que los consumen: crear la regla, ver la vista previa, contabilizar la distribución y anularla desde el historial.
+
+⏱️ CAPÍTULOS
+00:00  La regla de distribución
+00:49  Cuentas y receptores
+02:00  Ejecutar la distribución
+03:06  Historial y anulación
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear una regla de distribución con emisores, cuentas y receptores
+• Revisar la vista previa antes de contabilizar
+• Contabilizar la distribución de un período
+• Anular una distribución desde el historial
+
+⚠️ ERRORES COMUNES
+• Receptores que no suman 100 %: la regla no se guarda
+• Usar el mismo centro como emisor y receptor
+• Distribuir un período cerrado: solo se ejecuta en períodos abiertos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:42
+
+TRANSCRIPCIÓN
+============================================================
+Hay gastos que paga un centro pero consumen varios: el alquiler y la luz de la oficina, por ejemplo, se cargan a Administración, aunque los usan Ventas y Operaciones. La Distribución de Costos los reparte con una regla. Recojo el menú, y pulso Crear Regla. Escribo el código, DIST-ADM, que identifica la regla y no se repite en la empresa. Después va el nombre, que dice qué reparte: Gastos de administración. Con el código y el nombre escritos, bajo a Qué se distribuye. En Centros emisores abro la lista, marco Administración, que es el centro que tiene el gasto, y con la tecla Escape cierro la lista. El porcentaje a distribuir queda en cien: se reparte todo el saldo.
+Ahora, qué cuentas se reparten. En Desde la cuenta escribo el código de arrendamientos, seis punto cero tres punto cero dos. Y en Hasta la cuenta, el de servicios públicos, que termina en cero tres. Así la regla toma solo esas dos cuentas. En Cómo se reparte dejo la base en porcentaje fijo; las otras bases reparten según un indicador de cada mes, como los metros cuadrados, o según los empleados activos de cada centro. Faltan los receptores. En el primero abro la lista, y elijo Ventas Santo Domingo. En su porcentaje anoto cincuenta: le toca la mitad, porque es la sucursal que más espacio ocupa. Pulso Agregar receptor. En la fila nueva abro la lista, y elijo Ventas Santiago. En su porcentaje anoto treinta, que es su parte de la oficina. Vuelvo a pulsar Agregar receptor para el último. Abro su lista, y elijo Operaciones. Y en su porcentaje anoto el veinte restante. Los tres porcentajes tienen que sumar cien, y el total lo confirma. Guardo la regla, y el aviso lo confirma.
+La regla solo define el reparto; el movimiento se hace al ejecutarla, una vez por período. Paso a la pestaña Ejecutar. En Período contable abro la lista, y elijo Noviembre de dos mil veintiséis. Sin elegir reglas, se ejecutan todas las activas. Pulso Vista previa, que calcula sin registrar nada. La regla sale Lista para contabilizar, con ochenta y cuatro mil pesos: el alquiler y los servicios de noviembre. Debajo está el detalle. En Receptores, cuánto recibe cada centro: cuarenta y dos mil Santo Domingo, veinticinco mil doscientos Santiago y dieciséis mil ochocientos Operaciones. Y debajo, el asiento que se va a registrar: sale de Administración y entra a cada receptor, en las mismas cuentas. Todo cuadra, así que pulso Contabilizar. El sistema avisa que registrará un asiento por regla; confirmo. Tras un momento, el sistema informa que la distribución quedó contabilizada, con su asiento. Acepto el aviso.
+Cada ejecución queda en el Historial: el período, la regla, lo distribuido, sus receptores y el asiento que generó, que se abre desde su fila. Desde ese momento, los informes por centro muestran a Ventas y a Operaciones con su parte del alquiler, y a Administración sin ese gasto. Si algo salió mal, Anular registra el asiento de reverso en el mismo período, pide un motivo y deja la distribución como anulada, lista para ejecutarse de nuevo. Con varias reglas encadenadas, se anulan de la última a la primera.
