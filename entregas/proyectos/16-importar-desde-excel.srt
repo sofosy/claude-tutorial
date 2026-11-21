@@ -1,0 +1,91 @@
+1
+00:00:03,100 --> 00:00:05,842
+Si el presupuesto ya existe en una hoja de cálculo,
+
+2
+00:00:05,964 --> 00:00:08,310
+no hay que digitarlo partida por partida.
+
+3
+00:00:08,977 --> 00:00:11,693
+En el presupuesto en borrador, recojo el menú.
+
+4
+00:00:12,362 --> 00:00:15,711
+El botón Excel, plantilla, descarga el formato:
+
+5
+00:00:15,747 --> 00:00:19,816
+una fila por fase o por partida, con su código, su unidad,
+
+6
+00:00:19,914 --> 00:00:22,023
+su cantidad y su costo unitario.
+
+7
+00:00:22,679 --> 00:00:27,481
+Con el archivo ya lleno, pulso Importar Excel, y elijo el archivo de la nave.
+
+8
+00:00:28,135 --> 00:00:30,134
+El sistema todavía no lo aplica:
+
+9
+00:00:30,282 --> 00:00:32,341
+primero muestra una vista previa.
+
+10
+00:00:33,010 --> 00:00:35,343
+Nueve filas, y cero errores.
+
+11
+00:00:36,011 --> 00:00:40,167
+Si una unidad o una cuenta no existiera, aquí saldría la fila exacta,
+
+12
+00:00:40,264 --> 00:00:41,332
+con su mensaje.
+
+13
+00:00:41,987 --> 00:00:44,841
+Y avisa que se reemplazará la estructura del borrador.
+
+14
+00:00:45,497 --> 00:00:48,748
+Pulso Confirmar importación, y el aviso lo confirma.
+
+15
+00:00:50,121 --> 00:00:51,994
+El presupuesto queda armado.
+
+16
+00:00:52,650 --> 00:00:55,975
+Arriba, el costo directo de cinco millones de pesos,
+
+17
+00:00:55,986 --> 00:01:00,426
+con los indirectos y la utilidad que traía el archivo en su hoja de configuración.
+
+18
+00:01:01,083 --> 00:01:05,971
+Abajo, las tres fases con sus partidas, sus cantidades y sus costos.
+
+19
+00:01:06,638 --> 00:01:08,525
+Desde aquí se sigue igual que siempre:
+
+20
+00:01:08,659 --> 00:01:11,897
+se ajusta lo que haga falta, y se envía a aprobación.
+
+21
+00:01:12,554 --> 00:01:14,527
+Y funciona en los dos sentidos:
+
+22
+00:01:14,625 --> 00:01:18,682
+el mismo botón de Excel exporta el presupuesto, para trabajarlo fuera,
+
+23
+00:01:18,754 --> 00:01:21,360
+y volver a importarlo mientras siga en borrador.

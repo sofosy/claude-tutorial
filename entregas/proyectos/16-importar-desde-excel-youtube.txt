@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Proyectos · Importar el presupuesto desde Excel
+
+DESCRIPCIÓN
+============================================================
+Cómo cargar el presupuesto de un proyecto desde una hoja de Excel en Germiva: descargar la plantilla, importar el archivo, revisar la vista previa con sus errores y confirmar la importación.
+
+⏱️ CAPÍTULOS
+00:00  Importar desde Excel
+00:50  El presupuesto importado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Descargar la plantilla de Excel del presupuesto
+• Importar el archivo y leer la vista previa
+• Confirmar la importación
+• Exportar el presupuesto para trabajarlo fuera
+
+⚠️ ERRORES COMUNES
+• Importar sobre un borrador ya armado sin saber que lo reemplaza
+• Confirmar con errores sin corregir el archivo
+• Querer importar sobre una versión aprobada: se hace en una revisión en borrador
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:25
+
+TRANSCRIPCIÓN
+============================================================
+Si el presupuesto ya existe en una hoja de cálculo, no hay que digitarlo partida por partida. En el presupuesto en borrador, recojo el menú. El botón Excel, plantilla, descarga el formato: una fila por fase o por partida, con su código, su unidad, su cantidad y su costo unitario. Con el archivo ya lleno, pulso Importar Excel, y elijo el archivo de la nave. El sistema todavía no lo aplica: primero muestra una vista previa. Nueve filas, y cero errores. Si una unidad o una cuenta no existiera, aquí saldría la fila exacta, con su mensaje. Y avisa que se reemplazará la estructura del borrador. Pulso Confirmar importación, y el aviso lo confirma.
+El presupuesto queda armado. Arriba, el costo directo de cinco millones de pesos, con los indirectos y la utilidad que traía el archivo en su hoja de configuración. Abajo, las tres fases con sus partidas, sus cantidades y sus costos. Desde aquí se sigue igual que siempre: se ajusta lo que haga falta, y se envía a aprobación. Y funciona en los dos sentidos: el mismo botón de Excel exporta el presupuesto, para trabajarlo fuera, y volver a importarlo mientras siga en borrador.
