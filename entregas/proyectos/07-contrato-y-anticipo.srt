@@ -75,11 +75,11 @@ Sigue la forma de facturar.
 Hay tres:
 
 20
-00:01:02,381 --> 00:01:05,421
+00:01:02,382 --> 00:01:05,423
 por avance, midiendo lo ejecutado en cada período;
 
 21
-00:01:05,531 --> 00:01:07,665
+00:01:05,533 --> 00:01:07,667
 por hitos, con un plan de cobros;
 
 22
@@ -87,55 +87,55 @@ por hitos, con un plan de cobros;
 o por tiempo y materiales.
 
 23
-00:01:10,156 --> 00:01:11,448
+00:01:10,158 --> 00:01:11,450
 Dejo Por avance.
 
 24
-00:01:12,115 --> 00:01:16,432
+00:01:12,116 --> 00:01:16,433
 En Presupuesto que se cubica abro la lista, y elijo el presupuesto de la obra:
 
 25
-00:01:16,567 --> 00:01:18,590
+00:01:16,568 --> 00:01:18,591
 sus partidas son las que se medirán.
 
 26
-00:01:19,259 --> 00:01:20,525
+00:01:19,259 --> 00:01:20,527
 Bajo al anticipo.
 
 27
-00:01:21,180 --> 00:01:22,783
+00:01:21,182 --> 00:01:22,783
 En Anticipo anoto veinte:
 
 28
-00:01:22,879 --> 00:01:25,783
+00:01:22,881 --> 00:01:25,784
 el cliente adelanta el veinte por ciento del contrato.
 
 29
-00:01:26,451 --> 00:01:29,331
+00:01:26,453 --> 00:01:29,331
 Y en Amortización por factura anoto veinte también:
 
 30
-00:01:29,378 --> 00:01:32,231
+00:01:29,378 --> 00:01:32,233
 cada factura de avance descontará ese porcentaje,
 
 31
-00:01:32,254 --> 00:01:34,353
+00:01:32,256 --> 00:01:34,353
 hasta devolver el anticipo completo.
 
 32
-00:01:35,008 --> 00:01:37,180
+00:01:35,009 --> 00:01:37,180
 Por último, el fondo de reparo.
 
 33
-00:01:37,835 --> 00:01:38,792
+00:01:37,836 --> 00:01:38,793
 Anoto cinco:
 
 34
-00:01:38,902 --> 00:01:42,649
+00:01:38,902 --> 00:01:42,650
 el cliente retiene el cinco por ciento de cada factura como garantía,
 
 35
-00:01:42,734 --> 00:01:44,633
+00:01:42,734 --> 00:01:44,634
 y lo paga al recibir la obra.
 
 36
@@ -143,45 +143,45 @@ y lo paga al recibir la obra.
 Pulso Guardar, y el aviso lo confirma.
 
 37
-00:01:49,165 --> 00:01:53,085
+00:01:49,167 --> 00:01:53,087
 Con el contrato guardado, la pestaña muestra el estado de facturación:
 
 38
-00:01:53,134 --> 00:01:56,930
+00:01:53,135 --> 00:01:56,931
 contrato vigente, facturado, cobrado y por facturar.
 
 39
-00:01:57,585 --> 00:01:59,260
+00:01:57,586 --> 00:01:59,262
 Más abajo está el Anticipo:
 
 40
-00:01:59,371 --> 00:02:03,662
+00:01:59,372 --> 00:02:03,664
 un millón trescientos veinte mil pesos pactados, todavía sin facturar.
 
 41
-00:02:04,319 --> 00:02:06,007
+00:02:04,320 --> 00:02:06,008
 Pulso Facturar anticipo.
 
 42
-00:02:06,663 --> 00:02:08,673
+00:02:06,664 --> 00:02:08,674
 El sistema muestra la vista previa:
 
 43
-00:02:08,771 --> 00:02:13,001
+00:02:08,771 --> 00:02:13,002
 la base, el ITBIS sobre el diez por ciento, y el total de la factura.
 
 44
-00:02:13,657 --> 00:02:15,233
+00:02:13,658 --> 00:02:15,234
 Pulso Generar factura.
 
 45
-00:02:15,889 --> 00:02:18,693
+00:02:15,890 --> 00:02:18,694
 El aviso dice que la factura quedó creada en borrador:
 
 46
-00:02:18,816 --> 00:02:22,141
+00:02:18,817 --> 00:02:22,141
 se revisa y se emite en Ventas, como cualquier otra.
 
 47
-00:02:22,795 --> 00:02:26,890
+00:02:22,796 --> 00:02:26,891
 Desde ahí, cada factura de avance irá amortizando este anticipo.

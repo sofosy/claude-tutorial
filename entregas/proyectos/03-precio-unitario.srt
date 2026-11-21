@@ -63,145 +63,145 @@ Es un metro cúbico de hormigón por cada metro cúbico de zapata.
 Y en Costo unitario anoto seis mil trescientos pesos.
 
 17
-00:00:50,963 --> 00:00:52,576
+00:00:50,960 --> 00:00:52,573
 Falta la mano de obra.
 
 18
-00:00:53,231 --> 00:00:54,918
+00:00:53,228 --> 00:00:54,915
 Agrego otro recurso.
 
 19
-00:00:55,588 --> 00:00:58,764
+00:00:55,585 --> 00:00:58,761
 En su tipo abro la lista, y elijo Mano de obra.
 
 20
-00:00:59,420 --> 00:01:02,149
+00:00:59,417 --> 00:01:02,146
 En su descripción escribo Cuadrilla de vaciado.
 
 21
-00:01:02,804 --> 00:01:07,109
+00:01:02,801 --> 00:01:07,106
 Con la descripción lista, en su cantidad por unidad anoto uno también.
 
 22
-00:01:07,777 --> 00:01:11,027
+00:01:07,775 --> 00:01:11,025
 Y en su costo unitario anoto dos mil setecientos pesos,
 
 23
-00:01:11,138 --> 00:01:13,521
+00:01:11,134 --> 00:01:13,518
 lo que cobra la cuadrilla por metro cúbico.
 
 24
-00:01:14,176 --> 00:01:15,900
+00:01:14,174 --> 00:01:15,897
 Arriba, el panel suma:
 
 25
-00:01:15,998 --> 00:01:19,509
+00:01:15,995 --> 00:01:19,507
 el costo por unidad es nueve mil pesos, y el de la partida,
 
 26
-00:01:19,608 --> 00:01:22,932
+00:01:19,605 --> 00:01:22,930
 con sus ochenta metros cúbicos, setecientos veinte mil.
 
 27
-00:01:23,600 --> 00:01:28,030
+00:01:23,597 --> 00:01:28,027
 Si un material se desperdicia, se indica en su porcentaje de desperdicio.
 
 28
-00:01:28,685 --> 00:01:32,171
+00:01:28,682 --> 00:01:32,169
 Pulso Aplicar al borrador, y el costo pasa a la partida.
 
 29
-00:01:32,840 --> 00:01:34,032
+00:01:32,836 --> 00:01:34,028
 Cierro el panel.
 
 30
-00:01:35,955 --> 00:01:37,878
+00:01:35,947 --> 00:01:37,870
 Con todas las partidas costeadas,
 
 31
-00:01:38,001 --> 00:01:41,350
+00:01:37,993 --> 00:01:41,343
 el costo directo de la obra es cinco millones de pesos.
 
 32
-00:01:42,018 --> 00:01:45,157
+00:01:42,010 --> 00:01:45,149
 Para llegar al precio del cliente faltan los porcentajes.
 
 33
-00:01:45,825 --> 00:01:47,426
+00:01:45,817 --> 00:01:47,418
 En Indirectos anoto diez:
 
 34
-00:01:47,537 --> 00:01:51,903
+00:01:47,530 --> 00:01:51,896
 son los gastos de la obra que no pertenecen a una partida, como la supervisión.
 
 35
-00:01:52,560 --> 00:01:54,384
+00:01:52,551 --> 00:01:54,376
 Imprevistos lo dejo en cero.
 
 36
-00:01:55,039 --> 00:01:58,463
+00:01:55,031 --> 00:01:58,455
 Y en Utilidad anoto veinte, la ganancia sobre el costo.
 
 37
-00:01:59,119 --> 00:02:01,117
+00:01:59,111 --> 00:02:01,109
 Las cifras se recalculan al momento:
 
 38
-00:02:01,227 --> 00:02:05,296
+00:02:01,219 --> 00:02:05,289
 el precio antes de impuestos queda en seis millones seiscientos mil pesos.
 
 39
-00:02:05,965 --> 00:02:10,914
+00:02:05,956 --> 00:02:10,907
 Abajo, cada partida muestra ya su precio, y la última fila da el total.
 
 40
-00:02:11,582 --> 00:02:14,819
+00:02:11,574 --> 00:02:14,812
 Pulso Guardar presupuesto, y el aviso lo confirma.
 
 41
-00:02:16,184 --> 00:02:18,430
+00:02:16,175 --> 00:02:18,421
 Cada partida tiene además su detalle.
 
 42
-00:02:19,097 --> 00:02:23,241
+00:02:19,088 --> 00:02:23,233
 Abro el menú de la primera, y elijo Fechas, tarea y detalle.
 
 43
-00:02:23,909 --> 00:02:28,238
+00:02:23,900 --> 00:02:28,229
 Aquí van el inicio y el fin previstos de la partida, que arman el cronograma;
 
 44
-00:02:28,361 --> 00:02:30,532
+00:02:28,352 --> 00:02:30,524
 la tarea del proyecto a la que se vincula;
 
 45
-00:02:30,630 --> 00:02:34,562
+00:02:30,621 --> 00:02:34,554
 y el ITBIS estimado, con base presunta si el contrato la admite.
 
 46
-00:02:35,231 --> 00:02:38,196
+00:02:35,222 --> 00:02:38,187
 También sus propios porcentajes de indirectos y utilidad,
 
 47
-00:02:38,281 --> 00:02:40,130
+00:02:38,272 --> 00:02:40,121
 si difieren de los generales.
 
 48
-00:02:40,799 --> 00:02:43,405
+00:02:40,790 --> 00:02:43,396
 Cancelo, y subo a la barra de versión.
 
 49
-00:02:44,060 --> 00:02:47,770
+00:02:44,051 --> 00:02:47,762
 Con el presupuesto guardado, Excel descarga la estructura completa,
 
 50
-00:02:47,855 --> 00:02:50,312
+00:02:47,846 --> 00:02:50,304
 que también sirve de plantilla para importar.
 
 51
-00:02:50,967 --> 00:02:53,177
+00:02:50,959 --> 00:02:53,168
 Y PDF genera dos documentos:
 
 52
-00:02:53,262 --> 00:02:57,678
+00:02:53,253 --> 00:02:57,669
 uno para el cliente, solo con precios, y uno interno, con los costos.
