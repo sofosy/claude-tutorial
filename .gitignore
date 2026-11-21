@@ -54,3 +54,7 @@ guiones/exploracion-seguridad/v06a-04-secreto-mostrado.json
 guiones/exploracion-seguridad/v06a-05-secreto-copiado.json
 guiones/exploracion-seguridad/v06b-04-mas-acciones.json
 guiones/exploracion-seguridad/v06b-05-desactivada.json
+
+# Credenciales de YouTube (tutorial/subir.py). Nunca se versionan.
+client_secret*.json
+youtube-token.json

@@ -1,0 +1,570 @@
+{
+  "certificacion/Germiva - Tutorial de Certificación e-CF (2 partes) - 2026-10/Parte 1 - Solicitarla como contador para tus clientes.mp4": {
+    "id": "Bgrtn5Afmys",
+    "origen": "ya estaba en el canal",
+    "titulo": "Certificación e-CF · Parte 1: solicitarla como contador para tus clientes en Germiva"
+  },
+  "certificacion/Germiva - Tutorial de Certificación e-CF (2 partes) - 2026-10/Parte 2 - Aprobar y confirmar las solicitudes (equipo Germiva).mp4": {
+    "id": "V9LxVsiNmDI",
+    "origen": "ya estaba en el canal",
+    "titulo": "Certificación e-CF · Parte 2: aprobar y confirmar las solicitudes (equipo de Germiva)"
+  },
+  "citas/RegiSalud - Tutorial de Citas (5 partes) - 2026-10/Parte 1 - Los servicios del centro (tipos de cita).mp4": {
+    "omitir": "es de RegiSalud, no de Germiva: confirmar en qué canal va",
+    "titulo": "Citas · Parte 1: los servicios del centro"
+  },
+  "citas/RegiSalud - Tutorial de Citas (5 partes) - 2026-10/Parte 2 - El medico, su horario y su enlace de reservas.mp4": {
+    "omitir": "es de RegiSalud, no de Germiva: confirmar en qué canal va",
+    "titulo": "Citas · Parte 2: el médico, su horario y su enlace"
+  },
+  "citas/RegiSalud - Tutorial de Citas (5 partes) - 2026-10/Parte 3 - El paciente reserva por internet.mp4": {
+    "omitir": "es de RegiSalud, no de Germiva: confirmar en qué canal va",
+    "titulo": "Citas · Parte 3: el paciente reserva por internet"
+  },
+  "citas/RegiSalud - Tutorial de Citas (5 partes) - 2026-10/Parte 4 - Todas las citas - calendario y Agenda del Centro.mp4": {
+    "omitir": "es de RegiSalud, no de Germiva: confirmar en qué canal va",
+    "titulo": "Citas · Parte 4: todas las citas del centro"
+  },
+  "citas/RegiSalud - Tutorial de Citas (5 partes) - 2026-10/Parte 5 - Agendar, confirmar y atender una cita.mp4": {
+    "omitir": "es de RegiSalud, no de Germiva: confirmar en qué canal va",
+    "titulo": "Citas · Parte 5: agendar, confirmar y atender"
+  },
+  "clientes/01-pantalla.mp4": {
+    "fecha": "2026-11-21",
+    "id": "zYL0bNWfYJg",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Clientes 01 · La pantalla de clientes en Germiva"
+  },
+  "clientes/02-empresa-con-rnc.mp4": {
+    "fecha": "2026-11-21",
+    "id": "GDem2pumadY",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Clientes 02 · Crear una empresa con RNC en Germiva"
+  },
+  "clientes/03-contactos-y-direcciones.mp4": {
+    "fecha": "2026-11-21",
+    "id": "asJtnU_QQPA",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Clientes 03 · Contactos y direcciones en Germiva"
+  },
+  "clientes/04-persona-extranjero-informal.mp4": {
+    "fecha": "2026-11-21",
+    "id": "PeqHQK9zmpk",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Clientes 04 · Personas, extranjeros y casos especiales en Germiva"
+  },
+  "clientes/05-mismo-rnc-sucursales.mp4": {
+    "fecha": "2026-11-21",
+    "id": "Fw098ARJlDQ",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Clientes 05 · Varias cuentas con el mismo RNC en Germiva"
+  },
+  "clientes/06-sucursales-en-documentos.mp4": {
+    "fecha": "2026-11-21",
+    "id": "toJXuwFNV0E",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Clientes 06 · Las sucursales al facturar en Germiva"
+  },
+  "clientes/07-archivar-e-importar.mp4": {
+    "fecha": "2026-11-21",
+    "id": "-kVnzN5kiWM",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Clientes 07 · Archivar, restaurar e importar en Germiva"
+  },
+  "cobros/01-pantalla.mp4": {
+    "fecha": "2026-11-21",
+    "id": "cVSphJQrXSg",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Cobros 01 · La pantalla de cobros en Germiva"
+  },
+  "cobros/02-cobrar-una-factura.mp4": {
+    "fecha": "2026-11-21",
+    "id": "SW82ZoWQLbk",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Cobros 02 · Cobrar una factura en Germiva"
+  },
+  "cobros/03-pago-combinado.mp4": {
+    "fecha": "2026-11-21",
+    "id": "PcH2zLLrgfo",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Cobros 03 · Un cobro con varios métodos de pago en Germiva"
+  },
+  "cobros/04-retenciones.mp4": {
+    "fecha": "2026-11-21",
+    "id": "5vVll24iXPg",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Cobros 04 · Cuando el cliente retiene impuestos en Germiva"
+  },
+  "cobros/05-varias-facturas.mp4": {
+    "fecha": "2026-11-21",
+    "id": "jQC5vNCknpU",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Cobros 05 · Un solo pago para varias facturas en Germiva"
+  },
+  "cobros/06-varias-facturas-variantes.mp4": {
+    "fecha": "2026-11-21",
+    "id": "PD2dCDavoAM",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Cobros 06 · Varias facturas: otras configuraciones en Germiva"
+  },
+  "cobros/07-corregir-y-reversar.mp4": {
+    "fecha": "2026-11-21",
+    "id": "wtukjyXjpt0",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Cobros 07 · Corregir un reparto y reversar un cobro en Germiva"
+  },
+  "comercial-contadores/Germiva - Comercial para contadores - 2026-10/YouTube - horizontal.mp4": {
+    "omitir": "anuncia el plazo del 15 de noviembre de 2026, ya vencido",
+    "titulo": "Factura electrónica: 15 de noviembre. ¿Tus clientes están listos? | Germiva, gratis para contador"
+  },
+  "comercial-socios/Germiva - Se nuestro socio (contadores) - 2026-10/YouTube - horizontal.mp4": {
+    "omitir": "puede ser el mismo comercial que ya está en el canal con otro título",
+    "titulo": "Contador: ¿quién se queda con la comisión de la factura electrónica? | Sé socio de Germiva"
+  },
+  "compras-facturas/01-por-donde-entra.mp4": {
+    "fecha": "2026-11-21",
+    "id": "39FEmLEZkgE",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Compras · Entrada de facturas 1: por dónde entra cada factura en Germiva"
+  },
+  "compras-facturas/02-manual-por-totales.mp4": {
+    "fecha": "2026-11-21",
+    "id": "qEphhQVu2zw",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Compras · Entrada de facturas 2: registrar a mano, por totales en Germiva"
+  },
+  "compras-facturas/03-manual-por-lineas.mp4": {
+    "fecha": "2026-11-21",
+    "id": "zA7kIg_GROk",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Compras · Entrada de facturas 3: por líneas y al contado en Germiva"
+  },
+  "compras-facturas/04-importar-con-ia.mp4": {
+    "fecha": "2026-11-21",
+    "id": "tkzpa6ZylL8",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Compras · Entrada de facturas 4: importar con IA en Germiva"
+  },
+  "compras-facturas/05-plantilla-y-lote.mp4": {
+    "fecha": "2026-11-21",
+    "id": "dMiKApnX8fk",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Compras · Entrada de facturas 5: plantilla de Excel y entrada por lote en Germiva"
+  },
+  "compras-facturas/06-reporte-dgii.mp4": {
+    "fecha": "2026-11-21",
+    "id": "BdON0ThCTNI",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Compras · Entrada de facturas 6: el reporte de e-CF recibidos de la DGII en Germiva"
+  },
+  "compras-facturas/07-cotejar-recepcion.mp4": {
+    "fecha": "2026-11-21",
+    "id": "cFtex1HOs3U",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Compras · Entrada de facturas 7: la factura de una mercancía ya recibida en Germiva"
+  },
+  "compras-facturas/08-mercancia-por-recibir.mp4": {
+    "fecha": "2026-11-21",
+    "id": "yTTw2uym2Fs",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "pendiente",
+    "titulo": "Compras · Entrada de facturas 8: la factura llega antes que la mercancía en Germiva"
+  },
+  "contabilidad/01-catalogo.mp4": {
+    "id": "F1aQkSwlEa8",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 01 · Crea las cuentas que faltan en tu catálogo en Germiva"
+  },
+  "contabilidad/02-balance-inicial.mp4": {
+    "id": "ZTxrMJCr8Qg",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 02 · Carga los auxiliares y el balance inicial en Germiva"
+  },
+  "contabilidad/03-bancos.mp4": {
+    "id": "mZTHDIqa14c",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 03 · Crea tus bancos y cuentas bancarias para conciliar en Germiva"
+  },
+  "contabilidad/04-cierre-mensual.mp4": {
+    "id": "ma9hFVNPe-A",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 04 · Cierra el período del mes en Germiva"
+  },
+  "contabilidad/05-cierre-anual.mp4": {
+    "id": "vcFOTQ7e8zs",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 05 · Cierra el año fiscal en Germiva"
+  },
+  "contabilidad/06-revaluacion.mp4": {
+    "id": "in9iToCSMcc",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad · Revaluación NIC 21 de la moneda extranjera en Germiva"
+  },
+  "contabilidad/07-panel.mp4": {
+    "id": "P8LHTyK7CIk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 07 · El Panel de Contabilidad y cómo viaja un hecho en Germiva"
+  },
+  "contabilidad/08-cuentas.mp4": {
+    "id": "LuZEkbvb5JU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 08 · Mantén tu catálogo: renombrar, ocultar, desactivar y clasificar en Germiva"
+  },
+  "contabilidad/09-plantilla.mp4": {
+    "id": "txV-BBLO7N4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 09 · Plantillas de catálogo y catálogo propio en Germiva"
+  },
+  "contabilidad/10-mapeo.mp4": {
+    "id": "9M09GB-Xb6c",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 10 · Mapeo de Cuentas: a qué cuenta va cada operación en Germiva"
+  },
+  "contabilidad/11-autoposteo.mp4": {
+    "id": "Tmq4nO3loRk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 11 · Auto-posteo, Ajustes y Estado de la Configuración en Germiva"
+  },
+  "contabilidad/12-asiento.mp4": {
+    "id": "XeyYGAvW2TQ",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 12 · Asiento manual: registrar, contabilizar y aprobar en Germiva"
+  },
+  "contabilidad/13-reversar.mp4": {
+    "id": "qjpv_rSTKB4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 13 · Reversar y corregir un asiento en Germiva"
+  },
+  "contabilidad/14-recurrentes.mp4": {
+    "id": "vYkoY09eSkY",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 14 · Asientos recurrentes en Germiva"
+  },
+  "contabilidad/15-automaticos.mp4": {
+    "id": "GF1DSbsvQkA",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 15 · Asientos automáticos y Registro de Integración en Germiva"
+  },
+  "contabilidad/16-mayor.mp4": {
+    "id": "T18YqHBQZV4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 16 · Libro Mayor: movimientos, saldos y estado de cuenta en Germiva"
+  },
+  "contabilidad/17-informes.mp4": {
+    "id": "QOSHECe4zOc",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 17 · Informes financieros: Balanza, Balance General, Resultados y Razones en Germiva"
+  },
+  "contabilidad/18-informes-ii.mp4": {
+    "id": "JSVwbv2pIwk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 18 · Informes financieros: Flujo de Efectivo, Patrimonio y análisis en Germiva"
+  },
+  "contabilidad/19-periodos.mp4": {
+    "id": "bVwbQwvZAVQ",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 19 · Períodos contables: tipos, generar el año fiscal y período actual en Germiva"
+  },
+  "contabilidad/20-reabrir.mp4": {
+    "id": "K30Merv0sLU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 20 · Reabrir, cerrar y bloquear un período, y corregir lo que ya se cerró en Germiva"
+  },
+  "contabilidad/21-reversar-cierre.mp4": {
+    "id": "S1rXICe68jc",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 21 · Reversar el cierre del ejercicio en Germiva"
+  },
+  "contabilidad/22-transferencias.mp4": {
+    "id": "8bzoWISuKKI",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 22 · Bancos: saldo, transferencias entre cuentas propias y anulación en Germiva"
+  },
+  "contabilidad/23-conciliar.mp4": {
+    "id": "EREv8EEz1es",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 23 · Conciliación bancaria: importar el estado de cuenta y conciliar en Germiva"
+  },
+  "contabilidad/24-activos.mp4": {
+    "id": "cwNeO5mnuk4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 24 · Activos fijos: alta y depreciación en Germiva"
+  },
+  "contabilidad/25-activos-baja.mp4": {
+    "id": "YWoPw7Sm-Ac",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 25 · Activos fijos: dar de baja, vender y deshacer en Germiva"
+  },
+  "contabilidad/26-centros-costo.mp4": {
+    "id": "1Sli7_Rn00k",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 26 · Centros de costo: crear, jerarquía y ejecución en Germiva"
+  },
+  "contabilidad/27-presupuestos.mp4": {
+    "id": "JUhd6gek0I0",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 27 · Presupuestos: crear por cuenta y centro, aprobar y cerrar en Germiva"
+  },
+  "contabilidad/28-plantilla-firma.mp4": {
+    "id": "cc3FXm78OIY",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 28 · La plantilla de catálogo de tu firma contable en Germiva"
+  },
+  "contabilidad/29-catalogo-por-defecto.mp4": {
+    "id": "m5cPbpXAQeM",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 29 · El catálogo con el que nacen los clientes de tu firma en Germiva"
+  },
+  "contabilidad/30-alta-cliente.mp4": {
+    "id": "oGG6Xu4XUUo",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 30 · Dar de alta a un cliente con su catálogo en Germiva"
+  },
+  "contabilidad/31-cambiar-catalogo-cliente.mp4": {
+    "id": "rUs30SFBg98",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 31 · Cambiar el catálogo de un cliente de tu firma en Germiva"
+  },
+  "contabilidad/32-cambio-con-asientos.mp4": {
+    "id": "VG6bj8-kR2E",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 32 · Cambiar de catálogo con asientos: el asistente de correspondencia en Germiva"
+  },
+  "contabilidad/33-renovar-plantilla.mp4": {
+    "id": "daBW1XNcacU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 33 · Renovar la plantilla de catálogo de tu firma en Germiva"
+  },
+  "contabilidad/34-monedas-y-tasa.mp4": {
+    "id": "HagekNivEAM",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 34 · Monedas y tasa del día en Germiva"
+  },
+  "contabilidad/35-diferencia-cambiaria.mp4": {
+    "id": "05jF9ZAcyoo",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 35 · Las cuentas de diferencia cambiaria en Germiva"
+  },
+  "contabilidad/36-vender-y-cobrar-usd.mp4": {
+    "id": "K-1ZDPZdNFI",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 36 · Vender y cobrar en dólares en Germiva"
+  },
+  "contabilidad/37-comprar-y-pagar-usd.mp4": {
+    "id": "evZe2j6duEo",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 37 · Comprar y pagar en dólares en Germiva"
+  },
+  "contabilidad/38-revaluacion-por-dentro.mp4": {
+    "id": "LFB3mZBjRbU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 38 · La revaluación por dentro: asiento y ajuste por liquidación en Germiva"
+  },
+  "contabilidad/39-usd-y-dop.mp4": {
+    "id": "qQc5phw7qKA",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 39 · Ver la operación en dólares y en pesos en Germiva"
+  },
+  "crm/01-tablero-prospectos.mp4": {
+    "id": "NfIYGV0xyi4",
+    "origen": "ya estaba en el canal",
+    "titulo": "CRM 01 · El tablero de prospectos en Germiva"
+  },
+  "crm/02-ficha-y-seguimientos.mp4": {
+    "id": "yuktvj8qkG8",
+    "origen": "ya estaba en el canal",
+    "titulo": "CRM 02 · La ficha del prospecto y sus seguimientos en Germiva"
+  },
+  "crm/03-oportunidades.mp4": {
+    "id": "7oVuUj6-Rb4",
+    "origen": "ya estaba en el canal",
+    "titulo": "CRM 03 · Oportunidades: de la propuesta a la venta ganada en Germiva"
+  },
+  "crm/04-reportes-y-embudo.mp4": {
+    "id": "ITavnDJS1I0",
+    "origen": "ya estaba en el canal",
+    "titulo": "CRM 04 · Reportes y embudo comercial en Germiva"
+  },
+  "crm/05-configuracion.mp4": {
+    "id": "IO-jdYFXwdQ",
+    "origen": "ya estaba en el canal",
+    "titulo": "CRM 05 · Configurar espacios, etiquetas, columnas y metas en Germiva"
+  },
+  "demo-contadores/Germiva - Programa de Socios para contadores - video completo - 2026-10.mp4": {
+    "id": "vj0GJkLuLx8",
+    "origen": "ya estaba en el canal",
+    "titulo": "Programa de Socios Germiva para contadores · Qué es y cómo funciona en un caso real"
+  },
+  "demo-contadores/Germiva - Un dia de cierre con su cliente (contadores) - 2026-10.mp4": {
+    "omitir": "no está claro si ya está en el canal con otro título",
+    "titulo": "Germiva para contadores · Un día de cierre con su cliente"
+  },
+  "exito-del-cliente/01-cartera.mp4": {
+    "id": "lgvmo0yDPko",
+    "origen": "ya estaba en el canal",
+    "titulo": "Éxito del Cliente 01 · La cartera de clientes en Germiva"
+  },
+  "exito-del-cliente/02-ficha-cliente.mp4": {
+    "id": "0AKi3Rl-p-4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Éxito del Cliente 02 · La ficha del cliente y su bienvenida en Germiva"
+  },
+  "exito-del-cliente/03-contratos-y-proyectos.mp4": {
+    "id": "L8G8ae1OrAE",
+    "origen": "ya estaba en el canal",
+    "titulo": "Éxito del Cliente 03 · Contratos de venta y proyectos en Germiva"
+  },
+  "exito-del-cliente/04-configuracion.mp4": {
+    "id": "VbtapTIA_FM",
+    "origen": "ya estaba en el canal",
+    "titulo": "Éxito del Cliente 04 · Configuración en Germiva"
+  },
+  "mesa-de-ayuda/01-tablero.mp4": {
+    "id": "gH0NJh-c6eU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Mesa de Ayuda 01 · El tablero de casos en Germiva"
+  },
+  "mesa-de-ayuda/02-un-caso.mp4": {
+    "id": "WdF0jsch12I",
+    "origen": "ya estaba en el canal",
+    "titulo": "Mesa de Ayuda 02 · De abrir un caso a resolverlo en Germiva"
+  },
+  "mesa-de-ayuda/03-configuracion.mp4": {
+    "id": "AtAHsayOvFw",
+    "origen": "ya estaba en el canal",
+    "titulo": "Mesa de Ayuda 03 · Configuración: espacios, estados y avisos en Germiva"
+  },
+  "registro/tutorial-registro-germiva.mp4": {
+    "id": "RYwnZPZO07c",
+    "origen": "ya estaba en el canal",
+    "titulo": "Cómo crear tu cuenta en Germiva"
+  },
+  "rrhh/01-importar-exportar-empleados.mp4": {
+    "id": "pEihJ-9ftbU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Recursos Humanos 01 · Importar y exportar empleados por Excel en Germiva"
+  },
+  "suscripcion/01-pagar-suscripcion.mp4": {
+    "id": "e-Z4VvYJZII",
+    "origen": "ya estaba en el canal",
+    "titulo": "Cómo pagar tu suscripción de Germiva"
+  },
+  "suscripcion/02-cambiar-de-plan.mp4": {
+    "id": "qQq55XWGKHs",
+    "origen": "ya estaba en el canal",
+    "titulo": "Cómo cambiar de plan en Germiva"
+  },
+  "vendedores/01-ficha.mp4": {
+    "id": "RtQ_m06Xc3k",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 01 · La ficha de vendedor en Germiva"
+  },
+  "vendedores/02-cliente.mp4": {
+    "id": "09PXTyfBFLY",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 02 · El ejecutivo de cuenta del cliente en Germiva"
+  },
+  "vendedores/03-politicas.mp4": {
+    "id": "D8vcRblmlEM",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 03 · Las políticas de la empresa en Germiva"
+  },
+  "vendedores/04-factura.mp4": {
+    "id": "VElh9d1jATk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 04 · El vendedor en la factura en Germiva"
+  },
+  "vendedores/05-punto-de-venta.mp4": {
+    "id": "9DDYyux6aNE",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 05 · El vendedor en el punto de venta en Germiva"
+  },
+  "vendedores/06-cambiar-y-reasignar.mp4": {
+    "id": "3CQPJupz0-w",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 06 · Cambiar y reasignar el vendedor en Germiva"
+  },
+  "vendedores/07-esquema.mp4": {
+    "id": "3pDQj8A7QMo",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 07 · El esquema de comisión en Germiva"
+  },
+  "vendedores/08-comisiones.mp4": {
+    "id": "AbNDyueK2Qk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 08 · De la factura a la comisión en Germiva"
+  },
+  "vendedores/09-liquidacion.mp4": {
+    "id": "r4ILgQHSq8Y",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 09 · La liquidación de comisiones en Germiva"
+  },
+  "vendedores/10-nomina.mp4": {
+    "id": "QPuUq6D6TQU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 10 · La comisión en la nómina en Germiva"
+  },
+  "vendedores/11-vendedor-a-comision.mp4": {
+    "id": "L6UIkGn40QE",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 11 · El vendedor a comisión en Nómina en Germiva"
+  },
+  "vendedores/12-mis-comisiones.mp4": {
+    "id": "B1UMFrrrlkg",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 12 · Mis comisiones en Germiva"
+  },
+  "vendedores/13-reportes.mp4": {
+    "id": "793U8BMVI-o",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 13 · Los reportes por vendedor en Germiva"
+  },
+  "vendedores/14-vendedor-en-el-pdf.mp4": {
+    "id": "r4s6pj1UuYI",
+    "origen": "ya estaba en el canal",
+    "titulo": "Vendedores 14 · El vendedor en el PDF en Germiva"
+  }
+}
