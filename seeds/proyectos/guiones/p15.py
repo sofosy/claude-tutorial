@@ -17,7 +17,8 @@ pasos = [
   armarla desde cero, pulso Copiar semana anterior. El diálogo lo explica: crea la hoja con los mismos renglones de la
   semana pasada, con su proyecto, su partida y su tipo de hora. Confirmo con el botón Copiar. La hoja aparece con el renglón de Zapatas.
   Y debajo de su nombre, el sistema le recuerda lo planificado para él: cuarenta horas esta semana.""",
-  [res("section.content h1, section.content h2 >> nth=0", "Arriba ve su nombre", 3000),
+  [res("button.topbar-user", "o cada empleado por su cuenta", 3500),
+   res("section.content h2 >> nth=0", "Arriba ve su nombre", 3000),
    res("button:has-text('Copiar semana anterior')", "En vez de", 2500, True),
    clic("button:has-text('Copiar semana anterior')", "pulso Copiar semana anterior"),
    res("mat-dialog-container", "El diálogo lo explica", 6000),

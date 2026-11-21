@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Proyectos · Mis horas: cómo registra el empleado su semana
+
+DESCRIPCIÓN
+============================================================
+Cómo llena un empleado su hoja de tiempo en Germiva: copiar la semana anterior, anotar las horas de cada día, ver lo planificado y enviar la semana a aprobación.
+
+⏱️ CAPÍTULOS
+00:00  Mi hoja de la semana
+00:45  Anotar y enviar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Entrar a Mis horas con tu propio usuario
+• Copiar los renglones de la semana anterior
+• Anotar las horas de cada día
+• Enviar la semana a aprobación
+
+⚠️ ERRORES COMUNES
+• Esperar a fin de mes para llenar las horas
+• Olvidar enviar la hoja: en borrador no llega al supervisor
+• Querer editar una hoja ya enviada sin retirarla primero
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:38
+
+TRANSCRIPCIÓN
+============================================================
+Las horas de un proyecto las puede registrar el encargado, o cada empleado por su cuenta. Juan, albañil de la obra, entra con su usuario a Proyectos, Mis horas. Arriba ve su nombre y su puesto. Esta semana todavía está vacía. En vez de armarla desde cero, pulso Copiar semana anterior. El diálogo lo explica: crea la hoja con los mismos renglones de la semana pasada, con su proyecto, su partida y su tipo de hora. Confirmo con el botón Copiar. La hoja aparece con el renglón de Zapatas. Y debajo de su nombre, el sistema le recuerda lo planificado para él: cuarenta horas esta semana.
+Ahora anota lo trabajado. El lunes, ocho horas, la jornada completa en las zapatas. El martes, otras ocho horas en la misma partida de la obra. Y el miércoles, ocho más, con el vaciado ya terminado. La fila suma las horas de la semana. Aparece la barra de cambios sin guardar: pulso Guardar borrador, y el aviso lo confirma. Mientras esté en borrador, la hoja se puede seguir llenando día a día. Al terminar la semana, abro el menú de la hoja, y elijo Enviar a aprobación. El sistema pide confirmar, y confirmo. Desde aquí la hoja no se edita; si hay un error, se retira desde el mismo menú. El supervisor la recibe en Horas por aprobar, y al aprobarla, su costo entra al proyecto.

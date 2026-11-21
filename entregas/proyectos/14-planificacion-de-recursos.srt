@@ -1,0 +1,119 @@
+1
+00:00:03,100 --> 00:00:06,561
+Antes de que empiece la semana conviene saber quién está disponible.
+
+2
+00:00:07,229 --> 00:00:11,507
+En Proyectos, Planificación de recursos, cada fila es un empleado,
+
+3
+00:00:11,544 --> 00:00:13,380
+y cada columna una semana.
+
+4
+00:00:14,048 --> 00:00:17,001
+Las dos cifras son horas asignadas sobre capacidad.
+
+5
+00:00:17,670 --> 00:00:21,925
+La capacidad sale del horario laboral de la persona, menos sus vacaciones,
+
+6
+00:00:21,948 --> 00:00:23,971
+permisos y días feriados.
+
+7
+00:00:24,638 --> 00:00:28,968
+En Buscar empleado escribo Germiva, para quedarme solo con la cuadrilla de la obra,
+
+8
+00:00:29,091 --> 00:00:31,660
+que lleva ese apellido en los datos de ejemplo.
+
+9
+00:00:32,314 --> 00:00:33,694
+Quedan Juan y Ramón.
+
+10
+00:00:34,361 --> 00:00:36,955
+Para asignar horas hay que elegir el proyecto.
+
+11
+00:00:37,610 --> 00:00:39,770
+En Proyecto a planificar escribo Nave,
+
+12
+00:00:39,817 --> 00:00:43,204
+y espero a que el sistema busque entre los proyectos activos.
+
+13
+00:00:43,872 --> 00:00:46,515
+Aparece la nave de Haina, y la elijo.
+
+14
+00:00:47,171 --> 00:00:49,493
+Ahora cada semana tiene su casilla.
+
+15
+00:00:50,864 --> 00:00:53,420
+A Juan le planifico cuarenta horas esta semana,
+
+16
+00:00:53,542 --> 00:00:55,862
+que es lo normal de un albañil en la obra.
+
+17
+00:00:56,530 --> 00:00:59,992
+La barra azul muestra cuánto de su capacidad queda ocupado.
+
+18
+00:01:00,647 --> 00:01:05,510
+Para la semana siguiente le anoto sesenta, porque toca vaciar las zapatas completas.
+
+19
+00:01:06,177 --> 00:01:09,676
+La casilla se pone en rojo, y arriba sale el aviso:
+
+20
+00:01:09,688 --> 00:01:11,388
+una semana sobreasignada.
+
+21
+00:01:12,056 --> 00:01:14,996
+Sesenta horas superan las cincuenta de su capacidad.
+
+22
+00:01:15,665 --> 00:01:16,558
+Lo corrijo:
+
+23
+00:01:16,644 --> 00:01:21,222
+a Juan le dejo cincuenta, que es el máximo que su horario permite esa semana.
+
+24
+00:01:21,890 --> 00:01:26,901
+Y las diez que faltan se las asigno a Ramón, el ayudante, que tenía la semana libre.
+
+25
+00:01:27,557 --> 00:01:29,084
+El aviso desaparece.
+
+26
+00:01:29,752 --> 00:01:31,936
+Con el botón Solo los de este proyecto,
+
+27
+00:01:32,034 --> 00:01:35,037
+la lista se queda con la gente planificada en la obra.
+
+28
+00:01:35,704 --> 00:01:36,785
+Esto es un plan:
+
+29
+00:01:36,858 --> 00:01:38,149
+no genera costo.
+
+30
+00:01:38,817 --> 00:01:42,750
+El costo llega después, cuando las horas se registran y se aprueban.

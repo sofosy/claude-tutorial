@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Proyectos · Horas de mano de obra: tarifas, hojas de tiempo y aprobación
+
+DESCRIPCIÓN
+============================================================
+Cómo llevar en Germiva la mano de obra de un proyecto: definir la tarifa por puesto, registrar las horas de la semana por partida, enviarlas y aprobarlas para que entren al costo real, y consultar el reporte de horas.
+
+⏱️ CAPÍTULOS
+00:00  Tarifas de mano de obra
+00:57  Registrar las horas
+02:19  Aprobar las horas
+02:56  Reporte y planificación
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Definir la tarifa de mano de obra de un puesto
+• Registrar las horas de la semana por partida
+• Aprobar una hoja de tiempo
+• Leer el reporte de horas
+
+⚠️ ERRORES COMUNES
+• Registrar horas de un puesto sin tarifa: no se pueden costear
+• Aprobar la hoja propia: la aprueba otra persona
+• Olvidar la partida: las horas no llegan al costo del proyecto
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:33
+
+TRANSCRIPCIÓN
+============================================================
+La mano de obra también es costo del proyecto, y se mide con las horas de cada persona. Recojo el menú. Lo primero es la tarifa: cuánto cuesta una hora de cada puesto. El albañil ya tiene la suya: doscientos cincuenta pesos la hora, más treinta por ciento de cargas. Agrego la del ayudante: pulso Nueva tarifa. Se abre su formulario, que sirve para un puesto o para un empleado. En Puesto escribo Ayudante, para buscarlo entre los puestos de la empresa. Aparece en la lista, y lo elijo. En Costo de la hora anoto ciento ochenta pesos. Y en Cargas anoto treinta: es el porcentaje de seguridad social y prestaciones que se suma a la hora. Pulso Guardar, y el aviso lo confirma. Si una persona gana distinto que su puesto, se le pone una tarifa propia, y esa manda.
+Las horas se registran por semana. Cada empleado puede llenar las suyas en Mis horas; y en la pestaña Horas del proyecto, el encargado las registra por su cuadrilla. Pulso Agregar persona. Se abre el diálogo del renglón. En Empleado escribo Ramón Díaz, para buscar al ayudante entre los empleados activos. Aparece en la lista con su nombre completo, y lo elijo. En la partida escribo Excavación, que es donde trabajó esta semana. Aparece en la lista, y la elijo. Las horas son normales y facturables, como vienen marcadas; confirmo con el botón Agregar. En la fila de Ramón anoto las horas de cada día. El lunes trabajó ocho, la jornada normal de la obra. El martes, otra jornada completa de ocho horas. Y el miércoles, ocho más, hasta terminar la excavación. La fila calcula el total de horas, y el costo con la tarifa de su puesto. Debajo del total de la semana aparece la barra de cambios sin guardar: pulso Guardar borrador, y el aviso lo confirma. La hoja de Ramón queda en borrador. Para enviarla, abro el menú de su fila, y elijo Enviar a aprobación. El sistema pide confirmar, porque mientras esté por aprobar no se edita; confirmo.
+Las hojas enviadas llegan a Horas por aprobar. Aquí está la de Juan Pérez, el albañil, de la semana anterior: cuarenta horas, que a su tarifa cuestan trece mil pesos. La abro con Ver. El detalle muestra cada día, la partida, y los avisos de Recursos Humanos, si la persona tenía vacaciones o un permiso. Todo está bien, así que pulso Aprobar, y en el diálogo confirmo con Aprobar. El aviso lo dice: la mano de obra entró al costo real de la partida, con su asiento contable. Y como siempre, nadie aprueba su propia hoja.
+El Reporte de horas reúne todo. Pulso Consultar. Sale cada empleado con su partida, sus horas y su costo, y arriba el resumen: horas facturables, no facturables, y la utilización facturable del equipo. Se exporta a Excel. Y en Planificación de recursos, en el mismo menú, se asignan por adelantado las horas de cada persona a cada proyecto, semana por semana, para ver quién está sobrecargado. Con las horas aprobadas, el control del proyecto ya incluye su mano de obra.

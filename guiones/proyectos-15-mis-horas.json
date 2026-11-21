@@ -95,7 +95,13 @@
       "narracion": "Las horas de un proyecto las puede registrar el encargado, o cada empleado por su cuenta. Juan, albañil de la obra, entra con su usuario a Proyectos, Mis horas. Arriba ve su nombre y su puesto. Esta semana todavía está vacía. En vez de armarla desde cero, pulso Copiar semana anterior. El diálogo lo explica: crea la hoja con los mismos renglones de la semana pasada, con su proyecto, su partida y su tipo de hora. Confirmo con el botón Copiar. La hoja aparece con el renglón de Zapatas. Y debajo de su nombre, el sistema le recuerda lo planificado para él: cuarenta horas esta semana.",
       "acciones": [
         {
-          "resaltar": "section.content h1, section.content h2 >> nth=0",
+          "resaltar": "button.topbar-user",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "o cada empleado por su cuenta"
+        },
+        {
+          "resaltar": "section.content h2 >> nth=0",
           "durante_ms": 3000,
           "cursor": false,
           "al_decir": "Arriba ve su nombre"

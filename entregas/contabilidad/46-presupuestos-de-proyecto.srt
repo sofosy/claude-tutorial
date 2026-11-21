@@ -1,0 +1,95 @@
+1
+00:00:03,100 --> 00:00:07,044
+La empresa tiene su presupuesto anual, y cada obra tiene el suyo.
+
+2
+00:00:07,700 --> 00:00:11,371
+Para que el presupuesto contable incluya las obras no se copian a mano:
+
+3
+00:00:11,519 --> 00:00:12,525
+se incorporan.
+
+4
+00:00:13,192 --> 00:00:16,492
+En Presupuestos, abro el anual con Ver detalles.
+
+5
+00:00:17,161 --> 00:00:19,594
+Por ahora solo tiene los gastos fijos.
+
+6
+00:00:20,262 --> 00:00:22,916
+Arriba, pulso Presupuestos de proyecto.
+
+7
+00:00:23,573 --> 00:00:26,587
+El diálogo lista cada proyecto con presupuesto vigente:
+
+8
+00:00:26,698 --> 00:00:30,320
+la nave de Haina, con cinco millones y medio de pesos.
+
+9
+00:00:30,989 --> 00:00:35,343
+De ese total, en este ejercicio cae un millón ochocientos treinta y tres mil:
+
+10
+00:00:35,402 --> 00:00:38,976
+noviembre y diciembre, según el cronograma de sus partidas.
+
+11
+00:00:39,643 --> 00:00:41,518
+El resto es del año próximo.
+
+12
+00:00:42,186 --> 00:00:46,206
+La diferencia sale en rojo, porque todavía no se ha incorporado.
+
+13
+00:00:46,862 --> 00:00:49,282
+Pulso Incorporar presupuestos de proyecto.
+
+14
+00:00:49,936 --> 00:00:53,535
+La diferencia queda en cero, y el estado pasa a Cuadrado.
+
+15
+00:00:54,203 --> 00:00:55,569
+Cierro el diálogo.
+
+16
+00:00:56,954 --> 00:01:00,242
+En las líneas del presupuesto aparecen los renglones nuevos.
+
+17
+00:01:00,909 --> 00:01:04,643
+Llevan la cuenta Costos de obra, el centro de costo del proyecto,
+
+18
+00:01:04,716 --> 00:01:06,516
+y un renglón por cada mes.
+
+19
+00:01:07,185 --> 00:01:10,856
+Tienen el ícono de proyecto, y su monto no se edita aquí.
+
+20
+00:01:11,524 --> 00:01:15,495
+Si el presupuesto de la obra cambia, por ejemplo con una orden de cambio,
+
+21
+00:01:15,629 --> 00:01:18,012
+se vuelve a incorporar con el mismo botón.
+
+22
+00:01:18,667 --> 00:01:22,326
+Abajo, el total de costos y gastos ya incluye la obra.
+
+23
+00:01:22,995 --> 00:01:26,358
+Así las variaciones de la empresa, y el control de cada obra,
+
+24
+00:01:26,492 --> 00:01:28,316
+salen de las mismas cifras.

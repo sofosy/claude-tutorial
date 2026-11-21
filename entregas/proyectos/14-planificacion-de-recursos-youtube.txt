@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Proyectos · Planificación de recursos: quién está disponible y quién está sobreasignado
+
+DESCRIPCIÓN
+============================================================
+Cómo planificar a tu gente por semana en Germiva: la capacidad de cada empleado según su horario, vacaciones y feriados, las horas asignadas a cada proyecto y el aviso de semana sobreasignada.
+
+⏱️ CAPÍTULOS
+00:00  Capacidad y asignaciones
+00:50  Asignar y equilibrar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer la capacidad semanal de cada empleado
+• Asignar horas de un proyecto por semana
+• Detectar y corregir una semana sobreasignada
+• Ver solo a la gente de un proyecto
+
+⚠️ ERRORES COMUNES
+• Planificar sin elegir el proyecto: las casillas no aparecen
+• Asignar más horas que la capacidad de la semana
+• Confundir lo planificado con el costo: el costo llega con las horas aprobadas
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:47
+
+TRANSCRIPCIÓN
+============================================================
+Antes de que empiece la semana conviene saber quién está disponible. En Proyectos, Planificación de recursos, cada fila es un empleado, y cada columna una semana. Las dos cifras son horas asignadas sobre capacidad. La capacidad sale del horario laboral de la persona, menos sus vacaciones, permisos y días feriados. En Buscar empleado escribo Germiva, para quedarme solo con la cuadrilla de la obra, que lleva ese apellido en los datos de ejemplo. Quedan Juan y Ramón. Para asignar horas hay que elegir el proyecto. En Proyecto a planificar escribo Nave, y espero a que el sistema busque entre los proyectos activos. Aparece la nave de Haina, y la elijo. Ahora cada semana tiene su casilla.
+A Juan le planifico cuarenta horas esta semana, que es lo normal de un albañil en la obra. La barra azul muestra cuánto de su capacidad queda ocupado. Para la semana siguiente le anoto sesenta, porque toca vaciar las zapatas completas. La casilla se pone en rojo, y arriba sale el aviso: una semana sobreasignada. Sesenta horas superan las cincuenta de su capacidad. Lo corrijo: a Juan le dejo cincuenta, que es el máximo que su horario permite esa semana. Y las diez que faltan se las asigno a Ramón, el ayudante, que tenía la semana libre. El aviso desaparece. Con el botón Solo los de este proyecto, la lista se queda con la gente planificada en la obra. Esto es un plan: no genera costo. El costo llega después, cuando las horas se registran y se aprueban.
