@@ -1,0 +1,151 @@
+1
+00:00:03,100 --> 00:00:06,797
+En Germiva, una factura de compra puede entrar de varias formas,
+
+2
+00:00:06,881 --> 00:00:09,053
+y una sola pregunta decide por dónde:
+
+3
+00:00:09,163 --> 00:00:10,728
+¿quién emitió el comprobante?
+
+4
+00:00:11,394 --> 00:00:16,120
+Si te lo entregó el proveedor, como un crédito fiscal, va a Facturas Recibidas,
+
+5
+00:00:16,219 --> 00:00:17,509
+que es esta pantalla:
+
+6
+00:00:17,596 --> 00:00:19,048
+el buzón de Compras.
+
+7
+00:00:19,716 --> 00:00:22,173
+Cada fila es una factura de un proveedor.
+
+8
+00:00:22,829 --> 00:00:25,843
+Mientras está pendiente, todavía no es una compra:
+
+9
+00:00:25,990 --> 00:00:27,766
+no tiene asiento ni deuda.
+
+10
+00:00:28,422 --> 00:00:30,370
+Lo es cuando alguien le da entrada.
+
+11
+00:00:31,749 --> 00:00:34,069
+Al buzón se llega por cuatro puertas.
+
+12
+00:00:34,737 --> 00:00:35,966
+Importar con IA:
+
+13
+00:00:36,126 --> 00:00:39,649
+subes la foto o el PDF y el sistema lee la factura;
+
+14
+00:00:39,759 --> 00:00:42,911
+también llegan así las que envías por el WhatsApp de Germiva.
+
+15
+00:00:43,566 --> 00:00:46,804
+Registrar manual, para copiar una factura de papel.
+
+16
+00:00:47,472 --> 00:00:48,813
+Importar y exportar:
+
+17
+00:00:48,936 --> 00:00:51,442
+una plantilla de Excel con muchas facturas,
+
+18
+00:00:51,527 --> 00:00:55,049
+o el reporte de comprobantes recibidos que bajas de la DGII.
+
+19
+00:00:55,719 --> 00:00:56,539
+Y la cuarta:
+
+20
+00:00:56,649 --> 00:01:00,109
+el comprobante electrónico que el proveedor te envía entra solo.
+
+21
+00:01:00,778 --> 00:01:03,694
+El filtro Origen dice por cuál llegó cada una.
+
+22
+00:01:05,064 --> 00:01:07,323
+¿Y si el comprobante lo emite tu empresa?
+
+23
+00:01:07,978 --> 00:01:10,993
+Entonces se registra en Compras, Facturas.
+
+24
+00:01:11,661 --> 00:01:13,932
+Aquí está el listado único de compras:
+
+25
+00:01:14,018 --> 00:01:16,859
+todas aparecen en él, entren por donde entren.
+
+26
+00:01:17,527 --> 00:01:21,076
+Nueva Factura es solo para los tres comprobantes que numera tu empresa:
+
+27
+00:01:21,173 --> 00:01:23,195
+el de compras a un proveedor informal,
+
+28
+00:01:23,318 --> 00:01:26,010
+el de gastos menores y el de pagos al exterior.
+
+29
+00:01:26,665 --> 00:01:29,073
+Por eso no tiene campo para el NCF:
+
+30
+00:01:29,195 --> 00:01:30,623
+lo pone tu secuencia.
+
+31
+00:01:31,996 --> 00:01:32,903
+Un caso más:
+
+32
+00:01:33,026 --> 00:01:36,500
+si la mercancía llegó con una orden de compra y ya la recibiste,
+
+33
+00:01:36,621 --> 00:01:39,017
+la factura se registra desde Recepciones,
+
+34
+00:01:39,003 --> 00:01:41,347
+cotejándola contra lo que entró al almacén.
+
+35
+00:01:42,016 --> 00:01:44,560
+Así el costo no se carga dos veces.
+
+36
+00:01:45,228 --> 00:01:48,590
+En los próximos videos vemos cada forma, paso a paso:
+
+37
+00:01:48,600 --> 00:01:53,028
+a mano, con IA, con plantilla, con el reporte de la DGII,
+
+38
+00:01:53,152 --> 00:01:55,906
+desde la recepción y con los comprobantes propios.

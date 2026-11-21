@@ -1,0 +1,280 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/invoices",
+  "esperar": "button:has-text('Nueva Factura')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 10: gastos menores",
+ "descripcion": "Décimo video de la serie de entrada de facturas de compra en Germiva ERP. Los gastos pequeños sin proveedor identificado se registran con el comprobante de Gastos Menores (B13 o E43) en el formulario libre: conceptos escritos a mano, sin ITBIS, pagados desde la caja.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 10. Estado A. Formulario libre, B13, sin proveedor (Proveedor Genérico interno, marcado por preparar.mjs hasta que la instantánea traiga el seeder corregido). Líneas exentas: Parqueo para la mensajería (servicio) 300 y Agua y café para la oficina (bien) 850 = 1,150, pagado de Caja general.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Cuándo se usa el comprobante de Gastos Menores (B13/E43)",
+  "Cambiar al formulario libre y escribir conceptos sin catálogo",
+  "Por qué las líneas van exentas",
+  "Pagar el gasto desde la caja"
+ ],
+ "errores_comunes": [
+  "Ponerle ITBIS a un gasto menor: se registra exento",
+  "Usarlo para una compra de un proveedor con RNC: él debe darte su comprobante",
+  "Agregar descuentos o retenciones: el gasto menor no los admite"
+ ],
+ "pasos": [
+  {
+   "id": "01-libre",
+   "capitulo": "Formulario libre y tipo",
+   "rotulo": "Gastos menores",
+   "ruta": "Compras › Facturas › Nueva compra",
+   "narracion": "Para los gastos pequeños sin un proveedor identificado, como el parqueo o el agua de la oficina, existe el comprobante de gastos menores: el B13, o el E43 si facturas electrónico. Pulso Nueva Factura y recojo el panel. Esta vez uso el formulario libre, donde escribo los conceptos sin catálogo: abro más acciones y elijo cambiar a formulario libre. En tipo de comprobante elijo gastos menores. No hace falta proveedor: la compra queda a nombre del proveedor genérico de la empresa.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nueva Factura')",
+     "al_decir": "Pulso Nueva Factura"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "click": "button:has(mat-icon:text-is('more_vert')) >> nth=0",
+     "al_decir": "abro más acciones"
+    },
+    {
+     "click": ".mat-mdc-menu-panel button:has-text('libre')",
+     "al_decir": "formulario libre"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:has-text('Tipo de comprobante')) mat-select",
+     "al_decir": "En tipo de comprobante"
+    },
+    {
+     "click": "mat-option:has-text('B13')",
+     "al_decir": "elijo gastos menores"
+    },
+    {
+     "resaltar": "mat-form-field:has(input[placeholder*='Busque por nombre'])",
+     "durante_ms": 5000,
+     "al_decir": "No hace falta proveedor"
+    }
+   ]
+  },
+  {
+   "id": "02-conceptos",
+   "capitulo": "Los conceptos",
+   "rotulo": "Conceptos",
+   "ruta": "Compras › Facturas › Nueva compra",
+   "narracion": "Pulso Agregar línea y escribo el primer concepto: parqueo para la mensajería. Es un servicio: en tipo elijo servicio. El precio, trescientos pesos. Los gastos menores van sin ITBIS, así que en la tasa elijo exento. Agrego otra línea: agua y café para la oficina, ochocientos cincuenta, y su tasa, exento también. Debajo se ve la cuenta contable que se usará; si quieres otra, la cambias por línea.",
+   "acciones": [
+    {
+     "click": "button:has-text('Agregar línea')",
+     "al_decir": "Pulso Agregar línea"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='productName'] >> nth=0",
+      "texto": "Parqueo para la mensajería"
+     },
+     "al_decir": "el primer concepto"
+    },
+    {
+     "click": "mat-select[formcontrolname='goodOrServiceIndicator'] >> nth=0",
+     "al_decir": "en tipo"
+    },
+    {
+     "click": "mat-option:has-text('Servicio')",
+     "al_decir": "elijo servicio"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='price']:visible >> nth=0",
+      "texto": "300"
+     },
+     "al_decir": "trescientos pesos"
+    },
+    {
+     "click": "mat-select[formcontrolname='taxId'] >> nth=0",
+     "al_decir": "en la tasa"
+    },
+    {
+     "click": "mat-option:has-text('Exento')",
+     "al_decir": "elijo exento"
+    },
+    {
+     "click": "button:has-text('Agregar línea')",
+     "al_decir": "Agrego otra línea"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='productName'] >> nth=1",
+      "texto": "Agua y café para la oficina"
+     },
+     "al_decir": "agua y café"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='price']:visible >> nth=1",
+      "texto": "850"
+     },
+     "al_decir": "ochocientos cincuenta"
+    },
+    {
+     "click": "mat-select[formcontrolname='taxId'] >> nth=1",
+     "al_decir": "y su tasa"
+    },
+    {
+     "click": "mat-option:has-text('Exento')",
+     "al_decir": "exento también"
+    },
+    {
+     "resaltar": "text=Cuenta contable:",
+     "durante_ms": 4500,
+     "al_decir": "la cuenta contable"
+    }
+   ]
+  },
+  {
+   "id": "03-pagar",
+   "capitulo": "Pagar desde la caja",
+   "rotulo": "Guardar y pagar",
+   "ruta": "Compras › Facturas › Nueva compra",
+   "narracion": "En el pago, el gasto sale de la caja: el monto ya es el total, mil ciento cincuenta, en efectivo. En cuenta de origen escribo caja; la lista se filtra sola, bajo con la flecha en la lista y elijo la caja general. Pulso Guardar y pagar. El sistema emite el comprobante de gastos menores con su NCF y registra la salida de caja. El aviso lo confirma, y acepto. Recuerda: el gasto menor no lleva ITBIS, ni descuentos, ni retenciones.",
+   "acciones": [
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Monto a pagar'))",
+     "durante_ms": 4000,
+     "al_decir": "el monto ya es el total"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder*='Elige la caja o el banco'], mat-form-field:has(mat-label:has-text('Cuenta de origen')) input",
+      "texto": "Caja"
+     },
+     "al_decir": "escribo caja"
+    },
+    {
+     "esperar_ms": 600
+    },
+    {
+     "presionar": {
+      "tecla": "ArrowDown"
+     },
+     "al_decir": "bajo"
+    },
+    {
+     "presionar": {
+      "tecla": "ArrowDown"
+     },
+     "al_decir": "en la lista"
+    },
+    {
+     "presionar": {
+      "tecla": "Enter"
+     },
+     "al_decir": "elijo la caja"
+    },
+    {
+     "click": "button:has-text('Guardar y pagar') >> nth=0",
+     "al_decir": "Pulso Guardar y pagar"
+    },
+    {
+     "resaltar": "mat-dialog-container:has(button:has-text('Aceptar'))",
+     "durante_ms": 2500,
+     "al_decir": "El aviso lo confirma",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container:has(button:has-text('Aceptar')) button:has-text('Aceptar')",
+     "al_decir": "y acepto"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Gastos menores",
+      "texto": "Sin ITBIS, sin descuentos y sin retenciones."
+     },
+     "durante_ms": 6500,
+     "al_decir": "Recuerda"
+    }
+   ]
+  }
+ ]
+}

@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 5: plantilla de Excel y entrada por lote
+
+DESCRIPCIÓN
+============================================================
+Quinto video de la serie de entrada de facturas de compra en Germiva ERP. Cargamos varias facturas de una vez con la plantilla de Excel del buzón y les damos entrada en lote, con una sola confirmación.
+
+⏱️ CAPÍTULOS
+00:00  La plantilla
+00:31  Importar el archivo
+00:54  Dar entrada en lote
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Descargar la plantilla del buzón y cómo se llena
+• Importar el archivo: las facturas quedan pendientes
+• Dar entrada a varias facturas en lote
+• Cuándo una factura no entra por lote
+
+⚠️ ERRORES COMUNES
+• Dejar una fila con errores: si una falla, no se importa ninguna
+• Dar entrada por lote a documentos sin verificar
+• Usar claves distintas para los renglones de una misma factura
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:37
+
+TRANSCRIPCIÓN
+============================================================
+Cuando tienes muchas facturas, por ejemplo las que te pasa tu contador en una hoja de cálculo, las cargas de una vez. Pulso Importar y exportar. Primero descargas la plantilla, en Excel o en CSV: una fila por renglón de factura, y la misma clave agrupa los renglones de una factura. Trae instrucciones y un ejemplo. Ya la llené con dos facturas: una de lubricantes con dos renglones y otra de climatización.
+Más abajo, en importar el archivo, subo la plantilla llena. El sistema valida todas las filas antes de crear nada: si una tiene errores, no se importa ninguna, y te dice cuál corregir. Aquí todo estaba bien: dos facturas creadas, pendientes para revisión. Cierro, y ahí están en el buzón, pendientes.
+Como ya las verifiqué en la hoja, les doy entrada juntas. Recojo el panel para ver mejor, y marco las dos filas. Arriba aparece el botón Dar entrada, con la cantidad marcada; lo pulso, y confirmo. El sistema crea una factura de compra por cada fila, una tras otra, con su asiento y su cuenta por pagar. Listo: las dos facturas entraron, cada una con su número. Ojo: el lote usa los datos tal como vinieron. Una factura que necesita una decisión, como una nota de crédito o una mercancía ya recibida, no entra por lote: ábrela con la revisión.

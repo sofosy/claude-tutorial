@@ -1,0 +1,95 @@
+1
+00:00:03,100 --> 00:00:07,577
+La pinturería nos mandó la factura, pero la pintura llega la semana que viene.
+
+2
+00:00:08,246 --> 00:00:11,223
+La registramos ya, para tener la deuda al día.
+
+3
+00:00:11,891 --> 00:00:14,446
+Pulso Registrar manual y elijo el proveedor:
+
+4
+00:00:14,544 --> 00:00:15,439
+pinturas.
+
+5
+00:00:16,108 --> 00:00:20,200
+El plazo de quince días y la categoría 606 salen de su ficha.
+
+6
+00:00:20,870 --> 00:00:23,735
+Copio el NCF y la fecha de emisión.
+
+7
+00:00:24,390 --> 00:00:27,381
+En los montos paso a por líneas, y escribo la línea:
+
+8
+00:00:27,515 --> 00:00:31,448
+pintura acrílica blanca, doce galones a ochocientos noventa.
+
+9
+00:00:32,117 --> 00:00:33,692
+La tasa la confirmo yo:
+
+10
+00:00:33,716 --> 00:00:36,496
+abro la lista y elijo el dieciocho por ciento.
+
+11
+00:00:37,896 --> 00:00:41,282
+Debajo de la línea está el interruptor mercancía por recibir.
+
+12
+00:00:41,939 --> 00:00:42,708
+Lo enciendo:
+
+13
+00:00:42,831 --> 00:00:47,371
+la línea deja de pedir cuenta de gasto, y su costo va a mercancía por recibir,
+
+14
+00:00:47,481 --> 00:00:49,566
+como dice el asiento de la derecha.
+
+15
+00:00:50,234 --> 00:00:51,575
+Pulso Dar entrada.
+
+16
+00:00:52,231 --> 00:00:55,816
+El sistema registra la factura y abre la recepción de la pintura.
+
+17
+00:00:56,484 --> 00:00:59,201
+El aviso confirma la factura, y acepto.
+
+18
+00:01:00,554 --> 00:01:03,570
+Al dar entrada, el sistema abrió la recepción.
+
+19
+00:01:04,224 --> 00:01:08,852
+Voy a Recepciones, y ahí está, en borrador, de Pinturas Germiva.
+
+20
+00:01:09,507 --> 00:01:12,870
+Cuando llegue la pintura, quien recibe en el almacén la abre,
+
+21
+00:01:13,004 --> 00:01:16,578
+liga la línea a su producto, cuenta lo que llegó y la procesa.
+
+22
+00:01:17,245 --> 00:01:19,466
+Recién entonces sube el inventario.
+
+23
+00:01:20,122 --> 00:01:22,765
+Y no hace falta cotejar la factura otra vez:
+
+24
+00:01:22,862 --> 00:01:24,340
+ya está registrada.

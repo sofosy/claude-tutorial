@@ -1,0 +1,328 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/received-invoices",
+  "esperar": "button:has-text('Registrar manual')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 2: registrar a mano, por totales",
+ "descripcion": "Segundo video de la serie de entrada de facturas de compra en Germiva ERP. Registramos a mano una factura de papel copiando solo su pie: subtotal, ITBIS y total. El proveedor, la categoría 606, el plazo y la cuenta de gasto salen de su ficha, y antes de guardar ves el asiento y el 606.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 2. Estado A. Seguridad Germiva del Caribe (RNC 130555109, plazo 30, categoría 02, cuenta 6.03.04 Vigilancia y seguridad). NCF E310000000845, emisión 15/11/2026, crédito 30 días; subtotal 25,000, ITBIS 4,500, total 29,500.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Abrir la captura manual y sus tres partes",
+  "Elegir el proveedor y aprovechar su ficha: categoría 606, plazo y cuenta",
+  "Copiar el pie de la factura por totales",
+  "Leer el asiento y el 606 antes de dar entrada",
+  "Guardar borradores para registrar varias facturas"
+ ],
+ "errores_comunes": [
+  "Escribir el subtotal después del descuento: va el de antes",
+  "Dejar la categoría 606 vacía: la compra sale incompleta en el 606",
+  "Registrar al contado una factura a crédito: no nace la cuenta por pagar"
+ ],
+ "pasos": [
+  {
+   "id": "01-abrir",
+   "capitulo": "La captura manual",
+   "rotulo": "Registrar manual",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "Tenemos en la mano una factura de papel de la compañía de vigilancia, y la vamos a registrar en el buzón de facturas recibidas. Pulso Registrar manual. La captura tiene tres partes numeradas: proveedor y comprobante, condiciones de pago y montos. Y a la derecha, el resumen, el asiento que se va a generar y lo que pide el 606, que se actualizan mientras escribo.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar manual')",
+     "al_decir": "Pulso Registrar manual"
+    },
+    {
+     "resaltar": "mat-dialog-container section[aria-labelledby='entry-sec-1'] .entry-section__title",
+     "durante_ms": 2000,
+     "al_decir": "tres partes",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container section[aria-labelledby='entry-sec-2'] .entry-section__title",
+     "durante_ms": 1500,
+     "al_decir": "condiciones de pago",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container section[aria-labelledby='entry-sec-3'] .entry-section__title",
+     "durante_ms": 1500,
+     "al_decir": "montos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .entry-rail section[aria-labelledby='entry-summary-title']",
+     "durante_ms": 6000,
+     "al_decir": "a la derecha",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-proveedor",
+   "capitulo": "Proveedor y comprobante",
+   "rotulo": "Proveedor y comprobante",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "Empiezo por el proveedor. Escribo seguridad, y en la lista aparece Seguridad Germiva del Caribe; la elijo. Debajo queda su RNC, tomado de la ficha. Si no existiera, desde este mismo campo lo tomas del padrón de la DGII o lo creas. El tipo de comprobante viene en crédito fiscal. En NCF copio el número tal como viene en la factura. La fecha de emisión: quince de noviembre. Y fíjate en la categoría 606: ya vino de la ficha del proveedor.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-partner-document-select input",
+      "texto": "Seguridad"
+     },
+     "al_decir": "Escribo seguridad"
+    },
+    {
+     "click": "mat-option:has-text('Seguridad Germiva')",
+     "al_decir": "la elijo"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid='supplier-rnc']",
+     "durante_ms": 3500,
+     "al_decir": "su RNC"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-ncf-type)",
+     "durante_ms": 2500,
+     "al_decir": "El tipo de comprobante"
+    },
+    {
+     "escribir": {
+      "sel": "#f-ncf",
+      "texto": "E310000000845"
+     },
+     "al_decir": "En NCF copio"
+    },
+    {
+     "escribir": {
+      "sel": "#f-issue",
+      "texto": "15/11/2026"
+     },
+     "al_decir": "La fecha de emisión"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-606)",
+     "durante_ms": 4500,
+     "al_decir": "la categoría 606"
+    }
+   ]
+  },
+  {
+   "id": "03-condiciones",
+   "capitulo": "Condiciones de pago",
+   "rotulo": "Condiciones de pago",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "Segundo, las condiciones de pago. Esta factura es a crédito. El plazo ya dice treinta días, porque así está en la ficha del proveedor, y la fecha límite se calculó sola: emisión más plazo. Con esto, al dar entrada nace la cuenta por pagar.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container button.seg__btn:has-text('Crédito')",
+     "durante_ms": 2500,
+     "al_decir": "es a crédito"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-days)",
+     "durante_ms": 3500,
+     "al_decir": "treinta días"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-due)",
+     "durante_ms": 5000,
+     "al_decir": "la fecha límite"
+    }
+   ]
+  },
+  {
+   "id": "04-montos",
+   "capitulo": "Montos por totales",
+   "rotulo": "Montos por totales",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "Tercero, los montos. La captura abre por totales: copio el pie de la factura, sin desglosar productos. En concepto escribo qué se compró. La cuenta de gasto también la propone la ficha del proveedor: vigilancia y seguridad. Ahora el pie. Subtotal: veinticinco mil. ITBIS facturado: cuatro mil quinientos, y al lado confirma que es el dieciocho por ciento del gravado. Y el total de la factura: veintinueve mil quinientos. El sistema lo compara con el total calculado, y cuadra.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container [data-testid='mode-totals']",
+     "durante_ms": 3000,
+     "al_decir": "abre por totales"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container [data-testid='totals-concept']",
+      "texto": "Servicio de vigilancia de noviembre"
+     },
+     "al_decir": "En concepto escribo"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has([data-testid='totals-account'])",
+     "durante_ms": 4000,
+     "al_decir": "La cuenta de gasto"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container [data-testid='totals-subtotal']",
+      "texto": "25000"
+     },
+     "al_decir": "Subtotal"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container [data-testid='totals-itbis']",
+      "texto": "4500"
+     },
+     "al_decir": "ITBIS facturado"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid='itbis-hint']",
+     "durante_ms": 3000,
+     "al_decir": "dieciocho por ciento"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container [data-testid='totals-document-total']",
+      "texto": "29500"
+     },
+     "al_decir": "el total de la factura"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has([data-testid='totals-document-total'])",
+     "durante_ms": 3000,
+     "al_decir": "y cuadra"
+    }
+   ]
+  },
+  {
+   "id": "05-dar-entrada",
+   "capitulo": "Asiento, 606 y dar entrada",
+   "rotulo": "Dar entrada",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "Antes de guardar, mira la derecha. El resumen cuadra con la factura del proveedor. En el asiento, el gasto de vigilancia y el ITBIS por adelantar van al débito, y la cuenta por pagar al proveedor, al crédito. Y la lista del 606 está completa. Si todavía no la vas a registrar, Guardar borrador la deja pendiente, y Borrador y otra abre una captura en blanco para la siguiente. Esta está lista: pulso Dar entrada. El sistema crea la factura, su asiento y la cuenta por pagar. El aviso confirma que se creó la factura de compra, y acepto. La fila queda con entrada, con su número de factura.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container [data-testid='summary-status']",
+     "durante_ms": 3000,
+     "al_decir": "El resumen cuadra",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .entry-rail .journal",
+     "durante_ms": 7000,
+     "al_decir": "En el asiento",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .entry-rail ul.checks",
+     "durante_ms": 2500,
+     "al_decir": "la lista del 606",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid='save-draft']",
+     "durante_ms": 3000,
+     "al_decir": "Guardar borrador"
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Borrador y otra')",
+     "durante_ms": 3500,
+     "al_decir": "Borrador y otra"
+    },
+    {
+     "click": "mat-dialog-container [data-testid='submit-entry']",
+     "al_decir": "pulso Dar entrada"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "y acepto"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000000845') td:has-text('Con entrada')",
+     "durante_ms": 4000,
+     "al_decir": "La fila queda",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

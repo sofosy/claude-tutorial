@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 8: la factura llega antes que la mercancía
+
+DESCRIPCIÓN
+============================================================
+Octavo video de la serie de entrada de facturas de compra en Germiva ERP. Si la factura llega primero, se registra marcando sus líneas como mercancía por recibir: al dar entrada, el sistema abre la recepción en borrador para que el almacén la complete cuando llegue la mercancía.
+
+⏱️ CAPÍTULOS
+00:00  La factura que llega primero
+00:37  Marcar la línea
+01:00  La recepción en borrador
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar una factura de mercancía que todavía no llega
+• Marcar las líneas como «Mercancía por recibir»
+• La recepción en borrador que abre el sistema
+• Quién completa esa recepción y cuándo se mueve el inventario
+
+⚠️ ERRORES COMUNES
+• Mandar la mercancía a una cuenta de gasto: no entraría nunca al inventario
+• Esperar que el inventario suba al dar entrada: sube al procesar la recepción
+• Cotejar la factura otra vez cuando llega la mercancía: ya está registrada
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:28
+
+TRANSCRIPCIÓN
+============================================================
+La pinturería nos mandó la factura, pero la pintura llega la semana que viene. La registramos ya, para tener la deuda al día. Pulso Registrar manual y elijo el proveedor: pinturas. El plazo de quince días y la categoría 606 salen de su ficha. Copio el NCF y la fecha de emisión. En los montos paso a por líneas, y escribo la línea: pintura acrílica blanca, doce galones a ochocientos noventa. La tasa la confirmo yo: abro la lista y elijo el dieciocho por ciento.
+Debajo de la línea está el interruptor mercancía por recibir. Lo enciendo: la línea deja de pedir cuenta de gasto, y su costo va a mercancía por recibir, como dice el asiento de la derecha. Pulso Dar entrada. El sistema registra la factura y abre la recepción de la pintura. El aviso confirma la factura, y acepto.
+Al dar entrada, el sistema abrió la recepción. Voy a Recepciones, y ahí está, en borrador, de Pinturas Germiva. Cuando llegue la pintura, quien recibe en el almacén la abre, liga la línea a su producto, cuenta lo que llegó y la procesa. Recién entonces sube el inventario. Y no hace falta cotejar la factura otra vez: ya está registrada.

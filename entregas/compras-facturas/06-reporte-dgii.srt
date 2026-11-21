@@ -1,0 +1,111 @@
+1
+00:00:03,100 --> 00:00:07,243
+En la Oficina Virtual de la DGII puedes descargar el reporte de los comprobantes
+
+2
+00:00:07,054 --> 00:00:09,635
+electrónicos que te emitieron tus proveedores.
+
+3
+00:00:10,304 --> 00:00:12,400
+Ese archivo se sube aquí mismo.
+
+4
+00:00:13,057 --> 00:00:16,753
+Pulso Importar y exportar, y lo subo, tal como lo bajé.
+
+5
+00:00:17,410 --> 00:00:21,490
+El sistema lo reconoce solo, lo lee sin IA y sin gastar cupo.
+
+6
+00:00:22,146 --> 00:00:25,323
+Leyó tres comprobantes, los tres pasaron al buzón,
+
+7
+00:00:25,420 --> 00:00:27,368
+y avisa de los proveedores nuevos:
+
+8
+00:00:27,492 --> 00:00:31,597
+se crean con la razón social del padrón al darle entrada a su primera factura.
+
+9
+00:00:32,984 --> 00:00:33,767
+Cierro.
+
+10
+00:00:34,408 --> 00:00:37,981
+Los tres quedaron pendientes, con origen reporte DGII.
+
+11
+00:00:37,930 --> 00:00:40,039
+Abro la revisión del de mantenimiento.
+
+12
+00:00:40,709 --> 00:00:46,873
+El e-NCF, el RNC, el total y el ITBIS son los que la DGII tiene registrados,
+
+13
+00:00:46,945 --> 00:00:47,951
+y no se cambian:
+
+14
+00:00:48,100 --> 00:00:50,569
+son los que van a cruzar con tu 606.
+
+15
+00:00:51,237 --> 00:00:56,037
+El reporte no trae la fecha de emisión ni el detalle, así que eso lo confirmas tú.
+
+16
+00:00:56,706 --> 00:00:58,902
+Elijo la categoría 606:
+
+17
+00:00:58,987 --> 00:01:02,201
+gastos por trabajos, suministros y servicios.
+
+18
+00:01:02,856 --> 00:01:06,367
+Y como es a crédito, escribo el plazo, treinta días,
+
+19
+00:01:06,415 --> 00:01:08,662
+y la fecha límite se calcula sola.
+
+20
+00:01:10,043 --> 00:01:14,510
+Al dar entrada, el total y el ITBIS tienen que coincidir con los de la DGII;
+
+21
+00:01:14,558 --> 00:01:15,638
+aquí cuadran.
+
+22
+00:01:16,305 --> 00:01:17,647
+Pulso Dar entrada.
+
+23
+00:01:18,302 --> 00:01:22,322
+El sistema registra al proveedor con su nombre del padrón y crea la factura.
+
+24
+00:01:22,977 --> 00:01:24,478
+Se creó la factura.
+
+25
+00:01:25,135 --> 00:01:26,054
+Acepto.
+
+26
+00:01:26,697 --> 00:01:31,088
+Los otros dos puedes revisarlos igual, o marcarlos y darles entrada por lote.
+
+27
+00:01:31,757 --> 00:01:36,408
+Y la pestaña Cuadre con la DGII compara tu 606 con lo que la DGII tiene,
+
+28
+00:01:36,432 --> 00:01:38,306
+para que no se te escape ninguno.

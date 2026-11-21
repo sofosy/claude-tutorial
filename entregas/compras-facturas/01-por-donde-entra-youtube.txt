@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 1: por dónde entra cada factura
+
+DESCRIPCIÓN
+============================================================
+Primer video de la serie de entrada de facturas de compra en Germiva ERP. Una sola pregunta decide la pantalla: ¿quién emitió el comprobante? Vemos el buzón de facturas recibidas, sus cuatro puertas de entrada, el listado de Facturas y cuándo se usa «Nueva Factura».
+
+⏱️ CAPÍTULOS
+00:00  Quién emitió el comprobante
+00:31  Las puertas del buzón
+01:04  Comprobantes que emite tu empresa
+01:31  Mercancía ya recibida
+
+📋 EN ESTE VIDEO APRENDERÁS
+• La pregunta que decide la pantalla: ¿quién emitió el comprobante?
+• Las cuatro formas de que una factura llegue al buzón
+• Qué significa «Pendiente» y «Con entrada»
+• Cuándo se usa «Nueva Factura» y el listado único de Facturas
+
+⚠️ ERRORES COMUNES
+• Registrar en «Nueva Factura» un crédito fiscal que te entregó el proveedor: va al buzón
+• Creer que una factura del buzón ya es una compra: hasta darle entrada no tiene asiento ni deuda
+• Registrar dos veces la factura de una mercancía ya recibida: se coteja contra la recepción
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:00
+
+TRANSCRIPCIÓN
+============================================================
+En Germiva, una factura de compra puede entrar de varias formas, y una sola pregunta decide por dónde: ¿quién emitió el comprobante? Si te lo entregó el proveedor, como un crédito fiscal, va a Facturas Recibidas, que es esta pantalla: el buzón de Compras. Cada fila es una factura de un proveedor. Mientras está pendiente, todavía no es una compra: no tiene asiento ni deuda. Lo es cuando alguien le da entrada.
+Al buzón se llega por cuatro puertas. Importar con IA: subes la foto o el PDF y el sistema lee la factura; también llegan así las que envías por el WhatsApp de Germiva. Registrar manual, para copiar una factura de papel. Importar y exportar: una plantilla de Excel con muchas facturas, o el reporte de comprobantes recibidos que bajas de la DGII. Y la cuarta: el comprobante electrónico que el proveedor te envía entra solo. El filtro Origen dice por cuál llegó cada una.
+¿Y si el comprobante lo emite tu empresa? Entonces se registra en Compras, Facturas. Aquí está el listado único de compras: todas aparecen en él, entren por donde entren. Nueva Factura es solo para los tres comprobantes que numera tu empresa: el de compras a un proveedor informal, el de gastos menores y el de pagos al exterior. Por eso no tiene campo para el NCF: lo pone tu secuencia.
+Un caso más: si la mercancía llegó con una orden de compra y ya la recibiste, la factura se registra desde Recepciones, cotejándola contra lo que entró al almacén. Así el costo no se carga dos veces. En los próximos videos vemos cada forma, paso a paso: a mano, con IA, con plantilla, con el reporte de la DGII, desde la recepción y con los comprobantes propios.

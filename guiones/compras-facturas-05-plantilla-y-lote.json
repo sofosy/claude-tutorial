@@ -1,0 +1,215 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/received-invoices",
+  "esperar": "button:has-text('Registrar manual')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 5: plantilla de Excel y entrada por lote",
+ "descripcion": "Quinto video de la serie de entrada de facturas de compra en Germiva ERP. Cargamos varias facturas de una vez con la plantilla de Excel del buzón y les damos entrada en lote, con una sola confirmación.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 5. Estado A. Archivo seeds/compras-facturas/facturas-plantilla.xlsx (archivos.py): F-1 Lubricantes Germiva (130555133) E310000002201, dos renglones (6 aceite a 1,150 + 2 filtros a 475; ITBIS 1,413; total 9,263); F-2 Climatización Germiva (130555141) E310000088410 (4,200 + 756 = 4,956).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Descargar la plantilla del buzón y cómo se llena",
+  "Importar el archivo: las facturas quedan pendientes",
+  "Dar entrada a varias facturas en lote",
+  "Cuándo una factura no entra por lote"
+ ],
+ "errores_comunes": [
+  "Dejar una fila con errores: si una falla, no se importa ninguna",
+  "Dar entrada por lote a documentos sin verificar",
+  "Usar claves distintas para los renglones de una misma factura"
+ ],
+ "pasos": [
+  {
+   "id": "01-plantilla",
+   "capitulo": "La plantilla",
+   "rotulo": "Importar / Exportar",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "Cuando tienes muchas facturas, por ejemplo las que te pasa tu contador en una hoja de cálculo, las cargas de una vez. Pulso Importar y exportar. Primero descargas la plantilla, en Excel o en CSV: una fila por renglón de factura, y la misma clave agrupa los renglones de una factura. Trae instrucciones y un ejemplo. Ya la llené con dos facturas: una de lubricantes con dos renglones y otra de climatización.",
+   "acciones": [
+    {
+     "click": "button:has-text('Importar / Exportar')",
+     "al_decir": "Pulso Importar y exportar"
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Plantilla Excel')",
+     "durante_ms": 5500,
+     "al_decir": "descargas la plantilla"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "La plantilla",
+      "texto": "Factura · RNC · Proveedor · NCF · Tipo · Fecha · Concepto · Cantidad · Precio · ITBIS"
+     },
+     "durante_ms": 8000,
+     "al_decir": "Trae instrucciones"
+    }
+   ]
+  },
+  {
+   "id": "02-importar",
+   "capitulo": "Importar el archivo",
+   "rotulo": "Importar el archivo",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "Más abajo, en importar el archivo, subo la plantilla llena. El sistema valida todas las filas antes de crear nada: si una tiene errores, no se importa ninguna, y te dice cuál corregir. Aquí todo estaba bien: dos facturas creadas, pendientes para revisión. Cierro, y ahí están en el buzón, pendientes.",
+   "acciones": [
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type=file]",
+      "archivo": "seeds/compras-facturas/facturas-plantilla.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir'), mat-dialog-container button:has-text('Seleccionar'), mat-dialog-container [class*='drop'], mat-dialog-container button:has-text('Subir')"
+     },
+     "al_decir": "subo la plantilla"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success, mat-dialog-container .gm-dialog-alert:has-text('creada')",
+     "durante_ms": 4000,
+     "al_decir": "dos facturas creadas",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar') >> nth=-1",
+     "al_decir": "Cierro"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000002201') td:nth-child(2)",
+     "durante_ms": 2500,
+     "al_decir": "ahí están"
+    }
+   ]
+  },
+  {
+   "id": "03-lote",
+   "capitulo": "Dar entrada en lote",
+   "rotulo": "Entrada por lote",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "Como ya las verifiqué en la hoja, les doy entrada juntas. Recojo el panel para ver mejor, y marco las dos filas. Arriba aparece el botón Dar entrada, con la cantidad marcada; lo pulso, y confirmo. El sistema crea una factura de compra por cada fila, una tras otra, con su asiento y su cuenta por pagar. Listo: las dos facturas entraron, cada una con su número. Ojo: el lote usa los datos tal como vinieron. Una factura que necesita una decisión, como una nota de crédito o una mercancía ya recibida, no entra por lote: ábrela con la revisión.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el panel"
+    },
+    {
+     "click": "table tbody tr:has-text('E310000002201') input[type=checkbox]",
+     "al_decir": "marco las dos"
+    },
+    {
+     "click": "table tbody tr:has-text('E310000088410') input[type=checkbox]",
+     "al_decir": "las dos filas"
+    },
+    {
+     "click": "button:has-text('Dar entrada (')",
+     "al_decir": "lo pulso"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, dar entrada')",
+     "al_decir": "y confirmo"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "Listo",
+     "cursor": false
+    },
+    {
+     "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "las dos facturas entraron"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000002201') td:has-text('Con entrada')",
+     "durante_ms": 3000,
+     "al_decir": "cada una con su número"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Cuidado",
+      "texto": "El lote usa los datos tal como vinieron: úsalo solo con documentos verificados."
+     },
+     "durante_ms": 7000,
+     "al_decir": "Ojo"
+    }
+   ]
+  }
+ ]
+}

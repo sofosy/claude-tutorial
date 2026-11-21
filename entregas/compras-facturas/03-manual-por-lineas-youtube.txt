@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 3: por líneas y al contado
+
+DESCRIPCIÓN
+============================================================
+Tercer video de la serie de entrada de facturas de compra en Germiva ERP. Registramos una factura pagada en el momento, detallando cada artículo: una línea gravada al 18 % y otra exenta. Vemos el método de pago, el ITBIS de cada línea y por qué una compra al contado no deja cuenta por pagar.
+
+⏱️ CAPÍTULOS
+00:00  Proveedor y contado
+00:40  Por líneas
+01:24  Resumen y dar entrada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Registrar al contado y elegir el método de pago
+• Cambiar a la captura por líneas
+• Poner la tasa de ITBIS de cada línea, incluida una exenta
+• Por qué la compra al contado nace pagada y sin cuenta por pagar
+
+⚠️ ERRORES COMUNES
+• Registrar después otro pago para una compra que entró al contado: ya está pagada
+• Escribir a mano el ITBIS de una línea cuando la tasa lo calcula
+• Dejar gravada una línea que la factura trae exenta
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:01
+
+TRANSCRIPCIÓN
+============================================================
+Esta vez la factura es de la papelería, y la pagamos en el momento, por transferencia. Pulso Registrar manual. Busco el proveedor: escribo papelería y lo elijo. Copio el NCF y la fecha de emisión: dieciocho de noviembre. En condiciones de pago, elijo contado. Desaparecen el plazo y la fecha límite, y aparece el método de pago: lo abro y elijo transferencia bancaria. Y en caja o banco, la cuenta de donde salió el dinero: el banco. Al contado, la factura nace pagada y no deja cuenta por pagar.
+Ahora los montos. Quiero detallar cada artículo, así que paso a por líneas. En la primera línea escribo la descripción: resma de papel. Cantidad: diez. Precio: doscientos ochenta y cinco. Como es la primera compra a este proveedor, la tasa y el tipo vienen sugeridos para que los confirmes. El tipo, bien, está correcto. La tasa la abro y elijo el dieciocho por ciento, y el ITBIS sale calculado, en gris: quinientos trece. Agrego otra línea para los libros de registro: dos, a cuatrocientos cincuenta. Estos no llevan ITBIS, así que abro la tasa y elijo exento.
+A la derecha, el resumen separa lo exento de lo gravado, con su ITBIS, y el total: cuatro mil doscientos sesenta y tres. En el 606, una compra de bienes con su ITBIS por adelantar. Pulso Dar entrada. El sistema registra la compra y, en el mismo paso, su pago. El aviso confirma la factura, y acepto. En el buzón queda con entrada, y en Compras, Facturas, ya aparece pagada. Un detalle: no le registres otro pago, porque ya se registró al dar entrada.

@@ -1,0 +1,301 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/invoices",
+  "esperar": "button:has-text('Nueva Factura')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 11: pagos al exterior",
+ "descripcion": "Último video de la serie de entrada de facturas de compra en Germiva ERP. Un servicio que te factura un proveedor del exterior se registra con el comprobante de Pagos al Exterior (B17 o E47): en dólares, con la tasa del día, exento de ITBIS y con la retención del ISR que exige.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 11. Estado A (USD activo, tasa 60.50 del día). Formulario libre, B17, Germiva Cloud Hosting LLC (documento extranjero US-88-1305550). Línea «Hosting del sistema, noviembre», servicio exento, US$120. «Retención a todas»: ISR Remesas al Exterior 27 % (US$32.40). Crédito con vencimiento 20/12/2026, «Guardar y emitir».",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Cuándo se usa el comprobante de Pagos al Exterior (B17/E47)",
+  "Registrar la compra en dólares con la tasa del día",
+  "Aplicar la retención del ISR obligatoria",
+  "Emitir la compra a crédito"
+ ],
+ "errores_comunes": [
+  "Ponerle ITBIS: las líneas van exentas",
+  "Emitirlo sin la retención del ISR: el comprobante la exige en todas las líneas",
+  "Registrar en pesos una factura en dólares sin su tasa"
+ ],
+ "pasos": [
+  {
+   "id": "01-cabecera",
+   "capitulo": "Proveedor del exterior y moneda",
+   "rotulo": "Pagos al exterior",
+   "ruta": "Compras › Facturas › Nueva compra",
+   "narracion": "El hosting del sistema nos lo factura una empresa de Estados Unidos. Un proveedor del exterior no te da comprobante dominicano, así que tu empresa emite el de pagos al exterior: el B17, o el E47 en electrónico. Pulso Nueva Factura, recojo el panel, abro más acciones y paso al formulario libre. En tipo de comprobante elijo pagos al exterior. Busco el proveedor por su nombre: Germiva Cloud Hosting, que se identifica con su documento extranjero. La factura viene en dólares: arriba, en la moneda, abro la lista y elijo dólar estadounidense, y el sistema toma la tasa del día.",
+   "acciones": [
+    {
+     "click": "button:has-text('Nueva Factura')",
+     "al_decir": "Pulso Nueva Factura"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "click": "button:has(mat-icon:text-is('more_vert')) >> nth=0",
+     "al_decir": "abro más acciones"
+    },
+    {
+     "click": ".mat-mdc-menu-panel button:has-text('libre')",
+     "al_decir": "paso al formulario libre"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:has-text('Tipo de comprobante')) mat-select",
+     "al_decir": "En tipo de comprobante"
+    },
+    {
+     "click": "mat-option:has-text('B17')",
+     "al_decir": "elijo pagos al exterior"
+    },
+    {
+     "escribir": {
+      "sel": "input[placeholder*='Busque por nombre']",
+      "texto": "Cloud"
+     },
+     "al_decir": "Busco el proveedor"
+    },
+    {
+     "click": "mat-option:has-text('Germiva Cloud')",
+     "al_decir": "Germiva Cloud Hosting"
+    },
+    {
+     "click": "button:has-text('DOP')",
+     "al_decir": "en la moneda"
+    },
+    {
+     "click": "mat-form-field:has(mat-label:has-text('Moneda')) mat-select >> nth=-1",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('USD')",
+     "al_decir": "elijo dólar estadounidense"
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     },
+     "al_decir": "y el sistema"
+    },
+    {
+     "resaltar": "button:has-text('USD')",
+     "durante_ms": 3500,
+     "al_decir": "la tasa del día"
+    }
+   ]
+  },
+  {
+   "id": "02-linea-retencion",
+   "capitulo": "La línea y la retención del ISR",
+   "rotulo": "Retención del ISR",
+   "ruta": "Compras › Facturas › Nueva compra",
+   "narracion": "Pulso Agregar línea y escribo el concepto: hosting del sistema, noviembre. Aquí no hace falta un producto del catálogo: el concepto se escribe tal como viene en la factura. Es un servicio, así que en la columna tipo elijo servicio. El precio: ciento veinte dólares. Y va exento de ITBIS: en la columna tasa elijo exento. Ahora lo que este comprobante exige: la retención del ISR en todas las líneas. Pulso Retención a todas. En el tipo de retención de ISR elijo remesas al exterior, y el sistema propone su tasa: veintisiete por ciento. Aplico, y el aviso confirma la retención en todas las líneas.",
+   "acciones": [
+    {
+     "click": "button:has-text('Agregar línea')",
+     "al_decir": "Pulso Agregar línea"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='productName'] >> nth=0",
+      "texto": "Hosting del sistema, noviembre"
+     },
+     "al_decir": "escribo el concepto"
+    },
+    {
+     "click": "mat-select[formcontrolname='goodOrServiceIndicator'] >> nth=0",
+     "al_decir": "columna tipo"
+    },
+    {
+     "click": "mat-option:has-text('Servicio')",
+     "al_decir": "elijo servicio"
+    },
+    {
+     "escribir": {
+      "sel": "input[formcontrolname='price']:visible >> nth=0",
+      "texto": "120"
+     },
+     "al_decir": "El precio"
+    },
+    {
+     "click": "mat-select[formcontrolname='taxId'] >> nth=0",
+     "al_decir": "columna tasa"
+    },
+    {
+     "click": "mat-option:has-text('Exento')",
+     "al_decir": "elijo exento"
+    },
+    {
+     "click": "button:has-text('Retención a todas')",
+     "al_decir": "Pulso Retención a todas"
+    },
+    {
+     "click": "mat-dialog-container mat-select[formcontrolname='isrTaxRetentionTypeId']",
+     "al_decir": "tipo de retención"
+    },
+    {
+     "click": "mat-option:has-text('Remesas al Exterior')",
+     "al_decir": "remesas al exterior"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-form-field:has(input[formcontrolname='isrWithholdingRate'])",
+     "durante_ms": 3000,
+     "al_decir": "veintisiete por ciento"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aplicar')",
+     "al_decir": "Aplico"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "al_decir": "el aviso confirma",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-emitir",
+   "capitulo": "A crédito y emitir",
+   "rotulo": "Guardar y emitir",
+   "ruta": "Compras › Facturas › Nueva compra",
+   "narracion": "Este proveedor nos da un mes para pagar. En condición de pago abro la lista y elijo crédito, y en vencimiento escribo el veinte de diciembre. El resumen muestra la retención del ISR, y el total a pagar, el neto, en dólares. Pulso Guardar y emitir, y confirmo: la compra toma su NCF de la secuencia. El aviso confirma que se creó y se emitió, y acepto. Con esto ya conoces todas las formas de dar entrada a una factura de compra en Germiva.",
+   "acciones": [
+    {
+     "click": "mat-form-field:has(mat-label:has-text('Condición de pago')) input",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('Crédito')",
+     "al_decir": "elijo crédito"
+    },
+    {
+     "escribir": {
+      "sel": "mat-form-field:has(mat-label:has-text('Vencimiento')) input",
+      "texto": "20/12/2026"
+     },
+     "al_decir": "en vencimiento escribo"
+    },
+    {
+     "resaltar": "app-retention-perception-column, app-document-payable-total",
+     "durante_ms": 3500,
+     "al_decir": "El resumen muestra"
+    },
+    {
+     "resaltar": "app-document-payable-total",
+     "durante_ms": 3500,
+     "al_decir": "el total a pagar"
+    },
+    {
+     "click": "button:has-text('Guardar y emitir') >> nth=0",
+     "al_decir": "Pulso Guardar y emitir"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Emitir') >> nth=-1",
+     "al_decir": "y confirmo"
+    },
+    {
+     "resaltar": "mat-dialog-container:has(button:has-text('Aceptar'))",
+     "durante_ms": 2500,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container:has(button:has-text('Aceptar')) button:has-text('Aceptar')",
+     "al_decir": "y acepto"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Serie completa",
+      "texto": "Buzón: lo que emite el proveedor · Nueva Factura: lo que emite tu empresa · Recepción: la mercancía ya recibida."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Con esto"
+    }
+   ]
+  }
+ ]
+}

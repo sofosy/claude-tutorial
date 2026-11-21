@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 10: gastos menores
+
+DESCRIPCIÓN
+============================================================
+Décimo video de la serie de entrada de facturas de compra en Germiva ERP. Los gastos pequeños sin proveedor identificado se registran con el comprobante de Gastos Menores (B13 o E43) en el formulario libre: conceptos escritos a mano, sin ITBIS, pagados desde la caja.
+
+⏱️ CAPÍTULOS
+00:00  Formulario libre y tipo
+00:36  Los conceptos
+01:06  Pagar desde la caja
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo se usa el comprobante de Gastos Menores (B13/E43)
+• Cambiar al formulario libre y escribir conceptos sin catálogo
+• Por qué las líneas van exentas
+• Pagar el gasto desde la caja
+
+⚠️ ERRORES COMUNES
+• Ponerle ITBIS a un gasto menor: se registra exento
+• Usarlo para una compra de un proveedor con RNC: él debe darte su comprobante
+• Agregar descuentos o retenciones: el gasto menor no los admite
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:41
+
+TRANSCRIPCIÓN
+============================================================
+Para los gastos pequeños sin un proveedor identificado, como el parqueo o el agua de la oficina, existe el comprobante de gastos menores: el B13, o el E43 si facturas electrónico. Pulso Nueva Factura y recojo el panel. Esta vez uso el formulario libre, donde escribo los conceptos sin catálogo: abro más acciones y elijo cambiar a formulario libre. En tipo de comprobante elijo gastos menores. No hace falta proveedor: la compra queda a nombre del proveedor genérico de la empresa.
+Pulso Agregar línea y escribo el primer concepto: parqueo para la mensajería. Es un servicio: en tipo elijo servicio. El precio, trescientos pesos. Los gastos menores van sin ITBIS, así que en la tasa elijo exento. Agrego otra línea: agua y café para la oficina, ochocientos cincuenta, y su tasa, exento también. Debajo se ve la cuenta contable que se usará; si quieres otra, la cambias por línea.
+En el pago, el gasto sale de la caja: el monto ya es el total, mil ciento cincuenta, en efectivo. En cuenta de origen escribo caja; la lista se filtra sola, bajo con la flecha en la lista y elijo la caja general. Pulso Guardar y pagar. El sistema emite el comprobante de gastos menores con su NCF y registra la salida de caja. El aviso lo confirma, y acepto. Recuerda: el gasto menor no lleva ITBIS, ni descuentos, ni retenciones.

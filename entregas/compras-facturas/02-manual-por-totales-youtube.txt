@@ -1,0 +1,40 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 2: registrar a mano, por totales
+
+DESCRIPCIÓN
+============================================================
+Segundo video de la serie de entrada de facturas de compra en Germiva ERP. Registramos a mano una factura de papel copiando solo su pie: subtotal, ITBIS y total. El proveedor, la categoría 606, el plazo y la cuenta de gasto salen de su ficha, y antes de guardar ves el asiento y el 606.
+
+⏱️ CAPÍTULOS
+00:00  La captura manual
+00:27  Proveedor y comprobante
+01:03  Condiciones de pago
+01:21  Montos por totales
+01:58  Asiento, 606 y dar entrada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Abrir la captura manual y sus tres partes
+• Elegir el proveedor y aprovechar su ficha: categoría 606, plazo y cuenta
+• Copiar el pie de la factura por totales
+• Leer el asiento y el 606 antes de dar entrada
+• Guardar borradores para registrar varias facturas
+
+⚠️ ERRORES COMUNES
+• Escribir el subtotal después del descuento: va el de antes
+• Dejar la categoría 606 vacía: la compra sale incompleta en el 606
+• Registrar al contado una factura a crédito: no nace la cuenta por pagar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:43
+
+TRANSCRIPCIÓN
+============================================================
+Tenemos en la mano una factura de papel de la compañía de vigilancia, y la vamos a registrar en el buzón de facturas recibidas. Pulso Registrar manual. La captura tiene tres partes numeradas: proveedor y comprobante, condiciones de pago y montos. Y a la derecha, el resumen, el asiento que se va a generar y lo que pide el 606, que se actualizan mientras escribo.
+Empiezo por el proveedor. Escribo seguridad, y en la lista aparece Seguridad Germiva del Caribe; la elijo. Debajo queda su RNC, tomado de la ficha. Si no existiera, desde este mismo campo lo tomas del padrón de la DGII o lo creas. El tipo de comprobante viene en crédito fiscal. En NCF copio el número tal como viene en la factura. La fecha de emisión: quince de noviembre. Y fíjate en la categoría 606: ya vino de la ficha del proveedor.
+Segundo, las condiciones de pago. Esta factura es a crédito. El plazo ya dice treinta días, porque así está en la ficha del proveedor, y la fecha límite se calculó sola: emisión más plazo. Con esto, al dar entrada nace la cuenta por pagar.
+Tercero, los montos. La captura abre por totales: copio el pie de la factura, sin desglosar productos. En concepto escribo qué se compró. La cuenta de gasto también la propone la ficha del proveedor: vigilancia y seguridad. Ahora el pie. Subtotal: veinticinco mil. ITBIS facturado: cuatro mil quinientos, y al lado confirma que es el dieciocho por ciento del gravado. Y el total de la factura: veintinueve mil quinientos. El sistema lo compara con el total calculado, y cuadra.
+Antes de guardar, mira la derecha. El resumen cuadra con la factura del proveedor. En el asiento, el gasto de vigilancia y el ITBIS por adelantar van al débito, y la cuenta por pagar al proveedor, al crédito. Y la lista del 606 está completa. Si todavía no la vas a registrar, Guardar borrador la deja pendiente, y Borrador y otra abre una captura en blanco para la siguiente. Esta está lista: pulso Dar entrada. El sistema crea la factura, su asiento y la cuenta por pagar. El aviso confirma que se creó la factura de compra, y acepto. La fila queda con entrada, con su número de factura.

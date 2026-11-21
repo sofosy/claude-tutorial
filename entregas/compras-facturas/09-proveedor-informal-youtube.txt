@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 9: comprar a un proveedor informal
+
+DESCRIPCIÓN
+============================================================
+Noveno video de la serie de entrada de facturas de compra en Germiva ERP. Cuando el proveedor no está inscrito en el RNC, el comprobante lo emite tu empresa: el Comprobante de Compras (B11 o E41). Lo registramos en el formulario estándar, con la retención que propone el sistema y el pago desde la caja.
+
+⏱️ CAPÍTULOS
+00:00  Proveedor informal y comprobante
+00:49  La línea y las retenciones
+01:22  Pagar desde la caja
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo corresponde el Comprobante de Compras (B11/E41)
+• Registrar la compra en «Nueva Factura» con un servicio del catálogo
+• Proponer las retenciones del proveedor informal
+• Pagar el neto desde la caja
+
+⚠️ ERRORES COMUNES
+• Usar el Comprobante de Compras con un proveedor formal: él debe darte su crédito fiscal
+• Emitirlo sin las retenciones: el formulario lo avisa
+• Pagarle al proveedor el total: se le paga el neto; lo retenido es de la DGII
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:02
+
+TRANSCRIPCIÓN
+============================================================
+Le contratamos un flete a Ramón, un camionero que no está inscrito en el RNC. Él no puede darnos un comprobante fiscal, así que lo emite nuestra empresa: el comprobante de compras. En la pantalla de Facturas de compra, pulso Nueva Factura, y recojo el panel para ver mejor. Busco el proveedor: escribo Ramón y lo elijo; su ficha lo marca como contribuyente informal, con su cédula. El tipo de comprobante ya propone el de compras, el B11; si tu empresa factura electrónico, es el E41. No hay campo para el NCF: lo pone tu secuencia al emitir. Y la categoría 606: abro la lista y elijo gastos por trabajos, suministros y servicios.
+En las líneas busco el servicio en el catálogo: escribo flete y lo elijo. La cantidad queda en uno, y en precio escribo ocho mil quinientos. Enseguida aparece un aviso: al proveedor informal le retienes el ITBIS facturado y, en servicios, el ISR. Pulso Proponer retenciones, y el sistema aplica las del catálogo. En el resumen aparece la retención del ISR, y el total a pagar baja al neto: siete mil doscientos veinticinco. Las tasas, confírmalas con tu contador.
+Abajo está el pago. La condición es contado, y el panel ya trae el monto a pagar, que es el neto, en efectivo. Falta decir de dónde sale el dinero: en cuenta de origen escribo caja; la lista se filtra sola, bajo con la flecha en la lista y elijo la caja general. Pulso Guardar y pagar. El sistema emite el comprobante con el NCF de la secuencia, hace el asiento y registra la salida de caja. El aviso lo confirma, y acepto. Recuerda: lo retenido no se le paga al proveedor; se le debe a la DGII y sale en tu declaración.

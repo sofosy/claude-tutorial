@@ -1,0 +1,228 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/received-invoices",
+  "esperar": "button:has-text('Registrar manual')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 6: el reporte de e-CF recibidos de la DGII",
+ "descripcion": "Sexto video de la serie de entrada de facturas de compra en Germiva ERP. Subimos el reporte de comprobantes electrónicos recibidos que se descarga de la Oficina Virtual de la DGII: el sistema lo lee sin IA, crea una factura pendiente por comprobante y conserva los montos que la DGII tiene registrados.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 6. Estado A. Archivo seeds/compras-facturas/reporte-dgii-ecf-recibidos.xlsx (archivos.py): Limpieza Germiva (130555151) E310000004512 (2,124 / 324) y E310000004530 (1,416 / 216); Mantenimiento Germiva (130555168) E310000000981 (8,260 / 1,260). Receptor 130555001. Se da entrada por revisión a la de Mantenimiento con categoría 02 y emisión del día de recepción.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Qué es el reporte de e-CF recibidos y dónde se sube",
+  "Qué hace el sistema con cada comprobante del reporte",
+  "Qué datos quedan fijos y cuáles completas tú",
+  "Dar entrada a un comprobante del reporte"
+ ],
+ "errores_comunes": [
+  "Cambiar el total o el ITBIS: son los que la DGII tiene registrados y cruzarán con tu 606",
+  "Subir el reporte desde una sucursal: se importa desde la casa matriz",
+  "Dar entrada por lote a un comprobante en otra moneda: va por la revisión"
+ ],
+ "pasos": [
+  {
+   "id": "01-subir",
+   "capitulo": "Subir el reporte",
+   "rotulo": "Reporte de la DGII",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "En la Oficina Virtual de la DGII puedes descargar el reporte de los comprobantes electrónicos que te emitieron tus proveedores. Ese archivo se sube aquí mismo. Pulso Importar y exportar, y lo subo, tal como lo bajé. El sistema lo reconoce solo, lo lee sin IA y sin gastar cupo. Leyó tres comprobantes, los tres pasaron al buzón, y avisa de los proveedores nuevos: se crean con la razón social del padrón al darle entrada a su primera factura.",
+   "acciones": [
+    {
+     "click": "button:has-text('Importar / Exportar')",
+     "al_decir": "Pulso Importar y exportar"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type=file]",
+      "archivo": "seeds/compras-facturas/reporte-dgii-ecf-recibidos.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir'), mat-dialog-container button:has-text('Seleccionar'), mat-dialog-container [class*='drop'], mat-dialog-container button:has-text('Subir')"
+     },
+     "al_decir": "y lo subo"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-facts, mat-dialog-container app-dgii-report-summary",
+     "durante_ms": 4500,
+     "al_decir": "Leyó tres comprobantes",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container app-dgii-report-summary :text('PROVEEDORES NUEVOS'), mat-dialog-container :text('Proveedores nuevos')",
+     "durante_ms": 5500,
+     "al_decir": "los proveedores nuevos",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-revisar",
+   "capitulo": "Lo que queda fijo",
+   "rotulo": "Revisión del comprobante",
+   "ruta": "Compras › Facturas Recibidas › Dar entrada",
+   "narracion": "Cierro. Los tres quedaron pendientes, con origen reporte DGII. Abro la revisión del de mantenimiento. El e-NCF, el RNC, el total y el ITBIS son los que la DGII tiene registrados, y no se cambian: son los que van a cruzar con tu 606. El reporte no trae la fecha de emisión ni el detalle, así que eso lo confirmas tú. Elijo la categoría 606: gastos por trabajos, suministros y servicios. Y como es a crédito, escribo el plazo, treinta días, y la fecha límite se calcula sola.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar') >> nth=-1",
+     "al_decir": "Cierro"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000000981') td:has-text('Reporte DGII')",
+     "durante_ms": 2500,
+     "al_decir": "origen reporte DGII"
+    },
+    {
+     "click": "table tbody tr:has-text('E310000000981') button[aria-label='Dar entrada (revisión)']",
+     "al_decir": "Abro la revisión"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-facts, mat-dialog-container .gm-dialog-note",
+     "durante_ms": 6000,
+     "al_decir": "no se cambian",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-issue)",
+     "durante_ms": 4000,
+     "al_decir": "la fecha de emisión"
+    },
+    {
+     "click": "#f-606",
+     "al_decir": "Elijo la categoría"
+    },
+    {
+     "click": "mat-option:has-text('02')",
+     "al_decir": "gastos por trabajos"
+    },
+    {
+     "escribir": {
+      "sel": "#f-days",
+      "texto": "30"
+     },
+     "al_decir": "escribo el plazo"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-due)",
+     "durante_ms": 2500,
+     "al_decir": "la fecha límite"
+    }
+   ]
+  },
+  {
+   "id": "03-entrada",
+   "capitulo": "Dar entrada",
+   "rotulo": "Dar entrada",
+   "ruta": "Compras › Facturas Recibidas › Dar entrada",
+   "narracion": "Al dar entrada, el total y el ITBIS tienen que coincidir con los de la DGII; aquí cuadran. Pulso Dar entrada. El sistema registra al proveedor con su nombre del padrón y crea la factura. Se creó la factura. Acepto. Los otros dos puedes revisarlos igual, o marcarlos y darles entrada por lote. Y la pestaña Cuadre con la DGII compara tu 606 con lo que la DGII tiene, para que no se te escape ninguno.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container [data-testid='summary-status']",
+     "durante_ms": 3000,
+     "al_decir": "aquí cuadran",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container [data-testid='submit-entry']",
+     "al_decir": "Pulso Dar entrada"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 3500,
+     "al_decir": "Se creó la factura",
+     "cursor": false
+    },
+    {
+     "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Acepto"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000004512')",
+     "durante_ms": 3000,
+     "al_decir": "Los otros dos"
+    },
+    {
+     "resaltar": "a:has-text('Cuadre con la DGII'), [role=tab]:has-text('Cuadre con la DGII'), :text('Cuadre con la DGII')",
+     "durante_ms": 5000,
+     "al_decir": "Cuadre con la DGII"
+    }
+   ]
+  }
+ ]
+}

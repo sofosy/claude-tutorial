@@ -1,0 +1,115 @@
+1
+00:00:03,100 --> 00:00:04,786
+Cuando tienes muchas facturas,
+
+2
+00:00:04,860 --> 00:00:08,074
+por ejemplo las que te pasa tu contador en una hoja de cálculo,
+
+3
+00:00:08,184 --> 00:00:09,760
+las cargas de una vez.
+
+4
+00:00:10,428 --> 00:00:12,202
+Pulso Importar y exportar.
+
+5
+00:00:12,859 --> 00:00:16,443
+Primero descargas la plantilla, en Excel o en CSV:
+
+6
+00:00:16,503 --> 00:00:18,230
+una fila por renglón de factura,
+
+7
+00:00:18,240 --> 00:00:21,292
+y la misma clave agrupa los renglones de una factura.
+
+8
+00:00:21,948 --> 00:00:23,995
+Trae instrucciones y un ejemplo.
+
+9
+00:00:24,652 --> 00:00:26,551
+Ya la llené con dos facturas:
+
+10
+00:00:26,647 --> 00:00:30,096
+una de lubricantes con dos renglones y otra de climatización.
+
+11
+00:00:31,471 --> 00:00:35,564
+Más abajo, en importar el archivo, subo la plantilla llena.
+
+12
+00:00:36,219 --> 00:00:39,296
+El sistema valida todas las filas antes de crear nada:
+
+13
+00:00:39,456 --> 00:00:43,921
+si una tiene errores, no se importa ninguna, y te dice cuál corregir.
+
+14
+00:00:44,578 --> 00:00:45,992
+Aquí todo estaba bien:
+
+15
+00:00:46,115 --> 00:00:49,254
+dos facturas creadas, pendientes para revisión.
+
+16
+00:00:49,909 --> 00:00:53,272
+Cierro, y ahí están en el buzón, pendientes.
+
+17
+00:00:54,658 --> 00:00:58,317
+Como ya las verifiqué en la hoja, les doy entrada juntas.
+
+18
+00:00:58,984 --> 00:01:02,484
+Recojo el panel para ver mejor, y marco las dos filas.
+
+19
+00:01:03,152 --> 00:01:06,774
+Arriba aparece el botón Dar entrada, con la cantidad marcada;
+
+20
+00:01:06,897 --> 00:01:08,609
+lo pulso, y confirmo.
+
+21
+00:01:09,278 --> 00:01:13,234
+El sistema crea una factura de compra por cada fila, una tras otra,
+
+22
+00:01:13,344 --> 00:01:15,418
+con su asiento y su cuenta por pagar.
+
+23
+00:01:16,085 --> 00:01:16,707
+Listo:
+
+24
+00:01:16,817 --> 00:01:20,055
+las dos facturas entraron, cada una con su número.
+
+25
+00:01:20,710 --> 00:01:21,295
+Ojo:
+
+26
+00:01:21,368 --> 00:01:23,974
+el lote usa los datos tal como vinieron.
+
+27
+00:01:24,641 --> 00:01:26,864
+Una factura que necesita una decisión,
+
+28
+00:01:26,948 --> 00:01:31,465
+como una nota de crédito o una mercancía ya recibida, no entra por lote:
+
+29
+00:01:31,537 --> 00:01:32,977
+ábrela con la revisión.
