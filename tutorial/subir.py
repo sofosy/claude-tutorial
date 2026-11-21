@@ -8,6 +8,7 @@ Solo biblioteca estándar: corre igual en tu máquina que en GitHub Actions.
 
 Qué cuenta como «ya subido»: lo anotado en `entregas/subidos.json` y, además,
 cualquier video del canal con el mismo título (los que se subieron a mano).
+Una entrada con `"omitir": "motivo"` deja ese video en espera: no se sube.
 
 La cuota diaria de la API alcanza para pocos videos. Cuando YouTube la corta,
 el comando termina bien y deja el resto pendiente: la siguiente corrida (la
@@ -92,6 +93,28 @@ def _recortar(texto, tope):
     return texto
 
 
+def _titulo_canal(titulo, archivo):
+    """El título como se publica en el canal: «Serie NN · Tema en Germiva».
+
+    El paquete dice «Contabilidad · Vender y cobrar en dólares»; en el canal
+    ese video es «Contabilidad 36 · Vender y cobrar en dólares en Germiva».
+    El número sale del nombre del archivo (`36-…mp4`). Si el título ya trae su
+    propia numeración («Parte 3», «Entrada de facturas 3») no se le pone otra.
+    """
+    titulo = " ".join(titulo.split())
+    n = re.match(r"(\d+)-", archivo)
+    if n and " · " in titulo and not re.search(r"\d", titulo.split(":")[0]):
+        serie, resto = titulo.split(" · ", 1)
+        titulo = f"{serie} {n.group(1)} · {resto}"
+    if "germiva" not in titulo.lower() and "regisalud" not in archivo.lower():
+        largo = _recortar(titulo + " en Germiva", 100)
+        if largo.endswith(" en Germiva"):
+            titulo = largo
+    if len(titulo.encode("utf-8")) > 100:      # corta en una palabra, no a media sílaba
+        titulo = _recortar(titulo, 97).rsplit(" ", 1)[0].rstrip(" ,:;") + "…"
+    return titulo
+
+
 def descubrir():
     """Cada MP4 de `entregas/` que trae su texto de YouTube al lado."""
     videos, sin_texto = [], []
@@ -120,7 +143,7 @@ def descubrir():
                 largo += len(e) + 3
         videos.append({
             "rel": rel, "mp4": mp4, "serie": rel.split("/")[0],
-            "titulo": _recortar(" ".join(titulo.split()), 100),
+            "titulo": _titulo_canal(titulo, rel if "/" not in rel else rel.split("/", 1)[1]),
             "descripcion": _recortar(desc, 4900),
             "etiquetas": etiquetas,
             "miniatura": _primero(d / f"{s}-miniatura.png", d / f"{s} - miniatura.png",
@@ -256,6 +279,8 @@ def _guardar_registro(reg):
 
 def _pendiente(v, e):
     """Qué le falta a un video: el video mismo, la miniatura o los subtítulos."""
+    if e and e.get("omitir"):
+        return []
     if not e:
         return ["video"] + (["miniatura"] if v["miniatura"] else []) + (["subtítulos"] if v["srt"] else [])
     falta = []
@@ -278,6 +303,9 @@ def cmd_listar(a):
         if a.serie and v["serie"] != a.serie:
             continue
         e = reg.get(v["rel"])
+        if e and e.get("omitir"):
+            print(f"  en espera    {v['rel']}  ({e['omitir']})")
+            continue
         if not e and _clave(v["titulo"]) in canal:
             print(f"  en el canal  {v['rel']}  → {canal[_clave(v['titulo'])]}")
             continue
