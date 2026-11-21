@@ -1,0 +1,235 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/received-invoices",
+  "esperar": "button:has-text('Registrar manual')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 1: por dónde entra cada factura",
+ "descripcion": "Primer video de la serie de entrada de facturas de compra en Germiva ERP. Una sola pregunta decide la pantalla: ¿quién emitió el comprobante? Vemos el buzón de facturas recibidas, sus cuatro puertas de entrada, el listado de Facturas y cuándo se usa «Nueva Factura».",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 1. Estado B (preparar.mjs B): buzón con las dos facturas de la plantilla con entrada (Lubricantes y Climatización, origen Manual), y pendientes los tres e-CF del reporte de la DGII (Limpieza ×2 y Mantenimiento) y la de Ferremateriales leída con IA. No crea nada.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs B"
+ },
+ "aprenderas": [
+  "La pregunta que decide la pantalla: ¿quién emitió el comprobante?",
+  "Las cuatro formas de que una factura llegue al buzón",
+  "Qué significa «Pendiente» y «Con entrada»",
+  "Cuándo se usa «Nueva Factura» y el listado único de Facturas"
+ ],
+ "errores_comunes": [
+  "Registrar en «Nueva Factura» un crédito fiscal que te entregó el proveedor: va al buzón",
+  "Creer que una factura del buzón ya es una compra: hasta darle entrada no tiene asiento ni deuda",
+  "Registrar dos veces la factura de una mercancía ya recibida: se coteja contra la recepción"
+ ],
+ "pasos": [
+  {
+   "id": "01-pregunta",
+   "capitulo": "Quién emitió el comprobante",
+   "rotulo": "Por dónde entra",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "En Germiva, una factura de compra puede entrar de varias formas, y una sola pregunta decide por dónde: ¿quién emitió el comprobante? Si te lo entregó el proveedor, como un crédito fiscal, va a Facturas Recibidas, que es esta pantalla: el buzón de Compras. Cada fila es una factura de un proveedor. Mientras está pendiente, todavía no es una compra: no tiene asiento ni deuda. Lo es cuando alguien le da entrada.",
+   "acciones": [
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "En este video",
+      "texto": "Por dónde entra cada factura de compra, según quién emitió el comprobante."
+     },
+     "durante_ms": 7000,
+     "al_decir": "una sola pregunta"
+    },
+    {
+     "resaltar": ".panel-item:has-text('Facturas Recibidas')",
+     "durante_ms": 3000,
+     "al_decir": "va a Facturas Recibidas"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000004512') td:nth-child(2)",
+     "durante_ms": 3000,
+     "al_decir": "Cada fila"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000004512') td:has-text('Pendiente')",
+     "durante_ms": 2500,
+     "al_decir": "está pendiente"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000002201') td:has-text('Con entrada')",
+     "durante_ms": 3000,
+     "al_decir": "le da entrada"
+    }
+   ]
+  },
+  {
+   "id": "02-puertas",
+   "capitulo": "Las puertas del buzón",
+   "rotulo": "Las puertas del buzón",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "Al buzón se llega por cuatro puertas. Importar con IA: subes la foto o el PDF y el sistema lee la factura; también llegan así las que envías por el WhatsApp de Germiva. Registrar manual, para copiar una factura de papel. Importar y exportar: una plantilla de Excel con muchas facturas, o el reporte de comprobantes recibidos que bajas de la DGII. Y la cuarta: el comprobante electrónico que el proveedor te envía entra solo. El filtro Origen dice por cuál llegó cada una.",
+   "acciones": [
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "cuatro puertas"
+    },
+    {
+     "resaltar": "button:has-text('Importar con IA')",
+     "durante_ms": 5500,
+     "al_decir": "Importar con IA"
+    },
+    {
+     "resaltar": "button:has-text('Registrar manual')",
+     "durante_ms": 3000,
+     "al_decir": "Registrar manual"
+    },
+    {
+     "resaltar": "button:has-text('Importar / Exportar')",
+     "durante_ms": 5500,
+     "al_decir": "Importar y exportar"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000004512') td:has-text('Reporte DGII')",
+     "durante_ms": 2500,
+     "al_decir": "el reporte de comprobantes"
+    },
+    {
+     "resaltar": "mat-form-field:has(mat-label:has-text('Origen'))",
+     "durante_ms": 2500,
+     "al_decir": "El filtro Origen"
+    },
+    {
+     "resaltar": "table thead th:has-text('Origen')",
+     "durante_ms": 3500,
+     "al_decir": "por cuál llegó"
+    }
+   ]
+  },
+  {
+   "id": "03-propios",
+   "capitulo": "Comprobantes que emite tu empresa",
+   "rotulo": "Nueva Factura",
+   "ruta": "Compras › Facturas",
+   "navegar": "/purchases/invoices",
+   "al_decir_navegar": "Facturas",
+   "narracion": "¿Y si el comprobante lo emite tu empresa? Entonces se registra en Compras, Facturas. Aquí está el listado único de compras: todas aparecen en él, entren por donde entren. Nueva Factura es solo para los tres comprobantes que numera tu empresa: el de compras a un proveedor informal, el de gastos menores y el de pagos al exterior. Por eso no tiene campo para el NCF: lo pone tu secuencia.",
+   "acciones": [
+    {
+     "resaltar": "table tbody tr:has-text('E310000002201')",
+     "durante_ms": 4000,
+     "al_decir": "el listado único"
+    },
+    {
+     "resaltar": "button:has-text('Nueva Factura')",
+     "durante_ms": 9000,
+     "al_decir": "Nueva Factura es solo"
+    }
+   ]
+  },
+  {
+   "id": "04-recepcion",
+   "capitulo": "Mercancía ya recibida",
+   "rotulo": "Desde la recepción",
+   "ruta": "Compras › Recepciones",
+   "navegar": "/purchases/receipts",
+   "al_decir_navegar": "Recepciones",
+   "narracion": "Un caso más: si la mercancía llegó con una orden de compra y ya la recibiste, la factura se registra desde Recepciones, cotejándola contra lo que entró al almacén. Así el costo no se carga dos veces. En los próximos videos vemos cada forma, paso a paso: a mano, con IA, con plantilla, con el reporte de la DGII, desde la recepción y con los comprobantes propios.",
+   "acciones": [
+    {
+     "resaltar": "table tbody tr:has-text('REC-2026-000001') td:nth-child(1)",
+     "durante_ms": 2500,
+     "al_decir": "ya la recibiste"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('REC-2026-000001') td:has-text('Completada')",
+     "durante_ms": 3000,
+     "al_decir": "cotejándola"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Regla",
+      "texto": "¿Lo emitió el proveedor? Buzón. ¿Lo emite tu empresa? Nueva Factura. ¿Ya recibiste la mercancía? Desde la recepción."
+     },
+     "durante_ms": 9000,
+     "al_decir": "En los próximos videos"
+    }
+   ]
+  }
+ ]
+}

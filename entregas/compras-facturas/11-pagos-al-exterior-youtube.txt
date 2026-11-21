@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 11: pagos al exterior
+
+DESCRIPCIÓN
+============================================================
+Último video de la serie de entrada de facturas de compra en Germiva ERP. Un servicio que te factura un proveedor del exterior se registra con el comprobante de Pagos al Exterior (B17 o E47): en dólares, con la tasa del día, exento de ITBIS y con la retención del ISR que exige.
+
+⏱️ CAPÍTULOS
+00:00  Proveedor del exterior y moneda
+00:43  La línea y la retención del ISR
+01:27  A crédito y emitir
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Cuándo se usa el comprobante de Pagos al Exterior (B17/E47)
+• Registrar la compra en dólares con la tasa del día
+• Aplicar la retención del ISR obligatoria
+• Emitir la compra a crédito
+
+⚠️ ERRORES COMUNES
+• Ponerle ITBIS: las líneas van exentas
+• Emitirlo sin la retención del ISR: el comprobante la exige en todas las líneas
+• Registrar en pesos una factura en dólares sin su tasa
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:02
+
+TRANSCRIPCIÓN
+============================================================
+El hosting del sistema nos lo factura una empresa de Estados Unidos. Un proveedor del exterior no te da comprobante dominicano, así que tu empresa emite el de pagos al exterior: el B17, o el E47 en electrónico. Pulso Nueva Factura, recojo el panel, abro más acciones y paso al formulario libre. En tipo de comprobante elijo pagos al exterior. Busco el proveedor por su nombre: Germiva Cloud Hosting, que se identifica con su documento extranjero. La factura viene en dólares: arriba, en la moneda, abro la lista y elijo dólar estadounidense, y el sistema toma la tasa del día.
+Pulso Agregar línea y escribo el concepto: hosting del sistema, noviembre. Aquí no hace falta un producto del catálogo: el concepto se escribe tal como viene en la factura. Es un servicio, así que en la columna tipo elijo servicio. El precio: ciento veinte dólares. Y va exento de ITBIS: en la columna tasa elijo exento. Ahora lo que este comprobante exige: la retención del ISR en todas las líneas. Pulso Retención a todas. En el tipo de retención de ISR elijo remesas al exterior, y el sistema propone su tasa: veintisiete por ciento. Aplico, y el aviso confirma la retención en todas las líneas.
+Este proveedor nos da un mes para pagar. En condición de pago abro la lista y elijo crédito, y en vencimiento escribo el veinte de diciembre. El resumen muestra la retención del ISR, y el total a pagar, el neto, en dólares. Pulso Guardar y emitir, y confirmo: la compra toma su NCF de la secuencia. El aviso confirma que se creó y se emitió, y acepto. Con esto ya conoces todas las formas de dar entrada a una factura de compra en Germiva.

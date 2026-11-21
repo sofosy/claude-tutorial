@@ -1,0 +1,143 @@
+1
+00:00:03,100 --> 00:00:08,135
+Le contratamos un flete a Ramón, un camionero que no está inscrito en el RNC.
+
+2
+00:00:08,804 --> 00:00:12,908
+Él no puede darnos un comprobante fiscal, así que lo emite nuestra empresa:
+
+3
+00:00:13,006 --> 00:00:14,670
+el comprobante de compras.
+
+4
+00:00:15,339 --> 00:00:18,564
+En la pantalla de Facturas de compra, pulso Nueva Factura,
+
+5
+00:00:18,686 --> 00:00:20,759
+y recojo el panel para ver mejor.
+
+6
+00:00:21,414 --> 00:00:22,507
+Busco el proveedor:
+
+7
+00:00:22,617 --> 00:00:24,144
+escribo Ramón y lo elijo;
+
+8
+00:00:24,242 --> 00:00:27,926
+su ficha lo marca como contribuyente informal, con su cédula.
+
+9
+00:00:28,582 --> 00:00:32,216
+El tipo de comprobante ya propone el de compras, el B11;
+
+10
+00:00:32,314 --> 00:00:36,149
+si tu empresa factura electrónico, es el E41.
+
+11
+00:00:36,817 --> 00:00:38,840
+No hay campo para el NCF:
+
+12
+00:00:38,975 --> 00:00:40,936
+lo pone tu secuencia al emitir.
+
+13
+00:00:41,591 --> 00:00:43,466
+Y la categoría 606:
+
+14
+00:00:43,575 --> 00:00:47,991
+abro la lista y elijo gastos por trabajos, suministros y servicios.
+
+15
+00:00:49,376 --> 00:00:51,957
+En las líneas busco el servicio en el catálogo:
+
+16
+00:00:52,079 --> 00:00:53,879
+escribo flete y lo elijo.
+
+17
+00:00:54,534 --> 00:00:58,615
+La cantidad queda en uno, y en precio escribo ocho mil quinientos.
+
+18
+00:00:59,283 --> 00:01:01,058
+Enseguida aparece un aviso:
+
+19
+00:01:01,118 --> 00:01:06,006
+al proveedor informal le retienes el ITBIS facturado y, en servicios, el ISR.
+
+20
+00:01:06,674 --> 00:01:10,769
+Pulso Proponer retenciones, y el sistema aplica las del catálogo.
+
+21
+00:01:11,436 --> 00:01:16,026
+En el resumen aparece la retención del ISR, y el total a pagar baja al neto:
+
+22
+00:01:16,161 --> 00:01:18,171
+siete mil doscientos veinticinco.
+
+23
+00:01:18,840 --> 00:01:21,631
+Las tasas, confírmalas con tu contador.
+
+24
+00:01:23,003 --> 00:01:24,430
+Abajo está el pago.
+
+25
+00:01:25,098 --> 00:01:29,725
+La condición es contado, y el panel ya trae el monto a pagar, que es el neto,
+
+26
+00:01:29,736 --> 00:01:30,667
+en efectivo.
+
+27
+00:01:31,323 --> 00:01:33,457
+Falta decir de dónde sale el dinero:
+
+28
+00:01:33,506 --> 00:01:35,355
+en cuenta de origen escribo caja;
+
+29
+00:01:35,429 --> 00:01:39,882
+la lista se filtra sola, bajo con la flecha en la lista y elijo la caja general.
+
+30
+00:01:40,549 --> 00:01:42,076
+Pulso Guardar y pagar.
+
+31
+00:01:42,733 --> 00:01:46,206
+El sistema emite el comprobante con el NCF de la secuencia,
+
+32
+00:01:46,278 --> 00:01:48,984
+hace el asiento y registra la salida de caja.
+
+33
+00:01:49,652 --> 00:01:51,947
+El aviso lo confirma, y acepto.
+
+34
+00:01:52,615 --> 00:01:53,262
+Recuerda:
+
+35
+00:01:53,397 --> 00:01:55,444
+lo retenido no se le paga al proveedor;
+
+36
+00:01:55,591 --> 00:01:58,594
+se le debe a la DGII y sale en tu declaración.

@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 7: la factura de una mercancía ya recibida
+
+DESCRIPCIÓN
+============================================================
+Séptimo video de la serie de entrada de facturas de compra en Germiva ERP. Cuando la mercancía ya entró al almacén con su orden de compra, la factura del proveedor se registra desde la recepción: las líneas salen de lo aceptado y el costo no se carga dos veces.
+
+⏱️ CAPÍTULOS
+00:00  La recepción sin facturar
+00:37  Cotejar la factura
+01:06  Registrar la factura cotejada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Encontrar la recepción procesada y sin facturar
+• Generar la factura de compra desde la recepción
+• Qué se coteja: cantidades aceptadas y precio de la orden
+• Registrar la factura cotejada y cerrar la recepción
+
+⚠️ ERRORES COMUNES
+• Registrar la factura en el buzón aparte: el costo de la mercancía se carga dos veces
+• Cambiar la cantidad para que cuadre: se factura lo aceptado; si el proveedor facturó otra cantidad, corrige la recepción
+• Facturar una recepción que todavía no se procesó a inventario
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:37
+
+TRANSCRIPCIÓN
+============================================================
+Llegó la factura de los cementos, pero esa mercancía ya la recibimos: entró al almacén con su orden de compra. Por eso no se registra en el buzón, sino desde la recepción. Esta es la pantalla de Recepciones; cada fila es una entrega de un proveedor. La del cemento está completada y procesada a inventario. La abro con el ojo. Arriba, su orden y su proveedor; abajo, lo que se recibió: cien sacos de cemento y cincuenta varillas. Al pie, pulso Generar factura de compra.
+Se abre la factura de la recepción. Arriba, el resumen de lo que entró: la recepción, la orden, el proveedor y el valor recibido. Las líneas salen de la cantidad aceptada, al precio de la orden: la cantidad no se edita aquí, y el precio solo se corrige si el proveedor facturó otro. La categoría 606 y el plazo de treinta días vienen de la ficha del proveedor. Copio el NCF de la factura y la fecha de emisión.
+En el asiento, el débito va a mercancía por recibir, que es la cuenta puente de la recepción: así el costo no se carga dos veces. Pulso Registrar factura cotejada. El sistema registra la compra y cierra la recepción como facturada. La factura queda registrada. Acepto. Desde ahora, la factura muestra el cruce con la orden y la recepción: lo pedido, lo recibido y lo facturado.

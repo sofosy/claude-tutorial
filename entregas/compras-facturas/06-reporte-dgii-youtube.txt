@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 6: el reporte de e-CF recibidos de la DGII
+
+DESCRIPCIÓN
+============================================================
+Sexto video de la serie de entrada de facturas de compra en Germiva ERP. Subimos el reporte de comprobantes electrónicos recibidos que se descarga de la Oficina Virtual de la DGII: el sistema lo lee sin IA, crea una factura pendiente por comprobante y conserva los montos que la DGII tiene registrados.
+
+⏱️ CAPÍTULOS
+00:00  Subir el reporte
+00:32  Lo que queda fijo
+01:09  Dar entrada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Qué es el reporte de e-CF recibidos y dónde se sube
+• Qué hace el sistema con cada comprobante del reporte
+• Qué datos quedan fijos y cuáles completas tú
+• Dar entrada a un comprobante del reporte
+
+⚠️ ERRORES COMUNES
+• Cambiar el total o el ITBIS: son los que la DGII tiene registrados y cruzarán con tu 606
+• Subir el reporte desde una sucursal: se importa desde la casa matriz
+• Dar entrada por lote a un comprobante en otra moneda: va por la revisión
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 01:42
+
+TRANSCRIPCIÓN
+============================================================
+En la Oficina Virtual de la DGII puedes descargar el reporte de los comprobantes electrónicos que te emitieron tus proveedores. Ese archivo se sube aquí mismo. Pulso Importar y exportar, y lo subo, tal como lo bajé. El sistema lo reconoce solo, lo lee sin IA y sin gastar cupo. Leyó tres comprobantes, los tres pasaron al buzón, y avisa de los proveedores nuevos: se crean con la razón social del padrón al darle entrada a su primera factura.
+Cierro. Los tres quedaron pendientes, con origen reporte DGII. Abro la revisión del de mantenimiento. El e-NCF, el RNC, el total y el ITBIS son los que la DGII tiene registrados, y no se cambian: son los que van a cruzar con tu 606. El reporte no trae la fecha de emisión ni el detalle, así que eso lo confirmas tú. Elijo la categoría 606: gastos por trabajos, suministros y servicios. Y como es a crédito, escribo el plazo, treinta días, y la fecha límite se calcula sola.
+Al dar entrada, el total y el ITBIS tienen que coincidir con los de la DGII; aquí cuadran. Pulso Dar entrada. El sistema registra al proveedor con su nombre del padrón y crea la factura. Se creó la factura. Acepto. Los otros dos puedes revisarlos igual, o marcarlos y darles entrada por lote. Y la pestaña Cuadre con la DGII compara tu 606 con lo que la DGII tiene, para que no se te escape ninguno.

@@ -1,0 +1,35 @@
+TÍTULO
+============================================================
+Compras · Entrada de facturas 4: importar con IA
+
+DESCRIPCIÓN
+============================================================
+Cuarto video de la serie de entrada de facturas de compra en Germiva ERP. Subimos la foto de una factura, la IA la lee en segundos y la revisamos al lado del documento original antes de darle entrada. El proveedor que no existe se crea solo con su RNC.
+
+⏱️ CAPÍTULOS
+00:00  Subir la foto
+00:39  Revisar contra el original
+01:24  Líneas y dar entrada
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Subir fotos o PDF de facturas con «Importar con IA»
+• Revisar lo leído al lado del documento original
+• Qué pasa cuando el proveedor no está registrado
+• Dar entrada a la factura revisada
+
+⚠️ ERRORES COMUNES
+• Dar entrada sin revisar: la IA puede equivocarse y quien da entrada responde por los datos
+• Esperar que la IA adivine el destino del ITBIS: viene en «por adelantar»
+• Subir dos veces la misma factura: el sistema avisa el NCF repetido
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:06
+
+TRANSCRIPCIÓN
+============================================================
+La forma más rápida: dejar que la IA lea la factura. Pulso Importar con IA. Arriba, un aviso importante: la IA puede equivocarse, y quien da entrada debe verificar los datos. Debajo, tu cupo de IA. Arrastro aquí la foto de la factura, o la selecciono; puedes poner hasta veinte en la cola, en foto o en PDF. Pulso Procesar con IA, y en unos segundos la factura está leída: ya dice el proveedor, el NCF y el total. Cierro, y en el buzón aparece pendiente, con origen IA.
+Ahora la reviso. Pulso Dar entrada, revisión, y amplío la ventana a pantalla completa. A la izquierda está el documento original, con zoom y giro, para cotejar cada dato. A la derecha, lo que leyó la IA, en las mismas tres partes de la captura manual. Este proveedor no está registrado: el aviso dice que al dar entrada se crea con este nombre y este RNC, así que verifico el RNC contra la factura. El NCF y la fecha coinciden. La categoría 606 la confirmo yo: abro la lista y elijo compras que forman parte del costo de venta. La condición dice crédito treinta días, y la IA puso el plazo y la fecha límite.
+Bajo a los montos. La IA leyó las tres líneas, con su cantidad, su precio y su ITBIS al dieciocho por ciento, y el resumen dice que cuadra con el total del documento. Revisa también el tipo de cada línea: son tubos, pegamento y codos, así que todas deben decir bien, y así las leyó la IA. Si la factura fuera de mercancía que debe entrar al almacén, aquí marcarías mercancía por recibir en cada línea. Todo coincide: pulso Dar entrada. El sistema crea el proveedor nuevo y la factura, en un solo paso. Se creó la factura. Acepto.

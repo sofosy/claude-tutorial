@@ -1,0 +1,263 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/received-invoices",
+  "esperar": "button:has-text('Registrar manual')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 4: importar con IA",
+ "descripcion": "Cuarto video de la serie de entrada de facturas de compra en Germiva ERP. Subimos la foto de una factura, la IA la lee en segundos y la revisamos al lado del documento original antes de darle entrada. El proveedor que no existe se crea solo con su RNC.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 4. Estado A + credencial OpenAI (gpt-4.1-mini) en la base local. Foto: seeds/compras-facturas/factura-ferremateriales.jpg (Ferremateriales Germiva, RNC 130555117, sin ficha; E310002458319, 18/11/2026, crédito 30 días; 10 tubos a 185, 4 pegamentos a 450, 20 codos a 25; subtotal 4,150, ITBIS 747, total 4,897).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Subir fotos o PDF de facturas con «Importar con IA»",
+  "Revisar lo leído al lado del documento original",
+  "Qué pasa cuando el proveedor no está registrado",
+  "Dar entrada a la factura revisada"
+ ],
+ "errores_comunes": [
+  "Dar entrada sin revisar: la IA puede equivocarse y quien da entrada responde por los datos",
+  "Esperar que la IA adivine el destino del ITBIS: viene en «por adelantar»",
+  "Subir dos veces la misma factura: el sistema avisa el NCF repetido"
+ ],
+ "pasos": [
+  {
+   "id": "01-subir",
+   "capitulo": "Subir la foto",
+   "rotulo": "Importar con IA",
+   "ruta": "Compras › Facturas Recibidas",
+   "narracion": "La forma más rápida: dejar que la IA lea la factura. Pulso Importar con IA. Arriba, un aviso importante: la IA puede equivocarse, y quien da entrada debe verificar los datos. Debajo, tu cupo de IA. Arrastro aquí la foto de la factura, o la selecciono; puedes poner hasta veinte en la cola, en foto o en PDF. Pulso Procesar con IA, y en unos segundos la factura está leída: ya dice el proveedor, el NCF y el total. Cierro, y en el buzón aparece pendiente, con origen IA.",
+   "acciones": [
+    {
+     "click": "button:has-text('Importar con IA')",
+     "al_decir": "Pulso Importar con IA"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--warning, mat-dialog-container .gm-dialog-alert",
+     "durante_ms": 4500,
+     "al_decir": "un aviso importante",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .quota",
+     "durante_ms": 2000,
+     "al_decir": "tu cupo",
+     "cursor": false
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type=file]",
+      "archivo": "seeds/compras-facturas/factura-ferremateriales.jpg",
+      "ancla": "mat-dialog-container .dropzone, mat-dialog-container [class*='drop']"
+     },
+     "al_decir": "o la selecciono"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Procesar')",
+     "al_decir": "Pulso Procesar con IA"
+    },
+    {
+     "resaltar": "mat-dialog-container li:has-text('factura-ferremateriales'), mat-dialog-container [class*='queue'] :text('factura-ferremateriales')",
+     "durante_ms": 4500,
+     "al_decir": "ya dice el proveedor",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cerrar')",
+     "al_decir": "Cierro"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('FERREMATERIALES') td:has-text('Pendiente')",
+     "durante_ms": 3500,
+     "al_decir": "aparece pendiente"
+    }
+   ]
+  },
+  {
+   "id": "02-revisar",
+   "capitulo": "Revisar contra el original",
+   "rotulo": "La revisión",
+   "ruta": "Compras › Facturas Recibidas › Dar entrada",
+   "narracion": "Ahora la reviso. Pulso Dar entrada, revisión, y amplío la ventana a pantalla completa. A la izquierda está el documento original, con zoom y giro, para cotejar cada dato. A la derecha, lo que leyó la IA, en las mismas tres partes de la captura manual. Este proveedor no está registrado: el aviso dice que al dar entrada se crea con este nombre y este RNC, así que verifico el RNC contra la factura. El NCF y la fecha coinciden. La categoría 606 la confirmo yo: abro la lista y elijo compras que forman parte del costo de venta. La condición dice crédito treinta días, y la IA puso el plazo y la fecha límite.",
+   "acciones": [
+    {
+     "click": "table tbody tr:has-text('FERREMATERIALES') button[aria-label='Dar entrada (revisión)']",
+     "al_decir": "Pulso Dar entrada"
+    },
+    {
+     "click": "mat-dialog-container button:has(mat-icon:text-is('fullscreen'))",
+     "al_decir": "pantalla completa"
+    },
+    {
+     "resaltar": "mat-dialog-container .document-pane",
+     "durante_ms": 4500,
+     "al_decir": "el documento original",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .form-pane",
+     "durante_ms": 3000,
+     "al_decir": "lo que leyó la IA",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert:has-text('no corresponde')",
+     "durante_ms": 6000,
+     "al_decir": "no está registrado",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-rnc)",
+     "durante_ms": 2500,
+     "al_decir": "verifico el RNC"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-ncf)",
+     "durante_ms": 1800,
+     "al_decir": "El NCF"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-issue)",
+     "durante_ms": 1800,
+     "al_decir": "la fecha"
+    },
+    {
+     "click": "#f-606",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('09')",
+     "al_decir": "compras que forman parte"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-days)",
+     "durante_ms": 3500,
+     "al_decir": "puso el plazo"
+    }
+   ]
+  },
+  {
+   "id": "03-lineas-entrada",
+   "capitulo": "Líneas y dar entrada",
+   "rotulo": "Dar entrada",
+   "ruta": "Compras › Facturas Recibidas › Dar entrada",
+   "narracion": "Bajo a los montos. La IA leyó las tres líneas, con su cantidad, su precio y su ITBIS al dieciocho por ciento, y el resumen dice que cuadra con el total del documento. Revisa también el tipo de cada línea: son tubos, pegamento y codos, así que todas deben decir bien, y así las leyó la IA. Si la factura fuera de mercancía que debe entrar al almacén, aquí marcarías mercancía por recibir en cada línea. Todo coincide: pulso Dar entrada. El sistema crea el proveedor nuevo y la factura, en un solo paso. Se creó la factura. Acepto.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container section[aria-labelledby='entry-sec-3']",
+     "durante_ms": 5500,
+     "al_decir": "las tres líneas",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid='summary-status']",
+     "durante_ms": 3500,
+     "al_decir": "dice que cuadra",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container mat-select[formcontrolname='goodOrServiceIndicator'] >> nth=2",
+     "durante_ms": 4000,
+     "al_decir": "todas deben decir bien"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-slide-toggle.line-goods-toggle >> nth=2",
+     "durante_ms": 4000,
+     "al_decir": "mercancía por recibir"
+    },
+    {
+     "click": "mat-dialog-container [data-testid='submit-entry']",
+     "al_decir": "pulso Dar entrada"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "Se creó la factura",
+     "cursor": false
+    },
+    {
+     "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "Acepto"
+    }
+   ]
+  }
+ ]
+}

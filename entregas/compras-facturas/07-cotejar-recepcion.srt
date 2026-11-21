@@ -1,0 +1,111 @@
+1
+00:00:03,100 --> 00:00:07,341
+Llegó la factura de los cementos, pero esa mercancía ya la recibimos:
+
+2
+00:00:07,415 --> 00:00:09,847
+entró al almacén con su orden de compra.
+
+3
+00:00:10,515 --> 00:00:14,186
+Por eso no se registra en el buzón, sino desde la recepción.
+
+4
+00:00:14,843 --> 00:00:16,852
+Esta es la pantalla de Recepciones;
+
+5
+00:00:16,987 --> 00:00:19,346
+cada fila es una entrega de un proveedor.
+
+6
+00:00:20,013 --> 00:00:23,265
+La del cemento está completada y procesada a inventario.
+
+7
+00:00:23,920 --> 00:00:25,385
+La abro con el ojo.
+
+8
+00:00:26,053 --> 00:00:28,286
+Arriba, su orden y su proveedor;
+
+9
+00:00:28,359 --> 00:00:30,096
+abajo, lo que se recibió:
+
+10
+00:00:30,219 --> 00:00:33,012
+cien sacos de cemento y cincuenta varillas.
+
+11
+00:00:33,679 --> 00:00:36,483
+Al pie, pulso Generar factura de compra.
+
+12
+00:00:37,856 --> 00:00:39,977
+Se abre la factura de la recepción.
+
+13
+00:00:40,634 --> 00:00:42,707
+Arriba, el resumen de lo que entró:
+
+14
+00:00:42,716 --> 00:00:46,402
+la recepción, la orden, el proveedor y el valor recibido.
+
+15
+00:00:47,070 --> 00:00:50,666
+Las líneas salen de la cantidad aceptada, al precio de la orden:
+
+16
+00:00:50,765 --> 00:00:52,391
+la cantidad no se edita aquí,
+
+17
+00:00:52,439 --> 00:00:55,542
+y el precio solo se corrige si el proveedor facturó otro.
+
+18
+00:00:56,209 --> 00:01:00,911
+La categoría 606 y el plazo de treinta días vienen de la ficha del proveedor.
+
+19
+00:01:01,566 --> 00:01:04,990
+Copio el NCF de la factura y la fecha de emisión.
+
+20
+00:01:06,353 --> 00:01:09,517
+En el asiento, el débito va a mercancía por recibir,
+
+21
+00:01:09,639 --> 00:01:11,649
+que es la cuenta puente de la recepción:
+
+22
+00:01:11,722 --> 00:01:14,229
+así el costo no se carga dos veces.
+
+23
+00:01:14,896 --> 00:01:17,092
+Pulso Registrar factura cotejada.
+
+24
+00:01:17,761 --> 00:01:21,582
+El sistema registra la compra y cierra la recepción como facturada.
+
+25
+00:01:22,238 --> 00:01:24,124
+La factura queda registrada.
+
+26
+00:01:24,780 --> 00:01:25,699
+Acepto.
+
+27
+00:01:26,342 --> 00:01:30,151
+Desde ahora, la factura muestra el cruce con la orden y la recepción:
+
+28
+00:01:30,261 --> 00:01:32,804
+lo pedido, lo recibido y lo facturado.

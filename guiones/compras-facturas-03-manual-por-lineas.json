@@ -1,0 +1,300 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/received-invoices",
+  "esperar": "button:has-text('Registrar manual')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 3: por líneas y al contado",
+ "descripcion": "Tercer video de la serie de entrada de facturas de compra en Germiva ERP. Registramos una factura pagada en el momento, detallando cada artículo: una línea gravada al 18 % y otra exenta. Vemos el método de pago, el ITBIS de cada línea y por qué una compra al contado no deja cuenta por pagar.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 3. Estado A. Papelería Germiva (RNC 130555125, categoría 09, sin plazo). NCF E310000001290, emisión 18/11/2026, contado por transferencia. Líneas: 10 Resma de papel 8.5 x 11 a 285 (18 %, ITBIS 513) y 2 Libro de registro contable a 450 (exento). Subtotal 3,750, ITBIS 513, total 4,263.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Registrar al contado y elegir el método de pago",
+  "Cambiar a la captura por líneas",
+  "Poner la tasa de ITBIS de cada línea, incluida una exenta",
+  "Por qué la compra al contado nace pagada y sin cuenta por pagar"
+ ],
+ "errores_comunes": [
+  "Registrar después otro pago para una compra que entró al contado: ya está pagada",
+  "Escribir a mano el ITBIS de una línea cuando la tasa lo calcula",
+  "Dejar gravada una línea que la factura trae exenta"
+ ],
+ "pasos": [
+  {
+   "id": "01-proveedor",
+   "capitulo": "Proveedor y contado",
+   "rotulo": "Al contado",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "Esta vez la factura es de la papelería, y la pagamos en el momento, por transferencia. Pulso Registrar manual. Busco el proveedor: escribo papelería y lo elijo. Copio el NCF y la fecha de emisión: dieciocho de noviembre. En condiciones de pago, elijo contado. Desaparecen el plazo y la fecha límite, y aparece el método de pago: lo abro y elijo transferencia bancaria. Y en caja o banco, la cuenta de donde salió el dinero: el banco. Al contado, la factura nace pagada y no deja cuenta por pagar.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar manual')",
+     "al_decir": "Pulso Registrar manual"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-partner-document-select input",
+      "texto": "Papeler"
+     },
+     "al_decir": "escribo papelería"
+    },
+    {
+     "click": "mat-option:has-text('Papelería Germiva')",
+     "al_decir": "lo elijo"
+    },
+    {
+     "escribir": {
+      "sel": "#f-ncf",
+      "texto": "E310000001290"
+     },
+     "al_decir": "Copio el NCF"
+    },
+    {
+     "escribir": {
+      "sel": "#f-issue",
+      "texto": "18/11/2026"
+     },
+     "al_decir": "dieciocho de noviembre"
+    },
+    {
+     "click": "mat-dialog-container button.seg__btn:has-text('Contado')",
+     "al_decir": "elijo contado"
+    },
+    {
+     "click": "#f-method",
+     "al_decir": "lo abro"
+    },
+    {
+     "click": "mat-option:has-text('Transferencia')",
+     "al_decir": "transferencia bancaria"
+    },
+    {
+     "click": "mat-dialog-container input[placeholder*='de cuál sale']",
+     "al_decir": "Y en caja o banco"
+    },
+    {
+     "click": "mat-option:has-text('Banco 1')",
+     "al_decir": "el banco"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-method)",
+     "durante_ms": 4000,
+     "al_decir": "nace pagada"
+    }
+   ]
+  },
+  {
+   "id": "02-lineas",
+   "capitulo": "Por líneas",
+   "rotulo": "Por líneas",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "Ahora los montos. Quiero detallar cada artículo, así que paso a por líneas. En la primera línea escribo la descripción: resma de papel. Cantidad: diez. Precio: doscientos ochenta y cinco. Como es la primera compra a este proveedor, la tasa y el tipo vienen sugeridos para que los confirmes. El tipo, bien, está correcto. La tasa la abro y elijo el dieciocho por ciento, y el ITBIS sale calculado, en gris: quinientos trece. Agrego otra línea para los libros de registro: dos, a cuatrocientos cincuenta. Estos no llevan ITBIS, así que abro la tasa y elijo exento.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container [data-testid='mode-lines']",
+     "al_decir": "paso a por líneas"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='description'] >> nth=0",
+      "texto": "Resma de papel 8.5 x 11"
+     },
+     "al_decir": "escribo la descripción"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='quantity'] >> nth=0",
+      "texto": "10"
+     },
+     "al_decir": "Cantidad"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='unitPrice'] >> nth=0",
+      "texto": "285"
+     },
+     "al_decir": "Precio"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-select[formcontrolname='goodOrServiceIndicator'] >> nth=0",
+     "durante_ms": 2500,
+     "al_decir": "El tipo, bien"
+    },
+    {
+     "click": "mat-dialog-container mat-select[formcontrolname='taxRateCode'] >> nth=0",
+     "al_decir": "La tasa la abro"
+    },
+    {
+     "click": "mat-option:has-text('ITBIS 18%')",
+     "al_decir": "dieciocho por ciento"
+    },
+    {
+     "resaltar": "mat-dialog-container [data-testid='line-tax-0']",
+     "durante_ms": 3500,
+     "al_decir": "sale calculado"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Agregar línea')",
+     "al_decir": "Agrego otra línea"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='description'] >> nth=1",
+      "texto": "Libro de registro contable"
+     },
+     "al_decir": "libros de registro"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='quantity'] >> nth=1",
+      "texto": "2"
+     },
+     "al_decir": "dos"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='unitPrice'] >> nth=1",
+      "texto": "450"
+     },
+     "al_decir": "cuatrocientos cincuenta"
+    },
+    {
+     "click": "mat-dialog-container mat-select[formcontrolname='taxRateCode'] >> nth=1",
+     "al_decir": "abro la tasa"
+    },
+    {
+     "click": "mat-option:has-text('Exento')",
+     "al_decir": "elijo exento"
+    }
+   ]
+  },
+  {
+   "id": "03-dar-entrada",
+   "capitulo": "Resumen y dar entrada",
+   "rotulo": "Dar entrada",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "A la derecha, el resumen separa lo exento de lo gravado, con su ITBIS, y el total: cuatro mil doscientos sesenta y tres. En el 606, una compra de bienes con su ITBIS por adelantar. Pulso Dar entrada. El sistema registra la compra y, en el mismo paso, su pago. El aviso confirma la factura, y acepto. En el buzón queda con entrada, y en Compras, Facturas, ya aparece pagada. Un detalle: no le registres otro pago, porque ya se registró al dar entrada.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .entry-rail section[aria-labelledby='entry-summary-title']",
+     "durante_ms": 6000,
+     "al_decir": "el resumen separa",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .entry-rail ul.checks",
+     "durante_ms": 3500,
+     "al_decir": "En el 606",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container [data-testid='submit-entry']",
+     "al_decir": "Pulso Dar entrada"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 2000,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "y acepto"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('E310000001290') td:has-text('Con entrada')",
+     "durante_ms": 3000,
+     "al_decir": "queda con entrada"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Cuidado",
+      "texto": "Una compra al contado ya está pagada: no le registres otro pago."
+     },
+     "durante_ms": 6500,
+     "al_decir": "Un detalle"
+    }
+   ]
+  }
+ ]
+}

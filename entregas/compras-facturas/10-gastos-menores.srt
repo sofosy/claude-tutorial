@@ -1,0 +1,115 @@
+1
+00:00:03,100 --> 00:00:05,966
+Para los gastos pequeños sin un proveedor identificado,
+
+2
+00:00:06,076 --> 00:00:10,740
+como el parqueo o el agua de la oficina, existe el comprobante de gastos menores:
+
+3
+00:00:10,824 --> 00:00:14,695
+el B13, o el E43 si facturas electrónico.
+
+4
+00:00:15,351 --> 00:00:17,671
+Pulso Nueva Factura y recojo el panel.
+
+5
+00:00:18,339 --> 00:00:22,519
+Esta vez uso el formulario libre, donde escribo los conceptos sin catálogo:
+
+6
+00:00:22,606 --> 00:00:25,695
+abro más acciones y elijo cambiar a formulario libre.
+
+7
+00:00:26,350 --> 00:00:29,228
+En tipo de comprobante elijo gastos menores.
+
+8
+00:00:29,896 --> 00:00:31,498
+No hace falta proveedor:
+
+9
+00:00:31,609 --> 00:00:34,871
+la compra queda a nombre del proveedor genérico de la empresa.
+
+10
+00:00:36,246 --> 00:00:39,188
+Pulso Agregar línea y escribo el primer concepto:
+
+11
+00:00:39,284 --> 00:00:41,060
+parqueo para la mensajería.
+
+12
+00:00:41,714 --> 00:00:42,759
+Es un servicio:
+
+13
+00:00:42,818 --> 00:00:44,506
+en tipo elijo servicio.
+
+14
+00:00:45,161 --> 00:00:47,494
+El precio, trescientos pesos.
+
+15
+00:00:48,150 --> 00:00:52,456
+Los gastos menores van sin ITBIS, así que en la tasa elijo exento.
+
+16
+00:00:53,110 --> 00:00:54,426
+Agrego otra línea:
+
+17
+00:00:54,524 --> 00:00:59,822
+agua y café para la oficina, ochocientos cincuenta, y su tasa, exento también.
+
+18
+00:01:00,489 --> 00:01:02,834
+Debajo se ve la cuenta contable que se usará;
+
+19
+00:01:02,920 --> 00:01:05,364
+si quieres otra, la cambias por línea.
+
+20
+00:01:06,736 --> 00:01:09,256
+En el pago, el gasto sale de la caja:
+
+21
+00:01:09,328 --> 00:01:13,162
+el monto ya es el total, mil ciento cincuenta, en efectivo.
+
+22
+00:01:13,829 --> 00:01:15,665
+En cuenta de origen escribo caja;
+
+23
+00:01:15,763 --> 00:01:20,353
+la lista se filtra sola, bajo con la flecha en la lista y elijo la caja general.
+
+24
+00:01:21,022 --> 00:01:22,549
+Pulso Guardar y pagar.
+
+25
+00:01:23,204 --> 00:01:28,414
+El sistema emite el comprobante de gastos menores con su NCF y registra la salida
+
+26
+00:01:28,227 --> 00:01:28,959
+de caja.
+
+27
+00:01:29,615 --> 00:01:31,911
+El aviso lo confirma, y acepto.
+
+28
+00:01:32,579 --> 00:01:33,250
+Recuerda:
+
+29
+00:01:33,397 --> 00:01:37,504
+el gasto menor no lleva ITBIS, ni descuentos, ni retenciones.

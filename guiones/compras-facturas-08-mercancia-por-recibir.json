@@ -1,0 +1,242 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/purchases/received-invoices",
+  "esperar": "button:has-text('Registrar manual')"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "DGII": "de-ge-i-i",
+  "RNC": "erre-ene-ce",
+  "NCF": "ene-ce-efe",
+  "606": "seis-cero-seis",
+  "IA": "i-a",
+  "PDF": "pe-de-efe",
+  "e-CF": "e-ce-efe",
+  "E31": "e-treinta-y-uno",
+  "B01": "be-cero-uno",
+  "B11": "be-once",
+  "E41": "e-cuarenta-y-uno",
+  "B13": "be-trece",
+  "E43": "e-cuarenta-y-tres",
+  "B17": "be-diecisiete",
+  "E47": "e-cuarenta-y-siete"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Ferretería",
+   "Cementos",
+   "Pinturas",
+   "Papelería",
+   "Seguridad",
+   "Lubricantes",
+   "Climatización",
+   "Limpieza",
+   "Mantenimiento",
+   "Ferremateriales",
+   "Ramón"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "titulo": "Compras · Entrada de facturas 8: la factura llega antes que la mercancía",
+ "descripcion": "Octavo video de la serie de entrada de facturas de compra en Germiva ERP. Si la factura llega primero, se registra marcando sus líneas como mercancía por recibir: al dar entrada, el sistema abre la recepción en borrador para que el almacén la complete cuando llegue la mercancía.",
+ "_comentario": "Serie Compras · Entrada de facturas (nov. 2026), video 8. Estado A. Pinturas Germiva (130555184, plazo 15, categoría 09). NCF E310000006018, emisión 19/11/2026. Una línea: 12 Pintura acrílica blanca galón a 890 (18 %, ITBIS 1,922.40; total 12,602.40), marcada «Mercancía por recibir». Al dar entrada se abre la recepción en borrador.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/compras-facturas/preparar.mjs A"
+ },
+ "aprenderas": [
+  "Registrar una factura de mercancía que todavía no llega",
+  "Marcar las líneas como «Mercancía por recibir»",
+  "La recepción en borrador que abre el sistema",
+  "Quién completa esa recepción y cuándo se mueve el inventario"
+ ],
+ "errores_comunes": [
+  "Mandar la mercancía a una cuenta de gasto: no entraría nunca al inventario",
+  "Esperar que el inventario suba al dar entrada: sube al procesar la recepción",
+  "Cotejar la factura otra vez cuando llega la mercancía: ya está registrada"
+ ],
+ "pasos": [
+  {
+   "id": "01-captura",
+   "capitulo": "La factura que llega primero",
+   "rotulo": "Mercancía por recibir",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "La pinturería nos mandó la factura, pero la pintura llega la semana que viene. La registramos ya, para tener la deuda al día. Pulso Registrar manual y elijo el proveedor: pinturas. El plazo de quince días y la categoría 606 salen de su ficha. Copio el NCF y la fecha de emisión. En los montos paso a por líneas, y escribo la línea: pintura acrílica blanca, doce galones a ochocientos noventa. La tasa la confirmo yo: abro la lista y elijo el dieciocho por ciento.",
+   "acciones": [
+    {
+     "click": "button:has-text('Registrar manual')",
+     "al_decir": "Pulso Registrar manual"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-partner-document-select input",
+      "texto": "Pinturas"
+     },
+     "al_decir": "elijo el proveedor"
+    },
+    {
+     "click": "mat-option:has-text('Pinturas Germiva')",
+     "al_decir": "pinturas"
+    },
+    {
+     "resaltar": "mat-dialog-container .fld:has(#f-days)",
+     "durante_ms": 2500,
+     "al_decir": "quince días"
+    },
+    {
+     "escribir": {
+      "sel": "#f-ncf",
+      "texto": "E310000006018"
+     },
+     "al_decir": "Copio el NCF"
+    },
+    {
+     "escribir": {
+      "sel": "#f-issue",
+      "texto": "19/11/2026"
+     },
+     "al_decir": "la fecha de emisión"
+    },
+    {
+     "click": "mat-dialog-container [data-testid='mode-lines']",
+     "al_decir": "paso a por líneas"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='description'] >> nth=0",
+      "texto": "Pintura acrílica blanca galón"
+     },
+     "al_decir": "escribo la línea"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='quantity'] >> nth=0",
+      "texto": "12"
+     },
+     "al_decir": "doce galones"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container input[formcontrolname='unitPrice'] >> nth=0",
+      "texto": "890"
+     },
+     "al_decir": "ochocientos noventa"
+    },
+    {
+     "click": "mat-dialog-container mat-select[formcontrolname='taxRateCode'] >> nth=0",
+     "al_decir": "abro la lista"
+    },
+    {
+     "click": "mat-option:has-text('ITBIS 18%')",
+     "al_decir": "dieciocho por ciento"
+    }
+   ]
+  },
+  {
+   "id": "02-marcar",
+   "capitulo": "Marcar la línea",
+   "rotulo": "Por recibir",
+   "ruta": "Compras › Facturas Recibidas › Registrar manual",
+   "narracion": "Debajo de la línea está el interruptor mercancía por recibir. Lo enciendo: la línea deja de pedir cuenta de gasto, y su costo va a mercancía por recibir, como dice el asiento de la derecha. Pulso Dar entrada. El sistema registra la factura y abre la recepción de la pintura. El aviso confirma la factura, y acepto.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container mat-slide-toggle.line-goods-toggle >> nth=0",
+     "al_decir": "Lo enciendo"
+    },
+    {
+     "resaltar": "mat-dialog-container .entry-rail .journal",
+     "durante_ms": 4500,
+     "al_decir": "como dice el asiento",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container [data-testid='submit-entry']",
+     "al_decir": "Pulso Dar entrada"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 3000,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "click": ".custom-alert-dialog-panel mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "y acepto"
+    }
+   ]
+  },
+  {
+   "id": "03-recepcion",
+   "capitulo": "La recepción en borrador",
+   "rotulo": "La recepción",
+   "ruta": "Compras › Recepciones",
+   "navegar": "/purchases/receipts",
+   "al_decir_navegar": "Recepciones",
+   "narracion": "Al dar entrada, el sistema abrió la recepción. Voy a Recepciones, y ahí está, en borrador, de Pinturas Germiva. Cuando llegue la pintura, quien recibe en el almacén la abre, liga la línea a su producto, cuenta lo que llegó y la procesa. Recién entonces sube el inventario. Y no hace falta cotejar la factura otra vez: ya está registrada.",
+   "acciones": [
+    {
+     "resaltar": "table tbody tr:has-text('Pinturas Germiva') td:nth-child(1)",
+     "durante_ms": 3500,
+     "al_decir": "ahí está"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Pinturas Germiva') td:has-text('Borrador')",
+     "durante_ms": 3000,
+     "al_decir": "en borrador"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "En el almacén",
+      "texto": "Liga cada línea a su producto, cuenta lo recibido y procesa: ahí sube el inventario."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Cuando llegue"
+    }
+   ]
+  }
+ ]
+}
