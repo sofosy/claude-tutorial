@@ -33,9 +33,9 @@ pasos = [
   """Debajo están los gastos del proyecto: las compras que se le cargaron en el período. Aquí hay un alquiler de andamios
   de treinta mil pesos. Ningún gasto se cobra solo: hay que decidirlo. Marco su casilla Refacturable, y el aviso lo
   confirma. El sistema le suma el recargo del contrato, el diez por ciento, y quedan treinta y tres mil pesos a facturar.
-  Arriba, el botón ya muestra el total del período: sesenta y nueve mil pesos. Lo pulso. El sistema crea la factura en
-  borrador en Ventas, con una línea para la mano de obra y otra para los gastos, y el aviso trae su número. Allí se revisa
-  y se emite con su comprobante. La propuesta queda vacía: lo facturado se marca, y no se vuelve a proponer. El próximo
+  Arriba, el botón ya muestra el total del período: sesenta y nueve mil pesos. Lo pulso, y el aviso trae el número de la
+  factura. El sistema la crea en borrador en Ventas, con una línea para la mano de obra y otra para los gastos. Allí se
+  revisa y se emite con su comprobante. La propuesta queda vacía: lo facturado se marca, y no se vuelve a proponer. El próximo
   período se repite igual, con las horas y los gastos nuevos.""",
   [res("section.ps-panel:has(#billing-tm-title) h3 >> nth=1", "Debajo están los gastos", 3500),
    res(GASTOS + "tbody tr >> nth=0 >> td >> nth=1", "un alquiler de andamios", 4000),
@@ -44,9 +44,10 @@ pasos = [
    res(GASTOS + "tbody tr >> nth=0 >> td >> nth=4", "y quedan treinta y tres mil", 4000),
    res(TM + "button:has-text('Facturar')", "el botón ya muestra", 3500, True),
    clic(TM + "button:has-text('Facturar')", "Lo pulso"),
-   res("#billing-tm-title", "El sistema crea la factura", 4500),
-   res(".mat-mdc-snack-bar-container", "y el aviso trae su número", 3000),
+   {"resaltar": ".mat-mdc-snack-bar-container >> nth=0", "durante_ms": 3000, "cursor": False},
+   res("#billing-tm-title", "El sistema la crea en borrador", 4000),
+   res("#billing-documents-title", "Allí se\n  revisa".replace("\n  ", " "), 3500),
    res(HORAS + "tbody tr >> nth=0 >> td >> nth=0", "La propuesta queda vacía", 4000),
-   res("#billing-documents-title", "El próximo\n  período".replace("\n  ", " "), 4000)]),
+   res("#billing-tm-title", "El próximo\n  período".replace("\n  ", " "), 4000)]),
 ]
 guardar("proyectos-17-tiempo-y-materiales", g, pasos)

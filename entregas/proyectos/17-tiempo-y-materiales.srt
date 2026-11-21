@@ -1,0 +1,119 @@
+1
+00:00:03,100 --> 00:00:07,181
+Hay trabajos que no se cobran por un precio cerrado, sino por lo que se trabajó:
+
+2
+00:00:07,192 --> 00:00:08,384
+horas y gastos.
+
+3
+00:00:09,051 --> 00:00:11,334
+Eso es facturar por tiempo y materiales,
+
+4
+00:00:11,419 --> 00:00:14,137
+y se elige en el contrato de venta del proyecto.
+
+5
+00:00:14,792 --> 00:00:19,742
+En la pestaña Facturación, recojo el menú, y bajo al panel Tiempo y materiales.
+
+6
+00:00:20,411 --> 00:00:23,214
+El sistema arma solo la propuesta del período.
+
+7
+00:00:23,882 --> 00:00:25,038
+Primero las horas:
+
+8
+00:00:25,196 --> 00:00:28,968
+solo las aprobadas, cada día con su empleado y su partida.
+
+9
+00:00:29,625 --> 00:00:33,903
+Juan trabajó cuarenta horas, y cada una se cobra a novecientos pesos,
+
+10
+00:00:34,001 --> 00:00:35,851
+la tarifa de venta del contrato.
+
+11
+00:00:36,518 --> 00:00:38,480
+Son treinta y seis mil pesos.
+
+12
+00:00:39,148 --> 00:00:40,514
+Esa tarifa es de venta:
+
+13
+00:00:40,649 --> 00:00:43,949
+no es lo que cuesta Juan, sino lo que se le cobra al cliente.
+
+14
+00:00:45,320 --> 00:00:47,317
+Debajo están los gastos del proyecto:
+
+15
+00:00:47,427 --> 00:00:49,698
+las compras que se le cargaron en el período.
+
+16
+00:00:50,365 --> 00:00:53,442
+Aquí hay un alquiler de andamios de treinta mil pesos.
+
+17
+00:00:54,110 --> 00:00:55,984
+Ningún gasto se cobra solo:
+
+18
+00:00:56,033 --> 00:00:57,224
+hay que decidirlo.
+
+19
+00:00:57,893 --> 00:01:01,343
+Marco su casilla Refacturable, y el aviso lo confirma.
+
+20
+00:01:01,997 --> 00:01:05,707
+El sistema le suma el recargo del contrato, el diez por ciento,
+
+21
+00:01:05,781 --> 00:01:08,275
+y quedan treinta y tres mil pesos a facturar.
+
+22
+00:01:08,930 --> 00:01:11,920
+Arriba, el botón ya muestra el total del período:
+
+23
+00:01:12,031 --> 00:01:13,879
+sesenta y nueve mil pesos.
+
+24
+00:01:14,548 --> 00:01:17,847
+Lo pulso, y el aviso trae el número de la factura.
+
+25
+00:01:18,503 --> 00:01:20,748
+El sistema la crea en borrador en Ventas,
+
+26
+00:01:20,835 --> 00:01:24,097
+con una línea para la mano de obra y otra para los gastos.
+
+27
+00:01:24,765 --> 00:01:27,471
+Allí se revisa y se emite con su comprobante.
+
+28
+00:01:28,138 --> 00:01:29,640
+La propuesta queda vacía:
+
+29
+00:01:29,763 --> 00:01:32,816
+lo facturado se marca, y no se vuelve a proponer.
+
+30
+00:01:33,472 --> 00:01:37,801
+El próximo período se repite igual, con las horas y los gastos nuevos.

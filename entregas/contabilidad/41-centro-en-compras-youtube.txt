@@ -9,8 +9,8 @@ Cómo asignar en Germiva un centro de costo a cada línea de una factura de comp
 ⏱️ CAPÍTULOS
 00:00  Centro por línea de compra
 00:37  Repartir una línea
-01:31  Nómina
-02:00  Almacenes y activos fijos
+01:35  Nómina
+02:20  Almacenes y activos fijos
 
 📋 EN ESTE VIDEO APRENDERÁS
 • Asignar un centro de costo a cada línea de una compra
@@ -27,12 +27,12 @@ Cómo asignar en Germiva un centro de costo a cada línea de una factura de comp
 Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
 
 —
-Duración: 02:30
+Duración: 02:51
 
 TRANSCRIPCIÓN
 ============================================================
 En las compras, el centro de costo va en cada línea de la factura. Recojo el menú. Este borrador es de un proveedor de servicios, con dos gastos distintos. Lo abro con el lápiz de su fila. La primera línea es el mantenimiento de los montacargas, un gasto de Operaciones. Despliego la línea con la flecha de la derecha. Entre sus datos está Centro de costo: abro la lista, y elijo Operaciones. Si lo dejara vacío, el gasto iría al centro predeterminado de la empresa.
-La segunda línea es la publicidad en radio, que sirve a las dos sucursales de ventas. La despliego también, y esta vez pulso Repartir entre centros. En el primer centro abro la lista, y elijo Ventas Santo Domingo. En su porcentaje anoto cincuenta. La campaña es la misma para las dos sucursales, así que va a partes iguales. Pulso Agregar centro. En la fila nueva abro la lista, y elijo Ventas Santiago. En su porcentaje anoto el otro cincuenta. Con el total en cien por ciento, aplico. En la tabla, cada línea muestra ya su centro o su reparto. Guardo el borrador. El sistema confirma que la compra quedó actualizada, y acepto. Cuando la factura se emita, cada gasto irá a su centro; el ITBIS y la cuenta por pagar al proveedor van sin centro.
-El gasto de nómina no se digita línea a línea: toma el centro del departamento de cada empleado. En la configuración de Recursos Humanos, en Departamentos, abro Despacho y Transporte con un clic en su fila. Aquí está su Centro de costo, Logística: el sueldo, los aportes y las provisiones de su gente se imputan a ese centro. Y si un empleado debe ir a otro centro, se le pone uno propio en su ficha. Cierro.
+La segunda línea es la publicidad en radio, que sirve a las dos sucursales de ventas. La despliego también, y esta vez pulso Repartir entre centros. En el primer centro abro la lista, y elijo Ventas Santo Domingo. En su porcentaje anoto cincuenta. La campaña es la misma para las dos sucursales, así que va a partes iguales. Pulso Agregar centro. En la fila nueva abro la lista, y elijo Ventas Santiago. En su porcentaje anoto el otro cincuenta. Con el total en cien por ciento, aplico. En la tabla, cada línea muestra ya su centro o su reparto. Guardo el borrador, y espero un momento mientras el sistema registra la factura. El sistema confirma que la compra quedó actualizada, y acepto. Cuando la factura se emita, cada gasto irá a su centro; el ITBIS y la cuenta por pagar al proveedor van sin centro.
+El gasto de nómina no se digita línea a línea: toma el centro del departamento de cada empleado. En la configuración de Recursos Humanos, en Departamentos, abro Logística, uno de los departamentos que vienen con el sistema, con un clic en su fila. Estos departamentos no se editan, pero sí aceptan un centro de costo propio de tu empresa. En Centro de costo escribo Log, y espero a que el sistema busque entre los centros activos de la empresa. Aparece Logística, y lo elijo. Pulso Guardar centro de costo, y el aviso lo confirma. Desde ahora el sueldo, los aportes y las provisiones de su gente se imputan a ese centro. Y si un empleado debe ir a otro centro, se le pone uno propio en su ficha.
 Lo mismo pasa en Inventario. En la ficha de cada almacén está el Centro de costo por omisión: lo usan sus ajustes, sus salidas y sus consumos cuando el movimiento no trae otro centro.
 Y en Activos Fijos, al registrar un activo, el campo Centro de Costo decide a dónde van su depreciación de cada mes, su baja y su venta. Así, cada gasto llega a su centro sin tener que acordarse de digitarlo.

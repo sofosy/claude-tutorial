@@ -55,11 +55,11 @@ Lo correcto es resolver cada compromiso:
 recibir y facturar la orden, o anularla si ya no va.
 
 15
-00:00:47,167 --> 00:00:50,504
+00:00:47,167 --> 00:00:50,503
 La orden de acero ya no iba, y se anuló en Compras.
 
 16
-00:00:51,173 --> 00:00:52,204
+00:00:51,171 --> 00:00:52,203
 Ahora sí.
 
 17
@@ -67,15 +67,15 @@ Ahora sí.
 De nuevo en el Resumen, abro el campo Estado, y elijo Completado.
 
 18
-00:00:57,757 --> 00:00:59,012
+00:00:57,756 --> 00:00:59,010
 Pulso Actualizar.
 
 19
-00:00:59,679 --> 00:01:03,625
+00:00:59,679 --> 00:01:03,623
 Esta vez el sistema lo acepta, y confirma que el proyecto se guardó.
 
 20
-00:01:04,280 --> 00:01:05,447
+00:01:04,278 --> 00:01:05,447
 Pulso Aceptar.
 
 21
@@ -83,89 +83,89 @@ Pulso Aceptar.
 La cabecera ya muestra el proyecto como Completado.
 
 22
-00:01:10,335 --> 00:01:12,680
+00:01:10,328 --> 00:01:12,674
 Segundo, el contrato de venta.
 
 23
-00:01:13,348 --> 00:01:17,776
+00:01:13,341 --> 00:01:17,769
 En la pestaña Facturación, recojo el menú, y bajo a Cierre del contrato.
 
 24
-00:01:18,444 --> 00:01:21,645
+00:01:18,438 --> 00:01:21,638
 El botón Finiquito genera el documento que liquida el contrato:
 
 25
-00:01:21,743 --> 00:01:24,770
+00:01:21,736 --> 00:01:24,763
 lo facturado, el anticipo y el fondo de reparo.
 
 26
-00:01:25,438 --> 00:01:26,953
+00:01:25,432 --> 00:01:26,947
 Pulso Cerrar contrato.
 
 27
-00:01:27,608 --> 00:01:30,338
+00:01:27,602 --> 00:01:30,331
 En las notas escribo Obra recibida conforme.
 
 28
-00:01:31,006 --> 00:01:34,778
+00:01:31,000 --> 00:01:34,771
 Con la nota ya escrita, confirmo con el botón Cerrar contrato.
 
 29
-00:01:35,446 --> 00:01:38,474
+00:01:35,439 --> 00:01:38,468
 Desde ahora no se factura nada más de este contrato;
 
 30
-00:01:38,608 --> 00:01:41,089
+00:01:38,602 --> 00:01:41,082
 solo el fondo de reparo se sigue liberando.
 
 31
-00:01:41,758 --> 00:01:44,983
+00:01:41,751 --> 00:01:44,977
 Y si se cerró por error, el botón Reabrir lo devuelve.
 
 32
-00:01:46,339 --> 00:01:48,796
+00:01:46,334 --> 00:01:48,791
 Y tercero, el presupuesto del proyecto,
 
 33
-00:01:48,893 --> 00:01:51,735
+00:01:48,888 --> 00:01:51,730
 que es donde se cargan todos los costos de la obra.
 
 34
-00:01:52,390 --> 00:01:54,846
+00:01:52,385 --> 00:01:54,841
 Arriba, pulso Cerrar presupuesto.
 
 35
-00:01:55,502 --> 00:01:57,252
+00:01:55,497 --> 00:01:57,247
 El sistema recuerda la regla:
 
 36
-00:01:57,362 --> 00:02:01,357
+00:01:57,357 --> 00:02:01,352
 solo se cierra con el proyecto completado y sin compromisos abiertos.
 
 37
-00:02:02,025 --> 00:02:04,879
+00:02:02,020 --> 00:02:04,874
 En el motivo escribo Obra terminada y entregada.
 
 38
-00:02:05,547 --> 00:02:09,356
+00:02:05,542 --> 00:02:09,350
 Con el motivo ya anotado, pulso el botón Cerrar presupuesto.
 
 39
-00:02:10,024 --> 00:02:14,887
+00:02:10,019 --> 00:02:14,882
 El presupuesto queda cerrado, en solo lectura, y deja de aceptar imputaciones:
 
 40
-00:02:14,972 --> 00:02:18,842
+00:02:14,967 --> 00:02:18,837
 ninguna compra, hora ni gasto se puede cargar ya a esta obra.
 
 41
-00:02:19,510 --> 00:02:23,977
+00:02:19,504 --> 00:02:23,972
 Así el costo final queda fijo, listo para compararlo con lo presupuestado.
 
 42
-00:02:24,632 --> 00:02:26,903
+00:02:24,627 --> 00:02:26,898
 Proyecto, contrato y presupuesto:
 
 43
-00:02:27,025 --> 00:02:30,945
+00:02:27,020 --> 00:02:30,939
 con los tres cerrados, la obra está terminada también en los libros.

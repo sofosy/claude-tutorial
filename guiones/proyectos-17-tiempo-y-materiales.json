@@ -148,7 +148,7 @@
       "rotulo": "Gastos refacturables",
       "ruta": "Proyectos › Cartera › PRJ › Facturación",
       "texto_pantalla": "El gasto se cobra con su recargo",
-      "narracion": "Debajo están los gastos del proyecto: las compras que se le cargaron en el período. Aquí hay un alquiler de andamios de treinta mil pesos. Ningún gasto se cobra solo: hay que decidirlo. Marco su casilla Refacturable, y el aviso lo confirma. El sistema le suma el recargo del contrato, el diez por ciento, y quedan treinta y tres mil pesos a facturar. Arriba, el botón ya muestra el total del período: sesenta y nueve mil pesos. Lo pulso. El sistema crea la factura en borrador en Ventas, con una línea para la mano de obra y otra para los gastos, y el aviso trae su número. Allí se revisa y se emite con su comprobante. La propuesta queda vacía: lo facturado se marca, y no se vuelve a proponer. El próximo período se repite igual, con las horas y los gastos nuevos.",
+      "narracion": "Debajo están los gastos del proyecto: las compras que se le cargaron en el período. Aquí hay un alquiler de andamios de treinta mil pesos. Ningún gasto se cobra solo: hay que decidirlo. Marco su casilla Refacturable, y el aviso lo confirma. El sistema le suma el recargo del contrato, el diez por ciento, y quedan treinta y tres mil pesos a facturar. Arriba, el botón ya muestra el total del período: sesenta y nueve mil pesos. Lo pulso, y el aviso trae el número de la factura. El sistema la crea en borrador en Ventas, con una línea para la mano de obra y otra para los gastos. Allí se revisa y se emite con su comprobante. La propuesta queda vacía: lo facturado se marca, y no se vuelve a proponer. El próximo período se repite igual, con las horas y los gastos nuevos.",
       "acciones": [
         {
           "resaltar": "section.ps-panel:has(#billing-tm-title) h3 >> nth=1",
@@ -188,16 +188,21 @@
           "al_decir": "Lo pulso"
         },
         {
-          "resaltar": "#billing-tm-title",
-          "durante_ms": 4500,
-          "cursor": false,
-          "al_decir": "El sistema crea la factura"
+          "resaltar": ".mat-mdc-snack-bar-container >> nth=0",
+          "durante_ms": 3000,
+          "cursor": false
         },
         {
-          "resaltar": ".mat-mdc-snack-bar-container",
-          "durante_ms": 3000,
+          "resaltar": "#billing-tm-title",
+          "durante_ms": 4000,
           "cursor": false,
-          "al_decir": "y el aviso trae su número"
+          "al_decir": "El sistema la crea en borrador"
+        },
+        {
+          "resaltar": "#billing-documents-title",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "Allí se revisa"
         },
         {
           "resaltar": "section.ps-panel:has(#billing-tm-title) table[aria-label='Horas por facturar'] tbody tr >> nth=0 >> td >> nth=0",
@@ -206,7 +211,7 @@
           "al_decir": "La propuesta queda vacía"
         },
         {
-          "resaltar": "#billing-documents-title",
+          "resaltar": "#billing-tm-title",
           "durante_ms": 4000,
           "cursor": false,
           "al_decir": "El próximo período"
