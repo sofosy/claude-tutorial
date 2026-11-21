@@ -367,6 +367,18 @@ def consolidar():
     return b
 
 
+def mis_horas():
+    # P15: lo mismo que «horas», con Juan planificado 40 h en la obra esta
+    # semana: su hoja lo muestra junto a lo que lleva registrado.
+    import datetime
+    b = horas()
+    hoy = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=-4))).date()
+    lunes = hoy - datetime.timedelta(days=hoy.weekday())
+    llamar("PUT", "/v1/project-resource-plans/assignments", {
+        "project": b["proyecto"]["id"], "employee": b["juan"], "weekStart": str(lunes), "plannedHours": "40.00"})
+    return b
+
+
 def resolver_compromiso():
     """Entre dos pasos del video de cierre: la orden de acero ya no va y se anula.
     Entra como Laura: un inicio de sesión del administrador cerraría la del navegador."""
@@ -378,7 +390,7 @@ def resolver_compromiso():
 
 ESTADOS = {"inicio": inicio, "con-proyecto": con_proyecto, "borrador": borrador,
            "por-aprobar": por_aprobar, "aprobado": aprobado, "control": control, "cambios": cambios, "facturacion": facturacion,
-           "cubicacion": cubicacion, "subcontrato": subcontrato, "horas": horas, "avance": control, "hitos": hitos, "cierre": cierre, "consolidar": consolidar}
+           "cubicacion": cubicacion, "subcontrato": subcontrato, "horas": horas, "avance": control, "hitos": hitos, "cierre": cierre, "consolidar": consolidar, "mis-horas": mis_horas}
 
 if __name__ == "__main__":
     if sys.argv[1] == "resolver-compromiso":
