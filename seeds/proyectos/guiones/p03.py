@@ -2,7 +2,7 @@ from comun import *
 g = base_p("Proyectos · Análisis de precio unitario, indirectos, utilidad e ITBIS del presupuesto",
   "Cómo desglosar en Germiva el costo de una partida con el análisis de precio unitario, aplicar indirectos y utilidad para llegar al precio del cliente, completar el detalle de la partida y exportar el presupuesto a PDF y Excel.",
   "Video 03 de la serie Proyectos. setup: seeds/proyectos/preparar.sh borrador (presupuesto en borrador con seis partidas; «Zapatas y pedestales» sin costo; indirectos y utilidad en cero).",
-  "/projects", "button[aria-label='Abrir proyecto']", "borrador",
+  "/projects/17/presupuesto/2", "table.tree", "borrador",
   ["Desglosar una partida en materiales y mano de obra", "Aplicar indirectos y utilidad para obtener el precio",
    "Completar fechas, tarea e ITBIS de una partida", "Exportar el presupuesto a PDF y Excel"],
   ["Escribir las cantidades del análisis por el total de la partida: van por unidad",
@@ -12,16 +12,15 @@ A = "aside.apu-panel "
 pasos = [
  paso("01-apu", "Análisis de precio unitario", "Análisis de precio unitario", "Proyectos › Cartera › PRJ › Presupuesto",
   "El costo de una partida, desglosado en recursos",
-  """Este presupuesto ya tiene sus seis partidas, pero a Zapatas y pedestales le falta el costo. En lugar de escribirlo, lo
-  voy a calcular. Recojo el menú, abro el proyecto, voy a su pestaña Presupuesto, y abro el presupuesto con Ver
-  presupuesto. En la fila de Zapatas pulso el botón de Análisis de precio unitario. Se abre un panel a la derecha: aquí se
+  """Este es el presupuesto de la obra, en la pestaña Presupuesto del proyecto. Recojo el menú. Ya tiene sus tres fases y
+  sus seis partidas, pero a Zapatas y pedestales le falta el costo. En lugar de escribirlo, lo voy a calcular. En la fila
+  de Zapatas pulso el botón de Análisis de precio unitario. Se abre un panel a la derecha: aquí se
   desglosa lo que cuesta una sola unidad de la partida, en este caso un metro cúbico. Pulso Agregar recurso. En
   Descripción escribo el primero: Hormigón. El tipo ya dice Material. En Cantidad por unidad anoto uno. Es un metro cúbico
   de hormigón por cada metro cúbico de zapata. Y en Costo unitario anoto seis mil trescientos pesos.""",
-  [clic("button.panel-collapse", "Recojo el menú"),
-   clic("button[aria-label='Abrir proyecto']", "abro el proyecto"),
-   clic("a.ws-tab:has-text('Presupuesto')", "pestaña Presupuesto"),
-   clic("button[aria-label='Ver presupuesto']", "abro el presupuesto con Ver"),
+  [res("a.ws-tab.is-active, a.ws-tab:has-text('Presupuesto')", "en la pestaña Presupuesto", 2500),
+   clic("button.panel-collapse", "Recojo el menú"),
+   res("#structure-title", "le falta el costo", 3000),
    clic("button[aria-label='Análisis de precio unitario de la partida 01.02']", "pulso el botón de Análisis"),
    res(A + ">> nth=0", "Se abre un panel", 6000),
    clic(A + "button:has-text('Agregar recurso')", "Pulso Agregar recurso"),

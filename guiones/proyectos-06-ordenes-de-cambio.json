@@ -1,0 +1,340 @@
+{
+  "titulo": "Proyectos · Órdenes de cambio: adicionales, deductivas y firma del cliente",
+  "descripcion": "Cómo registrar en Germiva una orden de cambio cuando el cliente modifica el alcance, el precio o el plazo de un proyecto: crearla, enviarla a aprobación, aprobarla y ver cómo cambia el contrato y el presupuesto vigente.",
+  "_comentario": "Video 06 de la serie Proyectos. setup: seeds/proyectos/preparar.sh cambios (presupuesto aprobado; orden deductiva OCB-001 «Luminarias que suple el cliente» enviada por Laura, por −30,000 de costo y −39,600 de precio).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/cambios",
+    "esperar": "table.orders"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh cambios"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Crear una orden de cambio adicional sobre una partida",
+    "Enviarla a aprobación y aprobar la de otra persona",
+    "Ver el contrato original, los cambios y el contrato vigente",
+    "Cuándo exigir la firma del cliente"
+  ],
+  "errores_comunes": [
+    "Cambiar el precio con una revisión interna: el precio pactado solo cambia con una orden de cambio",
+    "Querer anular una orden aprobada: se revierte con una deductiva",
+    "Aprobar sin la referencia del cliente cuando el proyecto exige su firma"
+  ],
+  "pasos": [
+    {
+      "id": "01-cambios",
+      "capitulo": "La pestaña Cambios",
+      "rotulo": "Órdenes de cambio",
+      "ruta": "Proyectos › Cartera › PRJ › Cambios",
+      "texto_pantalla": "Contrato original · cambios · contrato vigente",
+      "narracion": "En una obra, el cliente casi siempre pide cambios: más metros, otro acabado, un plazo distinto. Cada cambio se registra como una orden de cambio. Se llevan en la pestaña Cambios del proyecto. Recojo el menú. Arriba, el contrato original: seis millones seiscientos mil pesos; los cambios aprobados; y el contrato vigente, que es la suma de los dos. A la derecha, lo que está en aprobación, y cómo quedaría el contrato si se aprueba. Y abajo, la lista de órdenes: hay una en aprobación, que preparó Laura.",
+      "acciones": [
+        {
+          "resaltar": "header.ws-header h1",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el cliente casi siempre"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Cambios')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "en la pestaña Cambios"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "resaltar": ".gm-fig:has-text('Contrato original'), :text('Contrato original') >> nth=0",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "el contrato original"
+        },
+        {
+          "resaltar": ":text('Contrato vigente') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "y el contrato vigente"
+        },
+        {
+          "resaltar": ":text('Contrato si se aprueban') >> nth=0",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "cómo quedaría el contrato"
+        },
+        {
+          "resaltar": "table.orders tbody tr >> nth=0 >> td >> nth=1",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "hay una en aprobación"
+        }
+      ]
+    },
+    {
+      "id": "02-nueva",
+      "capitulo": "Nueva orden de cambio",
+      "rotulo": "Nueva orden de cambio",
+      "ruta": "Proyectos › Cartera › PRJ › Cambios",
+      "texto_pantalla": "Tipo · título · origen · plazo · partidas que cambian",
+      "narracion": "Registro un cambio nuevo: el cliente quiere doscientos metros más de piso. Pulso Nueva orden de cambio. El tipo ya dice Adicional, porque aumenta el contrato; Deductivo lo reduce, y Sin costo solo cambia el plazo. En Título escribo Ampliación del piso industrial. Con el título de la orden ya escrito, en Plazo anoto cinco: son los días que el cambio agrega a la entrega. En Referencia del cliente escribo el documento donde lo pidió: Carta del 18 de noviembre. Ahora las partidas que cambian. Pulso Partida existente. En el buscador escribo Piso, para buscar la partida. Aparece en la lista, y la elijo. En Cantidad anoto doscientos, los metros cuadrados adicionales que pidió el cliente. En Costo anoto ciento cuarenta mil pesos, lo que cuesta hacerlos. Y en Precio anoto ciento ochenta y cuatro mil ochocientos, lo que se le cobra al cliente. Pulso Guardar, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "click": "button:has-text('Nueva orden de cambio')",
+          "al_decir": "Pulso Nueva orden de cambio"
+        },
+        {
+          "resaltar": "mat-dialog-container app-segmented-control[formcontrolname='changeType']",
+          "durante_ms": 6500,
+          "cursor": false,
+          "al_decir": "El tipo ya dice"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='title']",
+            "texto": "Ampliación del piso industrial"
+          },
+          "al_decir": "En Título escribo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='scheduleDays']",
+            "texto": "5"
+          },
+          "al_decir": "en Plazo anoto cinco"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='clientReference']",
+            "texto": "Carta del 18 de noviembre"
+          },
+          "al_decir": "Referencia del cliente escribo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Partida existente')",
+          "al_decir": "Pulso Partida existente"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[aria-label='Partida de la línea 1']",
+            "texto": "Piso"
+          },
+          "al_decir": "escribo Piso"
+        },
+        {
+          "click": "mat-option:has-text('03.01')",
+          "al_decir": "y la elijo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='quantity']",
+            "texto": "200"
+          },
+          "al_decir": "En Cantidad anoto doscientos"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='costAmount']",
+            "texto": "140000"
+          },
+          "al_decir": "En Costo anoto"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='priceAmount']",
+            "texto": "184800"
+          },
+          "al_decir": "en Precio anoto"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "03-enviar",
+      "capitulo": "Enviar a aprobación",
+      "rotulo": "Detalle de la orden",
+      "ruta": "Proyectos › Cartera › PRJ › Cambios › OCB-002",
+      "texto_pantalla": "Partidas, recorrido y soporte",
+      "narracion": "La orden queda en borrador, con su número. La abro con un clic en el número. El detalle muestra la partida que cambia y el efecto de la orden: ciento cuarenta mil más de costo, y ciento ochenta y cuatro mil ochocientos más de precio. En Recorrido se ve por dónde va; y en Soporte se adjunta la carta firmada por el cliente. Pulso Enviar a aprobación. El sistema pide confirmar; confirmo. Igual que el presupuesto, una orden de cambio la aprueba otra persona, no quien la preparó.",
+      "acciones": [
+        {
+          "click": "table.orders tr:has-text('OCB-002') button.link",
+          "al_decir": "con un clic en el número"
+        },
+        {
+          "resaltar": "#change-order-detail table >> nth=0",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "la partida que cambia"
+        },
+        {
+          "resaltar": "#change-order-detail :text('Recorrido') >> nth=0",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "En Recorrido"
+        },
+        {
+          "resaltar": "#change-order-detail button:has-text('Adjuntar')",
+          "durante_ms": 3500,
+          "cursor": true,
+          "al_decir": "en Soporte se adjunta"
+        },
+        {
+          "click": "#change-order-detail button:has-text('Enviar a aprobación')",
+          "al_decir": "Pulso Enviar a aprobación"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false,
+          "al_decir": "El sistema pide confirmar"
+        },
+        {
+          "click": "mat-dialog-container button.confirm-button, mat-dialog-container button:has-text('Enviar')",
+          "al_decir": "confirmo"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": "table.orders tr:has-text('OCB-002') td >> nth=7",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "la aprueba otra persona"
+        }
+      ]
+    },
+    {
+      "id": "04-aprobar",
+      "capitulo": "Aprobar",
+      "rotulo": "Aprobar orden de cambio",
+      "ruta": "Proyectos › Cartera › PRJ › Cambios › OCB-001",
+      "texto_pantalla": "Al aprobarse, cambia el contrato y el presupuesto vigente",
+      "narracion": "La que sí puedo aprobar es la de Laura: el cliente decidió comprar él mismo las luminarias. La abro. Es deductiva: baja treinta mil de costo, y treinta y nueve mil seiscientos de precio. Pulso Aprobar. El sistema avisa que, al aprobarla, se suma al presupuesto vigente y al contrato del proyecto; confirmo, y el aviso lo confirma. Arriba, las cifras cambiaron: el contrato vigente bajó a seis millones quinientos sesenta mil cuatrocientos pesos. Una orden aprobada ya no se anula: si hay que deshacerla, se registra otra en sentido contrario. Y si el proyecto debe exigir la firma del cliente antes de aprobar, se activa en el control de su presupuesto.",
+      "acciones": [
+        {
+          "click": "table.orders tr:has-text('OCB-001') button.link",
+          "al_decir": "La abro"
+        },
+        {
+          "resaltar": "#change-order-detail table >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "Es deductiva"
+        },
+        {
+          "click": "#change-order-detail button:has-text('Aprobar')",
+          "al_decir": "Pulso Aprobar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 5500,
+          "cursor": false,
+          "al_decir": "El sistema avisa"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Aprobar')",
+          "al_decir": "confirmo, y el aviso"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        },
+        {
+          "resaltar": ":text('Contrato vigente') >> nth=0",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "el contrato vigente bajó"
+        },
+        {
+          "resaltar": "table.orders tr:has-text('OCB-001') td >> nth=7",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "ya no se anula"
+        },
+        {
+          "resaltar": "a.ws-tab:has-text('Presupuesto')",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "se activa en el control"
+        }
+      ]
+    }
+  ]
+}

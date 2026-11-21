@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Proyectos · Aprobar el presupuesto, línea base y revisiones
+
+DESCRIPCIÓN
+============================================================
+Cómo se envía a aprobación el presupuesto de un proyecto en Germiva, quién puede aprobarlo, qué es la línea base, cómo crear una revisión, comparar versiones y definir los niveles de aprobación por monto.
+
+⏱️ CAPÍTULOS
+00:00  Enviar a aprobación
+00:54  Aprobar
+02:08  Revisiones y versiones
+02:49  Niveles de aprobación
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Enviar el presupuesto a aprobación
+• Por qué lo aprueba otra persona
+• Qué son la línea base y el presupuesto vigente
+• Crear una revisión y comparar versiones
+
+⚠️ ERRORES COMUNES
+• Querer aprobar el presupuesto que uno mismo preparó
+• Editar una versión aprobada: se crea una revisión
+• Enviar a aprobación con cambios sin guardar
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:17
+
+TRANSCRIPCIÓN
+============================================================
+Un presupuesto en borrador todavía no controla nada: primero hay que aprobarlo. Recojo el menú. Este es el presupuesto de la obra, en el mismo editor donde se armaron las partidas. En su barra de versión se ven los pasos que recorre: borrador, en aprobación, aprobada y vigente. El presupuesto ya está completo: cinco millones de costo, y seis millones seiscientos mil de precio. Bajo hasta el final de las partidas, donde está el total. Ahí mismo, a la derecha, está el botón que busco: pulso Enviar a aprobación. El sistema pide confirmar; confirmo. La versión pasa a En aprobación y ya no se puede editar. Pero yo no puedo aprobarla: quien prepara o envía un presupuesto no lo aprueba. Lo tiene que hacer otra persona con ese permiso.
+Salgo, para que entre Laura Méndez, la otra supervisora de la empresa. Abro el menú del usuario, y cierro sesión. En el acceso entro como Laura: escribo su usuario. Después, en el campo de la contraseña, escribo su clave. Con el usuario y la clave ya escritos, pulso el botón Iniciar sesión. Laura entra a su pantalla de inicio. El sistema le recuerda que a la empresa le falta el certificado digital; no afecta a los proyectos, así que pulso Más tarde.
+Ya con la sesión de Laura, vuelvo al presupuesto del proyecto, en Proyectos. Ella lo ve porque es parte del equipo de la obra. Al final de la versión está la Decisión de aprobación, con el nivel que le toca. En Observaciones escribo una nota: Revisado contra la cotización. La nota es opcional al aprobar, y obligatoria si se rechaza. Pulso Aprobar nivel uno. El sistema pide confirmar; confirmo, y el aviso lo confirma. La versión queda aprobada y congelada: es la línea base del proyecto, y también el presupuesto vigente, contra el que se controlarán las compras, las horas y las facturas.
+Una versión aprobada no se edita. Si los costos cambian, se crea una revisión. Abajo, en Nueva revisión, escribo el motivo: Ajuste del precio del acero. Con el motivo escrito, pulso Crear revisión. Nace la versión dos, en borrador, con todas las partidas copiadas. Ahí se corrigen costos y cantidades; el precio pactado con el cliente no cambia en una revisión interna: para eso están las órdenes de cambio. Mientras la versión dos no se apruebe, la uno sigue vigente. Y el selector Comparar con muestra, partida por partida, la diferencia entre dos versiones.
+Quién aprueba se define en Proyectos, Configuración de presupuestos. Abajo están los niveles de aprobación por monto: de uno a tres, cada uno con su límite y con el permiso que lo aprueba. Un presupuesto pequeño lo firma el primer nivel; uno grande necesita, en orden, la firma de cada nivel. Con el presupuesto aprobado, el proyecto ya puede controlar lo que se compra.

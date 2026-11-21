@@ -1,0 +1,223 @@
+1
+00:00:03,100 --> 00:00:06,015
+Un presupuesto en borrador todavía no controla nada:
+
+2
+00:00:06,163 --> 00:00:07,665
+primero hay que aprobarlo.
+
+3
+00:00:08,332 --> 00:00:09,475
+Recojo el menú.
+
+4
+00:00:10,143 --> 00:00:14,943
+Este es el presupuesto de la obra, en el mismo editor donde se armaron las partidas.
+
+5
+00:00:15,612 --> 00:00:18,253
+En su barra de versión se ven los pasos que recorre:
+
+6
+00:00:18,365 --> 00:00:21,676
+borrador, en aprobación, aprobada y vigente.
+
+7
+00:00:22,344 --> 00:00:24,169
+El presupuesto ya está completo:
+
+8
+00:00:24,317 --> 00:00:28,199
+cinco millones de costo, y seis millones seiscientos mil de precio.
+
+9
+00:00:28,856 --> 00:00:31,944
+Bajo hasta el final de las partidas, donde está el total.
+
+10
+00:00:32,612 --> 00:00:35,951
+Ahí mismo, a la derecha, está el botón que busco:
+
+11
+00:00:36,011 --> 00:00:37,588
+pulso Enviar a aprobación.
+
+12
+00:00:38,243 --> 00:00:40,054
+El sistema pide confirmar;
+
+13
+00:00:40,091 --> 00:00:40,899
+confirmo.
+
+14
+00:00:41,566 --> 00:00:44,792
+La versión pasa a En aprobación y ya no se puede editar.
+
+15
+00:00:45,460 --> 00:00:46,937
+Pero yo no puedo aprobarla:
+
+16
+00:00:47,060 --> 00:00:49,975
+quien prepara o envía un presupuesto no lo aprueba.
+
+17
+00:00:50,631 --> 00:00:53,200
+Lo tiene que hacer otra persona con ese permiso.
+
+18
+00:00:54,564 --> 00:00:59,054
+Salgo, para que entre Laura Méndez, la otra supervisora de la empresa.
+
+19
+00:00:59,722 --> 00:01:02,402
+Abro el menú del usuario, y cierro sesión.
+
+20
+00:01:03,057 --> 00:01:04,807
+En el acceso entro como Laura:
+
+21
+00:01:04,905 --> 00:01:06,344
+escribo su usuario.
+
+22
+00:01:07,013 --> 00:01:10,772
+Después, en el campo de la contraseña, escribo su clave.
+
+23
+00:01:11,427 --> 00:01:15,707
+Con el usuario y la clave ya escritos, pulso el botón Iniciar sesión.
+
+24
+00:01:16,364 --> 00:01:18,597
+Laura entra a su pantalla de inicio.
+
+25
+00:01:19,265 --> 00:01:22,937
+El sistema le recuerda que a la empresa le falta el certificado digital;
+
+26
+00:01:22,985 --> 00:01:26,384
+no afecta a los proyectos, así que pulso Más tarde.
+
+27
+00:01:27,772 --> 00:01:32,239
+Ya con la sesión de Laura, vuelvo al presupuesto del proyecto, en Proyectos.
+
+28
+00:01:32,906 --> 00:01:35,686
+Ella lo ve porque es parte del equipo de la obra.
+
+29
+00:01:36,353 --> 00:01:40,620
+Al final de la versión está la Decisión de aprobación, con el nivel que le toca.
+
+30
+00:01:41,289 --> 00:01:43,337
+En Observaciones escribo una nota:
+
+31
+00:01:43,496 --> 00:01:45,371
+Revisado contra la cotización.
+
+32
+00:01:46,026 --> 00:01:49,798
+La nota es opcional al aprobar, y obligatoria si se rechaza.
+
+33
+00:01:50,466 --> 00:01:52,117
+Pulso Aprobar nivel uno.
+
+34
+00:01:52,772 --> 00:01:54,472
+El sistema pide confirmar;
+
+35
+00:01:54,533 --> 00:01:56,951
+confirmo, y el aviso lo confirma.
+
+36
+00:01:57,621 --> 00:01:59,756
+La versión queda aprobada y congelada:
+
+37
+00:01:59,853 --> 00:02:03,624
+es la línea base del proyecto, y también el presupuesto vigente,
+
+38
+00:02:03,746 --> 00:02:07,593
+contra el que se controlarán las compras, las horas y las facturas.
+
+39
+00:02:08,965 --> 00:02:11,112
+Una versión aprobada no se edita.
+
+40
+00:02:11,766 --> 00:02:14,819
+Si los costos cambian, se crea una revisión.
+
+41
+00:02:15,475 --> 00:02:18,626
+Abajo, en Nueva revisión, escribo el motivo:
+
+42
+00:02:18,674 --> 00:02:20,549
+Ajuste del precio del acero.
+
+43
+00:02:21,204 --> 00:02:24,120
+Con el motivo escrito, pulso Crear revisión.
+
+44
+00:02:24,775 --> 00:02:29,341
+Nace la versión dos, en borrador, con todas las partidas copiadas.
+
+45
+00:02:30,008 --> 00:02:32,354
+Ahí se corrigen costos y cantidades;
+
+46
+00:02:32,402 --> 00:02:35,975
+el precio pactado con el cliente no cambia en una revisión interna:
+
+47
+00:02:36,072 --> 00:02:38,057
+para eso están las órdenes de cambio.
+
+48
+00:02:38,725 --> 00:02:42,361
+Mientras la versión dos no se apruebe, la uno sigue vigente.
+
+49
+00:02:43,016 --> 00:02:46,292
+Y el selector Comparar con muestra, partida por partida,
+
+50
+00:02:46,390 --> 00:02:48,636
+la diferencia entre dos versiones.
+
+51
+00:02:50,008 --> 00:02:54,114
+Quién aprueba se define en Proyectos, Configuración de presupuestos.
+
+52
+00:02:54,781 --> 00:02:57,201
+Abajo están los niveles de aprobación por monto:
+
+53
+00:02:57,324 --> 00:03:01,442
+de uno a tres, cada uno con su límite y con el permiso que lo aprueba.
+
+54
+00:03:02,110 --> 00:03:04,729
+Un presupuesto pequeño lo firma el primer nivel;
+
+55
+00:03:04,826 --> 00:03:08,510
+uno grande necesita, en orden, la firma de cada nivel.
+
+56
+00:03:09,179 --> 00:03:13,409
+Con el presupuesto aprobado, el proyecto ya puede controlar lo que se compra.

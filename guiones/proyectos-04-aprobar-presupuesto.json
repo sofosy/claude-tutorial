@@ -66,8 +66,8 @@
     "extra": {
       "__v": 2
     },
-    "navegar": "/projects",
-    "esperar": "button[aria-label='Abrir proyecto']"
+    "navegar": "/projects/17/presupuesto/2",
+    "esperar": "table.tree"
   },
   "setup": {
     "tipo": "shell",
@@ -92,29 +92,17 @@
       "rotulo": "Enviar a aprobación",
       "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
       "texto_pantalla": "Borrador → En aprobación",
-      "narracion": "Un presupuesto en borrador todavía no controla nada: primero hay que aprobarlo. Recojo el menú, abro el proyecto, voy a su pestaña Presupuesto, y lo abro con Ver presupuesto. Arriba se ven los pasos de la versión: borrador, en aprobación, aprobada y vigente. El presupuesto ya está completo: cinco millones de costo, y seis millones seiscientos mil de precio. Bajo hasta el final de las partidas, y pulso Enviar a aprobación. El sistema pide confirmar; confirmo. La versión pasa a En aprobación y ya no se puede editar. Pero yo no puedo aprobarla: quien prepara o envía un presupuesto no lo aprueba. Lo tiene que hacer otra persona con ese permiso.",
+      "narracion": "Un presupuesto en borrador todavía no controla nada: primero hay que aprobarlo. Recojo el menú. Este es el presupuesto de la obra, en el mismo editor donde se armaron las partidas. En su barra de versión se ven los pasos que recorre: borrador, en aprobación, aprobada y vigente. El presupuesto ya está completo: cinco millones de costo, y seis millones seiscientos mil de precio. Bajo hasta el final de las partidas, donde está el total. Ahí mismo, a la derecha, está el botón que busco: pulso Enviar a aprobación. El sistema pide confirmar; confirmo. La versión pasa a En aprobación y ya no se puede editar. Pero yo no puedo aprobarla: quien prepara o envía un presupuesto no lo aprueba. Lo tiene que hacer otra persona con ese permiso.",
       "acciones": [
         {
           "click": "button.panel-collapse",
           "al_decir": "Recojo el menú"
         },
         {
-          "click": "button[aria-label='Abrir proyecto']",
-          "al_decir": "abro el proyecto"
-        },
-        {
-          "click": "a.ws-tab:has-text('Presupuesto')",
-          "al_decir": "pestaña Presupuesto"
-        },
-        {
-          "click": "button[aria-label='Ver presupuesto']",
-          "al_decir": "Ver presupuesto"
-        },
-        {
           "resaltar": "ol.version-bar__steps",
           "durante_ms": 5000,
           "cursor": false,
-          "al_decir": "los pasos de la versión"
+          "al_decir": "se ven los pasos"
         },
         {
           "resaltar": ".budget-figs .gm-fig >> nth=0",
@@ -173,7 +161,7 @@
       "rotulo": "Aprueba otra persona",
       "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
       "texto_pantalla": "Quien prepara no aprueba",
-      "narracion": "Salgo, para que entre Laura Méndez, la otra supervisora de la empresa. Abro el menú del usuario, y cierro sesión. En el acceso entro como Laura: escribo su usuario. Después, en el campo de la contraseña, escribo su clave. Con el usuario y la clave ya escritos, pulso el botón Iniciar sesión.",
+      "narracion": "Salgo, para que entre Laura Méndez, la otra supervisora de la empresa. Abro el menú del usuario, y cierro sesión. En el acceso entro como Laura: escribo su usuario. Después, en el campo de la contraseña, escribo su clave. Con el usuario y la clave ya escritos, pulso el botón Iniciar sesión. Laura entra a su pantalla de inicio. El sistema le recuerda que a la empresa le falta el certificado digital; no afecta a los proyectos, así que pulso Más tarde.",
       "acciones": [
         {
           "click": "button.topbar-user",
@@ -200,6 +188,16 @@
         {
           "click": "button.auth-primary-btn",
           "al_decir": "pulso el botón Iniciar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3500,
+          "cursor": false,
+          "al_decir": "El sistema le recuerda"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Más tarde')",
+          "al_decir": "pulso Más tarde"
         }
       ]
     },
@@ -209,20 +207,14 @@
       "rotulo": "Decisión de aprobación",
       "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
       "texto_pantalla": "Aprobado: línea base y presupuesto vigente",
-      "navegar": "/projects",
-      "narracion": "Ya con la sesión de Laura, en la cartera de Proyectos abro el proyecto, voy a su pestaña Presupuesto, y entro con Ver presupuesto. Al final de la versión está la Decisión de aprobación, con el nivel que le toca. En Observaciones escribo una nota: Revisado contra la cotización. La nota es opcional al aprobar, y obligatoria si se rechaza. Pulso Aprobar nivel uno. El sistema pide confirmar; confirmo, y el aviso lo confirma. La versión queda aprobada y congelada: es la línea base del proyecto, y también el presupuesto vigente, contra el que se controlarán las compras, las horas y las facturas.",
+      "navegar": "/projects/17/presupuesto/2",
+      "narracion": "Ya con la sesión de Laura, vuelvo al presupuesto del proyecto, en Proyectos. Ella lo ve porque es parte del equipo de la obra. Al final de la versión está la Decisión de aprobación, con el nivel que le toca. En Observaciones escribo una nota: Revisado contra la cotización. La nota es opcional al aprobar, y obligatoria si se rechaza. Pulso Aprobar nivel uno. El sistema pide confirmar; confirmo, y el aviso lo confirma. La versión queda aprobada y congelada: es la línea base del proyecto, y también el presupuesto vigente, contra el que se controlarán las compras, las horas y las facturas.",
       "acciones": [
         {
-          "click": "button[aria-label='Abrir proyecto']",
-          "al_decir": "abro el proyecto"
-        },
-        {
-          "click": "a.ws-tab:has-text('Presupuesto')",
-          "al_decir": "pestaña Presupuesto"
-        },
-        {
-          "click": "button[aria-label='Ver presupuesto']",
-          "al_decir": "Ver presupuesto"
+          "resaltar": "ol.version-bar__steps",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "vuelvo al presupuesto"
         },
         {
           "resaltar": "app-budget-approval",

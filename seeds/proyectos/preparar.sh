@@ -49,7 +49,14 @@ if [[ "$DB" == germiva && ( ! -f "$BASE" || "$BASE" -ot "$SNAP" ) ]]; then
   # (FUZZY_WORD_DISTANCE) y el buscador de clientes fallaba en los videos.
   docker exec germiva-dev-mysql mysqldump -uroot --single-transaction --routines germiva | gzip > "$BASE"
 else
-  restaurar "$BASE"
+  # La pila de ensayo comparte MySQL con la de grabación, que lo reinicia al
+  # pasar de 2.5 GB: si la restauración cae en ese momento, se reintenta.
+  for intento in 1 2 3 4; do
+    restaurar "$BASE" && break
+    [[ $intento == 4 ]] && exit 1
+    sleep 20
+    for _ in $(seq 1 60); do $M -e 'SELECT 1' >/dev/null 2>&1 && break; sleep 2; done
+  done
 fi
 $M "$DB" -e "UPDATE companies SET legalName='Constructora Germiva Demo S.R.L.', tradeName='Constructora Germiva', rnc='130555001', email='proyectos@constructora.germiva.com', website='https://germiva.com' WHERE id=1; UPDATE users SET email='admin@germiva.com' WHERE id=1;"
 if [[ "$DB" == germiva ]]; then

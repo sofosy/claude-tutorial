@@ -1,0 +1,262 @@
+{
+  "titulo": "Proyectos · El contrato de venta y la factura del anticipo",
+  "descripcion": "Cómo registrar en Germiva el contrato de venta de un proyecto: monto, régimen de ITBIS para obras, forma de facturar, anticipo con su amortización y fondo de reparo; y cómo facturar el anticipo.",
+  "_comentario": "Video 07 de la serie Proyectos. setup: seeds/proyectos/preparar.sh facturacion (presupuesto aprobado por 6,600,000 de precio; servicio «Construcción de nave industrial» con base presunta de construcción).",
+  "base_url": "http://localhost:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}"
+  ],
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "pronunciacion": {
+    "NIC": "nic",
+    "CxC": "ce-por-ce",
+    "CxP": "ce-por-pe",
+    "ISR": "i-ese-erre",
+    "BHD": "be-hache-de",
+    "USD": "dólares",
+    "DOP": "pesos",
+    "ITBIS": "itebis",
+    "CPI": "ce-pe-i",
+    "SPI": "ese-pe-i",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "_perfil": "Datos ficticios sembrados por seeds/ (RNC 130555xxx, nombres con «Germiva»): la narración los nombra, no se sustituye nada.",
+    "perfil": "ninguno",
+    "permitidos": [
+      "germiva",
+      "130555",
+      "example.com"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.germiva.com",
+      "localhost:4200": "germiva.com"
+    }
+  },
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin",
+      "password": "admin"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/projects/17/facturacion",
+    "esperar": "button:has-text('Registrar contrato de venta')"
+  },
+  "setup": {
+    "tipo": "shell",
+    "cmd": "seeds/proyectos/preparar.sh facturacion"
+  },
+  "portada_s": 8,
+  "aprenderas": [
+    "Registrar el contrato de venta del proyecto",
+    "Elegir el régimen de ITBIS de una obra con materiales",
+    "Pactar anticipo, amortización y fondo de reparo",
+    "Facturar el anticipo"
+  ],
+  "errores_comunes": [
+    "Facturar una obra con materiales con ITBIS sobre el 100 %",
+    "Olvidar la amortización: el anticipo nunca se descontaría",
+    "Querer cambiar el régimen después de facturar: queda fijo con la primera factura"
+  ],
+  "pasos": [
+    {
+      "id": "01-contrato",
+      "capitulo": "El contrato de venta",
+      "rotulo": "Registrar contrato de venta",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Cliente, monto, régimen de ITBIS y comprobante",
+      "narracion": "El presupuesto dice cuánto cuesta la obra; el contrato de venta dice cómo se le cobra al cliente. Se registra en la pestaña Facturación del proyecto. Recojo el menú, y pulso Registrar contrato de venta. El cliente ya viene del proyecto. En Monto del contrato anoto seis millones seiscientos mil pesos, el precio del presupuesto, sin ITBIS. Los días de crédito quedan en treinta. Ahora el régimen de ITBIS. Esta es una obra con materiales: marco esa opción. Con ella, el ITBIS se calcula sobre el diez por ciento de cada factura, y el resto sale exento, como manda la norma para construcción. En Servicio de la factura escribo Construcción, para buscar el servicio con que se arma cada factura. Aparece en la lista, y lo elijo. En Tipo de comprobante abro la lista, y elijo la factura de crédito fiscal.",
+      "acciones": [
+        {
+          "resaltar": "a.ws-tab:has-text('Facturación')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "pestaña Facturación"
+        },
+        {
+          "click": "button.panel-collapse",
+          "al_decir": "Recojo el menú"
+        },
+        {
+          "click": "button:has-text('Registrar contrato de venta')",
+          "al_decir": "pulso Registrar contrato"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='originalAmount']",
+            "texto": "6600000"
+          },
+          "al_decir": "En Monto del contrato anoto"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has(input[formcontrolname='paymentTermDays'])",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "Los días de crédito"
+        },
+        {
+          "click": "mat-dialog-container mat-radio-button:has-text('Obra con materiales')",
+          "al_decir": "marco esa opción"
+        },
+        {
+          "resaltar": "mat-dialog-container h3:has-text('ITBIS y comprobante')",
+          "durante_ms": 6000,
+          "cursor": false,
+          "al_decir": "sobre el diez por ciento"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container app-custom-select[formcontrolname='product'] input",
+            "texto": "Construcción"
+          },
+          "al_decir": "escribo Construcción"
+        },
+        {
+          "click": "mat-option:has-text('Construcción de nave')",
+          "al_decir": "y lo elijo"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='ncfType']",
+          "al_decir": "En Tipo de comprobante abro"
+        },
+        {
+          "click": "mat-option:has-text('Crédito Fiscal')",
+          "al_decir": "elijo la factura de crédito fiscal"
+        }
+      ]
+    },
+    {
+      "id": "02-condiciones",
+      "capitulo": "Cómo se factura",
+      "rotulo": "Avance, anticipo y fondo de reparo",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "Por avance · anticipo 20 % · fondo de reparo 5 %",
+      "narracion": "Sigue la forma de facturar. Hay tres: por avance, midiendo lo ejecutado en cada período; por hitos, con un plan de cobros; o por tiempo y materiales. Dejo Por avance. En Presupuesto que se cubica abro la lista, y elijo el presupuesto de la obra: sus partidas son las que se medirán. Bajo al anticipo. En Anticipo anoto veinte: el cliente adelanta el veinte por ciento del contrato. Y en Amortización por factura anoto veinte también: cada factura de avance descontará ese porcentaje, hasta devolver el anticipo completo. Por último, el fondo de reparo. Anoto cinco: el cliente retiene el cinco por ciento de cada factura como garantía, y lo paga al recibir la obra. Pulso Guardar, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "resaltar": "mat-dialog-container mat-radio-button:has-text('Por avance')",
+          "durante_ms": 7500,
+          "cursor": false,
+          "al_decir": "Hay tres"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='budget']",
+          "al_decir": "En Presupuesto que se cubica abro"
+        },
+        {
+          "click": "mat-option:has-text('Presupuesto de obra')",
+          "al_decir": "elijo el presupuesto"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='advancePercentage']",
+            "texto": "20"
+          },
+          "al_decir": "En Anticipo anoto veinte"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='amortizationPercentage']",
+            "texto": "20"
+          },
+          "al_decir": "anoto veinte también"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='retentionPercentage']",
+            "texto": "5"
+          },
+          "al_decir": "Anoto cinco"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "Pulso Guardar"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 2500,
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "03-anticipo",
+      "capitulo": "Facturar el anticipo",
+      "rotulo": "Factura del anticipo",
+      "ruta": "Proyectos › Cartera › PRJ › Facturación",
+      "texto_pantalla": "El anticipo se factura aparte, con su ITBIS",
+      "narracion": "Con el contrato guardado, la pestaña muestra el estado de facturación: contrato vigente, facturado, cobrado y por facturar. Más abajo está el Anticipo: un millón trescientos veinte mil pesos pactados, todavía sin facturar. Pulso Facturar anticipo. El sistema muestra la vista previa: la base, el ITBIS sobre el diez por ciento, y el total de la factura. Pulso Generar factura. El aviso dice que la factura quedó creada en borrador: se revisa y se emite en Ventas, como cualquier otra. Desde ahí, cada factura de avance irá amortizando este anticipo.",
+      "acciones": [
+        {
+          "resaltar": "section.ps-panel >> nth=0",
+          "durante_ms": 5000,
+          "cursor": false,
+          "al_decir": "el estado de facturación"
+        },
+        {
+          "resaltar": "#billing-advance-title",
+          "durante_ms": 4500,
+          "cursor": false,
+          "al_decir": "Más abajo está el Anticipo"
+        },
+        {
+          "click": "button:has-text('Facturar anticipo')",
+          "al_decir": "Pulso Facturar anticipo"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 7000,
+          "cursor": false,
+          "al_decir": "la vista previa"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar factura')",
+          "al_decir": "Pulso Generar factura"
+        },
+        {
+          "resaltar": ".mat-mdc-snack-bar-container",
+          "durante_ms": 3500,
+          "cursor": false
+        },
+        {
+          "resaltar": "#billing-advance-title",
+          "durante_ms": 4000,
+          "cursor": false,
+          "al_decir": "cada factura de avance"
+        }
+      ]
+    }
+  ]
+}

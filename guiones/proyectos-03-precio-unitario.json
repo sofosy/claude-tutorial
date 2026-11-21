@@ -66,8 +66,8 @@
     "extra": {
       "__v": 2
     },
-    "navegar": "/projects",
-    "esperar": "button[aria-label='Abrir proyecto']"
+    "navegar": "/projects/17/presupuesto/2",
+    "esperar": "table.tree"
   },
   "setup": {
     "tipo": "shell",
@@ -92,23 +92,23 @@
       "rotulo": "Análisis de precio unitario",
       "ruta": "Proyectos › Cartera › PRJ › Presupuesto",
       "texto_pantalla": "El costo de una partida, desglosado en recursos",
-      "narracion": "Este presupuesto ya tiene sus seis partidas, pero a Zapatas y pedestales le falta el costo. En lugar de escribirlo, lo voy a calcular. Recojo el menú, abro el proyecto, voy a su pestaña Presupuesto, y abro el presupuesto con Ver presupuesto. En la fila de Zapatas pulso el botón de Análisis de precio unitario. Se abre un panel a la derecha: aquí se desglosa lo que cuesta una sola unidad de la partida, en este caso un metro cúbico. Pulso Agregar recurso. En Descripción escribo el primero: Hormigón. El tipo ya dice Material. En Cantidad por unidad anoto uno. Es un metro cúbico de hormigón por cada metro cúbico de zapata. Y en Costo unitario anoto seis mil trescientos pesos.",
+      "narracion": "Este es el presupuesto de la obra, en la pestaña Presupuesto del proyecto. Recojo el menú. Ya tiene sus tres fases y sus seis partidas, pero a Zapatas y pedestales le falta el costo. En lugar de escribirlo, lo voy a calcular. En la fila de Zapatas pulso el botón de Análisis de precio unitario. Se abre un panel a la derecha: aquí se desglosa lo que cuesta una sola unidad de la partida, en este caso un metro cúbico. Pulso Agregar recurso. En Descripción escribo el primero: Hormigón. El tipo ya dice Material. En Cantidad por unidad anoto uno. Es un metro cúbico de hormigón por cada metro cúbico de zapata. Y en Costo unitario anoto seis mil trescientos pesos.",
       "acciones": [
+        {
+          "resaltar": "a.ws-tab.is-active, a.ws-tab:has-text('Presupuesto')",
+          "durante_ms": 2500,
+          "cursor": false,
+          "al_decir": "en la pestaña Presupuesto"
+        },
         {
           "click": "button.panel-collapse",
           "al_decir": "Recojo el menú"
         },
         {
-          "click": "button[aria-label='Abrir proyecto']",
-          "al_decir": "abro el proyecto"
-        },
-        {
-          "click": "a.ws-tab:has-text('Presupuesto')",
-          "al_decir": "pestaña Presupuesto"
-        },
-        {
-          "click": "button[aria-label='Ver presupuesto']",
-          "al_decir": "abro el presupuesto con Ver"
+          "resaltar": "#structure-title",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "le falta el costo"
         },
         {
           "click": "button[aria-label='Análisis de precio unitario de la partida 01.02']",

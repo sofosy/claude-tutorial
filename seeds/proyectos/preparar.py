@@ -201,11 +201,87 @@ def control():
         "category": "PRODUCT", "name": "Acero estructural A36", "code": "MAT-ACERO", "tax": c.ITBIS_18,
         "unitMeasure": TON, "unitMeasureValue": "1", "managesInventory": True, "active": True})["id"]
     orden_de_obra(b, b["aceros"], acero, 10, 45000, "est")
+    # En borrador: la segunda etapa excede lo disponible de la partida (190,000).
+    compra_de_obra(b, b["movitierra"], "B0100000322", "Excavación de zapatas, segunda etapa", 200000, "exc",
+                   fecha="2026-11-18", emitir=False)
+    return b
+
+
+def cambios():
+    # P06: presupuesto aprobado y una orden de cambio deductiva que Laura
+    # preparó y envió: el video la aprueba con el administrador.
+    b = aprobado()
+    ruta = f"/v1/project-budgets/{b['presupuesto']['id']}/change-orders"
+    orden = como("laura.mendez", "POST", ruta, {
+        "changeType": "DEDUCTIVE", "origin": "CLIENT", "title": "Luminarias que suple el cliente",
+        "requestDate": "2026-11-16", "scheduleDays": 0, "clientReference": "Correo del 16 de noviembre",
+        "description": "El cliente comprará las luminarias por su cuenta.",
+        "lines": [{"kind": "EXISTING_LINE", "budgetLine": b["presupuesto"]["lineas"]["ele"]["id"],
+                   "quantity": "0", "costAmount": "-30000.00", "priceAmount": "-39600.00"}]})
+    como("laura.mendez", "POST", f"{ruta}/{orden['id']}/submit", {})
+    return b
+
+
+def servicio_de_obra():
+    """Servicio con que se arma la línea de las facturas del contrato: obra con
+    materiales (base presunta del 10 %, Norma 07-2007)."""
+    regimen = int(sql("SELECT id FROM presumptive_tax_regimes WHERE code='NORMA-07-2007-CONSTRUCCION' "
+                      "AND deleted_at IS NULL LIMIT 1"))
+    return llamar("POST", "/v1/product", {
+        "name": "Construcción de nave industrial", "code": "SRV-OBRA", "category": "SERVICE",
+        "description": "Construcción de nave industrial con materiales", "tax": c.ITBIS_18, "unitMeasure": UND,
+        "unitMeasureValue": "1", "managesInventory": False, "presumptiveTaxRegime": regimen})["id"]
+
+
+def facturacion():
+    # P07: presupuesto aprobado y el servicio de la factura; el video registra
+    # el contrato y factura el anticipo.
+    b = aprobado()
+    b["servicio"] = servicio_de_obra()
+    return b
+
+
+def contrato(b, **extra):
+    ruta = f"/v1/project-billing/projects/{b['proyecto']['id']}"
+    llamar("PUT", f"{ruta}/contract", {
+        "budget": b["presupuesto"]["id"], "currency": c.DOP, "originalAmount": "6600000.00",
+        "advancePercentage": "20", "amortizationPercentage": "20", "retentionPercentage": "5",
+        "retentionBase": "GROSS", "retentionReleaseTerms": "Recepción definitiva de la obra sin defectos",
+        "retentionReleaseDate": "2027-10-30", "taxRegime": "CONSTRUCTION_WITH_MATERIALS",
+        "billingMode": "PROGRESS", "product": b["servicio"], "ncfType": c.ncf_tipo("B01"),
+        "paymentTermDays": 30, **extra})
+    return ruta
+
+
+def emitir(numero):
+    llamar("PATCH", f"/v1/invoices/change-status/{numero}", {"invoiceStatusCode": "EMITTED"})
+
+
+def cubicacion():
+    # P08: contrato registrado y anticipo facturado y emitido; el video mide,
+    # aprueba y factura la primera cubicación.
+    b = facturacion()
+    ruta = contrato(b)
+    doc = llamar("POST", f"{ruta}/advance/invoice", {"issuedDate": "2026-11-05"})
+    b["anticipo"] = doc.get("invoiceNumber") or (doc.get("invoice") or {}).get("invoiceNumber")
+    if b["anticipo"]:
+        emitir(b["anticipo"])
+    return b
+
+
+def subcontrato():
+    # P09: presupuesto aprobado, el subcontratista de la excavación y su primera
+    # factura en borrador (200,000), todavía sin subcontrato.
+    b = aprobado()
+    b["movitierra"] = proveedor("Movimientos de Tierra Germiva S.R.L.", "130555041")
+    compra_de_obra(b, b["movitierra"], "B0100000321", "Excavación de zapatas, primera etapa", 200000, "exc",
+                   emitir=False)
     return b
 
 
 ESTADOS = {"inicio": inicio, "con-proyecto": con_proyecto, "borrador": borrador,
-           "por-aprobar": por_aprobar, "aprobado": aprobado, "control": control}
+           "por-aprobar": por_aprobar, "aprobado": aprobado, "control": control, "cambios": cambios, "facturacion": facturacion,
+           "cubicacion": cubicacion, "subcontrato": subcontrato}
 
 if __name__ == "__main__":
     c.TOKEN = c.token()
