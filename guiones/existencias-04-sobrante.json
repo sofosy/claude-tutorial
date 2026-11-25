@@ -1,0 +1,301 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 4: sobrante encontrado",
+ "descripcion": "Cuarta parte de la serie de cargas masivas de existencias de Germiva ERP. Al reorganizar el Almacén Central aparecen cajas de bujías y filtros que no estaban registrados. Se cargan con el motivo Sobrante encontrado, que se asienta como ganancia por ajuste. Cuándo no es un sobrante sino una compra a un proveedor, y cómo quedan los movimientos.",
+ "_comentario": "Serie Existencias, video 4. Estado C. Archivo sobrante-central.xlsx: bujías +36, filtros +10.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs C"
+ },
+ "aprenderas": [
+  "Elegir entre los cuatro motivos de carga",
+  "Cargar un sobrante con el motivo Sobrante encontrado",
+  "Leer el asiento de ganancia por ajuste",
+  "Distinguir un sobrante de una compra a un proveedor"
+ ],
+ "errores_comunes": [
+  "Cargar como sobrante mercancía de un proveedor que no se ha recibido: es una compra",
+  "Usar Sobrante encontrado en un conteo: ahí los sobrantes ya van con el motivo Conteo físico"
+ ],
+ "pasos": [
+  {
+   "id": "01-sobrante",
+   "capitulo": "Apareció mercancía",
+   "rotulo": "El sobrante",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Entrada · Almacén Central, todos los productos",
+   "narracion": "Seguimos con Repuestos Germiva. Entro a Inventario y abro Existencias. Ahora recojo el panel. Al reorganizar el pasillo B del Almacén Central aparecieron tres cajas de bujías, treinta y seis unidades, y diez filtros de aceite que no estaban registrados. Antes de cargarlos, una pregunta: ¿vienen de un proveedor? Si son de un pedido que todavía no se ha recibido, no son un sobrante, son una compra, y van por la recepción, a nombre de ese proveedor. Aquí no: llevan tiempo en el almacén. Pulso Actualizar existencias. Dejo Entrada, para sumar. Elijo Un almacén, y en la lista de almacenes, el Almacén Central. Ahora descargo la plantilla con todos los productos, y en el Excel escribo solo lo que apareció.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Existencias')",
+     "al_decir": "abro Existencias"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Bujía de iridio') td:nth-child(1)",
+     "durante_ms": 2500,
+     "al_decir": "tres cajas de bujías",
+     "cursor": false
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Filtro de aceite') td:nth-child(1)",
+     "durante_ms": 2500,
+     "al_decir": "diez filtros",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "¿Viene de un proveedor?",
+      "texto": "Si es de un pedido que no se ha recibido, es una compra: va por la recepción, con su factura y su 606."
+     },
+     "durante_ms": 9000,
+     "al_decir": "vienen de un proveedor"
+    },
+    {
+     "click": "button:has-text('Actualizar existencias')",
+     "al_decir": "Pulso Actualizar existencias"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-seg button:has-text('Entrada (sumar)')",
+     "durante_ms": 2500,
+     "al_decir": "Dejo Entrada",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Un almacén')",
+     "al_decir": "Elijo Un almacén"
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Almacén a exportar') mat-select",
+     "al_decir": "en la lista"
+    },
+    {
+     "click": "mat-option:has-text('Almacén Central')",
+     "al_decir": "el Almacén Central"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Descargar plantilla')",
+     "al_decir": "descargo la plantilla"
+    }
+   ]
+  },
+  {
+   "id": "02-motivo-sobrante",
+   "capitulo": "Los cuatro motivos",
+   "rotulo": "Motivo Sobrante encontrado",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Los motivos de una carga · Sobrante encontrado",
+   "narracion": "Ya llené el Excel. Abro el motivo de la carga para verlos todos. Inventario inicial está deshabilitado, porque ya se cerró. Conteo físico es para las diferencias al contar. Corrección de error de registro, para cantidades mal registradas antes. Y Sobrante encontrado, para mercancía que apareció sin estar registrada: solo existe para archivos de entrada. Lo elijo. En la referencia escribo: Cajas encontradas al reorganizar el pasillo B. Así queda explicado en el asiento y en cada movimiento. Subo el archivo.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "Abro el motivo"
+    },
+    {
+     "resaltar": "mat-option:has-text('Inventario inicial')",
+     "durante_ms": 2500,
+     "al_decir": "Inventario inicial está deshabilitado",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-option:has-text('Conteo físico')",
+     "durante_ms": 2500,
+     "al_decir": "Conteo físico es para",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-option:has-text('Corrección de error de registro')",
+     "durante_ms": 2500,
+     "al_decir": "Corrección de error",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-option:has-text('Sobrante encontrado')",
+     "durante_ms": 3500,
+     "al_decir": "Y Sobrante encontrado",
+     "cursor": false
+    },
+    {
+     "click": "mat-option:has-text('Sobrante encontrado')",
+     "al_decir": "Lo elijo"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Cajas encontradas al reorganizar el pasillo B"
+     },
+     "al_decir": "la referencia escribo"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/sobrante-central.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo y revisar')"
+     },
+     "al_decir": "Subo el archivo"
+    }
+   ]
+  },
+  {
+   "id": "03-aplicar-sobrante",
+   "capitulo": "Vista previa y resultado",
+   "rotulo": "Ganancia por ajuste",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Vista previa · ganancia por ajuste de inventario",
+   "narracion": "Entran dos productos por cinco mil doscientos setenta pesos: treinta y seis bujías a noventa y cinco, y diez filtros a ciento ochenta y cinco, su costo de siempre. Las demás filas no se tocan. En el asiento, débito a Inventario y crédito a otros ingresos por ajuste de inventario. Es una ganancia, porque la empresa tiene más de lo que creía. Aplico los dos cambios. El asiento quedó registrado, con su motivo y su referencia.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Entran')",
+     "durante_ms": 5000,
+     "al_decir": "Entran dos productos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('No se tocan')",
+     "durante_ms": 1500,
+     "al_decir": "Las demás filas",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-posting",
+     "durante_ms": 8000,
+     "al_decir": "En el asiento",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aplicar 2 cambios')",
+     "al_decir": "Aplico los dos cambios"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Asiento')",
+     "durante_ms": 5000,
+     "al_decir": "quedó registrado",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-movimientos",
+   "capitulo": "Los movimientos, sin proveedor",
+   "rotulo": "Movimientos",
+   "ruta": "Inventario › Movimientos",
+   "texto_pantalla": "Movimientos · la nota de la carga y sin proveedor",
+   "narracion": "Desde el resultado también puedes ir a los movimientos. Pulso Ver movimientos. Cada producto dejó su movimiento de entrada, y la nota dice de qué carga salió, en qué fila del archivo, el motivo y la referencia. Fíjate que no tiene proveedor: un sobrante no se le compró a nadie. Por eso tampoco genera cuenta por pagar ni entra al 606. La entrada recalcula el costo promedio, pero no cambia el último precio de compra del producto: ese solo lo mueve una compra.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container button:has-text('Ver movimientos')",
+     "al_decir": "Pulso Ver movimientos"
+    },
+    {
+     "resaltar": "table tbody tr:first-child td:nth-child(2)",
+     "durante_ms": 3000,
+     "al_decir": "Cada producto dejó",
+     "cursor": false
+    },
+    {
+     "resaltar": "table tbody tr:first-child td:nth-child(3)",
+     "durante_ms": 5000,
+     "al_decir": "la nota dice",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "¿Dónde queda el proveedor?",
+      "texto": "En las compras: la recepción y la factura lo llevan, con su cuenta por pagar y su 606."
+     },
+     "durante_ms": 8000,
+     "al_decir": "no tiene proveedor"
+    }
+   ]
+  }
+ ]
+}

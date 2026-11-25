@@ -1,0 +1,302 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 3: conteo físico",
+ "descripcion": "Tercera parte de la serie de cargas masivas de existencias de Germiva ERP. Repuestos Germiva cuenta la Sucursal Santiago y deja el sistema igual a lo contado: plantilla de conteo con los productos con existencia, sobrantes y faltantes en la vista previa, la confirmación de lo que queda en cero y un solo asiento con la ganancia y la pérdida por ajuste.",
+ "_comentario": "Serie Existencias, video 3. Estado C (fase cerrada). Archivo conteo-santiago.xlsx exportado de la plantilla de conteo de Santiago: correa 60→62, bujía 500→488, filtro 40→0, pastillas 150 sin cambio.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs C"
+ },
+ "aprenderas": [
+  "Descargar la plantilla de conteo justo al empezar a contar",
+  "Leer sobrantes, faltantes y filas que no cambian",
+  "Confirmar los productos que quedan en cero",
+  "Entender el asiento: ganancia y pérdida por ajuste en un solo asiento"
+ ],
+ "errores_comunes": [
+  "Exportar la plantilla días antes del conteo: lo vendido en medio se marca como movido",
+  "Escribir cero en lo que no se contó: la fila vacía no se toca, el cero sí",
+  "Contar menos de lo reservado por pedidos pendientes: primero despáchalos o libéralos"
+ ],
+ "pasos": [
+  {
+   "id": "01-plantilla-conteo",
+   "capitulo": "La plantilla de conteo",
+   "rotulo": "Plantilla de conteo",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Conteo físico · Sucursal Santiago, productos con existencia",
+   "narracion": "Hoy toca el conteo anual de la tienda de Santiago. Entro a Inventario y abro Existencias. Primero recojo el panel, para ver mejor. La idea es que el sistema quede igual a lo que se contó. Pulso Actualizar existencias y elijo Conteo físico: aquí no escribes lo que entra, sino lo que contaste, y la existencia queda en esa cantidad. Un conteo se hace por almacén. Elijo Un almacén, y en la lista de almacenes, la Sucursal Santiago. Fíjate que Productos cambió solo a Con existencia, que es lo normal para contar. Descargo la plantilla justo al empezar a contar: guarda la existencia de este momento. En el Excel escribes lo contado en existencia contada, y dejas vacío lo que no contaste.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Existencias')",
+     "al_decir": "abro Existencias"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "click": "button:has-text('Actualizar existencias')",
+     "al_decir": "Pulso"
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Conteo físico (fijar)')",
+     "al_decir": "elijo Conteo físico"
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Un almacén')",
+     "al_decir": "Elijo Un almacén"
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Almacén a exportar') mat-select",
+     "al_decir": "en la lista"
+    },
+    {
+     "click": "mat-option:has-text('Sucursal Santiago')",
+     "al_decir": "la Sucursal Santiago"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-seg:has(button:has-text('Sin existencia'))",
+     "durante_ms": 5000,
+     "al_decir": "Productos cambió solo",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Descargar plantilla')",
+     "al_decir": "Descargo la"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Vacía no es cero",
+      "texto": "Escribe lo contado en existencia_contada. Una fila vacía no se toca; un cero deja el producto en cero."
+     },
+     "durante_ms": 8000,
+     "al_decir": "En el Excel escribes"
+    }
+   ]
+  },
+  {
+   "id": "02-subir-conteo",
+   "capitulo": "Motivo y archivo",
+   "rotulo": "Motivo Conteo físico",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Motivo Conteo físico · referencia del conteo",
+   "narracion": "Ya terminamos de contar y llenamos el Excel. Abro el motivo de la carga, y de la lista elijo Conteo físico: los sobrantes se registran como ganancia y los faltantes como pérdida por ajuste. En la referencia escribo: Conteo anual 2026, Sucursal Santiago. Así, quien vea el asiento sabe de dónde salió. Subo el archivo con lo contado.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "Abro el motivo"
+    },
+    {
+     "click": "mat-option:has-text('Conteo físico')",
+     "al_decir": "elijo Conteo físico"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Conteo anual 2026, Sucursal Santiago"
+     },
+     "al_decir": "En la referencia escribo"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/conteo-santiago.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo y revisar')"
+     },
+     "al_decir": "Subo el archivo"
+    }
+   ]
+  },
+  {
+   "id": "03-vista-previa-conteo",
+   "capitulo": "Sobrantes, faltantes y ceros",
+   "rotulo": "Vista previa del conteo",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Vista previa · sobrantes, faltantes y lo que queda en cero",
+   "narracion": "La vista previa compara lo contado con lo que había al exportar. Entra un producto: sobraron dos correas. Salen dos: faltan doce bujías, y los cuarenta filtros no aparecieron. Las pastillas se contaron iguales, así que no se tocan. Debajo, un solo asiento con las dos patas: la ganancia por ajuste de lo que sobró, y la pérdida por ajuste de lo que faltó. Las salidas se ven al costo promedio de hoy; al aplicar se usa el costo exacto de cada lote. Dejar un producto en cero pide confirmarlo. Filtro Con aviso: el filtro de aceite quedará en cero, tenía cuarenta. Lo verificamos en el almacén, así que lo confirmo. Si un producto se vendiera después de exportar, el sistema lo marcaría y, por omisión, no lo tocaría. Aplico los tres cambios. Corre en segundo plano, con su barra de progreso.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Entran')",
+     "durante_ms": 1400,
+     "al_decir": "Entra un producto",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Salen')",
+     "durante_ms": 3500,
+     "al_decir": "Salen dos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('No se tocan')",
+     "durante_ms": 1100,
+     "al_decir": "no se tocan",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-posting",
+     "durante_ms": 11000,
+     "al_decir": "un solo asiento con las dos patas",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container .sbu-toolbar button:has-text('Con aviso')",
+     "al_decir": "Filtro Con aviso"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-table--plan tbody tr:has-text('Filtro de aceite') td:nth-child(9)",
+     "durante_ms": 4000,
+     "al_decir": "quedará en cero",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container mat-checkbox:has-text('Confirmo que deben quedar en cero')",
+     "al_decir": "lo confirmo"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Movidos después de exportar",
+      "texto": "Si un producto se vende o se compra después de bajar la plantilla, se marca y por omisión no se toca."
+     },
+     "durante_ms": 7000,
+     "al_decir": "Si un producto se vendiera"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aplicar 3 cambios')",
+     "al_decir": "Aplico los tres cambios"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "segundo plano",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-resultado-conteo",
+   "capitulo": "Resultado y asiento",
+   "rotulo": "Resultado del conteo",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Resultado · el conteo aplicado y su asiento",
+   "narracion": "Existencias actualizadas: tres productos. Salidas por ocho mil quinientos cuarenta pesos y entradas por dos mil quinientos. El asiento quedó registrado con el motivo y la referencia del conteo. Pulso Ver asiento. Aquí está, en Contabilidad, con sus cuatro líneas: la ganancia y la pérdida por ajuste contra la cuenta de inventario. Ahora la Sucursal Santiago tiene en el sistema exactamente lo que se contó.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Existencias actualizadas')",
+     "durante_ms": 1200,
+     "al_decir": "Existencias actualizadas",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Salidas')",
+     "durante_ms": 3500,
+     "al_decir": "Salidas por",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Asiento')",
+     "durante_ms": 4000,
+     "al_decir": "El asiento quedó registrado",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Ver asiento')",
+     "al_decir": "Pulso Ver asiento"
+    },
+    {
+     "resaltar": "table tbody tr:first-child td:nth-child(1)",
+     "durante_ms": 6000,
+     "al_decir": "con sus cuatro líneas",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

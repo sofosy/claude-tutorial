@@ -1,0 +1,286 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 6: productos nuevos con su existencia",
+ "descripcion": "Sexta parte de la serie de cargas masivas de existencias de Germiva ERP. Repuestos Germiva crea con la importación de productos dos kits de embrague que ya tiene en el almacén: la plantilla lleva la existencia, el costo, el almacén y el proveedor habitual (RNC y nombre). Al subirla elige el motivo y la referencia, revisa el asiento y la importa.",
+ "_comentario": "Serie Existencias, video 6. Estado E (inventario inicial abierto). Archivo productos-nuevos.xlsx: KE-500 30 × 4,800 y KE-520 20 × 5,350, proveedor Repuestos del Cibao Germiva (130555302).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs E"
+ },
+ "aprenderas": [
+  "Crear productos con su existencia desde la plantilla de productos",
+  "Dejar el proveedor habitual con las columnas RNC y nombre del proveedor",
+  "Elegir el motivo y revisar el asiento antes de importar"
+ ],
+ "errores_comunes": [
+  "Llenar la columna existencia en un producto que ya existe: se ignora; usa Actualizar existencias",
+  "Escribir un tipo de entrada distinto al del motivo: la fila sale con error",
+  "Crear con existencia productos que vienen de una compra: créalos sin existencia y recíbelos"
+ ],
+ "pasos": [
+  {
+   "id": "01-catalogo",
+   "capitulo": "Productos que no existen",
+   "rotulo": "Productos",
+   "ruta": "Inventario › Productos",
+   "texto_pantalla": "Productos · el catálogo de Repuestos Germiva",
+   "narracion": "Repuestos Germiva trae una línea nueva: kits de embrague, para sedán y para camioneta. Entro a Inventario y abro Productos. Ahora recojo el panel. Este es el catálogo, con un repuesto por fila. Los kits todavía no están, y ya hay treinta y veinte en el Almacén Central. Para crear muchos productos de una vez, con su existencia, se usa Importar o Exportar.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a"
+    },
+    {
+     "click": ".panel-item:has-text('Productos')",
+     "al_decir": "abro Productos"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Filtro de aceite') td:nth-child(2)",
+     "durante_ms": 3500,
+     "al_decir": "un repuesto por",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Importar / Exportar')",
+     "durante_ms": 4000,
+     "al_decir": "se usa Importar",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-plantilla-productos",
+   "capitulo": "La plantilla, con el proveedor",
+   "rotulo": "Plantilla de productos",
+   "ruta": "Inventario › Productos › Importar / Exportar",
+   "texto_pantalla": "Plantilla de productos · existencia, costo, almacén y proveedor",
+   "narracion": "Desde aquí, abro Importar o Exportar. Primero, la plantilla de Excel: trae una fila por producto, con código, nombre, marca, unidad y precio. Este aviso lo dice: para los productos que manejan inventario puedes cargar la existencia inicial, y solo se aplica al crear el producto. En cada kit lleno la existencia, el costo de compra sin ITBIS, el impuesto, y el almacén. Y aquí sí va el proveedor: las columnas RNC del proveedor, su registro de contribuyente, y nombre del proveedor dejan a Repuestos del Cibao como proveedor habitual de cada kit; si no existiera, se crearía. La columna tipo de entrada se deja vacía: la decide el motivo. Ya llené los dos kits. Selecciono el archivo.",
+   "acciones": [
+    {
+     "click": "button:has-text('Importar / Exportar')",
+     "al_decir": "abro Importar"
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Plantilla Excel')",
+     "durante_ms": 4000,
+     "al_decir": "la plantilla de Excel",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .callout:has-text('existencia inicial')",
+     "durante_ms": 7000,
+     "al_decir": "Este aviso lo dice",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Existencia, costo y almacén",
+      "texto": "Columnas existencia, precio_compra (sin ITBIS) y almacen. Solo cuentan al crear el producto."
+     },
+     "durante_ms": 7000,
+     "al_decir": "En cada kit lleno"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "El proveedor habitual",
+      "texto": "rnc_proveedor 130555302 y nombre_proveedor Repuestos del Cibao Germiva, SRL. Si no existe, se crea."
+     },
+     "durante_ms": 9000,
+     "al_decir": "aquí sí va el proveedor"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/productos-nuevos.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Seleccionar archivo e importar')"
+     },
+     "al_decir": "Selecciono el archivo"
+    }
+   ]
+  },
+  {
+   "id": "03-motivo-asiento",
+   "capitulo": "Motivo y asiento",
+   "rotulo": "Este archivo carga existencia",
+   "ruta": "Inventario › Productos › Importar / Exportar",
+   "texto_pantalla": "Este archivo carga existencia · motivo, referencia y asiento",
+   "narracion": "Como el archivo trae existencia, el diálogo se detiene: este archivo carga existencia. Crea dos productos por doscientos cincuenta y un mil pesos, y toda carga de existencia lleva su motivo y su asiento. Abro el motivo de la carga y elijo Inventario inicial, porque la empresa todavía está cargando lo que trae al empezar. En la referencia escribo: Nueva línea de kits de embrague. Esa referencia queda en el asiento. Dejo Un solo asiento. Pulso Revisar el asiento: débito a Inventario y crédito a la cuenta de apertura, por el mismo importe. Pulso Importar.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container app-product-import-stock-step .pis__lead",
+     "durante_ms": 6000,
+     "al_decir": "este archivo carga existencia",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container app-product-import-stock-step mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "Abro el motivo"
+    },
+    {
+     "click": "mat-option:has-text('Inventario inicial')",
+     "al_decir": "elijo Inventario inicial"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container app-product-import-stock-step mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Nueva línea de kits de embrague"
+     },
+     "al_decir": "En la referencia escribo"
+    },
+    {
+     "resaltar": "mat-dialog-container app-product-import-stock-step .gm-seg",
+     "durante_ms": 1800,
+     "al_decir": "Dejo Un solo asiento",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container app-product-import-stock-step button:has-text('Revisar el asiento')",
+     "al_decir": "Pulso Revisar"
+    },
+    {
+     "resaltar": "mat-dialog-container app-product-import-stock-step .pis__table-wrap",
+     "durante_ms": 6000,
+     "al_decir": "débito a Inventario",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container app-product-import-stock-step button:has-text('Importar')",
+     "al_decir": "Pulso Importar"
+    }
+   ]
+  },
+  {
+   "id": "04-resultado-importacion",
+   "capitulo": "Resultado",
+   "rotulo": "Productos creados",
+   "ruta": "Inventario › Productos",
+   "texto_pantalla": "Resultado · dos productos creados con su existencia y su asiento",
+   "narracion": "La importación corre en sus etapas: subir, validar, registrar y finalizar. Listo: dos productos creados. Y la existencia quedó registrada con su asiento, que desde aquí puedes abrir. Cierro el diálogo. Los dos kits ya están en el catálogo, con su existencia en el Almacén Central y su proveedor habitual. Si estos kits vinieran de una compra, lo correcto sería crearlos sin existencia y recibirlos con la recepción, a nombre del proveedor.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "corre en sus etapas",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .chip.created",
+     "durante_ms": 1200,
+     "al_decir": "dos productos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .banner.success",
+     "durante_ms": 5000,
+     "al_decir": "la existencia quedó registrada",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:text-is('Cerrar')",
+     "al_decir": "Cierro el"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Kit de embrague sedán') td:nth-child(2)",
+     "durante_ms": 4000,
+     "al_decir": "Los dos kits",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "¿Vienen de una compra?",
+      "texto": "Créalos sin existencia y recíbelos con la recepción, a nombre del proveedor."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Si estos kits vinieran"
+    }
+   ]
+  }
+ ]
+}

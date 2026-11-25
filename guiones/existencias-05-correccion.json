@@ -1,0 +1,246 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 5: corregir una cantidad mal registrada",
+ "descripcion": "Quinta parte de la serie de cargas masivas de existencias de Germiva ERP. En el complemento del inventario inicial se digitaron 140 amortiguadores en vez de 40. Con la plantilla de conteo se fija la cantidad correcta y el motivo Corrección de error de registro; el faltante se asienta como pérdida por ajuste y el asiento lleva la explicación.",
+ "_comentario": "Serie Existencias, video 5. Estado D: Central con 140 amortiguadores (error), fase cerrada. Archivo correccion-central.xlsx: amortiguador contado 40.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs D"
+ },
+ "aprenderas": [
+  "Corregir una cantidad con la plantilla de conteo",
+  "Usar el motivo Corrección de error de registro y explicar el error en la referencia",
+  "Entender por qué un faltante siempre es pérdida por ajuste"
+ ],
+ "errores_comunes": [
+  "Corregir con una carga un error que está en un documento: va con su devolución o nota de crédito",
+  "No anotar en la referencia qué se corrige: después nadie entiende el asiento"
+ ],
+ "pasos": [
+  {
+   "id": "01-el-error",
+   "capitulo": "Un cero de más",
+   "rotulo": "El error",
+   "ruta": "Inventario › Existencias",
+   "texto_pantalla": "Existencias · 140 amortiguadores en lugar de 40",
+   "narracion": "En el complemento del inventario inicial alguien escribió ciento cuarenta amortiguadores, y en el almacén hay cuarenta: un cero de más. Entro a Inventario y abro Existencias. Ahora recojo el panel, para ver la lista completa. El amortiguador dice ciento cuarenta. Para dejarlo en cuarenta uso la plantilla de conteo, porque fija la cantidad exacta. Si el error hubiera estado en un documento, como una compra o una factura, se corregiría en ese documento, con su devolución o su nota de crédito. Abro Actualizar existencias.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Existencias')",
+     "al_decir": "abro Existencias"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Amortiguador delantero') td:nth-child(2)",
+     "durante_ms": 4500,
+     "al_decir": "dice ciento cuarenta",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "¿El error está en un documento?",
+      "texto": "Corrígelo en ese documento, con su devolución o nota de crédito, no con una carga."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Si el error hubiera estado"
+    },
+    {
+     "click": "button:has-text('Actualizar existencias')",
+     "al_decir": "Abro Actualizar"
+    }
+   ]
+  },
+  {
+   "id": "02-corregir",
+   "capitulo": "Fijar la cantidad correcta",
+   "rotulo": "Corrección",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Conteo físico · motivo Corrección de error de registro",
+   "narracion": "En el primer paso del diálogo, elijo Conteo físico. Luego Un almacén, y en la lista de almacenes, el Almacén Central. Dejo Con existencia. Descargo la plantilla, y en el Excel escribo cuarenta solo en el amortiguador; las demás filas, vacías, para que no se toquen. El motivo es Corrección de error de registro: sirve para cantidades mal registradas antes. Y en la referencia explico qué se corrige: Se digitó 140 en lugar de 40 en el complemento. Cualquiera que vea el asiento entenderá por qué se hizo. Subo el archivo.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Conteo físico (fijar)')",
+     "al_decir": "elijo Conteo físico"
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Un almacén')",
+     "al_decir": "Luego Un almacén"
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Almacén a exportar') mat-select",
+     "al_decir": "en la lista"
+    },
+    {
+     "click": "mat-option:has-text('Almacén Central')",
+     "al_decir": "el Almacén Central"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Descargar plantilla')",
+     "al_decir": "Descargo la plantilla"
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "El motivo es"
+    },
+    {
+     "click": "mat-option:has-text('Corrección de error de registro')",
+     "al_decir": "Corrección de error de registro:"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Se digitó 140 en lugar de 40 en el complemento"
+     },
+     "al_decir": "explico qué se corrige"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/correccion-central.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo y revisar')"
+     },
+     "al_decir": "Subo el archivo"
+    }
+   ]
+  },
+  {
+   "id": "03-vista-previa-correccion",
+   "capitulo": "La pérdida por ajuste",
+   "rotulo": "Pérdida por ajuste",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Vista previa · sale lo que se digitó de más",
+   "narracion": "Sale un producto: cien amortiguadores, por doscientos treinta mil pesos al costo. Lo demás no se toca. En el asiento, débito a la pérdida por ajuste de inventario y crédito a Inventario. Un faltante siempre se registra como pérdida por ajuste, aunque el error venga del inventario inicial; si el monto es importante, coordínalo con tu contador. Aplico el cambio. El amortiguador queda en cuarenta, y el asiento lleva la referencia que explica el error. Pulso Ver asiento: ahí está, con la pérdida y el crédito a inventario.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Salen')",
+     "durante_ms": 5000,
+     "al_decir": "Sale un producto",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-posting",
+     "durante_ms": 7000,
+     "al_decir": "En el asiento",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Un faltante es pérdida",
+      "texto": "Aunque el error venga del inventario inicial. Si el monto es grande, coordínalo con tu contador."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Un faltante siempre"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aplicar 1 cambio')",
+     "al_decir": "Aplico el cambio"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Asiento')",
+     "durante_ms": 3500,
+     "al_decir": "el asiento lleva la referencia",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Ver asiento')",
+     "al_decir": "Pulso Ver"
+    },
+    {
+     "resaltar": "table tbody tr:first-child td:nth-child(1)",
+     "durante_ms": 5000,
+     "al_decir": "con la pérdida",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

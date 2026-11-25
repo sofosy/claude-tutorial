@@ -1,0 +1,334 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 2: mercancía que quedó fuera de la carga inicial",
+ "descripcion": "Segunda parte de la serie de cargas masivas de existencias de Germiva ERP. A Repuestos Germiva se le quedó un estante por contar en la carga inicial. Con la plantilla «Sin existencia» descarga solo lo que está en cero, lo carga como inventario inicial porque la fase sigue abierta, y al terminar cierra el inventario inicial. Qué hacer si ya estaba cerrado.",
+ "_comentario": "Serie Existencias, video 2. Estado B: Central con filtros, pastillas y bujías; Santiago cargado; faltan la correa y el amortiguador en el Central. Archivo complemento-central.xlsx (plantilla «Sin existencia» del Central).",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs B"
+ },
+ "aprenderas": [
+  "Descargar la plantilla solo con los productos sin existencia",
+  "Cargar lo que faltó como inventario inicial mientras la fase está abierta",
+  "Cerrar el inventario inicial cuando ya cargaste todo",
+  "Qué motivo usar si la fase ya está cerrada"
+ ],
+ "errores_comunes": [
+  "Buscar entre miles de filas lo que faltó en vez de usar «Sin existencia»",
+  "Olvidar que un producto que ya tiene existencia no sale en «Sin existencia»: va con la plantilla «Todos»",
+  "Cerrar el inventario inicial antes de terminar de cargar: no se reabre desde la pantalla"
+ ],
+ "pasos": [
+  {
+   "id": "01-el-caso",
+   "capitulo": "El estante que no se contó",
+   "rotulo": "El caso",
+   "ruta": "Inventario › Existencias",
+   "texto_pantalla": "Existencias · faltan la correa y el amortiguador",
+   "narracion": "Seguimos con Repuestos Germiva. Entro a Inventario y abro Existencias. En el video anterior cargamos el inventario inicial del Almacén Central, y la Sucursal Santiago se cargó igual. Recojo el panel. Pero al revisar, el encargado del Central se dio cuenta de que el estante de correas y amortiguadores no se contó. El amortiguador está sin stock, y la correa de distribución solo tiene lo de Santiago. Como el inventario inicial sigue abierto, esa mercancía todavía puede entrar como inventario inicial, contra el patrimonio de apertura. Abro Actualizar existencias.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Existencias')",
+     "al_decir": "abro Existencias"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el panel"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Amortiguador delantero') td:nth-child(4)",
+     "durante_ms": 2500,
+     "al_decir": "El amortiguador está sin stock",
+     "cursor": false
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Correa de distribución') td:nth-child(2)",
+     "durante_ms": 4000,
+     "al_decir": "solo tiene lo de",
+     "cursor": false
+    },
+    {
+     "click": "button:has-text('Actualizar existencias')",
+     "al_decir": "Abro Actualizar existencias"
+    }
+   ]
+  },
+  {
+   "id": "02-sin-existencia",
+   "capitulo": "La plantilla «Sin existencia»",
+   "rotulo": "Productos sin existencia",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Descarga la plantilla · solo los productos sin existencia",
+   "narracion": "Como en el video anterior, dejo Entrada, para sumar. Elijo Un almacén, y en la lista de almacenes, el Almacén Central. Ahora viene lo nuevo. En Productos elijo Sin existencia: la plantilla trae solo lo que en ese almacén está en cero o en negativo. Con miles de productos, así no tienes que buscar entre todas las filas lo que faltó. Descargo la plantilla y lleno solo la correa y el amortiguador, con su costo. Ojo con un caso: si a un producto que ya tiene existencia le faltaron unidades, ese no sale en esta plantilla. Para él descargas la de Todos y escribes solo las unidades que faltan.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .gm-seg button:has-text('Entrada (sumar)')",
+     "durante_ms": 3000,
+     "al_decir": "dejo Entrada",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Un almacén')",
+     "al_decir": "Elijo Un almacén"
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Almacén a exportar') mat-select",
+     "al_decir": "en la lista"
+    },
+    {
+     "click": "mat-option:has-text('Almacén Central')",
+     "al_decir": "el Almacén Central"
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Sin existencia')",
+     "al_decir": "elijo Sin existencia"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-seg:has(button:has-text('Sin existencia')) + p",
+     "durante_ms": 6000,
+     "al_decir": "solo lo que en ese almacén",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Descargar plantilla')",
+     "al_decir": "Descargo la plantilla"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "¿Ya tenía existencia?",
+      "texto": "No sale en «Sin existencia». Descarga la plantilla «Todos» y escribe solo las unidades que faltaron."
+     },
+     "durante_ms": 9000,
+     "al_decir": "Ojo con un caso"
+    }
+   ]
+  },
+  {
+   "id": "03-cargar",
+   "capitulo": "Cargar lo que faltó",
+   "rotulo": "Motivo y vista previa",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Inventario inicial · la correa y el amortiguador",
+   "narracion": "Ya llené el Excel. Ahora, el segundo paso. Abro el motivo de la carga: sigue siendo Inventario inicial, porque es mercancía que la empresa ya tenía al empezar. En la referencia escribo: Complemento del inventario inicial, estante de correas. Esa referencia queda en el asiento y en cada movimiento. Subo el archivo. En la vista previa entran dos productos por ciento sesenta y siete mil pesos, y las otras dos filas de la plantilla no se tocan. El asiento es el mismo del inventario inicial: débito a Inventario y crédito a la cuenta de apertura. Filtro las que se aplican: sesenta correas y cuarenta amortiguadores, con su costo. Todo cuadra, así que aplico los dos cambios. Corre en segundo plano, con su barra de progreso.",
+   "acciones": [
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "Abro el motivo"
+    },
+    {
+     "click": "mat-option:has-text('Inventario inicial')",
+     "al_decir": "Inventario inicial, porque"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Complemento del inventario inicial: estante de correas"
+     },
+     "al_decir": "En la referencia"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/complemento-central.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo y revisar')"
+     },
+     "al_decir": "Subo el archivo"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Entran')",
+     "durante_ms": 4000,
+     "al_decir": "entran dos productos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-posting",
+     "durante_ms": 7000,
+     "al_decir": "El asiento es el mismo",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container .sbu-toolbar button:has-text('Se aplican')",
+     "al_decir": "Filtro las"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-table--plan tbody tr:has-text('Correa de distribución') td:nth-child(6)",
+     "durante_ms": 1300,
+     "al_decir": "sesenta correas",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-table--plan tbody tr:has-text('Amortiguador delantero') td:nth-child(6)",
+     "durante_ms": 2000,
+     "al_decir": "cuarenta amortiguadores",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aplicar 2 cambios')",
+     "al_decir": "aplico los dos cambios"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "segundo plano",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-cerrar",
+   "capitulo": "Cerrar el inventario inicial",
+   "rotulo": "Cerrar inventario inicial",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Cerrar inventario inicial · desde aquí, toda carga es un ajuste",
+   "narracion": "Listo: el asiento quedó registrado. Ya está todo lo que la empresa traía, así que es momento de cerrar el inventario inicial. Pulso Nueva actualización y, abajo, Cerrar inventario inicial. El aviso explica lo que pasa: desde ahora toda carga se registra como ajuste, ganancia o pérdida, nunca más como inventario inicial, y no se reabre desde aquí. Confirmo. El aviso ahora dice cerrado, con la fecha y quién lo cerró. Si abro el motivo, Inventario inicial ya no se puede elegir. Si más adelante aparece mercancía que debió entrar al empezar, usa Corrección de error de registro: entra como ajuste y llega a los resultados del período, así que, si el monto es importante, coordínalo antes con tu contador.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Asiento')",
+     "durante_ms": 3500,
+     "al_decir": "el asiento quedó registrado",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Nueva actualización')",
+     "al_decir": "Pulso Nueva actualización"
+    },
+    {
+     "click": "mat-dialog-container .sbu-phase button:has-text('Cerrar inventario inicial')",
+     "al_decir": "abajo, Cerrar inventario"
+    },
+    {
+     "resaltar": "mat-dialog-container:has-text('Sí, cerrar')",
+     "durante_ms": 9000,
+     "al_decir": "El aviso explica",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Sí, cerrar')",
+     "al_decir": "Confirmo"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-phase",
+     "durante_ms": 4500,
+     "al_decir": "ahora dice cerrado",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "Si abro el motivo"
+    },
+    {
+     "resaltar": "mat-option:has-text('Inventario inicial')",
+     "durante_ms": 3500,
+     "al_decir": "ya no se puede elegir",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-option:has-text('Corrección de error de registro')",
+     "durante_ms": 3500,
+     "al_decir": "usa Corrección",
+     "cursor": false
+    },
+    {
+     "presionar": {
+      "tecla": "Escape"
+     },
+     "al_decir": "entra como ajuste"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Fase cerrada",
+      "texto": "Lo que aparezca después entra como ajuste y va a resultados. Si el monto es importante, coordínalo con tu contador."
+     },
+     "durante_ms": 8000,
+     "al_decir": "llega a los resultados"
+    }
+   ]
+  }
+ ]
+}
