@@ -266,7 +266,7 @@
      "cursor": false
     },
     {
-     "resaltar": "mat-dialog-container .banner.success",
+     "resaltar": "mat-dialog-container .banner.success:has-text('registrada con el asiento')",
      "durante_ms": 5000,
      "al_decir": "la existencia quedó registrada",
      "cursor": false

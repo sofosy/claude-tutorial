@@ -748,7 +748,7 @@ V6 = {
             "acciones": [
                 r(D, "corre en sus etapas", 2500),
                 r(f"{D} .chip.created", "dos productos", 1200),
-                r(f"{D} .banner.success", "la existencia quedó registrada", 5000),
+                r(f"{D} .banner.success:has-text('registrada con el asiento')", "la existencia quedó registrada", 5000),
                 c(f"{D} button:has-text('Cerrar'):visible", "Cierro el"),
                 r("table tbody tr:has-text('Kit de embrague sedán') td:has-text('Kit de embrague sedán')", "Los dos kits", 4000),
                 cartel("cuidado", "¿Vienen de una compra?",
