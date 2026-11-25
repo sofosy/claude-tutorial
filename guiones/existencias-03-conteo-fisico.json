@@ -51,6 +51,7 @@
   "permitidos": [
    "germiva",
    "130555",
+   "130585050",
    "Almacén",
    "Sucursal",
    "Santiago",
@@ -105,7 +106,7 @@
    "rotulo": "Plantilla de conteo",
    "ruta": "Inventario › Existencias › Actualizar existencias",
    "texto_pantalla": "Conteo físico · Sucursal Santiago, productos con existencia",
-   "narracion": "Hoy toca el conteo anual de la tienda de Santiago. Entro a Inventario y abro Existencias. Primero recojo el panel, para ver mejor. La idea es que el sistema quede igual a lo que se contó. Pulso Actualizar existencias y elijo Conteo físico: aquí no escribes lo que entra, sino lo que contaste, y la existencia queda en esa cantidad. Un conteo se hace por almacén. Elijo Un almacén, y en la lista de almacenes, la Sucursal Santiago. Fíjate que Productos cambió solo a Con existencia, que es lo normal para contar. Descargo la plantilla justo al empezar a contar: guarda la existencia de este momento. En el Excel escribes lo contado en existencia contada, y dejas vacío lo que no contaste.",
+   "narracion": "Hoy toca el conteo anual de la tienda de Santiago. Entro a Inventario y abro Existencias. Primero recojo el panel, para ver mejor. La idea es que el sistema quede igual a lo que se contó. Pulso Actualizar existencias. El diálogo tiene dos pasos, y en el primero elijo Conteo físico: aquí no escribes lo que entra, sino lo que contaste, y la existencia queda en esa cantidad. Un conteo se hace por almacén. Elijo Un almacén, y en la lista de almacenes, la Sucursal Santiago. Fíjate que Productos cambió solo a Con existencia, que es lo normal para contar. Descargo la plantilla justo al empezar a contar: guarda la existencia de este momento. En el Excel escribes lo contado en existencia contada, y dejas vacío lo que no contaste.",
    "acciones": [
     {
      "click": "nav.module-rail [aria-label='Inventario']",
@@ -122,6 +123,12 @@
     {
      "click": "button:has-text('Actualizar existencias')",
      "al_decir": "Pulso"
+    },
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-1)",
+     "durante_ms": 2500,
+     "al_decir": "El diálogo tiene dos pasos",
+     "cursor": false
     },
     {
      "click": "mat-dialog-container .gm-seg button:has-text('Conteo físico (fijar)')",

@@ -51,6 +51,7 @@
   "permitidos": [
    "germiva",
    "130555",
+   "130585050",
    "Almacén",
    "Sucursal",
    "Santiago",
@@ -121,6 +122,12 @@
     {
      "click": "button:has-text('Actualizar existencias')",
      "al_decir": "Pulso Actualizar"
+    },
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-2)",
+     "durante_ms": 3000,
+     "al_decir": "Ya tengo el Excel lleno",
+     "cursor": false
     },
     {
      "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
@@ -196,7 +203,7 @@
    "texto_pantalla": "Mapeo de Cuentas · Otros Ingresos por Ajuste de Inventario",
    "navegar": "/accounting/configuracion/mapeos",
    "al_decir_navegar": "Voy al Mapeo",
-   "narracion": "Esto lo hace quien lleva la contabilidad. Voy al Mapeo de Cuentas, en la configuración contable: aquí cada operación del sistema tiene su cuenta. Busco ajuste de inventario, y la lista se filtra sola. Este rol, otros ingresos por ajuste de inventario, apunta a la cuenta agrupadora. Abro su selector, que solo ofrece cuentas de detalle, y elijo Otros ingresos diversos, general. Se guarda al instante, y el aviso lo confirma.",
+   "narracion": "Esto lo hace quien lleva la contabilidad. Voy al Mapeo de Cuentas, en la configuración contable: aquí cada operación del sistema tiene su cuenta. Busco ajuste de inventario, y la lista se filtra sola. Este rol, otros ingresos por ajuste de inventario, apunta a la cuenta agrupadora. Abro su selector, que solo ofrece cuentas de detalle, y elijo Otros ingresos diversos, general. El aviso confirma que se guardó al instante. Ahora el rol apunta a una cuenta de detalle, que sí admite movimientos.",
    "acciones": [
     {
      "escribir": {
@@ -221,8 +228,14 @@
     },
     {
      "resaltar": ".mat-mdc-snack-bar-container",
-     "durante_ms": 3500,
-     "al_decir": "el aviso lo confirma",
+     "durante_ms": 2500,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "resaltar": "li.role-row:has(.role-row__label:text-is('Otros Ingresos por Ajuste de Inventario'))",
+     "durante_ms": 6000,
+     "al_decir": "Ahora el rol apunta",
      "cursor": false
     }
    ]
@@ -240,6 +253,12 @@
     {
      "click": "button:has-text('Actualizar existencias')",
      "al_decir": "pulso otra vez"
+    },
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-2)",
+     "durante_ms": 3000,
+     "al_decir": "No hace falta descargar",
+     "cursor": false
     },
     {
      "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
@@ -295,6 +314,15 @@
      "durante_ms": 4000,
      "al_decir": "Asiento registrado",
      "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Si el asiento queda pendiente",
+      "texto": "La existencia entra pero el asiento no: el resultado muestra «Reintentar asiento»."
+     },
+     "durante_ms": 9000,
+     "al_decir": "Hay un segundo caso"
     },
     {
      "cartel": {

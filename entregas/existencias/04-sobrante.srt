@@ -1,0 +1,195 @@
+1
+00:00:03,100 --> 00:00:05,123
+Seguimos con Repuestos Germiva.
+
+2
+00:00:05,778 --> 00:00:08,160
+Entro a Inventario y abro Existencias.
+
+3
+00:00:08,827 --> 00:00:10,417
+Ahora recojo el panel.
+
+4
+00:00:11,085 --> 00:00:15,562
+Al reorganizar el pasillo B del Almacén Central aparecieron tres cajas de bujías,
+
+5
+00:00:15,624 --> 00:00:20,126
+treinta y seis unidades, y diez filtros de aceite que no estaban registrados.
+
+6
+00:00:20,795 --> 00:00:23,003
+Antes de cargarlos, una pregunta:
+
+7
+00:00:23,102 --> 00:00:24,442
+¿vienen de un proveedor?
+
+8
+00:00:25,097 --> 00:00:29,129
+Si son de un pedido que todavía no se ha recibido, no son un sobrante,
+
+9
+00:00:29,265 --> 00:00:33,384
+son una compra, y van por la recepción, a nombre de ese proveedor.
+
+10
+00:00:34,051 --> 00:00:34,808
+Aquí no:
+
+11
+00:00:34,920 --> 00:00:36,669
+llevan tiempo en el almacén.
+
+12
+00:00:37,338 --> 00:00:39,336
+Pulso Actualizar existencias.
+
+13
+00:00:40,003 --> 00:00:41,990
+Dejo Entrada, para sumar.
+
+14
+00:00:42,658 --> 00:00:46,864
+Elijo Un almacén, y en la lista de almacenes, el Almacén Central.
+
+15
+00:00:47,530 --> 00:00:50,545
+Ahora descargo la plantilla con todos los productos,
+
+16
+00:00:50,606 --> 00:00:53,064
+y en el Excel escribo solo lo que apareció.
+
+17
+00:00:54,416 --> 00:00:55,831
+Ya llené el Excel.
+
+18
+00:00:56,499 --> 00:00:59,178
+Abro el motivo de la carga para verlos todos.
+
+19
+00:00:59,847 --> 00:01:03,420
+Inventario inicial está deshabilitado, porque ya se cerró.
+
+20
+00:01:04,075 --> 00:01:06,917
+Conteo físico es para las diferencias al contar.
+
+21
+00:01:07,572 --> 00:01:12,125
+Corrección de error de registro, para cantidades mal registradas antes.
+
+22
+00:01:12,793 --> 00:01:16,787
+Y Sobrante encontrado, para mercancía que apareció sin estar registrada:
+
+23
+00:01:16,947 --> 00:01:19,094
+solo existe para archivos de entrada.
+
+24
+00:01:19,750 --> 00:01:20,657
+Lo elijo.
+
+25
+00:01:21,313 --> 00:01:22,665
+En la referencia escribo:
+
+26
+00:01:22,725 --> 00:01:25,543
+Cajas encontradas al reorganizar el pasillo B.
+
+27
+00:01:26,210 --> 00:01:29,412
+Así queda explicado en el asiento y en cada movimiento.
+
+28
+00:01:30,080 --> 00:01:31,371
+Subo el archivo.
+
+29
+00:01:32,723 --> 00:01:36,122
+Entran dos productos por cinco mil doscientos setenta pesos:
+
+30
+00:01:36,182 --> 00:01:40,685
+treinta y seis bujías a noventa y cinco, y diez filtros a ciento ochenta y cinco,
+
+31
+00:01:40,771 --> 00:01:42,099
+su costo de siempre.
+
+32
+00:01:42,754 --> 00:01:44,667
+Las demás filas no se tocan.
+
+33
+00:01:45,334 --> 00:01:49,788
+En el asiento, débito a Inventario y crédito a otros ingresos por ajuste de
+
+34
+00:01:49,600 --> 00:01:50,432
+inventario.
+
+35
+00:01:51,088 --> 00:01:54,625
+Es una ganancia, porque la empresa tiene más de lo que creía.
+
+36
+00:01:55,292 --> 00:01:57,091
+Aplico los dos cambios.
+
+37
+00:01:57,747 --> 00:02:01,332
+El asiento quedó registrado, con su motivo y su referencia.
+
+38
+00:02:02,703 --> 00:02:05,855
+Desde el resultado también puedes ir a los movimientos.
+
+39
+00:02:06,522 --> 00:02:08,161
+Pulso Ver movimientos.
+
+40
+00:02:08,829 --> 00:02:12,985
+Cada producto dejó su movimiento de entrada, del tipo ajuste positivo,
+
+41
+00:02:13,020 --> 00:02:14,423
+en el Almacén Central.
+
+42
+00:02:15,091 --> 00:02:17,362
+Abro el detalle del primero con el ojo.
+
+43
+00:02:18,018 --> 00:02:24,270
+La nota dice de qué carga salió, en qué fila del archivo, el motivo y la referencia.
+
+44
+00:02:24,081 --> 00:02:26,427
+Y fíjate que no hay sección de proveedor:
+
+45
+00:02:26,240 --> 00:02:29,242
+un sobrante no se le compró a nadie.
+
+46
+00:02:29,055 --> 00:02:32,664
+Por eso tampoco genera cuenta por pagar ni entra al 606.
+
+47
+00:02:33,332 --> 00:02:35,567
+La entrada recalcula el costo promedio,
+
+48
+00:02:35,602 --> 00:02:38,406
+pero no cambia el último precio de compra del producto:
+
+49
+00:02:38,454 --> 00:02:40,441
+ese solo lo mueve una compra.

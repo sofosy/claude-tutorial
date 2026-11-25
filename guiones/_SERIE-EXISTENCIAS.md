@@ -15,7 +15,8 @@ vista previa del asiento, ninguna carga sin asiento con la contabilidad activa, 
   amortiguador (2,300), RD-90 radiador (6,800) → Autopartes del Caribe; BJ-14 bujía (95), CD-305 correa (1,250),
   LF-04 líquido de frenos (240) → Repuestos del Cibao.
 - Privacidad: perfil `ninguno` (todos los datos son inventados; la sustitución automática chocaba con el diálogo al
-  cambiar de paso). La puerta es `tut auditar --video`.
+  cambiar de paso). La puerta es `tut auditar --video`. `130585050` está en `permitidos` porque el OCR lee a veces
+  el RNC ficticio de la empresa (130555050, en el encabezado) con un 8 en lugar del 5 (comprobado en el video 4).
 
 ## Preparación
 

@@ -51,6 +51,7 @@
   "permitidos": [
    "germiva",
    "130555",
+   "130585050",
    "Almacén",
    "Sucursal",
    "Santiago",
@@ -295,29 +296,33 @@
    ]
   },
   {
-   "id": "04-proveedor",
+   "id": "04-historial",
    "capitulo": "La compra a nombre del proveedor",
-   "rotulo": "El proveedor en el movimiento",
-   "ruta": "Inventario › Movimientos",
-   "texto_pantalla": "Movimientos · la entrada de la recepción con su proveedor",
-   "navegar": "/inventory/movimientos",
-   "al_decir_navegar": "abro Movimientos",
-   "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro Movimientos. Arriba están las dos entradas de la recepción, en el Almacén Central. Abro el detalle de la primera con el ojo. Además del producto, la cantidad y el costo, aquí está la sección Proveedor: Autopartes del Caribe Germiva, con su RNC. Esa es la diferencia con las cargas de existencias: el inventario inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
+   "rotulo": "Historial del producto",
+   "ruta": "Inventario › Productos › Historial",
+   "texto_pantalla": "Historial del producto · la recepción con su proveedor",
+   "navegar": "/inventory/product/list",
+   "al_decir_navegar": "abro el catálogo",
+   "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro el catálogo de productos y edito el filtro de aceite. En la pestaña Historial, la vista Compras lista los documentos con que se ha comprado. Aquí está la recepción del contenedor, a nombre de Autopartes del Caribe Germiva, con su RNC, la cantidad y el costo. Esa es la diferencia con las cargas de existencias: el inventario inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
    "acciones": [
     {
-     "resaltar": "table tbody tr:first-child td:nth-child(5)",
-     "durante_ms": 3500,
-     "al_decir": "Arriba están las dos",
+     "click": "table tbody tr:has-text('Filtro de aceite') button:has(mat-icon:text-is('edit'))",
+     "al_decir": "edito el"
+    },
+    {
+     "click": "div[role='tab']:has-text('Historial')",
+     "al_decir": "En la pestaña Historial"
+    },
+    {
+     "resaltar": "app-product-document-history tbody tr:first-child td:nth-child(2)",
+     "durante_ms": 2500,
+     "al_decir": "Aquí está la recepción",
      "cursor": false
     },
     {
-     "click": "table tbody tr:first-child button:has(mat-icon:text-is('visibility'))",
-     "al_decir": "Abro el detalle"
-    },
-    {
-     "resaltar": "mat-dialog-container section.card:has(h3:text-is('Proveedor'))",
+     "resaltar": "app-product-document-history tbody tr:first-child td.history-partner",
      "durante_ms": 6000,
-     "al_decir": "aquí está la sección Proveedor",
+     "al_decir": "a nombre de Autopartes",
      "cursor": false
     },
     {

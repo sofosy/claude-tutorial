@@ -51,6 +51,7 @@
   "permitidos": [
    "germiva",
    "130555",
+   "130585050",
    "Almacén",
    "Sucursal",
    "Santiago",
@@ -103,7 +104,7 @@
    "rotulo": "El error",
    "ruta": "Inventario › Existencias",
    "texto_pantalla": "Existencias · 140 amortiguadores en lugar de 40",
-   "narracion": "En el complemento del inventario inicial alguien escribió ciento cuarenta amortiguadores, y en el almacén hay cuarenta: un cero de más. Entro a Inventario y abro Existencias. Ahora recojo el panel, para ver la lista completa. El amortiguador dice ciento cuarenta. Para dejarlo en cuarenta uso la plantilla de conteo, porque fija la cantidad exacta. Si el error hubiera estado en un documento, como una compra o una factura, se corregiría en ese documento, con su devolución o su nota de crédito. Abro Actualizar existencias.",
+   "narracion": "En el complemento del inventario inicial alguien escribió ciento cuarenta amortiguadores, y en el almacén hay cuarenta: un cero de más. Entro a Inventario y abro Existencias. Ahora recojo el panel, para ver la lista completa. El amortiguador dice ciento cuarenta. Para dejarlo en cuarenta uso la plantilla de conteo, porque fija la cantidad exacta. Si el error hubiera estado en un documento, como una compra o una factura, se corregiría en ese documento, con su devolución o su nota de crédito. Abro Actualizar existencias: tiene dos pasos, descargar la plantilla y subirla.",
    "acciones": [
     {
      "click": "nav.module-rail [aria-label='Inventario']",
@@ -135,6 +136,12 @@
     {
      "click": "button:has-text('Actualizar existencias')",
      "al_decir": "Abro Actualizar"
+    },
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-1)",
+     "durante_ms": 3000,
+     "al_decir": "tiene dos pasos",
+     "cursor": false
     }
    ]
   },

@@ -26,7 +26,7 @@ CABECERA = {
                       "DOT 4": "dot cuatro"},
     "privacidad": {
         "perfil": "ninguno",
-        "permitidos": ["germiva", "130555", "Almacén", "Sucursal", "Santiago", "Inventario", "Conteo", "Complemento",
+        "permitidos": ["germiva", "130555", "130585050", "Almacén", "Sucursal", "Santiago", "Inventario", "Conteo", "Complemento",
                        "Sobrante", "Corrige", "Contenedor", "Kit de embrague", "Filtro", "Pastillas", "Bujía", "Correa",
                        "Amortiguador", "Líquido", "Radiador", "Repuestos", "Autopartes", "Caribe", "Cibao", "Cajas"],
         "mapa_fijo": {"localhost:3001": "api.germiva.com", "localhost:4200": "germiva.com"},
@@ -366,7 +366,7 @@ V3 = {
             "texto_pantalla": "Conteo físico · Sucursal Santiago, productos con existencia",
             "narracion": "Hoy toca el conteo anual de la tienda de Santiago. Entro a Inventario y abro Existencias. "
                          "Primero recojo el panel, para ver mejor. La idea es que el sistema quede igual a lo que se contó. Pulso "
-                         "Actualizar existencias y elijo Conteo físico: aquí no escribes lo que entra, sino lo que "
+                         "Actualizar existencias. El diálogo tiene dos pasos, y en el primero elijo Conteo físico: aquí no escribes lo que entra, sino lo que "
                          "contaste, y la existencia queda en esa cantidad. Un conteo se hace por almacén. Elijo Un almacén, "
                          "y en la lista de almacenes, la Sucursal Santiago. Fíjate que Productos cambió solo a Con "
                          "existencia, que es lo normal para contar. Descargo la plantilla justo al empezar a contar: guarda "
@@ -375,6 +375,7 @@ V3 = {
             "acciones": ABRIR_EXISTENCIAS + [
                 c("button.panel-collapse", "recojo el panel"),
                 c("button:has-text('Actualizar existencias')", "Pulso"),
+                r(f"{D} section.sbu-panel:has(#sbu-step-1)", "El diálogo tiene dos pasos", 2500),
                 c(seg("Conteo físico (fijar)"), "elijo Conteo físico"),
                 c(seg("Un almacén"), "Elijo Un almacén"),
                 c(f"{campo('Almacén a exportar')} mat-select", "en la lista"),
@@ -588,7 +589,8 @@ V5 = {
                          "panel, para ver la lista completa. El amortiguador dice ciento cuarenta. Para dejarlo en "
                          "cuarenta uso la plantilla de conteo, porque fija la cantidad exacta. Si el error hubiera estado "
                          "en un documento, como una compra o una factura, se corregiría en ese documento, con su "
-                         "devolución o su nota de crédito. Abro Actualizar existencias.",
+                         "devolución o su nota de crédito. Abro Actualizar existencias: tiene dos pasos, descargar la "
+                         "plantilla y subirla.",
             "acciones": ABRIR_EXISTENCIAS + [
                 c("button.panel-collapse", "recojo el"),
                 r("table tbody tr:has-text('Amortiguador delantero') td:nth-child(2)", "dice ciento cuarenta", 4500),
@@ -596,6 +598,7 @@ V5 = {
                        "Corrígelo en ese documento, con su devolución o nota de crédito, no con una carga.",
                        "Si el error hubiera estado", 8000),
                 c("button:has-text('Actualizar existencias')", "Abro Actualizar"),
+                r(f"{D} section.sbu-panel:has(#sbu-step-1)", "tiene dos pasos", 3000),
             ],
         },
         {
@@ -705,6 +708,8 @@ V6 = {
                 cartel("consejo", "El proveedor habitual",
                        "rnc_proveedor 130555302 y nombre_proveedor Repuestos del Cibao Germiva, SRL. Si no existe, se crea.",
                        "aquí sí va el proveedor", 9000),
+                cartel("consejo", "Tipo de entrada: vacía",
+                       "La decide el motivo que eliges al subir el archivo.", "La columna tipo de entrada", 6000),
                 {"subir": {"sel": f"{D} input[type='file']", "archivo": "seeds/existencias/archivos/productos-nuevos.xlsx",
                            "ancla": f"{D} button:has-text('Seleccionar archivo e importar')"}, "al_decir": "Selecciono el archivo"},
             ],
@@ -786,6 +791,7 @@ V7 = {
             "acciones": ABRIR_EXISTENCIAS + [
                 c("button.panel-collapse", "recojo el panel"),
                 c("button:has-text('Actualizar existencias')", "Pulso Actualizar"),
+                r(f"{D} section.sbu-panel:has(#sbu-step-2)", "Ya tengo el Excel lleno", 3000),
                 c(f"{campo('Motivo de la carga')} mat-select", "Abro el motivo"),
                 c("mat-option:has-text('Sobrante encontrado')", "elijo Sobrante encontrado"),
                 {"escribir": {"sel": f"{campo('Referencia o detalle')} input", "texto": "Cajas encontradas en el pasillo B"},
@@ -822,8 +828,8 @@ V7 = {
             "narracion": "Esto lo hace quien lleva la contabilidad. Voy al Mapeo de Cuentas, en la configuración contable: "
                          "aquí cada operación del sistema tiene su cuenta. Busco ajuste de inventario, y la lista se filtra sola. Este rol, otros "
                          "ingresos por ajuste de inventario, apunta a la cuenta agrupadora. Abro su selector, que solo "
-                         "ofrece cuentas de detalle, y elijo Otros ingresos diversos, general. Se guarda al instante, y el "
-                         "aviso lo confirma.",
+                         "ofrece cuentas de detalle, y elijo Otros ingresos diversos, general. El aviso confirma que se guardó "
+                         "al instante. Ahora el rol apunta a una cuenta de detalle, que sí admite movimientos.",
             "acciones": [
                 {"escribir": {"sel": ".mapping-filters input", "texto": "Ajuste de Inventario"}, "al_decir": "Busco ajuste"},
                 r("li.role-row:has(.role-row__label:text-is('Otros Ingresos por Ajuste de Inventario'))",
@@ -831,7 +837,9 @@ V7 = {
                 c("li.role-row:has(.role-row__label:text-is('Otros Ingresos por Ajuste de Inventario')) mat-select",
                   "Abro su selector"),
                 c("mat-option:has-text('4.02.01.02.01')", "elijo Otros ingresos diversos"),
-                r(".mat-mdc-snack-bar-container", "el aviso lo confirma", 3500),
+                r(".mat-mdc-snack-bar-container", "El aviso confirma", 2500),
+                r("li.role-row:has(.role-row__label:text-is('Otros Ingresos por Ajuste de Inventario'))",
+                  "Ahora el rol apunta", 6000),
             ],
         },
         {
@@ -845,6 +853,7 @@ V7 = {
                          "otros ingresos diversos. Aplico los dos cambios, y la carga corre en segundo plano.",
             "acciones": [
                 c("button:has-text('Actualizar existencias')", "pulso otra vez"),
+                r(f"{D} section.sbu-panel:has(#sbu-step-2)", "No hace falta descargar", 3000),
                 c(f"{campo('Motivo de la carga')} mat-select", "Abro el motivo"),
                 c("mat-option:has-text('Sobrante encontrado')", "elijo Sobrante encontrado"),
                 {"escribir": {"sel": f"{campo('Referencia o detalle')} input", "texto": "Cajas encontradas en el pasillo B"},
@@ -866,6 +875,9 @@ V7 = {
                          "carga. Así ninguna carga queda sin su asiento.",
             "acciones": [
                 r(f"{D} .gm-dialog-alert--success:has-text('Asiento')", "Asiento registrado", 4000),
+                cartel("consejo", "Si el asiento queda pendiente",
+                       "La existencia entra pero el asiento no: el resultado muestra «Reintentar asiento».",
+                       "Hay un segundo caso", 9000),
                 cartel("cuidado", "Asiento pendiente",
                        "La existencia ya entró: no repitas la carga. Corrige la causa y pulsa Reintentar asiento.",
                        "No repitas la carga", 9000),
@@ -981,19 +993,20 @@ V8 = {
             ],
         },
         {
-            "id": "04-proveedor", "capitulo": "La compra a nombre del proveedor", "rotulo": "El proveedor en el movimiento",
-            "ruta": "Inventario › Movimientos",
-            "texto_pantalla": "Movimientos · la entrada de la recepción con su proveedor",
-            "navegar": "/inventory/movimientos", "al_decir_navegar": "abro Movimientos",
-            "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro Movimientos. Arriba están las dos "
-                         "entradas de la recepción, en el Almacén Central. Abro el detalle de la primera con el ojo. Además "
-                         "del producto, la cantidad y el costo, aquí está la sección Proveedor: Autopartes del Caribe "
-                         "Germiva, con su RNC. Esa es la diferencia con las cargas de existencias: el inventario inicial, "
-                         "los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
+            "id": "04-historial", "capitulo": "La compra a nombre del proveedor", "rotulo": "Historial del producto",
+            "ruta": "Inventario › Productos › Historial",
+            "texto_pantalla": "Historial del producto · la recepción con su proveedor",
+            "navegar": "/inventory/product/list", "al_decir_navegar": "abro el catálogo",
+            "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro el catálogo de productos y edito el "
+                         "filtro de aceite. En la pestaña Historial, la vista Compras lista los documentos con que se ha "
+                         "comprado. Aquí está la recepción del contenedor, a nombre de Autopartes del Caribe Germiva, con su "
+                         "RNC, la cantidad y el costo. Esa es la diferencia con las cargas de existencias: el inventario "
+                         "inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
             "acciones": [
-                r("table tbody tr:first-child td:nth-child(5)", "Arriba están las dos", 3500),
-                c("table tbody tr:first-child button:has(mat-icon:text-is('visibility'))", "Abro el detalle"),
-                r("mat-dialog-container section.card:has(h3:text-is('Proveedor'))", "aquí está la sección Proveedor", 6000),
+                c("table tbody tr:has-text('Filtro de aceite') button:has(mat-icon:text-is('edit'))", "edito el"),
+                c("div[role='tab']:has-text('Historial')", "En la pestaña Historial"),
+                r("app-product-document-history tbody tr:first-child td:nth-child(2)", "Aquí está la recepción", 2500),
+                r("app-product-document-history tbody tr:first-child td.history-partner", "a nombre de Autopartes", 6000),
                 cartel("consejo", "¿Dónde queda el proveedor?",
                        "En las compras: recepción, factura, cuenta por pagar y 606. Las cargas de existencias no lo llevan.",
                        "Esa es la diferencia", 9000),

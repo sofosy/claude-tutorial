@@ -51,6 +51,7 @@
   "permitidos": [
    "germiva",
    "130555",
+   "130585050",
    "Almacén",
    "Sucursal",
    "Santiago",
@@ -173,6 +174,15 @@
      },
      "durante_ms": 9000,
      "al_decir": "aquí sí va el proveedor"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Tipo de entrada: vacía",
+      "texto": "La decide el motivo que eliges al subir el archivo."
+     },
+     "durante_ms": 6000,
+     "al_decir": "La columna tipo de entrada"
     },
     {
      "subir": {

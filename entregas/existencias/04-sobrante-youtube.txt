@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Existencias · Parte 4: sobrante encontrado
+
+DESCRIPCIÓN
+============================================================
+Cuarta parte de la serie de cargas masivas de existencias de Germiva ERP. Al reorganizar el Almacén Central aparecen cajas de bujías y filtros que no estaban registrados. Se cargan con el motivo Sobrante encontrado, que se asienta como ganancia por ajuste. Cuándo no es un sobrante sino una compra a un proveedor, y cómo quedan los movimientos.
+
+⏱️ CAPÍTULOS
+00:00  Apareció mercancía
+00:54  Los cuatro motivos
+01:32  Vista previa y resultado
+02:02  Los movimientos, sin proveedor
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Elegir entre los cuatro motivos de carga
+• Cargar un sobrante con el motivo Sobrante encontrado
+• Leer el asiento de ganancia por ajuste
+• Distinguir un sobrante de una compra a un proveedor
+
+⚠️ ERRORES COMUNES
+• Cargar como sobrante mercancía de un proveedor que no se ha recibido: es una compra
+• Usar Sobrante encontrado en un conteo: ahí los sobrantes ya van con el motivo Conteo físico
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:44
+
+TRANSCRIPCIÓN
+============================================================
+Seguimos con Repuestos Germiva. Entro a Inventario y abro Existencias. Ahora recojo el panel. Al reorganizar el pasillo B del Almacén Central aparecieron tres cajas de bujías, treinta y seis unidades, y diez filtros de aceite que no estaban registrados. Antes de cargarlos, una pregunta: ¿vienen de un proveedor? Si son de un pedido que todavía no se ha recibido, no son un sobrante, son una compra, y van por la recepción, a nombre de ese proveedor. Aquí no: llevan tiempo en el almacén. Pulso Actualizar existencias. Dejo Entrada, para sumar. Elijo Un almacén, y en la lista de almacenes, el Almacén Central. Ahora descargo la plantilla con todos los productos, y en el Excel escribo solo lo que apareció.
+Ya llené el Excel. Abro el motivo de la carga para verlos todos. Inventario inicial está deshabilitado, porque ya se cerró. Conteo físico es para las diferencias al contar. Corrección de error de registro, para cantidades mal registradas antes. Y Sobrante encontrado, para mercancía que apareció sin estar registrada: solo existe para archivos de entrada. Lo elijo. En la referencia escribo: Cajas encontradas al reorganizar el pasillo B. Así queda explicado en el asiento y en cada movimiento. Subo el archivo.
+Entran dos productos por cinco mil doscientos setenta pesos: treinta y seis bujías a noventa y cinco, y diez filtros a ciento ochenta y cinco, su costo de siempre. Las demás filas no se tocan. En el asiento, débito a Inventario y crédito a otros ingresos por ajuste de inventario. Es una ganancia, porque la empresa tiene más de lo que creía. Aplico los dos cambios. El asiento quedó registrado, con su motivo y su referencia.
+Desde el resultado también puedes ir a los movimientos. Pulso Ver movimientos. Cada producto dejó su movimiento de entrada, del tipo ajuste positivo, en el Almacén Central. Abro el detalle del primero con el ojo. La nota dice de qué carga salió, en qué fila del archivo, el motivo y la referencia. Y fíjate que no hay sección de proveedor: un sobrante no se le compró a nadie. Por eso tampoco genera cuenta por pagar ni entra al 606. La entrada recalcula el costo promedio, pero no cambia el último precio de compra del producto: ese solo lo mueve una compra.
