@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Existencias · Parte 3: conteo físico
+
+DESCRIPCIÓN
+============================================================
+Tercera parte de la serie de cargas masivas de existencias de Germiva ERP. Repuestos Germiva cuenta la Sucursal Santiago y deja el sistema igual a lo contado: plantilla de conteo con los productos con existencia, sobrantes y faltantes en la vista previa, la confirmación de lo que queda en cero y un solo asiento con la ganancia y la pérdida por ajuste.
+
+⏱️ CAPÍTULOS
+00:00  La plantilla de conteo
+00:54  Motivo y archivo
+01:18  Sobrantes, faltantes y ceros
+02:15  Resultado y asiento
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Descargar la plantilla de conteo justo al empezar a contar
+• Leer sobrantes, faltantes y filas que no cambian
+• Confirmar los productos que quedan en cero
+• Entender el asiento: ganancia y pérdida por ajuste en un solo asiento
+
+⚠️ ERRORES COMUNES
+• Exportar la plantilla días antes del conteo: lo vendido en medio se marca como movido
+• Escribir cero en lo que no se contó: la fila vacía no se toca, el cero sí
+• Contar menos de lo reservado por pedidos pendientes: primero despáchalos o libéralos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:47
+
+TRANSCRIPCIÓN
+============================================================
+Hoy toca el conteo anual de la tienda de Santiago. Entro a Inventario y abro Existencias. Primero recojo el panel, para ver mejor. La idea es que el sistema quede igual a lo que se contó. Pulso Actualizar existencias. El diálogo tiene dos pasos, y en el primero elijo Conteo físico: aquí no escribes lo que entra, sino lo que contaste, y la existencia queda en esa cantidad. Un conteo se hace por almacén. Elijo Un almacén, y en la lista de almacenes, la Sucursal Santiago. Fíjate que Productos cambió solo a Con existencia, que es lo normal para contar. Descargo la plantilla justo al empezar a contar: guarda la existencia de este momento. En el Excel escribes lo contado en existencia contada, y dejas vacío lo que no contaste.
+Ya terminamos de contar y llenamos el Excel. Abro el motivo de la carga, y de la lista elijo Conteo físico: los sobrantes se registran como ganancia y los faltantes como pérdida por ajuste. En la referencia escribo: Conteo anual 2026, Sucursal Santiago. Así, quien vea el asiento sabe de dónde salió. Subo el archivo con lo contado.
+La vista previa compara lo contado con lo que había al exportar. Entra un producto: sobraron dos correas. Salen dos: faltan doce bujías, y los cuarenta filtros no aparecieron. Las pastillas se contaron iguales, así que no se tocan. Debajo, un solo asiento con las dos patas: la ganancia por ajuste de lo que sobró, y la pérdida por ajuste de lo que faltó. Las salidas se ven al costo promedio de hoy; al aplicar se usa el costo exacto de cada lote. Dejar un producto en cero pide confirmarlo. Filtro Con aviso: el filtro de aceite quedará en cero, tenía cuarenta. Lo verificamos en el almacén, así que lo confirmo. Si un producto se vendiera después de exportar, el sistema lo marcaría y, por omisión, no lo tocaría. Aplico los tres cambios. Corre en segundo plano, con su barra de progreso.
+Existencias actualizadas: tres productos. Salidas por ocho mil quinientos cuarenta pesos y entradas por dos mil quinientos. El asiento quedó registrado con el motivo y la referencia del conteo. Pulso Ver asiento. Aquí está, en Contabilidad, con sus cuatro líneas: la ganancia y la pérdida por ajuste contra la cuenta de inventario. Ahora la Sucursal Santiago tiene en el sistema exactamente lo que se contó.
