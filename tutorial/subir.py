@@ -10,6 +10,12 @@ Qué cuenta como «ya subido»: lo anotado en `entregas/subidos.json` y, además
 cualquier video del canal con el mismo título (los que se subieron a mano).
 Una entrada con `"omitir": "motivo"` deja ese video en espera: no se sube.
 
+Lista de reproducción: si la carpeta de la serie trae `lista.json`
+(`{"titulo": "…", "descripcion": "…"}`), cada corrida busca esa lista en el
+canal (o la crea, con la misma privacidad de los videos) y le agrega, en
+orden, los videos de la serie que ya están subidos. Lo hecho queda en el
+registro (`_listas` y `"lista": "agregado"` en cada video) para no repetir.
+
 La cuota diaria de la API alcanza para pocos videos. Cuando YouTube la corta,
 el comando termina bien y deja el resto pendiente: la siguiente corrida (la
 tarea diaria de GitHub Actions) sigue donde quedó.
@@ -266,6 +272,72 @@ def _subir_subtitulos(vid, ruta, token):
            {"Content-Type": f"multipart/related; boundary={borde}"}, token)
 
 
+# ─────────────────────────── listas de reproducción ───────────────────────────
+
+LISTAS = "_listas"   # clave del registro: {serie: {"id", "titulo"}}
+
+
+def _lista_de(serie):
+    """`entregas/<serie>/lista.json` o None si la serie no pide lista."""
+    ruta = ENTREGAS / serie / "lista.json"
+    if not ruta.exists():
+        return None
+    datos = json.loads(ruta.read_text(encoding="utf-8"))
+    return {"titulo": _recortar(datos["titulo"], 150), "descripcion": _recortar(datos.get("descripcion", ""), 4900)}
+
+
+def _buscar_lista(titulo, token):
+    """Id de una lista del canal con ese título (para no crear duplicados)."""
+    pagina = ""
+    while True:
+        r = _pedir(f"{API}/playlists?part=snippet&mine=true&maxResults=50"
+                   + (f"&pageToken={pagina}" if pagina else ""), token=token)
+        for it in r.get("items", []):
+            if _clave(it["snippet"]["title"]) == _clave(titulo):
+                return it["id"]
+        pagina = r.get("nextPageToken")
+        if not pagina:
+            return None
+
+
+def _asegurar_lista(serie, conf, privacidad, reg, token):
+    """Id de la lista de la serie: la anotada, la del canal o una nueva."""
+    anotada = reg.get(LISTAS, {}).get(serie)
+    if anotada:
+        return anotada["id"]
+    lid = _buscar_lista(conf["titulo"], token)
+    if not lid:
+        lid = _pedir(f"{API}/playlists?part=snippet,status", "POST", {
+            "snippet": {"title": conf["titulo"], "description": conf["descripcion"],
+                        "defaultLanguage": "es"},
+            "status": {"privacyStatus": privacidad}}, token=token)["id"]
+        print(f"  ☰ lista creada: {conf['titulo']}  https://www.youtube.com/playlist?list={lid}")
+    reg.setdefault(LISTAS, {})[serie] = {"id": lid, "titulo": conf["titulo"]}
+    _guardar_registro(reg)
+    return lid
+
+
+def _poner_en_listas(videos, serie_pedida, privacidad, reg, token):
+    """Agrega a su lista, en orden, los videos subidos de cada serie que la pide."""
+    for serie in sorted({v["serie"] for v in videos if not serie_pedida or v["serie"] == serie_pedida}):
+        conf = _lista_de(serie)
+        if not conf:
+            continue
+        faltan = [v for v in videos if v["serie"] == serie
+                  and reg.get(v["rel"], {}).get("id") and reg[v["rel"]].get("lista") != "agregado"]
+        if not faltan:
+            continue
+        lid = _asegurar_lista(serie, conf, privacidad, reg, token)
+        for v in faltan:      # descubrir() ya los da ordenados por nombre de archivo
+            e = reg[v["rel"]]
+            _pedir(f"{API}/playlistItems?part=snippet", "POST", {"snippet": {
+                "playlistId": lid, "resourceId": {"kind": "youtube#video", "videoId": e["id"]}}},
+                token=token)
+            e["lista"] = "agregado"
+            _guardar_registro(reg)
+            print(f"    ☰ {v['rel']} → lista {serie}")
+
+
 # ──────────────────────────────── comandos ────────────────────────────────────
 
 def _cargar_registro():
@@ -316,6 +388,14 @@ def cmd_listar(a):
         elif a.todo:
             print(f"  subido       {v['rel']}  → {e['id']}")
     print(f"\n  {faltan} por subir de {len(videos)} videos con texto de YouTube.")
+    for serie in sorted({v["serie"] for v in videos if not a.serie or v["serie"] == a.serie}):
+        conf = _lista_de(serie)
+        if conf:
+            de_serie = [v for v in videos if v["serie"] == serie]
+            dentro = sum(1 for v in de_serie if reg.get(v["rel"], {}).get("lista") == "agregado")
+            anotada = reg.get(LISTAS, {}).get(serie)
+            print(f"  lista «{conf['titulo']}»: {dentro} de {len(de_serie)} videos"
+                  + (f"  https://www.youtube.com/playlist?list={anotada['id']}" if anotada else "  (se crea al subir)"))
     if sin_texto and a.todo:
         print("\n  Sin texto de YouTube al lado (no se suben):")
         for r in sin_texto:
@@ -370,6 +450,7 @@ def cmd_subir(a):
                         e[campo] = f"falló: {err}"[:300]
                         print(f"    aviso: {campo} no se pudo subir — {err}")
                     _guardar_registro(reg)
+        _poner_en_listas(videos, a.serie, a.privacidad, reg, token)
     except Limite as lim:
         print(f"\n  YouTube cortó por hoy ({lim}).")
     faltan = sum(1 for v in videos
