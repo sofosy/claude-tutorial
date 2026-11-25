@@ -1,0 +1,211 @@
+1
+00:00:03,100 --> 00:00:05,743
+En Compras, abro una recepción nueva.
+
+2
+00:00:06,397 --> 00:00:10,676
+Llegó un contenedor de Autopartes del Caribe con filtros y pastillas de freno.
+
+3
+00:00:11,333 --> 00:00:12,685
+Esto sí es una compra:
+
+4
+00:00:12,797 --> 00:00:15,426
+tiene proveedor, factura y cuenta por pagar,
+
+5
+00:00:15,474 --> 00:00:18,824
+así que no va por Actualizar existencias sino por la recepción.
+
+6
+00:00:19,481 --> 00:00:20,722
+Elijo el origen:
+
+7
+00:00:20,856 --> 00:00:22,198
+Sin orden de compra.
+
+8
+00:00:22,865 --> 00:00:23,934
+Primero el proveedor:
+
+9
+00:00:24,068 --> 00:00:28,807
+escribo Autopartes, espero un momento a que aparezca, y lo elijo de la lista.
+
+10
+00:00:29,463 --> 00:00:31,027
+Luego el almacén destino:
+
+11
+00:00:31,161 --> 00:00:32,230
+escribo Central;
+
+12
+00:00:32,390 --> 00:00:36,013
+espero a que aparezca en la lista, y elijo el Almacén Central.
+
+13
+00:00:36,680 --> 00:00:39,360
+Conviene elegirlo antes de importar las líneas,
+
+14
+00:00:39,457 --> 00:00:41,579
+porque las líneas toman su ubicación.
+
+15
+00:00:42,942 --> 00:00:45,311
+Con cientos de líneas no se escriben a mano.
+
+16
+00:00:45,966 --> 00:00:48,088
+Pulso Importar líneas desde Excel.
+
+17
+00:00:48,744 --> 00:00:54,003
+La plantilla trae el código del producto, la cantidad, el costo unitario sin ITBIS,
+
+18
+00:00:54,076 --> 00:00:58,108
+el impuesto, y, si hace falta, el lote y el vencimiento.
+
+19
+00:00:58,777 --> 00:01:00,352
+Ya llené la del contenedor:
+
+20
+00:01:00,426 --> 00:01:03,019
+mil ochocientos filtros a ciento setenta y dos,
+
+21
+00:01:03,018 --> 00:01:06,033
+y seiscientos juegos de pastillas a seiscientos diez.
+
+22
+00:01:06,700 --> 00:01:08,066
+Elijo el archivo.
+
+23
+00:01:08,734 --> 00:01:13,498
+Dos líneas listas, por seiscientos setenta y cinco mil seiscientos pesos sin ITBIS,
+
+24
+00:01:13,570 --> 00:01:14,960
+y ninguna con error.
+
+25
+00:01:15,616 --> 00:01:19,401
+Agrego las dos líneas, y el aviso confirma que se agregaron.
+
+26
+00:01:20,768 --> 00:01:25,259
+Las líneas quedan en la recepción con su cantidad, su costo y su ubicación.
+
+27
+00:01:25,914 --> 00:01:29,152
+Como no hay orden de compra, el sistema pide el motivo:
+
+28
+00:01:29,250 --> 00:01:30,763
+quién la autorizó y por qué.
+
+29
+00:01:31,432 --> 00:01:33,628
+Lo escribo en las notas de la recepción.
+
+30
+00:01:34,284 --> 00:01:37,150
+Ese motivo queda en el documento para quien lo revise.
+
+31
+00:01:37,818 --> 00:01:39,618
+Con eso ya se puede guardar.
+
+32
+00:01:40,275 --> 00:01:41,156
+Pulso guardar;
+
+33
+00:01:41,241 --> 00:01:44,405
+el aviso dice que la recepción se creó, y acepto.
+
+34
+00:01:45,060 --> 00:01:48,001
+En el menú acciones pulso aprobar recepción;
+
+35
+00:01:47,813 --> 00:01:50,729
+me pide confirmar, y apruebo.
+
+36
+00:01:50,542 --> 00:01:53,966
+El aviso dice que ya se puede procesar a inventario;
+
+37
+00:01:54,621 --> 00:01:54,957
+acepto.
+
+38
+00:01:54,770 --> 00:01:58,530
+Y en el mismo menú, procesar a inventario.
+
+39
+00:01:58,342 --> 00:02:01,097
+Pulso procesar las dos líneas.
+
+40
+00:02:00,909 --> 00:02:02,993
+La mercancía entró al almacén:
+
+41
+00:02:02,806 --> 00:02:06,019
+el asiento va a inventario contra mercancía por recibir,
+
+42
+00:02:05,832 --> 00:02:10,658
+y cuando llegue la factura del proveedor se coteja con esta recepción, con su ITBIS,
+
+43
+00:02:10,471 --> 00:02:12,728
+su cuenta por pagar y su 606.
+
+44
+00:02:14,099 --> 00:02:16,371
+Ahora veamos dónde queda el proveedor.
+
+45
+00:02:17,038 --> 00:02:21,093
+En Inventario abro el catálogo de productos y edito el filtro de aceite.
+
+46
+00:02:21,763 --> 00:02:26,612
+Se abre su ficha, con sus datos arriba y sus pestañas abajo.
+
+47
+00:02:26,425 --> 00:02:30,817
+En la pestaña Historial, la vista Compras lista los documentos con que se ha
+
+48
+00:02:31,473 --> 00:02:31,957
+comprado.
+
+49
+00:02:31,770 --> 00:02:36,409
+Aquí está la recepción del contenedor, a nombre de Autopartes del Caribe Germiva,
+
+50
+00:02:36,222 --> 00:02:38,765
+con su RNC, la cantidad y el costo.
+
+51
+00:02:38,578 --> 00:02:42,560
+Esa es la diferencia con las cargas de existencias:
+
+52
+00:02:42,646 --> 00:02:46,627
+el inventario inicial, los conteos y los sobrantes no tienen proveedor;
+
+53
+00:02:46,725 --> 00:02:48,896
+las compras sí, y quedan a su nombre.

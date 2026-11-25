@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Existencias · Parte 8: recibir un contenedor desde Excel
+
+DESCRIPCIÓN
+============================================================
+Octava parte de la serie de cargas masivas de existencias de Germiva ERP. Llega un contenedor de Autopartes del Caribe Germiva: la compra entra por una recepción sin orden de compra, con el proveedor y el almacén, y las líneas se importan desde Excel. Se guarda, se aprueba y se procesa a inventario; la compra queda en el historial del producto a nombre del proveedor.
+
+⏱️ CAPÍTULOS
+00:00  La recepción, con su proveedor
+00:42  Las líneas desde Excel
+01:20  Guardar, aprobar y procesar
+02:14  La compra a nombre del proveedor
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Por qué una compra entra por la recepción y no por Actualizar existencias
+• Crear una recepción sin orden de compra con su proveedor y almacén
+• Importar las líneas de la recepción desde Excel
+• Aprobar y procesar la recepción a inventario
+• Ver la compra a nombre del proveedor en el historial del producto
+
+⚠️ ERRORES COMUNES
+• Cargar una compra con Actualizar existencias: se pierden el proveedor, la cuenta por pagar y el 606
+• Cambiar el almacén después de importar las líneas: pierden la ubicación
+• Dejar la recepción guardada sin procesarla: la mercancía no entra hasta procesarla a inventario
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:53
+
+TRANSCRIPCIÓN
+============================================================
+En Compras, abro una recepción nueva. Llegó un contenedor de Autopartes del Caribe con filtros y pastillas de freno. Esto sí es una compra: tiene proveedor, factura y cuenta por pagar, así que no va por Actualizar existencias sino por la recepción. Elijo el origen: Sin orden de compra. Primero el proveedor: escribo Autopartes, espero un momento a que aparezca, y lo elijo de la lista. Luego el almacén destino: escribo Central; espero a que aparezca en la lista, y elijo el Almacén Central. Conviene elegirlo antes de importar las líneas, porque las líneas toman su ubicación.
+Con cientos de líneas no se escriben a mano. Pulso Importar líneas desde Excel. La plantilla trae el código del producto, la cantidad, el costo unitario sin ITBIS, el impuesto, y, si hace falta, el lote y el vencimiento. Ya llené la del contenedor: mil ochocientos filtros a ciento setenta y dos, y seiscientos juegos de pastillas a seiscientos diez. Elijo el archivo. Dos líneas listas, por seiscientos setenta y cinco mil seiscientos pesos sin ITBIS, y ninguna con error. Agrego las dos líneas, y el aviso confirma que se agregaron.
+Las líneas quedan en la recepción con su cantidad, su costo y su ubicación. Como no hay orden de compra, el sistema pide el motivo: quién la autorizó y por qué. Lo escribo en las notas de la recepción. Ese motivo queda en el documento para quien lo revise. Con eso ya se puede guardar. Pulso guardar; el aviso dice que la recepción se creó, y acepto. En el menú acciones pulso aprobar recepción; me pide confirmar, y apruebo. El aviso dice que ya se puede procesar a inventario; acepto. Y en el mismo menú, procesar a inventario. Pulso procesar las dos líneas. La mercancía entró al almacén: el asiento va a inventario contra mercancía por recibir, y cuando llegue la factura del proveedor se coteja con esta recepción, con su ITBIS, su cuenta por pagar y su 606.
+Ahora veamos dónde queda el proveedor. En Inventario abro el catálogo de productos y edito el filtro de aceite. Se abre su ficha, con sus datos arriba y sus pestañas abajo. En la pestaña Historial, la vista Compras lista los documentos con que se ha comprado. Aquí está la recepción del contenedor, a nombre de Autopartes del Caribe Germiva, con su RNC, la cantidad y el costo. Esa es la diferencia con las cargas de existencias: el inventario inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.
