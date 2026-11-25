@@ -262,11 +262,11 @@
      "cursor": false
     },
     {
-     "click": "mat-dialog-container button:text-is('Cerrar')",
+     "click": "mat-dialog-container button:has-text('Cerrar'):visible",
      "al_decir": "Cierro el"
     },
     {
-     "resaltar": "table tbody tr:has-text('Kit de embrague sedán') td:nth-child(2)",
+     "resaltar": "table tbody tr:has-text('Kit de embrague sedán') td:has-text('Kit de embrague sedán')",
      "durante_ms": 4000,
      "al_decir": "Los dos kits",
      "cursor": false
