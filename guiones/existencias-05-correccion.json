@@ -235,7 +235,7 @@
      "al_decir": "Pulso Ver"
     },
     {
-     "resaltar": "table tbody tr:first-child td:nth-child(1)",
+     "resaltar": "app-journal-entry-form .editable-table-container",
      "durante_ms": 5000,
      "al_decir": "con la pérdida",
      "cursor": false

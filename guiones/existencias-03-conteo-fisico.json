@@ -291,7 +291,7 @@
      "al_decir": "Pulso Ver asiento"
     },
     {
-     "resaltar": "table tbody tr:first-child td:nth-child(1)",
+     "resaltar": "app-journal-entry-form .editable-table-container",
      "durante_ms": 6000,
      "al_decir": "con sus cuatro líneas",
      "cursor": false

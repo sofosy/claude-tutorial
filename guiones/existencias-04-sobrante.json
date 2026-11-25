@@ -268,22 +268,32 @@
    "rotulo": "Movimientos",
    "ruta": "Inventario › Movimientos",
    "texto_pantalla": "Movimientos · la nota de la carga y sin proveedor",
-   "narracion": "Desde el resultado también puedes ir a los movimientos. Pulso Ver movimientos. Cada producto dejó su movimiento de entrada, y la nota dice de qué carga salió, en qué fila del archivo, el motivo y la referencia. Fíjate que no tiene proveedor: un sobrante no se le compró a nadie. Por eso tampoco genera cuenta por pagar ni entra al 606. La entrada recalcula el costo promedio, pero no cambia el último precio de compra del producto: ese solo lo mueve una compra.",
+   "narracion": "Desde el resultado también puedes ir a los movimientos. Pulso Ver movimientos. Cada producto dejó su movimiento de entrada, del tipo ajuste positivo, en el Almacén Central. Abro el detalle del primero con el ojo. La nota dice de qué carga salió, en qué fila del archivo, el motivo y la referencia. Y fíjate que no hay sección de proveedor: un sobrante no se le compró a nadie. Por eso tampoco genera cuenta por pagar ni entra al 606. La entrada recalcula el costo promedio, pero no cambia el último precio de compra del producto: ese solo lo mueve una compra.",
    "acciones": [
     {
      "click": "mat-dialog-container button:has-text('Ver movimientos')",
      "al_decir": "Pulso Ver movimientos"
     },
     {
-     "resaltar": "table tbody tr:first-child td:nth-child(2)",
+     "resaltar": "table tbody tr:first-child td:nth-child(3)",
      "durante_ms": 3000,
-     "al_decir": "Cada producto dejó",
+     "al_decir": "Cada producto",
      "cursor": false
     },
     {
-     "resaltar": "table tbody tr:first-child td:nth-child(3)",
-     "durante_ms": 5000,
-     "al_decir": "la nota dice",
+     "click": "table tbody tr:first-child button:has(mat-icon:text-is('visibility'))",
+     "al_decir": "Abro el detalle"
+    },
+    {
+     "resaltar": "mat-dialog-container .row:has-text('Notas:')",
+     "durante_ms": 6000,
+     "al_decir": "La nota dice",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container section.card >> nth=0",
+     "durante_ms": 4000,
+     "al_decir": "no hay sección de proveedor",
      "cursor": false
     },
     {
@@ -293,7 +303,7 @@
       "texto": "En las compras: la recepción y la factura lo llevan, con su cuenta por pagar y su 606."
      },
      "durante_ms": 8000,
-     "al_decir": "no tiene proveedor"
+     "al_decir": "un sobrante no se le compró"
     }
    ]
   }

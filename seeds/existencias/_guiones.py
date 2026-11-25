@@ -272,7 +272,7 @@ V2 = {
                 c(f"{campo('Almacén a exportar')} mat-select", "en la lista"),
                 c("mat-option:has-text('Almacén Central')", "el Almacén Central"),
                 c(seg("Sin existencia"), "elijo Sin existencia"),
-                r(f"{D} .gm-seg:has(button:has-text('Sin existencia')) + p", "solo lo que en ese almacén", 6000),
+                r(f"{D} app-segmented-control:has(button:has-text('Sin existencia')) + p", "solo lo que en ese almacén", 6000),
                 c(f"{D} button:has-text('Descargar plantilla')", "Descargo la plantilla"),
                 cartel("consejo", "¿Ya tenía existencia?",
                        "No sale en «Sin existencia». Descarga la plantilla «Todos» y escribe solo las unidades que faltaron.",
@@ -443,7 +443,7 @@ V3 = {
                 r(f"{D} .sbu-stats .gm-stat:has-text('Salidas')", "Salidas por", 3500),
                 r(f"{D} .gm-dialog-alert--success:has-text('Asiento')", "El asiento quedó registrado", 4000),
                 c(f"{D} button:has-text('Ver asiento')", "Pulso Ver asiento"),
-                r("table tbody tr:first-child td:nth-child(1)", "con sus cuatro líneas", 6000),
+                r("app-journal-entry-form .editable-table-container", "con sus cuatro líneas", 6000),
             ],
         },
     ],
@@ -538,18 +538,21 @@ V4 = {
             "id": "04-movimientos", "capitulo": "Los movimientos, sin proveedor", "rotulo": "Movimientos",
             "ruta": "Inventario › Movimientos",
             "texto_pantalla": "Movimientos · la nota de la carga y sin proveedor",
-            "narracion": "Desde el resultado también puedes ir a los movimientos. Pulso Ver movimientos. Cada producto dejó su movimiento de entrada, y la nota dice de qué carga "
-                         "salió, en qué fila del archivo, el motivo y la referencia. Fíjate que no tiene proveedor: un "
-                         "sobrante no se le compró a nadie. Por eso tampoco genera cuenta por pagar ni entra al 606. La "
-                         "entrada recalcula el costo promedio, pero no cambia el último precio de compra del producto: ese "
-                         "solo lo mueve una compra.",
+            "narracion": "Desde el resultado también puedes ir a los movimientos. Pulso Ver movimientos. Cada producto "
+                         "dejó su movimiento de entrada, del tipo ajuste positivo, en el Almacén Central. Abro el detalle "
+                         "del primero con el ojo. La nota dice de qué carga salió, en qué fila del archivo, el motivo y la "
+                         "referencia. Y fíjate que no hay sección de proveedor: un sobrante no se le compró a nadie. Por "
+                         "eso tampoco genera cuenta por pagar ni entra al 606. La entrada recalcula el costo promedio, pero "
+                         "no cambia el último precio de compra del producto: ese solo lo mueve una compra.",
             "acciones": [
                 c(f"{D} button:has-text('Ver movimientos')", "Pulso Ver movimientos"),
-                r("table tbody tr:first-child td:nth-child(2)", "Cada producto dejó", 3000),
-                r("table tbody tr:first-child td:nth-child(3)", "la nota dice", 5000),
+                r("table tbody tr:first-child td:nth-child(3)", "Cada producto", 3000),
+                c("table tbody tr:first-child button:has(mat-icon:text-is('visibility'))", "Abro el detalle"),
+                r("mat-dialog-container .row:has-text('Notas:')", "La nota dice", 6000),
+                r("mat-dialog-container section.card >> nth=0", "no hay sección de proveedor", 4000),
                 cartel("consejo", "¿Dónde queda el proveedor?",
                        "En las compras: la recepción y la factura lo llevan, con su cuenta por pagar y su 606.",
-                       "no tiene proveedor", 8000),
+                       "un sobrante no se le compró", 8000),
             ],
         },
     ],
@@ -636,7 +639,7 @@ V5 = {
                 c(f"{D} button:has-text('Aplicar 1 cambio')", "Aplico el cambio"),
                 r(f"{D} .gm-dialog-alert--success:has-text('Asiento')", "el asiento lleva la referencia", 3500),
                 c(f"{D} button:has-text('Ver asiento')", "Pulso Ver"),
-                r("table tbody tr:first-child td:nth-child(1)", "con la pérdida", 5000),
+                r("app-journal-entry-form .editable-table-container", "con la pérdida", 5000),
             ],
         },
     ],
@@ -971,20 +974,19 @@ V8 = {
             ],
         },
         {
-            "id": "04-historial", "capitulo": "La compra a nombre del proveedor", "rotulo": "Historial del producto",
-            "ruta": "Inventario › Productos › Historial",
-            "texto_pantalla": "Historial del producto · la recepción con su proveedor",
-            "navegar": "/inventory/product/list", "al_decir_navegar": "abro el catálogo",
-            "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro el catálogo de productos, y entro al "
-                         "filtro de aceite. En la pestaña Historial están los documentos del producto. Aquí está la "
-                         "recepción del contenedor, a nombre de Autopartes del Caribe, con su cantidad y su costo. Esa es "
-                         "la diferencia con las cargas de existencias: el inventario inicial, los conteos y los sobrantes "
-                         "no tienen proveedor; las compras sí, y quedan a su nombre.",
+            "id": "04-proveedor", "capitulo": "La compra a nombre del proveedor", "rotulo": "El proveedor en el movimiento",
+            "ruta": "Inventario › Movimientos",
+            "texto_pantalla": "Movimientos · la entrada de la recepción con su proveedor",
+            "navegar": "/inventory/movimientos", "al_decir_navegar": "abro Movimientos",
+            "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro Movimientos. Arriba están las dos "
+                         "entradas de la recepción, en el Almacén Central. Abro el detalle de la primera con el ojo. Además "
+                         "del producto, la cantidad y el costo, aquí está la sección Proveedor: Autopartes del Caribe "
+                         "Germiva, con su RNC. Esa es la diferencia con las cargas de existencias: el inventario inicial, "
+                         "los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
             "acciones": [
-                c("table tbody tr:has-text('Filtro de aceite') td:nth-child(2)", "entro al"),
-                c("div[role='tab']:has-text('Historial')", "En la pestaña Historial"),
-                r("table tbody tr:has-text('Autopartes') td:nth-child(1)", "Aquí está la", 2000),
-                r("table tbody tr:has-text('Autopartes') td:has-text('Autopartes')", "a nombre de Autopartes", 5000),
+                r("table tbody tr:first-child td:nth-child(5)", "Arriba están las dos", 3500),
+                c("table tbody tr:first-child button:has(mat-icon:text-is('visibility'))", "Abro el detalle"),
+                r("mat-dialog-container section.card:has(h3:text-is('Proveedor'))", "aquí está la sección Proveedor", 6000),
                 cartel("consejo", "¿Dónde queda el proveedor?",
                        "En las compras: recepción, factura, cuenta por pagar y 606. Las cargas de existencias no lo llevan.",
                        "Esa es la diferencia", 9000),

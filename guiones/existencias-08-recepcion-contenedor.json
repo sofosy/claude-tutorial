@@ -282,33 +282,29 @@
    ]
   },
   {
-   "id": "04-historial",
+   "id": "04-proveedor",
    "capitulo": "La compra a nombre del proveedor",
-   "rotulo": "Historial del producto",
-   "ruta": "Inventario › Productos › Historial",
-   "texto_pantalla": "Historial del producto · la recepción con su proveedor",
-   "navegar": "/inventory/product/list",
-   "al_decir_navegar": "abro el catálogo",
-   "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro el catálogo de productos, y entro al filtro de aceite. En la pestaña Historial están los documentos del producto. Aquí está la recepción del contenedor, a nombre de Autopartes del Caribe, con su cantidad y su costo. Esa es la diferencia con las cargas de existencias: el inventario inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
+   "rotulo": "El proveedor en el movimiento",
+   "ruta": "Inventario › Movimientos",
+   "texto_pantalla": "Movimientos · la entrada de la recepción con su proveedor",
+   "navegar": "/inventory/movimientos",
+   "al_decir_navegar": "abro Movimientos",
+   "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro Movimientos. Arriba están las dos entradas de la recepción, en el Almacén Central. Abro el detalle de la primera con el ojo. Además del producto, la cantidad y el costo, aquí está la sección Proveedor: Autopartes del Caribe Germiva, con su RNC. Esa es la diferencia con las cargas de existencias: el inventario inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
    "acciones": [
     {
-     "click": "table tbody tr:has-text('Filtro de aceite') td:nth-child(2)",
-     "al_decir": "entro al"
-    },
-    {
-     "click": "div[role='tab']:has-text('Historial')",
-     "al_decir": "En la pestaña Historial"
-    },
-    {
-     "resaltar": "table tbody tr:has-text('Autopartes') td:nth-child(1)",
-     "durante_ms": 2000,
-     "al_decir": "Aquí está la",
+     "resaltar": "table tbody tr:first-child td:nth-child(5)",
+     "durante_ms": 3500,
+     "al_decir": "Arriba están las dos",
      "cursor": false
     },
     {
-     "resaltar": "table tbody tr:has-text('Autopartes') td:has-text('Autopartes')",
-     "durante_ms": 5000,
-     "al_decir": "a nombre de Autopartes",
+     "click": "table tbody tr:first-child button:has(mat-icon:text-is('visibility'))",
+     "al_decir": "Abro el detalle"
+    },
+    {
+     "resaltar": "mat-dialog-container section.card:has(h3:text-is('Proveedor'))",
+     "durante_ms": 6000,
+     "al_decir": "aquí está la sección Proveedor",
      "cursor": false
     },
     {

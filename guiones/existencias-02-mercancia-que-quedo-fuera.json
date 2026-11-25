@@ -168,7 +168,7 @@
      "al_decir": "elijo Sin existencia"
     },
     {
-     "resaltar": "mat-dialog-container .gm-seg:has(button:has-text('Sin existencia')) + p",
+     "resaltar": "mat-dialog-container app-segmented-control:has(button:has-text('Sin existencia')) + p",
      "durante_ms": 6000,
      "al_decir": "solo lo que en ese almacén",
      "cursor": false
