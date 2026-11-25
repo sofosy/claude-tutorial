@@ -933,7 +933,7 @@ V8 = {
                          "y el vencimiento. Ya llené la del contenedor: mil ochocientos filtros a ciento setenta y dos, y "
                          "seiscientos juegos de pastillas a seiscientos diez. Elijo el archivo. Dos líneas listas, por "
                          "seiscientos setenta y cinco mil seiscientos pesos sin ITBIS, y ninguna con error. Agrego las dos "
-                         "líneas.",
+                         "líneas, y el aviso confirma que se agregaron.",
             "acciones": [
                 c("button:has-text('Importar líneas desde Excel')", "Pulso Importar líneas"),
                 r(f"{D} button:has-text('Descargar plantilla')", "La plantilla", 6000),
@@ -941,13 +941,16 @@ V8 = {
                            "ancla": f"{D} button:has-text('Elegir archivo')"}, "al_decir": "Elijo el archivo"},
                 r(D, "Dos líneas listas", 6000),
                 c(f"{D} button:has-text('Agregar 2 líneas')", "Agrego las dos"),
+                r(".mat-mdc-snack-bar-container", "el aviso confirma", 3000),
             ],
         },
         {
             "id": "03-procesar", "capitulo": "Guardar, aprobar y procesar", "rotulo": "Procesar a inventario",
             "ruta": "Compras › Recepciones",
             "texto_pantalla": "Recepción · guardar, aprobar y procesar a inventario",
-            "narracion": "Las líneas quedan en la recepción con su cantidad, su costo y su ubicación. Pulso guardar; el "
+            "narracion": "Las líneas quedan en la recepción con su cantidad, su costo y su ubicación. Como no hay orden "
+                         "de compra, el sistema pide el motivo: quién la autorizó y por qué. Lo escribo en las notas de la "
+                         "recepción. Ese motivo queda en el documento para quien lo revise. Con eso ya se puede guardar. Pulso guardar; el "
                          "aviso dice que la recepción se creó, y acepto. En el menú acciones pulso aprobar recepción; me pide confirmar, y "
                          "apruebo. El aviso dice que ya se puede procesar a inventario; acepto. Y en el mismo menú, "
                          "procesar a inventario. Pulso procesar las dos líneas. La mercancía entró al almacén: el asiento "
@@ -955,6 +958,9 @@ V8 = {
                          "con esta recepción, con su ITBIS, su cuenta por pagar y su 606.",
             "acciones": [
                 r("mat-card:has-text('Líneas') mat-card-title", "Las líneas quedan", 3500),
+                {"escribir": {"sel": "textarea[formcontrolname='notes']",
+                              "texto": "Contenedor MSCU-2611 sin orden de compra. Autorizó Gerencia de compras."},
+                 "al_decir": "Lo escribo"},
                 c(".form-layout-footer button:has-text('Guardar')", "Pulso guardar"),
                 r(".custom-alert-dialog-panel mat-dialog-container", "la recepción se creó", 2500),
                 c("mat-dialog-container button:has-text('Aceptar')", "y acepto. En"),

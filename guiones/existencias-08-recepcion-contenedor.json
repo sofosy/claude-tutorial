@@ -166,7 +166,7 @@
    "rotulo": "Importar líneas",
    "ruta": "Compras › Recepciones › Crear recepción",
    "texto_pantalla": "Importar líneas desde Excel · código, cantidad y costo",
-   "narracion": "Con cientos de líneas no se escriben a mano. Pulso Importar líneas desde Excel. La plantilla trae el código del producto, la cantidad, el costo unitario sin ITBIS, el impuesto, y, si hace falta, el lote y el vencimiento. Ya llené la del contenedor: mil ochocientos filtros a ciento setenta y dos, y seiscientos juegos de pastillas a seiscientos diez. Elijo el archivo. Dos líneas listas, por seiscientos setenta y cinco mil seiscientos pesos sin ITBIS, y ninguna con error. Agrego las dos líneas.",
+   "narracion": "Con cientos de líneas no se escriben a mano. Pulso Importar líneas desde Excel. La plantilla trae el código del producto, la cantidad, el costo unitario sin ITBIS, el impuesto, y, si hace falta, el lote y el vencimiento. Ya llené la del contenedor: mil ochocientos filtros a ciento setenta y dos, y seiscientos juegos de pastillas a seiscientos diez. Elijo el archivo. Dos líneas listas, por seiscientos setenta y cinco mil seiscientos pesos sin ITBIS, y ninguna con error. Agrego las dos líneas, y el aviso confirma que se agregaron.",
    "acciones": [
     {
      "click": "button:has-text('Importar líneas desde Excel')",
@@ -195,6 +195,12 @@
     {
      "click": "mat-dialog-container button:has-text('Agregar 2 líneas')",
      "al_decir": "Agrego las dos"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "al_decir": "el aviso confirma",
+     "cursor": false
     }
    ]
   },
@@ -204,13 +210,20 @@
    "rotulo": "Procesar a inventario",
    "ruta": "Compras › Recepciones",
    "texto_pantalla": "Recepción · guardar, aprobar y procesar a inventario",
-   "narracion": "Las líneas quedan en la recepción con su cantidad, su costo y su ubicación. Pulso guardar; el aviso dice que la recepción se creó, y acepto. En el menú acciones pulso aprobar recepción; me pide confirmar, y apruebo. El aviso dice que ya se puede procesar a inventario; acepto. Y en el mismo menú, procesar a inventario. Pulso procesar las dos líneas. La mercancía entró al almacén: el asiento va a inventario contra mercancía por recibir, y cuando llegue la factura del proveedor se coteja con esta recepción, con su ITBIS, su cuenta por pagar y su 606.",
+   "narracion": "Las líneas quedan en la recepción con su cantidad, su costo y su ubicación. Como no hay orden de compra, el sistema pide el motivo: quién la autorizó y por qué. Lo escribo en las notas de la recepción. Ese motivo queda en el documento para quien lo revise. Con eso ya se puede guardar. Pulso guardar; el aviso dice que la recepción se creó, y acepto. En el menú acciones pulso aprobar recepción; me pide confirmar, y apruebo. El aviso dice que ya se puede procesar a inventario; acepto. Y en el mismo menú, procesar a inventario. Pulso procesar las dos líneas. La mercancía entró al almacén: el asiento va a inventario contra mercancía por recibir, y cuando llegue la factura del proveedor se coteja con esta recepción, con su ITBIS, su cuenta por pagar y su 606.",
    "acciones": [
     {
      "resaltar": "mat-card:has-text('Líneas') mat-card-title",
      "durante_ms": 3500,
      "al_decir": "Las líneas quedan",
      "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "textarea[formcontrolname='notes']",
+      "texto": "Contenedor MSCU-2611 sin orden de compra. Autorizó Gerencia de compras."
+     },
+     "al_decir": "Lo escribo"
     },
     {
      "click": ".form-layout-footer button:has-text('Guardar')",
