@@ -1000,7 +1000,7 @@ V8 = {
             "texto_pantalla": "Historial del producto · la recepción con su proveedor",
             "navegar": "/inventory/product/list", "al_decir_navegar": "abro el catálogo",
             "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro el catálogo de productos y edito el "
-                         "filtro de aceite. En la pestaña Historial, la vista Compras lista los documentos con que se ha "
+                         "filtro de aceite. Se abre su ficha, con sus datos arriba y sus pestañas abajo. En la pestaña Historial, la vista Compras lista los documentos con que se ha "
                          "comprado. Aquí está la recepción del contenedor, a nombre de Autopartes del Caribe Germiva, con su "
                          "RNC, la cantidad y el costo. Esa es la diferencia con las cargas de existencias: el inventario "
                          "inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
