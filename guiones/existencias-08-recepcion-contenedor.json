@@ -180,6 +180,15 @@
      "cursor": false
     },
     {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "El contenedor",
+      "texto": "1,800 filtros a 172.00 y 600 juegos de pastillas a 610.00, sin ITBIS."
+     },
+     "durante_ms": 6000,
+     "al_decir": "Ya llené la del contenedor"
+    },
+    {
      "subir": {
       "sel": "mat-dialog-container input[type='file']",
       "archivo": "seeds/existencias/archivos/recepcion-contenedor.xlsx",

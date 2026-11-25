@@ -950,6 +950,8 @@ V8 = {
             "acciones": [
                 c("button:has-text('Importar líneas desde Excel')", "Pulso Importar líneas"),
                 r(f"{D} button:has-text('Descargar plantilla')", "La plantilla", 6000),
+                cartel("consejo", "El contenedor",
+                       "1,800 filtros a 172.00 y 600 juegos de pastillas a 610.00, sin ITBIS.", "Ya llené la del contenedor", 6000),
                 {"subir": {"sel": f"{D} input[type='file']", "archivo": "seeds/existencias/archivos/recepcion-contenedor.xlsx",
                            "ancla": f"{D} button:has-text('Elegir archivo')"}, "al_decir": "Elijo el archivo"},
                 r(D, "Dos líneas listas", 6000),
