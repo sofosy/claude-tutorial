@@ -31,39 +31,39 @@ Para crear muchos productos de una vez, con su existencia,
 se usa Importar o Exportar.
 
 9
-00:00:29,814 --> 00:00:32,394
+00:00:29,815 --> 00:00:32,396
 Desde aquí, abro Importar o Exportar.
 
 10
-00:00:33,049 --> 00:00:35,195
+00:00:33,051 --> 00:00:35,197
 Primero, la plantilla de Excel:
 
 11
-00:00:35,307 --> 00:00:40,379
+00:00:35,307 --> 00:00:40,381
 trae una fila por producto, con código, nombre, marca, unidad y precio.
 
 12
-00:00:41,036 --> 00:00:42,251
+00:00:41,036 --> 00:00:42,253
 Este aviso lo dice:
 
 13
-00:00:42,349 --> 00:00:46,567
+00:00:42,350 --> 00:00:46,569
 para los productos que manejan inventario puedes cargar la existencia inicial,
 
 14
-00:00:46,381 --> 00:00:49,495
+00:00:46,382 --> 00:00:49,496
 y solo se aplica al crear el producto.
 
 15
-00:00:49,307 --> 00:00:54,293
+00:00:49,307 --> 00:00:54,295
 En cada kit lleno la existencia, el costo de compra sin ITBIS, el impuesto,
 
 16
-00:00:54,105 --> 00:00:56,004
+00:00:54,106 --> 00:00:56,006
 y el almacén.
 
 17
-00:00:55,817 --> 00:00:57,628
+00:00:55,819 --> 00:00:57,629
 Y aquí sí va el proveedor:
 
 18
@@ -71,125 +71,125 @@ Y aquí sí va el proveedor:
 las columnas RNC del proveedor, su registro de contribuyente,
 
 19
-00:01:00,456 --> 00:01:05,703
+00:01:00,457 --> 00:01:05,704
 y nombre del proveedor dejan a Repuestos del Cibao como proveedor habitual de cada
 
 20
-00:01:05,515 --> 00:01:06,013
+00:01:05,516 --> 00:01:06,014
 kit;
 
 21
-00:01:06,073 --> 00:01:08,145
+00:01:06,073 --> 00:01:08,146
 si no existiera, se crearía.
 
 22
-00:01:08,813 --> 00:01:11,259
+00:01:08,814 --> 00:01:11,260
 La columna tipo de entrada se deja vacía:
 
 23
-00:01:11,355 --> 00:01:12,759
+00:01:11,356 --> 00:01:12,760
 la decide el motivo.
 
 24
-00:01:13,414 --> 00:01:15,189
+00:01:13,415 --> 00:01:15,190
 Ya llené los dos kits.
 
 25
-00:01:15,844 --> 00:01:17,445
+00:01:15,846 --> 00:01:17,447
 Selecciono el archivo.
 
 26
-00:01:18,811 --> 00:01:22,185
+00:01:18,806 --> 00:01:22,180
 Como el archivo trae existencia, el diálogo se detiene:
 
 27
-00:01:22,295 --> 00:01:24,281
+00:01:22,290 --> 00:01:24,276
 este archivo carga existencia.
 
 28
-00:01:24,949 --> 00:01:28,150
+00:01:24,944 --> 00:01:28,145
 Crea dos productos por doscientos cincuenta y un mil pesos,
 
 29
-00:01:28,148 --> 00:01:31,349
+00:01:28,143 --> 00:01:31,344
 y toda carga de existencia lleva su motivo y su asiento.
 
 30
-00:01:32,017 --> 00:01:34,970
+00:01:32,012 --> 00:01:34,965
 Abro el motivo de la carga y elijo Inventario inicial,
 
 31
-00:01:34,931 --> 00:01:38,182
+00:01:34,926 --> 00:01:38,177
 porque la empresa todavía está cargando lo que trae al empezar.
 
 32
-00:01:38,850 --> 00:01:40,253
+00:01:38,845 --> 00:01:40,248
 En la referencia escribo:
 
 33
-00:01:40,313 --> 00:01:42,237
+00:01:40,308 --> 00:01:42,232
 Nueva línea de kits de embrague.
 
 34
-00:01:42,905 --> 00:01:45,065
+00:01:42,900 --> 00:01:45,060
 Esa referencia queda en el asiento.
 
 35
-00:01:45,720 --> 00:01:47,247
+00:01:45,715 --> 00:01:47,242
 Dejo Un solo asiento.
 
 36
-00:01:47,902 --> 00:01:49,454
+00:01:47,897 --> 00:01:49,449
 Pulso Revisar el asiento:
 
 37
-00:01:49,589 --> 00:01:53,770
+00:01:49,584 --> 00:01:53,765
 débito a Inventario y crédito a la cuenta de apertura, por el mismo importe.
 
 38
-00:01:54,425 --> 00:01:55,605
+00:01:54,420 --> 00:01:55,600
 Pulso Importar.
 
 39
-00:01:56,982 --> 00:01:59,103
+00:01:56,990 --> 00:01:59,111
 La importación corre en sus etapas:
 
 40
-00:01:59,251 --> 00:02:02,328
+00:01:59,259 --> 00:02:02,336
 subir, validar, registrar y finalizar.
 
 41
-00:02:02,996 --> 00:02:03,667
+00:02:03,004 --> 00:02:03,675
 Listo:
 
 42
-00:02:03,777 --> 00:02:05,465
+00:02:03,785 --> 00:02:05,473
 dos productos creados.
 
 43
-00:02:06,133 --> 00:02:10,574
+00:02:06,141 --> 00:02:10,582
 Y la existencia quedó registrada con su asiento, que desde aquí puedes abrir.
 
 44
-00:02:11,230 --> 00:02:12,596
+00:02:11,239 --> 00:02:12,604
 Cierro el diálogo.
 
 45
-00:02:13,263 --> 00:02:15,423
+00:02:13,271 --> 00:02:15,431
 Los dos kits ya están en el catálogo,
 
 46
-00:02:15,520 --> 00:02:18,883
+00:02:15,528 --> 00:02:18,891
 con su existencia en el Almacén Central y su proveedor habitual.
 
 47
-00:02:19,538 --> 00:02:21,648
+00:02:19,546 --> 00:02:21,656
 Si estos kits vinieran de una compra,
 
 48
-00:02:21,808 --> 00:02:25,715
+00:02:21,816 --> 00:02:25,723
 lo correcto sería crearlos sin existencia y recibirlos con la recepción,
 
 49
-00:02:25,751 --> 00:02:27,105
+00:02:25,759 --> 00:02:27,113
 a nombre del proveedor.
