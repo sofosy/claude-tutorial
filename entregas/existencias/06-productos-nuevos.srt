@@ -1,0 +1,195 @@
+1
+00:00:03,100 --> 00:00:05,445
+Repuestos Germiva trae una línea nueva:
+
+2
+00:00:05,529 --> 00:00:08,333
+kits de embrague, para sedán y para camioneta.
+
+3
+00:00:08,990 --> 00:00:11,284
+Entro a Inventario y abro Productos.
+
+4
+00:00:11,952 --> 00:00:13,541
+Ahora recojo el panel.
+
+5
+00:00:14,210 --> 00:00:17,225
+Este es el catálogo, con un repuesto por fila.
+
+6
+00:00:17,881 --> 00:00:22,358
+Los kits todavía no están, y ya hay treinta y veinte en el Almacén Central.
+
+7
+00:00:23,027 --> 00:00:26,463
+Para crear muchos productos de una vez, con su existencia,
+
+8
+00:00:26,585 --> 00:00:28,435
+se usa Importar o Exportar.
+
+9
+00:00:29,814 --> 00:00:32,394
+Desde aquí, abro Importar o Exportar.
+
+10
+00:00:33,049 --> 00:00:35,195
+Primero, la plantilla de Excel:
+
+11
+00:00:35,307 --> 00:00:40,379
+trae una fila por producto, con código, nombre, marca, unidad y precio.
+
+12
+00:00:41,036 --> 00:00:42,251
+Este aviso lo dice:
+
+13
+00:00:42,349 --> 00:00:46,567
+para los productos que manejan inventario puedes cargar la existencia inicial,
+
+14
+00:00:46,381 --> 00:00:49,495
+y solo se aplica al crear el producto.
+
+15
+00:00:49,307 --> 00:00:54,293
+En cada kit lleno la existencia, el costo de compra sin ITBIS, el impuesto,
+
+16
+00:00:54,105 --> 00:00:56,004
+y el almacén.
+
+17
+00:00:55,817 --> 00:00:57,628
+Y aquí sí va el proveedor:
+
+18
+00:00:57,442 --> 00:01:00,643
+las columnas RNC del proveedor, su registro de contribuyente,
+
+19
+00:01:00,456 --> 00:01:05,703
+y nombre del proveedor dejan a Repuestos del Cibao como proveedor habitual de cada
+
+20
+00:01:05,515 --> 00:01:06,013
+kit;
+
+21
+00:01:06,073 --> 00:01:08,145
+si no existiera, se crearía.
+
+22
+00:01:08,813 --> 00:01:11,259
+La columna tipo de entrada se deja vacía:
+
+23
+00:01:11,355 --> 00:01:12,759
+la decide el motivo.
+
+24
+00:01:13,414 --> 00:01:15,189
+Ya llené los dos kits.
+
+25
+00:01:15,844 --> 00:01:17,445
+Selecciono el archivo.
+
+26
+00:01:18,811 --> 00:01:22,185
+Como el archivo trae existencia, el diálogo se detiene:
+
+27
+00:01:22,295 --> 00:01:24,281
+este archivo carga existencia.
+
+28
+00:01:24,949 --> 00:01:28,150
+Crea dos productos por doscientos cincuenta y un mil pesos,
+
+29
+00:01:28,148 --> 00:01:31,349
+y toda carga de existencia lleva su motivo y su asiento.
+
+30
+00:01:32,017 --> 00:01:34,970
+Abro el motivo de la carga y elijo Inventario inicial,
+
+31
+00:01:34,931 --> 00:01:38,182
+porque la empresa todavía está cargando lo que trae al empezar.
+
+32
+00:01:38,850 --> 00:01:40,253
+En la referencia escribo:
+
+33
+00:01:40,313 --> 00:01:42,237
+Nueva línea de kits de embrague.
+
+34
+00:01:42,905 --> 00:01:45,065
+Esa referencia queda en el asiento.
+
+35
+00:01:45,720 --> 00:01:47,247
+Dejo Un solo asiento.
+
+36
+00:01:47,902 --> 00:01:49,454
+Pulso Revisar el asiento:
+
+37
+00:01:49,589 --> 00:01:53,770
+débito a Inventario y crédito a la cuenta de apertura, por el mismo importe.
+
+38
+00:01:54,425 --> 00:01:55,605
+Pulso Importar.
+
+39
+00:01:56,982 --> 00:01:59,103
+La importación corre en sus etapas:
+
+40
+00:01:59,251 --> 00:02:02,328
+subir, validar, registrar y finalizar.
+
+41
+00:02:02,996 --> 00:02:03,667
+Listo:
+
+42
+00:02:03,777 --> 00:02:05,465
+dos productos creados.
+
+43
+00:02:06,133 --> 00:02:10,574
+Y la existencia quedó registrada con su asiento, que desde aquí puedes abrir.
+
+44
+00:02:11,230 --> 00:02:12,596
+Cierro el diálogo.
+
+45
+00:02:13,263 --> 00:02:15,423
+Los dos kits ya están en el catálogo,
+
+46
+00:02:15,520 --> 00:02:18,883
+con su existencia en el Almacén Central y su proveedor habitual.
+
+47
+00:02:19,538 --> 00:02:21,648
+Si estos kits vinieran de una compra,
+
+48
+00:02:21,808 --> 00:02:25,715
+lo correcto sería crearlos sin existencia y recibirlos con la recepción,
+
+49
+00:02:25,751 --> 00:02:27,105
+a nombre del proveedor.
