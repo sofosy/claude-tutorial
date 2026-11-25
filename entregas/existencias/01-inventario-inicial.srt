@@ -1,0 +1,287 @@
+1
+00:00:03,100 --> 00:00:07,826
+Esta es Repuestos Germiva, una importadora de repuestos que empieza a usar Germiva.
+
+2
+00:00:08,480 --> 00:00:10,591
+Entro a Inventario y abro Existencias,
+
+3
+00:00:10,725 --> 00:00:13,678
+la pantalla con lo que hay de cada producto ahora mismo.
+
+4
+00:00:14,333 --> 00:00:17,931
+Cada fila es un repuesto, con lo disponible y lo reservado.
+
+5
+00:00:18,588 --> 00:00:19,791
+Recojo el panel.
+
+6
+00:00:20,460 --> 00:00:22,098
+Hoy todos están sin stock:
+
+7
+00:00:22,172 --> 00:00:26,276
+la mercancía está en los almacenes, pero todavía no en el sistema.
+
+8
+00:00:26,934 --> 00:00:30,196
+Solo en el Almacén Central hay mil doscientos filtros de aceite,
+
+9
+00:00:30,170 --> 00:00:34,250
+cuatrocientos juegos de pastillas de freno y dos mil quinientas bujías.
+
+10
+00:00:34,920 --> 00:00:38,417
+Escribirlos uno por uno sería lento y fácil de equivocar.
+
+11
+00:00:39,085 --> 00:00:41,134
+Para eso está Actualizar existencias:
+
+12
+00:00:41,194 --> 00:00:44,544
+una plantilla de Excel que se llena y se sube de una vez.
+
+13
+00:00:45,920 --> 00:00:48,761
+Para empezar, pulso Actualizar existencias.
+
+14
+00:00:49,429 --> 00:00:53,497
+El diálogo tiene dos pasos, y el primero es descargar la plantilla.
+
+15
+00:00:54,152 --> 00:00:55,444
+Elijo qué voy a hacer:
+
+16
+00:00:55,591 --> 00:00:58,507
+Entrada, que suma lo que escriba a lo que ya hay.
+
+17
+00:00:59,162 --> 00:01:01,682
+El conteo físico lo vemos en otro video.
+
+18
+00:01:02,350 --> 00:01:05,911
+Como la empresa tiene dos almacenes, cargo uno a la vez:
+
+19
+00:01:05,984 --> 00:01:09,531
+elijo Un almacén, y en la lista, el Almacén Central.
+
+20
+00:01:10,200 --> 00:01:11,763
+En productos dejo Todos:
+
+21
+00:01:11,885 --> 00:01:13,933
+los que tienen existencia y los que no.
+
+22
+00:01:14,602 --> 00:01:16,575
+Ahora descargo la plantilla.
+
+23
+00:01:17,230 --> 00:01:21,832
+El Excel trae cada repuesto con su código, su nombre y la existencia de hoy.
+
+24
+00:01:22,502 --> 00:01:24,040
+Yo lleno dos columnas:
+
+25
+00:01:24,126 --> 00:01:29,509
+la cantidad a ingresar y el costo unitario, sin ITBIS, es decir, sin el impuesto.
+
+26
+00:01:30,177 --> 00:01:32,646
+Las filas que dejo vacías no se tocan.
+
+27
+00:01:33,314 --> 00:01:35,424
+Fíjate que no hay columna de proveedor:
+
+28
+00:01:35,560 --> 00:01:38,350
+el inventario con el que empiezas no es una compra.
+
+29
+00:01:39,019 --> 00:01:43,397
+Lo que se le compre a Autopartes del Caribe entra por la recepción, con su factura.
+
+30
+00:01:44,746 --> 00:01:46,161
+Ya llené el Excel.
+
+31
+00:01:46,829 --> 00:01:48,293
+Voy al segundo paso:
+
+32
+00:01:48,391 --> 00:01:49,620
+subir el archivo.
+
+33
+00:01:50,288 --> 00:01:52,633
+Primero, el motivo de la carga.
+
+34
+00:01:53,289 --> 00:01:55,064
+Elijo Inventario inicial.
+
+35
+00:01:55,732 --> 00:01:57,532
+Debajo dice lo que significa:
+
+36
+00:01:57,692 --> 00:02:00,074
+son las existencias con las que la empresa empieza,
+
+37
+00:02:00,135 --> 00:02:02,406
+y se asientan contra el patrimonio de apertura,
+
+38
+00:02:02,528 --> 00:02:05,270
+solo mientras el inventario inicial esté abierto.
+
+39
+00:02:05,926 --> 00:02:07,304
+Escribo la referencia:
+
+40
+00:02:07,401 --> 00:02:09,710
+Inventario inicial Almacén Central.
+
+41
+00:02:10,378 --> 00:02:14,819
+Motivo y referencia son obligatorios y quedan en cada movimiento y en el asiento.
+
+42
+00:02:15,487 --> 00:02:19,370
+En el asiento contable dejo Un solo asiento, que es lo recomendado:
+
+43
+00:02:19,430 --> 00:02:21,764
+una línea por cuenta para toda la carga.
+
+44
+00:02:22,419 --> 00:02:24,702
+Elijo el archivo y pido revisarlo.
+
+45
+00:02:25,370 --> 00:02:27,145
+Todavía no se aplica nada.
+
+46
+00:02:28,554 --> 00:02:29,919
+Esta es la vista previa:
+
+47
+00:02:30,054 --> 00:02:33,056
+lo que va a pasar con cada fila, antes de aplicar.
+
+48
+00:02:33,724 --> 00:02:35,300
+Arriba, el resumen:
+
+49
+00:02:35,349 --> 00:02:39,728
+entran tres productos, por setecientos diecinueve mil quinientos pesos.
+
+50
+00:02:40,396 --> 00:02:45,419
+Las otras cuatro filas no se tocan, porque las dejé vacías, y no hay errores.
+
+51
+00:02:46,088 --> 00:02:48,295
+Debajo está el asiento que se generará:
+
+52
+00:02:48,394 --> 00:02:52,587
+débito a Inventario de mercancías y crédito a la cuenta de apertura del inventario,
+
+53
+00:02:52,549 --> 00:02:53,890
+por el mismo importe.
+
+54
+00:02:54,557 --> 00:02:59,334
+Si algo impidiera registrarlo, lo diría aquí y la carga no se podría aplicar.
+
+55
+00:03:00,002 --> 00:03:01,962
+Más abajo, el detalle.
+
+56
+00:03:02,617 --> 00:03:04,207
+Filtro las que se aplican.
+
+57
+00:03:04,862 --> 00:03:08,758
+Cada fila dice cuánto hay hoy, en cuánto queda y el valor que entra.
+
+58
+00:03:09,426 --> 00:03:10,283
+Todo cuadra:
+
+59
+00:03:10,394 --> 00:03:12,168
+aplico los tres cambios.
+
+60
+00:03:12,836 --> 00:03:16,360
+La carga corre en segundo plano, con su barra de progreso.
+
+61
+00:03:17,733 --> 00:03:19,606
+Existencias actualizadas:
+
+62
+00:03:19,680 --> 00:03:20,835
+tres productos.
+
+63
+00:03:21,502 --> 00:03:23,599
+Con pocos productos termina enseguida;
+
+64
+00:03:23,709 --> 00:03:26,948
+con miles, puedes cerrar la ventana y volver luego.
+
+65
+00:03:27,603 --> 00:03:31,820
+El asiento quedó registrado por setecientos diecinueve mil quinientos pesos,
+
+66
+00:03:31,856 --> 00:03:35,182
+con el motivo y la referencia, y desde aquí puedes abrirlo.
+
+67
+00:03:35,850 --> 00:03:39,608
+La Sucursal Santiago se carga igual, con su propia plantilla.
+
+68
+00:03:40,264 --> 00:03:42,039
+Pulso Nueva actualización.
+
+69
+00:03:42,695 --> 00:03:47,322
+Abajo queda el historial de cargas, y el aviso de inventario inicial abierto.
+
+70
+00:03:47,990 --> 00:03:52,034
+Mientras esté abierto, puedes seguir cargando como inventario inicial.
+
+71
+00:03:52,689 --> 00:03:56,648
+Cuando termines de cargar todo lo que traes, lo cierras con este botón.
+
+72
+00:03:57,316 --> 00:04:01,918
+Eso, y qué hacer si te quedó mercancía fuera, lo vemos en el próximo video.
