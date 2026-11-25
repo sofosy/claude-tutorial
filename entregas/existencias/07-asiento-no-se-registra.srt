@@ -1,0 +1,203 @@
+1
+00:00:03,100 --> 00:00:07,726
+Vamos a cargar el sobrante del Almacén Central, el mismo del video del sobrante.
+
+2
+00:00:08,394 --> 00:00:10,777
+Entro a Inventario y abro Existencias.
+
+3
+00:00:11,445 --> 00:00:13,032
+Primero recojo el panel.
+
+4
+00:00:13,702 --> 00:00:15,699
+Pulso Actualizar existencias.
+
+5
+00:00:16,368 --> 00:00:18,030
+Ya tengo el Excel lleno.
+
+6
+00:00:18,686 --> 00:00:21,801
+Abro el motivo de la carga y elijo Sobrante encontrado.
+
+7
+00:00:22,457 --> 00:00:23,810
+En la referencia escribo:
+
+8
+00:00:23,882 --> 00:00:26,078
+Cajas encontradas en el pasillo B.
+
+9
+00:00:26,734 --> 00:00:28,721
+Así queda explicada la carga.
+
+10
+00:00:29,376 --> 00:00:31,660
+Elijo el archivo y pido revisarlo.
+
+11
+00:00:33,032 --> 00:00:34,397
+Las filas están bien:
+
+12
+00:00:34,469 --> 00:00:37,981
+entran dos productos por cinco mil doscientos setenta pesos.
+
+13
+00:00:38,649 --> 00:00:40,894
+Pero en el asiento aparece un aviso en rojo:
+
+14
+00:00:41,017 --> 00:00:45,012
+no se puede registrar el asiento, así que la carga no se puede aplicar.
+
+15
+00:00:45,679 --> 00:00:46,722
+Y dice por qué:
+
+16
+00:00:46,809 --> 00:00:50,667
+la cuenta de otros ingresos que tiene el mapeo es agrupadora y no admite
+
+17
+00:00:50,478 --> 00:00:51,484
+movimientos;
+
+18
+00:00:51,508 --> 00:00:54,932
+hay que asignar una cuenta de detalle en la configuración contable.
+
+19
+00:00:55,588 --> 00:00:58,070
+Por eso el botón de aplicar está deshabilitado:
+
+20
+00:00:58,180 --> 00:00:59,421
+no se movió nada.
+
+21
+00:01:00,090 --> 00:01:03,079
+Las causas pueden ser una cuenta agrupadora o inactiva,
+
+22
+00:01:03,189 --> 00:01:06,167
+una configuración que falta o un período cerrado.
+
+23
+00:01:06,823 --> 00:01:09,181
+Cierro el diálogo y voy a corregirlo.
+
+24
+00:01:10,546 --> 00:01:13,003
+Esto lo hace quien lleva la contabilidad.
+
+25
+00:01:13,671 --> 00:01:16,859
+Voy al Mapeo de Cuentas, en la configuración contable:
+
+26
+00:01:16,933 --> 00:01:19,712
+aquí cada operación del sistema tiene su cuenta.
+
+27
+00:01:20,379 --> 00:01:23,754
+Busco ajuste de inventario, y la lista se filtra sola.
+
+28
+00:01:24,409 --> 00:01:29,508
+Este rol, otros ingresos por ajuste de inventario, apunta a la cuenta agrupadora.
+
+29
+00:01:30,164 --> 00:01:33,266
+Abro su selector, que solo ofrece cuentas de detalle,
+
+30
+00:01:33,376 --> 00:01:36,218
+y elijo Otros ingresos diversos, general.
+
+31
+00:01:36,885 --> 00:01:39,504
+El aviso confirma que se guardó al instante.
+
+32
+00:01:40,171 --> 00:01:44,650
+Ahora el rol apunta a una cuenta de detalle, que sí admite movimientos.
+
+33
+00:01:46,021 --> 00:01:47,462
+Ya está corregido.
+
+34
+00:01:48,116 --> 00:01:51,703
+Vuelvo a Existencias y pulso otra vez Actualizar existencias.
+
+35
+00:01:52,370 --> 00:01:54,665
+No hace falta descargar otra plantilla:
+
+36
+00:01:54,875 --> 00:01:56,328
+subo el mismo archivo.
+
+37
+00:01:56,995 --> 00:01:59,588
+Abro el motivo y elijo Sobrante encontrado.
+
+38
+00:02:00,245 --> 00:02:04,883
+Escribo la misma referencia, para que quede igual que la primera vez en el asiento.
+
+39
+00:02:05,551 --> 00:02:07,847
+Y ahora sí, elijo el archivo.
+
+40
+00:02:08,503 --> 00:02:11,295
+En la vista previa, el asiento sale completo:
+
+41
+00:02:11,418 --> 00:02:14,879
+débito a Inventario y crédito a otros ingresos diversos.
+
+42
+00:02:15,546 --> 00:02:19,269
+Aplico los dos cambios, y la carga corre en segundo plano.
+
+43
+00:02:20,632 --> 00:02:22,171
+Asiento registrado.
+
+44
+00:02:22,839 --> 00:02:25,097
+Hay un segundo caso, menos común:
+
+45
+00:02:25,195 --> 00:02:29,933
+que algo cambie mientras la carga corre, por ejemplo, que alguien cierre el período.
+
+46
+00:02:30,601 --> 00:02:34,262
+Entonces la existencia sí entra, pero el asiento queda pendiente,
+
+47
+00:02:34,309 --> 00:02:37,349
+y el resultado lo dice con el botón Reintentar asiento.
+
+48
+00:02:38,017 --> 00:02:39,346
+No repitas la carga:
+
+49
+00:02:39,468 --> 00:02:41,380
+corrige la causa y reintenta.
+
+50
+00:02:42,048 --> 00:02:46,811
+Mientras siga pendiente, el diálogo lo avisa arriba y no deja aplicar otra carga.
+
+51
+00:02:47,467 --> 00:02:49,899
+Así ninguna carga queda sin su asiento.

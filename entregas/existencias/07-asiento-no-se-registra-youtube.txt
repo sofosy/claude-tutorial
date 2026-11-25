@@ -1,0 +1,38 @@
+TÍTULO
+============================================================
+Existencias · Parte 7: cuando el asiento no se puede registrar
+
+DESCRIPCIÓN
+============================================================
+Séptima parte de la serie de cargas masivas de existencias de Germiva ERP. La vista previa avisa que el asiento no se puede registrar porque una cuenta del mapeo es agrupadora: la carga no se aplica. Se corrige la cuenta en el Mapeo de Cuentas, se vuelve a subir el mismo archivo y se aplica. Qué hacer si el asiento queda pendiente después de aplicar.
+
+⏱️ CAPÍTULOS
+00:00  La carga del sobrante
+00:32  El aviso
+01:10  Corregir la cuenta
+01:45  El mismo archivo, otra vez
+02:20  Si queda pendiente después de aplicar
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Leer el aviso de asiento que no se puede registrar
+• Corregir la cuenta en el Mapeo de Cuentas
+• Volver a subir el mismo archivo y aplicar
+• Qué hacer si el asiento queda pendiente después de aplicar
+
+⚠️ ERRORES COMUNES
+• Repetir una carga cuyo asiento quedó pendiente: la existencia ya entró; se usa Reintentar asiento
+• Asignar una cuenta agrupadora en el mapeo: solo las de detalle admiten movimientos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:54
+
+TRANSCRIPCIÓN
+============================================================
+Vamos a cargar el sobrante del Almacén Central, el mismo del video del sobrante. Entro a Inventario y abro Existencias. Primero recojo el panel. Pulso Actualizar existencias. Ya tengo el Excel lleno. Abro el motivo de la carga y elijo Sobrante encontrado. En la referencia escribo: Cajas encontradas en el pasillo B. Así queda explicada la carga. Elijo el archivo y pido revisarlo.
+Las filas están bien: entran dos productos por cinco mil doscientos setenta pesos. Pero en el asiento aparece un aviso en rojo: no se puede registrar el asiento, así que la carga no se puede aplicar. Y dice por qué: la cuenta de otros ingresos que tiene el mapeo es agrupadora y no admite movimientos; hay que asignar una cuenta de detalle en la configuración contable. Por eso el botón de aplicar está deshabilitado: no se movió nada. Las causas pueden ser una cuenta agrupadora o inactiva, una configuración que falta o un período cerrado. Cierro el diálogo y voy a corregirlo.
+Esto lo hace quien lleva la contabilidad. Voy al Mapeo de Cuentas, en la configuración contable: aquí cada operación del sistema tiene su cuenta. Busco ajuste de inventario, y la lista se filtra sola. Este rol, otros ingresos por ajuste de inventario, apunta a la cuenta agrupadora. Abro su selector, que solo ofrece cuentas de detalle, y elijo Otros ingresos diversos, general. El aviso confirma que se guardó al instante. Ahora el rol apunta a una cuenta de detalle, que sí admite movimientos.
+Ya está corregido. Vuelvo a Existencias y pulso otra vez Actualizar existencias. No hace falta descargar otra plantilla: subo el mismo archivo. Abro el motivo y elijo Sobrante encontrado. Escribo la misma referencia, para que quede igual que la primera vez en el asiento. Y ahora sí, elijo el archivo. En la vista previa, el asiento sale completo: débito a Inventario y crédito a otros ingresos diversos. Aplico los dos cambios, y la carga corre en segundo plano.
+Asiento registrado. Hay un segundo caso, menos común: que algo cambie mientras la carga corre, por ejemplo, que alguien cierre el período. Entonces la existencia sí entra, pero el asiento queda pendiente, y el resultado lo dice con el botón Reintentar asiento. No repitas la carga: corrige la causa y reintenta. Mientras siga pendiente, el diálogo lo avisa arriba y no deja aplicar otra carga. Así ninguna carga queda sin su asiento.
