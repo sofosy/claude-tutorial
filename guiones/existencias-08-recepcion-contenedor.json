@@ -330,18 +330,21 @@
     },
     {
      "resaltar": "app-product-document-history tbody tr:first-child td.history-partner",
-     "durante_ms": 6000,
+     "durante_ms": 5000,
      "al_decir": "a nombre de Autopartes",
      "cursor": false
     },
     {
-     "cartel": {
-      "tipo": "consejo",
-      "titulo": "¿Dónde queda el proveedor?",
-      "texto": "En las compras: recepción, factura, cuenta por pagar y 606. Las cargas de existencias no lo llevan."
-     },
-     "durante_ms": 9000,
-     "al_decir": "Esa es la diferencia"
+     "resaltar": "app-product-history .history-seg",
+     "durante_ms": 4000,
+     "al_decir": "Esa es la diferencia",
+     "cursor": false
+    },
+    {
+     "resaltar": "app-product-document-history tbody tr:first-child td.history-partner",
+     "durante_ms": 5000,
+     "al_decir": "las compras sí",
+     "cursor": false
     }
    ]
   }
