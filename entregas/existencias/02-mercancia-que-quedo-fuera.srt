@@ -1,0 +1,223 @@
+1
+00:00:03,100 --> 00:00:05,123
+Seguimos con Repuestos Germiva.
+
+2
+00:00:05,778 --> 00:00:08,160
+Entro a Inventario y abro Existencias.
+
+3
+00:00:08,827 --> 00:00:12,625
+En el video anterior cargamos el inventario inicial del Almacén Central,
+
+4
+00:00:12,696 --> 00:00:15,054
+y la Sucursal Santiago se cargó igual.
+
+5
+00:00:15,711 --> 00:00:16,914
+Recojo el panel.
+
+6
+00:00:17,582 --> 00:00:21,503
+Pero al revisar, el encargado del Central se dio cuenta de que el estante de
+
+7
+00:00:21,315 --> 00:00:23,586
+correas y amortiguadores no se contó.
+
+8
+00:00:24,254 --> 00:00:26,091
+El amortiguador está sin stock,
+
+9
+00:00:26,227 --> 00:00:29,315
+y la correa de distribución solo tiene lo de Santiago.
+
+10
+00:00:29,984 --> 00:00:32,055
+Como el inventario inicial sigue abierto,
+
+11
+00:00:32,153 --> 00:00:35,380
+esa mercancía todavía puede entrar como inventario inicial,
+
+12
+00:00:35,353 --> 00:00:37,166
+contra el patrimonio de apertura.
+
+13
+00:00:37,834 --> 00:00:39,795
+Abro Actualizar existencias.
+
+14
+00:00:41,167 --> 00:00:44,615
+Como en el video anterior, dejo Entrada, para sumar.
+
+15
+00:00:45,283 --> 00:00:49,489
+Elijo Un almacén, y en la lista de almacenes, el Almacén Central.
+
+16
+00:00:50,156 --> 00:00:51,670
+Ahora viene lo nuevo.
+
+17
+00:00:52,326 --> 00:00:54,350
+En Productos elijo Sin existencia:
+
+18
+00:00:54,472 --> 00:00:58,528
+la plantilla trae solo lo que en ese almacén está en cero o en negativo.
+
+19
+00:00:59,185 --> 00:01:03,750
+Con miles de productos, así no tienes que buscar entre todas las filas lo que faltó.
+
+20
+00:01:04,405 --> 00:01:09,057
+Descargo la plantilla y lleno solo la correa y el amortiguador, con su costo.
+
+21
+00:01:09,712 --> 00:01:10,855
+Ojo con un caso:
+
+22
+00:01:10,927 --> 00:01:14,153
+si a un producto que ya tiene existencia le faltaron unidades,
+
+23
+00:01:14,276 --> 00:01:16,287
+ese no sale en esta plantilla.
+
+24
+00:01:16,942 --> 00:01:20,764
+Para él descargas la de Todos y escribes solo las unidades que faltan.
+
+25
+00:01:22,139 --> 00:01:23,554
+Ya llené el Excel.
+
+26
+00:01:24,222 --> 00:01:26,294
+Ahora, el segundo paso.
+
+27
+00:01:26,950 --> 00:01:28,452
+Abro el motivo de la carga:
+
+28
+00:01:28,636 --> 00:01:30,349
+sigue siendo Inventario inicial,
+
+29
+00:01:30,323 --> 00:01:33,338
+porque es mercancía que la empresa ya tenía al empezar.
+
+30
+00:01:34,006 --> 00:01:35,384
+En la referencia escribo:
+
+31
+00:01:35,432 --> 00:01:38,856
+Complemento del inventario inicial, estante de correas.
+
+32
+00:01:39,524 --> 00:01:42,738
+Esa referencia queda en el asiento y en cada movimiento.
+
+33
+00:01:43,406 --> 00:01:44,697
+Subo el archivo.
+
+34
+00:01:45,353 --> 00:01:49,396
+En la vista previa entran dos productos por ciento sesenta y siete mil pesos,
+
+35
+00:01:49,408 --> 00:01:52,236
+y las otras dos filas de la plantilla no se tocan.
+
+36
+00:01:52,905 --> 00:01:55,573
+El asiento es el mismo del inventario inicial:
+
+37
+00:01:55,670 --> 00:01:58,635
+débito a Inventario y crédito a la cuenta de apertura.
+
+38
+00:01:59,292 --> 00:02:00,706
+Filtro las que se aplican:
+
+39
+00:02:00,841 --> 00:02:04,488
+sesenta correas y cuarenta amortiguadores, con su costo.
+
+40
+00:02:05,144 --> 00:02:08,147
+Todo cuadra, así que aplico los dos cambios.
+
+41
+00:02:08,816 --> 00:02:11,793
+Corre en segundo plano, con su barra de progreso.
+
+42
+00:02:13,167 --> 00:02:13,826
+Listo:
+
+43
+00:02:13,873 --> 00:02:15,759
+el asiento quedó registrado.
+
+44
+00:02:16,415 --> 00:02:18,500
+Ya está todo lo que la empresa traía,
+
+45
+00:02:18,635 --> 00:02:21,464
+así que es momento de cerrar el inventario inicial.
+
+46
+00:02:22,132 --> 00:02:26,238
+Pulso Nueva actualización y, abajo, Cerrar inventario inicial.
+
+47
+00:02:26,906 --> 00:02:28,533
+El aviso explica lo que pasa:
+
+48
+00:02:28,667 --> 00:02:32,774
+desde ahora toda carga se registra como ajuste, ganancia o pérdida,
+
+49
+00:02:32,908 --> 00:02:36,494
+nunca más como inventario inicial, y no se reabre desde aquí.
+
+50
+00:02:37,162 --> 00:02:38,118
+Confirmo.
+
+51
+00:02:38,774 --> 00:02:42,272
+El aviso ahora dice cerrado, con la fecha y quién lo cerró.
+
+52
+00:02:42,940 --> 00:02:46,725
+Si abro el motivo, Inventario inicial ya no se puede elegir.
+
+53
+00:02:47,380 --> 00:02:50,569
+Si más adelante aparece mercancía que debió entrar al empezar,
+
+54
+00:02:50,703 --> 00:02:52,665
+usa Corrección de error de registro:
+
+55
+00:02:52,750 --> 00:02:56,447
+entra como ajuste y llega a los resultados del período, así que,
+
+56
+00:02:56,544 --> 00:03:00,217
+si el monto es importante, coordínalo antes con tu contador.

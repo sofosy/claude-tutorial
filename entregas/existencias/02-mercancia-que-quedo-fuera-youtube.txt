@@ -1,0 +1,37 @@
+TÍTULO
+============================================================
+Existencias · Parte 2: mercancía que quedó fuera de la carga inicial
+
+DESCRIPCIÓN
+============================================================
+Segunda parte de la serie de cargas masivas de existencias de Germiva ERP. A Repuestos Germiva se le quedó un estante por contar en la carga inicial. Con la plantilla «Sin existencia» descarga solo lo que está en cero, lo carga como inventario inicial porque la fase sigue abierta, y al terminar cierra el inventario inicial. Qué hacer si ya estaba cerrado.
+
+⏱️ CAPÍTULOS
+00:00  El estante que no se contó
+00:41  La plantilla «Sin existencia»
+01:22  Cargar lo que faltó
+02:13  Cerrar el inventario inicial
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Descargar la plantilla solo con los productos sin existencia
+• Cargar lo que faltó como inventario inicial mientras la fase está abierta
+• Cerrar el inventario inicial cuando ya cargaste todo
+• Qué motivo usar si la fase ya está cerrada
+
+⚠️ ERRORES COMUNES
+• Buscar entre miles de filas lo que faltó en vez de usar «Sin existencia»
+• Olvidar que un producto que ya tiene existencia no sale en «Sin existencia»: va con la plantilla «Todos»
+• Cerrar el inventario inicial antes de terminar de cargar: no se reabre desde la pantalla
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 03:04
+
+TRANSCRIPCIÓN
+============================================================
+Seguimos con Repuestos Germiva. Entro a Inventario y abro Existencias. En el video anterior cargamos el inventario inicial del Almacén Central, y la Sucursal Santiago se cargó igual. Recojo el panel. Pero al revisar, el encargado del Central se dio cuenta de que el estante de correas y amortiguadores no se contó. El amortiguador está sin stock, y la correa de distribución solo tiene lo de Santiago. Como el inventario inicial sigue abierto, esa mercancía todavía puede entrar como inventario inicial, contra el patrimonio de apertura. Abro Actualizar existencias.
+Como en el video anterior, dejo Entrada, para sumar. Elijo Un almacén, y en la lista de almacenes, el Almacén Central. Ahora viene lo nuevo. En Productos elijo Sin existencia: la plantilla trae solo lo que en ese almacén está en cero o en negativo. Con miles de productos, así no tienes que buscar entre todas las filas lo que faltó. Descargo la plantilla y lleno solo la correa y el amortiguador, con su costo. Ojo con un caso: si a un producto que ya tiene existencia le faltaron unidades, ese no sale en esta plantilla. Para él descargas la de Todos y escribes solo las unidades que faltan.
+Ya llené el Excel. Ahora, el segundo paso. Abro el motivo de la carga: sigue siendo Inventario inicial, porque es mercancía que la empresa ya tenía al empezar. En la referencia escribo: Complemento del inventario inicial, estante de correas. Esa referencia queda en el asiento y en cada movimiento. Subo el archivo. En la vista previa entran dos productos por ciento sesenta y siete mil pesos, y las otras dos filas de la plantilla no se tocan. El asiento es el mismo del inventario inicial: débito a Inventario y crédito a la cuenta de apertura. Filtro las que se aplican: sesenta correas y cuarenta amortiguadores, con su costo. Todo cuadra, así que aplico los dos cambios. Corre en segundo plano, con su barra de progreso.
+Listo: el asiento quedó registrado. Ya está todo lo que la empresa traía, así que es momento de cerrar el inventario inicial. Pulso Nueva actualización y, abajo, Cerrar inventario inicial. El aviso explica lo que pasa: desde ahora toda carga se registra como ajuste, ganancia o pérdida, nunca más como inventario inicial, y no se reabre desde aquí. Confirmo. El aviso ahora dice cerrado, con la fecha y quién lo cerró. Si abro el motivo, Inventario inicial ya no se puede elegir. Si más adelante aparece mercancía que debió entrar al empezar, usa Corrección de error de registro: entra como ajuste y llega a los resultados del período, así que, si el monto es importante, coordínalo antes con tu contador.

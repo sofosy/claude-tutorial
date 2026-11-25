@@ -106,7 +106,7 @@
    "rotulo": "Existencias",
    "ruta": "Inventario › Existencias",
    "texto_pantalla": "Existencias · los repuestos, todos en cero",
-   "narracion": "Esta es Repuestos Germiva, una importadora de repuestos que empieza a usar Germiva. Entro a Inventario y abro Existencias. Cada fila es un repuesto, con lo disponible y lo reservado. Recojo el panel. Hoy todos están sin stock: la mercancía está en los almacenes, pero todavía no en el sistema. Solo en el Almacén Central hay mil doscientos filtros de aceite, cuatrocientos juegos de pastillas de freno y dos mil quinientas bujías. Escribirlos uno por uno sería lento y fácil de equivocar. Para eso está Actualizar existencias: una plantilla de Excel que se llena y se sube de una vez.",
+   "narracion": "Esta es Repuestos Germiva, una importadora de repuestos que empieza a usar Germiva. Entro a Inventario y abro Existencias, la pantalla con lo que hay de cada producto ahora mismo. Cada fila es un repuesto, con lo disponible y lo reservado. Recojo el panel. Hoy todos están sin stock: la mercancía está en los almacenes, pero todavía no en el sistema. Solo en el Almacén Central hay mil doscientos filtros de aceite, cuatrocientos juegos de pastillas de freno y dos mil quinientas bujías. Escribirlos uno por uno sería lento y fácil de equivocar. Para eso está Actualizar existencias: una plantilla de Excel que se llena y se sube de una vez.",
    "acciones": [
     {
      "click": "nav.module-rail [aria-label='Inventario']",
