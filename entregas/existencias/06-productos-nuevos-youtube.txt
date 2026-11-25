@@ -1,0 +1,36 @@
+TÍTULO
+============================================================
+Existencias · Parte 6: productos nuevos con su existencia
+
+DESCRIPCIÓN
+============================================================
+Sexta parte de la serie de cargas masivas de existencias de Germiva ERP. Repuestos Germiva crea con la importación de productos dos kits de embrague que ya tiene en el almacén: la plantilla lleva la existencia, el costo, el almacén y el proveedor habitual (RNC y nombre). Al subirla elige el motivo y la referencia, revisa el asiento y la importa.
+
+⏱️ CAPÍTULOS
+00:00  Productos que no existen
+00:29  La plantilla, con el proveedor
+01:18  Motivo y asiento
+01:56  Resultado
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Crear productos con su existencia desde la plantilla de productos
+• Dejar el proveedor habitual con las columnas RNC y nombre del proveedor
+• Elegir el motivo y revisar el asiento antes de importar
+
+⚠️ ERRORES COMUNES
+• Llenar la columna existencia en un producto que ya existe: se ignora; usa Actualizar existencias
+• Escribir un tipo de entrada distinto al del motivo: la fila sale con error
+• Crear con existencia productos que vienen de una compra: créalos sin existencia y recíbelos
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:31
+
+TRANSCRIPCIÓN
+============================================================
+Repuestos Germiva trae una línea nueva: kits de embrague, para sedán y para camioneta. Entro a Inventario y abro Productos. Ahora recojo el panel. Este es el catálogo, con un repuesto por fila. Los kits todavía no están, y ya hay treinta y veinte en el Almacén Central. Para crear muchos productos de una vez, con su existencia, se usa Importar o Exportar.
+Desde aquí, abro Importar o Exportar. Primero, la plantilla de Excel: trae una fila por producto, con código, nombre, marca, unidad y precio. Este aviso lo dice: para los productos que manejan inventario puedes cargar la existencia inicial, y solo se aplica al crear el producto. En cada kit lleno la existencia, el costo de compra sin ITBIS, el impuesto, y el almacén. Y aquí sí va el proveedor: las columnas RNC del proveedor, su registro de contribuyente, y nombre del proveedor dejan a Repuestos del Cibao como proveedor habitual de cada kit; si no existiera, se crearía. La columna tipo de entrada se deja vacía: la decide el motivo. Ya llené los dos kits. Selecciono el archivo.
+Como el archivo trae existencia, el diálogo se detiene: este archivo carga existencia. Crea dos productos por doscientos cincuenta y un mil pesos, y toda carga de existencia lleva su motivo y su asiento. Abro el motivo de la carga y elijo Inventario inicial, porque la empresa todavía está cargando lo que trae al empezar. En la referencia escribo: Nueva línea de kits de embrague. Esa referencia queda en el asiento. Dejo Un solo asiento. Pulso Revisar el asiento: débito a Inventario y crédito a la cuenta de apertura, por el mismo importe. Pulso Importar.
+La importación corre en sus etapas: subir, validar, registrar y finalizar. Listo: dos productos creados. Y la existencia quedó registrada con su asiento, que desde aquí puedes abrir. Cierro el diálogo. Los dos kits ya están en el catálogo, con su existencia en el Almacén Central y su proveedor habitual. Si estos kits vinieran de una compra, lo correcto sería crearlos sin existencia y recibirlos con la recepción, a nombre del proveedor.

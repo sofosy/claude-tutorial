@@ -1,0 +1,394 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130585050",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 1: inventario inicial",
+ "descripcion": "Primera parte de la serie de cargas masivas de existencias de Germiva ERP. Repuestos Germiva, una importadora que empieza a usar el sistema, carga de una vez la existencia de su Almacén Central: descarga la plantilla, la llena en Excel, elige el motivo Inventario inicial y la referencia, revisa la vista previa con el asiento contra el patrimonio de apertura y la aplica.",
+ "_comentario": "Serie Existencias, video 1. Estado A: siete repuestos sin existencia, inventario inicial abierto. El archivo inicial-central.xlsx lo genera restaurar.mjs A desde la plantilla real.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs A"
+ },
+ "aprenderas": [
+  "Descargar la plantilla de existencias de un almacén",
+  "Llenar la cantidad a ingresar y el costo sin ITBIS",
+  "Elegir el motivo Inventario inicial y escribir la referencia",
+  "Leer la vista previa y el asiento antes de aplicar",
+  "Saber dónde queda el proveedor: no en la carga, sino en la ficha y en la recepción"
+ ],
+ "errores_comunes": [
+  "Registrar el mismo inventario también en el Balance Inicial: quedaría duplicado",
+  "Cargar como inventario inicial una compra a un proveedor: las compras entran por la recepción",
+  "Escribir el costo con ITBIS: el costo de la plantilla va sin ITBIS"
+ ],
+ "pasos": [
+  {
+   "id": "01-existencias",
+   "capitulo": "La pantalla de Existencias",
+   "rotulo": "Existencias",
+   "ruta": "Inventario › Existencias",
+   "texto_pantalla": "Existencias · los repuestos, todos en cero",
+   "narracion": "Esta es Repuestos Germiva, una importadora de repuestos que empieza a usar Germiva. Entro a Inventario y abro Existencias, la pantalla con lo que hay de cada producto ahora mismo. Cada fila es un repuesto, con lo disponible y lo reservado. Recojo el panel. Hoy todos están sin stock: la mercancía está en los almacenes, pero todavía no en el sistema. Solo en el Almacén Central hay mil doscientos filtros de aceite, cuatrocientos juegos de pastillas de freno y dos mil quinientas bujías. Escribirlos uno por uno sería lento y fácil de equivocar. Para eso está Actualizar existencias: una plantilla de Excel que se llena y se sube de una vez.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Existencias')",
+     "al_decir": "abro Existencias"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Filtro de aceite') td:nth-child(1)",
+     "durante_ms": 3500,
+     "al_decir": "Cada fila es un repuesto",
+     "cursor": false
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "Recojo el panel"
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Filtro de aceite') td:nth-child(4)",
+     "durante_ms": 4000,
+     "al_decir": "sin stock",
+     "cursor": false
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Filtro de aceite') td:nth-child(1)",
+     "durante_ms": 1700,
+     "al_decir": "mil doscientos filtros",
+     "cursor": false
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Pastillas de freno') td:nth-child(1)",
+     "durante_ms": 2200,
+     "al_decir": "cuatrocientos",
+     "cursor": false
+    },
+    {
+     "resaltar": "table tbody tr:has-text('Bujía de iridio') td:nth-child(1)",
+     "durante_ms": 2200,
+     "al_decir": "dos mil quinientas",
+     "cursor": false
+    },
+    {
+     "resaltar": "button:has-text('Actualizar existencias')",
+     "durante_ms": 5000,
+     "al_decir": "Para eso está",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "02-plantilla",
+   "capitulo": "Descargar la plantilla",
+   "rotulo": "Paso 1 · la plantilla",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Descarga la plantilla · un almacén, todos los productos",
+   "narracion": "Para empezar, pulso Actualizar existencias. El diálogo tiene dos pasos, y el primero es descargar la plantilla. Elijo qué voy a hacer: Entrada, que suma lo que escriba a lo que ya hay. El conteo físico lo vemos en otro video. Como la empresa tiene dos almacenes, cargo uno a la vez: elijo Un almacén, y en la lista, el Almacén Central. En productos dejo Todos: los que tienen existencia y los que no. Ahora descargo la plantilla. El Excel trae cada repuesto con su código, su nombre y la existencia de hoy. Yo lleno dos columnas: la cantidad a ingresar y el costo unitario, sin ITBIS, es decir, sin el impuesto. Las filas que dejo vacías no se tocan. Fíjate que no hay columna de proveedor: el inventario con el que empiezas no es una compra. Lo que se le compre a Autopartes del Caribe entra por la recepción, con su factura.",
+   "acciones": [
+    {
+     "click": "button:has-text('Actualizar existencias')",
+     "al_decir": "Pulso Actualizar existencias"
+    },
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-1)",
+     "durante_ms": 3500,
+     "al_decir": "el primero es descargar",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-seg button:has-text('Entrada (sumar)')",
+     "durante_ms": 4000,
+     "al_decir": "Entrada, que suma",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:has-text('Un almacén')",
+     "al_decir": "elijo Un almacén"
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Almacén a exportar') mat-select",
+     "al_decir": "en la lista"
+    },
+    {
+     "click": "mat-option:has-text('Almacén Central')",
+     "al_decir": "el Almacén Central"
+    },
+    {
+     "click": "mat-dialog-container .gm-seg button:text-is('Todos')",
+     "al_decir": "dejo Todos"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Descargar plantilla')",
+     "al_decir": "descargo la plantilla"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Lo que llenas en el Excel",
+      "texto": "cantidad_a_ingresar y costo_unitario, sin ITBIS. Una fila vacía no se toca."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Yo lleno dos columnas"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "¿Y el proveedor?",
+      "texto": "La carga no lo pide: no es una compra. Lo que se le compra a un proveedor entra por la recepción, con su factura y su 606."
+     },
+     "durante_ms": 9000,
+     "al_decir": "no hay columna de proveedor"
+    }
+   ]
+  },
+  {
+   "id": "03-motivo",
+   "capitulo": "Motivo, referencia y asiento",
+   "rotulo": "Paso 2 · motivo y referencia",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Sube el archivo · motivo Inventario inicial",
+   "narracion": "Ya llené el Excel. Voy al segundo paso: subir el archivo. Primero, el motivo de la carga. Elijo Inventario inicial. Debajo dice lo que significa: son las existencias con las que la empresa empieza, y se asientan contra el patrimonio de apertura, solo mientras el inventario inicial esté abierto. Escribo la referencia: Inventario inicial Almacén Central. Motivo y referencia son obligatorios y quedan en cada movimiento y en el asiento. En el asiento contable dejo Un solo asiento, que es lo recomendado: una línea por cuenta para toda la carga. Elijo el archivo y pido revisarlo. Todavía no se aplica nada.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-2)",
+     "durante_ms": 3000,
+     "al_decir": "subir el archivo",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "el motivo de la carga"
+    },
+    {
+     "click": "mat-option:has-text('Inventario inicial')",
+     "al_decir": "Elijo Inventario inicial"
+    },
+    {
+     "resaltar": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') + p",
+     "durante_ms": 7000,
+     "al_decir": "Debajo dice",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Inventario inicial Almacén Central"
+     },
+     "al_decir": "Escribo la referencia"
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-seg:has(button:has-text('Un solo asiento'))",
+     "durante_ms": 5000,
+     "al_decir": "Un solo asiento",
+     "cursor": false
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/inicial-central.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo y revisar')"
+     },
+     "al_decir": "Elijo el archivo"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-context",
+     "durante_ms": 2500,
+     "al_decir": "Todavía no se aplica nada",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-vista-previa",
+   "capitulo": "La vista previa y el asiento",
+   "rotulo": "Vista previa",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Vista previa · lo que cambia y el asiento, antes de aplicar",
+   "narracion": "Esta es la vista previa: lo que va a pasar con cada fila, antes de aplicar. Arriba, el resumen: entran tres productos, por setecientos diecinueve mil quinientos pesos. Las otras cuatro filas no se tocan, porque las dejé vacías, y no hay errores. Debajo está el asiento que se generará: débito a Inventario de mercancías y crédito a la cuenta de apertura del inventario, por el mismo importe. Si algo impidiera registrarlo, lo diría aquí y la carga no se podría aplicar. Más abajo, el detalle. Filtro las que se aplican. Cada fila dice cuánto hay hoy, en cuánto queda y el valor que entra. Todo cuadra: aplico los tres cambios. La carga corre en segundo plano, con su barra de progreso.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .sbu-context",
+     "durante_ms": 2500,
+     "al_decir": "Esta es la vista previa",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Entran')",
+     "durante_ms": 3800,
+     "al_decir": "entran tres productos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('No se tocan')",
+     "durante_ms": 4000,
+     "al_decir": "no se tocan",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-posting",
+     "durante_ms": 9000,
+     "al_decir": "el asiento que se generará",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container .sbu-toolbar button:has-text('Se aplican')",
+     "al_decir": "Filtro las que se aplican"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-table--plan tbody tr:has-text('Bujía de iridio') td:nth-child(5)",
+     "durante_ms": 1200,
+     "al_decir": "en cuánto queda",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-table--plan tbody tr:has-text('Bujía de iridio') td:nth-child(8)",
+     "durante_ms": 1800,
+     "al_decir": "el valor que entra",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aplicar 3 cambios')",
+     "al_decir": "aplico los tres cambios"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "segundo plano",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "05-resultado",
+   "capitulo": "Resultado e inventario inicial abierto",
+   "rotulo": "Resultado",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Resultado · asiento registrado e inventario inicial abierto",
+   "narracion": "Existencias actualizadas: tres productos. Con pocos productos termina enseguida; con miles, puedes cerrar la ventana y volver luego. El asiento quedó registrado por setecientos diecinueve mil quinientos pesos, con el motivo y la referencia, y desde aquí puedes abrirlo. La Sucursal Santiago se carga igual, con su propia plantilla. Pulso Nueva actualización. Abajo queda el historial de cargas, y el aviso de inventario inicial abierto. Mientras esté abierto, puedes seguir cargando como inventario inicial. Cuando termines de cargar todo lo que traes, lo cierras con este botón. Eso, y qué hacer si te quedó mercancía fuera, lo vemos en el próximo video.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Existencias actualizadas')",
+     "durante_ms": 4000,
+     "al_decir": "Existencias actualizadas",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Asiento')",
+     "durante_ms": 6000,
+     "al_decir": "El asiento quedó registrado",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Ver asiento')",
+     "durante_ms": 3000,
+     "al_decir": "puedes abrirlo",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Nueva actualización')",
+     "al_decir": "Pulso Nueva actualización"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-history",
+     "durante_ms": 2500,
+     "al_decir": "el historial de cargas",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-phase",
+     "durante_ms": 7000,
+     "al_decir": "inventario inicial abierto",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-phase button:has-text('Cerrar inventario inicial')",
+     "durante_ms": 4000,
+     "al_decir": "con este botón",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

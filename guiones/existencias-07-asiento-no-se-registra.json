@@ -1,0 +1,345 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130585050",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 7: cuando el asiento no se puede registrar",
+ "descripcion": "Séptima parte de la serie de cargas masivas de existencias de Germiva ERP. La vista previa avisa que el asiento no se puede registrar porque una cuenta del mapeo es agrupadora: la carga no se aplica. Se corrige la cuenta en el Mapeo de Cuentas, se vuelve a subir el mismo archivo y se aplica. Qué hacer si el asiento queda pendiente después de aplicar.",
+ "_comentario": "Serie Existencias, video 7. Estado F: el mapeo «Otros Ingresos por Ajuste de Inventario» apunta a la agrupadora 4.02.01.02. Archivo sobrante-central.xlsx.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs F"
+ },
+ "aprenderas": [
+  "Leer el aviso de asiento que no se puede registrar",
+  "Corregir la cuenta en el Mapeo de Cuentas",
+  "Volver a subir el mismo archivo y aplicar",
+  "Qué hacer si el asiento queda pendiente después de aplicar"
+ ],
+ "errores_comunes": [
+  "Repetir una carga cuyo asiento quedó pendiente: la existencia ya entró; se usa Reintentar asiento",
+  "Asignar una cuenta agrupadora en el mapeo: solo las de detalle admiten movimientos"
+ ],
+ "pasos": [
+  {
+   "id": "01-intentar",
+   "capitulo": "La carga del sobrante",
+   "rotulo": "El sobrante",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Actualizar existencias · el sobrante del Almacén Central",
+   "narracion": "Vamos a cargar el sobrante del Almacén Central, el mismo del video del sobrante. Entro a Inventario y abro Existencias. Primero recojo el panel. Pulso Actualizar existencias. Ya tengo el Excel lleno. Abro el motivo de la carga y elijo Sobrante encontrado. En la referencia escribo: Cajas encontradas en el pasillo B. Así queda explicada la carga. Elijo el archivo y pido revisarlo.",
+   "acciones": [
+    {
+     "click": "nav.module-rail [aria-label='Inventario']",
+     "al_decir": "Entro a Inventario"
+    },
+    {
+     "click": ".panel-item:has-text('Existencias')",
+     "al_decir": "abro Existencias"
+    },
+    {
+     "click": "button.panel-collapse",
+     "al_decir": "recojo el panel"
+    },
+    {
+     "click": "button:has-text('Actualizar existencias')",
+     "al_decir": "Pulso Actualizar"
+    },
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-2)",
+     "durante_ms": 3000,
+     "al_decir": "Ya tengo el Excel lleno",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "Abro el motivo"
+    },
+    {
+     "click": "mat-option:has-text('Sobrante encontrado')",
+     "al_decir": "elijo Sobrante encontrado"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Cajas encontradas en el pasillo B"
+     },
+     "al_decir": "En la referencia"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/sobrante-central.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo y revisar')"
+     },
+     "al_decir": "Elijo el archivo"
+    }
+   ]
+  },
+  {
+   "id": "02-bloqueo",
+   "capitulo": "El aviso",
+   "rotulo": "Asiento que no se puede registrar",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "No se puede registrar el asiento · la carga no se aplica",
+   "narracion": "Las filas están bien: entran dos productos por cinco mil doscientos setenta pesos. Pero en el asiento aparece un aviso en rojo: no se puede registrar el asiento, así que la carga no se puede aplicar. Y dice por qué: la cuenta de otros ingresos que tiene el mapeo es agrupadora y no admite movimientos; hay que asignar una cuenta de detalle en la configuración contable. Por eso el botón de aplicar está deshabilitado: no se movió nada. Las causas pueden ser una cuenta agrupadora o inactiva, una configuración que falta o un período cerrado. Cierro el diálogo y voy a corregirlo.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .sbu-stats .gm-stat:has-text('Entran')",
+     "durante_ms": 3500,
+     "al_decir": "entran dos productos",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-posting .gm-dialog-alert--danger",
+     "durante_ms": 12000,
+     "al_decir": "aparece un aviso en rojo",
+     "cursor": false
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Aplicar 2 cambios')",
+     "durante_ms": 4000,
+     "al_decir": "el botón",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Causas posibles",
+      "texto": "Cuenta agrupadora o inactiva, configuración contable que falta o período cerrado."
+     },
+     "durante_ms": 7000,
+     "al_decir": "Las causas pueden ser"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Cancelar')",
+     "al_decir": "Cierro el diálogo"
+    }
+   ]
+  },
+  {
+   "id": "03-mapeo",
+   "capitulo": "Corregir la cuenta",
+   "rotulo": "Mapeo de Cuentas",
+   "ruta": "Contabilidad › Configuración Contable › Mapeo de Cuentas",
+   "texto_pantalla": "Mapeo de Cuentas · Otros Ingresos por Ajuste de Inventario",
+   "navegar": "/accounting/configuracion/mapeos",
+   "al_decir_navegar": "Voy al Mapeo",
+   "narracion": "Esto lo hace quien lleva la contabilidad. Voy al Mapeo de Cuentas, en la configuración contable: aquí cada operación del sistema tiene su cuenta. Busco ajuste de inventario, y la lista se filtra sola. Este rol, otros ingresos por ajuste de inventario, apunta a la cuenta agrupadora. Abro su selector, que solo ofrece cuentas de detalle, y elijo Otros ingresos diversos, general. El aviso confirma que se guardó al instante. Ahora el rol apunta a una cuenta de detalle, que sí admite movimientos.",
+   "acciones": [
+    {
+     "escribir": {
+      "sel": ".mapping-filters input",
+      "texto": "Ajuste de Inventario"
+     },
+     "al_decir": "Busco ajuste"
+    },
+    {
+     "resaltar": "li.role-row:has(.role-row__label:text-is('Otros Ingresos por Ajuste de Inventario'))",
+     "durante_ms": 5000,
+     "al_decir": "Este rol",
+     "cursor": false
+    },
+    {
+     "click": "li.role-row:has(.role-row__label:text-is('Otros Ingresos por Ajuste de Inventario')) mat-select",
+     "al_decir": "Abro su selector"
+    },
+    {
+     "click": "mat-option:has-text('4.02.01.02.01')",
+     "al_decir": "elijo Otros ingresos diversos"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 2500,
+     "al_decir": "El aviso confirma",
+     "cursor": false
+    },
+    {
+     "resaltar": "li.role-row:has(.role-row__label:text-is('Otros Ingresos por Ajuste de Inventario'))",
+     "durante_ms": 6000,
+     "al_decir": "Ahora el rol apunta",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "04-reintentar",
+   "capitulo": "El mismo archivo, otra vez",
+   "rotulo": "Volver a subir",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "El mismo archivo · ahora el asiento sí se registra",
+   "navegar": "/inventory/existencias",
+   "al_decir_navegar": "Vuelvo a Existencias",
+   "narracion": "Ya está corregido. Vuelvo a Existencias y pulso otra vez Actualizar existencias. No hace falta descargar otra plantilla: subo el mismo archivo. Abro el motivo y elijo Sobrante encontrado. Escribo la misma referencia, para que quede igual que la primera vez en el asiento. Y ahora sí, elijo el archivo. En la vista previa, el asiento sale completo: débito a Inventario y crédito a otros ingresos diversos. Aplico los dos cambios, y la carga corre en segundo plano.",
+   "acciones": [
+    {
+     "click": "button:has-text('Actualizar existencias')",
+     "al_decir": "pulso otra vez"
+    },
+    {
+     "resaltar": "mat-dialog-container section.sbu-panel:has(#sbu-step-2)",
+     "durante_ms": 3000,
+     "al_decir": "No hace falta descargar",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container mat-form-field:has-text('Motivo de la carga') mat-select",
+     "al_decir": "Abro el motivo"
+    },
+    {
+     "click": "mat-option:has-text('Sobrante encontrado')",
+     "al_decir": "elijo Sobrante encontrado"
+    },
+    {
+     "escribir": {
+      "sel": "mat-dialog-container mat-form-field:has-text('Referencia o detalle') input",
+      "texto": "Cajas encontradas en el pasillo B"
+     },
+     "al_decir": "Escribo la misma"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/sobrante-central.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo y revisar')"
+     },
+     "al_decir": "Y ahora sí, elijo el archivo"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-posting",
+     "durante_ms": 6000,
+     "al_decir": "el asiento sale completo",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aplicar 2 cambios')",
+     "al_decir": "Aplico los dos cambios"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "segundo plano",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "05-pendiente",
+   "capitulo": "Si queda pendiente después de aplicar",
+   "rotulo": "Reintentar asiento",
+   "ruta": "Inventario › Existencias › Actualizar existencias",
+   "texto_pantalla": "Resultado · y qué hacer si el asiento queda pendiente",
+   "narracion": "Asiento registrado. Hay un segundo caso, menos común: que algo cambie mientras la carga corre, por ejemplo, que alguien cierre el período. Entonces la existencia sí entra, pero el asiento queda pendiente, y el resultado lo dice con el botón Reintentar asiento. No repitas la carga: corrige la causa y reintenta. Mientras siga pendiente, el diálogo lo avisa arriba y no deja aplicar otra carga. Así ninguna carga queda sin su asiento.",
+   "acciones": [
+    {
+     "resaltar": "mat-dialog-container .gm-dialog-alert--success:has-text('Asiento')",
+     "durante_ms": 4000,
+     "al_decir": "Asiento registrado",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Si el asiento queda pendiente",
+      "texto": "La existencia entra pero el asiento no: el resultado muestra «Reintentar asiento»."
+     },
+     "durante_ms": 9000,
+     "al_decir": "Hay un segundo caso"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Asiento pendiente",
+      "texto": "La existencia ya entró: no repitas la carga. Corrige la causa y pulsa Reintentar asiento."
+     },
+     "durante_ms": 9000,
+     "al_decir": "No repitas la carga"
+    },
+    {
+     "resaltar": "mat-dialog-container .sbu-stats",
+     "durante_ms": 4000,
+     "al_decir": "ninguna carga queda",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}

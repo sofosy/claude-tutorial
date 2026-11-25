@@ -1,0 +1,352 @@
+{
+ "base_url": "http://localhost:4200",
+ "zona_horaria": "America/Santo_Domingo",
+ "sesion": {
+  "tipo": "api",
+  "url": "http://localhost:3001/api/auth/dev/login",
+  "cuerpo": {
+   "username": "admin",
+   "password": "admin"
+  },
+  "clave": "aut",
+  "extra": {
+   "__v": 2
+  },
+  "navegar": "/home"
+ },
+ "voz": {
+  "id": "es-DO-RamonaNeural",
+  "velocidad": "+12%"
+ },
+ "musica": {
+  "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+  "volumen_db": -32,
+  "ducking": true,
+  "fade_s": 2
+ },
+ "loudnorm": {
+  "lufs": -14,
+  "tp": -1.5
+ },
+ "marca_video": {
+  "entrada_s": 3,
+  "cierre_s": 3
+ },
+ "rotulo_paso": {
+  "segundos": 3.5
+ },
+ "css_global": [
+  "app-chatbot-widget{display:none!important}",
+  ".chatbot-fab{display:none!important}"
+ ],
+ "pronunciacion": {
+  "ITBIS": "itebís",
+  "RNC": "erre ene ce",
+  "606": "seiscientos seis",
+  "SRL": "ese erre ele",
+  "DOT 4": "dot cuatro"
+ },
+ "privacidad": {
+  "perfil": "ninguno",
+  "permitidos": [
+   "germiva",
+   "130555",
+   "130585050",
+   "Almacén",
+   "Sucursal",
+   "Santiago",
+   "Inventario",
+   "Conteo",
+   "Complemento",
+   "Sobrante",
+   "Corrige",
+   "Contenedor",
+   "Kit de embrague",
+   "Filtro",
+   "Pastillas",
+   "Bujía",
+   "Correa",
+   "Amortiguador",
+   "Líquido",
+   "Radiador",
+   "Repuestos",
+   "Autopartes",
+   "Caribe",
+   "Cibao",
+   "Cajas"
+  ],
+  "mapa_fijo": {
+   "localhost:3001": "api.germiva.com",
+   "localhost:4200": "germiva.com"
+  }
+ },
+ "portada_s": 6,
+ "titulo": "Existencias · Parte 8: recibir un contenedor desde Excel",
+ "descripcion": "Octava parte de la serie de cargas masivas de existencias de Germiva ERP. Llega un contenedor de Autopartes del Caribe Germiva: la compra entra por una recepción sin orden de compra, con el proveedor y el almacén, y las líneas se importan desde Excel. Se guarda, se aprueba y se procesa a inventario; la compra queda en el historial del producto a nombre del proveedor.",
+ "_comentario": "Serie Existencias, video 8. Estado C. Archivo recepcion-contenedor.xlsx: FA-210 1,800 × 172 y PF-88 600 × 610 (675,600 sin ITBIS). Flujo: Guardar → Aprobar Recepción → Procesar a Inventario.",
+ "setup": {
+  "tipo": "shell",
+  "cmd": "node seeds/existencias/restaurar.mjs C"
+ },
+ "aprenderas": [
+  "Por qué una compra entra por la recepción y no por Actualizar existencias",
+  "Crear una recepción sin orden de compra con su proveedor y almacén",
+  "Importar las líneas de la recepción desde Excel",
+  "Aprobar y procesar la recepción a inventario",
+  "Ver la compra a nombre del proveedor en el historial del producto"
+ ],
+ "errores_comunes": [
+  "Cargar una compra con Actualizar existencias: se pierden el proveedor, la cuenta por pagar y el 606",
+  "Cambiar el almacén después de importar las líneas: pierden la ubicación",
+  "Dejar la recepción guardada sin procesarla: la mercancía no entra hasta procesarla a inventario"
+ ],
+ "pasos": [
+  {
+   "id": "01-recepcion",
+   "capitulo": "La recepción, con su proveedor",
+   "rotulo": "Recepción sin orden",
+   "ruta": "Compras › Recepciones › Crear recepción",
+   "texto_pantalla": "Recepción sin orden de compra · proveedor y almacén",
+   "navegar": "/purchases/receipts/create",
+   "al_decir_navegar": "abro una recepción",
+   "narracion": "En Compras, abro una recepción nueva. Llegó un contenedor de Autopartes del Caribe con filtros y pastillas de freno. Esto sí es una compra: tiene proveedor, factura y cuenta por pagar, así que no va por Actualizar existencias sino por la recepción. Elijo el origen: Sin orden de compra. Primero el proveedor: escribo Autopartes, espero un momento a que aparezca, y lo elijo de la lista. Luego el almacén destino: escribo Central; espero a que aparezca en la lista, y elijo el Almacén Central. Conviene elegirlo antes de importar las líneas, porque las líneas toman su ubicación.",
+   "acciones": [
+    {
+     "click_opcional": "button.panel-collapse",
+     "al_decir": "Llegó un contenedor"
+    },
+    {
+     "cartel": {
+      "tipo": "cuidado",
+      "titulo": "Una compra, no una carga",
+      "texto": "Tiene proveedor, factura y cuenta por pagar: entra por la recepción, no por Actualizar existencias."
+     },
+     "durante_ms": 8000,
+     "al_decir": "Esto sí es una compra"
+    },
+    {
+     "click": "button:has-text('Sin orden de compra')",
+     "al_decir": "Sin orden de compra"
+    },
+    {
+     "escribir": {
+      "sel": "app-partner-document-select input",
+      "texto": "Autopartes"
+     },
+     "al_decir": "escribo Autopartes"
+    },
+    {
+     "click": "mat-option:has-text('Autopartes del Caribe Germiva')",
+     "al_decir": "lo elijo de la lista"
+    },
+    {
+     "escribir": {
+      "sel": "app-autocomplete:has-text('Almacén destino') input",
+      "texto": "Central"
+     },
+     "al_decir": "escribo Central"
+    },
+    {
+     "click": "mat-option:has-text('Almacén Central')",
+     "al_decir": "elijo el Almacén Central"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Almacén primero",
+      "texto": "Si cambias el almacén después de importar las líneas, pierden su ubicación."
+     },
+     "durante_ms": 7000,
+     "al_decir": "Conviene elegirlo"
+    }
+   ]
+  },
+  {
+   "id": "02-importar-lineas",
+   "capitulo": "Las líneas desde Excel",
+   "rotulo": "Importar líneas",
+   "ruta": "Compras › Recepciones › Crear recepción",
+   "texto_pantalla": "Importar líneas desde Excel · código, cantidad y costo",
+   "narracion": "Con cientos de líneas no se escriben a mano. Pulso Importar líneas desde Excel. La plantilla trae el código del producto, la cantidad, el costo unitario sin ITBIS, el impuesto, y, si hace falta, el lote y el vencimiento. Ya llené la del contenedor: mil ochocientos filtros a ciento setenta y dos, y seiscientos juegos de pastillas a seiscientos diez. Elijo el archivo. Dos líneas listas, por seiscientos setenta y cinco mil seiscientos pesos sin ITBIS, y ninguna con error. Agrego las dos líneas, y el aviso confirma que se agregaron.",
+   "acciones": [
+    {
+     "click": "button:has-text('Importar líneas desde Excel')",
+     "al_decir": "Pulso Importar líneas"
+    },
+    {
+     "resaltar": "mat-dialog-container button:has-text('Descargar plantilla')",
+     "durante_ms": 6000,
+     "al_decir": "La plantilla",
+     "cursor": false
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "El contenedor",
+      "texto": "1,800 filtros a 172.00 y 600 juegos de pastillas a 610.00, sin ITBIS."
+     },
+     "durante_ms": 6000,
+     "al_decir": "Ya llené la del contenedor"
+    },
+    {
+     "subir": {
+      "sel": "mat-dialog-container input[type='file']",
+      "archivo": "seeds/existencias/archivos/recepcion-contenedor.xlsx",
+      "ancla": "mat-dialog-container button:has-text('Elegir archivo')"
+     },
+     "al_decir": "Elijo el archivo"
+    },
+    {
+     "resaltar": "mat-dialog-container",
+     "durante_ms": 6000,
+     "al_decir": "Dos líneas listas",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Agregar 2 líneas')",
+     "al_decir": "Agrego las dos"
+    },
+    {
+     "resaltar": ".mat-mdc-snack-bar-container",
+     "durante_ms": 3000,
+     "al_decir": "el aviso confirma",
+     "cursor": false
+    }
+   ]
+  },
+  {
+   "id": "03-procesar",
+   "capitulo": "Guardar, aprobar y procesar",
+   "rotulo": "Procesar a inventario",
+   "ruta": "Compras › Recepciones",
+   "texto_pantalla": "Recepción · guardar, aprobar y procesar a inventario",
+   "narracion": "Las líneas quedan en la recepción con su cantidad, su costo y su ubicación. Como no hay orden de compra, el sistema pide el motivo: quién la autorizó y por qué. Lo escribo en las notas de la recepción. Ese motivo queda en el documento para quien lo revise. Con eso ya se puede guardar. Pulso guardar; el aviso dice que la recepción se creó, y acepto. En el menú acciones pulso aprobar recepción; me pide confirmar, y apruebo. El aviso dice que ya se puede procesar a inventario; acepto. Y en el mismo menú, procesar a inventario. Pulso procesar las dos líneas. La mercancía entró al almacén: el asiento va a inventario contra mercancía por recibir, y cuando llegue la factura del proveedor se coteja con esta recepción, con su ITBIS, su cuenta por pagar y su 606.",
+   "acciones": [
+    {
+     "resaltar": "mat-card:has-text('Líneas') mat-card-title",
+     "durante_ms": 3500,
+     "al_decir": "Las líneas quedan",
+     "cursor": false
+    },
+    {
+     "escribir": {
+      "sel": "textarea[formcontrolname='notes']",
+      "texto": "Contenedor MSCU-2611 sin orden de compra. Autorizó Gerencia de compras."
+     },
+     "al_decir": "Lo escribo"
+    },
+    {
+     "click": ".form-layout-footer button:has-text('Guardar')",
+     "al_decir": "Pulso guardar"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "la recepción se creó",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "y acepto. En"
+    },
+    {
+     "click": ".page-hero button:has-text('Acciones')",
+     "al_decir": "el menú acciones"
+    },
+    {
+     "click": ".mat-mdc-menu-panel button:has-text('Aprobar Recepción')",
+     "al_decir": "pulso aprobar recepción"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aprobar')",
+     "al_decir": "y apruebo"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 2500,
+     "al_decir": "ya se puede procesar",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "acepto. Y en"
+    },
+    {
+     "click": ".page-hero button:has-text('Acciones')",
+     "al_decir": "el mismo menú"
+    },
+    {
+     "click": ".mat-mdc-menu-panel button:has-text('Procesar a Inventario')",
+     "al_decir": "procesar a inventario. Pulso"
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Procesar 2 líneas')",
+     "al_decir": "procesar las dos líneas"
+    },
+    {
+     "resaltar": ".custom-alert-dialog-panel mat-dialog-container",
+     "durante_ms": 3500,
+     "al_decir": "La mercancía entró",
+     "cursor": false
+    },
+    {
+     "click": "mat-dialog-container button:has-text('Aceptar')",
+     "al_decir": "el asiento va"
+    },
+    {
+     "cartel": {
+      "tipo": "consejo",
+      "titulo": "Después, la factura",
+      "texto": "Se coteja con esta recepción: ITBIS, cuenta por pagar a nombre del proveedor y 606."
+     },
+     "durante_ms": 8000,
+     "al_decir": "cuando llegue la factura"
+    }
+   ]
+  },
+  {
+   "id": "04-historial",
+   "capitulo": "La compra a nombre del proveedor",
+   "rotulo": "Historial del producto",
+   "ruta": "Inventario › Productos › Historial",
+   "texto_pantalla": "Historial del producto · la recepción con su proveedor",
+   "navegar": "/inventory/product/list",
+   "al_decir_navegar": "abro el catálogo",
+   "narracion": "Ahora veamos dónde queda el proveedor. En Inventario abro el catálogo de productos y edito el filtro de aceite. Se abre su ficha, con sus datos arriba y sus pestañas abajo. En la pestaña Historial, la vista Compras lista los documentos con que se ha comprado. Aquí está la recepción del contenedor, a nombre de Autopartes del Caribe Germiva, con su RNC, la cantidad y el costo. Esa es la diferencia con las cargas de existencias: el inventario inicial, los conteos y los sobrantes no tienen proveedor; las compras sí, y quedan a su nombre.",
+   "acciones": [
+    {
+     "click": "table tbody tr:has-text('Filtro de aceite') button:has(mat-icon:text-is('edit'))",
+     "al_decir": "edito el"
+    },
+    {
+     "click": "div[role='tab']:has-text('Historial')",
+     "al_decir": "En la pestaña Historial"
+    },
+    {
+     "resaltar": "app-product-document-history tbody tr:first-child td:nth-child(2)",
+     "durante_ms": 2500,
+     "al_decir": "Aquí está la recepción",
+     "cursor": false
+    },
+    {
+     "resaltar": "app-product-document-history tbody tr:first-child td.history-partner",
+     "durante_ms": 5000,
+     "al_decir": "a nombre de Autopartes",
+     "cursor": false
+    },
+    {
+     "resaltar": "app-product-history .history-seg",
+     "durante_ms": 4000,
+     "al_decir": "Esa es la diferencia",
+     "cursor": false
+    },
+    {
+     "resaltar": "app-product-document-history tbody tr:first-child td.history-partner",
+     "durante_ms": 5000,
+     "al_decir": "las compras sí",
+     "cursor": false
+    }
+   ]
+  }
+ ]
+}
