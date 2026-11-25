@@ -1,0 +1,33 @@
+TÍTULO
+============================================================
+Existencias · Parte 5: corregir una cantidad mal registrada
+
+DESCRIPCIÓN
+============================================================
+Quinta parte de la serie de cargas masivas de existencias de Germiva ERP. En el complemento del inventario inicial se digitaron 140 amortiguadores en vez de 40. Con la plantilla de conteo se fija la cantidad correcta y el motivo Corrección de error de registro; el faltante se asienta como pérdida por ajuste y el asiento lleva la explicación.
+
+⏱️ CAPÍTULOS
+00:00  Un cero de más
+00:42  Fijar la cantidad correcta
+01:20  La pérdida por ajuste
+
+📋 EN ESTE VIDEO APRENDERÁS
+• Corregir una cantidad con la plantilla de conteo
+• Usar el motivo Corrección de error de registro y explicar el error en la referencia
+• Entender por qué un faltante siempre es pérdida por ajuste
+
+⚠️ ERRORES COMUNES
+• Corregir con una carga un error que está en un documento: va con su devolución o nota de crédito
+• No anotar en la referencia qué se corrige: después nadie entiende el asiento
+
+🏷️ ETIQUETAS
+Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
+
+—
+Duración: 02:00
+
+TRANSCRIPCIÓN
+============================================================
+En el complemento del inventario inicial alguien escribió ciento cuarenta amortiguadores, y en el almacén hay cuarenta: un cero de más. Entro a Inventario y abro Existencias. Ahora recojo el panel, para ver la lista completa. El amortiguador dice ciento cuarenta. Para dejarlo en cuarenta uso la plantilla de conteo, porque fija la cantidad exacta. Si el error hubiera estado en un documento, como una compra o una factura, se corregiría en ese documento, con su devolución o su nota de crédito. Abro Actualizar existencias: tiene dos pasos, descargar la plantilla y subirla.
+En el primer paso del diálogo, elijo Conteo físico. Luego Un almacén, y en la lista de almacenes, el Almacén Central. Dejo Con existencia. Descargo la plantilla, y en el Excel escribo cuarenta solo en el amortiguador; las demás filas, vacías, para que no se toquen. El motivo es Corrección de error de registro: sirve para cantidades mal registradas antes. Y en la referencia explico qué se corrige: Se digitó 140 en lugar de 40 en el complemento. Cualquiera que vea el asiento entenderá por qué se hizo. Subo el archivo.
+Sale un producto: cien amortiguadores, por doscientos treinta mil pesos al costo. Lo demás no se toca. En el asiento, débito a la pérdida por ajuste de inventario y crédito a Inventario. Un faltante siempre se registra como pérdida por ajuste, aunque el error venga del inventario inicial; si el monto es importante, coordínalo con tu contador. Aplico el cambio. El amortiguador queda en cuarenta, y el asiento lleva la referencia que explica el error. Pulso Ver asiento: ahí está, con la pérdida y el crédito a inventario.

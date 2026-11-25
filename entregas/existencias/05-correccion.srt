@@ -1,0 +1,135 @@
+1
+00:00:03,100 --> 00:00:06,785
+En el complemento del inventario inicial alguien escribió ciento cuarenta
+
+2
+00:00:06,596 --> 00:00:09,277
+amortiguadores, y en el almacén hay cuarenta:
+
+3
+00:00:09,411 --> 00:00:10,628
+un cero de más.
+
+4
+00:00:11,295 --> 00:00:13,679
+Entro a Inventario y abro Existencias.
+
+5
+00:00:14,346 --> 00:00:17,571
+Ahora recojo el panel, para ver la lista completa.
+
+6
+00:00:18,228 --> 00:00:20,548
+El amortiguador dice ciento cuarenta.
+
+7
+00:00:21,216 --> 00:00:26,091
+Para dejarlo en cuarenta uso la plantilla de conteo, porque fija la cantidad exacta.
+
+8
+00:00:26,760 --> 00:00:30,878
+Si el error hubiera estado en un documento, como una compra o una factura,
+
+9
+00:00:31,013 --> 00:00:35,294
+se corregiría en ese documento, con su devolución o su nota de crédito.
+
+10
+00:00:35,960 --> 00:00:37,773
+Abro Actualizar existencias:
+
+11
+00:00:37,845 --> 00:00:41,258
+tiene dos pasos, descargar la plantilla y subirla.
+
+12
+00:00:42,631 --> 00:00:46,055
+En el primer paso del diálogo, elijo Conteo físico.
+
+13
+00:00:46,722 --> 00:00:50,841
+Luego Un almacén, y en la lista de almacenes, el Almacén Central.
+
+14
+00:00:51,509 --> 00:00:53,012
+Dejo Con existencia.
+
+15
+00:00:53,679 --> 00:00:58,207
+Descargo la plantilla, y en el Excel escribo cuarenta solo en el amortiguador;
+
+16
+00:00:58,305 --> 00:01:01,679
+las demás filas, vacías, para que no se toquen.
+
+17
+00:01:02,347 --> 00:01:04,842
+El motivo es Corrección de error de registro:
+
+18
+00:01:04,977 --> 00:01:07,905
+sirve para cantidades mal registradas antes.
+
+19
+00:01:08,573 --> 00:01:10,769
+Y en la referencia explico qué se corrige:
+
+20
+00:01:10,854 --> 00:01:14,192
+Se digitó 140 en lugar de 40 en el complemento.
+
+21
+00:01:14,860 --> 00:01:17,751
+Cualquiera que vea el asiento entenderá por qué se hizo.
+
+22
+00:01:18,407 --> 00:01:19,698
+Subo el archivo.
+
+23
+00:01:21,060 --> 00:01:22,179
+Sale un producto:
+
+24
+00:01:22,313 --> 00:01:26,257
+cien amortiguadores, por doscientos treinta mil pesos al costo.
+
+25
+00:01:26,912 --> 00:01:28,414
+Lo demás no se toca.
+
+26
+00:01:29,084 --> 00:01:33,945
+En el asiento, débito a la pérdida por ajuste de inventario y crédito a Inventario.
+
+27
+00:01:34,602 --> 00:01:37,640
+Un faltante siempre se registra como pérdida por ajuste,
+
+28
+00:01:37,701 --> 00:01:39,972
+aunque el error venga del inventario inicial;
+
+29
+00:01:40,082 --> 00:01:43,408
+si el monto es importante, coordínalo con tu contador.
+
+30
+00:01:44,063 --> 00:01:45,355
+Aplico el cambio.
+
+31
+00:01:46,010 --> 00:01:47,834
+El amortiguador queda en cuarenta,
+
+32
+00:01:47,957 --> 00:01:50,959
+y el asiento lleva la referencia que explica el error.
+
+33
+00:01:51,615 --> 00:01:52,795
+Pulso Ver asiento:
+
+34
+00:01:52,881 --> 00:01:56,204
+ahí está, con la pérdida y el crédito a inventario.
