@@ -7,7 +7,7 @@ DESCRIPCIÓN
 ⏱️ CAPÍTULOS
 00:00  Cerrar la caja
 01:10  Ingresar lo contado
-02:19  Registrar el conteo
+02:22  Registrar el conteo
 
 📋 EN ESTE VIDEO APRENDERÁS
 • Leer el desglose del efectivo de tu caja y entender de dónde sale el efectivo esperado
@@ -24,7 +24,7 @@ DESCRIPCIÓN
 Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
 
 —
-Duración: 03:20
+Duración: 03:32
 
 TRANSCRIPCIÓN
 ============================================================

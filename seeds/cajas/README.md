@@ -7,6 +7,8 @@ Correr desde `claude-tutorial/seeds/cajas` (Node ≥ 18, sin dependencias) o con
 | Archivo | Qué hace |
 |---|---|
 | `_lib.mjs` | `api(usuario, método, ruta, cuerpo)` con login `auth/dev/login` (clave `Demo2026!`), `sql()` con `sql_log_bin=0`, constantes (empresa 43, cuentas 116/167, Efectivo=1) |
+| `alta-empresa.mjs` | Da de alta la empresa 43 y sus 4 usuarios en una base que no la tiene (p. ej. la sembrada del API en un contenedor): `auth/dev/register` + compañeros por SQL (el plan 2 admite un usuario). Sube el AUTO_INCREMENT para respetar los ids 43 y 49/50/51 |
+| `preparar-api.mjs S3\|S4\|S5` | Rehace por API los estados que antes se fijaron desde la UI (`explorar.py v3…v5`), con los mismos usuarios, montos y textos |
 | `sembrar-s0.mjs` | Siembra S0 UNA vez sobre la empresa recién creada (política, 3 cajas, 6 turnos de D-3…D-1 con cuadres confirmados por carmen, bloqueo de Santiago, turno abierto de luis). Se niega si ya hay sesiones (`--forzar`) |
 | `_estado.mjs` | Lista MEDIDA de tablas que escribe el flujo (ver abajo) y su modo de restauración |
 | `fijar.mjs <S#>` | Vuelca con mysqldump las filas `company_id=43` de esas tablas a `estados/<S#>.sql` (+ `.json` con conteos y hora). Espera a que la auditoría asíncrona del API se quede quieta |
@@ -25,6 +27,12 @@ Correr desde `claude-tutorial/seeds/cajas` (Node ≥ 18, sin dependencias) o con
 | S4 | S3 + MOV-00010 aprobado por carmen + TRF-2026-00001 3,000 Mostrador 2 → Principal recibida (esperado Principal 3,500; alerta de saldo bajo creada y resuelta) | `explorar.py v4` |
 | S5 | S4 + conteo de cierre de yohanna REC-2026-00007 (3,480, −20 «Faltan 20 pesos en monedas») pendiente; sesión cerrada | `explorar.py v5` |
 | S6 | S5 + REC-00007 aprobado por carmen (con asiento del faltante) + arqueo sorpresa REC-00008 sobre la sesión de luis (3,050, pendiente) + Santiago desbloqueada | `explorar.py v6` |
+
+**Base nueva (contenedor, 2026-11-26):** `MYSQL_BIN=<ruta a un mysql.exe/mysqldump.exe>` (o enlaces con esos nombres) →
+`node alta-empresa.mjs` → `node sembrar-s0.mjs` → `node fijar.mjs S0` → `node preparar.mjs S1` / `S2i` + `fijar` →
+`node preparar-api.mjs S3` / `S4` / `S5` + `fijar`. Los volcados de `estados/` quedan con los ids de esa base: no se
+versionan (los del repo son los de la máquina de la serie). Las cuentas de contrapartida se buscan por código
+(4.02.01.02.01 y 6.03.21) y el login reintenta ante el límite de 10 ingresos por minuto.
 
 Uso entre tomas: `node seeds/cajas/restaurar.mjs S3` (el estado de PARTIDA del video, ver
 `guiones/_DATOS-CAJAS.md`). Probado: S0→S0, S0→S1→S1→S0→S0, S3/S4/S5/S6 tras modificar por UI.

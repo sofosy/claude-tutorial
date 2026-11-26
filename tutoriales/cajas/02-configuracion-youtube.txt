@@ -7,8 +7,8 @@ DESCRIPCIÓN
 ⏱️ CAPÍTULOS
 00:00  Denominaciones
 00:56  Políticas: fondo y tolerancias
-01:58  Políticas: aprobaciones y cuadre
-02:58  Configurar la impresora
+02:10  Políticas: aprobaciones y cuadre
+03:10  Configurar la impresora
 
 📋 EN ESTE VIDEO APRENDERÁS
 • Qué es una denominación y cómo agregar un billete o una moneda que falte
@@ -27,7 +27,7 @@ DESCRIPCIÓN
 Germiva, ERP, facturación electrónica, DGII, República Dominicana, tutorial, software de gestión
 
 —
-Duración: 04:14
+Duración: 04:25
 
 TRANSCRIPCIÓN
 ============================================================

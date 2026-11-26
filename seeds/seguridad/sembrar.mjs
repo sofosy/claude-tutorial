@@ -45,7 +45,10 @@ if (uno(`SELECT username FROM users WHERE id=${rosaId}`) !== ROSA) {
 }
 
 // ── 2. Plan 15 «Empresarial» (SALES_QUOTE, INVOICING, PRODUCTS, API_ACCESS): lo cambia la plataforma → SQL
-sql(`UPDATE subscriptions SET plan_id=15 WHERE company_id=${CIA} AND plan_id<>15`);
+// El id del plan cambia entre bases (15 en la máquina donde se grabó la serie, 14 en la base sembrada
+// del API): se busca el «Empresarial» con cupo para las 9 personas.
+const PLAN = +uno(`SELECT id FROM plans WHERE name='Empresarial' AND included_users>=9 AND deleted_at IS NULL ORDER BY id DESC LIMIT 1`) || 15;
+sql(`UPDATE subscriptions SET plan_id=${PLAN} WHERE company_id=${CIA} AND plan_id<>${PLAN}`);
 log('plan', uno(`SELECT CONCAT(s.id,' plan ',s.plan_id,' ',s.status) FROM subscriptions s WHERE s.company_id=${CIA} ORDER BY id DESC LIMIT 1`));
 
 // ── 3. La empresa exige aprobación de cotizaciones (Preferencias › Facturación)
