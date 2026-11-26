@@ -210,8 +210,23 @@
     "id": "yTTw2uym2Fs",
     "miniatura": "subida",
     "privacidad": "private",
-    "subtitulos": "pendiente",
+    "subtitulos": "subidos",
     "titulo": "Compras · Entrada de facturas 8: la factura llega antes que la mercancía en Germiva"
+  },
+  "compras-facturas/09-proveedor-informal.mp4": {
+    "id": "IVaWX4B9kmA",
+    "origen": "ya estaba en el canal",
+    "titulo": "Compras · Entrada de facturas 9: comprar a un proveedor informal en Germiva"
+  },
+  "compras-facturas/10-gastos-menores.mp4": {
+    "id": "VDPrfEFcrKg",
+    "origen": "ya estaba en el canal",
+    "titulo": "Compras · Entrada de facturas 10: gastos menores en Germiva"
+  },
+  "compras-facturas/11-pagos-al-exterior.mp4": {
+    "id": "qQ_DUKmbn7E",
+    "origen": "ya estaba en el canal",
+    "titulo": "Compras · Entrada de facturas 11: pagos al exterior en Germiva"
   },
   "contabilidad/01-catalogo.mp4": {
     "id": "F1aQkSwlEa8",
@@ -408,6 +423,44 @@
     "origen": "ya estaba en el canal",
     "titulo": "Contabilidad 39 · Ver la operación en dólares y en pesos en Germiva"
   },
+  "contabilidad/40-centro-en-asiento.mp4": {
+    "id": "EumKmO3x35A",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 40 · El centro de costo en un asiento: por línea, repartido y obligatorio en Germiva"
+  },
+  "contabilidad/41-centro-en-compras.mp4": {
+    "id": "gDeFSwdJVfs",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 41 · El centro de costo en compras, nómina, activos y almacenes en Germiva"
+  },
+  "contabilidad/42-distribucion-costos.mp4": {
+    "id": "OW9SDMEIZAk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 42 · Distribución de costos indirectos entre centros en Germiva"
+  },
+  "contabilidad/43-informes-por-centro.mp4": {
+    "id": "1-Dhlu3TXKc",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 43 · Informes por centro de costo: resultados, acumulado y Libro Mayor en Germiva"
+  },
+  "contabilidad/44-variaciones.mp4": {
+    "id": "hMLMAxgOgTk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 44 · Variaciones: presupuesto contra lo ejecutado en Germiva"
+  },
+  "contabilidad/45-control-presupuestario.mp4": {
+    "id": "s41snalrk2A",
+    "origen": "ya estaba en el canal",
+    "titulo": "Contabilidad 45 · Control presupuestario: comprometido, disponible y bloqueo en Germiva"
+  },
+  "contabilidad/46-presupuestos-de-proyecto.mp4": {
+    "fecha": "2026-11-22",
+    "id": "wKgm0ty_6g4",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Contabilidad 46 · Las obras dentro del presupuesto contable: incorporar los presupuestos de…"
+  },
   "crm/01-tablero-prospectos.mp4": {
     "id": "NfIYGV0xyi4",
     "origen": "ya estaba en el canal",
@@ -462,6 +515,26 @@
     "origen": "ya estaba en el canal",
     "titulo": "Éxito del Cliente 04 · Configuración en Germiva"
   },
+  "fabricacion/01-lista-de-materiales.mp4": {
+    "id": "nB45GZHV4w4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Fabricación · Parte 1: la lista de materiales en Germiva"
+  },
+  "fabricacion/02-orden-de-fabricacion.mp4": {
+    "id": "0pBe3Xi-Tkc",
+    "origen": "ya estaba en el canal",
+    "titulo": "Fabricación · Parte 2: la orden de fabricación en Germiva"
+  },
+  "fabricacion/03-merma-faltantes-trazabilidad.mp4": {
+    "id": "hB_uKHJc8Es",
+    "origen": "ya estaba en el canal",
+    "titulo": "Fabricación · Parte 3: merma, faltantes y trazabilidad en Germiva"
+  },
+  "fabricacion/04-pedido-y-subensambles.mp4": {
+    "id": "fpg_RvABhtw",
+    "origen": "ya estaba en el canal",
+    "titulo": "Fabricación · Parte 4: fabricar para un pedido y sub-ensambles en Germiva"
+  },
   "mesa-de-ayuda/01-tablero.mp4": {
     "id": "gH0NJh-c6eU",
     "origen": "ya estaba en el canal",
@@ -476,6 +549,160 @@
     "id": "AtAHsayOvFw",
     "origen": "ya estaba en el canal",
     "titulo": "Mesa de Ayuda 03 · Configuración: espacios, estados y avisos en Germiva"
+  },
+  "productos/01-catalogo.mp4": {
+    "id": "4qeLuOfqvso",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 1: el catálogo en Germiva"
+  },
+  "productos/02-crear-producto.mp4": {
+    "id": "d5aaPXz0We4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 2: crear un producto en Germiva"
+  },
+  "productos/03-servicio-fiscal-tienda.mp4": {
+    "id": "dDY98ZA1gCg",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 3: servicios, fiscal y tienda en línea en Germiva"
+  },
+  "productos/04-empaques.mp4": {
+    "id": "Hj2TGyKAur0",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 4: unidades y empaques en Germiva"
+  },
+  "productos/05-compras-e-inventario.mp4": {
+    "fecha": "2026-11-22",
+    "id": "dq4MK2OVY1c",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Productos · Parte 5: empaques en compras e inventario en Germiva"
+  },
+  "productos/06-vender-por-empaque.mp4": {
+    "fecha": "2026-11-22",
+    "id": "mm43gDNb6rA",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Productos · Parte 6: vender por empaque en Germiva"
+  },
+  "productos/07-peso-y-balanza.mp4": {
+    "id": "HAqbskPGWw4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 7: productos por peso y balanza en Germiva"
+  },
+  "productos/08-convertir-unidad-base.mp4": {
+    "id": "HapyN4vgx9E",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 8: convertir la unidad base en Germiva"
+  },
+  "productos/09-variantes-crear.mp4": {
+    "id": "qgF3Gt2Vqsw",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 9: crear un producto con variantes en Germiva"
+  },
+  "productos/10-variantes-vender.mp4": {
+    "id": "rL20zyZMOEc",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 10: variantes por dentro, su existencia y su venta en Germiva"
+  },
+  "productos/11-exterior-e-insumos.mp4": {
+    "id": "aASkoJy50fQ",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 11: comercio exterior e insumos en Germiva"
+  },
+  "productos/12-listas-de-precios.mp4": {
+    "id": "gUKlXq575gU",
+    "origen": "ya estaba en el canal",
+    "titulo": "Productos · Parte 12: listas de precios en Germiva"
+  },
+  "proyectos/01-crear-proyecto.mp4": {
+    "id": "vxxBosNuK4k",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 01 · Crear un proyecto y conocer su espacio de trabajo en Germiva"
+  },
+  "proyectos/02-crear-presupuesto.mp4": {
+    "id": "JtleBafzK98",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 02 · Crear el presupuesto del proyecto: fases y partidas en Germiva"
+  },
+  "proyectos/03-precio-unitario.mp4": {
+    "id": "0jaMuWgKJXo",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 03 · Análisis de precio unitario, indirectos, utilidad e ITBIS del presupuesto"
+  },
+  "proyectos/04-aprobar-presupuesto.mp4": {
+    "id": "Sn1Kb0j-iuk",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 04 · Aprobar el presupuesto, línea base y revisiones en Germiva"
+  },
+  "proyectos/05-control.mp4": {
+    "id": "XSqdpddHo-k",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 05 · Control del presupuesto: comprometido, real y disponible por partida en Germiva"
+  },
+  "proyectos/06-ordenes-de-cambio.mp4": {
+    "id": "F3uC3WBgz4c",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 06 · Órdenes de cambio: adicionales, deductivas y firma del cliente en Germiva"
+  },
+  "proyectos/07-contrato-y-anticipo.mp4": {
+    "id": "2_jVR4RzHfs",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 07 · El contrato de venta y la factura del anticipo en Germiva"
+  },
+  "proyectos/08-cubicaciones.mp4": {
+    "id": "FVgZWCUZJyA",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 08 · Cubicaciones: medir el avance, facturarlo y el fondo de reparo en Germiva"
+  },
+  "proyectos/09-subcontratos.mp4": {
+    "id": "uvV8z1IkLkg",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 09 · Subcontratos y retención de garantía en Germiva"
+  },
+  "proyectos/10-horas.mp4": {
+    "id": "0vlGRwcLKfI",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 10 · Horas de mano de obra: tarifas, hojas de tiempo y aprobación en Germiva"
+  },
+  "proyectos/11-avance-y-valor-ganado.mp4": {
+    "id": "1_roXJhYS7c",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 11 · Avance físico, valor ganado, flujo de caja y rentabilidad en Germiva"
+  },
+  "proyectos/12-facturar-por-hitos.mp4": {
+    "fecha": "2026-11-22",
+    "id": "-EWnKtF5rvY",
+    "miniatura": "subida",
+    "privacidad": "private",
+    "subtitulos": "subidos",
+    "titulo": "Proyectos 12 · Facturar por hitos: el plan de cobros y la factura de cada hito en Germiva"
+  },
+  "proyectos/13-cerrar-el-proyecto.mp4": {
+    "id": "uLCjEBe7Qr0",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 13 · Cerrar el proyecto: compromisos abiertos, finiquito y cierre del presupuesto"
+  },
+  "proyectos/14-planificacion-de-recursos.mp4": {
+    "id": "X_VgLEkMZMQ",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 14 · Planificación de recursos: quién está disponible y quién está sobreasignado"
+  },
+  "proyectos/15-mis-horas.mp4": {
+    "id": "NNNvmGu-5y4",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 15 · Mis horas: cómo registra el empleado su semana en Germiva"
+  },
+  "proyectos/16-importar-desde-excel.mp4": {
+    "id": "EeaXbW0q6Oo",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 16 · Importar el presupuesto desde Excel en Germiva"
+  },
+  "proyectos/17-tiempo-y-materiales.mp4": {
+    "id": "Ac9KUbajusQ",
+    "origen": "ya estaba en el canal",
+    "titulo": "Proyectos 17 · Facturar por tiempo y materiales: horas aprobadas y gastos refacturables en Germiva"
   },
   "registro/tutorial-registro-germiva.mp4": {
     "id": "RYwnZPZO07c",
