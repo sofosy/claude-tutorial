@@ -207,7 +207,7 @@
         {
           "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Roles y permisos')",
           "durante_ms": 1500,
-          "al_decir": "doce roles"
+          "al_decir": "trece roles"
         },
         {
           "resaltar": ".gm-sheet__tabs a[mat-tab-link]:has-text('Integraciones')",
@@ -245,7 +245,7 @@
           "al_decir": "Lo cierro"
         }
       ],
-      "narracion": "Ahora sí, entro por el candado de la izquierda. Esta es la consola de Seguridad: una sola hoja con todo el módulo. Arriba, el título y la frase que lo resume: quién entra, qué puede hacer y qué cambió. Debajo están las cinco pestañas: Resumen, Personas, Roles y permisos, Integraciones y Auditoría. El número de cada pestaña es un conteo: nueve personas; en Roles y permisos, doce roles; y en Integraciones, una credencial. Cada pestaña exige su propio permiso; si alguien no lo tiene, esa pestaña ni aparece. A la derecha, el buscador encuentra personas por su nombre o su usuario; y si estás en Roles y permisos, busca roles. Y el botón Nuevo abre un menú para crear un usuario, un rol, un equipo o una integración de API. Lo cierro sin elegir nada: cada alta tiene su propio video."
+      "narracion": "Ahora sí, entro por el candado de la izquierda. Esta es la consola de Seguridad: una sola hoja con todo el módulo. Arriba, el título y la frase que lo resume: quién entra, qué puede hacer y qué cambió. Debajo están las cinco pestañas: Resumen, Personas, Roles y permisos, Integraciones y Auditoría. El número de cada pestaña es un conteo: nueve personas; en Roles y permisos, trece roles; y en Integraciones, una credencial. Cada pestaña exige su propio permiso; si alguien no lo tiene, esa pestaña ni aparece. A la derecha, el buscador encuentra personas por su nombre o su usuario; y si estás en Roles y permisos, busca roles. Y el botón Nuevo abre un menú para crear un usuario, un rol, un equipo o una integración de API. Lo cierro sin elegir nada: cada alta tiene su propio video."
     },
     {
       "id": "04-recorrido",

@@ -121,3 +121,19 @@ Aprenderás:
 
 ---
 Música: «Elevator Music» de Alex McCulloch (CC0, OpenGameArt). Tipografía: Inter (OFL).
+
+## Pendiente de regrabar (2026-11-26)
+
+Los cambios de Cajas de sofosy/Germiva-api#1961 y sofosy/germiva-website#1783 alteraron tres pantallas que salen en
+cámara. Los guiones ya están al día; los `.mp4` publicados todavía muestran lo anterior hasta regrabar estos pasos
+(`tut.py video <guion> --paso <id>` + montar):
+
+| Video | Paso | Qué cambió en el sistema |
+|---|---|---|
+| 2 · Configuración | `02-politicas-fondo-tolerancia` | Políticas trae primero el bloque «Cobros y turno» (enlaza a Preferencias › Operación). |
+| 6 · Cerrar caja | `02-ingresar-montos` | El conteo ya no viene lleno con lo esperado: el monto recibido sale vacío. La cifra «Total esperado en caja» ahora es «Efectivo esperado en gaveta» y aparte «Otros medios». |
+| 6 · Cerrar caja | `03-registrar-conteo` | Al registrar, el sistema confirma «¿Cerrar el turno?» con lo declarado; se acepta con «Cerrar turno». |
+| 7 · Cuadre y desbloqueo | `02-arqueo-sorpresa` | Misma cifra renombrada («Efectivo esperado en gaveta») y conteo vacío. |
+
+Sin cambios visibles: videos 1, 3, 4, 5 y 8 (el 4 resalta «Cobros del turno», que sigue existiendo; el 7 aprueba una
+diferencia de 20 pesos dentro de la tolerancia, que no pide comentario del supervisor).

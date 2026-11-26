@@ -149,11 +149,16 @@
     {
       "id": "02-politicas-fondo-tolerancia",
       "ruta": "Cajas › Configuración › Políticas",
-      "texto_pantalla": "Políticas · estaciones, fondo inicial, tolerancias y duración de las sesiones",
+      "texto_pantalla": "Políticas · cobros y turno, estaciones, fondo inicial, tolerancias y duración de las sesiones",
       "acciones": [
         {
           "click": "nav.segmented--sub button.segmented__option:has-text('Políticas')",
           "al_decir": "Políticas"
+        },
+        {
+          "resaltar": "section.policy-card:has(h4:has-text('Cobros y turno'))",
+          "durante_ms": 7000,
+          "al_decir": "Cobros y turno"
         },
         {
           "resaltar": "section.policy-card:has(h4:has-text('Estaciones de trabajo'))",
@@ -196,7 +201,7 @@
           "al_decir": "feriados"
         }
       ],
-      "narracion": "Ahora la sección Políticas: son las reglas que valen para todas las cajas de la empresa, repartidas en bloques. El primero, Estaciones de trabajo, está apagado: es el modo Flexible, en el que cada cajero abre su caja desde cualquier computadora, sin vincularla. Así lo dejamos. En Fondos y límites, el Fondo inicial por defecto es de cinco mil pesos: es el efectivo con que arranca cada turno, y ya aparece escrito al abrir la caja. El mínimo y el máximo quedan vacíos, sin límite. Luego vienen las Tolerancias de diferencia: cuánto puede faltar o sobrar al cuadrar sin que cuente como diferencia. El modo es Monto fijo, con cincuenta pesos, y se aplica a cada método de pago por separado. Diferencias consecutivas máximas, tres: si una caja cuadra fuera de tolerancia tres veces seguidas, se bloquea sola. En Control de sesiones, un turno dura como máximo setecientos veinte minutos, o sea doce horas; y en los días feriados no se abre caja.",
+      "narracion": "Ahora la sección Políticas: son las reglas que valen para todas las cajas de la empresa, repartidas en bloques. El primero, Cobros y turno, recuerda una decisión que se toma en Preferencias de la empresa: si se puede cobrar sin un turno abierto, ese dinero no entra en ningún cuadre; el botón te lleva ahí. Después, Estaciones de trabajo, que está apagado: es el modo Flexible, en el que cada cajero abre su caja desde cualquier computadora, sin vincularla. Así lo dejamos. En Fondos y límites, el Fondo inicial por defecto es de cinco mil pesos: es el efectivo con que arranca cada turno, y ya aparece escrito al abrir la caja. El mínimo y el máximo quedan vacíos, sin límite. Luego vienen las Tolerancias de diferencia: cuánto puede faltar o sobrar al cuadrar sin que cuente como diferencia. El modo es Monto fijo, con cincuenta pesos, y se aplica a cada método de pago por separado. Diferencias consecutivas máximas, tres: si una caja cuadra fuera de tolerancia tres veces seguidas, se bloquea sola. En Control de sesiones, un turno dura como máximo setecientos veinte minutos, o sea doce horas; y en los días feriados no se abre caja.",
       "capitulo": "Políticas: fondo y tolerancias",
       "rotulo": "Políticas: fondo y tolerancias"
     },

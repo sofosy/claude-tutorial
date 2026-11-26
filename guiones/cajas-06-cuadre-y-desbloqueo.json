@@ -206,7 +206,7 @@
           "al_decir": "Pulso Continuar"
         },
         {
-          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Total esperado en caja'))",
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Efectivo esperado en gaveta'))",
           "durante_ms": 4000,
           "al_decir": "debe haber"
         },
