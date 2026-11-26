@@ -57,6 +57,8 @@ export async function login(usuario, { forzar = false } = {}) {
     body: JSON.stringify({ username: usuario, password: CLAVE }),
   });
   const j = await r.json();
+  // auth/dev/login admite 10 ingresos por minuto: ante el 429 se espera y se reintenta.
+  if (j.statusCode === 429) { await new Promise(ok => setTimeout(ok, 61000)); return login(usuario, { forzar }); }
   if (!j.accessToken) throw new Error(`login ${usuario}: ${JSON.stringify(j).slice(0, 300)}`);
   const cia = empresa();
   if (cia && j.session?.currentCompanyId !== cia) throw new Error(`${usuario} no está en la empresa ${cia}`);

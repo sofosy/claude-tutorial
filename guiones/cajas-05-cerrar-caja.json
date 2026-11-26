@@ -122,7 +122,7 @@
       "id": "02-ingresar-montos",
       "ruta": "Cajas › Conteo de cierre › Ingresar montos",
       "texto_pantalla": "Conteo de cierre · paso 2, Ingresar montos",
-      "narracion": "Esta es la página de Conteo de cierre. Arriba hay tres pasos; el primero, elegir la sesión, lo hizo el sistema por ti, así que ya estás en Ingresar montos. El Resumen de la sesión repite las cifras clave: el fondo con que abriste, los cobros del turno y el total que debería haber en caja. Si quieres ver de dónde sale ese total, pulsa Ver cálculo: despliega la misma cuenta que viste en Mi caja. Más abajo, en Detalles por método de pago, hay una fila por cada forma en que entró dinero; aquí solo Efectivo. La columna Monto esperado dice cuánto debería haber, y en Monto recibido va lo que contaste de verdad, billete por billete. Viene lleno con lo esperado, así que lo corrijo: escribo tres mil cuatrocientos ochenta. Al momento, el sistema calcula la Diferencia: faltan veinte pesos, y debajo aclara que está dentro de la tolerancia de cincuenta, el margen que la empresa acepta. Como hay diferencia, se abre la Justificación de esa línea. Explico el motivo: veinte pesos en monedas. Todo coincide con lo contado, así que paso a Siguiente.",
+      "narracion": "Esta es la página de Conteo de cierre. Arriba hay tres pasos; el primero, elegir la sesión, lo hizo el sistema por ti, así que ya estás en Ingresar montos. El Resumen de la sesión repite las cifras clave: el fondo con que abriste, los cobros del turno y el efectivo esperado en gaveta, separado de los otros medios. Si quieres ver de dónde sale ese efectivo, pulsa Ver cálculo: despliega la misma cuenta que viste en Mi caja. Más abajo, en Detalles por método de pago, hay una fila por cada forma en que entró dinero; aquí solo Efectivo. La columna Monto esperado dice cuánto debería haber, y en Monto recibido va lo que contaste de verdad, billete por billete. Viene vacío, para que escribas lo que contaste y no lo que dice el sistema: escribo tres mil cuatrocientos ochenta. Al momento, el sistema calcula la Diferencia: faltan veinte pesos, y debajo aclara que está dentro de la tolerancia de cincuenta, el margen que la empresa acepta. Como hay diferencia, se abre la Justificación de esa línea. Explico el motivo: veinte pesos en monedas. Todo coincide con lo contado, así que paso a Siguiente.",
       "acciones": [
         {
           "resaltar": "mat-step-header:has-text('Ingresar montos')",
@@ -135,9 +135,9 @@
           "al_decir": "Resumen"
         },
         {
-          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Total esperado en caja'))",
+          "resaltar": ".wizard-figs .gm-fig:has(.gm-fig__l:text-is('Efectivo esperado en gaveta'))",
           "durante_ms": 3500,
-          "al_decir": "el total que"
+          "al_decir": "el efectivo esperado"
         },
         {
           "click": "button:has-text('Ver cálculo')",
@@ -194,8 +194,8 @@
     {
       "id": "03-registrar-conteo",
       "ruta": "Cajas › Conteo de cierre › Confirmar cuadre",
-      "texto_pantalla": "Conteo de cierre · paso 3, Confirmar cuadre y Registrar conteo",
-      "narracion": "Último paso: Confirmar cuadre. El Resumen de totales pone lado a lado lo esperado, tres mil quinientos, lo recibido, tres mil cuatrocientos ochenta, y la diferencia total, menos veinte. Debajo, el aviso verde confirma que todos los métodos de pago están dentro de la tolerancia. Si alguno se saliera del margen, verías una advertencia, y tendrías que justificar esa diferencia antes de poder registrar. La lista Revisa las diferencias muestra solo las líneas que no cuadraron exacto. La Justificación global es opcional: sirve para explicar el cuadre completo; como ya expliqué la línea, la dejo en blanco. Pulso Registrar conteo. Sale el mensaje: conteo de cierre registrado, un supervisor hará el cuadre oficial. El sistema cierra la sesión y te devuelve a Mi caja, que ahora dice que no tienes una sesión activa. Tu turno terminó, y tu conteo queda esperando la revisión de la supervisora.",
+      "texto_pantalla": "Conteo de cierre · paso 3, Confirmar cuadre, Registrar conteo y Cerrar turno",
+      "narracion": "Último paso: Confirmar cuadre. El Resumen de totales pone lado a lado lo esperado, tres mil quinientos, lo recibido, tres mil cuatrocientos ochenta, y la diferencia total, menos veinte. Debajo, el aviso verde confirma que todos los métodos de pago están dentro de la tolerancia. Si alguno se saliera del margen, verías una advertencia, y tendrías que justificar esa diferencia antes de poder registrar. La lista Revisa las diferencias muestra solo las líneas que no cuadraron exacto. La Justificación global es opcional: sirve para explicar el cuadre completo; como ya expliqué la línea, la dejo en blanco. Pulso Registrar conteo. Como cerrar el turno no se deshace, el sistema pregunta: ¿Cerrar el turno?, y repite lo que declaras. Confirmo con Cerrar turno. Sale el mensaje: conteo de cierre registrado, un supervisor hará el cuadre oficial. El sistema cierra la sesión y te devuelve a Mi caja, que ahora dice que no tienes una sesión activa. Tu turno terminó, y tu conteo queda esperando la revisión de la supervisora.",
       "acciones": [
         {
           "resaltar": "mat-step-header:has-text('Confirmar cuadre')",
@@ -235,6 +235,16 @@
         {
           "click": "button:has-text('Registrar conteo')",
           "al_decir": "Pulso Registrar"
+        },
+        {
+          "resaltar": ".custom-alert-dialog-style",
+          "durante_ms": 3000,
+          "cursor": false,
+          "al_decir": "el sistema pregunta"
+        },
+        {
+          "click": ".custom-alert-dialog-style button.confirm-button",
+          "al_decir": "Confirmo con"
         },
         {
           "resaltar": ".mat-mdc-snack-bar-container",

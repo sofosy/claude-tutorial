@@ -10,8 +10,12 @@ export const EMPRESA = 43; // «Ferretería El Progreso» (RNC 130555021) — la
 export const API = process.env.GERMIVA_API || 'http://localhost:3001/api';
 export const CLAVE = 'Demo2026!';
 export const MYSQL = process.env.MYSQL_BIN || 'C:/Program Files/MySQL/MySQL Server 9.7/bin/mysql.exe';
-export const CUENTA_INGRESOS = 116; // 4.02.01.02 «Otros ingresos diversos» (catálogo global)
-export const CUENTA_GASTOS = 167;   // 6.03.21 «Otros gastos generales» (catálogo global)
+// Cuentas del catálogo global por su CÓDIGO: el id cambia de una base a otra
+// (116/167 en la máquina donde se grabó la serie, 120/172 en la base sembrada del API).
+const cuentaGlobal = codigo => +sql(`SELECT id FROM accounting_chart WHERE code='${codigo}' AND company_id IS NULL AND deleted_at IS NULL LIMIT 1`)[0][0];
+// 4.02.01.02 pasó a ser agrupadora en el catálogo global; su detalle es 4.02.01.02.01.
+export const CUENTA_INGRESOS = cuentaGlobal('4.02.01.02.01') || cuentaGlobal('4.02.01.02'); // «Otros ingresos diversos (general)»
+export const CUENTA_GASTOS = cuentaGlobal('6.03.21');      // «Otros gastos generales»
 export const EFECTIVO = 1;          // payment_methods.id Efectivo (CASH)
 
 /** Ejecuta SQL (texto) contra la BD local sin binlog. Devuelve filas TSV sin cabecera. */
@@ -32,6 +36,8 @@ export async function login(usuario) {
     body: JSON.stringify({ username: usuario, password: CLAVE }),
   });
   const j = await r.json();
+  // auth/dev/login admite 10 ingresos por minuto: ante el 429 se espera y se reintenta.
+  if (j.statusCode === 429) { await new Promise(ok => setTimeout(ok, 61000)); return login(usuario); }
   if (!j.accessToken) throw new Error(`login ${usuario}: ${JSON.stringify(j).slice(0, 300)}`);
   if (j.session?.currentCompanyId !== EMPRESA) throw new Error(`${usuario} no está en la empresa ${EMPRESA}`);
   tokens[usuario] = j.accessToken;

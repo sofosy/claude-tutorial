@@ -5,11 +5,11 @@ Ocho videos que recorren un día completo de caja, en el orden en que se aprende
 | # | Video | Duración | Lo graba el rol |
 |---|---|---|---|
 | 1 | [El tablero y tus cajas](01-tablero.mp4) | 3:42 | admin.progreso |
-| 2 | [Denominaciones, políticas e impresora](02-configuracion.mp4) | 4:14 | admin.progreso |
+| 2 | [Denominaciones, políticas e impresora](02-configuracion.mp4) | 4:25 | admin.progreso |
 | 3 | [Abre tu caja y registra entradas y salidas](03-abrir-y-operar.mp4) | 4:33 | yohanna.peralta |
 | 4 | [Cobrar una factura con pago combinado](04-cobro-factura.mp4) | 4:21 | admin.progreso |
 | 5 | [Aprueba movimientos y mueve efectivo entre cajas](05-aprobar-y-transferir.mp4) | 3:27 | carmen.rosario |
-| 6 | [Cierra tu caja con el conteo de cierre](06-cerrar-caja.mp4) | 3:20 | yohanna.peralta |
+| 6 | [Cierra tu caja con el conteo de cierre](06-cerrar-caja.mp4) | 3:32 | yohanna.peralta |
 | 7 | [Cuadre oficial, arqueo sorpresa y desbloqueo](07-cuadre-y-desbloqueo.mp4) | 3:57 | carmen.rosario |
 | 8 | [Historial y análisis](08-historial-y-analisis.mp4) | 3:17 | carmen.rosario |
 
@@ -30,12 +30,12 @@ Aprenderás:
 - Crear una caja nueva con sus métodos de pago y sus umbrales de alerta
 - Administrar las cajas desde Configuración: buscar, bloquear y archivar
 
-### 2. Denominaciones, políticas e impresora (4:14)
+### 2. Denominaciones, políticas e impresora (4:25)
 
 - 00:00  Denominaciones
 - 00:56  Políticas: fondo y tolerancias
-- 01:58  Políticas: aprobaciones y cuadre
-- 02:58  Configurar la impresora
+- 02:10  Políticas: aprobaciones y cuadre
+- 03:10  Configurar la impresora
 
 Aprenderás:
 - Qué es una denominación y cómo agregar un billete o una moneda que falte
@@ -83,11 +83,11 @@ Aprenderás:
 - Crear una transferencia de efectivo entre dos cajas abiertas.
 - Recibir la transferencia en la caja destino y comprobar el saldo nuevo en el tablero.
 
-### 6. Cierra tu caja con el conteo de cierre (3:20)
+### 6. Cierra tu caja con el conteo de cierre (3:32)
 
 - 00:00  Cerrar la caja
 - 01:10  Ingresar lo contado
-- 02:19  Registrar el conteo
+- 02:22  Registrar el conteo
 
 Aprenderás:
 - Leer el desglose del efectivo de tu caja y entender de dónde sale el efectivo esperado
@@ -121,3 +121,22 @@ Aprenderás:
 
 ---
 Música: «Elevator Music» de Alex McCulloch (CC0, OpenGameArt). Tipografía: Inter (OFL).
+
+## Regrabados el 2026-11-26
+
+Los cambios de Cajas de sofosy/Germiva-api#1961 y sofosy/germiva-website#1783 alteraron tres pantallas que salen en
+cámara. Se regrabaron completos los videos 2, 6 y 7 (veredicto PUBLICABLE en los tres):
+
+| Video | Paso | Qué cambió en el sistema |
+|---|---|---|
+| 2 · Configuración | `02-politicas-fondo-tolerancia` | Políticas trae primero el bloque «Cobros y turno» (enlaza a Preferencias › Operación). |
+| 6 · Cerrar caja | `02-ingresar-montos` | El monto recibido sale vacío (ya no viene lleno con lo esperado). «Total esperado en caja» ahora es «Efectivo esperado en gaveta», con «Otros medios» aparte. |
+| 6 · Cerrar caja | `03-registrar-conteo` | Al registrar, el sistema confirma «¿Cerrar el turno?» con lo declarado; se acepta con «Cerrar turno». |
+| 7 · Cuadre y desbloqueo | `02-arqueo-sorpresa` | Misma cifra renombrada y conteo vacío. |
+
+Sin cambios visibles: videos 1, 3, 4, 5 y 8 (el 4 resalta «Cobros del turno», que sigue existiendo; el 7 aprueba una
+diferencia de 20 pesos dentro de la tolerancia, que no pide comentario del supervisor).
+
+Se grabaron en un contenedor sobre la base sembrada del API, con la empresa demo recreada por
+`seeds/cajas/alta-empresa.mjs` → `sembrar-s0.mjs` → `preparar.mjs S1|S2i` → `preparar-api.mjs S3|S4|S5`
+(mismos datos y textos que los estados fijados; ver `seeds/cajas/README.md`).
