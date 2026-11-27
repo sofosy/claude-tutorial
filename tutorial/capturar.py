@@ -101,7 +101,15 @@ def _setup(paso, variables, db):
         # con la salida entubada, Python hijo hereda cp1252 en Windows y muere
         # al imprimir una flecha o un acento: el seed queda a medias sin culpa
         entorno = {**os.environ, "PYTHONIOENCODING": "utf-8", "PYTHONUTF8": "1"}
-        subprocess.run(s["cmd"], shell=True, check=True, cwd=RAIZ, env=entorno)
+        if s.get("guardar_en"):
+            # La salida estándar (sin espacios a los lados) queda en la variable: sirve para un
+            # código de verificación que se emite DURANTE el paso anterior (p. ej. el del portal).
+            salida = subprocess.run(s["cmd"], shell=True, check=True, cwd=RAIZ, env=entorno,
+                                    capture_output=True, text=True, encoding="utf-8").stdout.strip()
+            variables[s["guardar_en"]] = salida
+            print(f"    setup shell: {s['guardar_en']} = {salida}")
+        else:
+            subprocess.run(s["cmd"], shell=True, check=True, cwd=RAIZ, env=entorno)
     elif s["tipo"] == "sql":
         valor = _sql(db, _sub(s["query"], variables))
         if s.get("guardar_en"):
