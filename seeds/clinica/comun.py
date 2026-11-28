@@ -10,13 +10,14 @@ from pathlib import Path
 RAIZ = Path(__file__).resolve().parents[2]
 
 PERMITIDOS = [
-    "regisalud", "RegiSalud", "Los Prados", "losprados", "los-prados", "402-0555", "001-0555", "correo.test",
+    "regisalud", "RegiSalud", "Los Prados", "40205550", "00105551", "8095550", "8295550", "8495550", "losprados", "los-prados", "402-0555", "001-0555", "correo.test",
     "131456789", "EXQ-", "Carmen Peña", "Ana Pérez", "Jorge Medina", "Marta Reyes", "Pablo Santos", "Elías Tavárez",
     "Luis Gómez", "Ramírez", "Castro", "Herrera", "Almonte", "Lora", "Mejía", "Rosa Elena", "Martínez",
     "Juan Carlos", "Batista", "Carolina", "Méndez", "Miguel Ángel", "Rosario", "Paola", "Jiménez",
     "Rafael Antonio", "Núñez", "Yesenia", "Castillo", "Héctor Manuel", "Vargas", "Laura Patricia", "Santana",
     "Daniel Alberto", "Polanco", "Mariela", "Guzmán", "Francisco Javier", "Cabrera", "Altagracia", "Peralta",
     "Mateo", "Valeria", "Natalia", "Gabriela", "Fernández", "Sofía", "Andrés", "Lucía", "Tomás",
+    "Rosa", "Elena", "Juan", "Carlos", "Miguel", "Ángel", "Rafael", "Antonio", "Héctor", "Manuel", "Laura", "Patricia", "Daniel", "Alberto", "Francisco", "Javier", "Ana", "Jorge", "Marta", "Pablo", "Elías", "Luis", "Pérez", "Medina", "Reyes", "Santos", "Tavárez", "Gómez",
     "809-555", "829-555", "849-555", "Consultorio", "Humano", "Senasa", "Mapfre", "Universal", "Primera",
 ]
 
