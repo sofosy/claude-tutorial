@@ -388,7 +388,7 @@ def ars_04():
                 "la de Rosa y dos más, con lo que cubre cada una. Las marco todas: primero la de Rosa, después la "
                 "de Juan Carlos, y por último la de Carolina. Abajo se suma el total a reclamar. La remesa de destino se sugiere por la fecha del "
                 "servicio: Noviembre. Pulso Reclamar. El sistema pide confirmar, y confirmo. El aviso dice que se "
-                "crearon las tres reclamaciones."
+                "crearon las tres reclamaciones, y lo cierro."
             ),
             "acciones": [
                 R("button:has-text('Por reclamar')", 2000, al_decir="por reclamar, seguimiento"),
@@ -400,8 +400,8 @@ def ars_04():
                 R("mat-form-field:has-text('Remesa de destino')", 2500, al_decir="se sugiere"),
                 {"click": REC, "al_decir": "Pulso Reclamar"},
                 {"click": "button:has-text('Sí, Reclamar')", "al_decir": "y confirmo"},
-                R("mat-dialog-container:has(app-custom-alert-dialog)", 2000, al_decir="el aviso dice", cursor=False),
-                {"click": "button:has-text('Entendido')", "al_decir": "las tres reclamaciones"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 2000, al_decir="que se crearon", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "y lo cierro"},
             ],
         },
         {
@@ -648,6 +648,71 @@ def ars_06():
     )
 
 
+def ars_07():
+    ALERTA = "mat-dialog-container:has(app-custom-alert-dialog)"
+    CAROL = "tr:has-text('CLM-2026-000203')"
+    pasos = [
+        {
+            "id": "01-formulario", "capitulo": "El formulario de reclamación", "rotulo": "Formulario de reclamación",
+            "navegar": "/patients/547?tab=ars", "ruta": "Pacientes › ficha › ARS › Reclamaciones a la ARS",
+            "texto_pantalla": "El formulario por servicios prestados, lleno con los datos del paciente",
+            "narracion": (
+                "Algunas ARS piden, además de la factura y el anexo, el formulario de reclamación por servicios "
+                "prestados de cada paciente, firmado por el médico. Está en la ficha del paciente, pestaña ARS, en "
+                "Reclamaciones a la ARS. Abro la de Carolina. El formulario sale lleno con sus datos, su afiliación, "
+                "la autorización y los servicios. Elijo el médico tratante: escribo su nombre, y elijo a la doctora "
+                "Ana cuando aparece en la lista. Con el médico puesto, guardo los cambios del formulario. Desde aquí se descarga en "
+                "PDF, o se imprime para que el médico lo firme."
+            ),
+            "acciones": [
+                R(":text('Reclamaciones a la ARS') >> xpath=..", 3000, al_decir="en Reclamaciones a la ARS"),
+                {"click": "button[aria-label^='Abrir la reclamación'] >> nth=0", "al_decir": "Abro la de Carolina"},
+                R("app-patient-claim-form-tab", 4000, al_decir="sale lleno", cursor=False),
+                {"click": "app-patient-claim-form-tab app-autocomplete input", "al_decir": "Elijo el médico"},
+                {"teclear": "Ana", "al_decir": "escribo su nombre"},
+                {"click": "mat-option:has-text('Ana') >> nth=0", "al_decir": "cuando aparece"},
+                {"click": "app-patient-claim-form-tab button:has-text('Guardar')", "al_decir": "guardo los cambios"},
+                R("app-patient-claim-form-tab button:has-text('Descargar PDF')", 2500, al_decir="se descarga en PDF"),
+                R("app-patient-claim-form-tab button:has-text('Imprimir')", 2500, al_decir="o se imprime"),
+            ],
+        },
+        {
+            "id": "02-baja", "capitulo": "Dar de baja lo no cobrado", "rotulo": "Dar de baja",
+            "navegar": "/health-insurance/reclamaciones", "al_decir_navegar": "La ARS respondió",
+            "ruta": "Seguros de Salud › Reclamaciones › Seguimiento › Dar de baja lo no cobrado",
+            "texto_pantalla": "Lo que la ARS no va a pagar sale de su cuenta por cobrar, con su asiento",
+            "narracion": (
+                "Volvamos a la glosa de Carolina. La ARS respondió la apelación y mantuvo la glosa: esos seiscientos "
+                "cuarenta no se van a cobrar. Abro la pestaña de Seguimiento. En la fila de Carolina abro su menú, y "
+                "pulso Dar de baja lo no cobrado. El cuadro dice cuánto queda sin cobrar y que sale de la cuenta por "
+                "cobrar de la aseguradora como ajuste, con su asiento; lo ya cobrado no cambia. Escribo el motivo: "
+                "que la ARS mantuvo la glosa tras la apelación. Revisado el texto, confirmo con el botón Dar de baja. Un momento "
+                "después, el aviso confirma el ajuste; lo cierro. La reclamación queda cerrada, y con eso la cuenta "
+                "de la ARS cuadra con lo que de verdad pagó."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Seguimiento')", "al_decir": "Abro la pestaña"},
+                {"click": f"{CAROL} button:has(mat-icon:text('more_vert'))", "al_decir": "abro su menú"},
+                {"click": ".mat-mdc-menu-content button:has-text('Dar de baja')", "al_decir": "pulso Dar de baja"},
+                R(f"{DLG}", 5000, al_decir="El cuadro dice", cursor=False),
+                {"escribir": {"sel": f"{DLG} textarea", "texto": "La ARS mantuvo la glosa tras la apelación."},
+                 "al_decir": "Escribo el motivo"},
+                {"click": f"{DLG} button:has-text('Dar de baja')", "al_decir": "confirmo con el botón"},
+                R(ALERTA, 1800, al_decir="el aviso confirma", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro"},
+                R(f"{CAROL} td >> nth=-3", 3500, al_decir="queda cerrada"),
+            ],
+        },
+    ]
+    return guion(
+        "ars-07-formulario-y-baja", "Seguros de salud · Parte 7: el formulario de reclamación y dar de baja",
+        "Séptima parte de la serie de ARS de RegiSalud: el formulario de reclamación por servicios prestados de cada "
+        "paciente (médico tratante, PDF e impresión) y dar de baja lo que la ARS no va a pagar, con su ajuste en la "
+        "cuenta por cobrar.",
+        pasos, comentario="Estado: ars.mjs restaurar G (F + lo que deja la parte 6).", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (ars_01, ars_02, ars_03, ars_04, ars_05, ars_06):
+    for f in (ars_01, ars_02, ars_03, ars_04, ars_05, ars_06, ars_07):
         print(f())

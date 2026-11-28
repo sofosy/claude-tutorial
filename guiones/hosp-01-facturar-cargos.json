@@ -1,0 +1,297 @@
+{
+  "titulo": "Hospitalización · Facturar los cargos del ingreso",
+  "descripcion": "Hospitalización en RegiSalud: aprobar los cargos del ingreso y facturarlos con «Facturar cargos» desde la pestaña Cuenta del paciente, antes o después del alta, sin facturar dos veces el mismo cargo.",
+  "_comentario": "Estado: ars.mjs restaurar H (hosp.mjs H).",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "102017174",
+      "401516454",
+      "809-476-3535",
+      "humano.com.do",
+      "PSS-",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-aprobar",
+      "capitulo": "Aprobar los cargos",
+      "rotulo": "Cargos del ingreso",
+      "navegar": "/hospitalization/charges",
+      "ruta": "Hospitalización › Cargos",
+      "texto_pantalla": "Lo que se le hace al paciente ingresado entra como cargo pendiente",
+      "narracion": "Durante un ingreso, cada servicio que recibe el paciente entra como un cargo: laboratorios, estudios, medicamentos, la habitación. Están en Hospitalización, Cargos. Daniel tiene tres: el hemograma y el electrocardiograma ya aprobados, y una sonografía pendiente. Un cargo pendiente no se factura hasta que alguien lo revisa y lo aprueba. En su fila pulso Aprobar, y confirmo. El aviso dice que quedó aprobado; lo cierro.",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('Hemograma completo')",
+          "durante_ms": 3000,
+          "al_decir": "Están en Hospitalización"
+        },
+        {
+          "resaltar": "tr:has-text('Sonografía abdominal') td >> nth=-2",
+          "durante_ms": 3500,
+          "al_decir": "una sonografía pendiente"
+        },
+        {
+          "click": "tr:has-text('Sonografía abdominal') button:has(mat-icon:text('check_circle'))",
+          "al_decir": "En su fila pulso Aprobar"
+        },
+        {
+          "click": "mat-dialog-container:has(app-custom-alert-dialog) button:has-text('Aprobar')",
+          "al_decir": "y confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 1800,
+          "al_decir": "dice que quedó aprobado",
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Entendido')",
+          "al_decir": "lo cierro"
+        }
+      ]
+    },
+    {
+      "id": "02-facturar",
+      "capitulo": "Facturar cargos",
+      "rotulo": "Facturar cargos",
+      "navegar": "/patients/554?tab=cuenta",
+      "al_decir_navegar": "En la ficha",
+      "ruta": "Pacientes › ficha › Cuenta › Cargos del ingreso",
+      "texto_pantalla": "Una factura con los cargos aprobados que aún no se han facturado",
+      "narracion": "Ahora los facturamos. En la ficha de Daniel, pestaña Cuenta, están los cargos del ingreso con su estado y el acumulado. Los tres están aprobados. Pulso Facturar cargos. El sistema arma una sola factura con los cargos aprobados que aún no tienen factura, y el aviso dice cuántos entraron. Se puede facturar antes o después del alta, y las veces que haga falta: un cargo facturado no vuelve a entrar. Pulso Abrir la factura.",
+      "acciones": [
+        {
+          "resaltar": ":text('Cargos del ingreso') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "están los cargos"
+        },
+        {
+          "resaltar": ".acc__total",
+          "durante_ms": 3000,
+          "al_decir": "y el acumulado"
+        },
+        {
+          "click": "button:has-text('Facturar cargos')",
+          "al_decir": "Pulso Facturar cargos"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 5000,
+          "al_decir": "y el aviso dice",
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Abrir la factura')",
+          "al_decir": "Pulso Abrir la"
+        }
+      ]
+    },
+    {
+      "id": "03-factura",
+      "capitulo": "La factura del ingreso",
+      "rotulo": "La factura",
+      "ruta": "Ventas › Facturas › Factura del ingreso",
+      "texto_pantalla": "En borrador: se revisa, se emite y se cobra como cualquier factura",
+      "narracion": "La factura queda en borrador, a nombre de Daniel, con una línea por servicio y el número del ingreso en las notas. Lo que tiene el mismo servicio y el mismo precio, como la habitación de cada día, va en una sola línea. Desde aquí se revisa, se emite y se cobra como cualquier factura. Si algún cargo tuviera cobertura de la ARS, el sistema no lo factura aquí: se factura desde la autorización del paciente, como vimos en la serie de seguros.",
+      "acciones": [
+        {
+          "resaltar": ":text('Borrador') >> nth=0",
+          "durante_ms": 2500,
+          "al_decir": "queda en borrador"
+        },
+        {
+          "resaltar": ":text('Líneas del documento') >> xpath=ancestor::*[3]",
+          "durante_ms": 4000,
+          "al_decir": "una línea por servicio"
+        },
+        {
+          "resaltar": ".invoice-total-block",
+          "durante_ms": 3000,
+          "al_decir": "se emite y se cobra"
+        }
+      ]
+    }
+  ]
+}
