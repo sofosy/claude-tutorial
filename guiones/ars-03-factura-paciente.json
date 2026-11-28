@@ -203,14 +203,14 @@
       "narracion": "Un servicio con seguro lleva dos facturas: la de la paciente, solo por lo que ella paga, y la de la ARS, por lo que cubre, que se hace después en Reclamaciones. Empezamos por la de Rosa. En su ficha, pestaña ARS, está la autorización aprobada de la consulta. En su menú pulso Facturar esta autorización. Es la forma más común; también se puede cobrar la consulta desde la cita en la agenda.",
       "acciones": [
         {
-          "resaltar": ":text('Cobertura del paciente') >> xpath=..",
-          "durante_ms": 3500,
-          "al_decir": "la de la paciente"
-        },
-        {
           "resaltar": "a.rail-item[aria-label='Seguros de Salud']",
           "durante_ms": 2500,
           "al_decir": "en Reclamaciones"
+        },
+        {
+          "resaltar": ":text('Cobertura del paciente') >> xpath=..",
+          "durante_ms": 3000,
+          "al_decir": "Empezamos por la de Rosa"
         },
         {
           "resaltar": ":text('ARS AUT-551207')",
@@ -273,7 +273,7 @@
       "rotulo": "Guardar y cobrar",
       "ruta": "Ventas › Facturas › Nueva factura › Cobro",
       "texto_pantalla": "Efectivo, tarjeta o transferencia; la factura queda saldada",
-      "narracion": "Más abajo está el cobro. Rosa paga en efectivo, así que elijo Efectivo y pulso Exacto: el monto recibido es el mismo que se cobra. El aviso de abajo confirma que se cobran quinientos y la factura queda saldada. Pulso Guardar y cobrar. El aviso dice cobro procesado; lo cierro y pulso Aceptar.",
+      "narracion": "Más abajo está el cobro. Rosa paga en efectivo, así que elijo Efectivo. Me entrega justo quinientos, y pulso Exacto: el monto recibido es el mismo que se cobra. El aviso de abajo confirma que se cobran quinientos y la factura queda saldada. Pulso Guardar y cobrar. En ese paso se emite el comprobante y se registra el cobro, y la factura queda en contabilidad. El aviso dice cobro procesado; pulso Aceptar.",
       "acciones": [
         {
           "click": "button:has-text('Efectivo')",
@@ -310,7 +310,7 @@
       "rotulo": "Factura pagada",
       "ruta": "Ventas › Facturas › Ver factura",
       "texto_pantalla": "Pagada, con su comprobante; la autorización queda utilizada",
-      "narracion": "La factura queda pagada, con su número de comprobante. El resumen de pagos dice lo cobrado y que no queda nada pendiente, y desde aquí se imprime la factura o el recibo. La autorización pasa a utilizada: ya no se puede facturar otra vez. Lo que cubrió la ARS queda en Reclamaciones, por reclamar. En el próximo video se lo reclamamos y le emitimos su factura.",
+      "narracion": "La factura queda pagada, con su número de comprobante. El resumen de pagos dice lo cobrado y que no queda nada pendiente, y desde aquí se imprime la factura, o también el recibo del pago. La autorización pasa a utilizada: ya no se puede facturar otra vez. Lo que cubrió la ARS queda en Reclamaciones, por reclamar. En el próximo video se lo reclamamos y le emitimos su factura.",
       "acciones": [
         {
           "resaltar": ":text('Pagada') >> nth=0",
@@ -335,7 +335,7 @@
         {
           "resaltar": "button:has-text('Imprimir recibo')",
           "durante_ms": 2500,
-          "al_decir": "o el recibo"
+          "al_decir": "el recibo del pago"
         },
         {
           "resaltar": ":text('Cobertura ARS') >> nth=0",

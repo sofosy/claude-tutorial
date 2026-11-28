@@ -279,8 +279,8 @@ def ars_03():
                 "agenda."
             ),
             "acciones": [
-                R(":text('Cobertura del paciente') >> xpath=..", 3500, al_decir="la de la paciente"),
                 R("a.rail-item[aria-label='Seguros de Salud']", 2500, al_decir="en Reclamaciones"),
+                R(":text('Cobertura del paciente') >> xpath=..", 3000, al_decir="Empezamos por la de Rosa"),
                 R(":text('ARS AUT-551207')", 4000, al_decir="está la autorización aprobada"),
                 {"click": "button:has(mat-icon:text('more_vert')) >> nth=1", "al_decir": "En su menú"},
                 {"click": ".mat-mdc-menu-content button:has-text('Facturar esta autorización')",
@@ -311,9 +311,10 @@ def ars_03():
             "ruta": "Ventas › Facturas › Nueva factura › Cobro",
             "texto_pantalla": "Efectivo, tarjeta o transferencia; la factura queda saldada",
             "narracion": (
-                "Más abajo está el cobro. Rosa paga en efectivo, así que elijo Efectivo y pulso Exacto: el monto "
+                "Más abajo está el cobro. Rosa paga en efectivo, así que elijo Efectivo. Me entrega justo quinientos, y pulso Exacto: el monto "
                 "recibido es el mismo que se cobra. El aviso de abajo confirma que se cobran quinientos y la "
-                "factura queda saldada. Pulso Guardar y cobrar. El aviso dice cobro procesado; lo cierro y pulso Aceptar."
+                "factura queda saldada. Pulso Guardar y cobrar. En ese paso se emite el comprobante y se registra "
+                "el cobro, y la factura queda en contabilidad. El aviso dice cobro procesado; pulso Aceptar."
             ),
             "acciones": [
                 {"click": "button:has-text('Efectivo')", "al_decir": "elijo Efectivo"},
@@ -330,7 +331,7 @@ def ars_03():
             "texto_pantalla": "Pagada, con su comprobante; la autorización queda utilizada",
             "narracion": (
                 "La factura queda pagada, con su número de comprobante. El resumen de pagos dice lo cobrado y que "
-                "no queda nada pendiente, y desde aquí se imprime la factura o el recibo. La autorización pasa a "
+                "no queda nada pendiente, y desde aquí se imprime la factura, o también el recibo del pago. La autorización pasa a "
                 "utilizada: ya no se puede facturar otra vez. Lo que cubrió la ARS queda en Reclamaciones, por "
                 "reclamar. En el próximo video se lo reclamamos y le emitimos su factura."
             ),
@@ -339,7 +340,7 @@ def ars_03():
                 R(":text('B0200000001')", 2500, al_decir="número de comprobante"),
                 R(":text('Resumen de Pagos') >> xpath=..", 3500, al_decir="El resumen de pagos"),
                 R("button:has-text('Imprimir') >> nth=0", 2500, al_decir="se imprime"),
-                R("button:has-text('Imprimir recibo')", 2500, al_decir="o el recibo"),
+                R("button:has-text('Imprimir recibo')", 2500, al_decir="el recibo del pago"),
                 R(":text('Cobertura ARS') >> nth=0", 3000, al_decir="Lo que cubrió la ARS"),
             ],
         },
