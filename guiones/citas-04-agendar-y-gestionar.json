@@ -162,7 +162,7 @@
       "navegar": "/agenda/calendar",
       "ruta": "Calendario › Nueva Cita",
       "texto_pantalla": "Nueva cita · paciente, motivo de la consulta y médico",
-      "narracion": "Una paciente llama para pedir cita. La forma más común de agendar es desde el Calendario, con el botón Nueva Cita. También se agenda desde la ficha del paciente, o con el más de cada médico en la Agenda del Centro; y el paciente lo hace solo, por el enlace de reservas o por WhatsApp. Pulso Nueva Cita. Primero el paciente: escribo su nombre, Laura. Cuando aparece en la lista, la elijo. Debajo sale su ficha, con la edad y la cédula. Ahora el motivo de la consulta: escribo chequeo, y en la lista que se abre elijo chequeo general. Después el médico: escribo Jorge, que es su nombre, y en la lista elijo al doctor Jorge Medina. Debajo se ve lo que dice su consulta: la duración del turno, si la ARS exige autorización y su tarifa.",
+      "narracion": "Una paciente llama para pedir cita. La forma más común de agendar es desde el Calendario, con el botón Nueva Cita. También se agenda desde la ficha del paciente, o con el más de cada médico en la Agenda del Centro; y el paciente lo hace solo, por el enlace de reservas o por WhatsApp. Pulso Nueva Cita. Primero el paciente: escribo su nombre, Laura. Cuando aparece en la lista, la elijo. Debajo sale su ficha, con la edad y la cédula. Ahora el motivo de la consulta: escribo chequeo, y en la lista que se abre debajo del campo elijo chequeo general. Después el médico: escribo Jorge, que es su nombre, y en la lista elijo al doctor Jorge Medina. Debajo se ve lo que dice su consulta: la duración del turno, si la ARS exige autorización y su tarifa.",
       "acciones": [
         {
           "resaltar": "button:has-text('Nueva Cita')",
@@ -190,6 +190,12 @@
           "al_decir": "la elijo"
         },
         {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "al_decir": "Debajo sale su ficha",
+          "cursor": false
+        },
+        {
           "escribir": {
             "sel": "app-custom-select.apt-reason input",
             "texto": "Chequeo"
@@ -212,9 +218,10 @@
           "al_decir": "elijo al doctor Jorge"
         },
         {
-          "resaltar": ".apt-consult, .apt-doctor-meta, .apt-sec:has-text('Tarifa')",
-          "durante_ms": 5000,
-          "al_decir": "lo que dice su consulta"
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "al_decir": "lo que dice su consulta",
+          "cursor": false
         }
       ]
     },
@@ -269,7 +276,7 @@
       "rotulo": "Repetir esta cita",
       "ruta": "Calendario › Nueva Cita › Repetir esta cita",
       "texto_pantalla": "Repetir esta cita · cada N semanas o meses",
-      "narracion": "Laura viene a control cada cuatro semanas, así que marco Repetir esta cita. La frecuencia ya dice cuatro semanas, y en repeticiones pongo tres, contando la primera, para no pedir cada control. Abajo, la nota dice hasta qué fecha llega la serie. Pulso Agendar cita. Se agendan las tres citas, cada una con las mismas validaciones que la primera; si alguna cae en un feriado o en un turno lleno, el sistema avisa cuál quedó fuera para agendarla a mano. Se abre el detalle de la primera: su número, el estado confirmada y la visita, primera consulta o seguimiento, que el sistema decide con el historial de la paciente.",
+      "narracion": "Laura viene a control cada cuatro semanas, así que marco Repetir esta cita. La frecuencia ya dice cuatro semanas, y en repeticiones pongo tres, contando la primera, para no pedir cada control. Abajo, la nota dice hasta qué fecha llega la serie. Pulso Agendar cita. Se agendan las tres citas, cada una con las mismas validaciones que la primera; si alguna cae en un feriado o en un turno lleno, el sistema avisa cuál quedó fuera para agendarla a mano. La ventana se cierra y la cita ya sale en el calendario. Al abrirla se ve su visita, primera consulta o seguimiento, que el sistema decide solo con el historial de la paciente.",
       "acciones": [
         {
           "click": "mat-checkbox[formcontrolname='isRecurring']",
@@ -299,13 +306,18 @@
         {
           "resaltar": "mat-snack-bar-container",
           "durante_ms": 3000,
-          "al_decir": "Se agendan las tres",
+          "al_decir": "cada una con las mismas",
           "cursor": false
         },
         {
-          "resaltar": ".apt-sum, .apt-head",
-          "durante_ms": 5000,
-          "al_decir": "Se abre el detalle",
+          "resaltar": ".toolbar-title",
+          "durante_ms": 3000,
+          "al_decir": "feriado o en un turno lleno"
+        },
+        {
+          "resaltar": ".calendar-legend",
+          "durante_ms": 4000,
+          "al_decir": "ya sale en el calendario",
           "cursor": false
         }
       ]
@@ -349,13 +361,20 @@
           "al_decir": "Confirmo"
         },
         {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2000,
+          "al_decir": "el sistema pregunta",
+          "cursor": false
+        },
+        {
           "click": "mat-dialog-container button:has-text('Sí'), mat-dialog-container button:has-text('Confirmar')",
           "al_decir": "digo que sí"
         },
         {
-          "resaltar": ".calendar-legend",
+          "resaltar": "mat-snack-bar-container",
           "durante_ms": 3000,
-          "al_decir": "queda confirmada"
+          "al_decir": "queda confirmada",
+          "cursor": false
         }
       ]
     },
@@ -365,7 +384,7 @@
       "rotulo": "Reprogramar",
       "ruta": "Calendario › panel de la cita › Reprogramar",
       "texto_pantalla": "Reprogramar · nuevo horario y motivo",
-      "narracion": "Otro paciente, Francisco Javier Cabrera, pide otra hora. Lo busco por su nombre. Su cita es la semana que viene, así que paso a la semana siguiente, y toco su cita. En el panel, pulso el botón Reprogramar. Se abre la ventana: arriba queda la cita actual, y debajo la semana del médico con los cupos de cada día. Elijo un día, y el turno de las cinco. Escribo el motivo: el paciente pidió otra hora, para que quede en la historia. Confirmo con el botón de abajo: se crea la cita nueva, la anterior queda como reprogramada para la historia, y al paciente le llega un correo con el nuevo horario.",
+      "narracion": "Otro paciente, Francisco Javier Cabrera, pide otra hora. Lo busco por su nombre. Su cita es la semana que viene, así que paso a la semana siguiente, y toco su cita. En el panel, pulso el botón Reprogramar. Se abre la ventana: arriba queda la cita actual, y debajo la semana del médico con los cupos de cada día. Elijo el sábado, que tiene cupos, y el último turno de la tarde. Escribo el motivo: el paciente pidió otra hora, para que quede en la historia. Confirmo con el botón de abajo: se crea la cita nueva, la anterior queda como reprogramada para la historia, y al paciente le llega un correo con el nuevo horario.",
       "acciones": [
         {
           "escribir": {
@@ -393,12 +412,12 @@
           "cursor": false
         },
         {
-          "click": "mat-dialog-container button.day:not([disabled]) >> nth=1",
-          "al_decir": "Elijo un día"
+          "click": "mat-dialog-container button.day:not([disabled]) >> nth=0",
+          "al_decir": "Elijo el sábado"
         },
         {
-          "click": "mat-dialog-container button.slot:has-text('5:00')",
-          "al_decir": "el turno de las cinco"
+          "click": "mat-dialog-container button.slot >> nth=-1",
+          "al_decir": "el último turno"
         },
         {
           "escribir": {
@@ -412,7 +431,7 @@
           "al_decir": "Confirmo con el botón"
         },
         {
-          "resaltar": "mat-snack-bar-container, .calendar-card",
+          "resaltar": "mat-snack-bar-container",
           "durante_ms": 3500,
           "al_decir": "se crea la cita nueva",
           "cursor": false
@@ -444,7 +463,7 @@
           "al_decir": "toco su cita"
         },
         {
-          "click": "button[color='warn']:has-text('Cancelar') >> nth=0",
+          "click": "button:has-text('Cancelar Cita') >> nth=0",
           "al_decir": "el botón rojo"
         },
         {
@@ -456,6 +475,12 @@
           "al_decir": "solicitud del paciente"
         },
         {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "al_decir": "Ese motivo queda",
+          "cursor": false
+        },
+        {
           "resaltar": "mat-dialog-container textarea",
           "durante_ms": 2500,
           "al_decir": "la nota es opcional"
@@ -465,7 +490,7 @@
           "al_decir": "confirmo con Cancelar"
         },
         {
-          "resaltar": "mat-snack-bar-container, .calendar-card",
+          "resaltar": "mat-snack-bar-container",
           "durante_ms": 3000,
           "al_decir": "el turno queda libre",
           "cursor": false

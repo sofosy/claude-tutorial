@@ -461,7 +461,7 @@ def citas_04():
                 "Agenda del Centro; y el paciente lo hace solo, por el enlace de reservas o por WhatsApp. Pulso "
                 "Nueva Cita. Primero el paciente: escribo su nombre, Laura. Cuando aparece en la lista, la elijo. "
                 "Debajo sale su ficha, con la edad y la cédula. Ahora el motivo de la consulta: escribo chequeo, y "
-                "en la lista que se abre elijo chequeo general. Después el médico: escribo Jorge, que es su nombre, y en la lista "
+                "en la lista que se abre debajo del campo elijo chequeo general. Después el médico: escribo Jorge, que es su nombre, y en la lista "
                 "elijo al doctor Jorge Medina. Debajo se ve lo que dice su consulta: la duración del turno, si la "
                 "ARS exige autorización y su tarifa."
             ),
@@ -471,11 +471,12 @@ def citas_04():
                 {"click": "button:has-text('Nueva Cita')", "al_decir": "Pulso Nueva Cita"},
                 {"escribir": {"sel": "input[formcontrolname='patientSearch']", "texto": "Laura"}, "al_decir": "escribo su nombre"},
                 {"click": "mat-option:has-text('Laura Patricia')", "al_decir": "la elijo"},
+                R("mat-dialog-container", 1500, al_decir="Debajo sale su ficha", cursor=False),
                 {"escribir": {"sel": "app-custom-select.apt-reason input", "texto": "Chequeo"}, "al_decir": "escribo chequeo"},
                 {"click": "mat-option:has-text('Chequeo General')", "al_decir": "elijo chequeo general"},
                 {"escribir": {"sel": "input[formcontrolname='doctorSearch']", "texto": "Jorge"}, "al_decir": "escribo Jorge"},
                 {"click": "mat-option:has-text('Jorge Medina')", "al_decir": "elijo al doctor Jorge"},
-                R(".apt-consult, .apt-doctor-meta, .apt-sec:has-text('Tarifa')", 5000, al_decir="lo que dice su consulta"),
+                R("mat-dialog-container", 4000, al_decir="lo que dice su consulta", cursor=False),
             ],
         },
         {
@@ -510,9 +511,9 @@ def citas_04():
                 "cuatro semanas, y en repeticiones pongo tres, contando la primera, para no pedir cada control. Abajo, la nota dice hasta qué "
                 "fecha llega la serie. Pulso Agendar cita. Se "
                 "agendan las tres citas, cada una con las mismas validaciones que la primera; si alguna cae en un "
-                "feriado o en un turno lleno, el sistema avisa cuál quedó fuera para agendarla a mano. Se abre el "
-                "detalle de la primera: su número, el estado confirmada y la visita, primera consulta o "
-                "seguimiento, que el sistema decide con el historial de la paciente."
+                "feriado o en un turno lleno, el sistema avisa cuál quedó fuera para agendarla a mano. La ventana "
+                "se cierra y la cita ya sale en el calendario. Al abrirla se ve su visita, primera consulta o "
+                "seguimiento, que el sistema decide solo con el historial de la paciente."
             ),
             "acciones": [
                 {"click": "mat-checkbox[formcontrolname='isRecurring']", "al_decir": "marco Repetir"},
@@ -520,8 +521,9 @@ def citas_04():
                 {"escribir": {"sel": "input[formcontrolname='recurrenceCount']", "texto": "3"}, "al_decir": "pongo tres"},
                 R(".apt-note", 3500, al_decir="La nota dice"),
                 {"click": "button:has-text('Agendar cita')", "al_decir": "Pulso Agendar cita"},
-                R("mat-snack-bar-container", 3000, al_decir="Se agendan las tres", cursor=False),
-                R(".apt-sum, .apt-head", 5000, al_decir="Se abre el detalle", cursor=False),
+                R("mat-snack-bar-container", 3000, al_decir="cada una con las mismas", cursor=False),
+                R(".toolbar-title", 3000, al_decir="feriado o en un turno lleno"),
+                R(".calendar-legend", 4000, al_decir="ya sale en el calendario", cursor=False),
             ],
         },
         {
@@ -541,8 +543,9 @@ def citas_04():
                 {"click": "button.status-menu-trigger", "al_decir": "el botón de estado"},
                 R(".mat-mdc-menu-panel", 3500, al_decir="confirmar, registrar", cursor=False),
                 {"click": "button[mat-menu-item]:has-text('Confirmar')", "al_decir": "Confirmo"},
+                R("mat-dialog-container", 2000, al_decir="el sistema pregunta", cursor=False),
                 {"click": "mat-dialog-container button:has-text('Sí'), mat-dialog-container button:has-text('Confirmar')", "al_decir": "digo que sí"},
-                R(".calendar-legend", 3000, al_decir="queda confirmada"),
+                R("mat-snack-bar-container", 3000, al_decir="queda confirmada", cursor=False),
             ],
         },
         {
@@ -553,7 +556,7 @@ def citas_04():
                 "Otro paciente, Francisco Javier Cabrera, pide otra hora. Lo busco por su nombre. Su cita es la "
                 "semana que viene, así que paso a la semana siguiente, y toco su cita. En el panel, pulso el botón "
                 "Reprogramar. Se abre la ventana: arriba queda la cita actual, y debajo la semana del médico con los "
-                "cupos de cada día. Elijo un día, y el turno de las cinco. Escribo el motivo: el paciente pidió otra "
+                "cupos de cada día. Elijo el sábado, que tiene cupos, y el último turno de la tarde. Escribo el motivo: el paciente pidió otra "
                 "hora, para que quede en la historia. Confirmo con el botón de abajo: se crea la cita nueva, la anterior queda como reprogramada para la "
                 "historia, y al paciente le llega un correo con el nuevo horario."
             ),
@@ -563,11 +566,11 @@ def citas_04():
                 {"click": ".fc-list-event:has-text('Francisco') >> nth=0", "al_decir": "toco su cita"},
                 {"click": "button:has-text('Reprogramar') >> nth=0", "al_decir": "pulso el botón"},
                 R("mat-dialog-container .days", 3500, al_decir="la semana del médico", cursor=False),
-                {"click": "mat-dialog-container button.day:not([disabled]) >> nth=1", "al_decir": "Elijo un día"},
-                {"click": "mat-dialog-container button.slot:has-text('5:00')", "al_decir": "el turno de las cinco"},
+                {"click": "mat-dialog-container button.day:not([disabled]) >> nth=0", "al_decir": "Elijo el sábado"},
+                {"click": "mat-dialog-container button.slot >> nth=-1", "al_decir": "el último turno"},
                 {"escribir": {"sel": "mat-dialog-container textarea", "texto": "El paciente pidió otra hora"}, "al_decir": "Escribo el motivo"},
                 {"click": "mat-dialog-container button:has-text('Reprogramar') >> nth=-1", "al_decir": "Confirmo con el botón"},
-                R("mat-snack-bar-container, .calendar-card", 3500, al_decir="se crea la cita nueva", cursor=False),
+                R("mat-snack-bar-container", 3500, al_decir="se crea la cita nueva", cursor=False),
                 R(".calendar-legend", 3500, al_decir="como reprogramada"),
             ],
         },
@@ -586,12 +589,13 @@ def citas_04():
             "acciones": [
                 {"escribir": {"sel": "input[formcontrolname='searchTerm']", "texto": "Rafael"}, "al_decir": "Busco a Rafael"},
                 {"click": ".fc-list-event:has-text('Rafael') >> nth=0", "al_decir": "toco su cita"},
-                {"click": "button[color='warn']:has-text('Cancelar') >> nth=0", "al_decir": "el botón rojo"},
+                {"click": "button:has-text('Cancelar Cita') >> nth=0", "al_decir": "el botón rojo"},
                 {"click": "mat-dialog-container mat-select", "al_decir": "pide el motivo"},
                 {"click": "mat-option:has-text('Solicitud del paciente')", "al_decir": "solicitud del paciente"},
+                R("mat-dialog-container", 2500, al_decir="Ese motivo queda", cursor=False),
                 R("mat-dialog-container textarea", 2500, al_decir="la nota es opcional"),
                 {"click": "mat-dialog-container button:has-text('Cancelar la cita')", "al_decir": "confirmo con Cancelar"},
-                R("mat-snack-bar-container, .calendar-card", 3000, al_decir="el turno queda libre", cursor=False),
+                R("mat-snack-bar-container", 3000, al_decir="el turno queda libre", cursor=False),
                 R("mat-select[formcontrolname='statuses']", 3000, al_decir="los filtros de"),
             ],
         },
