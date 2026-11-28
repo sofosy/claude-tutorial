@@ -54,7 +54,35 @@ async function base() {
   log('base lista:', SERVICIOS.length, 'servicios y secuencias B01/B02');
 }
 
+// ── B: lo que deja el video 1, completo ─────────────────────────────────────────────────────────
+export const TARIFAS = [ // plan Humano Básico: [código, precio, cubre, copago, exige autorización, código ARS]
+  ['SRV-CONSULTA', 2500, 2000, 500, true, 'CONS-001'],
+  ['SRV-HEMOGRAMA', 800, 640, 160, false, 'LAB-1020'],
+  ['SRV-SONO-ABD', 3500, 2800, 700, true, 'IMG-3050'],
+  ['SRV-EKG', 1800, 1440, 360, false, 'CAR-2010'],
+];
+const prod = code => +uno(`SELECT id FROM products WHERE company_id=${E} AND code='${code}' AND deleted_at IS NULL`);
+export const aseguradora = n => +uno(`SELECT id FROM partners WHERE company_id=${E} AND name='${n}' AND deleted_at IS NULL ORDER BY id LIMIT 1`);
+export const plan = codigo => +uno(`SELECT id FROM health_insurance_plans WHERE company_id=${E} AND plan_code='${codigo}' AND deleted_at IS NULL ORDER BY id LIMIT 1`);
+
+async function estadoB() {
+  await login();
+  if (!aseguradora('ARS HUMANO')) await api('POST', 'v1/health-insurer-catalog/import', { codes: ['HUMANO', 'SENASA'] });
+  await api('PATCH', `v1/partner/${aseguradora('ARS HUMANO')}`, { insurerProviderCode: 'PSS-10458', insurerClaimDeadlineDays: 60 });
+  const humano = plan('HUMANO-P01');
+  for (const [code, precio, cubre, copago, aut, codigoArs] of TARIFAS) {
+    const ya = uno(`SELECT id FROM health_insurer_agreements WHERE company_id=${E} AND plan_id=${humano} AND product_id=${prod(code)} AND deleted_at IS NULL`);
+    if (ya) continue;
+    await api('POST', 'v1/health-insurer-agreements', {
+      plan: humano, product: prod(code), insurerCode: codigoArs, pricingType: 'FIXED_AMOUNT',
+      agreedPrice: precio, coverageAmount: cubre, patientCopay: copago, requiresAuthorization: aut,
+    });
+  }
+  log('estado B listo: Humano y Senasa, tarifario de Humano Básico con', TARIFAS.length, 'servicios');
+}
+
 if (orden === 'guardar') guardar(nombre);
+else if (orden === 'B') await estadoB();
 else if (orden === 'restaurar') restaurar(nombre);
 else if (orden === 'base') await base();
 else { console.error('orden desconocida'); process.exit(1); }
