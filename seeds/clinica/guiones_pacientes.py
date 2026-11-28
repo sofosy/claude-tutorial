@@ -166,6 +166,105 @@ def pacientes_01():
     )
 
 
+def pacientes_02():
+    pasos = [
+        {
+            "id": "01-cabecera", "capitulo": "La ficha: cabecera y pestañas", "rotulo": "La ficha del paciente",
+            "navegar": "/patients", "ruta": "Pacientes › Rosa Elena Martínez",
+            "texto_pantalla": "La ficha · cabecera, acciones y pestañas",
+            "narracion": (
+                "En esta parte vemos la ficha del paciente: todo lo que el centro sabe de él, en un solo lugar. Estoy "
+                "en Pacientes. En la lista, abro la ficha de Rosa Elena Martínez. Arriba está la cabecera: su nombre, si está activa, su "
+                "expediente, la edad, la cédula y el teléfono, con atajos para llamar, escribir por WhatsApp o por "
+                "correo. A la derecha, Agendar cita abre el formulario de la cita con la paciente ya puesta, y "
+                "Nueva evolución empieza una nota clínica. Debajo están las pestañas: el resumen, la historia "
+                "clínica, la ficha con sus datos, la agenda con sus citas, la cuenta con sus facturas y saldo, y "
+                "el ingreso si la hospitalizan. En la fila de plantillas están los formularios clínicos que el "
+                "centro usa, como el consentimiento informado."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Rosa Elena')", "al_decir": "abro la ficha"},
+                R(".ph, app-patient-header", 5000, al_decir="la cabecera", cursor=False),
+                R("button:has-text('Agendar cita')", 3000, al_decir="Agendar cita abre"),
+                R("button:has-text('Nueva evolución')", 2500, al_decir="Nueva evolución"),
+                R("button.tab:has-text('Resumen') >> xpath=..", 6000, al_decir="las pestañas"),
+                R(":text('Consentimiento Informado') >> nth=0", 3000, al_decir="la fila de plantillas"),
+            ],
+        },
+        {
+            "id": "02-alergia", "capitulo": "Alergias, medicación y alertas", "rotulo": "Alergias y alertas",
+            "ruta": "Pacientes › ficha › Resumen › Alergias",
+            "texto_pantalla": "Alergias, medicación habitual y alertas médicas",
+            "narracion": (
+                "El resumen muestra la situación clínica, las últimas evoluciones, los consentimientos y, a la "
+                "derecha, lo que nadie debe pasar por alto: alertas médicas, alergias y medicación activa. La "
+                "paciente es alérgica a la penicilina, así que en alergias pulso Agregar, y se abre la ventana. En "
+                "alérgeno escribo el nombre: penicilina, como lo dice la paciente. Ahora abro el tipo, y en la lista elijo medicamento. "
+                "Después abro la severidad, y elijo severa, porque le cuesta respirar. En reacción escribo lo que "
+                "le pasa: ronchas y falta de aire. Las fechas y las notas son opcionales. Con eso, pulso el botón "
+                "Agregar. La alergia queda en la lista y, por ser grave, también "
+                "en la cabecera, a la vista de quien abra la ficha. La medicación habitual y las alertas médicas "
+                "se registran igual, con su botón Agregar. Las escribe el personal médico; recepción solo las ve."
+            ),
+            "acciones": [
+                R(":text('Situación clínica')", 3000, al_decir="la situación clínica"),
+                R(":text('Alertas médicas') >> xpath=..", 3500, al_decir="lo que nadie debe pasar"),
+                {"click": "button:has-text('Agregar') >> nth=1", "al_decir": "en alergias pulso Agregar"},
+                R("mat-dialog-container", 1500, al_decir="se abre la ventana", cursor=False),
+                {"escribir": {"sel": "mat-dialog-container input[formcontrolname='allergen']", "texto": "Penicilina"},
+                 "al_decir": "escribo el nombre: penicilina"},
+                {"click": "mat-dialog-container mat-select[formcontrolname='allergyType']", "al_decir": "abro el tipo"},
+                {"click": "mat-option:has-text('Medicamento')", "al_decir": "elijo medicamento"},
+                {"click": "mat-dialog-container mat-select[formcontrolname='severity']", "al_decir": "abro la severidad"},
+                {"click": "mat-option:has-text('Severa')", "al_decir": "elijo severa"},
+                {"escribir": {"sel": "mat-dialog-container [formcontrolname='reaction']", "texto": "Ronchas y falta de aire"},
+                 "al_decir": "En reacción escribo"},
+                {"click": "mat-dialog-container button:has-text('Agregar')", "al_decir": "pulso el botón Agregar"},
+                R("mat-snack-bar-container", 2500, al_decir="queda en la lista", cursor=False),
+                R(":text('Penicilina') >> nth=0", 3000, al_decir="por ser grave"),
+                R(":text('Medicación activa') >> xpath=..", 3500, al_decir="La medicación habitual"),
+            ],
+        },
+        {
+            "id": "03-archivos", "capitulo": "Datos, archivos y estado", "rotulo": "Ficha y archivos",
+            "ruta": "Pacientes › ficha › Ficha",
+            "texto_pantalla": "Ficha · datos editables, archivos del paciente y estado",
+            "narracion": (
+                "Terminado el resumen, ahora paso a la pestaña Ficha, que tiene los mismos datos del registro, editables, y se guardan con Guardar. Más "
+                "abajo están los archivos del paciente: aquí se suben sus estudios, informes o documentos. Pulso "
+                "Agregar archivo y elijo el PDF de su hemograma. Escribo el nombre con el que se va a buscar: "
+                "hemograma. La fecha es la del estudio; la dejo en hoy. Pulso Subir. El archivo queda en la lista, guardado en la nube y no en el equipo, para "
+                "descargarlo, editarlo o eliminarlo. Al final está el estado del paciente: si se desmarca Paciente "
+                "activo, deja de salir al agendar, pero conserva toda su historia; un paciente con actividad no se "
+                "borra, se inactiva."
+            ),
+            "acciones": [
+                {"click": "button.tab:has-text('Ficha')", "al_decir": "paso a la pestaña Ficha"},
+                R(".section-title:has-text('Información básica')", 3500, al_decir="los mismos datos"),
+                R(".section-title:has-text('Archivos del paciente')", 3500, al_decir="los archivos del paciente"),
+                {"click": "button:has-text('Agregar archivo')", "al_decir": "Pulso Agregar archivo"},
+                {"subir": {"sel": "app-patient-file-section input[type='file']", "archivo": "seeds/clinica/archivos/hemograma-rosa-elena.pdf",
+                           "ancla": "app-patient-file-section .drop-text"}, "al_decir": "elijo el PDF"},
+                {"escribir": {"sel": "app-patient-file-section input[formcontrolname='name']", "texto": "Hemograma"},
+                 "al_decir": "Escribo el nombre"},
+                R("app-patient-file-section input[formcontrolname='date']", 2500, al_decir="La fecha es"),
+                {"click": "app-patient-file-section button:has-text('Subir'), app-patient-file-section button:has-text('Guardar')",
+                 "al_decir": "Pulso Subir"},
+                R("mat-snack-bar-container", 2500, al_decir="El archivo queda", cursor=False),
+                R("app-patient-file-section :text('Hemograma') >> nth=0", 3000, al_decir="guardado en la nube"),
+                R(".section-title:has-text('Estado del paciente')", 4500, al_decir="el estado del paciente"),
+            ],
+        },
+    ]
+    return guion(
+        "pacientes-02-ficha", "Pacientes · Parte 2: la ficha del paciente",
+        "Segunda parte de la serie de Pacientes de RegiSalud: la cabecera de la ficha y sus atajos, las pestañas, "
+        "registrar una alergia (y dónde van la medicación y las alertas médicas), subir un archivo del paciente y "
+        "el estado activo o inactivo.",
+        pasos, comentario="Estado: pacientes.mjs (Rosa Elena sin alergias ni archivos).", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (pacientes_01,):
+    for f in (pacientes_01, pacientes_02):
         print(f())

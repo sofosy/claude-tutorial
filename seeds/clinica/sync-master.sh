@@ -42,7 +42,7 @@ fi
 # 200 en la raíz no basta: hay que esperar a que ng serve termine de compilar (y servir /home).
 for i in $(seq 1 180); do
   curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:4200/home | grep -q 200 \
-    && tail -3 Germiva-api/.dev-env/web.log | grep -q -E "Local:|bundle generation complete|Page reload" && break
+    && tail -3 Germiva-api/.dev-env/web.log | grep -q -E "Local:|bundle generation complete|Page reload|Component update" && break
   sleep 5
 done
 echo "listo para grabar"
