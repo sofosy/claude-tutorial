@@ -414,7 +414,7 @@ def ars_04():
             "narracion": (
                 "Cuando está conforme, pulso Emitir. Al emitirla se le asigna el comprobante de crédito fiscal, "
                 "porque la ARS tiene RNC; se registra la cuenta por cobrar a la aseguradora, y la remesa queda "
-                "entregada. Confirmo. El aviso confirma que quedó emitida, y lo cierro. La remesa entregada ya no está entre las abiertas: en el filtro elijo "
+                "entregada. Confirmo, y el sistema la emite y la contabiliza. El aviso confirma que quedó emitida, y lo cierro. La remesa entregada ya no está entre las abiertas: en el filtro elijo "
                 "Entregadas, y ahí está la factura emitida, con su número de comprobante."
             ),
             "acciones": [
@@ -434,7 +434,7 @@ def ars_04():
             "ruta": "Ventas › Facturas › Factura a la aseguradora",
             "texto_pantalla": "El PDF de la factura y el anexo con la lista de reclamaciones",
             "narracion": (
-                "Para verla completa, abro la factura en Ventas. Es de crédito fiscal, a nombre de ARS Humano, con el código de "
+                "Para verla completa, abro la factura en Ventas, donde vive como cualquier otra factura del centro. Es de crédito fiscal, a nombre de ARS Humano, con el código de "
                 "prestador del centro. En Imprimir está el PDF de la factura y el anexo con la lista de "
                 "reclamaciones: cada paciente, su cédula, su servicio, su autorización y el monto. Eso es lo que se "
                 "le entrega a la ARS. En el próximo video registramos la entrega y el pago de la aseguradora."
