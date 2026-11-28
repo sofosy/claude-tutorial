@@ -1,0 +1,28 @@
+TÍTULO
+============================================================
+Citas y turnos · Parte 6: la configuración de la agenda
+
+DESCRIPCIÓN
+============================================================
+Sexta parte de la serie de Citas y turnos de RegiSalud: los ajustes generales de la agenda (recordatorios, enlace de reservas del centro, avisos por WhatsApp y reservas del portal) y cómo el paciente se agenda solo desde el enlace, según los horarios configurados.
+
+⏱️ CAPÍTULOS
+00:00  Recordatorios de las citas
+00:32  El enlace de reservas del centro
+00:59  Avisos por WhatsApp
+01:27  Las reservas del portal
+01:49  Lo que ve el paciente
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 02:22
+
+TRANSCRIPCIÓN
+============================================================
+En este video vemos los ajustes generales de la agenda. Los horarios de cada médico ya los vimos en la parte uno. Los ajustes del centro están en Configuración, Preferencias, pestaña Operación. Ahí está la sección Citas Médicas. Al paciente le llega un recordatorio veinticuatro horas antes de su cita, y un segundo recordatorio: aquí se dice cuántos minutos antes sale. Lo cambio a dos horas: ciento veinte minutos.
+Al lado está el enlace de reservas del centro. Es uno solo para todos los médicos, y dice cuántos se pueden reservar en línea. Un médico aparece en el enlace cuando su consulta está marcada para reserva en línea y tiene franjas visibles para pacientes, como vimos en la parte uno. Pulso Copiar enlace, y el aviso de abajo confirma que quedó copiado: listo para pegarlo en WhatsApp, en las redes o en la página web del centro.
+Los avisos de la cita salen siempre por correo. Si el centro conectó su WhatsApp en WhatsApp e IA, este interruptor los manda también por WhatsApp: la confirmación, el recordatorio, la reprogramación y la cancelación, cada uno con su plantilla aprobada. El sistema ya trae las plantillas redactadas. Termino con Guardar. Se guarda para todo el centro, y el aviso confirma que quedó guardada; lo cierro.
+Lo guardado queda para todos. En el Calendario, Configurar portal del paciente decide cómo reserva el paciente. Con Permitir reservas desde el portal encendido, entra con su correo y un código, y si el sistema lo reconoce, la cita se crea sola. Apagado, solo deja sus datos y la recepción vincula la reserva.
+Para terminar, veamos el otro lado. Y así lo ve el paciente cuando abre el enlace: primero elige la especialidad, por ejemplo medicina general, y salen sus médicos con los próximos turnos libres, sacados de los horarios que configuramos, sin bloqueos ni horas ocupadas. Toca una hora y la reserva sigue: entra con su correo y confirma. Ese paso a paso está en la parte dos. Con esto termina la serie de citas y turnos.
