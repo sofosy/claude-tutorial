@@ -1,0 +1,356 @@
+{
+  "titulo": "Citas y turnos · Parte 6: la configuración de la agenda",
+  "descripcion": "Sexta parte de la serie de Citas y turnos de RegiSalud: los ajustes generales de la agenda (recordatorios, enlace de reservas del centro, avisos por WhatsApp y reservas del portal) y cómo el paciente se agenda solo desde el enlace, según los horarios configurados.",
+  "_comentario": "Estado: citas.mjs C (médicos con horario y consulta reservable).",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "102017174",
+      "401516454",
+      "809-476-3535",
+      "humano.com.do",
+      "PSS-",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-recordatorios",
+      "capitulo": "Recordatorios de las citas",
+      "rotulo": "Configuración de la agenda",
+      "navegar": "/company/preferences",
+      "ruta": "Configuración › Preferencias › Operación › Citas Médicas",
+      "texto_pantalla": "Los ajustes generales de la agenda del centro",
+      "narracion": "En este video vemos los ajustes generales de la agenda. Los horarios de cada médico ya los vimos en la parte uno. Los ajustes del centro están en Configuración, Preferencias, pestaña Operación. Ahí está la sección Citas Médicas. Al paciente le llega un recordatorio veinticuatro horas antes de su cita, y un segundo recordatorio: aquí se dice cuántos minutos antes sale. Lo cambio a dos horas: ciento veinte minutos.",
+      "acciones": [
+        {
+          "click": "[role=tab]:has-text('Operación')",
+          "al_decir": "pestaña Operación"
+        },
+        {
+          "resaltar": ":text('Citas Médicas')",
+          "durante_ms": 2500,
+          "al_decir": "la sección Citas Médicas"
+        },
+        {
+          "resaltar": "mat-form-field:has([formcontrolname='appointmentReminderMinutesBefore'])",
+          "durante_ms": 3500,
+          "al_decir": "un segundo recordatorio"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='appointmentReminderMinutesBefore']",
+            "texto": "120"
+          },
+          "al_decir": "Lo cambio a dos horas"
+        }
+      ]
+    },
+    {
+      "id": "02-enlace",
+      "capitulo": "El enlace de reservas del centro",
+      "rotulo": "Enlace de reservas",
+      "ruta": "Configuración › Preferencias › Operación › Citas Médicas",
+      "texto_pantalla": "Un solo enlace para todo el centro",
+      "narracion": "Al lado está el enlace de reservas del centro. Es uno solo para todos los médicos, y dice cuántos se pueden reservar en línea. Un médico aparece en el enlace cuando su consulta está marcada para reserva en línea y tiene franjas visibles para pacientes, como vimos en la parte uno. Pulso Copiar enlace, y el aviso de abajo confirma que quedó copiado: listo para pegarlo en WhatsApp, en las redes o en la página web del centro.",
+      "acciones": [
+        {
+          "resaltar": "app-center-booking-link",
+          "durante_ms": 4000,
+          "al_decir": "el enlace de reservas del centro"
+        },
+        {
+          "resaltar": ":text('reservables en línea')",
+          "durante_ms": 3500,
+          "al_decir": "dice cuántos"
+        },
+        {
+          "click": "button:has-text('Copiar enlace')",
+          "al_decir": "Pulso Copiar"
+        },
+        {
+          "resaltar": "mat-snack-bar-container, .mat-mdc-snack-bar-container",
+          "durante_ms": 1800,
+          "al_decir": "el aviso de abajo",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "03-whatsapp",
+      "capitulo": "Avisos por WhatsApp",
+      "rotulo": "Avisos por WhatsApp",
+      "ruta": "Configuración › Preferencias › Operación › Avisos por WhatsApp",
+      "texto_pantalla": "Confirmación, recordatorio, reprogramación y cancelación por WhatsApp",
+      "narracion": "Los avisos de la cita salen siempre por correo. Si el centro conectó su WhatsApp en WhatsApp e IA, este interruptor los manda también por WhatsApp: la confirmación, el recordatorio, la reprogramación y la cancelación, cada uno con su plantilla aprobada. El sistema ya trae las plantillas redactadas. Termino con Guardar. Se guarda para todo el centro, y el aviso confirma que quedó guardada; lo cierro.",
+      "acciones": [
+        {
+          "resaltar": ":text('Avisos por WhatsApp')",
+          "durante_ms": 2500,
+          "al_decir": "Los avisos de la cita"
+        },
+        {
+          "resaltar": "mat-slide-toggle[formcontrolname='appointmentWhatsappEnabled']",
+          "durante_ms": 4500,
+          "al_decir": "este interruptor"
+        },
+        {
+          "click": "button:has(mat-icon:text('save')):has-text('Guardar')",
+          "al_decir": "Termino con Guardar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 1800,
+          "al_decir": "el aviso confirma",
+          "cursor": false
+        },
+        {
+          "click_opcional": "button:has-text('Entendido')",
+          "espera_ms": 4000
+        }
+      ]
+    },
+    {
+      "id": "04-portal",
+      "capitulo": "Las reservas del portal",
+      "rotulo": "Portal del paciente",
+      "navegar": "/agenda/configurar-portal-paciente",
+      "al_decir_navegar": "En el Calendario",
+      "ruta": "Calendario › Configurar portal del paciente",
+      "texto_pantalla": "Con reservas del portal, el paciente entra con su correo",
+      "narracion": "Lo guardado queda para todos. En el Calendario, Configurar portal del paciente decide cómo reserva el paciente. Con Permitir reservas desde el portal encendido, entra con su correo y un código, y si el sistema lo reconoce, la cita se crea sola. Apagado, solo deja sus datos y la recepción vincula la reserva.",
+      "acciones": [
+        {
+          "resaltar": "mat-slide-toggle:has-text('Permitir acceso al portal')",
+          "durante_ms": 2500,
+          "al_decir": "decide cómo"
+        },
+        {
+          "resaltar": "mat-slide-toggle:has-text('Permitir reservas desde el portal')",
+          "durante_ms": 5000,
+          "al_decir": "Con Permitir reservas"
+        },
+        {
+          "resaltar": "button:has-text('Guardar configuración')",
+          "durante_ms": 2500,
+          "al_decir": "la recepción vincula"
+        }
+      ]
+    },
+    {
+      "id": "05-paciente",
+      "capitulo": "Lo que ve el paciente",
+      "rotulo": "El paciente se agenda",
+      "navegar": "/book/centro/los-prados",
+      "al_decir_navegar": "veamos el otro lado",
+      "ruta": "Enlace de reservas del centro (lo que ve el paciente)",
+      "texto_pantalla": "Especialidad, médico y hora: solo lo que los horarios permiten",
+      "narracion": "Para terminar, veamos el otro lado. Y así lo ve el paciente cuando abre el enlace: primero elige la especialidad, por ejemplo medicina general, y salen sus médicos con los próximos turnos libres, sacados de los horarios que configuramos, sin bloqueos ni horas ocupadas. Toca una hora y la reserva sigue: entra con su correo y confirma. Ese paso a paso está en la parte dos. Con esto termina la serie de citas y turnos.",
+      "acciones": [
+        {
+          "resaltar": ":text('Elige la especialidad')",
+          "durante_ms": 1800,
+          "al_decir": "cuando abre el enlace"
+        },
+        {
+          "click": ":text('Medicina General')",
+          "al_decir": "por ejemplo medicina general"
+        },
+        {
+          "resaltar": ":text('Próximos turnos') >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "los próximos turnos"
+        },
+        {
+          "resaltar": ":text('Próximos turnos') >> xpath=.. >> button >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "Toca una hora"
+        },
+        {
+          "resaltar": ":text('Correo y acceso')",
+          "durante_ms": 3000,
+          "al_decir": "entra con su correo"
+        }
+      ]
+    }
+  ]
+}

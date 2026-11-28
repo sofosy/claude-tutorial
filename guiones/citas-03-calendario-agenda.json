@@ -1,0 +1,395 @@
+{
+  "titulo": "Citas · Parte 3: el calendario y la agenda del centro",
+  "descripcion": "Tercera parte de la serie de Citas de RegiSalud: el Calendario con sus vistas (mes, semana, día y lista), los colores de estado, los filtros por médico, especialidad, consultorio y estado, la disponibilidad de un médico, el panel de una cita, la búsqueda, la Agenda del Centro por médico y la agenda de cada médico.",
+  "_comentario": "Estado C de citas.mjs.",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-calendario",
+      "capitulo": "El Calendario: todas las citas",
+      "rotulo": "Calendario",
+      "navegar": "/home",
+      "ruta": "Calendario",
+      "texto_pantalla": "Calendario · mes, semana, día y lista",
+      "narracion": "Ahora vemos las citas desde dentro del centro. Entro a Calendario, en el menú de la izquierda. Abre en el mes actual. Cada bloque es una cita, con su hora y el paciente, y el color dice su estado; abajo está la leyenda de colores: programada, confirmada, en espera, atendida, cancelada. Con las flechas se cambia de mes y Hoy vuelve al día actual. Estos botones cambian la vista: mes, semana, día y lista. Paso a la semana.",
+      "acciones": [
+        {
+          "click": "a.rail-item[aria-label='Calendario']",
+          "al_decir": "Entro a Calendario"
+        },
+        {
+          "resaltar": ".fc-daygrid-event >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "Cada bloque"
+        },
+        {
+          "resaltar": ".calendar-legend",
+          "durante_ms": 4500,
+          "al_decir": "la leyenda"
+        },
+        {
+          "resaltar": "button.today-btn",
+          "durante_ms": 2500,
+          "al_decir": "Hoy vuelve"
+        },
+        {
+          "resaltar": ".view-toggle-group",
+          "durante_ms": 3500,
+          "al_decir": "Estos botones"
+        },
+        {
+          "click": ".view-toggle-btn >> nth=1",
+          "al_decir": "Paso a la semana"
+        }
+      ]
+    },
+    {
+      "id": "02-filtros",
+      "capitulo": "Filtrar y ver la disponibilidad",
+      "rotulo": "Filtros",
+      "ruta": "Calendario › Semana",
+      "texto_pantalla": "Filtros · médico, especialidad, consultorio y estado",
+      "narracion": "Con todos los médicos juntos, la semana se llena. Para eso está esta fila de filtros: buscar, médicos, especialidad, consultorio y estado. Abro Médicos, y en la lista elijo a la doctora Ana Pérez. Quedan solo sus citas. Con un solo médico se puede encender Disponibilidad: se pintan en verde las horas en que atiende y todavía tiene turnos libres. Toco una cita, y a la derecha sale su panel: el paciente, el médico, el motivo y el consultorio, con los botones para verla, editarla, reprogramarla, cambiar su estado o cancelarla.",
+      "acciones": [
+        {
+          "resaltar": ".calendar-filters",
+          "durante_ms": 4000,
+          "al_decir": "esta fila de filtros"
+        },
+        {
+          "click": "mat-select[formcontrolname='staffIds']",
+          "al_decir": "Abro Médicos"
+        },
+        {
+          "click": "mat-option:has-text('Ana Pérez')",
+          "al_decir": "elijo a la doctora"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Quedan"
+        },
+        {
+          "click": "mat-slide-toggle:has-text('Disponibilidad')",
+          "al_decir": "encender Disponibilidad"
+        },
+        {
+          "click": ".fc-timegrid-event >> nth=0",
+          "al_decir": "Toco una cita"
+        },
+        {
+          "resaltar": ".appointment-panel, .side-panel, mat-sidenav, aside",
+          "durante_ms": 6000,
+          "al_decir": "sale su panel",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "03-lista",
+      "capitulo": "La vista de lista y la búsqueda",
+      "rotulo": "Vista de lista",
+      "ruta": "Calendario › Lista",
+      "texto_pantalla": "Lista · las citas por día, con búsqueda",
+      "narracion": "Ahora otra vista. Paso a la vista de lista, que es la más cómoda para recepción: una fila por cita, agrupadas por día. Quito el filtro del médico, y para encontrar a alguien uso Buscar: escribo Carolina, y la lista se filtra mientras escribo. Aparece su cita con la doctora Marta Reyes.",
+      "acciones": [
+        {
+          "click": ".view-toggle-btn >> nth=3",
+          "al_decir": "la vista de lista"
+        },
+        {
+          "click": "mat-select[formcontrolname='staffIds']",
+          "al_decir": "Quito el filtro"
+        },
+        {
+          "click": "mat-option:has-text('Ana Pérez')",
+          "al_decir": "del médico"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "para encontrar"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='searchTerm']",
+            "texto": "Carolina"
+          },
+          "al_decir": "escribo Carolina"
+        },
+        {
+          "resaltar": ".fc-list-event >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "Aparece su cita"
+        }
+      ]
+    },
+    {
+      "id": "04-centro",
+      "capitulo": "La Agenda del Centro",
+      "rotulo": "Agenda del Centro",
+      "ruta": "Calendario › Agenda del Centro",
+      "texto_pantalla": "Agenda del Centro · una columna por médico",
+      "narracion": "Para ver el día de todo el centro, pulso Agenda del Centro. Aquí cada columna es un médico, con cuántas citas tiene, y cada tarjeta es una cita con su hora, el paciente y su estado. Con la flecha paso al día siguiente, y el botón Hoy vuelve a hoy. Solo médicos con citas esconde las columnas vacías, y mostrar canceladas añade las que se cancelaron. El más de cada columna agenda una cita nueva con ese médico, y al tocar su nombre se abre su panel. La otra vista, por período, lista las citas de varios días.",
+      "acciones": [
+        {
+          "click": "button:has-text('Agenda del Centro')",
+          "al_decir": "pulso Agenda del Centro"
+        },
+        {
+          "resaltar": ".col >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "Aquí cada columna"
+        },
+        {
+          "click": "button[aria-label='Día siguiente']",
+          "al_decir": "paso al día siguiente"
+        },
+        {
+          "resaltar": "button.today-btn",
+          "durante_ms": 2500,
+          "al_decir": "el botón Hoy"
+        },
+        {
+          "resaltar": ".toggles mat-slide-toggle:has-text('Solo médicos')",
+          "durante_ms": 3000,
+          "al_decir": "Solo médicos con citas"
+        },
+        {
+          "resaltar": ".toggles mat-slide-toggle:has-text('Mostrar canceladas')",
+          "durante_ms": 3000,
+          "al_decir": "mostrar canceladas"
+        },
+        {
+          "resaltar": "button.col__add >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "El más"
+        },
+        {
+          "resaltar": ".col__head >> nth=0",
+          "durante_ms": 2500,
+          "al_decir": "su nombre"
+        },
+        {
+          "resaltar": "button:has-text('Período'), button:has-text('Periodo')",
+          "durante_ms": 3000,
+          "al_decir": "por período"
+        }
+      ]
+    },
+    {
+      "id": "05-medico",
+      "capitulo": "La agenda de cada médico",
+      "rotulo": "Agenda del médico",
+      "ruta": "Médicos › Ana Pérez › Agenda › Citas",
+      "texto_pantalla": "Agenda del médico · próximas, hoy y anteriores",
+      "narracion": "Y cada médico tiene su agenda en su panel. Toco el nombre de la doctora Ana Pérez. En la pestaña Agenda, la vista Citas muestra su semana y debajo la lista: próximas, las de hoy o las anteriores, con la hora, el paciente y el consultorio. Desde el botón de estado de cada cita se confirma, se registra la llegada o se marca que no asistió. En la próxima parte agendamos una cita y la manejamos de principio a fin.",
+      "acciones": [
+        {
+          "click": ".col__head:has-text('Ana Pérez')",
+          "al_decir": "Toco el nombre"
+        },
+        {
+          "click": "button.tab:has-text('Agenda')",
+          "al_decir": "En la pestaña"
+        },
+        {
+          "resaltar": "button:has-text('Próximas')",
+          "durante_ms": 3500,
+          "al_decir": "próximas"
+        },
+        {
+          "resaltar": "button:has-text('Estado') >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "el botón de estado"
+        }
+      ]
+    }
+  ]
+}

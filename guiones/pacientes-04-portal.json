@@ -1,0 +1,427 @@
+{
+  "titulo": "Pacientes · Parte 4: el portal del paciente",
+  "descripcion": "Cuarta parte de la serie de Pacientes de RegiSalud: configurar el portal del paciente, dar acceso a un paciente desde su ficha, publicarle un resultado en PDF y cómo entra con su correo y un código para ver sus citas y sus resultados.",
+  "_comentario": "Estado: pacientes.mjs (portal sin accesos, resultados apagados) + citas.mjs C.",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-config",
+      "capitulo": "Configurar el portal del paciente",
+      "rotulo": "Portal del paciente",
+      "navegar": "/agenda/calendar",
+      "ruta": "Calendario › Configurar portal del paciente",
+      "texto_pantalla": "Portal del paciente · acceso, citas, reservas y resultados",
+      "narracion": "El portal del paciente es la página donde el paciente entra con su correo para ver sus citas y los resultados que el centro le publica. No da acceso a ninguna pantalla del centro ni a su historia clínica. Se configura desde el Calendario, con Configurar portal del paciente. Permitir acceso deja entrar a los pacientes. Mostrar citas les enseña sus citas, y permitir reservas les deja agendar desde el portal. Los resultados vienen apagados: los enciendo, porque vamos a publicar un análisis. Si el centro tiene WhatsApp conectado, los códigos de acceso también pueden ir por ahí. Pulso Guardar configuración, y el aviso confirma que quedó guardada.",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Configurar portal del paciente')",
+          "durante_ms": 3500,
+          "al_decir": "la página donde el paciente"
+        },
+        {
+          "resaltar": "button:has-text('Reservas sin ficha')",
+          "durante_ms": 3000,
+          "al_decir": "No da acceso"
+        },
+        {
+          "click": "button:has-text('Configurar portal del paciente')",
+          "al_decir": "Configurar portal del paciente. Permitir"
+        },
+        {
+          "resaltar": "mat-slide-toggle:has-text('Permitir acceso al portal')",
+          "durante_ms": 3000,
+          "al_decir": "acceso deja entrar"
+        },
+        {
+          "resaltar": "mat-slide-toggle:has-text('Mostrar citas')",
+          "durante_ms": 2500,
+          "al_decir": "Mostrar citas"
+        },
+        {
+          "resaltar": "mat-slide-toggle:has-text('Permitir reservas')",
+          "durante_ms": 2500,
+          "al_decir": "permitir reservas"
+        },
+        {
+          "click": "mat-slide-toggle:has-text('Mostrar resultados publicados') button",
+          "al_decir": "los enciendo"
+        },
+        {
+          "resaltar": "mat-form-field:has-text('Plantilla de códigos')",
+          "durante_ms": 3500,
+          "al_decir": "WhatsApp conectado"
+        },
+        {
+          "click": "button:has-text('Guardar configuración')",
+          "al_decir": "Pulso Guardar configuración"
+        },
+        {
+          "resaltar": ":text('Configuración guardada')",
+          "durante_ms": 2500,
+          "al_decir": "quedó guardada",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "02-acceso",
+      "capitulo": "Dar acceso a un paciente",
+      "rotulo": "Autorizar un acceso",
+      "navegar": "/patients",
+      "ruta": "Pacientes › ficha › Gestionar acceso al portal",
+      "texto_pantalla": "Autorizar un acceso · titular o representante, y qué puede ver",
+      "narracion": "Cualquier paciente puede crear su cuenta al reservar por internet. Pero el centro también le da acceso desde su ficha. Abro a Rosa Elena Martínez y paso a la pestaña Ficha. Más abajo está Gestionar acceso al portal. El tipo de acceso es paciente titular, ella misma; para un niño se autoriza a su representante. El canal es el correo, y escribo el suyo. Marco lo que podrá ver: citas, formularios y resultados publicados. Por último, confirmo que verifiqué su identidad y su correo, y pulso Guardar y enviar código. Le llega un código para entrar.",
+      "acciones": [
+        {
+          "click": "button:has-text('Rosa Elena')",
+          "al_decir": "Abro a Rosa Elena"
+        },
+        {
+          "click": "button.tab:has-text('Ficha')",
+          "al_decir": "la pestaña Ficha"
+        },
+        {
+          "resaltar": "app-portal-staff h3:has-text('Autorizar')",
+          "durante_ms": 3000,
+          "al_decir": "Gestionar acceso al portal"
+        },
+        {
+          "resaltar": "app-portal-staff mat-form-field:has-text('Tipo de acceso')",
+          "durante_ms": 4000,
+          "al_decir": "El tipo de acceso"
+        },
+        {
+          "escribir": {
+            "sel": "app-portal-staff mat-form-field:has-text('Correo de quien') input",
+            "texto": "rosa.martinez@correo.test"
+          },
+          "al_decir": "escribo el suyo"
+        },
+        {
+          "click": "app-portal-staff mat-checkbox:has-text('Resultados publicados')",
+          "al_decir": "resultados publicados"
+        },
+        {
+          "click": "app-portal-staff mat-checkbox.check",
+          "al_decir": "confirmo que verifiqué"
+        },
+        {
+          "click": "app-portal-staff button:has-text('Guardar y enviar código')",
+          "al_decir": "pulso Guardar y enviar código"
+        },
+        {
+          "resaltar": ":text('Acceso guardado')",
+          "durante_ms": 3500,
+          "al_decir": "Le llega un código",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "03-resultado",
+      "capitulo": "Publicar un resultado",
+      "rotulo": "Publicar un resultado",
+      "ruta": "Pacientes › ficha › Resultados para el portal",
+      "texto_pantalla": "Resultados para el portal · un PDF que el paciente descarga",
+      "narracion": "Justo debajo están los resultados para el portal. Escribo el título que verá la paciente: hemograma completo, tal como lo entregó el laboratorio. Ahora pulso Seleccionar PDF y elijo el archivo del laboratorio. Pulso Publicar para este paciente. El resultado queda en la lista, y desde aquí se puede retirar. Publicarlo no lo agrega a los archivos de la ficha: son cosas distintas.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "app-portal-staff mat-form-field:has-text('Título del resultado') input",
+            "texto": "Hemograma completo"
+          },
+          "al_decir": "Escribo el título"
+        },
+        {
+          "subir": {
+            "sel": "app-portal-staff input[type='file']",
+            "archivo": "seeds/clinica/archivos/resultado-hemograma.pdf",
+            "ancla": "app-portal-staff button:has-text('Seleccionar PDF')"
+          },
+          "al_decir": "Ahora pulso Seleccionar PDF"
+        },
+        {
+          "click": "app-portal-staff button:has-text('Publicar para este paciente')",
+          "al_decir": "Pulso Publicar"
+        },
+        {
+          "resaltar": "app-portal-staff button:has-text('Retirar')",
+          "durante_ms": 3500,
+          "al_decir": "se puede retirar"
+        }
+      ]
+    },
+    {
+      "id": "04-entrar",
+      "capitulo": "El paciente entra a su portal",
+      "rotulo": "Entrar al portal",
+      "navegar": "/portal-paciente/los-prados",
+      "al_decir_navegar": "entra al portal",
+      "ruta": "Portal del paciente (lo que ve el paciente)",
+      "texto_pantalla": "Portal del paciente · correo y código de seis dígitos",
+      "narracion": "Ahora la paciente entra al portal, desde el enlace del correo o desde el enlace de reservas del centro. Pulsa Ingresar al portal. Escribe su correo, el mismo que le dio al centro, y después pulsa Continuar. Le llega un código de seis dígitos, que vence en treinta minutos.",
+      "acciones": [
+        {
+          "click": "button:has-text('Ingresar al portal')",
+          "al_decir": "Pulsa Ingresar al portal"
+        },
+        {
+          "escribir": {
+            "sel": "#portal-email",
+            "texto": "rosa.martinez@correo.test"
+          },
+          "al_decir": "Escribe su correo"
+        },
+        {
+          "click": "button.btn--primary:has-text('Continuar')",
+          "al_decir": "después pulsa Continuar"
+        }
+      ]
+    },
+    {
+      "id": "05-portal",
+      "capitulo": "Sus citas y sus resultados",
+      "rotulo": "Citas y resultados",
+      "setup": {
+        "tipo": "shell",
+        "cmd": "node seeds/clinica/codigo-portal.mjs rosa.martinez@correo.test",
+        "guardar_en": "codigo"
+      },
+      "ruta": "Portal del paciente › Citas y resultados",
+      "texto_pantalla": "Sus citas y los resultados publicados",
+      "narracion": "Revisa su correo y copia el código. Lo escribe aquí, son seis números, y después pulsa Verificar código. Ya está dentro. Ve sus citas con su fecha y su estado, y debajo los resultados que el centro le publicó, que puede descargar en PDF. El portal muestra las citas, pero no las cancela: para eso usa el enlace de su reserva o llama al centro. En Gestionar personas autorizadas puede darle acceso a un familiar. Y desde Agendar una cita reserva otra. La sesión dura ocho horas. Con esto termina la serie de pacientes.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "#portal-code",
+            "texto": "{{codigo}}"
+          },
+          "al_decir": "Lo escribe aquí"
+        },
+        {
+          "click": "button:has-text('Verificar código')",
+          "al_decir": "después pulsa Verificar código"
+        },
+        {
+          "resaltar": ":text('Citas') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "Ve sus citas"
+        },
+        {
+          "resaltar": ":text('Hemograma completo') >> nth=0",
+          "durante_ms": 4000,
+          "al_decir": "los resultados que el centro"
+        },
+        {
+          "resaltar": "button:has-text('Descargar PDF'), a:has-text('Descargar PDF')",
+          "durante_ms": 3000,
+          "al_decir": "descargar en PDF"
+        },
+        {
+          "resaltar": ":text('Citas') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "no las cancela"
+        },
+        {
+          "resaltar": ":text('Gestionar personas autorizadas')",
+          "durante_ms": 3000,
+          "al_decir": "Gestionar personas"
+        },
+        {
+          "resaltar": ":text('Agendar una cita')",
+          "durante_ms": 2500,
+          "al_decir": "Agendar una cita reserva"
+        },
+        {
+          "resaltar": "button:has-text('Cerrar sesión')",
+          "durante_ms": 3000,
+          "al_decir": "La sesión"
+        }
+      ]
+    }
+  ]
+}

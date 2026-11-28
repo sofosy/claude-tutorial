@@ -171,14 +171,18 @@ def sustituir(pag, cfg, previo=None):
             registrar(regla["tipo"], real)
 
     # regla 2 — semántica del campo (nombre/etiqueta del input)
+    # Si la página navega mientras se recorren los campos (un «Aceptar» que lleva
+    # a otra pantalla), el elemento ya no existe: cada lectura esperaba 30 s y la
+    # grabación quedaba congelada. Tope corto y se sigue con el siguiente.
     for e in pag.locator("input,textarea").all():
-        pista = " ".join(filter(None, [e.get_attribute("formcontrolname"),
-                                       e.get_attribute("name"),
-                                       e.get_attribute("id"),
-                                       e.get_attribute("placeholder")]))
-        tipo = _tipo_de(None, pista)
-        if tipo:
-            registrar(tipo, e.input_value() or "")
+        try:
+            pista = " ".join(filter(None, [e.get_attribute(a, timeout=800) for a in
+                                           ("formcontrolname", "name", "id", "placeholder")]))
+            tipo = _tipo_de(None, pista)
+            if tipo:
+                registrar(tipo, e.input_value(timeout=800) or "")
+        except Exception:
+            continue
 
     # regla 3 — patrones sobre todo el texto visible (solo en perfil estricto)
     if perfil == "estricto":

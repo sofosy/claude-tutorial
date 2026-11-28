@@ -1,0 +1,28 @@
+TÍTULO
+============================================================
+Citas · Parte 3: el calendario y la agenda del centro
+
+DESCRIPCIÓN
+============================================================
+Tercera parte de la serie de Citas de RegiSalud: el Calendario con sus vistas (mes, semana, día y lista), los colores de estado, los filtros por médico, especialidad, consultorio y estado, la disponibilidad de un médico, el panel de una cita, la búsqueda, la Agenda del Centro por médico y la agenda de cada médico.
+
+⏱️ CAPÍTULOS
+00:00  El Calendario: todas las citas
+00:35  Filtrar y ver la disponibilidad
+01:14  La vista de lista y la búsqueda
+01:35  La Agenda del Centro
+02:10  La agenda de cada médico
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 02:41
+
+TRANSCRIPCIÓN
+============================================================
+Ahora vemos las citas desde dentro del centro. Entro a Calendario, en el menú de la izquierda. Abre en el mes actual. Cada bloque es una cita, con su hora y el paciente, y el color dice su estado; abajo está la leyenda de colores: programada, confirmada, en espera, atendida, cancelada. Con las flechas se cambia de mes y Hoy vuelve al día actual. Estos botones cambian la vista: mes, semana, día y lista. Paso a la semana.
+Con todos los médicos juntos, la semana se llena. Para eso está esta fila de filtros: buscar, médicos, especialidad, consultorio y estado. Abro Médicos, y en la lista elijo a la doctora Ana Pérez. Quedan solo sus citas. Con un solo médico se puede encender Disponibilidad: se pintan en verde las horas en que atiende y todavía tiene turnos libres. Toco una cita, y a la derecha sale su panel: el paciente, el médico, el motivo y el consultorio, con los botones para verla, editarla, reprogramarla, cambiar su estado o cancelarla.
+Ahora otra vista. Paso a la vista de lista, que es la más cómoda para recepción: una fila por cita, agrupadas por día. Quito el filtro del médico, y para encontrar a alguien uso Buscar: escribo Carolina, y la lista se filtra mientras escribo. Aparece su cita con la doctora Marta Reyes.
+Para ver el día de todo el centro, pulso Agenda del Centro. Aquí cada columna es un médico, con cuántas citas tiene, y cada tarjeta es una cita con su hora, el paciente y su estado. Con la flecha paso al día siguiente, y el botón Hoy vuelve a hoy. Solo médicos con citas esconde las columnas vacías, y mostrar canceladas añade las que se cancelaron. El más de cada columna agenda una cita nueva con ese médico, y al tocar su nombre se abre su panel. La otra vista, por período, lista las citas de varios días.
+Y cada médico tiene su agenda en su panel. Toco el nombre de la doctora Ana Pérez. En la pestaña Agenda, la vista Citas muestra su semana y debajo la lista: próximas, las de hoy o las anteriores, con la hora, el paciente y el consultorio. Desde el botón de estado de cada cita se confirma, se registra la llegada o se marca que no asistió. En la próxima parte agendamos una cita y la manejamos de principio a fin.

@@ -1,0 +1,444 @@
+{
+  "titulo": "Citas · Parte 2: el paciente reserva por internet",
+  "descripcion": "Segunda parte de la serie de Citas de RegiSalud: el enlace único de reservas del centro tal como lo ve el paciente (especialidad, médico y hora), la entrada con su correo y el código de verificación, para quién es la cita, la confirmación, y cómo recepción vincula una reserva sin ficha con el paciente.",
+  "_comentario": "Estado B de citas.mjs (sin citas); Gabriela Fernández con ficha sin correo.",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-enlace",
+      "capitulo": "El enlace de reservas del centro",
+      "rotulo": "Enlace de reservas",
+      "navegar": "/book/centro/los-prados",
+      "al_decir_navegar": "abro el enlace",
+      "ruta": "Enlace de reservas del centro (lo que ve el paciente)",
+      "texto_pantalla": "Enlace de reservas · especialidad, médico y hora",
+      "narracion": "Me pongo en el lugar de la paciente y abro el enlace de reservas del centro, como lo haría desde su teléfono. Es uno solo para todos los médicos: se copia desde la Disponibilidad de cualquier médico y se comparte por WhatsApp, en redes o en la página web. Arriba están los pasos de la reserva. Cada tarjeta es una especialidad, con su médico y su próximo turno. Gabriela necesita una consulta general, así que elige Medicina General.",
+      "acciones": [
+        {
+          "resaltar": ".topbar",
+          "durante_ms": 3500,
+          "al_decir": "uno solo"
+        },
+        {
+          "resaltar": ".steps",
+          "durante_ms": 3500,
+          "al_decir": "los pasos"
+        },
+        {
+          "resaltar": "button.specialty >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "Cada tarjeta"
+        },
+        {
+          "click": "button.specialty:has-text('Medicina General')",
+          "al_decir": "elige Medicina General"
+        }
+      ]
+    },
+    {
+      "id": "02-hora",
+      "capitulo": "Elegir médico y hora",
+      "rotulo": "Médico y hora",
+      "ruta": "Enlace de reservas › Medicina General",
+      "texto_pantalla": "Médicos de la especialidad con sus próximos turnos",
+      "narracion": "Salen los médicos de esa especialidad, primero quien atiende antes, con su consultorio y sus próximos turnos. Tocar una hora ya elige médico y turno, pero ella quiere otro día, así que pulsa Ver más días y horas en la doctora Ana Pérez. Se abre la semana de la doctora: los días apagados no tienen cupo. Toca un día, y abajo salen las horas de la mañana. Elige una, y el resumen de abajo confirma el día y la hora. Pulsa Continuar.",
+      "acciones": [
+        {
+          "resaltar": "article.card:has-text('Ana Pérez')",
+          "durante_ms": 4000,
+          "al_decir": "Salen los médicos"
+        },
+        {
+          "resaltar": "article.card:has-text('Ana Pérez') .slots",
+          "durante_ms": 3500,
+          "al_decir": "Tocar una hora"
+        },
+        {
+          "click": "article.card:has-text('Ana Pérez') button.link",
+          "al_decir": "Ver más días"
+        },
+        {
+          "resaltar": ".days",
+          "durante_ms": 3500,
+          "al_decir": "los días apagados"
+        },
+        {
+          "click": "button.day:not([disabled]) >> nth=1",
+          "al_decir": "Toca un día"
+        },
+        {
+          "click": "button.slot >> nth=2",
+          "al_decir": "Elige una"
+        },
+        {
+          "resaltar": ".selection",
+          "durante_ms": 3000,
+          "al_decir": "el resumen"
+        },
+        {
+          "click": "button.btn--primary:has-text('Continuar')",
+          "al_decir": "Pulsa Continuar"
+        }
+      ]
+    },
+    {
+      "id": "03-correo",
+      "capitulo": "Entrar con el correo",
+      "rotulo": "Correo y acceso",
+      "ruta": "Enlace de reservas › Correo y acceso",
+      "texto_pantalla": "Correo y acceso · un código de seis dígitos",
+      "narracion": "A la derecha queda el resumen de la reserva: la doctora, el consultorio, la duración y el precio particular de su consulta. Para reservar, la paciente entra con su correo: así sus citas quedan en su portal. Escribe su correo, el mismo donde quiere recibir los avisos de sus citas, y pulsa Continuar. Le llega un código de seis dígitos.",
+      "acciones": [
+        {
+          "resaltar": ".summary, aside",
+          "durante_ms": 4500,
+          "al_decir": "el resumen",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "#portal-email",
+            "texto": "gabriela.fernandez@correo.test"
+          },
+          "al_decir": "Escribe su correo"
+        },
+        {
+          "click": "app-portal-entry button.btn--primary:has-text('Continuar')",
+          "al_decir": "pulsa Continuar"
+        }
+      ]
+    },
+    {
+      "id": "04-codigo",
+      "capitulo": "Verificar el código y sus datos",
+      "rotulo": "Código de verificación",
+      "ruta": "Enlace de reservas › Código",
+      "setup": {
+        "tipo": "shell",
+        "cmd": "node seeds/clinica/codigo-portal.mjs gabriela.fernandez@correo.test",
+        "guardar_en": "codigo"
+      },
+      "texto_pantalla": "El código vence en 30 minutos y admite tres intentos",
+      "narracion": "El código vence en treinta minutos. Lo copia del correo y lo escribe aquí. Son seis números, y tiene tres intentos. Ahora pulsa Verificar código. Como es la primera vez que entra, completa su nombre: Gabriela, tal como quiere que aparezca. Después su primer apellido: Fernández. El segundo apellido es opcional. Pulsa Guardar datos y continuar.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "#portal-code",
+            "texto": "{{codigo}}"
+          },
+          "al_decir": "lo escribe aquí"
+        },
+        {
+          "click": "button:has-text('Verificar código')",
+          "al_decir": "pulsa Verificar código"
+        },
+        {
+          "escribir": {
+            "sel": "#portal-names",
+            "texto": "Gabriela"
+          },
+          "al_decir": "completa su nombre"
+        },
+        {
+          "escribir": {
+            "sel": "#portal-first",
+            "texto": "Fernández"
+          },
+          "al_decir": "su primer apellido"
+        },
+        {
+          "click": "button:has-text('Guardar datos y continuar')",
+          "al_decir": "Pulsa Guardar"
+        }
+      ]
+    },
+    {
+      "id": "05-confirmar",
+      "capitulo": "Para quién es y confirmar",
+      "rotulo": "Confirmar la cita",
+      "ruta": "Enlace de reservas › Paciente › Confirmación",
+      "texto_pantalla": "Para mí o para una persona a mi cargo · Confirmar cita",
+      "narracion": "Ahora dice para quién es la cita: para ella, o para una persona a su cargo, como un hijo, con su relación y su fecha de nacimiento. Es para ella. Pulsa Revisar la cita. Revisa el paciente y a qué correo le llegarán los avisos, y pulsa Confirmar cita. La reserva quedó confirmada, con su número. Desde aquí la agrega a su calendario, reserva otra o la cancela si no puede ir.",
+      "acciones": [
+        {
+          "resaltar": "input[name='patient-choice'] >> xpath=ancestor::label[1] >> nth=1",
+          "durante_ms": 3500,
+          "al_decir": "una persona a su cargo"
+        },
+        {
+          "click": "input[name='patient-choice'] >> nth=0",
+          "al_decir": "Es para ella"
+        },
+        {
+          "click": "button:has-text('Revisar la cita')",
+          "al_decir": "Pulsa Revisar"
+        },
+        {
+          "click": "button[type='submit']",
+          "al_decir": "pulsa Confirmar cita"
+        },
+        {
+          "resaltar": ":text('Tu reserva quedó confirmada')",
+          "durante_ms": 4000,
+          "al_decir": "quedó confirmada",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "06-sin-ficha",
+      "capitulo": "Reservas sin ficha: vincular al paciente",
+      "rotulo": "Reservas sin ficha",
+      "navegar": "/agenda/reservas-sin-ficha",
+      "ruta": "Calendario › Reservas sin ficha",
+      "texto_pantalla": "Reservas sin ficha · verificar la identidad y vincular",
+      "narracion": "Ahora la recepción. En el Calendario, Reservas sin ficha. Si el correo de Gabriela estuviera en su ficha, la cita se habría creado sola. Pero su ficha no lo tiene, así que el centro todavía no sabe quién es: el turno está apartado, pero no es una cita ni sale en el calendario. Cada reserva tiene sus acciones. Registrar paciente crea la ficha con los datos de la reserva, si es nueva. Si la reserva quedó pendiente, Confirmar turno la confirma; esta ya está confirmada. Y Cancelar reserva libera el horario. Gabriela ya es paciente, así que pulso Vincular paciente. La busco por su nombre, o por su cédula, y pulso Buscar. Aparece su ficha; verifico que es ella, pulso Vincular esta ficha. El sistema pregunta si la vinculo, y confirmo. Ahora sí se crea la cita, con su médico y su turno: el aviso lo confirma, y a Gabriela le llega la confirmación por correo.",
+      "acciones": [
+        {
+          "resaltar": "h2:has-text('Gabriela')",
+          "durante_ms": 3500,
+          "al_decir": "el correo de Gabriela"
+        },
+        {
+          "resaltar": "h2:has-text('Gabriela') >> xpath=..",
+          "durante_ms": 4000,
+          "al_decir": "el turno está apartado"
+        },
+        {
+          "resaltar": "a:has-text('Registrar paciente')",
+          "durante_ms": 3000,
+          "al_decir": "Registrar paciente"
+        },
+        {
+          "resaltar": ".identity .status",
+          "durante_ms": 2500,
+          "al_decir": "Confirmar turno"
+        },
+        {
+          "resaltar": "button:has-text('Cancelar reserva')",
+          "durante_ms": 2500,
+          "al_decir": "Cancelar reserva"
+        },
+        {
+          "click": "button:has-text('Vincular paciente')",
+          "al_decir": "pulso Vincular paciente"
+        },
+        {
+          "escribir": {
+            "sel": "input[name='query']",
+            "texto": "Gabriela"
+          },
+          "al_decir": "La busco"
+        },
+        {
+          "click": "button:has-text('Buscar')",
+          "al_decir": "pulso Buscar"
+        },
+        {
+          "click": "button:has-text('Vincular esta ficha')",
+          "al_decir": "pulso Vincular esta ficha"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "al_decir": "El sistema pregunta",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Vincular')",
+          "al_decir": "y confirmo"
+        },
+        {
+          "resaltar": ":text('Reserva vinculada')",
+          "durante_ms": 3500,
+          "al_decir": "Ahora sí se crea",
+          "cursor": false
+        }
+      ]
+    }
+  ]
+}

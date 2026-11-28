@@ -141,7 +141,7 @@ function revisarGuion(arg) {
     acciones.forEach((acc, ia) => {
       const tipo = tipoDe(acc);
       const sel = selDe(acc);
-      const esClic = ['click', 'arrastrar', 'escribir', 'marcar', 'click_opcional', 'subir', 'seleccionar'].includes(tipo);
+      const esClic = ['click', 'arrastrar', 'firmar', 'escribir', 'marcar', 'click_opcional', 'subir', 'seleccionar'].includes(tipo);
       const anticipo = tipo === 'resaltar' || TIPOS_CAPA.includes(tipo) ? ANTICIPO_MARCA : ANTICIPO;
 
       if (tipo === 'esperar_ms') {
@@ -174,6 +174,21 @@ function revisarGuion(arg) {
           cambios.push(BOTON_QUE_CAMBIA.test(sel || '') || /^a[\s[.:]|routerlink/i.test(sel || '') ? [te - 0.6, te + 2] : [te - 0.6, te + 0.8]);
           now = te + 0.18;
           if (sel) pulsados.add(sel);
+          break;
+        }
+        case 'teclear': {
+          te = s + ANTICIPO - 0.04;
+          const txt = String(acc.teclear ?? '');
+          finTecleo = te + 0.1 + txt.length * TECLEO * 1.1;
+          cambios.push([te - 0.3, finTecleo]);
+          now = finTecleo + 0.15;
+          break;
+        }
+        case 'firmar': {
+          // el trazo de la firma dura ~1,5 s con el botón pulsado (grabar.py: _firmar)
+          te = s + ANTICIPO - 0.04;
+          cambios.push([te - 0.6, te + 2.0]);
+          now = te + 1.6;
           break;
         }
         case 'arrastrar': {

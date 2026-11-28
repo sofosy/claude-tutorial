@@ -1,0 +1,539 @@
+{
+  "titulo": "Citas · Parte 4: agendar, confirmar, reprogramar y cancelar",
+  "descripcion": "Cuarta parte de la serie de Citas de RegiSalud: agendar una cita desde el Calendario (y las otras formas de agendar), el paciente, el motivo, el médico y su consulta, el turno libre, la cobertura, los recordatorios, repetir la cita cada N semanas, confirmar, reprogramar a otra hora y cancelar con motivo.",
+  "_comentario": "Estado C de citas.mjs.",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-nueva",
+      "capitulo": "Nueva cita: paciente, motivo y médico",
+      "rotulo": "Nueva cita",
+      "navegar": "/agenda/calendar",
+      "ruta": "Calendario › Nueva Cita",
+      "texto_pantalla": "Nueva cita · paciente, motivo de la consulta y médico",
+      "narracion": "Una paciente llama para pedir cita. La forma más común de agendar es desde el Calendario, con el botón Nueva Cita. También se agenda desde la ficha del paciente, o con el más de cada médico en la Agenda del Centro; y el paciente lo hace solo, por el enlace de reservas o por WhatsApp. Pulso Nueva Cita. Primero el paciente: escribo su nombre, Laura. Cuando aparece en la lista, la elijo. Debajo sale su ficha, con la edad y la cédula. Ahora el motivo de la consulta: escribo chequeo, y en la lista que se abre debajo del campo elijo chequeo general. Después el médico: escribo Jorge, que es su nombre, y en la lista elijo al doctor Jorge Medina. Debajo se ve lo que dice su consulta: la duración del turno, si la ARS exige autorización y su tarifa.",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Nueva Cita')",
+          "durante_ms": 3000,
+          "al_decir": "botón Nueva Cita"
+        },
+        {
+          "resaltar": "button:has-text('Agenda del Centro')",
+          "durante_ms": 3000,
+          "al_decir": "Agenda del Centro;"
+        },
+        {
+          "click": "button:has-text('Nueva Cita')",
+          "al_decir": "Pulso Nueva Cita"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='patientSearch']",
+            "texto": "Laura"
+          },
+          "al_decir": "escribo su nombre"
+        },
+        {
+          "click": "mat-option:has-text('Laura Patricia')",
+          "al_decir": "la elijo"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "al_decir": "Debajo sale su ficha",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "app-custom-select.apt-reason input",
+            "texto": "Chequeo"
+          },
+          "al_decir": "escribo chequeo"
+        },
+        {
+          "click": "mat-option:has-text('Chequeo General')",
+          "al_decir": "elijo chequeo general"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='doctorSearch']",
+            "texto": "Jorge"
+          },
+          "al_decir": "escribo Jorge"
+        },
+        {
+          "click": "mat-option:has-text('Jorge Medina')",
+          "al_decir": "elijo al doctor Jorge"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "al_decir": "lo que dice su consulta",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "02-turno",
+      "capitulo": "El turno, la cobertura y los recordatorios",
+      "rotulo": "Turno y cobertura",
+      "ruta": "Calendario › Nueva Cita › Cuándo",
+      "texto_pantalla": "Cuándo · los huecos libres del horario del médico",
+      "narracion": "Más abajo está la semana del doctor: cada día dice cuántos turnos le quedan. Toco el primer día disponible, y aparecen sus turnos libres. Elijo uno de la tarde. El consultorio sale solo de la franja del horario. En cobertura, la paciente paga directo, sin seguro, así que paga la tarifa completa; si tuviera ARS, aquí se elige su afiliación y su autorización. Los recordatorios salen por WhatsApp un día antes y por correo una hora antes. En cómo se agendó marco por teléfono, y como ya la confirmó, marco esa casilla.",
+      "acciones": [
+        {
+          "resaltar": ".apt-days",
+          "durante_ms": 3500,
+          "al_decir": "la semana del doctor"
+        },
+        {
+          "click": "button.apt-day:not([disabled]) >> nth=0",
+          "al_decir": "Toco el primer día"
+        },
+        {
+          "click": ".apt-slots button >> nth=2",
+          "al_decir": "Elijo uno de la tarde"
+        },
+        {
+          "resaltar": ".apt-sec:has-text('Cobertura')",
+          "durante_ms": 5000,
+          "al_decir": "En cobertura"
+        },
+        {
+          "resaltar": ".apt-sec:has-text('Recordatorios')",
+          "durante_ms": 4000,
+          "al_decir": "Los recordatorios"
+        },
+        {
+          "click": "mat-select[formcontrolname='source']",
+          "al_decir": "En cómo se agendó"
+        },
+        {
+          "click": "mat-option:has-text('teléfono')",
+          "al_decir": "marco por teléfono"
+        },
+        {
+          "click": "mat-checkbox[formcontrolname='isConfirmed']",
+          "al_decir": "marco esa casilla"
+        }
+      ]
+    },
+    {
+      "id": "03-repetir",
+      "capitulo": "Repetir la cita y agendar",
+      "rotulo": "Repetir esta cita",
+      "ruta": "Calendario › Nueva Cita › Repetir esta cita",
+      "texto_pantalla": "Repetir esta cita · cada N semanas o meses",
+      "narracion": "Laura viene a control cada cuatro semanas, así que marco Repetir esta cita. La frecuencia ya dice cuatro semanas, y en repeticiones pongo tres, contando la primera, para no pedir cada control. Abajo, la nota dice hasta qué fecha llega la serie. Pulso Agendar cita. Se agendan las tres citas, cada una con las mismas validaciones que la primera; si alguna cae en un feriado o en un turno lleno, el sistema avisa cuál quedó fuera para agendarla a mano. La ventana se cierra y la cita ya sale en el calendario. Al abrirla se ve su visita, primera consulta o seguimiento, que el sistema decide solo con el historial de la paciente.",
+      "acciones": [
+        {
+          "click": "mat-checkbox[formcontrolname='isRecurring']",
+          "al_decir": "marco Repetir"
+        },
+        {
+          "resaltar": "input[formcontrolname='recurrenceInterval']",
+          "durante_ms": 2500,
+          "al_decir": "La frecuencia"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='recurrenceCount']",
+            "texto": "3"
+          },
+          "al_decir": "pongo tres"
+        },
+        {
+          "resaltar": ".apt-note",
+          "durante_ms": 3500,
+          "al_decir": "La nota dice"
+        },
+        {
+          "click": "button:has-text('Agendar cita')",
+          "al_decir": "Pulso Agendar cita"
+        },
+        {
+          "resaltar": "mat-snack-bar-container",
+          "durante_ms": 3000,
+          "al_decir": "cada una con las mismas",
+          "cursor": false
+        },
+        {
+          "resaltar": ".toolbar-title",
+          "durante_ms": 3000,
+          "al_decir": "feriado o en un turno lleno"
+        },
+        {
+          "resaltar": ".calendar-legend",
+          "durante_ms": 4000,
+          "al_decir": "ya sale en el calendario",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "04-confirmar",
+      "capitulo": "Confirmar una cita",
+      "rotulo": "Confirmar",
+      "navegar": "/agenda/calendar",
+      "ruta": "Calendario › panel de la cita › Estado",
+      "texto_pantalla": "Estado · confirmar, registrar la llegada o no asistió",
+      "narracion": "Ahora una cita que sigue programada: la de Rosa Elena Martínez. En el Calendario la busco por su nombre, Rosa. Ahora paso a la vista de lista, y toco su cita. En el panel, el botón de estado muestra solo los pasos que tocan: confirmar, registrar la llegada o marcar que no asistió. Confirmo, el sistema pregunta, y digo que sí. La cita queda confirmada, en verde.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='searchTerm']",
+            "texto": "Rosa"
+          },
+          "al_decir": "la busco por su"
+        },
+        {
+          "click": ".view-toggle-btn >> nth=3",
+          "al_decir": "la vista de lista"
+        },
+        {
+          "click": ".fc-list-event:has-text('Rosa') >> nth=0",
+          "al_decir": "toco su cita"
+        },
+        {
+          "click": "button.status-menu-trigger",
+          "al_decir": "el botón de estado"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-panel",
+          "durante_ms": 3500,
+          "al_decir": "confirmar, registrar",
+          "cursor": false
+        },
+        {
+          "click": "button[mat-menu-item]:has-text('Confirmar')",
+          "al_decir": "Confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2000,
+          "al_decir": "el sistema pregunta",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Sí'), mat-dialog-container button:has-text('Confirmar')",
+          "al_decir": "digo que sí"
+        },
+        {
+          "resaltar": "mat-snack-bar-container",
+          "durante_ms": 3000,
+          "al_decir": "queda confirmada",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "05-reprogramar",
+      "capitulo": "Reprogramar a otra hora",
+      "rotulo": "Reprogramar",
+      "ruta": "Calendario › panel de la cita › Reprogramar",
+      "texto_pantalla": "Reprogramar · nuevo horario y motivo",
+      "narracion": "Otro paciente, Francisco Javier Cabrera, pide otra hora. Lo busco por su nombre. Su cita es la semana que viene, así que paso a la semana siguiente, y toco su cita. En el panel, pulso el botón Reprogramar. Se abre la ventana: arriba queda la cita actual, y debajo la semana del médico con los cupos de cada día. Elijo el sábado, que tiene cupos, y el último turno de la tarde. Escribo el motivo: el paciente pidió otra hora, para que quede en la historia. Confirmo con el botón de abajo: se crea la cita nueva, la anterior queda como reprogramada para la historia, y al paciente le llega un correo con el nuevo horario.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='searchTerm']",
+            "texto": "Francisco"
+          },
+          "al_decir": "Lo busco por"
+        },
+        {
+          "click": "button[mattooltip='Siguiente'], button:has(mat-icon:text('chevron_right')) >> nth=0",
+          "al_decir": "la semana siguiente"
+        },
+        {
+          "click": ".fc-list-event:has-text('Francisco') >> nth=0",
+          "al_decir": "toco su cita"
+        },
+        {
+          "click": "button:has-text('Reprogramar') >> nth=0",
+          "al_decir": "pulso el botón"
+        },
+        {
+          "resaltar": "mat-dialog-container .days",
+          "durante_ms": 3500,
+          "al_decir": "la semana del médico",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button.day:not([disabled]) >> nth=0",
+          "al_decir": "Elijo el sábado"
+        },
+        {
+          "click": "mat-dialog-container button.slot >> nth=-1",
+          "al_decir": "el último turno"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container textarea",
+            "texto": "El paciente pidió otra hora"
+          },
+          "al_decir": "Escribo el motivo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Reprogramar') >> nth=-1",
+          "al_decir": "Confirmo con el botón"
+        },
+        {
+          "resaltar": "mat-snack-bar-container",
+          "durante_ms": 3500,
+          "al_decir": "se crea la cita nueva",
+          "cursor": false
+        },
+        {
+          "resaltar": ".calendar-legend",
+          "durante_ms": 3500,
+          "al_decir": "como reprogramada"
+        }
+      ]
+    },
+    {
+      "id": "06-cancelar",
+      "capitulo": "Cancelar o marcar que no asistió",
+      "rotulo": "Cancelar",
+      "ruta": "Calendario › panel de la cita › Cancelar",
+      "texto_pantalla": "Cancelar · motivo para el informe de cancelaciones",
+      "narracion": "Y si un paciente avisa que no vendrá, se cancela. Busco a Rafael Antonio Núñez por su nombre. Toco su cita, y en el panel pulso el botón rojo. El sistema pide el motivo: solicitud del paciente. Ese motivo queda en la cita y en el informe de cancelaciones; la nota es opcional, para el equipo. Y confirmo con Cancelar la cita: el turno queda libre y los recordatorios se anulan. Si el paciente simplemente no vino, no se cancela: en el botón de estado se marca que no asistió. Y con los filtros de estado se encuentran las canceladas. En la próxima parte, la llegada del paciente y los turnos.",
+      "acciones": [
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='searchTerm']",
+            "texto": "Rafael"
+          },
+          "al_decir": "Busco a Rafael"
+        },
+        {
+          "click": ".fc-list-event:has-text('Rafael') >> nth=0",
+          "al_decir": "toco su cita"
+        },
+        {
+          "click": "button:has-text('Cancelar Cita') >> nth=0",
+          "al_decir": "el botón rojo"
+        },
+        {
+          "click": "mat-dialog-container mat-select",
+          "al_decir": "pide el motivo"
+        },
+        {
+          "click": "mat-option:has-text('Solicitud del paciente')",
+          "al_decir": "solicitud del paciente"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "al_decir": "Ese motivo queda",
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-dialog-container textarea",
+          "durante_ms": 2500,
+          "al_decir": "la nota es opcional"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Cancelar la cita')",
+          "al_decir": "confirmo con Cancelar"
+        },
+        {
+          "resaltar": "mat-snack-bar-container",
+          "durante_ms": 3000,
+          "al_decir": "el turno queda libre",
+          "cursor": false
+        },
+        {
+          "resaltar": "mat-select[formcontrolname='statuses']",
+          "durante_ms": 3000,
+          "al_decir": "los filtros de"
+        }
+      ]
+    }
+  ]
+}

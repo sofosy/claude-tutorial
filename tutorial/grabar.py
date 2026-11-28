@@ -580,7 +580,14 @@ JS_FRANJA = """
       // un sticky es una barra (cabecera, filtros) si es bajo; un panel lateral
       // de más de media ventana también se pega, pero lo de dentro sí hay que
       // bajarlo desplazando la página
-      if (p === 'sticky' && n.getBoundingClientRect().height <= window.innerHeight * 0.5) return true;
+      // …pero solo si ya está pegado, dentro de la ventana: un pie sticky al final
+      // de un formulario largo (la barra de «Guardar cambios») está 2000 px más
+      // abajo y sin pegar; tomarlo por fijo dejaba el clic fuera de pantalla
+      if (p === 'sticky') {
+        const r = n.getBoundingClientRect();
+        const pegado = r.top >= -1 && r.bottom <= window.innerHeight + 1;
+        if (pegado && r.height <= window.innerHeight * 0.5) return true;
+      }
     }
     return false;
   };
@@ -808,14 +815,15 @@ def _localizar(pag, sel, timeout=8000):
     return loc, caja
 
 
-def _clic(pag, sel, ctx):
+def _clic(pag, sel, ctx, veces=1):
     loc, caja = _localizar(pag, sel)
     x, y = _centro(caja)
     ctx.enfocar(caja, ZOOM_ACCION)
     _mover(pag, x, y)
     pag.evaluate("([x,y]) => window.__tut && __tut.click(x,y)", [x, y])
     ctx.registro("clic", sel, loc)
-    pag.mouse.click(x, y)
+    # veces=3 selecciona el párrafo entero (p. ej. una línea en blanco de un editor de texto)
+    pag.mouse.click(x, y, click_count=veces)
     pag.wait_for_timeout(180)
     return loc
 
@@ -866,6 +874,36 @@ def _arrastrar(pag, spec, ctx):
     # daría por CORTADA aunque la tarjeta se suelte a la vista
     ctx.registro("clic", spec["hasta"])
     pag.wait_for_timeout(250)
+
+
+def _firmar(pag, sel, ctx):
+    """Dibuja una firma a mano alzada sobre un lienzo (canvas de firma), a la vista.
+
+        {"firmar": "<selector del canvas>", "al_decir": "…"}
+
+    Un trazo continuo tipo rúbrica, con el cursor dibujado y el ratón real juntos
+    y el botón pulsado, para que el componente de firma registre cada punto.
+    """
+    import math
+    loc, caja = _localizar(pag, sel)
+    ctx.enfocar(caja, ZOOM_ACCION)
+    x0 = caja["x"] + caja["width"] * 0.18
+    y0 = caja["y"] + caja["height"] * 0.55
+    ancho = caja["width"] * 0.62
+    alto = caja["height"] * 0.22
+    _mover(pag, x0, y0)
+    ctx.registro("clic", sel, loc)
+    pag.mouse.down()
+    pasos = 46
+    for i in range(1, pasos + 1):
+        t = i / pasos
+        x = x0 + ancho * t
+        y = y0 - alto * math.sin(t * math.pi * 3.2) * (1 - 0.35 * t)
+        pag.evaluate("([x,y,ms]) => window.__tut && __tut.move(x,y,ms)", [x, y, 28])
+        pag.mouse.move(x, y, steps=2)
+        pag.wait_for_timeout(28)
+    pag.mouse.up()
+    pag.wait_for_timeout(200)
 
 
 def _escribir(pag, sel, texto, ctx):
@@ -1119,9 +1157,17 @@ def _acciones(pag, ctx, variables):
             _esperar_palabra(ctx, acc["al_decir"], minimo=0,
                              anticipo=0.25 if any(k in acc for k in ACCIONES_MARCA) else ANTICIPO)
         if "click" in acc:
-            _clic(pag, acc["click"], ctx)
+            _clic(pag, acc["click"], ctx, acc.get("veces", 1))
         elif "arrastrar" in acc:
             _arrastrar(pag, acc["arrastrar"], ctx)
+        elif "firmar" in acc:
+            _firmar(pag, acc["firmar"], ctx)
+        elif "teclear" in acc:
+            # Escribe donde está el cursor, sin seleccionar todo antes (un editor de
+            # texto enriquecido perdería el documento con Ctrl+A).
+            pag.keyboard.type(_sub(acc["teclear"], variables), delay=TECLEO_MS)
+            pag.wait_for_timeout(150)
+            ctx.registro("tecla", "teclear")
         elif "escribir" in acc:
             e = acc["escribir"]
             _escribir(pag, e["sel"], _sub(e["texto"], variables), ctx)

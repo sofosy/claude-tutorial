@@ -1,0 +1,348 @@
+{
+  "titulo": "Seguros de salud · Parte 3: la factura del paciente",
+  "descripcion": "Tercera parte de la serie de ARS de RegiSalud: facturar una autorización aprobada, la factura del paciente por su copago (el servicio completo menos la cobertura de la ARS), cobrarla y cómo queda la autorización.",
+  "_comentario": "Estado: ars.mjs restaurar C.",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "102017174",
+      "401516454",
+      "809-476-3535",
+      "humano.com.do",
+      "PSS-",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-dos-facturas",
+      "capitulo": "Dos facturas por un servicio",
+      "rotulo": "Facturar la autorización",
+      "navegar": "/patients/545?tab=ars",
+      "ruta": "Pacientes › ficha › ARS › Facturar esta autorización",
+      "texto_pantalla": "La paciente paga su copago; lo que cubre la ARS se le factura a ella aparte",
+      "narracion": "Un servicio con seguro lleva dos facturas: la de la paciente, solo por lo que ella paga, y la de la ARS, por lo que cubre, que se hace después en Reclamaciones. Empezamos por la de Rosa. En su ficha, pestaña ARS, está la autorización aprobada de la consulta. En su menú pulso Facturar esta autorización. Es la forma más común; también se puede cobrar la consulta desde la cita en la agenda.",
+      "acciones": [
+        {
+          "resaltar": "a.rail-item[aria-label='Seguros de Salud']",
+          "durante_ms": 2500,
+          "al_decir": "en Reclamaciones"
+        },
+        {
+          "resaltar": ":text('Cobertura del paciente') >> xpath=..",
+          "durante_ms": 3000,
+          "al_decir": "Empezamos por la de Rosa"
+        },
+        {
+          "resaltar": ":text('ARS AUT-551207')",
+          "durante_ms": 4000,
+          "al_decir": "está la autorización aprobada"
+        },
+        {
+          "click": "button:has(mat-icon:text('more_vert')) >> nth=1",
+          "al_decir": "En su menú"
+        },
+        {
+          "click": ".mat-mdc-menu-content button:has-text('Facturar esta autorización')",
+          "al_decir": "pulso Facturar esta"
+        },
+        {
+          "resaltar": ":text('Nueva Factura')",
+          "durante_ms": 3000,
+          "al_decir": "Es la forma más común"
+        }
+      ]
+    },
+    {
+      "id": "02-factura",
+      "capitulo": "La factura del paciente",
+      "rotulo": "Factura del paciente",
+      "ruta": "Ventas › Facturas › Nueva factura (médica)",
+      "texto_pantalla": "El servicio completo, menos lo que cubre la ARS: el copago",
+      "narracion": "Se abre la factura ya armada. La paciente queda fija mientras se use su cobertura, y el comprobante es de consumo. Abajo están su aseguradora, su plan y su póliza. La línea trae la consulta de dos mil quinientos, con lo que cubre la ARS. El resumen lo deja claro: dos mil quinientos de servicio, menos dos mil de cobertura, y un total a pagar de quinientos.",
+      "acciones": [
+        {
+          "resaltar": ":text('El paciente no puede cambiarse')",
+          "durante_ms": 3500,
+          "al_decir": "queda fija"
+        },
+        {
+          "resaltar": ":text('COBERTURA DEL PACIENTE') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "su aseguradora"
+        },
+        {
+          "resaltar": ":text('COBERT. ARS')",
+          "durante_ms": 3000,
+          "al_decir": "con lo que cubre"
+        },
+        {
+          "resaltar": "app-document-cost-summary",
+          "durante_ms": 3500,
+          "al_decir": "El resumen lo deja claro"
+        },
+        {
+          "resaltar": ".invoice-total-block",
+          "durante_ms": 3000,
+          "al_decir": "un total a pagar"
+        }
+      ]
+    },
+    {
+      "id": "03-cobro",
+      "capitulo": "Cobrar el copago",
+      "rotulo": "Guardar y cobrar",
+      "ruta": "Ventas › Facturas › Nueva factura › Cobro",
+      "texto_pantalla": "Efectivo, tarjeta o transferencia; la factura queda saldada",
+      "narracion": "Más abajo está el cobro. Rosa paga en efectivo, así que elijo Efectivo. Me entrega justo quinientos, y pulso Exacto: el monto recibido es el mismo que se cobra. El aviso de abajo confirma que se cobran quinientos y la factura queda saldada. Pulso Guardar y cobrar. En ese paso se emite el comprobante y se registra el cobro, y la factura queda en contabilidad. El aviso dice cobro procesado; pulso Aceptar.",
+      "acciones": [
+        {
+          "click": "button:has-text('Efectivo')",
+          "al_decir": "elijo Efectivo"
+        },
+        {
+          "click": "button:has-text('Exacto')",
+          "al_decir": "pulso Exacto"
+        },
+        {
+          "resaltar": ":text('la factura queda')",
+          "durante_ms": 3000,
+          "al_decir": "El aviso de abajo"
+        },
+        {
+          "click": "button:has-text('Guardar y cobrar')",
+          "al_decir": "Pulso Guardar y cobrar"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 1800,
+          "al_decir": "El aviso dice",
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Aceptar')",
+          "al_decir": "pulso Aceptar"
+        }
+      ]
+    },
+    {
+      "id": "04-resultado",
+      "capitulo": "La factura pagada",
+      "rotulo": "Factura pagada",
+      "ruta": "Ventas › Facturas › Ver factura",
+      "texto_pantalla": "Pagada, con su comprobante; la autorización queda utilizada",
+      "narracion": "La factura queda pagada, con su número de comprobante. El resumen de pagos dice lo cobrado y que no queda nada pendiente, y desde aquí se imprime la factura, o también el recibo del pago. La autorización pasa a utilizada: ya no se puede facturar otra vez. Lo que cubrió la ARS queda en Reclamaciones, por reclamar. En el próximo video se lo reclamamos y le emitimos su factura.",
+      "acciones": [
+        {
+          "resaltar": ":text('Pagada') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "queda pagada"
+        },
+        {
+          "resaltar": ":text('B0200000001')",
+          "durante_ms": 2500,
+          "al_decir": "número de comprobante"
+        },
+        {
+          "resaltar": ":text('Resumen de Pagos') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "El resumen de pagos"
+        },
+        {
+          "resaltar": "button:has-text('Imprimir') >> nth=0",
+          "durante_ms": 2500,
+          "al_decir": "se imprime"
+        },
+        {
+          "resaltar": "button:has-text('Imprimir recibo')",
+          "durante_ms": 2500,
+          "al_decir": "el recibo del pago"
+        },
+        {
+          "resaltar": ":text('Cobertura ARS') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "Lo que cubrió la ARS"
+        }
+      ]
+    }
+  ]
+}

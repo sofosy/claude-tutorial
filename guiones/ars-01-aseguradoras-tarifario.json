@@ -1,0 +1,480 @@
+{
+  "titulo": "Seguros de salud · Parte 1: aseguradoras y tarifario",
+  "descripcion": "Primera parte de la serie de ARS de RegiSalud: la consola de Seguros de Salud, importar las ARS del catálogo dominicano con sus planes, completar el código de prestador y el plazo de presentación, y cargar el tarifario: lo que cubre la ARS y el copago del paciente, por plan y por servicio.",
+  "_comentario": "Estado: ars.mjs restaurar base.",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "102017174",
+      "401516454",
+      "809-476-3535",
+      "humano.com.do",
+      "PSS-",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-consola",
+      "capitulo": "La consola de Seguros de Salud",
+      "rotulo": "Seguros de Salud",
+      "navegar": "/home",
+      "ruta": "Seguros de Salud",
+      "texto_pantalla": "Aseguradoras, tarifario, afiliaciones, autorizaciones y reclamaciones",
+      "narracion": "En esta serie vemos el ciclo completo con las ARS, las administradoras de riesgos de salud: la aseguradora y su tarifario, la afiliación del paciente, la autorización, las dos facturas y el cobro a la aseguradora. Entro a Seguros de Salud, en el menú de la izquierda. Arriba, el resumen dice cuántas aseguradoras hay, cuántas autorizaciones esperan respuesta y cuánto se les debe cobrar a las ARS. Las pestañas siguen el ciclo: aseguradoras, tarifario, afiliaciones, autorizaciones y reclamaciones.",
+      "acciones": [
+        {
+          "resaltar": "a.rail-item[aria-label='Seguros de Salud']",
+          "durante_ms": 3000,
+          "al_decir": "las dos facturas"
+        },
+        {
+          "click": "a.rail-item[aria-label='Seguros de Salud']",
+          "al_decir": "Entro a Seguros"
+        },
+        {
+          "resaltar": ":text('aseguradoras ·')",
+          "durante_ms": 4000,
+          "al_decir": "el resumen dice"
+        },
+        {
+          "resaltar": "a[role=tab]:has-text('Aseguradoras')",
+          "durante_ms": 1800,
+          "al_decir": "las pestañas siguen"
+        },
+        {
+          "resaltar": "a[role=tab]:has-text('Tarifario')",
+          "durante_ms": 1500,
+          "al_decir": "tarifario, afiliaciones"
+        },
+        {
+          "resaltar": "a[role=tab]:has-text('Reclamaciones')",
+          "durante_ms": 2000,
+          "al_decir": "y reclamaciones"
+        }
+      ]
+    },
+    {
+      "id": "02-importar",
+      "capitulo": "Importar las aseguradoras",
+      "rotulo": "Importar del catálogo",
+      "ruta": "Seguros de Salud › Aseguradoras › Importar del catálogo",
+      "texto_pantalla": "Las ARS dominicanas, con sus planes, desde el catálogo",
+      "narracion": "El centro todavía no tiene aseguradoras. Lo más rápido es traerlas del catálogo dominicano, con sus planes ya cargados; también se puede crear una a mano con Nueva aseguradora. Pulso Importar del catálogo, y se abre la lista de las ARS del país. Busco Humano, y cuando aparece en la lista con sus ocho planes, la marco con un clic. Ahora borro la búsqueda y escribo Senasa, que es la otra ARS con la que trabaja el centro; la marco también. La selección se conserva entre búsquedas. Pulso Importar. El aviso confirma dos aseguradoras y doce planes; pulso Entendido. Lo importado pasa a ser del centro: se puede renombrar o desactivar sin afectar a nadie más.",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Nueva aseguradora')",
+          "durante_ms": 3000,
+          "al_decir": "crear una a mano"
+        },
+        {
+          "click": "button:has-text('Importar del catálogo') >> nth=0",
+          "al_decir": "Pulso Importar del"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2200,
+          "al_decir": "se abre la lista",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input",
+            "texto": "Humano"
+          },
+          "al_decir": "Busco Humano"
+        },
+        {
+          "click": "mat-dialog-container :text('ARS HUMANO')",
+          "al_decir": "la marco con un clic"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input",
+            "texto": "Senasa"
+          },
+          "al_decir": "escribo Senasa"
+        },
+        {
+          "click": "mat-dialog-container :text('ARS SENASA')",
+          "al_decir": "la marco también"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Importar')",
+          "al_decir": "Pulso Importar. El"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "al_decir": "El aviso confirma",
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Entendido')",
+          "al_decir": "Entendido. Lo"
+        },
+        {
+          "resaltar": ":text('ARS HUMANO') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "pasa a ser del centro"
+        }
+      ]
+    },
+    {
+      "id": "03-ficha",
+      "capitulo": "La ficha de la aseguradora",
+      "rotulo": "La ficha de la ARS",
+      "ruta": "Seguros de Salud › Aseguradoras › ARS Humano",
+      "texto_pantalla": "Planes, convenio y lo que exige para reclamar",
+      "narracion": "A la derecha está la ficha de ARS Humano: su registro nacional de contribuyente, el RNC, sus cifras de cobro y, debajo, sus planes. Más abajo, el convenio y el tarifario, y lo que la ARS exige para reclamar. Aquí avisa que faltan dos datos: sin el código de prestador y el plazo de presentación, la aseguradora devuelve la remesa. Pulso Completar.",
+      "acciones": [
+        {
+          "resaltar": ":text('RNC 102017174')",
+          "durante_ms": 2500,
+          "al_decir": "el RNC"
+        },
+        {
+          "resaltar": ":text('PLANES') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "debajo, sus planes"
+        },
+        {
+          "resaltar": ":text('Faltan datos para poder reclamar')",
+          "durante_ms": 4500,
+          "al_decir": "faltan dos datos"
+        },
+        {
+          "click": "button:has-text('Completar')",
+          "al_decir": "Pulso Completar"
+        }
+      ]
+    },
+    {
+      "id": "04-completar",
+      "capitulo": "Código de prestador y plazo",
+      "rotulo": "Completar la ARS",
+      "ruta": "Seguros de Salud › Aseguradoras › Editar aseguradora",
+      "texto_pantalla": "Código de prestador, comprobante y plazo de presentación",
+      "narracion": "La ficha trae el RNC, que hace falta para facturarle con crédito fiscal, y el teléfono de autorizaciones. En facturación y reclamación escribo el código de prestador que la ARS le dio al centro. El tipo de comprobante lo dejo automático: el sistema elige el que tenga secuencia activa. Y a la derecha, el plazo de presentación, los días que da la ARS para reclamarle: sesenta. Con eso basta. Pulso Guardar cambios, y el aviso lo confirma.",
+      "acciones": [
+        {
+          "resaltar": "mat-form-field:has([formcontrolname='tin'])",
+          "durante_ms": 3000,
+          "al_decir": "trae el RNC"
+        },
+        {
+          "resaltar": "mat-form-field:has([formcontrolname='authorizationPhone'])",
+          "durante_ms": 2500,
+          "al_decir": "el teléfono"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='insurerProviderCode']",
+            "texto": "PSS-10458"
+          },
+          "al_decir": "escribo el código de prestador"
+        },
+        {
+          "resaltar": "mat-form-field:has([formcontrolname='ncfType'])",
+          "durante_ms": 2500,
+          "al_decir": "lo dejo automático"
+        },
+        {
+          "escribir": {
+            "sel": "input[formcontrolname='insurerClaimDeadlineDays']",
+            "texto": "60"
+          },
+          "al_decir": "los días que da"
+        },
+        {
+          "click": "button:has-text('Guardar cambios')",
+          "al_decir": "Pulso Guardar cambios"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 1800,
+          "al_decir": "el aviso lo confirma",
+          "cursor": false
+        },
+        {
+          "click_opcional": "button:has-text('Entendido')",
+          "espera_ms": 5000
+        }
+      ]
+    },
+    {
+      "id": "05-tarifa",
+      "capitulo": "El tarifario",
+      "rotulo": "Nueva tarifa",
+      "navegar": "/health-insurance/tarifario",
+      "al_decir_navegar": "pasamos al tarifario",
+      "ruta": "Seguros de Salud › Tarifario › Nueva tarifa",
+      "texto_pantalla": "Por plan y por servicio: lo que cubre la ARS y lo que paga el paciente",
+      "narracion": "Con la aseguradora lista, pasamos al tarifario, que es el acuerdo con la ARS: por plan y por servicio, cuánto cubre ella y cuánto paga el paciente. Pulso Nueva tarifa, y se abre el formulario en blanco. Elijo el plan, ARS Humano Básico. Una tarifa es de un plan, no de toda la aseguradora. Después elijo el servicio: la consulta de medicina general. Su precio de venta se propone como precio convenido: dos mil quinientos. La ARS cubre dos mil, y el copago se calcula solo: quinientos, lo que paga el paciente en el mostrador. Ahora escribo el código con que la ARS identifica el servicio, y marco que exige autorización previa. Guardo.",
+      "acciones": [
+        {
+          "click": "button:has-text('Nueva tarifa') >> nth=0",
+          "al_decir": "Pulso Nueva tarifa"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2000,
+          "al_decir": "el formulario en blanco",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container mat-select >> nth=0",
+          "al_decir": "Elijo el plan"
+        },
+        {
+          "click": "mat-option:has-text('ARS Humano Basico')",
+          "al_decir": "Humano Básico"
+        },
+        {
+          "click": "mat-dialog-container mat-select >> nth=1",
+          "al_decir": "Después elijo el servicio"
+        },
+        {
+          "click": "mat-option:has-text('Consulta de medicina general')",
+          "al_decir": "la consulta de"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has-text('Precio convenido')",
+          "durante_ms": 3000,
+          "al_decir": "se propone como"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container mat-form-field:has-text('Cubre la aseguradora') input",
+            "texto": "2000"
+          },
+          "al_decir": "La ARS cubre"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has-text('Copago del paciente')",
+          "durante_ms": 3000,
+          "al_decir": "se calcula solo"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container mat-form-field:has-text('Código de la ARS') input",
+            "texto": "CONS-001"
+          },
+          "al_decir": "Ahora escribo el código"
+        },
+        {
+          "click": "mat-dialog-container mat-slide-toggle button",
+          "al_decir": "marco que exige"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Guardar')",
+          "al_decir": "guardo"
+        }
+      ]
+    },
+    {
+      "id": "06-mas",
+      "capitulo": "Otras formas de cargar el tarifario",
+      "rotulo": "Importar y aprobar",
+      "ruta": "Seguros de Salud › Tarifario",
+      "texto_pantalla": "Importar / Exportar · Requerir aprobación de las tarifas",
+      "narracion": "La tarifa queda en la lista, con lo que cubre la ARS, el copago y que exige autorización. Los montos se corrigen aquí mismo. Para cargar muchas a la vez está Importar y Exportar, con una plantilla. Y en el engranaje, Requerir aprobación hace que cada tarifa nueva pase por un supervisor antes de usarse. En el próximo video afiliamos a una paciente y pedimos su autorización.",
+      "acciones": [
+        {
+          "resaltar": "tr:has-text('Consulta de medicina general')",
+          "durante_ms": 4500,
+          "al_decir": "queda en la lista"
+        },
+        {
+          "resaltar": "button:has-text('Importar / Exportar') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "Para cargar muchas"
+        },
+        {
+          "resaltar": "button[aria-label='Ajustes del módulo']",
+          "durante_ms": 3500,
+          "al_decir": "en el engranaje"
+        }
+      ]
+    }
+  ]
+}

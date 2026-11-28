@@ -1,0 +1,30 @@
+TÍTULO
+============================================================
+Seguros de salud · Parte 1: aseguradoras y tarifario
+
+DESCRIPCIÓN
+============================================================
+Primera parte de la serie de ARS de RegiSalud: la consola de Seguros de Salud, importar las ARS del catálogo dominicano con sus planes, completar el código de prestador y el plazo de presentación, y cargar el tarifario: lo que cubre la ARS y el copago del paciente, por plan y por servicio.
+
+⏱️ CAPÍTULOS
+00:00  La consola de Seguros de Salud
+00:36  Importar las aseguradoras
+01:23  La ficha de la aseguradora
+01:50  Código de prestador y plazo
+02:23  El tarifario
+03:11  Otras formas de cargar el tarifario
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 03:40
+
+TRANSCRIPCIÓN
+============================================================
+En esta serie vemos el ciclo completo con las ARS, las administradoras de riesgos de salud: la aseguradora y su tarifario, la afiliación del paciente, la autorización, las dos facturas y el cobro a la aseguradora. Entro a Seguros de Salud, en el menú de la izquierda. Arriba, el resumen dice cuántas aseguradoras hay, cuántas autorizaciones esperan respuesta y cuánto se les debe cobrar a las ARS. Las pestañas siguen el ciclo: aseguradoras, tarifario, afiliaciones, autorizaciones y reclamaciones.
+El centro todavía no tiene aseguradoras. Lo más rápido es traerlas del catálogo dominicano, con sus planes ya cargados; también se puede crear una a mano con Nueva aseguradora. Pulso Importar del catálogo, y se abre la lista de las ARS del país. Busco Humano, y cuando aparece en la lista con sus ocho planes, la marco con un clic. Ahora borro la búsqueda y escribo Senasa, que es la otra ARS con la que trabaja el centro; la marco también. La selección se conserva entre búsquedas. Pulso Importar. El aviso confirma dos aseguradoras y doce planes; pulso Entendido. Lo importado pasa a ser del centro: se puede renombrar o desactivar sin afectar a nadie más.
+A la derecha está la ficha de ARS Humano: su registro nacional de contribuyente, el RNC, sus cifras de cobro y, debajo, sus planes. Más abajo, el convenio y el tarifario, y lo que la ARS exige para reclamar. Aquí avisa que faltan dos datos: sin el código de prestador y el plazo de presentación, la aseguradora devuelve la remesa. Pulso Completar.
+La ficha trae el RNC, que hace falta para facturarle con crédito fiscal, y el teléfono de autorizaciones. En facturación y reclamación escribo el código de prestador que la ARS le dio al centro. El tipo de comprobante lo dejo automático: el sistema elige el que tenga secuencia activa. Y a la derecha, el plazo de presentación, los días que da la ARS para reclamarle: sesenta. Con eso basta. Pulso Guardar cambios, y el aviso lo confirma.
+Con la aseguradora lista, pasamos al tarifario, que es el acuerdo con la ARS: por plan y por servicio, cuánto cubre ella y cuánto paga el paciente. Pulso Nueva tarifa, y se abre el formulario en blanco. Elijo el plan, ARS Humano Básico. Una tarifa es de un plan, no de toda la aseguradora. Después elijo el servicio: la consulta de medicina general. Su precio de venta se propone como precio convenido: dos mil quinientos. La ARS cubre dos mil, y el copago se calcula solo: quinientos, lo que paga el paciente en el mostrador. Ahora escribo el código con que la ARS identifica el servicio, y marco que exige autorización previa. Guardo.
+La tarifa queda en la lista, con lo que cubre la ARS, el copago y que exige autorización. Los montos se corrigen aquí mismo. Para cargar muchas a la vez está Importar y Exportar, con una plantilla. Y en el engranaje, Requerir aprobación hace que cada tarifa nueva pase por un supervisor antes de usarse. En el próximo video afiliamos a una paciente y pedimos su autorización.

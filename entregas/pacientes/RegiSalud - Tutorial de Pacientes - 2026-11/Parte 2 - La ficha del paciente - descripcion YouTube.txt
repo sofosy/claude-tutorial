@@ -1,0 +1,24 @@
+TÍTULO
+============================================================
+Pacientes · Parte 2: la ficha del paciente
+
+DESCRIPCIÓN
+============================================================
+Segunda parte de la serie de Pacientes de RegiSalud: la cabecera de la ficha y sus atajos, las pestañas, registrar una alergia (y dónde van la medicación y las alertas médicas), subir un archivo del paciente y el estado activo o inactivo.
+
+⏱️ CAPÍTULOS
+00:00  La ficha: cabecera y pestañas
+00:53  Alergias, medicación y alertas
+01:53  Datos, archivos y estado
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 02:44
+
+TRANSCRIPCIÓN
+============================================================
+En esta parte vemos la ficha del paciente: todo lo que el centro sabe de él, en un solo lugar. Estoy en Pacientes. En la lista, abro la ficha de Rosa Elena Martínez. Arriba está la cabecera: su nombre, si está activa, su expediente, la edad, la cédula y el teléfono, con atajos para llamar, escribir por WhatsApp o por correo. A la derecha, Agendar cita abre el formulario de la cita con la paciente ya puesta, y Nueva evolución empieza una nota clínica. Debajo están las pestañas: el resumen, la historia clínica, la ficha con sus datos, la agenda con sus citas, la cuenta con sus facturas y saldo, y el ingreso si la hospitalizan. En la fila de plantillas están los formularios clínicos que el centro usa, como el consentimiento informado.
+El resumen muestra la situación clínica, las últimas evoluciones, los consentimientos y, a la derecha, lo que nadie debe pasar por alto: alertas médicas, alergias y medicación activa. La paciente es alérgica a la penicilina, así que en alergias pulso Agregar, y se abre la ventana. En alérgeno escribo el nombre: penicilina, como lo dice la paciente. Ahora abro el tipo, y en la lista elijo medicamento. Después abro la severidad, y elijo severa, porque le cuesta respirar. En reacción escribo lo que le pasa: ronchas y falta de aire. Las fechas y las notas son opcionales. Con eso, pulso el botón Agregar. La alergia queda en la lista y, por ser grave, también en la cabecera, a la vista de quien abra la ficha. La medicación habitual y las alertas médicas se registran igual, con su botón Agregar. Las escribe el personal médico; recepción solo las ve.
+Terminado el resumen, ahora paso a la pestaña Ficha, que tiene los mismos datos del registro, editables, y se guardan con Guardar. Más abajo están los archivos del paciente: aquí se suben sus estudios, informes o documentos. Pulso Agregar archivo y elijo el PDF de su hemograma. Escribo el nombre con el que se va a buscar: hemograma. La fecha es la del estudio; la dejo en hoy. Pulso Subir. El archivo queda en la lista, guardado en la nube y no en el equipo, para descargarlo, editarlo o eliminarlo. Al final está el estado del paciente: si se desmarca Paciente activo, deja de salir al agendar, pero conserva toda su historia; un paciente con actividad no se borra, se inactiva.

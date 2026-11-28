@@ -1,0 +1,30 @@
+TÍTULO
+============================================================
+Citas · Parte 2: el paciente reserva por internet
+
+DESCRIPCIÓN
+============================================================
+Segunda parte de la serie de Citas de RegiSalud: el enlace único de reservas del centro tal como lo ve el paciente (especialidad, médico y hora), la entrada con su correo y el código de verificación, para quién es la cita, la confirmación, y cómo recepción vincula una reserva sin ficha con el paciente.
+
+⏱️ CAPÍTULOS
+00:00  El enlace de reservas del centro
+00:32  Elegir médico y hora
+01:03  Entrar con el correo
+01:26  Verificar el código y sus datos
+01:54  Para quién es y confirmar
+02:22  Reservas sin ficha: vincular al paciente
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 03:27
+
+TRANSCRIPCIÓN
+============================================================
+Me pongo en el lugar de la paciente y abro el enlace de reservas del centro, como lo haría desde su teléfono. Es uno solo para todos los médicos: se copia desde la Disponibilidad de cualquier médico y se comparte por WhatsApp, en redes o en la página web. Arriba están los pasos de la reserva. Cada tarjeta es una especialidad, con su médico y su próximo turno. Gabriela necesita una consulta general, así que elige Medicina General.
+Salen los médicos de esa especialidad, primero quien atiende antes, con su consultorio y sus próximos turnos. Tocar una hora ya elige médico y turno, pero ella quiere otro día, así que pulsa Ver más días y horas en la doctora Ana Pérez. Se abre la semana de la doctora: los días apagados no tienen cupo. Toca un día, y abajo salen las horas de la mañana. Elige una, y el resumen de abajo confirma el día y la hora. Pulsa Continuar.
+A la derecha queda el resumen de la reserva: la doctora, el consultorio, la duración y el precio particular de su consulta. Para reservar, la paciente entra con su correo: así sus citas quedan en su portal. Escribe su correo, el mismo donde quiere recibir los avisos de sus citas, y pulsa Continuar. Le llega un código de seis dígitos.
+El código vence en treinta minutos. Lo copia del correo y lo escribe aquí. Son seis números, y tiene tres intentos. Ahora pulsa Verificar código. Como es la primera vez que entra, completa su nombre: Gabriela, tal como quiere que aparezca. Después su primer apellido: Fernández. El segundo apellido es opcional. Pulsa Guardar datos y continuar.
+Ahora dice para quién es la cita: para ella, o para una persona a su cargo, como un hijo, con su relación y su fecha de nacimiento. Es para ella. Pulsa Revisar la cita. Revisa el paciente y a qué correo le llegarán los avisos, y pulsa Confirmar cita. La reserva quedó confirmada, con su número. Desde aquí la agrega a su calendario, reserva otra o la cancela si no puede ir.
+Ahora la recepción. En el Calendario, Reservas sin ficha. Si el correo de Gabriela estuviera en su ficha, la cita se habría creado sola. Pero su ficha no lo tiene, así que el centro todavía no sabe quién es: el turno está apartado, pero no es una cita ni sale en el calendario. Cada reserva tiene sus acciones. Registrar paciente crea la ficha con los datos de la reserva, si es nueva. Si la reserva quedó pendiente, Confirmar turno la confirma; esta ya está confirmada. Y Cancelar reserva libera el horario. Gabriela ya es paciente, así que pulso Vincular paciente. La busco por su nombre, o por su cédula, y pulso Buscar. Aparece su ficha; verifico que es ella, pulso Vincular esta ficha. El sistema pregunta si la vinculo, y confirmo. Ahora sí se crea la cita, con su médico y su turno: el aviso lo confirma, y a Gabriela le llega la confirmación por correo.

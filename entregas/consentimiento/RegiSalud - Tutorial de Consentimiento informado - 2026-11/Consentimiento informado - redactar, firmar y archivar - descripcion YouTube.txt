@@ -1,0 +1,34 @@
+TÍTULO
+============================================================
+Consentimiento informado: redactar, firmar y archivar
+
+DESCRIPCIÓN
+============================================================
+Cómo se prepara un consentimiento informado en RegiSalud: la doctora llena el procedimiento, los riesgos y las alternativas, la paciente confirma su identidad, lo lee, declara y firma con el dedo en el consultorio (o desde un enlace por correo), y el registro queda aceptado, con constancia, bitácora y la firma de la doctora.
+
+⏱️ CAPÍTULOS
+00:00  Un consentimiento nuevo
+00:34  Procedimiento, riesgos y alternativas
+01:13  Completar y elegir cómo firma
+01:55  La paciente confirma que es ella
+02:16  Leer, declarar y firmar
+02:57  La constancia
+03:14  En el expediente
+04:10  Los consentimientos de la paciente
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 04:33
+
+TRANSCRIPCIÓN
+============================================================
+En este video la doctora Ana Pérez prepara el consentimiento de un procedimiento, la paciente lo firma y queda la constancia en su expediente. Abro a Rosa Elena Martínez. En la ficha, debajo de Plantillas, está Consentimiento Informado General: viene asignado a todos los médicos, y el centro puede crear los suyos en las plantillas clínicas. Lo abro y pulso Nueva. El documento ya trae los datos de la paciente, su cédula, y el nombre y el exequátur de la doctora.
+Lo que falta son las líneas en blanco, y se llenan con palabras que la paciente entienda. Primero el procedimiento: drenaje de un absceso en el brazo derecho, tal como se lo dije a ella. En la línea de abajo, cómo se hace: con anestesia local, en el mismo consultorio. Después, los riesgos que le expliqué en la consulta, los frecuentes y también los suyos propios. En la otra línea, lo que puede quedarle después, que es una pequeña cicatriz. Por último, las alternativas razonables, incluida la de no hacer nada. Un consentimiento con huecos sin llenar no se puede enviar a firmar.
+Debajo del documento, la aceptación del paciente espera a que el registro esté completo. El botón Guardar solo lo deja en borrador. Ahora pulso Completar. El aviso lo confirma, y se abre la aceptación del paciente. Hay dos formas de firmar. Por correo, a la paciente le llega un enlace personal y firma desde su casa: eliges cuántos días vale y se le recuerda antes de vencer. Mientras no firme, el enlace se puede reenviar o cancelar. Pero lo más común es que firme aquí mismo, así que elijo En el consultorio. Antes de abrir el documento, pedirá los últimos cuatro dígitos de su cédula.
+Ahora es el turno de la paciente. Pulso Abrir para firmar y le paso la pantalla, o la tableta. Se abre la página de firma, con el nombre del centro arriba. Esta es su página: no ve nada del sistema, solo su documento. Escribe los últimos cuatro dígitos de su cédula y pulsa Continuar.
+En la pantalla siguiente está el documento. Primero lo lee completo: el botón para seguir solo se activa al llegar al final. Si no está de acuerdo, lo dice aquí y queda registrado. Pulsa Continuar. Ahora marca cada declaración, solo si es cierta: que lo leyó completo, que pudo hacer sus preguntas, que sabe que puede revocarlo, y que autoriza el procedimiento. Firma como paciente; si fuera un menor, firmaría su representante. Su nombre ya está puesto. Dibuja su firma con el dedo; si no le gusta, la limpia y vuelve a empezar. Cuando está conforme, pulsa Aceptar y firmar.
+Listo. La firma queda con fecha y hora, y con un código de verificación. La paciente puede descargar su copia firmada aquí mismo, o pedirla impresa en el centro. Y si cambia de opinión, puede revocarlo antes del procedimiento.
+La doctora recupera su pantalla y vuelve a la ficha de Rosa, en la pestaña del consentimiento. Mientras carga, fíjate en algo: la paciente nunca vio el resto del sistema, solo su documento. En el historial está el registro que acabamos de preparar, con su número. Lo abro. Dice Aceptado, cuándo lo abrió y cuándo firmó, por qué canal y quién firmó. Ver constancia descarga el documento con la evidencia, y Revocar registra que la paciente se arrepintió. Debajo, la bitácora guarda cada paso. El texto aceptado queda congelado. Por último firmo yo el registro: pulso Firmar. Me pide mi contraseña, para confirmar que soy yo quien firma. La escribo. Nadie más puede firmar por mí. Ahora confirmo con Firmar. Queda cerrado, y solo se corrige por enmienda.
+Una última cosa. En el Resumen de la ficha, el bloque de consentimientos reúne todos los de la paciente con su estado: sin enviar, enviado, aceptado o revocado. Así, antes del procedimiento, cualquiera ve si ya firmó. Con esto termina el video de consentimiento informado.

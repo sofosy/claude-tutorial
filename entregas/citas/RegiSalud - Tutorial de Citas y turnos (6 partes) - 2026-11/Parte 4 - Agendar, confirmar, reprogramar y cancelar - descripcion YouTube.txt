@@ -1,0 +1,30 @@
+TÍTULO
+============================================================
+Citas · Parte 4: agendar, confirmar, reprogramar y cancelar
+
+DESCRIPCIÓN
+============================================================
+Cuarta parte de la serie de Citas de RegiSalud: agendar una cita desde el Calendario (y las otras formas de agendar), el paciente, el motivo, el médico y su consulta, el turno libre, la cobertura, los recordatorios, repetir la cita cada N semanas, confirmar, reprogramar a otra hora y cancelar con motivo.
+
+⏱️ CAPÍTULOS
+00:00  Nueva cita: paciente, motivo y médico
+00:55  El turno, la cobertura y los recordatorios
+01:32  Repetir la cita y agendar
+02:14  Confirmar una cita
+02:43  Reprogramar a otra hora
+03:26  Cancelar o marcar que no asistió
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 04:11
+
+TRANSCRIPCIÓN
+============================================================
+Una paciente llama para pedir cita. La forma más común de agendar es desde el Calendario, con el botón Nueva Cita. También se agenda desde la ficha del paciente, o con el más de cada médico en la Agenda del Centro; y el paciente lo hace solo, por el enlace de reservas o por WhatsApp. Pulso Nueva Cita. Primero el paciente: escribo su nombre, Laura. Cuando aparece en la lista, la elijo. Debajo sale su ficha, con la edad y la cédula. Ahora el motivo de la consulta: escribo chequeo, y en la lista que se abre debajo del campo elijo chequeo general. Después el médico: escribo Jorge, que es su nombre, y en la lista elijo al doctor Jorge Medina. Debajo se ve lo que dice su consulta: la duración del turno, si la ARS exige autorización y su tarifa.
+Más abajo está la semana del doctor: cada día dice cuántos turnos le quedan. Toco el primer día disponible, y aparecen sus turnos libres. Elijo uno de la tarde. El consultorio sale solo de la franja del horario. En cobertura, la paciente paga directo, sin seguro, así que paga la tarifa completa; si tuviera ARS, aquí se elige su afiliación y su autorización. Los recordatorios salen por WhatsApp un día antes y por correo una hora antes. En cómo se agendó marco por teléfono, y como ya la confirmó, marco esa casilla.
+Laura viene a control cada cuatro semanas, así que marco Repetir esta cita. La frecuencia ya dice cuatro semanas, y en repeticiones pongo tres, contando la primera, para no pedir cada control. Abajo, la nota dice hasta qué fecha llega la serie. Pulso Agendar cita. Se agendan las tres citas, cada una con las mismas validaciones que la primera; si alguna cae en un feriado o en un turno lleno, el sistema avisa cuál quedó fuera para agendarla a mano. La ventana se cierra y la cita ya sale en el calendario. Al abrirla se ve su visita, primera consulta o seguimiento, que el sistema decide solo con el historial de la paciente.
+Ahora una cita que sigue programada: la de Rosa Elena Martínez. En el Calendario la busco por su nombre, Rosa. Ahora paso a la vista de lista, y toco su cita. En el panel, el botón de estado muestra solo los pasos que tocan: confirmar, registrar la llegada o marcar que no asistió. Confirmo, el sistema pregunta, y digo que sí. La cita queda confirmada, en verde.
+Otro paciente, Francisco Javier Cabrera, pide otra hora. Lo busco por su nombre. Su cita es la semana que viene, así que paso a la semana siguiente, y toco su cita. En el panel, pulso el botón Reprogramar. Se abre la ventana: arriba queda la cita actual, y debajo la semana del médico con los cupos de cada día. Elijo el sábado, que tiene cupos, y el último turno de la tarde. Escribo el motivo: el paciente pidió otra hora, para que quede en la historia. Confirmo con el botón de abajo: se crea la cita nueva, la anterior queda como reprogramada para la historia, y al paciente le llega un correo con el nuevo horario.
+Y si un paciente avisa que no vendrá, se cancela. Busco a Rafael Antonio Núñez por su nombre. Toco su cita, y en el panel pulso el botón rojo. El sistema pide el motivo: solicitud del paciente. Ese motivo queda en la cita y en el informe de cancelaciones; la nota es opcional, para el equipo. Y confirmo con Cancelar la cita: el turno queda libre y los recordatorios se anulan. Si el paciente simplemente no vino, no se cancela: en el botón de estado se marca que no asistió. Y con los filtros de estado se encuentran las canceladas. En la próxima parte, la llegada del paciente y los turnos.

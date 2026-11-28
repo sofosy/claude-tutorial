@@ -1,0 +1,26 @@
+TÍTULO
+============================================================
+Seguros de salud · Parte 2: afiliación y autorización
+
+DESCRIPCIÓN
+============================================================
+Segunda parte de la serie de ARS de RegiSalud: registrar la afiliación del paciente en su ficha, pedir la autorización de un servicio con los montos del tarifario, registrar la aprobación de la ARS y seguirla desde las bandejas de Autorizaciones y Afiliaciones.
+
+⏱️ CAPÍTULOS
+00:00  La afiliación del paciente
+00:51  Pedir la autorización
+01:23  Registrar la respuesta de la ARS
+02:03  Las bandejas de seguimiento
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 02:39
+
+TRANSCRIPCIÓN
+============================================================
+Rosa Elena Martínez llega con su seguro de ARS Humano. La afiliación se registra en su ficha; también se puede marcar al crear el paciente, con la casilla de que viene con seguro. Abro a Rosa en la lista, y en su ficha paso a la pestaña ARS. Pulso Nueva afiliación, y se abre el formulario con su nombre arriba. Primero elijo la aseguradora: ARS Humano. Con eso se cargan sus planes, y elijo el suyo, que es el Básico. Ahora escribo el número de póliza, tal como sale en su carnet. Debajo va el número de afiliado, que es el que la ARS pide en cada autorización. La vigencia empieza hoy, y como es su primera afiliación, queda como la principal. Todo listo: guardo.
+La afiliación queda arriba, como principal. Ahora la consulta: en el tarifario exige autorización, así que pulso Nueva autorización. La afiliación ya viene elegida, con el tipo y la urgencia. Busco el servicio escribiendo consulta, y en la lista aparece con su tarifa; lo elijo. Los montos salen del tarifario: dos mil quinientos, de los que la ARS cubre dos mil y la paciente paga quinientos. Vienen bloqueados porque así lo pactó el convenio.
+La autorización se pide por el canal de la ARS: su portal o su teléfono. Si todavía no responde, pulso Guardar y queda pendiente. Aquí ya llamé y me dieron el código, así que enciendo Registrar la aprobación. Escribo el código que dio la ARS, que es el que se reclama después. El monto aprobado se propone con la cobertura calculada, y la vigencia es de treinta días. Si todo cuadra, pulso Guardar y Aprobar. El aviso confirma que quedó aprobada con su código. Pulso Entendido, y la autorización aparece en la lista de Rosa, con su número y su vencimiento.
+Todo esto se sigue desde la consola. En Seguros de Salud, la pestaña Autorizaciones es la bandeja: cuántas esperan respuesta, cuántas vencen y cuántas están aprobadas sin usar. Cada fila dice su siguiente paso; la de Rosa ya se puede facturar. Ahora paso a la pestaña de al lado. En Afiliaciones, la columna Cobertura hoy contesta si el seguro cubre hoy, y Verificar lo comprueba. En el próximo video facturamos la consulta: lo que paga Rosa y lo que se le reclama a la ARS.

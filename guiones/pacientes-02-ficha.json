@@ -1,0 +1,381 @@
+{
+  "titulo": "Pacientes · Parte 2: la ficha del paciente",
+  "descripcion": "Segunda parte de la serie de Pacientes de RegiSalud: la cabecera de la ficha y sus atajos, las pestañas, registrar una alergia (y dónde van la medicación y las alertas médicas), subir un archivo del paciente y el estado activo o inactivo.",
+  "_comentario": "Estado: pacientes.mjs (Rosa Elena sin alergias ni archivos).",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-cabecera",
+      "capitulo": "La ficha: cabecera y pestañas",
+      "rotulo": "La ficha del paciente",
+      "navegar": "/patients",
+      "ruta": "Pacientes › Rosa Elena Martínez",
+      "texto_pantalla": "La ficha · cabecera, acciones y pestañas",
+      "narracion": "En esta parte vemos la ficha del paciente: todo lo que el centro sabe de él, en un solo lugar. Estoy en Pacientes. En la lista, abro la ficha de Rosa Elena Martínez. Arriba está la cabecera: su nombre, si está activa, su expediente, la edad, la cédula y el teléfono, con atajos para llamar, escribir por WhatsApp o por correo. A la derecha, Agendar cita abre el formulario de la cita con la paciente ya puesta, y Nueva evolución empieza una nota clínica. Debajo están las pestañas: el resumen, la historia clínica, la ficha con sus datos, la agenda con sus citas, la cuenta con sus facturas y saldo, y el ingreso si la hospitalizan. En la fila de plantillas están los formularios clínicos que el centro usa, como el consentimiento informado.",
+      "acciones": [
+        {
+          "click": "button:has-text('Rosa Elena')",
+          "al_decir": "abro la ficha"
+        },
+        {
+          "resaltar": ".ph, app-patient-header",
+          "durante_ms": 5000,
+          "al_decir": "la cabecera",
+          "cursor": false
+        },
+        {
+          "resaltar": "button:has-text('Agendar cita')",
+          "durante_ms": 3000,
+          "al_decir": "Agendar cita abre"
+        },
+        {
+          "resaltar": "button:has-text('Nueva evolución')",
+          "durante_ms": 2500,
+          "al_decir": "Nueva evolución"
+        },
+        {
+          "resaltar": "button.tab:has-text('Resumen') >> xpath=..",
+          "durante_ms": 6000,
+          "al_decir": "las pestañas"
+        },
+        {
+          "resaltar": ":text('Consentimiento Informado') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "la fila de plantillas"
+        }
+      ]
+    },
+    {
+      "id": "02-alergia",
+      "capitulo": "Alergias, medicación y alertas",
+      "rotulo": "Alergias y alertas",
+      "ruta": "Pacientes › ficha › Resumen › Alergias",
+      "texto_pantalla": "Alergias, medicación habitual y alertas médicas",
+      "narracion": "El resumen muestra la situación clínica, las últimas evoluciones, los consentimientos y, a la derecha, lo que nadie debe pasar por alto: alertas médicas, alergias y medicación activa. La paciente es alérgica a la penicilina, así que en alergias pulso Agregar, y se abre la ventana. En alérgeno escribo el nombre: penicilina, como lo dice la paciente. Ahora abro el tipo, y en la lista elijo medicamento. Después abro la severidad, y elijo severa, porque le cuesta respirar. En reacción escribo lo que le pasa: ronchas y falta de aire. Las fechas y las notas son opcionales. Con eso, pulso el botón Agregar. La alergia queda en la lista y, por ser grave, también en la cabecera, a la vista de quien abra la ficha. La medicación habitual y las alertas médicas se registran igual, con su botón Agregar. Las escribe el personal médico; recepción solo las ve.",
+      "acciones": [
+        {
+          "resaltar": ":text('Situación clínica')",
+          "durante_ms": 3000,
+          "al_decir": "la situación clínica"
+        },
+        {
+          "resaltar": ":text('Alertas médicas') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "lo que nadie debe pasar"
+        },
+        {
+          "click": "button:has-text('Agregar') >> nth=1",
+          "al_decir": "en alergias pulso Agregar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1500,
+          "al_decir": "se abre la ventana",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='allergen']",
+            "texto": "Penicilina"
+          },
+          "al_decir": "escribo el nombre: penicilina"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='allergyType']",
+          "al_decir": "abro el tipo"
+        },
+        {
+          "click": "mat-option:has-text('Medicamento')",
+          "al_decir": "elijo medicamento"
+        },
+        {
+          "click": "mat-dialog-container mat-select[formcontrolname='severity']",
+          "al_decir": "abro la severidad"
+        },
+        {
+          "click": "mat-option:has-text('Severa')",
+          "al_decir": "elijo severa"
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container [formcontrolname='reaction']",
+            "texto": "Ronchas y falta de aire"
+          },
+          "al_decir": "En reacción escribo"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Agregar')",
+          "al_decir": "pulso el botón Agregar"
+        },
+        {
+          "resaltar": "mat-snack-bar-container",
+          "durante_ms": 2500,
+          "al_decir": "queda en la lista",
+          "cursor": false
+        },
+        {
+          "resaltar": ":text('Penicilina') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "por ser grave"
+        },
+        {
+          "resaltar": ":text('Medicación activa') >> xpath=..",
+          "durante_ms": 3500,
+          "al_decir": "La medicación habitual"
+        }
+      ]
+    },
+    {
+      "id": "03-archivos",
+      "capitulo": "Datos, archivos y estado",
+      "rotulo": "Ficha y archivos",
+      "ruta": "Pacientes › ficha › Ficha",
+      "texto_pantalla": "Ficha · datos editables, archivos del paciente y estado",
+      "narracion": "Terminado el resumen, ahora paso a la pestaña Ficha, que tiene los mismos datos del registro, editables, y se guardan con Guardar. Más abajo están los archivos del paciente: aquí se suben sus estudios, informes o documentos. Pulso Agregar archivo y elijo el PDF de su hemograma. Escribo el nombre con el que se va a buscar: hemograma. La fecha es la del estudio; la dejo en hoy. Pulso Subir. El archivo queda en la lista, guardado en la nube y no en el equipo, para descargarlo, editarlo o eliminarlo. Al final está el estado del paciente: si se desmarca Paciente activo, deja de salir al agendar, pero conserva toda su historia; un paciente con actividad no se borra, se inactiva.",
+      "acciones": [
+        {
+          "click": "button.tab:has-text('Ficha')",
+          "al_decir": "paso a la pestaña Ficha"
+        },
+        {
+          "resaltar": ".section-title:has-text('Información básica')",
+          "durante_ms": 3500,
+          "al_decir": "los mismos datos"
+        },
+        {
+          "resaltar": ".section-title:has-text('Archivos del paciente')",
+          "durante_ms": 3500,
+          "al_decir": "los archivos del paciente"
+        },
+        {
+          "click": "button:has-text('Agregar archivo')",
+          "al_decir": "Pulso Agregar archivo"
+        },
+        {
+          "subir": {
+            "sel": "app-patient-file-section input[type='file']",
+            "archivo": "seeds/clinica/archivos/hemograma-rosa-elena.pdf",
+            "ancla": "app-patient-file-section .drop-text"
+          },
+          "al_decir": "elijo el PDF"
+        },
+        {
+          "escribir": {
+            "sel": "app-patient-file-section input[formcontrolname='name']",
+            "texto": "Hemograma"
+          },
+          "al_decir": "Escribo el nombre"
+        },
+        {
+          "resaltar": "app-patient-file-section input[formcontrolname='date']",
+          "durante_ms": 2500,
+          "al_decir": "La fecha es"
+        },
+        {
+          "click": "app-patient-file-section button:has-text('Subir'), app-patient-file-section button:has-text('Guardar')",
+          "al_decir": "Pulso Subir"
+        },
+        {
+          "resaltar": "mat-snack-bar-container",
+          "durante_ms": 2500,
+          "al_decir": "El archivo queda",
+          "cursor": false
+        },
+        {
+          "resaltar": "app-patient-file-section :text('Hemograma') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "guardado en la nube"
+        },
+        {
+          "resaltar": ".section-title:has-text('Estado del paciente')",
+          "durante_ms": 4500,
+          "al_decir": "el estado del paciente"
+        }
+      ]
+    }
+  ]
+}
