@@ -43,15 +43,15 @@ def citas_06():
             "narracion": (
                 "Al lado está el enlace de reservas del centro. Es uno solo para todos los médicos, y dice cuántos "
                 "se pueden reservar en línea. Un médico aparece en el enlace cuando su consulta está marcada para "
-                "reserva en línea y tiene franjas visibles para pacientes, como vimos en la parte uno. Copiar enlace "
-                "lo deja listo para pegarlo en WhatsApp, en las redes o en la página web del centro. El aviso de "
-                "abajo confirma que quedó copiado."
+                "reserva en línea y tiene franjas visibles para pacientes, como vimos en la parte uno. Pulso Copiar "
+                "enlace, y el aviso de abajo confirma que quedó copiado: listo para pegarlo en WhatsApp, en las "
+                "redes o en la página web del centro."
             ),
             "acciones": [
                 R("app-center-booking-link", 4000, al_decir="el enlace de reservas del centro"),
                 R(":text('reservables en línea')", 3500, al_decir="dice cuántos"),
-                {"click": "button:has-text('Copiar enlace')", "al_decir": "Copiar enlace"},
-                R("mat-snack-bar-container, .mat-mdc-snack-bar-container", 2000, al_decir="El aviso de", cursor=False),
+                {"click": "button:has-text('Copiar enlace')", "al_decir": "Pulso Copiar"},
+                R("mat-snack-bar-container, .mat-mdc-snack-bar-container", 1800, al_decir="el aviso de abajo", cursor=False),
             ],
         },
         {
