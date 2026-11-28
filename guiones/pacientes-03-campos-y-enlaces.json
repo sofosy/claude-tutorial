@@ -1,0 +1,419 @@
+{
+  "titulo": "Pacientes · Parte 3: campos de la ficha y enlaces de registro",
+  "descripcion": "Tercera parte de la serie de Pacientes de RegiSalud: qué campos pide la ficha (requerido, visible u oculto), generar un enlace de registro temporal o permanente y cómo el paciente llena su registro desde el teléfono.",
+  "_comentario": "Estado: pacientes.mjs (sin enlaces ni Tomás Polanco).",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-campos",
+      "capitulo": "Qué campos pide la ficha",
+      "rotulo": "Campos de la ficha",
+      "navegar": "/patients",
+      "ruta": "Pacientes › Ajustes › Campos de la ficha",
+      "texto_pantalla": "Campos de la ficha · requerido, visible u oculto",
+      "narracion": "Cada centro decide qué le pide a sus pacientes. En Pacientes, el engranaje abre los ajustes del módulo, con dos pestañas. En Campos de la ficha está cada campo, sección por sección. En visibilidad se elige si es requerido, visible u oculto: un campo requerido se exige al registrar desde la pantalla y desde el enlace, y uno oculto desaparece del formulario. También se le puede cambiar la etiqueta, poner un texto de ayuda y moverlo de orden con las flechas. Toda una sección se oculta con su propia visibilidad. Aplicar perfil carga una configuración de fábrica, y los cambios se guardan con Guardar.",
+      "acciones": [
+        {
+          "click": "button.pc__settings",
+          "al_decir": "el engranaje abre"
+        },
+        {
+          "resaltar": "a:has-text('Campos de la ficha')",
+          "durante_ms": 3000,
+          "al_decir": "dos pestañas"
+        },
+        {
+          "resaltar": "mat-form-field.visibility-select >> nth=1",
+          "durante_ms": 4500,
+          "al_decir": "En visibilidad"
+        },
+        {
+          "resaltar": "mat-form-field.label-input >> nth=1",
+          "durante_ms": 3000,
+          "al_decir": "cambiar la etiqueta"
+        },
+        {
+          "resaltar": "mat-form-field.help-input >> nth=1",
+          "durante_ms": 2500,
+          "al_decir": "un texto de ayuda"
+        },
+        {
+          "resaltar": "button:has(mat-icon:text('arrow_downward')) >> nth=1",
+          "durante_ms": 2500,
+          "al_decir": "con las flechas"
+        },
+        {
+          "resaltar": "mat-form-field.section-visibility-select >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "Toda una sección"
+        },
+        {
+          "resaltar": "button:has-text('Aplicar perfil')",
+          "durante_ms": 3000,
+          "al_decir": "Aplicar perfil"
+        }
+      ]
+    },
+    {
+      "id": "02-enlace",
+      "capitulo": "Generar un enlace de registro",
+      "rotulo": "Enlace de registro",
+      "ruta": "Pacientes › Ajustes › Enlaces de registro",
+      "texto_pantalla": "Enlace de registro · el paciente llena su ficha desde el teléfono",
+      "narracion": "La otra pestaña son los enlaces de registro: el paciente llena sus datos desde su teléfono, antes de llegar, y recepción no tiene que escribirlos. Pulso Generar enlace. Hay dos tipos: el temporal vence a los siete días o en la fecha que elija; el permanente no vence y sirve para publicarlo en la página del centro. Lo dejo temporal y escribo el nombre del paciente, Tomás Polanco, para reconocer el enlace en la lista. Pulso Generar enlace. El sistema lo copia al portapapeles: se lo mando al paciente por WhatsApp o por correo, porque el sistema no lo envía.",
+      "acciones": [
+        {
+          "click": "a:has-text('Enlaces de registro')",
+          "al_decir": "los enlaces de registro"
+        },
+        {
+          "click": "button:has-text('Generar enlace')",
+          "al_decir": "antes de llegar, y recepción"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has([formcontrolname='linkType'])",
+          "durante_ms": 4500,
+          "al_decir": "Hay dos tipos",
+          "cursor": false
+        },
+        {
+          "escribir": {
+            "sel": "mat-dialog-container input[formcontrolname='patientName']",
+            "texto": "Tomás Polanco"
+          },
+          "al_decir": "escribo el nombre del paciente"
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar enlace')",
+          "al_decir": "Pulso Generar enlace. El sistema"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "al_decir": "lo copia al portapapeles",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Entendido')",
+          "al_decir": "porque el sistema no lo envía"
+        }
+      ]
+    },
+    {
+      "id": "03-paciente",
+      "capitulo": "El paciente llena su registro",
+      "rotulo": "Registro del paciente",
+      "setup": {
+        "tipo": "shell",
+        "cmd": "node seeds/clinica/ultimo-enlace.mjs",
+        "guardar_en": "token"
+      },
+      "navegar": "/intake/{{token}}",
+      "al_decir_navegar": "abre el enlace",
+      "ruta": "Enlace de registro (lo que ve el paciente)",
+      "texto_pantalla": "Registro del paciente · sus datos, en pasos",
+      "narracion": "Ahora me pongo en el lugar del paciente, que abre el enlace en su teléfono. El formulario va por pasos. Arriba puede entrar a su portal si ya tiene cuenta; no hace falta para registrarse. Escribe su nombre: Tomás, como en su cédula. Ahora su primer apellido, que es Polanco. En tipo de documento abre la lista y elige cédula, que es su documento. Ahora escribe su número, sin guiones ni espacios. Y por último, su fecha de nacimiento, con el día primero y después el mes. Con eso, pulsa Siguiente. Este paso tiene sus datos sociales, y es opcional, así que sigue. El siguiente es su información médica, como el tipo de sangre; sigue. Luego viene la dirección; sigue. Después sus contactos; sigue. La información de discapacidad; sigue. Los datos sociales y administrativos; sigue. Y llega al último paso.",
+      "acciones": [
+        {
+          "resaltar": ":text('Paso 1 de')",
+          "durante_ms": 3000,
+          "al_decir": "va por pasos"
+        },
+        {
+          "resaltar": "button:has-text('Ingresar al portal')",
+          "durante_ms": 3000,
+          "al_decir": "entrar a su portal"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has-text('Nombre') input >> nth=0",
+            "texto": "Tomás"
+          },
+          "al_decir": "Escribe su nombre"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has-text('Primer apellido') input",
+            "texto": "Polanco"
+          },
+          "al_decir": "Ahora su primer apellido"
+        },
+        {
+          "click": "mat-form-field:has-text('Tipo de documento') mat-select",
+          "al_decir": "abre la lista"
+        },
+        {
+          "click": "mat-option:has-text('Cédula')",
+          "al_decir": "elige cédula"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has-text('Número de documento') input",
+            "texto": "40205550188"
+          },
+          "al_decir": "Ahora escribe su número"
+        },
+        {
+          "escribir": {
+            "sel": "mat-form-field:has-text('Fecha de nacimiento') input",
+            "texto": "20/06/1987"
+          },
+          "al_decir": "su fecha de nacimiento"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "Con eso, pulsa Siguiente"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "opcional, así que sigue"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "tipo de sangre; sigue"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "la dirección; sigue"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "sus contactos; sigue"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "discapacidad; sigue"
+        },
+        {
+          "click": "button:has-text('Siguiente')",
+          "al_decir": "administrativos; sigue"
+        }
+      ]
+    },
+    {
+      "id": "04-enviar",
+      "capitulo": "Enviar el registro",
+      "rotulo": "Enviar el registro",
+      "ruta": "Enlace de registro › Enviar Formulario",
+      "texto_pantalla": "Enviar · el sistema comprueba el documento",
+      "narracion": "En el último paso pulsa Enviar Formulario. El sistema comprueba que no sea un robot y que el documento no esté ya registrado en el centro, sin decir de quién es. El registro quedó hecho, y si dejó su correo le llega la confirmación.",
+      "acciones": [
+        {
+          "click": "button:has-text('Enviar Formulario')",
+          "al_decir": "pulsa Enviar Formulario"
+        },
+        {
+          "resaltar": "mat-card, .success, .result, main",
+          "durante_ms": 4000,
+          "al_decir": "El registro quedó hecho",
+          "cursor": false
+        }
+      ]
+    },
+    {
+      "id": "05-ficha",
+      "capitulo": "La ficha nueva en el centro",
+      "rotulo": "La ficha nueva",
+      "navegar": "/patients",
+      "ruta": "Pacientes",
+      "texto_pantalla": "La ficha nace con su número de expediente",
+      "narracion": "De vuelta en el centro, Tomás Polanco ya aparece en Pacientes, con su número de expediente, listo para agendarle. La marca Incompleta avisa que le faltan datos que la ficha pide; recepción los completa cuando llegue. Si el documento ya existía, el registro se rechaza y el paciente ve que debe comunicarse con el centro.",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Tomás')",
+          "durante_ms": 4000,
+          "al_decir": "ya aparece en Pacientes"
+        },
+        {
+          "resaltar": ":text('Incompleta') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "La marca Incompleta"
+        }
+      ]
+    }
+  ]
+}

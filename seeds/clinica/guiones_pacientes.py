@@ -265,6 +265,130 @@ def pacientes_02():
     )
 
 
+def pacientes_03():
+    I = "mat-form-field:has-text('{}') input"
+    pasos = [
+        {
+            "id": "01-campos", "capitulo": "Qué campos pide la ficha", "rotulo": "Campos de la ficha",
+            "navegar": "/patients", "ruta": "Pacientes › Ajustes › Campos de la ficha",
+            "texto_pantalla": "Campos de la ficha · requerido, visible u oculto",
+            "narracion": (
+                "Cada centro decide qué le pide a sus pacientes. En Pacientes, el engranaje abre los ajustes del "
+                "módulo, con dos pestañas. En Campos de la ficha está cada campo, sección por sección. En "
+                "visibilidad se elige si es requerido, visible u oculto: un campo requerido se exige al registrar "
+                "desde la pantalla y desde el enlace, y uno oculto desaparece del formulario. También se le puede "
+                "cambiar la etiqueta, poner un texto de ayuda y moverlo de orden con las flechas. Toda una sección "
+                "se oculta con su propia visibilidad. Aplicar perfil carga una configuración de fábrica, y los "
+                "cambios se guardan con Guardar."
+            ),
+            "acciones": [
+                {"click": "button.pc__settings", "al_decir": "el engranaje abre"},
+                R("a:has-text('Campos de la ficha')", 3000, al_decir="dos pestañas"),
+                R("mat-form-field.visibility-select >> nth=1", 4500, al_decir="En visibilidad"),
+                R("mat-form-field.label-input >> nth=1", 3000, al_decir="cambiar la etiqueta"),
+                R("mat-form-field.help-input >> nth=1", 2500, al_decir="un texto de ayuda"),
+                R("button:has(mat-icon:text('arrow_downward')) >> nth=1", 2500, al_decir="con las flechas"),
+                R("mat-form-field.section-visibility-select >> nth=0", 3000, al_decir="Toda una sección"),
+                R("button:has-text('Aplicar perfil')", 3000, al_decir="Aplicar perfil"),
+            ],
+        },
+        {
+            "id": "02-enlace", "capitulo": "Generar un enlace de registro", "rotulo": "Enlace de registro",
+            "ruta": "Pacientes › Ajustes › Enlaces de registro",
+            "texto_pantalla": "Enlace de registro · el paciente llena su ficha desde el teléfono",
+            "narracion": (
+                "La otra pestaña son los enlaces de registro: el paciente llena sus datos desde su teléfono, antes "
+                "de llegar, y recepción no tiene que escribirlos. Pulso Generar enlace. Hay dos tipos: el temporal vence a los "
+                "siete días o en la fecha que elija; el permanente no vence y sirve para publicarlo en la página "
+                "del centro. Lo dejo temporal y escribo el nombre del paciente, Tomás Polanco, para reconocer el "
+                "enlace en la lista. Pulso Generar enlace. El sistema lo copia al portapapeles: se lo mando al "
+                "paciente por WhatsApp o por correo, porque el sistema no lo envía."
+            ),
+            "acciones": [
+                {"click": "a:has-text('Enlaces de registro')", "al_decir": "los enlaces de registro"},
+                {"click": "button:has-text('Generar enlace')", "al_decir": "antes de llegar, y recepción"},
+                R("mat-dialog-container mat-form-field:has([formcontrolname='linkType'])", 4500, al_decir="Hay dos tipos", cursor=False),
+                {"escribir": {"sel": "mat-dialog-container input[formcontrolname='patientName']", "texto": "Tomás Polanco"},
+                 "al_decir": "escribo el nombre del paciente"},
+                {"click": "mat-dialog-container button:has-text('Generar enlace')", "al_decir": "Pulso Generar enlace. El sistema"},
+                R("mat-dialog-container", 4000, al_decir="lo copia al portapapeles", cursor=False),
+                {"click": "mat-dialog-container button:has-text('Entendido')", "al_decir": "porque el sistema no lo envía"},
+            ],
+        },
+        {
+            "id": "03-paciente", "capitulo": "El paciente llena su registro", "rotulo": "Registro del paciente",
+            "setup": {"tipo": "shell", "cmd": "node seeds/clinica/ultimo-enlace.mjs", "guardar_en": "token"},
+            "navegar": "/intake/{{token}}", "al_decir_navegar": "abre el enlace",
+            "ruta": "Enlace de registro (lo que ve el paciente)",
+            "texto_pantalla": "Registro del paciente · sus datos, en pasos",
+            "narracion": (
+                "Ahora me pongo en el lugar del paciente, que abre el enlace en su teléfono. El formulario va por "
+                "pasos. Arriba puede entrar a su portal si ya tiene cuenta; no hace falta para registrarse. Escribe "
+                "su nombre: Tomás, como en su cédula. Ahora su primer apellido, que es Polanco. En tipo de documento "
+                "abre la lista y elige cédula, que es su documento. Ahora escribe su número, sin guiones ni espacios. Y por último, su "
+                "fecha de nacimiento, con el día primero y después el mes. Con eso, pulsa Siguiente. Este paso tiene sus datos sociales, y es opcional, así que sigue. El "
+                "siguiente es su información médica, como el tipo de sangre; sigue. Luego viene la dirección; "
+                "sigue. Después sus contactos; sigue. La información de discapacidad; sigue. Los datos sociales y "
+                "administrativos; sigue. Y llega al último paso."
+            ),
+            "acciones": [
+                R(":text('Paso 1 de')", 3000, al_decir="va por pasos"),
+                R("button:has-text('Ingresar al portal')", 3000, al_decir="entrar a su portal"),
+                {"escribir": {"sel": I.format("Nombre") + " >> nth=0", "texto": "Tomás"}, "al_decir": "Escribe su nombre"},
+                {"escribir": {"sel": I.format("Primer apellido"), "texto": "Polanco"}, "al_decir": "Ahora su primer apellido"},
+                {"click": "mat-form-field:has-text('Tipo de documento') mat-select", "al_decir": "abre la lista"},
+                {"click": "mat-option:has-text('Cédula')", "al_decir": "elige cédula"},
+                {"escribir": {"sel": I.format("Número de documento"), "texto": "40205550188"}, "al_decir": "Ahora escribe su número"},
+                {"escribir": {"sel": I.format("Fecha de nacimiento"), "texto": "20/06/1987"}, "al_decir": "su fecha de nacimiento"},
+                {"click": "button:has-text('Siguiente')", "al_decir": "Con eso, pulsa Siguiente"},
+                {"click": "button:has-text('Siguiente')", "al_decir": "opcional, así que sigue"},
+                {"click": "button:has-text('Siguiente')", "al_decir": "tipo de sangre; sigue"},
+                {"click": "button:has-text('Siguiente')", "al_decir": "la dirección; sigue"},
+                {"click": "button:has-text('Siguiente')", "al_decir": "sus contactos; sigue"},
+                {"click": "button:has-text('Siguiente')", "al_decir": "discapacidad; sigue"},
+                {"click": "button:has-text('Siguiente')", "al_decir": "administrativos; sigue"},
+            ],
+        },
+        {
+            "id": "04-enviar", "capitulo": "Enviar el registro", "rotulo": "Enviar el registro",
+            "ruta": "Enlace de registro › Enviar Formulario",
+            "texto_pantalla": "Enviar · el sistema comprueba el documento",
+            "narracion": (
+                "En el último paso pulsa Enviar Formulario. El sistema comprueba que no sea un robot y que el "
+                "documento no esté ya registrado en el centro, sin decir de quién es. El registro quedó hecho, y "
+                "si dejó su correo le llega la confirmación."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Enviar Formulario')", "al_decir": "pulsa Enviar Formulario"},
+                R("mat-card, .success, .result, main", 4000, al_decir="El registro quedó hecho", cursor=False),
+            ],
+        },
+        {
+            "id": "05-ficha", "capitulo": "La ficha nueva en el centro", "rotulo": "La ficha nueva",
+            "navegar": "/patients",
+            "ruta": "Pacientes",
+            "texto_pantalla": "La ficha nace con su número de expediente",
+            "narracion": (
+                "De vuelta en el centro, Tomás Polanco ya aparece en Pacientes, con su número de expediente, listo "
+                "para agendarle. La marca Incompleta avisa que le faltan datos que la ficha pide; recepción los "
+                "completa cuando llegue. Si el documento ya existía, el registro se rechaza y el paciente ve que debe "
+                "comunicarse con el centro."
+            ),
+            "acciones": [
+                R("button:has-text('Tomás')", 4000, al_decir="ya aparece en Pacientes"),
+                R(":text('Incompleta') >> nth=0", 3500, al_decir="La marca Incompleta"),
+            ],
+        },
+    ]
+    return guion(
+        "pacientes-03-campos-y-enlaces", "Pacientes · Parte 3: campos de la ficha y enlaces de registro",
+        "Tercera parte de la serie de Pacientes de RegiSalud: qué campos pide la ficha (requerido, visible u "
+        "oculto), generar un enlace de registro temporal o permanente y cómo el paciente llena su registro desde "
+        "el teléfono.",
+        pasos, comentario="Estado: pacientes.mjs (sin enlaces ni Tomás Polanco).", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (pacientes_01, pacientes_02):
+    for f in (pacientes_01, pacientes_02, pacientes_03):
         print(f())

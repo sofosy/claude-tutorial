@@ -181,6 +181,11 @@ def _rutas_locales(ctx, guion):
             "document.addEventListener('DOMContentLoaded', () => {"
             " const s = document.createElement('style'); s.textContent = %s;"
             " document.head.appendChild(s); });" % css)
+    # `js_global`: scripts que corren antes que la app en cada página. Caso típico: la
+    # app abre una pestaña nueva (window.open) y el grabador solo filma la actual;
+    # el guion la redirige a la misma pestaña para que el paso se vea en cámara.
+    for js in guion.get("js_global", []):
+        ctx.add_init_script(js)
     for r in guion.get("rutas_locales", []):
         def servir(route, _req=None, r=r):
             if r.get("archivo"):

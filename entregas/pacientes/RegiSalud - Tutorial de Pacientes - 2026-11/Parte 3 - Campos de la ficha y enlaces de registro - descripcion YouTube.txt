@@ -1,0 +1,28 @@
+TÍTULO
+============================================================
+Pacientes · Parte 3: campos de la ficha y enlaces de registro
+
+DESCRIPCIÓN
+============================================================
+Tercera parte de la serie de Pacientes de RegiSalud: qué campos pide la ficha (requerido, visible u oculto), generar un enlace de registro temporal o permanente y cómo el paciente llena su registro desde el teléfono.
+
+⏱️ CAPÍTULOS
+00:00  Qué campos pide la ficha
+00:43  Generar un enlace de registro
+01:19  El paciente llena su registro
+02:23  Enviar el registro
+02:38  La ficha nueva en el centro
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 03:02
+
+TRANSCRIPCIÓN
+============================================================
+Cada centro decide qué le pide a sus pacientes. En Pacientes, el engranaje abre los ajustes del módulo, con dos pestañas. En Campos de la ficha está cada campo, sección por sección. En visibilidad se elige si es requerido, visible u oculto: un campo requerido se exige al registrar desde la pantalla y desde el enlace, y uno oculto desaparece del formulario. También se le puede cambiar la etiqueta, poner un texto de ayuda y moverlo de orden con las flechas. Toda una sección se oculta con su propia visibilidad. Aplicar perfil carga una configuración de fábrica, y los cambios se guardan con Guardar.
+La otra pestaña son los enlaces de registro: el paciente llena sus datos desde su teléfono, antes de llegar, y recepción no tiene que escribirlos. Pulso Generar enlace. Hay dos tipos: el temporal vence a los siete días o en la fecha que elija; el permanente no vence y sirve para publicarlo en la página del centro. Lo dejo temporal y escribo el nombre del paciente, Tomás Polanco, para reconocer el enlace en la lista. Pulso Generar enlace. El sistema lo copia al portapapeles: se lo mando al paciente por WhatsApp o por correo, porque el sistema no lo envía.
+Ahora me pongo en el lugar del paciente, que abre el enlace en su teléfono. El formulario va por pasos. Arriba puede entrar a su portal si ya tiene cuenta; no hace falta para registrarse. Escribe su nombre: Tomás, como en su cédula. Ahora su primer apellido, que es Polanco. En tipo de documento abre la lista y elige cédula, que es su documento. Ahora escribe su número, sin guiones ni espacios. Y por último, su fecha de nacimiento, con el día primero y después el mes. Con eso, pulsa Siguiente. Este paso tiene sus datos sociales, y es opcional, así que sigue. El siguiente es su información médica, como el tipo de sangre; sigue. Luego viene la dirección; sigue. Después sus contactos; sigue. La información de discapacidad; sigue. Los datos sociales y administrativos; sigue. Y llega al último paso.
+En el último paso pulsa Enviar Formulario. El sistema comprueba que no sea un robot y que el documento no esté ya registrado en el centro, sin decir de quién es. El registro quedó hecho, y si dejó su correo le llega la confirmación.
+De vuelta en el centro, Tomás Polanco ya aparece en Pacientes, con su número de expediente, listo para agendarle. La marca Incompleta avisa que le faltan datos que la ficha pide; recepción los completa cuando llegue. Si el documento ya existía, el registro se rechaza y el paciente ve que debe comunicarse con el centro.
