@@ -4,6 +4,7 @@
   "_comentario": "Estado: ars.mjs restaurar G (F + lo que deja la parte 6).",
   "base_url": "http://127.0.0.1:4200",
   "zona_horaria": "America/Santo_Domingo",
+  "idioma": "es-DO",
   "sesion": {
     "tipo": "api",
     "url": "http://localhost:3001/api/auth/dev/login",
@@ -200,7 +201,7 @@
       "navegar": "/patients/547?tab=ars",
       "ruta": "Pacientes › ficha › ARS › Reclamaciones a la ARS",
       "texto_pantalla": "El formulario por servicios prestados, lleno con los datos del paciente",
-      "narracion": "Algunas ARS piden, además de la factura y el anexo, el formulario de reclamación por servicios prestados de cada paciente, firmado por el médico. Está en la ficha del paciente, pestaña ARS, en Reclamaciones a la ARS. Abro la de Carolina. El formulario sale lleno con sus datos, su afiliación, la autorización y los servicios. Elijo el médico tratante: escribo su nombre, y elijo a la doctora Ana cuando aparece en la lista. Con el médico puesto, guardo los cambios del formulario. Desde aquí se descarga en PDF, o se imprime para que el médico lo firme.",
+      "narracion": "Algunas ARS piden, además de la factura y el anexo, el formulario de reclamación por servicios prestados de cada paciente, firmado por el médico. Está en la ficha del paciente, pestaña ARS, en Reclamaciones a la ARS. Abro la de Carolina. El formulario sale lleno con sus datos, su afiliación, la autorización y los servicios; si falta algo que la ARS exige, como el diagnóstico, lo avisa arriba, y se completa aquí mismo. Elijo el médico tratante: escribo su nombre, y elijo a la doctora Ana cuando aparece en la lista. Con el médico puesto, guardo los cambios del formulario. Desde aquí se descarga en PDF, o se imprime para que el médico lo firme.",
       "acciones": [
         {
           "resaltar": ":text('Reclamaciones a la ARS') >> xpath=..",
@@ -212,10 +213,15 @@
           "al_decir": "Abro la de Carolina"
         },
         {
-          "resaltar": "app-patient-claim-form-tab",
-          "durante_ms": 4000,
+          "resaltar": ":text('Formulario de Reclamación') >> nth=-1 >> xpath=..",
+          "durante_ms": 3000,
           "al_decir": "sale lleno",
           "cursor": false
+        },
+        {
+          "resaltar": ":text('Faltan datos requeridos') >> xpath=ancestor::*[2]",
+          "durante_ms": 4000,
+          "al_decir": "si falta algo"
         },
         {
           "click": "app-patient-claim-form-tab app-autocomplete input",

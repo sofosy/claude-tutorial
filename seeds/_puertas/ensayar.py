@@ -211,7 +211,8 @@ def main():
         try:
             ctx_nav = nav.new_context(viewport={"width": g.ANCHO_CSS, "height": g.ALTO_CSS},
                                       device_scale_factor=g.ESCALA,
-                                      **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
+                                      **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}),
+                                      **({"locale": guion["idioma"]} if guion.get("idioma") else {}))
             ctx_nav.add_init_script(g.JS_CAPA)  # cursor, marca y sonda de alertas del motor
             _rutas_locales(ctx_nav, guion)  # fuentes, css_global y js_global, como en la grabación
             if api_ensayo:

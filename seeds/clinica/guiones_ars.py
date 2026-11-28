@@ -660,14 +660,16 @@ def ars_07():
                 "Algunas ARS piden, además de la factura y el anexo, el formulario de reclamación por servicios "
                 "prestados de cada paciente, firmado por el médico. Está en la ficha del paciente, pestaña ARS, en "
                 "Reclamaciones a la ARS. Abro la de Carolina. El formulario sale lleno con sus datos, su afiliación, "
-                "la autorización y los servicios. Elijo el médico tratante: escribo su nombre, y elijo a la doctora "
+                "la autorización y los servicios; si falta algo que la ARS exige, como el diagnóstico, lo avisa "
+                "arriba, y se completa aquí mismo. Elijo el médico tratante: escribo su nombre, y elijo a la doctora "
                 "Ana cuando aparece en la lista. Con el médico puesto, guardo los cambios del formulario. Desde aquí se descarga en "
                 "PDF, o se imprime para que el médico lo firme."
             ),
             "acciones": [
                 R(":text('Reclamaciones a la ARS') >> xpath=..", 3000, al_decir="en Reclamaciones a la ARS"),
                 {"click": "button[aria-label^='Abrir la reclamación'] >> nth=0", "al_decir": "Abro la de Carolina"},
-                R("app-patient-claim-form-tab", 4000, al_decir="sale lleno", cursor=False),
+                R(":text('Formulario de Reclamación') >> nth=-1 >> xpath=..", 3000, al_decir="sale lleno", cursor=False),
+                R(":text('Faltan datos requeridos') >> xpath=ancestor::*[2]", 4000, al_decir="si falta algo"),
                 {"click": "app-patient-claim-form-tab app-autocomplete input", "al_decir": "Elijo el médico"},
                 {"teclear": "Ana", "al_decir": "escribo su nombre"},
                 {"click": "mat-option:has-text('Ana') >> nth=0", "al_decir": "cuando aparece"},
