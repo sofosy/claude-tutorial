@@ -17,7 +17,12 @@ DELETE FROM patient_tickets WHERE company_id=${E};
 DELETE FROM appointment_reminders WHERE appointment_id IN (SELECT id FROM appointments WHERE company_id=${E});
 DELETE FROM bookings WHERE booking_page_id IN (SELECT id FROM booking_pages WHERE company_id=${E});
 DELETE FROM appointments WHERE company_id=${E};
-DELETE FROM schedule_events WHERE company_id=${E} AND title LIKE 'Reserva:%';`;
+DELETE FROM schedule_events WHERE company_id=${E} AND title LIKE 'Reserva:%';
+-- Cuenta del portal de Gabriela (la crea su reserva en línea del video 2): sin ella, la reserva vuelve a pedir el código.
+DELETE FROM patient_portal_sessions WHERE account_id IN (SELECT id FROM patient_portal_accounts WHERE company_id=${E} AND email LIKE 'gabriela.%');
+DELETE FROM patient_portal_result_reads WHERE account_id IN (SELECT id FROM patient_portal_accounts WHERE company_id=${E} AND email LIKE 'gabriela.%');
+DELETE FROM patient_portal_access WHERE account_id IN (SELECT id FROM patient_portal_accounts WHERE company_id=${E} AND email LIKE 'gabriela.%');
+DELETE FROM patient_portal_accounts WHERE company_id=${E} AND email LIKE 'gabriela.%';`;
 sql(borrarCitas + `
 DELETE FROM schedule_exceptions WHERE company_id=${E};
 DELETE FROM staff_schedules WHERE staff_id=${LUIS};

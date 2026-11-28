@@ -286,7 +286,7 @@ def citas_02():
                 {"click": "input[name='patient-choice'] >> nth=0", "al_decir": "Es para ella"},
                 {"click": "button:has-text('Revisar la cita')", "al_decir": "Pulsa Revisar"},
                 {"click": "button[type='submit']", "al_decir": "pulsa Confirmar cita"},
-                R("main, .page", 5000, al_decir="quedó confirmada", cursor=False),
+                R(":text('Tu reserva quedó confirmada')", 4000, al_decir="quedó confirmada", cursor=False),
             ],
         },
         {
@@ -298,24 +298,28 @@ def citas_02():
                 "Ahora la recepción. En el Calendario, Reservas sin ficha. Si el correo de Gabriela estuviera en su "
                 "ficha, la cita se habría creado sola. Pero su ficha no lo tiene, así que el centro todavía no sabe "
                 "quién es: el turno está apartado, pero no es una cita ni sale en el calendario. Cada reserva tiene "
-                "cuatro acciones. Registrar paciente crea la ficha con los datos de la reserva, si es nueva. "
-                "Confirmar turno la marca confirmada, y Cancelar reserva libera el horario. Gabriela ya es "
+                "sus acciones. Registrar paciente crea la ficha con los datos de la reserva, si es nueva. Si la "
+                "reserva quedó pendiente, Confirmar turno la confirma; esta ya está confirmada. Y Cancelar reserva "
+                "libera el horario. Gabriela ya es "
                 "paciente, así que pulso Vincular paciente. La busco por su nombre, o por su cédula, y pulso Buscar. "
-                "Aparece su ficha; verifico que es ella, pulso Vincular esta ficha y confirmo. Ahora sí se crea la "
-                "cita, con su médico y su turno, y le llega la confirmación por correo."
+                "Aparece su ficha; verifico que es ella, pulso Vincular esta ficha. El sistema pregunta "
+                "si la vinculo, y confirmo. Ahora sí se crea la "
+                "cita, con su médico y su turno: el aviso lo confirma, y a Gabriela le llega la confirmación por "
+                "correo."
             ),
             "acciones": [
                 R("h2:has-text('Gabriela')", 3500, al_decir="el correo de Gabriela"),
                 R("h2:has-text('Gabriela') >> xpath=..", 4000, al_decir="el turno está apartado"),
-                R("button:has-text('Registrar paciente')", 3000, al_decir="Registrar paciente"),
-                R("button:has-text('Confirmar turno')", 2500, al_decir="Confirmar turno"),
+                R("a:has-text('Registrar paciente')", 3000, al_decir="Registrar paciente"),
+                R(".identity .status", 2500, al_decir="Confirmar turno"),
                 R("button:has-text('Cancelar reserva')", 2500, al_decir="Cancelar reserva"),
                 {"click": "button:has-text('Vincular paciente')", "al_decir": "pulso Vincular paciente"},
                 {"escribir": {"sel": "input[name='query']", "texto": "Gabriela"}, "al_decir": "La busco"},
                 {"click": "button:has-text('Buscar')", "al_decir": "pulso Buscar"},
                 {"click": "button:has-text('Vincular esta ficha')", "al_decir": "pulso Vincular esta ficha"},
+                R("mat-dialog-container", 2500, al_decir="El sistema pregunta", cursor=False),
                 {"click": "mat-dialog-container button:has-text('Vincular')", "al_decir": "y confirmo"},
-                R("mat-snack-bar-container, main", 3500, al_decir="Ahora sí se crea", cursor=False),
+                R(":text('Reserva vinculada')", 3500, al_decir="Ahora sí se crea", cursor=False),
             ],
         },
     ]
@@ -329,6 +333,122 @@ def citas_02():
     )
 
 
+def citas_03():
+    pasos = [
+        {
+            "id": "01-calendario", "capitulo": "El Calendario: todas las citas", "rotulo": "Calendario",
+            "navegar": "/home", "ruta": "Calendario",
+            "texto_pantalla": "Calendario · mes, semana, día y lista",
+            "narracion": (
+                "Ahora vemos las citas desde dentro del centro. Entro a Calendario, en el menú de la izquierda. Abre "
+                "en el mes actual. Cada bloque es una cita, con su hora y el paciente, y el color dice su estado; "
+                "abajo está la leyenda de colores: programada, confirmada, en espera, atendida, cancelada. Con las "
+                "flechas se cambia de mes y Hoy vuelve al día actual. Estos botones cambian la vista: mes, semana, "
+                "día y lista. Paso a la semana."
+            ),
+            "acciones": [
+                {"click": "a.rail-item[aria-label='Calendario']", "al_decir": "Entro a Calendario"},
+                R(".fc-daygrid-event >> nth=0", 3500, al_decir="Cada bloque"),
+                R(".calendar-legend", 4500, al_decir="la leyenda"),
+                R("button.today-btn", 2500, al_decir="Hoy vuelve"),
+                R(".view-toggle-group", 3500, al_decir="Estos botones"),
+                {"click": ".view-toggle-btn >> nth=1", "al_decir": "Paso a la semana"},
+            ],
+        },
+        {
+            "id": "02-filtros", "capitulo": "Filtrar y ver la disponibilidad", "rotulo": "Filtros",
+            "ruta": "Calendario › Semana",
+            "texto_pantalla": "Filtros · médico, especialidad, consultorio y estado",
+            "narracion": (
+                "Con todos los médicos juntos, la semana se llena. Para eso está esta fila de filtros: buscar, "
+                "médicos, especialidad, consultorio y estado. Abro Médicos, y en la lista elijo a la doctora Ana "
+                "Pérez. Quedan "
+                "solo sus citas. Con un solo médico se puede encender Disponibilidad: se pintan en verde las horas "
+                "en que atiende y todavía tiene turnos libres. Toco una cita, y a la derecha sale su panel: el "
+                "paciente, el médico, el motivo y el consultorio, con los botones para verla, editarla, "
+                "reprogramarla, cambiar su estado o cancelarla."
+            ),
+            "acciones": [
+                R(".calendar-filters", 4000, al_decir="esta fila de filtros"),
+                {"click": "mat-select[formcontrolname='staffIds']", "al_decir": "Abro Médicos"},
+                {"click": "mat-option:has-text('Ana Pérez')", "al_decir": "elijo a la doctora"},
+                {"presionar": {"tecla": "Escape"}, "al_decir": "Quedan"},
+                {"click": "mat-slide-toggle:has-text('Disponibilidad')", "al_decir": "encender Disponibilidad"},
+                {"click": ".fc-timegrid-event >> nth=0", "al_decir": "Toco una cita"},
+                R(".appointment-panel, .side-panel, mat-sidenav, aside", 6000, al_decir="sale su panel", cursor=False),
+            ],
+        },
+        {
+            "id": "03-lista", "capitulo": "La vista de lista y la búsqueda", "rotulo": "Vista de lista",
+            "ruta": "Calendario › Lista",
+            "texto_pantalla": "Lista · las citas por día, con búsqueda",
+            "narracion": (
+                "Ahora otra vista. Cierro el panel y paso a la vista de lista, que es la más cómoda para recepción: una fila por "
+                "cita, agrupadas por día. Quito el filtro del médico, y para encontrar a alguien uso Buscar: "
+                "escribo Rafael, y la lista se filtra mientras escribo. Aparece su cita con la doctora Ana Pérez."
+            ),
+            "acciones": [
+                {"click": "button:has(mat-icon:text('close')) >> nth=0", "al_decir": "Cierro el panel"},
+                {"click": ".view-toggle-btn >> nth=3", "al_decir": "la vista de lista"},
+                {"click": "mat-select[formcontrolname='staffIds']", "al_decir": "Quito el filtro"},
+                {"click": "mat-option:has-text('Ana Pérez')", "al_decir": "del médico"},
+                {"presionar": {"tecla": "Escape"}, "al_decir": "para encontrar"},
+                {"escribir": {"sel": "input[formcontrolname='searchTerm']", "texto": "Rafael"}, "al_decir": "escribo Rafael"},
+                R(".fc-list-event >> nth=0", 3500, al_decir="Aparece su cita"),
+            ],
+        },
+        {
+            "id": "04-centro", "capitulo": "La Agenda del Centro", "rotulo": "Agenda del Centro",
+            "ruta": "Calendario › Agenda del Centro",
+            "texto_pantalla": "Agenda del Centro · una columna por médico",
+            "narracion": (
+                "Para ver el día de todo el centro, pulso Agenda del Centro. Aquí cada columna es un médico, con cuántas "
+                "citas tiene, y cada tarjeta es una cita con su hora, el paciente y su estado. Con la flecha paso "
+                "al día siguiente, y el botón Hoy vuelve a hoy. Solo médicos con citas esconde las columnas vacías, "
+                "y mostrar canceladas añade las que se cancelaron. El más de cada columna agenda una cita nueva con "
+                "ese médico, y al tocar su nombre se abre su panel. La otra vista, por período, lista las citas de "
+                "varios días."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Agenda del Centro')", "al_decir": "pulso Agenda del Centro"},
+                R(".col >> nth=0", 4000, al_decir="Aquí cada columna"),
+                {"click": "button[aria-label='Día siguiente']", "al_decir": "paso al día siguiente"},
+                R("button.today-btn", 2500, al_decir="el botón Hoy"),
+                R("mat-slide-toggle >> nth=1", 3000, al_decir="Solo médicos con citas"),
+                R("mat-slide-toggle >> nth=0", 3000, al_decir="mostrar canceladas"),
+                R("button.col__add >> nth=0", 3000, al_decir="El más"),
+                R(".col__head >> nth=0", 2500, al_decir="su nombre"),
+                R("button:has-text('Período'), button:has-text('Periodo')", 3000, al_decir="por período"),
+            ],
+        },
+        {
+            "id": "05-medico", "capitulo": "La agenda de cada médico", "rotulo": "Agenda del médico",
+            "ruta": "Médicos › Ana Pérez › Agenda › Citas",
+            "texto_pantalla": "Agenda del médico · próximas, hoy y anteriores",
+            "narracion": (
+                "Y cada médico tiene su agenda en su panel. Toco el nombre de la doctora Ana Pérez. En la pestaña "
+                "Agenda, la vista Citas muestra su semana y debajo la lista: próximas, las de hoy o las anteriores, "
+                "con la hora, el paciente y el consultorio. Desde el botón de estado de cada cita se confirma, se "
+                "registra la llegada o se marca que no asistió. En la próxima parte agendamos una cita y la "
+                "manejamos de principio a fin."
+            ),
+            "acciones": [
+                {"click": ".col__head:has-text('Ana Pérez')", "al_decir": "Toco el nombre"},
+                {"click": "button.tab:has-text('Agenda')", "al_decir": "En la pestaña"},
+                R("button:has-text('Próximas')", 3500, al_decir="próximas"),
+                R("button:has-text('Estado') >> nth=0, button.status-btn >> nth=0", 4000, al_decir="el botón de estado"),
+            ],
+        },
+    ]
+    return guion(
+        "citas-03-calendario-agenda", "Citas · Parte 3: el calendario y la agenda del centro",
+        "Tercera parte de la serie de Citas de RegiSalud: el Calendario con sus vistas (mes, semana, día y lista), "
+        "los colores de estado, los filtros por médico, especialidad, consultorio y estado, la disponibilidad de "
+        "un médico, el panel de una cita, la búsqueda, la Agenda del Centro por médico y la agenda de cada médico.",
+        pasos, comentario="Estado C de citas.mjs.", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (citas_01, citas_02):
+    for f in (citas_01, citas_02, citas_03):
         print(f())

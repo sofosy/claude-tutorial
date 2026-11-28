@@ -329,8 +329,8 @@
           "al_decir": "pulsa Confirmar cita"
         },
         {
-          "resaltar": "main, .page",
-          "durante_ms": 5000,
+          "resaltar": ":text('Tu reserva quedó confirmada')",
+          "durante_ms": 4000,
           "al_decir": "quedó confirmada",
           "cursor": false
         }
@@ -343,7 +343,7 @@
       "navegar": "/agenda/reservas-sin-ficha",
       "ruta": "Calendario › Reservas sin ficha",
       "texto_pantalla": "Reservas sin ficha · verificar la identidad y vincular",
-      "narracion": "Ahora la recepción. En el Calendario, Reservas sin ficha. Si el correo de Gabriela estuviera en su ficha, la cita se habría creado sola. Pero su ficha no lo tiene, así que el centro todavía no sabe quién es: el turno está apartado, pero no es una cita ni sale en el calendario. Cada reserva tiene cuatro acciones. Registrar paciente crea la ficha con los datos de la reserva, si es nueva. Confirmar turno la marca confirmada, y Cancelar reserva libera el horario. Gabriela ya es paciente, así que pulso Vincular paciente. La busco por su nombre, o por su cédula, y pulso Buscar. Aparece su ficha; verifico que es ella, pulso Vincular esta ficha y confirmo. Ahora sí se crea la cita, con su médico y su turno, y le llega la confirmación por correo.",
+      "narracion": "Ahora la recepción. En el Calendario, Reservas sin ficha. Si el correo de Gabriela estuviera en su ficha, la cita se habría creado sola. Pero su ficha no lo tiene, así que el centro todavía no sabe quién es: el turno está apartado, pero no es una cita ni sale en el calendario. Cada reserva tiene sus acciones. Registrar paciente crea la ficha con los datos de la reserva, si es nueva. Si la reserva quedó pendiente, Confirmar turno la confirma; esta ya está confirmada. Y Cancelar reserva libera el horario. Gabriela ya es paciente, así que pulso Vincular paciente. La busco por su nombre, o por su cédula, y pulso Buscar. Aparece su ficha; verifico que es ella, pulso Vincular esta ficha. El sistema pregunta si la vinculo, y confirmo. Ahora sí se crea la cita, con su médico y su turno: el aviso lo confirma, y a Gabriela le llega la confirmación por correo.",
       "acciones": [
         {
           "resaltar": "h2:has-text('Gabriela')",
@@ -356,12 +356,12 @@
           "al_decir": "el turno está apartado"
         },
         {
-          "resaltar": "button:has-text('Registrar paciente')",
+          "resaltar": "a:has-text('Registrar paciente')",
           "durante_ms": 3000,
           "al_decir": "Registrar paciente"
         },
         {
-          "resaltar": "button:has-text('Confirmar turno')",
+          "resaltar": ".identity .status",
           "durante_ms": 2500,
           "al_decir": "Confirmar turno"
         },
@@ -390,11 +390,17 @@
           "al_decir": "pulso Vincular esta ficha"
         },
         {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2500,
+          "al_decir": "El sistema pregunta",
+          "cursor": false
+        },
+        {
           "click": "mat-dialog-container button:has-text('Vincular')",
           "al_decir": "y confirmo"
         },
         {
-          "resaltar": "mat-snack-bar-container, main",
+          "resaltar": ":text('Reserva vinculada')",
           "durante_ms": 3500,
           "al_decir": "Ahora sí se crea",
           "cursor": false
