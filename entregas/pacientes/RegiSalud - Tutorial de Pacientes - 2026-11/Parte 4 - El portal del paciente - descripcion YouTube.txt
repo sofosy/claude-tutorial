@@ -1,0 +1,28 @@
+TÍTULO
+============================================================
+Pacientes · Parte 4: el portal del paciente
+
+DESCRIPCIÓN
+============================================================
+Cuarta parte de la serie de Pacientes de RegiSalud: configurar el portal del paciente, dar acceso a un paciente desde su ficha, publicarle un resultado en PDF y cómo entra con su correo y un código para ver sus citas y sus resultados.
+
+⏱️ CAPÍTULOS
+00:00  Configurar el portal del paciente
+00:45  Dar acceso a un paciente
+01:25  Publicar un resultado
+01:52  El paciente entra a su portal
+02:11  Sus citas y sus resultados
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 02:54
+
+TRANSCRIPCIÓN
+============================================================
+El portal del paciente es la página donde el paciente entra con su correo para ver sus citas y los resultados que el centro le publica. No da acceso a ninguna pantalla del centro ni a su historia clínica. Se configura desde el Calendario, con Configurar portal del paciente. Permitir acceso deja entrar a los pacientes. Mostrar citas les enseña sus citas, y permitir reservas les deja agendar desde el portal. Los resultados vienen apagados: los enciendo, porque vamos a publicar un análisis. Si el centro tiene WhatsApp conectado, los códigos de acceso también pueden ir por ahí. Pulso Guardar configuración, y el aviso confirma que quedó guardada.
+Cualquier paciente puede crear su cuenta al reservar por internet. Pero el centro también le da acceso desde su ficha. Abro a Rosa Elena Martínez y paso a la pestaña Ficha. Más abajo está Gestionar acceso al portal. El tipo de acceso es paciente titular, ella misma; para un niño se autoriza a su representante. El canal es el correo, y escribo el suyo. Marco lo que podrá ver: citas, formularios y resultados publicados. Por último, confirmo que verifiqué su identidad y su correo, y pulso Guardar y enviar código. Le llega un código para entrar.
+Justo debajo están los resultados para el portal. Escribo el título que verá la paciente: hemograma completo, tal como lo entregó el laboratorio. Ahora pulso Seleccionar PDF y elijo el archivo del laboratorio. Pulso Publicar para este paciente. El resultado queda en la lista, y desde aquí se puede retirar. Publicarlo no lo agrega a los archivos de la ficha: son cosas distintas.
+Ahora la paciente entra al portal, desde el enlace del correo o desde el enlace de reservas del centro. Pulsa Ingresar al portal. Escribe su correo, el mismo que le dio al centro, y después pulsa Continuar. Le llega un código de seis dígitos, que vence en treinta minutos.
+Revisa su correo y copia el código. Lo escribe aquí, son seis números, y después pulsa Verificar código. Ya está dentro. Ve sus citas con su fecha y su estado, y debajo los resultados que el centro le publicó, que puede descargar en PDF. El portal muestra las citas, pero no las cancela: para eso usa el enlace de su reserva o llama al centro. En Gestionar personas autorizadas puede darle acceso a un familiar. Y desde Agendar una cita reserva otra. La sesión dura ocho horas. Con esto termina la serie de pacientes.

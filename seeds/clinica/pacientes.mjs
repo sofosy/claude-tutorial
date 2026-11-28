@@ -23,5 +23,12 @@ sql(`DELETE FROM patient_intake_links WHERE company_id=${E};
      DELETE FROM patient_medications WHERE patient_id IN (SELECT id FROM partners WHERE company_id=${E});
      DELETE FROM patient_medical_alerts WHERE patient_id IN (SELECT id FROM partners WHERE company_id=${E});
      UPDATE partners SET active=1, isActivePatient=1 WHERE company_id=${E} AND partnerType='PATIENT';
-     DELETE FROM company_notifications WHERE company_id=${E};`);
+     DELETE FROM company_notifications WHERE company_id=${E};
+     -- Portal (video 4): sin accesos, cuentas ni resultados de Rosa Elena; resultados del portal apagados.
+     DELETE FROM patient_portal_result_reads WHERE result_id IN (SELECT id FROM patient_portal_results WHERE company_id=${E});
+     DELETE FROM patient_portal_results WHERE company_id=${E};
+     DELETE FROM patient_portal_sessions WHERE account_id IN (SELECT id FROM patient_portal_accounts WHERE company_id=${E} AND email LIKE 'rosa.%');
+     DELETE FROM patient_portal_access WHERE account_id IN (SELECT id FROM patient_portal_accounts WHERE company_id=${E} AND email LIKE 'rosa.%');
+     DELETE FROM patient_portal_accounts WHERE company_id=${E} AND email LIKE 'rosa.%';
+     DELETE FROM patient_portal_settings WHERE company_id=${E};`);
 log('pacientes listos; fichas borradas:', ids.length);

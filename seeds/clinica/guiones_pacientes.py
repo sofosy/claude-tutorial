@@ -389,6 +389,132 @@ def pacientes_03():
     )
 
 
+def pacientes_04():
+    correo = "rosa.martinez@correo.test"
+    PS = "app-portal-staff"
+    pasos = [
+        {
+            "id": "01-config", "capitulo": "Configurar el portal del paciente", "rotulo": "Portal del paciente",
+            "navegar": "/agenda/calendar", "ruta": "Calendario › Configurar portal del paciente",
+            "texto_pantalla": "Portal del paciente · acceso, citas, reservas y resultados",
+            "narracion": (
+                "El portal del paciente es la página donde el paciente entra con su correo para ver sus citas y "
+                "los resultados que el centro le publica. No da acceso a ninguna pantalla del centro ni a su "
+                "historia clínica. Se configura desde el Calendario, con Configurar portal del paciente. Permitir "
+                "acceso deja entrar a los pacientes. Mostrar citas les enseña sus citas, y permitir reservas les "
+                "deja agendar desde el portal. Los resultados vienen apagados: los enciendo, porque vamos a "
+                "publicar un análisis. Si el centro tiene WhatsApp conectado, los códigos de acceso también pueden "
+                "ir por ahí. Pulso Guardar configuración, y el aviso confirma que quedó guardada."
+            ),
+            "acciones": [
+                R("button:has-text('Configurar portal del paciente')", 3500, al_decir="la página donde el paciente"),
+                R("button:has-text('Reservas sin ficha')", 3000, al_decir="No da acceso"),
+                {"click": "button:has-text('Configurar portal del paciente')", "al_decir": "Configurar portal del paciente. Permitir"},
+                R("mat-slide-toggle:has-text('Permitir acceso al portal')", 3000, al_decir="acceso deja entrar"),
+                R("mat-slide-toggle:has-text('Mostrar citas')", 2500, al_decir="Mostrar citas"),
+                R("mat-slide-toggle:has-text('Permitir reservas')", 2500, al_decir="permitir reservas"),
+                {"click": "mat-slide-toggle:has-text('Mostrar resultados publicados') button", "al_decir": "los enciendo"},
+                R("mat-form-field:has-text('Plantilla de códigos')", 3500, al_decir="WhatsApp conectado"),
+                {"click": "button:has-text('Guardar configuración')", "al_decir": "Pulso Guardar configuración"},
+                R(":text('Configuración guardada')", 2500, al_decir="quedó guardada", cursor=False),
+            ],
+        },
+        {
+            "id": "02-acceso", "capitulo": "Dar acceso a un paciente", "rotulo": "Autorizar un acceso",
+            "navegar": "/patients", "ruta": "Pacientes › ficha › Gestionar acceso al portal",
+            "texto_pantalla": "Autorizar un acceso · titular o representante, y qué puede ver",
+            "narracion": (
+                "Cualquier paciente puede crear su cuenta al reservar por internet. Pero el centro también le da "
+                "acceso desde su ficha. Abro a Rosa Elena Martínez y paso a la pestaña Ficha. Más abajo está "
+                "Gestionar acceso al portal. El tipo de acceso es paciente titular, ella misma; para un niño se "
+                "autoriza a su representante. El canal es el correo, y escribo el suyo. Marco lo que podrá ver: "
+                "citas, formularios y resultados publicados. Por último, confirmo que verifiqué su identidad y su correo, y "
+                "pulso Guardar y enviar código. Le llega un código para entrar."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Rosa Elena')", "al_decir": "Abro a Rosa Elena"},
+                {"click": "button.tab:has-text('Ficha')", "al_decir": "la pestaña Ficha"},
+                R(f"{PS} h3:has-text('Autorizar')", 3000, al_decir="Gestionar acceso al portal"),
+                R(f"{PS} mat-form-field:has-text('Tipo de acceso')", 4000, al_decir="El tipo de acceso"),
+                {"escribir": {"sel": f"{PS} mat-form-field:has-text('Correo de quien') input", "texto": correo},
+                 "al_decir": "escribo el suyo"},
+                {"click": f"{PS} mat-checkbox:has-text('Resultados publicados')", "al_decir": "resultados publicados"},
+                {"click": f"{PS} mat-checkbox.check", "al_decir": "confirmo que verifiqué"},
+                {"click": f"{PS} button:has-text('Guardar y enviar código')", "al_decir": "pulso Guardar y enviar código"},
+                R(":text('Acceso guardado')", 3500, al_decir="Le llega un código", cursor=False),
+            ],
+        },
+        {
+            "id": "03-resultado", "capitulo": "Publicar un resultado", "rotulo": "Publicar un resultado",
+            "ruta": "Pacientes › ficha › Resultados para el portal",
+            "texto_pantalla": "Resultados para el portal · un PDF que el paciente descarga",
+            "narracion": (
+                "Justo debajo están los resultados para el portal. Escribo el título que verá la paciente: "
+                "hemograma completo, tal como lo entregó el laboratorio. Ahora pulso Seleccionar PDF y elijo el archivo del laboratorio. Pulso Publicar para "
+                "este paciente. El resultado queda en la lista, y desde aquí se puede retirar. Publicarlo no lo "
+                "agrega a los archivos de la ficha: son cosas distintas."
+            ),
+            "acciones": [
+                {"escribir": {"sel": f"{PS} mat-form-field:has-text('Título del resultado') input", "texto": "Hemograma completo"},
+                 "al_decir": "Escribo el título"},
+                {"subir": {"sel": f"{PS} input[type='file']", "archivo": "seeds/clinica/archivos/resultado-hemograma.pdf",
+                           "ancla": f"{PS} button:has-text('Seleccionar PDF')"}, "al_decir": "Ahora pulso Seleccionar PDF"},
+                {"click": f"{PS} button:has-text('Publicar para este paciente')", "al_decir": "Pulso Publicar"},
+                R(f"{PS} button:has-text('Retirar')", 3500, al_decir="se puede retirar"),
+            ],
+        },
+        {
+            "id": "04-entrar", "capitulo": "El paciente entra a su portal", "rotulo": "Entrar al portal",
+            "navegar": "/portal-paciente/los-prados", "al_decir_navegar": "entra al portal",
+            "ruta": "Portal del paciente (lo que ve el paciente)",
+            "texto_pantalla": "Portal del paciente · correo y código de seis dígitos",
+            "narracion": (
+                "Ahora la paciente entra al portal, desde el enlace del correo o desde el enlace de reservas del "
+                "centro. Pulsa Ingresar al portal. Escribe su correo, el mismo que le dio al centro, y después pulsa "
+                "Continuar. Le llega un código de seis dígitos, que vence en "
+                "treinta minutos."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Ingresar al portal')", "al_decir": "Pulsa Ingresar al portal"},
+                {"escribir": {"sel": "#portal-email", "texto": correo}, "al_decir": "Escribe su correo"},
+                {"click": "button.btn--primary:has-text('Continuar')", "al_decir": "después pulsa Continuar"},
+            ],
+        },
+        {
+            "id": "05-portal", "capitulo": "Sus citas y sus resultados", "rotulo": "Citas y resultados",
+            "setup": {"tipo": "shell", "cmd": f"node seeds/clinica/codigo-portal.mjs {correo}", "guardar_en": "codigo"},
+            "ruta": "Portal del paciente › Citas y resultados",
+            "texto_pantalla": "Sus citas y los resultados publicados",
+            "narracion": (
+                "Revisa su correo y copia el código. Lo escribe aquí, son seis números, y después pulsa Verificar código. Ya "
+                "está dentro. Ve sus citas con su fecha y su estado, "
+                "y debajo los resultados que el centro le publicó, que puede descargar en PDF. El portal muestra "
+                "las citas, pero no las cancela: para eso usa el enlace de su reserva o llama al centro. En Gestionar "
+                "personas autorizadas puede darle acceso a un familiar. Y desde Agendar una cita reserva otra. La sesión "
+                "dura ocho horas. Con esto termina la serie de pacientes."
+            ),
+            "acciones": [
+                {"escribir": {"sel": "#portal-code", "texto": "{{codigo}}"}, "al_decir": "Lo escribe aquí"},
+                {"click": "button:has-text('Verificar código')", "al_decir": "después pulsa Verificar código"},
+                R(":text('Citas') >> nth=0", 3500, al_decir="Ve sus citas"),
+                R(":text('Hemograma completo') >> nth=0", 4000, al_decir="los resultados que el centro"),
+                R("button:has-text('Descargar PDF'), a:has-text('Descargar PDF')", 3000, al_decir="descargar en PDF"),
+                R(":text('Citas') >> nth=0", 3000, al_decir="no las cancela"),
+                R(":text('Gestionar personas autorizadas')", 3000, al_decir="Gestionar personas"),
+                R(":text('Agendar una cita')", 2500, al_decir="Agendar una cita reserva"),
+                R("button:has-text('Cerrar sesión')", 3000, al_decir="La sesión"),
+            ],
+        },
+    ]
+    return guion(
+        "pacientes-04-portal", "Pacientes · Parte 4: el portal del paciente",
+        "Cuarta parte de la serie de Pacientes de RegiSalud: configurar el portal del paciente, dar acceso a un "
+        "paciente desde su ficha, publicarle un resultado en PDF y cómo entra con su correo y un código para ver "
+        "sus citas y sus resultados.",
+        pasos, comentario="Estado: pacientes.mjs (portal sin accesos, resultados apagados) + citas.mjs C.", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (pacientes_01, pacientes_02, pacientes_03):
+    for f in (pacientes_01, pacientes_02, pacientes_03, pacientes_04):
         print(f())
