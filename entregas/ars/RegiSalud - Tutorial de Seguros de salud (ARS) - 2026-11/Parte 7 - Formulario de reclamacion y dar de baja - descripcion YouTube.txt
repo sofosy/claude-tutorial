@@ -1,0 +1,22 @@
+TÍTULO
+============================================================
+Seguros de salud · Parte 7: el formulario de reclamación y dar de baja
+
+DESCRIPCIÓN
+============================================================
+Séptima parte de la serie de ARS de RegiSalud: el formulario de reclamación por servicios prestados de cada paciente (médico tratante, PDF e impresión) y dar de baja lo que la ARS no va a pagar, con su ajuste en la cuenta por cobrar.
+
+⏱️ CAPÍTULOS
+00:00  El formulario de reclamación
+00:49  Dar de baja lo no cobrado
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 01:38
+
+TRANSCRIPCIÓN
+============================================================
+Algunas ARS piden, además de la factura y el anexo, el formulario de reclamación por servicios prestados de cada paciente, firmado por el médico. Está en la ficha del paciente, pestaña ARS, en Reclamaciones a la ARS. Abro la de Carolina. El formulario sale lleno con sus datos, su afiliación, la autorización y los servicios; si falta algo que la ARS exige, como el diagnóstico, lo avisa arriba, y se completa aquí mismo. Elijo el médico tratante: escribo su nombre, y elijo a la doctora Ana cuando aparece en la lista. Con el médico puesto, guardo los cambios del formulario. Desde aquí se descarga en PDF, o se imprime para que el médico lo firme.
+Volvamos a la glosa de Carolina. La ARS respondió la apelación y mantuvo la glosa: esos seiscientos cuarenta no se van a cobrar. Abro la pestaña de Seguimiento. En la fila de Carolina abro su menú, y pulso Dar de baja lo no cobrado. El cuadro dice cuánto queda sin cobrar y que sale de la cuenta por cobrar de la aseguradora como ajuste, con su asiento; lo ya cobrado no cambia. Escribo el motivo: que la ARS mantuvo la glosa tras la apelación. Revisado el texto, confirmo con el botón Dar de baja. Un momento después, el aviso confirma el ajuste; lo cierro. La reclamación queda cerrada, y con eso la cuenta de la ARS cuadra con lo que de verdad pagó.

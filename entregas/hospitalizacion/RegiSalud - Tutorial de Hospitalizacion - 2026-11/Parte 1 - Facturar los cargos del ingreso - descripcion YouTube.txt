@@ -1,0 +1,24 @@
+TÍTULO
+============================================================
+Hospitalización · Facturar los cargos del ingreso
+
+DESCRIPCIÓN
+============================================================
+Hospitalización en RegiSalud: aprobar los cargos del ingreso y facturarlos con «Facturar cargos» desde la pestaña Cuenta del paciente, antes o después del alta, sin facturar dos veces el mismo cargo.
+
+⏱️ CAPÍTULOS
+00:00  Aprobar los cargos
+00:33  Facturar cargos
+01:03  La factura del ingreso
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 01:36
+
+TRANSCRIPCIÓN
+============================================================
+Durante un ingreso, cada servicio que recibe el paciente entra como un cargo: laboratorios, estudios, medicamentos, la habitación. Están en Hospitalización, Cargos. Daniel tiene tres: el hemograma y el electrocardiograma ya aprobados, y una sonografía pendiente. Un cargo pendiente no se factura hasta que alguien lo revisa y lo aprueba. En su fila pulso Aprobar, y confirmo. El aviso confirma que quedó aprobado.
+Ahora los facturamos. En la ficha de Daniel, pestaña Cuenta, están los cargos del ingreso con su estado y el acumulado. Los tres están aprobados. Pulso Facturar cargos. El sistema arma una sola factura con los cargos aprobados que aún no tienen factura, y el aviso dice cuántos entraron. Se puede facturar antes o después del alta, y las veces que haga falta: un cargo facturado no vuelve a entrar. Pulso Abrir la factura.
+La factura queda en borrador, a nombre de Daniel, con una línea por servicio. Lo que tiene el mismo servicio y el mismo precio, como la habitación de cada día, va en una sola línea. Si algún cargo tuviera cobertura de la aseguradora, la ARS, el sistema no lo factura aquí: se factura desde la autorización del paciente, como vimos en la serie de seguros. Desde aquí se revisa el total, y se emite y se cobra como cualquier factura.

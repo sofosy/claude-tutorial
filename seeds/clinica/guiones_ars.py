@@ -266,26 +266,28 @@ def ars_02():
 
 
 def ars_03():
+    ALERTA = "mat-dialog-container:has(app-custom-alert-dialog)"
     pasos = [
         {
-            "id": "01-dos-facturas", "capitulo": "Dos facturas por un servicio", "rotulo": "Facturar la autorización",
-            "navegar": "/patients/545?tab=ars", "ruta": "Pacientes › ficha › ARS › Facturar esta autorización",
+            "id": "01-cobrar", "capitulo": "Cobrar la consulta atendida", "rotulo": "Cobrar consulta",
+            "navegar": "/agenda/calendar", "ruta": "Calendario › la cita › Cobrar consulta",
             "texto_pantalla": "La paciente paga su copago; lo que cubre la ARS se le factura a ella aparte",
             "narracion": (
                 "Un servicio con seguro lleva dos facturas: la de la paciente, solo por lo que ella paga, y la de "
-                "la ARS, por lo que cubre, que se hace después en Reclamaciones. Empezamos por la de Rosa. En su "
-                "ficha, pestaña ARS, está la autorización aprobada de la consulta. En su menú pulso Facturar esta "
-                "autorización. Es la forma más común; también se puede cobrar la consulta desde la cita en la "
-                "agenda."
+                "la ARS, por lo que cubre, que se hace después en Reclamaciones. Empezamos por la de Rosa, que ya "
+                "terminó su consulta con la doctora Ana. Lo más práctico es cobrarla desde la agenda: en la lista "
+                "del día abro su cita, que está atendida, y pulso Cobrar consulta. Como su ARS tiene convenio para "
+                "esta consulta y ya hay una autorización aprobada, el sistema avisa que se factura desde la "
+                "autorización, para que lo que cubre la ARS quede por reclamar. Pulso Facturar desde la "
+                "autorización."
             ),
             "acciones": [
                 R("a.rail-item[aria-label='Seguros de Salud']", 2500, al_decir="en Reclamaciones"),
-                R(":text('Cobertura del paciente') >> xpath=..", 3000, al_decir="Empezamos por la de Rosa"),
-                R(":text('ARS AUT-551207')", 4000, al_decir="está la autorización aprobada"),
-                {"click": "button:has(mat-icon:text('more_vert')) >> nth=1", "al_decir": "En su menú"},
-                {"click": ".mat-mdc-menu-content button:has-text('Facturar esta autorización')",
-                 "al_decir": "pulso Facturar esta"},
-                R(":text('Nueva Factura')", 3000, al_decir="Es la forma más común"),
+                {"click": ".view-toggle-btn >> nth=3", "al_decir": "en la lista"},
+                {"click": ".fc-list-event:has-text('Rosa') >> nth=0", "al_decir": "abro su cita"},
+                {"click": "button:has-text('Cobrar consulta')", "al_decir": "pulso Cobrar consulta"},
+                R(ALERTA, 6000, al_decir="el sistema avisa", cursor=False),
+                {"click": "button:has-text('Facturar desde la autorización')", "al_decir": "Pulso Facturar desde"},
             ],
         },
         {
@@ -293,7 +295,7 @@ def ars_03():
             "ruta": "Ventas › Facturas › Nueva factura (médica)",
             "texto_pantalla": "El servicio completo, menos lo que cubre la ARS: el copago",
             "narracion": (
-                "Se abre la factura ya armada. La paciente queda fija mientras se use su cobertura, y el "
+                "Se abre la factura ya armada con su autorización. La paciente queda fija mientras se use su cobertura, y el "
                 "comprobante es de consumo. Abajo están su aseguradora, su plan y su póliza. La línea trae la "
                 "consulta de dos mil quinientos, con lo que cubre la ARS. El resumen lo deja claro: dos mil "
                 "quinientos de servicio, menos dos mil de cobertura, y un total a pagar de quinientos."
@@ -333,7 +335,7 @@ def ars_03():
                 "La factura queda pagada, con su número de comprobante. El resumen de pagos dice lo cobrado y que "
                 "no queda nada pendiente, y desde aquí se imprime la factura, o también el recibo del pago. La autorización pasa a "
                 "utilizada: ya no se puede facturar otra vez. Lo que cubrió la ARS queda en Reclamaciones, por "
-                "reclamar. En el próximo video se lo reclamamos y le emitimos su factura."
+                "reclamar."
             ),
             "acciones": [
                 R(":text('Pagada') >> nth=0", 3000, al_decir="queda pagada"),
@@ -344,13 +346,31 @@ def ars_03():
                 R(":text('Cobertura ARS') >> nth=0", 3000, al_decir="Lo que cubrió la ARS"),
             ],
         },
+        {
+            "id": "05-ficha", "capitulo": "La otra forma: desde la ficha", "rotulo": "Desde la ficha",
+            "navegar": "/patients/545?tab=ars", "al_decir_navegar": "Cuando el servicio",
+            "ruta": "Pacientes › ficha › ARS",
+            "texto_pantalla": "Sin cita que cobrar: menú de la autorización › Facturar esta autorización",
+            "narracion": (
+                "Veamos la otra forma. Cuando el servicio no viene de una cita, por ejemplo un laboratorio, la "
+                "factura se hace desde la ficha del paciente, en la pestaña ARS: en el menú de la autorización "
+                "aprobada está Facturar esta autorización, y abre la misma factura. La de Rosa ya aparece "
+                "utilizada. En el próximo video se lo reclamamos a la ARS y le emitimos su factura."
+            ),
+            "acciones": [
+                R(":text('Cobertura del paciente') >> xpath=..", 3000, al_decir="desde la ficha"),
+                R(":text('ARS AUT-551207') >> xpath=ancestor::*[contains(@class,'tabx__row')][1]", 5000,
+                  al_decir="en el menú de la autorización"),
+                R(":text('Utilizada') >> nth=0", 3000, al_decir="ya aparece utilizada"),
+            ],
+        },
     ]
     return guion(
         "ars-03-factura-paciente", "Seguros de salud · Parte 3: la factura del paciente",
-        "Tercera parte de la serie de ARS de RegiSalud: facturar una autorización aprobada, la factura del "
-        "paciente por su copago (el servicio completo menos la cobertura de la ARS), cobrarla y cómo queda la "
-        "autorización.",
-        pasos, comentario="Estado: ars.mjs restaurar C.", portada_s=4,
+        "Tercera parte de la serie de ARS de RegiSalud: cobrar la consulta atendida desde la agenda, que lleva a "
+        "facturarla desde su autorización; la factura del paciente por su copago (el servicio completo menos la "
+        "cobertura de la ARS), cobrarla, cómo queda la autorización y la otra forma, desde la ficha.",
+        pasos, comentario="Estado: ars.mjs restaurar C3.", portada_s=4,
     )
 
 
@@ -368,7 +388,7 @@ def ars_04():
                 "la de Rosa y dos más, con lo que cubre cada una. Las marco todas: primero la de Rosa, después la "
                 "de Juan Carlos, y por último la de Carolina. Abajo se suma el total a reclamar. La remesa de destino se sugiere por la fecha del "
                 "servicio: Noviembre. Pulso Reclamar. El sistema pide confirmar, y confirmo. El aviso dice que se "
-                "crearon las tres reclamaciones."
+                "crearon las tres reclamaciones, y lo cierro."
             ),
             "acciones": [
                 R("button:has-text('Por reclamar')", 2000, al_decir="por reclamar, seguimiento"),
@@ -380,8 +400,8 @@ def ars_04():
                 R("mat-form-field:has-text('Remesa de destino')", 2500, al_decir="se sugiere"),
                 {"click": REC, "al_decir": "Pulso Reclamar"},
                 {"click": "button:has-text('Sí, Reclamar')", "al_decir": "y confirmo"},
-                R("mat-dialog-container:has(app-custom-alert-dialog)", 2000, al_decir="el aviso dice", cursor=False),
-                {"click": "button:has-text('Entendido')", "al_decir": "las tres reclamaciones"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 2000, al_decir="que se crearon", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "y lo cierro"},
             ],
         },
         {
@@ -628,6 +648,75 @@ def ars_06():
     )
 
 
+def ars_07():
+    ALERTA = "mat-dialog-container:has(app-custom-alert-dialog)"
+    CAROL = "tr:has-text('CLM-2026-000203')"
+    pasos = [
+        {
+            "id": "01-formulario", "capitulo": "El formulario de reclamación", "rotulo": "Formulario de reclamación",
+            "navegar": "/patients/547?tab=ars", "ruta": "Pacientes › ficha › ARS › Reclamaciones a la ARS",
+            "texto_pantalla": "El formulario por servicios prestados, lleno con los datos del paciente",
+            "narracion": (
+                "Algunas ARS piden, además de la factura y el anexo, el formulario de reclamación por servicios "
+                "prestados de cada paciente, firmado por el médico. Está en la ficha del paciente, pestaña ARS, en "
+                "Reclamaciones a la ARS. Abro la de Carolina. El formulario sale lleno con sus datos, su afiliación, "
+                "la autorización y los servicios; si falta algo que la ARS exige, como el diagnóstico, lo avisa "
+                "arriba, y se completa aquí mismo. Elijo el médico tratante: escribo su nombre, y elijo a la doctora "
+                "Ana cuando aparece en la lista. Con el médico puesto, guardo los cambios del formulario. Desde aquí se descarga en "
+                "PDF, o se imprime para que el médico lo firme."
+            ),
+            "acciones": [
+                R(":text('Cobertura del paciente') >> xpath=..", 3000, al_decir="firmado por el médico"),
+                R(":text('Autorizaciones') >> nth=0 >> xpath=..", 2500, al_decir="Está en la ficha"),
+                R(":text('Reclamaciones a la ARS') >> xpath=..", 3000, al_decir="en Reclamaciones a la ARS"),
+                {"click": "button[aria-label^='Abrir la reclamación'] >> nth=0", "al_decir": "Abro la de Carolina"},
+                R(".claim-form-tab__active", 3000, al_decir="sale lleno", cursor=False),
+                R(":text('Faltan datos requeridos') >> xpath=ancestor::*[2]", 4000, al_decir="si falta algo"),
+                {"click": "app-patient-claim-form-tab app-autocomplete input", "al_decir": "Elijo el médico"},
+                {"teclear": "Ana", "al_decir": "escribo su nombre"},
+                {"click": "mat-option:has-text('Ana') >> nth=0", "al_decir": "cuando aparece"},
+                {"click": "app-patient-claim-form-tab button:has-text('Guardar')", "al_decir": "guardo los cambios"},
+                R("app-patient-claim-form-tab button:has-text('Descargar PDF')", 2500, al_decir="se descarga en PDF"),
+                R("app-patient-claim-form-tab button:has-text('Imprimir')", 2500, al_decir="o se imprime"),
+            ],
+        },
+        {
+            "id": "02-baja", "capitulo": "Dar de baja lo no cobrado", "rotulo": "Dar de baja",
+            "navegar": "/health-insurance/reclamaciones", "al_decir_navegar": "La ARS respondió",
+            "ruta": "Seguros de Salud › Reclamaciones › Seguimiento › Dar de baja lo no cobrado",
+            "texto_pantalla": "Lo que la ARS no va a pagar sale de su cuenta por cobrar, con su asiento",
+            "narracion": (
+                "Volvamos a la glosa de Carolina. La ARS respondió la apelación y mantuvo la glosa: esos seiscientos "
+                "cuarenta no se van a cobrar. Abro la pestaña de Seguimiento. En la fila de Carolina abro su menú, y "
+                "pulso Dar de baja lo no cobrado. El cuadro dice cuánto queda sin cobrar y que sale de la cuenta por "
+                "cobrar de la aseguradora como ajuste, con su asiento; lo ya cobrado no cambia. Escribo el motivo: "
+                "que la ARS mantuvo la glosa tras la apelación. Revisado el texto, confirmo con el botón Dar de baja. Un momento "
+                "después, el aviso confirma el ajuste; lo cierro. La reclamación queda cerrada, y con eso la cuenta "
+                "de la ARS cuadra con lo que de verdad pagó."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Seguimiento')", "al_decir": "Abro la pestaña"},
+                {"click": f"{CAROL} button:has(mat-icon:text('more_vert'))", "al_decir": "abro su menú"},
+                {"click": ".mat-mdc-menu-content button:has-text('Dar de baja')", "al_decir": "pulso Dar de baja"},
+                R(f"{DLG}", 5000, al_decir="El cuadro dice", cursor=False),
+                {"escribir": {"sel": f"{DLG} textarea", "texto": "La ARS mantuvo la glosa tras la apelación."},
+                 "al_decir": "Escribo el motivo"},
+                {"click": f"{DLG} button:has-text('Dar de baja')", "al_decir": "confirmo con el botón"},
+                R(ALERTA, 1800, al_decir="el aviso confirma", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro"},
+                R(f"{CAROL} td >> nth=-3", 3500, al_decir="queda cerrada"),
+            ],
+        },
+    ]
+    return guion(
+        "ars-07-formulario-y-baja", "Seguros de salud · Parte 7: el formulario de reclamación y dar de baja",
+        "Séptima parte de la serie de ARS de RegiSalud: el formulario de reclamación por servicios prestados de cada "
+        "paciente (médico tratante, PDF e impresión) y dar de baja lo que la ARS no va a pagar, con su ajuste en la "
+        "cuenta por cobrar.",
+        pasos, comentario="Estado: ars.mjs restaurar G (F + lo que deja la parte 6).", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (ars_01, ars_02, ars_03, ars_04, ars_05, ars_06):
+    for f in (ars_01, ars_02, ars_03, ars_04, ars_05, ars_06, ars_07):
         print(f())

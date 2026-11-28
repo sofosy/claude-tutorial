@@ -200,7 +200,7 @@
       "navegar": "/health-insurance/reclamaciones",
       "ruta": "Seguros de Salud › Reclamaciones › Por reclamar",
       "texto_pantalla": "Lo ya facturado al paciente, listo para reclamarle a la aseguradora",
-      "narracion": "Ahora le cobramos a la ARS lo que cubrió. La pestaña Reclamaciones sigue el ciclo en cuatro pasos: por reclamar, seguimiento, remesas y facturas, y entrega y cobro. En Por reclamar solo llega lo que ya se le facturó al paciente: aquí están las tres autorizaciones de ARS Humano de este mes, la de Rosa y dos más, con lo que cubre cada una. Las marco todas: primero la de Rosa, después la de Juan Carlos, y por último la de Carolina. Abajo se suma el total a reclamar. La remesa de destino se sugiere por la fecha del servicio: Noviembre. Pulso Reclamar. El sistema pide confirmar, y confirmo. El aviso dice que se crearon las tres reclamaciones.",
+      "narracion": "Ahora le cobramos a la ARS lo que cubrió. La pestaña Reclamaciones sigue el ciclo en cuatro pasos: por reclamar, seguimiento, remesas y facturas, y entrega y cobro. En Por reclamar solo llega lo que ya se le facturó al paciente: aquí están las tres autorizaciones de ARS Humano de este mes, la de Rosa y dos más, con lo que cubre cada una. Las marco todas: primero la de Rosa, después la de Juan Carlos, y por último la de Carolina. Abajo se suma el total a reclamar. La remesa de destino se sugiere por la fecha del servicio: Noviembre. Pulso Reclamar. El sistema pide confirmar, y confirmo. El aviso dice que se crearon las tres reclamaciones, y lo cierro.",
       "acciones": [
         {
           "resaltar": "button:has-text('Por reclamar')",
@@ -245,12 +245,12 @@
         {
           "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
           "durante_ms": 2000,
-          "al_decir": "el aviso dice",
+          "al_decir": "que se crearon",
           "cursor": false
         },
         {
           "click": "button:has-text('Entendido')",
-          "al_decir": "las tres reclamaciones"
+          "al_decir": "y lo cierro"
         }
       ]
     },

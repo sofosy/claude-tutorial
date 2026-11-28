@@ -24,6 +24,7 @@ PERMITIDOS = [
 BASE = {
     "base_url": "http://127.0.0.1:4200",
     "zona_horaria": "America/Santo_Domingo",
+    "idioma": "es-DO",
     "sesion": {
         "tipo": "api", "url": "http://localhost:3001/api/auth/dev/login",
         "cuerpo": {"username": "admin.losprados@regisalud.test", "password": "LosPrados2026!"},
