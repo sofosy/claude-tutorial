@@ -7,6 +7,8 @@
 //   C     B + Rosa afiliada a Humano con una autorización aprobada (video 3).
 //   D     C + la factura de Rosa cobrada y otras dos autorizaciones facturadas (video 4).
 //   E     D + reclamadas en una remesa y la factura a ARS Humano emitida (video 5).
+//   C3    C + la cita de Rosa con Ana, de hoy y ya atendida, con su afiliación; la consulta de Ana se
+//         factura con SRV-CONSULTA (el servicio del convenio). Video 3: «Cobrar consulta» → autorización.
 import { execSync } from 'node:child_process';
 import { mkdirSync } from 'node:fs';
 import { sql, uno, api, login, log, empresa } from './_lib.mjs';
@@ -151,6 +153,29 @@ async function estadoC() {
   log('estado C listo: Rosa afiliada a Humano con su autorización aprobada');
 }
 
+// La consulta se finaliza con la nota clínica firmada, que es otro video: aquí la cita queda COMPLETED
+// por SQL. Lo demás va por el API, como en pantalla.
+async function estadoC3() {
+  await login();
+  const ANA = 576;
+  sql(`UPDATE appointment_types_catalog SET product_id=${prod('SRV-CONSULTA')}, base_price=2500
+       WHERE company_id=${E} AND code='CONSULTA-STAFF-${ANA}'`);
+  const rosa = paciente('Rosa Elena', 'Martínez');
+  const af = +uno(`SELECT id FROM patient_insurances WHERE company_id=${E} AND patient_id=${rosa} AND deleted_at IS NULL LIMIT 1`);
+  const cat = +uno(`SELECT id FROM appointment_types_catalog WHERE company_id=${E} AND code='CONSULTA-STAFF-${ANA}'`);
+  const dia = new Date(Date.now() - 4 * 3600000).toISOString().slice(0, 10);
+  const r = await api('POST', 'v1/appointment', {
+    patientId: rosa, staffId: ANA, appointmentTypeCatalogId: cat, patientInsuranceId: af,
+    scheduledStartTime: new Date(`${dia}T09:00:00-04:00`).toISOString(),
+    scheduledEndTime: new Date(`${dia}T09:30:00-04:00`).toISOString(), durationMinutes: 30,
+    reasonForVisit: 'Chequeo general', priority: 'NORMAL', source: 'PHONE',
+  });
+  sql(`UPDATE appointments SET status='COMPLETED', is_checked_in=1,
+         actual_arrival_time=scheduled_start_time, actual_start_time=scheduled_start_time,
+         actual_end_time=scheduled_end_time WHERE id=${r.id}`);
+  log('estado C3 listo: cita', r.id, 'de Rosa con Ana, atendida');
+}
+
 async function estadoD() {
   await login();
   const cat = await catalogos();
@@ -187,6 +212,7 @@ async function estadoE() {
 if (orden === 'guardar') guardar(nombre);
 else if (orden === 'E') await estadoE();
 else if (orden === 'C') await estadoC();
+else if (orden === 'C3') await estadoC3();
 else if (orden === 'D') await estadoD();
 else if (orden === 'B') await estadoB();
 else if (orden === 'restaurar') restaurar(nombre);

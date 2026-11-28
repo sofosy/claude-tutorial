@@ -266,26 +266,28 @@ def ars_02():
 
 
 def ars_03():
+    ALERTA = "mat-dialog-container:has(app-custom-alert-dialog)"
     pasos = [
         {
-            "id": "01-dos-facturas", "capitulo": "Dos facturas por un servicio", "rotulo": "Facturar la autorización",
-            "navegar": "/patients/545?tab=ars", "ruta": "Pacientes › ficha › ARS › Facturar esta autorización",
+            "id": "01-cobrar", "capitulo": "Cobrar la consulta atendida", "rotulo": "Cobrar consulta",
+            "navegar": "/agenda/calendar", "ruta": "Calendario › la cita › Cobrar consulta",
             "texto_pantalla": "La paciente paga su copago; lo que cubre la ARS se le factura a ella aparte",
             "narracion": (
                 "Un servicio con seguro lleva dos facturas: la de la paciente, solo por lo que ella paga, y la de "
-                "la ARS, por lo que cubre, que se hace después en Reclamaciones. Empezamos por la de Rosa. En su "
-                "ficha, pestaña ARS, está la autorización aprobada de la consulta. En su menú pulso Facturar esta "
-                "autorización. Es la forma más común; también se puede cobrar la consulta desde la cita en la "
-                "agenda."
+                "la ARS, por lo que cubre, que se hace después en Reclamaciones. Empezamos por la de Rosa, que ya "
+                "terminó su consulta con la doctora Ana. Lo más práctico es cobrarla desde la agenda: en la lista "
+                "del día abro su cita, que está atendida, y pulso Cobrar consulta. Como su ARS tiene convenio para "
+                "esta consulta y ya hay una autorización aprobada, el sistema avisa que se factura desde la "
+                "autorización, para que lo que cubre la ARS quede por reclamar. Pulso Facturar desde la "
+                "autorización."
             ),
             "acciones": [
                 R("a.rail-item[aria-label='Seguros de Salud']", 2500, al_decir="en Reclamaciones"),
-                R(":text('Cobertura del paciente') >> xpath=..", 3000, al_decir="Empezamos por la de Rosa"),
-                R(":text('ARS AUT-551207')", 4000, al_decir="está la autorización aprobada"),
-                {"click": "button:has(mat-icon:text('more_vert')) >> nth=1", "al_decir": "En su menú"},
-                {"click": ".mat-mdc-menu-content button:has-text('Facturar esta autorización')",
-                 "al_decir": "pulso Facturar esta"},
-                R(":text('Nueva Factura')", 3000, al_decir="Es la forma más común"),
+                {"click": ".view-toggle-btn >> nth=3", "al_decir": "en la lista"},
+                {"click": ".fc-list-event:has-text('Rosa') >> nth=0", "al_decir": "abro su cita"},
+                {"click": "button:has-text('Cobrar consulta')", "al_decir": "pulso Cobrar consulta"},
+                R(ALERTA, 6000, al_decir="el sistema avisa", cursor=False),
+                {"click": "button:has-text('Facturar desde la autorización')", "al_decir": "Pulso Facturar desde"},
             ],
         },
         {
@@ -293,7 +295,7 @@ def ars_03():
             "ruta": "Ventas › Facturas › Nueva factura (médica)",
             "texto_pantalla": "El servicio completo, menos lo que cubre la ARS: el copago",
             "narracion": (
-                "Se abre la factura ya armada. La paciente queda fija mientras se use su cobertura, y el "
+                "Se abre la factura ya armada con su autorización. La paciente queda fija mientras se use su cobertura, y el "
                 "comprobante es de consumo. Abajo están su aseguradora, su plan y su póliza. La línea trae la "
                 "consulta de dos mil quinientos, con lo que cubre la ARS. El resumen lo deja claro: dos mil "
                 "quinientos de servicio, menos dos mil de cobertura, y un total a pagar de quinientos."
@@ -333,7 +335,7 @@ def ars_03():
                 "La factura queda pagada, con su número de comprobante. El resumen de pagos dice lo cobrado y que "
                 "no queda nada pendiente, y desde aquí se imprime la factura, o también el recibo del pago. La autorización pasa a "
                 "utilizada: ya no se puede facturar otra vez. Lo que cubrió la ARS queda en Reclamaciones, por "
-                "reclamar. En el próximo video se lo reclamamos y le emitimos su factura."
+                "reclamar."
             ),
             "acciones": [
                 R(":text('Pagada') >> nth=0", 3000, al_decir="queda pagada"),
@@ -344,13 +346,31 @@ def ars_03():
                 R(":text('Cobertura ARS') >> nth=0", 3000, al_decir="Lo que cubrió la ARS"),
             ],
         },
+        {
+            "id": "05-ficha", "capitulo": "La otra forma: desde la ficha", "rotulo": "Desde la ficha",
+            "navegar": "/patients/545?tab=ars", "al_decir_navegar": "Cuando el servicio",
+            "ruta": "Pacientes › ficha › ARS",
+            "texto_pantalla": "Sin cita que cobrar: menú de la autorización › Facturar esta autorización",
+            "narracion": (
+                "Veamos la otra forma. Cuando el servicio no viene de una cita, por ejemplo un laboratorio, la "
+                "factura se hace desde la ficha del paciente, en la pestaña ARS: en el menú de la autorización "
+                "aprobada está Facturar esta autorización, y abre la misma factura. La de Rosa ya aparece "
+                "utilizada. En el próximo video se lo reclamamos a la ARS y le emitimos su factura."
+            ),
+            "acciones": [
+                R(":text('Cobertura del paciente') >> xpath=..", 3000, al_decir="desde la ficha"),
+                R(":text('ARS AUT-551207') >> xpath=ancestor::*[contains(@class,'tabx__row')][1]", 5000,
+                  al_decir="en el menú de la autorización"),
+                R(":text('Utilizada') >> nth=0", 3000, al_decir="ya aparece utilizada"),
+            ],
+        },
     ]
     return guion(
         "ars-03-factura-paciente", "Seguros de salud · Parte 3: la factura del paciente",
-        "Tercera parte de la serie de ARS de RegiSalud: facturar una autorización aprobada, la factura del "
-        "paciente por su copago (el servicio completo menos la cobertura de la ARS), cobrarla y cómo queda la "
-        "autorización.",
-        pasos, comentario="Estado: ars.mjs restaurar C.", portada_s=4,
+        "Tercera parte de la serie de ARS de RegiSalud: cobrar la consulta atendida desde la agenda, que lleva a "
+        "facturarla desde su autorización; la factura del paciente por su copago (el servicio completo menos la "
+        "cobertura de la ARS), cobrarla, cómo queda la autorización y la otra forma, desde la ficha.",
+        pasos, comentario="Estado: ars.mjs restaurar C3.", portada_s=4,
     )
 
 
