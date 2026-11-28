@@ -97,14 +97,21 @@ async function afiliar(pac, poliza, afiliado) {
 
 async function autorizar(afiliacion, codes, codigoArs) {
   const r = await api('POST', 'v1/insurance-authorizations', {
-    patientInsurance: afiliacion, autoApprove: true, insurerAuthorizationNumber: codigoArs,
+    patientInsurance: afiliacion,
     details: codes.map(code => {
       const [, precio, cubre, copago] = tarifa(code);
       return { product: prod(code), quantity: 1, unitPrice: precio, coverageType: 'FIXED_AMOUNT', coverageValue: cubre,
                maxCoveredAmount: cubre, patientCopay: copago };
     }),
   });
-  return r;
+  // Como en pantalla: «Guardar y Aprobar» con el código de la ARS y treinta días de vigencia.
+  const hoy = new Date(); const fin = new Date(hoy.getTime() + 30 * 86400000);
+  const cubre = codes.reduce((t, c) => t + tarifa(c)[2], 0);
+  await api('POST', `v1/insurance-authorizations/${r.id}/approve`, {
+    insurerAuthorizationNumber: codigoArs, approvedAmount: cubre,
+    validFrom: hoy.toISOString().slice(0, 10), validUntil: fin.toISOString().slice(0, 10),
+  });
+  return api('GET', `v1/insurance-authorizations/${r.id}`);
 }
 
 async function catalogos() {
