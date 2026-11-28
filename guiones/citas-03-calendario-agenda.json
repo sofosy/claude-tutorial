@@ -243,12 +243,8 @@
       "rotulo": "Vista de lista",
       "ruta": "Calendario › Lista",
       "texto_pantalla": "Lista · las citas por día, con búsqueda",
-      "narracion": "Ahora otra vista. Cierro el panel y paso a la vista de lista, que es la más cómoda para recepción: una fila por cita, agrupadas por día. Quito el filtro del médico, y para encontrar a alguien uso Buscar: escribo Rafael, y la lista se filtra mientras escribo. Aparece su cita con la doctora Ana Pérez.",
+      "narracion": "Ahora otra vista. Paso a la vista de lista, que es la más cómoda para recepción: una fila por cita, agrupadas por día. Quito el filtro del médico, y para encontrar a alguien uso Buscar: escribo Carolina, y la lista se filtra mientras escribo. Aparece su cita con la doctora Marta Reyes.",
       "acciones": [
-        {
-          "click": "button:has(mat-icon:text('close')) >> nth=0",
-          "al_decir": "Cierro el panel"
-        },
         {
           "click": ".view-toggle-btn >> nth=3",
           "al_decir": "la vista de lista"
@@ -270,9 +266,9 @@
         {
           "escribir": {
             "sel": "input[formcontrolname='searchTerm']",
-            "texto": "Rafael"
+            "texto": "Carolina"
           },
-          "al_decir": "escribo Rafael"
+          "al_decir": "escribo Carolina"
         },
         {
           "resaltar": ".fc-list-event >> nth=0",
@@ -308,12 +304,12 @@
           "al_decir": "el botón Hoy"
         },
         {
-          "resaltar": "mat-slide-toggle >> nth=1",
+          "resaltar": ".toggles mat-slide-toggle:has-text('Solo médicos')",
           "durante_ms": 3000,
           "al_decir": "Solo médicos con citas"
         },
         {
-          "resaltar": "mat-slide-toggle >> nth=0",
+          "resaltar": ".toggles mat-slide-toggle:has-text('Mostrar canceladas')",
           "durante_ms": 3000,
           "al_decir": "mostrar canceladas"
         },
@@ -356,7 +352,7 @@
           "al_decir": "próximas"
         },
         {
-          "resaltar": "button:has-text('Estado') >> nth=0, button.status-btn >> nth=0",
+          "resaltar": "button:has-text('Estado') >> nth=0",
           "durante_ms": 4000,
           "al_decir": "el botón de estado"
         }
