@@ -288,11 +288,6 @@
       "narracion": "Debajo del documento, la aceptación del paciente espera a que el registro esté completo. El botón Guardar solo lo deja en borrador. Ahora pulso Completar. El aviso lo confirma, y se abre la aceptación del paciente. Hay dos formas de firmar. Por correo, a la paciente le llega un enlace personal y firma desde su casa: eliges cuántos días vale y se le recuerda antes de vencer. Mientras no firme, el enlace se puede reenviar o cancelar. Pero lo más común es que firme aquí mismo, así que elijo En el consultorio. Antes de abrir el documento, pedirá los últimos cuatro dígitos de su cédula.",
       "acciones": [
         {
-          "resaltar": "app-consent-request-panel",
-          "durante_ms": 3000,
-          "al_decir": "Debajo del documento"
-        },
-        {
           "resaltar": "button:has(mat-icon:text('save'))",
           "durante_ms": 1500,
           "al_decir": "El botón Guardar"
@@ -338,7 +333,7 @@
       "rotulo": "Identidad",
       "ruta": "Página de firma (lo que ve la paciente)",
       "texto_pantalla": "Últimos 4 dígitos de la cédula · enlace personal",
-      "narracion": "Ahora es el turno de la paciente. Pulso Abrir para firmar y le paso la pantalla, o la tableta. Esta es su página: no ve nada del sistema, solo su documento. Escribe los últimos cuatro dígitos de su cédula y pulsa Continuar.",
+      "narracion": "Ahora es el turno de la paciente. Pulso Abrir para firmar y le paso la pantalla, o la tableta. Se abre la página de firma, con el nombre del centro arriba. Esta es su página: no ve nada del sistema, solo su documento. Escribe los últimos cuatro dígitos de su cédula y pulsa Continuar.",
       "acciones": [
         {
           "click": "app-consent-request-panel button:has-text('Abrir para firmar')",
@@ -368,7 +363,7 @@
       "rotulo": "La firma",
       "ruta": "Página de firma › Lectura › Firma",
       "texto_pantalla": "Lo lee hasta el final, marca cada declaración y firma con el dedo",
-      "narracion": "En la pantalla siguiente está el documento. Primero lo lee completo: el botón para seguir solo se activa al llegar al final. Si no está de acuerdo, lo dice aquí y queda registrado. Pulsa Continuar. Ahora marca cada declaración, solo si es cierta: que lo leyó completo, que pudo hacer sus preguntas, que sabe que puede revocarlo, y que autoriza el procedimiento. Firma como paciente; si fuera un menor, firmaría su representante. Su nombre ya está puesto. Dibuja su firma con el dedo, y pulsa Aceptar y firmar.",
+      "narracion": "En la pantalla siguiente está el documento. Primero lo lee completo: el botón para seguir solo se activa al llegar al final. Si no está de acuerdo, lo dice aquí y queda registrado. Pulsa Continuar. Ahora marca cada declaración, solo si es cierta: que lo leyó completo, que pudo hacer sus preguntas, que sabe que puede revocarlo, y que autoriza el procedimiento. Firma como paciente; si fuera un menor, firmaría su representante. Su nombre ya está puesto. Dibuja su firma con el dedo; si no le gusta, la limpia y vuelve a empezar. Cuando está conforme, pulsa Aceptar y firmar.",
       "acciones": [
         {
           "click": ".pc__doc",
@@ -431,7 +426,7 @@
       "rotulo": "Consentimiento aceptado",
       "ruta": "Página de firma › Listo",
       "texto_pantalla": "Código de verificación y copia firmada",
-      "narracion": "Listo. La firma queda con fecha y hora, y con un código de verificación. La paciente puede descargar su copia firmada aquí mismo, o pedirla impresa en el centro.",
+      "narracion": "Listo. La firma queda con fecha y hora, y con un código de verificación. La paciente puede descargar su copia firmada aquí mismo, o pedirla impresa en el centro. Y si cambia de opinión, puede revocarlo antes del procedimiento.",
       "acciones": [
         {
           "resaltar": ":text('Consentimiento aceptado')",
@@ -447,6 +442,11 @@
           "resaltar": "button:has-text('Descargar mi consentimiento'), a:has-text('Descargar mi consentimiento')",
           "durante_ms": 3000,
           "al_decir": "descargar su copia"
+        },
+        {
+          "resaltar": ":text('Puede revocar este consentimiento')",
+          "durante_ms": 3000,
+          "al_decir": "si cambia de opinión"
         }
       ]
     },
@@ -458,11 +458,16 @@
       "al_decir_navegar": "recupera su pantalla",
       "ruta": "Pacientes › ficha › Consentimiento › Aceptado",
       "texto_pantalla": "Aceptado · constancia, bitácora y firma de la doctora",
-      "narracion": "La doctora recupera su pantalla. De vuelta en la ficha de Rosa, abro el registro. Dice Aceptado, cuándo lo abrió y cuándo firmó, por qué canal y quién firmó. Ver constancia descarga el documento con la evidencia, y Revocar registra que la paciente se arrepintió. Debajo, la bitácora guarda cada paso. El texto aceptado queda congelado. Por último firmo yo el registro: pulso Firmar. Me pide mi contraseña, para confirmar que soy yo quien firma. La escribo. Nadie más puede firmar por mí. Ahora confirmo con Firmar. Queda cerrado, y solo se corrige por enmienda.",
+      "narracion": "La doctora recupera su pantalla y vuelve a la ficha de Rosa, en la pestaña del consentimiento. Mientras carga, fíjate en algo: la paciente nunca vio el resto del sistema, solo su documento. En el historial está el registro que acabamos de preparar, con su número. Lo abro. Dice Aceptado, cuándo lo abrió y cuándo firmó, por qué canal y quién firmó. Ver constancia descarga el documento con la evidencia, y Revocar registra que la paciente se arrepintió. Debajo, la bitácora guarda cada paso. El texto aceptado queda congelado. Por último firmo yo el registro: pulso Firmar. Me pide mi contraseña, para confirmar que soy yo quien firma. La escribo. Nadie más puede firmar por mí. Ahora confirmo con Firmar. Queda cerrado, y solo se corrige por enmienda.",
       "acciones": [
         {
+          "resaltar": "tr:has-text('RC-2026-00001')",
+          "durante_ms": 3000,
+          "al_decir": "En el historial"
+        },
+        {
           "click": "tr:has-text('RC-2026-00001') button",
-          "al_decir": "abro el registro"
+          "al_decir": "Lo abro"
         },
         {
           "resaltar": "app-consent-request-panel .cp__status, app-consent-request-panel :text('Aceptado') >> nth=0",

@@ -77,7 +77,6 @@ def consentimiento_01():
                 "Antes de abrir el documento, pedirá los últimos cuatro dígitos de su cédula."
             ),
             "acciones": [
-                R(PANEL, 3000, al_decir="Debajo del documento"),
                 R("button:has(mat-icon:text('save'))", 1500, al_decir="El botón Guardar"),
                 {"click": "button:has-text('Completar')", "al_decir": "Ahora pulso Completar"},
                 R(".mat-mdc-snack-bar-label, simple-snack-bar", 1800, al_decir="El aviso lo confirma", cursor=False),
@@ -93,7 +92,8 @@ def consentimiento_01():
             "ruta": "Página de firma (lo que ve la paciente)",
             "texto_pantalla": "Últimos 4 dígitos de la cédula · enlace personal",
             "narracion": (
-                "Ahora es el turno de la paciente. Pulso Abrir para firmar y le paso la pantalla, o la tableta. Esta es su página: "
+                "Ahora es el turno de la paciente. Pulso Abrir para firmar y le paso la pantalla, o la tableta. Se abre la "
+                "página de firma, con el nombre del centro arriba. Esta es su página: "
                 "no ve nada del sistema, solo su documento. Escribe los últimos cuatro dígitos de su cédula y "
                 "pulsa Continuar."
             ),
@@ -113,7 +113,8 @@ def consentimiento_01():
                 "acuerdo, lo dice aquí y queda registrado. Pulsa Continuar. Ahora marca cada declaración, solo si "
                 "es cierta: que lo leyó completo, que pudo hacer sus preguntas, que sabe que puede revocarlo, y "
                 "que autoriza el procedimiento. Firma como paciente; si fuera un menor, firmaría "
-                "su representante. Su nombre ya está puesto. Dibuja su firma con el dedo, y pulsa Aceptar y firmar."
+                "su representante. Su nombre ya está puesto. Dibuja su firma con el dedo; si no le gusta, la limpia y "
+                "vuelve a empezar. Cuando está conforme, pulsa Aceptar y firmar."
             ),
             "acciones": [
                 {"click": ".pc__doc", "al_decir": "lo lee completo"},
@@ -136,13 +137,15 @@ def consentimiento_01():
             "texto_pantalla": "Código de verificación y copia firmada",
             "narracion": (
                 "Listo. La firma queda con fecha y hora, y con un código de verificación. La paciente puede "
-                "descargar su copia firmada aquí mismo, o pedirla impresa en el centro."
+                "descargar su copia firmada aquí mismo, o pedirla impresa en el centro. Y si cambia de opinión, puede "
+                "revocarlo antes del procedimiento."
             ),
             "acciones": [
                 R(":text('Consentimiento aceptado')", 2500, al_decir="Listo"),
                 R(":text('Código de verificación') >> xpath=..", 2000, al_decir="un código de verificación"),
                 R("button:has-text('Descargar mi consentimiento'), a:has-text('Descargar mi consentimiento')", 3000,
                   al_decir="descargar su copia"),
+                R(":text('Puede revocar este consentimiento')", 3000, al_decir="si cambia de opinión"),
             ],
         },
         {
@@ -151,7 +154,9 @@ def consentimiento_01():
             "ruta": "Pacientes › ficha › Consentimiento › Aceptado",
             "texto_pantalla": "Aceptado · constancia, bitácora y firma de la doctora",
             "narracion": (
-                "La doctora recupera su pantalla. De vuelta en la ficha de Rosa, abro el registro. Dice Aceptado, cuándo "
+                "La doctora recupera su pantalla y vuelve a la ficha de Rosa, en la pestaña del consentimiento. Mientras "
+                "carga, fíjate en algo: la paciente nunca vio el resto del sistema, solo su documento. En el "
+                "historial está el registro que acabamos de preparar, con su número. Lo abro. Dice Aceptado, cuándo "
                 "lo abrió y cuándo firmó, por qué canal y quién firmó. Ver constancia descarga el documento con la "
                 "evidencia, y Revocar registra que la paciente se arrepintió. Debajo, la bitácora guarda cada "
                 "paso. El texto aceptado queda congelado. Por último firmo yo el registro: pulso Firmar. Me pide "
@@ -159,7 +164,8 @@ def consentimiento_01():
                 "cerrado, y solo se corrige por enmienda."
             ),
             "acciones": [
-                {"click": "tr:has-text('RC-2026-00001') button", "al_decir": "abro el registro"},
+                R("tr:has-text('RC-2026-00001')", 3000, al_decir="En el historial"),
+                {"click": "tr:has-text('RC-2026-00001') button", "al_decir": "Lo abro"},
                 R(f"{PANEL} .cp__status, {PANEL} :text('Aceptado') >> nth=0", 2500, al_decir="Dice Aceptado", cursor=False),
                 R(f"{PANEL} dl, {PANEL} :text('Canal')", 2000, al_decir="por qué canal"),
                 R(f"{PANEL} button:has-text('Ver constancia')", 2500, al_decir="Ver constancia"),
