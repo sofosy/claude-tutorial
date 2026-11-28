@@ -248,7 +248,7 @@
           "al_decir": "Copiar enlace"
         },
         {
-          "resaltar": ".mat-mdc-snack-bar-label, simple-snack-bar",
+          "resaltar": "mat-snack-bar-container, .mat-mdc-snack-bar-container",
           "durante_ms": 2000,
           "al_decir": "El aviso de",
           "cursor": false
@@ -261,7 +261,7 @@
       "rotulo": "Avisos por WhatsApp",
       "ruta": "Configuración › Preferencias › Operación › Avisos por WhatsApp",
       "texto_pantalla": "Confirmación, recordatorio, reprogramación y cancelación por WhatsApp",
-      "narracion": "Los avisos de la cita salen siempre por correo. Si el centro conectó su WhatsApp en WhatsApp e IA, este interruptor los manda también por WhatsApp: la confirmación, el recordatorio, la reprogramación y la cancelación, cada uno con su plantilla aprobada. El sistema ya trae las plantillas redactadas. Termino con Guardar, y el aviso confirma que quedó guardada; lo cierro.",
+      "narracion": "Los avisos de la cita salen siempre por correo. Si el centro conectó su WhatsApp en WhatsApp e IA, este interruptor los manda también por WhatsApp: la confirmación, el recordatorio, la reprogramación y la cancelación, cada uno con su plantilla aprobada. El sistema ya trae las plantillas redactadas. Termino con Guardar. Se guarda para todo el centro, y el aviso confirma que quedó guardada; lo cierro.",
       "acciones": [
         {
           "resaltar": ":text('Avisos por WhatsApp')",

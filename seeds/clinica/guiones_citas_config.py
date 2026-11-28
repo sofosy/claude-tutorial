@@ -51,7 +51,7 @@ def citas_06():
                 R("app-center-booking-link", 4000, al_decir="el enlace de reservas del centro"),
                 R(":text('reservables en línea')", 3500, al_decir="dice cuántos"),
                 {"click": "button:has-text('Copiar enlace')", "al_decir": "Copiar enlace"},
-                R(".mat-mdc-snack-bar-label, simple-snack-bar", 2000, al_decir="El aviso de", cursor=False),
+                R("mat-snack-bar-container, .mat-mdc-snack-bar-container", 2000, al_decir="El aviso de", cursor=False),
             ],
         },
         {
@@ -62,7 +62,7 @@ def citas_06():
                 "Los avisos de la cita salen siempre por correo. Si el centro conectó su WhatsApp en WhatsApp e IA, "
                 "este interruptor los manda también por WhatsApp: la confirmación, el recordatorio, la "
                 "reprogramación y la cancelación, cada uno con su plantilla aprobada. El sistema ya trae las "
-                "plantillas redactadas. Termino con Guardar, y el aviso confirma que quedó guardada; lo cierro."
+                "plantillas redactadas. Termino con Guardar. Se guarda para todo el centro, y el aviso confirma que quedó guardada; lo cierro."
             ),
             "acciones": [
                 R(":text('Avisos por WhatsApp')", 2500, al_decir="Los avisos de la cita"),
