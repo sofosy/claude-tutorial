@@ -24,15 +24,15 @@ def hosp_01():
                 "estudios, medicamentos, la habitación. Están en Hospitalización, Cargos. Daniel tiene tres: el "
                 "hemograma y el electrocardiograma ya aprobados, y una sonografía pendiente. Un cargo pendiente no "
                 "se factura hasta que alguien lo revisa y lo aprueba. En su fila pulso Aprobar, y confirmo. El "
-                "aviso dice que quedó aprobado; lo cierro."
+                "aviso confirma que quedó aprobado."
             ),
             "acciones": [
                 R("tr:has-text('Hemograma completo')", 3000, al_decir="Están en Hospitalización"),
                 R(f"{SONO} td >> nth=-2", 3500, al_decir="una sonografía pendiente"),
                 {"click": f"{SONO} button:has(mat-icon:text('check_circle'))", "al_decir": "En su fila pulso Aprobar"},
                 {"click": f"{ALERTA} button:has-text('Aprobar')", "al_decir": "y confirmo"},
-                R(ALERTA, 1800, al_decir="dice que quedó aprobado", cursor=False),
-                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro"},
+                R(ALERTA, 1800, al_decir="confirma que quedó aprobado", cursor=False),
+                {"click_opcional": "button:has-text('Aceptar')", "espera_ms": 3000},
             ],
         },
         {
@@ -48,7 +48,7 @@ def hosp_01():
                 "factura."
             ),
             "acciones": [
-                R(":text('Cargos del ingreso') >> xpath=..", 3500, al_decir="están los cargos"),
+                R(":text('Cargos del ingreso') >> xpath=..", 3000, al_decir="con su estado"),
                 R(".acc__total", 3000, al_decir="y el acumulado"),
                 {"click": "button:has-text('Facturar cargos')", "al_decir": "Pulso Facturar cargos"},
                 R(ALERTA, 5000, al_decir="y el aviso dice", cursor=False),
@@ -60,16 +60,18 @@ def hosp_01():
             "ruta": "Ventas › Facturas › Factura del ingreso",
             "texto_pantalla": "En borrador: se revisa, se emite y se cobra como cualquier factura",
             "narracion": (
-                "La factura queda en borrador, a nombre de Daniel, con una línea por servicio y el número del "
-                "ingreso en las notas. Lo que tiene el mismo servicio y el mismo precio, como la habitación de cada "
-                "día, va en una sola línea. Desde aquí se revisa, se emite y se cobra como cualquier factura. Si "
-                "algún cargo tuviera cobertura de la ARS, el sistema no lo factura aquí: se factura desde la "
-                "autorización del paciente, como vimos en la serie de seguros."
+                "La factura queda en borrador, a nombre de Daniel, con una línea por servicio. Lo que tiene el "
+                "mismo servicio y el mismo precio, como la habitación de cada día, va en una sola línea. Si algún "
+                "cargo tuviera cobertura de la aseguradora, la ARS, el sistema no lo factura aquí: se factura desde "
+                "la autorización del paciente, como vimos en la serie de seguros. Desde aquí se revisa el total, y "
+                "se emite y se cobra como cualquier factura."
             ),
             "acciones": [
                 R(":text('Borrador') >> nth=0", 2500, al_decir="queda en borrador"),
-                R(":text('Líneas del documento') >> xpath=ancestor::*[3]", 4000, al_decir="una línea por servicio"),
-                R(".invoice-total-block", 3000, al_decir="se emite y se cobra"),
+                R(":text('Líneas del documento') >> xpath=ancestor::*[3]", 5000, al_decir="Lo que tiene el"),
+                R(".price-readonly:has-text('RD$800.00') >> nth=0", 4000, al_decir="Si algún cargo tuviera"),
+                R(".invoice-total-block", 3000, al_decir="se revisa el total"),
+                R("button:has-text('Guardar y cobrar')", 3000, al_decir="se emite y se cobra"),
             ],
         },
     ]

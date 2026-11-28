@@ -4,6 +4,7 @@
   "_comentario": "Estado: ars.mjs restaurar H (hosp.mjs H).",
   "base_url": "http://127.0.0.1:4200",
   "zona_horaria": "America/Santo_Domingo",
+  "idioma": "es-DO",
   "sesion": {
     "tipo": "api",
     "url": "http://localhost:3001/api/auth/dev/login",
@@ -200,7 +201,7 @@
       "navegar": "/hospitalization/charges",
       "ruta": "Hospitalización › Cargos",
       "texto_pantalla": "Lo que se le hace al paciente ingresado entra como cargo pendiente",
-      "narracion": "Durante un ingreso, cada servicio que recibe el paciente entra como un cargo: laboratorios, estudios, medicamentos, la habitación. Están en Hospitalización, Cargos. Daniel tiene tres: el hemograma y el electrocardiograma ya aprobados, y una sonografía pendiente. Un cargo pendiente no se factura hasta que alguien lo revisa y lo aprueba. En su fila pulso Aprobar, y confirmo. El aviso dice que quedó aprobado; lo cierro.",
+      "narracion": "Durante un ingreso, cada servicio que recibe el paciente entra como un cargo: laboratorios, estudios, medicamentos, la habitación. Están en Hospitalización, Cargos. Daniel tiene tres: el hemograma y el electrocardiograma ya aprobados, y una sonografía pendiente. Un cargo pendiente no se factura hasta que alguien lo revisa y lo aprueba. En su fila pulso Aprobar, y confirmo. El aviso confirma que quedó aprobado.",
       "acciones": [
         {
           "resaltar": "tr:has-text('Hemograma completo')",
@@ -223,12 +224,12 @@
         {
           "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
           "durante_ms": 1800,
-          "al_decir": "dice que quedó aprobado",
+          "al_decir": "confirma que quedó aprobado",
           "cursor": false
         },
         {
-          "click": "button:has-text('Entendido')",
-          "al_decir": "lo cierro"
+          "click_opcional": "button:has-text('Aceptar')",
+          "espera_ms": 3000
         }
       ]
     },
@@ -244,8 +245,8 @@
       "acciones": [
         {
           "resaltar": ":text('Cargos del ingreso') >> xpath=..",
-          "durante_ms": 3500,
-          "al_decir": "están los cargos"
+          "durante_ms": 3000,
+          "al_decir": "con su estado"
         },
         {
           "resaltar": ".acc__total",
@@ -274,7 +275,7 @@
       "rotulo": "La factura",
       "ruta": "Ventas › Facturas › Factura del ingreso",
       "texto_pantalla": "En borrador: se revisa, se emite y se cobra como cualquier factura",
-      "narracion": "La factura queda en borrador, a nombre de Daniel, con una línea por servicio y el número del ingreso en las notas. Lo que tiene el mismo servicio y el mismo precio, como la habitación de cada día, va en una sola línea. Desde aquí se revisa, se emite y se cobra como cualquier factura. Si algún cargo tuviera cobertura de la ARS, el sistema no lo factura aquí: se factura desde la autorización del paciente, como vimos en la serie de seguros.",
+      "narracion": "La factura queda en borrador, a nombre de Daniel, con una línea por servicio. Lo que tiene el mismo servicio y el mismo precio, como la habitación de cada día, va en una sola línea. Si algún cargo tuviera cobertura de la aseguradora, la ARS, el sistema no lo factura aquí: se factura desde la autorización del paciente, como vimos en la serie de seguros. Desde aquí se revisa el total, y se emite y se cobra como cualquier factura.",
       "acciones": [
         {
           "resaltar": ":text('Borrador') >> nth=0",
@@ -283,11 +284,21 @@
         },
         {
           "resaltar": ":text('Líneas del documento') >> xpath=ancestor::*[3]",
+          "durante_ms": 5000,
+          "al_decir": "Lo que tiene el"
+        },
+        {
+          "resaltar": ".price-readonly:has-text('RD$800.00') >> nth=0",
           "durante_ms": 4000,
-          "al_decir": "una línea por servicio"
+          "al_decir": "Si algún cargo tuviera"
         },
         {
           "resaltar": ".invoice-total-block",
+          "durante_ms": 3000,
+          "al_decir": "se revisa el total"
+        },
+        {
+          "resaltar": "button:has-text('Guardar y cobrar')",
           "durante_ms": 3000,
           "al_decir": "se emite y se cobra"
         }
