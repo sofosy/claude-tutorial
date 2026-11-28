@@ -171,7 +171,21 @@ async function estadoD() {
   log('estado D listo: tres autorizaciones de Humano facturadas al paciente');
 }
 
+async function estadoE() {
+  await login();
+  const cat = await catalogos();
+  const auts = sql(`SELECT id FROM insurance_authorizations WHERE company_id=${E} AND deleted_at IS NULL ORDER BY id`).map(r => +r[0]);
+  await api('POST', 'v1/insurer-invoices/claims', { authorizationIds: auts });
+  const claims = sql(`SELECT id FROM insurance_claims WHERE company_id=${E} AND deleted_at IS NULL ORDER BY id`).map(r => +r[0]);
+  const fi = await api('POST', 'v1/insurer-invoices/from-claims', {
+    insurer: aseguradora('ARS HUMANO'), claimIds: claims, incomeType: cat.incomeType, paymentType: cat.creditPaymentType,
+  });
+  await api('POST', `v1/insurer-invoices/${fi.invoice?.id ?? fi.id}/emit`);
+  log('estado E listo:', claims.length, 'reclamaciones en la factura a ARS Humano, emitida');
+}
+
 if (orden === 'guardar') guardar(nombre);
+else if (orden === 'E') await estadoE();
 else if (orden === 'C') await estadoC();
 else if (orden === 'D') await estadoD();
 else if (orden === 'B') await estadoB();
