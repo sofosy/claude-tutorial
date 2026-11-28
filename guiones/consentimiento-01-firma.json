@@ -288,6 +288,11 @@
       "narracion": "Debajo del documento, la aceptación del paciente espera a que el registro esté completo. El botón Guardar solo lo deja en borrador. Ahora pulso Completar. El aviso lo confirma, y se abre la aceptación del paciente. Hay dos formas de firmar. Por correo, a la paciente le llega un enlace personal y firma desde su casa: eliges cuántos días vale y se le recuerda antes de vencer. Mientras no firme, el enlace se puede reenviar o cancelar. Pero lo más común es que firme aquí mismo, así que elijo En el consultorio. Antes de abrir el documento, pedirá los últimos cuatro dígitos de su cédula.",
       "acciones": [
         {
+          "resaltar": "button:has(mat-icon:text('check_circle'))",
+          "durante_ms": 2500,
+          "al_decir": "Debajo del documento"
+        },
+        {
           "resaltar": "button:has(mat-icon:text('save'))",
           "durante_ms": 1500,
           "al_decir": "El botón Guardar"

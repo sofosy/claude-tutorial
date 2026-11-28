@@ -77,6 +77,7 @@ def consentimiento_01():
                 "Antes de abrir el documento, pedirá los últimos cuatro dígitos de su cédula."
             ),
             "acciones": [
+                R("button:has(mat-icon:text('check_circle'))", 2500, al_decir="Debajo del documento"),
                 R("button:has(mat-icon:text('save'))", 1500, al_decir="El botón Guardar"),
                 {"click": "button:has-text('Completar')", "al_decir": "Ahora pulso Completar"},
                 R(".mat-mdc-snack-bar-label, simple-snack-bar", 1800, al_decir="El aviso lo confirma", cursor=False),
