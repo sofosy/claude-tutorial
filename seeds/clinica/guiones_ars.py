@@ -573,7 +573,7 @@ def ars_06():
             "ruta": "Seguros de Salud › Reclamaciones › Entrega y cobro › Registrar cobro",
             "texto_pantalla": "El pago se reparte entre las reclamaciones abiertas del lote",
             "narracion": (
-                "El aviso confirma la conciliación; lo cierro. Carolina queda parcialmente pagada. Ahora el pago "
+                "Se guarda la conciliación con su cobro. El aviso confirma la conciliación; lo cierro. Carolina queda parcialmente pagada. Ahora el pago "
                 "del resto. En Entrega y cobro, en la fila del lote, pulso Registrar cobro. Dice lo reclamado, lo "
                 "ya cobrado por la conciliación y lo que falta: cuatro mil ochocientos, de las otras dos. La "
                 "reclamación ya conciliada no se toca. Escribo la referencia del banco, que es el número de la "
@@ -596,7 +596,7 @@ def ars_06():
             "ruta": "Seguros de Salud › Reclamaciones › Seguimiento",
             "texto_pantalla": "Lo glosado se apela; si no se recupera, se da de baja con su asiento",
             "narracion": (
-                "Listo. El aviso confirma que el cobro baja lo que debe la ARS; lo cierro y volvemos a la pestaña de Seguimiento: dos pagadas, y Carolina con seiscientos "
+                "Se registra el cobro en la factura a la aseguradora. El aviso confirma que el cobro baja lo que debe la ARS; lo cierro y volvemos a la pestaña de Seguimiento: dos pagadas, y Carolina con seiscientos "
                 "cuarenta pendientes. Su siguiente paso es apelar. Pulso Apelar, se abre el cuadro, y escribo el argumento: "
                 "que ya tenemos la orden médica completa. Lo reviso con calma, y apelo. Si la ARS paga después, se concilia su respuesta. Si "
                 "no, en el menú está Dar de baja lo no cobrado: sale de la cuenta por cobrar como ajuste, con su "
