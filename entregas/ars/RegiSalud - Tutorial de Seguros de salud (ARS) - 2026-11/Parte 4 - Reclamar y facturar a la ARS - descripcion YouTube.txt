@@ -1,0 +1,26 @@
+TÍTULO
+============================================================
+Seguros de salud · Parte 4: reclamar y facturar a la ARS
+
+DESCRIPCIÓN
+============================================================
+Cuarta parte de la serie de ARS de RegiSalud: reclamar a la aseguradora lo ya facturado al paciente, agruparlo en la remesa, generar y emitir la factura a la ARS con su comprobante de crédito fiscal, y el anexo con la lista de reclamaciones.
+
+⏱️ CAPÍTULOS
+00:00  Por reclamar
+00:49  La factura a la aseguradora
+01:24  Emitir la factura
+01:55  La factura y el anexo
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 02:29
+
+TRANSCRIPCIÓN
+============================================================
+Ahora le cobramos a la ARS lo que cubrió. La pestaña Reclamaciones sigue el ciclo en cuatro pasos: por reclamar, seguimiento, remesas y facturas, y entrega y cobro. En Por reclamar solo llega lo que ya se le facturó al paciente: aquí están las tres autorizaciones de ARS Humano de este mes, la de Rosa y dos más, con lo que cubre cada una. Las marco todas: primero la de Rosa, después la de Juan Carlos, y por último la de Carolina. Abajo se suma el total a reclamar. La remesa de destino se sugiere por la fecha del servicio: Noviembre. Pulso Reclamar. El sistema pide confirmar, y confirmo. El aviso dice que se crearon las tres reclamaciones.
+Con las reclamaciones creadas, paso a Remesas y facturas. La remesa es el paquete que se le entrega a la ARS, y la factura es cómo se entrega. La de noviembre tiene las tres reclamaciones sin facturar. Pulso Facturar. Ahí están las tres, con su paciente y su fecha de servicio, por siete mil cuatrocientos cuarenta. Pulso Generar Factura. El aviso dice que se generó; lo cierro. Queda en borrador: todavía se le pueden agregar o quitar reclamaciones, o cambiar el texto de la línea.
+Cuando está conforme, pulso Emitir. Al emitirla se le asigna el comprobante de crédito fiscal, porque la ARS tiene RNC; se registra la cuenta por cobrar a la aseguradora, y la remesa queda entregada. Confirmo, y el sistema la emite y la contabiliza. El aviso confirma que quedó emitida, y lo cierro. La remesa entregada ya no está entre las abiertas: en el filtro elijo Entregadas, y ahí está la factura emitida, con su número de comprobante.
+Para verla completa, abro la factura en Ventas, donde vive como cualquier otra factura del centro. Es de crédito fiscal, a nombre de ARS Humano, con el código de prestador del centro. En Imprimir está el PDF de la factura y el anexo con la lista de reclamaciones: cada paciente, su cédula, su servicio, su autorización y el monto. Eso es lo que se le entrega a la ARS. En el próximo video registramos la entrega y el pago de la aseguradora.
