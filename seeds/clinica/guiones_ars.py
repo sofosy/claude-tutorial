@@ -164,7 +164,7 @@ def ars_02():
             "narracion": (
                 "Rosa Elena Martínez llega con su seguro de ARS Humano. La afiliación se registra en su ficha; "
                 "también se puede marcar al crear el paciente, con la casilla de que viene con seguro. Abro a "
-                "Rosa y paso a la pestaña ARS. Pulso Nueva afiliación. Primero elijo la aseguradora: ARS Humano. "
+                "Rosa en la lista, y en su ficha paso a la pestaña ARS. Pulso Nueva afiliación, y se abre el formulario con su nombre arriba. Primero elijo la aseguradora: ARS Humano. "
                 "Con eso se cargan sus planes, y elijo el suyo, que es el Básico. Ahora escribo el número de "
                 "póliza, tal como sale en su carnet. Debajo va el número de afiliado, que es el que la ARS pide "
                 "en cada autorización. La vigencia empieza hoy, y como es su primera afiliación, queda como la "
@@ -174,6 +174,7 @@ def ars_02():
                 {"click": "button:has-text('Rosa Elena')", "al_decir": "Abro a"},
                 {"click": "button.tab:has-text('ARS')", "al_decir": "la pestaña ARS"},
                 {"click": "button:has-text('Nueva afiliación')", "al_decir": "Pulso Nueva afiliación"},
+                R(f"{DLG} :text('Rosa Elena Martínez')", 2000, al_decir="con su nombre arriba", cursor=False),
                 {"click": f"{DLG} mat-select[formcontrolname='insurerId']", "al_decir": "Primero elijo la aseguradora"},
                 {"click": "mat-option:has-text('ARS HUMANO')", "al_decir": "ARS Humano. Con"},
                 {"click": f"{DLG} mat-select[formcontrolname='planId']", "al_decir": "se cargan sus planes"},
@@ -182,6 +183,7 @@ def ars_02():
                  "al_decir": "Ahora escribo el número"},
                 {"escribir": {"sel": "input[formcontrolname='memberNumber']", "texto": "88120455"},
                  "al_decir": "Debajo va el número"},
+                R(f"{DLG} mat-form-field:has([formcontrolname='effectiveDate'])", 2500, al_decir="La vigencia empieza hoy"),
                 R(f"{DLG} :text('queda como la principal')", 3000, al_decir="queda como la principal"),
                 {"click": f"{DLG} button:has-text('Guardar')", "al_decir": "guardo"},
             ],

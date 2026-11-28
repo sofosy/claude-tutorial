@@ -200,7 +200,7 @@
       "navegar": "/patients",
       "ruta": "Pacientes › ficha › ARS › Nueva afiliación",
       "texto_pantalla": "A qué plan pertenece el paciente: aseguradora, plan, póliza y afiliado",
-      "narracion": "Rosa Elena Martínez llega con su seguro de ARS Humano. La afiliación se registra en su ficha; también se puede marcar al crear el paciente, con la casilla de que viene con seguro. Abro a Rosa y paso a la pestaña ARS. Pulso Nueva afiliación. Primero elijo la aseguradora: ARS Humano. Con eso se cargan sus planes, y elijo el suyo, que es el Básico. Ahora escribo el número de póliza, tal como sale en su carnet. Debajo va el número de afiliado, que es el que la ARS pide en cada autorización. La vigencia empieza hoy, y como es su primera afiliación, queda como la principal. Todo listo: guardo.",
+      "narracion": "Rosa Elena Martínez llega con su seguro de ARS Humano. La afiliación se registra en su ficha; también se puede marcar al crear el paciente, con la casilla de que viene con seguro. Abro a Rosa en la lista, y en su ficha paso a la pestaña ARS. Pulso Nueva afiliación, y se abre el formulario con su nombre arriba. Primero elijo la aseguradora: ARS Humano. Con eso se cargan sus planes, y elijo el suyo, que es el Básico. Ahora escribo el número de póliza, tal como sale en su carnet. Debajo va el número de afiliado, que es el que la ARS pide en cada autorización. La vigencia empieza hoy, y como es su primera afiliación, queda como la principal. Todo listo: guardo.",
       "acciones": [
         {
           "click": "button:has-text('Rosa Elena')",
@@ -213,6 +213,12 @@
         {
           "click": "button:has-text('Nueva afiliación')",
           "al_decir": "Pulso Nueva afiliación"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Rosa Elena Martínez')",
+          "durante_ms": 2000,
+          "al_decir": "con su nombre arriba",
+          "cursor": false
         },
         {
           "click": "mat-dialog-container mat-select[formcontrolname='insurerId']",
@@ -243,6 +249,11 @@
             "texto": "88120455"
           },
           "al_decir": "Debajo va el número"
+        },
+        {
+          "resaltar": "mat-dialog-container mat-form-field:has([formcontrolname='effectiveDate'])",
+          "durante_ms": 2500,
+          "al_decir": "La vigencia empieza hoy"
         },
         {
           "resaltar": "mat-dialog-container :text('queda como la principal')",
