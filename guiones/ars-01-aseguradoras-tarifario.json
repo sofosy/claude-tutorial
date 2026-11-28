@@ -447,7 +447,7 @@
         },
         {
           "click": "mat-dialog-container button:has-text('Guardar')",
-          "al_decir": "Guardo"
+          "al_decir": "guardo"
         }
       ]
     },
