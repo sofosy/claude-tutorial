@@ -81,7 +81,92 @@ async function estadoB() {
   log('estado B listo: Humano y Senasa, tarifario de Humano Básico con', TARIFAS.length, 'servicios');
 }
 
+// ── C, D, E ────────────────────────────────────────────────────────────────────────────────────
+const paciente = (n, a) => +uno(`SELECT id FROM partners WHERE company_id=${E} AND name='${n}' AND firstLastName='${a}' AND deleted_at IS NULL ORDER BY id LIMIT 1`);
+const tarifa = code => TARIFAS.find(t => t[0] === code);
+
+async function afiliar(pac, poliza, afiliado) {
+  const ya = uno(`SELECT id FROM patient_insurances WHERE company_id=${E} AND patient_id=${pac} AND deleted_at IS NULL LIMIT 1`);
+  if (ya) return +ya;
+  const r = await api('POST', 'v1/patient-insurances', {
+    patient: pac, plan: plan('HUMANO-P01'), policyNumber: poliza, memberNumber: afiliado, isPrimary: true,
+    effectiveDate: new Date().toISOString().slice(0, 10),
+  });
+  return r.id;
+}
+
+async function autorizar(afiliacion, codes, codigoArs) {
+  const r = await api('POST', 'v1/insurance-authorizations', {
+    patientInsurance: afiliacion, autoApprove: true, insurerAuthorizationNumber: codigoArs,
+    details: codes.map(code => {
+      const [, precio, cubre, copago] = tarifa(code);
+      return { product: prod(code), quantity: 1, unitPrice: precio, coverageType: 'FIXED_AMOUNT', coverageValue: cubre,
+               maxCoveredAmount: cubre, patientCopay: copago };
+    }),
+  });
+  return r;
+}
+
+async function catalogos() {
+  const inc = await api('GET', 'v1/income-type?limit=20');
+  const pay = await api('GET', 'v1/payment/types?limit=50');
+  const cur = await api('GET', 'v1/company-currencies/local');
+  const rows = x => x?.data ?? x ?? [];
+  return {
+    incomeType: (rows(inc).find(i => i.isDefault) ?? rows(inc)[0])?.id,
+    paymentType: (rows(pay).find(p => /contado|efectivo|cash/i.test(p.name ?? '')) ?? rows(pay)[0])?.id,
+    creditPaymentType: (rows(pay).find(p => /cr[eé]dito/i.test(p.name ?? '')) ?? rows(pay)[0])?.id,
+    currency: cur?.currency?.id ?? cur?.id,
+  };
+}
+
+// Factura del paciente desde su autorización, emitida y cobrada en efectivo.
+async function facturarPaciente(cat, pac, afiliacion, aut) {
+  const r = await api('POST', 'v1/medical-invoices', {
+    ncfType: 2, incomeType: cat.incomeType, paymentType: cat.paymentType, currency: cat.currency,
+    partner: pac, patientInsurance: afiliacion,
+    details: aut.details.map(d => ({ product: d.productId ?? d.product?.id, quantity: 1, unitPriceOverride: Number(d.unitPrice) })),
+    coverageOverrides: aut.details.map((d, i) => ({ detailIndex: i, authorizationDetail: d.id })),
+  });
+  const numero = r.invoiceNumber ?? r.invoice?.invoiceNumber;
+  await api('PATCH', `v1/invoices/change-status/${numero}`, { invoiceStatusCode: 'EMITTED' });
+  const copago = +uno(`SELECT total FROM invoices WHERE invoice_number='${numero}' AND company_id=${E}`);
+  if (copago > 0) await api('POST', 'v1/payment', { invoiceNumber: numero, amount: copago.toFixed(2), amountReceived: copago.toFixed(2), paymentMethodCode: 'CASH' });
+  return numero;
+}
+
+async function estadoC() {
+  await login();
+  const rosa = paciente('Rosa Elena', 'Martínez');
+  const af = await afiliar(rosa, 'HUM-778812', '88120455');
+  if (!uno(`SELECT id FROM insurance_authorizations WHERE company_id=${E} AND patient_insurance_id=${af} AND deleted_at IS NULL LIMIT 1`))
+    await autorizar(af, ['SRV-CONSULTA'], 'AUT-551207');
+  log('estado C listo: Rosa afiliada a Humano con su autorización aprobada');
+}
+
+async function estadoD() {
+  await login();
+  const cat = await catalogos();
+  const rosa = paciente('Rosa Elena', 'Martínez');
+  const afRosa = +uno(`SELECT id FROM patient_insurances WHERE company_id=${E} AND patient_id=${rosa} AND deleted_at IS NULL LIMIT 1`);
+  const autRosa = await api('GET', `v1/insurance-authorizations/${uno(`SELECT id FROM insurance_authorizations WHERE company_id=${E} AND patient_insurance_id=${afRosa} AND deleted_at IS NULL ORDER BY id LIMIT 1`)}`);
+  await facturarPaciente(cat, rosa, afRosa, autRosa);
+  // Otras dos pacientes de Humano con lo suyo ya facturado: «Por reclamar» con más de una.
+  for (const [n, a, pol, afi, codes, codigo] of [
+    ['Juan Carlos', 'Batista', 'HUM-662041', '88119321', ['SRV-SONO-ABD'], 'AUT-551388'],
+    ['Carolina', 'Méndez', 'HUM-701553', '88124507', ['SRV-CONSULTA', 'SRV-HEMOGRAMA'], 'AUT-551402'],
+  ]) {
+    const pac = paciente(n, a);
+    const af = await afiliar(pac, pol, afi);
+    const aut = await autorizar(af, codes, codigo);
+    await facturarPaciente(cat, pac, af, aut);
+  }
+  log('estado D listo: tres autorizaciones de Humano facturadas al paciente');
+}
+
 if (orden === 'guardar') guardar(nombre);
+else if (orden === 'C') await estadoC();
+else if (orden === 'D') await estadoD();
 else if (orden === 'B') await estadoB();
 else if (orden === 'restaurar') restaurar(nombre);
 else if (orden === 'base') await base();
