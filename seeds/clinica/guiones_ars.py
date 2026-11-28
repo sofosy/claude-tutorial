@@ -265,6 +265,94 @@ def ars_02():
     )
 
 
+def ars_03():
+    pasos = [
+        {
+            "id": "01-dos-facturas", "capitulo": "Dos facturas por un servicio", "rotulo": "Facturar la autorización",
+            "navegar": "/patients/545?tab=ars", "ruta": "Pacientes › ficha › ARS › Facturar esta autorización",
+            "texto_pantalla": "La paciente paga su copago; lo que cubre la ARS se le factura a ella aparte",
+            "narracion": (
+                "Un servicio con seguro lleva dos facturas: la de la paciente, solo por lo que ella paga, y la de "
+                "la ARS, por lo que cubre, que se hace después en Reclamaciones. Empezamos por la de Rosa. En su "
+                "ficha, pestaña ARS, está la autorización aprobada de la consulta. En su menú pulso Facturar esta "
+                "autorización. Es la forma más común; también se puede cobrar la consulta desde la cita en la "
+                "agenda."
+            ),
+            "acciones": [
+                R(":text('Cobertura del paciente') >> xpath=..", 3500, al_decir="la de la paciente"),
+                R("a.rail-item[aria-label='Seguros de Salud']", 2500, al_decir="en Reclamaciones"),
+                R(":text('ARS AUT-551207')", 4000, al_decir="está la autorización aprobada"),
+                {"click": "button:has(mat-icon:text('more_vert')) >> nth=1", "al_decir": "En su menú"},
+                {"click": ".mat-mdc-menu-content button:has-text('Facturar esta autorización')",
+                 "al_decir": "pulso Facturar esta"},
+                R(":text('Nueva Factura')", 3000, al_decir="Es la forma más común"),
+            ],
+        },
+        {
+            "id": "02-factura", "capitulo": "La factura del paciente", "rotulo": "Factura del paciente",
+            "ruta": "Ventas › Facturas › Nueva factura (médica)",
+            "texto_pantalla": "El servicio completo, menos lo que cubre la ARS: el copago",
+            "narracion": (
+                "Se abre la factura ya armada. La paciente queda fija mientras se use su cobertura, y el "
+                "comprobante es de consumo. Abajo están su aseguradora, su plan y su póliza. La línea trae la "
+                "consulta de dos mil quinientos, con lo que cubre la ARS. El resumen lo deja claro: dos mil "
+                "quinientos de servicio, menos dos mil de cobertura, y un total a pagar de quinientos."
+            ),
+            "acciones": [
+                R(":text('El paciente no puede cambiarse')", 3500, al_decir="queda fija"),
+                R(":text('COBERTURA DEL PACIENTE') >> xpath=..", 3500, al_decir="su aseguradora"),
+                R(":text('COBERT. ARS')", 3000, al_decir="con lo que cubre"),
+                R("app-document-cost-summary", 3500, al_decir="El resumen lo deja claro"),
+                R(".invoice-total-block", 3000, al_decir="un total a pagar"),
+            ],
+        },
+        {
+            "id": "03-cobro", "capitulo": "Cobrar el copago", "rotulo": "Guardar y cobrar",
+            "ruta": "Ventas › Facturas › Nueva factura › Cobro",
+            "texto_pantalla": "Efectivo, tarjeta o transferencia; la factura queda saldada",
+            "narracion": (
+                "Más abajo está el cobro. Rosa paga en efectivo, así que elijo Efectivo y pulso Exacto: el monto "
+                "recibido es el mismo que se cobra. El aviso de abajo confirma que se cobran quinientos y la "
+                "factura queda saldada. Pulso Guardar y cobrar. El aviso dice cobro procesado; lo cierro y pulso Aceptar."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Efectivo')", "al_decir": "elijo Efectivo"},
+                {"click": "button:has-text('Exacto')", "al_decir": "pulso Exacto"},
+                R(":text('la factura queda')", 3000, al_decir="El aviso de abajo"),
+                {"click": "button:has-text('Guardar y cobrar')", "al_decir": "Pulso Guardar y cobrar"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 1800, al_decir="El aviso dice", cursor=False),
+                {"click": "button:has-text('Aceptar')", "al_decir": "pulso Aceptar"},
+            ],
+        },
+        {
+            "id": "04-resultado", "capitulo": "La factura pagada", "rotulo": "Factura pagada",
+            "ruta": "Ventas › Facturas › Ver factura",
+            "texto_pantalla": "Pagada, con su comprobante; la autorización queda utilizada",
+            "narracion": (
+                "La factura queda pagada, con su número de comprobante. El resumen de pagos dice lo cobrado y que "
+                "no queda nada pendiente, y desde aquí se imprime la factura o el recibo. La autorización pasa a "
+                "utilizada: ya no se puede facturar otra vez. Lo que cubrió la ARS queda en Reclamaciones, por "
+                "reclamar. En el próximo video se lo reclamamos y le emitimos su factura."
+            ),
+            "acciones": [
+                R(":text('Pagada') >> nth=0", 3000, al_decir="queda pagada"),
+                R(":text('B0200000001')", 2500, al_decir="número de comprobante"),
+                R(":text('Resumen de Pagos') >> xpath=..", 3500, al_decir="El resumen de pagos"),
+                R("button:has-text('Imprimir') >> nth=0", 2500, al_decir="se imprime"),
+                R("button:has-text('Imprimir recibo')", 2500, al_decir="o el recibo"),
+                R(":text('Cobertura ARS') >> nth=0", 3000, al_decir="Lo que cubrió la ARS"),
+            ],
+        },
+    ]
+    return guion(
+        "ars-03-factura-paciente", "Seguros de salud · Parte 3: la factura del paciente",
+        "Tercera parte de la serie de ARS de RegiSalud: facturar una autorización aprobada, la factura del "
+        "paciente por su copago (el servicio completo menos la cobertura de la ARS), cobrarla y cómo queda la "
+        "autorización.",
+        pasos, comentario="Estado: ars.mjs restaurar C.", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (ars_01, ars_02):
+    for f in (ars_01, ars_02, ars_03):
         print(f())
