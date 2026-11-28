@@ -666,9 +666,11 @@ def ars_07():
                 "PDF, o se imprime para que el médico lo firme."
             ),
             "acciones": [
+                R(":text('Cobertura del paciente') >> xpath=..", 3000, al_decir="firmado por el médico"),
+                R(":text('Autorizaciones') >> nth=0 >> xpath=..", 2500, al_decir="Está en la ficha"),
                 R(":text('Reclamaciones a la ARS') >> xpath=..", 3000, al_decir="en Reclamaciones a la ARS"),
                 {"click": "button[aria-label^='Abrir la reclamación'] >> nth=0", "al_decir": "Abro la de Carolina"},
-                R(":text('Formulario de Reclamación') >> nth=-1 >> xpath=..", 3000, al_decir="sale lleno", cursor=False),
+                R(".claim-form-tab__active", 3000, al_decir="sale lleno", cursor=False),
                 R(":text('Faltan datos requeridos') >> xpath=ancestor::*[2]", 4000, al_decir="si falta algo"),
                 {"click": "app-patient-claim-form-tab app-autocomplete input", "al_decir": "Elijo el médico"},
                 {"teclear": "Ana", "al_decir": "escribo su nombre"},

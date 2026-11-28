@@ -204,6 +204,16 @@
       "narracion": "Algunas ARS piden, además de la factura y el anexo, el formulario de reclamación por servicios prestados de cada paciente, firmado por el médico. Está en la ficha del paciente, pestaña ARS, en Reclamaciones a la ARS. Abro la de Carolina. El formulario sale lleno con sus datos, su afiliación, la autorización y los servicios; si falta algo que la ARS exige, como el diagnóstico, lo avisa arriba, y se completa aquí mismo. Elijo el médico tratante: escribo su nombre, y elijo a la doctora Ana cuando aparece en la lista. Con el médico puesto, guardo los cambios del formulario. Desde aquí se descarga en PDF, o se imprime para que el médico lo firme.",
       "acciones": [
         {
+          "resaltar": ":text('Cobertura del paciente') >> xpath=..",
+          "durante_ms": 3000,
+          "al_decir": "firmado por el médico"
+        },
+        {
+          "resaltar": ":text('Autorizaciones') >> nth=0 >> xpath=..",
+          "durante_ms": 2500,
+          "al_decir": "Está en la ficha"
+        },
+        {
           "resaltar": ":text('Reclamaciones a la ARS') >> xpath=..",
           "durante_ms": 3000,
           "al_decir": "en Reclamaciones a la ARS"
@@ -213,7 +223,7 @@
           "al_decir": "Abro la de Carolina"
         },
         {
-          "resaltar": ":text('Formulario de Reclamación') >> nth=-1 >> xpath=..",
+          "resaltar": ".claim-form-tab__active",
           "durante_ms": 3000,
           "al_decir": "sale lleno",
           "cursor": false
