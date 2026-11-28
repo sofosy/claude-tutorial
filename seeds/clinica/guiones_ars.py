@@ -392,7 +392,7 @@ def ars_04():
                 "Con las reclamaciones creadas, paso a Remesas y facturas. La remesa es el paquete que se le entrega a la ARS, y la factura es "
                 "cómo se entrega. La de noviembre tiene las tres reclamaciones sin facturar. Pulso Facturar. Ahí "
                 "están las tres, con su paciente y su fecha de servicio, por siete mil cuatrocientos cuarenta. "
-                "Pulso Generar Factura. Queda en borrador: todavía se le pueden agregar o quitar reclamaciones, o "
+                "Pulso Generar Factura. El aviso dice que se generó; lo cierro. Queda en borrador: todavía se le pueden agregar o quitar reclamaciones, o "
                 "cambiar el texto de la línea."
             ),
             "acciones": [
@@ -401,7 +401,8 @@ def ars_04():
                 {"click": "button:has-text('Facturar') >> nth=0", "al_decir": "Pulso Facturar"},
                 R(f"{DLG} tr:has-text('CLM-2026-000201')", 3500, al_decir="Ahí están las tres", cursor=False),
                 {"click": f"{DLG} button:has-text('Generar Factura')", "al_decir": "Pulso Generar Factura"},
-                {"click": "button:has-text('Entendido')", "al_decir": "Queda en borrador"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 1800, al_decir="El aviso dice que se generó", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro. Queda"},
                 R("button:has-text('Agregar Reclamaciones')", 2500, al_decir="agregar o quitar"),
                 R("button:has-text('Editar Descripción')", 2500, al_decir="cambiar el texto"),
             ],
@@ -420,7 +421,8 @@ def ars_04():
                 {"click": "button:has(mat-icon:text('send')):has-text('Emitir')", "al_decir": "pulso Emitir"},
                 R(f"{DLG}", 4000, al_decir="Al emitirla se le asigna", cursor=False),
                 {"click": "button:has-text('Sí, Emitir')", "al_decir": "Confirmo"},
-                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 1800, al_decir="El aviso confirma que quedó", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "y lo cierro"},
                 {"click": ".content-block mat-select >> nth=1", "al_decir": "en el filtro"},
                 {"click": "mat-option:has-text('Entregadas')", "al_decir": "elijo Entregadas"},
                 R(":text('B0100000001') >> nth=0", 3500, al_decir="con su número de comprobante"),

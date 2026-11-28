@@ -260,7 +260,7 @@
       "rotulo": "Facturar la remesa",
       "ruta": "Seguros de Salud › Reclamaciones › Remesas y facturas › Facturar",
       "texto_pantalla": "La remesa es el paquete para la ARS; la factura es cómo se entrega",
-      "narracion": "Con las reclamaciones creadas, paso a Remesas y facturas. La remesa es el paquete que se le entrega a la ARS, y la factura es cómo se entrega. La de noviembre tiene las tres reclamaciones sin facturar. Pulso Facturar. Ahí están las tres, con su paciente y su fecha de servicio, por siete mil cuatrocientos cuarenta. Pulso Generar Factura. Queda en borrador: todavía se le pueden agregar o quitar reclamaciones, o cambiar el texto de la línea.",
+      "narracion": "Con las reclamaciones creadas, paso a Remesas y facturas. La remesa es el paquete que se le entrega a la ARS, y la factura es cómo se entrega. La de noviembre tiene las tres reclamaciones sin facturar. Pulso Facturar. Ahí están las tres, con su paciente y su fecha de servicio, por siete mil cuatrocientos cuarenta. Pulso Generar Factura. El aviso dice que se generó; lo cierro. Queda en borrador: todavía se le pueden agregar o quitar reclamaciones, o cambiar el texto de la línea.",
       "acciones": [
         {
           "click": "button:has-text('Remesas y facturas')",
@@ -286,8 +286,14 @@
           "al_decir": "Pulso Generar Factura"
         },
         {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 1800,
+          "al_decir": "El aviso dice que se generó",
+          "cursor": false
+        },
+        {
           "click": "button:has-text('Entendido')",
-          "al_decir": "Queda en borrador"
+          "al_decir": "lo cierro. Queda"
         },
         {
           "resaltar": "button:has-text('Agregar Reclamaciones')",
@@ -324,8 +330,14 @@
           "al_decir": "Confirmo"
         },
         {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 1800,
+          "al_decir": "El aviso confirma que quedó",
+          "cursor": false
+        },
+        {
           "click": "button:has-text('Entendido')",
-          "al_decir": "lo cierro"
+          "al_decir": "y lo cierro"
         },
         {
           "click": ".content-block mat-select >> nth=1",
