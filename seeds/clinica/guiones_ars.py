@@ -354,6 +354,108 @@ def ars_03():
     )
 
 
+def ars_04():
+    REC = "button:has(mat-icon:text('check_circle')):has-text('Reclamar')"
+    pasos = [
+        {
+            "id": "01-por-reclamar", "capitulo": "Por reclamar", "rotulo": "Reclamar a la ARS",
+            "navegar": "/health-insurance/reclamaciones", "ruta": "Seguros de Salud › Reclamaciones › Por reclamar",
+            "texto_pantalla": "Lo ya facturado al paciente, listo para reclamarle a la aseguradora",
+            "narracion": (
+                "Ahora le cobramos a la ARS lo que cubrió. La pestaña Reclamaciones sigue el ciclo en cuatro pasos: "
+                "por reclamar, seguimiento, remesas y facturas, y entrega y cobro. En Por reclamar solo llega lo "
+                "que ya se le facturó al paciente: aquí están las tres autorizaciones de ARS Humano de este mes, "
+                "la de Rosa y dos más, con lo que cubre cada una. Las marco todas: primero la de Rosa, después la "
+                "de Juan Carlos, y por último la de Carolina. Abajo se suma el total a reclamar. La remesa de destino se sugiere por la fecha del "
+                "servicio: Noviembre. Pulso Reclamar. El sistema pide confirmar, y confirmo. El aviso dice que se "
+                "crearon las tres reclamaciones."
+            ),
+            "acciones": [
+                R("button:has-text('Por reclamar')", 2000, al_decir="por reclamar, seguimiento"),
+                R("button:has-text('Entrega y cobro')", 2000, al_decir="y entrega y cobro"),
+                R(":text('ARS HUMANO') >> nth=0", 3500, al_decir="aquí están las tres"),
+                {"click": ".content-block mat-checkbox >> nth=0", "al_decir": "primero la de Rosa"},
+                {"click": ".content-block mat-checkbox >> nth=1", "al_decir": "de Juan Carlos"},
+                {"click": ".content-block mat-checkbox >> nth=2", "al_decir": "la de Carolina"},
+                R("mat-form-field:has-text('Remesa de destino')", 2500, al_decir="se sugiere"),
+                {"click": REC, "al_decir": "Pulso Reclamar"},
+                {"click": "button:has-text('Sí, Reclamar')", "al_decir": "y confirmo"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 2000, al_decir="el aviso dice", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "las tres reclamaciones"},
+            ],
+        },
+        {
+            "id": "02-facturar", "capitulo": "La factura a la aseguradora", "rotulo": "Facturar la remesa",
+            "ruta": "Seguros de Salud › Reclamaciones › Remesas y facturas › Facturar",
+            "texto_pantalla": "La remesa es el paquete para la ARS; la factura es cómo se entrega",
+            "narracion": (
+                "Con las reclamaciones creadas, paso a Remesas y facturas. La remesa es el paquete que se le entrega a la ARS, y la factura es "
+                "cómo se entrega. La de noviembre tiene las tres reclamaciones sin facturar. Pulso Facturar. Ahí "
+                "están las tres, con su paciente y su fecha de servicio, por siete mil cuatrocientos cuarenta. "
+                "Pulso Generar Factura. Queda en borrador: todavía se le pueden agregar o quitar reclamaciones, o "
+                "cambiar el texto de la línea."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Remesas y facturas')", "al_decir": "Paso a Remesas"},
+                R(":text('Noviembre 2026') >> nth=0", 3500, al_decir="La de noviembre"),
+                {"click": "button:has-text('Facturar') >> nth=0", "al_decir": "Pulso Facturar"},
+                R(f"{DLG} tr:has-text('CLM-2026-000201')", 3500, al_decir="Ahí están las tres", cursor=False),
+                {"click": f"{DLG} button:has-text('Generar Factura')", "al_decir": "Pulso Generar Factura"},
+                {"click": "button:has-text('Entendido')", "al_decir": "Queda en borrador"},
+                R("button:has-text('Agregar Reclamaciones')", 2500, al_decir="agregar o quitar"),
+                R("button:has-text('Editar Descripción')", 2500, al_decir="cambiar el texto"),
+            ],
+        },
+        {
+            "id": "03-emitir", "capitulo": "Emitir la factura", "rotulo": "Emitir",
+            "ruta": "Seguros de Salud › Reclamaciones › Remesas y facturas › Emitir",
+            "texto_pantalla": "Comprobante de crédito fiscal, cuenta por cobrar y remesa entregada",
+            "narracion": (
+                "Cuando está conforme, pulso Emitir. Al emitirla se le asigna el comprobante de crédito fiscal, "
+                "porque la ARS tiene RNC; se registra la cuenta por cobrar a la aseguradora, y la remesa queda "
+                "entregada. Confirmo. El aviso confirma que quedó emitida, y lo cierro. La remesa entregada ya no está entre las abiertas: en el filtro elijo "
+                "Entregadas, y ahí está la factura emitida, con su número de comprobante."
+            ),
+            "acciones": [
+                {"click": "button:has(mat-icon:text('send')):has-text('Emitir')", "al_decir": "pulso Emitir"},
+                R(f"{DLG}", 4000, al_decir="Al emitirla se le asigna", cursor=False),
+                {"click": "button:has-text('Sí, Emitir')", "al_decir": "Confirmo"},
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro"},
+                {"click": ".content-block mat-select >> nth=1", "al_decir": "en el filtro"},
+                {"click": "mat-option:has-text('Entregadas')", "al_decir": "elijo Entregadas"},
+                R(":text('B0100000001') >> nth=0", 3500, al_decir="con su número de comprobante"),
+            ],
+        },
+        {
+            "id": "04-anexo", "capitulo": "La factura y el anexo", "rotulo": "Factura y anexo",
+            "navegar": "/sales/invoices/1000000004", "al_decir_navegar": "abro la factura",
+            "ruta": "Ventas › Facturas › Factura a la aseguradora",
+            "texto_pantalla": "El PDF de la factura y el anexo con la lista de reclamaciones",
+            "narracion": (
+                "Para verla completa, abro la factura en Ventas. Es de crédito fiscal, a nombre de ARS Humano, con el código de "
+                "prestador del centro. En Imprimir está el PDF de la factura y el anexo con la lista de "
+                "reclamaciones: cada paciente, su cédula, su servicio, su autorización y el monto. Eso es lo que se "
+                "le entrega a la ARS. En el próximo video registramos la entrega y el pago de la aseguradora."
+            ),
+            "acciones": [
+                R(":text('Tradicional · Crédito Fiscal') >> nth=0", 3000, al_decir="Es de crédito fiscal"),
+                R(":text('Código de Prestador')", 3000, al_decir="con el código"),
+                {"click": "button:has-text('Imprimir') >> nth=0", "al_decir": "En Imprimir"},
+                R(".mat-mdc-menu-content button:has-text('Descargar PDF')", 2500, al_decir="el PDF de la factura"),
+                R(".mat-mdc-menu-content button:has-text('Anexo')", 5000, al_decir="el anexo con la lista"),
+                {"presionar": {"tecla": "Escape"}, "al_decir": "Eso es lo que"},
+            ],
+        },
+    ]
+    return guion(
+        "ars-04-reclamar-facturar", "Seguros de salud · Parte 4: reclamar y facturar a la ARS",
+        "Cuarta parte de la serie de ARS de RegiSalud: reclamar a la aseguradora lo ya facturado al paciente, "
+        "agruparlo en la remesa, generar y emitir la factura a la ARS con su comprobante de crédito fiscal, y el "
+        "anexo con la lista de reclamaciones.",
+        pasos, comentario="Estado: ars.mjs restaurar D.", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (ars_01, ars_02, ars_03):
+    for f in (ars_01, ars_02, ars_03, ars_04):
         print(f())

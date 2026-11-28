@@ -1,0 +1,388 @@
+{
+  "titulo": "Seguros de salud · Parte 4: reclamar y facturar a la ARS",
+  "descripcion": "Cuarta parte de la serie de ARS de RegiSalud: reclamar a la aseguradora lo ya facturado al paciente, agruparlo en la remesa, generar y emitir la factura a la ARS con su comprobante de crédito fiscal, y el anexo con la lista de reclamaciones.",
+  "_comentario": "Estado: ars.mjs restaurar D.",
+  "base_url": "http://127.0.0.1:4200",
+  "zona_horaria": "America/Santo_Domingo",
+  "sesion": {
+    "tipo": "api",
+    "url": "http://localhost:3001/api/auth/dev/login",
+    "cuerpo": {
+      "username": "admin.losprados@regisalud.test",
+      "password": "LosPrados2026!"
+    },
+    "clave": "aut",
+    "extra": {
+      "__v": 2
+    },
+    "navegar": "/home"
+  },
+  "marca": {
+    "nombre": "RegiSalud",
+    "logo": "marca/regisalud.png",
+    "simbolo": "marca/regisalud-simbolo.png",
+    "linea": "RegiSalud · Tutorial"
+  },
+  "url_publica": "https://regisalud.com",
+  "voz": {
+    "id": "es-DO-RamonaNeural",
+    "velocidad": "+12%"
+  },
+  "musica": {
+    "archivo": "marca/musica/elevator-music-mcculloch.mp3",
+    "volumen_db": -32,
+    "ducking": true,
+    "fade_s": 2
+  },
+  "loudnorm": {
+    "lufs": -14,
+    "tp": -1.5
+  },
+  "marca_video": {
+    "entrada_s": 3,
+    "cierre_s": 3
+  },
+  "rotulo_paso": {
+    "segundos": 3.5
+  },
+  "rutas_locales": [
+    {
+      "url": "https://fonts.googleapis.com/css?family=Material*",
+      "archivo": "fuentes/material-icons.css"
+    },
+    {
+      "url": "https://fonts.googleapis.com/css2?family=Roboto*",
+      "archivo": "fuentes/roboto.css"
+    },
+    {
+      "url": "https://fonts.gstatic.com/local/*",
+      "carpeta": "fuentes"
+    }
+  ],
+  "css_global": [
+    "app-chatbot-widget{display:none!important}",
+    ".chatbot-fab{display:none!important}",
+    ".nav-notification-icons .notification-badge{display:none!important}"
+  ],
+  "pronunciacion": {
+    "RegiSalud": "Regisalud",
+    "ARS": "a-erre-ese",
+    "PDF": "pe-de-efe"
+  },
+  "privacidad": {
+    "permitidos": [
+      "regisalud",
+      "RegiSalud",
+      "Los Prados",
+      "40205550",
+      "00105551",
+      "8095550",
+      "8295550",
+      "8495550",
+      "losprados",
+      "los-prados",
+      "402-0555",
+      "001-0555",
+      "correo.test",
+      "131456789",
+      "EXQ-",
+      "Carmen Peña",
+      "Ana Pérez",
+      "Jorge Medina",
+      "Marta Reyes",
+      "Pablo Santos",
+      "Elías Tavárez",
+      "Luis Gómez",
+      "Ramírez",
+      "Castro",
+      "Herrera",
+      "Almonte",
+      "Lora",
+      "Mejía",
+      "Rosa Elena",
+      "Martínez",
+      "Juan Carlos",
+      "Batista",
+      "Carolina",
+      "Méndez",
+      "Miguel Ángel",
+      "Rosario",
+      "Paola",
+      "Jiménez",
+      "Rafael Antonio",
+      "Núñez",
+      "Yesenia",
+      "Castillo",
+      "Héctor Manuel",
+      "Vargas",
+      "Laura Patricia",
+      "Santana",
+      "Daniel Alberto",
+      "Polanco",
+      "Mariela",
+      "Guzmán",
+      "Francisco Javier",
+      "Cabrera",
+      "Altagracia",
+      "Peralta",
+      "Mateo",
+      "Valeria",
+      "Natalia",
+      "Gabriela",
+      "Fernández",
+      "Sofía",
+      "Andrés",
+      "Lucía",
+      "Tomás",
+      "Rosa",
+      "Elena",
+      "Juan",
+      "Carlos",
+      "Miguel",
+      "Ángel",
+      "Rafael",
+      "Antonio",
+      "Héctor",
+      "Manuel",
+      "Laura",
+      "Patricia",
+      "Daniel",
+      "Alberto",
+      "Francisco",
+      "Javier",
+      "Ana",
+      "Jorge",
+      "Marta",
+      "Pablo",
+      "Elías",
+      "Luis",
+      "Pérez",
+      "Medina",
+      "Reyes",
+      "Santos",
+      "Tavárez",
+      "Gómez",
+      "809-555",
+      "829-555",
+      "849-555",
+      "102017174",
+      "401516454",
+      "809-476-3535",
+      "humano.com.do",
+      "PSS-",
+      "Consultorio",
+      "Humano",
+      "Senasa",
+      "Mapfre",
+      "Universal",
+      "Primera"
+    ],
+    "mapa_fijo": {
+      "localhost:3001": "api.regisalud.com",
+      "127.0.0.1:4200": "regisalud.com",
+      "localhost:4200": "regisalud.com"
+    }
+  },
+  "tags": [
+    "RegiSalud",
+    "clínica",
+    "consultorio",
+    "citas médicas",
+    "República Dominicana",
+    "tutorial"
+  ],
+  "portada_s": 4,
+  "pasos": [
+    {
+      "id": "01-por-reclamar",
+      "capitulo": "Por reclamar",
+      "rotulo": "Reclamar a la ARS",
+      "navegar": "/health-insurance/reclamaciones",
+      "ruta": "Seguros de Salud › Reclamaciones › Por reclamar",
+      "texto_pantalla": "Lo ya facturado al paciente, listo para reclamarle a la aseguradora",
+      "narracion": "Ahora le cobramos a la ARS lo que cubrió. La pestaña Reclamaciones sigue el ciclo en cuatro pasos: por reclamar, seguimiento, remesas y facturas, y entrega y cobro. En Por reclamar solo llega lo que ya se le facturó al paciente: aquí están las tres autorizaciones de ARS Humano de este mes, la de Rosa y dos más, con lo que cubre cada una. Las marco todas: primero la de Rosa, después la de Juan Carlos, y por último la de Carolina. Abajo se suma el total a reclamar. La remesa de destino se sugiere por la fecha del servicio: Noviembre. Pulso Reclamar. El sistema pide confirmar, y confirmo. El aviso dice que se crearon las tres reclamaciones.",
+      "acciones": [
+        {
+          "resaltar": "button:has-text('Por reclamar')",
+          "durante_ms": 2000,
+          "al_decir": "por reclamar, seguimiento"
+        },
+        {
+          "resaltar": "button:has-text('Entrega y cobro')",
+          "durante_ms": 2000,
+          "al_decir": "y entrega y cobro"
+        },
+        {
+          "resaltar": ":text('ARS HUMANO') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "aquí están las tres"
+        },
+        {
+          "click": ".content-block mat-checkbox >> nth=0",
+          "al_decir": "primero la de Rosa"
+        },
+        {
+          "click": ".content-block mat-checkbox >> nth=1",
+          "al_decir": "de Juan Carlos"
+        },
+        {
+          "click": ".content-block mat-checkbox >> nth=2",
+          "al_decir": "la de Carolina"
+        },
+        {
+          "resaltar": "mat-form-field:has-text('Remesa de destino')",
+          "durante_ms": 2500,
+          "al_decir": "se sugiere"
+        },
+        {
+          "click": "button:has(mat-icon:text('check_circle')):has-text('Reclamar')",
+          "al_decir": "Pulso Reclamar"
+        },
+        {
+          "click": "button:has-text('Sí, Reclamar')",
+          "al_decir": "y confirmo"
+        },
+        {
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
+          "durante_ms": 2000,
+          "al_decir": "el aviso dice",
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Entendido')",
+          "al_decir": "las tres reclamaciones"
+        }
+      ]
+    },
+    {
+      "id": "02-facturar",
+      "capitulo": "La factura a la aseguradora",
+      "rotulo": "Facturar la remesa",
+      "ruta": "Seguros de Salud › Reclamaciones › Remesas y facturas › Facturar",
+      "texto_pantalla": "La remesa es el paquete para la ARS; la factura es cómo se entrega",
+      "narracion": "Con las reclamaciones creadas, paso a Remesas y facturas. La remesa es el paquete que se le entrega a la ARS, y la factura es cómo se entrega. La de noviembre tiene las tres reclamaciones sin facturar. Pulso Facturar. Ahí están las tres, con su paciente y su fecha de servicio, por siete mil cuatrocientos cuarenta. Pulso Generar Factura. Queda en borrador: todavía se le pueden agregar o quitar reclamaciones, o cambiar el texto de la línea.",
+      "acciones": [
+        {
+          "click": "button:has-text('Remesas y facturas')",
+          "al_decir": "Paso a Remesas"
+        },
+        {
+          "resaltar": ":text('Noviembre 2026') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "La de noviembre"
+        },
+        {
+          "click": "button:has-text('Facturar') >> nth=0",
+          "al_decir": "Pulso Facturar"
+        },
+        {
+          "resaltar": "mat-dialog-container tr:has-text('CLM-2026-000201')",
+          "durante_ms": 3500,
+          "al_decir": "Ahí están las tres",
+          "cursor": false
+        },
+        {
+          "click": "mat-dialog-container button:has-text('Generar Factura')",
+          "al_decir": "Pulso Generar Factura"
+        },
+        {
+          "click": "button:has-text('Entendido')",
+          "al_decir": "Queda en borrador"
+        },
+        {
+          "resaltar": "button:has-text('Agregar Reclamaciones')",
+          "durante_ms": 2500,
+          "al_decir": "agregar o quitar"
+        },
+        {
+          "resaltar": "button:has-text('Editar Descripción')",
+          "durante_ms": 2500,
+          "al_decir": "cambiar el texto"
+        }
+      ]
+    },
+    {
+      "id": "03-emitir",
+      "capitulo": "Emitir la factura",
+      "rotulo": "Emitir",
+      "ruta": "Seguros de Salud › Reclamaciones › Remesas y facturas › Emitir",
+      "texto_pantalla": "Comprobante de crédito fiscal, cuenta por cobrar y remesa entregada",
+      "narracion": "Cuando está conforme, pulso Emitir. Al emitirla se le asigna el comprobante de crédito fiscal, porque la ARS tiene RNC; se registra la cuenta por cobrar a la aseguradora, y la remesa queda entregada. Confirmo. El aviso confirma que quedó emitida, y lo cierro. La remesa entregada ya no está entre las abiertas: en el filtro elijo Entregadas, y ahí está la factura emitida, con su número de comprobante.",
+      "acciones": [
+        {
+          "click": "button:has(mat-icon:text('send')):has-text('Emitir')",
+          "al_decir": "pulso Emitir"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 4000,
+          "al_decir": "Al emitirla se le asigna",
+          "cursor": false
+        },
+        {
+          "click": "button:has-text('Sí, Emitir')",
+          "al_decir": "Confirmo"
+        },
+        {
+          "click": "button:has-text('Entendido')",
+          "al_decir": "lo cierro"
+        },
+        {
+          "click": ".content-block mat-select >> nth=1",
+          "al_decir": "en el filtro"
+        },
+        {
+          "click": "mat-option:has-text('Entregadas')",
+          "al_decir": "elijo Entregadas"
+        },
+        {
+          "resaltar": ":text('B0100000001') >> nth=0",
+          "durante_ms": 3500,
+          "al_decir": "con su número de comprobante"
+        }
+      ]
+    },
+    {
+      "id": "04-anexo",
+      "capitulo": "La factura y el anexo",
+      "rotulo": "Factura y anexo",
+      "navegar": "/sales/invoices/1000000004",
+      "al_decir_navegar": "abro la factura",
+      "ruta": "Ventas › Facturas › Factura a la aseguradora",
+      "texto_pantalla": "El PDF de la factura y el anexo con la lista de reclamaciones",
+      "narracion": "Para verla completa, abro la factura en Ventas. Es de crédito fiscal, a nombre de ARS Humano, con el código de prestador del centro. En Imprimir está el PDF de la factura y el anexo con la lista de reclamaciones: cada paciente, su cédula, su servicio, su autorización y el monto. Eso es lo que se le entrega a la ARS. En el próximo video registramos la entrega y el pago de la aseguradora.",
+      "acciones": [
+        {
+          "resaltar": ":text('Tradicional · Crédito Fiscal') >> nth=0",
+          "durante_ms": 3000,
+          "al_decir": "Es de crédito fiscal"
+        },
+        {
+          "resaltar": ":text('Código de Prestador')",
+          "durante_ms": 3000,
+          "al_decir": "con el código"
+        },
+        {
+          "click": "button:has-text('Imprimir') >> nth=0",
+          "al_decir": "En Imprimir"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-content button:has-text('Descargar PDF')",
+          "durante_ms": 2500,
+          "al_decir": "el PDF de la factura"
+        },
+        {
+          "resaltar": ".mat-mdc-menu-content button:has-text('Anexo')",
+          "durante_ms": 5000,
+          "al_decir": "el anexo con la lista"
+        },
+        {
+          "presionar": {
+            "tecla": "Escape"
+          },
+          "al_decir": "Eso es lo que"
+        }
+      ]
+    }
+  ]
+}
