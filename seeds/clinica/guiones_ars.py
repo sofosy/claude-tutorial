@@ -126,7 +126,7 @@ def ars_01():
                 {"escribir": {"sel": f"{DLG} mat-form-field:has-text('Código de la ARS') input", "texto": "CONS-001"},
                  "al_decir": "Ahora escribo el código"},
                 {"click": f"{DLG} mat-slide-toggle button", "al_decir": "marco que exige"},
-                {"click": f"{DLG} button:has-text('Guardar')", "al_decir": "Guardo"},
+                {"click": f"{DLG} button:has-text('Guardar')", "al_decir": "guardo"},
             ],
         },
         {
@@ -155,6 +155,114 @@ def ars_01():
     )
 
 
+def ars_02():
+    pasos = [
+        {
+            "id": "01-afiliacion", "capitulo": "La afiliación del paciente", "rotulo": "Nueva afiliación",
+            "navegar": "/patients", "ruta": "Pacientes › ficha › ARS › Nueva afiliación",
+            "texto_pantalla": "A qué plan pertenece el paciente: aseguradora, plan, póliza y afiliado",
+            "narracion": (
+                "Rosa Elena Martínez llega con su seguro de ARS Humano. La afiliación se registra en su ficha; "
+                "también se puede marcar al crear el paciente, con la casilla de que viene con seguro. Abro a "
+                "Rosa y paso a la pestaña ARS. Pulso Nueva afiliación. Primero elijo la aseguradora: ARS Humano. "
+                "Con eso se cargan sus planes, y elijo el suyo, que es el Básico. Ahora escribo el número de "
+                "póliza, tal como sale en su carnet. Debajo va el número de afiliado, que es el que la ARS pide "
+                "en cada autorización. La vigencia empieza hoy, y como es su primera afiliación, queda como la "
+                "principal. Todo listo: guardo."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Rosa Elena')", "al_decir": "Abro a"},
+                {"click": "button.tab:has-text('ARS')", "al_decir": "la pestaña ARS"},
+                {"click": "button:has-text('Nueva afiliación')", "al_decir": "Pulso Nueva afiliación"},
+                {"click": f"{DLG} mat-select[formcontrolname='insurerId']", "al_decir": "Primero elijo la aseguradora"},
+                {"click": "mat-option:has-text('ARS HUMANO')", "al_decir": "ARS Humano. Con"},
+                {"click": f"{DLG} mat-select[formcontrolname='planId']", "al_decir": "se cargan sus planes"},
+                {"click": "mat-option:has-text('Basico')", "al_decir": "que es el Básico"},
+                {"escribir": {"sel": "input[formcontrolname='policyNumber']", "texto": "HUM-778812"},
+                 "al_decir": "Ahora escribo el número"},
+                {"escribir": {"sel": "input[formcontrolname='memberNumber']", "texto": "88120455"},
+                 "al_decir": "Debajo va el número"},
+                R(f"{DLG} :text('queda como la principal')", 3000, al_decir="queda como la principal"),
+                {"click": f"{DLG} button:has-text('Guardar')", "al_decir": "guardo"},
+            ],
+        },
+        {
+            "id": "02-autorizacion", "capitulo": "Pedir la autorización", "rotulo": "Nueva autorización",
+            "ruta": "Pacientes › ficha › ARS › Nueva autorización",
+            "texto_pantalla": "Lo que la ARS acepta cubrir, con los montos del tarifario",
+            "narracion": (
+                "La afiliación queda arriba, como principal. Ahora la consulta: en el tarifario exige "
+                "autorización, así que pulso Nueva autorización. La afiliación ya viene elegida, con el tipo y "
+                "la urgencia. Busco el servicio escribiendo consulta, y en la lista aparece con su tarifa; lo elijo. Los montos salen del tarifario: dos mil "
+                "quinientos, de los que la ARS cubre dos mil y la paciente paga quinientos. Vienen bloqueados "
+                "porque así lo pactó el convenio."
+            ),
+            "acciones": [
+                R(":text('ARS HUMANO · ARS Humano Basico')", 3000, al_decir="La afiliación queda arriba"),
+                {"click": "button:has-text('Nueva autorización')", "al_decir": "pulso Nueva autorización"},
+                R(":text('No. afiliado')", 3000, al_decir="ya viene elegida"),
+                {"escribir": {"sel": "mat-form-field:has-text('Servicio a autorizar') input", "texto": "Consulta"},
+                 "al_decir": "Busco el servicio"},
+                {"click": "mat-option:has-text('Consulta de medicina general')", "al_decir": "con su tarifa; lo elijo"},
+                R(":text('Cubre la aseguradora') >> nth=0", 3500, al_decir="la ARS cubre dos mil"),
+                R(":text('Montos del convenio')", 3000, al_decir="Vienen bloqueados"),
+            ],
+        },
+        {
+            "id": "03-aprobar", "capitulo": "Registrar la respuesta de la ARS", "rotulo": "Guardar y aprobar",
+            "ruta": "Pacientes › ficha › ARS › Nueva autorización › Respuesta de la aseguradora",
+            "texto_pantalla": "Código de la ARS, monto aprobado y vigencia",
+            "narracion": (
+                "La autorización se pide por el canal de la ARS: su portal o su teléfono. Si todavía no responde, "
+                "pulso Guardar y queda pendiente. Aquí ya llamé y me dieron el código, así que enciendo Registrar "
+                "la aprobación. Escribo el código que dio la ARS, que es el que se reclama después. El monto aprobado "
+                "se propone con la cobertura calculada, y la vigencia es de treinta días. Si todo cuadra, pulso "
+                "Guardar y Aprobar. El aviso confirma que quedó aprobada con su código. Pulso Entendido, y la "
+                "autorización aparece en la lista de Rosa, con su número y su vencimiento."
+            ),
+            "acciones": [
+                R("button:has-text('Guardar borrador') >> xpath=..", 3500, al_decir="Si todavía no responde"),
+                {"click": "mat-slide-toggle:has-text('Registrar la aprobación') button", "al_decir": "enciendo Registrar"},
+                {"escribir": {"sel": "input[formcontrolname='insurerAuthorizationNumber']", "texto": "AUT-551207"},
+                 "al_decir": "Escribo el código"},
+                R("mat-form-field:has([formcontrolname='approvedAmount'])", 3000, al_decir="El monto aprobado"),
+                R("mat-form-field:has([formcontrolname='validUntil'])", 2500, al_decir="treinta días"),
+                {"click": "button:has-text('Guardar y Aprobar')", "al_decir": "pulso Guardar y Aprobar"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 2500, al_decir="El aviso confirma", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "Pulso Entendido"},
+                R(":text('ARS AUT-551207')", 3000, al_decir="aparece en la lista"),
+            ],
+        },
+        {
+            "id": "04-bandejas", "capitulo": "Las bandejas de seguimiento", "rotulo": "Autorizaciones y afiliaciones",
+            "navegar": "/health-insurance/autorizaciones", "al_decir_navegar": "En Seguros de Salud",
+            "ruta": "Seguros de Salud › Autorizaciones · Afiliaciones",
+            "texto_pantalla": "Qué contestó la ARS, qué vence y qué ya se puede facturar",
+            "narracion": (
+                "Todo esto se sigue desde la consola. En Seguros de Salud, la pestaña Autorizaciones es la "
+                "bandeja: cuántas esperan respuesta, cuántas vencen y cuántas están aprobadas sin usar. Cada "
+                "fila dice su siguiente paso; la de Rosa ya se puede facturar. Ahora paso a la pestaña de al lado. En Afiliaciones, la columna "
+                "Cobertura hoy contesta si el seguro cubre hoy, y Verificar lo comprueba. En el próximo video "
+                "facturamos la consulta: lo que paga Rosa y lo que se le reclama a la ARS."
+            ),
+            "acciones": [
+                R(":text('APROBADAS SIN USAR') >> xpath=..", 3500, al_decir="cuántas están aprobadas"),
+                R("button:has-text('Facturar en el paciente')", 3500, al_decir="ya se puede facturar"),
+                {"click": "a[role=tab]:has-text('Afiliaciones')", "al_decir": "En Afiliaciones"},
+                R("td:has-text('Cubre')", 3000, al_decir="Cobertura hoy contesta"),
+                R("button:has-text('Verificar')", 2500, al_decir="Verificar lo comprueba"),
+            ],
+        },
+    ]
+    return guion(
+        "ars-02-afiliacion-autorizacion", "Seguros de salud · Parte 2: afiliación y autorización",
+        "Segunda parte de la serie de ARS de RegiSalud: registrar la afiliación del paciente en su ficha, pedir "
+        "la autorización de un servicio con los montos del tarifario, registrar la aprobación de la ARS y "
+        "seguirla desde las bandejas de Autorizaciones y Afiliaciones.",
+        pasos, comentario="Estado: ars.mjs restaurar B.", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (ars_01,):
+    for f in (ars_01, ars_02):
         print(f())
