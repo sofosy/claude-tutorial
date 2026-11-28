@@ -44,7 +44,7 @@ BASE = {
     "css_global": [
         "app-chatbot-widget{display:none!important}",
         ".chatbot-fab{display:none!important}",
-        "button.nav-notification-icons .mat-badge-content{display:none!important}",
+        ".nav-notification-icons .notification-badge{display:none!important}",
     ],
     "pronunciacion": {"RegiSalud": "Regisalud", "ARS": "a-erre-ese", "PDF": "pe-de-efe"},
     "privacidad": {

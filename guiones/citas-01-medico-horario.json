@@ -62,7 +62,7 @@
   "css_global": [
     "app-chatbot-widget{display:none!important}",
     ".chatbot-fab{display:none!important}",
-    "button.nav-notification-icons .mat-badge-content{display:none!important}"
+    ".nav-notification-icons .notification-badge{display:none!important}"
   ],
   "pronunciacion": {
     "RegiSalud": "Regisalud",
@@ -219,6 +219,11 @@
           "al_decir": "consulta del médico"
         },
         {
+          "resaltar": "mat-checkbox:has-text('Pide autorización')",
+          "durante_ms": 3000,
+          "al_decir": "permiso previo"
+        },
+        {
           "escribir": {
             "sel": "input[formcontrolname='price']",
             "texto": "2000"
@@ -228,7 +233,7 @@
         {
           "resaltar": "mat-checkbox:has-text('Pide autorización')",
           "durante_ms": 4500,
-          "al_decir": "Pide autorización"
+          "al_decir": "Pide autorización de"
         },
         {
           "resaltar": "mat-checkbox:has-text('Se puede reservar')",
@@ -252,7 +257,7 @@
       "capitulo": "El horario de atención",
       "rotulo": "Horario de atención",
       "texto_pantalla": "Una franja: horas, especialidad, duración del turno, pacientes, modalidad y consultorio",
-      "narracion": "Ahora el horario de atención. Cada día de la semana es una fila, y el doctor todavía no atiende ninguno. Pulso Agregar en el lunes. Una franja es un bloque de horas que se divide en turnos: de ocho de la mañana a doce. La especialidad es la que atiende en esta franja; sale de las de su ficha. La duración por turno es la duración de cada cita: treinta minutos. Y pacientes por turno, uno. La modalidad puede ser presencial o virtual, por videollamada, con su enlace de reunión. Esta es presencial, así que lleva consultorio: la sala donde atiende. Escribo el nombre de uno que todavía no existe, y elijo crearlo desde aquí mismo.",
+      "narracion": "Ahora el horario de atención. Cada día de la semana es una fila, y el doctor todavía no atiende ninguno. Pulso Agregar en el lunes. Una franja es un bloque de horas que se divide en turnos: de ocho de la mañana a doce. La especialidad es la que atiende en esta franja; sale de las de su ficha. La duración por turno es la duración de cada cita: treinta minutos. Y pacientes por turno, uno. La modalidad puede ser presencial o virtual, por videollamada, con su enlace de reunión. Esta es presencial, así que lleva consultorio: la sala donde atiende. Escribo el nombre de uno que todavía no existe, y elijo crearlo desde aquí mismo. Se abre la ficha del consultorio, con el nombre que escribí.",
       "acciones": [
         {
           "resaltar": "app-doctor-schedule-tab .day-line:has-text('Lunes')",
@@ -298,6 +303,12 @@
         {
           "click": "mat-option.cs-create",
           "al_decir": "elijo crearlo"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 3000,
+          "al_decir": "Se abre la ficha",
+          "cursor": false
         }
       ]
     },
@@ -306,7 +317,7 @@
       "capitulo": "Crear el consultorio",
       "rotulo": "Nuevo consultorio",
       "texto_pantalla": "Consultorio · código, nombre y ubicación",
-      "narracion": "Se abre la ficha del consultorio con el nombre que escribí. Le pongo un código corto: consultorio pediatría, en mayúsculas y con un guion en medio, porque es una clave interna. La dirección, el teléfono, el edificio y el piso son opcionales; sirven cuando el centro tiene varias sedes, porque el paciente ve dónde lo atienden. Pulso Guardar, y el consultorio queda elegido en la franja. Los consultorios también se manejan en la pestaña Ajustes del médico.",
+      "narracion": "Le pongo un código corto: consultorio pediatría, en mayúsculas y con un guion en medio, porque es una clave interna. La dirección, el teléfono, el edificio y el piso son opcionales; sirven cuando el centro tiene varias sedes, porque el paciente ve dónde lo atienden. Pulso Guardar, y el consultorio queda elegido en la franja. Los consultorios también se manejan en la pestaña Ajustes del médico.",
       "acciones": [
         {
           "escribir": {
@@ -401,7 +412,7 @@
       "capitulo": "Bloqueos de agenda",
       "rotulo": "Bloquear unas horas",
       "texto_pantalla": "Bloqueos · vacaciones o una ausencia de unas horas",
-      "narracion": "Más abajo están los bloqueos de agenda. Un bloqueo no cambia el horario: aparta un tiempo en que el médico no está, por vacaciones o por unas horas. Pulso Nuevo bloqueo. Por defecto toma el día completo de hoy; para varios días se cambia la fecha hasta. Esta vez es solo un rato: elijo la hora de inicio, las diez. Después la hora fin, las doce. El último campo es solo para el equipo: escribo el motivo, reunión médica, para que todos sepan por qué no hay citas. El aviso de abajo confirma qué se va a bloquear. Con todo listo, pulso Bloquear, y el sistema avisa que el horario quedó bloqueado. En esas horas no se ofrece ninguna cita, ni en recepción ni por internet. Ojo: un bloqueo no cancela las citas que ya estaban dadas; esas se reprograman. El bloqueo queda en la lista, y desde ahí se puede quitar.",
+      "narracion": "Más abajo están los bloqueos de agenda. Un bloqueo no cambia el horario: aparta un tiempo en que el médico no está, por vacaciones o por unas horas. Pulso Nuevo bloqueo. Por defecto toma el día completo de hoy; para varios días se cambia la fecha hasta. Esta vez es solo un rato: elijo la hora de inicio y marco las diez. Después la hora fin, y marco las doce. El último campo es solo para el equipo: escribo el motivo, reunión médica, para que todos sepan por qué no hay citas. El aviso de abajo confirma qué se va a bloquear. Con todo listo, pulso Bloquear, y el sistema avisa que el horario quedó bloqueado. En esas horas no se ofrece ninguna cita, ni en recepción ni por internet. Ojo: un bloqueo no cancela las citas que ya estaban dadas; esas se reprograman. El bloqueo queda en la lista, y desde ahí se puede quitar.",
       "acciones": [
         {
           "resaltar": "app-doctor-schedule-tab .block-section, app-doctor-schedule-tab h3:has-text('Bloqueos de agenda')",
@@ -419,19 +430,19 @@
         },
         {
           "click": "mat-select:near(:text('Hora inicio')) >> nth=0",
-          "al_decir": "la hora de inicio"
+          "al_decir": "Esta vez es solo"
         },
         {
           "click": "mat-option:has-text('10:00 a. m.')",
-          "al_decir": "las diez"
+          "al_decir": "y marco las diez"
         },
         {
           "click": "mat-form-field:has-text('Hora fin') mat-select",
-          "al_decir": "la hora fin"
+          "al_decir": "Después la"
         },
         {
           "click": "mat-option:has-text('12:00 p. m.')",
-          "al_decir": "las doce"
+          "al_decir": "y marco las doce"
         },
         {
           "escribir": {
@@ -458,8 +469,18 @@
         },
         {
           "resaltar": "app-doctor-schedule-tab .exc-row",
-          "durante_ms": 4000,
-          "al_decir": "queda en la lista"
+          "durante_ms": 4500,
+          "al_decir": "En esas horas"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab .day-line:has-text('Lunes')",
+          "durante_ms": 3500,
+          "al_decir": "las citas que ya estaban"
+        },
+        {
+          "resaltar": "app-doctor-schedule-tab .exc-row__del",
+          "durante_ms": 3000,
+          "al_decir": "se puede quitar"
         }
       ]
     },
@@ -481,7 +502,7 @@
           "al_decir": "Horarios de Atención"
         },
         {
-          "resaltar": "app-staff-schedule-list, .content-block table, .schedule-board",
+          "resaltar": "table.sch__grid th.sch__staff >> nth=0",
           "durante_ms": 4000,
           "al_decir": "a todos los médicos",
           "cursor": false

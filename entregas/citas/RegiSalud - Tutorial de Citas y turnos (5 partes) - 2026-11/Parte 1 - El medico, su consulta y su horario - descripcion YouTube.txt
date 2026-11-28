@@ -1,0 +1,32 @@
+TÍTULO
+============================================================
+Citas · Parte 1: el médico, su consulta y su horario
+
+DESCRIPCIÓN
+============================================================
+Primera parte de la serie de Citas de RegiSalud: la Disponibilidad del médico (Médicos › Agenda), su consulta (precio particular, autorización de la ARS y reserva en línea), el horario de atención por franjas con especialidad, duración del turno, pacientes, modalidad y consultorio (creado desde el mismo campo), la repetición en varios días, los bloqueos de agenda y la vista de Recursos y Ajustes.
+
+⏱️ CAPÍTULOS
+00:00  La agenda de un médico
+00:54  La consulta: precio y autorización
+01:41  El horario de atención
+02:31  Crear el consultorio
+02:57  Repetir la franja en varios días
+03:44  Bloqueos de agenda
+04:42  Los horarios de todos y los feriados
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 05:13
+
+TRANSCRIPCIÓN
+============================================================
+En esta serie vemos las citas de principio a fin. Todo empieza por el médico: sin horario, nadie le puede agendar. Entro a Médicos, en el menú de la izquierda. A la izquierda está la lista de médicos del centro. Un médico nuevo se registra con Nuevo médico, con su cédula, su exequátur y sus especialidades; el doctor Luis Gómez, pediatra, ya está registrado, así que lo abro. Recojo la lista para ganar espacio, y abro la pestaña Agenda. Tiene dos vistas: Citas, las que ya tiene, y Disponibilidad, que es cuándo y dónde atiende. Abro Disponibilidad. Arriba está el enlace de reservas del centro: uno solo para todos los médicos. El aviso dice que este doctor todavía no aparece en él, porque no tiene horario.
+Debajo está la consulta del médico. Ya no hay tipos de cita: cada médico tiene una sola consulta, y de aquí salen su precio, su cobro y si la aseguradora de salud, la ARS, exige un permiso previo. En precio particular escribo lo que paga un paciente sin seguro: dos mil pesos. Es el precio que se cobra y el que ve el paciente al reservar. Pide autorización de la aseguradora se marca cuando las ARS exigen una autorización previa para esta consulta: al agendar con seguro, el sistema la pedirá. Este pediatra no la necesita. Y se puede reservar en el enlace del centro lo deja aparecer en las reservas por internet. Pulso Guardar, y el aviso de abajo confirma que la consulta quedó guardada.
+Ahora el horario de atención. Cada día de la semana es una fila, y el doctor todavía no atiende ninguno. Pulso Agregar en el lunes. Una franja es un bloque de horas que se divide en turnos: de ocho de la mañana a doce. La especialidad es la que atiende en esta franja; sale de las de su ficha. La duración por turno es la duración de cada cita: treinta minutos. Y pacientes por turno, uno. La modalidad puede ser presencial o virtual, por videollamada, con su enlace de reunión. Esta es presencial, así que lleva consultorio: la sala donde atiende. Escribo el nombre de uno que todavía no existe, y elijo crearlo desde aquí mismo. Se abre la ficha del consultorio, con el nombre que escribí.
+Le pongo un código corto: consultorio pediatría, en mayúsculas y con un guion en medio, porque es una clave interna. La dirección, el teléfono, el edificio y el piso son opcionales; sirven cuando el centro tiene varias sedes, porque el paciente ve dónde lo atienden. Pulso Guardar, y el consultorio queda elegido en la franja. Los consultorios también se manejan en la pestaña Ajustes del médico.
+Para no repetir lo mismo cinco veces, en Aplicar a marco el martes. Marco también el miércoles. Después el jueves. Y por último el viernes. El recuadro azul resume cuántos turnos salen en cada día. Abajo hay dos opciones de reserva. Visible para pacientes en el enlace de reservas hace que estas horas se ofrezcan por internet; si se desmarca, solo recepción las puede usar. Permitir reservas para hoy deja reservar el mismo día. Pulso Agregar franja. El aviso de abajo confirma que se agregaron las cinco franjas, y cada día muestra ya su horario, su especialidad y su consultorio. Y arriba, el enlace del centro ya dice que el doctor aparece en las reservas.
+Más abajo están los bloqueos de agenda. Un bloqueo no cambia el horario: aparta un tiempo en que el médico no está, por vacaciones o por unas horas. Pulso Nuevo bloqueo. Por defecto toma el día completo de hoy; para varios días se cambia la fecha hasta. Esta vez es solo un rato: elijo la hora de inicio y marco las diez. Después la hora fin, y marco las doce. El último campo es solo para el equipo: escribo el motivo, reunión médica, para que todos sepan por qué no hay citas. El aviso de abajo confirma qué se va a bloquear. Con todo listo, pulso Bloquear, y el sistema avisa que el horario quedó bloqueado. En esas horas no se ofrece ninguna cita, ni en recepción ni por internet. Ojo: un bloqueo no cancela las citas que ya estaban dadas; esas se reprograman. El bloqueo queda en la lista, y desde ahí se puede quitar.
+El horario también se puede cargar desde otra pantalla: Configuración, Recursos y Ajustes. Recojo el panel para ganar espacio. La sección Horarios de Atención muestra a todos los médicos a la vez, con sus franjas, y desde ahí mismo se agregan. Y en Días No Laborables están los feriados y los cierres del centro: un día de esa lista no ofrece citas a nadie. En el próximo video el paciente reserva por internet.

@@ -52,8 +52,9 @@ def citas_01():
             ),
             "acciones": [
                 R(".consult-price, mat-form-field.consult-price", 2500, al_decir="consulta del médico"),
+                R("mat-checkbox:has-text('Pide autorización')", 3000, al_decir="permiso previo"),
                 {"escribir": {"sel": "input[formcontrolname='price']", "texto": "2000"}, "al_decir": "En precio particular"},
-                R("mat-checkbox:has-text('Pide autorización')", 4500, al_decir="Pide autorización"),
+                R("mat-checkbox:has-text('Pide autorización')", 4500, al_decir="Pide autorización de"),
                 R("mat-checkbox:has-text('Se puede reservar')", 3500, al_decir="Y se puede reservar"),
                 {"click": "button.consult-save", "al_decir": "Pulso Guardar"},
                 R("mat-snack-bar-container", 2500, al_decir="quedó guardada", cursor=False),
@@ -69,7 +70,8 @@ def citas_01():
                 "ficha. La duración por turno es la duración de cada cita: treinta minutos. Y pacientes por turno, "
                 "uno. La modalidad puede ser presencial o virtual, por videollamada, con su enlace de reunión. Esta "
                 "es presencial, así que lleva consultorio: la sala donde atiende. Escribo el nombre de uno que "
-                "todavía no existe, y elijo crearlo desde aquí mismo."
+                "todavía no existe, y elijo crearlo desde aquí mismo. Se abre la ficha del consultorio, con el nombre "
+                "que escribí."
             ),
             "acciones": [
                 R(f"{SCH} .day-line:has-text('Lunes')", 2500, al_decir="Cada día"),
@@ -82,13 +84,14 @@ def citas_01():
                 {"escribir": {"sel": f"{SCH} app-custom-select[formcontrolname='consultorioId'] input",
                               "texto": "Consultorio Pediátrico"}, "al_decir": "Escribo el nombre"},
                 {"click": "mat-option.cs-create", "al_decir": "elijo crearlo"},
+                R("mat-dialog-container", 3000, al_decir="Se abre la ficha", cursor=False),
             ],
         },
         {
             "id": "04-consultorio", "capitulo": "Crear el consultorio", "rotulo": "Nuevo consultorio",
             "texto_pantalla": "Consultorio · código, nombre y ubicación",
             "narracion": (
-                "Se abre la ficha del consultorio con el nombre que escribí. Le pongo un código corto: consultorio "
+                "Le pongo un código corto: consultorio "
                 "pediatría, en mayúsculas y con un guion en medio, porque es una clave interna. La dirección, el teléfono, el edificio y el piso son opcionales; sirven cuando el centro "
                 "tiene varias sedes, porque el paciente ve dónde lo atienden. Pulso Guardar, y el consultorio queda "
                 "elegido en la franja. Los consultorios también se manejan en la pestaña Ajustes del médico."
@@ -135,7 +138,7 @@ def citas_01():
                 "Más abajo están los bloqueos de agenda. Un bloqueo no cambia el horario: aparta un tiempo en que el "
                 "médico no está, por vacaciones o por unas horas. Pulso Nuevo bloqueo. Por defecto toma el día "
                 "completo de hoy; para varios días se cambia la fecha hasta. Esta vez es solo un rato: elijo la hora "
-                "de inicio, las diez. Después la hora fin, las doce. El último campo es solo para el equipo: escribo el "
+                "de inicio y marco las diez. Después la hora fin, y marco las doce. El último campo es solo para el equipo: escribo el "
                 "motivo, reunión médica, para que todos sepan por qué no hay citas. El aviso de abajo confirma qué se va a bloquear. Con todo listo, pulso "
                 "Bloquear, y el sistema avisa que el horario quedó bloqueado. En esas horas no se ofrece ninguna cita, ni en recepción ni por internet. Ojo: un bloqueo no cancela "
                 "las citas que ya estaban dadas; esas se reprograman. El bloqueo queda en la lista, y desde ahí se "
@@ -145,16 +148,18 @@ def citas_01():
                 R(f"{SCH} .block-section, {SCH} h3:has-text('Bloqueos de agenda')", 3000, al_decir="los bloqueos de agenda"),
                 {"click": "button:has-text('Nuevo bloqueo')", "al_decir": "Pulso Nuevo bloqueo"},
                 R("mat-form-field:has-text('Hasta') >> nth=0", 3000, al_decir="la fecha hasta"),
-                {"click": "mat-select:near(:text('Hora inicio')) >> nth=0", "al_decir": "la hora de inicio"},
-                {"click": "mat-option:has-text('10:00 a. m.')", "al_decir": "las diez"},
-                {"click": "mat-form-field:has-text('Hora fin') mat-select", "al_decir": "la hora fin"},
-                {"click": "mat-option:has-text('12:00 p. m.')", "al_decir": "las doce"},
+                {"click": "mat-select:near(:text('Hora inicio')) >> nth=0", "al_decir": "Esta vez es solo"},
+                {"click": "mat-option:has-text('10:00 a. m.')", "al_decir": "y marco las diez"},
+                {"click": "mat-form-field:has-text('Hora fin') mat-select", "al_decir": "Después la"},
+                {"click": "mat-option:has-text('12:00 p. m.')", "al_decir": "y marco las doce"},
                 {"escribir": {"sel": "input[placeholder*='Motivo'], mat-form-field:has-text('Motivo del bloqueo') input",
                               "texto": "Reunión médica"}, "al_decir": "escribo el"},
                 R("mat-icon:text('info') >> xpath=.. >> nth=-1", 3500, al_decir="El aviso de abajo", cursor=False),
                 {"click": "button:has-text('Bloquear')", "al_decir": "pulso Bloquear"},
                 R("mat-snack-bar-container", 2500, al_decir="quedó bloqueado", cursor=False),
-                R(f"{SCH} .exc-row", 4000, al_decir="queda en la lista"),
+                R(f"{SCH} .exc-row", 4500, al_decir="En esas horas"),
+                R(f"{SCH} .day-line:has-text('Lunes')", 3500, al_decir="las citas que ya estaban"),
+                R(f"{SCH} .exc-row__del", 3000, al_decir="se puede quitar"),
             ],
         },
         {
@@ -170,7 +175,7 @@ def citas_01():
             "acciones": [
                 {"click": "button.panel-collapse", "al_decir": "Recojo el"},
                 {"click": "button.nav-item:has-text('Horarios de Atención')", "al_decir": "Horarios de Atención"},
-                R("app-staff-schedule-list, .content-block table, .schedule-board", 4000, al_decir="a todos los médicos", cursor=False),
+                R("table.sch__grid th.sch__staff >> nth=0", 4000, al_decir="a todos los médicos", cursor=False),
                 {"click": "button.nav-item:has-text('Días No Laborables')", "al_decir": "Días No Laborables"},
                 R("td:has-text('Navidad')", 3000, al_decir="los feriados"),
                 R("button:has-text('Nuevo día no laborable')", 3000, al_decir="los cierres del centro"),
@@ -188,6 +193,142 @@ def citas_01():
     )
 
 
+def citas_02():
+    correo = "gabriela.fernandez@correo.test"
+    pasos = [
+        {
+            "id": "01-enlace", "capitulo": "El enlace de reservas del centro", "rotulo": "Enlace de reservas",
+            "navegar": "/book/centro/los-prados", "al_decir_navegar": "abro el enlace",
+            "ruta": "Enlace de reservas del centro (lo que ve el paciente)",
+            "texto_pantalla": "Enlace de reservas · especialidad, médico y hora",
+            "narracion": (
+                "Me pongo en el lugar de la paciente y abro el enlace de reservas del centro, como lo haría desde su "
+                "teléfono. Es uno solo para todos los médicos: se copia desde la Disponibilidad de cualquier médico "
+                "y se comparte por WhatsApp, en redes o en la página web. Arriba están los pasos de la reserva. "
+                "Cada tarjeta es una especialidad, con su médico y su próximo turno. Gabriela necesita una consulta "
+                "general, así que elige Medicina General."
+            ),
+            "acciones": [
+                R(".topbar", 3500, al_decir="uno solo"),
+                R(".steps", 3500, al_decir="los pasos"),
+                R("button.specialty >> nth=0", 3500, al_decir="Cada tarjeta"),
+                {"click": "button.specialty:has-text('Medicina General')", "al_decir": "elige Medicina General"},
+            ],
+        },
+        {
+            "id": "02-hora", "capitulo": "Elegir médico y hora", "rotulo": "Médico y hora",
+            "ruta": "Enlace de reservas › Medicina General",
+            "texto_pantalla": "Médicos de la especialidad con sus próximos turnos",
+            "narracion": (
+                "Salen los médicos de esa especialidad, primero quien atiende antes, con su consultorio y sus "
+                "próximos turnos. Tocar una hora ya elige médico y turno, pero ella quiere otro día, así que pulsa "
+                "Ver más días y horas en la doctora Ana Pérez. Se abre la semana de la doctora: los días apagados "
+                "no tienen cupo. Toca un día, y abajo salen las horas de la mañana. Elige una, y el resumen de "
+                "abajo confirma el día y la hora. Pulsa Continuar."
+            ),
+            "acciones": [
+                R("article.card:has-text('Ana Pérez')", 4000, al_decir="Salen los médicos"),
+                R("article.card:has-text('Ana Pérez') .slots", 3500, al_decir="Tocar una hora"),
+                {"click": "article.card:has-text('Ana Pérez') button.link", "al_decir": "Ver más días"},
+                R(".days", 3500, al_decir="los días apagados"),
+                {"click": "button.day:not([disabled]) >> nth=1", "al_decir": "Toca un día"},
+                {"click": "button.slot >> nth=2", "al_decir": "Elige una"},
+                R(".selection", 3000, al_decir="el resumen"),
+                {"click": "button.btn--primary:has-text('Continuar')", "al_decir": "Pulsa Continuar"},
+            ],
+        },
+        {
+            "id": "03-correo", "capitulo": "Entrar con el correo", "rotulo": "Correo y acceso",
+            "ruta": "Enlace de reservas › Correo y acceso",
+            "texto_pantalla": "Correo y acceso · un código de seis dígitos",
+            "narracion": (
+                "A la derecha queda el resumen de la reserva: la doctora, el consultorio, la duración y el precio "
+                "particular de su consulta. Para reservar, la paciente entra con su correo: así sus citas quedan en "
+                "su portal. Escribe su correo, el mismo donde quiere recibir los avisos de sus citas, y pulsa "
+                "Continuar. Le llega un código de seis dígitos."
+            ),
+            "acciones": [
+                R(".summary, aside", 4500, al_decir="el resumen", cursor=False),
+                {"escribir": {"sel": "#portal-email", "texto": correo}, "al_decir": "Escribe su correo"},
+                {"click": "app-portal-entry button.btn--primary:has-text('Continuar')", "al_decir": "pulsa Continuar"},
+            ],
+        },
+        {
+            "id": "04-codigo", "capitulo": "Verificar el código y sus datos", "rotulo": "Código de verificación",
+            "ruta": "Enlace de reservas › Código",
+            "setup": {"tipo": "shell", "cmd": f"node seeds/clinica/codigo-portal.mjs {correo}", "guardar_en": "codigo"},
+            "texto_pantalla": "El código vence en 30 minutos y admite tres intentos",
+            "narracion": (
+                "El código vence en treinta minutos. Lo copia del correo y lo escribe aquí. Son seis números, y "
+                "tiene tres intentos. Ahora pulsa Verificar código. Como es la primera vez que entra, completa su "
+                "nombre: Gabriela, tal como quiere que aparezca. Después su primer apellido: Fernández. El segundo apellido es opcional. Pulsa Guardar datos y continuar."
+            ),
+            "acciones": [
+                {"escribir": {"sel": "#portal-code", "texto": "{{codigo}}"}, "al_decir": "lo escribe aquí"},
+                {"click": "button:has-text('Verificar código')", "al_decir": "pulsa Verificar código"},
+                {"escribir": {"sel": "#portal-names", "texto": "Gabriela"}, "al_decir": "completa su nombre"},
+                {"escribir": {"sel": "#portal-first", "texto": "Fernández"}, "al_decir": "su primer apellido"},
+                {"click": "button:has-text('Guardar datos y continuar')", "al_decir": "Pulsa Guardar"},
+            ],
+        },
+        {
+            "id": "05-confirmar", "capitulo": "Para quién es y confirmar", "rotulo": "Confirmar la cita",
+            "ruta": "Enlace de reservas › Paciente › Confirmación",
+            "texto_pantalla": "Para mí o para una persona a mi cargo · Confirmar cita",
+            "narracion": (
+                "Ahora dice para quién es la cita: para ella, o para una persona a su cargo, como un hijo, con su "
+                "relación y su fecha de nacimiento. Es para ella. Pulsa Revisar la cita. Revisa el paciente y a qué "
+                "correo le llegarán los avisos, y pulsa Confirmar cita. La reserva quedó confirmada, con su número. "
+                "Desde aquí la agrega a su calendario, reserva otra o la cancela si no puede ir."
+            ),
+            "acciones": [
+                R("input[name='patient-choice'] >> xpath=ancestor::label[1] >> nth=1", 3500, al_decir="una persona a su cargo"),
+                {"click": "input[name='patient-choice'] >> nth=0", "al_decir": "Es para ella"},
+                {"click": "button:has-text('Revisar la cita')", "al_decir": "Pulsa Revisar"},
+                {"click": "button[type='submit']", "al_decir": "pulsa Confirmar cita"},
+                R("main, .page", 5000, al_decir="quedó confirmada", cursor=False),
+            ],
+        },
+        {
+            "id": "06-sin-ficha", "capitulo": "Reservas sin ficha: vincular al paciente", "rotulo": "Reservas sin ficha",
+            "navegar": "/agenda/reservas-sin-ficha",
+            "ruta": "Calendario › Reservas sin ficha",
+            "texto_pantalla": "Reservas sin ficha · verificar la identidad y vincular",
+            "narracion": (
+                "Ahora la recepción. En el Calendario, Reservas sin ficha. Si el correo de Gabriela estuviera en su "
+                "ficha, la cita se habría creado sola. Pero su ficha no lo tiene, así que el centro todavía no sabe "
+                "quién es: el turno está apartado, pero no es una cita ni sale en el calendario. Cada reserva tiene "
+                "cuatro acciones. Registrar paciente crea la ficha con los datos de la reserva, si es nueva. "
+                "Confirmar turno la marca confirmada, y Cancelar reserva libera el horario. Gabriela ya es "
+                "paciente, así que pulso Vincular paciente. La busco por su nombre, o por su cédula, y pulso Buscar. "
+                "Aparece su ficha; verifico que es ella, pulso Vincular esta ficha y confirmo. Ahora sí se crea la "
+                "cita, con su médico y su turno, y le llega la confirmación por correo."
+            ),
+            "acciones": [
+                R("h2:has-text('Gabriela')", 3500, al_decir="el correo de Gabriela"),
+                R("h2:has-text('Gabriela') >> xpath=..", 4000, al_decir="el turno está apartado"),
+                R("button:has-text('Registrar paciente')", 3000, al_decir="Registrar paciente"),
+                R("button:has-text('Confirmar turno')", 2500, al_decir="Confirmar turno"),
+                R("button:has-text('Cancelar reserva')", 2500, al_decir="Cancelar reserva"),
+                {"click": "button:has-text('Vincular paciente')", "al_decir": "pulso Vincular paciente"},
+                {"escribir": {"sel": "input[name='query']", "texto": "Gabriela"}, "al_decir": "La busco"},
+                {"click": "button:has-text('Buscar')", "al_decir": "pulso Buscar"},
+                {"click": "button:has-text('Vincular esta ficha')", "al_decir": "pulso Vincular esta ficha"},
+                {"click": "mat-dialog-container button:has-text('Vincular')", "al_decir": "y confirmo"},
+                R("mat-snack-bar-container, main", 3500, al_decir="Ahora sí se crea", cursor=False),
+            ],
+        },
+    ]
+    return guion(
+        "citas-02-reserva-en-linea", "Citas · Parte 2: el paciente reserva por internet",
+        "Segunda parte de la serie de Citas de RegiSalud: el enlace único de reservas del centro tal como lo ve el "
+        "paciente (especialidad, médico y hora), la entrada con su correo y el código de verificación, para quién "
+        "es la cita, la confirmación, y cómo recepción vincula una reserva sin ficha con el paciente.",
+        pasos, comentario="Estado B de citas.mjs (sin citas); Gabriela Fernández con ficha sin correo.",
+        portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (citas_01,):
+    for f in (citas_01, citas_02):
         print(f())
