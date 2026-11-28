@@ -24,6 +24,7 @@ def ars_01():
                 "ciclo: aseguradoras, tarifario, afiliaciones, autorizaciones y reclamaciones."
             ),
             "acciones": [
+                R("a.rail-item[aria-label='Seguros de Salud']", 3000, al_decir="las dos facturas"),
                 {"click": "a.rail-item[aria-label='Seguros de Salud']", "al_decir": "Entro a Seguros"},
                 R(":text('aseguradoras ·')", 4000, al_decir="el resumen dice"),
                 R("a[role=tab]:has-text('Aseguradoras')", 1800, al_decir="las pestañas siguen"),
@@ -38,7 +39,7 @@ def ars_01():
             "narracion": (
                 "El centro todavía no tiene aseguradoras. Lo más rápido es traerlas del catálogo dominicano, con "
                 "sus planes ya cargados; también se puede crear una a mano con Nueva aseguradora. Pulso Importar "
-                "del catálogo. Busco Humano, y cuando aparece en la lista con sus ocho planes, la marco con un clic. Ahora borro la búsqueda y escribo "
+                "del catálogo, y se abre la lista de las ARS del país. Busco Humano, y cuando aparece en la lista con sus ocho planes, la marco con un clic. Ahora borro la búsqueda y escribo "
                 "Senasa, que es la otra ARS con la que trabaja el centro; la marco también. La selección se "
                 "conserva entre búsquedas. Pulso Importar. El aviso confirma dos aseguradoras y doce planes; pulso "
                 "Entendido. Lo importado pasa a ser del centro: se puede renombrar o desactivar sin afectar a "
@@ -47,6 +48,7 @@ def ars_01():
             "acciones": [
                 R("button:has-text('Nueva aseguradora')", 3000, al_decir="crear una a mano"),
                 {"click": "button:has-text('Importar del catálogo') >> nth=0", "al_decir": "Pulso Importar del"},
+                R(f"{DLG}", 2200, al_decir="se abre la lista", cursor=False),
                 {"escribir": {"sel": f"{DLG} input", "texto": "Humano"}, "al_decir": "Busco Humano"},
                 {"click": f"{DLG} :text('ARS HUMANO')", "al_decir": "la marco con un clic"},
                 {"escribir": {"sel": f"{DLG} input", "texto": "Senasa"}, "al_decir": "escribo Senasa"},
@@ -94,7 +96,7 @@ def ars_01():
                 {"escribir": {"sel": "input[formcontrolname='insurerClaimDeadlineDays']", "texto": "60"},
                  "al_decir": "los días que da"},
                 {"click": "button:has-text('Guardar cambios')", "al_decir": "Pulso Guardar cambios"},
-                R("app-custom-alert-dialog", 1800, al_decir="el aviso lo confirma", cursor=False),
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 1800, al_decir="el aviso lo confirma", cursor=False),
                 {"click_opcional": "button:has-text('Entendido')", "espera_ms": 5000},
             ],
         },
@@ -105,13 +107,14 @@ def ars_01():
             "texto_pantalla": "Por plan y por servicio: lo que cubre la ARS y lo que paga el paciente",
             "narracion": (
                 "Con la aseguradora lista, pasamos al tarifario, que es el acuerdo con la ARS: por plan y por servicio, cuánto cubre ella y "
-                "cuánto paga el paciente. Pulso Nueva tarifa. Elijo el plan, ARS Humano Básico. Una tarifa es de un "
+                "cuánto paga el paciente. Pulso Nueva tarifa, y se abre el formulario en blanco. Elijo el plan, ARS Humano Básico. Una tarifa es de un "
                 "plan, no de toda la aseguradora. Después elijo el servicio: la consulta de medicina general. Su precio de venta se propone como precio convenido: dos mil "
                 "quinientos. La ARS cubre dos mil, y el copago se calcula solo: quinientos, lo que paga el paciente en el mostrador. Ahora escribo el código con "
                 "que la ARS identifica el servicio, y marco que exige autorización previa. Guardo."
             ),
             "acciones": [
                 {"click": "button:has-text('Nueva tarifa') >> nth=0", "al_decir": "Pulso Nueva tarifa"},
+                R(f"{DLG}", 2000, al_decir="el formulario en blanco", cursor=False),
                 {"click": f"{DLG} mat-select >> nth=0", "al_decir": "Elijo el plan"},
                 {"click": "mat-option:has-text('ARS Humano Basico')", "al_decir": "Humano Básico"},
                 {"click": f"{DLG} mat-select >> nth=1", "al_decir": "Después elijo el servicio"},

@@ -203,6 +203,11 @@
       "narracion": "En esta serie vemos el ciclo completo con las ARS, las administradoras de riesgos de salud: la aseguradora y su tarifario, la afiliación del paciente, la autorización, las dos facturas y el cobro a la aseguradora. Entro a Seguros de Salud, en el menú de la izquierda. Arriba, el resumen dice cuántas aseguradoras hay, cuántas autorizaciones esperan respuesta y cuánto se les debe cobrar a las ARS. Las pestañas siguen el ciclo: aseguradoras, tarifario, afiliaciones, autorizaciones y reclamaciones.",
       "acciones": [
         {
+          "resaltar": "a.rail-item[aria-label='Seguros de Salud']",
+          "durante_ms": 3000,
+          "al_decir": "las dos facturas"
+        },
+        {
           "click": "a.rail-item[aria-label='Seguros de Salud']",
           "al_decir": "Entro a Seguros"
         },
@@ -234,7 +239,7 @@
       "rotulo": "Importar del catálogo",
       "ruta": "Seguros de Salud › Aseguradoras › Importar del catálogo",
       "texto_pantalla": "Las ARS dominicanas, con sus planes, desde el catálogo",
-      "narracion": "El centro todavía no tiene aseguradoras. Lo más rápido es traerlas del catálogo dominicano, con sus planes ya cargados; también se puede crear una a mano con Nueva aseguradora. Pulso Importar del catálogo. Busco Humano, y cuando aparece en la lista con sus ocho planes, la marco con un clic. Ahora borro la búsqueda y escribo Senasa, que es la otra ARS con la que trabaja el centro; la marco también. La selección se conserva entre búsquedas. Pulso Importar. El aviso confirma dos aseguradoras y doce planes; pulso Entendido. Lo importado pasa a ser del centro: se puede renombrar o desactivar sin afectar a nadie más.",
+      "narracion": "El centro todavía no tiene aseguradoras. Lo más rápido es traerlas del catálogo dominicano, con sus planes ya cargados; también se puede crear una a mano con Nueva aseguradora. Pulso Importar del catálogo, y se abre la lista de las ARS del país. Busco Humano, y cuando aparece en la lista con sus ocho planes, la marco con un clic. Ahora borro la búsqueda y escribo Senasa, que es la otra ARS con la que trabaja el centro; la marco también. La selección se conserva entre búsquedas. Pulso Importar. El aviso confirma dos aseguradoras y doce planes; pulso Entendido. Lo importado pasa a ser del centro: se puede renombrar o desactivar sin afectar a nadie más.",
       "acciones": [
         {
           "resaltar": "button:has-text('Nueva aseguradora')",
@@ -244,6 +249,12 @@
         {
           "click": "button:has-text('Importar del catálogo') >> nth=0",
           "al_decir": "Pulso Importar del"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2200,
+          "al_decir": "se abre la lista",
+          "cursor": false
         },
         {
           "escribir": {
@@ -359,7 +370,7 @@
           "al_decir": "Pulso Guardar cambios"
         },
         {
-          "resaltar": "app-custom-alert-dialog",
+          "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
           "durante_ms": 1800,
           "al_decir": "el aviso lo confirma",
           "cursor": false
@@ -378,11 +389,17 @@
       "al_decir_navegar": "pasamos al tarifario",
       "ruta": "Seguros de Salud › Tarifario › Nueva tarifa",
       "texto_pantalla": "Por plan y por servicio: lo que cubre la ARS y lo que paga el paciente",
-      "narracion": "Con la aseguradora lista, pasamos al tarifario, que es el acuerdo con la ARS: por plan y por servicio, cuánto cubre ella y cuánto paga el paciente. Pulso Nueva tarifa. Elijo el plan, ARS Humano Básico. Una tarifa es de un plan, no de toda la aseguradora. Después elijo el servicio: la consulta de medicina general. Su precio de venta se propone como precio convenido: dos mil quinientos. La ARS cubre dos mil, y el copago se calcula solo: quinientos, lo que paga el paciente en el mostrador. Ahora escribo el código con que la ARS identifica el servicio, y marco que exige autorización previa. Guardo.",
+      "narracion": "Con la aseguradora lista, pasamos al tarifario, que es el acuerdo con la ARS: por plan y por servicio, cuánto cubre ella y cuánto paga el paciente. Pulso Nueva tarifa, y se abre el formulario en blanco. Elijo el plan, ARS Humano Básico. Una tarifa es de un plan, no de toda la aseguradora. Después elijo el servicio: la consulta de medicina general. Su precio de venta se propone como precio convenido: dos mil quinientos. La ARS cubre dos mil, y el copago se calcula solo: quinientos, lo que paga el paciente en el mostrador. Ahora escribo el código con que la ARS identifica el servicio, y marco que exige autorización previa. Guardo.",
       "acciones": [
         {
           "click": "button:has-text('Nueva tarifa') >> nth=0",
           "al_decir": "Pulso Nueva tarifa"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 2000,
+          "al_decir": "el formulario en blanco",
+          "cursor": false
         },
         {
           "click": "mat-dialog-container mat-select >> nth=0",
