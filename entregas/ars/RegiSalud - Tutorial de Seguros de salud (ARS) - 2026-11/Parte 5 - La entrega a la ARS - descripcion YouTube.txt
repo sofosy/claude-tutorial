@@ -1,0 +1,24 @@
+TÍTULO
+============================================================
+Seguros de salud · Parte 5: la entrega a la ARS
+
+DESCRIPCIÓN
+============================================================
+Quinta parte de la serie de ARS de RegiSalud: preparar el lote con las reclamaciones de la remesa, cerrarlo, entregarlo a la aseguradora y registrar su acuse de recibo.
+
+⏱️ CAPÍTULOS
+00:00  Preparar la entrega
+00:28  Cerrar y entregar
+00:51  El acuse de recibo
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 01:25
+
+TRANSCRIPCIÓN
+============================================================
+Ya emitimos la factura a ARS Humano. Ahora hay que entregársela, con sus reclamaciones, y seguir lo que pase después. Eso se hace en el paso cuatro, Entrega y cobro. Pulso Preparar entrega y elijo la remesa de noviembre. El aviso dice que se armó un lote con sus tres reclamaciones; lo cierro. La fila del lote dice en qué paso va y cuál le falta.
+El siguiente paso es cerrar el lote, para que no entre nada más. Pulso Cerrar lote y confirmo. El aviso dice que quedó cerrado, y lo cierro. Cuando el mensajero lleva el paquete a la ARS, pulso Entregar. El sistema pide confirmar; confirmo, y sus reclamaciones pasan a enviadas, con la fecha de hoy.
+La ARS sella la entrega con un número de acuse. En la fila pulso Registrar acuse. En el cuadro escribo el número que dio la ARS, tal como aparece en el sello, y lo guardo con el botón de abajo. El aviso confirma que el lote queda en procesamiento por la aseguradora; lo cierro. La fila ya muestra el número de acuse, y su siguiente paso es registrar el cobro cuando la ARS pague. En el próximo video vemos ese pago, con una glosa.

@@ -545,7 +545,7 @@ def ars_06():
                 "La ARS mandó su respuesta, con el detalle de cada servicio. Pagó la consulta de Carolina, pero objetó su hemograma por "
                 "documentación incompleta: eso es una glosa. Cuando la ARS da el detalle por servicio, se concilia "
                 "esa reclamación antes de registrar el cobro del lote. En Seguimiento, en el menú de la reclamación "
-                "de Carolina, pulso Conciliar línea por línea. Cada servicio tiene su resultado. Para la consulta "
+                "de Carolina, pulso Conciliar línea por línea. Se abre la conciliación, y cada servicio tiene su resultado. Para la consulta "
                 "elijo que quedó pagada, y los montos se llenan solos. Para el hemograma abro el resultado y elijo "
                 "glosada: el monto pasa a la columna de glosado. Después abro el motivo, y elijo documentación "
                 "incompleta. Abajo, el cobro de lo pagado se registra en la factura a la aseguradora. Con eso, "
@@ -557,6 +557,7 @@ def ars_06():
                 {"click": "button:has-text('Seguimiento')", "al_decir": "En Seguimiento"},
                 {"click": f"{CAROL} button:has(mat-icon:text('more_vert'))", "al_decir": "reclamación de Carolina"},
                 {"click": ".mat-mdc-menu-content button:has-text('Conciliar')", "al_decir": "pulso Conciliar"},
+                R(f"{DLG} :text('Conciliar Reclamación')", 1800, al_decir="Se abre la conciliación", cursor=False),
                 {"click": f"{DLG} tr:has-text('Consulta de medicina') mat-select", "al_decir": "Para la consulta"},
                 {"click": "mat-option:has-text('Pagada')", "al_decir": "que quedó pagada"},
                 {"click": f"{DLG} tr:has-text('Hemograma') mat-select", "al_decir": "Para el hemograma"},
@@ -595,8 +596,8 @@ def ars_06():
             "ruta": "Seguros de Salud › Reclamaciones › Seguimiento",
             "texto_pantalla": "Lo glosado se apela; si no se recupera, se da de baja con su asiento",
             "narracion": (
-                "El aviso confirma que el cobro baja lo que debe la ARS; lo cierro y volvemos a la pestaña de Seguimiento: dos pagadas, y Carolina con seiscientos "
-                "cuarenta pendientes. Su siguiente paso es apelar. Pulso Apelar, y en el cuadro escribo el argumento: "
+                "Listo. El aviso confirma que el cobro baja lo que debe la ARS; lo cierro y volvemos a la pestaña de Seguimiento: dos pagadas, y Carolina con seiscientos "
+                "cuarenta pendientes. Su siguiente paso es apelar. Pulso Apelar, se abre el cuadro, y escribo el argumento: "
                 "que ya tenemos la orden médica completa. Lo reviso con calma, y apelo. Si la ARS paga después, se concilia su respuesta. Si "
                 "no, en el menú está Dar de baja lo no cobrado: sale de la cuenta por cobrar como ajuste, con su "
                 "asiento. Así se cierra el ciclo completo con la ARS."
@@ -607,6 +608,7 @@ def ars_06():
                 {"click": "button:has-text('Seguimiento')", "al_decir": "la pestaña de Seguimiento"},
                 R(f"{CAROL} td >> nth=-4", 3000, al_decir="Carolina con seiscientos"),
                 {"click": f"{CAROL} button:has-text('Apelar')", "al_decir": "Pulso Apelar"},
+                R(f"{DLG}", 1800, al_decir="se abre el cuadro", cursor=False),
                 {"escribir": {"sel": f"{DLG} textarea, {DLG} input", "texto": "Se adjunta la orden médica completa."},
                  "al_decir": "escribo el argumento"},
                 {"click": f"{DLG} button:has-text('Apelar')", "al_decir": "y apelo"},

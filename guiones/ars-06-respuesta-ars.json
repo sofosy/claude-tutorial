@@ -200,7 +200,7 @@
       "navegar": "/health-insurance/reclamaciones",
       "ruta": "Seguros de Salud › Reclamaciones › Seguimiento",
       "texto_pantalla": "Lo que la ARS pagó, servicio por servicio, y lo que glosó",
-      "narracion": "La ARS mandó su respuesta, con el detalle de cada servicio. Pagó la consulta de Carolina, pero objetó su hemograma por documentación incompleta: eso es una glosa. Cuando la ARS da el detalle por servicio, se concilia esa reclamación antes de registrar el cobro del lote. En Seguimiento, en el menú de la reclamación de Carolina, pulso Conciliar línea por línea. Cada servicio tiene su resultado. Para la consulta elijo que quedó pagada, y los montos se llenan solos. Para el hemograma abro el resultado y elijo glosada: el monto pasa a la columna de glosado. Después abro el motivo, y elijo documentación incompleta. Abajo, el cobro de lo pagado se registra en la factura a la aseguradora. Con eso, guardo la conciliación.",
+      "narracion": "La ARS mandó su respuesta, con el detalle de cada servicio. Pagó la consulta de Carolina, pero objetó su hemograma por documentación incompleta: eso es una glosa. Cuando la ARS da el detalle por servicio, se concilia esa reclamación antes de registrar el cobro del lote. En Seguimiento, en el menú de la reclamación de Carolina, pulso Conciliar línea por línea. Se abre la conciliación, y cada servicio tiene su resultado. Para la consulta elijo que quedó pagada, y los montos se llenan solos. Para el hemograma abro el resultado y elijo glosada: el monto pasa a la columna de glosado. Después abro el motivo, y elijo documentación incompleta. Abajo, el cobro de lo pagado se registra en la factura a la aseguradora. Con eso, guardo la conciliación.",
       "acciones": [
         {
           "resaltar": "button:has-text('Seguimiento')",
@@ -223,6 +223,12 @@
         {
           "click": ".mat-mdc-menu-content button:has-text('Conciliar')",
           "al_decir": "pulso Conciliar"
+        },
+        {
+          "resaltar": "mat-dialog-container :text('Conciliar Reclamación')",
+          "durante_ms": 1800,
+          "al_decir": "Se abre la conciliación",
+          "cursor": false
         },
         {
           "click": "mat-dialog-container tr:has-text('Consulta de medicina') mat-select",
@@ -314,7 +320,7 @@
       "rotulo": "Apelar la glosa",
       "ruta": "Seguros de Salud › Reclamaciones › Seguimiento",
       "texto_pantalla": "Lo glosado se apela; si no se recupera, se da de baja con su asiento",
-      "narracion": "El aviso confirma que el cobro baja lo que debe la ARS; lo cierro y volvemos a la pestaña de Seguimiento: dos pagadas, y Carolina con seiscientos cuarenta pendientes. Su siguiente paso es apelar. Pulso Apelar, y en el cuadro escribo el argumento: que ya tenemos la orden médica completa. Lo reviso con calma, y apelo. Si la ARS paga después, se concilia su respuesta. Si no, en el menú está Dar de baja lo no cobrado: sale de la cuenta por cobrar como ajuste, con su asiento. Así se cierra el ciclo completo con la ARS.",
+      "narracion": "Listo. El aviso confirma que el cobro baja lo que debe la ARS; lo cierro y volvemos a la pestaña de Seguimiento: dos pagadas, y Carolina con seiscientos cuarenta pendientes. Su siguiente paso es apelar. Pulso Apelar, se abre el cuadro, y escribo el argumento: que ya tenemos la orden médica completa. Lo reviso con calma, y apelo. Si la ARS paga después, se concilia su respuesta. Si no, en el menú está Dar de baja lo no cobrado: sale de la cuenta por cobrar como ajuste, con su asiento. Así se cierra el ciclo completo con la ARS.",
       "acciones": [
         {
           "resaltar": "mat-dialog-container:has(app-custom-alert-dialog)",
@@ -338,6 +344,12 @@
         {
           "click": "tr:has-text('CLM-2026-000203') button:has-text('Apelar')",
           "al_decir": "Pulso Apelar"
+        },
+        {
+          "resaltar": "mat-dialog-container",
+          "durante_ms": 1800,
+          "al_decir": "se abre el cuadro",
+          "cursor": false
         },
         {
           "escribir": {
