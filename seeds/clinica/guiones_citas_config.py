@@ -44,12 +44,14 @@ def citas_06():
                 "Al lado está el enlace de reservas del centro. Es uno solo para todos los médicos, y dice cuántos "
                 "se pueden reservar en línea. Un médico aparece en el enlace cuando su consulta está marcada para "
                 "reserva en línea y tiene franjas visibles para pacientes, como vimos en la parte uno. Copiar enlace "
-                "lo deja listo para pegarlo en WhatsApp, en las redes o en la página web del centro."
+                "lo deja listo para pegarlo en WhatsApp, en las redes o en la página web del centro. El aviso de "
+                "abajo confirma que quedó copiado."
             ),
             "acciones": [
                 R("app-center-booking-link", 4000, al_decir="el enlace de reservas del centro"),
                 R(":text('reservables en línea')", 3500, al_decir="dice cuántos"),
                 {"click": "button:has-text('Copiar enlace')", "al_decir": "Copiar enlace"},
+                R(".mat-mdc-snack-bar-label, simple-snack-bar", 2000, al_decir="El aviso de", cursor=False),
             ],
         },
         {
@@ -60,12 +62,14 @@ def citas_06():
                 "Los avisos de la cita salen siempre por correo. Si el centro conectó su WhatsApp en WhatsApp e IA, "
                 "este interruptor los manda también por WhatsApp: la confirmación, el recordatorio, la "
                 "reprogramación y la cancelación, cada uno con su plantilla aprobada. El sistema ya trae las "
-                "plantillas redactadas. Termino con Guardar."
+                "plantillas redactadas. Termino con Guardar, y el aviso confirma que quedó guardada; lo cierro."
             ),
             "acciones": [
                 R(":text('Avisos por WhatsApp')", 2500, al_decir="Los avisos de la cita"),
                 R("mat-slide-toggle[formcontrolname='appointmentWhatsappEnabled']", 4500, al_decir="este interruptor"),
                 {"click": "button:has(mat-icon:text('save')):has-text('Guardar')", "al_decir": "Termino con Guardar"},
+                R("mat-dialog-container:has(app-custom-alert-dialog)", 1800, al_decir="el aviso confirma", cursor=False),
+                {"click_opcional": "button:has-text('Entendido')", "espera_ms": 4000},
             ],
         },
         {
