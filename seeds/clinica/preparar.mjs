@@ -47,6 +47,9 @@ for (const [clave, nombre, ap1, ap2, ced, g, esp, exq, precio, franjas] of MEDIC
       name: nombre, firstLastName: ap1, secondLastName: ap2, documentType: 'CEDULA', documentNumber: ced,
       birthDate: '1980-05-10', gender: g, medicalLicenseNumber: exq, medicalLicenseExpiry: '2030-12-31',
       medicalSpecialtyIds: esp, personalMobilePhone: '809-555-02' + String(MEDICOS.findIndex(m => m[0] === clave)).padStart(2, '0'),
+      // La doctora Ana Pérez entra al sistema: con su sesión se graba el consentimiento informado.
+      ...(clave === 'ana' ? { access: { username: 'ana.perez.losprados', email: 'ana.perez@regisalud.test',
+        password: 'AnaPerez2026!', roleIds: [+uno(`SELECT id FROM roles WHERE company_id=${E} AND name='Médico'`)] } } : {}),
     })).id;
   }
   medico[clave] = +id;

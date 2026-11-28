@@ -24,7 +24,7 @@ from .rutas import RAIZ
 
 MIN_PALABRAS = 6          # una narración más corta que esto no explica nada
 DESFASE_MAX = 0.9         # segundos entre la palabra y el clic que se toleran
-ACCIONES_VISIBLES = ("click", "arrastrar", "escribir", "seleccionar", "marcar", "presionar", "subir")
+ACCIONES_VISIBLES = ("click", "arrastrar", "firmar", "teclear", "escribir", "seleccionar", "marcar", "presionar", "subir")
 # acciones de la capa (insignia/cartel/diagrama, ver GRABACION.md): cambian la
 # pantalla sin mover el cursor, como `resaltar`
 ACCIONES_CAPA = ("cartel", "diagrama", "diagrama_fase", "diagrama_cerrar", "insignia")

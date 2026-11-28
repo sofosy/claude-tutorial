@@ -31,7 +31,7 @@ from playwright.sync_api import sync_playwright  # noqa: E402
 
 from tutorial import grabar as g  # noqa: E402
 from tutorial import rutas  # noqa: E402
-from tutorial.capturar import _sesion, _setup, _sub  # noqa: E402
+from tutorial.capturar import _rutas_locales, _sesion, _setup, _sub  # noqa: E402
 
 PAUSA_MS = 400  # entre acciones: sin voz no hay palabra que esperar
 
@@ -60,11 +60,17 @@ def _visible(ctx, desde):
 def _una(pag, ctx, acc, variables):
     """Ejecuta una acción como grabar._acciones, sin reloj. Devuelve (tipo, sel)."""
     if "click" in acc:
-        g._clic(pag, acc["click"], ctx)
+        g._clic(pag, acc["click"], ctx, acc.get("veces", 1))
         return "click", acc["click"]
     if "arrastrar" in acc:
         g._arrastrar(pag, acc["arrastrar"], ctx)
         return "arrastrar", acc["arrastrar"]["desde"]
+    if "teclear" in acc:
+        pag.keyboard.type(_sub(acc["teclear"], variables), delay=20)
+        return "teclear", "-"
+    if "firmar" in acc:
+        g._firmar(pag, acc["firmar"], ctx)
+        return "firmar", acc["firmar"]
     if "escribir" in acc:
         e = acc["escribir"]
         g._escribir(pag, e["sel"], _sub(e["texto"], variables), ctx)
@@ -207,6 +213,7 @@ def main():
                                       device_scale_factor=g.ESCALA,
                                       **({"timezone_id": guion["zona_horaria"]} if guion.get("zona_horaria") else {}))
             ctx_nav.add_init_script(g.JS_CAPA)  # cursor, marca y sonda de alertas del motor
+            _rutas_locales(ctx_nav, guion)  # fuentes, css_global y js_global, como en la grabación
             if api_ensayo:
                 host_ensayo = api_ensayo.rsplit("/api", 1)[0]
                 ctx_nav.route("http://localhost:3001/**", lambda r: r.continue_(

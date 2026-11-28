@@ -112,7 +112,7 @@ export function cargarGuion(arg) {
 }
 
 /** Tipo de acción de una entrada de `acciones`. */
-export const TIPOS = ['click', 'arrastrar', 'escribir', 'resaltar', 'subir', 'seleccionar', 'marcar',
+export const TIPOS = ['click', 'firmar', 'teclear', 'arrastrar', 'escribir', 'resaltar', 'subir', 'seleccionar', 'marcar',
   'click_opcional', 'presionar', 'esperar_ms', 'quitar_marca', 'plano_general',
   'cartel', 'diagrama', 'diagrama_fase', 'diagrama_cerrar', 'insignia'];
 /** Acciones de la capa (insignia/cartel/diagrama): cambian la pantalla sin mover el cursor. */

@@ -9,7 +9,7 @@ sys.stdout.reconfigure(encoding="utf-8", errors="replace")
 from playwright.sync_api import sync_playwright
 from tutorial.capturar import _sesion, _rutas_locales
 from ensayar import cargar
-nombre, guion = cargar("clinica"); base = guion["base_url"].rstrip("/")
+import os; nombre, guion = cargar(os.environ.get("GUION", "clinica")); base = guion["base_url"].rstrip("/")
 OUT = RAIZ / "salida" / "clinica" / "explorar"; OUT.mkdir(parents=True, exist_ok=True)
 tag, ruta, *pasos = sys.argv[1:]
 UI_JS = """() => { const vis = e => { const r = e.getBoundingClientRect(); return r.width > 0 && r.height > 0 && getComputedStyle(e).visibility !== 'hidden'; };
@@ -48,6 +48,13 @@ with sync_playwright() as p:
             elif k == "eval": print("--- eval:", json.dumps(pag.evaluate(v), ensure_ascii=False)[:5000])
             elif k == "ui":
                 print("--- ui:", json.dumps(pag.evaluate(UI_JS), ensure_ascii=False)[:8000])
+            elif k == "tclick": pag.locator(v).first.click(click_count=3, timeout=8000); pag.wait_for_timeout(600)
+            elif k == "sign":
+                b = pag.locator(v).first.bounding_box(); import math
+                pag.mouse.move(b["x"]+30, b["y"]+b["height"]/2); pag.mouse.down()
+                for i in range(40): pag.mouse.move(b["x"]+30+i*(b["width"]-60)/40, b["y"]+b["height"]/2+18*math.sin(i/3))
+                pag.mouse.up(); pag.wait_for_timeout(500)
+            elif k == "kb": pag.keyboard.type(v, delay=15); pag.wait_for_timeout(400)
             elif k == "press": pag.keyboard.press(v); pag.wait_for_timeout(800)
         except Exception as e:
             print(f"!! {paso}: {str(e)[:300]}")
