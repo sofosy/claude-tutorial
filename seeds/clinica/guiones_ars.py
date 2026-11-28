@@ -509,16 +509,17 @@ def ars_05():
             "narracion": (
                 "La ARS sella la entrega con un número de acuse. En la fila pulso Registrar acuse. En el cuadro "
                 "escribo el número que dio la ARS, tal como aparece en el sello, y lo guardo con el botón de "
-                "abajo. El aviso confirma que el lote queda en procesamiento por la aseguradora; lo cierro. Su "
+                "abajo. El aviso confirma que el lote queda en procesamiento por la aseguradora; lo cierro. La fila ya muestra el número de acuse, y su "
                 "siguiente paso es registrar el cobro cuando la ARS pague. En el próximo video vemos ese pago, con "
                 "una glosa."
             ),
             "acciones": [
                 {"click": f"{LOTE} button:has-text('Registrar acuse')", "al_decir": "En la fila pulso"},
+                R(f"{DLG}", 1800, al_decir="En el cuadro", cursor=False),
                 {"escribir": {"sel": f"{DLG} input", "texto": "ACU-2026-1187"}, "al_decir": "escribo el número"},
                 {"click": f"{DLG} button:has-text('Registrar Acuse')", "al_decir": "lo guardo con el botón"},
                 R(ALERTA, 1800, al_decir="El aviso confirma que el lote", cursor=False),
-                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro. Su"},
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro. La fila"},
                 R(f"{LOTE} td >> nth=-3", 3500, al_decir="siguiente paso es registrar"),
             ],
         },
