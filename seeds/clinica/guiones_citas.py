@@ -609,6 +609,125 @@ def citas_04():
     )
 
 
+def citas_05():
+    pasos = [
+        {
+            "id": "01-tablero", "capitulo": "La Operación del Día", "rotulo": "Operación del Día",
+            "navegar": "/home", "ruta": "Operación del Día",
+            "texto_pantalla": "Operación del Día · lo que pasa hoy con cada paciente",
+            "narracion": (
+                "Lo que pasa hoy con los pacientes se sigue en la Operación del Día. La abro desde el menú de la "
+                "izquierda; también está en el Calendario. Arriba están las etapas del recorrido, con cuántos "
+                "pacientes hay en cada una: en consulta, en cola, llegó, citado y cerrado hoy. Al tocar una etapa, "
+                "el tablero muestra solo esos pacientes. Cada fila es un paciente con su hora, dónde lo atienden y "
+                "quién."
+            ),
+            "acciones": [
+                {"click": "a.rail-item[aria-label='Operación del Día']", "al_decir": "La abro desde el menú"},
+                R(".op-rail", 4500, al_decir="las etapas del recorrido"),
+                R(".op-rail__item:has-text('Citado')", 3000, al_decir="Al tocar una etapa"),
+                R(".op-tbl__r >> nth=0", 3500, al_decir="Cada fila es un paciente"),
+            ],
+        },
+        {
+            "id": "02-llegada", "capitulo": "Registrar la llegada: el turno", "rotulo": "Llegada y turno",
+            "ruta": "Operación del Día › paciente › Registrar llegada",
+            "texto_pantalla": "Registrar llegada · la cita pasa a en espera y recibe su turno",
+            "narracion": (
+                "Yesenia Castillo acaba de llegar a recepción. Abro su fila. El panel muestra su recorrido de hoy y "
+                "la acción que toca. Pulso Registrar llegada. El aviso confirma la llegada, y acepto. Ahora está en "
+                "cola, con su número de turno, que sale en la pantalla de la sala. La llegada también se "
+                "registra desde el detalle de la cita o desde la agenda del médico."
+            ),
+            "acciones": [
+                {"click": ".op-tbl__r:has-text('Yesenia')", "al_decir": "Abro su fila"},
+                R(".op-next, .gm-console-master__detail", 3500, al_decir="la acción que toca", cursor=False),
+                {"click": "button:has-text('Registrar llegada')", "al_decir": "Pulso Registrar llegada"},
+                R("mat-dialog-container", 2500, al_decir="El aviso confirma", cursor=False),
+                {"click": "mat-dialog-container button:has-text('Aceptar')", "al_decir": "y acepto"},
+                R(".op-pick:has-text('Yesenia')", 4000, al_decir="Ahora está en cola"),
+            ],
+        },
+        {
+            "id": "03-llamar", "capitulo": "Llamar, iniciar y finalizar la atención", "rotulo": "Llamar e iniciar",
+            "ruta": "Operación del Día › Llamar › Iniciar atención",
+            "texto_pantalla": "Llamar · Iniciar atención · Finalizar atención",
+            "narracion": (
+                "Cuando el médico está listo, pulso Llamar: el turno se anuncia y el sistema confirma que la "
+                "paciente fue llamada; acepto. La paciente camina hacia el consultorio, y cuando entra, pulso "
+                "Iniciar atención; el aviso lo "
+                "confirma, y vuelvo a aceptar. Queda en consulta. Al terminar, Finalizar atención cierra la cita, pero solo con la nota clínica del médico "
+                "firmada: si falta, el sistema lo dice. Lo intento: el aviso explica que primero hay que firmar la "
+                "nota. El médico la escribe en la historia clínica, y al firmarla la cita queda atendida, lista "
+                "para cobrar."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Llamar')", "al_decir": "pulso Llamar"},
+                R("mat-dialog-container", 2500, al_decir="el sistema confirma", cursor=False),
+                {"click": "mat-dialog-container button:has-text('Aceptar')", "al_decir": "acepto"},
+                {"click": "button:has-text('Iniciar atención')", "al_decir": "Iniciar atención; el"},
+                R("mat-dialog-container", 2000, al_decir="lo confirma", cursor=False),
+                {"click": "mat-dialog-container button:has-text('Aceptar')", "al_decir": "vuelvo a aceptar"},
+                R(".op-pick:has-text('Yesenia')", 3000, al_decir="Queda en consulta"),
+                {"click": "button:has-text('Finalizar atención')", "al_decir": "Lo intento"},
+                R("mat-dialog-container", 4000, al_decir="el aviso explica", cursor=False),
+                {"click": "mat-dialog-container button:has-text('Aceptar')", "al_decir": "El médico la escribe"},
+                R("button:has-text('Historia clínica')", 3000, al_decir="en la historia clínica"),
+            ],
+        },
+        {
+            "id": "04-turno", "capitulo": "Un turno sin cita", "rotulo": "Nuevo turno",
+            "navegar": "/service-queue/tickets/create", "al_decir_navegar": "Nuevo Turno",
+            "ruta": "Cola de Servicio › Turnos › Nuevo Turno",
+            "texto_pantalla": "Nuevo turno · para quien llega sin cita",
+            "narracion": (
+                "Si alguien llega sin cita, recepción le da un turno con Nuevo Turno, en la Cola de Servicio. "
+                "Busco a la paciente por su nombre, Altagracia. Cuando aparece en la lista, la elijo. Ahora la "
+                "especialidad que necesita: escribo medicina, y en la lista que se abre elijo medicina general. La prioridad "
+                "queda en normal. Si además elijo un médico, se le crea una cita express ya con la llegada "
+                "registrada; lo dejo sin médico. Pulso Crear Turno, y recibe su número en la cola. Cierro el aviso."
+            ),
+            "acciones": [
+                {"escribir": {"sel": "input[formcontrolname='patientSearch']", "texto": "Altagracia"}, "al_decir": "Busco a la paciente"},
+                {"click": "mat-option:has-text('Altagracia')", "al_decir": "la elijo"},
+                {"escribir": {"sel": "input[formcontrolname='specialtySearch']", "texto": "Medicina"}, "al_decir": "escribo medicina"},
+                {"click": "mat-option:has-text('Medicina General')", "al_decir": "abre elijo medicina general"},
+                R("mat-form-field:has([formcontrolname='staffSearch'])", 4000, al_decir="Si además elijo"),
+                {"click": "button:has-text('Crear Turno')", "al_decir": "Pulso Crear Turno"},
+                R("mat-dialog-container", 3000, al_decir="número en la", cursor=False),
+                {"click": "mat-dialog-container button:has-text('Entendido')", "al_decir": "Cierro el aviso"},
+            ],
+        },
+        {
+            "id": "05-panel", "capitulo": "El panel de turnos", "rotulo": "Panel de Turnos",
+            "navegar": "/service-queue",
+            "ruta": "Cola de Servicio › Panel de Turnos",
+            "texto_pantalla": "Panel de turnos · el día de un vistazo, por área",
+            "narracion": (
+                "En la Cola de Servicio, el Panel de Turnos resume el día: los turnos de hoy, cuántos esperan, cuántos están en atención, "
+                "los completados y la espera promedio. Debajo, cada área de servicio con su prefijo, quién espera y "
+                "el próximo turno. Las áreas, sus salas y los recorridos por varias estaciones, como triaje, "
+                "consulta y caja, se configuran en Recursos y Ajustes. Con esto termina la serie de citas y turnos."
+            ),
+            "acciones": [
+                R(".statistics-row", 6000, al_decir="resume el día"),
+                R(":text('Consulta Externa')", 3000, al_decir="cada área de servicio"),
+                R("button:has-text('Ver Cola')", 2500, al_decir="quién espera"),
+                R(".next-label", 3000, al_decir="el próximo turno"),
+                R("button:has-text('Llamar')", 3000, al_decir="Las áreas"),
+                R(".statistics-row", 3500, al_decir="Con esto termina"),
+            ],
+        },
+    ]
+    return guion(
+        "citas-05-llegada-y-turnos", "Citas · Parte 5: la llegada, los turnos y la Operación del Día",
+        "Quinta parte de la serie de Citas de RegiSalud: la Operación del Día, registrar la llegada del paciente y "
+        "su turno en la cola, llamar e iniciar la atención, por qué Finalizar atención pide la nota firmada, dar un "
+        "turno a quien llega sin cita y el Panel de Turnos.",
+        pasos, comentario="Estado C de citas.mjs (citas de hoy).", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (citas_01, citas_02, citas_03, citas_04):
+    for f in (citas_01, citas_02, citas_03, citas_04, citas_05):
         print(f())

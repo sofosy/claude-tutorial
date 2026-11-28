@@ -1,0 +1,28 @@
+TÍTULO
+============================================================
+Citas · Parte 5: la llegada, los turnos y la Operación del Día
+
+DESCRIPCIÓN
+============================================================
+Quinta parte de la serie de Citas de RegiSalud: la Operación del Día, registrar la llegada del paciente y su turno en la cola, llamar e iniciar la atención, por qué Finalizar atención pide la nota firmada, dar un turno a quien llega sin cita y el Panel de Turnos.
+
+⏱️ CAPÍTULOS
+00:00  La Operación del Día
+00:29  Registrar la llegada: el turno
+00:56  Llamar, iniciar y finalizar la atención
+01:34  Un turno sin cita
+02:09  El panel de turnos
+
+🏷️ ETIQUETAS
+RegiSalud, clínica, consultorio, citas médicas, República Dominicana, tutorial
+
+—
+Duración: 02:41
+
+TRANSCRIPCIÓN
+============================================================
+Lo que pasa hoy con los pacientes se sigue en la Operación del Día. La abro desde el menú de la izquierda; también está en el Calendario. Arriba están las etapas del recorrido, con cuántos pacientes hay en cada una: en consulta, en cola, llegó, citado y cerrado hoy. Al tocar una etapa, el tablero muestra solo esos pacientes. Cada fila es un paciente con su hora, dónde lo atienden y quién.
+Yesenia Castillo acaba de llegar a recepción. Abro su fila. El panel muestra su recorrido de hoy y la acción que toca. Pulso Registrar llegada. El aviso confirma la llegada, y acepto. Ahora está en cola, con su número de turno, que sale en la pantalla de la sala. La llegada también se registra desde el detalle de la cita o desde la agenda del médico.
+Cuando el médico está listo, pulso Llamar: el turno se anuncia y el sistema confirma que la paciente fue llamada; acepto. La paciente camina hacia el consultorio, y cuando entra, pulso Iniciar atención; el aviso lo confirma, y vuelvo a aceptar. Queda en consulta. Al terminar, Finalizar atención cierra la cita, pero solo con la nota clínica del médico firmada: si falta, el sistema lo dice. Lo intento: el aviso explica que primero hay que firmar la nota. El médico la escribe en la historia clínica, y al firmarla la cita queda atendida, lista para cobrar.
+Si alguien llega sin cita, recepción le da un turno con Nuevo Turno, en la Cola de Servicio. Busco a la paciente por su nombre, Altagracia. Cuando aparece en la lista, la elijo. Ahora la especialidad que necesita: escribo medicina, y en la lista que se abre elijo medicina general. La prioridad queda en normal. Si además elijo un médico, se le crea una cita express ya con la llegada registrada; lo dejo sin médico. Pulso Crear Turno, y recibe su número en la cola. Cierro el aviso.
+En la Cola de Servicio, el Panel de Turnos resume el día: los turnos de hoy, cuántos esperan, cuántos están en atención, los completados y la espera promedio. Debajo, cada área de servicio con su prefijo, quién espera y el próximo turno. Las áreas, sus salas y los recorridos por varias estaciones, como triaje, consulta y caja, se configuran en Recursos y Ajustes. Con esto termina la serie de citas y turnos.
