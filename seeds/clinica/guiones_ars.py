@@ -458,6 +458,79 @@ def ars_04():
     )
 
 
+def ars_05():
+    ALERTA = "mat-dialog-container:has(app-custom-alert-dialog)"
+    LOTE = "tr:has-text('BATCH-202611-0001')"
+    pasos = [
+        {
+            "id": "01-lote", "capitulo": "Preparar la entrega", "rotulo": "Entrega y cobro",
+            "navegar": "/health-insurance/reclamaciones", "ruta": "Seguros de Salud › Reclamaciones › Entrega y cobro",
+            "texto_pantalla": "El lote: el paquete físico que se le entrega a la ARS",
+            "narracion": (
+                "Ya emitimos la factura a ARS Humano. Ahora hay que entregársela, con sus reclamaciones, y seguir "
+                "lo que pase después. Eso se hace en el paso cuatro, Entrega y cobro. Pulso Preparar entrega y "
+                "elijo la remesa de noviembre. El aviso dice que se armó un lote con sus tres reclamaciones; lo "
+                "cierro. La fila del lote dice en qué paso va y cuál le falta."
+            ),
+            "acciones": [
+                {"click": "button:has-text('Entrega y cobro')", "al_decir": "el paso cuatro"},
+                {"click": "button:has-text('Preparar entrega')", "al_decir": "Pulso Preparar entrega"},
+                {"click": ".mat-mdc-menu-content button:has-text('Noviembre 2026')", "al_decir": "elijo la remesa"},
+                R(ALERTA, 2200, al_decir="El aviso dice", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro. La"},
+                R(f"{LOTE} td >> nth=-3", 3500, al_decir="en qué paso va"),
+            ],
+        },
+        {
+            "id": "02-entregar", "capitulo": "Cerrar y entregar", "rotulo": "Cerrar y entregar",
+            "ruta": "Seguros de Salud › Reclamaciones › Entrega y cobro › Lote",
+            "texto_pantalla": "Cerrado: no admite más reclamaciones. Entregado: las reclamaciones pasan a Enviadas",
+            "narracion": (
+                "El siguiente paso es cerrar el lote, para que no entre nada más. Pulso Cerrar lote y confirmo. "
+                "El aviso dice que quedó cerrado, y lo cierro. Cuando el mensajero lleva el paquete a la ARS, pulso "
+                "Entregar. El sistema pide confirmar; confirmo, y sus reclamaciones pasan a enviadas, con la fecha "
+                "de hoy."
+            ),
+            "acciones": [
+                {"click": f"{LOTE} button:has-text('Cerrar lote')", "al_decir": "Pulso Cerrar lote"},
+                {"click": "mat-dialog-container button:has-text('Cerrar Lote')", "al_decir": "y confirmo. El"},
+                R(ALERTA, 1500, al_decir="El aviso dice que quedó", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "y lo cierro. Cuando"},
+                {"click": f"{LOTE} button:has-text('Entregar')", "al_decir": "pulso Entregar"},
+                {"click": "button:has-text('Sí, Enviar')", "al_decir": "confirmo, y sus"},
+                R(ALERTA, 1800, al_decir="pasan a enviadas", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "con la fecha de hoy"},
+            ],
+        },
+        {
+            "id": "03-acuse", "capitulo": "El acuse de recibo", "rotulo": "Registrar acuse",
+            "ruta": "Seguros de Salud › Reclamaciones › Entrega y cobro › Acuse",
+            "texto_pantalla": "El número con el que la ARS recibió el lote",
+            "narracion": (
+                "La ARS sella la entrega con un número de acuse. En la fila pulso Registrar acuse. En el cuadro "
+                "escribo el número que dio la ARS, tal como aparece en el sello, y lo guardo con el botón de "
+                "abajo. El aviso confirma que el lote queda en procesamiento por la aseguradora; lo cierro. Su "
+                "siguiente paso es registrar el cobro cuando la ARS pague. En el próximo video vemos ese pago, con "
+                "una glosa."
+            ),
+            "acciones": [
+                {"click": f"{LOTE} button:has-text('Registrar acuse')", "al_decir": "En la fila pulso"},
+                {"escribir": {"sel": f"{DLG} input", "texto": "ACU-2026-1187"}, "al_decir": "escribo el número"},
+                {"click": f"{DLG} button:has-text('Registrar Acuse')", "al_decir": "lo guardo con el botón"},
+                R(ALERTA, 1800, al_decir="El aviso confirma que el lote", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro. Su"},
+                R(f"{LOTE} td >> nth=-3", 3500, al_decir="siguiente paso es registrar"),
+            ],
+        },
+    ]
+    return guion(
+        "ars-05-entrega", "Seguros de salud · Parte 5: la entrega a la ARS",
+        "Quinta parte de la serie de ARS de RegiSalud: preparar el lote con las reclamaciones de la remesa, "
+        "cerrarlo, entregarlo a la aseguradora y registrar su acuse de recibo.",
+        pasos, comentario="Estado: ars.mjs restaurar E.", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (ars_01, ars_02, ars_03, ars_04):
+    for f in (ars_01, ars_02, ars_03, ars_04, ars_05):
         print(f())
