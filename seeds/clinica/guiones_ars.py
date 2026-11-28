@@ -532,6 +532,100 @@ def ars_05():
     )
 
 
+def ars_06():
+    ALERTA = "mat-dialog-container:has(app-custom-alert-dialog)"
+    CAROL = "tr:has-text('CLM-2026-000203')"
+    LOTE = "tr:has-text('BATCH-202611-0001')"
+    pasos = [
+        {
+            "id": "01-conciliar", "capitulo": "Conciliar línea por línea", "rotulo": "La respuesta de la ARS",
+            "navegar": "/health-insurance/reclamaciones", "ruta": "Seguros de Salud › Reclamaciones › Seguimiento",
+            "texto_pantalla": "Lo que la ARS pagó, servicio por servicio, y lo que glosó",
+            "narracion": (
+                "La ARS mandó su respuesta, con el detalle de cada servicio. Pagó la consulta de Carolina, pero objetó su hemograma por "
+                "documentación incompleta: eso es una glosa. Cuando la ARS da el detalle por servicio, se concilia "
+                "esa reclamación antes de registrar el cobro del lote. En Seguimiento, en el menú de la reclamación "
+                "de Carolina, pulso Conciliar línea por línea. Cada servicio tiene su resultado. Para la consulta "
+                "elijo que quedó pagada, y los montos se llenan solos. Para el hemograma abro el resultado y elijo "
+                "glosada: el monto pasa a la columna de glosado. Después abro el motivo, y elijo documentación "
+                "incompleta. Abajo, el cobro de lo pagado se registra en la factura a la aseguradora. Con eso, "
+                "guardo la conciliación."
+            ),
+            "acciones": [
+                R("button:has-text('Seguimiento')", 2500, al_decir="Pagó la consulta"),
+                R("button:has-text('Entrega y cobro')", 2500, al_decir="eso es una glosa"),
+                {"click": "button:has-text('Seguimiento')", "al_decir": "En Seguimiento"},
+                {"click": f"{CAROL} button:has(mat-icon:text('more_vert'))", "al_decir": "reclamación de Carolina"},
+                {"click": ".mat-mdc-menu-content button:has-text('Conciliar')", "al_decir": "pulso Conciliar"},
+                {"click": f"{DLG} tr:has-text('Consulta de medicina') mat-select", "al_decir": "Para la consulta"},
+                {"click": "mat-option:has-text('Pagada')", "al_decir": "que quedó pagada"},
+                {"click": f"{DLG} tr:has-text('Hemograma') mat-select", "al_decir": "Para el hemograma"},
+                {"click": "mat-option:has-text('Glosada')", "al_decir": "y elijo glosada"},
+                {"click": f"{DLG} tr:has-text('Hemograma') mat-select >> nth=1", "al_decir": "Después abro el motivo"},
+                {"click": "mat-option:has-text('Documentación incompleta')", "al_decir": "y elijo documentación"},
+                R(f"{DLG} :text('Se registrará un cobro de') >> xpath=..", 3000, al_decir="el cobro de lo pagado"),
+                {"click": f"{DLG} button:has-text('Guardar Conciliación')", "al_decir": "guardo la conciliación"},
+            ],
+        },
+        {
+            "id": "02-lote", "capitulo": "El cobro del lote", "rotulo": "Registrar el cobro",
+            "ruta": "Seguros de Salud › Reclamaciones › Entrega y cobro › Registrar cobro",
+            "texto_pantalla": "El pago se reparte entre las reclamaciones abiertas del lote",
+            "narracion": (
+                "El aviso confirma la conciliación; lo cierro. Carolina queda parcialmente pagada. Ahora el pago "
+                "del resto. En Entrega y cobro, en la fila del lote, pulso Registrar cobro. Dice lo reclamado, lo "
+                "ya cobrado por la conciliación y lo que falta: cuatro mil ochocientos, de las otras dos. La "
+                "reclamación ya conciliada no se toca. Escribo la referencia del banco, que es el número de la "
+                "transferencia que hizo la ARS. Todo cuadra, así que registro el cobro."
+            ),
+            "acciones": [
+                R(ALERTA, 1800, al_decir="El aviso confirma", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro"},
+                {"click": "button:has-text('Entrega y cobro')", "al_decir": "En Entrega y cobro"},
+                {"click": f"{LOTE} button:has-text('Registrar cobro')", "al_decir": "pulso Registrar cobro"},
+                R(f"{DLG} dl", 4000, al_decir="Dice lo reclamado"),
+                R(f"{DLG} :text('ya se concilió')", 3000, al_decir="ya conciliada no se toca"),
+                {"escribir": {"sel": f"{DLG} mat-form-field:has-text('Referencia') input", "texto": "TRF-88290"},
+                 "al_decir": "la referencia del banco"},
+                {"click": f"{DLG} button:has-text('Registrar RD')", "al_decir": "registro el cobro"},
+            ],
+        },
+        {
+            "id": "03-apelar", "capitulo": "Apelar o dar de baja", "rotulo": "Apelar la glosa",
+            "ruta": "Seguros de Salud › Reclamaciones › Seguimiento",
+            "texto_pantalla": "Lo glosado se apela; si no se recupera, se da de baja con su asiento",
+            "narracion": (
+                "El aviso confirma que el cobro baja lo que debe la ARS; lo cierro y volvemos a la pestaña de Seguimiento: dos pagadas, y Carolina con seiscientos "
+                "cuarenta pendientes. Su siguiente paso es apelar. Pulso Apelar, y en el cuadro escribo el argumento: "
+                "que ya tenemos la orden médica completa. Lo reviso con calma, y apelo. Si la ARS paga después, se concilia su respuesta. Si "
+                "no, en el menú está Dar de baja lo no cobrado: sale de la cuenta por cobrar como ajuste, con su "
+                "asiento. Así se cierra el ciclo completo con la ARS."
+            ),
+            "acciones": [
+                R(ALERTA, 1800, al_decir="El aviso confirma que el cobro", cursor=False),
+                {"click": "button:has-text('Entendido')", "al_decir": "lo cierro y volvemos"},
+                {"click": "button:has-text('Seguimiento')", "al_decir": "la pestaña de Seguimiento"},
+                R(f"{CAROL} td >> nth=-4", 3000, al_decir="Carolina con seiscientos"),
+                {"click": f"{CAROL} button:has-text('Apelar')", "al_decir": "Pulso Apelar"},
+                {"escribir": {"sel": f"{DLG} textarea, {DLG} input", "texto": "Se adjunta la orden médica completa."},
+                 "al_decir": "escribo el argumento"},
+                {"click": f"{DLG} button:has-text('Apelar')", "al_decir": "y apelo"},
+                {"click_opcional": "button:has-text('Entendido')", "espera_ms": 5000},
+                {"click": f"{CAROL} button:has(mat-icon:text('more_vert'))", "al_decir": "en el menú"},
+                R(".mat-mdc-menu-content button:has-text('Dar de baja')", 4000, al_decir="Dar de baja lo no"),
+                {"presionar": {"tecla": "Escape"}, "al_decir": "Así se cierra"},
+            ],
+        },
+    ]
+    return guion(
+        "ars-06-respuesta-ars", "Seguros de salud · Parte 6: el pago de la ARS, glosas y apelación",
+        "Sexta y última parte de la serie de ARS de RegiSalud: conciliar línea por línea la respuesta de la "
+        "aseguradora con una glosa, registrar el cobro del lote, apelar lo glosado y, si no se recupera, darlo "
+        "de baja.",
+        pasos, comentario="Estado: ars.mjs restaurar F.", portada_s=4,
+    )
+
+
 if __name__ == "__main__":
-    for f in (ars_01, ars_02, ars_03, ars_04, ars_05):
+    for f in (ars_01, ars_02, ars_03, ars_04, ars_05, ars_06):
         print(f())
