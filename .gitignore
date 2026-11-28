@@ -58,3 +58,4 @@ guiones/exploracion-seguridad/v06b-05-desactivada.json
 # Credenciales de YouTube (tutorial/subir.py). Nunca se versionan.
 client_secret*.json
 youtube-token.json
+.estados/

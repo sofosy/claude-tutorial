@@ -580,7 +580,14 @@ JS_FRANJA = """
       // un sticky es una barra (cabecera, filtros) si es bajo; un panel lateral
       // de más de media ventana también se pega, pero lo de dentro sí hay que
       // bajarlo desplazando la página
-      if (p === 'sticky' && n.getBoundingClientRect().height <= window.innerHeight * 0.5) return true;
+      // …pero solo si ya está pegado, dentro de la ventana: un pie sticky al final
+      // de un formulario largo (la barra de «Guardar cambios») está 2000 px más
+      // abajo y sin pegar; tomarlo por fijo dejaba el clic fuera de pantalla
+      if (p === 'sticky') {
+        const r = n.getBoundingClientRect();
+        const pegado = r.top >= -1 && r.bottom <= window.innerHeight + 1;
+        if (pegado && r.height <= window.innerHeight * 0.5) return true;
+      }
     }
     return false;
   };

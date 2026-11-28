@@ -18,7 +18,7 @@ PERMITIDOS = [
     "Daniel Alberto", "Polanco", "Mariela", "Guzmán", "Francisco Javier", "Cabrera", "Altagracia", "Peralta",
     "Mateo", "Valeria", "Natalia", "Gabriela", "Fernández", "Sofía", "Andrés", "Lucía", "Tomás",
     "Rosa", "Elena", "Juan", "Carlos", "Miguel", "Ángel", "Rafael", "Antonio", "Héctor", "Manuel", "Laura", "Patricia", "Daniel", "Alberto", "Francisco", "Javier", "Ana", "Jorge", "Marta", "Pablo", "Elías", "Luis", "Pérez", "Medina", "Reyes", "Santos", "Tavárez", "Gómez",
-    "809-555", "829-555", "849-555", "Consultorio", "Humano", "Senasa", "Mapfre", "Universal", "Primera",
+    "809-555", "829-555", "849-555", "102017174", "401516454", "809-476-3535", "humano.com.do", "PSS-", "Consultorio", "Humano", "Senasa", "Mapfre", "Universal", "Primera",
 ]
 
 BASE = {
